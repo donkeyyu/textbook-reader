@@ -43,3 +43,8 @@
 
 采用 single-context 布局；探索领域概念或架构决策时，读取
 [domain.md](docs/agents/domain.md)。
+
+### Textbook supplements
+
+编写或审核教材补充理解素材时，使用
+[textbook-supplements](.agents/skills/textbook-supplements/SKILL.md)。

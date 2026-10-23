@@ -1,0 +1,3 @@
+interface:
+  display_name: "PDF 内容索引"
+  short_description: "建立可追溯的逐页内容索引，核对教材页码与题目位置，检查覆盖范围"

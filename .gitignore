@@ -11,3 +11,12 @@ __pycache__/
 # Downloaded textbooks stay local; source records can be tracked.
 materials/textbooks/*.pdf
 materials/textbooks/.textbook-*/
+
+# Local evidence for PDF indexes; retain manifests and navigation metadata.
+materials/indexes/*/images/
+materials/indexes/*/text/
+materials/indexes/*/.work/
+
+# Locally rendered textbook pages and design review captures.
+public/textbooks/
+.impeccable/review/

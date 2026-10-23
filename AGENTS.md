@@ -24,6 +24,11 @@
 
 ## Agent skills
 
+### PDF content indexing
+
+建立或更新教材内容索引、页码映射和题目定位时，读取
+[index-pdf-content](.agents/skills/index-pdf-content/SKILL.md)。
+
 ### Textbook download
 
 从国家中小学智慧教育平台获取教材时，读取

@@ -66,7 +66,7 @@
         "content": "封底：数学七年级上册，ISBN条码"
       }
     ],
-    "page_mapping_status": "仅核对上述页面，尚未建立或验证全书页序与印刷页码映射。",
+    "page_mapping_status": "全书PDF页序与可见印刷页码已逐页核对；结果见 content_index.page_map。无可见页码的页面保留 absent，未按固定偏移补写。",
     "integrity_checks": {
       "bytes_match_server_metadata": true,
       "repeated_download_sha256_matches": true,
@@ -74,7 +74,23 @@
       "poppler_page_count": 202
     },
     "extraction_note": "pypdf 6.21.2 在本文件 extract_text() 时发生字体对象类型错误；pdftotext 可用于检索，但部分符号无法准确提取。Poppler 报 Marked Content 语法警告，抽查页渲染可读。公式和排版仍以原页为准。",
-    "usage_notice": "仅供个人学习使用，未经授权不得另做他用"
+    "usage_notice": "仅供个人学习使用，未经授权不得另做他用",
+    "content_index": {
+      "indexed_on": "2026-10-23",
+      "skill": "index-pdf-content",
+      "scope": "full",
+      "catalog": "../indexes/人教版-数学-七年级上册/catalog.md",
+      "index": "../indexes/人教版-数学-七年级上册/index.jsonl",
+      "manifest": "../indexes/人教版-数学-七年级上册/manifest.json",
+      "page_map": "../indexes/人教版-数学-七年级上册/page-map.csv",
+      "verification": "../indexes/人教版-数学-七年级上册/verification.json",
+      "index_sha256": "03f99cd20589161c42112bb900a90168fa347844c932c16fa5ac919611f59d31",
+      "reviewed_pdf_pages": 202,
+      "printed_page_verified_count": 186,
+      "printed_page_absent_count": 16,
+      "printed_page_unverified_count": 0,
+      "unresolved_pdf_pages": []
+    }
   },
   "resource_url": "https://r1-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/540ac93d-67fc-4353-9e49-1ef20d02b5a4.pkg/9787107382468_义务教育教科书•数学_七年级_上册_人民教育出版社_1787020812508.pdf",
   "detail_url": "https://s-file-1.ykt.cbern.com.cn/zxx/ndrv2/resources/tch_material/details/540ac93d-67fc-4353-9e49-1ef20d02b5a4.json",

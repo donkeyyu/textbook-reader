@@ -2,12 +2,14 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { bookTitle, getPage, pageCount, pages } from "../textbook/catalog";
 import { getLocation, getSupplement, supplementsForPage } from "../textbook/supplements";
 import { readingPage, restoredScroll, type PageMetric } from "./session";
+import { groupMarkers } from "./marker-groups";
 import { SupplementPanel, SupplementPreview, type PreviewAnchor } from "./Supplement";
 
 type ReadingContext = {
   page: number;
   fraction: number;
   supplementId: string | null;
+  choiceIds: string[] | null;
   locationId: string | null;
   focusId: string;
   panelScroll: number;
@@ -47,6 +49,9 @@ export function Reader() {
   const [pageError, setPageError] = useState(false);
   const [navigationOpen, setNavigationOpen] = useState(() => window.matchMedia("(min-width: 761px)").matches);
   const [supplementId, setSupplementId] = useState<string | null>(null);
+  const [choiceIds, setChoiceIds] = useState<string[] | null>(null);
+  const [paperWidth, setPaperWidth] = useState(690);
+  const [markerSize, setMarkerSize] = useState(() => window.matchMedia("(max-width: 760px)").matches ? 32 : 36);
   const [selectedLocation, setSelectedLocation] = useState<string | null>(null);
   const [history, setHistory] = useState<ReadingContext[]>([]);
   const [preview, setPreview] = useState<{ id: string; anchor: PreviewAnchor } | null>(null);
@@ -87,6 +92,8 @@ export function Reader() {
       const saved = anchor.current;
       const resized = width > 0 && width !== list.clientWidth;
       width = list.clientWidth;
+      setPaperWidth(width);
+      setMarkerSize(window.matchMedia("(max-width: 760px)").matches ? 32 : 36);
       metrics.current = measurePages(list);
       const metric = metrics.current[saved.page - 1];
       if (resized && metric) element.scrollTop = restoredScroll(metric, saved.fraction);
@@ -149,7 +156,14 @@ export function Reader() {
     setPageError(false);
     const panel = document.getElementById("supplement-panel");
     if (panel && commit.panelScroll !== undefined) panel.scrollTop = commit.panelScroll;
-    document.getElementById(commit.focusId)?.focus({ preventScroll: true });
+    const focused = document.getElementById(commit.focusId);
+    focused?.focus({ preventScroll: true });
+    if (panel && focused && commit.focusId.startsWith("choice-")) {
+      const bounds = panel.getBoundingClientRect();
+      const title = focused.getBoundingClientRect();
+      if (title.top < bounds.top) panel.scrollTop += title.top - bounds.top;
+      else if (title.bottom > bounds.bottom) panel.scrollTop += title.bottom - bounds.bottom;
+    }
     setCommit(null);
   }, [commit]);
 
@@ -165,7 +179,7 @@ export function Reader() {
 
   function focusMarker(id: string) {
     suppressPreviewFocus.current = true;
-    document.getElementById(`supplement-${id}`)?.focus({ preventScroll: true });
+    document.querySelector<HTMLButtonElement>(`[data-supplement-ids~="${id}"]`)?.focus({ preventScroll: true });
     suppressPreviewFocus.current = false;
   }
   function keepPreview() { clearTimeout(previewTimer.current); }
@@ -197,13 +211,18 @@ export function Reader() {
     setError(null);
   }
 
-  function openSupplement(id: string) {
+  function openSupplement(id: string, highlight = !!getSupplement(id)?.questionGuide) {
     cancelJump();
     keepPreview();
     setPreview(null);
-    setSelectedLocation(null);
+    setChoiceIds(null);
+    setSelectedLocation(highlight ? getSupplement(id)!.locationId : null);
     setSupplementId(id);
     setHistory([]);
+    if (highlight) {
+      const location = getLocation(getSupplement(id)!.locationId);
+      setCommit({ page: location.page, locationId: location.id, focusId: "supplement-title", panelScroll: 0 });
+    }
     if (window.matchMedia("(max-width: 760px)").matches) setNavigationOpen(false);
     requestAnimationFrame(() => {
       const panel = document.getElementById("supplement-panel");
@@ -212,14 +231,41 @@ export function Reader() {
     });
   }
 
+  function openChoices(ids: string[]) {
+    cancelJump();
+    keepPreview();
+    setPreview(null);
+    setSupplementId(null);
+    setSelectedLocation(null);
+    setHistory([]);
+    setChoiceIds(ids);
+    if (window.matchMedia("(max-width: 760px)").matches) setNavigationOpen(false);
+    requestAnimationFrame(() => {
+      const panel = document.getElementById("supplement-panel");
+      if (panel) panel.scrollTop = 0;
+      document.getElementById(`choice-${ids[0]}`)?.focus({ preventScroll: true });
+    });
+  }
+
+  function selectAccordion(id: string | null) {
+    cancelJump();
+    keepPreview();
+    setPreview(null);
+    setSupplementId(id);
+    const location = id ? getLocation(getSupplement(id)!.locationId) : undefined;
+    setSelectedLocation(location?.id ?? null);
+    if (location) setCommit({ page: location.page, locationId: location.id, focusId: `choice-${id}` });
+  }
+
   function closeSupplement() {
     cancelJump();
-    const id = supplementId;
+    const id = supplementId ?? choiceIds?.[0];
+    setChoiceIds(null);
     setSupplementId(null);
     setSelectedLocation(null);
     setHistory([]);
     requestAnimationFrame(() => {
-      const marker = id ? document.getElementById(`supplement-${id}`)?.getBoundingClientRect() : undefined;
+      const marker = id ? document.querySelector(`[data-supplement-ids~="${id}"]`)?.getBoundingClientRect() : undefined;
       const viewport = scroller.current?.getBoundingClientRect();
       if (id && marker && viewport && marker.bottom > viewport.top && marker.top < viewport.bottom) focusMarker(id);
       else document.getElementById(`page-${current.current}`)?.focus({ preventScroll: true });
@@ -236,7 +282,7 @@ export function Reader() {
     if (!metric) return;
     void navigate({ page: location.page, locationId, source: {
       page, fraction: (element.scrollTop - metric.top) / metric.height,
-      supplementId, locationId: selectedLocation, focusId,
+      supplementId, choiceIds, locationId: selectedLocation, focusId,
       panelScroll: document.getElementById("supplement-panel")?.scrollTop ?? 0,
     } });
   }
@@ -254,6 +300,7 @@ export function Reader() {
       image.src = target.image;
       await image.decode();
       if (requestId.current !== id) return;
+      setChoiceIds(jump.restore?.choiceIds ?? null);
       if (jump.source) setHistory((previous) => [...previous, jump.source!]);
       else if (!jump.restore) setHistory([]);
       if (jump.restore) {
@@ -313,7 +360,7 @@ export function Reader() {
     if (preview) {
       setPreview(null);
       focusMarker(preview.id);
-    } else if (supplementId) closeSupplement();
+    } else if (supplementId || choiceIds) closeSupplement();
     else if (navigationOpen) {
       setNavigationOpen(false);
       toggleButton.current?.focus();
@@ -331,7 +378,7 @@ export function Reader() {
         {!navigationOpen && pageControls}
       </div>
     </header>
-    <main className={`reading-layout${navigationOpen ? " navigation-open" : ""}${note ? " supplement-open" : ""}`}>
+    <main className={`reading-layout${navigationOpen ? " navigation-open" : ""}${note || choiceIds ? " supplement-open" : ""}`}>
       <nav id="page-sidebar" className="page-sidebar" hidden={!navigationOpen} aria-label="页面导航">
         {navigationOpen && pageControls}
         <div className="page-thumbnails" ref={thumbnailList}>
@@ -356,22 +403,32 @@ export function Reader() {
             {highlighted?.page === page.page && <div id={`location-${highlighted.id}`} className={`location-highlight${previewNote ? " preview-highlight" : ""}`} tabIndex={-1}
               aria-label={`教材位置：${highlighted.anchorLabel}`} style={{ left: `${highlighted.region.x * 100}%`, top: `${highlighted.region.y * 100}%`,
                 width: `${highlighted.region.width * 100}%`, height: `${highlighted.region.height * 100}%` }} />}
-            {supplementsForPage(page.page).map((item) => {
+            {groupMarkers(supplementsForPage(page.page).map((item) => {
+              const { marker } = getLocation(item.locationId);
+              return { id: item.id, x: marker.x * paperWidth, y: marker.y * paperWidth * page.height / page.width };
+            }), markerSize).map((group) => {
+              const item = getSupplement(group[0]!.id)!;
               const location = getLocation(item.locationId);
-              return <button key={item.id} id={`supplement-${item.id}`} className="supplement-marker"
+              const ids = group.map(({ id }) => id);
+              const grouped = group.length > 1;
+              return <button key={item.id} id={`supplement-${item.id}`} className="supplement-marker" data-supplement-ids={ids.join(' ')}
                 style={{ left: `${location.marker.x * 100}%`, top: `${location.marker.y * 100}%` }}
-                aria-label={`解读：${item.title}`} aria-expanded={supplementId === item.id || preview?.id === item.id}
-                aria-controls={supplementId === item.id ? "supplement-panel" : preview?.id === item.id ? "supplement-preview" : undefined}
+                aria-label={grouped ? `选择此处的${group.length}条解读` : `解读：${item.title}`}
+                aria-expanded={ids.includes(supplementId ?? '') || !!choiceIds?.some((id) => ids.includes(id)) || preview?.id === item.id}
+                aria-controls={grouped || ids.includes(supplementId ?? '') ? "supplement-panel" : preview?.id === item.id ? "supplement-preview" : undefined}
                 aria-describedby={preview?.id === item.id ? "supplement-preview" : undefined}
-                onPointerEnter={(event) => { if (event.pointerType !== "touch") showPreview(item.id, event.currentTarget); }}
-                onPointerLeave={leavePreview} onFocus={(event) => { if (!suppressPreviewFocus.current) showPreview(item.id, event.currentTarget); }}
+                onPointerEnter={(event) => { if (!grouped && event.pointerType !== "touch") showPreview(item.id, event.currentTarget); }}
+                onPointerLeave={leavePreview} onFocus={(event) => { if (!grouped && !suppressPreviewFocus.current) showPreview(item.id, event.currentTarget); }}
                 onBlur={(event) => { if (!(event.relatedTarget instanceof Node) || !document.getElementById("supplement-preview")?.contains(event.relatedTarget)) leavePreview(); }}
-                onClick={() => openSupplement(item.id)}><span aria-hidden="true">💡</span></button>;
+                onClick={() => grouped ? openChoices(ids) : openSupplement(item.id)}><span aria-hidden="true">💡</span>
+                {grouped && <span className="marker-count" aria-hidden="true">{group.length}</span>}
+              </button>;
             })}
           </section>)}
         </div>
       </div>
-      {note && <SupplementPanel key={note.id} note={note} pending={pending} onClose={closeSupplement} onRelated={relatedJump}
+      {(choiceIds || note) && <SupplementPanel key={choiceIds?.join(" ") ?? note?.id} notes={choiceIds ? choiceIds.map((id) => getSupplement(id)!) : [note!]}
+        expandedId={supplementId} onSelect={selectAccordion} pending={pending} onClose={closeSupplement} onRelated={relatedJump}
         activeLocationId={selectedLocation}
         onBack={previous ? () => { void navigate({ page: previous.page, restore: previous }); } : undefined} />}
     </main>

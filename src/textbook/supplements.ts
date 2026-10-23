@@ -1,5 +1,4 @@
-import chapter from '../../content/grade-7-volume-1/chapter-1.json' with { type: 'json' };
-import positioning from '../../content/grade-7-volume-1/locations.json' with { type: 'json' };
+import { chapterSources } from './chapters.ts';
 import book from './book.json' with { type: 'json' };
 
 export type TextbookLocation = {
@@ -23,16 +22,27 @@ export type Supplement = {
   learningRole: string;
   learningGap: string;
   learningAction: string;
+  questionGuide?: {
+    knowledgePoints: string[];
+    method: string[];
+    cautions: string[];
+  };
   related: { locationId: string; label: string; purpose: string }[];
 };
 
+export type QuestionCoverage = {
+  status: 'pending' | 'source-checked';
+  basis: string;
+  items: { label: string; page: number; supplementId: string; parts: string[] }[];
+};
+
 // Content and coordinates belong to this exact PDF, not merely the same book title.
-if (chapter.documentSha256 !== book.documentSha256 || positioning.documentSha256 !== book.documentSha256) {
+if (chapterSources.some(({ chapter, positioning }) => chapter.documentSha256 !== book.documentSha256 || positioning.documentSha256 !== book.documentSha256)) {
   throw new Error('教材与补充说明的来源不匹配。');
 }
 
-const locations = new Map<string, TextbookLocation>(positioning.locations.map((location: TextbookLocation) => [location.id, location]));
-const supplements = new Map<string, Supplement>(chapter.supplements.map((supplement: Supplement) => [supplement.id, supplement]));
+const locations = new Map<string, TextbookLocation>(chapterSources.flatMap(({ positioning }) => positioning.locations).map((location: TextbookLocation) => [location.id, location]));
+const supplements = new Map<string, Supplement>(chapterSources.flatMap(({ chapter }) => chapter.supplements).map((supplement: Supplement) => [supplement.id, supplement]));
 
 export function getLocation(id: string): TextbookLocation {
   const location = locations.get(id);

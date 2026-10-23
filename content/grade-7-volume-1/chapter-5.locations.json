@@ -1,0 +1,3561 @@
+{
+  "documentSha256": "6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249",
+  "coordinateSystem": "normalized-full-page-top-left",
+  "sourceIndex": "materials/indexes/人教版-数学-七年级上册/index.jsonl",
+  "sourceImages": "materials/indexes/人教版-数学-七年级上册/images/",
+  "locations": [
+    {
+      "id": "ch5-q-p117-intro",
+      "page": 117,
+      "printedPage": null,
+      "indexAnchor": 1,
+      "anchorLabel": "甲、乙两支登山队",
+      "locator": "章引言题干开头“甲、乙两支登山队”；本题在已核对PDF118页回顾并建模，算术尝试和该页追及旁问均属于同题。",
+      "region": {
+        "x": 0.13,
+        "y": 0.16,
+        "width": 0.36,
+        "height": 0.029
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.17450000000000002
+      },
+      "sourceImageSha256": "94ca7dfe9a3ca79764820a75de5af03312629759cdb8867656c762babe23e0e2"
+    },
+    {
+      "id": "ch5-unknown-as-number",
+      "page": 117,
+      "printedPage": null,
+      "indexAnchor": 1,
+      "anchorLabel": "甲、乙两支登山队",
+      "locator": "章引言中“人们经常用字母表示其中的未知数”一句。",
+      "region": {
+        "x": 0.425,
+        "y": 0.307,
+        "width": 0.37,
+        "height": 0.031
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.3225
+      },
+      "sourceImageSha256": "94ca7dfe9a3ca79764820a75de5af03312629759cdb8867656c762babe23e0e2"
+    },
+    {
+      "id": "ch5-same-reference",
+      "page": 118,
+      "printedPage": "111",
+      "indexAnchor": 2,
+      "anchorLabel": "本章引言中的问题",
+      "locator": "登山问题“甲队追上乙队时，他们处于同一位置”及下一行相等关系。",
+      "region": {
+        "x": 0.175,
+        "y": 0.496,
+        "width": 0.66,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.521
+      },
+      "sourceImageSha256": "cf0f31d85292e3b6a50a1211fe6734e311ce35f8e38bfbee02e2c3be324574d5"
+    },
+    {
+      "id": "ch5-q-p118-problem1",
+      "page": 118,
+      "printedPage": "111",
+      "indexAnchor": 3,
+      "anchorLabel": "问题1",
+      "locator": "问题1题号及题干开头“用买3个大水杯的钱”。",
+      "region": {
+        "x": 0.175,
+        "y": 0.725,
+        "width": 0.39,
+        "height": 0.03
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.74
+      },
+      "sourceImageSha256": "cf0f31d85292e3b6a50a1211fe6734e311ce35f8e38bfbee02e2c3be324574d5"
+    },
+    {
+      "id": "ch5-cup-unknown",
+      "page": 118,
+      "printedPage": "111",
+      "indexAnchor": 3,
+      "anchorLabel": "问题1",
+      "locator": "问题1“如果设大水杯的单价为x元”至“恰好能买4个小水杯”的设元语句。",
+      "region": {
+        "x": 0.13,
+        "y": 0.778,
+        "width": 0.79,
+        "height": 0.052
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.804
+      },
+      "sourceImageSha256": "cf0f31d85292e3b6a50a1211fe6734e311ce35f8e38bfbee02e2c3be324574d5"
+    },
+    {
+      "id": "ch5-q-p119-problem2",
+      "page": 119,
+      "printedPage": "112",
+      "indexAnchor": 0,
+      "anchorLabel": "问题2",
+      "locator": "问题2题号及题干开头“图5.1-1是一枚长方形”；整题要求求纪念币的长和宽。",
+      "region": {
+        "x": 0.13,
+        "y": 0.064,
+        "width": 0.44,
+        "height": 0.03
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.079
+      },
+      "sourceImageSha256": "c9a3164189705c711a36415fa8c5ab056b83242a81d0e26d0c7855770b3f7ec5"
+    },
+    {
+      "id": "ch5-equation",
+      "page": 119,
+      "printedPage": "112",
+      "indexAnchor": 1,
+      "anchorLabel": "方程",
+      "locator": "问题2之后“像这样，先设出字母表示未知数”至“这样的等式叫作方程”的定义段。",
+      "region": {
+        "x": 0.085,
+        "y": 0.407,
+        "width": 0.57,
+        "height": 0.08
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.447
+      },
+      "sourceImageSha256": "c9a3164189705c711a36415fa8c5ab056b83242a81d0e26d0c7855770b3f7ec5"
+    },
+    {
+      "id": "ch5-q-p120-example1",
+      "page": 120,
+      "printedPage": "113",
+      "indexAnchor": 0,
+      "anchorLabel": "例1",
+      "locator": "例1题号及“根据下列问题，设未知数并列出方程”整题要求，覆盖（1）（2）；右侧解释方程两边含义的旁注并入同题。",
+      "region": {
+        "x": 0.175,
+        "y": 0.064,
+        "width": 0.49,
+        "height": 0.03
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.079
+      },
+      "sourceImageSha256": "af5c0284a6e20ddb5f461bcef7d6332ffadf9eb4e8668c1d76adce697b94953c"
+    },
+    {
+      "id": "ch5-percent-base",
+      "page": 120,
+      "printedPage": "113",
+      "indexAnchor": 0,
+      "anchorLabel": "例1",
+      "locator": "例1（1）解答中设全校人数x至“女生比男生多80人”的列式依据。",
+      "region": {
+        "x": 0.13,
+        "y": 0.24,
+        "width": 0.535,
+        "height": 0.077
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.2785
+      },
+      "sourceImageSha256": "af5c0284a6e20ddb5f461bcef7d6332ffadf9eb4e8668c1d76adce697b94953c"
+    },
+    {
+      "id": "ch5-model-choose-relation",
+      "page": 120,
+      "printedPage": "113",
+      "indexAnchor": 1,
+      "anchorLabel": "归纳",
+      "locator": "归纳框中“分析实际问题中的数量关系，利用其中的相等关系列出方程”所在两行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.514,
+        "width": 0.78,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.539
+      },
+      "sourceImageSha256": "af5c0284a6e20ddb5f461bcef7d6332ffadf9eb4e8668c1d76adce697b94953c"
+    },
+    {
+      "id": "ch5-q-p120-exercise1",
+      "page": 120,
+      "printedPage": "113",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "练习第1题题号及“甲种铅笔每支1.4元，乙种铅笔每支1.8元”的题干首行。",
+      "region": {
+        "x": 0.15,
+        "y": 0.705,
+        "width": 0.58,
+        "height": 0.03
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.72
+      },
+      "sourceImageSha256": "af5c0284a6e20ddb5f461bcef7d6332ffadf9eb4e8668c1d76adce697b94953c"
+    },
+    {
+      "id": "ch5-q-p120-exercise2",
+      "page": 120,
+      "printedPage": "113",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "练习第2题题号及“有两条电线，第一条长90m，第二条长40m”的题干首行。",
+      "region": {
+        "x": 0.15,
+        "y": 0.76,
+        "width": 0.54,
+        "height": 0.03
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.775
+      },
+      "sourceImageSha256": "af5c0284a6e20ddb5f461bcef7d6332ffadf9eb4e8668c1d76adce697b94953c"
+    },
+    {
+      "id": "ch5-q-p120-exercise3",
+      "page": 120,
+      "printedPage": "113",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "练习第3题题号及“某圆环形状的工件如图所示，它的面积是200cm²”的题干首行。",
+      "region": {
+        "x": 0.15,
+        "y": 0.844,
+        "width": 0.54,
+        "height": 0.03
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.859
+      },
+      "sourceImageSha256": "af5c0284a6e20ddb5f461bcef7d6332ffadf9eb4e8668c1d76adce697b94953c"
+    },
+    {
+      "id": "ch5-solution",
+      "page": 121,
+      "printedPage": "114",
+      "indexAnchor": 0,
+      "anchorLabel": "方程的解、解方程",
+      "locator": "“一般地，使方程左、右两边的值相等的未知数的值”至“叫作解方程”的定义。",
+      "region": {
+        "x": 0.085,
+        "y": 0.204,
+        "width": 0.79,
+        "height": 0.081
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.2445
+      },
+      "sourceImageSha256": "b2e3d50e80365e318fd96a1e7d3fba8ac711b6bd7d58d5b01ec4db2ad0403dcd"
+    },
+    {
+      "id": "ch5-q-p121-example2",
+      "page": 121,
+      "printedPage": "114",
+      "indexAnchor": 1,
+      "anchorLabel": "例2",
+      "locator": "例2题号及（1）两个候选值与方程2x=3的题干首行；整题包括下一行（2）。",
+      "region": {
+        "x": 0.13,
+        "y": 0.302,
+        "width": 0.55,
+        "height": 0.038
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.321
+      },
+      "sourceImageSha256": "b2e3d50e80365e318fd96a1e7d3fba8ac711b6bd7d58d5b01ec4db2ad0403dcd"
+    },
+    {
+      "id": "ch5-substitute-consistently",
+      "page": 121,
+      "printedPage": "114",
+      "indexAnchor": 1,
+      "anchorLabel": "例2",
+      "locator": "例2（2）解答中“当x=10时”到“两边的值不相等”的检验语句。",
+      "region": {
+        "x": 0.085,
+        "y": 0.523,
+        "width": 0.79,
+        "height": 0.078
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.562
+      },
+      "sourceImageSha256": "b2e3d50e80365e318fd96a1e7d3fba8ac711b6bd7d58d5b01ec4db2ad0403dcd"
+    },
+    {
+      "id": "ch5-q-p121-thinking1",
+      "page": 121,
+      "printedPage": "114",
+      "indexAnchor": 2,
+      "anchorLabel": "思考",
+      "locator": "上方思考框中“x=60是方程(5/8)x²=4000的解吗？x=80呢？”题干。",
+      "region": {
+        "x": 0.15,
+        "y": 0.718,
+        "width": 0.61,
+        "height": 0.037
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.7364999999999999
+      },
+      "sourceImageSha256": "b2e3d50e80365e318fd96a1e7d3fba8ac711b6bd7d58d5b01ec4db2ad0403dcd"
+    },
+    {
+      "id": "ch5-q-p121-thinking2",
+      "page": 121,
+      "printedPage": "114",
+      "indexAnchor": 3,
+      "anchorLabel": "思考",
+      "locator": "页底第二处思考中的“观察方程”短题干；本题包括其后三个方程和“它们有什么共同特征？”的要求。",
+      "region": {
+        "x": 0.15,
+        "y": 0.838,
+        "width": 0.19,
+        "height": 0.029
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.8524999999999999
+      },
+      "sourceImageSha256": "b2e3d50e80365e318fd96a1e7d3fba8ac711b6bd7d58d5b01ec4db2ad0403dcd"
+    },
+    {
+      "id": "ch5-linear-definition",
+      "page": 122,
+      "printedPage": "115",
+      "indexAnchor": 0,
+      "anchorLabel": "一元一次方程",
+      "locator": "页首一元一次方程定义的三行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.065,
+        "width": 0.79,
+        "height": 0.078
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.104
+      },
+      "sourceImageSha256": "96927d8350d4ffa7a8391d457f016e75f4d73b616b7ddfbf0a575c4ed63611ec"
+    },
+    {
+      "id": "ch5-q-p122-exercise1",
+      "page": 122,
+      "printedPage": "115",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—2题",
+      "locator": "练习第1题“判断x=2和x=4是不是方程2x−3=5的解”整行。",
+      "region": {
+        "x": 0.15,
+        "y": 0.403,
+        "width": 0.64,
+        "height": 0.03
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.41800000000000004
+      },
+      "sourceImageSha256": "96927d8350d4ffa7a8391d457f016e75f4d73b616b7ddfbf0a575c4ed63611ec"
+    },
+    {
+      "id": "ch5-q-p122-exercise2",
+      "page": 122,
+      "printedPage": "115",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—2题",
+      "locator": "练习第2题“下列等式中哪些是方程？哪些是一元一次方程？”题干；三小问在下一行。",
+      "region": {
+        "x": 0.15,
+        "y": 0.432,
+        "width": 0.58,
+        "height": 0.03
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.447
+      },
+      "sourceImageSha256": "96927d8350d4ffa7a8391d457f016e75f4d73b616b7ddfbf0a575c4ed63611ec"
+    },
+    {
+      "id": "ch5-equality-transitive",
+      "page": 122,
+      "printedPage": "115",
+      "indexAnchor": 4,
+      "anchorLabel": "等式两边可以交换；相等关系可以传递",
+      "locator": "等式基本事实中“相等关系可以传递。如果a=b，b=c，那么a=c”一行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.757,
+        "width": 0.54,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.77
+      },
+      "sourceImageSha256": "96927d8350d4ffa7a8391d457f016e75f4d73b616b7ddfbf0a575c4ed63611ec"
+    },
+    {
+      "id": "ch5-q-p122-thinking",
+      "page": 122,
+      "printedPage": "115",
+      "indexAnchor": 5,
+      "anchorLabel": "思考",
+      "locator": "页末思考中“在小学，我们已经知道：等式两边同时加（或减）同一个数”题干首行；全题要求引入负数后用具体数试验。",
+      "region": {
+        "x": 0.15,
+        "y": 0.825,
+        "width": 0.7,
+        "height": 0.03
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.84
+      },
+      "sourceImageSha256": "96927d8350d4ffa7a8391d457f016e75f4d73b616b7ddfbf0a575c4ed63611ec"
+    },
+    {
+      "id": "ch5-same-operation",
+      "page": 123,
+      "printedPage": "116",
+      "indexAnchor": 0,
+      "anchorLabel": "等式的性质1",
+      "locator": "等式的性质1文字及下方a±c=b±c公式框。",
+      "region": {
+        "x": 0.13,
+        "y": 0.093,
+        "width": 0.72,
+        "height": 0.074
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.13
+      },
+      "sourceImageSha256": "e0fd1d55fa73f5b037a63fa63630d13390dee1bba2195388139f8d8f9197e6f4"
+    },
+    {
+      "id": "ch5-nonzero",
+      "page": 123,
+      "printedPage": "116",
+      "indexAnchor": 1,
+      "anchorLabel": "等式的性质2",
+      "locator": "等式的性质2文字和乘法、除法两个公式。",
+      "region": {
+        "x": 0.13,
+        "y": 0.181,
+        "width": 0.74,
+        "height": 0.108
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.235
+      },
+      "sourceImageSha256": "e0fd1d55fa73f5b037a63fa63630d13390dee1bba2195388139f8d8f9197e6f4"
+    },
+    {
+      "id": "ch5-q-p123-example3",
+      "page": 123,
+      "printedPage": "116",
+      "indexAnchor": 2,
+      "anchorLabel": "例3",
+      "locator": "例3题号及“根据等式的性质填空，并说明依据”整题要求；含（1）—（4）。",
+      "region": {
+        "x": 0.13,
+        "y": 0.305,
+        "width": 0.52,
+        "height": 0.03
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.32
+      },
+      "sourceImageSha256": "e0fd1d55fa73f5b037a63fa63630d13390dee1bba2195388139f8d8f9197e6f4"
+    },
+    {
+      "id": "ch5-q-p123-example4",
+      "page": 123,
+      "printedPage": "116",
+      "indexAnchor": 3,
+      "anchorLabel": "例4",
+      "locator": "例4题号及“利用等式的性质解下列方程”整题要求；含（1）—（3），第（2）（3）问的解答续在已核对PDF124页。",
+      "region": {
+        "x": 0.13,
+        "y": 0.644,
+        "width": 0.5,
+        "height": 0.027
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.6575
+      },
+      "sourceImageSha256": "e0fd1d55fa73f5b037a63fa63630d13390dee1bba2195388139f8d8f9197e6f4"
+    },
+    {
+      "id": "ch5-undo-operation",
+      "page": 123,
+      "printedPage": "116",
+      "indexAnchor": 3,
+      "anchorLabel": "例4",
+      "locator": "例4分析中“想要把方程x+7=26转化为x=m”至利用性质解另两方程。",
+      "region": {
+        "x": 0.085,
+        "y": 0.719,
+        "width": 0.79,
+        "height": 0.078
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.758
+      },
+      "sourceImageSha256": "e0fd1d55fa73f5b037a63fa63630d13390dee1bba2195388139f8d8f9197e6f4"
+    },
+    {
+      "id": "ch5-negative-coefficient",
+      "page": 124,
+      "printedPage": "117",
+      "indexAnchor": 0,
+      "anchorLabel": "例4（续）",
+      "locator": "例4（2）“方程两边除以−5”至x=−4的步骤。",
+      "region": {
+        "x": 0.17,
+        "y": 0.066,
+        "width": 0.31,
+        "height": 0.127
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.1295
+      },
+      "sourceImageSha256": "db7a343cbfcfefe31ce3e313ee82a599e195e550c1c61786cc624a42a07984b3"
+    },
+    {
+      "id": "ch5-check-original",
+      "page": 124,
+      "printedPage": "117",
+      "indexAnchor": 1,
+      "anchorLabel": "代入原方程检验",
+      "locator": "例4之后“通常需要代入原方程检验”至代入x=−27的说明。",
+      "region": {
+        "x": 0.13,
+        "y": 0.418,
+        "width": 0.79,
+        "height": 0.102
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.4655
+      },
+      "sourceImageSha256": "db7a343cbfcfefe31ce3e313ee82a599e195e550c1c61786cc624a42a07984b3"
+    },
+    {
+      "id": "ch5-q-p124-exercise1",
+      "page": 124,
+      "printedPage": "117",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—2题",
+      "locator": "练习第1题“根据等式的性质填空”题干，四小问在其后。",
+      "region": {
+        "x": 0.15,
+        "y": 0.67,
+        "width": 0.4,
+        "height": 0.03
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.685
+      },
+      "sourceImageSha256": "db7a343cbfcfefe31ce3e313ee82a599e195e550c1c61786cc624a42a07984b3"
+    },
+    {
+      "id": "ch5-q-p124-exercise2",
+      "page": 124,
+      "printedPage": "117",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—2题",
+      "locator": "练习第2题“利用等式的性质解下列方程，并检验”题干；含（1）—（4）。",
+      "region": {
+        "x": 0.15,
+        "y": 0.814,
+        "width": 0.61,
+        "height": 0.03
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.829
+      },
+      "sourceImageSha256": "db7a343cbfcfefe31ce3e313ee82a599e195e550c1c61786cc624a42a07984b3"
+    },
+    {
+      "id": "ch5-q-p125-exercise1",
+      "page": 125,
+      "printedPage": "118",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—4题",
+      "locator": "习题5.1第1题题号及“列等式表示”整题要求；含（1）—（6）。",
+      "region": {
+        "x": 0.105,
+        "y": 0.153,
+        "width": 0.22,
+        "height": 0.03
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.16799999999999998
+      },
+      "sourceImageSha256": "1efa9ed1a89aab37f1c2f09f869d71803fff370166344d2daa4ecce2dc008b6b"
+    },
+    {
+      "id": "ch5-diagram-evidence",
+      "page": 125,
+      "printedPage": "118",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—4题",
+      "locator": "习题5.1第2题“根据下列图形中标出的量及其满足的关系，列出方程”题干。",
+      "region": {
+        "x": 0.105,
+        "y": 0.331,
+        "width": 0.65,
+        "height": 0.033
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.3475
+      },
+      "sourceImageSha256": "1efa9ed1a89aab37f1c2f09f869d71803fff370166344d2daa4ecce2dc008b6b"
+    },
+    {
+      "id": "ch5-q-p125-exercise2",
+      "page": 125,
+      "printedPage": "118",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—4题",
+      "locator": "习题5.1第2题题号及“根据下列图形中标出的量及其满足的关系，列出方程”题干；图（1）—（3）均在本页。",
+      "region": {
+        "x": 0.105,
+        "y": 0.34,
+        "width": 0.65,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.35150000000000003
+      },
+      "sourceImageSha256": "1efa9ed1a89aab37f1c2f09f869d71803fff370166344d2daa4ecce2dc008b6b"
+    },
+    {
+      "id": "ch5-q-p125-exercise3",
+      "page": 125,
+      "printedPage": "118",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—4题",
+      "locator": "习题5.1第3题题号及“x=3，x=0，x=−2分别是下列哪个方程的解”题干；含四个方程。",
+      "region": {
+        "x": 0.105,
+        "y": 0.547,
+        "width": 0.69,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.5585
+      },
+      "sourceImageSha256": "1efa9ed1a89aab37f1c2f09f869d71803fff370166344d2daa4ecce2dc008b6b"
+    },
+    {
+      "id": "ch5-q-p125-exercise4",
+      "page": 125,
+      "printedPage": "118",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—4题",
+      "locator": "习题5.1第4题题号及“利用等式的性质解下列方程”题干；含（1）—（4）。",
+      "region": {
+        "x": 0.105,
+        "y": 0.625,
+        "width": 0.47,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.6365
+      },
+      "sourceImageSha256": "1efa9ed1a89aab37f1c2f09f869d71803fff370166344d2daa4ecce2dc008b6b"
+    },
+    {
+      "id": "ch5-q-p125-exercise5",
+      "page": 125,
+      "printedPage": "118",
+      "indexAnchor": 3,
+      "anchorLabel": "综合运用 第5—6题",
+      "locator": "习题5.1第5题题号及“某校七年级（1）班共有学生48人”的题干首行。",
+      "region": {
+        "x": 0.105,
+        "y": 0.79,
+        "width": 0.69,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.802
+      },
+      "sourceImageSha256": "1efa9ed1a89aab37f1c2f09f869d71803fff370166344d2daa4ecce2dc008b6b"
+    },
+    {
+      "id": "ch5-q-p125-exercise6",
+      "page": 125,
+      "printedPage": "118",
+      "indexAnchor": 3,
+      "anchorLabel": "综合运用 第5—6题",
+      "locator": "习题5.1第6题题号及“把10000元奖学金按照两种奖项奖给20名学生”的题干首行。",
+      "region": {
+        "x": 0.105,
+        "y": 0.85,
+        "width": 0.7,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.8624999999999999
+      },
+      "sourceImageSha256": "1efa9ed1a89aab37f1c2f09f869d71803fff370166344d2daa4ecce2dc008b6b"
+    },
+    {
+      "id": "ch5-q-p126-exercise7",
+      "page": 126,
+      "printedPage": "119",
+      "indexAnchor": 0,
+      "anchorLabel": "习题5.1 第7—10题",
+      "locator": "习题5.1第7题题号及“去年某镇居民人均可支配收入为30438元”的题干首行。",
+      "region": {
+        "x": 0.15,
+        "y": 0.077,
+        "width": 0.74,
+        "height": 0.03
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.092
+      },
+      "sourceImageSha256": "2b108f66a5c5e18c5f529fc75a216ac14f247b5ad733b564ef2654fc4aeb6fb5"
+    },
+    {
+      "id": "ch5-q-p126-exercise8",
+      "page": 126,
+      "printedPage": "119",
+      "indexAnchor": 0,
+      "anchorLabel": "习题5.1 第7—10题",
+      "locator": "习题5.1第8题题号及“一辆汽车已行驶了12000km，计划每月再行驶800km”的题干首行。",
+      "region": {
+        "x": 0.15,
+        "y": 0.13,
+        "width": 0.75,
+        "height": 0.03
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.14500000000000002
+      },
+      "sourceImageSha256": "2b108f66a5c5e18c5f529fc75a216ac14f247b5ad733b564ef2654fc4aeb6fb5"
+    },
+    {
+      "id": "ch5-q-p126-exercise9",
+      "page": 126,
+      "printedPage": "119",
+      "indexAnchor": 0,
+      "anchorLabel": "习题5.1 第7—10题",
+      "locator": "习题5.1第9题题号及“一个圆柱形包装盒（厚度忽略不计）的高是12cm”的题干首行。",
+      "region": {
+        "x": 0.15,
+        "y": 0.181,
+        "width": 0.75,
+        "height": 0.03
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.196
+      },
+      "sourceImageSha256": "2b108f66a5c5e18c5f529fc75a216ac14f247b5ad733b564ef2654fc4aeb6fb5"
+    },
+    {
+      "id": "ch5-q-p126-exercise10",
+      "page": 126,
+      "printedPage": "119",
+      "indexAnchor": 0,
+      "anchorLabel": "习题5.1 第7—10题",
+      "locator": "习题5.1第10题题号及“某校号召学生用零花钱为地震灾区捐款”的题干首行。",
+      "region": {
+        "x": 0.15,
+        "y": 0.234,
+        "width": 0.74,
+        "height": 0.03
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.249
+      },
+      "sourceImageSha256": "2b108f66a5c5e18c5f529fc75a216ac14f247b5ad733b564ef2654fc4aeb6fb5"
+    },
+    {
+      "id": "ch5-digit-value",
+      "page": 126,
+      "printedPage": "119",
+      "indexAnchor": 1,
+      "anchorLabel": "拓广探索 第11题",
+      "locator": "习题5.1第11题的两位数与交换数位题干。",
+      "region": {
+        "x": 0.15,
+        "y": 0.34,
+        "width": 0.75,
+        "height": 0.051
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.3655
+      },
+      "sourceImageSha256": "2b108f66a5c5e18c5f529fc75a216ac14f247b5ad733b564ef2654fc4aeb6fb5"
+    },
+    {
+      "id": "ch5-q-p126-exercise11",
+      "page": 126,
+      "printedPage": "119",
+      "indexAnchor": 1,
+      "anchorLabel": "拓广探索 第11题",
+      "locator": "习题5.1第11题题号及“一个两位数个位上的数字是1，十位上的数字是x”的题干首行。",
+      "region": {
+        "x": 0.15,
+        "y": 0.34,
+        "width": 0.75,
+        "height": 0.03
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.35500000000000004
+      },
+      "sourceImageSha256": "2b108f66a5c5e18c5f529fc75a216ac14f247b5ad733b564ef2654fc4aeb6fb5"
+    },
+    {
+      "id": "ch5-q-p127-problem1",
+      "page": 127,
+      "printedPage": "120",
+      "indexAnchor": 1,
+      "anchorLabel": "问题1",
+      "locator": "问题1（三年购买计算机）的题号及题干开头。",
+      "region": {
+        "x": 0.13,
+        "y": 0.264,
+        "width": 0.74,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.277
+      },
+      "sourceImageSha256": "38c900d3ae25ba324692d76af98c0ae447b411c7b26f084719ee9c091f7ba9e7"
+    },
+    {
+      "id": "ch5-combine-purpose",
+      "page": 127,
+      "printedPage": "120",
+      "indexAnchor": 1,
+      "anchorLabel": "问题1",
+      "locator": "问题1“把含有x的项合并同类项”及7x=140。",
+      "region": {
+        "x": 0.13,
+        "y": 0.461,
+        "width": 0.38,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.462
+      },
+      "sourceImageSha256": "38c900d3ae25ba324692d76af98c0ae447b411c7b26f084719ee9c091f7ba9e7"
+    },
+    {
+      "id": "ch5-coefficient-one",
+      "page": 127,
+      "printedPage": "120",
+      "indexAnchor": 1,
+      "anchorLabel": "问题1",
+      "locator": "问题1“系数化为1”及x=20。",
+      "region": {
+        "x": 0.13,
+        "y": 0.52,
+        "width": 0.38,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.568
+      },
+      "sourceImageSha256": "38c900d3ae25ba324692d76af98c0ae447b411c7b26f084719ee9c091f7ba9e7"
+    },
+    {
+      "id": "ch5-q-p127-think",
+      "page": 127,
+      "printedPage": "120",
+      "indexAnchor": 2,
+      "anchorLabel": "思考",
+      "locator": "思考栏“上面解方程中‘合并同类项’起了什么作用？”这一行。",
+      "region": {
+        "x": 0.152,
+        "y": 0.675,
+        "width": 0.463,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.688
+      },
+      "sourceImageSha256": "38c900d3ae25ba324692d76af98c0ae447b411c7b26f084719ee9c091f7ba9e7"
+    },
+    {
+      "id": "ch5-q-p127-example1",
+      "page": 127,
+      "printedPage": "120",
+      "indexAnchor": 3,
+      "anchorLabel": "例1",
+      "locator": "例1题号及“解下列方程”一行；（1）（2）解答续于PDF128页。",
+      "region": {
+        "x": 0.13,
+        "y": 0.714,
+        "width": 0.208,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.727
+      },
+      "sourceImageSha256": "38c900d3ae25ba324692d76af98c0ae447b411c7b26f084719ee9c091f7ba9e7"
+    },
+    {
+      "id": "ch5-q-p127-why-solution",
+      "page": 127,
+      "printedPage": "120",
+      "indexAnchor": 3,
+      "anchorLabel": "例1",
+      "locator": "例1右侧黄色旁注中“得到x=m就是方程的解（想想为什么）”及上下文。",
+      "region": {
+        "x": 0.643,
+        "y": 0.748,
+        "width": 0.213,
+        "height": 0.118
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.807
+      },
+      "sourceImageSha256": "38c900d3ae25ba324692d76af98c0ae447b411c7b26f084719ee9c091f7ba9e7"
+    },
+    {
+      "id": "ch5-q-p128-example2",
+      "page": 128,
+      "printedPage": "121",
+      "indexAnchor": 1,
+      "anchorLabel": "例2",
+      "locator": "例2（相邻三个数）的题号及题干开头。",
+      "region": {
+        "x": 0.175,
+        "y": 0.194,
+        "width": 0.738,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.207
+      },
+      "sourceImageSha256": "bd4e0e46ef4b27f2d4b801dfae781a07ddb2556a432b13313285e76e1cb0ceb8"
+    },
+    {
+      "id": "ch5-successive-ratio",
+      "page": 128,
+      "printedPage": "121",
+      "indexAnchor": 1,
+      "anchorLabel": "例2",
+      "locator": "例2解答“设所求三个数中的第1个数是x，则后两个数分别是−3x，9x”两行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.305,
+        "width": 0.74,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.33
+      },
+      "sourceImageSha256": "bd4e0e46ef4b27f2d4b801dfae781a07ddb2556a432b13313285e76e1cb0ceb8"
+    },
+    {
+      "id": "ch5-q-p128-practice1",
+      "page": 128,
+      "printedPage": "121",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "印刷121页练习第1题（含（1）—（4））的题号及题干开头。",
+      "region": {
+        "x": 0.151,
+        "y": 0.659,
+        "width": 0.166,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.672
+      },
+      "sourceImageSha256": "bd4e0e46ef4b27f2d4b801dfae781a07ddb2556a432b13313285e76e1cb0ceb8"
+    },
+    {
+      "id": "ch5-q-p128-practice2",
+      "page": 128,
+      "printedPage": "121",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "印刷121页练习第2题的题号及题干开头。",
+      "region": {
+        "x": 0.151,
+        "y": 0.756,
+        "width": 0.74,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.769
+      },
+      "sourceImageSha256": "bd4e0e46ef4b27f2d4b801dfae781a07ddb2556a432b13313285e76e1cb0ceb8"
+    },
+    {
+      "id": "ch5-q-p128-practice3",
+      "page": 128,
+      "printedPage": "121",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "印刷121页练习第3题的题号及题干开头。",
+      "region": {
+        "x": 0.151,
+        "y": 0.812,
+        "width": 0.74,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.825
+      },
+      "sourceImageSha256": "bd4e0e46ef4b27f2d4b801dfae781a07ddb2556a432b13313285e76e1cb0ceb8"
+    },
+    {
+      "id": "ch5-q-p129-problem2",
+      "page": 129,
+      "printedPage": "122",
+      "indexAnchor": 0,
+      "anchorLabel": "问题2",
+      "locator": "问题2（分图书）的题号及题干开头。",
+      "region": {
+        "x": 0.13,
+        "y": 0.071,
+        "width": 0.74,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.084
+      },
+      "sourceImageSha256": "049cabfdf0eeeec3acd25b2c92ba7fbf5807cc7b62683da736b77bdbbc644afa"
+    },
+    {
+      "id": "ch5-same-total",
+      "page": 129,
+      "printedPage": "122",
+      "indexAnchor": 0,
+      "anchorLabel": "问题2",
+      "locator": "问题2“这批书的总数是一个定值”至“根据这一相等关系列方程”的语句。",
+      "region": {
+        "x": 0.085,
+        "y": 0.265,
+        "width": 0.525,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.29
+      },
+      "sourceImageSha256": "049cabfdf0eeeec3acd25b2c92ba7fbf5807cc7b62683da736b77bdbbc644afa"
+    },
+    {
+      "id": "ch5-q-p129-think",
+      "page": 129,
+      "printedPage": "122",
+      "indexAnchor": 1,
+      "anchorLabel": "思考",
+      "locator": "思考栏两行题干“方程……怎样才能把它转化为x=m……”",
+      "region": {
+        "x": 0.108,
+        "y": 0.397,
+        "width": 0.744,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.421
+      },
+      "sourceImageSha256": "049cabfdf0eeeec3acd25b2c92ba7fbf5807cc7b62683da736b77bdbbc644afa"
+    },
+    {
+      "id": "ch5-transpose",
+      "page": 129,
+      "printedPage": "122",
+      "indexAnchor": 3,
+      "anchorLabel": "移项",
+      "locator": "“即把原方程左边的20变为−20移到右边”至移项定义的两行。",
+      "region": {
+        "x": 0.085,
+        "y": 0.739,
+        "width": 0.79,
+        "height": 0.053
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.7655
+      },
+      "sourceImageSha256": "049cabfdf0eeeec3acd25b2c92ba7fbf5807cc7b62683da736b77bdbbc644afa"
+    },
+    {
+      "id": "ch5-q-p130-think",
+      "page": 130,
+      "printedPage": "123",
+      "indexAnchor": 1,
+      "anchorLabel": "思考",
+      "locator": "思考栏“上面解方程中‘移项’起了什么作用？”这一行。",
+      "region": {
+        "x": 0.2,
+        "y": 0.196,
+        "width": 0.393,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.209
+      },
+      "sourceImageSha256": "58eb90982fa9c3d766bad0d871e66381376223e0169a9ffc7401953375a5b7ed"
+    },
+    {
+      "id": "ch5-q-p130-example3",
+      "page": 130,
+      "printedPage": "123",
+      "indexAnchor": 2,
+      "anchorLabel": "例3",
+      "locator": "例3（含（1）（2））的题号及题干开头。",
+      "region": {
+        "x": 0.175,
+        "y": 0.234,
+        "width": 0.203,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.247
+      },
+      "sourceImageSha256": "58eb90982fa9c3d766bad0d871e66381376223e0169a9ffc7401953375a5b7ed"
+    },
+    {
+      "id": "ch5-choose-side",
+      "page": 130,
+      "printedPage": "123",
+      "indexAnchor": 2,
+      "anchorLabel": "例3",
+      "locator": "例3（1）第一步“移项”及3x+2x=32−7。",
+      "region": {
+        "x": 0.175,
+        "y": 0.31,
+        "width": 0.32,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.335
+      },
+      "sourceImageSha256": "58eb90982fa9c3d766bad0d871e66381376223e0169a9ffc7401953375a5b7ed"
+    },
+    {
+      "id": "ch5-q-p130-example4",
+      "page": 130,
+      "printedPage": "123",
+      "indexAnchor": 3,
+      "anchorLabel": "例4",
+      "locator": "例4题号及题干首行；解答续于PDF131页。",
+      "region": {
+        "x": 0.175,
+        "y": 0.532,
+        "width": 0.735,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.545
+      },
+      "sourceImageSha256": "58eb90982fa9c3d766bad0d871e66381376223e0169a9ffc7401953375a5b7ed"
+    },
+    {
+      "id": "ch5-ratio-unit",
+      "page": 130,
+      "printedPage": "123",
+      "indexAnchor": 3,
+      "anchorLabel": "例4",
+      "locator": "例4解答“设采用新、旧工艺的废水排放量分别为2x t和5x t”一行。",
+      "region": {
+        "x": 0.175,
+        "y": 0.677,
+        "width": 0.7,
+        "height": 0.03
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.692
+      },
+      "sourceImageSha256": "58eb90982fa9c3d766bad0d871e66381376223e0169a9ffc7401953375a5b7ed"
+    },
+    {
+      "id": "ch5-q-p131-practice1",
+      "page": 131,
+      "printedPage": "124",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—4题",
+      "locator": "印刷124页练习第1题（含（1）—（4））的题号及题干开头。",
+      "region": {
+        "x": 0.108,
+        "y": 0.407,
+        "width": 0.158,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.42
+      },
+      "sourceImageSha256": "54860845c41624e2b0f85a309e64f5c5504630c54ce00f93cd4ec4d216e110a7"
+    },
+    {
+      "id": "ch5-q-p131-practice2",
+      "page": 131,
+      "printedPage": "124",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—4题",
+      "locator": "印刷124页练习第2题的题号及题干开头。",
+      "region": {
+        "x": 0.108,
+        "y": 0.512,
+        "width": 0.598,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.525
+      },
+      "sourceImageSha256": "54860845c41624e2b0f85a309e64f5c5504630c54ce00f93cd4ec4d216e110a7"
+    },
+    {
+      "id": "ch5-q-p131-practice3",
+      "page": 131,
+      "printedPage": "124",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—4题",
+      "locator": "印刷124页练习第3题的题号及题干开头。",
+      "region": {
+        "x": 0.108,
+        "y": 0.542,
+        "width": 0.74,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.555
+      },
+      "sourceImageSha256": "54860845c41624e2b0f85a309e64f5c5504630c54ce00f93cd4ec4d216e110a7"
+    },
+    {
+      "id": "ch5-q-p131-practice4",
+      "page": 131,
+      "printedPage": "124",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—4题",
+      "locator": "印刷124页练习第4题的题号及题干开头。",
+      "region": {
+        "x": 0.108,
+        "y": 0.596,
+        "width": 0.74,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.609
+      },
+      "sourceImageSha256": "54860845c41624e2b0f85a309e64f5c5504630c54ce00f93cd4ec4d216e110a7"
+    },
+    {
+      "id": "ch5-q-p131-problem3",
+      "page": 131,
+      "printedPage": "124",
+      "indexAnchor": 3,
+      "anchorLabel": "问题3",
+      "locator": "问题3题号及题干首行；方程与求解续于PDF132页。",
+      "region": {
+        "x": 0.13,
+        "y": 0.713,
+        "width": 0.74,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.726
+      },
+      "sourceImageSha256": "54860845c41624e2b0f85a309e64f5c5504630c54ce00f93cd4ec4d216e110a7"
+    },
+    {
+      "id": "ch5-monthly-total",
+      "page": 131,
+      "printedPage": "124",
+      "indexAnchor": 3,
+      "anchorLabel": "问题3",
+      "locator": "问题3页底“上半年的用电量是6x”至“下半年的用电量是6(x−2000)”两行。",
+      "region": {
+        "x": 0.085,
+        "y": 0.854,
+        "width": 0.575,
+        "height": 0.052
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.88
+      },
+      "sourceImageSha256": "54860845c41624e2b0f85a309e64f5c5504630c54ce00f93cd4ec4d216e110a7"
+    },
+    {
+      "id": "ch5-q-p132-example5",
+      "page": 132,
+      "printedPage": "125",
+      "indexAnchor": 1,
+      "anchorLabel": "例5",
+      "locator": "例5（含（1）（2））的题号及题干开头。",
+      "region": {
+        "x": 0.175,
+        "y": 0.386,
+        "width": 0.203,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.399
+      },
+      "sourceImageSha256": "ad8e5df44d1678b8d00213d17f9d9c32051ae44f9ae583a0bd9d139222132740"
+    },
+    {
+      "id": "ch5-negative-bracket",
+      "page": 132,
+      "printedPage": "125",
+      "indexAnchor": 1,
+      "anchorLabel": "例5",
+      "locator": "例5（1）“去括号”及2x−x−10=5x+2x−2，结合右侧例5（2）。",
+      "region": {
+        "x": 0.175,
+        "y": 0.435,
+        "width": 0.32,
+        "height": 0.052
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.461
+      },
+      "sourceImageSha256": "ad8e5df44d1678b8d00213d17f9d9c32051ae44f9ae583a0bd9d139222132740"
+    },
+    {
+      "id": "ch5-q-p132-example6",
+      "page": 132,
+      "printedPage": "125",
+      "indexAnchor": 2,
+      "anchorLabel": "例6",
+      "locator": "例6题号及题干首行；解答续于PDF133页。",
+      "region": {
+        "x": 0.175,
+        "y": 0.697,
+        "width": 0.738,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.71
+      },
+      "sourceImageSha256": "ad8e5df44d1678b8d00213d17f9d9c32051ae44f9ae583a0bd9d139222132740"
+    },
+    {
+      "id": "ch5-boat-condition",
+      "page": 132,
+      "printedPage": "125",
+      "indexAnchor": 2,
+      "anchorLabel": "例6",
+      "locator": "例6解答中静水速度x与顺、逆水速度x+3、x−3的设元语句。",
+      "region": {
+        "x": 0.13,
+        "y": 0.808,
+        "width": 0.79,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.833
+      },
+      "sourceImageSha256": "ad8e5df44d1678b8d00213d17f9d9c32051ae44f9ae583a0bd9d139222132740"
+    },
+    {
+      "id": "ch5-q-p133-practice1",
+      "page": 133,
+      "printedPage": "126",
+      "indexAnchor": 1,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "印刷126页练习第1题（含（1）—（4））的题号及题干开头。",
+      "region": {
+        "x": 0.108,
+        "y": 0.316,
+        "width": 0.158,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.329
+      },
+      "sourceImageSha256": "88cc5c5cfe08f6bc0ca6424d2b19ca657b2ff8a3f415a2afb4424c3a84856acc"
+    },
+    {
+      "id": "ch5-change-dimensions",
+      "page": 133,
+      "printedPage": "126",
+      "indexAnchor": 1,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "练习第2题长方形长减少2 cm、宽增加2 cm而面积保持不变的题干。",
+      "region": {
+        "x": 0.105,
+        "y": 0.474,
+        "width": 0.58,
+        "height": 0.08
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.514
+      },
+      "sourceImageSha256": "88cc5c5cfe08f6bc0ca6424d2b19ca657b2ff8a3f415a2afb4424c3a84856acc"
+    },
+    {
+      "id": "ch5-q-p133-practice2",
+      "page": 133,
+      "printedPage": "126",
+      "indexAnchor": 1,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "印刷126页练习第2题的题号及题干开头。",
+      "region": {
+        "x": 0.108,
+        "y": 0.477,
+        "width": 0.527,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.49
+      },
+      "sourceImageSha256": "88cc5c5cfe08f6bc0ca6424d2b19ca657b2ff8a3f415a2afb4424c3a84856acc"
+    },
+    {
+      "id": "ch5-q-p133-practice3",
+      "page": 133,
+      "printedPage": "126",
+      "indexAnchor": 1,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "印刷126页练习第3题的题号及题干开头。",
+      "region": {
+        "x": 0.108,
+        "y": 0.563,
+        "width": 0.527,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.576
+      },
+      "sourceImageSha256": "88cc5c5cfe08f6bc0ca6424d2b19ca657b2ff8a3f415a2afb4424c3a84856acc"
+    },
+    {
+      "id": "ch5-q-p133-problem4",
+      "page": 133,
+      "printedPage": "126",
+      "indexAnchor": 2,
+      "anchorLabel": "问题4",
+      "locator": "问题4题号及题干首行；路线图在本页下部，时刻表和解答续于PDF134页。",
+      "region": {
+        "x": 0.13,
+        "y": 0.704,
+        "width": 0.74,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.717
+      },
+      "sourceImageSha256": "88cc5c5cfe08f6bc0ca6424d2b19ca657b2ff8a3f415a2afb4424c3a84856acc"
+    },
+    {
+      "id": "ch5-elapsed-time",
+      "page": 134,
+      "printedPage": "127",
+      "indexAnchor": 0,
+      "anchorLabel": "表5.2-1",
+      "locator": "表5.2-1地名和时间两行，结合已核对PDF133页汽车路线。",
+      "region": {
+        "x": 0.305,
+        "y": 0.096,
+        "width": 0.44,
+        "height": 0.054
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.123
+      },
+      "sourceImageSha256": "b55a268a465002cfc3324457d900c24651cd97253812d8ebe65498335e95981a"
+    },
+    {
+      "id": "ch5-lcm-convenience",
+      "page": 134,
+      "printedPage": "127",
+      "indexAnchor": 1,
+      "anchorLabel": "问题4（续）",
+      "locator": "问题4解答中“各分母的最小公倍数是15，方程两边都乘15”所在两行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.438,
+        "width": 0.79,
+        "height": 0.06
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.468
+      },
+      "sourceImageSha256": "b55a268a465002cfc3324457d900c24651cd97253812d8ebe65498335e95981a"
+    },
+    {
+      "id": "ch5-every-term",
+      "page": 135,
+      "printedPage": "128",
+      "indexAnchor": 0,
+      "anchorLabel": "去分母、去括号、移项、合并同类项、系数化为1",
+      "locator": "解方程框图去分母后第一框“5(3x+1)−10×2=(3x−2)−2(2x+3)”。",
+      "region": {
+        "x": 0.155,
+        "y": 0.153,
+        "width": 0.44,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.1655
+      },
+      "sourceImageSha256": "72c3b8ceaf9934a4cc180c60eafbdb274e5ae406e5e158c1e02587f3df41bfe6"
+    },
+    {
+      "id": "ch5-q-p135-step-reasons",
+      "page": 135,
+      "printedPage": "128",
+      "indexAnchor": 0,
+      "anchorLabel": "去分母、去括号、移项、合并同类项、系数化为1",
+      "locator": "解方程框图右侧蓝色旁注“你能说出每个步骤的依据吗？”；框图所用方程在PDF134页末引入。",
+      "region": {
+        "x": 0.628,
+        "y": 0.227,
+        "width": 0.224,
+        "height": 0.047
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.2505
+      },
+      "sourceImageSha256": "72c3b8ceaf9934a4cc180c60eafbdb274e5ae406e5e158c1e02587f3df41bfe6"
+    },
+    {
+      "id": "ch5-steps-choice",
+      "page": 135,
+      "printedPage": "128",
+      "indexAnchor": 1,
+      "anchorLabel": "归纳",
+      "locator": "归纳中“解一元一次方程的一般步骤包括”至“等式的性质和运算律”的三行。",
+      "region": {
+        "x": 0.085,
+        "y": 0.488,
+        "width": 0.79,
+        "height": 0.078
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.527
+      },
+      "sourceImageSha256": "72c3b8ceaf9934a4cc180c60eafbdb274e5ae406e5e158c1e02587f3df41bfe6"
+    },
+    {
+      "id": "ch5-q-p135-example7",
+      "page": 135,
+      "printedPage": "128",
+      "indexAnchor": 2,
+      "anchorLabel": "例7",
+      "locator": "例7题号及“解下列方程”一行；（1）（2）解答续于PDF136页。",
+      "region": {
+        "x": 0.13,
+        "y": 0.58,
+        "width": 0.203,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.593
+      },
+      "sourceImageSha256": "72c3b8ceaf9934a4cc180c60eafbdb274e5ae406e5e158c1e02587f3df41bfe6"
+    },
+    {
+      "id": "ch5-whole-numerator",
+      "page": 136,
+      "printedPage": "129",
+      "indexAnchor": 0,
+      "anchorLabel": "例7（续）",
+      "locator": "例7（2）“去分母（方程两边乘6）”及18x+3(x−1)=18−2(2x−1)。",
+      "region": {
+        "x": 0.175,
+        "y": 0.126,
+        "width": 0.51,
+        "height": 0.052
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.152
+      },
+      "sourceImageSha256": "e6b146e76a195ae788e7430642c93d711371cdaa31f66a41b2b6b2001489cfca"
+    },
+    {
+      "id": "ch5-q-p136-practice1",
+      "page": 136,
+      "printedPage": "129",
+      "indexAnchor": 1,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "印刷129页练习第1题（含（1）—（4））的题号及题干开头。",
+      "region": {
+        "x": 0.151,
+        "y": 0.472,
+        "width": 0.166,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.485
+      },
+      "sourceImageSha256": "e6b146e76a195ae788e7430642c93d711371cdaa31f66a41b2b6b2001489cfca"
+    },
+    {
+      "id": "ch5-q-p136-practice2",
+      "page": 136,
+      "printedPage": "129",
+      "indexAnchor": 1,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "印刷129页练习第2题的题号及题干开头。",
+      "region": {
+        "x": 0.151,
+        "y": 0.598,
+        "width": 0.455,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.611
+      },
+      "sourceImageSha256": "e6b146e76a195ae788e7430642c93d711371cdaa31f66a41b2b6b2001489cfca"
+    },
+    {
+      "id": "ch5-q-p136-practice3",
+      "page": 136,
+      "printedPage": "129",
+      "indexAnchor": 1,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "印刷129页练习第3题的题号及题干开头。",
+      "region": {
+        "x": 0.151,
+        "y": 0.826,
+        "width": 0.455,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.839
+      },
+      "sourceImageSha256": "e6b146e76a195ae788e7430642c93d711371cdaa31f66a41b2b6b2001489cfca"
+    },
+    {
+      "id": "ch5-q-p137-hw1",
+      "page": 137,
+      "printedPage": "130",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—7题",
+      "locator": "习题5.2第1题（含（1）—（4））的题号及题干开头。",
+      "region": {
+        "x": 0.108,
+        "y": 0.16,
+        "width": 0.151,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.171
+      },
+      "sourceImageSha256": "8c8db65372261e0864d33d2cabdfaa14d05e37508c4f38d7a25ca004941c8668"
+    },
+    {
+      "id": "ch5-q-p137-hw2",
+      "page": 137,
+      "printedPage": "130",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—7题",
+      "locator": "习题5.2第2题（含（1）—（4））的题号及题干开头。",
+      "region": {
+        "x": 0.108,
+        "y": 0.238,
+        "width": 0.151,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.249
+      },
+      "sourceImageSha256": "8c8db65372261e0864d33d2cabdfaa14d05e37508c4f38d7a25ca004941c8668"
+    },
+    {
+      "id": "ch5-q-p137-hw3",
+      "page": 137,
+      "printedPage": "130",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—7题",
+      "locator": "习题5.2第3题（含（1）—（4））的题号及题干开头。",
+      "region": {
+        "x": 0.108,
+        "y": 0.317,
+        "width": 0.151,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.328
+      },
+      "sourceImageSha256": "8c8db65372261e0864d33d2cabdfaa14d05e37508c4f38d7a25ca004941c8668"
+    },
+    {
+      "id": "ch5-negative-denominator",
+      "page": 137,
+      "printedPage": "130",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—7题",
+      "locator": "习题5.2第3题（2），左边分母为−5的方程。",
+      "region": {
+        "x": 0.485,
+        "y": 0.338,
+        "width": 0.22,
+        "height": 0.04
+      },
+      "marker": {
+        "x": 0.935,
+        "y": 0.358
+      },
+      "sourceImageSha256": "8c8db65372261e0864d33d2cabdfaa14d05e37508c4f38d7a25ca004941c8668"
+    },
+    {
+      "id": "ch5-q-p137-hw4",
+      "page": 137,
+      "printedPage": "130",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—7题",
+      "locator": "习题5.2第4题（含（1）—（4））的题号及题干开头。",
+      "region": {
+        "x": 0.108,
+        "y": 0.423,
+        "width": 0.227,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.434
+      },
+      "sourceImageSha256": "8c8db65372261e0864d33d2cabdfaa14d05e37508c4f38d7a25ca004941c8668"
+    },
+    {
+      "id": "ch5-q-p137-hw5",
+      "page": 137,
+      "printedPage": "130",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—7题",
+      "locator": "习题5.2第5题的题号及题干开头。",
+      "region": {
+        "x": 0.108,
+        "y": 0.56,
+        "width": 0.74,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.571
+      },
+      "sourceImageSha256": "8c8db65372261e0864d33d2cabdfaa14d05e37508c4f38d7a25ca004941c8668"
+    },
+    {
+      "id": "ch5-q-p137-hw6",
+      "page": 137,
+      "printedPage": "130",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—7题",
+      "locator": "习题5.2第6题的题号及题干开头。",
+      "region": {
+        "x": 0.108,
+        "y": 0.611,
+        "width": 0.74,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.622
+      },
+      "sourceImageSha256": "8c8db65372261e0864d33d2cabdfaa14d05e37508c4f38d7a25ca004941c8668"
+    },
+    {
+      "id": "ch5-q-p137-hw7",
+      "page": 137,
+      "printedPage": "130",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—7题",
+      "locator": "习题5.2第7题的题号及题干开头。",
+      "region": {
+        "x": 0.108,
+        "y": 0.663,
+        "width": 0.74,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.674
+      },
+      "sourceImageSha256": "8c8db65372261e0864d33d2cabdfaa14d05e37508c4f38d7a25ca004941c8668"
+    },
+    {
+      "id": "ch5-q-p137-hw8",
+      "page": 137,
+      "printedPage": "130",
+      "indexAnchor": 2,
+      "anchorLabel": "综合运用 第8—9题",
+      "locator": "习题5.2第8题的题号及题干开头。",
+      "region": {
+        "x": 0.108,
+        "y": 0.746,
+        "width": 0.74,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.757
+      },
+      "sourceImageSha256": "8c8db65372261e0864d33d2cabdfaa14d05e37508c4f38d7a25ca004941c8668"
+    },
+    {
+      "id": "ch5-q-p137-hw9",
+      "page": 137,
+      "printedPage": "130",
+      "indexAnchor": 2,
+      "anchorLabel": "综合运用 第8—9题",
+      "locator": "习题5.2第9题题号及题干首行；（1）（2）两问在PDF138页页首，已连读核对。",
+      "region": {
+        "x": 0.108,
+        "y": 0.798,
+        "width": 0.457,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.809
+      },
+      "sourceImageSha256": "8c8db65372261e0864d33d2cabdfaa14d05e37508c4f38d7a25ca004941c8668"
+    },
+    {
+      "id": "ch5-q-ex52-10",
+      "page": 138,
+      "printedPage": "131",
+      "indexAnchor": 1,
+      "anchorLabel": "习题5.2 第10—14题",
+      "locator": "习题5.2 第10题题号、标题或短题干：“10. 某造纸厂为节约木材”起始文字。",
+      "region": {
+        "x": 0.152,
+        "y": 0.139,
+        "width": 0.349,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.1515
+      },
+      "sourceImageSha256": "91af1b006e0ac876bc16126cd2155bf95f3ec33ef6edac42d5c2a6999baddb78"
+    },
+    {
+      "id": "ch5-climb-time",
+      "page": 138,
+      "printedPage": "131",
+      "indexAnchor": 1,
+      "anchorLabel": "习题5.2 第10—14题",
+      "locator": "习题5.2第11题题干中“张华……先出发30 min”至“两人同时登上山顶”的两行。",
+      "region": {
+        "x": 0.15,
+        "y": 0.216,
+        "width": 0.747,
+        "height": 0.047
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.2395
+      },
+      "sourceImageSha256": "91af1b006e0ac876bc16126cd2155bf95f3ec33ef6edac42d5c2a6999baddb78"
+    },
+    {
+      "id": "ch5-q-ex52-11",
+      "page": 138,
+      "printedPage": "131",
+      "indexAnchor": 1,
+      "anchorLabel": "习题5.2 第10—14题",
+      "locator": "习题5.2 第11题题号、标题或短题干：“11. 张华和李明登一座山”。",
+      "region": {
+        "x": 0.152,
+        "y": 0.217,
+        "width": 0.235,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.2295
+      },
+      "sourceImageSha256": "91af1b006e0ac876bc16126cd2155bf95f3ec33ef6edac42d5c2a6999baddb78"
+    },
+    {
+      "id": "ch5-q-ex52-12",
+      "page": 138,
+      "printedPage": "131",
+      "indexAnchor": 1,
+      "anchorLabel": "习题5.2 第10—14题",
+      "locator": "习题5.2 第12题题号、标题或短题干：“12. 两辆汽车从相距84 km的两地”。",
+      "region": {
+        "x": 0.152,
+        "y": 0.321,
+        "width": 0.322,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.3335
+      },
+      "sourceImageSha256": "91af1b006e0ac876bc16126cd2155bf95f3ec33ef6edac42d5c2a6999baddb78"
+    },
+    {
+      "id": "ch5-q-ex52-13",
+      "page": 138,
+      "printedPage": "131",
+      "indexAnchor": 1,
+      "anchorLabel": "习题5.2 第10—14题",
+      "locator": "习题5.2 第13题题号、标题或短题干：“13. 在风速为24 km/h的条件下”。",
+      "region": {
+        "x": 0.152,
+        "y": 0.372,
+        "width": 0.316,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.3845
+      },
+      "sourceImageSha256": "91af1b006e0ac876bc16126cd2155bf95f3ec33ef6edac42d5c2a6999baddb78"
+    },
+    {
+      "id": "ch5-q-ex52-14",
+      "page": 138,
+      "printedPage": "131",
+      "indexAnchor": 1,
+      "anchorLabel": "习题5.2 第10—14题",
+      "locator": "习题5.2 第14题题号、标题或短题干：“14. 如图，在一张普通的月历中”。",
+      "region": {
+        "x": 0.152,
+        "y": 0.477,
+        "width": 0.365,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.4895
+      },
+      "sourceImageSha256": "91af1b006e0ac876bc16126cd2155bf95f3ec33ef6edac42d5c2a6999baddb78"
+    },
+    {
+      "id": "ch5-q-ex52-15",
+      "page": 138,
+      "printedPage": "131",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索 第15—16题",
+      "locator": "习题5.2 第15题题号、标题或短题干：“15. 有一些相同的房间需要粉刷墙面”。",
+      "region": {
+        "x": 0.152,
+        "y": 0.613,
+        "width": 0.428,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.6255
+      },
+      "sourceImageSha256": "91af1b006e0ac876bc16126cd2155bf95f3ec33ef6edac42d5c2a6999baddb78"
+    },
+    {
+      "id": "ch5-q-ex52-16",
+      "page": 138,
+      "printedPage": "131",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索 第15—16题",
+      "locator": "习题5.2 第16题题号、标题或短题干：“16. 李明骑自行车从A地到B地”。",
+      "region": {
+        "x": 0.152,
+        "y": 0.716,
+        "width": 0.329,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.7285
+      },
+      "sourceImageSha256": "91af1b006e0ac876bc16126cd2155bf95f3ec33ef6edac42d5c2a6999baddb78"
+    },
+    {
+      "id": "ch5-q-ex52-17",
+      "page": 138,
+      "printedPage": "131",
+      "indexAnchor": 3,
+      "anchorLabel": "习题5.2 第17题（1）",
+      "locator": "习题5.2 第17题题号、标题或短题干：“17. 一列火车匀速行驶”；（2）（3）续于已核对PDF139页。",
+      "region": {
+        "x": 0.152,
+        "y": 0.795,
+        "width": 0.269,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.8075
+      },
+      "sourceImageSha256": "91af1b006e0ac876bc16126cd2155bf95f3ec33ef6edac42d5c2a6999baddb78"
+    },
+    {
+      "id": "ch5-train-reference",
+      "page": 138,
+      "printedPage": "131",
+      "indexAnchor": 3,
+      "anchorLabel": "习题5.2 第17题（1）",
+      "locator": "习题5.2第17题第（1）问：“从车头经过灯下到车尾经过灯下”所在两行；后两问续于PDF139页。",
+      "region": {
+        "x": 0.19,
+        "y": 0.844,
+        "width": 0.704,
+        "height": 0.047
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.8675
+      },
+      "sourceImageSha256": "91af1b006e0ac876bc16126cd2155bf95f3ec33ef6edac42d5c2a6999baddb78"
+    },
+    {
+      "id": "ch5-q-repeating-inquiry",
+      "page": 139,
+      "printedPage": "132",
+      "indexAnchor": 1,
+      "anchorLabel": "无限循环小数化分数",
+      "locator": "探究与发现：无限循环小数化分数题号、标题或短题干：“无限循环小数化分数”标题；含下方三次“想一想”。",
+      "region": {
+        "x": 0.38,
+        "y": 0.255,
+        "width": 0.282,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.268
+      },
+      "sourceImageSha256": "9a31a01853d6e85c418a2f2d541a9e6c106adc73eba5398b88da40fc168acb5d"
+    },
+    {
+      "id": "ch5-repeating-alignment",
+      "page": 139,
+      "printedPage": "132",
+      "indexAnchor": 2,
+      "anchorLabel": "先以无限循环小数为例进行讨论",
+      "locator": "单数字循环节讨论中“设……=x”至“所以10x−x=7”的一行。",
+      "region": {
+        "x": 0.181,
+        "y": 0.437,
+        "width": 0.642,
+        "height": 0.028
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.451
+      },
+      "sourceImageSha256": "9a31a01853d6e85c418a2f2d541a9e6c106adc73eba5398b88da40fc168acb5d"
+    },
+    {
+      "id": "ch5-q-ex53-example1",
+      "page": 140,
+      "printedPage": "133",
+      "indexAnchor": 1,
+      "anchorLabel": "例1",
+      "locator": "5.3 例1题号、标题或短题干：“例1 某车间有22名工人”。",
+      "region": {
+        "x": 0.175,
+        "y": 0.261,
+        "width": 0.275,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.274
+      },
+      "sourceImageSha256": "b498575e99b69e4015cdda6a0ca91c8695edb6b662e3181898ac2756db128438"
+    },
+    {
+      "id": "ch5-matching-workers",
+      "page": 140,
+      "printedPage": "133",
+      "indexAnchor": 1,
+      "anchorLabel": "例1",
+      "locator": "例1由配套关系列出的方程“2000(22−x)=2×1200x”。",
+      "region": {
+        "x": 0.245,
+        "y": 0.46,
+        "width": 0.287,
+        "height": 0.028
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.474
+      },
+      "sourceImageSha256": "b498575e99b69e4015cdda6a0ca91c8695edb6b662e3181898ac2756db128438"
+    },
+    {
+      "id": "ch5-q-ex53-example2",
+      "page": 140,
+      "printedPage": "133",
+      "indexAnchor": 2,
+      "anchorLabel": "例2",
+      "locator": "5.3 例2题号、标题或短题干：“例2 整理一批图书”。",
+      "region": {
+        "x": 0.175,
+        "y": 0.662,
+        "width": 0.255,
+        "height": 0.027
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.6755
+      },
+      "sourceImageSha256": "b498575e99b69e4015cdda6a0ca91c8695edb6b662e3181898ac2756db128438"
+    },
+    {
+      "id": "ch5-work-unit",
+      "page": 140,
+      "printedPage": "133",
+      "indexAnchor": 2,
+      "anchorLabel": "例2",
+      "locator": "例2分析开头“如果把总工作量设为1”这一短语。",
+      "region": {
+        "x": 0.245,
+        "y": 0.75,
+        "width": 0.25,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.7625
+      },
+      "sourceImageSha256": "b498575e99b69e4015cdda6a0ca91c8695edb6b662e3181898ac2756db128438"
+    },
+    {
+      "id": "ch5-two-checks",
+      "page": 141,
+      "printedPage": "134",
+      "indexAnchor": 1,
+      "anchorLabel": "归纳",
+      "locator": "归纳框图下方从“一元一次方程的解”通向“实际问题的答案”的“检验”箭头与文字。",
+      "region": {
+        "x": 0.336,
+        "y": 0.448,
+        "width": 0.221,
+        "height": 0.031
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.4635
+      },
+      "sourceImageSha256": "807d1ba33179e78a82a0685782325d43ece4b7891a9d29f0454c0332b9749d43"
+    },
+    {
+      "id": "ch5-q-practice134-1",
+      "page": 141,
+      "printedPage": "134",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "印刷134页 练习第1题题号、标题或短题干：“1. 一条地下管线由甲工程队”。",
+      "region": {
+        "x": 0.109,
+        "y": 0.638,
+        "width": 0.36,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.651
+      },
+      "sourceImageSha256": "807d1ba33179e78a82a0685782325d43ece4b7891a9d29f0454c0332b9749d43"
+    },
+    {
+      "id": "ch5-q-practice134-2",
+      "page": 141,
+      "printedPage": "134",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "印刷134页 练习第2题题号、标题或短题干：“2. 在一次劳动课上”。",
+      "region": {
+        "x": 0.109,
+        "y": 0.696,
+        "width": 0.291,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.709
+      },
+      "sourceImageSha256": "807d1ba33179e78a82a0685782325d43ece4b7891a9d29f0454c0332b9749d43"
+    },
+    {
+      "id": "ch5-q-practice134-3",
+      "page": 141,
+      "printedPage": "134",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "印刷134页 练习第3题题号、标题或短题干：“3. 一台仪器由1个A部件”。",
+      "region": {
+        "x": 0.109,
+        "y": 0.781,
+        "width": 0.305,
+        "height": 0.027
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.7945
+      },
+      "sourceImageSha256": "807d1ba33179e78a82a0685782325d43ece4b7891a9d29f0454c0332b9749d43"
+    },
+    {
+      "id": "ch5-q-inquiry1",
+      "page": 142,
+      "printedPage": "135",
+      "indexAnchor": 0,
+      "anchorLabel": "探究1 销售中的盈亏",
+      "locator": "探究1 销售中的盈亏题号、标题或短题干：“一商店以每件60元的价格卖出两件衣服”。",
+      "region": {
+        "x": 0.2,
+        "y": 0.208,
+        "width": 0.437,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.221
+      },
+      "sourceImageSha256": "d447319ae8d8b1340985c28223770a8c0a76dd3ec7530dfb8cb5c3b45496c940"
+    },
+    {
+      "id": "ch5-profit-base",
+      "page": 142,
+      "printedPage": "135",
+      "indexAnchor": 1,
+      "anchorLabel": "分析",
+      "locator": "探究1分析开头“一件盈利25%，另一件亏损25%，合起来是不盈不亏”的猜想所在两行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.303,
+        "width": 0.51,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.328
+      },
+      "sourceImageSha256": "d447319ae8d8b1340985c28223770a8c0a76dd3ec7530dfb8cb5c3b45496c940"
+    },
+    {
+      "id": "ch5-q-practice136-1",
+      "page": 143,
+      "printedPage": "136",
+      "indexAnchor": 0,
+      "anchorLabel": "练习 第1—2题",
+      "locator": "印刷136页 练习第1题题号、标题或短题干：“1. 某商店有两种书包”。",
+      "region": {
+        "x": 0.109,
+        "y": 0.119,
+        "width": 0.27,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.132
+      },
+      "sourceImageSha256": "6cc78a501416affc798214c0db43eaba1d25fbd704d6bfa8b4826c2cf0cd7fa2"
+    },
+    {
+      "id": "ch5-q-practice136-2",
+      "page": 143,
+      "printedPage": "136",
+      "indexAnchor": 0,
+      "anchorLabel": "练习 第1—2题",
+      "locator": "印刷136页 练习第2题题号、标题或短题干：“2. 一件商品按成本价提高20%后标价”。",
+      "region": {
+        "x": 0.109,
+        "y": 0.199,
+        "width": 0.383,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.212
+      },
+      "sourceImageSha256": "6cc78a501416affc798214c0db43eaba1d25fbd704d6bfa8b4826c2cf0cd7fa2"
+    },
+    {
+      "id": "ch5-discount-bases",
+      "page": 143,
+      "printedPage": "136",
+      "indexAnchor": 0,
+      "anchorLabel": "练习 第1—2题",
+      "locator": "页首练习第2题“按成本价提高20%后标价，再打八折销售”的第一行。",
+      "region": {
+        "x": 0.109,
+        "y": 0.2,
+        "width": 0.741,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.2125
+      },
+      "sourceImageSha256": "6cc78a501416affc798214c0db43eaba1d25fbd704d6bfa8b4826c2cf0cd7fa2"
+    },
+    {
+      "id": "ch5-q-inquiry2",
+      "page": 143,
+      "printedPage": "136",
+      "indexAnchor": 1,
+      "anchorLabel": "探究2 球赛积分表问题",
+      "locator": "探究2 球赛积分表问题题号、标题或短题干：“球赛积分表问题”标题；（2）（3）分析与想一想续于PDF144页。",
+      "region": {
+        "x": 0.395,
+        "y": 0.331,
+        "width": 0.203,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.344
+      },
+      "sourceImageSha256": "6cc78a501416affc798214c0db43eaba1d25fbd704d6bfa8b4826c2cf0cd7fa2"
+    },
+    {
+      "id": "ch5-table-rule-check",
+      "page": 143,
+      "printedPage": "136",
+      "indexAnchor": 4,
+      "anchorLabel": "分析：（1）",
+      "locator": "探究2分析（1）最后一句“用表5.3-1中其他行可以验证”。",
+      "region": {
+        "x": 0.13,
+        "y": 0.895,
+        "width": 0.75,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.907
+      },
+      "sourceImageSha256": "6cc78a501416affc798214c0db43eaba1d25fbd704d6bfa8b4826c2cf0cd7fa2"
+    },
+    {
+      "id": "ch5-context-integer",
+      "page": 144,
+      "printedPage": "137",
+      "indexAnchor": 0,
+      "anchorLabel": "探究2（2）（3）（续）",
+      "locator": "探究2（3）“想一想，y表示什么量？它可以不取整数吗？”的提问句。",
+      "region": {
+        "x": 0.173,
+        "y": 0.374,
+        "width": 0.483,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.3865
+      },
+      "sourceImageSha256": "d33d77598331a0821fc6e9ab503b625615653959d1d70c8e243d03be28675b30"
+    },
+    {
+      "id": "ch5-q-practice137-1",
+      "page": 144,
+      "printedPage": "137",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1题",
+      "locator": "印刷137页 练习第1题题号、标题或短题干：“1. 在足球联赛中，胜一场得3分”。",
+      "region": {
+        "x": 0.151,
+        "y": 0.679,
+        "width": 0.301,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.692
+      },
+      "sourceImageSha256": "d33d77598331a0821fc6e9ab503b625615653959d1d70c8e243d03be28675b30"
+    },
+    {
+      "id": "ch5-q-practice137-2",
+      "page": 144,
+      "printedPage": "137",
+      "indexAnchor": 3,
+      "anchorLabel": "练习 第2题",
+      "locator": "印刷137页 练习第2题题号、标题或短题干：“2. 下表是某校七年级至九年级某月”；续表与填表要求已核对PDF145页。",
+      "region": {
+        "x": 0.151,
+        "y": 0.821,
+        "width": 0.446,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.834
+      },
+      "sourceImageSha256": "d33d77598331a0821fc6e9ab503b625615653959d1d70c8e243d03be28675b30"
+    },
+    {
+      "id": "ch5-q-inquiry3",
+      "page": 145,
+      "printedPage": "138",
+      "indexAnchor": 1,
+      "anchorLabel": "探究3 不同能效空调的综合费用比较",
+      "locator": "探究3 不同能效空调的综合费用比较题号、标题或短题干：“不同能效空调的综合费用比较”标题；续页计算与比较见PDF146页。",
+      "region": {
+        "x": 0.326,
+        "y": 0.343,
+        "width": 0.46,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.356
+      },
+      "sourceImageSha256": "625022844fca7567298cd9a5ff619dc389b5b081112c7f078ee026511540965b"
+    },
+    {
+      "id": "ch5-energy-units",
+      "page": 145,
+      "printedPage": "138",
+      "indexAnchor": 4,
+      "anchorLabel": "综合费用＝空调的售价＋电费",
+      "locator": "探究3分析中1级能效空调费用式“3000+0.5×640t”。",
+      "region": {
+        "x": 0.38,
+        "y": 0.756,
+        "width": 0.196,
+        "height": 0.028
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.77
+      },
+      "sourceImageSha256": "625022844fca7567298cd9a5ff619dc389b5b081112c7f078ee026511540965b"
+    },
+    {
+      "id": "ch5-cost-difference",
+      "page": 146,
+      "printedPage": "139",
+      "indexAnchor": 1,
+      "anchorLabel": "综合费用的比较",
+      "locator": "费用比较中改写得到“3000+320t+80(t−5)”的单行公式。",
+      "region": {
+        "x": 0.393,
+        "y": 0.373,
+        "width": 0.255,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.386
+      },
+      "sourceImageSha256": "c4c5d2550f6467d29af339868b3f11ef55d2cf3ec0e3dffddb166dae64e3348e"
+    },
+    {
+      "id": "ch5-q-practice139-1",
+      "page": 146,
+      "printedPage": "139",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—2题",
+      "locator": "印刷139页 练习第1题题号、标题或短题干：“1. 在甲复印店用A4纸复印文件”。",
+      "region": {
+        "x": 0.151,
+        "y": 0.649,
+        "width": 0.446,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.662
+      },
+      "sourceImageSha256": "c4c5d2550f6467d29af339868b3f11ef55d2cf3ec0e3dffddb166dae64e3348e"
+    },
+    {
+      "id": "ch5-copy-tier",
+      "page": 146,
+      "printedPage": "139",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—2题",
+      "locator": "练习第1题中“超过部分每页收费降为0.09元”的文字所在第二行。",
+      "region": {
+        "x": 0.442,
+        "y": 0.679,
+        "width": 0.333,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.6915
+      },
+      "sourceImageSha256": "c4c5d2550f6467d29af339868b3f11ef55d2cf3ec0e3dffddb166dae64e3348e"
+    },
+    {
+      "id": "ch5-q-practice139-2",
+      "page": 146,
+      "printedPage": "139",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—2题",
+      "locator": "印刷139页 练习第2题题号、标题或短题干：“2. 现有两种地铁机场线计次月票”。",
+      "region": {
+        "x": 0.151,
+        "y": 0.765,
+        "width": 0.452,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.778
+      },
+      "sourceImageSha256": "c4c5d2550f6467d29af339868b3f11ef55d2cf3ec0e3dffddb166dae64e3348e"
+    },
+    {
+      "id": "ch5-q-ex53-1",
+      "page": 147,
+      "printedPage": "140",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—5题",
+      "locator": "习题5.3 第1题题号、标题或短题干：“1. 结合本节内容体会例2后归纳的框图”。",
+      "region": {
+        "x": 0.109,
+        "y": 0.161,
+        "width": 0.386,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.174
+      },
+      "sourceImageSha256": "86e8ea42cd36bef90ebc33c4a1bc2cc72eb1fd0e71203614a5222eaed15c5ebb"
+    },
+    {
+      "id": "ch5-q-ex53-2",
+      "page": 147,
+      "printedPage": "140",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—5题",
+      "locator": "习题5.3 第2题题号、标题或短题干：“2. 制作一张桌子要用1个桌面和4条桌腿”。",
+      "region": {
+        "x": 0.109,
+        "y": 0.188,
+        "width": 0.388,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.201
+      },
+      "sourceImageSha256": "86e8ea42cd36bef90ebc33c4a1bc2cc72eb1fd0e71203614a5222eaed15c5ebb"
+    },
+    {
+      "id": "ch5-q-ex53-3",
+      "page": 147,
+      "printedPage": "140",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—5题",
+      "locator": "习题5.3 第3题题号、标题或短题干：“3. 某车间每天能制作500个甲种零件”。",
+      "region": {
+        "x": 0.109,
+        "y": 0.239,
+        "width": 0.385,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.252
+      },
+      "sourceImageSha256": "86e8ea42cd36bef90ebc33c4a1bc2cc72eb1fd0e71203614a5222eaed15c5ebb"
+    },
+    {
+      "id": "ch5-work-total-time",
+      "page": 147,
+      "printedPage": "140",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—5题",
+      "locator": "习题5.3第4题中“先一起工作1 h，再由乙单独完成剩余部分，一共需要多长时间”的两行。",
+      "region": {
+        "x": 0.133,
+        "y": 0.314,
+        "width": 0.721,
+        "height": 0.049
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.3385
+      },
+      "sourceImageSha256": "86e8ea42cd36bef90ebc33c4a1bc2cc72eb1fd0e71203614a5222eaed15c5ebb"
+    },
+    {
+      "id": "ch5-q-ex53-4",
+      "page": 147,
+      "printedPage": "140",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—5题",
+      "locator": "习题5.3 第4题题号、标题或短题干：“4. 某项工作由甲、乙两人单独做”。",
+      "region": {
+        "x": 0.109,
+        "y": 0.316,
+        "width": 0.311,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.329
+      },
+      "sourceImageSha256": "86e8ea42cd36bef90ebc33c4a1bc2cc72eb1fd0e71203614a5222eaed15c5ebb"
+    },
+    {
+      "id": "ch5-q-ex53-5",
+      "page": 147,
+      "printedPage": "140",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—5题",
+      "locator": "习题5.3 第5题题号、标题或短题干：“5. 整理一批数据，由1人整理”。",
+      "region": {
+        "x": 0.109,
+        "y": 0.368,
+        "width": 0.264,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.381
+      },
+      "sourceImageSha256": "86e8ea42cd36bef90ebc33c4a1bc2cc72eb1fd0e71203614a5222eaed15c5ebb"
+    },
+    {
+      "id": "ch5-q-ex53-6",
+      "page": 147,
+      "printedPage": "140",
+      "indexAnchor": 2,
+      "anchorLabel": "综合运用 第6—9题",
+      "locator": "习题5.3 第6题题号、标题或短题干：“6. 用A型和B型机器生产同样的产品”。",
+      "region": {
+        "x": 0.109,
+        "y": 0.472,
+        "width": 0.396,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.485
+      },
+      "sourceImageSha256": "86e8ea42cd36bef90ebc33c4a1bc2cc72eb1fd0e71203614a5222eaed15c5ebb"
+    },
+    {
+      "id": "ch5-temperature-start",
+      "page": 147,
+      "printedPage": "140",
+      "indexAnchor": 2,
+      "anchorLabel": "综合运用 第6—9题",
+      "locator": "习题5.3第7题题干“假设温度的变化是均匀的”。",
+      "region": {
+        "x": 0.136,
+        "y": 0.549,
+        "width": 0.692,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.5615
+      },
+      "sourceImageSha256": "86e8ea42cd36bef90ebc33c4a1bc2cc72eb1fd0e71203614a5222eaed15c5ebb"
+    },
+    {
+      "id": "ch5-q-ex53-7",
+      "page": 147,
+      "printedPage": "140",
+      "indexAnchor": 2,
+      "anchorLabel": "综合运用 第6—9题",
+      "locator": "习题5.3 第7题题号、标题或短题干：“7. 下表中记录了一次实验中时间和温度的数据”。",
+      "region": {
+        "x": 0.109,
+        "y": 0.55,
+        "width": 0.434,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.563
+      },
+      "sourceImageSha256": "86e8ea42cd36bef90ebc33c4a1bc2cc72eb1fd0e71203614a5222eaed15c5ebb"
+    },
+    {
+      "id": "ch5-q-ex53-8",
+      "page": 147,
+      "printedPage": "140",
+      "indexAnchor": 2,
+      "anchorLabel": "综合运用 第6—9题",
+      "locator": "习题5.3 第8题题号、标题或短题干：“8. 某糕点厂中秋节前要制作一批”。",
+      "region": {
+        "x": 0.109,
+        "y": 0.7,
+        "width": 0.333,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.713
+      },
+      "sourceImageSha256": "86e8ea42cd36bef90ebc33c4a1bc2cc72eb1fd0e71203614a5222eaed15c5ebb"
+    },
+    {
+      "id": "ch5-q-ex53-9",
+      "page": 147,
+      "printedPage": "140",
+      "indexAnchor": 2,
+      "anchorLabel": "综合运用 第6—9题",
+      "locator": "习题5.3 第9题题号、标题或短题干：“9. 李明和刘伟分别从A，B两地同时出发”。",
+      "region": {
+        "x": 0.109,
+        "y": 0.803,
+        "width": 0.503,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.816
+      },
+      "sourceImageSha256": "86e8ea42cd36bef90ebc33c4a1bc2cc72eb1fd0e71203614a5222eaed15c5ebb"
+    },
+    {
+      "id": "ch5-sales-quantity-base",
+      "page": 148,
+      "printedPage": "141",
+      "indexAnchor": 0,
+      "anchorLabel": "习题5.3 第10—11题",
+      "locator": "习题5.3第10题“降价20%……销售总金额不变”的两行。",
+      "region": {
+        "x": 0.15,
+        "y": 0.077,
+        "width": 0.748,
+        "height": 0.049
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.1015
+      },
+      "sourceImageSha256": "f9a08a09a127e3e2a587dfdc5467b77c243395b737961cd8738394f800ab9b5c"
+    },
+    {
+      "id": "ch5-q-ex53-10",
+      "page": 148,
+      "printedPage": "141",
+      "indexAnchor": 0,
+      "anchorLabel": "习题5.3 第10—11题",
+      "locator": "习题5.3 第10题题号、标题或短题干：“10. 商店对某商品降价20%促销”。",
+      "region": {
+        "x": 0.151,
+        "y": 0.077,
+        "width": 0.334,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.09
+      },
+      "sourceImageSha256": "f9a08a09a127e3e2a587dfdc5467b77c243395b737961cd8738394f800ab9b5c"
+    },
+    {
+      "id": "ch5-q-ex53-11",
+      "page": 148,
+      "printedPage": "141",
+      "indexAnchor": 0,
+      "anchorLabel": "习题5.3 第10—11题",
+      "locator": "习题5.3 第11题题号、标题或短题干：“11. 甲组的4名工人3月份完成的总工作量”。",
+      "region": {
+        "x": 0.151,
+        "y": 0.132,
+        "width": 0.416,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.145
+      },
+      "sourceImageSha256": "f9a08a09a127e3e2a587dfdc5467b77c243395b737961cd8738394f800ab9b5c"
+    },
+    {
+      "id": "ch5-q-ex53-12",
+      "page": 148,
+      "printedPage": "141",
+      "indexAnchor": 1,
+      "anchorLabel": "拓广探索 第12—13题",
+      "locator": "习题5.3 第12题题号、标题或短题干：“12. 将探究2的积分表换为你们学校”。",
+      "region": {
+        "x": 0.151,
+        "y": 0.344,
+        "width": 0.46,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.357
+      },
+      "sourceImageSha256": "f9a08a09a127e3e2a587dfdc5467b77c243395b737961cd8738394f800ab9b5c"
+    },
+    {
+      "id": "ch5-q-ex53-13",
+      "page": 148,
+      "printedPage": "141",
+      "indexAnchor": 1,
+      "anchorLabel": "拓广探索 第12—13题",
+      "locator": "习题5.3 第13题题号、标题或短题干：“13. 希腊数学家丢番图的墓碑上记载着”。",
+      "region": {
+        "x": 0.151,
+        "y": 0.399,
+        "width": 0.386,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.412
+      },
+      "sourceImageSha256": "f9a08a09a127e3e2a587dfdc5467b77c243395b737961cd8738394f800ab9b5c"
+    },
+    {
+      "id": "ch5-q-ex53-14",
+      "page": 148,
+      "printedPage": "141",
+      "indexAnchor": 2,
+      "anchorLabel": "习题5.3 第14题",
+      "locator": "习题5.3 第14题题号、标题或短题干：“14. 下面是某购物平台的两种图书促销方式”。",
+      "region": {
+        "x": 0.151,
+        "y": 0.707,
+        "width": 0.404,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.72
+      },
+      "sourceImageSha256": "f9a08a09a127e3e2a587dfdc5467b77c243395b737961cd8738394f800ab9b5c"
+    },
+    {
+      "id": "ch5-promotion-threshold",
+      "page": 148,
+      "printedPage": "141",
+      "indexAnchor": 2,
+      "anchorLabel": "习题5.3 第14题",
+      "locator": "习题5.3第14题的“方式一：满100元减50元”一行。",
+      "region": {
+        "x": 0.187,
+        "y": 0.731,
+        "width": 0.272,
+        "height": 0.027
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.7445
+      },
+      "sourceImageSha256": "f9a08a09a127e3e2a587dfdc5467b77c243395b737961cd8738394f800ab9b5c"
+    },
+    {
+      "id": "ch5-model-assumptions",
+      "page": 149,
+      "printedPage": "142",
+      "indexAnchor": 3,
+      "anchorLabel": "实际问题—数学模型",
+      "locator": "末段中“可能还要作一些合理的假设”这一短语。",
+      "region": {
+        "x": 0.572,
+        "y": 0.685,
+        "width": 0.28,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.6975
+      },
+      "sourceImageSha256": "4ad57fcee3ce7094656e9240cd3ace0730266f76f07e03f436f9c93f7e6c1e88"
+    },
+    {
+      "id": "ch5-q-activity1",
+      "page": 150,
+      "printedPage": "143",
+      "indexAnchor": 0,
+      "anchorLabel": "活动1 生活中的阶梯计价问题",
+      "locator": "数学活动1 生活中的阶梯计价问题题号、标题或短题干：“活动1 生活中的阶梯计价问题”标题。",
+      "region": {
+        "x": 0.14,
+        "y": 0.139,
+        "width": 0.377,
+        "height": 0.028
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.153
+      },
+      "sourceImageSha256": "e0ec7ac16f9b3bc13b2fcd7ede2fb4e81992de3903fe6e6ce2ed1f7fdc2cf8e6"
+    },
+    {
+      "id": "ch5-water-tier",
+      "page": 150,
+      "printedPage": "143",
+      "indexAnchor": 1,
+      "anchorLabel": "某城市居民生活用水的收费标准",
+      "locator": "活动1收费表的第二阶梯一行“181～240；6”。",
+      "region": {
+        "x": 0.211,
+        "y": 0.288,
+        "width": 0.621,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.3005
+      },
+      "sourceImageSha256": "e0ec7ac16f9b3bc13b2fcd7ede2fb4e81992de3903fe6e6ce2ed1f7fdc2cf8e6"
+    },
+    {
+      "id": "ch5-q-activity2",
+      "page": 150,
+      "printedPage": "143",
+      "indexAnchor": 3,
+      "anchorLabel": "活动2 木杆挂重物问题",
+      "locator": "数学活动2 木杆挂重物问题题号、标题或短题干：“活动2 木杆挂重物问题”标题；后续实验及建模任务已核对PDF151页。",
+      "region": {
+        "x": 0.143,
+        "y": 0.649,
+        "width": 0.291,
+        "height": 0.029
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.6635
+      },
+      "sourceImageSha256": "e0ec7ac16f9b3bc13b2fcd7ede2fb4e81992de3903fe6e6ce2ed1f7fdc2cf8e6"
+    },
+    {
+      "id": "ch5-balance-controls",
+      "page": 150,
+      "printedPage": "143",
+      "indexAnchor": 3,
+      "anchorLabel": "活动2 木杆挂重物问题",
+      "locator": "活动2开头“用一根质地均匀的木杆和一些等重的小物体”一句。",
+      "region": {
+        "x": 0.198,
+        "y": 0.685,
+        "width": 0.596,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.6965
+      },
+      "sourceImageSha256": "e0ec7ac16f9b3bc13b2fcd7ede2fb4e81992de3903fe6e6ce2ed1f7fdc2cf8e6"
+    },
+    {
+      "id": "ch5-balance-data",
+      "page": 151,
+      "printedPage": "144",
+      "indexAnchor": 1,
+      "anchorLabel": "根据记录你能发现什么规律",
+      "locator": "活动2续页“根据记录你能发现什么规律？”一句。",
+      "region": {
+        "x": 0.155,
+        "y": 0.112,
+        "width": 0.3,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.124
+      },
+      "sourceImageSha256": "79b0cab3c2691aedd6246e1935288d89dd4dea7f3b050f3a12164221cbeeae6c"
+    },
+    {
+      "id": "ch5-standard-nonzero",
+      "page": 152,
+      "printedPage": "145",
+      "indexAnchor": 2,
+      "anchorLabel": "二、回顾与思考",
+      "locator": "回顾与思考中标准形式下一行的括注“其中x是未知数，a，b是已知数，并且a≠0”。",
+      "region": {
+        "x": 0.151,
+        "y": 0.712,
+        "width": 0.51,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.724
+      },
+      "sourceImageSha256": "e14eec96b6655a1a216a2bb499553408e8d1b30bdb106a6d2ea157d79fa1c38f"
+    },
+    {
+      "id": "ch5-q-summary1",
+      "page": 153,
+      "printedPage": "146",
+      "indexAnchor": 0,
+      "anchorLabel": "回顾与思考（续）",
+      "locator": "小结回顾与思考第1题“举例说明方程与等式之间的关系……”一行。",
+      "region": {
+        "x": 0.15,
+        "y": 0.139,
+        "width": 0.64,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.151
+      },
+      "sourceImageSha256": "c6d2dc2c47f6ba9d4e21e62053cc467e8d19764fd7395d4a1fbbfc4d51d1f659"
+    },
+    {
+      "id": "ch5-q-summary2",
+      "page": 153,
+      "printedPage": "146",
+      "indexAnchor": 0,
+      "anchorLabel": "回顾与思考（续）",
+      "locator": "回顾与思考第2题“回顾等式的性质，说明解方程和等式的性质之间有什么关系”一行。",
+      "region": {
+        "x": 0.15,
+        "y": 0.168,
+        "width": 0.62,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.18
+      },
+      "sourceImageSha256": "c6d2dc2c47f6ba9d4e21e62053cc467e8d19764fd7395d4a1fbbfc4d51d1f659"
+    },
+    {
+      "id": "ch5-q-summary3",
+      "page": 153,
+      "printedPage": "146",
+      "indexAnchor": 0,
+      "anchorLabel": "回顾与思考（续）",
+      "locator": "回顾与思考第3题首行“回顾解一元一次方程的一般步骤，结合例子说明……”题干。",
+      "region": {
+        "x": 0.15,
+        "y": 0.197,
+        "width": 0.7,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.209
+      },
+      "sourceImageSha256": "c6d2dc2c47f6ba9d4e21e62053cc467e8d19764fd7395d4a1fbbfc4d51d1f659"
+    },
+    {
+      "id": "ch5-q-summary4",
+      "page": 153,
+      "printedPage": "146",
+      "indexAnchor": 0,
+      "anchorLabel": "回顾与思考（续）",
+      "locator": "回顾与思考第4题“你能举例说明用字母表示数、列代数式和列方程的区别和联系吗”一行。",
+      "region": {
+        "x": 0.15,
+        "y": 0.282,
+        "width": 0.72,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.294
+      },
+      "sourceImageSha256": "c6d2dc2c47f6ba9d4e21e62053cc467e8d19764fd7395d4a1fbbfc4d51d1f659"
+    },
+    {
+      "id": "ch5-q-summary5",
+      "page": 153,
+      "printedPage": "146",
+      "indexAnchor": 0,
+      "anchorLabel": "回顾与思考（续）",
+      "locator": "回顾与思考第5题关于分析相等关系并举例的两行；入口定位题干第一行。",
+      "region": {
+        "x": 0.15,
+        "y": 0.31,
+        "width": 0.7,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.322
+      },
+      "sourceImageSha256": "c6d2dc2c47f6ba9d4e21e62053cc467e8d19764fd7395d4a1fbbfc4d51d1f659"
+    },
+    {
+      "id": "ch5-q-summary6",
+      "page": 153,
+      "printedPage": "146",
+      "indexAnchor": 0,
+      "anchorLabel": "回顾与思考（续）",
+      "locator": "回顾与思考第6题从“请收集一些实际问题”至“解决过程”的三行；入口定位题干第一行。",
+      "region": {
+        "x": 0.15,
+        "y": 0.369,
+        "width": 0.7,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.381
+      },
+      "sourceImageSha256": "c6d2dc2c47f6ba9d4e21e62053cc467e8d19764fd7395d4a1fbbfc4d51d1f659"
+    },
+    {
+      "id": "ch5-q-review1",
+      "page": 153,
+      "printedPage": "146",
+      "indexAnchor": 2,
+      "anchorLabel": "复习巩固 第1—2题",
+      "locator": "复习题5第1题“列方程表示下列语句中的相等关系”题干，四小问均在本页。",
+      "region": {
+        "x": 0.098,
+        "y": 0.585,
+        "width": 0.55,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.5965
+      },
+      "sourceImageSha256": "c6d2dc2c47f6ba9d4e21e62053cc467e8d19764fd7395d4a1fbbfc4d51d1f659"
+    },
+    {
+      "id": "ch5-q-review2",
+      "page": 153,
+      "printedPage": "146",
+      "indexAnchor": 2,
+      "anchorLabel": "复习巩固 第1—2题",
+      "locator": "复习题5第2题“指出x=1，x=2，x=3各是下列哪个方程的解”题干。",
+      "region": {
+        "x": 0.1,
+        "y": 0.815,
+        "width": 0.68,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.8265
+      },
+      "sourceImageSha256": "c6d2dc2c47f6ba9d4e21e62053cc467e8d19764fd7395d4a1fbbfc4d51d1f659"
+    },
+    {
+      "id": "ch5-q-review3",
+      "page": 154,
+      "printedPage": "147",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固 第3—6题",
+      "locator": "复习题5第3题“解下列方程”题干，含（1）—（4）。",
+      "region": {
+        "x": 0.142,
+        "y": 0.077,
+        "width": 0.23,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.088
+      },
+      "sourceImageSha256": "81342944d08a46f105acc73e1a59c6eae25c611b789e9a4d9e1b4c465d0ea78c"
+    },
+    {
+      "id": "ch5-q-review4",
+      "page": 154,
+      "printedPage": "147",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固 第3—6题",
+      "locator": "复习题5第4题“当x为何值时，下列各组中两个式子的值相等”题干。",
+      "region": {
+        "x": 0.14,
+        "y": 0.194,
+        "width": 0.59,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.206
+      },
+      "sourceImageSha256": "81342944d08a46f105acc73e1a59c6eae25c611b789e9a4d9e1b4c465d0ea78c"
+    },
+    {
+      "id": "ch5-q-review5",
+      "page": 154,
+      "printedPage": "147",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固 第3—6题",
+      "locator": "复习题5第5题梯形面积公式及“在……中”题干，含（1）—（3）。",
+      "region": {
+        "x": 0.14,
+        "y": 0.266,
+        "width": 0.51,
+        "height": 0.034
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.283
+      },
+      "sourceImageSha256": "81342944d08a46f105acc73e1a59c6eae25c611b789e9a4d9e1b4c465d0ea78c"
+    },
+    {
+      "id": "ch5-formula-known",
+      "page": 154,
+      "printedPage": "147",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固 第3—6题",
+      "locator": "复习题5第5题第（3）问“已知S=50，a=6，b=5/3a，求h”。",
+      "region": {
+        "x": 0.168,
+        "y": 0.361,
+        "width": 0.367,
+        "height": 0.04
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.381
+      },
+      "sourceImageSha256": "81342944d08a46f105acc73e1a59c6eae25c611b789e9a4d9e1b4c465d0ea78c"
+    },
+    {
+      "id": "ch5-q-review6",
+      "page": 154,
+      "printedPage": "147",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固 第3—6题",
+      "locator": "复习题5第6题矿泉水与毛巾购物问题两行题干；入口定位题干第一行。",
+      "region": {
+        "x": 0.14,
+        "y": 0.405,
+        "width": 0.77,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.417
+      },
+      "sourceImageSha256": "81342944d08a46f105acc73e1a59c6eae25c611b789e9a4d9e1b4c465d0ea78c"
+    },
+    {
+      "id": "ch5-q-review7",
+      "page": 154,
+      "printedPage": "147",
+      "indexAnchor": 2,
+      "anchorLabel": "综合运用 第7—9题",
+      "locator": "复习题5第7题冬奥奖牌数量关系的两行题干；入口定位题干第一行。",
+      "region": {
+        "x": 0.14,
+        "y": 0.489,
+        "width": 0.77,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.501
+      },
+      "sourceImageSha256": "81342944d08a46f105acc73e1a59c6eae25c611b789e9a4d9e1b4c465d0ea78c"
+    },
+    {
+      "id": "ch5-q-review8",
+      "page": 154,
+      "printedPage": "147",
+      "indexAnchor": 2,
+      "anchorLabel": "综合运用 第7—9题",
+      "locator": "复习题5第8题古代快马追慢马的题干，不包含页底出处注释；入口定位题干第一行。",
+      "region": {
+        "x": 0.14,
+        "y": 0.675,
+        "width": 0.77,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.687
+      },
+      "sourceImageSha256": "81342944d08a46f105acc73e1a59c6eae25c611b789e9a4d9e1b4c465d0ea78c"
+    },
+    {
+      "id": "ch5-q-review9",
+      "page": 154,
+      "printedPage": "147",
+      "indexAnchor": 2,
+      "anchorLabel": "综合运用 第7—9题",
+      "locator": "复习题5第9题购买两只基金的完整三行题干；入口定位题干第一行。",
+      "region": {
+        "x": 0.14,
+        "y": 0.726,
+        "width": 0.77,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.738
+      },
+      "sourceImageSha256": "81342944d08a46f105acc73e1a59c6eae25c611b789e9a4d9e1b4c465d0ea78c"
+    },
+    {
+      "id": "ch5-returns-base",
+      "page": 154,
+      "printedPage": "147",
+      "indexAnchor": 2,
+      "anchorLabel": "综合运用 第7—9题",
+      "locator": "复习题5第9题第二行“收益恰好相等，且实际收益率分别为4.4%，3.6%”的文字。",
+      "region": {
+        "x": 0.166,
+        "y": 0.753,
+        "width": 0.492,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.7655
+      },
+      "sourceImageSha256": "81342944d08a46f105acc73e1a59c6eae25c611b789e9a4d9e1b4c465d0ea78c"
+    },
+    {
+      "id": "ch5-q-review10",
+      "page": 155,
+      "printedPage": "148",
+      "indexAnchor": 0,
+      "anchorLabel": "综合运用 第10—12题",
+      "locator": "复习题5第10题环形跑道题干及首次、再次相遇两项要求；入口定位题干第一行。",
+      "region": {
+        "x": 0.097,
+        "y": 0.077,
+        "width": 0.76,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.089
+      },
+      "sourceImageSha256": "d966e9d17d8fb42a5fb67b01691ab8de9df0bbeef73d72337055610a2c31c9fe"
+    },
+    {
+      "id": "ch5-q-review11",
+      "page": 155,
+      "printedPage": "148",
+      "indexAnchor": 0,
+      "anchorLabel": "综合运用 第10—12题",
+      "locator": "复习题5第11题鸽子与鸽笼两种安排的三行题干；入口定位题干第一行。",
+      "region": {
+        "x": 0.097,
+        "y": 0.154,
+        "width": 0.76,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.166
+      },
+      "sourceImageSha256": "d966e9d17d8fb42a5fb67b01691ab8de9df0bbeef73d72337055610a2c31c9fe"
+    },
+    {
+      "id": "ch5-age-same-time",
+      "page": 155,
+      "printedPage": "148",
+      "indexAnchor": 0,
+      "anchorLabel": "综合运用 第10—12题",
+      "locator": "复习题5第12题关于父女“现在的年龄”与“当……时”的两行。",
+      "region": {
+        "x": 0.097,
+        "y": 0.237,
+        "width": 0.76,
+        "height": 0.061
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.2675
+      },
+      "sourceImageSha256": "d966e9d17d8fb42a5fb67b01691ab8de9df0bbeef73d72337055610a2c31c9fe"
+    },
+    {
+      "id": "ch5-q-review12",
+      "page": 155,
+      "printedPage": "148",
+      "indexAnchor": 0,
+      "anchorLabel": "综合运用 第10—12题",
+      "locator": "复习题5第12题现在与另一时刻的父女年龄两行；入口定位题干第一行。",
+      "region": {
+        "x": 0.097,
+        "y": 0.237,
+        "width": 0.76,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.249
+      },
+      "sourceImageSha256": "d966e9d17d8fb42a5fb67b01691ab8de9df0bbeef73d72337055610a2c31c9fe"
+    },
+    {
+      "id": "ch5-q-review13",
+      "page": 155,
+      "printedPage": "148",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索 第13—15题",
+      "locator": "复习题5第13题知识竞赛题干，表格及（1）（2）在同页；入口定位题干第一行。",
+      "region": {
+        "x": 0.097,
+        "y": 0.339,
+        "width": 0.76,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.351
+      },
+      "sourceImageSha256": "d966e9d17d8fb42a5fb67b01691ab8de9df0bbeef73d72337055610a2c31c9fe"
+    },
+    {
+      "id": "ch5-score-feasibility",
+      "page": 155,
+      "printedPage": "148",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索 第13—15题",
+      "locator": "复习题5第13题第（2）问“同学G说他得了80分，你认为可能吗？为什么？”一行。",
+      "region": {
+        "x": 0.133,
+        "y": 0.591,
+        "width": 0.507,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.6035
+      },
+      "sourceImageSha256": "d966e9d17d8fb42a5fb67b01691ab8de9df0bbeef73d72337055610a2c31c9fe"
+    },
+    {
+      "id": "ch5-q-review14",
+      "page": 155,
+      "printedPage": "148",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索 第13—15题",
+      "locator": "复习题5第14题游泳会员费用题干三行，含下方（1）—（3）；入口定位题干第一行。",
+      "region": {
+        "x": 0.097,
+        "y": 0.614,
+        "width": 0.76,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.055,
+        "y": 0.626
+      },
+      "sourceImageSha256": "d966e9d17d8fb42a5fb67b01691ab8de9df0bbeef73d72337055610a2c31c9fe"
+    },
+    {
+      "id": "ch5-q-review15",
+      "page": 155,
+      "printedPage": "148",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索 第13—15题",
+      "locator": "复习题5第15题“丰收1号”“丰收2号”的前半段题干，完整要求续至本页底；入口定位题干第一行。",
+      "region": {
+        "x": 0.097,
+        "y": 0.772,
+        "width": 0.76,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.784
+      },
+      "sourceImageSha256": "d966e9d17d8fb42a5fb67b01691ab8de9df0bbeef73d72337055610a2c31c9fe"
+    },
+    {
+      "id": "ch5-percentage-points",
+      "page": 155,
+      "printedPage": "148",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索 第13—15题",
+      "locator": "复习题5第15题第三行开头“百分点”一词，与上一行“含油率提高了10个”连读。",
+      "region": {
+        "x": 0.132,
+        "y": 0.821,
+        "width": 0.078,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.834
+      },
+      "sourceImageSha256": "d966e9d17d8fb42a5fb67b01691ab8de9df0bbeef73d72337055610a2c31c9fe"
+    }
+  ]
+}

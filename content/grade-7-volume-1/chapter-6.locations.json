@@ -1,0 +1,3561 @@
+{
+  "documentSha256": "6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249",
+  "coordinateSystem": "normalized-full-page-top-left",
+  "sourceIndex": "materials/indexes/人教版-数学-七年级上册/index.jsonl",
+  "sourceImages": "materials/indexes/人教版-数学-七年级上册/images/",
+  "locations": [
+    {
+      "id": "ch6-q-intro-city",
+      "page": 156,
+      "printedPage": null,
+      "indexAnchor": 1,
+      "anchorLabel": "几何",
+      "locator": "章引言第一段末句：“你能从章前图中找到一些熟悉的图形吗？”",
+      "region": {
+        "x": 0.22,
+        "y": 0.194,
+        "width": 0.412,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.945,
+        "y": 0.204
+      },
+      "sourceImageSha256": "426613c9f764f8de414fa974f86fc677b83911a391447c1eeafe4c00be64ec0c"
+    },
+    {
+      "id": "ch6-abstract-shape",
+      "page": 157,
+      "printedPage": "150",
+      "indexAnchor": 2,
+      "anchorLabel": "几何图形",
+      "locator": "页底最后一段前两行，从“我们在小学学习过的点、线段……”至“它们都是几何图形”。",
+      "region": {
+        "x": 0.085,
+        "y": 0.81,
+        "width": 0.79,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.834
+      },
+      "sourceImageSha256": "4802e90a7e3a24756d7b80d2d6a38b401bdf70dd7783a16e226a6d0e3c7b5c90"
+    },
+    {
+      "id": "ch6-solid-not-coplanar",
+      "page": 158,
+      "printedPage": "151",
+      "indexAnchor": 1,
+      "anchorLabel": "立体图形",
+      "locator": "小节标题下首段前两行，从“有些几何图形”至“它们是立体图形”。",
+      "region": {
+        "x": 0.13,
+        "y": 0.102,
+        "width": 0.785,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.945,
+        "y": 0.126
+      },
+      "sourceImageSha256": "c8a82a382c5aedda8ac6a2e31e4e206cc180306f5e2b9b73a13885217a05bc32"
+    },
+    {
+      "id": "ch6-q-prism-pyramid-examples",
+      "page": 158,
+      "printedPage": "151",
+      "indexAnchor": 1,
+      "anchorLabel": "立体图形",
+      "locator": "首段末行：“你能再找出一些棱柱、棱锥的实例吗？”",
+      "region": {
+        "x": 0.13,
+        "y": 0.187,
+        "width": 0.38,
+        "height": 0.019
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.1965
+      },
+      "sourceImageSha256": "c8a82a382c5aedda8ac6a2e31e4e206cc180306f5e2b9b73a13885217a05bc32"
+    },
+    {
+      "id": "ch6-hidden-edges",
+      "page": 158,
+      "printedPage": "151",
+      "indexAnchor": 1,
+      "anchorLabel": "立体图形",
+      "locator": "图6.1-2左侧三棱柱示意图，含后侧用蓝色虚线表示的棱；不含上方实物照片。",
+      "region": {
+        "x": 0.143,
+        "y": 0.36,
+        "width": 0.24,
+        "height": 0.083
+      },
+      "marker": {
+        "x": 0.945,
+        "y": 0.4015
+      },
+      "sourceImageSha256": "c8a82a382c5aedda8ac6a2e31e4e206cc180306f5e2b9b73a13885217a05bc32"
+    },
+    {
+      "id": "ch6-q-solid-matching",
+      "page": 158,
+      "printedPage": "151",
+      "indexAnchor": 2,
+      "anchorLabel": "思考",
+      "locator": "图6.1-3上方思考题干两行，从“图6.1-3中实物的形状对应哪些立体图形”到“连起来”。",
+      "region": {
+        "x": 0.153,
+        "y": 0.561,
+        "width": 0.746,
+        "height": 0.045
+      },
+      "marker": {
+        "x": 0.945,
+        "y": 0.5835
+      },
+      "sourceImageSha256": "c8a82a382c5aedda8ac6a2e31e4e206cc180306f5e2b9b73a13885217a05bc32"
+    },
+    {
+      "id": "ch6-plane-not-flat-object",
+      "page": 158,
+      "printedPage": "151",
+      "indexAnchor": 3,
+      "anchorLabel": "平面图形",
+      "locator": "页底平面图形定义两行：“有些几何图形……的各部分都在同一平面内，它们是平面图形”。",
+      "region": {
+        "x": 0.13,
+        "y": 0.829,
+        "width": 0.785,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.945,
+        "y": 0.853
+      },
+      "sourceImageSha256": "c8a82a382c5aedda8ac6a2e31e4e206cc180306f5e2b9b73a13885217a05bc32"
+    },
+    {
+      "id": "ch6-q-plane-patterns",
+      "page": 159,
+      "printedPage": "152",
+      "indexAnchor": 0,
+      "anchorLabel": "思考",
+      "locator": "页首思考题干两行：“图6.1-4的各图中包含哪些简单平面图形？请再举出一些平面图形的例子。”",
+      "region": {
+        "x": 0.11,
+        "y": 0.106,
+        "width": 0.737,
+        "height": 0.045
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.1285
+      },
+      "sourceImageSha256": "50d79f8fc3ce999c9baf3174ec893d311e4b44096230d111bf94ecd994b00caa"
+    },
+    {
+      "id": "ch6-q-geometric-properties",
+      "page": 159,
+      "printedPage": "152",
+      "indexAnchor": 1,
+      "anchorLabel": "练习 第1—2题",
+      "locator": "页中练习第1题题干两行，列举铁球性质并问几何研究哪些性质。",
+      "region": {
+        "x": 0.11,
+        "y": 0.53,
+        "width": 0.742,
+        "height": 0.045
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.5525
+      },
+      "sourceImageSha256": "50d79f8fc3ce999c9baf3174ec893d311e4b44096230d111bf94ecd994b00caa"
+    },
+    {
+      "id": "ch6-q-solids-plane-faces",
+      "page": 159,
+      "printedPage": "152",
+      "indexAnchor": 1,
+      "anchorLabel": "练习 第1—2题",
+      "locator": "练习第2题题干两行，从“图中各立体图形的表面中包含哪些平面图形”到“位置”。",
+      "region": {
+        "x": 0.11,
+        "y": 0.586,
+        "width": 0.743,
+        "height": 0.044
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.608
+      },
+      "sourceImageSha256": "50d79f8fc3ce999c9baf3174ec893d311e4b44096230d111bf94ecd994b00caa"
+    },
+    {
+      "id": "ch6-views-information",
+      "page": 159,
+      "printedPage": "152",
+      "indexAnchor": 2,
+      "anchorLabel": "从不同方向看立体图形",
+      "locator": "页底正文前两行：“对于一些立体图形的问题，常把它们转化为平面图形来研究。从不同方向看立体图形，往往会得到不同形状的平面图形。”",
+      "region": {
+        "x": 0.085,
+        "y": 0.808,
+        "width": 0.79,
+        "height": 0.052
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.834
+      },
+      "sourceImageSha256": "50d79f8fc3ce999c9baf3174ec893d311e4b44096230d111bf94ecd994b00caa"
+    },
+    {
+      "id": "ch6-q-cubes-views-example",
+      "page": 160,
+      "printedPage": "153",
+      "indexAnchor": 1,
+      "anchorLabel": "例",
+      "locator": "例题题干两行：“图6.1-7是一个由9个大小相同的正方体组成的立体图形”至“各能得到什么平面图形”。",
+      "region": {
+        "x": 0.13,
+        "y": 0.254,
+        "width": 0.785,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.278
+      },
+      "sourceImageSha256": "1595bf975db56aaf9948201d3c2bcae22b86e96732980c199917e5c53128ff97"
+    },
+    {
+      "id": "ch6-view-overlap",
+      "page": 160,
+      "printedPage": "153",
+      "indexAnchor": 1,
+      "anchorLabel": "例",
+      "locator": "图6.1-8左上方“从前面看”的方格图及其方向标签。",
+      "region": {
+        "x": 0.48,
+        "y": 0.31,
+        "width": 0.215,
+        "height": 0.06
+      },
+      "marker": {
+        "x": 0.945,
+        "y": 0.34
+      },
+      "sourceImageSha256": "1595bf975db56aaf9948201d3c2bcae22b86e96732980c199917e5c53128ff97"
+    },
+    {
+      "id": "ch6-net-vs-view",
+      "page": 160,
+      "printedPage": "153",
+      "indexAnchor": 2,
+      "anchorLabel": "展开图",
+      "locator": "下半页正文开头两行，从“有些立体图形是由一些平面图形围成的”至“称为相应立体图形的展开图”。",
+      "region": {
+        "x": 0.13,
+        "y": 0.589,
+        "width": 0.785,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.945,
+        "y": 0.613
+      },
+      "sourceImageSha256": "1595bf975db56aaf9948201d3c2bcae22b86e96732980c199917e5c53128ff97"
+    },
+    {
+      "id": "ch6-q-chalkbox-unfold",
+      "page": 160,
+      "printedPage": "153",
+      "indexAnchor": 3,
+      "anchorLabel": "粉笔盒与它的展开图",
+      "locator": "页底正文末行后半句：“自己动手把一个粉笔盒剪开铺平，看看它的……”；要求续于PDF161页首。",
+      "region": {
+        "x": 0.47,
+        "y": 0.67,
+        "width": 0.445,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.6805
+      },
+      "sourceImageSha256": "1595bf975db56aaf9948201d3c2bcae22b86e96732980c199917e5c53128ff97"
+    },
+    {
+      "id": "ch6-q-nets-explore",
+      "page": 161,
+      "printedPage": "154",
+      "indexAnchor": 1,
+      "anchorLabel": "探究",
+      "locator": "页上半探究框题干三行，从“你还记得长方体和圆柱的展开图吗”到“是否相同”。",
+      "region": {
+        "x": 0.11,
+        "y": 0.17,
+        "width": 0.74,
+        "height": 0.076
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.208
+      },
+      "sourceImageSha256": "d75d2d1aa95bcc55612dbc7eb6e184ad985cd1827f4e303668be127cf3d38ba7"
+    },
+    {
+      "id": "ch6-q-prism-view-directions",
+      "page": 161,
+      "printedPage": "154",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—2题",
+      "locator": "练习第1题题干一行：“右面三幅图分别是从哪个方向看这个棱柱得到的？”",
+      "region": {
+        "x": 0.11,
+        "y": 0.482,
+        "width": 0.741,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.492
+      },
+      "sourceImageSha256": "d75d2d1aa95bcc55612dbc7eb6e184ad985cd1827f4e303668be127cf3d38ba7"
+    },
+    {
+      "id": "ch6-q-net-matching",
+      "page": 161,
+      "printedPage": "154",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—2题",
+      "locator": "练习第2题题干一行：“把相应的立体图形与它的展开图用线连起来。”",
+      "region": {
+        "x": 0.11,
+        "y": 0.636,
+        "width": 0.55,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.646
+      },
+      "sourceImageSha256": "d75d2d1aa95bcc55612dbc7eb6e184ad985cd1827f4e303668be127cf3d38ba7"
+    },
+    {
+      "id": "ch6-cube-net-condition",
+      "page": 162,
+      "printedPage": "155",
+      "indexAnchor": 0,
+      "anchorLabel": "练习 第3题",
+      "locator": "页首练习第3题的题干：“下列图形中可以作为一个正方体的展开图的是（ ）”；不框四个候选图。",
+      "region": {
+        "x": 0.152,
+        "y": 0.091,
+        "width": 0.59,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.945,
+        "y": 0.101
+      },
+      "sourceImageSha256": "3311fb244fe2edd2dfe302246294737308142e55f354848a88e00f74263b42f5"
+    },
+    {
+      "id": "ch6-q-elements-intro",
+      "page": 162,
+      "printedPage": "155",
+      "indexAnchor": 1,
+      "anchorLabel": "6.1.2 点、线、面、体",
+      "locator": "6.1.2标题下第二行末的两个提问：“构成图形的元素是什么？这些元素之间又存在着什么关系？”",
+      "region": {
+        "x": 0.24,
+        "y": 0.357,
+        "width": 0.59,
+        "height": 0.019
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.3665
+      },
+      "sourceImageSha256": "3311fb244fe2edd2dfe302246294737308142e55f354848a88e00f74263b42f5"
+    },
+    {
+      "id": "ch6-q-cuboid-count",
+      "page": 162,
+      "printedPage": "155",
+      "indexAnchor": 2,
+      "anchorLabel": "思考",
+      "locator": "图6.1-11左侧思考题干三行，依次问面、棱、顶点的数量。",
+      "region": {
+        "x": 0.153,
+        "y": 0.428,
+        "width": 0.472,
+        "height": 0.076
+      },
+      "marker": {
+        "x": 0.945,
+        "y": 0.466
+      },
+      "sourceImageSha256": "3311fb244fe2edd2dfe302246294737308142e55f354848a88e00f74263b42f5"
+    },
+    {
+      "id": "ch6-surface-and-solid",
+      "page": 162,
+      "printedPage": "155",
+      "indexAnchor": 3,
+      "anchorLabel": "体、面、线",
+      "locator": "中下部定义句：“包围着体的是面。”",
+      "region": {
+        "x": 0.176,
+        "y": 0.584,
+        "width": 0.171,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.945,
+        "y": 0.5945
+      },
+      "sourceImageSha256": "3311fb244fe2edd2dfe302246294737308142e55f354848a88e00f74263b42f5"
+    },
+    {
+      "id": "ch6-q-flat-curved-examples",
+      "page": 162,
+      "printedPage": "155",
+      "indexAnchor": 3,
+      "anchorLabel": "体、面、线",
+      "locator": "面定义段末行：“一些平面与曲面的例子吗？”；该提问始于上一行末的“你能再举出”。",
+      "region": {
+        "x": 0.13,
+        "y": 0.643,
+        "width": 0.268,
+        "height": 0.019
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.6525
+      },
+      "sourceImageSha256": "3311fb244fe2edd2dfe302246294737308142e55f354848a88e00f74263b42f5"
+    },
+    {
+      "id": "ch6-point-model",
+      "page": 163,
+      "printedPage": "156",
+      "indexAnchor": 0,
+      "anchorLabel": "线和线相交的地方是点",
+      "locator": "页首第二段第一句：“天上的星星、世界地图上的城市等都给我们以点的形象。”",
+      "region": {
+        "x": 0.13,
+        "y": 0.099,
+        "width": 0.568,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.1095
+      },
+      "sourceImageSha256": "74818efe2c8be8ff1363c5372915d612331e2d92027c646b418a5fa17cc9076d"
+    },
+    {
+      "id": "ch6-motion-needs-direction",
+      "page": 163,
+      "printedPage": "156",
+      "indexAnchor": 1,
+      "anchorLabel": "图6.1-14",
+      "locator": "图6.1-14上方正文第三行后半句：“这可以说线动成面。”",
+      "region": {
+        "x": 0.52,
+        "y": 0.214,
+        "width": 0.205,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.224
+      },
+      "sourceImageSha256": "74818efe2c8be8ff1363c5372915d612331e2d92027c646b418a5fa17cc9076d"
+    },
+    {
+      "id": "ch6-face-rotation",
+      "page": 163,
+      "printedPage": "156",
+      "indexAnchor": 1,
+      "anchorLabel": "图6.1-14",
+      "locator": "图6.1-14上方末行，含“绕它的一边旋转一周，形成一个圆柱体”及“这可以说面动成体”；“它”指上行的长方形硬纸片。",
+      "region": {
+        "x": 0.085,
+        "y": 0.241,
+        "width": 0.79,
+        "height": 0.019
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.25
+      },
+      "sourceImageSha256": "74818efe2c8be8ff1363c5372915d612331e2d92027c646b418a5fa17cc9076d"
+    },
+    {
+      "id": "ch6-q-surfaces-practice",
+      "page": 163,
+      "printedPage": "156",
+      "indexAnchor": 3,
+      "anchorLabel": "练习 第1题",
+      "locator": "页底练习第1题题干一行，问各个面中哪些是平的、哪些是曲的。",
+      "region": {
+        "x": 0.11,
+        "y": 0.703,
+        "width": 0.703,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.713
+      },
+      "sourceImageSha256": "74818efe2c8be8ff1363c5372915d612331e2d92027c646b418a5fa17cc9076d"
+    },
+    {
+      "id": "ch6-q-line-motion-practice",
+      "page": 164,
+      "printedPage": "157",
+      "indexAnchor": 0,
+      "anchorLabel": "练习 第2—3题",
+      "locator": "页首练习第2题题干两行，从“上面的线分别按箭头所示方向平移或绕定点旋转”到“连起来”。",
+      "region": {
+        "x": 0.152,
+        "y": 0.091,
+        "width": 0.743,
+        "height": 0.046
+      },
+      "marker": {
+        "x": 0.945,
+        "y": 0.114
+      },
+      "sourceImageSha256": "6ff85818f84c90de144270c8d16681b551ed16aa888842828aeb09d936fc5a8d"
+    },
+    {
+      "id": "ch6-rotation-axis-practice",
+      "page": 164,
+      "printedPage": "157",
+      "indexAnchor": 0,
+      "anchorLabel": "练习 第2—3题",
+      "locator": "页中练习第3题前两行题干：“上面的平面图形绕轴旋转一周……把有对应关系的平面图形与立体图形用线连起来。”",
+      "region": {
+        "x": 0.151,
+        "y": 0.322,
+        "width": 0.745,
+        "height": 0.047
+      },
+      "marker": {
+        "x": 0.945,
+        "y": 0.3455
+      },
+      "sourceImageSha256": "6ff85818f84c90de144270c8d16681b551ed16aa888842828aeb09d936fc5a8d"
+    },
+    {
+      "id": "ch6-q-61-1",
+      "page": 164,
+      "printedPage": "157",
+      "indexAnchor": 2,
+      "anchorLabel": "复习巩固 第1题",
+      "locator": "习题6.1复习巩固第1题题干一行，要求图形与名称连线。",
+      "region": {
+        "x": 0.152,
+        "y": 0.688,
+        "width": 0.505,
+        "height": 0.019
+      },
+      "marker": {
+        "x": 0.945,
+        "y": 0.6975
+      },
+      "sourceImageSha256": "6ff85818f84c90de144270c8d16681b551ed16aa888842828aeb09d936fc5a8d"
+    },
+    {
+      "id": "ch6-q-61-2",
+      "page": 165,
+      "printedPage": "158",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固 第2—4题",
+      "locator": "页首习题6.1第2题题干一行，从“分别从前面、左面、上面观察这些立体图形”到“什么平面图形”。",
+      "region": {
+        "x": 0.11,
+        "y": 0.082,
+        "width": 0.735,
+        "height": 0.019
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.0915
+      },
+      "sourceImageSha256": "8a229154867069e8d40e3e963b5fbb175066ed8518a9edb69528baa632346652"
+    },
+    {
+      "id": "ch6-q-61-3",
+      "page": 165,
+      "printedPage": "158",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固 第2—4题",
+      "locator": "习题6.1第3题题干一行，要求选择绕轴旋转一周形成左侧几何体的平面图形。",
+      "region": {
+        "x": 0.11,
+        "y": 0.235,
+        "width": 0.718,
+        "height": 0.019
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.2445
+      },
+      "sourceImageSha256": "8a229154867069e8d40e3e963b5fbb175066ed8518a9edb69528baa632346652"
+    },
+    {
+      "id": "ch6-q-61-4",
+      "page": 165,
+      "printedPage": "158",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固 第2—4题",
+      "locator": "习题6.1第4题题干一行，要求立体图形与展开图连线。",
+      "region": {
+        "x": 0.11,
+        "y": 0.42,
+        "width": 0.55,
+        "height": 0.019
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.4295
+      },
+      "sourceImageSha256": "8a229154867069e8d40e3e963b5fbb175066ed8518a9edb69528baa632346652"
+    },
+    {
+      "id": "ch6-q-61-5",
+      "page": 165,
+      "printedPage": "158",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第5—6题",
+      "locator": "习题6.1第5题题干首行，给出边长5cm的正方形和旋转轴条件；后续三问属于同一题。",
+      "region": {
+        "x": 0.11,
+        "y": 0.617,
+        "width": 0.739,
+        "height": 0.019
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.6265
+      },
+      "sourceImageSha256": "8a229154867069e8d40e3e963b5fbb175066ed8518a9edb69528baa632346652"
+    },
+    {
+      "id": "ch6-view-area-practice",
+      "page": 165,
+      "printedPage": "158",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第5—6题",
+      "locator": "习题6.1第5题末尾两行，包含“它的面积是____”的问句；不框右侧第6题展开图。",
+      "region": {
+        "x": 0.133,
+        "y": 0.694,
+        "width": 0.255,
+        "height": 0.045
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.7165
+      },
+      "sourceImageSha256": "8a229154867069e8d40e3e963b5fbb175066ed8518a9edb69528baa632346652"
+    },
+    {
+      "id": "ch6-q-61-6",
+      "page": 165,
+      "printedPage": "158",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第5—6题",
+      "locator": "习题6.1第6题左下题干首两行，从“这些图形都是正方体的展开图吗”到“如果不能”。",
+      "region": {
+        "x": 0.11,
+        "y": 0.746,
+        "width": 0.269,
+        "height": 0.046
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.769
+      },
+      "sourceImageSha256": "8a229154867069e8d40e3e963b5fbb175066ed8518a9edb69528baa632346652"
+    },
+    {
+      "id": "ch6-q-61-7",
+      "page": 166,
+      "printedPage": "159",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用 第7—9题",
+      "locator": "习题6.1第7题题号及首行诗句“横看成岭侧成峰，远近高低各不同……”；问题续在下两行。",
+      "region": {
+        "x": 0.152,
+        "y": 0.114,
+        "width": 0.741,
+        "height": 0.019
+      },
+      "marker": {
+        "x": 0.945,
+        "y": 0.1235
+      },
+      "sourceImageSha256": "759549b8386db79ac99f9f681239760c262886d253e156ccafa95398a2b43773"
+    },
+    {
+      "id": "ch6-opposite-faces-practice",
+      "page": 166,
+      "printedPage": "159",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用 第7—9题",
+      "locator": "习题6.1第8题题干第二、三行：“成正方体后，有‘的’字一面的相对面上的字是（ ）”。",
+      "region": {
+        "x": 0.18,
+        "y": 0.216,
+        "width": 0.41,
+        "height": 0.045
+      },
+      "marker": {
+        "x": 0.945,
+        "y": 0.2385
+      },
+      "sourceImageSha256": "759549b8386db79ac99f9f681239760c262886d253e156ccafa95398a2b43773"
+    },
+    {
+      "id": "ch6-q-61-9",
+      "page": 166,
+      "printedPage": "159",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用 第7—9题",
+      "locator": "习题6.1第9题题干一行：“下列图形能折叠成什么图形？”",
+      "region": {
+        "x": 0.152,
+        "y": 0.296,
+        "width": 0.36,
+        "height": 0.019
+      },
+      "marker": {
+        "x": 0.945,
+        "y": 0.3055
+      },
+      "sourceImageSha256": "759549b8386db79ac99f9f681239760c262886d253e156ccafa95398a2b43773"
+    },
+    {
+      "id": "ch6-q-61-10",
+      "page": 166,
+      "printedPage": "159",
+      "indexAnchor": 3,
+      "anchorLabel": "拓广探索 第10—12题",
+      "locator": "习题6.1第10题题干一行：“你能把一张正方形纸片折叠成一个三棱锥吗？动手试一试。”",
+      "region": {
+        "x": 0.152,
+        "y": 0.467,
+        "width": 0.575,
+        "height": 0.019
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.4765
+      },
+      "sourceImageSha256": "759549b8386db79ac99f9f681239760c262886d253e156ccafa95398a2b43773"
+    },
+    {
+      "id": "ch6-decorated-net-practice",
+      "page": 166,
+      "printedPage": "159",
+      "indexAnchor": 3,
+      "anchorLabel": "拓广探索 第10—12题",
+      "locator": "习题6.1第11题题干：“左面的图形可能是右面哪些图形的展开图？”",
+      "region": {
+        "x": 0.153,
+        "y": 0.493,
+        "width": 0.522,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.945,
+        "y": 0.5035
+      },
+      "sourceImageSha256": "759549b8386db79ac99f9f681239760c262886d253e156ccafa95398a2b43773"
+    },
+    {
+      "id": "ch6-q-61-12",
+      "page": 166,
+      "printedPage": "159",
+      "indexAnchor": 3,
+      "anchorLabel": "拓广探索 第10—12题",
+      "locator": "页底习题6.1第12题题干两行，要求查资料、收集图片并交流。",
+      "region": {
+        "x": 0.152,
+        "y": 0.819,
+        "width": 0.745,
+        "height": 0.046
+      },
+      "marker": {
+        "x": 0.945,
+        "y": 0.842
+      },
+      "sourceImageSha256": "759549b8386db79ac99f9f681239760c262886d253e156ccafa95398a2b43773"
+    },
+    {
+      "id": "ch6-q-line-ray-segment-intro",
+      "page": 169,
+      "printedPage": "162",
+      "indexAnchor": 0,
+      "anchorLabel": "6.2 直线、射线、线段",
+      "locator": "6.2导入段第二行：“你能说说它们的联系与区别吗？”",
+      "region": {
+        "x": 0.494,
+        "y": 0.189,
+        "width": 0.312,
+        "height": 0.019
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.1985
+      },
+      "sourceImageSha256": "a3cbe95b7adc4a03991820867051bec400a82f9b00a322a0b007c3bede4cd081"
+    },
+    {
+      "id": "ch6-q-lines-through-points",
+      "page": 169,
+      "printedPage": "162",
+      "indexAnchor": 2,
+      "anchorLabel": "探究",
+      "locator": "探究框题干一行：“经过一个点能画几条直线？经过两个点呢？动手试一试。”",
+      "region": {
+        "x": 0.155,
+        "y": 0.34,
+        "width": 0.558,
+        "height": 0.019
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.3495
+      },
+      "sourceImageSha256": "a3cbe95b7adc4a03991820867051bec400a82f9b00a322a0b007c3bede4cd081"
+    },
+    {
+      "id": "ch6-two-points-unique",
+      "page": 169,
+      "printedPage": "162",
+      "indexAnchor": 3,
+      "anchorLabel": "两点确定一条直线",
+      "locator": "页中蓝色基本事实：“经过两点有一条直线，并且只有一条直线。”",
+      "region": {
+        "x": 0.13,
+        "y": 0.405,
+        "width": 0.425,
+        "height": 0.019
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.4145
+      },
+      "sourceImageSha256": "a3cbe95b7adc4a03991820867051bec400a82f9b00a322a0b007c3bede4cd081"
+    },
+    {
+      "id": "ch6-line-points-not-ends",
+      "page": 169,
+      "printedPage": "162",
+      "indexAnchor": 4,
+      "anchorLabel": "直线的表示及点与直线的位置关系",
+      "locator": "图6.2-2中的A、B、直线l及图下“直线AB或直线l”的标注。",
+      "region": {
+        "x": 0.107,
+        "y": 0.721,
+        "width": 0.183,
+        "height": 0.08
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.771
+      },
+      "sourceImageSha256": "a3cbe95b7adc4a03991820867051bec400a82f9b00a322a0b007c3bede4cd081"
+    },
+    {
+      "id": "ch6-intersection-one-point",
+      "page": 169,
+      "printedPage": "162",
+      "indexAnchor": 5,
+      "anchorLabel": "相交、交点",
+      "locator": "页底“当两条不同的直线有一个公共点时……”至“这个公共点叫作它们的交点”的定义两行。",
+      "region": {
+        "x": 0.085,
+        "y": 0.87,
+        "width": 0.79,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.894
+      },
+      "sourceImageSha256": "a3cbe95b7adc4a03991820867051bec400a82f9b00a322a0b007c3bede4cd081"
+    },
+    {
+      "id": "ch6-ray-name-order",
+      "page": 170,
+      "printedPage": "163",
+      "indexAnchor": 0,
+      "anchorLabel": "线段、射线的表示",
+      "locator": "页首“可以用图6.2-5的方式来表示线段AB（或线段BA）”至“其中点O是射线的端点”的表示语句。",
+      "region": {
+        "x": 0.13,
+        "y": 0.072,
+        "width": 0.79,
+        "height": 0.073
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.107
+      },
+      "sourceImageSha256": "9cbdd47f1da06a2f92f567d949503e143c6acf240247d467580f36b473108785"
+    },
+    {
+      "id": "ch6-p170-ray-line-question",
+      "page": 170,
+      "printedPage": "163",
+      "indexAnchor": 0,
+      "anchorLabel": "线段、射线的表示",
+      "locator": "图6.2-6右侧浅蓝旁问“怎样由一条线段得到一条射线或一条直线？”",
+      "region": {
+        "x": 0.675,
+        "y": 0.173,
+        "width": 0.222,
+        "height": 0.046
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.195
+      },
+      "sourceImageSha256": "9cbdd47f1da06a2f92f567d949503e143c6acf240247d467580f36b473108785"
+    },
+    {
+      "id": "ch6-extension-order",
+      "page": 170,
+      "printedPage": "163",
+      "indexAnchor": 1,
+      "anchorLabel": "连接、延长与反向延长线段",
+      "locator": "页中“连接AB”后的“延长线段AB”与“延长线段BA”两种方向说明，图6.2-7、图6.2-8上方。",
+      "region": {
+        "x": 0.13,
+        "y": 0.262,
+        "width": 0.79,
+        "height": 0.073
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.298
+      },
+      "sourceImageSha256": "9cbdd47f1da06a2f92f567d949503e143c6acf240247d467580f36b473108785"
+    },
+    {
+      "id": "ch6-p170-exercise-1",
+      "page": 170,
+      "printedPage": "163",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "练习框第1题题号及“判断题”题干。",
+      "region": {
+        "x": 0.153,
+        "y": 0.45,
+        "width": 0.11,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.461
+      },
+      "sourceImageSha256": "9cbdd47f1da06a2f92f567d949503e143c6acf240247d467580f36b473108785"
+    },
+    {
+      "id": "ch6-p170-exercise-2",
+      "page": 170,
+      "printedPage": "163",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "练习第2题题干“按下列语句画出图形”。",
+      "region": {
+        "x": 0.153,
+        "y": 0.623,
+        "width": 0.25,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.634
+      },
+      "sourceImageSha256": "9cbdd47f1da06a2f92f567d949503e143c6acf240247d467580f36b473108785"
+    },
+    {
+      "id": "ch6-point-on-not-endpoint",
+      "page": 170,
+      "printedPage": "163",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "练习第2题（3）“经过点O的三条线段a，b，c”及（4）“线段AB，CD相交于点B，连接AD”所在两行。",
+      "region": {
+        "x": 0.18,
+        "y": 0.707,
+        "width": 0.7,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.737
+      },
+      "sourceImageSha256": "9cbdd47f1da06a2f92f567d949503e143c6acf240247d467580f36b473108785"
+    },
+    {
+      "id": "ch6-p170-exercise-3",
+      "page": 170,
+      "printedPage": "163",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "练习第3题题干“用适当的语句表述图中点与直线的关系”。",
+      "region": {
+        "x": 0.153,
+        "y": 0.766,
+        "width": 0.58,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.777
+      },
+      "sourceImageSha256": "9cbdd47f1da06a2f92f567d949503e143c6acf240247d467580f36b473108785"
+    },
+    {
+      "id": "ch6-compass-copy-length",
+      "page": 171,
+      "printedPage": "164",
+      "indexAnchor": 1,
+      "anchorLabel": "尺规作图",
+      "locator": "上部正文“也可以先用直尺画直线l，再用圆规在直线l上取CD=AB”至“尺规作图”的说明。",
+      "region": {
+        "x": 0.085,
+        "y": 0.185,
+        "width": 0.79,
+        "height": 0.077
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.228
+      },
+      "sourceImageSha256": "bc3d3ab0ce1ff8d6630e7aa9216fa4f2ec811815e38b58c55d329fed645d7670"
+    },
+    {
+      "id": "ch6-p171-tools-question",
+      "page": 171,
+      "printedPage": "164",
+      "indexAnchor": 1,
+      "anchorLabel": "尺规作图",
+      "locator": "图6.2-9右侧浅蓝旁问“想一想，两种方法中，刻度尺、直尺和圆规分别发挥什么作用？”",
+      "region": {
+        "x": 0.63,
+        "y": 0.309,
+        "width": 0.226,
+        "height": 0.07
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.344
+      },
+      "sourceImageSha256": "bc3d3ab0ce1ff8d6630e7aa9216fa4f2ec811815e38b58c55d329fed645d7670"
+    },
+    {
+      "id": "ch6-p171-comparison-explore",
+      "page": 171,
+      "printedPage": "164",
+      "indexAnchor": 2,
+      "anchorLabel": "探究",
+      "locator": "图6.2-10左侧探究的两个提问，从“怎样比较两条线段的长短”到“你能再举出一些……实例吗”。",
+      "region": {
+        "x": 0.11,
+        "y": 0.47,
+        "width": 0.32,
+        "height": 0.133
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.54
+      },
+      "sourceImageSha256": "bc3d3ab0ce1ff8d6630e7aa9216fa4f2ec811815e38b58c55d329fed645d7670"
+    },
+    {
+      "id": "ch6-segment-comparison-alignment",
+      "page": 171,
+      "printedPage": "164",
+      "indexAnchor": 3,
+      "anchorLabel": "比较两条线段的长短",
+      "locator": "页底“在图6.2-11中，点A与C重合，点B落在点C，D之间”至比较大小的提问。",
+      "region": {
+        "x": 0.085,
+        "y": 0.843,
+        "width": 0.79,
+        "height": 0.075
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.878
+      },
+      "sourceImageSha256": "bc3d3ab0ce1ff8d6630e7aa9216fa4f2ec811815e38b58c55d329fed645d7670"
+    },
+    {
+      "id": "ch6-p171-comparison-cases",
+      "page": 171,
+      "printedPage": "164",
+      "indexAnchor": 3,
+      "anchorLabel": "比较两条线段的长短",
+      "locator": "页底“想一想，什么情况下线段AB大于线段CD，线段AB等于线段CD呢？”所在两行。",
+      "region": {
+        "x": 0.085,
+        "y": 0.873,
+        "width": 0.79,
+        "height": 0.046
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.895
+      },
+      "sourceImageSha256": "bc3d3ab0ce1ff8d6630e7aa9216fa4f2ec811815e38b58c55d329fed645d7670"
+    },
+    {
+      "id": "ch6-p172-shortest-explore",
+      "page": 172,
+      "printedPage": "165",
+      "indexAnchor": 0,
+      "anchorLabel": "探究",
+      "locator": "探究框左侧“除它们外能否再修一条从A地到B地的最短道路？如果能……画出最短道路”三行。",
+      "region": {
+        "x": 0.153,
+        "y": 0.134,
+        "width": 0.41,
+        "height": 0.075
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.175
+      },
+      "sourceImageSha256": "20845c4c6ebfe8efe7f731b6371cc03e325e3e12019695c53f22bfb4d13cc2b8"
+    },
+    {
+      "id": "ch6-shortest-same-endpoints",
+      "page": 172,
+      "printedPage": "165",
+      "indexAnchor": 1,
+      "anchorLabel": "两点之间，线段最短",
+      "locator": "蓝色基本事实“两点的所有连线中，线段最短”及简述“两点之间，线段最短”。",
+      "region": {
+        "x": 0.175,
+        "y": 0.319,
+        "width": 0.41,
+        "height": 0.047
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.344
+      },
+      "sourceImageSha256": "20845c4c6ebfe8efe7f731b6371cc03e325e3e12019695c53f22bfb4d13cc2b8"
+    },
+    {
+      "id": "ch6-p172-shortest-application",
+      "page": 172,
+      "printedPage": "165",
+      "indexAnchor": 1,
+      "anchorLabel": "两点之间，线段最短",
+      "locator": "基本事实下方“你能举出这个基本事实在生活中的一些应用吗？”",
+      "region": {
+        "x": 0.175,
+        "y": 0.375,
+        "width": 0.46,
+        "height": 0.019
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.385
+      },
+      "sourceImageSha256": "20845c4c6ebfe8efe7f731b6371cc03e325e3e12019695c53f22bfb4d13cc2b8"
+    },
+    {
+      "id": "ch6-distance-is-length",
+      "page": 172,
+      "printedPage": "165",
+      "indexAnchor": 2,
+      "anchorLabel": "距离",
+      "locator": "页中独立定义句“连接两点的线段的长度，叫作这两点间的距离”。",
+      "region": {
+        "x": 0.175,
+        "y": 0.404,
+        "width": 0.58,
+        "height": 0.019
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.414
+      },
+      "sourceImageSha256": "20845c4c6ebfe8efe7f731b6371cc03e325e3e12019695c53f22bfb4d13cc2b8"
+    },
+    {
+      "id": "ch6-segment-difference-positive",
+      "page": 172,
+      "printedPage": "165",
+      "indexAnchor": 3,
+      "anchorLabel": "线段的运算",
+      "locator": "线段运算段第二行右侧的条件短语“设线段a>b”。",
+      "region": {
+        "x": 0.663,
+        "y": 0.489,
+        "width": 0.151,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.5
+      },
+      "sourceImageSha256": "20845c4c6ebfe8efe7f731b6371cc03e325e3e12019695c53f22bfb4d13cc2b8"
+    },
+    {
+      "id": "ch6-segment-sum-between",
+      "page": 172,
+      "printedPage": "165",
+      "indexAnchor": 3,
+      "anchorLabel": "线段的运算",
+      "locator": "图6.2-13（1）下方的等式“AC=a+b”，对应上方A、B、C依次排列的图。",
+      "region": {
+        "x": 0.361,
+        "y": 0.663,
+        "width": 0.147,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.674
+      },
+      "sourceImageSha256": "20845c4c6ebfe8efe7f731b6371cc03e325e3e12019695c53f22bfb4d13cc2b8"
+    },
+    {
+      "id": "ch6-p172-example",
+      "page": 172,
+      "printedPage": "165",
+      "indexAnchor": 4,
+      "anchorLabel": "例",
+      "locator": "例题题干“已知线段a，b，作一条线段，使它等于2a−b”；解答续于PDF173页首。",
+      "region": {
+        "x": 0.175,
+        "y": 0.74,
+        "width": 0.67,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.751
+      },
+      "sourceImageSha256": "20845c4c6ebfe8efe7f731b6371cc03e325e3e12019695c53f22bfb4d13cc2b8"
+    },
+    {
+      "id": "ch6-midpoint-two-conditions",
+      "page": 173,
+      "printedPage": "166",
+      "indexAnchor": 1,
+      "anchorLabel": "中点",
+      "locator": "上部“点M把线段AB分成相等的两条线段AM与MB，点M叫作线段AB的中点”的定义语句。",
+      "region": {
+        "x": 0.085,
+        "y": 0.14,
+        "width": 0.515,
+        "height": 0.076
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.173
+      },
+      "sourceImageSha256": "3eaf0e83f84c8367cb5f20da4b5d87836825e5ea88d2ba95bc9d6cc010a3fe52"
+    },
+    {
+      "id": "ch6-estimate-then-verify",
+      "page": 173,
+      "printedPage": "166",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "练习第1题题干“估计下列图中线段AB与AC的大小关系，再用刻度尺或圆规检验”。",
+      "region": {
+        "x": 0.11,
+        "y": 0.421,
+        "width": 0.7,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.432
+      },
+      "sourceImageSha256": "3eaf0e83f84c8367cb5f20da4b5d87836825e5ea88d2ba95bc9d6cc010a3fe52"
+    },
+    {
+      "id": "ch6-p173-exercise-2",
+      "page": 173,
+      "printedPage": "166",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "练习第2题题干“已知线段a，b，作一条线段，使它等于a+2b”。",
+      "region": {
+        "x": 0.11,
+        "y": 0.602,
+        "width": 0.57,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.613
+      },
+      "sourceImageSha256": "3eaf0e83f84c8367cb5f20da4b5d87836825e5ea88d2ba95bc9d6cc010a3fe52"
+    },
+    {
+      "id": "ch6-collinear-order-exercise",
+      "page": 173,
+      "printedPage": "166",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "练习第3题：“点M，N，P在同一条直线上，MN=3cm，NP=1cm。求线段MP的长。”",
+      "region": {
+        "x": 0.11,
+        "y": 0.63,
+        "width": 0.6,
+        "height": 0.047
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.654
+      },
+      "sourceImageSha256": "3eaf0e83f84c8367cb5f20da4b5d87836825e5ea88d2ba95bc9d6cc010a3fe52"
+    },
+    {
+      "id": "ch6-p173-exercises-1",
+      "page": 173,
+      "printedPage": "166",
+      "indexAnchor": 4,
+      "anchorLabel": "复习巩固 第1题",
+      "locator": "习题6.2第1题题号及“如图，已知三点A，B，C”题干。",
+      "region": {
+        "x": 0.11,
+        "y": 0.804,
+        "width": 0.31,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.815
+      },
+      "sourceImageSha256": "3eaf0e83f84c8367cb5f20da4b5d87836825e5ea88d2ba95bc9d6cc010a3fe52"
+    },
+    {
+      "id": "ch6-p174-exercises-2",
+      "page": 174,
+      "printedPage": "167",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固 第2—4题",
+      "locator": "页首习题6.2第2题题干“读下列语句，并分别画出图形”。",
+      "region": {
+        "x": 0.153,
+        "y": 0.08,
+        "width": 0.31,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.091
+      },
+      "sourceImageSha256": "67b52e7f2d3a8b7ae58af9ce5f3db085837ed28f1737ee687ab8d539ac68b7ec"
+    },
+    {
+      "id": "ch6-p174-exercises-3",
+      "page": 174,
+      "printedPage": "167",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固 第2—4题",
+      "locator": "习题6.2第3题首行“用一个钉子把一根细木条钉在木板上，用手拨木条，木条能转动”所在语句。",
+      "region": {
+        "x": 0.153,
+        "y": 0.21,
+        "width": 0.74,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.221
+      },
+      "sourceImageSha256": "67b52e7f2d3a8b7ae58af9ce5f3db085837ed28f1737ee687ab8d539ac68b7ec"
+    },
+    {
+      "id": "ch6-p174-exercises-4",
+      "page": 174,
+      "printedPage": "167",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固 第2—4题",
+      "locator": "习题6.2第4题题干“点C，D在线段AB上，且AC=CB，CD=DB”。",
+      "region": {
+        "x": 0.153,
+        "y": 0.289,
+        "width": 0.54,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3
+      },
+      "sourceImageSha256": "67b52e7f2d3a8b7ae58af9ce5f3db085837ed28f1737ee687ab8d539ac68b7ec"
+    },
+    {
+      "id": "ch6-extension-midpoint-exercise",
+      "page": 174,
+      "printedPage": "167",
+      "indexAnchor": 2,
+      "anchorLabel": "综合运用 第5—6题",
+      "locator": "习题6.2第5题题干，“延长AB至点C”至“如果DC=2，那么AB的长为”。",
+      "region": {
+        "x": 0.153,
+        "y": 0.426,
+        "width": 0.74,
+        "height": 0.061
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.459
+      },
+      "sourceImageSha256": "67b52e7f2d3a8b7ae58af9ce5f3db085837ed28f1737ee687ab8d539ac68b7ec"
+    },
+    {
+      "id": "ch6-p174-exercises-6",
+      "page": 174,
+      "printedPage": "167",
+      "indexAnchor": 2,
+      "anchorLabel": "综合运用 第5—6题",
+      "locator": "习题6.2第6题（1）两行题干，从“把原来弯曲的河道改直”到“有什么变化”；同题（2）续在下方。",
+      "region": {
+        "x": 0.153,
+        "y": 0.523,
+        "width": 0.74,
+        "height": 0.043
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.546
+      },
+      "sourceImageSha256": "67b52e7f2d3a8b7ae58af9ce5f3db085837ed28f1737ee687ab8d539ac68b7ec"
+    },
+    {
+      "id": "ch6-number-line-midpoint-exercise",
+      "page": 175,
+      "printedPage": "168",
+      "indexAnchor": 0,
+      "anchorLabel": "综合运用 第7—8题",
+      "locator": "习题6.2第7题：“A，B，C是数轴上的三个点，点A表示数3，且线段AB的长为4，C为AB的中点”。",
+      "region": {
+        "x": 0.11,
+        "y": 0.08,
+        "width": 0.57,
+        "height": 0.044
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.103
+      },
+      "sourceImageSha256": "90104d4ad33b426220088b09cd371fe4c5179ff077cae4af3d030a19299230ea"
+    },
+    {
+      "id": "ch6-p175-exercises-8",
+      "page": 175,
+      "printedPage": "168",
+      "indexAnchor": 0,
+      "anchorLabel": "综合运用 第7—8题",
+      "locator": "习题6.2第8题题干“已知线段a，b，c，作一条线段，使它等于a+2b−c”。",
+      "region": {
+        "x": 0.11,
+        "y": 0.133,
+        "width": 0.57,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.144
+      },
+      "sourceImageSha256": "90104d4ad33b426220088b09cd371fe4c5179ff077cae4af3d030a19299230ea"
+    },
+    {
+      "id": "ch6-p175-exercises-9",
+      "page": 175,
+      "printedPage": "168",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索 第9—10题",
+      "locator": "习题6.2第9题（1）题干两行；同题（2）在下方规定沿侧面爬行一圈和两圈。",
+      "region": {
+        "x": 0.11,
+        "y": 0.201,
+        "width": 0.74,
+        "height": 0.045
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.225
+      },
+      "sourceImageSha256": "90104d4ad33b426220088b09cd371fe4c5179ff077cae4af3d030a19299230ea"
+    },
+    {
+      "id": "ch6-cylinder-route-constraints",
+      "page": 175,
+      "printedPage": "168",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索 第9—10题",
+      "locator": "习题6.2第9题（2）“沿圆柱侧面爬行一圈到达点B”及“爬行两圈”所在两行。",
+      "region": {
+        "x": 0.14,
+        "y": 0.255,
+        "width": 0.71,
+        "height": 0.041
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.276
+      },
+      "sourceImageSha256": "90104d4ad33b426220088b09cd371fe4c5179ff077cae4af3d030a19299230ea"
+    },
+    {
+      "id": "ch6-maximum-intersections-exercise",
+      "page": 175,
+      "printedPage": "168",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索 第9—10题",
+      "locator": "习题6.2第10题题干，询问三条、四条直线“最多有多少个交点”及规律。",
+      "region": {
+        "x": 0.11,
+        "y": 0.435,
+        "width": 0.74,
+        "height": 0.044
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.458
+      },
+      "sourceImageSha256": "90104d4ad33b426220088b09cd371fe4c5179ff077cae4af3d030a19299230ea"
+    },
+    {
+      "id": "ch6-p176-reading-units",
+      "page": 176,
+      "printedPage": "169",
+      "indexAnchor": 2,
+      "anchorLabel": "长度单位",
+      "locator": "长度的测量材料中“查一查资料”后的单位换算与手机屏幕对角线差值提问，位于工具介绍之前。",
+      "region": {
+        "x": 0.164,
+        "y": 0.659,
+        "width": 0.725,
+        "height": 0.069
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.694
+      },
+      "sourceImageSha256": "2a9b88166e8219978652e8e30090b5004811b0ebf19a89e1ce6db3593b6831d3"
+    },
+    {
+      "id": "ch6-screen-unit-exercise",
+      "page": 176,
+      "printedPage": "169",
+      "indexAnchor": 2,
+      "anchorLabel": "长度单位",
+      "locator": "阅读材料中“英制长度单位和国际单位制的长度单位是如何换算的”至“手机屏幕对角线长度相差多少厘米”的提问。",
+      "region": {
+        "x": 0.164,
+        "y": 0.686,
+        "width": 0.725,
+        "height": 0.043
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.71
+      },
+      "sourceImageSha256": "2a9b88166e8219978652e8e30090b5004811b0ebf19a89e1ce6db3593b6831d3"
+    },
+    {
+      "id": "ch6-angle-rays-definition",
+      "page": 177,
+      "printedPage": "170",
+      "indexAnchor": 2,
+      "anchorLabel": "角",
+      "locator": "角定义段前三行，从“有公共端点的两条射线组成的图形”到“这两条射线是角的两条边”。",
+      "region": {
+        "x": 0.085,
+        "y": 0.495,
+        "width": 0.515,
+        "height": 0.075
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.531
+      },
+      "sourceImageSha256": "039b94ac1482f6fd8c37dd2e47bcee02e6fe64dde99142ad60a5b218c489b7f7"
+    },
+    {
+      "id": "ch6-angle-single-letter",
+      "page": 177,
+      "printedPage": "170",
+      "indexAnchor": 2,
+      "anchorLabel": "角",
+      "locator": "右侧浅蓝旁问“能把∠α记作∠O吗？为什么？∠α还可以怎样表示？”三行文字。",
+      "region": {
+        "x": 0.634,
+        "y": 0.606,
+        "width": 0.224,
+        "height": 0.068
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.641
+      },
+      "sourceImageSha256": "039b94ac1482f6fd8c37dd2e47bcee02e6fe64dde99142ad60a5b218c489b7f7"
+    },
+    {
+      "id": "ch6-angle-three-letter-name",
+      "page": 177,
+      "printedPage": "170",
+      "indexAnchor": 2,
+      "anchorLabel": "角",
+      "locator": "图6.3-2左图下方“∠AOB或∠O”的表示文字。",
+      "region": {
+        "x": 0.15,
+        "y": 0.695,
+        "width": 0.13,
+        "height": 0.019
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.705
+      },
+      "sourceImageSha256": "039b94ac1482f6fd8c37dd2e47bcee02e6fe64dde99142ad60a5b218c489b7f7"
+    },
+    {
+      "id": "ch6-p177-rotation-think",
+      "page": 177,
+      "printedPage": "170",
+      "indexAnchor": 3,
+      "anchorLabel": "思考",
+      "locator": "思考框从“角也可以看作由一条射线绕着它的端点旋转而形成”到两个旋转提问；图6.3-3续在PDF178。",
+      "region": {
+        "x": 0.11,
+        "y": 0.787,
+        "width": 0.74,
+        "height": 0.076
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.828
+      },
+      "sourceImageSha256": "039b94ac1482f6fd8c37dd2e47bcee02e6fe64dde99142ad60a5b218c489b7f7"
+    },
+    {
+      "id": "ch6-p178-unit-fill",
+      "page": 178,
+      "printedPage": "171",
+      "indexAnchor": 1,
+      "anchorLabel": "度、分、秒；角度制",
+      "locator": "图6.3-4下方“1周角=__°，1平角=__°，1°=__′，1′=__″”填空行。",
+      "region": {
+        "x": 0.175,
+        "y": 0.521,
+        "width": 0.63,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.535
+      },
+      "sourceImageSha256": "4ca5d91bc93402e1b0d3d1527fd29ed4a41c1f8e37c96a559e9d8f0854e4aa4d"
+    },
+    {
+      "id": "ch6-compound-angle-units",
+      "page": 178,
+      "printedPage": "171",
+      "indexAnchor": 1,
+      "anchorLabel": "度、分、秒；角度制",
+      "locator": "“∠α的度数是48度56分37秒，记作∠α=48°56′37″”的读写语句。",
+      "region": {
+        "x": 0.175,
+        "y": 0.552,
+        "width": 0.53,
+        "height": 0.018
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.562
+      },
+      "sourceImageSha256": "4ca5d91bc93402e1b0d3d1527fd29ed4a41c1f8e37c96a559e9d8f0854e4aa4d"
+    },
+    {
+      "id": "ch6-p178-example-1",
+      "page": 178,
+      "printedPage": "171",
+      "indexAnchor": 3,
+      "anchorLabel": "例1",
+      "locator": "页底例1题干两行，包含灯塔及三处方位条件；题干和解答续于PDF179上部。",
+      "region": {
+        "x": 0.13,
+        "y": 0.868,
+        "width": 0.79,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.894
+      },
+      "sourceImageSha256": "4ca5d91bc93402e1b0d3d1527fd29ed4a41c1f8e37c96a559e9d8f0854e4aa4d"
+    },
+    {
+      "id": "ch6-bearing-reference-direction",
+      "page": 179,
+      "printedPage": "172",
+      "indexAnchor": 0,
+      "anchorLabel": "例1（续）",
+      "locator": "例1续解“以点O为顶点，表示正北方向的射线为角的一边，画40°的角”至“即客轮B所在的方向”。",
+      "region": {
+        "x": 0.085,
+        "y": 0.336,
+        "width": 0.79,
+        "height": 0.073
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.37
+      },
+      "sourceImageSha256": "55c4f7bd7288d04c7c0615fca639540cbc92aa26fe10729121e8597270b59715"
+    },
+    {
+      "id": "ch6-clock-hour-hand-moves",
+      "page": 179,
+      "printedPage": "172",
+      "indexAnchor": 1,
+      "anchorLabel": "练习 第1—4题",
+      "locator": "练习第1题“6时整……8时呢？8时30分呢？”两行题干。",
+      "region": {
+        "x": 0.11,
+        "y": 0.497,
+        "width": 0.455,
+        "height": 0.046
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.52
+      },
+      "sourceImageSha256": "55c4f7bd7288d04c7c0615fca639540cbc92aa26fe10729121e8597270b59715"
+    },
+    {
+      "id": "ch6-p179-exercise-2",
+      "page": 179,
+      "printedPage": "172",
+      "indexAnchor": 1,
+      "anchorLabel": "练习 第1—4题",
+      "locator": "练习第2题题干“根据图中的信息填写下表，将表中的角用其他方法表示出来”。",
+      "region": {
+        "x": 0.11,
+        "y": 0.553,
+        "width": 0.455,
+        "height": 0.047
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.579
+      },
+      "sourceImageSha256": "55c4f7bd7288d04c7c0615fca639540cbc92aa26fe10729121e8597270b59715"
+    },
+    {
+      "id": "ch6-p179-exercise-3",
+      "page": 179,
+      "printedPage": "172",
+      "indexAnchor": 1,
+      "anchorLabel": "练习 第1—4题",
+      "locator": "练习第3题题号和第（1）问“35°等于多少分？等于多少秒？”；第（2）问紧接下一行。",
+      "region": {
+        "x": 0.11,
+        "y": 0.688,
+        "width": 0.38,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.699
+      },
+      "sourceImageSha256": "55c4f7bd7288d04c7c0615fca639540cbc92aa26fe10729121e8597270b59715"
+    },
+    {
+      "id": "ch6-decimal-degree-comparison-exercise",
+      "page": 179,
+      "printedPage": "172",
+      "indexAnchor": 1,
+      "anchorLabel": "练习 第1—4题",
+      "locator": "练习第3题（2）“38°15′和38.15°相等吗？若不相等，哪个大？”",
+      "region": {
+        "x": 0.14,
+        "y": 0.718,
+        "width": 0.515,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.728
+      },
+      "sourceImageSha256": "55c4f7bd7288d04c7c0615fca639540cbc92aa26fe10729121e8597270b59715"
+    },
+    {
+      "id": "ch6-p179-exercise-4",
+      "page": 179,
+      "printedPage": "172",
+      "indexAnchor": 1,
+      "anchorLabel": "练习 第1—4题",
+      "locator": "练习第4题开头“从蜂巢的入口处看，蜂巢由许多正六边形”两行；后续要求按图利用三角尺和圆规作图。",
+      "region": {
+        "x": 0.11,
+        "y": 0.746,
+        "width": 0.32,
+        "height": 0.046
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.771
+      },
+      "sourceImageSha256": "55c4f7bd7288d04c7c0615fca639540cbc92aa26fe10729121e8597270b59715"
+    },
+    {
+      "id": "ch6-angle-overlap-conditions",
+      "page": 180,
+      "printedPage": "173",
+      "indexAnchor": 1,
+      "anchorLabel": "比较两个角的大小",
+      "locator": "比较方法段“也可以把它们的一条边叠合在一起，通过观察另一条边的位置来比较两个角的大小”所在两行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.157,
+        "width": 0.79,
+        "height": 0.046
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.18
+      },
+      "sourceImageSha256": "54f4c1da37da4043ad82198440343d64cbac7e79067dcc31d0a68aeaa136492e"
+    },
+    {
+      "id": "ch6-p180-comparison-question",
+      "page": 180,
+      "printedPage": "173",
+      "indexAnchor": 1,
+      "anchorLabel": "比较两个角的大小",
+      "locator": "正文“你能结合图6.3-6，描述比较∠AOB与∠A′O′B′大小的方法和结果吗？”所在两行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.185,
+        "width": 0.79,
+        "height": 0.046
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.213
+      },
+      "sourceImageSha256": "54f4c1da37da4043ad82198440343d64cbac7e79067dcc31d0a68aeaa136492e"
+    },
+    {
+      "id": "ch6-p180-angle-sum-think",
+      "page": 180,
+      "printedPage": "173",
+      "indexAnchor": 2,
+      "anchorLabel": "思考",
+      "locator": "思考框“类比两条线段的和与差，你能结合图6.3-7说明什么是两个角的和与差吗？”",
+      "region": {
+        "x": 0.153,
+        "y": 0.504,
+        "width": 0.51,
+        "height": 0.046
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.53
+      },
+      "sourceImageSha256": "54f4c1da37da4043ad82198440343d64cbac7e79067dcc31d0a68aeaa136492e"
+    },
+    {
+      "id": "ch6-angle-sum-interior-ray",
+      "page": 180,
+      "printedPage": "173",
+      "indexAnchor": 3,
+      "anchorLabel": "两个角的和与差",
+      "locator": "图6.3-7后的和、差说明前两行，包含“∠AOC是∠AOB与∠BOC的和”及相应等式。",
+      "region": {
+        "x": 0.13,
+        "y": 0.616,
+        "width": 0.79,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.641
+      },
+      "sourceImageSha256": "54f4c1da37da4043ad82198440343d64cbac7e79067dcc31d0a68aeaa136492e"
+    },
+    {
+      "id": "ch6-p180-angle-difference-fill",
+      "page": 180,
+      "printedPage": "173",
+      "indexAnchor": 3,
+      "anchorLabel": "两个角的和与差",
+      "locator": "角的和差段末“类似地，∠AOC−∠AOB=____”填空行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.674,
+        "width": 0.4,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.685
+      },
+      "sourceImageSha256": "54f4c1da37da4043ad82198440343d64cbac7e79067dcc31d0a68aeaa136492e"
+    },
+    {
+      "id": "ch6-p180-triangles-explore",
+      "page": 180,
+      "printedPage": "173",
+      "indexAnchor": 4,
+      "anchorLabel": "探究",
+      "locator": "页底探究框左侧“参考图6.3-8，借助一副三角尺的角，结合角的和、差运算，可以画出哪些度数的角？”",
+      "region": {
+        "x": 0.153,
+        "y": 0.743,
+        "width": 0.25,
+        "height": 0.104
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.799
+      },
+      "sourceImageSha256": "54f4c1da37da4043ad82198440343d64cbac7e79067dcc31d0a68aeaa136492e"
+    },
+    {
+      "id": "ch6-p181-example-2",
+      "page": 181,
+      "printedPage": "174",
+      "indexAnchor": 0,
+      "anchorLabel": "例2",
+      "locator": "页首例2题干“ O是直线AB上一点，∠AOC=53°17′，求∠BOC的度数”两行。",
+      "region": {
+        "x": 0.085,
+        "y": 0.071,
+        "width": 0.79,
+        "height": 0.047
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.096
+      },
+      "sourceImageSha256": "321b29c20504587264ea3ad8a71baee8c0ee6714bd039404dfd3eac1c5cab496"
+    },
+    {
+      "id": "ch6-straight-angle-opposite-rays",
+      "page": 181,
+      "printedPage": "174",
+      "indexAnchor": 0,
+      "anchorLabel": "例2",
+      "locator": "例2分析“AB是直线，∠AOB是平角。∠BOC与∠AOC的和是∠AOB”两行。",
+      "region": {
+        "x": 0.085,
+        "y": 0.253,
+        "width": 0.52,
+        "height": 0.046
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.277
+      },
+      "sourceImageSha256": "321b29c20504587264ea3ad8a71baee8c0ee6714bd039404dfd3eac1c5cab496"
+    },
+    {
+      "id": "ch6-angle-borrow-same-quantity",
+      "page": 181,
+      "printedPage": "174",
+      "indexAnchor": 1,
+      "anchorLabel": "角度的加、减运算",
+      "locator": "右上黄色旁注末部“本题中应借1°，先将180°化为179°60′，再进行减法运算”。",
+      "region": {
+        "x": 0.645,
+        "y": 0.303,
+        "width": 0.21,
+        "height": 0.067
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.338
+      },
+      "sourceImageSha256": "321b29c20504587264ea3ad8a71baee8c0ee6714bd039404dfd3eac1c5cab496"
+    },
+    {
+      "id": "ch6-p181-exercise-1",
+      "page": 181,
+      "printedPage": "174",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "练习第1题题号及“填空题”题干。",
+      "region": {
+        "x": 0.11,
+        "y": 0.497,
+        "width": 0.13,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.508
+      },
+      "sourceImageSha256": "321b29c20504587264ea3ad8a71baee8c0ee6714bd039404dfd3eac1c5cab496"
+    },
+    {
+      "id": "ch6-p181-exercise-2",
+      "page": 181,
+      "printedPage": "174",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "练习第2题题号及“按图填空”题干。",
+      "region": {
+        "x": 0.11,
+        "y": 0.584,
+        "width": 0.145,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.595
+      },
+      "sourceImageSha256": "321b29c20504587264ea3ad8a71baee8c0ee6714bd039404dfd3eac1c5cab496"
+    },
+    {
+      "id": "ch6-p181-exercise-3",
+      "page": 181,
+      "printedPage": "174",
+      "indexAnchor": 2,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "练习第3题题号及“计算”题干。",
+      "region": {
+        "x": 0.11,
+        "y": 0.726,
+        "width": 0.095,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.737
+      },
+      "sourceImageSha256": "321b29c20504587264ea3ad8a71baee8c0ee6714bd039404dfd3eac1c5cab496"
+    },
+    {
+      "id": "ch6-p181-equal-angle-fill",
+      "page": 181,
+      "printedPage": "174",
+      "indexAnchor": 3,
+      "anchorLabel": "把一个角分成两个相等的角",
+      "locator": "页底根据∠AOB=∠BOC填写整角与半角关系的两个空；相关图6.3-10续在PDF182。",
+      "region": {
+        "x": 0.175,
+        "y": 0.879,
+        "width": 0.6,
+        "height": 0.036
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.893
+      },
+      "sourceImageSha256": "321b29c20504587264ea3ad8a71baee8c0ee6714bd039404dfd3eac1c5cab496"
+    },
+    {
+      "id": "ch6-bisector-ray-conditions",
+      "page": 182,
+      "printedPage": "175",
+      "indexAnchor": 1,
+      "anchorLabel": "角的平分线",
+      "locator": "“一般地，从一个角的顶点出发，把这个角分成两个相等的角的射线，叫作这个角的平分线”的定义语句。",
+      "region": {
+        "x": 0.13,
+        "y": 0.273,
+        "width": 0.79,
+        "height": 0.046
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.297
+      },
+      "sourceImageSha256": "8b756fb5c0ee972518f9c184437d6e4105423f0fc8e7d8c3ed9c8beaa5104471"
+    },
+    {
+      "id": "ch6-fold-bisector-check",
+      "page": 182,
+      "printedPage": "175",
+      "indexAnchor": 2,
+      "anchorLabel": "探究",
+      "locator": "探究题干“仿照图6.3-12，在一张半透明的纸上通过折纸作角的平分线”。",
+      "region": {
+        "x": 0.198,
+        "y": 0.37,
+        "width": 0.61,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.381
+      },
+      "sourceImageSha256": "8b756fb5c0ee972518f9c184437d6e4105423f0fc8e7d8c3ed9c8beaa5104471"
+    },
+    {
+      "id": "ch6-p182-example-3",
+      "page": 182,
+      "printedPage": "175",
+      "indexAnchor": 3,
+      "anchorLabel": "例3",
+      "locator": "例3题干“把一个周角7等分，每份是多少度的角（精确到分）？”",
+      "region": {
+        "x": 0.175,
+        "y": 0.524,
+        "width": 0.59,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.535
+      },
+      "sourceImageSha256": "8b756fb5c0ee972518f9c184437d6e4105423f0fc8e7d8c3ed9c8beaa5104471"
+    },
+    {
+      "id": "ch6-angle-round-to-minute",
+      "page": 182,
+      "printedPage": "175",
+      "indexAnchor": 3,
+      "anchorLabel": "例3",
+      "locator": "例3解答末两行“=51°+180′÷7”到“≈51°26′”。",
+      "region": {
+        "x": 0.221,
+        "y": 0.643,
+        "width": 0.2,
+        "height": 0.042
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.67
+      },
+      "sourceImageSha256": "8b756fb5c0ee972518f9c184437d6e4105423f0fc8e7d8c3ed9c8beaa5104471"
+    },
+    {
+      "id": "ch6-p182-exercise-1",
+      "page": 182,
+      "printedPage": "175",
+      "indexAnchor": 4,
+      "anchorLabel": "练习 第1题",
+      "locator": "页底练习第1题完整题干三行，从“把一个蛋糕等分成8份”到“这个蛋糕应等分成多少份”。",
+      "region": {
+        "x": 0.153,
+        "y": 0.773,
+        "width": 0.57,
+        "height": 0.073
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.813
+      },
+      "sourceImageSha256": "8b756fb5c0ee972518f9c184437d6e4105423f0fc8e7d8c3ed9c8beaa5104471"
+    },
+    {
+      "id": "ch6-p183-exercise-2",
+      "page": 183,
+      "printedPage": "176",
+      "indexAnchor": 0,
+      "anchorLabel": "练习 第2—3题",
+      "locator": "页首续页练习第2题题干，含“O是直线AB上一点，OC是∠AOB的平分线，∠COD=31°28′”。",
+      "region": {
+        "x": 0.11,
+        "y": 0.092,
+        "width": 0.55,
+        "height": 0.047
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.117
+      },
+      "sourceImageSha256": "55f30559a281399c421957c6699dcf0ae1a0f391ee2fc66c5e24e884fe897cfb"
+    },
+    {
+      "id": "ch6-p183-exercise-3",
+      "page": 183,
+      "printedPage": "176",
+      "indexAnchor": 0,
+      "anchorLabel": "练习 第2—3题",
+      "locator": "页首续页练习第3题题号及“计算”题干。",
+      "region": {
+        "x": 0.11,
+        "y": 0.149,
+        "width": 0.095,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.16
+      },
+      "sourceImageSha256": "55f30559a281399c421957c6699dcf0ae1a0f391ee2fc66c5e24e884fe897cfb"
+    },
+    {
+      "id": "ch6-complementary-position-independent",
+      "page": 183,
+      "printedPage": "176",
+      "indexAnchor": 2,
+      "anchorLabel": "余角、互余；补角、互补",
+      "locator": "图6.3-14下“如果两个角的和等于180°（平角），就说这两个角互为补角”及互补的定义段。",
+      "region": {
+        "x": 0.085,
+        "y": 0.534,
+        "width": 0.79,
+        "height": 0.075
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.571
+      },
+      "sourceImageSha256": "55f30559a281399c421957c6699dcf0ae1a0f391ee2fc66c5e24e884fe897cfb"
+    },
+    {
+      "id": "ch6-p183-complements-think",
+      "page": 183,
+      "printedPage": "176",
+      "indexAnchor": 3,
+      "anchorLabel": "思考",
+      "locator": "思考框“∠1与∠2、∠3都互为余角”及“类似地，与同一个角互补的两个角……”两问。",
+      "region": {
+        "x": 0.153,
+        "y": 0.689,
+        "width": 0.6,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.715
+      },
+      "sourceImageSha256": "55f30559a281399c421957c6699dcf0ae1a0f391ee2fc66c5e24e884fe897cfb"
+    },
+    {
+      "id": "ch6-equal-angle-complements",
+      "page": 183,
+      "printedPage": "176",
+      "indexAnchor": 4,
+      "anchorLabel": "同角（等角）的余角相等",
+      "locator": "页底蓝色结论“同角（等角）的余角相等”。",
+      "region": {
+        "x": 0.13,
+        "y": 0.824,
+        "width": 0.26,
+        "height": 0.019
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.834
+      },
+      "sourceImageSha256": "55f30559a281399c421957c6699dcf0ae1a0f391ee2fc66c5e24e884fe897cfb"
+    },
+    {
+      "id": "ch6-p183-equal-supplements-why",
+      "page": 183,
+      "printedPage": "176",
+      "indexAnchor": 5,
+      "anchorLabel": "同角（等角）的补角相等",
+      "locator": "右下浅蓝旁问“你能说出为什么‘同角（等角）的补角相等’吗？”",
+      "region": {
+        "x": 0.638,
+        "y": 0.84,
+        "width": 0.22,
+        "height": 0.072
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.876
+      },
+      "sourceImageSha256": "55f30559a281399c421957c6699dcf0ae1a0f391ee2fc66c5e24e884fe897cfb"
+    },
+    {
+      "id": "ch6-example4-opposite-rays",
+      "page": 184,
+      "printedPage": "177",
+      "indexAnchor": 0,
+      "anchorLabel": "例4",
+      "locator": "例4解答首句“因为点A，O，B在同一条直线上，所以∠AOC和∠BOC互为补角”；结合右侧图6.3-15核对O的位置。",
+      "region": {
+        "x": 0.13,
+        "y": 0.211,
+        "width": 0.62,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.235
+      },
+      "sourceImageSha256": "fb3dfd12c64c1d73a1774c412298a0f9f45fe69f298151df91f6d54cff817398"
+    },
+    {
+      "id": "ch6-example4-complement-pairs",
+      "page": 184,
+      "printedPage": "177",
+      "indexAnchor": 0,
+      "anchorLabel": "例4",
+      "locator": "例4解答末句“同理，∠AOD和∠BOE，∠AOD和∠COE，∠COD和∠BOE也互为余角”。",
+      "region": {
+        "x": 0.13,
+        "y": 0.405,
+        "width": 0.79,
+        "height": 0.045
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.425
+      },
+      "sourceImageSha256": "fb3dfd12c64c1d73a1774c412298a0f9f45fe69f298151df91f6d54cff817398"
+    },
+    {
+      "id": "ch6-angle-position-exercise",
+      "page": 185,
+      "printedPage": "178",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—4题",
+      "locator": "习题6.3复习巩固第2题（5）：“在同一平面内，∠AOB=60°，∠COB=30°，则∠AOC=90°”。",
+      "region": {
+        "x": 0.132,
+        "y": 0.315,
+        "width": 0.697,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.327
+      },
+      "sourceImageSha256": "805d6c6db8a41bfdf53c6cac1568eb93aa0c5451457662a439d67369cd90b758"
+    },
+    {
+      "id": "ch6-clock-continuous-motion",
+      "page": 185,
+      "printedPage": "178",
+      "indexAnchor": 2,
+      "anchorLabel": "复习巩固 第5—8题",
+      "locator": "习题6.3复习巩固第6题（3）：“3时25分，时钟的时针与分针所成的角是多少度？”",
+      "region": {
+        "x": 0.132,
+        "y": 0.625,
+        "width": 0.672,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.637
+      },
+      "sourceImageSha256": "805d6c6db8a41bfdf53c6cac1568eb93aa0c5451457662a439d67369cd90b758"
+    },
+    {
+      "id": "ch6-bearing-observation-base",
+      "page": 186,
+      "printedPage": "179",
+      "indexAnchor": 0,
+      "anchorLabel": "综合运用 第10—13题",
+      "locator": "习题6.3综合运用第13题题干：“从A地发现……”与“从B地发现……”两处观测方向。",
+      "region": {
+        "x": 0.151,
+        "y": 0.731,
+        "width": 0.75,
+        "height": 0.074
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.745
+      },
+      "sourceImageSha256": "f514f3ccad15a5a5dd2c497e457129ec7e3939268840632dfe0bd186481aba08"
+    },
+    {
+      "id": "ch6-measurement-conjecture",
+      "page": 186,
+      "printedPage": "179",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索 第14题",
+      "locator": "习题6.3拓广探索第14题末问：“量一量这些四边形中另一个角的度数，你能发现什么规律？”",
+      "region": {
+        "x": 0.151,
+        "y": 0.841,
+        "width": 0.747,
+        "height": 0.047
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.866
+      },
+      "sourceImageSha256": "f514f3ccad15a5a5dd2c497e457129ec7e3939268840632dfe0bd186481aba08"
+    },
+    {
+      "id": "ch6-extended-angle-observation",
+      "page": 187,
+      "printedPage": "180",
+      "indexAnchor": 0,
+      "anchorLabel": "拓广探索 第15题",
+      "locator": "习题6.3拓广探索第15题（2）“再换几个类似的图试试，你有什么发现？”两行。",
+      "region": {
+        "x": 0.151,
+        "y": 0.346,
+        "width": 0.702,
+        "height": 0.049
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.371
+      },
+      "sourceImageSha256": "85cd919a31a9869767ff0cf5c9c47bdb48187598d5b86dd5209bb470ee3d0a32"
+    },
+    {
+      "id": "ch6-paper-glue-tabs",
+      "page": 189,
+      "printedPage": "182",
+      "indexAnchor": 3,
+      "anchorLabel": "图1、图2、图3",
+      "locator": "活动1图1上方两个灰绿色粘贴边及其与蓝色面的分界；不含图2和图3。",
+      "region": {
+        "x": 0.268,
+        "y": 0.295,
+        "width": 0.226,
+        "height": 0.015
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.302
+      },
+      "sourceImageSha256": "591ff8b581ebea6f525d797100113aed792fa5357718bd27324342e9c0ffa048"
+    },
+    {
+      "id": "ch6-star-consecutive-angles",
+      "page": 190,
+      "printedPage": "183",
+      "indexAnchor": 1,
+      "anchorLabel": "绘制五角星",
+      "locator": "活动2绘制五角星步骤（2）：“以圆心为顶点，连续画72°（即360°÷5）的角，与圆相交于五个点”。",
+      "region": {
+        "x": 0.195,
+        "y": 0.191,
+        "width": 0.694,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.204
+      },
+      "sourceImageSha256": "669a7ee38ab0bb10ac50f6c68695719f671303de231c7bb6c98fb02cd2476550"
+    },
+    {
+      "id": "ch6-view-versus-net",
+      "page": 191,
+      "printedPage": "184",
+      "indexAnchor": 3,
+      "anchorLabel": "回顾与思考",
+      "locator": "回顾与思考第二段中“一是从‘从不同方向看立体图形’和‘展开立体图形’的角度，体会立体图形与平面图形之间的联系”。",
+      "region": {
+        "x": 0.109,
+        "y": 0.755,
+        "width": 0.744,
+        "height": 0.053
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.782
+      },
+      "sourceImageSha256": "bc6b155b92844a247898173c5cabd551740fd819d0a42329ca54b57b0a06df2e"
+    },
+    {
+      "id": "ch6-analogy-boundaries",
+      "page": 192,
+      "printedPage": "185",
+      "indexAnchor": 0,
+      "anchorLabel": "回顾与思考（续）",
+      "locator": "回顾与思考续页首段：“类比线段的大小比较、和差运算、中点，研究角的大小比较、和差运算、平分线等”。",
+      "region": {
+        "x": 0.15,
+        "y": 0.112,
+        "width": 0.744,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.137
+      },
+      "sourceImageSha256": "a1af68600cc66f1092373f5ea0ee4dabd77168840062b55f2e581ad42ba9bb3e"
+    },
+    {
+      "id": "ch6-reverse-extension-reading",
+      "page": 193,
+      "printedPage": "186",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第4—6题",
+      "locator": "复习题6第4题（4）：“连接DA，并反向延长DA至E，使DE=2AD”。",
+      "region": {
+        "x": 0.122,
+        "y": 0.587,
+        "width": 0.627,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.599
+      },
+      "sourceImageSha256": "42522602d1f2baecea2bb1c94217d8077f9309da315690c95f9ab279d7467dd3"
+    },
+    {
+      "id": "ch6-surface-route-correspondence",
+      "page": 194,
+      "printedPage": "187",
+      "indexAnchor": 2,
+      "anchorLabel": "综合运用 第8—10题",
+      "locator": "复习题6第9题中“在圆柱的侧面上，过点A，C嵌有一圈路径最短的金属丝。现将圆柱侧面沿AB剪开”两行。",
+      "region": {
+        "x": 0.162,
+        "y": 0.344,
+        "width": 0.461,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.37
+      },
+      "sourceImageSha256": "9a309f858b5b88799e7e75254bb439c2ca57b90ebc3705cee4695fad032bb0cc"
+    },
+    {
+      "id": "ch6-fold-angle-evidence",
+      "page": 195,
+      "printedPage": "188",
+      "indexAnchor": 0,
+      "anchorLabel": "综合运用 第11—12题",
+      "locator": "复习题6第11题首段两处“对折”及“得到折痕EM”“得到折痕EN”的文字条件。",
+      "region": {
+        "x": 0.132,
+        "y": 0.106,
+        "width": 0.725,
+        "height": 0.047
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.13
+      },
+      "sourceImageSha256": "a66b0cff09bf3c881cac748fa2d3af7a43b288325425e5847ef6a0570f78aab5"
+    },
+    {
+      "id": "ch6-midpoint-investigation-check",
+      "page": 195,
+      "printedPage": "188",
+      "indexAnchor": 3,
+      "anchorLabel": "拓广探索 第13—14题",
+      "locator": "复习题6拓广探索第13题首句“记其四边的中点分别为E，F，G，H，连接EF，FG，GH，HE，并量出它们的长”。",
+      "region": {
+        "x": 0.095,
+        "y": 0.535,
+        "width": 0.766,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.558
+      },
+      "sourceImageSha256": "a66b0cff09bf3c881cac748fa2d3af7a43b288325425e5847ef6a0570f78aab5"
+    },
+    {
+      "id": "ch6-field-data-sources",
+      "page": 196,
+      "printedPage": "189",
+      "indexAnchor": 3,
+      "anchorLabel": "活动准备",
+      "locator": "活动准备“2.资料学习”中“了解田径运动会不同运动项目的场地设计规格与要求”两行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.865,
+        "width": 0.782,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.888
+      },
+      "sourceImageSha256": "5bbf9b6111eff91ca1d88c1cf87b9a78e374c900da13f3bc05fb1e7f3d237ec8"
+    },
+    {
+      "id": "ch6-field-scale-consistency",
+      "page": 197,
+      "printedPage": "190",
+      "indexAnchor": 1,
+      "anchorLabel": "活动一 了解田径运动会相关运动项目场地设计的要求",
+      "locator": "活动一任务中“按适当的比例在A4纸上画出这些运动项目的场地示意图，并配以适当的数据和文字说明”。",
+      "region": {
+        "x": 0.084,
+        "y": 0.3,
+        "width": 0.785,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.326
+      },
+      "sourceImageSha256": "8c01980fbac28829f624447b4ace63a14b45ebb639b382b1c293ad6139d0b72d"
+    },
+    {
+      "id": "ch6-track-measurement-route",
+      "page": 197,
+      "printedPage": "190",
+      "indexAnchor": 3,
+      "anchorLabel": "任务1 径赛项目跑道的设计",
+      "locator": "任务1第（1）问中“第一分道的总长度是多少米？弯道是什么形状？弯道中各分道的长度分别是多少米？”",
+      "region": {
+        "x": 0.085,
+        "y": 0.512,
+        "width": 0.786,
+        "height": 0.076
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.552
+      },
+      "sourceImageSha256": "8c01980fbac28829f624447b4ace63a14b45ebb639b382b1c293ad6139d0b72d"
+    },
+    {
+      "id": "ch6-track-start-validation",
+      "page": 197,
+      "printedPage": "190",
+      "indexAnchor": 3,
+      "anchorLabel": "任务1 径赛项目跑道的设计",
+      "locator": "任务1第（3）问：“如何在学校400 m跑道内划定400 m跑比赛的起跑线？4×100 m接力比赛的起跑线又该如何划定？画出它们的示意图”。",
+      "region": {
+        "x": 0.085,
+        "y": 0.807,
+        "width": 0.785,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.834
+      },
+      "sourceImageSha256": "8c01980fbac28829f624447b4ace63a14b45ebb639b382b1c293ad6139d0b72d"
+    },
+    {
+      "id": "ch6-throwing-radii-distinction",
+      "page": 198,
+      "printedPage": "191",
+      "indexAnchor": 0,
+      "anchorLabel": "任务2 田赛项目场地的设计",
+      "locator": "任务2第（3）问中“圆的半径是多少米？扇形所在圆的半径是多少米？”两行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.383,
+        "width": 0.458,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.409
+      },
+      "sourceImageSha256": "a64edce08aaa1408309a7bf357b477b79108d83ddef259932b4dcf1492ecb6d9"
+    },
+    {
+      "id": "ch6-field-layout-constraints",
+      "page": 198,
+      "printedPage": "191",
+      "indexAnchor": 1,
+      "anchorLabel": "任务3",
+      "locator": "任务3总述：“综合考虑田径比赛的场地要求，在保障比赛安全的前提下，为使各项比赛互不干扰……”两行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.468,
+        "width": 0.785,
+        "height": 0.049
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.493
+      },
+      "sourceImageSha256": "a64edce08aaa1408309a7bf357b477b79108d83ddef259932b4dcf1492ecb6d9"
+    },
+    {
+      "id": "ch6-design-evidence",
+      "page": 199,
+      "printedPage": "192",
+      "indexAnchor": 0,
+      "anchorLabel": "3.方案实施",
+      "locator": "“3.方案实施”段中“并给出设计图和设计说明（要给出规划理由等），记录完成任务的过程，形成研究报告”。",
+      "region": {
+        "x": 0.086,
+        "y": 0.128,
+        "width": 0.786,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.152
+      },
+      "sourceImageSha256": "505877d4704f7b24d030e559812c53d929fdf4097ec7ae642d1902876e6f4a42"
+    },
+    {
+      "id": "ch6-q-p184-example4",
+      "page": 184,
+      "printedPage": "177",
+      "indexAnchor": 0,
+      "anchorLabel": "例4",
+      "locator": "例4：辨认互为余角的角的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.13,
+        "y": 0.07,
+        "width": 0.788,
+        "height": 0.046
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.093
+      },
+      "sourceImageSha256": "fb3dfd12c64c1d73a1774c412298a0f9f45fe69f298151df91f6d54cff817398"
+    },
+    {
+      "id": "ch6-q-p184-practice1",
+      "page": 184,
+      "printedPage": "177",
+      "indexAnchor": 1,
+      "anchorLabel": "练习 第1—4题",
+      "locator": "练习第1题：找互余与互补的角的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.15,
+        "y": 0.507,
+        "width": 0.713,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.519
+      },
+      "sourceImageSha256": "fb3dfd12c64c1d73a1774c412298a0f9f45fe69f298151df91f6d54cff817398"
+    },
+    {
+      "id": "ch6-q-p184-practice2",
+      "page": 184,
+      "printedPage": "177",
+      "indexAnchor": 1,
+      "anchorLabel": "练习 第1—4题",
+      "locator": "练习第2题：求70°39′角的余角与补角的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.15,
+        "y": 0.755,
+        "width": 0.492,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.767
+      },
+      "sourceImageSha256": "fb3dfd12c64c1d73a1774c412298a0f9f45fe69f298151df91f6d54cff817398"
+    },
+    {
+      "id": "ch6-q-p184-practice3",
+      "page": 184,
+      "printedPage": "177",
+      "indexAnchor": 1,
+      "anchorLabel": "练习 第1—4题",
+      "locator": "练习第3题：由补角的倍数关系求角的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.15,
+        "y": 0.784,
+        "width": 0.45,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.796
+      },
+      "sourceImageSha256": "fb3dfd12c64c1d73a1774c412298a0f9f45fe69f298151df91f6d54cff817398"
+    },
+    {
+      "id": "ch6-q-p184-practice4",
+      "page": 184,
+      "printedPage": "177",
+      "indexAnchor": 1,
+      "anchorLabel": "练习 第1—4题",
+      "locator": "练习第4题：不能进入围墙时测量夹角的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.15,
+        "y": 0.813,
+        "width": 0.52,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.838
+      },
+      "sourceImageSha256": "fb3dfd12c64c1d73a1774c412298a0f9f45fe69f298151df91f6d54cff817398"
+    },
+    {
+      "id": "ch6-q-p185-e1",
+      "page": 185,
+      "printedPage": "178",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—4题",
+      "locator": "习题6.3第1题：以OC为边表示角的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.108,
+        "y": 0.159,
+        "width": 0.482,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.171
+      },
+      "sourceImageSha256": "805d6c6db8a41bfdf53c6cac1568eb93aa0c5451457662a439d67369cd90b758"
+    },
+    {
+      "id": "ch6-q-p185-e2",
+      "page": 185,
+      "printedPage": "178",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—4题",
+      "locator": "习题6.3第2题：角概念与关系判断的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.108,
+        "y": 0.185,
+        "width": 0.16,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.1965
+      },
+      "sourceImageSha256": "805d6c6db8a41bfdf53c6cac1568eb93aa0c5451457662a439d67369cd90b758"
+    },
+    {
+      "id": "ch6-q-p185-e3",
+      "page": 185,
+      "printedPage": "178",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—4题",
+      "locator": "习题6.3第3题：角度单位与运算填空的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.108,
+        "y": 0.344,
+        "width": 0.16,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.356
+      },
+      "sourceImageSha256": "805d6c6db8a41bfdf53c6cac1568eb93aa0c5451457662a439d67369cd90b758"
+    },
+    {
+      "id": "ch6-q-p185-e4",
+      "page": 185,
+      "printedPage": "178",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—4题",
+      "locator": "习题6.3第4题：由补角求余角的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.108,
+        "y": 0.447,
+        "width": 0.682,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4595
+      },
+      "sourceImageSha256": "805d6c6db8a41bfdf53c6cac1568eb93aa0c5451457662a439d67369cd90b758"
+    },
+    {
+      "id": "ch6-q-p185-e5",
+      "page": 185,
+      "printedPage": "178",
+      "indexAnchor": 2,
+      "anchorLabel": "复习巩固 第5—8题",
+      "locator": "习题6.3第5题：按方位画射线的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.108,
+        "y": 0.475,
+        "width": 0.742,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.5
+      },
+      "sourceImageSha256": "805d6c6db8a41bfdf53c6cac1568eb93aa0c5451457662a439d67369cd90b758"
+    },
+    {
+      "id": "ch6-q-p185-e6",
+      "page": 185,
+      "printedPage": "178",
+      "indexAnchor": 2,
+      "anchorLabel": "复习巩固 第5—8题",
+      "locator": "习题6.3第6题：时针与分针的转动的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.108,
+        "y": 0.576,
+        "width": 0.433,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.5885
+      },
+      "sourceImageSha256": "805d6c6db8a41bfdf53c6cac1568eb93aa0c5451457662a439d67369cd90b758"
+    },
+    {
+      "id": "ch6-q-p185-e7",
+      "page": 185,
+      "printedPage": "178",
+      "indexAnchor": 2,
+      "anchorLabel": "复习巩固 第5—8题",
+      "locator": "习题6.3第7题：比较∠AOB与∠COD的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.108,
+        "y": 0.654,
+        "width": 0.75,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.6665
+      },
+      "sourceImageSha256": "805d6c6db8a41bfdf53c6cac1568eb93aa0c5451457662a439d67369cd90b758"
+    },
+    {
+      "id": "ch6-q-p185-e8",
+      "page": 185,
+      "printedPage": "178",
+      "indexAnchor": 2,
+      "anchorLabel": "复习巩固 第5—8题",
+      "locator": "习题6.3第8题：连续两次角平分的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.108,
+        "y": 0.807,
+        "width": 0.742,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.819
+      },
+      "sourceImageSha256": "805d6c6db8a41bfdf53c6cac1568eb93aa0c5451457662a439d67369cd90b758"
+    },
+    {
+      "id": "ch6-q-p185-e9",
+      "page": 185,
+      "printedPage": "178",
+      "indexAnchor": 4,
+      "anchorLabel": "综合运用 第9题",
+      "locator": "习题6.3第9题：以公共边画角并求夹角的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.108,
+        "y": 0.864,
+        "width": 0.76,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.8765
+      },
+      "sourceImageSha256": "805d6c6db8a41bfdf53c6cac1568eb93aa0c5451457662a439d67369cd90b758"
+    },
+    {
+      "id": "ch6-q-p186-e10",
+      "page": 186,
+      "printedPage": "179",
+      "indexAnchor": 0,
+      "anchorLabel": "综合运用 第10—13题",
+      "locator": "习题6.3第10题：由角平分线填写角关系的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.15,
+        "y": 0.079,
+        "width": 0.567,
+        "height": 0.047
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.1025
+      },
+      "sourceImageSha256": "f514f3ccad15a5a5dd2c497e457129ec7e3939268840632dfe0bd186481aba08"
+    },
+    {
+      "id": "ch6-q-p186-e11",
+      "page": 186,
+      "printedPage": "179",
+      "indexAnchor": 0,
+      "anchorLabel": "综合运用 第10—13题",
+      "locator": "习题6.3第11题：三角尺不同摆放下的角关系的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.15,
+        "y": 0.299,
+        "width": 0.752,
+        "height": 0.047
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.3225
+      },
+      "sourceImageSha256": "f514f3ccad15a5a5dd2c497e457129ec7e3939268840632dfe0bd186481aba08"
+    },
+    {
+      "id": "ch6-q-p186-e12",
+      "page": 186,
+      "printedPage": "179",
+      "indexAnchor": 0,
+      "anchorLabel": "综合运用 第10—13题",
+      "locator": "习题6.3第12题：相邻齿中心线的夹角的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.15,
+        "y": 0.517,
+        "width": 0.75,
+        "height": 0.047
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.5405
+      },
+      "sourceImageSha256": "f514f3ccad15a5a5dd2c497e457129ec7e3939268840632dfe0bd186481aba08"
+    },
+    {
+      "id": "ch6-q-p187-e15",
+      "page": 187,
+      "printedPage": "180",
+      "indexAnchor": 0,
+      "anchorLabel": "拓广探索 第15题",
+      "locator": "习题6.3第15题：延长边所得角的和的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.108,
+        "y": 0.079,
+        "width": 0.748,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.103
+      },
+      "sourceImageSha256": "85cd919a31a9869767ff0cf5c9c47bdb48187598d5b86dd5209bb470ee3d0a32"
+    },
+    {
+      "id": "ch6-q-p189-activity1",
+      "page": 189,
+      "printedPage": "182",
+      "indexAnchor": 2,
+      "anchorLabel": "（1）—（4）",
+      "locator": "数学活动1：制作纸魔方的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.11,
+        "y": 0.18,
+        "width": 0.745,
+        "height": 0.046
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.203
+      },
+      "sourceImageSha256": "591ff8b581ebea6f525d797100113aed792fa5357718bd27324342e9c0ffa048"
+    },
+    {
+      "id": "ch6-q-p190-activity2",
+      "page": 190,
+      "printedPage": "183",
+      "indexAnchor": 1,
+      "anchorLabel": "绘制五角星",
+      "locator": "数学活动2：绘制五角星及星形探索的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.195,
+        "y": 0.135,
+        "width": 0.485,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.1475
+      },
+      "sourceImageSha256": "669a7ee38ab0bb10ac50f6c68695719f671303de231c7bb6c98fb02cd2476550"
+    },
+    {
+      "id": "ch6-q-p192-recap1",
+      "page": 192,
+      "printedPage": "185",
+      "indexAnchor": 0,
+      "anchorLabel": "回顾与思考（续）",
+      "locator": "小结回顾与思考第1题：描述并画出数学名词的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.15,
+        "y": 0.224,
+        "width": 0.735,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.248
+      },
+      "sourceImageSha256": "a1af68600cc66f1092373f5ea0ee4dabd77168840062b55f2e581ad42ba9bb3e"
+    },
+    {
+      "id": "ch6-q-p192-recap2",
+      "page": 192,
+      "printedPage": "185",
+      "indexAnchor": 0,
+      "anchorLabel": "回顾与思考（续）",
+      "locator": "小结回顾与思考第2题：举几何图形的实例的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.195,
+        "y": 0.34,
+        "width": 0.515,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.3515
+      },
+      "sourceImageSha256": "a1af68600cc66f1092373f5ea0ee4dabd77168840062b55f2e581ad42ba9bb3e"
+    },
+    {
+      "id": "ch6-q-p192-recap3",
+      "page": 192,
+      "printedPage": "185",
+      "indexAnchor": 0,
+      "anchorLabel": "回顾与思考（续）",
+      "locator": "小结回顾与思考第3题：展开图与观察图的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.15,
+        "y": 0.369,
+        "width": 0.744,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.393
+      },
+      "sourceImageSha256": "a1af68600cc66f1092373f5ea0ee4dabd77168840062b55f2e581ad42ba9bb3e"
+    },
+    {
+      "id": "ch6-q-p192-recap4",
+      "page": 192,
+      "printedPage": "185",
+      "indexAnchor": 0,
+      "anchorLabel": "回顾与思考（续）",
+      "locator": "小结回顾与思考第4题：直线和线段的重要结论的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.195,
+        "y": 0.426,
+        "width": 0.64,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.4375
+      },
+      "sourceImageSha256": "a1af68600cc66f1092373f5ea0ee4dabd77168840062b55f2e581ad42ba9bb3e"
+    },
+    {
+      "id": "ch6-q-p192-recap5",
+      "page": 192,
+      "printedPage": "185",
+      "indexAnchor": 0,
+      "anchorLabel": "回顾与思考（续）",
+      "locator": "小结回顾与思考第5题：角的知识与结论的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.195,
+        "y": 0.455,
+        "width": 0.68,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4665
+      },
+      "sourceImageSha256": "a1af68600cc66f1092373f5ea0ee4dabd77168840062b55f2e581ad42ba9bb3e"
+    },
+    {
+      "id": "ch6-q-p192-recap6",
+      "page": 192,
+      "printedPage": "185",
+      "indexAnchor": 0,
+      "anchorLabel": "回顾与思考（续）",
+      "locator": "小结回顾与思考第6题：线段与角的类比的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.195,
+        "y": 0.484,
+        "width": 0.69,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.4955
+      },
+      "sourceImageSha256": "a1af68600cc66f1092373f5ea0ee4dabd77168840062b55f2e581ad42ba9bb3e"
+    },
+    {
+      "id": "ch6-q-p192-review1",
+      "page": 192,
+      "printedPage": "185",
+      "indexAnchor": 2,
+      "anchorLabel": "复习巩固 第1题",
+      "locator": "复习题6第1题：说出立体图形名称的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.14,
+        "y": 0.647,
+        "width": 0.285,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.6585
+      },
+      "sourceImageSha256": "a1af68600cc66f1092373f5ea0ee4dabd77168840062b55f2e581ad42ba9bb3e"
+    },
+    {
+      "id": "ch6-q-p193-review2",
+      "page": 193,
+      "printedPage": "186",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固 第2—3题",
+      "locator": "复习题6第2题：俯视图对应的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.095,
+        "y": 0.079,
+        "width": 0.77,
+        "height": 0.046
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.102
+      },
+      "sourceImageSha256": "42522602d1f2baecea2bb1c94217d8077f9309da315690c95f9ab279d7467dd3"
+    },
+    {
+      "id": "ch6-q-p193-review3",
+      "page": 193,
+      "printedPage": "186",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固 第2—3题",
+      "locator": "复习题6第3题：从三个方向观察的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.095,
+        "y": 0.374,
+        "width": 0.773,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3865
+      },
+      "sourceImageSha256": "42522602d1f2baecea2bb1c94217d8077f9309da315690c95f9ab279d7467dd3"
+    },
+    {
+      "id": "ch6-q-p193-review4",
+      "page": 193,
+      "printedPage": "186",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第4—6题",
+      "locator": "复习题6第4题：按语句画图的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.095,
+        "y": 0.535,
+        "width": 0.65,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.547
+      },
+      "sourceImageSha256": "42522602d1f2baecea2bb1c94217d8077f9309da315690c95f9ab279d7467dd3"
+    },
+    {
+      "id": "ch6-q-p193-review5",
+      "page": 193,
+      "printedPage": "186",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第4—6题",
+      "locator": "复习题6第5题：零件图中的线段长度的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.095,
+        "y": 0.751,
+        "width": 0.77,
+        "height": 0.046
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.774
+      },
+      "sourceImageSha256": "42522602d1f2baecea2bb1c94217d8077f9309da315690c95f9ab279d7467dd3"
+    },
+    {
+      "id": "ch6-q-p193-review6",
+      "page": 193,
+      "printedPage": "186",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第4—6题",
+      "locator": "复习题6第6题：角度填空的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.095,
+        "y": 0.804,
+        "width": 0.185,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.8155
+      },
+      "sourceImageSha256": "42522602d1f2baecea2bb1c94217d8077f9309da315690c95f9ab279d7467dd3"
+    },
+    {
+      "id": "ch6-q-p194-review7",
+      "page": 194,
+      "printedPage": "187",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固 第7题",
+      "locator": "复习题6第7题：角度与余补关系判断的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.14,
+        "y": 0.08,
+        "width": 0.2,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.0915
+      },
+      "sourceImageSha256": "9a309f858b5b88799e7e75254bb439c2ca57b90ebc3705cee4695fad032bb0cc"
+    },
+    {
+      "id": "ch6-q-p194-review8",
+      "page": 194,
+      "printedPage": "187",
+      "indexAnchor": 2,
+      "anchorLabel": "综合运用 第8—10题",
+      "locator": "复习题6第8题：由三个观察图辨认立体图形的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.14,
+        "y": 0.241,
+        "width": 0.492,
+        "height": 0.07
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.276
+      },
+      "sourceImageSha256": "9a309f858b5b88799e7e75254bb439c2ca57b90ebc3705cee4695fad032bb0cc"
+    },
+    {
+      "id": "ch6-q-p194-review9",
+      "page": 194,
+      "printedPage": "187",
+      "indexAnchor": 2,
+      "anchorLabel": "综合运用 第8—10题",
+      "locator": "复习题6第9题：圆柱侧面的一圈最短路线的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.14,
+        "y": 0.319,
+        "width": 0.486,
+        "height": 0.049
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3435
+      },
+      "sourceImageSha256": "9a309f858b5b88799e7e75254bb439c2ca57b90ebc3705cee4695fad032bb0cc"
+    },
+    {
+      "id": "ch6-q-p194-review10",
+      "page": 194,
+      "printedPage": "187",
+      "indexAnchor": 2,
+      "anchorLabel": "综合运用 第8—10题",
+      "locator": "复习题6第10题：图形运动形成立体的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.14,
+        "y": 0.557,
+        "width": 0.763,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.582
+      },
+      "sourceImageSha256": "9a309f858b5b88799e7e75254bb439c2ca57b90ebc3705cee4695fad032bb0cc"
+    },
+    {
+      "id": "ch6-q-p195-review11",
+      "page": 195,
+      "printedPage": "188",
+      "indexAnchor": 0,
+      "anchorLabel": "综合运用 第11—12题",
+      "locator": "复习题6第11题：两次对折后的夹角的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.095,
+        "y": 0.08,
+        "width": 0.767,
+        "height": 0.073
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.1165
+      },
+      "sourceImageSha256": "a66b0cff09bf3c881cac748fa2d3af7a43b288325425e5847ef6a0570f78aab5"
+    },
+    {
+      "id": "ch6-q-p195-review12",
+      "page": 195,
+      "printedPage": "188",
+      "indexAnchor": 0,
+      "anchorLabel": "综合运用 第11—12题",
+      "locator": "复习题6第12题：动物园导游图的方向的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.095,
+        "y": 0.451,
+        "width": 0.765,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.475
+      },
+      "sourceImageSha256": "a66b0cff09bf3c881cac748fa2d3af7a43b288325425e5847ef6a0570f78aab5"
+    },
+    {
+      "id": "ch6-q-p195-review13",
+      "page": 195,
+      "printedPage": "188",
+      "indexAnchor": 3,
+      "anchorLabel": "拓广探索 第13—14题",
+      "locator": "复习题6第13题：连接四边中点后的探究的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.095,
+        "y": 0.535,
+        "width": 0.767,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.559
+      },
+      "sourceImageSha256": "a66b0cff09bf3c881cac748fa2d3af7a43b288325425e5847ef6a0570f78aab5"
+    },
+    {
+      "id": "ch6-q-p195-review14",
+      "page": 195,
+      "printedPage": "188",
+      "indexAnchor": 3,
+      "anchorLabel": "拓广探索 第13—14题",
+      "locator": "复习题6第14题：四个距离之和最小的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.095,
+        "y": 0.788,
+        "width": 0.765,
+        "height": 0.075
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.8255
+      },
+      "sourceImageSha256": "a66b0cff09bf3c881cac748fa2d3af7a43b288325425e5847ef6a0570f78aab5"
+    },
+    {
+      "id": "ch6-q-p197-field-activity1",
+      "page": 197,
+      "printedPage": "190",
+      "indexAnchor": 1,
+      "anchorLabel": "活动一 了解田径运动会相关运动项目场地设计的要求",
+      "locator": "综合与实践活动一：了解场地设计要求的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.13,
+        "y": 0.271,
+        "width": 0.744,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.2825
+      },
+      "sourceImageSha256": "8c01980fbac28829f624447b4ace63a14b45ebb639b382b1c293ad6139d0b72d"
+    },
+    {
+      "id": "ch6-q-p197-field-task1",
+      "page": 197,
+      "printedPage": "190",
+      "indexAnchor": 3,
+      "anchorLabel": "任务1 径赛项目跑道的设计",
+      "locator": "综合与实践任务1：径赛项目跑道的设计的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.13,
+        "y": 0.482,
+        "width": 0.31,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.494
+      },
+      "sourceImageSha256": "8c01980fbac28829f624447b4ace63a14b45ebb639b382b1c293ad6139d0b72d"
+    },
+    {
+      "id": "ch6-q-p198-field-task2",
+      "page": 198,
+      "printedPage": "191",
+      "indexAnchor": 0,
+      "anchorLabel": "任务2 田赛项目场地的设计",
+      "locator": "综合与实践任务2：田赛项目场地的设计的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.175,
+        "y": 0.069,
+        "width": 0.302,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.081
+      },
+      "sourceImageSha256": "a64edce08aaa1408309a7bf357b477b79108d83ddef259932b4dcf1492ecb6d9"
+    },
+    {
+      "id": "ch6-q-p198-field-task3",
+      "page": 198,
+      "printedPage": "191",
+      "indexAnchor": 1,
+      "anchorLabel": "任务3",
+      "locator": "综合与实践任务3：比赛场地互不干扰的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.13,
+        "y": 0.468,
+        "width": 0.785,
+        "height": 0.049
+      },
+      "marker": {
+        "x": 0.045,
+        "y": 0.4925
+      },
+      "sourceImageSha256": "a64edce08aaa1408309a7bf357b477b79108d83ddef259932b4dcf1492ecb6d9"
+    },
+    {
+      "id": "ch6-q-p198-field-activity3",
+      "page": 198,
+      "printedPage": "191",
+      "indexAnchor": 2,
+      "anchorLabel": "活动三 自己提出问题并加以解决",
+      "locator": "综合与实践活动三：提出并解决自己的问题的题号及起始题干；指南覆盖本题所列全部小问。",
+      "region": {
+        "x": 0.13,
+        "y": 0.647,
+        "width": 0.78,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.671
+      },
+      "sourceImageSha256": "a64edce08aaa1408309a7bf357b477b79108d83ddef259932b4dcf1492ecb6d9"
+    }
+  ]
+}

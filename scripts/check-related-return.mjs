@@ -7,8 +7,7 @@ const locations = new Map(positioning.locations.map((location) => [location.id, 
 export const reviewCases = chapter.supplements.flatMap((note) => note.related.map((link) => ({ note, link })));
 
 async function settled(page) {
-  await page.waitForFunction(() => !document.querySelector('.reading-message'));
-  await page.evaluate(() => new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+  await page.waitForFunction(() => !document.querySelector('.reading-message'), undefined, { timeout: 30_000 });
 }
 
 export async function openNote(page, id) {
@@ -17,8 +16,32 @@ export async function openNote(page, id) {
   await page.fill('#page-input', String(locations.get(note.locationId).page));
   await page.press('#page-input', 'Enter');
   await settled(page);
-  await page.click(`#supplement-${id}`);
+  const marker = `[data-supplement-ids~="${id}"]`;
+  await page.click(marker, { timeout: 30_000 });
+  if (await page.evaluate((noteId) => !!document.getElementById(`choice-${noteId}`), id)) await page.click(`#choice-${id}`, { timeout: 30_000 });
   await settled(page);
+}
+
+export async function checkAccordion(page, id) {
+  await openNote(page, id);
+  const ids = await page.evaluate(() => [...document.querySelectorAll('.supplement-accordion summary')].map((summary) => summary.id));
+  assert.ok(ids.length > 1, 'Choose a note whose marker is grouped at this width');
+  const selected = `choice-${id}`;
+  const opened = () => page.evaluate(() => [...document.querySelectorAll('.supplement-accordion[open] summary')].map((summary) => summary.id));
+  assert.deepEqual(await opened(), [selected]);
+  await page.press(`#${selected}`, 'Enter');
+  assert.deepEqual(await opened(), [], 'Enter collapses the current explanation');
+  await page.press(`#${selected}`, 'Space');
+  assert.deepEqual(await opened(), [selected], 'Space expands the explanation');
+  const other = ids.find((item) => item !== selected);
+  await page.click(`#${other}`, { timeout: 30_000 });
+  assert.deepEqual(await opened(), [other], 'Selecting another title keeps only that explanation open');
+  assert.ok(await page.evaluate(() => {
+    const panel = document.querySelector('#supplement-panel').getBoundingClientRect();
+    const summary = document.querySelector('.supplement-accordion[open] summary').getBoundingClientRect();
+    return summary.bottom > panel.top && summary.top < panel.bottom;
+  }), 'The selected title stays visible after the preceding explanation collapses');
+  console.log(`PASS accordion keyboard and switching: ${id}`);
 }
 
 export async function readingSnapshot(page, sourcePage) {
@@ -29,6 +52,7 @@ export async function readingSnapshot(page, sourcePage) {
       fraction: (viewport.top - paper.top) / paper.height,
       panelScroll: document.querySelector('#supplement-panel')?.scrollTop ?? 0,
       title: document.querySelector('#supplement-title')?.textContent,
+      expanded: document.querySelector('.supplement-accordion[open] summary')?.id ?? null,
       focus: document.activeElement?.id,
       highlight: document.querySelector('.location-highlight')?.id ?? null,
       back: !!document.querySelector('.return-button'),
@@ -52,6 +76,7 @@ export async function checkReviewCase(page, index) {
   await settled(page);
   const after = await readingSnapshot(page, sourcePage);
   assert.equal(after.title, before.title);
+  assert.equal(after.expanded, before.expanded, 'Return restores the expanded explanation');
   assert.equal(after.back, false, 'One link creates exactly one return entry');
   assert.equal(after.highlight, before.highlight);
   assert.equal(after.focus, selector.slice(1), 'Return restores focus to its source link');
@@ -66,15 +91,17 @@ export async function checkReviewChain(page, targets) {
   for (const target of targets) {
     const selector = `.supplement-related button[id$="-${target}"]`;
     await page.focus(selector);
-    sources.push(await readingSnapshot(page, 28));
+    const locationId = await page.evaluate(() => document.querySelector('.location-highlight')?.id.replace('location-', ''));
+    const sourcePage = locations.get(locationId)?.page ?? 28;
+    sources.push({ sourcePage, snapshot: await readingSnapshot(page, sourcePage) });
     await page.click(selector);
     await settled(page);
     await page.waitForSelector(`#location-${target}`);
   }
-  for (const source of sources.reverse()) {
+  for (const { sourcePage, snapshot: source } of sources.reverse()) {
     await page.click('.return-button');
     await settled(page);
-    const restored = await readingSnapshot(page, 28);
+    const restored = await readingSnapshot(page, sourcePage);
     assert.equal(restored.title, source.title);
     assert.equal(restored.highlight, source.highlight);
     assert.equal(restored.focus, source.focus);
@@ -87,10 +114,10 @@ export async function checkReviewChain(page, targets) {
 
 export async function checkReviewExit(page, action) {
   await openNote(page, 'ch1-number-line-review');
-  await page.click('#related-ch1-number-line-review-ch1-opposite-geometry');
+  await page.click('#related-ch1-number-line-review-ch1-order-on-axis');
   await settled(page);
   if (action === 'close') await page.click('button[aria-label="关闭解读"]');
-  else if (action === 'escape') await page.press('#location-ch1-opposite-geometry', 'Escape');
+  else if (action === 'escape') await page.press('#location-ch1-order-on-axis', 'Escape');
   else if (action === 'page-input') {
     await page.fill('#page-input', '30');
     await page.press('#page-input', 'Enter');
@@ -116,7 +143,7 @@ export async function checkReviewExit(page, action) {
 
 export async function checkReviewFailures(page) {
   await openNote(page, 'ch1-number-line-review');
-  await page.click('#related-ch1-number-line-review-ch1-opposite-geometry');
+  await page.click('#related-ch1-number-line-review-ch1-order-on-axis');
   await settled(page);
   const before = await readingSnapshot(page, 28);
   await page.evaluate(() => {
@@ -187,13 +214,11 @@ export async function checkReviewFailures(page) {
 
 // Run with an ego-browser Page already open on the local reader.
 export async function checkRelatedReturn(page) {
-  const related = '#related-ch1-direction-exercise-ch1-positive-negative';
-  await page.fill('#page-input', '12');
-  await page.press('#page-input', 'Enter');
-  await page.waitForFunction(() => !document.querySelector('.reading-message'));
-  await page.click('#supplement-ch1-direction-exercise');
+  const note = chapter.supplements.find((item) => item.id === 'ch1-guess-range');
+  const related = '#related-ch1-guess-range-ch1-order-on-axis';
+  await openNote(page, note.id);
   await page.click(related);
-  await page.waitForSelector('#location-ch1-positive-negative');
+  await page.waitForSelector('#location-ch1-order-on-axis');
   const repeatsTarget = await page.evaluate((selector) => !!document.querySelector(selector), related);
   if (repeatsTarget) {
     await page.click(related);
@@ -206,9 +231,9 @@ export async function checkRelatedReturn(page) {
     back: !!document.querySelector('.return-button'),
     title: document.querySelector('#supplement-title').textContent,
   }));
-  assert.equal(restored.page, '12', 'One return must reach the source, not the repeated review target');
+  assert.equal(restored.page, String(locations.get(note.locationId).page), 'One return must reach the source, not the repeated review target');
   assert.equal(restored.back, false, 'A repeated target must not add a duplicate history entry');
-  assert.equal(restored.title, '方向的正负由约定决定');
+  assert.equal(restored.title, note.title);
   assert.equal(repeatsTarget, false, 'The active review target must not remain a navigation link');
   assert.ok(await page.evaluate((selector) => !!document.querySelector(selector), related), 'Returning restores the review link');
   console.log('PASS: review target cannot repeat; one return restores its source and link');

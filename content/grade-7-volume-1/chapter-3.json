@@ -1,0 +1,3815 @@
+{
+  "documentSha256": "6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249",
+  "chapter": "第三章 代数式",
+  "pageRange": [
+    75,
+    94
+  ],
+  "contentOrigin": "补充解释；不属于教材原文。例子另行标明，习题提示不提供答案。",
+  "review": {
+    "status": "source-checked",
+    "basis": "逐页查看PDF第75–94页原图及跨页上下文，核对印刷页码、公式、图形、题号与索引；独立审核题目清单、各小问方法、数学条件、关联目标及练习边界；逐项检查定位叠图。",
+    "reviewer": "AI-assisted authoring and review",
+    "learningEffect": "未经学生使用验证。"
+  },
+  "supplements": [
+    {
+      "id": "ch3-q-robot-introduction",
+      "locationId": "ch3-q-robot-introduction",
+      "title": "章引问题（1）—（3）：题目导读",
+      "preview": "先分清识别面积和采摘个数，再看每问已知的是时间还是工作量。",
+      "paragraphs": [],
+      "learningRole": "引出问题",
+      "learningGap": "三个问题用两类工作量及不同时间单位，需要分别选择数量关系。",
+      "learningAction": "能为三问识别工作量、效率、时间及比较对象，自主列出表示所求量的式子。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "工作量、工作效率与时间的关系；识别面积与采摘个数是两种不同的工作量。",
+          "用字母表示变化的量；字母的意义和单位由题目给定。"
+        ],
+        "method": [
+          "（1）比较10 s、60 s、t s三个提问：改变了哪个量，哪个效率保持不变？用同一种数量关系处理它们。",
+          "（2）所求改为时间。先说明给定的n表示什么，再判断工作量和效率怎样决定时间。",
+          "（3）区分一个机械手、m个机械手与工人的采摘工作量，并辨认“多多少个”要求比较的两个量。"
+        ],
+        "cautions": [
+          "8 s表示采摘一个苹果的用时，不能直接当作每秒的采摘个数；1 h与秒制效率要匹配。",
+          "t、n的取值要符合时间和面积的意义；m是机械手个数，题目已给m>1，还应为整数。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-omitted-multiplication",
+          "label": "含字母式子的乘法书写",
+          "purpose": "把情境中的数量关系写成含字母的式子时，检查数与字母的连接方式。"
+        },
+        {
+          "locationId": "ch3-division-context",
+          "label": "平均量与除数的情境条件",
+          "purpose": "借铺管道例子区分工作量和时间，并检查第（2）问所求时间的实际意义。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-omitted-multiplication",
+      "locationId": "ch3-omitted-multiplication",
+      "title": "5t仍然是一道乘法",
+      "preview": "省去乘号，不会改变原来的运算。",
+      "paragraphs": [
+        "看到5t，可以先在心里补回5×t。5和t并排写，是含字母式子的书写约定；不是把两个数字接起来，也不是5+t。",
+        "这个约定不能随意搬到两个数之间。补充用例：5×2不能省写成52，因为52已表示五十二。需要代入具体数计算时，把乘号写出来更清楚。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "便笺说明了省写形式，未说明与数字连写的边界及代入时恢复乘号的作用。",
+      "learningAction": "能正确还原省略的乘法，并判断数字之间不能照此连写。",
+      "related": []
+    },
+    {
+      "id": "ch3-letter-range",
+      "locationId": "ch3-letter-range",
+      "title": "“任意时间”也要符合情境",
+      "preview": "t可以改变，但它表示的量和单位不能随意改变。",
+      "paragraphs": [
+        "这里的t表示以秒为单位的工作时间。换一个t，就换了一次工作时间；5仍表示题目给定的每秒识别范围。字母可以变化，不表示所有量都同时变化。",
+        "“任意时间”是在题设工作效率不变的条件下说的。时间不能取负数；若计入尚未开始工作的时刻，可以取t=0。字母能表示哪些数，要结合它代表的量判断。"
+      ],
+      "learningRole": "陈述性质或结论",
+      "learningGap": "一般性说明未展开可变的时间、固定效率与情境取值范围的区别。",
+      "learningAction": "能说明t与5各自代表什么，并排除负时间。",
+      "related": []
+    },
+    {
+      "id": "ch3-rate-and-time-units",
+      "locationId": "ch3-rate-and-time-units",
+      "title": "8秒一个，为什么写成1/8？",
+      "preview": "参与相乘的是每秒采摘个数，时间也必须用秒。",
+      "paragraphs": [
+        "8表示采摘一个苹果所用的秒数，1/8才表示一个机械手平均每秒采摘的个数。两者回答的问题不同，不能把8直接当作工作效率。",
+        "式子用每秒的效率，就要把1 h换成3600 s，才能得到个数。也可以先把效率换成每小时的个数，再乘1 h；统一单位是必须的，选用秒还是小时是方便做法。m是机械手的个数，因此是大于1的整数。"
+      ],
+      "learningRole": "推导或证明",
+      "learningGap": "文字关系到数式之间省略了单个所需时间转为单位时间效率与单位配合的理由。",
+      "learningAction": "能说明1/8、3600、m分别承担什么作用，并检查时间单位。",
+      "related": []
+    },
+    {
+      "id": "ch3-q-two-quantity-problems",
+      "locationId": "ch3-q-two-quantity-problems",
+      "title": "引入问题（1）（2）：题目导读",
+      "preview": "平均每天、周长和面积，分别对应不同的数量关系。",
+      "paragraphs": [],
+      "learningRole": "引出问题",
+      "learningGap": "跨页两问分别使用平均量及图形公式，需要把字母与所求量对应。",
+      "learningAction": "能区分平均长度、周长、面积，自主用字母表达两题中的三个所求量。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "平均量与总量、份数或时间的关系。",
+          "正方形的边长、周长和面积；一个字母可以表示公式中的一个量。"
+        ],
+        "method": [
+          "（1）先读全下一页接续的问句，确认所求是平均每天铺设的长度，再判断总长度和总天数的作用。",
+          "（2）分别回想正方形周长和面积各在计算什么，再把边长换成题目给定的字母。可将两个结果读回几何意义作检查。"
+        ],
+        "cautions": [
+          "（1）d表示完成工程所用天数，必须为正；“平均每天”不要求每天铺设一样长，也不自动要求d为整数。",
+          "（2）边长a应为正。周长与面积的量纲不同，不能因为都用a表示就混成同一个量。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-fraction-whole-denominator",
+          "label": "除数的整体与非零条件",
+          "purpose": "检查表示平均每天长度时，什么量充当除数以及允许什么取值。"
+        },
+        {
+          "locationId": "ch3-expression-vs-relation",
+          "label": "代数式与数量关系",
+          "purpose": "区分表示一个数量的式子和说明两量相等的关系。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-division-context",
+      "locationId": "ch3-division-context",
+      "title": "d除了不能为0，还受什么限制？",
+      "preview": "能计算只是第一步，还要能解释为这道题的天数。",
+      "paragraphs": [
+        "分母是工作天数d，d=0时不能做除法。由于这里描述铺完一条管道所花的时间，d还必须大于0；负数虽然可以用来做除法，却不符合本题的时间含义。",
+        "“平均每天”是把总长度按总时间平均分配，并不表示实际每天铺设的长度必须一样。题目没有要求只能用整天计时，所以不要仅看到“天”就另加d必须为整数的限制。"
+      ],
+      "learningRole": "陈述性质或结论",
+      "learningGap": "列式未区分除法的数学限制、情境的正值限制与平均量的含义。",
+      "learningAction": "能检查分母和情境两类条件，并区分平均效率与逐日实际效率。",
+      "related": []
+    },
+    {
+      "id": "ch3-expression-vs-relation",
+      "locationId": "ch3-expression-vs-relation",
+      "title": "4a和l=4a分别告诉你什么？",
+      "preview": "一个表示量，一个把两个量的关系写出来。",
+      "paragraphs": [
+        "4a表示“a的4倍”这个数量；l=4a则说明周长l等于这个数量。教材在定义处列出4a，是把这个表示数量的式子单独拿出来看。",
+        "列代数式时，得到一个能表示所求数量的式子就可以了。没有给出字母的具体值，也没有要求求出字母时，不必再把它变成一道解方程的问题。单独的数或字母也能表示数量，所以教材把它们也算作代数式。"
+      ],
+      "learningRole": "定义概念",
+      "learningGap": "公式中的等式与被定义的代数式相邻出现，需要分清表示数量与陈述关系。",
+      "learningAction": "能从l=4a中指出代数式4a，并说明列式不等于求出a。",
+      "related": [
+        {
+          "locationId": "ch3-value-not-expression",
+          "label": "继续看代数式的值",
+          "purpose": "了解给定字母值后，表示数量的式子怎样得到具体结果。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-example-1",
+      "locationId": "ch3-q-example-1",
+      "title": "例1：题目导读",
+      "preview": "分别认出折扣、面积、倍数差和体积比例，别只按文字顺序拼字母。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "四个情境的运算对象和单位不同，需要逐问说明数量结构。",
+      "learningAction": "能说明四问分别使用何种数量关系，并检查所列式的单位与情境。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "折扣所对应的价格比例，长方形面积，倍数与差，长方体体积及其一部分。",
+          "同一个字母或相同形式的代数式，可以在不同题中表示不同的量。"
+        ],
+        "method": [
+          "（1）确认九折的比较基准是原价，所求仍是每千克的售价。",
+          "（2）把长和宽对应到长方形面积公式中的两个量。",
+          "（3）辨认“少10件”是在与哪个数量比较；列式后把运算顺序读回原句。",
+          "（4）先辨认水池容积和池内水体积的区别，再把题目给定的三分之一对应到正确的整体。"
+        ],
+        "cautions": [
+          "（1）（2）都使用p，但它分别表示单价和长度；不能混用单位。",
+          "（3）产量是非负整数，字母的取值还应使所表示的产量有意义。",
+          "（4）a、h表示正的长度，体积使用立方单位；水占的是容积的三分之一，不是三个边长各占三分之一。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-expression-vs-relation",
+          "label": "代数式所表示的数量",
+          "purpose": "确认各问要得到的是表示所求量的式子。"
+        },
+        {
+          "locationId": "ch3-context-and-unit",
+          "label": "代数式的情境与单位",
+          "purpose": "检查例1中相同式子为何表示不同的量。"
+        },
+        {
+          "locationId": "ch3-read-outer-operation",
+          "label": "运算对象与整体",
+          "purpose": "辨认倍数差和体积比例分别作用于哪个数量。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-context-and-unit",
+      "locationId": "ch3-context-and-unit",
+      "title": "同是0.9p，为什么单位不同？",
+      "preview": "式子保留运算结构；字母的含义由各自情境决定。",
+      "paragraphs": [
+        "在第（1）题中，p是每千克苹果的原价，0.9是九折对应的比例，所得量仍是每千克的价格。在第（2）题中，p是以米为单位的宽，0.9是以米为单位的长，两条边相乘得到面积。",
+        "因此，单看0.9p不能断定它表示什么量。需要同时读懂字母的说明、数字所带的单位和问题所求的量。不同题中的同一个字母，也不必表示同一种量。"
+      ],
+      "learningRole": "陈述性质或结论",
+      "learningGap": "原文指出同式多义，但未说明单位为何不同，以及解释式子需要哪些情境信息。",
+      "learningAction": "能结合字母含义与单位解释同一个式子在两个情境中的不同含义。",
+      "related": []
+    },
+    {
+      "id": "ch3-q-same-expression-context",
+      "locationId": "ch3-q-same-expression-context",
+      "title": "例1后的举例问题：题目导读",
+      "preview": "给相同式子安排新的含义，并解释每个数和字母。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "举例要求迁移同式不同义，需要说明式子与情境的对应而非只换故事名称。",
+      "learningAction": "能给出一个使同一代数式具有不同实际含义的例子，并解释各部分及单位。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "代数式表达数量关系；其实际含义取决于数字、字母及单位的说明。"
+        ],
+        "method": [
+          "可以沿用上文的式子，也可以选一个自己熟悉的代数式，尝试给它安排不同的实际含义。",
+          "对每个情境分别说明所求的量、字母的含义与各步运算的理由，再检查它们是否确实对应同一个式子。"
+        ],
+        "cautions": [
+          "不同情境中的同一字母不必表示同一种量，但在同一个情境中必须保持含义一致。",
+          "若含除法或表示长度、人数等实际量，还要说明哪些取值符合情境。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-context-and-unit",
+          "label": "同一代数式的不同含义",
+          "purpose": "借助0.9p的两个已分析情境检查自己的举例。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-example-2",
+      "locationId": "ch3-q-example-2",
+      "title": "例2：题目导读",
+      "preview": "先看最后一步，再把每个运算对象读完整。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "四式分别含和、括号整体、复合分母及平方，需要区别运算层次。",
+      "learningAction": "能依据运算层次描述四个式子的意义，并检查分母条件。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "代数式的运算顺序；括号、分数线和指数确定运算作用的对象。"
+        ],
+        "method": [
+          "（1）（2）对比最后执行的运算，辨认“2倍”分别作用于哪一部分。",
+          "（3）先圈出分数线下面的完整对象，再用“商”的语言说明上下两部分的关系。",
+          "（4）分别辨认平方项、含字母的乘积和常数，再说明它们怎样组成整个式子。"
+        ],
+        "cautions": [
+          "说式子的意义时，词语应反映括号和分数线的范围，不能只照抄字母出现的先后。",
+          "（3）的整个分母不能为0；说明条件时要检查其中每个因数。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-expression-vs-relation",
+          "label": "代数式及其运算结构",
+          "purpose": "回到定义，确认每个式子如何由数、字母和运算组成。"
+        },
+        {
+          "locationId": "ch3-omitted-multiplication",
+          "label": "省略乘号的书写约定",
+          "purpose": "先读懂2a、ab等并写形式，再描述整个式子的意义。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-read-outer-operation",
+      "locationId": "ch3-read-outer-operation",
+      "title": "读式子时，先认最后一步",
+      "preview": "括号决定“2倍”作用于哪一个整体。",
+      "paragraphs": [
+        "2a+3的最后一步是相加，所以整体是一个和；2(a+3)的最后一步是相乘，所以整体是一个积，其中一个因数是a+3这个整体。",
+        "读式子可以先认最后一步，再说明每一部分；计算时则按运算顺序从里面做起。这两种观察顺序服务于不同目的。“先认最后一步”是读懂结构的方法，不是改变计算顺序。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "例题给出读法，却未说明如何利用最外层运算形成读法。",
+      "learningAction": "能根据最后一步运算区分2a+3与2(a+3)的结构。",
+      "related": []
+    },
+    {
+      "id": "ch3-q-example-2-margin-context",
+      "locationId": "ch3-q-example-2-margin-context",
+      "title": "例2旁的举例问题：题目导读",
+      "preview": "让情境体现“先乘后加”与“把和当作整体”的区别。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "两个外观接近的式子需要不同的情境关系，不能只给字母取同一个名字。",
+      "learningAction": "能为两式各举实际例子，并说明括号是否对应情境中的整体。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "括号确定运算对象；实际情境中的单位和数量关系决定列式。"
+        ],
+        "method": [
+          "分别为两个式子确定a所代表的量，再说明数字2和3在各自情境中的作用。",
+          "把自己编的情境读回运算关系，检查“2倍”作用的范围是否与原式一致。"
+        ],
+        "cautions": [
+          "两个式子都要有相应的情境说明，不能用一个含糊故事同时代替两者。",
+          "相加的量须能比较；若结果表示人数、长度或费用，还要检查单位和允许取值。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-read-outer-operation",
+          "label": "括号与倍数作用的范围",
+          "purpose": "检查两个故事是否分别体现了原式的结构。"
+        },
+        {
+          "locationId": "ch3-context-and-unit",
+          "label": "数量含义与单位",
+          "purpose": "检查所编情境中相加、相乘的量是否合理。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-fraction-whole-denominator",
+      "locationId": "ch3-fraction-whole-denominator",
+      "title": "分数线下面要作为一个整体",
+      "preview": "c除以的是ab，不能读成“除以a后再乘b”。",
+      "paragraphs": [
+        "分数线把下面的ab合为整个除数。若写成带除号的一行，应写c÷(ab)，括号使除数的范围与原式相同。",
+        "除数不能为0，因此ab不能为0，也就是a和b都不能为0。补充用例：a=2、b=3、c=12时，12÷(2×3)与12÷2×3不是同一个运算，不能随意去掉括号。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "例题读法未展开分数线的分组作用与分母非零条件。",
+      "learningAction": "能把分式正确改写为除法，并检查a、b的非零条件。",
+      "related": []
+    },
+    {
+      "id": "ch3-q-p71-exercise-1",
+      "locationId": "ch3-q-p71-exercise-1",
+      "title": "练习1：题目导读",
+      "preview": "先辨认每个字母代表的量，再选择倍数、年龄差、平均分或体积关系。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "四类填空需逐问识别数量关系，避免把出现字母就理解为同一种运算。",
+      "learningAction": "能按四个情境自主列式，并分别检查字母范围和单位。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "总数与每包数量，年龄随年份的变化，平均分配，正方体体积。"
+        ],
+        "method": [
+          "（1）把6包和n包作比较：每包数量保持什么不变，包数在哪个位置参与计算？",
+          "（2）以今年年龄为参照，辨认去年与6年后分别向时间的哪一侧变化。",
+          "（3）先判断一袋糖的质量由总质量和袋数怎样决定。",
+          "（4）回想正方体体积与棱长的关系，区分体积和表面积。"
+        ],
+        "cautions": [
+          "（1）的n表示包数；（3）的n表示袋数，平均分装时袋数应为正整数，两问不可混用其含义。",
+          "（2）年龄要与题述年份相容；（4）a表示正的棱长，体积使用立方单位。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-letter-range",
+          "label": "字母的情境取值",
+          "purpose": "检查包数、年龄、质量和长度各自允许什么数。"
+        },
+        {
+          "locationId": "ch3-division-context",
+          "label": "平均分配与除法条件",
+          "purpose": "辨认第（3）问平均每袋质量的除数及范围。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p71-exercise-2",
+      "locationId": "ch3-q-p71-exercise-2",
+      "title": "练习2：题目导读",
+      "preview": "按和、乘积、平方与商辨认结构，再用完整的话描述。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "四式需把字母、平方、括号和分数线分别对应到语言中的运算对象。",
+      "learningAction": "能自主说出四式意义，保留括号、指数和分母的完整范围。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "代数式的语言表达；括号、指数与分数线确定运算顺序和对象。"
+        ],
+        "method": [
+          "（1）分别辨认两部分表示的量，再说明它们如何合成整个式子。",
+          "（2）找出被乘以3的完整对象，并核对差的先后顺序。",
+          "（3）辨认平方作用于哪一部分，再说明最后的运算。",
+          "（4）分别圈出分子和分母，把分数线表达为两部分之间的运算。"
+        ],
+        "cautions": [
+          "第（2）项的括号内是有顺序的差，交换字母次序会改变意义。",
+          "第（4）项要求分母不为0；读式时不要把分母的一部分移到分数线外。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-read-outer-operation",
+          "label": "按整体运算读式",
+          "purpose": "把例2的读式方法用于各项。"
+        },
+        {
+          "locationId": "ch3-fraction-whole-denominator",
+          "label": "分母的整体范围",
+          "purpose": "检查第（4）项如何完整表达除数。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-make-context-exercise",
+      "locationId": "ch3-make-context-exercise",
+      "title": "练习3：题目导读",
+      "preview": "让100和2x在故事中表示能够相减的量。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "自编情境需要解释式子的各部分及取值边界，而不是只为字母命名。",
+      "learningAction": "能自主编出符合原式的情境，并检查单位和结果意义。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "代数式的实际含义；差的两个量及单位；字母的情境取值。"
+        ],
+        "method": [
+          "先确定x表示的量，再分别说明100、2和2x在情境中意味着什么。",
+          "把情境读回原式，检查所求是否确为这两个量按原有顺序所得的差；可选合法的x检验解释。"
+        ],
+        "cautions": [
+          "相减的两个量应表示同一种可比较的量，单位须匹配。",
+          "若用结果表示剩余量、长度等，需检查是否允许负值；由所编情境决定x的范围。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-context-and-unit",
+          "label": "代数式的含义与单位",
+          "purpose": "回看同式不同义的例子，核查自己编的情境。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-sum-difference-thinking",
+      "locationId": "ch3-q-sum-difference-thinking",
+      "title": "思考：和与差的积：题目导读",
+      "preview": "先认清相乘的两个对象，再判断是否需要把它们保留成整体。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "和、差、积三个运算词的层次需被明确辨认，而非按词序直接拼接。",
+      "learningAction": "能自主区分两个因数的范围，并说明所写符号怎样保留原句的层次。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "和、差、积的运算对象；括号将一个数量作为整体。"
+        ],
+        "method": [
+          "找出问句最后要求做的运算，再指出参加这一运算的两个数量各是什么。",
+          "写出自己的式子后，按运算顺序读回问句；可对照教材下方图解检查两个分支是否对应。"
+        ],
+        "cautions": [
+          "本书无特别说明时，a、b两数的差按a在前、b在后的顺序理解。",
+          "括号是否需要取决于能否保持运算对象的范围，不是为了把所有字母都括起来。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-read-outer-operation",
+          "label": "整体运算与括号",
+          "purpose": "借助先认最后一步的方法确认“积”的两个对象。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-example-3",
+      "locationId": "ch3-q-example-3",
+      "title": "例3：题目导读",
+      "preview": "辨认总价、利息和降价分别以哪个量为基准。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "三题分别含分类计价、按本金计息及先标价后降价，需要保留各自基准与次序。",
+      "learningAction": "能说明三问各步运算的对象，并检查所得表示的是钱数、利息还是售价。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "单价、数量与总价；利息与本金、年利率、存期的关系；先按倍数标价再降价。"
+        ],
+        "method": [
+          "（1）分别说明面包与饮料的单价、数量，辨认所求总钱数包含哪两类费用。",
+          "（2）明确所求是到期利息，并对照题下分析辨认本金、年利率和存期各自的作用。",
+          "（3）先辨认“1.1倍”以什么为基准，再判断降价是在商品价格变化的哪个阶段发生。"
+        ],
+        "cautions": [
+          "（1）的a、b分别是两类商品的单价，不要求二者数值不同。",
+          "（2）按本题给出的计息关系理解每年的基准，不把到期利息与本金或本息和混淆。",
+          "（3）80是降价的钱数；所列售价还须符合非负的情境要求。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-context-and-unit",
+          "label": "数字、字母的含义与单位",
+          "purpose": "检查各问的数字及字母代表单价、比例还是钱数。"
+        },
+        {
+          "locationId": "ch3-read-outer-operation",
+          "label": "运算次序与对象",
+          "purpose": "核对例3（3）中标价和降价的先后关系。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-interest-base",
+      "locationId": "ch3-interest-base",
+      "title": "三个2.75%都以谁为基准？",
+      "preview": "本题每年的利息，都按原来的本金a计算。",
+      "paragraphs": [
+        "年利率说明一年利息占本金的比例。按本题给出的“本金×年利率×存期”关系，每一年的计算基准都是a，3表示三个这样的年度。",
+        "8.25%a表示这三年新增的利息，不包含原来存入的本金。这里采用题目给定的计息关系，不能另把前一年的利息加入下一年的本金，也不能把三年的利率误读成每年的利率。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "计算未展开百分率的基准与“利息”所指数量的边界。",
+      "learningAction": "能指出百分率的基准，并区分利息与本金加利息。",
+      "related": []
+    },
+    {
+      "id": "ch3-q-example-4",
+      "locationId": "ch3-q-example-4",
+      "title": "例4：题目导读",
+      "preview": "路程相同，先区分原速度和新速度对应的时间。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "速度增量和提前时间是不同量，需在共同路程下识别两个行驶时间。",
+      "learningAction": "能说明两问所用行程关系及提前时间的比较次序。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "路程、速度、时间的关系；同路程下速度与时间的变化；时间差。"
+        ],
+        "method": [
+          "（1）辨认给定的路程与速度，以及本问所求的量，用行程关系建立联系。",
+          "（2）指出新速度改变的是哪一部分。比较原、新两次行程各自的时间，再根据“早到”核对时间差的先后顺序。"
+        ],
+        "cautions": [
+          "v表示正的行驶速度；速度增加3 km/h不等于用时减少3 h。",
+          "单位分别为km、km/h、h；所求提前时间应符合加快后较早到达的情境。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-division-context",
+          "label": "除法与实际数量条件",
+          "purpose": "检查把路程和速度联系到时间时，除数的取值是否符合行程情境。"
+        },
+        {
+          "locationId": "ch3-fraction-whole-denominator",
+          "label": "分母整体与非零条件",
+          "purpose": "检查新速度在用时表达式中是否保持完整。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-new-speed-whole",
+      "locationId": "ch3-new-speed-whole",
+      "title": "加快3 km/h，为什么不能从时间减3？",
+      "preview": "速度的变化，要先换算成这段路程所需时间的变化。",
+      "paragraphs": [
+        "3的单位是km/h，表示速度的增量；所求提前时间的单位是h。两个不同种类的量不能直接相减。速度变为v+3后，应把这个整体作为除数，才得到新的行驶时间。",
+        "这里v>0，原速度与新速度都为正。相同路程下新速度较大，新时间较短，所以“原时间−新时间”表示提前的时间。差式已能表示所求数量，不要求先求出v。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "列式未展开为何速度增量不能直接当作时间增量，以及分母整体和减法顺序的依据。",
+      "learningAction": "能按量与单位区分速度变化和时间变化，并解释分母与相减顺序。",
+      "related": [
+        {
+          "locationId": "ch3-fraction-whole-denominator",
+          "label": "回顾分母的整体范围",
+          "purpose": "理解v+3为什么共同作为除数。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p73-exercise-1",
+      "locationId": "ch3-q-p73-exercise-1",
+      "title": "练习1：题目导读",
+      "preview": "先确认每句话所描述的完整数量，再保留运算顺序。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "三个文字列式分别含倍数比较、相反数和差、平方与除法，需要逐一辨认范围。",
+      "learningAction": "能自主列出三式，并检查相反数、差的顺序和除数条件。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "倍数与增量；相反数；差的顺序；平方和商。"
+        ],
+        "method": [
+          "（1）指出“比……大1”是在与哪个数量比较，再检查所列式是否表达了这种比较。",
+          "（2）先分别指出差中的两个量，再核对谁在前、谁在后。",
+          "（3）辨认平方所作用的对象和除法的除数，保持它们在式子中的角色。"
+        ],
+        "cautions": [
+          "a的相反数不一定是负数，不能仅凭符号外形判断其正负。",
+          "（3）要能做除法，b不能为0；括号与分数线应保留原句的运算范围。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch1-opposite-sign",
+          "label": "相反数与负号",
+          "purpose": "回顾第（2）问中a的相反数怎样表示及如何判断正负。"
+        },
+        {
+          "locationId": "ch3-read-outer-operation",
+          "label": "按运算对象理解列式",
+          "purpose": "检查三问中的运算层次与文字是否一致。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-opposite-difference-exercise",
+      "locationId": "ch3-opposite-difference-exercise",
+      "title": "先看清“谁与谁的差”",
+      "preview": "相反数描述一个量；“差”还要求确定前后顺序。",
+      "paragraphs": [
+        "这句话先描述两个量，再要求它们的差。先分别指出哪一段话描述第一个量、哪一段描述第二个量，再按教材对“差”的约定连接。",
+        "含有a的相反数时，不要先认定它一定是负数。a本身可以为负数，写出的式子应对题目允许的a都成立。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "复合文字表述需要区分相反数这一对象与外层差的次序。",
+      "learningAction": "能分出两个运算对象，并在不预设a正负的情况下自主列式。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-sign",
+          "label": "回顾a与−a的意义",
+          "purpose": "确认相反数的写法与a本身的符号无关。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p73-exercise-2",
+      "locationId": "ch3-q-p73-exercise-2",
+      "title": "练习2：题目导读",
+      "preview": "辨认每袋价格与卖出袋数各自的作用。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "收入情境需要对应单价、数量和总价，并与利润等其他钱数区分。",
+      "learningAction": "能根据单价与销量自主表达销售收入，并说明m的含义与范围。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "单价、销售数量与总收入的关系；含字母式子的乘法书写。"
+        ],
+        "method": [
+          "把“每袋4.8元”和“售m袋”分别对应到单价与销量，再辨认所求收入包含的是哪部分钱。",
+          "列式后选择一个简单的合法销量，检查式子是否符合逐袋累计价格的意义。"
+        ],
+        "cautions": [
+          "收入表示销售所得钱数；题中未给成本，不要把它改成计算利润。",
+          "m表示售出的袋数，应为非负整数；收入以元为单位。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-omitted-multiplication",
+          "label": "数与字母的乘法书写",
+          "purpose": "检查表示单价与销量关系的式子如何书写。"
+        },
+        {
+          "locationId": "ch3-letter-range",
+          "label": "字母的实际取值",
+          "purpose": "检查m是否能解释为售出的袋数。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p73-exercise-3",
+      "locationId": "ch3-q-p73-exercise-3",
+      "title": "练习3：题目导读",
+      "preview": "把每块地的面积与它自己的每公顷产量配成一组。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "四个字母表示两块地的不同量，需要保持配对并检查面积单位与单产单位。",
+      "learningAction": "能正确配对每块地的面积和单产，自主表达两块地的总产量。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "工作总量与单位面积产量、面积的关系；两部分总量的合成。"
+        ],
+        "method": [
+          "分别标出第一块地与第二块地各自的一对数据，再说明每一对如何决定该地块的产量。",
+          "辨认所求的“总产量”包含哪些部分，列式后按地块逐项读回，检查是否错配字母。"
+        ],
+        "cautions": [
+          "m、n是以hm²计的面积，a、b是每公顷的产量，单位已经对应；不要只看到平方单位就擅自换成平方米。",
+          "面积与单产不可交叉配对；最终要表示棉花质量，使用kg。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-context-and-unit",
+          "label": "数量意义与单位匹配",
+          "purpose": "核对面积和单位面积产量相乘后所表示的量。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p73-exercise-4",
+      "locationId": "ch3-q-p73-exercise-4",
+      "title": "练习4：题目导读",
+      "preview": "减去的是小正方形的面积，要先分清长度与面积。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "题目同时给边长并问剩余面积，需要辨认差的对象并排除边长差代替面积差。",
+      "learningAction": "能自主表达剩余面积，说明两个被比较量是什么，并检查几何范围。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "正方形边长与面积的关系；挖去一部分后剩余面积的意义。"
+        ],
+        "method": [
+          "画一个简单示意图，标明保留和挖去的部分，辨认题目中的a、b各标哪条边。",
+          "所求是面积，先说明每个正方形面积由哪个长度决定，再考虑剩余部分与这两个面积的关系。"
+        ],
+        "cautions": [
+          "a、b是长度，面积用平方毫米；不要把长度的差直接解释为面积。",
+          "两条边长均为正，且题目说小正方形从大正方形中挖去，取值须与“大”“小”和能放入的情境相符。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-read-outer-operation",
+          "label": "运算对象与整体",
+          "purpose": "检查相减的对象是否是两块面积。"
+        },
+        {
+          "locationId": "ch3-context-and-unit",
+          "label": "式子所表示的量与单位",
+          "purpose": "区分边长与面积的单位。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-direct-proportion-condition",
+      "locationId": "ch3-direct-proportion-condition",
+      "title": "一起变大，就成正比例吗？",
+      "preview": "要保持的是比值，不只是同向变化。",
+      "paragraphs": [
+        "这里工作效率固定为5，时间增加到原来的几倍，识别范围也增加到原来的几倍。对正的工作时间，用识别范围除以时间，总能回到同一个效率。",
+        "仅看到两个量一起增大还不够。补充用例：边长与边长加1都随边长增大，但“边长加1”与边长的比值不固定，不能只凭同向变化判断为正比例。"
+      ],
+      "learningRole": "定义概念",
+      "learningGap": "正比例说明未对比比值固定与仅同向变化的不同判断强度。",
+      "learningAction": "能用比值固定判断正比例，并说明同向变化不足以判定。",
+      "related": []
+    },
+    {
+      "id": "ch3-q-snow-problem",
+      "locationId": "ch3-q-snow-problem",
+      "title": "问题：造雪天数：题目导读",
+      "preview": "先把每列数据理解为一种安排，再寻找变化中保持不变的量。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "表格计算与观察关系是不同任务，需要由造雪情境解释不变量而非只看到一增一减。",
+      "learningAction": "能自主填表、描述两个量的变化，并用情境说明支持关系判断的依据。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "总量、每天完成量与天数的关系；配对数据与不变量。"
+        ],
+        "method": [
+          "（1）每一列代表一种每天造雪量的安排。先辨认总量、每天造雪量、天数三者中哪些已知，再完成各列。",
+          "（2）把自己填出的天数与对应的每天造雪量逐列比较。除变化方向外，还要检查哪种运算能得到题目中不变的量，并说明其实际意义。"
+        ],
+        "cautions": [
+          "每天造雪量与天数按同一列配对，不能从不同安排中任取两个数。",
+          "仅凭一个量变大、另一个变小还不足以说明某种比例关系；判断应同时有情境中的固定量作依据。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-inverse-nonzero",
+          "label": "反比例关系及非零条件",
+          "purpose": "填表并形成关系判断后，对照字母表示检查固定量与变量的条件。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-inverse-not-decrease",
+      "locationId": "ch3-inverse-not-decrease",
+      "title": "一大一小，还需要检查什么？",
+      "preview": "反比例判断的关键是乘积保持不变。",
+      "paragraphs": [
+        "造雪例子中，每天造雪量增加，天数减少，这是变化方向；两者相乘仍等于同一批雪的总量，才给出反比例所需的不变量。",
+        "“一个增加，另一个减少”本身不足以判断。补充用例：总长10 cm的绳子分成两段，长度2和8的乘积是16，长度3和7的乘积是21。两段一增一减，乘积却没有保持不变。"
+      ],
+      "learningRole": "定义概念",
+      "learningGap": "原文从实例归纳定义，但需澄清反向变化并非充分条件。",
+      "learningAction": "能检查乘积是否固定，并用此排除只反向变化的情况。",
+      "related": [
+        {
+          "locationId": "ch3-direct-proportion-condition",
+          "label": "对照正比例的比值",
+          "purpose": "分清两类比例关系分别保持什么不变。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-inverse-nonzero",
+      "locationId": "ch3-inverse-nonzero",
+      "title": "为什么特别写k≠0？",
+      "preview": "固定乘积不为0，才排除了一个量总为0的情况。",
+      "paragraphs": [
+        "若乘积固定为0，可以让x任意变化而y始终为0。这样的“乘积固定”并不是教材这里定义的反比例关系，所以条件中要排除k=0。",
+        "当xy=k且k≠0时，x和y都不能为0，才可以写成y=k/x。k是在讨论的这一个关系里固定；换一个问题，它可以取不同的非零数。造雪例中两种量为正，还要遵守实际意义。"
+      ],
+      "learningRole": "陈述性质或结论",
+      "learningGap": "字母表示给出了非零条件，但未解释排除的情形及由此产生的除法条件。",
+      "learningAction": "能解释k≠0的作用，并判断反比例中的两个量不能取0。",
+      "related": []
+    },
+    {
+      "id": "ch3-q-example-5",
+      "locationId": "ch3-q-example-5",
+      "title": "例5：题目导读",
+      "preview": "每个容器里是同样多的水，所求高度只属于水占据的部分。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "水量、容器内部底面积与水高需对应到同一圆柱部分，并据固定量判断关系。",
+      "learningAction": "能说明两问中的体积公式如何对应水体，并检查变量关系及单位。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "圆柱体积、底面积与高的关系；固定水量下两量的关系；单位匹配。"
+        ],
+        "method": [
+          "（1）把每个容器里水占据的部分看成圆柱，分别辨认已知水体积、内部底面积和所求水高。",
+          "（2）用x、y对应刚才的两个量，说明它们怎样联系到每个容器共同的水量，再对照比例关系的判断条件。"
+        ],
+        "cautions": [
+          "y是水的高度，不是整个容器高度；采用的是容器内部的底面积。",
+          "x、y均为正，面积用cm²、高用cm、水体积用cm³；容器须能容纳给定水量。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-inverse-nonzero",
+          "label": "反比例关系的非零条件",
+          "purpose": "检查用字母表达关系时变量及固定量的条件。"
+        },
+        {
+          "locationId": "ch3-context-and-unit",
+          "label": "数量关系与单位",
+          "purpose": "借助面积例子的单位说明，检查底面积与水高对应的体积单位。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-water-volume-fixed",
+      "locationId": "ch3-water-volume-fixed",
+      "title": "不变的是水量，不是容器大小",
+      "preview": "x与y相乘，要对应同一份水的体积。",
+      "paragraphs": [
+        "每个容器中都注入300 cm³水，所以底面积x与水高y相乘得到同一个水体积。y表示水面到容器底的高度，不是整个容器的高度。",
+        "这里用的是内部底面积，并把水所占部分看成圆柱。面积以cm²计，高以cm计，乘积以cm³计，才能与300对应；容器需要能容纳这些水。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "结论未拆开水高与容器高，以及固定水体积和单位配合的作用。",
+      "learningAction": "能指出xy对应的实际量，并辨认水高与容器高。",
+      "related": []
+    },
+    {
+      "id": "ch3-q-inverse-life",
+      "locationId": "ch3-q-inverse-life",
+      "title": "3.1思考：生活中的反比例关系：题目导读",
+      "preview": "先说清两个变化量和固定总量，再检验它们的乘积。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "举例需指明两个量及固定乘积，不能只描述一增一减。",
+      "learningAction": "能自选生活例子，说明两个变量、固定量和允许范围。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "反比例关系的实际情境",
+          "固定乘积与量的含义"
+        ],
+        "method": [
+          "先选择两种有关联的量，说明哪个实际总量保持不变，再检查两量之积是否始终等于它。",
+          "用自己情境中的两组允许取值核验，并解释为什么其他允许取值也遵守同一关系。"
+        ],
+        "cautions": [
+          "仅有一增一减还不能判定反比例；固定的积还必须不为0。",
+          "明确字母含义、单位和允许范围，避免只有计算式而没有可成立的情境。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-inverse-not-decrease",
+          "label": "反比例关系",
+          "purpose": "用乘积固定的条件检查本题两个量的关系。"
+        },
+        {
+          "locationId": "ch3-context-and-unit",
+          "label": "代数式的实际意义与单位",
+          "purpose": "把本题的字母、数值和所求量逐一对应。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-s31-practice1",
+      "locationId": "ch3-q-s31-practice1",
+      "title": "3.1练习：路程一定的汽车（第1题）：题目导读",
+      "preview": "把路程一定转成速度与时间之间可检验的数量关系。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "行程题要把路程一定转为判断速度与时间关系的依据。",
+      "learningAction": "能用行程关系检验所问比例关系，并说明速度与时间的条件。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "路程、平均速度与时间的关系",
+          "反比例关系的判断"
+        ],
+        "method": [
+          "用路程、平均速度和时间的关系，把题目“路程一定”对应到一个不变量，再与反比例的条件比较。"
+        ],
+        "cautions": [
+          "须针对同一段非零路程，速度和用时应为正。",
+          "理由要说明什么保持不变，不能只说速度快就用时少。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-inverse-not-decrease",
+          "label": "反比例关系",
+          "purpose": "用乘积固定的条件检查本题两个量的关系。"
+        },
+        {
+          "locationId": "ch3-formula-unit-match",
+          "label": "路程公式与单位",
+          "purpose": "借助s=vt识别平均速度与时间之间的不变量。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-s31-practice2",
+      "locationId": "ch3-q-s31-practice2",
+      "title": "3.1练习：判断反比例（第2题）：题目导读",
+      "preview": "先辨认各题固定的量，再检查两个变量的乘积。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "三种情境固定的量不同，不能把总量不变都看成乘积不变。",
+      "learningAction": "能逐问指出固定量并用数量关系支持比例判断。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "反比例关系的乘积条件",
+          "数量关系中的总量"
+        ],
+        "method": [
+          "（1）把每箱质量、箱数与整批质量联系起来；（2）把底面积、高与体积联系起来；（3）把两类费用与总费用联系起来。",
+          "逐项写明固定量与两个变化量的关系，再用同一反比例标准判断。"
+        ],
+        "cautions": [
+          "“一定”修饰的量各不相同，不要只凭这个词选结论。",
+          "箱数是整数；涉及质量、体积和费用的数量应符合实际含义。",
+          "每项都要给理由，不能用一个情境的结论替代另外两项。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-inverse-not-decrease",
+          "label": "反比例关系",
+          "purpose": "用乘积固定的条件检查本题两个量的关系。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-inverse-test-exercise",
+      "locationId": "ch3-inverse-test-exercise",
+      "title": "“总费用一定”能直接下结论吗？",
+      "preview": "先查一定的量与所比较的两个量怎样联系。",
+      "paragraphs": [
+        "先把荧光笔费用、中性笔费用和总费用之间的关系用文字或式子写出来，再与反比例定义比较。题目出现“一定”，并不自动满足定义。",
+        "也可以在总费用相同的前提下，自选两组合法费用，检查所需的不变量。计算和关系判断留给你完成。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "题干含“一定”易与反比例的乘积一定混同，需要明确核对对象。",
+      "learningAction": "能主动检查固定的究竟是什么量，并据定义独立判断。",
+      "related": [
+        {
+          "locationId": "ch3-inverse-not-decrease",
+          "label": "回顾反比例判断的条件",
+          "purpose": "辨别仅有一增一减或某个总量固定是否足够。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-s31-practice3",
+      "locationId": "ch3-q-s31-practice3",
+      "title": "3.1练习：运输表格（第3题）：题目导读",
+      "preview": "每列代表一种运输安排；先配对，再研究变化和关系。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "运输表既要读取配对数据，也要区分变化描述与比例判断。",
+      "learningAction": "能按列核验总量，解释变化，并建立t与a的关系。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "表格中对应数据的读取",
+          "工作量、效率和时间",
+          "列式及反比例判断"
+        ],
+        "method": [
+          "（1）同一列描述一种运输安排，用这种安排的效率与天数求总吨数。",
+          "（2）比较不同列中的成对数据，描述变化；（3）按题目给a、t的含义写出关系，再检查反比例条件。"
+        ],
+        "cautions": [
+          "上下数据要按列配对，不能从两列各取一个数当作同一种安排。",
+          "变化方向和比例关系是两种不同的结论，第三问仍需说明不变量。",
+          "本题每天吨数、运输天数都为正，结果单位应与所问数量一致。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-inverse-not-decrease",
+          "label": "反比例关系",
+          "purpose": "用固定乘积条件检查表中的运输效率与天数。"
+        },
+        {
+          "locationId": "ch3-formula-unit-match",
+          "label": "数量关系公式与单位",
+          "purpose": "在表格的数据之间确认每个量的含义和单位。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-table-pairing-exercise",
+      "locationId": "ch3-table-pairing-exercise",
+      "title": "表中的上下两个数是一组",
+      "preview": "关系式要同时符合每一组数据和货物总量的含义。",
+      "paragraphs": [
+        "同一列的每天吨数与天数描述同一种运输安排。不要把不同列的数随意配对；它们可能属于不同的安排。",
+        "写出含a、t的关系后，选两列数据分别检验，再说明式子里保持不变的量在运输情境中是什么。检验具体数据能帮助发现错误，但解释情境关系才能说明为何其他安排也适用。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "由表到式需要对应数据配对与情境依据，而不只是找到数值规律。",
+      "learningAction": "能按列配对数据检验自列关系，并说明不变量的实际意义。",
+      "related": []
+    },
+    {
+      "id": "ch3-q-exercise31-1",
+      "locationId": "ch3-q-exercise31-1",
+      "title": "习题3.1第1题：题目导读",
+      "preview": "辨认倍数、分数部分、差与商各自作用于哪个量。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "倍数、分数部分、差与商四种说法中的运算对象不同。",
+      "learningAction": "能把四个文字表达各自列式，并说明差的顺序和除数条件。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "用代数式表示倍数与分数部分",
+          "差与商的运算次序",
+          "乘方及除法条件"
+        ],
+        "method": [
+          "（1）（2）辨明“几倍”或“几分之几”作用于哪个数；（3）先辨认“比谁少”，保留基准量；（4）分清乘方的对象和除数。",
+          "把列出的式子读回原句，逐项检查是否表达了同一数量。"
+        ],
+        "cautions": [
+          "省略乘号不等于把数字连写。",
+          "（3）的减法次序不能颠倒；（4）的除数不能为0。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-read-outer-operation",
+          "label": "代数式的运算层次",
+          "purpose": "根据最外层运算确定各部分的组合关系。"
+        },
+        {
+          "locationId": "ch3-fraction-whole-denominator",
+          "label": "分母的整体范围与非零条件",
+          "purpose": "检查本题商的除数范围和取值条件。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-exercise31-2",
+      "locationId": "ch3-q-exercise31-2",
+      "title": "习题3.1第2题：题目导读",
+      "preview": "先找最后一步，再读完整的括号、平方和分式。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "读式需保留各项的括号、平方和分数线范围。",
+      "learningAction": "能按四个式子的真实运算层次描述其意义。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "代数式的读法",
+          "括号和分数线的分组作用",
+          "平方的运算对象"
+        ],
+        "method": [
+          "先确认各式最后一步运算，再说明每一部分。（1）注意乘法与加法的层次；（2）注意括号整体；（3）分别辨认平方对象；（4）把分子、分母各当作整体读。"
+        ],
+        "cautions": [
+          "不要把“两个平方的和”读成“和的平方”。",
+          "（4）还应检查什么取值会使整个分母为0，不能只看分母是否含字母。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-read-outer-operation",
+          "label": "代数式的运算层次",
+          "purpose": "根据最外层运算确定各部分的组合关系。"
+        },
+        {
+          "locationId": "ch3-fraction-whole-denominator",
+          "label": "分母的整体范围与非零条件",
+          "purpose": "检查本题商的除数范围和取值条件。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-fraction-reading-exercise",
+      "locationId": "ch3-fraction-reading-exercise",
+      "title": "上下两部分都要读完整",
+      "preview": "读出商以后，再分别说明分子和分母。",
+      "paragraphs": [
+        "先辨认分数线把哪些内容放在上面、哪些放在下面，再用例2的读法表达它们之间的运算。不要把分子或分母中的加减号移到分数线外。",
+        "读完以后再检查：什么样的n会使整个分母为0？这种值能否代入？具体读法和条件由你写出。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "复合分式读法需要明确分数线范围，并自主检查分母条件。",
+      "learningAction": "能把分子分母作为整体读式，并独立确定不可取值。",
+      "related": [
+        {
+          "locationId": "ch3-fraction-whole-denominator",
+          "label": "回顾分数线的整体作用",
+          "purpose": "把例2的除数范围检查用到含加减的分母。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-exercise31-3",
+      "locationId": "ch3-q-exercise31-3",
+      "title": "习题3.1第3题：题目导读",
+      "preview": "四个情境分别核对所求量、运算基准和单位。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "四个应用情境分别涉及表面积、分步总量、利息和提前时间。",
+      "learningAction": "能逐问对应已知量与所求量，并检查运算顺序和单位。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "几何表面积与数量关系",
+          "已有总量和新增量",
+          "百分率基准与利息",
+          "行程公式"
+        ],
+        "method": [
+          "（1）辨认正方体各面的数量和面积；（2）分别识别目前累计量、以后每年的量和经过年数。",
+          "（3）先分清利息与本息和各求什么；（4）先确定实际用时，再由路程与用时考虑速度。"
+        ],
+        "cautions": [
+          "（2）人数以“万人”为单位，不要在同一式子里混用人与万人。",
+          "（3）百分率以存入的本金为基准，不能把利息与本息和混同。",
+          "（4）实际用时应为正，提前的1 h不是速度的增量。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-context-and-unit",
+          "label": "代数式的实际意义与单位",
+          "purpose": "把本题的字母、数值和所求量逐一对应。"
+        },
+        {
+          "locationId": "ch3-interest-base",
+          "label": "利率的基准与利息",
+          "purpose": "区分第（3）问所求的两个数量。"
+        },
+        {
+          "locationId": "ch3-new-speed-whole",
+          "label": "速度与时间的区别",
+          "purpose": "帮助第（4）问识别所给的是时间差。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-early-arrival-exercise",
+      "locationId": "ch3-early-arrival-exercise",
+      "title": "“提前1小时”改变了哪一个量？",
+      "preview": "先区分计划用时与实际用时，再考虑速度。",
+      "paragraphs": [
+        "题目给出的提前量是时间差。先在时间线上标出计划到达与实际到达，判断实际行驶时间是哪一段；不要把提前量当成速度差。",
+        "列式后，检查分母能否表示正的行驶时间，再说明这对原计划时间有什么要求。保留这个检查，能发现形式上可计算却不符合行程情境的取值。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "相同路程不同时间的列式需要辨认时间量及情境取值限制。",
+      "learningAction": "能独立确定实际用时，并检查所列速度式的分母含义。",
+      "related": [
+        {
+          "locationId": "ch3-new-speed-whole",
+          "label": "回看速度与时间的区别",
+          "purpose": "比较例4改变速度与本题改变用时的不同已知信息。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-exercise31-4",
+      "locationId": "ch3-q-exercise31-4",
+      "title": "习题3.1第4题：题目导读",
+      "preview": "人数、面积和制作情境固定的量不同，要逐项判断。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "三个情境需要分别识别人数、面积或工作量中的不变量。",
+      "learningAction": "能用各题自己的数量关系解释两个量是否成反比例。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "反比例关系的判断",
+          "排队人数、三角形面积和工作量关系"
+        ],
+        "method": [
+          "（1）用排队的总人数联系每排人数与排数；（2）用三角形面积公式联系所给的底与对应高；（3）用制作效率联系数量与时间。",
+          "每项分别判断这两个量的积是否始终固定为同一非零数，写出依据。"
+        ],
+        "cautions": [
+          "（1）人数和排数只能取符合分组要求的正整数。",
+          "（2）必须使用这条底所对应的高；（3）固定工作效率与固定工作总量不是同一个条件。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-inverse-not-decrease",
+          "label": "反比例关系",
+          "purpose": "用乘积固定的条件检查本题两个量的关系。"
+        },
+        {
+          "locationId": "ch3-triangle-base-height",
+          "label": "三角形的底与对应高",
+          "purpose": "确认第（2）问所用面积关系的对象。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-exercise31-5",
+      "locationId": "ch3-q-exercise31-5",
+      "title": "习题3.1第5题：题目导读",
+      "preview": "每袋颗数和总袋数要按列配对，且要能等量分完。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "糖果分装表要兼顾数据配对、固定总量与整数分配。",
+      "learningAction": "能填表、描述变化，并解释每袋颗数与袋数的关系及允许取值。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "表格数据配对",
+          "平均分配和总量",
+          "反比例关系与整数条件"
+        ],
+        "method": [
+          "（1）把同一列的每袋颗数与总袋数对应起来；（2）比较几种分装方案中的两种量。",
+          "（3）沿用表中数据的对应关系，按题目对m、n的定义列式，再说明比例关系。"
+        ],
+        "cautions": [
+          "m、n的含义以本题为准，不能沿用其他题中同名字母的意思。",
+          "糖果颗数和袋数均应是正整数，且需能把整批糖果等量分完。",
+          "跨页的第（3）问仍使用本页同一批糖果的数据。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-table-pairing-exercise",
+          "label": "表格中对应量的关系",
+          "purpose": "把运输表的按列核对方法用于糖果分装表。"
+        },
+        {
+          "locationId": "ch3-inverse-not-decrease",
+          "label": "反比例关系",
+          "purpose": "用乘积固定的条件检查本题两个量的关系。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-exercise31-6",
+      "locationId": "ch3-q-exercise31-6",
+      "title": "习题3.1第6题：题目导读",
+      "preview": "逐项解释两个情境，再用相同运算结构编一个新例子。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "串珠价格与生产情境需要逐项解释同类表达式，末尾还要求迁移举例。",
+      "learningAction": "能解释两个式子的数量含义，并为其中一个式子再举成立的情境。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "代数式在不同情境中的共同结构",
+          "单价与总价、效率与总产量"
+        ],
+        "method": [
+          "（1）先分辨两种颜色珠子各自的价格和数量；（2）先分辨两个车间的日产量与生产天数。",
+          "比较两个列式的运算结构，再自编一个具有同样结构的情境，并解释每个量的含义。"
+        ],
+        "cautions": [
+          "字母a、b在两小问中表示的量和单位不同。",
+          "末尾还要求举一个新例子，不能只填完两个空。",
+          "若写法不同，可按数量关系说明它们是否表达同一种结构，不必强行改成唯一写法。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-context-and-unit",
+          "label": "代数式的实际意义与单位",
+          "purpose": "把本题的字母、数值和所求量逐一对应。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-exercise31-7",
+      "locationId": "ch3-q-exercise31-7",
+      "title": "习题3.1第7题：题目导读",
+      "preview": "相似写法可能表达不同关系，故事也须体现这个差别。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "两组相似式子的运算层次不同，举例必须反映这种差别。",
+      "learningAction": "能分别读懂两组式子，并用实际情境解释它们的区别。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "运算层次和括号的作用",
+          "乘法与加法的含义",
+          "用情境解释代数式"
+        ],
+        "method": [
+          "（1）分别找出两个式子最后一步运算及其对象；（2）辨认分数与字母之间是乘还是加。",
+          "每组先用文字区分式子的意义，再构造能体现这种差别的实际情境。"
+        ],
+        "cautions": [
+          "表达式中的分数是一个完整的数；数与字母并写表示乘法。",
+          "举例时同时说明字母和各量单位，不要只换人物或物品名称而保持错误的关系。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-read-outer-operation",
+          "label": "代数式的运算层次",
+          "purpose": "根据最外层运算确定各部分的组合关系。"
+        },
+        {
+          "locationId": "ch3-omitted-multiplication",
+          "label": "乘号省写约定",
+          "purpose": "辨认第（2）组两个式子中的不同运算。"
+        },
+        {
+          "locationId": "ch3-context-and-unit",
+          "label": "代数式的实际意义与单位",
+          "purpose": "把本题的字母、数值和所求量逐一对应。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-exercise31-8",
+      "locationId": "ch3-q-exercise31-8",
+      "title": "习题3.1第8题：题目导读",
+      "preview": "区分第几个数和这个数的大小，并说明你采用的规律。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "数列观察需要区分第几个数与这个数的大小，并说明推广依据。",
+      "learningAction": "能说明所采用的规律，写出第n个数的表示，并用已知各项核验。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "数列中的位置与数值",
+          "观察规律并用代数式表达"
+        ],
+        "method": [
+          "（1）提出一种符合所给各项的规律，用文字说明；（2）明确第n个的位置含义，再把你的规则写成含n的式子。",
+          "用前几项检查式子，并说明规则为何可继续使用。"
+        ],
+        "cautions": [
+          "有限的几项不保证规律只有一种，必须说清采用的规则。",
+          "序号从第1个开始，n的取值应符合计数含义。",
+          "不要只报后面的一个数而漏掉文字规则和一般表示。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-square-pattern-index",
+          "label": "序号与对应数量",
+          "purpose": "比较拼图中序号和数量的区别，检查第n个的起点。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-sequence-rule-exercise",
+      "locationId": "ch3-sequence-rule-exercise",
+      "title": "为什么题目说“有可能”？",
+      "preview": "看到几个数，可以提出规律，还要说明采用的规则。",
+      "paragraphs": [
+        "有限的几个数只展示了开头，后面可以按不同规则继续。题目让你提出一种与已给各项相符的规律，不是凭几个数就证明只有这一种规律。",
+        "先写清自己的规则，再用它检查给出的每一项。用第n个数表示时，还要说明n从哪里开始，保证第一项就与原数列对应。"
+      ],
+      "learningRole": "探究",
+      "learningGap": "数列题中“有可能”的表述暗含猜想的非唯一性与位置编号的要求。",
+      "learningAction": "能提出并检验一种一致规则，区分猜测规律与证明唯一。",
+      "related": []
+    },
+    {
+      "id": "ch3-q-exercise31-9",
+      "locationId": "ch3-q-exercise31-9",
+      "title": "习题3.1第9题：题目导读",
+      "preview": "先找每问固定的条件，再区分读完用时与已经读了几天。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "三人的阅读题分别固定阅读量或每天阅读量，还涉及已读与未读。",
+      "learningAction": "能逐问说明固定条件，建立时间或未读页数的关系并检验比例判断。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "工作总量、每天效率与用时",
+          "已完成量和剩余量",
+          "正反比例关系的条件"
+        ],
+        "method": [
+          "（1）先用已知阅读安排确定这本书的总页数，再比较其他安排；分别说明天数与每天页数之间的关系。",
+          "（2）保留各人自己的阅读速度，考虑经过同样t天后的已读量和剩余量，再根据两个量的数量关系判断是否反比例。"
+        ],
+        "cautions": [
+          "总页数相同不表示三人每天读的页数相同。",
+          "x表示丙读完的总天数，t表示共同经过的天数，不可互换。",
+          "第二问限定在两星期内；剩余页数应与尚未读完的情境相符。",
+          "每问所比较的两个量不同，应分别检查不变量。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-inverse-not-decrease",
+          "label": "反比例关系",
+          "purpose": "用乘积固定的条件检查本题两个量的关系。"
+        },
+        {
+          "locationId": "ch3-letter-range",
+          "label": "字母所表示的量与取值范围",
+          "purpose": "区分本题的总用时x与已经经过的t天。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-integer-scope-exercise",
+      "locationId": "ch3-integer-scope-exercise",
+      "title": "这里的“整数”有什么用？",
+      "preview": "式子的范围要覆盖正数、负数和0中的相应情形。",
+      "paragraphs": [
+        "题目要求表示任意一个偶数或奇数，所以检查自己的表示时，不能只试几个正整数。还应想想0和负整数中的相应数能否表示出来。",
+        "另一个检查方向是：让n取任意整数时，你的式子是否始终属于要表示的那一类？“能举出一些例子”与“能表示任意一个”是不同要求。"
+      ],
+      "learningRole": "探究",
+      "learningGap": "整数参数的覆盖范围与全称要求未在题干展开。",
+      "learningAction": "能从产生结果与覆盖目标两方面检验自己构造的表示。",
+      "related": []
+    },
+    {
+      "id": "ch3-q-exercise31-10",
+      "locationId": "ch3-q-exercise31-10",
+      "title": "习题3.1第10题：题目导读",
+      "preview": "偶奇数表示与三位数表示，需要不同的字母范围。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "整数表示与十进制数位使用不同的字母含义及限制。",
+      "learningAction": "能分别解释偶奇数表示与数位表达，并检查参数范围。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "用整数参数表示偶数与奇数",
+          "十进制数位的位值",
+          "字母的取值条件"
+        ],
+        "method": [
+          "（1）从整数的奇偶性质构造表示，再检查它能否覆盖所有相应整数。",
+          "（2）先用一个具体三位数观察各数位贡献，再用a、b、c表示同样的位值关系。"
+        ],
+        "cautions": [
+          "（1）不能只考虑正整数，还要考虑0和负整数中的相应情况。",
+          "（2）字母表示数位上的数字，百位还有三位数首位的限制。",
+          "直接连写三个字母在代数式中表示乘法，不能代替位值表达。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-letter-range",
+          "label": "字母含义与取值范围",
+          "purpose": "为第（1）问整数参数和第（2）问数位数字分别检查范围。"
+        },
+        {
+          "locationId": "ch3-omitted-multiplication",
+          "label": "乘号省写约定",
+          "purpose": "区分字母并写的乘法与数位表示。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-digits-place-exercise",
+      "locationId": "ch3-digits-place-exercise",
+      "title": "数字的位置决定它贡献多少",
+      "preview": "字母并排通常表示乘法，不能直接拿来代替数位。",
+      "paragraphs": [
+        "想一想一个具体三位数的个位、十位、百位各贡献多少，再把同样的数位关系用a、b、c表达。不要只把三个字母连写，因为本章中并排的字母表示乘法。",
+        "还要检查每个字母能取哪些数字，以及三位数的百位是否可以是0。题目给出的是数位上的数字，它们的范围比一般的数更窄。"
+      ],
+      "learningRole": "探究",
+      "learningGap": "位置记数与代数乘法的并写容易混淆，需保留学生按数位构式。",
+      "learningAction": "能区分数位表示与字母乘积，并自主检查数位范围。",
+      "related": [
+        {
+          "locationId": "ch3-omitted-multiplication",
+          "label": "回顾字母并写的约定",
+          "purpose": "判断为什么直接连写字母不能表达三位数。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-matches-duplicate-exercise",
+      "locationId": "ch3-matches-duplicate-exercise",
+      "title": "习题3.1第11题：题目导读",
+      "preview": "先记录每场比赛双方，检查同一场有没有算过两次。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "推广比赛场数前，需要用具体记录排除同一场重复计算。",
+      "learningAction": "能记录小规模比赛，说明计数为何不重不漏，并检验含n的表达。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "分类计数与不重不漏",
+          "从具体情况到含n的代数式"
+        ],
+        "method": [
+          "选一个小规模球队数，记录每场比赛双方，再核对所有不同对手的配对是否齐全。",
+          "用同一种计数思路处理题目给出的其他球队数，最后说明如何推广到n支球队。"
+        ],
+        "cautions": [
+          "每两队之间只比赛一场，从双方各记录一次会造成重复。",
+          "“3支、4支、5支、n支”都要回应，不能只给一个具体场数。",
+          "n表示球队数，应取符合比赛情境的整数。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-matchstick-shared-side",
+          "label": "不重复、不遗漏的计数",
+          "purpose": "比较共用边重复计数，检查一场比赛是否从双方各数了一次。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-same-letter-consistency",
+      "locationId": "ch3-same-letter-consistency",
+      "title": "两个字母必须取不同的数吗？",
+      "preview": "字母不同，可以取相同的值；同一个字母要保持同一含义。",
+      "paragraphs": [
+        "x和y分别代表两个数，这两个数可以不同，也可以相同。字母名称不同，并没有附带“数值一定不相等”的条件。",
+        "在同一次使用x+y=y+x时，左右两边的x必须取同一个值，y也一样；否则就不再是在交换同一对数的顺序。字母表达一般性，仍要保持前后一致。"
+      ],
+      "learningRole": "陈述性质或结论",
+      "learningGap": "一般性表述未区分字母名称不同与数值不同，以及一次代入的前后一致性。",
+      "learningAction": "能允许不同字母取同值，并保持等式中同一字母取值一致。",
+      "related": [
+        {
+          "locationId": "ch3-same-letter-substitution",
+          "label": "在求值练习中检查一致性",
+          "purpose": "把同一字母保持同一数值的原则用于代入。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p86-volleyball",
+      "locationId": "ch3-q-p86-volleyball",
+      "title": "3.2 问题：购置排球：题目导读",
+      "preview": "分清按班配发的数量和全校另外留用的数量。",
+      "paragraphs": [],
+      "learningRole": "引出问题；示范方法",
+      "learningGap": "题目把按班增加的配发量与全校固定留用量放在一起，需要说明它们在列式和两次代入中的不同作用。",
+      "learningAction": "能按排球的用途解释教材式子中的两部分，并说明改变班级数时哪一部分随之变化。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "用字母表示数量",
+          "按份数计算总量",
+          "列代数式与求值"
+        ],
+        "method": [
+          "把每班配发的排球与学校另外留用的排球看作两部分；确定哪一部分随班级数变化。",
+          "结合教材用n表示班级数的约定，读出代数式每一部分的含义。再比较班级数取15和20时，哪些数变了、哪些数保持不变。"
+        ],
+        "cautions": [
+          "n表示班级数，应取正整数。",
+          "“学校另外留20个”是全校留用量，不能当成每个班都另外留20个。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-letter-range",
+          "label": "字母含义与取值范围",
+          "purpose": "检查班级数这一实际数量的允许取值。"
+        },
+        {
+          "locationId": "ch3-value-not-expression",
+          "label": "代数式与代数式的值",
+          "purpose": "区分一般配发关系和具体班级数下的结果。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-class-count-domain",
+      "locationId": "ch3-class-count-domain",
+      "title": "字母能表示数，为什么这里不能随便取？",
+      "preview": "n表示班级数，取值还要符合班级能怎样计数。",
+      "paragraphs": [
+        "字母本身可以用来表示不同的数，但放进这个情境后，n表示的是班级数，就应取正整数。把负数或分数代入5n+20，可能仍能算出数值，却不能解释成这所学校的班级数和购球数量。",
+        "因此，判断一个数能不能代入时，可以分两步检查：式子中的运算是否有意义，这个数是否符合字母在题目中的实际含义。两种条件都要满足。"
+      ],
+      "learningRole": "引出问题；示范方法",
+      "learningGap": "排球问题给出字母所指对象和两次代入，但未区分可计算的数值与符合班级数含义的取值。",
+      "learningAction": "能根据班级数的含义限制n的取值，并区分算得出与情境成立。",
+      "related": []
+    },
+    {
+      "id": "ch3-value-not-expression",
+      "locationId": "ch3-value-not-expression",
+      "title": "换了字母的值，代数式也换了吗？",
+      "preview": "运算关系保持不变，变化的是这次代入得到的数值。",
+      "paragraphs": [
+        "5n+20保留了“班级数乘5，再加20”的关系。n取15或20时，使用的仍是同一个代数式；95和120是两次取值分别得到的结果。求值是在已给定字母值后计算，不是在求一个尚未给出的字母。",
+        "教材说“一般也不同”，并没有说每次换字母值，结果一定改变。解释用例：代数式x²中，x取2和−2时，值都是4。两个不同的字母值可以得到同一个代数式的值。"
+      ],
+      "learningRole": "定义概念",
+      "learningGap": "定义未展开式子保持的关系与某次数值结果的区别，也未解释“一般”允许不同取值得到同值。",
+      "learningAction": "能区分代数式与代数式的值，并判断“不同取值必有不同结果”不成立。",
+      "related": [
+        {
+          "locationId": "ch3-expression-vs-relation",
+          "label": "回顾代数式表示什么",
+          "purpose": "先分清表示数量的式子，再看一次代入所得的值。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p86-example1",
+      "locationId": "ch3-q-p86-example1",
+      "title": "3.2 例1：题目导读",
+      "preview": "对两组x、y取值分别代入同一个式子。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "两组求值计算需要连接到省略乘号的读法，说明换取值后为何仍按同一运算关系计算。",
+      "learningAction": "能逐项解释教材两组算式中的数从哪里代入，以及为什么两组都先乘后加。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "代数式的值",
+          "省略乘号的读法",
+          "含分数的有理数运算"
+        ],
+        "method": [
+          "（1）先确认2x和3y各表示哪个数与哪个字母相乘，再在原位置分别代入x、y的整数值。",
+          "（2）使用新的整组取值重新代入，保留分数作为一个数参与乘法。两问都按先乘后加的顺序读教材计算。"
+        ],
+        "cautions": [
+          "两组取值不能混用；第二问的x不能沿用第一问的数。",
+          "2x不是把2与x的数值并排拼成一个多位数。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-omitted-multiplication",
+          "label": "省略乘号的约定",
+          "purpose": "读懂2x、3y中仍然存在的乘法。"
+        },
+        {
+          "locationId": "ch3-value-not-expression",
+          "label": "代数式的值",
+          "purpose": "理解两问只是对同一个式子选用不同的取值。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-value-denominator-condition",
+      "locationId": "ch3-value-denominator-condition",
+      "title": "代入前，为什么要先看分母？",
+      "preview": "同一个a既出现在平方中，也出现在分母中，取值要兼顾两处。",
+      "paragraphs": [
+        "在a²−b/a中，a²允许a取0，但分式b/a要求a不能为0。同一个字母在同一个式子中表示同一个数，所以必须同时满足两处运算的条件。",
+        "例2给出的a=4和a=−3都满足这一条件。负数作分母可以计算；被排除的是0，不能把“分母不能为0”误读成“分母必须是正数”。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "例2两组取值均可代入，但题干未单列同一字母在不同位置同时受到的分母条件。",
+      "learningAction": "能在求值前检查分母，说明a可以为负数而不能为0。",
+      "related": [
+        {
+          "locationId": "ch3-class-count-domain",
+          "label": "比较实际情境的取值限制",
+          "purpose": "区分运算本身的条件与实际数量的条件。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p86-example2",
+      "locationId": "ch3-q-p86-example2",
+      "title": "3.2 例2：题目导读",
+      "preview": "同时检查分母条件、负数代入和平方的运算对象。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "同一个a同时出现在平方和分母中，需要解释分母条件与负数整体代入怎样共同约束教材步骤。",
+      "learningAction": "能说明教材为何允许a取负数而不允许取0，并解释第（2）问平方底数的括号。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "分母不能为0",
+          "代数式的值",
+          "负数的乘方与除法"
+        ],
+        "method": [
+          "（1）先检查a在分母中的非零条件，再将这一组a、b分别代入平方项和分式；读出教材各步运算如何保留原式的减号。",
+          "（2）a出现的两处都使用这一组给定的负数，b使用同组给定值。对照次页解答，说明平方中的括号为什么保留整个负数作为底数。"
+        ],
+        "cautions": [
+          "a可以是负数，但不能是0。",
+          "平方外的负号与平方底数中的负号含义不同；分式的结果也要带着自己的符号参与最后一步。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-fraction-whole-denominator",
+          "label": "分母整体与非零条件",
+          "purpose": "在代入前识别分式和分母限制。"
+        },
+        {
+          "locationId": "ch3-value-not-expression",
+          "label": "代数式的值",
+          "purpose": "明确给定字母数值后应保留原式关系求值。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-negative-substitution-base",
+      "locationId": "ch3-negative-substitution-base",
+      "title": "为什么−3代入平方后要加括号？",
+      "preview": "a²的底数是整个a，因此这里的底数是整个−3。",
+      "paragraphs": [
+        "a²表示a乘a。a=−3时，两个因数都是−3，写成(−3)²，括号就把负号和3一起保留为底数。",
+        "若写成−3²，平方只作用于3，负号留在平方外面，所表达的运算就变了。代入是替换字母所表示的数，不能改变原式规定的运算对象。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "续解直接写出(−3)²，未展开括号保持负数整体作为底数的理由。",
+      "learningAction": "能说明(−3)²与−3²的运算对象不同，并保留负数代入时的底数结构。",
+      "related": []
+    },
+    {
+      "id": "ch3-q-p87-practice1",
+      "locationId": "ch3-q-p87-practice1",
+      "title": "3.2 练习第1题：题目导读",
+      "preview": "让左边每个a值沿对应线进入同一个代数式。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "对应图同时呈现字母取值与计算结果，需要先分清两列的角色再将各组数配对。",
+      "learningAction": "能把每个a值代入同一代数式，并将结果填在与该取值对应的连线上。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "代数式的值",
+          "数与数值结果的对应",
+          "负数乘法与减法"
+        ],
+        "method": [
+          "先读两列的标题，区分左边的字母取值与右边的代数式结果；用已填的一组确认图的读法。",
+          "把剩余的0、负分数和负整数分别代入同一个式子，再把各自的结果写在对应线上。"
+        ],
+        "cautions": [
+          "结果必须与同一条线左端的a值配对。",
+          "不要把a前面的系数与a的取值合并成一个数；代入负数后仍按原运算关系计算。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-value-not-expression",
+          "label": "代数式的值",
+          "purpose": "区分图中输入的a与计算结果。"
+        },
+        {
+          "locationId": "ch3-omitted-multiplication",
+          "label": "省略乘号的约定",
+          "purpose": "正确读取式子中的系数与字母。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-same-letter-substitution",
+      "locationId": "ch3-same-letter-substitution",
+      "title": "3.2 练习第2题：题目导读",
+      "preview": "每组取值都要一致地替换式子中全部x和y。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "一个式子中x、y多次出现且第二组含分数和负数，需要保持同组取值一致而不漏换字母。",
+      "learningAction": "能逐处核对两组代入中的每个x和y，指出遗漏、混用取值或破坏负数底数的位置。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "同一字母取值一致",
+          "乘方、乘法与加法顺序",
+          "负数和分数的代入"
+        ],
+        "method": [
+          "（1）在原式中逐处找到x和y，再用第一组整数值替换，分别辨认平方项和乘积项。",
+          "（2）重新使用第二组分数、负数取值。可以先完成整式的替换，再按各项的运算顺序计算并相加。"
+        ],
+        "cautions": [
+          "同一组中每个x都取同一个值，每个y也都取同一个值。",
+          "负数作平方的底数时要保持整体；xy表示两个数的乘积。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-same-letter-consistency",
+          "label": "同一字母的含义保持一致",
+          "purpose": "检查同一组取值是否一致替换所有x和y。"
+        },
+        {
+          "locationId": "ch3-negative-substitution-base",
+          "label": "负数代入与乘方",
+          "purpose": "借前面的例2保留本题负数平方的底数结构。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p87-practice3",
+      "locationId": "ch3-q-p87-practice3",
+      "title": "3.2 练习第3题：题目导读",
+      "preview": "把两段路程的关系写清，再求给定速度和时间下的总路程。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "题目先给路程再给速度和时间，需要把后者转为可与已行路程相加的同类数量。",
+      "learningAction": "能用同一长度单位解释总路程式中的两部分，并核查给定v、t后的求值结果。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "路程、速度、时间的关系",
+          "部分与总量",
+          "代数式的值"
+        ],
+        "method": [
+          "先区分已经行驶的路程与后来按给定速度、时间行驶的路程，判断题目所问“全部路程”包括哪几部分。",
+          "用字母表示后来一段所需的数量关系；完成总路程的列式后，再把给定的v和t代入自己所列的式子。"
+        ],
+        "cautions": [
+          "3.5的单位是km，不能把它当作速度或时间。",
+          "速度用km/h、时间用h，求出的路程单位应与前一段路程相同。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-formula-unit-match",
+          "label": "行程公式与单位",
+          "purpose": "核对后一段路程所用数量和单位。"
+        },
+        {
+          "locationId": "ch3-expression-value-checks",
+          "label": "列式与求值的检查",
+          "purpose": "先检查总路程关系，再检查具体运算。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-formula-unit-match",
+      "locationId": "ch3-formula-unit-match",
+      "title": "公式里的数值为什么要先统一单位？",
+      "preview": "速度中的时间单位，要与代入的时间单位配合。",
+      "paragraphs": [
+        "s=vt表示路程、速度和时间的关系。若速度的数值按km/h记录，时间的数值就要按h记录，这样乘积才对应以km记录的路程。数值相乘时，量的单位也要相互配合。",
+        "解释用例：已知速度用km/h、时间给30 min，应先把时间换成0.5 h，或把速度换成与min配合的单位，再代入。不能把30直接当成30 h；统一单位是保证含义一致，不是一定要选某一种单位。"
+      ],
+      "learningRole": "陈述性质或结论；示范方法",
+      "learningGap": "公式段解释数量关系但未单列数值所依赖的单位匹配条件。",
+      "learningAction": "能在使用s=vt前检查速度与时间单位，并说明换单位的目的。",
+      "related": []
+    },
+    {
+      "id": "ch3-q-p87-example3",
+      "locationId": "ch3-q-p87-example3",
+      "title": "3.2 例3：题目导读",
+      "preview": "按边界的组成理解周长，再按要求表示近似结果。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "跑道图形、周长式和近似结果之间需要连接几何分段、直径含义与取整要求。",
+      "learningAction": "能解释教材为何把两段半圆弧合看为一个圆周，并说明最终结果使用近似表达的依据。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "周长是边界长度之和",
+          "圆周长公式",
+          "代数式求值与近似数"
+        ],
+        "method": [
+          "（1）沿图示跑道走一圈，辨认直道与弯道各有几段；说明两个半圆弧为什么可以合看成一个圆的周长。",
+          "（2）对照教材把给定长度代入的步骤，检查长度单位、π的取值及结果取整数的要求。"
+        ],
+        "cautions": [
+          "图中b是半圆形弯道的直径，不是半径。",
+          "题目只求最内侧这一条跑道；取整后应使用近似表达。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-formula-unit-match",
+          "label": "公式中的单位匹配",
+          "purpose": "检查长度代入和周长结果所用单位。"
+        },
+        {
+          "locationId": "ch3-expression-value-checks",
+          "label": "列式与求值的检查",
+          "purpose": "区分跑道边界关系和给定尺寸下的计算。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-track-rounded-value",
+      "locationId": "ch3-track-rounded-value",
+      "title": "这里为什么写“约300 m”？",
+      "preview": "代数式给出计算关系，取π的近似值和结果取整会影响精确程度。",
+      "paragraphs": [
+        "2a+πb保留了跑道周长的关系。本题按要求用3.14代替π，再把计算结果取整数，因此最后的300 m是按题目要求得到的近似值。",
+        "“≈”提醒读者：结果不是精确等于300 m。求值后还要回到题目，检查它要求保留怎样的精确程度；不能因为计算结束，就省掉“约”或改写成精确等号。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "例3给出近似号与约字，未展开它们与π取值、结果取整要求之间的联系。",
+      "learningAction": "能说明近似号的来源，并按题目要求表达结果的精确程度。",
+      "related": []
+    },
+    {
+      "id": "ch3-q-p88-example4",
+      "locationId": "ch3-q-p88-example4",
+      "title": "3.2 例4：题目导读",
+      "preview": "先辨认三角尺实际占有的区域，再理解面积式与求值。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "例题使用区域相减和三角形面积公式，需要说明圆孔为何扣除以及a、b为何能作底与对应高。",
+      "learningAction": "能根据图3.2-2解释教材面积式中各部分的几何含义和平方单位的来源。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "三角形面积与底高对应",
+          "圆面积",
+          "组合图形面积与求值"
+        ],
+        "method": [
+          "对照图3.2-2，说明外部三角形与圆孔分别对应哪些区域，教材的面积关系为何反映了三角尺本身的面积。",
+          "检查a、b在图中为何可以作为底和对应的高，并辨认r的含义；再按给定尺寸和π的要求读代入计算。"
+        ],
+        "cautions": [
+          "r标的是圆孔的半径。",
+          "参加面积计算的长度要使用相配的单位，结果用平方单位表示。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-context-and-unit",
+          "label": "数量关系与单位",
+          "purpose": "检查三角尺面积式所表示的实际数量。"
+        },
+        {
+          "locationId": "ch3-expression-value-checks",
+          "label": "列式与求值的检查",
+          "purpose": "分别核对区域关系和给定尺寸下的结果。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-triangle-base-height",
+      "locationId": "ch3-triangle-base-height",
+      "title": "为什么这里可以把a和b相乘再取一半？",
+      "preview": "面积公式需要底和对应的高，不能随便选两条边。",
+      "paragraphs": [
+        "图3.2-2中，标a的线段与标b的线段互相垂直。把b看作底时，a就是这条底对应的高，所以三角形面积公式可以使用这两个长度。",
+        "“两条边的长度”本身还不够。若选的是一条斜边和另一条边，必须先检查其中一个长度是否真是另一个底所对应的高，不能只因题目给了两个字母就直接相乘。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "例4直接使用1/2 ab，未明确图中垂直关系保证a、b是底与对应高。",
+      "learningAction": "能根据图形检查底与高的对应关系，说明公式中为什么选a和b。",
+      "related": []
+    },
+    {
+      "id": "ch3-area-value-unit",
+      "locationId": "ch3-area-value-unit",
+      "title": "长度用cm，面积为什么要写cm²？",
+      "preview": "结果表达的是面积，单位要跟着所求的量变化。",
+      "paragraphs": [
+        "式子中的ab由两个长度相乘，单位是cm×cm，也就是cm²；r²同样是两个长度相乘，单位也是cm²。因此，两个面积可以相减，所得结果仍用cm²记录。",
+        "这里a、b、r的长度单位已经一致。若其中一个长度用不同单位记录，要先换成相配的单位再代入。只在最后加一个cm²，并不能修正前面单位不一致造成的数值错误。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "例4给出面积单位但未解释平方单位从何而来及两个面积相减前单位要一致。",
+      "learningAction": "能从长度乘积说明面积单位，并检查参加面积运算的长度单位。",
+      "related": [
+        {
+          "locationId": "ch3-formula-unit-match",
+          "label": "比较行程公式的单位",
+          "purpose": "用相同的单位匹配原则检查不同公式。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p88-practice1",
+      "locationId": "ch3-q-p88-practice1",
+      "title": "3.2 练习第1题：题目导读",
+      "preview": "把字母与图形公式中的具体长度一一对应。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "两个填空分别给出不同图形的长度，需要把字母准确放到面积公式的对应位置后再求值。",
+      "learningAction": "能将每问给定的字母对应到图形中的底和高，并用该对应关系检查面积式及结果单位。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "平行四边形面积",
+          "梯形面积",
+          "先列式再求值"
+        ],
+        "method": [
+          "（1）按题意确认a、b各表示平行四边形中的哪个量，回忆面积关系并列式，再代入给定数值。",
+          "（2）分别确认梯形的两条底和高；用括号保留需要先作为整体运算的部分，再独立求值。"
+        ],
+        "cautions": [
+          "底与高要相互对应，不能只因有两个长度就相乘。",
+          "第二问求值时不要遗漏梯形公式中的系数；两问的结果都表示面积。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-triangle-base-height",
+          "label": "底与对应高",
+          "purpose": "回顾面积公式必须使用相应底、高的原则。"
+        },
+        {
+          "locationId": "ch3-area-value-unit",
+          "label": "面积单位",
+          "purpose": "检查两问的长度单位与平方单位。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p88-practice2",
+      "locationId": "ch3-q-p88-practice2",
+      "title": "3.2 练习第2题：题目导读",
+      "preview": "宽与高相等，也仍是体积公式中的两个长度因数。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "宽和高使用同一字母，可能掩盖它们仍是体积关系中两个独立长度因子的事实。",
+      "learningAction": "能在体积式中指出宽和高各自对应的因子，并用同一个b值完成两处代入。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "长方体体积",
+          "同一字母多次出现",
+          "代数式的值"
+        ],
+        "method": [
+          "把长、宽、高分别与a、b对应，检查“宽与高都是b”怎样进入体积的数量关系。",
+          "列出表示体积的代数式，再用同一组a、b值替换全部字母，最后解释所得数量和单位。"
+        ],
+        "cautions": [
+          "宽和高虽然相等，却不能因此在体积计算中少用一个长度。",
+          "长度用cm时，体积要使用立方单位。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-same-letter-substitution",
+          "label": "同字母的一致代入",
+          "purpose": "确保宽和高使用同一个b值且都参与计算。"
+        },
+        {
+          "locationId": "ch3-expression-value-checks",
+          "label": "列式与求值的检查",
+          "purpose": "分别核对体积关系和给定尺寸下的计算。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p88-practice3",
+      "locationId": "ch3-q-p88-practice3",
+      "title": "3.2 练习第3题：题目导读",
+      "preview": "从外圆、内圆与圆环的区域关系确定面积式。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "圆环的外形容易引出对半径作差的直觉，需要根据实际区域辨认应进行运算的面积对象。",
+      "learningAction": "能说明圆环面积式中的每一项对应哪个区域，并检查R、r与图中半径是否一致。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "圆的面积",
+          "部分与整体面积",
+          "代数式求值"
+        ],
+        "method": [
+          "先看图中R、r各对应哪个圆的半径，再判断圆环与两个圆的面积有怎样的关系。",
+          "按这个区域关系列式，再代入两条半径及题目给出的π值，独立完成计算。"
+        ],
+        "cautions": [
+          "R与r均为半径，不能当作直径。",
+          "圆环面积的运算对象是面积；不要把半径差直接当作圆环的面积或另一个圆的半径。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-area-value-unit",
+          "label": "面积运算与单位",
+          "purpose": "检查圆面积之间运算后的结果仍为面积。"
+        },
+        {
+          "locationId": "ch3-expression-value-checks",
+          "label": "列式与求值的检查",
+          "purpose": "先核对区域关系，再核对代入。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p89-ex32-1",
+      "locationId": "ch3-q-p89-ex32-1",
+      "title": "习题3.2 第1题：题目导读",
+      "preview": "负数代入后，保留减号与平方各自的作用。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "两小问都含负数，但原式的减号与平方作用的位置不同，需要分别保留这些运算对象。",
+      "learningAction": "能标出代入后属于数本身的负号和原有减号，并据此确定每问的运算顺序。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "代数式的值",
+          "减去负数",
+          "负数的平方"
+        ],
+        "method": [
+          "（1）用给定数替换a，辨认替换后原式的减号与这个数自身的负号。",
+          "（2）先确定平方的底数是哪一个完整的数，再按原式运算顺序求值。"
+        ],
+        "cautions": [
+          "第二问的平方只作用于b，不作用于整个式子。",
+          "用括号保留代入的负数，不能把原有运算符号与负号混掉。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-negative-substitution-base",
+          "label": "负数代入与平方底数",
+          "purpose": "辨认两问中负号的位置与平方作用对象。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p89-ex32-2",
+      "locationId": "ch3-q-p89-ex32-2",
+      "title": "习题3.2 第2题：题目导读",
+      "preview": "同一组a、b值进入五种运算，按列检查对应结果。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "同一组字母值用于五种运算，尤其两列分式交换了分子分母，需要逐列核对而不能照搬结果。",
+      "learningAction": "能依据表头分别写出五列的代入式，并指出两列除法中各自的分母。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "代数式的值",
+          "有理数四则运算",
+          "分母非零条件"
+        ],
+        "method": [
+          "按表头逐列读a+b、a−b、ab、a/b、b/a，先辨认每列规定的运算，再代入同一组a、b值。",
+          "完成后对照表头复查，特别比较两个除法中谁是分子、谁是分母，而不要把同一结果直接抄到另一列。"
+        ],
+        "cautions": [
+          "b的负号应随数值一起代入。",
+          "两列除法的分母不同，分别检查非零条件；除法不能任意交换顺序。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-same-letter-substitution",
+          "label": "同字母的一致代入",
+          "purpose": "确保各列都使用题目给定的同一组数。"
+        },
+        {
+          "locationId": "ch3-value-denominator-condition",
+          "label": "分母非零条件",
+          "purpose": "检查两个分式各自的分母。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-sum-square-structure",
+      "locationId": "ch3-sum-square-structure",
+      "title": "习题3.2 第3题：题目导读",
+      "preview": "对同一组数，分别按两个式子的真实运算结构求值。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "两个代数式使用相同字母和平方符号，需要依据平方底数辨认不同结构而非凭外观合并计算。",
+      "learningAction": "能圈出两个式子中每个平方的底数，并分别按两组取值求值作比较。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "代数式的值",
+          "平方的运算对象",
+          "括号与运算顺序"
+        ],
+        "method": [
+          "（1）把第一组a、b值分别代入两个代数式，标清每个平方的底数，并独立计算。",
+          "（2）对第二组取值重复相同的结构检查，再比较所得结果；不要用前一问的结果替代这一问的代入。"
+        ],
+        "cautions": [
+          "a²+b²与(a+b)²的运算对象不同，不能因为字母相同就按同一种步骤算。",
+          "负数代入平方时，要把整个负数作为底数保留下来。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-negative-substitution-base",
+          "label": "平方的底数与括号",
+          "purpose": "借例2中对底数的辨认，检查两个式子的平方对象。"
+        },
+        {
+          "locationId": "ch3-read-outer-operation",
+          "label": "运算层次",
+          "purpose": "按每个式子的括号、平方和外层运算分别求值。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p89-ex32-4",
+      "locationId": "ch3-q-p89-ex32-4",
+      "title": "习题3.2 第4题：题目导读",
+      "preview": "先辨认分式整体与括号整体，再按原式顺序代入。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "一问以分数线划分整体，另一问含括号平方和分数系数，需要按不同结构确定求值顺序。",
+      "learningAction": "能在两问中标出分子、分母或括号所形成的整体，并据此检查自己的运算顺序。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "分式中的整体",
+          "分母不能为0",
+          "括号、乘方和乘法顺序"
+        ],
+        "method": [
+          "（1）先把分数线两侧各自读完整，检查给定n使分母是否为0，再分别求出两部分并进行除法。",
+          "（2）把a、b、c对应到原式位置，辨认括号内的差、平方和分数系数的乘法，按原结构求值。"
+        ],
+        "cautions": [
+          "分数线下的n−1是整个分母，不能只把n看作分母。",
+          "第二问的平方作用于括号内的整体；1/4后与b是乘法。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-fraction-reading-exercise",
+          "label": "分式的整体读法",
+          "purpose": "确认第一问分子与分母各包含哪些运算。"
+        },
+        {
+          "locationId": "ch3-read-outer-operation",
+          "label": "运算层次",
+          "purpose": "辨认第二问的括号、平方与最外层运算。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p89-ex32-5",
+      "locationId": "ch3-q-p89-ex32-5",
+      "title": "习题3.2 第5题：题目导读",
+      "preview": "逐项对照给定体积公式中的符号含义。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "公式已经给出，仍需把半径和高准确对应到符号并保留系数，避免只凭数字完成运算。",
+      "learningAction": "能将给定尺寸逐项对应到圆锥体积公式的因子，并核查所得结果的立方单位。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "利用给定公式求值",
+          "半径的平方",
+          "体积单位"
+        ],
+        "method": [
+          "先根据题干把r与h分别对应到圆锥的底面半径和高，保留公式中的全部因数。",
+          "代入已给尺寸和π的指定值，按先乘方再乘法的顺序计算，最后用所求量检查结果单位。"
+        ],
+        "cautions": [
+          "r是半径，不能因图形是圆就再擅自除以2。",
+          "不要遗漏公式中的1/3；长度统一为cm时，体积使用cm³。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-expression-value-checks",
+          "label": "公式求值的检查",
+          "purpose": "逐项核对符号对应、代入与运算。"
+        },
+        {
+          "locationId": "ch3-area-value-unit",
+          "label": "由长度乘积确定单位",
+          "purpose": "从面积的平方单位继续判断面积乘高后的体积单位。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p89-ex32-6",
+      "locationId": "ch3-q-p89-ex32-6",
+      "title": "习题3.2 第6题：题目导读",
+      "preview": "明确求的是钢材占有的体积，辨认空心部分。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "钢管同时具有外部轮廓与内部空心，需要区分材料体积和整个外圆柱占据的空间。",
+      "learningAction": "能用图中材料与空心区域的关系说明体积式各部分的意义，并核查代入的半径和长度。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "圆柱体积",
+          "组合物体的体积",
+          "代数式求值"
+        ],
+        "method": [
+          "对照图形说明外部圆柱、内部空心部分与钢管材料分别是什么；判断它们的体积怎样关联。",
+          "将R、r、a对应到各个半径和长度，在列式时保留同一段钢管的共同长度，再代入给定数值计算。"
+        ],
+        "cautions": [
+          "R、r均表示半径，且外半径应大于内半径。",
+          "求钢材体积时不能把空心部分当作材料；尺寸用mm时，结果用立方毫米。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-area-value-unit",
+          "label": "面积运算与单位",
+          "purpose": "先检查横截面区域及其面积单位，再结合长度考虑体积。"
+        },
+        {
+          "locationId": "ch3-expression-value-checks",
+          "label": "列式与求值的检查",
+          "purpose": "区分材料区域的关系检查和具体数值运算。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p89-ex32-7",
+      "locationId": "ch3-q-p89-ex32-7",
+      "title": "习题3.2 第7题：题目导读",
+      "preview": "从路程和速度转到用时，再解释时间差。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "已知量是路程和速度而所求量是时间差，需要先转变比较对象再确定差的顺序与含义。",
+      "learningAction": "能用题目中的用时大小条件和时间单位检验自己列出的差，并解释求得数值的实际意义。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "路程、速度、时间的关系",
+          "差的顺序与意义",
+          "代数式求值"
+        ],
+        "method": [
+          "（1）辨认两人各自的路程、速度与时间关系，确定“少用的时间”比较的是哪两个量，再按题意自行列式。",
+          "（2）用给定数值求所列代数式的值，并用一句含单位的话说明该数值比较了谁与谁的用时。"
+        ],
+        "cautions": [
+          "“甲用的时间较少”是检查差的顺序与正负的条件。",
+          "两人的速度为正，不能作为0分母；速度差不能直接代替时间差。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-formula-unit-match",
+          "label": "路程、速度、时间的关系",
+          "purpose": "由路程和速度确定比较的用时，并核对单位。"
+        },
+        {
+          "locationId": "ch3-new-speed-whole",
+          "label": "行程中的时间差",
+          "purpose": "借前面例4分清速度变化与所求时间差的关系。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-travel-time-difference",
+      "locationId": "ch3-travel-time-difference",
+      "title": "“少用的时间”怎样检查正负？",
+      "preview": "比较的是两段用时，少用多少应是较长时间与较短时间的差。",
+      "paragraphs": [
+        "题目给的是路程和速度，最后比较的却是时间。先明确每个人的用时怎样由路程、速度确定，再检查“甲比乙少用”是在比较哪两个时间。不能直接用两人的速度差代替时间差。",
+        "题目已说明甲用时较少，所以表示“少用多少”的结果应为正，单位也应是时间。列式后可用这两点自查；哪个时间应放在减号前，留给你按题意判断。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "第7题要从给定速度转向用时比较，需区分所给数量与所求时间差并检查顺序。",
+      "learningAction": "能辨认时间差而非速度差，自主列式并用正负和单位检查意义。",
+      "related": [
+        {
+          "locationId": "ch3-formula-unit-match",
+          "label": "回顾路程、速度、时间的关系",
+          "purpose": "确认求用时所依据的数量关系，并检查结果单位。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p89-ex32-8",
+      "locationId": "ch3-q-p89-ex32-8",
+      "title": "习题3.2 第8题：题目导读",
+      "preview": "查明换算关系的方向，再把数值连同温标一起代入。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "题目要求两个相反方向的温标换算，需要辨认查得公式的输入量和输出量，不能只替换单位符号。",
+      "learningAction": "能为两问各选方向正确的换算关系，标明输入温标并通过反向换算检查结果。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "用公式表示数量关系",
+          "代数式求值",
+          "负数代入与单位含义"
+        ],
+        "method": [
+          "先按题目要求查找可靠资料中的摄氏与华氏换算公式，记录每个字母代表哪一种温度以及资料来源。",
+          "（1）根据输入和目标温标选择相应公式，将给定摄氏数值代入。",
+          "（2）重新确认反方向换算时的公式与输入量，再代入给定的负华氏数值；可把结果反向换算作核验。"
+        ],
+        "cautions": [
+          "°C与°F表示不同的计量标准，同一个数字配上不同温标不是同一个温度。",
+          "不能只改单位符号，也不能在两个方向中不加辨认地使用同一个代入规则。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-context-and-unit",
+          "label": "数量与单位的含义",
+          "purpose": "提醒公式中的数值必须按对应温标解释。"
+        },
+        {
+          "locationId": "ch3-value-not-expression",
+          "label": "代数式的值",
+          "purpose": "在查明关系后，用已知数值进行求值。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p90-activity1",
+      "locationId": "ch3-q-p90-activity1",
+      "title": "数学活动1：拼图小游戏：题目导读",
+      "preview": "把图形的计数方法解释清楚，再用字母表达规律。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "两种拼图都要求从图形得到一般表达，需要区分序号与数量并为共享部分和新增部分建立计数依据。",
+      "learningAction": "能用不重复不遗漏的图形计数解释两项活动的表达式，并以给出的图形检验它们。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "用字母表示一般规律",
+          "不重复不遗漏的计数",
+          "图形序号与数量的对应"
+        ],
+        "method": [
+          "（1）按图分别尝试2、3、4个三角形，记录火柴棍数，并说明哪些边已经存在、哪些边是新添的；用同一种计数理由处理n个。",
+          "（2）按图下序号确认第1、2、3个正方形，记录每边小方格数和总数。比较相邻两图中新增的方格区域，再解释一般的第n个与第(n−1)个怎样比较。"
+        ],
+        "cautions": [
+          "共用的火柴只能计一次。",
+          "图2最左边的单个小正方形没有标为“第1个”；序号与每边方格数不能混为一谈。",
+          "观察几组数可以提出猜想，还需用拼法说明规律为何继续成立。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-sequence-rule-exercise",
+          "label": "规律的猜想与验证",
+          "purpose": "把前几幅图的观察转为有计数理由支持的一般规律。"
+        },
+        {
+          "locationId": "ch3-matches-duplicate-exercise",
+          "label": "不重复计数",
+          "purpose": "借鉴计数时检查同一对象是否被算过多次的原则。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-matchstick-shared-side",
+      "locationId": "ch3-matchstick-shared-side",
+      "title": "数三角形的边，为什么可能重复？",
+      "preview": "相邻三角形共用的一根火柴，只能计一次。",
+      "paragraphs": [
+        "图1中，某些边同时属于相邻的两个三角形，但它们仍是同一根火柴。把每个三角形的边数分别数完再相加时，要检查是否把共同的边重复算了。",
+        "可以在图上给每根火柴做一次记号，也可以观察接上一个新三角形时哪些边已经存在。选一种能说明“不重复、不遗漏”的计数方法，再把规律推广到n个；不要只由几组数猜一个式子。"
+      ],
+      "learningRole": "探究",
+      "learningGap": "拼图问题要求找一般规律，未说明共用边会使分别数三角形边数产生重复。",
+      "learningAction": "能识别共用边，用不重复不遗漏的计数说明自己得到的式子。",
+      "related": []
+    },
+    {
+      "id": "ch3-square-pattern-index",
+      "locationId": "ch3-square-pattern-index",
+      "title": "“第n个”里的n就是边上的小方格数吗？",
+      "preview": "图形的序号与每行的小方格数是两种不同的计数。",
+      "paragraphs": [
+        "图2把单个小正方形画在前面作材料展示；写着“第1个正方形”的图从一边有2个小方格开始。读图时先对齐下方的序号，不能把最左边的单个小方格自行当成第1个。",
+        "序号表示这是第几个拼出的图形，每边的小方格数表示图形的尺寸。先分别记录前几幅图的这两种数，再找它们的关系，最后比较题目所问的相邻两个图形。"
+      ],
+      "learningRole": "探究",
+      "learningGap": "图2在第1个前另画单个小方格，且序号不等于每边方格数，可能影响一般项对应。",
+      "learningAction": "能按原图标注辨认序号与每边方格数，保持第n个图形的对应关系。",
+      "related": []
+    },
+    {
+      "id": "ch3-q-p91-activity2",
+      "locationId": "ch3-q-p91-activity2",
+      "title": "数学活动2：密码中的数学：题目导读",
+      "preview": "按条件选用解码规则，并检验自己设计的规则是否可还原。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "解码按密文数的奇偶选择规则，而自设计密码还需保证规则可以一致还原，两种任务的检查重点不同。",
+      "learningAction": "能逐个说明解码时选用规则的依据，并用试编码与还原指出自设计规则是否有歧义。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "按条件代入代数式",
+          "奇数与偶数的辨认",
+          "数与字母的对应"
+        ],
+        "method": [
+          "（1）逐个辨认密文数的奇偶性，按对应规则求出明文序号，再按题中1至26的编号找回字母。",
+          "（2）先写清明文、密文和字母编号的约定，再设计关系；选几组进行编码与还原，让同伴检查仅凭规则能否确定原字母。"
+        ],
+        "cautions": [
+          "奇偶判断的对象是密文中的x，不是尚未求出的明文序号。",
+          "字母编号从1开始；不要把本题规则与上一页按字母移动的示例混用。",
+          "自己设计时要说明范围边界，并检查不同明文是否会产生无法区分的同一密文。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-integer-scope-exercise",
+          "label": "整数与奇偶性",
+          "purpose": "按密文整数的奇偶性质选择规则。"
+        },
+        {
+          "locationId": "ch3-value-not-expression",
+          "label": "代数式的值",
+          "purpose": "把每个密文数作为一次取值，按选定规则计算。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-cipher-unambiguous-rule",
+      "locationId": "ch3-cipher-unambiguous-rule",
+      "title": "自己设计的密码，怎样知道同伴能还原？",
+      "preview": "检验规则时，要看同一个密文会不会对应不同明文。",
+      "paragraphs": [
+        "写出一个能把明文变成密文的算式，还要检查接收者拿到密文后能否按约定还原。若两个不同的明文被写成同一个密文，而没有其他区分信息，接收者就无法只靠这个密文确定原来的字母。",
+        "设计后可选几组明文试着编码，再让同伴只看密文与规则尝试还原。若有歧义，就修改约定；也要共同约定字母范围及遇到范围边界时怎样处理。这里先检验能否一致使用，不替你选定编码方法。"
+      ],
+      "learningRole": "探究",
+      "learningGap": "开放的密码设计任务未列出规则可还原、边界有约定的检验要求。",
+      "learningAction": "能用试编码与还原检验所设计规则，发现有歧义或未定义的情况。",
+      "related": []
+    },
+    {
+      "id": "ch3-expression-value-checks",
+      "locationId": "ch3-expression-value-checks",
+      "title": "列式和求值，要检查两件不同的事",
+      "preview": "列式检查数量关系，求值检查替换和运算。",
+      "paragraphs": [
+        "列代数式时，要检查每个字母表示什么、各项运算是否符合数量关系。求代数式的值时，则是在这些关系已确定后，检查取值是否允许、有没有替换完整、运算是否正确。",
+        "所以，算出一个数并不能单独证明列式正确。回看应用问题时，可以先把式子读回题意，再用给定数值计算；结果还要按所求的量解释，并写上合适的单位。"
+      ],
+      "learningRole": "回顾与整理",
+      "learningGap": "知识结构图列出列式和求值两个分支，但未说明它们承担不同的检查任务。",
+      "learningAction": "能分别检查数量关系与求值过程，避免用计算正确代替列式正确。",
+      "related": [
+        {
+          "locationId": "ch3-value-not-expression",
+          "label": "区分式子与它的值",
+          "purpose": "回顾同一数量关系与一次具体计算结果的区别。"
+        },
+        {
+          "locationId": "ch3-formula-unit-match",
+          "label": "检查公式中的单位",
+          "purpose": "把求值所得数解释成题目所求的实际数量。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p92-review1",
+      "locationId": "ch3-q-p92-review1",
+      "title": "回顾与思考 第1题：题目导读",
+      "preview": "用一个有明确数量关系的例子说明代数式怎样简明表达。",
+      "paragraphs": [],
+      "learningRole": "回顾与整理",
+      "learningGap": "举例说明不能停在写出一个含字母的式子，还需建立每个符号与实际数量关系的对应。",
+      "learningAction": "能用一个具体情境逐项解释自己所写代数式中的数字、字母与运算。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "代数式的实际意义",
+          "用字母表示数量",
+          "数量关系的符号表达"
+        ],
+        "method": [
+          "从本章或熟悉生活中选一个数量关系，先用普通语言说明它涉及什么量。",
+          "给需要表示的量指定字母，写出代数式，再逐项解释每个数、字母和运算在情境中代表什么。"
+        ],
+        "cautions": [
+          "只写一个含字母的式子，还没有完成“举例说明”。",
+          "例子中的字母含义、取值和单位要相互一致。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-expression-vs-relation",
+          "label": "代数式与数量关系",
+          "purpose": "辨认式子表达的数量及其关系。"
+        },
+        {
+          "locationId": "ch3-letter-range",
+          "label": "字母的实际含义与范围",
+          "purpose": "使自选例子的字母取值符合情境。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p92-review2",
+      "locationId": "ch3-q-p92-review2",
+      "title": "回顾与思考 第2题：题目导读",
+      "preview": "保持式子的运算结构，给它两种成立的实际含义。",
+      "paragraphs": [],
+      "learningRole": "回顾与整理",
+      "learningGap": "同式异义要求保持运算结构不变，同时让两种情境的字母含义与单位各自成立。",
+      "learningAction": "能给同一个代数式安排两种实际解释，并指出它们改变的数量含义和保留的运算关系。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "同一代数式的不同意义",
+          "数量与单位",
+          "运算结构"
+        ],
+        "method": [
+          "先选一个自己能解释各部分的代数式，再为其中的字母、数字和运算分别安排两种实际含义。",
+          "把两种情境读回同一个式子，比较它们哪些数量含义或单位改变了，哪些运算关系保持一致。"
+        ],
+        "cautions": [
+          "改变的是数量的解释，不能同时悄悄改变原式的运算结构。",
+          "同一情境中相加或相减的量应具有可比较的含义和相配的单位。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-context-and-unit",
+          "label": "同式的不同实际意义",
+          "purpose": "借助教材中同一式子表达不同数量的例子检查自己的情境。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p92-review3",
+      "locationId": "ch3-q-p92-review3",
+      "title": "回顾与思考 第3题：题目导读",
+      "preview": "用自己的一次列式说明，量的含义怎样决定运算关系。",
+      "paragraphs": [],
+      "learningRole": "回顾与整理",
+      "learningGap": "关于量的意义与关系的体会容易停留在一般表态，需要用具体列式过程展示这些信息的作用。",
+      "learningAction": "能选一道应用题说明一个关键词或单位怎样决定所列式子的运算对象。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "辨认已知量与所求量",
+          "数量关系",
+          "列式的含义检查"
+        ],
+        "method": [
+          "回选一道应用题，先说明题目给了哪些量、要求什么量，以及这些量怎样关联。",
+          "解释为什么选定某种运算，再把自己列出的式子读回题意；指出忽略一个关键词或单位可能会怎样改变含义。"
+        ],
+        "cautions": [
+          "体会需要联系具体数量关系，不能只写“要认真读题”。",
+          "算得出数不等于列式符合题意；先检查关系，再检查运算。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-expression-value-checks",
+          "label": "列式与求值的分别检查",
+          "purpose": "用数量意义审查列式，避免只检验计算。"
+        },
+        {
+          "locationId": "ch3-read-outer-operation",
+          "label": "运算层次与意义",
+          "purpose": "把式子按真实运算层次读回题意。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p92-review4",
+      "locationId": "ch3-q-p92-review4",
+      "title": "回顾与思考 第4题：题目导读",
+      "preview": "明确反比例的条件，再用例子说明不变量。",
+      "paragraphs": [],
+      "learningRole": "回顾与整理",
+      "learningGap": "回顾反比例需要把变化方向与乘积恒定的判据分开，并将非零条件落实到例子中。",
+      "learningAction": "能用一个例子指出两个相关量、非零不变量及其乘积关系，说明判断反比例的依据。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "反比例关系",
+          "乘积一定且非零",
+          "字母取值范围"
+        ],
+        "method": [
+          "用自己的话说清判断反比例需要检查哪个不变量，以及它应满足什么条件。",
+          "选择一个实际例子，说明两个量如何变化、哪个量保持不变，再用数量关系支持判断。"
+        ],
+        "cautions": [
+          "“一个变大、另一个变小”只描述变化方向，不能单独证明反比例。",
+          "例子中的常量不能为0，还要交代两个量的允许范围。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-inverse-not-decrease",
+          "label": "反比例的乘积条件",
+          "purpose": "核对判断标准并用它检查所举例子。"
+        },
+        {
+          "locationId": "ch3-inverse-nonzero",
+          "label": "反比例中常量非零",
+          "purpose": "说明反比例条件中的非零限制。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p92-review5",
+      "locationId": "ch3-q-p92-review5",
+      "title": "回顾与思考 第5题：题目导读",
+      "preview": "选一个求值过程，具体说明符号和运算顺序怎样影响结果。",
+      "paragraphs": [],
+      "learningRole": "回顾与整理",
+      "learningGap": "求值规则需要落到具体符号和运算对象上，才能说明改变符号位置或顺序为何改变计算。",
+      "learningAction": "能在一个求值例子中指出某处符号或括号的作用，并说明该处误读会改变哪一步运算。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "代数式的值",
+          "运算符号与运算顺序",
+          "负数代入"
+        ],
+        "method": [
+          "选择本章一个含括号、分式或负数取值的例子，说明每一步先算什么、为什么。",
+          "检查代入是否保留原式的运算对象，并用具体位置说明若误读符号或顺序，会改变哪一个运算。"
+        ],
+        "cautions": [
+          "要指出具体式子中的具体符号，不能只背“先乘除后加减”。",
+          "举例时区分已知字母值后的求值与求未知字母，二者任务不同。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-negative-substitution-base",
+          "label": "负数代入与运算对象",
+          "purpose": "用括号中的完整底数说明符号为什么不能丢。"
+        },
+        {
+          "locationId": "ch3-fraction-whole-denominator",
+          "label": "分数线的整体作用",
+          "purpose": "检查分母整体与计算顺序。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p93-review3-1",
+      "locationId": "ch3-q-p93-review3-1",
+      "title": "复习题3 第1题：题目导读",
+      "preview": "按每个小问的数量含义和运算层次列式。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "四个小问分别涉及比较基准、整体平方、单位时间量和找回金额，需要按各自语义确定运算层次。",
+      "learningAction": "能把四个小问所列式子按运算顺序读回题意，并检查比较对象、整体和金额条件是否吻合。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "倍数、和差与乘方的表达",
+          "单位时间量与总量",
+          "购物总价与找回金额"
+        ],
+        "method": [
+          "（1）先确认“比什么小”，再辨认题目比较的基准量。",
+          "（2）先找最后要求进行的运算，再确认它作用于哪个整体。",
+          "（3）辨认每分钟的数量与总时间，检查它们的单位怎样配合。",
+          "（4）分别辨认总花费和找回金额，说明它们与单价、件数及支付金额的关系，再列式。"
+        ],
+        "cautions": [
+          "需要先作为整体运算的数量应在式子中得到保留。",
+          "第（4）问明确支付后还剩余，所列找回金额应符合这一条件。",
+          "题目求的是含字母的数量表达，不要求先猜出字母的具体值。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-read-outer-operation",
+          "label": "运算层次与数量意义",
+          "purpose": "检查前两问的倍数、和差及整体关系。"
+        },
+        {
+          "locationId": "ch3-letter-range",
+          "label": "字母含义与情境条件",
+          "purpose": "检查时间、件数和金额的含义。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-verbal-operation-scope",
+      "locationId": "ch3-verbal-operation-scope",
+      "title": "文字较长时，怎样保留运算的层次？",
+      "preview": "先辨认最后做什么，再确定这一运算作用于哪个整体。",
+      "paragraphs": [
+        "不要急着把数字、字母和符号按文字出现的顺序接起来。先判断这句话最后要求做哪种运算，再确认这项运算作用于哪个数量；中间得到的数量可能需要作为整体保留。",
+        "列式后，按你写出的运算顺序把式子读回一句话，检查是否与原句相同。若两句话的运算对象不同，就应回头检查括号的位置，而不是只检查有没有漏掉某个字母。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "第1题第（2）问包含多层数量描述，需提供读取运算对象和反读核对的方法而不直接列式。",
+      "learningAction": "能按运算对象理解文字层次，并通过反读检查自己的式子。",
+      "related": [
+        {
+          "locationId": "ch3-read-outer-operation",
+          "label": "回顾按最后一步辨认结构",
+          "purpose": "先认运算对象和层次，再自主写出本题的式子。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p93-review3-2",
+      "locationId": "ch3-q-p93-review3-2",
+      "title": "复习题3 第2题：题目导读",
+      "preview": "区分温差、连续降价和每日平均量中的比较基准。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "温差、连续降价与每日平均量使用不同的基准，需要保留各自比较对象、变化先后和时间尺度。",
+      "learningAction": "能指出三小问中每一步所依据的基准量，并据此检查气温、两次售价及每日路程的表达。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "差与基准量",
+          "折扣与后续变化",
+          "总量、天数与平均每天的量"
+        ],
+        "method": [
+          "（1）明确温差比较的是最高气温与最低气温，依据已知最低气温表达所求量。",
+          "（2）区分“打八折”与“每件又降10元”两种变化，分别解释第一次、第二次降价后所问的售价。",
+          "（3）分别辨认两人的累计路程和共同的天数；用每天平均量作比较时，两人的量都要按同一时间标准表达。"
+        ],
+        "cautions": [
+          "八折描述保留原价的比例，不能把它当作降8元。",
+          "“第二次”是在第一次降价后继续变化，需保持这个先后关系。",
+          "30天是计算平均每天路程的时间长度，不能把累计差直接当成每日差。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-context-and-unit",
+          "label": "折扣与数量意义",
+          "purpose": "回顾比例系数怎样表示售价，并检查所列量的单位。"
+        },
+        {
+          "locationId": "ch3-read-outer-operation",
+          "label": "运算层次",
+          "purpose": "保持连续变化中各次运算的对象。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p93-review3-3",
+      "locationId": "ch3-q-p93-review3-3",
+      "title": "复习题3 第3题：题目导读",
+      "preview": "把代数式的每个部分读回图形或实际情境。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "解释式子既要说明整个结果表示什么，也要为每一步运算找到相应图形或情境含义。",
+      "learningAction": "能把两小问中代数式的各步运算对应到具体数量，并检查所给两个情境都支持同一个式子。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "代数式的实际意义",
+          "括号与数量整体",
+          "同式的不同情境"
+        ],
+        "method": [
+          "（1）回想长方形各边的关系，说明括号内和括号外的运算各计入哪些长度，再给整个式子所表示的量命名。",
+          "（2）安排两个不同情境，使a、b各有明确含义，并分别说明系数和加法在情境中的作用。"
+        ],
+        "cautions": [
+          "第（1）问要解释整个式子表示的量，不能只把符号读成一句算术话。",
+          "第（2）问的两个情境都要能支持相加，字母含义和单位不能互相冲突。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-read-outer-operation",
+          "label": "代数式的运算层次",
+          "purpose": "按括号内外的结构解释第（1）问。"
+        },
+        {
+          "locationId": "ch3-context-and-unit",
+          "label": "同式的不同意义",
+          "purpose": "检查第（2）问两种情境与单位是否成立。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p93-review3-4",
+      "locationId": "ch3-q-p93-review3-4",
+      "title": "复习题3 第4题：题目导读",
+      "preview": "分别把周长固定、面积固定翻译成两边长度的关系。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "周长固定和面积固定都限制边长变化，但需要分别建立关系才能判断是否满足反比例条件。",
+      "learningAction": "能分别写出两种固定条件下x、y的关系，并用乘积条件说明各自的比例判断。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "长方形周长与面积关系",
+          "用一个字母表示另一个量",
+          "反比例的判断条件"
+        ],
+        "method": [
+          "（1）说明绳子长度对应图形的哪种数量，列出它与相邻边长的关系，再尝试用x表达y。",
+          "（2）按面积条件重新建立两边的关系，再表达y与x的联系，不沿用上一问的固定量。",
+          "（3）分别检查两种条件下两个边长的积是否保持同一非零值，并用前两问的关系支持判断。"
+        ],
+        "cautions": [
+          "长方形的边长须为正，列出的表达式也应给出正的另一条边长。",
+          "一边增大另一边减小，不足以单独证明反比例。",
+          "周长的单位与面积的单位不同，两个“12”承担的条件不能混用。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-inverse-not-decrease",
+          "label": "反比例的乘积条件",
+          "purpose": "判断第（3）问两种约束是否符合标准。"
+        },
+        {
+          "locationId": "ch3-inverse-nonzero",
+          "label": "反比例中的非零条件",
+          "purpose": "核对边长与固定乘积的取值条件。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-inverse-proportion-check",
+      "locationId": "ch3-inverse-proportion-check",
+      "title": "一个变大、另一个变小，就够了吗？",
+      "preview": "判断反比例，要检查两个量的积是否保持同一个非零常数。",
+      "paragraphs": [
+        "一个量增大时另一个量减小，只说明变化的方向，还没有说明变化符合什么数量关系。判断反比例，应检查在题目允许的取值范围内，两量的积是否始终保持同一个非零常数。",
+        "本题分别给出“周长一定”和“面积一定”两个条件。可回到前两问自己列出的关系，逐一检验这个标准；两种条件应分别判断，不能只凭同一幅长方形图就给出相同结论。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "第4题对照两种反向变化情境，需区分变化方向与反比例的乘积条件，保留两种情形的判断。",
+      "learningAction": "能用乘积条件独立判断反比例，并区分周长固定与面积固定的约束。",
+      "related": [
+        {
+          "locationId": "ch3-inverse-not-decrease",
+          "label": "回顾反比例的判断依据",
+          "purpose": "用乘积固定的标准检查两个长方形条件。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p93-review3-5",
+      "locationId": "ch3-q-p93-review3-5",
+      "title": "复习题3 第5题：题目导读",
+      "preview": "分别求两个式子的值，重点看平方究竟作用于什么。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "平方差与差的平方外观接近，需要在负数和分数代入中持续保持各自的平方对象。",
+      "learningAction": "能圈出两个式子的平方底数，并用它检查两组代入是否改变了原式结构。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "代数式的值",
+          "平方的作用对象",
+          "负数与分数代入"
+        ],
+        "method": [
+          "（1）把第一组负数值分别代入两个式子，保留各自的减法与平方结构，独立计算。",
+          "（2）换用第二组包含分数的取值，再按每个式子的运算顺序求值；对照两问检查自己是否误把不同结构当成同一种计算。"
+        ],
+        "cautions": [
+          "a²−b²与(a−b)²的平方对象不同。",
+          "负数代入时，数本身的负号不能替代原式中的减号。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-sum-square-structure",
+          "label": "平方对象与括号",
+          "purpose": "借前面两个相似式子的对照方法检查本题结构。"
+        },
+        {
+          "locationId": "ch3-negative-substitution-base",
+          "label": "负数代入与乘方",
+          "purpose": "保持第一组负数和第二组负分数的完整底数。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p93-review3-6",
+      "locationId": "ch3-q-p93-review3-6",
+      "title": "复习题3 第6题：题目导读",
+      "preview": "把排数与从第一排起增加的次数区分开。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "第n排是位置序号而非从首排起增加的次数，需要将起始座位数与逐排增加对应起来。",
+      "learningAction": "能用前几排说明排数和增加次数的关系，再用这一对应关系检查第n排及第19排的表达。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "用字母表示数量规律",
+          "起始量与逐次增加",
+          "代数式求值"
+        ],
+        "method": [
+          "（1）先按题目规则记录第1、2、3排座位数，再比较“第几排”和“已经增加几次”之间的关系，用同一理由表达第n排。",
+          "（2）把给定的第一排座位数和目标排数对应到自己的表达式中，再求值并核验题意。"
+        ],
+        "cautions": [
+          "所求是第n排本身的座位数，不是前n排的座位总数。",
+          "排数应为正整数；不要把第1排已有的座位当成一次额外增加。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-square-pattern-index",
+          "label": "序号与数量的对应",
+          "purpose": "借拼图中的序号辨认，检查排数与增加次数是否混淆。"
+        },
+        {
+          "locationId": "ch3-value-not-expression",
+          "label": "代数式的值",
+          "purpose": "把第（2）问看作一般座位关系的一次具体取值。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p94-review3-7",
+      "locationId": "ch3-q-p94-review3-7",
+      "title": "复习题3 第7题：题目导读",
+      "preview": "准确读出线段标注，再选择能表示阴影面积的区域关系。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "图形给出整边与部分线段的长度，需要准确读标注后才能为阴影区域选择面积关系。",
+      "learningAction": "能把面积式中的各个长度和面积项对应到原图的线段与区域，并用给定尺寸检验结果范围。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "正方形和三角形面积",
+          "整体与部分的面积关系",
+          "代数式求值"
+        ],
+        "method": [
+          "（1）先把a、b和4分别对应到图上的准确线段，观察阴影区域与周围简单图形怎样组合，选一种不重复也不遗漏的面积关系来列式。",
+          "（2）将给定a、b值代入自己所列的式子，并对照图形判断所得面积是否处在合理范围。"
+        ],
+        "cautions": [
+          "尺寸线上的4标的是上边的一段，并非正方形整条边长。",
+          "使用三角形面积时，要选底与对应的高；只看图上有两个长度就相乘并不充分。",
+          "图中没有指定长度单位，不应自行补成cm或m。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-triangle-base-height",
+          "label": "三角形的底与对应高",
+          "purpose": "支持阴影分解后所需的三角形面积计算。"
+        },
+        {
+          "locationId": "ch3-area-value-unit",
+          "label": "面积关系与单位",
+          "purpose": "检查同类面积之间运算及结果的量纲。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-diagram-segment-label",
+      "locationId": "ch3-diagram-segment-label",
+      "title": "图上的4标的是哪一段？",
+      "preview": "尺寸线的两个端点决定它量的是整条边还是其中一段。",
+      "paragraphs": [
+        "数字4对应的是标注箭头连接的两个位置，它并不自动表示整条上边的长度。题目说正方形边长为a，图上又标出边上的部分长度，这两类信息要分别辨认。",
+        "列面积式之前，先把每个长度标记和图上的两个端点对应起来。若需要一条没有直接标数的线段，可根据整边与各部分的关系判断，不能只凭数字写在某条边附近就把它当作整边。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "第7题上边的部分长度4容易与正方形整边a混淆，需按尺寸线端点辨认标注。",
+      "learningAction": "能把4、a等标注对应到准确线段，保留阴影面积的自主分解与列式。",
+      "related": []
+    },
+    {
+      "id": "ch3-counter-pattern-corners",
+      "locationId": "ch3-counter-pattern-corners",
+      "title": "复习题3 第8题：题目导读",
+      "preview": "依据棋子的实际分布建立可解释的计数规律。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "棋子只沿边分布且角点属于两条边，需要用实际分布支持一般计数而非套用铺满方阵的规则。",
+      "learningAction": "能通过图上的分组说明第n个图形的计数为何不重复、不遗漏，并用前三图检验。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "图形序号与数量规律",
+          "不重复不遗漏的计数",
+          "从具体图形到一般表达"
+        ],
+        "method": [
+          "按图下序号记录前几幅图的棋子数，观察棋子分布在什么位置，确定一种清楚的分组或递增计数方式。",
+          "用图上的棋子说明该计数方式为何没有重数、漏数，再推广到第n个图形，并用已给图形检验。"
+        ],
+        "cautions": [
+          "这些图形中间没有铺满棋子，不能仅凭外形像正方形就直接套用铺满方阵的计数。",
+          "角上的棋子可能同时属于两条边，选用按边计数时须避免重复。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-matchstick-shared-side",
+          "label": "共同部分的计数",
+          "purpose": "借火柴拼图检查同一对象被多次计入的情况。"
+        },
+        {
+          "locationId": "ch3-sequence-rule-exercise",
+          "label": "规律的解释与检验",
+          "purpose": "用图形理由支持一般表达，避免只凭几个数猜结果。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-q-p94-review3-9",
+      "locationId": "ch3-q-p94-review3-9",
+      "title": "复习题3 第9题：题目导读",
+      "preview": "区分每串固定、总数固定和另有剩余三个条件。",
+      "paragraphs": [],
+      "learningRole": "练习；探究",
+      "learningGap": "三个小问依次改变固定量并引入剩余，需要分清每份、份数、参与分配总量与比例判据。",
+      "learningAction": "能为每个小问标明固定量和参与分配的数量，并据此核验所列式子、比例判断及整数条件。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "每份数量、份数与总量",
+          "正比例与反比例条件",
+          "列代数式与求值"
+        ],
+        "method": [
+          "（1）辨认每串数量与串数，列出所需山楂总数的关系，再用比值或乘积不变量检查所问比例关系。",
+          "（2）改为总数固定、每串相等的条件，表示每串数量，并独立检验它与串数之间的比例关系。",
+          "（3）先区分原有总数、已经串入的数量与剩余数量，再表达每串个数；最后用给定a、b、c求值并核验总数。"
+        ],
+        "cautions": [
+          "串数和每串个数都须符合正整数计数，平均分配时不能用零串或把山楂解释成小数个。",
+          "第（3）问有剩余，原有山楂不全是参与分配的山楂。",
+          "判断比例关系要先说清本小问固定了什么，不能把上一问的固定条件带进下一问。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch3-direct-proportion-condition",
+          "label": "正比例的比值条件",
+          "purpose": "为第（1）（2）问提供应检验的不变量之一。"
+        },
+        {
+          "locationId": "ch3-inverse-not-decrease",
+          "label": "反比例的乘积条件",
+          "purpose": "与比值条件对照，独立判断两种情境。"
+        },
+        {
+          "locationId": "ch3-class-count-domain",
+          "label": "整数数量的取值范围",
+          "purpose": "检查串数与每串个数的情境限制。"
+        }
+      ]
+    },
+    {
+      "id": "ch3-skewer-integer-domain",
+      "locationId": "ch3-skewer-integer-domain",
+      "title": "串数能取任意正数吗？",
+      "preview": "这里不仅有除法条件，还有完整山楂能否平均分配的条件。",
+      "paragraphs": [
+        "b表示串数，应取正整数；每串的山楂个数也应是正整数。题目还说200个山楂按每串相等的个数串完，因此选取的串数必须能让这次分配完成，不能把山楂切成小数个来解释结果。",
+        "列式后，除了检查有没有除以0，还可检查所得数值是否符合“每串有多少个山楂”的含义，并用总数核验。此处只检查取值条件，具体式子和比例关系仍由你根据题意确定。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "第9题第（2）问中的等量整数分配对b有情境限制，单有分母非零还不能保证取值适用。",
+      "learningAction": "能检查串数及每串个数的正整数条件，区分运算有意义与情境可实现。",
+      "related": [
+        {
+          "locationId": "ch3-class-count-domain",
+          "label": "回顾实际数量的取值范围",
+          "purpose": "比较班级数与串数都受到整数计数约束。"
+        },
+        {
+          "locationId": "ch3-value-denominator-condition",
+          "label": "回顾除法的基本条件",
+          "purpose": "在情境条件之外，仍先保证分母不为0。"
+        }
+      ]
+    }
+  ],
+  "pageDecisions": [
+    {
+      "page": 75,
+      "decision": "逐页核对章引机器人背景及（1）—（3），新增整题导读，逐问覆盖识别范围、识别用时、机器人与工人采摘量的比较；本页无可见印刷页码。"
+    },
+    {
+      "page": 76,
+      "decision": "保留t范围、乘号省写及单位转换的原解读；机器人章引题按PDF75记一次。本页末两道引入数量问题按一组新增导读，并核对PDF77的（1）问句和（2）正方形问句，不重复计算跨页题数。"
+    },
+    {
+      "page": 77,
+      "decision": "新增例1四小问及例1后独立举例问题的题目导读；页首引入两问已归PDF76。保留除法条件、代数式与关系、同式不同单位的原解读。"
+    },
+    {
+      "page": 78,
+      "decision": "逐项核对例2四小问、右侧举例便笺、练习1四小问、练习2四小问、练习3与思考和与差的积，六个独立入口全部提供知识、方法、注意条件及回顾关联；思考的图解和PDF79续句一并核对。"
+    },
+    {
+      "page": 79,
+      "decision": "新增例3三小问、例4两小问的整题导读；上端和与差的积结论归PDF78思考题，不另计题。保留利率基准与速度变化的原步骤解读。"
+    },
+    {
+      "page": 80,
+      "decision": "新增练习1三小问、练习2、练习3、练习4及造雪问题两小问的导读；造雪表格和问句已逐项覆盖，并核对PDF81续页分析。保留相反数与差、正比例条件的原解读。"
+    },
+    {
+      "page": 81,
+      "decision": "新增例5两小问的整题导读，定位题干并核对圆柱图；页首造雪分析归PDF80整题。保留反比例定义、k非零及水体积对应的原解读。"
+    },
+    {
+      "page": 82,
+      "decision": "已核对思考举例、练习第1–3题及习题3.1第1题，全部建立题目导读，覆盖各小问、知识方法条件和关联；保留原有费用判断与表格配对细部说明。"
+    },
+    {
+      "page": 83,
+      "decision": "已核对习题3.1第2–5题，共同覆盖读式、实际列式、比例判断和糖果分装；第5题第（3）问续到84页，只记一个题目入口。保留复合分式和提前到达的细部说明。"
+    },
+    {
+      "page": 84,
+      "decision": "已核对习题3.1第5题续问及第6–11题，逐题覆盖所有小问和第6题末尾举例要求；第5题入口保留83页，不重复计题。保留规律、整数范围、数位、计数细部说明。"
+    },
+    {
+      "page": 85,
+      "decision": "阅读对话中的提问均由后续对话直接回答，本页未另布置学生独立作答题。保留不同字母可同值及同一字母前后一致的概念补充，历史段不作无关扩展。"
+    },
+    {
+      "page": 86,
+      "decision": "按逐题导读要求核对原图。本页设3个题目入口：问题（购置排球）、例1、例2；例2第（2）问续解在第87页，题目入口仅设在本页题干。各题均补齐知识点、方法、注意事项及独立知识关联；练习的列式、计算与结论由学生完成。保留独立的概念与步骤说明；原有整题提示扩充为题目导读。"
+    },
+    {
+      "page": 87,
+      "decision": "按逐题导读要求核对原图。本页设4个题目入口：练习第1—3题、例3；例3分析与解答续至第88页，入口仅设在本页题干。各题均补齐知识点、方法、注意事项及独立知识关联；练习的列式、计算与结论由学生完成。保留独立的概念与步骤说明；原有整题提示扩充为题目导读。"
+    },
+    {
+      "page": 88,
+      "decision": "按逐题导读要求核对原图。本页设4个题目入口：例4、练习第1—3题；本页例3续解不重复计题。各题均补齐知识点、方法、注意事项及独立知识关联；练习的列式、计算与结论由学生完成。保留独立的概念与步骤说明；原有整题提示扩充为题目导读。"
+    },
+    {
+      "page": 89,
+      "decision": "按逐题导读要求核对原图。本页设8个题目入口：习题3.2第1—8题，含复习巩固、综合运用、拓广探索全部题目。各题均补齐知识点、方法、注意事项及独立知识关联；练习的列式、计算与结论由学生完成。保留独立的概念与步骤说明；原有整题提示扩充为题目导读。"
+    },
+    {
+      "page": 90,
+      "decision": "按逐题导读要求核对原图。本页设1个题目入口：数学活动1的第（1）（2）项合为一题；数学活动2的研究任务续于第91页并在该页设入口。各题均补齐知识点、方法、注意事项及独立知识关联；练习的列式、计算与结论由学生完成。保留独立的概念与步骤说明；原有整题提示扩充为题目导读。"
+    },
+    {
+      "page": 91,
+      "decision": "按逐题导读要求核对原图。本页设1个题目入口：数学活动2研究问题第（1）（2）项合为一题，包含按条件解码及开放设计；已连读第90页示例。各题均补齐知识点、方法、注意事项及独立知识关联；练习的列式、计算与结论由学生完成。保留独立的概念与步骤说明；原有整题提示扩充为题目导读。"
+    },
+    {
+      "page": 92,
+      "decision": "按逐题导读要求核对原图。本页设5个题目入口：回顾与思考第1—5题分别建立导读。各题均补齐知识点、方法、注意事项及独立知识关联；练习的列式、计算与结论由学生完成。保留独立的概念与步骤说明；原有整题提示扩充为题目导读。"
+    },
+    {
+      "page": 93,
+      "decision": "按逐题导读要求核对原图。本页设6个题目入口：复习题3第1—6题；每题的连续小问在各自导读中逐项覆盖。各题均补齐知识点、方法、注意事项及独立知识关联；练习的列式、计算与结论由学生完成。保留独立的概念与步骤说明；原有整题提示扩充为题目导读。"
+    },
+    {
+      "page": 94,
+      "decision": "按逐题导读要求核对原图。本页设3个题目入口：复习题3第7—9题，含图形面积、棋子规律及冰糖葫芦数量关系全部小问。各题均补齐知识点、方法、注意事项及独立知识关联；练习的列式、计算与结论由学生完成。保留独立的概念与步骤说明；原有整题提示扩充为题目导读。"
+    }
+  ],
+  "questionCoverage": {
+    "status": "source-checked",
+    "basis": "逐页核对PDF第75–94页的章引、引入问题、例题、练习、思考、举例、习题、数学活动及小结回顾题；独立清单审计确认68题无漏项。连续小问合为一题且逐项覆盖，跨页题按作答题干只记一次；第85页对话中的自问自答不计独立题。",
+    "items": [
+      {
+        "label": "章引问题（1）—（3）",
+        "page": 75,
+        "supplementId": "ch3-q-robot-introduction",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）"
+        ]
+      },
+      {
+        "label": "引入问题（1）（2）",
+        "page": 76,
+        "supplementId": "ch3-q-two-quantity-problems",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "例1",
+        "page": 77,
+        "supplementId": "ch3-q-example-1",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）",
+          "（4）"
+        ]
+      },
+      {
+        "label": "例1后的举例问题",
+        "page": 77,
+        "supplementId": "ch3-q-same-expression-context",
+        "parts": []
+      },
+      {
+        "label": "例2",
+        "page": 78,
+        "supplementId": "ch3-q-example-2",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）",
+          "（4）"
+        ]
+      },
+      {
+        "label": "例2旁的举例问题",
+        "page": 78,
+        "supplementId": "ch3-q-example-2-margin-context",
+        "parts": []
+      },
+      {
+        "label": "练习1（印刷71页）",
+        "page": 78,
+        "supplementId": "ch3-q-p71-exercise-1",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）",
+          "（4）"
+        ]
+      },
+      {
+        "label": "练习2（印刷71页）",
+        "page": 78,
+        "supplementId": "ch3-q-p71-exercise-2",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）",
+          "（4）"
+        ]
+      },
+      {
+        "label": "练习3（印刷71页）",
+        "page": 78,
+        "supplementId": "ch3-make-context-exercise",
+        "parts": []
+      },
+      {
+        "label": "思考：和与差的积",
+        "page": 78,
+        "supplementId": "ch3-q-sum-difference-thinking",
+        "parts": []
+      },
+      {
+        "label": "例3",
+        "page": 79,
+        "supplementId": "ch3-q-example-3",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）"
+        ]
+      },
+      {
+        "label": "例4",
+        "page": 79,
+        "supplementId": "ch3-q-example-4",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "练习1（印刷73页）",
+        "page": 80,
+        "supplementId": "ch3-q-p73-exercise-1",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）"
+        ]
+      },
+      {
+        "label": "练习2（印刷73页）",
+        "page": 80,
+        "supplementId": "ch3-q-p73-exercise-2",
+        "parts": []
+      },
+      {
+        "label": "练习3（印刷73页）",
+        "page": 80,
+        "supplementId": "ch3-q-p73-exercise-3",
+        "parts": []
+      },
+      {
+        "label": "练习4（印刷73页）",
+        "page": 80,
+        "supplementId": "ch3-q-p73-exercise-4",
+        "parts": []
+      },
+      {
+        "label": "问题：造雪天数",
+        "page": 80,
+        "supplementId": "ch3-q-snow-problem",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "例5",
+        "page": 81,
+        "supplementId": "ch3-q-example-5",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "3.1思考：生活中的反比例关系",
+        "page": 82,
+        "supplementId": "ch3-q-inverse-life",
+        "parts": []
+      },
+      {
+        "label": "3.1练习：路程一定的汽车（第1题）",
+        "page": 82,
+        "supplementId": "ch3-q-s31-practice1",
+        "parts": []
+      },
+      {
+        "label": "3.1练习：判断反比例（第2题）",
+        "page": 82,
+        "supplementId": "ch3-q-s31-practice2",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）"
+        ]
+      },
+      {
+        "label": "3.1练习：运输表格（第3题）",
+        "page": 82,
+        "supplementId": "ch3-q-s31-practice3",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）"
+        ]
+      },
+      {
+        "label": "习题3.1第1题",
+        "page": 82,
+        "supplementId": "ch3-q-exercise31-1",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）",
+          "（4）"
+        ]
+      },
+      {
+        "label": "习题3.1第2题",
+        "page": 83,
+        "supplementId": "ch3-q-exercise31-2",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）",
+          "（4）"
+        ]
+      },
+      {
+        "label": "习题3.1第3题",
+        "page": 83,
+        "supplementId": "ch3-q-exercise31-3",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）",
+          "（4）"
+        ]
+      },
+      {
+        "label": "习题3.1第4题",
+        "page": 83,
+        "supplementId": "ch3-q-exercise31-4",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）"
+        ]
+      },
+      {
+        "label": "习题3.1第5题",
+        "page": 83,
+        "supplementId": "ch3-q-exercise31-5",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）"
+        ]
+      },
+      {
+        "label": "习题3.1第6题",
+        "page": 84,
+        "supplementId": "ch3-q-exercise31-6",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "习题3.1第7题",
+        "page": 84,
+        "supplementId": "ch3-q-exercise31-7",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "习题3.1第8题",
+        "page": 84,
+        "supplementId": "ch3-q-exercise31-8",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "习题3.1第9题",
+        "page": 84,
+        "supplementId": "ch3-q-exercise31-9",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "习题3.1第10题",
+        "page": 84,
+        "supplementId": "ch3-q-exercise31-10",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "习题3.1第11题",
+        "page": 84,
+        "supplementId": "ch3-matches-duplicate-exercise",
+        "parts": []
+      },
+      {
+        "label": "3.2 问题：购置排球",
+        "page": 86,
+        "supplementId": "ch3-q-p86-volleyball",
+        "parts": []
+      },
+      {
+        "label": "3.2 例1",
+        "page": 86,
+        "supplementId": "ch3-q-p86-example1",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "3.2 例2",
+        "page": 86,
+        "supplementId": "ch3-q-p86-example2",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "3.2 练习（第80页）第1题",
+        "page": 87,
+        "supplementId": "ch3-q-p87-practice1",
+        "parts": []
+      },
+      {
+        "label": "3.2 练习（第80页）第2题",
+        "page": 87,
+        "supplementId": "ch3-same-letter-substitution",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "3.2 练习（第80页）第3题",
+        "page": 87,
+        "supplementId": "ch3-q-p87-practice3",
+        "parts": []
+      },
+      {
+        "label": "3.2 例3",
+        "page": 87,
+        "supplementId": "ch3-q-p87-example3",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "3.2 例4",
+        "page": 88,
+        "supplementId": "ch3-q-p88-example4",
+        "parts": []
+      },
+      {
+        "label": "3.2 练习（第81页）第1题",
+        "page": 88,
+        "supplementId": "ch3-q-p88-practice1",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "3.2 练习（第81页）第2题",
+        "page": 88,
+        "supplementId": "ch3-q-p88-practice2",
+        "parts": []
+      },
+      {
+        "label": "3.2 练习（第81页）第3题",
+        "page": 88,
+        "supplementId": "ch3-q-p88-practice3",
+        "parts": []
+      },
+      {
+        "label": "习题3.2 第1题",
+        "page": 89,
+        "supplementId": "ch3-q-p89-ex32-1",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "习题3.2 第2题",
+        "page": 89,
+        "supplementId": "ch3-q-p89-ex32-2",
+        "parts": []
+      },
+      {
+        "label": "习题3.2 第3题",
+        "page": 89,
+        "supplementId": "ch3-sum-square-structure",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "习题3.2 第4题",
+        "page": 89,
+        "supplementId": "ch3-q-p89-ex32-4",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "习题3.2 第5题",
+        "page": 89,
+        "supplementId": "ch3-q-p89-ex32-5",
+        "parts": []
+      },
+      {
+        "label": "习题3.2 第6题",
+        "page": 89,
+        "supplementId": "ch3-q-p89-ex32-6",
+        "parts": []
+      },
+      {
+        "label": "习题3.2 第7题",
+        "page": 89,
+        "supplementId": "ch3-q-p89-ex32-7",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "习题3.2 第8题",
+        "page": 89,
+        "supplementId": "ch3-q-p89-ex32-8",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "数学活动1：拼图小游戏",
+        "page": 90,
+        "supplementId": "ch3-q-p90-activity1",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "数学活动2：密码中的数学",
+        "page": 91,
+        "supplementId": "ch3-q-p91-activity2",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "回顾与思考 第1题",
+        "page": 92,
+        "supplementId": "ch3-q-p92-review1",
+        "parts": []
+      },
+      {
+        "label": "回顾与思考 第2题",
+        "page": 92,
+        "supplementId": "ch3-q-p92-review2",
+        "parts": []
+      },
+      {
+        "label": "回顾与思考 第3题",
+        "page": 92,
+        "supplementId": "ch3-q-p92-review3",
+        "parts": []
+      },
+      {
+        "label": "回顾与思考 第4题",
+        "page": 92,
+        "supplementId": "ch3-q-p92-review4",
+        "parts": []
+      },
+      {
+        "label": "回顾与思考 第5题",
+        "page": 92,
+        "supplementId": "ch3-q-p92-review5",
+        "parts": []
+      },
+      {
+        "label": "复习题3 第1题",
+        "page": 93,
+        "supplementId": "ch3-q-p93-review3-1",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）",
+          "（4）"
+        ]
+      },
+      {
+        "label": "复习题3 第2题",
+        "page": 93,
+        "supplementId": "ch3-q-p93-review3-2",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）"
+        ]
+      },
+      {
+        "label": "复习题3 第3题",
+        "page": 93,
+        "supplementId": "ch3-q-p93-review3-3",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "复习题3 第4题",
+        "page": 93,
+        "supplementId": "ch3-q-p93-review3-4",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）"
+        ]
+      },
+      {
+        "label": "复习题3 第5题",
+        "page": 93,
+        "supplementId": "ch3-q-p93-review3-5",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "复习题3 第6题",
+        "page": 93,
+        "supplementId": "ch3-q-p93-review3-6",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "复习题3 第7题",
+        "page": 94,
+        "supplementId": "ch3-q-p94-review3-7",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "复习题3 第8题",
+        "page": 94,
+        "supplementId": "ch3-counter-pattern-corners",
+        "parts": []
+      },
+      {
+        "label": "复习题3 第9题",
+        "page": 94,
+        "supplementId": "ch3-q-p94-review3-9",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）"
+        ]
+      }
+    ]
+  }
+}

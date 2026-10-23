@@ -1,0 +1,2060 @@
+{
+  "documentSha256": "6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249",
+  "coordinateSystem": "normalized-full-page-top-left",
+  "sourceIndex": "materials/indexes/人教版-数学-七年级上册/index.jsonl",
+  "sourceImages": "materials/indexes/人教版-数学-七年级上册/images/",
+  "locations": [
+    {
+      "id": "ch4-q-intro-1",
+      "page": 95,
+      "printedPage": null,
+      "indexAnchor": 1,
+      "anchorLabel": "问题（1）—（3）",
+      "locator": "章引言问题（1）的题号与题干首行；指南覆盖本题列出的全部小问。",
+      "region": {
+        "x": 0.13,
+        "y": 0.279,
+        "width": 0.48,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.2905
+      },
+      "sourceImageSha256": "c95c540e82dc2378eb7c7b574945ee9b34bf3940fbb77f4f5e673c9cd7c0dfac"
+    },
+    {
+      "id": "ch4-q-intro-2",
+      "page": 95,
+      "printedPage": null,
+      "indexAnchor": 1,
+      "anchorLabel": "问题（1）—（3）",
+      "locator": "章引言问题（2）的题号与题干首行；指南覆盖本题列出的全部小问。",
+      "region": {
+        "x": 0.13,
+        "y": 0.307,
+        "width": 0.74,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3185
+      },
+      "sourceImageSha256": "c95c540e82dc2378eb7c7b574945ee9b34bf3940fbb77f4f5e673c9cd7c0dfac"
+    },
+    {
+      "id": "ch4-q-intro-3",
+      "page": 95,
+      "printedPage": null,
+      "indexAnchor": 1,
+      "anchorLabel": "问题（1）—（3）",
+      "locator": "章引言问题（3）的题号与题干首行；指南覆盖本题列出的全部小问。",
+      "region": {
+        "x": 0.13,
+        "y": 0.392,
+        "width": 0.74,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4035
+      },
+      "sourceImageSha256": "c95c540e82dc2378eb7c7b574945ee9b34bf3940fbb77f4f5e673c9cd7c0dfac"
+    },
+    {
+      "id": "ch4-why-simplify",
+      "page": 95,
+      "printedPage": null,
+      "indexAnchor": 0,
+      "anchorLabel": "第四章 整式的加减",
+      "locator": "章引言末段，从“要解决上面的问题”到“体会数与整式在加减运算中的一致性”。",
+      "region": {
+        "x": 0.085,
+        "y": 0.477,
+        "width": 0.79,
+        "height": 0.104
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.529
+      },
+      "sourceImageSha256": "c95c540e82dc2378eb7c7b574945ee9b34bf3940fbb77f4f5e673c9cd7c0dfac"
+    },
+    {
+      "id": "ch4-q-observe-monomial",
+      "page": 96,
+      "printedPage": "89",
+      "indexAnchor": 1,
+      "anchorLabel": "观察",
+      "locator": "4.1 观察：代数式的共同特点的题号与题干首行；指南覆盖本题列出的全部小问。",
+      "region": {
+        "x": 0.151,
+        "y": 0.469,
+        "width": 0.31,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4805
+      },
+      "sourceImageSha256": "62583b1c7d6b15943bf641d8a83f3276617a48cf09b73de9371ed8ece74d7938"
+    },
+    {
+      "id": "ch4-monomial-product",
+      "page": 96,
+      "printedPage": "89",
+      "indexAnchor": 2,
+      "anchorLabel": "单项式",
+      "locator": "“这些代数式都是数或字母的积”及下一行“单独的一个数或一个字母也是单项式”。",
+      "region": {
+        "x": 0.13,
+        "y": 0.506,
+        "width": 0.79,
+        "height": 0.049
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.5305
+      },
+      "sourceImageSha256": "62583b1c7d6b15943bf641d8a83f3276617a48cf09b73de9371ed8ece74d7938"
+    },
+    {
+      "id": "ch4-coefficient-sign",
+      "page": 96,
+      "printedPage": "89",
+      "indexAnchor": 3,
+      "anchorLabel": "系数、次数",
+      "locator": "“单项式表示数与字母相乘时”之后，“单项式的系数是1或−1时，1通常省略不写，如a³，−x”。",
+      "region": {
+        "x": 0.13,
+        "y": 0.639,
+        "width": 0.79,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.664
+      },
+      "sourceImageSha256": "62583b1c7d6b15943bf641d8a83f3276617a48cf09b73de9371ed8ece74d7938"
+    },
+    {
+      "id": "ch4-degree-letters",
+      "page": 96,
+      "printedPage": "89",
+      "indexAnchor": 3,
+      "anchorLabel": "系数、次数",
+      "locator": "“一个单项式中，所有字母的指数的和叫作这个单项式的次数”这一句。",
+      "region": {
+        "x": 0.173,
+        "y": 0.696,
+        "width": 0.606,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.7085
+      },
+      "sourceImageSha256": "62583b1c7d6b15943bf641d8a83f3276617a48cf09b73de9371ed8ece74d7938"
+    },
+    {
+      "id": "ch4-constant-degree",
+      "page": 96,
+      "printedPage": "89",
+      "indexAnchor": 3,
+      "anchorLabel": "系数、次数",
+      "locator": "页底“一般地，我们规定：一个非零的数的次数为0，0没有次数”。",
+      "region": {
+        "x": 0.174,
+        "y": 0.852,
+        "width": 0.6,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.8645
+      },
+      "sourceImageSha256": "62583b1c7d6b15943bf641d8a83f3276617a48cf09b73de9371ed8ece74d7938"
+    },
+    {
+      "id": "ch4-q-sec41-example1",
+      "page": 97,
+      "printedPage": "90",
+      "indexAnchor": 0,
+      "anchorLabel": "例1",
+      "locator": "4.1 例1的题号与题干首行；指南覆盖本题列出的全部小问。",
+      "region": {
+        "x": 0.13,
+        "y": 0.069,
+        "width": 0.505,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.0805
+      },
+      "sourceImageSha256": "6fe33f3f05195923763612dce99e56fb9c2dd2b63c70a5720a9a8c8831587eb1"
+    },
+    {
+      "id": "ch4-opposite-variable",
+      "page": 97,
+      "printedPage": "90",
+      "indexAnchor": 0,
+      "anchorLabel": "例1",
+      "locator": "例1解答第（3）小题：“−n，它的系数是−1，次数是1”。",
+      "region": {
+        "x": 0.131,
+        "y": 0.787,
+        "width": 0.46,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.7995
+      },
+      "sourceImageSha256": "6fe33f3f05195923763612dce99e56fb9c2dd2b63c70a5720a9a8c8831587eb1"
+    },
+    {
+      "id": "ch4-ratio-area",
+      "page": 97,
+      "printedPage": "90",
+      "indexAnchor": 0,
+      "anchorLabel": "例1",
+      "locator": "例1解答第（5）小题：(2/3)a²及其系数、次数。",
+      "region": {
+        "x": 0.131,
+        "y": 0.853,
+        "width": 0.46,
+        "height": 0.03
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.868
+      },
+      "sourceImageSha256": "6fe33f3f05195923763612dce99e56fb9c2dd2b63c70a5720a9a8c8831587eb1"
+    },
+    {
+      "id": "ch4-q-sec41-practice-p91-1",
+      "page": 98,
+      "printedPage": "91",
+      "indexAnchor": 0,
+      "anchorLabel": "练习",
+      "locator": "4.1 练习（印刷91页）第1题的题号与题干首行；指南覆盖本题列出的全部小问。",
+      "region": {
+        "x": 0.148,
+        "y": 0.118,
+        "width": 0.105,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.129
+      },
+      "sourceImageSha256": "b7d4f0b81be1ea9b82cd67999b7f7e7b94cc692ee6f31ebfb2b29484fe334bcd"
+    },
+    {
+      "id": "ch4-q-sec41-practice-p91-2",
+      "page": 98,
+      "printedPage": "91",
+      "indexAnchor": 0,
+      "anchorLabel": "练习",
+      "locator": "4.1 练习（印刷91页）第2题的题号与题干首行；指南覆盖本题列出的全部小问。",
+      "region": {
+        "x": 0.148,
+        "y": 0.255,
+        "width": 0.475,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.266
+      },
+      "sourceImageSha256": "b7d4f0b81be1ea9b82cd67999b7f7e7b94cc692ee6f31ebfb2b29484fe334bcd"
+    },
+    {
+      "id": "ch4-q-think-polynomial",
+      "page": 98,
+      "printedPage": "91",
+      "indexAnchor": 1,
+      "anchorLabel": "思考",
+      "locator": "4.1 思考：与单项式的区别和联系的题号与题干首行；指南覆盖本题列出的全部小问。",
+      "region": {
+        "x": 0.151,
+        "y": 0.744,
+        "width": 0.65,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.7555
+      },
+      "sourceImageSha256": "b7d4f0b81be1ea9b82cd67999b7f7e7b94cc692ee6f31ebfb2b29484fe334bcd"
+    },
+    {
+      "id": "ch4-signed-terms",
+      "page": 98,
+      "printedPage": "91",
+      "indexAnchor": 2,
+      "anchorLabel": "多项式、项、常数项",
+      "locator": "思考框下第一段“这些式子都可以看作几个单项式的和”，以及2n−10、x²+2x+8的拆分。",
+      "region": {
+        "x": 0.13,
+        "y": 0.78,
+        "width": 0.79,
+        "height": 0.047
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.8035
+      },
+      "sourceImageSha256": "b7d4f0b81be1ea9b82cd67999b7f7e7b94cc692ee6f31ebfb2b29484fe334bcd"
+    },
+    {
+      "id": "ch4-polynomial-degree",
+      "page": 99,
+      "printedPage": "92",
+      "indexAnchor": 0,
+      "anchorLabel": "多项式的次数",
+      "locator": "页首“多项式里，次数最高的项的次数，叫作这个多项式的次数”。",
+      "region": {
+        "x": 0.085,
+        "y": 0.068,
+        "width": 0.52,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.093
+      },
+      "sourceImageSha256": "77886f214be57a25111cce3207a1344d4c24238b5beb921800d268f96b00fffa"
+    },
+    {
+      "id": "ch4-q-degree-bubble",
+      "page": 99,
+      "printedPage": "92",
+      "indexAnchor": 0,
+      "anchorLabel": "多项式的次数",
+      "locator": "页首右侧气泡中的“的项和次数分别是什么？”一行；指南覆盖气泡中的2a+3b和(1/2)ab−πr²两个式子。",
+      "region": {
+        "x": 0.631,
+        "y": 0.129,
+        "width": 0.23,
+        "height": 0.027
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.1425
+      },
+      "sourceImageSha256": "77886f214be57a25111cce3207a1344d4c24238b5beb921800d268f96b00fffa"
+    },
+    {
+      "id": "ch4-q-sec41-example2",
+      "page": 99,
+      "printedPage": "92",
+      "indexAnchor": 2,
+      "anchorLabel": "例2",
+      "locator": "4.1 例2的题号与题干首行；指南覆盖本题列出的全部小问。",
+      "region": {
+        "x": 0.13,
+        "y": 0.317,
+        "width": 0.485,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3285
+      },
+      "sourceImageSha256": "77886f214be57a25111cce3207a1344d4c24238b5beb921800d268f96b00fffa"
+    },
+    {
+      "id": "ch4-same-degree-different",
+      "page": 99,
+      "printedPage": "92",
+      "indexAnchor": 2,
+      "anchorLabel": "例2",
+      "locator": "例2解答第（4）小题：18a²+4ab的项和次数。",
+      "region": {
+        "x": 0.085,
+        "y": 0.852,
+        "width": 0.525,
+        "height": 0.052
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.878
+      },
+      "sourceImageSha256": "77886f214be57a25111cce3207a1344d4c24238b5beb921800d268f96b00fffa"
+    },
+    {
+      "id": "ch4-q-sec41-practice-p93-1",
+      "page": 100,
+      "printedPage": "93",
+      "indexAnchor": 0,
+      "anchorLabel": "练习",
+      "locator": "4.1 练习（印刷93页）第1题的题号与题干首行；指南覆盖本题列出的全部小问。",
+      "region": {
+        "x": 0.148,
+        "y": 0.117,
+        "width": 0.727,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.1285
+      },
+      "sourceImageSha256": "7954918c81286ebd066b7fe4cabbde8e6ce421221a08f77679f77964d25ef8ea"
+    },
+    {
+      "id": "ch4-degree-table",
+      "page": 100,
+      "printedPage": "93",
+      "indexAnchor": 0,
+      "anchorLabel": "练习",
+      "locator": "4.1 练习（印刷93页）第2题的题号与题干首行；指南覆盖本题列出的全部小问。",
+      "region": {
+        "x": 0.148,
+        "y": 0.319,
+        "width": 0.108,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3305
+      },
+      "sourceImageSha256": "7954918c81286ebd066b7fe4cabbde8e6ce421221a08f77679f77964d25ef8ea"
+    },
+    {
+      "id": "ch4-q-sec41-practice-p93-3",
+      "page": 100,
+      "printedPage": "93",
+      "indexAnchor": 0,
+      "anchorLabel": "练习",
+      "locator": "4.1 练习（印刷93页）第3题的题号与题干首行；指南覆盖本题列出的全部小问。",
+      "region": {
+        "x": 0.148,
+        "y": 0.468,
+        "width": 0.75,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4795
+      },
+      "sourceImageSha256": "7954918c81286ebd066b7fe4cabbde8e6ce421221a08f77679f77964d25ef8ea"
+    },
+    {
+      "id": "ch4-q-hw41-1",
+      "page": 100,
+      "printedPage": "93",
+      "indexAnchor": 1,
+      "anchorLabel": "习题4.1",
+      "locator": "习题4.1 第1题的题号与题干首行；指南覆盖本题列出的全部小问。",
+      "region": {
+        "x": 0.148,
+        "y": 0.862,
+        "width": 0.27,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.873
+      },
+      "sourceImageSha256": "7954918c81286ebd066b7fe4cabbde8e6ce421221a08f77679f77964d25ef8ea"
+    },
+    {
+      "id": "ch4-many-monomials",
+      "page": 101,
+      "printedPage": "94",
+      "indexAnchor": 0,
+      "anchorLabel": "习题4.1（续）",
+      "locator": "习题4.1 第2题的题号与题干首行；指南覆盖本题列出的全部小问。",
+      "region": {
+        "x": 0.105,
+        "y": 0.081,
+        "width": 0.41,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.092
+      },
+      "sourceImageSha256": "e9527e2f70d50c489e3f17918439719a4e666be56afab402f1eb32f76e73ac72"
+    },
+    {
+      "id": "ch4-q-hw41-3",
+      "page": 101,
+      "printedPage": "94",
+      "indexAnchor": 0,
+      "anchorLabel": "习题4.1（续）",
+      "locator": "习题4.1 第3题的题号与题干首行；指南覆盖本题列出的全部小问。",
+      "region": {
+        "x": 0.105,
+        "y": 0.107,
+        "width": 0.3,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.1185
+      },
+      "sourceImageSha256": "e9527e2f70d50c489e3f17918439719a4e666be56afab402f1eb32f76e73ac72"
+    },
+    {
+      "id": "ch4-q-hw41-4",
+      "page": 101,
+      "printedPage": "94",
+      "indexAnchor": 0,
+      "anchorLabel": "习题4.1（续）",
+      "locator": "习题4.1 第4题的题号与题干首行；指南覆盖本题列出的全部小问。",
+      "region": {
+        "x": 0.105,
+        "y": 0.159,
+        "width": 0.47,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.17
+      },
+      "sourceImageSha256": "e9527e2f70d50c489e3f17918439719a4e666be56afab402f1eb32f76e73ac72"
+    },
+    {
+      "id": "ch4-q-hw41-5",
+      "page": 101,
+      "printedPage": "94",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "习题4.1 第5题的题号与题干首行；指南覆盖本题列出的全部小问。",
+      "region": {
+        "x": 0.105,
+        "y": 0.332,
+        "width": 0.75,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.343
+      },
+      "sourceImageSha256": "e9527e2f70d50c489e3f17918439719a4e666be56afab402f1eb32f76e73ac72"
+    },
+    {
+      "id": "ch4-q-hw41-6",
+      "page": 101,
+      "printedPage": "94",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "习题4.1 第6题的题号与题干首行；指南覆盖本题列出的全部小问。",
+      "region": {
+        "x": 0.105,
+        "y": 0.41,
+        "width": 0.76,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.421
+      },
+      "sourceImageSha256": "e9527e2f70d50c489e3f17918439719a4e666be56afab402f1eb32f76e73ac72"
+    },
+    {
+      "id": "ch4-q-hw41-7",
+      "page": 101,
+      "printedPage": "94",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "习题4.1 第7题的题号与题干首行；指南覆盖本题列出的全部小问。",
+      "region": {
+        "x": 0.105,
+        "y": 0.54,
+        "width": 0.75,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.551
+      },
+      "sourceImageSha256": "e9527e2f70d50c489e3f17918439719a4e666be56afab402f1eb32f76e73ac72"
+    },
+    {
+      "id": "ch4-integer-remainder",
+      "page": 101,
+      "printedPage": "94",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索",
+      "locator": "习题4.1 第8题的题号与题干首行；指南覆盖本题列出的全部小问。",
+      "region": {
+        "x": 0.105,
+        "y": 0.676,
+        "width": 0.49,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.687
+      },
+      "sourceImageSha256": "e9527e2f70d50c489e3f17918439719a4e666be56afab402f1eb32f76e73ac72"
+    },
+    {
+      "id": "ch4-q-hw41-9",
+      "page": 101,
+      "printedPage": "94",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索",
+      "locator": "习题4.1 第9题的题号与题干首行；指南覆盖本题列出的全部小问。",
+      "region": {
+        "x": 0.105,
+        "y": 0.728,
+        "width": 0.75,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.739
+      },
+      "sourceImageSha256": "e9527e2f70d50c489e3f17918439719a4e666be56afab402f1eb32f76e73ac72"
+    },
+    {
+      "id": "ch4-same-letter-distance",
+      "page": 102,
+      "printedPage": "95",
+      "indexAnchor": 1,
+      "anchorLabel": "本章引言中的问题（2）",
+      "locator": "香港口岸至西人工岛全长的两个连续式子72a+96×1.25a与72a+120a。",
+      "region": {
+        "x": 0.43,
+        "y": 0.376,
+        "width": 0.18,
+        "height": 0.052
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.402
+      },
+      "sourceImageSha256": "01693e0f0be0fff4da8940b96c578f991f9f24954768e29baa953f9e0551e70e"
+    },
+    {
+      "id": "ch4-q-sec42-intro-compute",
+      "page": 102,
+      "printedPage": "95",
+      "indexAnchor": 1,
+      "anchorLabel": "本章引言中的问题（2）",
+      "locator": "4.2 导入：如何计算72a+120a的题号与题干首行；指南覆盖本题列出的全部小问。",
+      "region": {
+        "x": 0.174,
+        "y": 0.434,
+        "width": 0.33,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.445
+      },
+      "sourceImageSha256": "01693e0f0be0fff4da8940b96c578f991f9f24954768e29baa953f9e0551e70e"
+    },
+    {
+      "id": "ch4-q-sec42-inquiry-p95",
+      "page": 102,
+      "printedPage": "95",
+      "indexAnchor": 2,
+      "anchorLabel": "探究",
+      "locator": "4.2 探究（印刷95页）的题号与题干首行；指南覆盖本题列出的全部小问。",
+      "region": {
+        "x": 0.197,
+        "y": 0.535,
+        "width": 0.237,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.5465
+      },
+      "sourceImageSha256": "01693e0f0be0fff4da8940b96c578f991f9f24954768e29baa953f9e0551e70e"
+    },
+    {
+      "id": "ch4-values-and-law",
+      "page": 102,
+      "printedPage": "95",
+      "indexAnchor": 3,
+      "anchorLabel": "根据分配律",
+      "locator": "页底“有相同的结构，并且字母a代表的是一个数，因此根据分配律也有”一句，等式续于PDF103页。",
+      "region": {
+        "x": 0.13,
+        "y": 0.894,
+        "width": 0.79,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.9055
+      },
+      "sourceImageSha256": "01693e0f0be0fff4da8940b96c578f991f9f24954768e29baa953f9e0551e70e"
+    },
+    {
+      "id": "ch4-q-sec42-inquiry-p96",
+      "page": 103,
+      "printedPage": "96",
+      "indexAnchor": 1,
+      "anchorLabel": "探究",
+      "locator": "探究框内“填空：”一行；指南覆盖第（1）—（3）小题及共同特点、规律提问。",
+      "region": {
+        "x": 0.153,
+        "y": 0.14,
+        "width": 0.075,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.1515
+      },
+      "sourceImageSha256": "2c8ea3c6ecba4ef14f747ed19beab9c3106e9ade4705183c76dfee04373b1852"
+    },
+    {
+      "id": "ch4-like-terms",
+      "page": 103,
+      "printedPage": "96",
+      "indexAnchor": 2,
+      "anchorLabel": "同类项",
+      "locator": "“像72a与−120a，3m²与2m²，3xy²与−4xy²这样”至“几个常数项也是同类项”。",
+      "region": {
+        "x": 0.085,
+        "y": 0.485,
+        "width": 0.79,
+        "height": 0.079
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.5245
+      },
+      "sourceImageSha256": "2c8ea3c6ecba4ef14f747ed19beab9c3106e9ade4705183c76dfee04373b1852"
+    },
+    {
+      "id": "ch4-move-signed-terms",
+      "page": 103,
+      "printedPage": "96",
+      "indexAnchor": 3,
+      "anchorLabel": "合并同类项",
+      "locator": "4x²+2x+7+3x−8x²−2到标注“交换律”的下一行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.629,
+        "width": 0.475,
+        "height": 0.053
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.6555
+      },
+      "sourceImageSha256": "2c8ea3c6ecba4ef14f747ed19beab9c3106e9ade4705183c76dfee04373b1852"
+    },
+    {
+      "id": "ch4-combine-rule",
+      "page": 103,
+      "printedPage": "96",
+      "indexAnchor": 3,
+      "anchorLabel": "合并同类项",
+      "locator": "蓝色法则“合并同类项后，所得项的系数是合并前各同类项的系数的和。字母连同它的指数不变”。",
+      "region": {
+        "x": 0.085,
+        "y": 0.795,
+        "width": 0.79,
+        "height": 0.051
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.8205
+      },
+      "sourceImageSha256": "2c8ea3c6ecba4ef14f747ed19beab9c3106e9ade4705183c76dfee04373b1852"
+    },
+    {
+      "id": "ch4-q-sec42-example1",
+      "page": 103,
+      "printedPage": "96",
+      "indexAnchor": 4,
+      "anchorLabel": "例1",
+      "locator": "页底“例1 合并下列各式的同类项”题干；包含第（1）（2）题，解答续于PDF104页，入口仅放在本页。",
+      "region": {
+        "x": 0.13,
+        "y": 0.853,
+        "width": 0.325,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.8645
+      },
+      "sourceImageSha256": "2c8ea3c6ecba4ef14f747ed19beab9c3106e9ade4705183c76dfee04373b1852"
+    },
+    {
+      "id": "ch4-zero-coefficient",
+      "page": 104,
+      "printedPage": "97",
+      "indexAnchor": 0,
+      "anchorLabel": "例1（续）",
+      "locator": "例1（2）解答中(4−4)a²+(3−4)b²+2ab到−b²+2ab两行。",
+      "region": {
+        "x": 0.219,
+        "y": 0.172,
+        "width": 0.37,
+        "height": 0.052
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.198
+      },
+      "sourceImageSha256": "9e392fe7f61e6a919fac2a21d6dd7e973f5ad2c4adf34aa328dc81fbb7de73d2"
+    },
+    {
+      "id": "ch4-q-42-example2",
+      "page": 104,
+      "printedPage": "97",
+      "indexAnchor": 1,
+      "anchorLabel": "例2",
+      "locator": "例2题号及第（1）问“求多项式……的值”这一行；同题第（2）问在下一行。",
+      "region": {
+        "x": 0.174,
+        "y": 0.235,
+        "width": 0.689,
+        "height": 0.035
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.2525
+      },
+      "sourceImageSha256": "9e392fe7f61e6a919fac2a21d6dd7e973f5ad2c4adf34aa328dc81fbb7de73d2"
+    },
+    {
+      "id": "ch4-simplify-value",
+      "page": 104,
+      "printedPage": "97",
+      "indexAnchor": 1,
+      "anchorLabel": "例2",
+      "locator": "例2“分析：在求多项式的值时，可以先将多项式中的同类项合并，然后再求值”两行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.327,
+        "width": 0.79,
+        "height": 0.052
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.353
+      },
+      "sourceImageSha256": "9e392fe7f61e6a919fac2a21d6dd7e973f5ad2c4adf34aa328dc81fbb7de73d2"
+    },
+    {
+      "id": "ch4-q-42-compare-substitution",
+      "page": 104,
+      "printedPage": "97",
+      "indexAnchor": 1,
+      "anchorLabel": "例2",
+      "locator": "例2右侧蓝色旁注“请你把字母的值直接代入原式求值……哪种方法更简便？”",
+      "region": {
+        "x": 0.671,
+        "y": 0.482,
+        "width": 0.224,
+        "height": 0.095
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.5295
+      },
+      "sourceImageSha256": "9e392fe7f61e6a919fac2a21d6dd7e973f5ad2c4adf34aa328dc81fbb7de73d2"
+    },
+    {
+      "id": "ch4-q-42-example3",
+      "page": 104,
+      "printedPage": "97",
+      "indexAnchor": 2,
+      "anchorLabel": "例3",
+      "locator": "例3题号及第（1）问开头“水库水位第一天……”一行；第（2）问在下方，解答续于已核对PDF105页。",
+      "region": {
+        "x": 0.174,
+        "y": 0.696,
+        "width": 0.732,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.709
+      },
+      "sourceImageSha256": "9e392fe7f61e6a919fac2a21d6dd7e973f5ad2c4adf34aa328dc81fbb7de73d2"
+    },
+    {
+      "id": "ch4-net-water-change",
+      "page": 104,
+      "printedPage": "97",
+      "indexAnchor": 2,
+      "anchorLabel": "例3",
+      "locator": "例3（1）解答末句“两天水位总的变化情况为下降了1.5a cm”。",
+      "region": {
+        "x": 0.13,
+        "y": 0.894,
+        "width": 0.6,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.9055
+      },
+      "sourceImageSha256": "9e392fe7f61e6a919fac2a21d6dd7e973f5ad2c4adf34aa328dc81fbb7de73d2"
+    },
+    {
+      "id": "ch4-stock-and-change",
+      "page": 105,
+      "printedPage": "98",
+      "indexAnchor": 0,
+      "anchorLabel": "例3（2）（续）",
+      "locator": "例3（2）续解中的5x−3x+4x=(5−3+4)x=6x一行；题干在PDF104页。",
+      "region": {
+        "x": 0.317,
+        "y": 0.127,
+        "width": 0.324,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.1375
+      },
+      "sourceImageSha256": "e5dfaa5ebb9ac3c8a69879e1eda21b60a6e36eac566dcdbfe3753b61789b0d39"
+    },
+    {
+      "id": "ch4-q-p98-practice1",
+      "page": 105,
+      "printedPage": "98",
+      "indexAnchor": 1,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "练习第1题题号与“合并下列各式的同类项”题干。",
+      "region": {
+        "x": 0.108,
+        "y": 0.232,
+        "width": 0.273,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.242
+      },
+      "sourceImageSha256": "e5dfaa5ebb9ac3c8a69879e1eda21b60a6e36eac566dcdbfe3753b61789b0d39"
+    },
+    {
+      "id": "ch4-q-p98-practice2",
+      "page": 105,
+      "printedPage": "98",
+      "indexAnchor": 1,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "练习第2题题号与“先化简，再求值”题干。",
+      "region": {
+        "x": 0.108,
+        "y": 0.366,
+        "width": 0.196,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3765
+      },
+      "sourceImageSha256": "e5dfaa5ebb9ac3c8a69879e1eda21b60a6e36eac566dcdbfe3753b61789b0d39"
+    },
+    {
+      "id": "ch4-area-not-radius",
+      "page": 105,
+      "printedPage": "98",
+      "indexAnchor": 1,
+      "anchorLabel": "练习 第1—3题",
+      "locator": "练习第3题题号及“大圆的半径是R，小圆的面积……”的第一行；比例4/9及圆环图就在右侧。",
+      "region": {
+        "x": 0.108,
+        "y": 0.452,
+        "width": 0.587,
+        "height": 0.038
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.471
+      },
+      "sourceImageSha256": "e5dfaa5ebb9ac3c8a69879e1eda21b60a6e36eac566dcdbfe3753b61789b0d39"
+    },
+    {
+      "id": "ch4-bracket-time",
+      "page": 105,
+      "printedPage": "98",
+      "indexAnchor": 2,
+      "anchorLabel": "主桥与海底隧道长度的和、差",
+      "locator": "“通过海底隧道所需时间比通过主桥的时间少0.15 h”至“行驶的路程是72(b−0.15) km”。",
+      "region": {
+        "x": 0.085,
+        "y": 0.642,
+        "width": 0.79,
+        "height": 0.049
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.6665
+      },
+      "sourceImageSha256": "e5dfaa5ebb9ac3c8a69879e1eda21b60a6e36eac566dcdbfe3753b61789b0d39"
+    },
+    {
+      "id": "ch4-q-p98-bridge-simplify",
+      "page": 105,
+      "printedPage": "98",
+      "indexAnchor": 2,
+      "anchorLabel": "主桥与海底隧道长度的和、差",
+      "locator": "两式①②下方“上面的代数式①②都带有括号，应该如何化简它们？”一句；②计算续于已核对PDF106页。",
+      "region": {
+        "x": 0.131,
+        "y": 0.809,
+        "width": 0.497,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.82
+      },
+      "sourceImageSha256": "e5dfaa5ebb9ac3c8a69879e1eda21b60a6e36eac566dcdbfe3753b61789b0d39"
+    },
+    {
+      "id": "ch4-distribute-every-term",
+      "page": 106,
+      "printedPage": "99",
+      "indexAnchor": 1,
+      "anchorLabel": "去括号",
+      "locator": "“去括号就是用括号外的数乘括号内的每一项，再把所得的积相加”两行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.097,
+        "width": 0.79,
+        "height": 0.052
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.123
+      },
+      "sourceImageSha256": "c261e362057cac0d58495783d4bbc95388f416435e982e61fe8b0c9f2d7b294a"
+    },
+    {
+      "id": "ch4-minus-bracket",
+      "page": 106,
+      "printedPage": "99",
+      "indexAnchor": 1,
+      "anchorLabel": "去括号",
+      "locator": "特别情形给出的+(x−3)=x−3，−(x−3)=−x+3两个等式。",
+      "region": {
+        "x": 0.308,
+        "y": 0.211,
+        "width": 0.424,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.2225
+      },
+      "sourceImageSha256": "c261e362057cac0d58495783d4bbc95388f416435e982e61fe8b0c9f2d7b294a"
+    },
+    {
+      "id": "ch4-q-42-example4",
+      "page": 106,
+      "printedPage": "99",
+      "indexAnchor": 2,
+      "anchorLabel": "例4",
+      "locator": "例4题号与“化简”题干；下面两列为第（1）（2）小题。",
+      "region": {
+        "x": 0.174,
+        "y": 0.297,
+        "width": 0.122,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3075
+      },
+      "sourceImageSha256": "c261e362057cac0d58495783d4bbc95388f416435e982e61fe8b0c9f2d7b294a"
+    },
+    {
+      "id": "ch4-negative-factor",
+      "page": 106,
+      "printedPage": "99",
+      "indexAnchor": 2,
+      "anchorLabel": "例4",
+      "locator": "例4（2）从(4y−5)−3(1−2y)到4y−5−3+6y两行。",
+      "region": {
+        "x": 0.221,
+        "y": 0.437,
+        "width": 0.226,
+        "height": 0.051
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4625
+      },
+      "sourceImageSha256": "c261e362057cac0d58495783d4bbc95388f416435e982e61fe8b0c9f2d7b294a"
+    },
+    {
+      "id": "ch4-q-42-negative-product-question",
+      "page": 106,
+      "printedPage": "99",
+      "indexAnchor": 2,
+      "anchorLabel": "例4",
+      "locator": "例4（2）右侧蓝色旁注中的“为什么−3×（−2y）=6y？”一句。",
+      "region": {
+        "x": 0.674,
+        "y": 0.441,
+        "width": 0.213,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4525
+      },
+      "sourceImageSha256": "c261e362057cac0d58495783d4bbc95388f416435e982e61fe8b0c9f2d7b294a"
+    },
+    {
+      "id": "ch4-q-42-example5",
+      "page": 106,
+      "printedPage": "99",
+      "indexAnchor": 3,
+      "anchorLabel": "例5",
+      "locator": "例5题号及“两船从同一港口同时出发反向而行……”第一行；第（1）（2）问在下方。",
+      "region": {
+        "x": 0.174,
+        "y": 0.525,
+        "width": 0.738,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.5365
+      },
+      "sourceImageSha256": "c261e362057cac0d58495783d4bbc95388f416435e982e61fe8b0c9f2d7b294a"
+    },
+    {
+      "id": "ch4-boats-two-questions",
+      "page": 106,
+      "printedPage": "99",
+      "indexAnchor": 3,
+      "anchorLabel": "例5",
+      "locator": "例5第（1）（2）问“相距多远”与“甲船比乙船多航行多少千米”。",
+      "region": {
+        "x": 0.176,
+        "y": 0.582,
+        "width": 0.505,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.607
+      },
+      "sourceImageSha256": "c261e362057cac0d58495783d4bbc95388f416435e982e61fe8b0c9f2d7b294a"
+    },
+    {
+      "id": "ch4-bracket-check-exercise",
+      "page": 107,
+      "printedPage": "100",
+      "indexAnchor": 0,
+      "anchorLabel": "练习 第1—4题",
+      "locator": "练习第1题题号与“下列去括号的过程是否正确？如果错误，请改正”题干。",
+      "region": {
+        "x": 0.108,
+        "y": 0.118,
+        "width": 0.523,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.1285
+      },
+      "sourceImageSha256": "36570f32d273b6c4eaa0809a63f6e1769fb42156d13d2df947fc81f71d4a9196"
+    },
+    {
+      "id": "ch4-q-p100-practice2",
+      "page": 107,
+      "printedPage": "100",
+      "indexAnchor": 0,
+      "anchorLabel": "练习 第1—4题",
+      "locator": "练习第2题题号与“去括号”题干。",
+      "region": {
+        "x": 0.108,
+        "y": 0.204,
+        "width": 0.111,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.215
+      },
+      "sourceImageSha256": "36570f32d273b6c4eaa0809a63f6e1769fb42156d13d2df947fc81f71d4a9196"
+    },
+    {
+      "id": "ch4-q-p100-practice3",
+      "page": 107,
+      "printedPage": "100",
+      "indexAnchor": 0,
+      "anchorLabel": "练习 第1—4题",
+      "locator": "练习第3题题号与“化简”题干。",
+      "region": {
+        "x": 0.108,
+        "y": 0.29,
+        "width": 0.084,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3005
+      },
+      "sourceImageSha256": "36570f32d273b6c4eaa0809a63f6e1769fb42156d13d2df947fc81f71d4a9196"
+    },
+    {
+      "id": "ch4-water-tiers",
+      "page": 107,
+      "printedPage": "100",
+      "indexAnchor": 0,
+      "anchorLabel": "练习 第1—4题",
+      "locator": "练习第4题题号及“某地居民的生活用水收费标准为……”第一行。",
+      "region": {
+        "x": 0.108,
+        "y": 0.407,
+        "width": 0.747,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.42
+      },
+      "sourceImageSha256": "36570f32d273b6c4eaa0809a63f6e1769fb42156d13d2df947fc81f71d4a9196"
+    },
+    {
+      "id": "ch4-q-42-example6",
+      "page": 107,
+      "printedPage": "100",
+      "indexAnchor": 1,
+      "anchorLabel": "例6",
+      "locator": "例6题号及“计算”题干；两小题与解答分别左右排列。",
+      "region": {
+        "x": 0.131,
+        "y": 0.575,
+        "width": 0.121,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.5855
+      },
+      "sourceImageSha256": "36570f32d273b6c4eaa0809a63f6e1769fb42156d13d2df947fc81f71d4a9196"
+    },
+    {
+      "id": "ch4-q-42-example7",
+      "page": 107,
+      "printedPage": "100",
+      "indexAnchor": 2,
+      "anchorLabel": "例7",
+      "locator": "例7题号与“做大、小两个长方体纸盒，尺寸如表4.2-1所示”题干；两问在本页底，解答续于已核对PDF108页。",
+      "region": {
+        "x": 0.131,
+        "y": 0.718,
+        "width": 0.554,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.729
+      },
+      "sourceImageSha256": "36570f32d273b6c4eaa0809a63f6e1769fb42156d13d2df947fc81f71d4a9196"
+    },
+    {
+      "id": "ch4-box-surface",
+      "page": 108,
+      "printedPage": "101",
+      "indexAnchor": 0,
+      "anchorLabel": "例7（续）",
+      "locator": "例7续解开头“小纸盒的表面积”与“大纸盒的表面积”两行，尺寸表在PDF107页。",
+      "region": {
+        "x": 0.176,
+        "y": 0.068,
+        "width": 0.47,
+        "height": 0.053
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.0945
+      },
+      "sourceImageSha256": "b91963ec0ce1147903151ad831fc446409bcc84b055a3237832ea02b4523ec92"
+    },
+    {
+      "id": "ch4-two-operations",
+      "page": 108,
+      "printedPage": "101",
+      "indexAnchor": 1,
+      "anchorLabel": "整式加减的运算法则",
+      "locator": "蓝色整式加减法则“几个整式相加减，如果有括号就先去括号，然后再合并同类项”。",
+      "region": {
+        "x": 0.176,
+        "y": 0.449,
+        "width": 0.627,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4595
+      },
+      "sourceImageSha256": "b91963ec0ce1147903151ad831fc446409bcc84b055a3237832ea02b4523ec92"
+    },
+    {
+      "id": "ch4-q-42-example8",
+      "page": 108,
+      "printedPage": "101",
+      "indexAnchor": 2,
+      "anchorLabel": "例8",
+      "locator": "例8题号及完整求值题干所在一行。",
+      "region": {
+        "x": 0.174,
+        "y": 0.48,
+        "width": 0.718,
+        "height": 0.038
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.499
+      },
+      "sourceImageSha256": "b91963ec0ce1147903151ad831fc446409bcc84b055a3237832ea02b4523ec92"
+    },
+    {
+      "id": "ch4-substitute-whole",
+      "page": 108,
+      "printedPage": "101",
+      "indexAnchor": 2,
+      "anchorLabel": "例8",
+      "locator": "例8代入求值的最后一行：原式=(−3)×(−2)+(2/3)²=… 。",
+      "region": {
+        "x": 0.176,
+        "y": 0.703,
+        "width": 0.423,
+        "height": 0.035
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.7205
+      },
+      "sourceImageSha256": "b91963ec0ce1147903151ad831fc446409bcc84b055a3237832ea02b4523ec92"
+    },
+    {
+      "id": "ch4-q-p101-practice1",
+      "page": 108,
+      "printedPage": "101",
+      "indexAnchor": 3,
+      "anchorLabel": "练习 第1题（1）（2）",
+      "locator": "页底练习第1题题号与“计算”题干；第（1）（2）问在本页，第（3）问续于已核对PDF109页顶部。",
+      "region": {
+        "x": 0.151,
+        "y": 0.799,
+        "width": 0.09,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.8095
+      },
+      "sourceImageSha256": "b91963ec0ce1147903151ad831fc446409bcc84b055a3237832ea02b4523ec92"
+    },
+    {
+      "id": "ch4-q-p102-practice2",
+      "page": 109,
+      "printedPage": "102",
+      "indexAnchor": 0,
+      "anchorLabel": "练习 第1题（3）、第2—3题",
+      "locator": "页首练习第2题完整题干“求……的值，其中……”一行。",
+      "region": {
+        "x": 0.108,
+        "y": 0.129,
+        "width": 0.673,
+        "height": 0.038
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.148
+      },
+      "sourceImageSha256": "9781670635bbd8022abd95dbd82c5b280d45aaf488cea3a881ba226af6f781b5"
+    },
+    {
+      "id": "ch4-q-p102-practice3",
+      "page": 109,
+      "printedPage": "102",
+      "indexAnchor": 0,
+      "anchorLabel": "练习 第1题（3）、第2—3题",
+      "locator": "页首练习第3题题号与“笔记本的单价是x元，中性笔的单价是y元……”第一行。",
+      "region": {
+        "x": 0.108,
+        "y": 0.175,
+        "width": 0.747,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.1855
+      },
+      "sourceImageSha256": "9781670635bbd8022abd95dbd82c5b280d45aaf488cea3a881ba226af6f781b5"
+    },
+    {
+      "id": "ch4-q-42-exercise1",
+      "page": 109,
+      "printedPage": "102",
+      "indexAnchor": 2,
+      "anchorLabel": "复习巩固 第1—5题",
+      "locator": "习题4.2复习巩固第1题题号及“合并同类项”题干。",
+      "region": {
+        "x": 0.108,
+        "y": 0.39,
+        "width": 0.146,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4005
+      },
+      "sourceImageSha256": "9781670635bbd8022abd95dbd82c5b280d45aaf488cea3a881ba226af6f781b5"
+    },
+    {
+      "id": "ch4-q-42-exercise2",
+      "page": 109,
+      "printedPage": "102",
+      "indexAnchor": 2,
+      "anchorLabel": "复习巩固 第1—5题",
+      "locator": "习题4.2第2题题号与“化简”题干。",
+      "region": {
+        "x": 0.108,
+        "y": 0.468,
+        "width": 0.086,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.478
+      },
+      "sourceImageSha256": "9781670635bbd8022abd95dbd82c5b280d45aaf488cea3a881ba226af6f781b5"
+    },
+    {
+      "id": "ch4-q-42-exercise3",
+      "page": 109,
+      "printedPage": "102",
+      "indexAnchor": 2,
+      "anchorLabel": "复习巩固 第1—5题",
+      "locator": "习题4.2第3题题号与“计算”题干。",
+      "region": {
+        "x": 0.108,
+        "y": 0.548,
+        "width": 0.081,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.5585
+      },
+      "sourceImageSha256": "9781670635bbd8022abd95dbd82c5b280d45aaf488cea3a881ba226af6f781b5"
+    },
+    {
+      "id": "ch4-nested-bracket-check",
+      "page": 109,
+      "printedPage": "102",
+      "indexAnchor": 2,
+      "anchorLabel": "复习巩固 第1—5题",
+      "locator": "习题4.2第3（4）题：3x²−[7x−(4x−3)−2x²]。",
+      "region": {
+        "x": 0.5,
+        "y": 0.603,
+        "width": 0.306,
+        "height": 0.027
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.6165
+      },
+      "sourceImageSha256": "9781670635bbd8022abd95dbd82c5b280d45aaf488cea3a881ba226af6f781b5"
+    },
+    {
+      "id": "ch4-q-42-exercise4",
+      "page": 109,
+      "printedPage": "102",
+      "indexAnchor": 2,
+      "anchorLabel": "复习巩固 第1—5题",
+      "locator": "习题4.2第4题题号与“先化简，再求值”题干。",
+      "region": {
+        "x": 0.108,
+        "y": 0.642,
+        "width": 0.195,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.6525
+      },
+      "sourceImageSha256": "9781670635bbd8022abd95dbd82c5b280d45aaf488cea3a881ba226af6f781b5"
+    },
+    {
+      "id": "ch4-altitude-difference",
+      "page": 109,
+      "printedPage": "102",
+      "indexAnchor": 2,
+      "anchorLabel": "复习巩固 第1—5题",
+      "locator": "习题4.2第5题题号及“甲地的海拔是h m……”第一行。",
+      "region": {
+        "x": 0.108,
+        "y": 0.74,
+        "width": 0.751,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.7505
+      },
+      "sourceImageSha256": "9781670635bbd8022abd95dbd82c5b280d45aaf488cea3a881ba226af6f781b5"
+    },
+    {
+      "id": "ch4-q-42-exercise6",
+      "page": 109,
+      "printedPage": "102",
+      "indexAnchor": 3,
+      "anchorLabel": "综合运用 第6题",
+      "locator": "习题4.2第6题题号与“在学习了整式的加减后，老师给出一道课堂练习题”题干；三人说法和提问续于已核对PDF110页。",
+      "region": {
+        "x": 0.108,
+        "y": 0.823,
+        "width": 0.508,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.834
+      },
+      "sourceImageSha256": "9781670635bbd8022abd95dbd82c5b280d45aaf488cea3a881ba226af6f781b5"
+    },
+    {
+      "id": "ch4-all-values-exercise",
+      "page": 110,
+      "printedPage": "103",
+      "indexAnchor": 0,
+      "anchorLabel": "习题4.2 第6题（续）",
+      "locator": "习题4.2第6题续页中丙的说法及“这三位同学的说法是否正确？请说明理由”。",
+      "region": {
+        "x": 0.176,
+        "y": 0.131,
+        "width": 0.54,
+        "height": 0.047
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.1545
+      },
+      "sourceImageSha256": "6c0af1a434a73c2820e456b92a3fbbff0a02cc52f63f2742cf75bd56fc75a4f6"
+    },
+    {
+      "id": "ch4-q-42-exercise7",
+      "page": 110,
+      "printedPage": "103",
+      "indexAnchor": 1,
+      "anchorLabel": "习题4.2 第7—9题",
+      "locator": "习题4.2第7题题号及“已知三角形的第一条边的长为……”第一行。",
+      "region": {
+        "x": 0.151,
+        "y": 0.184,
+        "width": 0.743,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.1945
+      },
+      "sourceImageSha256": "6c0af1a434a73c2820e456b92a3fbbff0a02cc52f63f2742cf75bd56fc75a4f6"
+    },
+    {
+      "id": "ch4-q-42-exercise8",
+      "page": 110,
+      "printedPage": "103",
+      "indexAnchor": 1,
+      "anchorLabel": "习题4.2 第7—9题",
+      "locator": "习题4.2第8题题号及“窗户的形状如图所示……”第一行；右侧窗户图为同题。",
+      "region": {
+        "x": 0.151,
+        "y": 0.262,
+        "width": 0.561,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.2725
+      },
+      "sourceImageSha256": "6c0af1a434a73c2820e456b92a3fbbff0a02cc52f63f2742cf75bd56fc75a4f6"
+    },
+    {
+      "id": "ch4-price-bases",
+      "page": 110,
+      "printedPage": "103",
+      "indexAnchor": 1,
+      "anchorLabel": "习题4.2 第7—9题",
+      "locator": "习题4.2第9题题号与“一种商品每件进价为a元……”第一行。",
+      "region": {
+        "x": 0.151,
+        "y": 0.368,
+        "width": 0.558,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.379
+      },
+      "sourceImageSha256": "6c0af1a434a73c2820e456b92a3fbbff0a02cc52f63f2742cf75bd56fc75a4f6"
+    },
+    {
+      "id": "ch4-triangle-count",
+      "page": 110,
+      "printedPage": "103",
+      "indexAnchor": 3,
+      "anchorLabel": "习题4.2 第10—11题",
+      "locator": "习题4.2第10题题号及“一些点组成形如三角形的图形……”第一行；下方四幅点阵图均属本题。",
+      "region": {
+        "x": 0.151,
+        "y": 0.5,
+        "width": 0.743,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.511
+      },
+      "sourceImageSha256": "6c0af1a434a73c2820e456b92a3fbbff0a02cc52f63f2742cf75bd56fc75a4f6"
+    },
+    {
+      "id": "ch4-q-42-exercise11",
+      "page": 110,
+      "printedPage": "103",
+      "indexAnchor": 3,
+      "anchorLabel": "习题4.2 第10—11题",
+      "locator": "习题4.2第11题题号及“10个棱长为a cm的正方体摆放成如图的形状……”第一行；组合体图在下方。",
+      "region": {
+        "x": 0.151,
+        "y": 0.704,
+        "width": 0.743,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.7145
+      },
+      "sourceImageSha256": "6c0af1a434a73c2820e456b92a3fbbff0a02cc52f63f2742cf75bd56fc75a4f6"
+    },
+    {
+      "id": "ch4-q-sheet-average",
+      "page": 111,
+      "printedPage": "104",
+      "indexAnchor": 3,
+      "anchorLabel": "利用电子表格可以进行数据计算",
+      "locator": "信息技术应用·求和与平均值示例：题号或题干所在行；同题全部小问共用此入口。",
+      "region": {
+        "x": 0.16,
+        "y": 0.286,
+        "width": 0.32,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.2975
+      },
+      "sourceImageSha256": "2261f5b5095ebbe2991b8bac8d07f22b0f43df9e4e531f21e8cc303e183fa5b1"
+    },
+    {
+      "id": "ch4-q-sheet-formula",
+      "page": 111,
+      "printedPage": "104",
+      "indexAnchor": 3,
+      "anchorLabel": "利用电子表格可以进行数据计算",
+      "locator": "信息技术应用·多项式求值示例：题号或题干所在行；同题全部小问共用此入口。",
+      "region": {
+        "x": 0.16,
+        "y": 0.668,
+        "width": 0.694,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.6805
+      },
+      "sourceImageSha256": "2261f5b5095ebbe2991b8bac8d07f22b0f43df9e4e531f21e8cc303e183fa5b1"
+    },
+    {
+      "id": "ch4-q-calendar",
+      "page": 112,
+      "printedPage": "105",
+      "indexAnchor": 0,
+      "anchorLabel": "活动1 月历中的奥秘",
+      "locator": "数学活动·活动1 月历中的奥秘：题号或题干所在行；同题全部小问共用此入口。",
+      "region": {
+        "x": 0.144,
+        "y": 0.139,
+        "width": 0.26,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.152
+      },
+      "sourceImageSha256": "30f5a3971f14e0338f73da66a9277d17fd4d7591f82f8c01fa3272609f0c4882"
+    },
+    {
+      "id": "ch4-calendar-evidence",
+      "page": 112,
+      "printedPage": "105",
+      "indexAnchor": 1,
+      "anchorLabel": "（1）—（5）",
+      "locator": "活动1第（4）问：“这个结论对于任何一个月的月历都成立吗？你能说明理由吗？”",
+      "region": {
+        "x": 0.153,
+        "y": 0.492,
+        "width": 0.46,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.517
+      },
+      "sourceImageSha256": "30f5a3971f14e0338f73da66a9277d17fd4d7591f82f8c01fa3272609f0c4882"
+    },
+    {
+      "id": "ch4-q-divisible-three",
+      "page": 113,
+      "printedPage": "106",
+      "indexAnchor": 0,
+      "anchorLabel": "活动2 自然数被3整除的规律",
+      "locator": "数学活动·活动2 自然数被3整除的规律：题号或题干所在行；同题全部小问共用此入口。",
+      "region": {
+        "x": 0.103,
+        "y": 0.091,
+        "width": 0.36,
+        "height": 0.028
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.105
+      },
+      "sourceImageSha256": "a21ad03656af205acc452e712fb44579a1cc08337b76070c5dab4c39ff7a9b46"
+    },
+    {
+      "id": "ch4-digit-notation",
+      "page": 113,
+      "printedPage": "106",
+      "indexAnchor": 1,
+      "anchorLabel": "先来看两位数的情形",
+      "locator": "“若一个两位数的十位、个位上的数字分别为a，b，则通常记这个两位数为ab（上加横线）”两行。",
+      "region": {
+        "x": 0.107,
+        "y": 0.247,
+        "width": 0.74,
+        "height": 0.051
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.2725
+      },
+      "sourceImageSha256": "a21ad03656af205acc452e712fb44579a1cc08337b76070c5dab4c39ff7a9b46"
+    },
+    {
+      "id": "ch4-divisibility-split",
+      "page": 113,
+      "printedPage": "106",
+      "indexAnchor": 1,
+      "anchorLabel": "先来看两位数的情形",
+      "locator": "两位数推导中的等式：带横线的ab=10a+b=9a+(a+b)。",
+      "region": {
+        "x": 0.337,
+        "y": 0.303,
+        "width": 0.287,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.315
+      },
+      "sourceImageSha256": "a21ad03656af205acc452e712fb44579a1cc08337b76070c5dab4c39ff7a9b46"
+    },
+    {
+      "id": "ch4-one-law-two-directions",
+      "page": 114,
+      "printedPage": "107",
+      "indexAnchor": 2,
+      "anchorLabel": "二、回顾与思考",
+      "locator": "回顾与思考中，从“整式中的每个字母都表示数”至“从而可以进行整式的加减运算”所在前三行。",
+      "region": {
+        "x": 0.153,
+        "y": 0.543,
+        "width": 0.74,
+        "height": 0.081
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.5835
+      },
+      "sourceImageSha256": "1960d976c1a537e581ce8a78b703d5105a6e683a5ac7e14487a9439139c93806"
+    },
+    {
+      "id": "ch4-q-summary1",
+      "page": 114,
+      "printedPage": "107",
+      "indexAnchor": 3,
+      "anchorLabel": "第1—3题",
+      "locator": "小结·回顾与思考第1题：题号或题干所在行；同题全部小问共用此入口。",
+      "region": {
+        "x": 0.197,
+        "y": 0.688,
+        "width": 0.69,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.7005
+      },
+      "sourceImageSha256": "1960d976c1a537e581ce8a78b703d5105a6e683a5ac7e14487a9439139c93806"
+    },
+    {
+      "id": "ch4-q-summary2",
+      "page": 114,
+      "printedPage": "107",
+      "indexAnchor": 3,
+      "anchorLabel": "第1—3题",
+      "locator": "小结·回顾与思考第2题：题号或题干所在行；同题全部小问共用此入口。",
+      "region": {
+        "x": 0.197,
+        "y": 0.746,
+        "width": 0.69,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.7585
+      },
+      "sourceImageSha256": "1960d976c1a537e581ce8a78b703d5105a6e683a5ac7e14487a9439139c93806"
+    },
+    {
+      "id": "ch4-q-summary3",
+      "page": 114,
+      "printedPage": "107",
+      "indexAnchor": 3,
+      "anchorLabel": "第1—3题",
+      "locator": "小结·回顾与思考第3题：题号或题干所在行；同题全部小问共用此入口。",
+      "region": {
+        "x": 0.197,
+        "y": 0.804,
+        "width": 0.49,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.817
+      },
+      "sourceImageSha256": "1960d976c1a537e581ce8a78b703d5105a6e683a5ac7e14487a9439139c93806"
+    },
+    {
+      "id": "ch4-classification-review",
+      "page": 115,
+      "printedPage": "108",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—5题",
+      "locator": "复习题4第1题：题号或题干所在行；同题全部小问共用此入口。",
+      "region": {
+        "x": 0.097,
+        "y": 0.188,
+        "width": 0.767,
+        "height": 0.049
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.2125
+      },
+      "sourceImageSha256": "1dea809b9693bcb85875df6e617a8522375319d9ae21afdf3e76006a34b8f377"
+    },
+    {
+      "id": "ch4-q-review2",
+      "page": 115,
+      "printedPage": "108",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—5题",
+      "locator": "复习题4第2题：题号或题干所在行；同题全部小问共用此入口。",
+      "region": {
+        "x": 0.097,
+        "y": 0.285,
+        "width": 0.544,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.298
+      },
+      "sourceImageSha256": "1dea809b9693bcb85875df6e617a8522375319d9ae21afdf3e76006a34b8f377"
+    },
+    {
+      "id": "ch4-q-review3",
+      "page": 115,
+      "printedPage": "108",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—5题",
+      "locator": "复习题4第3题：题号或题干所在行；同题全部小问共用此入口。",
+      "region": {
+        "x": 0.097,
+        "y": 0.312,
+        "width": 0.13,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3235
+      },
+      "sourceImageSha256": "1dea809b9693bcb85875df6e617a8522375319d9ae21afdf3e76006a34b8f377"
+    },
+    {
+      "id": "ch4-q-review4",
+      "page": 115,
+      "printedPage": "108",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—5题",
+      "locator": "复习题4第4题：题号或题干所在行；同题全部小问共用此入口。",
+      "region": {
+        "x": 0.097,
+        "y": 0.454,
+        "width": 0.13,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4655
+      },
+      "sourceImageSha256": "1dea809b9693bcb85875df6e617a8522375319d9ae21afdf3e76006a34b8f377"
+    },
+    {
+      "id": "ch4-q-review5",
+      "page": 115,
+      "printedPage": "108",
+      "indexAnchor": 1,
+      "anchorLabel": "复习巩固 第1—5题",
+      "locator": "复习题4第5题：题号或题干所在行；同题全部小问共用此入口。",
+      "region": {
+        "x": 0.097,
+        "y": 0.653,
+        "width": 0.21,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.665
+      },
+      "sourceImageSha256": "1dea809b9693bcb85875df6e617a8522375319d9ae21afdf3e76006a34b8f377"
+    },
+    {
+      "id": "ch4-q-review6",
+      "page": 115,
+      "printedPage": "108",
+      "indexAnchor": 2,
+      "anchorLabel": "综合运用 第6题",
+      "locator": "复习题4第6题：题号或题干所在行；同题全部小问共用此入口。",
+      "region": {
+        "x": 0.097,
+        "y": 0.783,
+        "width": 0.765,
+        "height": 0.049
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.8075
+      },
+      "sourceImageSha256": "1dea809b9693bcb85875df6e617a8522375319d9ae21afdf3e76006a34b8f377"
+    },
+    {
+      "id": "ch4-difference-whole-review",
+      "page": 115,
+      "printedPage": "108",
+      "indexAnchor": 2,
+      "anchorLabel": "综合运用 第6题",
+      "locator": "复习题4第6（2）题：分别列出两个数并计算差。",
+      "region": {
+        "x": 0.122,
+        "y": 0.836,
+        "width": 0.733,
+        "height": 0.047
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.8595
+      },
+      "sourceImageSha256": "1dea809b9693bcb85875df6e617a8522375319d9ae21afdf3e76006a34b8f377"
+    },
+    {
+      "id": "ch4-q-review7",
+      "page": 116,
+      "printedPage": "109",
+      "indexAnchor": 0,
+      "anchorLabel": "复习题4 第7—8题",
+      "locator": "复习题4第7题：题号或题干所在行；同题全部小问共用此入口。",
+      "region": {
+        "x": 0.141,
+        "y": 0.079,
+        "width": 0.76,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.103
+      },
+      "sourceImageSha256": "221485d472c3a1e99deb4fc7c8d40835eebc6af74d96ca91429b67137110ec42"
+    },
+    {
+      "id": "ch4-q-review8",
+      "page": 116,
+      "printedPage": "109",
+      "indexAnchor": 0,
+      "anchorLabel": "复习题4 第7—8题",
+      "locator": "复习题4第8题：题号或题干所在行；同题全部小问共用此入口。",
+      "region": {
+        "x": 0.141,
+        "y": 0.131,
+        "width": 0.76,
+        "height": 0.046
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.154
+      },
+      "sourceImageSha256": "221485d472c3a1e99deb4fc7c8d40835eebc6af74d96ca91429b67137110ec42"
+    },
+    {
+      "id": "ch4-reversed-digits",
+      "page": 116,
+      "printedPage": "109",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索 第9—10题",
+      "locator": "复习题4第9题：题号或题干所在行；同题全部小问共用此入口。",
+      "region": {
+        "x": 0.141,
+        "y": 0.344,
+        "width": 0.767,
+        "height": 0.072
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.38
+      },
+      "sourceImageSha256": "221485d472c3a1e99deb4fc7c8d40835eebc6af74d96ca91429b67137110ec42"
+    },
+    {
+      "id": "ch4-whole-expression",
+      "page": 116,
+      "printedPage": "109",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索 第9—10题",
+      "locator": "复习题4第10题：题号或题干所在行；同题全部小问共用此入口。",
+      "region": {
+        "x": 0.141,
+        "y": 0.421,
+        "width": 0.69,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4335
+      },
+      "sourceImageSha256": "221485d472c3a1e99deb4fc7c8d40835eebc6af74d96ca91429b67137110ec42"
+    }
+  ]
+}

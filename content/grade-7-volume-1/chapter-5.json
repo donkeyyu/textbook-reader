@@ -1,0 +1,6532 @@
+{
+  "documentSha256": "6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249",
+  "chapter": "第五章 一元一次方程",
+  "pageRange": [
+    117,
+    155
+  ],
+  "contentOrigin": "补充解释；不属于教材原文。例子另行标明，习题提示不提供答案。",
+  "review": {
+    "status": "source-checked",
+    "basis": "已逐页查看PDF117–155原图，核对61条概念与步骤解读、126个整题指南的数学条件、教材对应及精确定位；编写后经独立复核并修正发现的问题。",
+    "reviewer": "AI-assisted authoring and independent review",
+    "learningEffect": "未经学生使用验证。"
+  },
+  "supplements": [
+    {
+      "id": "ch5-q-p117-intro",
+      "locationId": "ch5-q-p117-intro",
+      "title": "登山追及：先辨认时间与位置",
+      "preview": "比较路程之前，先说清它从哪里算起。",
+      "paragraphs": [],
+      "learningRole": "引出问题",
+      "learningGap": "整题需要把题目所求的时间与两种路程含义联系起来。",
+      "learningAction": "能区分两种路程，并说明算术式或方程中各个量的含义。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "路程、速度和时间的关系。",
+          "同时出发时，两队经过的时间相同；位置要相对同一个参照点表示。"
+        ],
+        "method": [
+          "先从图中辨认两队的出发位置、行进方向和题目所求的量。",
+          "可以先尝试小学的算术方法；阅读下一页的方程方法时，逐个解释字母和两边表达式表示什么。"
+        ],
+        "cautions": [
+          "两队走过的路程与两队距大本营的路程不是同一个量。",
+          "距离与速度的单位要配套；得到的时间还应符合“在途中追上”的情境。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-same-reference",
+          "label": "路程比较的共同参照点",
+          "purpose": "对照下一页的建模说明，检查自己比较的是行进路程还是距大本营的距离。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-unknown-as-number",
+      "locationId": "ch5-unknown-as-number",
+      "title": "不知道的量，也能先参加运算",
+      "preview": "字母先占住未知数的位置，数量关系不必等算出答案才成立。",
+      "paragraphs": [
+        "不知道两队行进了几小时，并不妨碍表示“速度×时间”。把共同的行进时间记为一个字母，就能用同一个数表达两队各走了多远。",
+        "列方程时暂时未知的是数值，已知的是这些数量必须满足的关系。字母让我们先把关系写完整，再寻找能使关系成立的数。"
+      ],
+      "learningRole": "引出问题",
+      "learningGap": "章引言介绍方程用途，未解释未知数为何能参与运算。",
+      "learningAction": "能区分暂时未知的数值与可以先写出的数量关系。",
+      "related": []
+    },
+    {
+      "id": "ch5-same-reference",
+      "locationId": "ch5-same-reference",
+      "title": "追上时，相等的是哪一段路？",
+      "preview": "共同终点不代表从各自出发点走过的路一样长。",
+      "paragraphs": [
+        "两队出发地点不同。追上时两队位于同一地点，因此从同一个大本营算起的路程相同；各自这段时间新走的路程却不同。",
+        "式子中的1和3把两队原来的位置计入路程。只有先统一比较的起点，等号两边才在表示同一位置。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "原文给出追及时路程相等，但易把距大本营路程与新走路程混淆。",
+      "learningAction": "能说明等号两边为何都要计入出发时离大本营的距离。",
+      "related": []
+    },
+    {
+      "id": "ch5-q-p118-problem1",
+      "locationId": "ch5-q-p118-problem1",
+      "title": "问题1：水杯单价怎样联系",
+      "preview": "设元以后，要保持同一个字母的含义不变。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "整题需要同时核对设元含义、差价关系和总价关系的分工。",
+      "learningAction": "能读出两种单价的联系和方程两边的总价含义。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "单价、数量与总价的关系。",
+          "两个未知量可以由题目中的差价关系联系起来。"
+        ],
+        "method": [
+          "先明确选哪一种水杯的单价作未知数，再辨认另一个单价与它的关系。",
+          "对照教材列出的方程，说明两边各表示哪一笔钱，以及为何可以相等。"
+        ],
+        "cautions": [
+          "“3个大水杯”和“4个小水杯”的数量不同，不表示两种单价相同。",
+          "题目问两种单价，未知数的值不一定直接包含全部所求量；单价应为正。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-cup-unknown",
+          "label": "设元的含义与情境约束",
+          "purpose": "检查同一个x是否始终代表选定的单价，以及另一种单价对它有什么限制。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-cup-unknown",
+      "locationId": "ch5-cup-unknown",
+      "title": "设x以后，另一个单价也有约束",
+      "preview": "同一个x始终表示大水杯的单价，小水杯的单价由差价确定。",
+      "paragraphs": [
+        "设大水杯单价为x元以后，x不能在另一处改指小水杯的单价。小水杯用x−5表示，两种单价因而由同一个未知数联系起来。",
+        "这还带来情境条件：两种单价都应为正，所以这里的x必须大于5。列出的等式表示总价关系，解出数值后仍要核对它是否符合单价的意义。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "列式已展开，但未说明统一未知数含义与单价正值对x的限制。",
+      "learningAction": "能保持未知数含义不变，并指出本题未知数的情境限制。",
+      "related": []
+    },
+    {
+      "id": "ch5-q-p119-problem2",
+      "locationId": "ch5-q-p119-problem2",
+      "title": "问题2：比例与面积各提供什么条件",
+      "preview": "长度之比与面积关系承担不同的作用。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "整题同时用到长度比例和面积等式，需要分清两种关系的用途。",
+      "learningAction": "能说明设元、表示另一条边和列面积等式各自依据什么。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "长方形的面积由长和宽确定。",
+          "比的前后顺序要与“长、宽”的顺序相同。"
+        ],
+        "method": [
+          "先确认设定的未知数代表长还是宽，再用比例关系检查另一条边的表示。",
+          "阅读列出的方程时，辨认左边表示的量，并检查它是否与已知面积对应。"
+        ],
+        "cautions": [
+          "长和宽的单位是mm，面积的单位是mm²，不能混在同一等式中比较。",
+          "本题是认识方程的例子；出现平方不妨碍它成为方程，也不要直接当作一元一次方程来套步骤。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "表示其他量与建立方程",
+          "purpose": "区分比例怎样帮助表示另一条边、面积条件怎样用来建立等式。"
+        },
+        {
+          "locationId": "ch5-equation",
+          "label": "方程的含义",
+          "purpose": "依据含未知数的相等关系辨认本题列出的式子。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-equation",
+      "locationId": "ch5-equation",
+      "title": "方程中的等号，是等待满足的条件",
+      "preview": "有等号还不够；还要含未知数。它也不要求任取一个数都成立。",
+      "paragraphs": [
+        "方程用等号规定未知数必须满足的关系。“含未知数的等式”不表示任意代入一个数，两边都相等；我们正是要找让这个关系成立的值。",
+        "补充辨认用例：2+3=5没有未知数；2x+3只是一个式子，没有相等关系；2x+3=5才把未知数和相等关系写在一起。"
+      ],
+      "learningRole": "定义概念",
+      "learningGap": "定义未对比代数式、数值等式与对未知数的等式条件。",
+      "learningAction": "能依据未知数和等号两个要素辨认方程，并说明等号限制未知数的值。",
+      "related": []
+    },
+    {
+      "id": "ch5-q-p120-example1",
+      "locationId": "ch5-q-p120-example1",
+      "title": "例1：列式前读清两类数量关系",
+      "preview": "人数题先找占比的整体，图形题先找变化的边。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "整例需要区分两问的数量结构，并完成旁注要求的等式含义说明。",
+      "learningAction": "能分别解释两问的设元和等式含义，而非照抄方程。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "百分数的意义及其所对应的整体。",
+          "正方形和长方形的边长、面积关系。"
+        ],
+        "method": [
+          "（1）辨认52%以哪一群学生为整体，再读出“比男生多80人”比较的量。",
+          "（2）对照图中的原正方形与加宽后的图形，分清哪些长度变化、哪些长度不变。",
+          "读完两个方程后，回应旁注：分别用一句话说明等号左边和右边的量。"
+        ],
+        "cautions": [
+          "（1）人数的差不能当作百分比的差。",
+          "（2）加宽5m不是面积增加5m²，也不是每条边都增加5m。",
+          "本例要求设未知数并列出方程，不必为了完成这一要求继续求解。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-percent-base",
+          "label": "百分数的共同基准",
+          "purpose": "帮助辨认第（1）问中男女生占比所对应的全校人数。"
+        },
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "列方程中的关系分工",
+          "purpose": "检查每问中表示其他量的关系与最终写成等号的关系。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-percent-base",
+      "locationId": "ch5-percent-base",
+      "title": "52%和48%都以谁为整体？",
+      "preview": "百分数表示人数占全校的比例；80人表示两类人数的差。",
+      "paragraphs": [
+        "这里女生占52%的整体是全校学生人数x，所以男生也应以同一个整体计算，所占比例是1−0.52。不能把“女生比男生多80人”读成女生比男生多80%。",
+        "方程两边都表示人数：左边是女生人数与男生人数之差，右边是80人。判断列式是否表达了题意，可以先把两边各自代表的量说出来。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "例1已列式，未拆开百分数的共同基准与人数差的区别。",
+      "learningAction": "能指出两个百分数的共同基准，并说明等式两边的量与单位。",
+      "related": []
+    },
+    {
+      "id": "ch5-model-choose-relation",
+      "locationId": "ch5-model-choose-relation",
+      "title": "题目中的“关系”不全都写成等号",
+      "preview": "有些关系用来表示其他量，另一个关系用来限制未知数。",
+      "paragraphs": [
+        "例1（1）中，占比先帮助我们用x表示女生、男生人数；人数之差再成为方程的两边。不是每句话都单独写成一个方程。",
+        "设完未知数后，可先检查哪些量已经能用它表示，再找到题目中必须成立的相等关系。最后读一遍等号两边，确认它们比较的是同一种量。"
+      ],
+      "learningRole": "回顾与整理",
+      "learningGap": "归纳流程未区分表示量所用关系与建立方程所用相等关系。",
+      "learningAction": "能区分设元后表示其他量与列方程两个工作。",
+      "related": []
+    },
+    {
+      "id": "ch5-q-p120-exercise1",
+      "locationId": "ch5-q-p120-exercise1",
+      "title": "练习1：铅笔数量与总价",
+      "preview": "两种铅笔同时受到支数和钱数两个条件的限制。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "整题有两个总量，需要辨认它们的量纲与列式分工。",
+      "learningAction": "能说明两个总量的作用并自主选择未知数、列方程。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "单价×数量得到该种商品的总价。",
+          "两类数量的合计关系。"
+        ],
+        "method": [
+          "选定一种铅笔的支数为未知数后，检查另一种支数能否由题目中的条件表示。",
+          "分清“共15支”和“共23元”分别约束哪一种量，再决定怎样用它们列方程。"
+        ],
+        "cautions": [
+          "支数和钱数的单位不同，不能直接相加。",
+          "所设支数应符合整数及总支数的限制；本题的任务是设元和列方程。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "表示数量与建立相等关系",
+          "purpose": "帮助区分总支数条件和总价条件在列方程时的不同用途。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p120-exercise2",
+      "locationId": "ch5-q-p120-exercise2",
+      "title": "练习2：截下与接上对应同一段",
+      "preview": "把变化后的长度说清楚，再判断等号比较什么。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "转移同一段长度会同时改变两条电线，容易只处理一边。",
+      "learningAction": "能区分两条电线的变化并独立写出长度关系。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "原有长度、减少的长度与剩余长度之间的关系。",
+          "同一段电线从一条转移到另一条时，转出和转入的长度一致。"
+        ],
+        "method": [
+          "先在图或草图上标出截下的一段，分别描述两条电线发生的变化。",
+          "根据题目要求，判断列方程时应比较原来的长度还是变化后的长度。"
+        ],
+        "cautions": [
+          "同一段电线在两条电线的变化中只代表一个数。",
+          "题目已说明忽略接头长度；截取长度仍应在实际可截取的范围内。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "相等关系的选择",
+          "purpose": "帮助判断应让哪两个变化后的量相等，而不是只比较原来的长度。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p120-exercise3",
+      "locationId": "ch5-q-p120-exercise3",
+      "title": "练习3：圆环面积怎样看",
+      "preview": "先区分整个圆面和中间留下的空缺。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "圆环中的已知面积与未知半径不属于同一个完整圆，需要先辨认区域。",
+      "learningAction": "能识别所给区域并独立把面积关系写成方程。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "圆的面积与半径的关系。",
+          "整体面积与部分面积的关系。"
+        ],
+        "method": [
+          "在图上辨认所给200cm²对应哪个区域，再辨认10cm对应哪条半径。",
+          "选定未知量后，用自己的图形分解表示所求区域，并把面积条件写成等式。"
+        ],
+        "cautions": [
+          "半径不是直径；面积单位和长度单位不同。",
+          "内沿小圆应能放在外沿大圆内；不要把内圆面积直接当作工件面积。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-diagram-evidence",
+          "label": "图形列式的已知条件",
+          "purpose": "检查图中区域、半径和面积各指什么，避免仅凭图形大小猜测。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-solution",
+      "locationId": "ch5-solution",
+      "title": "解是x的值，不是两边算出的值",
+      "preview": "代入后两边相等，用来确认这个x合适。",
+      "paragraphs": [
+        "登山问题中，代入x=5后两边都是7。方程的解是x=5；7是代入后两边表达式的值，不能把它当成未知数的值。",
+        "判断一个数是不是解，是拿候选值去检查等号；解方程则是寻找符合条件的值。这两个动作有关，但起点不同。"
+      ],
+      "learningRole": "定义概念",
+      "learningGap": "定义没有特别区分未知数的取值与代入后等式两边的共同值。",
+      "learningAction": "能分清方程的解、两边的值以及检验和求解两种动作。",
+      "related": []
+    },
+    {
+      "id": "ch5-q-p121-example2",
+      "locationId": "ch5-q-p121-example2",
+      "title": "例2：一个候选值怎样接受检验",
+      "preview": "分别计算两边，再作判断。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "整例中有四次候选值检验，需要保持同值代入并区分解与表达式值。",
+      "learningAction": "能独立检验候选值并据两边的值作判断。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "方程的解是使两边的值相等的未知数的值。",
+          "同一个未知数在各处应代入同一个数。"
+        ],
+        "method": [
+          "（1）把两个候选值分开检验，每次都比较代入后的左边和右边。",
+          "（2）留意未知数在两边都出现，检查教材的计算是否始终使用同一个候选值。"
+        ],
+        "cautions": [
+          "不能一开始就假定等号成立，也不能左右代入不同的数。",
+          "两边的共同值与方程的解不是同一概念。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-solution",
+          "label": "方程的解",
+          "purpose": "用定义判断每次检验要比较的是什么。"
+        },
+        {
+          "locationId": "ch5-substitute-consistently",
+          "label": "同值代入与分别检验",
+          "purpose": "检查未知数多次出现时的代入方式。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-substitute-consistently",
+      "locationId": "ch5-substitute-consistently",
+      "title": "同一个候选数，要代入所有x",
+      "preview": "左右两边各自计算，再比较结果。",
+      "paragraphs": [
+        "检验3x=4(x−5)时，等号两边的x是同一个未知数。选定一个候选值，就要把每处x都换成它，不能左右各试一个不同的数。",
+        "左边和右边分别算出结果后再比较。若先假定两边相等，再用这个等式去算，就失去了检验是否相等的作用。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "例2展示代入计算，未强调同值替换和独立比较的检验逻辑。",
+      "learningAction": "能用同一个候选值替换全部未知数，独立比较两边。",
+      "related": [
+        {
+          "locationId": "ch5-solution",
+          "label": "回看方程的解",
+          "purpose": "确认检验要检查的是未知数取值能否使两边相等。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p121-thinking1",
+      "locationId": "ch5-q-p121-thinking1",
+      "title": "思考：含平方时怎样检验解",
+      "preview": "候选值先代入，再按运算顺序计算。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "检验对象含平方，需要把解的定义与正确运算范围连接起来。",
+      "learningAction": "能独立检验两个候选值，说明平方的运算对象。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "方程的解的定义。",
+          "乘方与乘法的运算顺序。"
+        ],
+        "method": [
+          "对两个候选值分别计算等号两边，再记录各自的判断理由。",
+          "先看清平方作用于哪一个量，必要时把代入的数用括号写出。"
+        ],
+        "cautions": [
+          "5/8与x²相乘，不表示把5/8和x的乘积整体平方。",
+          "判断过程仍要由你完成；不必先求出方程的全部解。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-solution",
+          "label": "方程的解",
+          "purpose": "确认候选值使两边相等才算通过检验。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p121-thinking2",
+      "locationId": "ch5-q-p121-thinking2",
+      "title": "思考：怎样比较方程的结构",
+      "preview": "比较字母与含字母的项，不只比较外形。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "观察要求需要结构比较的方向，同时应保留学生归纳共同特征的工作。",
+      "learningAction": "能从三个方程中自主归纳结构特征并与定义核对。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "未知数的含义。",
+          "整式、项与次数的含义。"
+        ],
+        "method": [
+          "逐个记录每个方程用了哪些未知数，以及含未知数的项有什么特点，再比较这些记录。",
+          "分清同一个字母出现多次与出现几个不同未知数；用自己的话提出共同特征。"
+        ],
+        "cautions": [
+          "括号、百分数系数或项写在不同边，未必改变你正在观察的结构。",
+          "先完成观察和表述，再对照下一页的定义检查自己的分类依据。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-linear-definition",
+          "label": "一元一次方程的定义（后续核对）",
+          "purpose": "在完成观察后，对照下一页定义检查所提出的共同特征是否完整。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-linear-definition",
+      "locationId": "ch5-linear-definition",
+      "title": "“一元”“一次”和“整式”都要检查",
+      "preview": "未知数出现几次，不等于未知数有几个或次数是几。",
+      "paragraphs": [
+        "“一元”看未知数有几个，不看同一个字母写了几遍。例如补充用例x+1=2x中，两处x仍是同一个未知数，含x的项次数都是1。",
+        "还要检查含未知数的式子都是整式。补充用例1/x=2虽然只见一个x，未知数却在分母中，不符合这里的定义；x²=4则不符合一次的条件。"
+      ],
+      "learningRole": "定义概念",
+      "learningGap": "定义多个条件易被只数字母出现次数代替，也可能遗漏整式条件。",
+      "learningAction": "能分别检查未知数个数、整式条件和次数，说明不符合的具体原因。",
+      "related": []
+    },
+    {
+      "id": "ch5-q-p122-exercise1",
+      "locationId": "ch5-q-p122-exercise1",
+      "title": "练习1：逐个检验候选值",
+      "preview": "每一个判断都要有独立的代入依据。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "需将解的定义应用于多个候选值，避免把求解与检验混为一谈。",
+      "learningAction": "能分别完成两次代入检验并说明判断。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "方程的解的定义。",
+          "代入求值时先乘除后加减。"
+        ],
+        "method": [
+          "对每个候选值分别求左边的值，再与右边比较。",
+          "用“相等”或“不相等”的证据说明判断，不依赖看起来是否合适。"
+        ],
+        "cautions": [
+          "不要把两个候选值混在一次代入中。",
+          "题目要判断给定值是否为解，不要求先写出完整求解过程。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-solution",
+          "label": "方程的解",
+          "purpose": "用定义确定两次判断的标准。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p122-exercise2",
+      "locationId": "ch5-q-p122-exercise2",
+      "title": "练习2：先判方程，再判类型",
+      "preview": "两次分类使用的条件不同。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "同一组式子要完成两层分类，需避免仅用一项特征下结论。",
+      "learningAction": "能逐式说明属于或不属于两类对象的依据。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "方程的定义。",
+          "一元一次方程的定义及其各项条件。"
+        ],
+        "method": [
+          "先依据方程的定义逐式判断，再对其中的方程逐项检查一元一次方程的条件。",
+          "记录判断依据，而不只写题号；遇到不符合的式子，指出是哪项条件未满足。"
+        ],
+        "cautions": [
+          "未知数出现多次不等于有多个未知数。",
+          "只含一个未知数还不足以判断它是一元一次方程。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-equation",
+          "label": "方程的定义",
+          "purpose": "帮助完成第一层判断：式子是否含未知数和相等关系。"
+        },
+        {
+          "locationId": "ch5-linear-definition",
+          "label": "一元一次方程的条件",
+          "purpose": "帮助检查未知数个数、整式条件与次数。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-equality-transitive",
+      "locationId": "ch5-equality-transitive",
+      "title": "传递相等，必须有同一个中间量",
+      "preview": "两个量都等于同一个量，才能把它们联系起来。",
+      "paragraphs": [
+        "a=b、b=c中，两处b指同一个量；所以a和c才相等。这不是只要看见两个等号，就能把最外面的量连起来。",
+        "列实际问题的方程时，常把同一个总量用两种方式表示。两种表示都等于这个总量，便可以令它们相等。后面的图书分配问题会用到这个想法。"
+      ],
+      "learningRole": "陈述性质或结论",
+      "learningGap": "基本事实简写为符号，未连接同一中间量与两种表示列方程的用途。",
+      "learningAction": "能说明相等关系传递所用的共同量。",
+      "related": [
+        {
+          "locationId": "ch5-same-total",
+          "label": "看看同一总量的两种表示",
+          "purpose": "在图书分配问题中认出传递相等关系的共同量。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p122-thinking",
+      "locationId": "ch5-q-p122-thinking",
+      "title": "思考：怎样用负数检验等式性质",
+      "preview": "试验前先确定两边原本相等。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "数值试验需要控制同运算条件，并区分观察证据与普遍结论。",
+      "learningAction": "能设计合法的负数试验，记录现象并说明证据的限度。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "等式表示两边的值相等。",
+          "有理数加、减、乘、除及除数不能为0。"
+        ],
+        "method": [
+          "自己选取包含负数的相等关系，对两边施行题目所列的同一种运算，逐次比较结果。",
+          "可以改变数值或运算作对照，并记录观察到的现象；完成尝试后再读下一页的一般表述。"
+        ],
+        "cautions": [
+          "每次对照要用同一个加数、减数、乘数或非零除数。",
+          "几个具体数的试验可支持观察，但不能单凭有限次试验证明对所有数都成立。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-same-operation",
+          "label": "等式两边的同运算（后续说明）",
+          "purpose": "完成数值试验后，对照下一页说明检查“同一个”的作用。"
+        },
+        {
+          "locationId": "ch5-nonzero",
+          "label": "除数非零的条件",
+          "purpose": "检查所设计的除法试验是否有意义。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-same-operation",
+      "locationId": "ch5-same-operation",
+      "title": "为什么强调两边“同一个”？",
+      "preview": "对相等的两个量作同样增减，原来的相等关系才能保留。",
+      "paragraphs": [
+        "可把a−b看成两边的差。若a=b，这个差是0；两边同时加c后，差仍是(a+c)−(b+c)=a−b，新增的c相互抵消。",
+        "这里也允许加减同一个式子；同一个未知数取同一个值时，该式子在两边的值相同。只改一边，或两边改得不同，都没有这条性质作保证。"
+      ],
+      "learningRole": "陈述性质或结论",
+      "learningGap": "性质直接陈述结果，未解释同增同减如何保持两边差为0。",
+      "learningAction": "能用两边的差说明同增同减保持相等，并识别仅改单边的错误。",
+      "related": []
+    },
+    {
+      "id": "ch5-nonzero",
+      "locationId": "ch5-nonzero",
+      "title": "除数非零，乘0又为什么不能用来求解？",
+      "preview": "等式两边乘0仍相等，却会抹掉未知数的限制。",
+      "paragraphs": [
+        "除以0没有意义，所以等式两边同除的数必须非零。解方程时，还要保证变形可以反过来：两边同乘非零数后，可以同除这个数回到原方程。",
+        "补充用例：把x=2两边乘0，会得到0=0。这个等式对任何x都成立，不能再用它找回只有x=2的限制。因此，解方程时不把同乘0用作保持原方程解不变的变形。"
+      ],
+      "learningRole": "陈述性质或结论",
+      "learningGap": "性质允许同乘任意数，但用它解方程时的可逆条件没有在此展开。",
+      "learningAction": "能区别保持一个等式成立与保持方程的解不变，并说明非零条件。",
+      "related": []
+    },
+    {
+      "id": "ch5-q-p123-example3",
+      "locationId": "ch5-q-p123-example3",
+      "title": "例3：从等式变化辨认所用性质",
+      "preview": "填空与说明依据是同一件事的两个部分。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "整例四种填空需要把结果与同运算依据对应，而非只看空格。",
+      "learningAction": "能为每一小问说明两边做了什么运算及依据。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "等式两边同加减的性质。",
+          "等式两边同乘、同除的性质及非零条件。"
+        ],
+        "method": [
+          "（1）（2）比较变形前后哪部分保留、哪部分消失，再检查两边是否进行了同样的加减。",
+          "（3）（4）比较变形前后的倍数关系，并说明两边应怎样保持同步。"
+        ],
+        "cautions": [
+          "不能只观察有空格的一边；另一边的变化也要能由同一操作解释。",
+          "负号属于数或项的一部分；使用除法时要检查除数。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-same-operation",
+          "label": "等式的性质1",
+          "purpose": "核对加减变化为什么需要同时作用于两边。"
+        },
+        {
+          "locationId": "ch5-nonzero",
+          "label": "等式的性质2及非零条件",
+          "purpose": "核对乘除变化的依据与使用条件。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p123-example4",
+      "locationId": "ch5-q-p123-example4",
+      "title": "例4：每次变形希望留下什么",
+      "preview": "合法变形与接近求解目标要同时考虑。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "跨页整例需连接每个方程的结构、变形目的与检验，不能只读局部步骤。",
+      "learningAction": "能逐问说明变形目标并用原方程检验。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "等式性质保证两边同运算后的相等关系。",
+          "写成x等于一个数的形式，可以直接读出未知数的值。"
+        ],
+        "method": [
+          "（1）观察未知数外还附带什么量，再理解教材为何选择该运算。",
+          "（2）把负系数看成一个整体，核对所用除法是否把系数变为1。",
+          "（3）对照续页的两次运算，分别说明它们消去了什么、保留了什么。"
+        ],
+        "cautions": [
+          "不是每个小问都需要相同的运算次数；以方程的实际结构为准。",
+          "所得值要代入原方程检验；解答的（2）（3）续在下一页。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-undo-operation",
+          "label": "等式变形的目标",
+          "purpose": "理解所选运算怎样帮助得到x等于常数的形式。"
+        },
+        {
+          "locationId": "ch5-negative-coefficient",
+          "label": "负系数的整体处理",
+          "purpose": "检查第（2）（3）问中负系数与符号的处理。"
+        },
+        {
+          "locationId": "ch5-check-original",
+          "label": "代回原方程检验",
+          "purpose": "核对求得的值是否满足起初的等式。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-undo-operation",
+      "locationId": "ch5-undo-operation",
+      "title": "为什么要减7，而不是随便减一个数？",
+      "preview": "性质说明可以怎么变，求解目标决定选哪一种变法。",
+      "paragraphs": [
+        "两边同减别的数也能保持相等，但减7恰好把左边的+7抵消，留下单独的x。这个选择同时满足“变形合法”和“更接近x=常数”两个要求。",
+        "解方程不只是做相同运算。每次运算前，还要想它能去掉什么、下一步能否更容易读出未知数的值。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "例4给出消去7的操作，未区分变形依据与选择操作的目标。",
+      "learningAction": "能分别说明一次变形为何合法、为何有用。",
+      "related": [
+        {
+          "locationId": "ch5-same-operation",
+          "label": "回看等式的性质1",
+          "purpose": "性质保证两边同减7后仍相等；减7的选择另由求解目标决定。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-negative-coefficient",
+      "locationId": "ch5-negative-coefficient",
+      "title": "系数是−5，要连负号一起除",
+      "preview": "−5x是(−5)×x；同除−5才能得到1×x。",
+      "paragraphs": [
+        "系数包含前面的负号。把−5x看成(−5)×x后，两边同除−5，左边的系数就变成1；右边也必须同除−5。",
+        "若两边同除5，也仍是合法变形，但左边会留下−x，尚未直接得到x。这说明“可以做”与“一步达到目标”不是一回事。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "例4（2）省略了含符号系数与系数化为1目标的联系。",
+      "learningAction": "能完整识别负系数，说明同除负系数的目的。",
+      "related": [
+        {
+          "locationId": "ch5-nonzero",
+          "label": "回看同除的条件",
+          "purpose": "这里的−5不是0，因而可以同除并反向恢复。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-check-original",
+      "locationId": "ch5-check-original",
+      "title": "为什么要代回原方程？",
+      "preview": "最后一行是计算结果，原方程才是最初要满足的条件。",
+      "paragraphs": [
+        "把结果代入自己算出的x=某数，通常只会得到同一个数等于它自己，查不出前面的变号或计算错误。代回原方程，才能检验结果是否满足最初的等式。",
+        "若代入后两边不相等，这个候选值一定不是原方程的解，需要回查计算。即使方程检验通过，实际问题还要检查单位、范围和数量的实际意义。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "教材建议代入原方程，未解释为何不能只检验最后结果及情境检验的区别。",
+      "learningAction": "能选择原方程作检验，并区分算式条件与情境条件。",
+      "related": [
+        {
+          "locationId": "ch5-solution",
+          "label": "回看方程的解",
+          "purpose": "用定义说明原方程两边相等才是检验依据。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p124-exercise1",
+      "locationId": "ch5-q-p124-exercise1",
+      "title": "练习1：检查等式两边是否同步",
+      "preview": "先描述变化，再决定空格中的数或式。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "四个填空需由前后关系选择运算，不能只凭形状补数。",
+      "learningAction": "能自主填写并说明每问对应的等式性质。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "等式两边同加减、同乘除的性质。",
+          "同除时除数必须非零。"
+        ],
+        "method": [
+          "对每小问比较等号一边的前后形式，判断发生了哪类运算。",
+          "再用同一操作检查另一边，独立完成空格并口头说明依据。"
+        ],
+        "cautions": [
+          "同加一个数与把某项乘一个数不同。",
+          "含字母的式子也能作为加减的整体，不能漏掉其中一部分。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-same-operation",
+          "label": "等式的性质1",
+          "purpose": "检查第（1）（2）问两边的加减是否相同。"
+        },
+        {
+          "locationId": "ch5-nonzero",
+          "label": "等式的性质2",
+          "purpose": "检查第（3）（4）问两边的乘除及除数条件。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p124-exercise2",
+      "locationId": "ch5-q-p124-exercise2",
+      "title": "练习2：求解与检验都要完成",
+      "preview": "先看未知数怎样参与运算，再决定变形。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "四题结构不同且明确要求检验，需要独立选变形并保留完整检验动作。",
+      "learningAction": "能自主解四个方程，并用原方程验证所得值。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "等式性质及系数的含义。",
+          "方程的解的定义与代入检验。"
+        ],
+        "method": [
+          "逐问辨认未知数的系数和同边的其他项，选择能使未知数逐渐单独出现的合法运算。",
+          "得到候选值后，分别代回各自的原方程计算两边，完成题目要求的检验。"
+        ],
+        "cautions": [
+          "小数、分数或负系数仍是系数的一部分，不能只去掉数字而漏掉符号。",
+          "检验要用原方程，不能只检查最后写出的x=某数。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-undo-operation",
+          "label": "等式变形的目标",
+          "purpose": "帮助根据每个方程的结构选择运算，而非套用同一顺序。"
+        },
+        {
+          "locationId": "ch5-check-original",
+          "label": "代回原方程检验",
+          "purpose": "区分求解过程和最后的检验要求。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p125-exercise1",
+      "locationId": "ch5-q-p125-exercise1",
+      "title": "第1题：先分清语句的层次",
+      "preview": "等于两侧各是一段需要翻译的表达。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "六个文字表达含不同层级与减法顺序，需要逐句正确翻译。",
+      "learningAction": "能独立写出六个等式并口头读回原句。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "和、差、倍数及分数的代数表示。",
+          "等式用等号连接两个相等的量。"
+        ],
+        "method": [
+          "逐句以“等于”为界，先读清两侧分别描述哪个量，再把整句话写成等式。",
+          "（3）—（6）含有多层关系，可先给“几倍”“几分之一”等片段作标记，确认后续加减作用在哪个量上。"
+        ],
+        "cautions": [
+          "“比某量大”与“某量的几倍”是不同的关系。",
+          "“差”有顺序；不要交换被比较的两部分。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-equation",
+          "label": "含字母的等式",
+          "purpose": "回顾字母表达未知量、等号表达相等关系的含义，检查语句两边是否对应。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-diagram-evidence",
+      "locationId": "ch5-diagram-evidence",
+      "title": "列图形方程，依据标记而不是目测",
+      "preview": "边长、角度、面积各有各的数量关系，先确认图中给的是什么。",
+      "paragraphs": [
+        "读三幅图时，先区分文字和标记给出的条件与图形画出来的样子。没有标出的边相等或角相等，不能仅凭“看起来差不多”使用。",
+        "列式后再把两边的含义说一遍：它们是在比较长度、角度，还是面积？这些量不能混用。具体选哪条图形关系、怎样代入，留给你判断。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "图形列方程可能误用目测条件，或混用长度面积关系。",
+      "learningAction": "能从标注读取已知量，并检查等式两边量的类型。",
+      "related": []
+    },
+    {
+      "id": "ch5-q-p125-exercise2",
+      "locationId": "ch5-q-p125-exercise2",
+      "title": "第2题：按图中条件选择关系",
+      "preview": "三幅图分别涉及长度、角度和面积。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "三图需要各自选择图形关系，不能把图形外观当作已知。",
+      "learningAction": "能按标注独立选关系，为三幅图各列方程。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "三角形周长、内角和、面积的已学关系。",
+          "图形中给出的量与未知量的对应。"
+        ],
+        "method": [
+          "逐图列出已有标注，再判断哪条图形关系与这些标注相符。",
+          "用字母表示有关量后，检查等号两边是否在比较同一种量，再独立列出方程。"
+        ],
+        "cautions": [
+          "边长的和、角的和与面积不能混用。",
+          "只使用题目给出的文字和标记，不能凭图形外观添加相等条件。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-diagram-evidence",
+          "label": "图形列式的证据与量纲",
+          "purpose": "检查三幅图分别给出什么条件，以及所选关系是否有依据。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p125-exercise3",
+      "locationId": "ch5-q-p125-exercise3",
+      "title": "第3题：候选值与方程怎样配对",
+      "preview": "逐个检验，别预设一一对应。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "多候选值与多方程的对应容易漏检或误假定一一配对。",
+      "learningAction": "能按定义完成配对并保留检验依据。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "方程的解与代入检验。",
+          "有理数的符号和运算顺序。"
+        ],
+        "method": [
+          "可用表格记录给定三个数在四个方程中的检验结果，避免漏掉组合。",
+          "每次都分别计算两边，依据是否相等决定某个数能否与该方程配对。"
+        ],
+        "cautions": [
+          "题目没有承诺每个方程都恰好匹配一个给定数。",
+          "代入负数时使用括号，并保持方程中所有x取同一个值。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-substitute-consistently",
+          "label": "同值代入与分别检验",
+          "purpose": "检查多处x以及负数候选值的代入过程。"
+        },
+        {
+          "locationId": "ch5-solution",
+          "label": "方程的解",
+          "purpose": "作为候选数与方程能否配对的判断标准。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p125-exercise4",
+      "locationId": "ch5-q-p125-exercise4",
+      "title": "第4题：选择能单独留下未知数的运算",
+      "preview": "观察结构后再决定先做哪一步。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "四个方程需自主选择运算，避免机械重复一套步骤。",
+      "learningAction": "能用等式性质独立求解并解释变形依据。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "等式的加减性质和乘除性质。",
+          "系数化为1的含义。"
+        ],
+        "method": [
+          "逐题辨认未知数的系数及同边其他项，选择有助于让未知数单独出现的运算。",
+          "每一步都说明等号两边做了什么；完成后可代入原式检查。"
+        ],
+        "cautions": [
+          "同时对两边操作，不等于只改变含x的那一项。",
+          "若采用除法，除数须非零；分数系数同样可以按乘除关系处理。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-undo-operation",
+          "label": "合法变形与求解目标",
+          "purpose": "帮助根据每道方程的结构选择运算。"
+        },
+        {
+          "locationId": "ch5-nonzero",
+          "label": "同除的非零条件",
+          "purpose": "检查系数化为1时的除法条件。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p125-exercise5",
+      "locationId": "ch5-q-p125-exercise5",
+      "title": "第5题：人数的部分与整体",
+      "preview": "先明确“谁的几分之几”，再处理多出的部分。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "分数关系中的基准与全班总数不同，需要分清参照对象。",
+      "learningAction": "能读准分数关系并自主用人数条件列方程。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "总人数与两类人数的关系。",
+          "以指定对象为基准的分数数量关系。"
+        ],
+        "method": [
+          "把句子中“女生”“男生”“全班”各自对应的量标出来，辨认分数以谁为基准。",
+          "选定未知数后，检查另一类人数如何表示，再自主利用题目条件列方程。"
+        ],
+        "cautions": [
+          "“比男生人数的4/5多3”中的3表示人数，不能并入分数作比例。",
+          "本组第5—10题要求列方程；所设人数应符合整数及全班总人数的限制。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-percent-base",
+          "label": "比例所对应的整体",
+          "purpose": "借助共同基准的辨认方法，确认本题分数参照的是哪一类人数。"
+        },
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "表示其他量与列方程",
+          "purpose": "区分两类人数的联系与总人数条件的作用。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p125-exercise6",
+      "locationId": "ch5-q-p125-exercise6",
+      "title": "第6题：人数与奖金分别合计",
+      "preview": "先区分人数的总量和钱数的总量。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "人数合计与奖金合计同时出现，需要正确配对而非混用。",
+      "learningAction": "能分清两个总量并自主列方程。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "人数、每人奖金与该类奖金总额的关系。",
+          "两类数量的合计关系。"
+        ],
+        "method": [
+          "选定一种奖项的人数作未知数后，检查另一种奖项人数与它有什么联系。",
+          "把两种奖项的人数和对应奖金配对，再判断总奖金条件怎样进入等式。"
+        ],
+        "cautions": [
+          "两种奖项的每人奖金不同，不能直接按平均奖金代替两类金额。",
+          "获奖人数应是非负整数，并受总人数限制。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "两个总量条件的分工",
+          "purpose": "帮助区分总人数用于表示人数、总奖金用于限制未知数的作用。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p126-exercise7",
+      "locationId": "ch5-q-p126-exercise7",
+      "title": "第7题：增长率以哪一年为基准",
+      "preview": "先分清原有量、增长量和增长后的量。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "逆向求原有量时易把已知的增长后数值误当基准。",
+      "learningAction": "能确定增长率的基准并自主列出前后数量关系。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "增长率表示增长量占原有量的比例。",
+          "增长前后数量之间的关系。"
+        ],
+        "method": [
+          "在题干中标出“前年”“去年”，确定已知的是哪个时期的收入。",
+          "把增长率所对应的基准说清楚，再自主表示增长量并列方程。"
+        ],
+        "cautions": [
+          "“增长6.8%”不能当作增加6.8元。",
+          "不能因为去年收入已知，就自动把它当作增长率的基准。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-percent-base",
+          "label": "百分数的基准量",
+          "purpose": "帮助检查增长率究竟以哪个时期的收入为整体。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p126-exercise8",
+      "locationId": "ch5-q-p126-exercise8",
+      "title": "第8题：累计路程还包含原有部分",
+      "preview": "未知的是以后经过的时间，不是已经行驶的路程。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "题目同时给出既有与新增路程，需要保持总量含义一致。",
+      "learningAction": "能区分累计量和增加量并自主列方程。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "每月增加量与月数的关系。",
+          "累计总量与原有量、后续增加量的关系。"
+        ],
+        "method": [
+          "分别标记已经行驶的路程、每月计划增加的路程和目标总路程。",
+          "说明所设未知数的单位，再自主把这些量之间的联系写成方程。"
+        ],
+        "cautions": [
+          "每月800km是增加量的速率，20800km是累计总路程。",
+          "单位中的“每月”要与未知时间的单位配套；不能遗漏已经行驶的部分。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-same-reference",
+          "label": "路程量的含义与起点",
+          "purpose": "借助已有路程和新行驶路程的区分，检查本题所列总路程是否完整。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p126-exercise9",
+      "locationId": "ch5-q-p126-exercise9",
+      "title": "第9题：圆柱表面积由哪些面组成",
+      "preview": "先辨认表面组成，再用半径表达有关面积。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "圆柱表面积涉及不同表面，需防止把表面积与侧面积或体积混淆。",
+      "learningAction": "能识别表面组成并独立把面积条件写成方程。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "圆的周长和面积。",
+          "圆柱表面展开后的组成及侧面与底面的关系。"
+        ],
+        "method": [
+          "根据“圆柱形包装盒”的表面画出或回想展开图，逐一核对各部分面积的来源。",
+          "以底面半径作为未知量时，检查高和半径分别参与哪些面积计算，再自主列方程。"
+        ],
+        "cautions": [
+          "表面积不是体积，也不能只算侧面。",
+          "题目已说明厚度忽略不计；半径、直径、高和面积的单位不能混用。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-diagram-evidence",
+          "label": "图形条件与面积量纲",
+          "purpose": "检查所用圆柱尺寸、表面组成和面积单位，使列式对应题目给定的量。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p126-exercise10",
+      "locationId": "ch5-q-p126-exercise10",
+      "title": "第10题：平均量与总量怎样连接",
+      "preview": "两个班的总额与每人的平均额要分清。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "不同班级的平均量、总额和差额混合出现，需要正确匹配对象。",
+      "learningAction": "能区分各量所属班级并自主列方程。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "平均每人捐款、人数与捐款总额的关系。",
+          "两个总量之间的大小和差额关系。"
+        ],
+        "method": [
+          "分别标出题目给的是哪个班的总额、哪个班的平均额，以及两个班总额怎样比较。",
+          "选定未知人数后，检查与它相乘的量是否对应同一个班，再自主列方程。"
+        ],
+        "cautions": [
+          "10元是平均每人的捐款，不是全班总额。",
+          "读清“（1）班比（2）班少22元”的方向；人数应为正整数。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "数量表示与相等关系",
+          "purpose": "帮助把平均量表示总额与两个总额的差额关系分开使用。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-digit-value",
+      "locationId": "ch5-digit-value",
+      "title": "数字和这个数字在数中的贡献不同",
+      "preview": "先确认x在哪一位，再表示整个两位数。",
+      "paragraphs": [
+        "同一个数字写在十位和个位，对整个数的贡献不同。补充用例：数字4在46中表示4个十，在64中表示4个一。交换数位后，应重新按数位解释各个数字。",
+        "本题中的x表示一个数字，不能任意取值。列出并解出方程后，还要检查它能否放在原数和新数的相应数位上。原数、新数的表示和方程请自己完成。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "两位数问题未展开数字取值与位值的区别，可能把数字交换当成两项直接互换。",
+      "learningAction": "能按位值表示两位数，并检查求得值能否作为相应数位的数字。",
+      "related": []
+    },
+    {
+      "id": "ch5-q-p126-exercise11",
+      "locationId": "ch5-q-p126-exercise11",
+      "title": "第11题：数字交换后，数值怎样变化",
+      "preview": "把数字与所在数位分开考虑。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "数字交换改变位值，整题需要把位值表达与大小关系连接。",
+      "learningAction": "能独立表示原数、新数并据差额列方程。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "十进位值：同一个数字在不同数位上的贡献不同。",
+          "两个数之间的差额关系。"
+        ],
+        "method": [
+          "分别标明交换前后每个数字所在的位置，独立写出两个两位数的表示。",
+          "再检查哪个数较大、差是多少，并自主把题意写成方程。"
+        ],
+        "cautions": [
+          "x表示一个数字，不能任意取值；还应检查它放在十位是否允许。",
+          "数字交换不是把两个数字简单相减；原数与新数的顺序不能颠倒。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-digit-value",
+          "label": "数字的位值与取值限制",
+          "purpose": "回顾数字在十位和个位的不同作用，再独立表示本题的两个数。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p127-problem1",
+      "locationId": "ch5-q-p127-problem1",
+      "title": "问题1：连续倍数怎样连接三年数量",
+      "preview": "辨认每个“2倍”的比较对象，再检查三年总量。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "本题需要把连续倍数关系与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "辨认每个“2倍”的比较对象，再检查三年总量。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "连续倍数关系",
+          "分量之和等于总量",
+          "合并同类项解方程",
+          "方程的解与代入检验"
+        ],
+        "method": [
+          "沿“前年→去年→今年”的顺序确认每次倍数的基准；再把三个年份的数量放进同一总量关系。",
+          "对照解答，辨认合并同类项和系数化为1各自减少了什么运算。",
+          "检验旁问：把教材给出的候选数逐处代入原方程的x，分别求两边的值再比较。"
+        ],
+        "cautions": [
+          "“今年是去年的2倍”不能直接把前年当作基准。",
+          "所设未知数表示前年购买量；答案还应符合台数的正整数意义。",
+          "检验时要代回原方程；等号两边的数值不等于未知数的值。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-combine-purpose",
+          "label": "合并同类项",
+          "purpose": "本题的三年数量都用同一未知量表示，回顾为何可合并为一个含未知数的项。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-combine-purpose",
+      "locationId": "ch5-combine-purpose",
+      "title": "合并以后，变成“几个x”等于已知数",
+      "preview": "合并同类项改变写法，不改变每个x取值时的结果。",
+      "paragraphs": [
+        "x、2x、4x都在数同一种未知量，因此可把系数相加，写成7x。这一步是分配律的逆向使用，等号左边只是换成更简洁的表达。",
+        "简化后只需回答“7个相同的数合为140，一个是多少”，所以接下来可把系数化为1。合并的作用是把多处同类项集中成一个系数。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "问题1给出合并结果，未连接分配律与转化为单个系数的求解目的。",
+      "learningAction": "能说明合并同类项为何不改变方程，并说出它对下一步的作用。",
+      "related": []
+    },
+    {
+      "id": "ch5-coefficient-one",
+      "locationId": "ch5-coefficient-one",
+      "title": "系数化为1，不是把系数直接擦掉",
+      "preview": "这里把两边都除以7，才得到同解的新方程。",
+      "paragraphs": [
+        "7x表示7乘x。左边除以7后成为x，右边140也要除以7。这不是只改左边的系数，而是对等号两边做同一种运算。",
+        "这种写成x=常数的形式让我们直接读出未知数。系数已经是1时，就不需要再做一次“系数化为1”。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "简写“系数化为1”可能被误读为仅删去系数。",
+      "learningAction": "能把步骤名称还原为两边同除非零系数，并判断是否需要此步。",
+      "related": [
+        {
+          "locationId": "ch5-nonzero",
+          "label": "回看除数不能为0",
+          "purpose": "系数化为1需要用系数作除数。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p127-think",
+      "locationId": "ch5-q-p127-think",
+      "title": "思考：比较合并前后的结构",
+      "preview": "从含x项的个数与求解目标说明合并的作用。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "本题需要把合并同类项与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "从含x项的个数与求解目标说明合并的作用。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "合并同类项",
+          "求解目标x=m"
+        ],
+        "method": [
+          "对照合并前后：未知数出现了几处，常数一边有没有改变？再看下一步要完成什么。"
+        ],
+        "cautions": [
+          "“式子更短”只是表面变化，要说明这种变化怎样帮助找出未知数。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-combine-purpose",
+          "label": "合并同类项",
+          "purpose": "帮助比较同类项集中前后，方程怎样接近可直接求解的形式。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p127-example1",
+      "locationId": "ch5-q-p127-example1",
+      "title": "例1：先看哪些项可以合并",
+      "preview": "分清分数、小数系数及常数运算，再完成系数化为1。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "本题需要把同类项与系数与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "分清分数、小数系数及常数运算，再完成系数化为1。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "同类项与系数",
+          "有理数运算",
+          "系数化为1"
+        ],
+        "method": [
+          "（1）把分数系数连同符号读完整，再比较含x项与常数项的位置。",
+          "（2）分别整理左边的含x项与右边的乘法算式，比较它们在等式中各自的作用。"
+        ],
+        "cautions": [
+          "同类项的字母部分保持不变；不要把系数相加误写成未知数相乘。",
+          "系数化为1时除以完整的非零系数，包括其符号。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-coefficient-one",
+          "label": "系数化为1",
+          "purpose": "两小问合并后都要由非零系数决定同除的数。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p127-why-solution",
+      "locationId": "ch5-q-p127-why-solution",
+      "title": "旁注思考：变形能否反向恢复",
+      "preview": "从每一步的依据判断最终的数为何仍满足原方程。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "本题需要把等式性质与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "从每一步的依据判断最终的数为何仍满足原方程。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "等式性质",
+          "等价变形",
+          "方程的解"
+        ],
+        "method": [
+          "任选原解答中的一步，想一想能否用逆运算恢复前一步；再把这一检查连成完整过程。"
+        ],
+        "cautions": [
+          "不能用“两边同乘0仍相等”说明求解过程可逆；涉及除法时必须核对除数非零。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-nonzero",
+          "label": "等式变形的非零条件",
+          "purpose": "本题追问求解为何保留原方程的解，需检查运算是否可反向恢复。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p128-example2",
+      "locationId": "ch5-q-p128-example2",
+      "title": "例2：相邻关系不是相等的差",
+      "preview": "根据前后项的倍数和符号变化，检查三个数的表示。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "本题需要把有理数乘方与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "根据前后项的倍数和符号变化，检查三个数的表示。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "有理数乘方",
+          "相邻项倍数关系",
+          "分量之和等于总量"
+        ],
+        "method": [
+          "从给出的相邻数比较符号与绝对值，确认后一项怎样由前一项得到。",
+          "设元后逐次表示后两项；求得数值时还要检查它们是否真是该数列的连续三项。"
+        ],
+        "cautions": [
+          "第三个数要在第二个数基础上再变化一次。",
+          "三个数的和与每个数所属的数列，是需要同时满足的条件。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-successive-ratio",
+          "label": "连续倍数关系",
+          "purpose": "回顾连续乘同一个负数时第三项的表示，避免跳过一次变化。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-successive-ratio",
+      "locationId": "ch5-successive-ratio",
+      "title": "第三个数为什么是9x？",
+      "preview": "相邻两次都乘−3，第二次是在−3x上再乘−3。",
+      "paragraphs": [
+        "设第一个数为x后，第二个数是−3x。第三个数不是再往x上加一个−3，而是把第二个数再乘−3，所以是(−3)(−3x)=9x。",
+        "“相邻”规定了关系逐次作用的顺序。先说明前一个数怎样变成后一个数，再表达三个数，可避免把连续倍数关系误当作相同差值关系。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "数列例题直接写出三个数，未展开两次相邻乘法如何合成9x。",
+      "learningAction": "能把连续两次倍数关系接起来，解释第三个数的表示。",
+      "related": []
+    },
+    {
+      "id": "ch5-q-p128-practice1",
+      "locationId": "ch5-q-p128-practice1",
+      "title": "练习1：同类项中的分数和小数",
+      "preview": "按四式的系数形式选择整理方法，并保留每一项的符号。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需要把合并同类项与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "按四式的系数形式选择整理方法，并保留每一项的符号。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "合并同类项",
+          "有理数系数",
+          "系数化为1"
+        ],
+        "method": [
+          "（1）比较整数系数；（2）先看两个分母相同的项能怎样合并。",
+          "（3）同时关注负整数与小数系数；（4）把右边的常数运算与左边的同类项整理区分开。"
+        ],
+        "cautions": [
+          "含x项的系数相加减，不能把字母部分也相加。",
+          "乘法优先于加减；最后同除时不能遗漏系数的负号。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-combine-purpose",
+          "label": "合并同类项",
+          "purpose": "四个小问都需把同类项集中，回顾合并的含义与求解作用。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p128-practice2",
+      "locationId": "ch5-q-p128-practice2",
+      "title": "练习2：连续两年的倍数基准",
+      "preview": "区分2022年与2023年各自比较的年份。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需要把连续倍数关系与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "区分2022年与2023年各自比较的年份。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "连续倍数关系",
+          "三年总产值"
+        ],
+        "method": [
+          "按年份画出倍数关系链，选一个年份的产值作未知量，再检查其余两年是否都能用它表示。"
+        ],
+        "cautions": [
+          "“2023年是2022年的2倍”不是相对2021年的倍数。",
+          "题中金额用万元表示；列式与答语的单位要一致。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-successive-ratio",
+          "label": "连续倍数关系",
+          "purpose": "本题也有连续两次倍数变化，回顾为何后一项必须接着前一项表示。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p128-practice3",
+      "locationId": "ch5-q-p128-practice3",
+      "title": "练习3：数量比中的一份",
+      "preview": "把三种型号的比例与总台数配合使用。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需要把按比例表示未知量与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "把三种型号的比例与总台数配合使用。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "按比例表示未知量",
+          "分量之和等于总量"
+        ],
+        "method": [
+          "先确认1∶2∶14中每个数对应哪种型号；考虑用共同的一份表示三种数量。"
+        ],
+        "cautions": [
+          "比例的份数没有“台”的单位；每份对应的实际台数需要由总量确定。",
+          "求出中间未知量后，要检查是否已经回答了三种型号各自的数量。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-ratio-unit",
+          "label": "按比例设未知量",
+          "purpose": "回顾“一份”与实际所求数量的区别，避免只回答每份数量。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p129-problem2",
+      "locationId": "ch5-q-p129-problem2",
+      "title": "问题2：两次分法指向同一批书",
+      "preview": "分清实际书数、需要书数与剩余或缺少的数量。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "本题需要把同一总量的两种表示与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "分清实际书数、需要书数与剩余或缺少的数量。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "同一总量的两种表示",
+          "移项解方程"
+        ],
+        "method": [
+          "分别检查两种分法：已分或所需的数量与实际书数之间是什么关系？再对照教材列出的等式。",
+          "总量表示旁问：分别给两个式子指认实际对象，再说明两种表示为什么应描述同一个量。"
+        ],
+        "cautions": [
+          "“缺25本”不表示现有书数比所需更多。",
+          "未知数表示人数，解出后还要检查两种分法都符合题意。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-same-total",
+          "label": "同一总量的两种表示",
+          "purpose": "本题等号成立的依据是两边都表示同一批书，而不是都含有x。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-same-total",
+      "locationId": "ch5-same-total",
+      "title": "相等的是同一批书的两种表示",
+      "preview": "“剩余”和“缺少”都要还原成实际拥有的总数。",
+      "paragraphs": [
+        "每人分3本时，“已分出去的+剩下的”是实际书数；每人分4本时，“需要的−缺少的”才是实际书数。两次的分配方式不同，实际拥有的书数没有变。",
+        "因此，列等式并不是因为两个式子都含x，而是因为它们都在表示同一批书的总数。判断加还是减，要看正在从哪一种量还原实际总数。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "列式说明未集中区分剩余与缺少相对于实际总数的方向。",
+      "learningAction": "能说明两边共同表示的量，并根据实际与所需的区别解释加减方向。",
+      "related": []
+    },
+    {
+      "id": "ch5-q-p129-think",
+      "locationId": "ch5-q-p129-think",
+      "title": "思考：整理含x项与常数项",
+      "preview": "根据求解目标选择两边相同的加减运算。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "本题需要把等式的性质1与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "根据求解目标选择两边相同的加减运算。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "等式的性质1",
+          "含未知数项与常数项",
+          "移项的符号变化"
+        ],
+        "method": [
+          "观察等式两边各有什么项，考虑哪些同类项需要集中；为拟做的变化写出两边共同的运算。",
+          "移项图旁问：把图中同一项连同前面的符号一起比较，再联系上方两边同减的过程说明依据。"
+        ],
+        "cautions": [
+          "可以选择不同的集中方向；关键是两边运算一致且有助于化简。",
+          "等号同侧重排或去括号不是移项，不要套用相同的变号理由。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-same-operation",
+          "label": "等式的性质1",
+          "purpose": "本题需决定如何整理两边的项，先确认共同运算的依据。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-transpose",
+      "locationId": "ch5-transpose",
+      "title": "移项变号，是两边同加减的简写",
+      "preview": "等号两边是两种表达；移项并非符号越过等号就自行改变。",
+      "paragraphs": [
+        "以左边的+20移到右边为例：两边同减20，左边的+20被抵消，右边出现−20。若原项是负项，两边就可同加它的相反数来抵消。",
+        "符号变化只属于被移到另一边的整项，留在原边的项不因此变号。每次拿不准时，都可以还原成“两边同时加或减什么”来检查。"
+      ],
+      "learningRole": "定义概念；示范方法",
+      "learningGap": "教材有箭头演示，需把变号规则明确绑定到同加减并限定变号的对象。",
+      "learningAction": "能把移项还原成等式性质，区分移动项和留在原边的项。",
+      "related": [
+        {
+          "locationId": "ch5-same-operation",
+          "label": "回看等式的性质1",
+          "purpose": "用两边同加减解释移项为何保持方程的解。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p130-think",
+      "locationId": "ch5-q-p130-think",
+      "title": "思考：移项为后面的哪一步准备",
+      "preview": "比较移项前后同类项的位置，说明变形的目的。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "本题需要把移项与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "比较移项前后同类项的位置，说明变形的目的。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "移项",
+          "合并同类项"
+        ],
+        "method": [
+          "先看移项前两边含x项与常数项的分布，再看下一步合并需要哪些项处在同一边。"
+        ],
+        "cautions": [
+          "说明作用时不能只背“移项要变号”；变号是规则，整理同类项是选择操作的目的。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-choose-side",
+          "label": "移项方向与求解目标",
+          "purpose": "回顾移项方向可选择，再说明本题为什么采用这一种整理。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p130-example3",
+      "locationId": "ch5-q-p130-example3",
+      "title": "例3：移项与系数符号",
+      "preview": "区分跨越等号的变号与系数化为1时的除法。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "本题需要把移项与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "区分跨越等号的变号与系数化为1时的除法。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "移项",
+          "合并同类项",
+          "负分数系数"
+        ],
+        "method": [
+          "（1）跟踪两边含x项与常数项的移动；（2）注意合并中出现的分数系数及其符号。"
+        ],
+        "cautions": [
+          "没有跨越等号的项，不因移项而变号。",
+          "最后同除的数是完整系数；负分数也必须保留负号。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-transpose",
+          "label": "移项及其依据",
+          "purpose": "两题的项分布在等号两边，需要按等式性质集中同类项。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-choose-side",
+      "locationId": "ch5-choose-side",
+      "title": "含x的项必须移到左边吗？",
+      "preview": "位置是方便选择；同类项集中、变形有依据才是关键。",
+      "paragraphs": [
+        "例3把含x的项放在左边，便于最后写成x=常数。也可以把含x的项集中到右边，只要每个移项都符合等式性质，得到的解应相同。",
+        "选择时可看哪边更容易合并、符号更简单。不能把“通常放左边”当作方程必须遵守的数学条件。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "并排解答统一把未知项放左边，可能被误读为必须步骤。",
+      "learningAction": "能说明未知项放在哪一边是方法选择，并用依据判断合法性。",
+      "related": [
+        {
+          "locationId": "ch5-transpose",
+          "label": "回看移项的依据",
+          "purpose": "判断另一种整理方式是否保持原方程的解。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p130-example4",
+      "locationId": "ch5-q-p130-example4",
+      "title": "例4：比例与同一个限额",
+      "preview": "把新旧排量的比例和相对限额的差量分开理解。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "本题需要把按比例设未知量与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "把新旧排量的比例和相对限额的差量分开理解。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "按比例设未知量",
+          "同一数量的两种表示",
+          "移项解方程"
+        ],
+        "method": [
+          "先读清2∶5的先后顺序，再检查两种排量怎样分别还原到同一个排放限额。",
+          "等式含义旁问：分别从旧工艺和新工艺的排量出发，说明各自经过加减后还原了什么量。"
+        ],
+        "cautions": [
+          "x表示一份排量，不直接等于任一种工艺的排量。",
+          "“超过200”和“少100”都相对限额，不能把它们当作两种排量本身。",
+          "两边单位都是吨还不够，还需确认它们表示同一种具体数量。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-ratio-unit",
+          "label": "按比例设未知量",
+          "purpose": "本题用2x和5x表示两种排量，需要区分共同份量与最终答案。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-ratio-unit",
+      "locationId": "ch5-ratio-unit",
+      "title": "这里的x是一份，不是新工艺的排量",
+      "preview": "按2∶5设为2x和5x，用一个未知数保留比的关系。",
+      "paragraphs": [
+        "把两种排量分别写为2x和5x，是把它们看作2份与5份相同的量。x表示每一份对应多少吨，不是任意一种工艺的排量。",
+        "解出x后，题目所问的两个排量仍要分别由2x、5x得到。设元时写清x代表的量，能防止把中间求出的份量直接当成题目的答案。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "例4按比例设元，但x的中间量含义与题目所问排量未展开区分。",
+      "learningAction": "能解释按比例设元中的一份，并将未知数的值转换为所求量。",
+      "related": []
+    },
+    {
+      "id": "ch5-q-p131-practice1",
+      "locationId": "ch5-q-p131-practice1",
+      "title": "练习1：两边都有未知数时怎样整理",
+      "preview": "根据四式的项分布选择移项方向，并核对符号。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需要把移项与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "根据四式的项分布选择移项方向，并核对符号。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "移项",
+          "合并同类项",
+          "整数与分数系数"
+        ],
+        "method": [
+          "（1）和（2）观察常数项只在一边时需要集中哪些项；（3）同时检查两边的含y项与常数项。",
+          "（4）先把分数读作y的系数，再决定如何集中同类项。"
+        ],
+        "cautions": [
+          "未知数写成y不改变解方程的原则。",
+          "项的符号跟着项走；移项方向可以不同，但必须保持等价。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-choose-side",
+          "label": "移项方向与求解目标",
+          "purpose": "四式都可按项的分布选择整理方向，不必机械地把未知数固定在左边。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p131-practice2",
+      "locationId": "ch5-q-p131-practice2",
+      "title": "练习2：从章引言的方程求追及时间",
+      "preview": "在小数系数运算中保留未知数的实际含义。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需要把移项解方程与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "在小数系数运算中保留未知数的实际含义。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "移项解方程",
+          "追及问题中的共同参照点"
+        ],
+        "method": [
+          "辨认等式两边哪些是随时间增加的路程，哪些是开始时的位置；再选择方程整理方法。"
+        ],
+        "cautions": [
+          "x表示共同经过的时间；两队新走路程并不相等。",
+          "小数系数的减法与常数项的移项要分别检查。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-same-reference",
+          "label": "追及问题的共同参照点",
+          "purpose": "本题承接章引言，回顾等号比较的是从同一大本营算起的位置。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p131-practice3",
+      "locationId": "ch5-q-p131-practice3",
+      "title": "练习3：年龄差与同一时刻的倍数",
+      "preview": "把固定年龄差和现在的年龄倍数放在同一时刻比较。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需要把年龄差不变与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "把固定年龄差和现在的年龄倍数放在同一时刻比较。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "年龄差不变",
+          "倍数关系建模"
+        ],
+        "method": [
+          "区分“出生时”和“现在”；用一张时间对照表标明父子年龄的共同变化，再选择现在的未知量。"
+        ],
+        "cautions": [
+          "李明出生时父亲的28岁不是父亲现在的年龄。",
+          "年龄倍数随时间可能变化，年龄差则在两人同时增长时保持不变。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-age-same-time",
+          "label": "同一时刻的年龄比较",
+          "purpose": "本题同时给出出生时与现在的条件，需先对齐比较时刻。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p131-practice4",
+      "locationId": "ch5-q-p131-practice4",
+      "title": "练习4：转给对方后比较的是哪一份",
+      "preview": "分清采摘量与转移后的持有量，并统一时间单位。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需要把效率×时间=总量与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "分清采摘量与转移后的持有量，并统一时间单位。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "效率×时间=总量",
+          "转移前后数量关系"
+        ],
+        "method": [
+          "先分别表示两人的采摘量，再描述“取出给对方”怎样同时影响两个人手中的量；由转移后的相等条件自主列式。"
+        ],
+        "cautions": [
+          "0.25 kg会同时影响转出方和转入方，不能只改一方。",
+          "平均每小时的采摘量与所设时间单位必须匹配。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "选择相等关系",
+          "purpose": "本题需要先用效率表示数量，再选择转移后一样多的条件列方程。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p131-problem3",
+      "locationId": "ch5-q-p131-problem3",
+      "title": "问题3：月平均量怎样成为半年总量",
+      "preview": "明确每个月的减少量与半年累计减少量不同。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "本题需要把平均量与总量与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "明确每个月的减少量与半年累计减少量不同。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "平均量与总量",
+          "分量之和等于总量",
+          "带括号方程"
+        ],
+        "method": [
+          "读清题中比较的是月平均用电量；再检查上下半年各有几个月、各自总量怎样表示。"
+        ],
+        "cautions": [
+          "用电量单位是kW·h，不能只写成功率单位kW。",
+          "同一个括号表示下半年每月平均量，累计时其中每一部分都受月份数影响。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-monthly-total",
+          "label": "平均量与累计总量",
+          "purpose": "本题需要把每月的差量累计到半年，回顾倍数作用于整个平均量。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-monthly-total",
+      "locationId": "ch5-monthly-total",
+      "title": "每月少2000，半年就少多少？",
+      "preview": "月平均量与半年总量相差6个月这个倍数。",
+      "paragraphs": [
+        "题目比较的是两段时期的月平均用电量，所以x−2000仍表示一个月的平均量。半年有6个月，半年总量才写成6(x−2000)。",
+        "括号把“一个月平均用多少”作为整体，6同时作用于x和减去的2000。不能把月平均减少量直接当作半年的总减少量。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "问题3直接写半年总量，未区分平均量差与累计量差。",
+      "learningAction": "能根据时间单位把月平均量转成半年总量，并解释括号的作用。",
+      "related": []
+    },
+    {
+      "id": "ch5-q-p132-example5",
+      "locationId": "ch5-q-p132-example5",
+      "title": "例5：括号前的系数怎样分配",
+      "preview": "把去括号的符号变化与后续移项分开检查。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "本题需要把分配律与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "把去括号的符号变化与后续移项分开检查。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "分配律",
+          "负系数去括号",
+          "移项解方程"
+        ],
+        "method": [
+          "（1）比较括号前隐含的−1与显式系数2；（2）逐个检查两边负系数作用的括号。"
+        ],
+        "cautions": [
+          "括号内每一项都要乘外面的系数，常数项也包括在内。",
+          "去括号发生在等号同侧，不能用“移项变号”代替它的理由。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-negative-bracket",
+          "label": "负系数去括号",
+          "purpose": "两小问都包含括号前的负号，需按分配律检查每一项。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-negative-bracket",
+      "locationId": "ch5-negative-bracket",
+      "title": "括号前的负号作用于整个括号",
+      "preview": "去括号先看乘法分配，移项再看等式性质。",
+      "paragraphs": [
+        "例5（1）的−(x+10)相当于−1乘括号内的和，去括号时两项都受−1作用，所以都改变符号。例5（2）的−7(x−1)也要把−7分别乘到两项。",
+        "这些符号变化发生在等号同一边，是分配律的结果；移项的变号则来自两边同加减。不要把两种变号原因混成一条规则。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "两个例题的负号变化可混淆去括号与移项的不同依据。",
+      "learningAction": "能分别指出去括号与移项的变号依据，并使系数作用于每项。",
+      "related": [
+        {
+          "locationId": "ch5-transpose",
+          "label": "对照移项的变号",
+          "purpose": "区分等号同一边的分配律与跨边的同加减。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p132-example6",
+      "locationId": "ch5-q-p132-example6",
+      "title": "例6：往返路程相同，速度为何不同",
+      "preview": "区分静水速度、实际航速与水流速度，检查逆流条件。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "本题需要把路程=速度×时间与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "区分静水速度、实际航速与水流速度，检查逆流条件。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "路程=速度×时间",
+          "顺逆水速度",
+          "情境中的正值约束"
+        ],
+        "method": [
+          "结合航行方向解释水流对实际速度的作用，再核对往返两段的路程表达。"
+        ],
+        "cautions": [
+          "两次航行时间不同，不能直接令两个速度相等。",
+          "静水速度必须大于水流速度，才能按题意逆流前进；求出的数还需满足这一条件。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-boat-condition",
+          "label": "逆流航行的条件",
+          "purpose": "本题求静水速度，必须检查结果能否使逆流速度为正。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-boat-condition",
+      "locationId": "ch5-boat-condition",
+      "title": "逆流还能前进，限制了哪个量？",
+      "preview": "静水速度必须大于水流速度，才能按题意完成逆水航程。",
+      "paragraphs": [
+        "教材把逆水速度写成x−3，单位是km/h。这里说船能逆水从乙码头回到甲码头，所以逆水速度应为正，即x>3。",
+        "这项条件来自行驶情境，不是解方程时自动加进去的运算规则。求得x后要回看它是否满足条件，并确认往返路程相等。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "例6给出顺逆速度式，未说明能完成逆水行程对未知数的限制。",
+      "learningAction": "能从逆水行程确定x的范围，并对求解结果作情境检查。",
+      "related": [
+        {
+          "locationId": "ch5-check-original",
+          "label": "回看检验的两个层次",
+          "purpose": "方程成立后还要满足逆水航行的实际条件。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p133-practice1",
+      "locationId": "ch5-q-p133-practice1",
+      "title": "练习1：不同括号结构怎样检查",
+      "preview": "按四题括号前的系数与括号内的项逐项检查。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需要把分配律与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "按四题括号前的系数与括号内的项逐项检查。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "分配律",
+          "负系数去括号",
+          "分数与小数系数"
+        ],
+        "method": [
+          "（1）确认外面的2作用于括号全部；（2）比较两边正、负系数的区别。",
+          "（3）把分数系数连同字母作为一项；（4）关注两边负系数与小数项的乘法。"
+        ],
+        "cautions": [
+          "去括号不能漏乘常数项，也不能只改变括号第一项的符号。",
+          "各小问可按实际结构选择先化简或移项，不必把步骤名称全部写一遍。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-negative-bracket",
+          "label": "负系数去括号",
+          "purpose": "这些方程需要用分配律展开括号，尤其需检查负系数影响的范围。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-change-dimensions",
+      "locationId": "ch5-change-dimensions",
+      "title": "长宽的变化量相反，面积就不变吗？",
+      "preview": "面积由长与宽的乘积决定，不能只把两个变化量相加。",
+      "paragraphs": [
+        "本题“面积保持不变”是给出的条件，不能仅从长减少2 cm、宽增加2 cm推出。长度的增减和面积的变化不是同一种量。",
+        "先分别辨认改变前后有哪些边长，再检查两边写出的是否都是面积。怎样用未知数表示宽并建立等式，仍由你完成。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "练习第2题易把长宽增减抵消当成面积不变的原因。",
+      "learningAction": "能把题设面积不变与边长变化区别开，并检查所列关系的量。",
+      "related": []
+    },
+    {
+      "id": "ch5-q-p133-practice2",
+      "locationId": "ch5-q-p133-practice2",
+      "title": "练习2：长宽改变，比较的是面积",
+      "preview": "分别表示变化前后的长和宽，再使用面积相等条件。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需要把长方形面积与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "分别表示变化前后的长和宽，再使用面积相等条件。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "长方形面积",
+          "变化前后等量关系"
+        ],
+        "method": [
+          "列出原来与改变后的两组边长，用相同的面积公式分别表示，再检查题设给出的不变量。"
+        ],
+        "cautions": [
+          "长减2、宽加2本身不能保证面积不变；面积不变是本题另给的条件。",
+          "边长与面积的单位不同，求出的宽还须为正。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-change-dimensions",
+          "label": "长宽变化与面积条件",
+          "purpose": "本题需要区分边长增减和面积保持不变这两种信息。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p133-practice3",
+      "locationId": "ch5-q-p133-practice3",
+      "title": "练习3：个数总量与用绳总量",
+      "preview": "用两种不同单位的总量条件连接两类中国结。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需要把总个数约束与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "用两种不同单位的总量条件连接两类中国结。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "总个数约束",
+          "单位用量×个数=总用量"
+        ],
+        "method": [
+          "先选一种中国结的个数为未知数，利用总个数确定另一种的表示；再思考两类用绳量如何与总用绳量对应。"
+        ],
+        "cautions": [
+          "6的单位是个，20的单位是米，不能直接放在同一种数量关系中相加。",
+          "两种个数都应为非负整数，且必须同时满足个数与用绳条件。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "选择相等关系",
+          "purpose": "本题先用总个数表示两个数量，再以用绳总量建立相等关系。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p133-problem4",
+      "locationId": "ch5-q-p133-problem4",
+      "title": "问题4：路段与用时要配对",
+      "preview": "把路线图中的路程和时刻表中的时间间隔对应起来。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "本题需要把匀速运动的速度相等与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "把路线图中的路程和时刻表中的时间间隔对应起来。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "匀速运动的速度相等",
+          "时刻与时间间隔",
+          "去分母"
+        ],
+        "method": [
+          "结合PDF134页时刻表，分别标出所比较路段的起终点及对应经过时间；再对照教材使用的速度关系。",
+          "PDF134页旁问：重新选择一组路段并匹配相应的时间间隔，尝试寻找另一种受匀速条件支持的等量关系。"
+        ],
+        "cautions": [
+          "13:00、15:00是时刻，不能直接当作行驶的小时数。",
+          "x表示王家庄到翠湖的路程，结果应与图中翠湖在青山之后的位置顺序相符。",
+          "另设未知量时必须重新写清含义；只调换等号两边并未改变所依据的数量关系。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-elapsed-time",
+          "label": "时刻与时间间隔",
+          "purpose": "本题列式要以对应路段的时间间隔为分母，不能使用钟表时刻。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-elapsed-time",
+      "locationId": "ch5-elapsed-time",
+      "title": "13:00不是13小时的行驶时间",
+      "preview": "时刻是时间轴上的位置，行驶时间是两个时刻之间的间隔。",
+      "paragraphs": [
+        "表中的10:00、13:00、15:00表示经过各地的时刻。求某一段行程的速度，要用这段路程除以对应的时间间隔，不能直接除以终点时刻的数值。",
+        "两段都从王家庄算起时，时间也都从10:00算起。起点一致，路程与所用时间才能正确配对。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "时间表到3 h与5 h的转换易被误读为直接使用时刻，未展开配对原则。",
+      "learningAction": "能区分时刻和时长，并为每段路程选对应的时间间隔。",
+      "related": []
+    },
+    {
+      "id": "ch5-lcm-convenience",
+      "locationId": "ch5-lcm-convenience",
+      "title": "为什么选15？能选30吗？",
+      "preview": "公倍数能消去分母，最小公倍数让数通常更小。",
+      "paragraphs": [
+        "两边同乘3和5的公倍数，两个分母都能约去。15是最小公倍数，通常使变形后的整数较小，计算较省力。",
+        "同乘30也能保持方程的解并消去分母，只是所得系数更大。用最小公倍数是方便的选择；必须满足的是同乘一个非零数，并让每个分母都能被消去。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "去分母说明采用最小公倍数，未区分方便选择与合法变形的必要条件。",
+      "learningAction": "能说明其他非零公倍数也可去分母，并解释选最小公倍数的好处。",
+      "related": [
+        {
+          "locationId": "ch5-nonzero",
+          "label": "回看非零条件",
+          "purpose": "保证同乘后可反向恢复原方程。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-every-term",
+      "locationId": "ch5-every-term",
+      "title": "没有分母的项，也要一起乘",
+      "preview": "“两边同乘10”作用于每一边的整个式子。",
+      "paragraphs": [
+        "去分母是把左边整个式子、右边整个式子都乘10，再用分配律展开。常数项−2虽然没有写分母，也属于左边，所以必须变成−20。",
+        "只给含分母的项乘10，相当于对同一边的不同部分作了不同操作，不是等式性质所说的两边同乘一个数。可先给左右两边各套一个括号，检查是否漏乘。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "流程图提醒每一项同乘，但未解释整数项也参与的整体运算依据。",
+      "learningAction": "能把去分母还原为两边整体相乘，检查常数项是否漏乘。",
+      "related": [
+        {
+          "locationId": "ch5-lcm-convenience",
+          "label": "回看乘数的选择",
+          "purpose": "先选能消去所有分母的非零公倍数，再对每项使用。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p135-step-reasons",
+      "locationId": "ch5-q-p135-step-reasons",
+      "title": "框图思考：逐步说明变形依据",
+      "preview": "区分等式两边共同运算与等号同侧的恒等改写。",
+      "paragraphs": [],
+      "learningRole": "回顾与整理",
+      "learningGap": "本题需要把等式的性质与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "区分等式两边共同运算与等号同侧的恒等改写。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "等式的性质",
+          "分配律",
+          "移项与合并同类项"
+        ],
+        "method": [
+          "去分母、系数化为1：检查两边共同进行了什么运算及非零条件。",
+          "去括号、合并同类项：检查同侧式子怎样由运算律改写。",
+          "移项：试着恢复成等式两边同时加减同一项的写法。"
+        ],
+        "cautions": [
+          "一般步骤不是每道方程都必须全部执行；这里要求解释此框图已经出现的每一步。",
+          "去分母时没有分母的项也参加运算，分子作为整体处理。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-steps-choice",
+          "label": "解一元一次方程的一般步骤",
+          "purpose": "本题需要把五种步骤与实际变形依据对上，不能只背步骤名称。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-steps-choice",
+      "locationId": "ch5-steps-choice",
+      "title": "一般步骤不是必须全部走一遍",
+      "preview": "先看方程还保留什么结构，再选择能简化它的变形。",
+      "paragraphs": [
+        "“去分母、去括号、移项、合并同类项、系数化为1”是常见整理路线。如果没有分母或括号，对应步骤便可省去；如果同一边已有同类项，也可先合并。",
+        "选择顺序时，检查两点：每一步是否有等式性质或运算律作依据，变形后是否更容易得到x=常数。步骤名称不能代替这两项判断。"
+      ],
+      "learningRole": "回顾与整理",
+      "learningGap": "一般步骤的排列易被当作必须执行的固定算法，旁注只给一个换序例。",
+      "learningAction": "能根据方程结构省去无须做的步骤，并说明所选顺序的依据。",
+      "related": []
+    },
+    {
+      "id": "ch5-q-p135-example7",
+      "locationId": "ch5-q-p135-example7",
+      "title": "例7：去分母后还要守住整体与符号",
+      "preview": "对照两道方程检查各项同乘及分子整体处理。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "本题需要把去分母与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "对照两道方程检查各项同乘及分子整体处理。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "去分母",
+          "分子整体",
+          "负系数去括号"
+        ],
+        "method": [
+          "（1）核对分母被约去前后的每一项，包括独立常数。",
+          "（2）特别跟踪减号后分式的分子，比较去分母与去括号两个阶段的符号。"
+        ],
+        "cautions": [
+          "最小公倍数是使数较小的方便选择，非零公倍数也能保持等价。",
+          "不能只对含分母的项乘同一个数。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-whole-numerator",
+          "label": "去分母时分子作为整体",
+          "purpose": "两题的分子都含多个项，去分母后仍要保持整个分子的运算范围。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-whole-numerator",
+      "locationId": "ch5-whole-numerator",
+      "title": "分母约去后，分子仍是一个整体",
+      "preview": "外面的系数或负号不能只作用于分子第一项。",
+      "paragraphs": [
+        "例7（2）两边乘6后，右边的分式项变成−2(2x−1)。分母虽然消去了，2x−1仍是原来被除的整个式子，需要括号保留它与外部−2的关系。",
+        "接着去括号时，−2要分别乘2x和−1。先保留整体、再展开，能把去分母与去括号两项操作的依据分开检查。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "例7直接写出括号形式，未说明去分母后为何仍需保留分子整体。",
+      "learningAction": "能在去分母后保留分子整体，并正确判断外部系数的作用范围。",
+      "related": [
+        {
+          "locationId": "ch5-negative-bracket",
+          "label": "回看负系数去括号",
+          "purpose": "确认外部负系数怎样分配到分子的每一项。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p136-practice1",
+      "locationId": "ch5-q-p136-practice1",
+      "title": "练习1：按分母结构选择乘数",
+      "preview": "逐题辨认分母、独立项及分子前面的符号。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需要把去分母与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "逐题辨认分母、独立项及分子前面的符号。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "去分母",
+          "分配律",
+          "移项解方程"
+        ],
+        "method": [
+          "（1）关注两边相同的分母；（2）检查独立常数与两个分式如何共同参加运算。",
+          "（3）注意最后一个分式前的减号与分子中的减号；（4）跟踪右边两个分式以及左边的独立常数。"
+        ],
+        "cautions": [
+          "每道题都可选择非零公倍数，不必把最小公倍数误认为唯一乘数。",
+          "约去分母后，分子各项仍受整体外面的系数和符号影响。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-every-term",
+          "label": "去分母时每一项都参与",
+          "purpose": "四式均需把同乘的数作用到两边每一项，避免漏掉整数项。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p136-practice2",
+      "locationId": "ch5-q-p136-practice2",
+      "title": "练习2：多个分数都指向同一个数",
+      "preview": "读清每个“它的”所指的整体，再表示部分与全部。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需要把一个数的几分之几与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "读清每个“它的”所指的整体，再表示部分与全部。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "一个数的几分之几",
+          "分量之和等于总量",
+          "含分数系数的方程"
+        ],
+        "method": [
+          "把文字中的每一部分与同一个未知数对应，确认“全部”是否也作为一项计入；由和的条件自主列式。"
+        ],
+        "cautions": [
+          "三分之二、一半、七分之一不是彼此相乘，也不是依次对剩余量取分数。",
+          "列式后再选择整理方法，不要把各分母直接相加。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-percent-base",
+          "label": "分数与百分数的基准量",
+          "purpose": "和百分数题一样，本题每一个分数都要先确定它所依附的同一整体。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p136-practice3",
+      "locationId": "ch5-q-p136-practice3",
+      "title": "练习3：早到一小时怎样进入关系",
+      "preview": "把共同路程与不同用时联系起来，并辨认时间差方向。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需要把路程、速度与时间与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "把共同路程与不同用时联系起来，并辨认时间差方向。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "路程、速度与时间",
+          "同程不同速度",
+          "时间差"
+        ],
+        "method": [
+          "选择路程或一辆车的用时作未知量，分别检查另一辆车的用时如何表示，再使用早到的条件。"
+        ],
+        "cautions": [
+          "同时出发不表示同时到达；速度较快的一辆用时应更短。",
+          "速度单位是km/h，1 h的时间差不能直接与速度或路程相加。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-elapsed-time",
+          "label": "行驶时间间隔",
+          "purpose": "本题比较从共同出发时刻到各自到达时刻的用时，需分清时刻与经过时间。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p137-hw1",
+      "locationId": "ch5-q-p137-hw1",
+      "title": "习题1：先认同类项的位置",
+      "preview": "按项在等式两边的分布，选择合并或移项。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需要把合并同类项与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "按项在等式两边的分布，选择合并或移项。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "合并同类项",
+          "移项",
+          "系数化为1"
+        ],
+        "method": [
+          "（1）（2）检查同侧含未知数项的系数；（3）（4）比较含未知数项与常数项在两边的位置，再选择整理方向。"
+        ],
+        "cautions": [
+          "x与y只是不同的未知数名称；系数的负号属于该项。",
+          "小数系数的合并与移项变号是不同操作，要分别核对。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-transpose",
+          "label": "移项与等式性质",
+          "purpose": "第（3）（4）问需要跨等号整理同类项，回顾变号的依据。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p137-hw2",
+      "locationId": "ch5-q-p137-hw2",
+      "title": "习题2：括号外面的数作用到哪里",
+      "preview": "分别检查正号、负号和数乘括号的不同结构。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需要把去括号与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "分别检查正号、负号和数乘括号的不同结构。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "去括号",
+          "分配律",
+          "合并同类项"
+        ],
+        "method": [
+          "（1）观察括号前的加号；（2）把括号前的减号理解为整个括号的负系数。",
+          "（3）和（4）比较正、负整数系数作用到括号内各项后的符号。"
+        ],
+        "cautions": [
+          "字母c、b、x、y都可表示未知数，不能因字母不同更换求解原则。",
+          "（2）（4）中的常数项同样受到括号外负系数的影响。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-negative-bracket",
+          "label": "负系数去括号",
+          "purpose": "本题的差异集中在括号前的系数，回顾分配范围与符号。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p137-hw3",
+      "locationId": "ch5-q-p137-hw3",
+      "title": "习题3：负分母与独立项都要检查",
+      "preview": "辨认四式的分母结构，保持每一次共同运算完整。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需要把去分母与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "辨认四式的分母结构，保持每一次共同运算完整。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "去分母",
+          "负分母的符号",
+          "分子整体"
+        ],
+        "method": [
+          "（1）比较两分母；（2）先把负分母的符号纳入检查。",
+          "（3）关注不带分母的常数；（4）逐个跟踪左右两边的分式和独立项。"
+        ],
+        "cautions": [
+          "公倍数乘到每一项；不能因为某项没有分母就跳过。",
+          "负分母不等于分子只有第一项变号；保持分子整体再处理符号。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-negative-denominator",
+          "label": "负分母与项的符号",
+          "purpose": "第（2）问含负分母，回顾整体符号有助于检查去分母的结果。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-negative-denominator",
+      "locationId": "ch5-negative-denominator",
+      "title": "负分母也属于项的符号",
+      "preview": "先读清整项的正负，再选择去分母的乘数。",
+      "paragraphs": [
+        "分母带负号时，整个分式的符号会受它影响。可以先把负号写到分式前，也可以直接按有理数乘除法处理；两种写法必须表示同一个量。",
+        "检查自己的去分母步骤时，不仅看分母是否消失，还要检查商的正负。这里保留乘数的选择和完整变形，由你自己完成。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "习题第3题（2）出现负分母，易在只关注消分母时漏掉符号。",
+      "learningAction": "能识别负分母对整项符号的影响，并在去分母后检查符号。",
+      "related": [
+        {
+          "locationId": "ch5-every-term",
+          "label": "回看去分母的整体运算",
+          "purpose": "结合每项都参与及有理数符号规则检查变形。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p137-hw4",
+      "locationId": "ch5-q-p137-hw4",
+      "title": "习题4：先确定文字的运算范围",
+      "preview": "把“和、差、倍、几分之几”与完整对象对应。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需要把文字数量关系转方程与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "把“和、差、倍、几分之几”与完整对象对应。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "文字数量关系转方程",
+          "括号的运算范围",
+          "等量关系"
+        ],
+        "method": [
+          "（1）辨认两边各自的倍数与加减；（2）区分“与−5的和”和“与5的和”。",
+          "（3）分别确定1.2倍、3.6倍作用的整体；（4）从最外层的二分之一、四分之一向内读清各自对象。"
+        ],
+        "cautions": [
+          "“和的几倍”与“几倍再加另一数”结构不同，需要的括号也不同。",
+          "列好方程后把两边读回原句，确认未改变减法顺序。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "数量关系与方程",
+          "purpose": "本题要把文字条件转成等式，先确认每个式子表达什么量。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p137-hw5",
+      "locationId": "ch5-q-p137-hw5",
+      "title": "习题5：绳长对应周长",
+      "preview": "同时使用长宽倍数与整圈绳长，分清一组长宽和与周长。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需要把长方形周长与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "同时使用长宽倍数与整圈绳长，分清一组长宽和与周长。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "长方形周长",
+          "长宽倍数关系"
+        ],
+        "method": [
+          "先在长方形上标记两条长、两条宽，确认绳子经过哪些边；再用长宽倍数减少未知量。"
+        ],
+        "cautions": [
+          "60 m对应完整周长，不是一条长加一条宽。",
+          "长、宽均为正，答语应分别回应两种边长。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-diagram-evidence",
+          "label": "几何量与图形条件",
+          "purpose": "本题需根据图形的边和周长含义建立关系，不能凭外形或少数边猜列式。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p137-hw6",
+      "locationId": "ch5-q-p137-hw6",
+      "title": "习题6：剩下与缺少怎样还原总数",
+      "preview": "分别区分种下的、计划所需的与实际树苗总数。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需要把同一总量的两种表示与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "分别区分种下的、计划所需的与实际树苗总数。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "同一总量的两种表示",
+          "剩余与不足关系"
+        ],
+        "method": [
+          "对两种分配方式分别说明：按人数算出的数量是什么，它与实际树苗总数之间差在哪里？再寻找共同表示的量。"
+        ],
+        "cautions": [
+          "两处“6株”的意义不同，一个是实际剩下，一个是完成计划还缺的。",
+          "人数应为正整数，并须同时满足两种安排。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-same-total",
+          "label": "同一总量的两种表示",
+          "purpose": "本题与分书问题有相同的剩余和不足结构，可回顾如何还原实际总量。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p137-hw7",
+      "locationId": "ch5-q-p137-hw7",
+      "title": "习题7：米数条件与金额条件各做什么",
+      "preview": "先用总长度联系两种布，再检查总价的组成。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需要把总数量约束与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "先用总长度联系两种布，再检查总价的组成。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "总数量约束",
+          "单价×数量=总价"
+        ],
+        "method": [
+          "选一种布的长度作未知量，利用总米数表示另一种长度；再检查每种价格分别作用于哪一段长度。"
+        ],
+        "cautions": [
+          "64的单位是米，550的单位是元；总米数与总价不能直接比较。",
+          "两种长度都不能为负，最终须核对总米数和总价两项条件。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "选择相等关系",
+          "purpose": "本题利用一个条件表示未知量，再以另一总量条件列方程。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p137-hw8",
+      "locationId": "ch5-q-p137-hw8",
+      "title": "习题8：数字和不等于两位数本身",
+      "preview": "分清个位数字、十位数字与组成的两位数。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需要把数位上的数字与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "分清个位数字、十位数字与组成的两位数。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "数位上的数字",
+          "数字之间的倍数关系",
+          "两位数表示"
+        ],
+        "method": [
+          "先让两个数字满足题设的倍数与和的关系，再按十位和个位的意义组成所问的数。"
+        ],
+        "cautions": [
+          "数字和为9不是两位数等于9。",
+          "个位数字应在0—9，十位数字应在1—9；只求出一个数字尚未完整作答。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-digit-value",
+          "label": "数字与数位值",
+          "purpose": "本题先研究两个数字再求整个两位数，需分清数字与数位贡献。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-p137-hw9",
+      "locationId": "ch5-q-p137-hw9",
+      "title": "习题9：节水比例相对同一基准",
+      "preview": "区分用水占比与节水比例，并将三个田块的量放在同一关系中。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需要把百分数的基准量与题干结构联系起来，并辨认适用条件。",
+      "learningAction": "区分用水占比与节水比例，并将三个田块的量放在同一关系中。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "百分数的基准量",
+          "分量之和等于总量"
+        ],
+        "method": [
+          "（1）确认25%和15%都相对哪种灌溉方式，再分别表示另外两块田地的用水量。",
+          "（2）沿用第（1）问的数量含义，利用三块田地的总用水量自行建立关系。"
+        ],
+        "cautions": [
+          "题目说的是“用水量是漫灌的25%和15%”，不是“比漫灌少25%和15%”。",
+          "三块田地同样大使比较有共同基础；解出基准量后还要回应三块各自用水量。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-percent-base",
+          "label": "百分数的基准量",
+          "purpose": "本题两个百分率都依附漫灌用水量，需先确认同一基准。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-ex52-10",
+      "locationId": "ch5-q-ex52-10",
+      "title": "习题5.2 第10题：思路与检查",
+      "preview": "先分清去年、前年各指哪个量，再翻译倍数后的增量。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "先分清去年、前年各指哪个量，再翻译倍数后的增量。",
+      "learningAction": "求解后按原句核对两个年份的产量关系，并写清单位。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "一元一次方程表示数量关系",
+          "倍数关系与相差关系"
+        ],
+        "method": [
+          "把两个年份分别列在表中，标清已知产量和所求产量。",
+          "按“是谁的几倍”“又多多少”的顺序读题，用同一未知数表示有关量后选择等量关系。",
+          "求解后按原句核对两个年份的产量关系，并写清单位。"
+        ],
+        "cautions": [
+          "“多150 t”是在比较倍数之后补上的数量。",
+          "不要把题目已知的产量误设为仍待求的产量。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "数量关系与等量关系",
+          "purpose": "帮助把含倍数和相差的叙述转为适合列方程的关系。"
+        },
+        {
+          "locationId": "ch5-check-original",
+          "label": "原方程检验",
+          "purpose": "求解后将所得数代回检查。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-climb-time",
+      "locationId": "ch5-climb-time",
+      "title": "同时到达，不等于用时相同",
+      "preview": "从各自出发时刻算起，才是每个人实际登山的时间。",
+      "paragraphs": [
+        "“同时登上山顶”确定了相同的结束时刻，“先出发”却给出了不同的开始时刻。画时间线时，可共用一个到达点，再分别标出两人的出发点。",
+        "题目中的x已经表示张华用时。写另一人的用时前，先判断谁在山路上经历的时间更长；不要把同一钟表时刻当作相同的时间长度。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "同时到达与先后出发的条件并存，需区分时刻和时间长度。",
+      "learningAction": "能用共同结束时刻比较两人的实际用时，并自行表示另一人的登山时间。",
+      "related": []
+    },
+    {
+      "id": "ch5-q-ex52-11",
+      "locationId": "ch5-q-ex52-11",
+      "title": "习题5.2 第11题：思路与检查",
+      "preview": "同一到达时刻对应两段不同的登山用时。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "同一到达时刻对应两段不同的登山用时。",
+      "learningAction": "求出x后先查两段用时是否符合先后出发条件，再利用路程关系求题目所问的山高。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "时刻与经过时间",
+          "路程、速度、时间的关系"
+        ],
+        "method": [
+          "（1）画出共同的到达时刻，再向前标出两人的出发时刻；先判断谁用时更长，再写李明的用时。",
+          "（2）给两人的行程分别标注速度和用时，找出可以比较的路程，再自行列方程。",
+          "求出x后先查两段用时是否符合先后出发条件，再利用路程关系求题目所问的山高。"
+        ],
+        "cautions": [
+          "题中的x已指定为张华的用时，不要中途换含义。",
+          "30 min是出发时刻之差，不是任何一人的全程用时。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-elapsed-time",
+          "label": "时刻与时间长度",
+          "purpose": "用共同终点时刻确定两人的实际登山时长。"
+        },
+        {
+          "locationId": "ch5-same-reference",
+          "label": "行程的比较基准",
+          "purpose": "确认用于比较的路程有相同起点和终点。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-ex52-12",
+      "locationId": "ch5-q-ex52-12",
+      "title": "习题5.2 第12题：思路与检查",
+      "preview": "用同一段相遇时间整理两车速度，不把速度差当成速度和。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "用同一段相遇时间整理两车速度，不把速度差当成速度和。",
+      "learningAction": "解出速度后同时检查速度差和两车在给定时间内走过的总路程。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "相向而行的路程关系",
+          "速度差与未知数表示"
+        ],
+        "method": [
+          "画两地及相遇点，把两辆车走过的部分分别标在图上。",
+          "选择一辆车的速度为未知数，用题中的速度差表示另一辆车速度；根据图形寻找等量关系。",
+          "解出速度后同时检查速度差和两车在给定时间内走过的总路程。"
+        ],
+        "cautions": [
+          "两车的速度都应为正，且应符合题目中的快慢关系。",
+          "先统一时间与速度的单位再计算。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-same-reference",
+          "label": "行程的比较基准",
+          "purpose": "借助端点和相遇点确定各段路程。"
+        },
+        {
+          "locationId": "ch5-two-checks",
+          "label": "方程检验与情境检验",
+          "purpose": "检查答案是否满足路程、速度差及实际条件。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-ex52-13",
+      "locationId": "ch5-q-ex52-13",
+      "title": "习题5.2 第13题：思路与检查",
+      "preview": "先区分无风航速与顺、逆风时的实际航速。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "先区分无风航速与顺、逆风时的实际航速。",
+      "learningAction": "（2）求出无风航速后，用其中一次飞行计算航程，再用另一次飞行复核。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "顺风、逆风的速度关系",
+          "同一路程的两种表示"
+        ],
+        "method": [
+          "（1）画一张顺风、逆风两行的表，分别填写飞行时间及相对地面的速度表示。",
+          "确认两次飞行所比较的是同一段航程，再利用这些量自行建立方程。",
+          "（2）求出无风航速后，用其中一次飞行计算航程，再用另一次飞行复核。"
+        ],
+        "cautions": [
+          "题目问无风航速，不能把相对地面的顺风或逆风速度直接作为答案。",
+          "所得无风航速应能使逆风飞行速度保持为正。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-boat-condition",
+          "label": "顺逆流速度关系及条件",
+          "purpose": "把顺逆流的方向分析迁移到顺逆风飞行。"
+        },
+        {
+          "locationId": "ch5-same-total",
+          "label": "同一个量的两种表示",
+          "purpose": "识别两次飞行共同对应的航程。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-ex52-14",
+      "locationId": "ch5-q-ex52-14",
+      "title": "习题5.2 第14题：思路与检查",
+      "preview": "月历中的位置规律，还要接受真实日期范围的检验。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "月历中的位置规律，还要接受真实日期范围的检验。",
+      "learningAction": "所得候选日期既要满足总和，也要能出现在同一张普通月历的相应位置。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "相邻星期的日期关系",
+          "方程的解与实际取值范围"
+        ],
+        "method": [
+          "先在月历上观察同列相邻两行的日期间隔，给三行日期标出对应位置。",
+          "选择其中一个日期作为未知数，表示其余日期，再使用总和条件。",
+          "所得候选日期既要满足总和，也要能出现在同一张普通月历的相应位置。"
+        ],
+        "cautions": [
+          "同列日期的间隔不是相邻自然数的间隔。",
+          "出现整数解仍需检查月份的日期范围与行列位置。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-unknown-as-number",
+          "label": "用字母表示未知量",
+          "purpose": "用一个日期统一表示同列的其他日期。"
+        },
+        {
+          "locationId": "ch5-two-checks",
+          "label": "方程检验与情境检验",
+          "purpose": "区分代数上成立与月历上可实现。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-ex52-15",
+      "locationId": "ch5-q-ex52-15",
+      "title": "习题5.2 第15题：思路与检查",
+      "preview": "先把房间数量换为实际粉刷面积，再比较每人的工作量。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "先把房间数量换为实际粉刷面积，再比较每人的工作量。",
+      "learningAction": "将每组的实际总面积转为人均面积后，利用题目给出的比较条件列方程；再检查每个余量的方向。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "总工作量与人均工作量",
+          "余量、欠量的含义"
+        ],
+        "method": [
+          "以一级工和二级工为两行列表，记录人数、房间数以及未刷完或多刷的面积。",
+          "设一个房间的墙面面积为未知数，分别判断两组当天实际完成面积应怎样修正。",
+          "将每组的实际总面积转为人均面积后，利用题目给出的比较条件列方程；再检查每个余量的方向。"
+        ],
+        "cautions": [
+          "“还剩50 m²”与“多刷40 m²”不能作相同方向的处理。",
+          "题中的差值比较的是每人一天的粉刷量，不是两组总量。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "数量关系与等量关系",
+          "purpose": "先区分总量与人均量，再选择比较关系。"
+        },
+        {
+          "locationId": "ch5-two-checks",
+          "label": "方程检验与情境检验",
+          "purpose": "核查实际完成面积与余量条件是否一致。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-ex52-16",
+      "locationId": "ch5-q-ex52-16",
+      "title": "习题5.2 第16题：思路与检查",
+      "preview": "两次相距相同，可能对应相遇前和相遇后的不同位置。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "两次相距相同，可能对应相遇前和相遇后的不同位置。",
+      "learningAction": "根据示意图比较有关时间段和路程，建立关系；求出两地距离后用两次观测分别验证。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "相向运动及相遇前后的位置",
+          "钟表时刻与经过时间"
+        ],
+        "method": [
+          "把8:00、8:30、9:00标在同一时间线上，另画两人从两地相向行驶的示意图。",
+          "依次分析距离如何减小、相遇后又如何增大，判断两次距离记录对应的位置。",
+          "根据示意图比较有关时间段和路程，建立关系；求出两地距离后用两次观测分别验证。"
+        ],
+        "cautions": [
+          "“相距9 km”表示两人间的距离，不是某人走了9 km。",
+          "不要把相遇前后的有向位置混成同一条距离表达式。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-elapsed-time",
+          "label": "时刻与时间长度",
+          "purpose": "把观测时刻转为各时间段的长度。"
+        },
+        {
+          "locationId": "ch5-same-reference",
+          "label": "行程的比较基准",
+          "purpose": "在同一条路线图中比较相遇前后的距离。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-ex52-17",
+      "locationId": "ch5-q-ex52-17",
+      "title": "习题5.2 第17题：思路与检查",
+      "preview": "先确定火车通过的开始和结束事件，再描述车头的位移。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "先确定火车通过的开始和结束事件，再描述车头的位移。",
+      "learningAction": "（3）把前两问得到的速度表示放在一起，利用匀速条件自行列方程；求解后复核两个通过时间。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "路程、速度、时间",
+          "同一物体匀速运动的速度不变"
+        ],
+        "method": [
+          "（1）画出车头刚到灯下和车尾刚离开灯下两个位置，跟踪同一个端点的移动。",
+          "（2）对隧道也画出开始、结束位置，标出300 m属于哪一段；用同一个端点比较位移。",
+          "（3）把前两问得到的速度表示放在一起，利用匀速条件自行列方程；求解后复核两个通过时间。"
+        ],
+        "cautions": [
+          "灯是一个固定点，隧道有长度，两种“通过”的路程不能直接照搬。",
+          "续页中的x仍表示同一列火车的长度，单位保持一致。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-same-reference",
+          "label": "行程的比较基准",
+          "purpose": "通过固定跟踪点判断每次通过事件的路程。"
+        },
+        {
+          "locationId": "ch5-check-original",
+          "label": "原方程检验",
+          "purpose": "求出车长后检查关系是否成立。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-train-reference",
+      "locationId": "ch5-train-reference",
+      "title": "比较路程时，要跟住车上的同一个点",
+      "preview": "车头和车尾标记不同事件；路程应追踪同一个点的位置变化。",
+      "paragraphs": [
+        "先画出开始照到车身和结束照到车身的两个时刻，把灯的位置保持不动，再在两幅图中找同一个车头。这样看到的位移，才是这段时间内火车行驶的路程。",
+        "下一页的过隧道情形也可这样核对开始、结束事件。不要把“车头在哪里”与另一时刻“车尾在哪里”的距离直接当作火车的路程。请自行比较两幅图并列式。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "车头、车尾界定的时间段容易被误当成同一点的位移，需要先固定追踪对象。",
+      "learningAction": "能用起止状态图追踪同一个点，自主判断照灯和过隧道各自对应的路程。",
+      "related": []
+    },
+    {
+      "id": "ch5-q-repeating-inquiry",
+      "locationId": "ch5-q-repeating-inquiry",
+      "title": "探究与发现：无限循环小数化分数：思路与检查",
+      "preview": "按循环节长度寻找对齐办法，再说明为什么能够消去重复尾部。",
+      "paragraphs": [],
+      "learningRole": "探究；示范方法",
+      "learningGap": "按循环节长度寻找对齐办法，再说明为什么能够消去重复尾部。",
+      "learningAction": "把各组所得方法归纳成由循环节长度决定的操作，再用回除或小数展开核对代表性结果。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "等式的基本性质",
+          "十进制小数位值与循环节",
+          "分数与循环小数的表示"
+        ],
+        "method": [
+          "先读课本的示范：将待化的小数用字母表示，观察变换前后小数点右侧从哪里开始重复。",
+          "第一次“想一想”逐一处理一位循环节；每次都说明重复尾部为什么能对齐。",
+          "第二次“想一想”改为两位循环节，第三次分别处理三位、四位循环节；比较对齐时移动的位数。",
+          "把各组所得方法归纳成由循环节长度决定的操作，再用回除或小数展开核对代表性结果。"
+        ],
+        "cautions": [
+          "循环节10中的0是循环节的一部分，不能省去。",
+          "相减前要确认小数尾部逐位相同；不要把本页纯循环的做法未经调整就套到其他形式。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-same-operation",
+          "label": "等式的基本性质",
+          "purpose": "解释对小数等式实施变换时为何仍保持相等。"
+        },
+        {
+          "locationId": "ch5-repeating-alignment",
+          "label": "重复小数尾部对齐",
+          "purpose": "观察十进制位移与循环节长度之间的关系。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-repeating-alignment",
+      "locationId": "ch5-repeating-alignment",
+      "title": "乘10是为了让循环部分对齐",
+      "preview": "小数部分完全相同，相减后才会消去。",
+      "paragraphs": [
+        "这里的x表示完整的无限循环小数。乘10后，整数部分改变了，但小数部分仍是不断重复的7；所以10x与x相减，消去的是相同的小数部分，不是把末尾的数字舍去了。",
+        "下方循环节有两位的例子乘100，也是在寻找相同的小数部分。选择10还是100，取决于需要移动几位才能重新对齐，不能只看小数里出现了几个不同数字。"
+      ],
+      "learningRole": "推导或证明；示范方法",
+      "learningGap": "教材展示相减结果，但未展开乘10或100与循环部分对齐的关系。",
+      "learningAction": "能说明乘10或100的目的，并区分无限循环值与截取有限位的近似值。",
+      "related": []
+    },
+    {
+      "id": "ch5-q-ex53-example1",
+      "locationId": "ch5-q-ex53-example1",
+      "title": "5.3 例1：思路与检查",
+      "preview": "配套要求比较的是成套数量，设未知数的对象可以改变。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "配套要求比较的是成套数量，设未知数的对象可以改变。",
+      "learningAction": "检查人数是非负整数、总人数正确，并核查一天产量能够配套。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "人数总量约束",
+          "按配套比例比较产量",
+          "同一问题的不同设元方式"
+        ],
+        "method": [
+          "先把人数、每人日产量、总日产量分栏，解释课本中两个工人数表达式的来源。",
+          "对照“一螺栓配两螺母”的要求，说明为什么不能只比较两种零件的个数是否相同。",
+          "旁问：改设生产螺母的人数为x，重新填写两行表格并自行列方程；比较两种设元所得分工是否一致。",
+          "检查人数是非负整数、总人数正确，并核查一天产量能够配套。"
+        ],
+        "cautions": [
+          "每人的生产能力与需要的零件比例是两个不同条件。",
+          "换设元后，x的含义变了，不能沿用原来的另一行表达式。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "数量关系与等量关系",
+          "purpose": "在人数总量和配套条件中区分表示关系与列式依据。"
+        },
+        {
+          "locationId": "ch5-matching-workers",
+          "label": "配套数量的比较",
+          "purpose": "解释零件个数与成套数量的区别。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-matching-workers",
+      "locationId": "ch5-matching-workers",
+      "title": "配套比例说的是产品，不是工人数",
+      "preview": "先算各组一天的产量，再按一栓两母比较。",
+      "paragraphs": [
+        "右边的2作用在“螺栓数量”上，是把每个螺栓需要的2个螺母计入。两边因此都表示螺母的数量：一边是实际生产的，一边是为这些螺栓所需要的。",
+        "不能直接把生产螺母的人数定为另一组的2倍，因为每人生产两种产品的效率不同。人数要先与各自的人均产量相乘，才能比较产品的配套关系。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "配套条件虽已说明，但方程两侧量的对应和为何不能直接按人数配比尚未展开。",
+      "learningAction": "能给方程两边注明数量含义，并说明配套比例不能直接用作工人数比例。",
+      "related": []
+    },
+    {
+      "id": "ch5-q-ex53-example2",
+      "locationId": "ch5-q-ex53-example2",
+      "title": "5.3 例2：思路与检查",
+      "preview": "人数变化后要分段计算，两个阶段使用同一个工作总量单位。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "人数变化后要分段计算，两个阶段使用同一个工作总量单位。",
+      "learningAction": "结合续页框图复述从实际问题到方程，再回到实际答案的过程。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "工作量、工作效率与时间",
+          "分阶段工作的总量关系"
+        ],
+        "method": [
+          "读清“1人40 h完成”表示的工作效率，再解释把全部图书记为1的好处。",
+          "以人数变化时刻为界画两阶段表格，填写人数、时长、该阶段完成量。",
+          "追踪课本方程中每一部分对应哪一个阶段；求解后核对最初人数与增员后人数。",
+          "结合续页框图复述从实际问题到方程，再回到实际答案的过程。"
+        ],
+        "cautions": [
+          "4 h和8 h是两个阶段的时长，不能都套用增员后的总人数。",
+          "设工作总量为1时，各阶段工作量表示同一批书的比例。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "数量关系与等量关系",
+          "purpose": "把分阶段的已完成量组织为列方程的依据。"
+        },
+        {
+          "locationId": "ch5-work-unit",
+          "label": "工作总量取1",
+          "purpose": "理解工作效率与统一工作量单位。"
+        },
+        {
+          "locationId": "ch5-two-checks",
+          "label": "方程检验与情境检验",
+          "purpose": "检查人数及工作完成情况。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-work-unit",
+      "locationId": "ch5-work-unit",
+      "title": "把工作量看成1，改变的是计量单位",
+      "preview": "1表示整理完这一整批书，不表示只有一本书。",
+      "paragraphs": [
+        "把整批图书的整理量作为一个单位，就能用“完成整批的几分之几”记录进度。因此1人40 h完成整批，1 h完成的就是整批的1/40。没有给图书本数，也能计算完成比例。",
+        "这种表示还用到了题设的效率相同，以及按不变效率计算的约定。人数与工作时间相乘，再乘人均每小时完成比例，才得到这一时段完成的比例；人数本身不能与工作比例相加。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "总量取1是常用做法，但它作为计量单位的含义和人数、时间、效率相乘的量纲关系未展开。",
+      "learningAction": "能解释工作总量1与效率1/40的含义，说明它们不是图书本数。",
+      "related": []
+    },
+    {
+      "id": "ch5-two-checks",
+      "locationId": "ch5-two-checks",
+      "title": "检验要回答两个不同问题",
+      "preview": "既要满足原方程，也要符合未知量在题中的意义。",
+      "paragraphs": [
+        "代回原方程，是检查所得数值是否真的使左右两边相等；回到题意，还要检查它能否表示所设的量，以及其他条件是否都满足。前一项通过，不能自动替代后一项。",
+        "本页例2中的x表示最初安排的人数，所以它应是正整数；答语也应回答“先安排多少人”，不能把增加人手后的总人数当作x。检验前先重读设未知数的那一句。"
+      ],
+      "learningRole": "回顾与整理",
+      "learningGap": "流程图的检验环节未区分原方程检验、情境取值限制和未知量指代。",
+      "learningAction": "能分别检查原方程与实际意义，并核对答语回答的是否为所设未知量。",
+      "related": [
+        {
+          "locationId": "ch5-check-original",
+          "label": "回看原方程的检验",
+          "purpose": "先确认数值使原方程成立，再检查它是否符合实际意义。"
+        },
+        {
+          "locationId": "ch5-context-integer",
+          "label": "看场次为什么不能取分数",
+          "purpose": "比较方程有解而实际情境无法成立的例子。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-practice134-1",
+      "locationId": "ch5-q-practice134-1",
+      "title": "练习第1题：思路与检查",
+      "preview": "两队同时施工时，各自效率仍由独做时间确定。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "两队同时施工时，各自效率仍由独做时间确定。",
+      "learningAction": "求解后检查合作用时是否与两队的独做时间及效率大小相符。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "工作效率与独做时间",
+          "合作完成的工作量"
+        ],
+        "method": [
+          "统一工作量单位，分别由独做时间求两队各自每单位时间能完成的份额。",
+          "画两端施工的示意图，标明两队工作的共同时间，再独立建立完成工程的关系。",
+          "求解后检查合作用时是否与两队的独做时间及效率大小相符。"
+        ],
+        "cautions": [
+          "独做时间不能直接相加得到合作时间。",
+          "两队必须用同一工作总量作为效率的参照。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-work-unit",
+          "label": "工作总量取1",
+          "purpose": "将两队不同的独做时间转成可相加的工作效率。"
+        },
+        {
+          "locationId": "ch5-two-checks",
+          "label": "方程检验与情境检验",
+          "purpose": "利用合作应提高完成速度检查结果。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-practice134-2",
+      "locationId": "ch5-q-practice134-2",
+      "title": "练习第2题：思路与检查",
+      "preview": "“调往的人数”与“调后总人数”应分列表示。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "“调往的人数”与“调后总人数”应分列表示。",
+      "learningAction": "求解后检查两处调入人数之和、调后倍数关系及人数的整数性。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "总人数约束",
+          "变化前后数量与倍数关系"
+        ],
+        "method": [
+          "分别列甲、乙原有人数、调入人数、调后人数三栏。",
+          "选择一处调入人数为未知数，先表示另一处调入人数，再阅读倍数条件究竟比较哪一栏。",
+          "求解后检查两处调入人数之和、调后倍数关系及人数的整数性。"
+        ],
+        "cautions": [
+          "题目的两倍关系发生在调动完成后。",
+          "最终回答两处各调入多少人，不要只给调后总人数。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "数量关系与等量关系",
+          "purpose": "区分调入量的总量约束与调后人数的比较。"
+        },
+        {
+          "locationId": "ch5-two-checks",
+          "label": "方程检验与情境检验",
+          "purpose": "验证人数分配满足全部实际条件。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-practice134-3",
+      "locationId": "ch5-q-practice134-3",
+      "title": "练习第3题：思路与检查",
+      "preview": "先把部件数换成可配成的仪器数量，再考虑原材料分配。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "先把部件数换成可配成的仪器数量，再考虑原材料分配。",
+      "learningAction": "用分配结果计算仪器台数，并核对两种部件是否全部配套。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "按比例配套",
+          "原材料用量与部件产量"
+        ],
+        "method": [
+          "设一种部件使用的钢材体积，利用总钢材量表示另一种用量，分别计算可生产的部件数量。",
+          "根据每台仪器需要的部件数量，比较两种部件各能支持多少台仪器，再独立找出合适分配。",
+          "用分配结果计算仪器台数，并核对两种部件是否全部配套。"
+        ],
+        "cautions": [
+          "A、B部件的产量相等，不一定满足一台仪器的配套要求。",
+          "钢材单位是m³，部件和仪器的单位分别是个、台。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-matching-workers",
+          "label": "配套数量的比较",
+          "purpose": "从每套所需部件数出发确定产量的比较基准。"
+        },
+        {
+          "locationId": "ch5-two-checks",
+          "label": "方程检验与情境检验",
+          "purpose": "检查原材料使用量与成品配套数。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-inquiry1",
+      "locationId": "ch5-q-inquiry1",
+      "title": "探究1 销售中的盈亏：思路与检查",
+      "preview": "盈亏百分率必须与各自进价配对，估计也要说明依据。",
+      "paragraphs": [],
+      "learningRole": "探究；示范方法",
+      "learningGap": "盈亏百分率必须与各自进价配对，估计也要说明依据。",
+      "learningAction": "旁问：把计算判断与最初估计对照，说明哪一个基数差异影响了判断，并概括方程帮助解决了什么未知量。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "利润、售价与进价",
+          "百分率的基数",
+          "总收入与总成本比较"
+        ],
+        "method": [
+          "先保留自己的估计，并写下认为会盈、亏或持平的理由。",
+          "为两件衣服分别列售价、进价、盈亏率表，明确每个百分率以哪一件衣服的进价为基数。",
+          "读课本如何分别确定进价，再比较两件衣服合计的收入与成本。",
+          "旁问：把计算判断与最初估计对照，说明哪一个基数差异影响了判断，并概括方程帮助解决了什么未知量。"
+        ],
+        "cautions": [
+          "两个25%并不意味着盈亏金额相等。",
+          "题目问两件合在一起的结果，不能只判断其中一件。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-percent-base",
+          "label": "百分率的整体",
+          "purpose": "给每个百分率明确对应的进价。"
+        },
+        {
+          "locationId": "ch5-profit-base",
+          "label": "盈亏率以进价为基数",
+          "purpose": "理解利润额与盈亏率之间的关系。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-profit-base",
+      "locationId": "ch5-profit-base",
+      "title": "两个25%不能直接抵消",
+      "preview": "百分数相同，不表示对应的金额相同。",
+      "paragraphs": [
+        "两件衣服的盈亏率各自以自己的进价为基准。只有先确认基准金额相同，才能由相同的百分数判断盈亏金额相等。这里给出的相同量是售价，并不是进价。",
+        "还可先作方向判断：盈利那件的进价低于售价，亏损那件的进价高于售价。因此两次取25%所用的基准不同。列方程的作用，正是把这两个尚不知道的基准找出来。"
+      ],
+      "learningRole": "示范方法；探究",
+      "learningGap": "教材给出反驳与完整计算，但未直接拆清同百分数不能相消的基准条件。",
+      "learningAction": "能指出两次25%的基准分别是什么，并解释同售价不保证盈亏金额相等。",
+      "related": []
+    },
+    {
+      "id": "ch5-q-practice136-1",
+      "locationId": "ch5-q-practice136-1",
+      "title": "练习第1题：思路与检查",
+      "preview": "相同的是利润额，两种利润率的基数不同。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "相同的是利润额，两种利润率的基数不同。",
+      "learningAction": "求解后逐一核对进价差与利润额是否符合题意。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "利润额与利润率",
+          "进价差与未知数表示"
+        ],
+        "method": [
+          "将大、小书包分别作为两行，列出进价、利润率、利润额。",
+          "选择一种进价为未知数，利用进价差表示另一种进价，再确定两行哪一列可以比较。",
+          "求解后逐一核对进价差与利润额是否符合题意。"
+        ],
+        "cautions": [
+          "30%和20%各乘自己的进价。",
+          "利润相等不表示售价相等。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-profit-base",
+          "label": "利润率以进价为基数",
+          "purpose": "从各自进价计算各自利润额。"
+        },
+        {
+          "locationId": "ch5-percent-base",
+          "label": "百分率的整体",
+          "purpose": "防止把两个百分率套到同一个基数。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-practice136-2",
+      "locationId": "ch5-q-practice136-2",
+      "title": "练习第2题：思路与检查",
+      "preview": "成本、标价、实售价是连续变化中的三个量。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "成本、标价、实售价是连续变化中的三个量。",
+      "learningAction": "最后用实售价与成本比较，说明盈亏判断的依据。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "百分数表示提价",
+          "折扣以标价为基数",
+          "盈亏比较的基准"
+        ],
+        "method": [
+          "画出从成本到标价、再到实售价的顺序，把每次变化作用的对象标在箭头旁。",
+          "利用已知实售价反向寻找成本，或设成本为未知数按顺序表示另外两个价格。",
+          "最后用实售价与成本比较，说明盈亏判断的依据。"
+        ],
+        "cautions": [
+          "提价与打折的基数不同，不能直接把百分数增减抵消。",
+          "八折对应标价的一定比例，不能当作成本的一定比例。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-discount-bases",
+          "label": "提价与折扣的不同基数",
+          "purpose": "沿价格变化顺序确定每一步作用的对象。"
+        },
+        {
+          "locationId": "ch5-profit-base",
+          "label": "利润以进价为比较基准",
+          "purpose": "用成本和实售价完成盈亏判断。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-discount-bases",
+      "locationId": "ch5-discount-bases",
+      "title": "涨价和打折各以哪个价格为基准？",
+      "preview": "先找每次百分数所依附的价格，再比较最后的售价与成本。",
+      "paragraphs": [
+        "“提高20%”与“打八折”发生在不同阶段。可把成本价、标价、售价按顺序写成三个名称，在两个箭头旁分别标出题目给出的变化；确认每一次变化是相对箭头前的哪个价格。",
+        "涨价率与折扣不能只因都出现了20这个数就相互抵消。保留这三个价格的区别，再自行表示它们的关系和判断盈亏。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "连续价格变化的百分数基准发生切换，直接加减百分数会遗漏这一点。",
+      "learningAction": "能辨认两次变化各自的基准，自主建立成本、标价与售价的关系。",
+      "related": [
+        {
+          "locationId": "ch5-profit-base",
+          "label": "回顾百分数的基准",
+          "purpose": "先分清百分数依附的金额，再分析连续两次价格变化。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-inquiry2",
+      "locationId": "ch5-q-inquiry2",
+      "title": "探究2 球赛积分表问题：思路与检查",
+      "preview": "先用积分表验证计分规则，再区分方程的解与可行的场数。",
+      "paragraphs": [],
+      "learningRole": "探究；示范方法",
+      "learningGap": "先用积分表验证计分规则，再区分方程的解与可行的场数。",
+      "learningAction": "续页“想一想”：说清y表示哪一类比赛的场数；说明非整数解在这个情境中意味着什么，再作结论。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "表格中的数量关系",
+          "用同一未知数表示互补数量",
+          "整数取值的情境约束"
+        ],
+        "method": [
+          "（1）从条件最少的一行入手推测负一场得分，再找另一行确定胜一场得分；用其余行核验规则。",
+          "（2）先说明胜场、负场和总场数如何相连，再把各类比赛获得的积分分别表示出来。",
+          "（3）按题目要求比较两类比赛的总积分，并检查所求场数是否允许。",
+          "续页“想一想”：说清y表示哪一类比赛的场数；说明非整数解在这个情境中意味着什么，再作结论。"
+        ],
+        "cautions": [
+          "胜一场得分与所有胜场的总积分不是同一个量。",
+          "不能把不合情境的非整数解四舍五入为比赛场数。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "数量关系与等量关系",
+          "purpose": "把表格中的场数与积分组织成不同关系。"
+        },
+        {
+          "locationId": "ch5-two-checks",
+          "label": "方程检验与情境检验",
+          "purpose": "判断代数解能否作为实际比赛场数。"
+        },
+        {
+          "locationId": "ch5-table-rule-check",
+          "label": "表格规则的核验",
+          "purpose": "用多行数据检验所推测的计分规则。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-table-rule-check",
+      "locationId": "ch5-table-rule-check",
+      "title": "为什么求出规则后还要看其他行？",
+      "preview": "用来求规则的数据，与用来核对规则的数据，作用不同。",
+      "paragraphs": [
+        "用选中的行求出每场积分，只能先保证这个结果与所用的数据相符。再看其他球队，是检查同一套胜负积分规则是否能同时解释整张表。",
+        "若某一行不符合，应核对数据、运算和是否采用同一计分规则，不能为了配上那一行就临时更改它的规则。表中各队共同遵守同一规则，才支持把这个规则用于下一步。"
+      ],
+      "learningRole": "示范方法；探究",
+      "learningGap": "原文要求其他行验证，但未说明验证与求规则使用不同数据的作用。",
+      "learningAction": "能说明其他行核对是在检查同一规则的一致性，而不只是重复求解。",
+      "related": []
+    },
+    {
+      "id": "ch5-context-integer",
+      "locationId": "ch5-context-integer",
+      "title": "为什么不能把14/3场四舍五入？",
+      "preview": "取整后也许像场次，却不再保证原来的相等关系。",
+      "paragraphs": [
+        "胜场数必须是0到14之间的整数。14/3能满足所列方程，却不能表示比赛的场次；这说明要求的那种胜负总积分相等的情形不存在。",
+        "不能把它四舍五入成某个整数再作答案。取整改变了数值，必须重新检查原方程；本题的相等关系是精确要求，不是允许误差的估计。"
+      ],
+      "learningRole": "示范方法；陈述性质或结论",
+      "learningGap": "教材说明非整数不合实际，但未区分无法实现与通过取整得到近似答案。",
+      "learningAction": "能说明场次的整数和范围条件，并解释取整不能挽救不符合情境的方程解。",
+      "related": [
+        {
+          "locationId": "ch5-solution",
+          "label": "回顾方程的解",
+          "purpose": "检查取整后的数是否仍满足方程，分清近似记录和精确相等。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-practice137-1",
+      "locationId": "ch5-q-practice137-1",
+      "title": "练习第1题：思路与检查",
+      "preview": "不败缩小了比赛结果种类，但总场数与积分仍应分开表示。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "不败缩小了比赛结果种类，但总场数与积分仍应分开表示。",
+      "learningAction": "（2）重新按两类总积分的比较要求分析；检查是否存在满足场数条件的结果。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "总场数与分类场数",
+          "总积分的分项计算",
+          "场数的整数约束"
+        ],
+        "method": [
+          "（1）根据“不败”确定要记录的结果种类，用一张表分别填写场数、每场得分、各类总积分。",
+          "使用9场与21分两个条件，把一个条件用于表示未知量，再自行选另一个条件建立方程。",
+          "（2）重新按两类总积分的比较要求分析；检查是否存在满足场数条件的结果。"
+        ],
+        "cautions": [
+          "第（2）问需按它自己的要求分析，不能只重复第（1）问的答案。",
+          "比赛场数必须为非负整数。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-table-rule-check",
+          "label": "计分规则与总积分",
+          "purpose": "按不同比赛结果分别计算积分。"
+        },
+        {
+          "locationId": "ch5-two-checks",
+          "label": "方程检验与情境检验",
+          "purpose": "判断两类积分相等时是否仍有可行场数。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-practice137-2",
+      "locationId": "ch5-q-practice137-2",
+      "title": "练习第2题：思路与检查",
+      "preview": "先从两行已知记录识别每次用时，再处理次数的整数限制。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "先从两行已知记录识别每次用时，再处理次数的整数限制。",
+      "learningAction": "寻找符合次数取值范围的组合，把候选组合代回总时间条件逐一核验。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "同类活动的单位时间",
+          "表格比较与消去共同部分",
+          "非负整数解的实际意义"
+        ],
+        "method": [
+          "把七、八年级的两行记录对齐，找出相同的活动次数和不同的部分，推求各类活动每次的时长。",
+          "将所得时长用于九年级这一行，用未知数表示待填的次数并整理时间关系。",
+          "寻找符合次数取值范围的组合，把候选组合代回总时间条件逐一核验。"
+        ],
+        "cautions": [
+          "总时间的小数不是活动次数的小数，活动次数仍应为整数。",
+          "跨页表中的空格属于同一题，两个空格应联合检查。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-same-operation",
+          "label": "等式的基本性质",
+          "purpose": "理解比较两条记录时去除相同部分的依据。"
+        },
+        {
+          "locationId": "ch5-two-checks",
+          "label": "方程检验与情境检验",
+          "purpose": "筛选满足活动次数要求的解。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-inquiry3",
+      "locationId": "ch5-q-inquiry3",
+      "title": "探究3 不同能效空调的综合费用比较：思路与检查",
+      "preview": "比较费用时先统一使用年数，并把购机费和电费分开。",
+      "paragraphs": [],
+      "learningRole": "探究；示范方法",
+      "learningGap": "比较费用时先统一使用年数，并把购机费和电费分开。",
+      "learningAction": "说明结论依赖哪些题设条件，并回看原问题是否还缺少决定购买所需的使用年数。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "固定费用与累计费用",
+          "耗电量、电价与电费",
+          "相等时刻与区间比较"
+        ],
+        "method": [
+          "列出两款空调的购机费及每年电费，解释从耗电量换成电费时的单位。",
+          "以相同使用年数表示两款综合费用，读课本如何寻找费用相等的时刻。",
+          "再分别比较使用时间较短和较长的情况，把结论写成带使用年数条件的判断。",
+          "说明结论依赖哪些题设条件，并回看原问题是否还缺少决定购买所需的使用年数。"
+        ],
+        "cautions": [
+          "能耗数值不能直接与购机价格相加。",
+          "费用相等的年数只给出比较的分界，不能替代所有使用年数下的结论。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "数量关系与等量关系",
+          "purpose": "把购机费用与随时间累计的电费分别组织。"
+        },
+        {
+          "locationId": "ch5-energy-units",
+          "label": "耗电量到费用的单位转换",
+          "purpose": "统一综合费用中各项的单位。"
+        },
+        {
+          "locationId": "ch5-cost-difference",
+          "label": "固定差额与逐年差额",
+          "purpose": "解释使用年数改变时两方案的费用比较。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-energy-units",
+      "locationId": "ch5-energy-units",
+      "title": "售价为什么不乘使用年数？",
+      "preview": "售价是一次支出，电费按年累积。",
+      "paragraphs": [
+        "3000元只在购买时支付一次。640表示平均每年的耗电量，乘电价0.5后得到每年的电费，再乘t年才得到这段使用期间的电费。两部分都以元计，才可以相加。",
+        "因此式子把费用分成“固定的一次支出”和“随时间增加的支出”。这里按表中的平均年耗电量和给定电价计算；若实际年用量或电价改变，费用式中的相应数据也应调整。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "教材给出费用式，未展开固定费用与累计费用的区别及单位如何相容。",
+      "learningAction": "能逐项解释费用式的单位，并说明为什么只有年电费乘t。",
+      "related": []
+    },
+    {
+      "id": "ch5-cost-difference",
+      "locationId": "ch5-cost-difference",
+      "title": "多出来的80(t−5)表示什么？",
+      "preview": "它是3级能效费用减去1级能效费用的差。",
+      "paragraphs": [
+        "改写后，前面的3000+320t是1级能效的费用，后面80(t−5)是3级比1级多出的费用。这个差为负，表示3级费用较低，不是说某款空调的费用是负数。",
+        "80来自两款空调每年电费的差，5对应两种总费用相等的使用年数。把费用差写成80(t−5)，就能直接看出使用时间在5年前后时，差的符号为什么改变。"
+      ],
+      "learningRole": "推导或证明；示范方法",
+      "learningGap": "比较式的变形未明确剩余一项的数量含义，容易把负差误读为负费用。",
+      "learningAction": "能解释80(t−5)是两费用之差，并依据差的正负判断谁的费用较低。",
+      "related": [
+        {
+          "locationId": "ch1-deviation",
+          "label": "回顾实际量与偏差",
+          "purpose": "区分费用本身与相对另一费用多出或少了多少。"
+        },
+        {
+          "locationId": "ch5-energy-units",
+          "label": "回看综合费用的组成",
+          "purpose": "确认两个费用式分别包含一次售价和累计电费。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-practice139-1",
+      "locationId": "ch5-q-practice139-1",
+      "title": "练习第1题：思路与检查",
+      "preview": "分段单价只作用于相应页数，先判断收费相同可能落在哪一段。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "分段单价只作用于相应页数，先判断收费相同可能落在哪一段。",
+      "learningAction": "求解后核对结果属于所设范围，并按两家的原收费规则各算一次总价。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "分段计费",
+          "单价、数量与费用",
+          "方程解所属区间的检验"
+        ],
+        "method": [
+          "分别考察复印页数未超过20页和超过20页时两店怎样收费。",
+          "若需列方程，先声明所讨论的页数范围，再把甲店的不同收费段分开记录。",
+          "求解后核对结果属于所设范围，并按两家的原收费规则各算一次总价。"
+        ],
+        "cautions": [
+          "超过20页后，不能把甲店所有页数都按后一档单价计算。",
+          "复印页数应为正整数；边界页数的收费应连续核对。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-assumptions",
+          "label": "模型的适用条件",
+          "purpose": "在列方程前声明页数所在区间。"
+        },
+        {
+          "locationId": "ch5-two-checks",
+          "label": "方程检验与情境检验",
+          "purpose": "同时检验费用相等和页数范围。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-copy-tier",
+      "locationId": "ch5-copy-tier",
+      "title": "优惠单价作用于哪一部分？",
+      "preview": "“超过部分”限定了新单价的使用范围。",
+      "paragraphs": [
+        "读收费条件时，既要看达到什么页数，也要看新单价适用于全部页数还是只适用于超过的部分。本题用了“超过部分”，请把这几个字与乙店的“不论复印多少页”作比较。",
+        "列式前先判断准备使用的收费条件适用于哪个页数范围；求得页数后，还要回到这个范围和页数应为整数的条件核对。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "分段收费的适用范围易被忽略，尤其把超过部分优惠扩展到全部页数。",
+      "learningAction": "能识别单价适用的页数部分，独立分情况表示费用并检查所得页数。",
+      "related": []
+    },
+    {
+      "id": "ch5-q-practice139-2",
+      "locationId": "ch5-q-practice139-2",
+      "title": "练习第2题：思路与检查",
+      "preview": "两张票的额外收费从不同次数开始，比较要分区间。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "两张票的额外收费从不同次数开始，比较要分区间。",
+      "learningAction": "继续检查超过两种额度后的情况，把比较结果整理为按整数乘坐次数选择的规则。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "固定费用与超额费用",
+          "分段比较",
+          "实际取值为整数的次数"
+        ],
+        "method": [
+          "按两种票各自包含的次数划分比较区间，先处理大于10次但尚未超过另一张票额度的情况。",
+          "在每个区间分别记录两张票的固定费用和额外收费，寻找费用相同或高低变化的位置。",
+          "继续检查超过两种额度后的情况，把比较结果整理为按整数乘坐次数选择的规则。"
+        ],
+        "cautions": [
+          "月票内包含的次数不应再按普通单次票价重复收费。",
+          "题目限定每月超过10次；结论须覆盖这个范围内所有情况。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-cost-difference",
+          "label": "固定差额与逐次差额",
+          "purpose": "比较两方案基础费用及新增次数的费用变化。"
+        },
+        {
+          "locationId": "ch5-model-assumptions",
+          "label": "模型的适用条件",
+          "purpose": "按额度范围选择适用的费用表达方式。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-ex53-1",
+      "locationId": "ch5-q-ex53-1",
+      "title": "习题5.3 第1题：思路与检查",
+      "preview": "用一道实际例题为框图中的每一步提供证据。",
+      "paragraphs": [],
+      "learningRole": "回顾与整理；练习",
+      "learningGap": "用一道实际例题为框图中的每一步提供证据。",
+      "learningAction": "说明从方程的数值解回到实际答案时，为什么还要解释单位和取值条件。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "实际问题到一元一次方程的建模过程",
+          "代数求解与实际解释"
+        ],
+        "method": [
+          "选本节一道已读例题，指出设未知数前整理了哪些量和条件。",
+          "沿框图依次标出设元、列方程、解方程、检验与回答所对应的具体文字或计算。",
+          "说明从方程的数值解回到实际答案时，为什么还要解释单位和取值条件。"
+        ],
+        "cautions": [
+          "只背步骤名称不能显示各步的作用。",
+          "检查答案时既看等式，也看题目中的现实限制。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-two-checks",
+          "label": "方程检验与情境检验",
+          "purpose": "解释建模流程中从数值解回到实际答案的步骤。"
+        },
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "数量关系与等量关系",
+          "purpose": "说明整理数据后怎样选择列方程的依据。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-ex53-2",
+      "locationId": "ch5-q-ex53-2",
+      "title": "习题5.3 第2题：思路与检查",
+      "preview": "桌面和桌腿应按能组成的桌子数比较。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "桌面和桌腿应按能组成的桌子数比较。",
+      "learningAction": "选择分配后核验两种零件配套、材料总量和桌子数量。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "配套问题",
+          "材料用量与产量"
+        ],
+        "method": [
+          "用一种零件的木材体积表示分配方案，另列总木材的使用情况。",
+          "把桌面产量和桌腿产量分别换成能够组成的桌子数，判断哪种零件会限制成品数。",
+          "选择分配后核验两种零件配套、材料总量和桌子数量。"
+        ],
+        "cautions": [
+          "桌腿的个数不能直接当作桌子数。",
+          "要回答木材如何分配，不能只报最多桌子数。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-matching-workers",
+          "label": "配套数量的比较",
+          "purpose": "按一桌面四桌腿确定成品数量的限制。"
+        },
+        {
+          "locationId": "ch5-two-checks",
+          "label": "方程检验与情境检验",
+          "purpose": "核对用材总量及配套情况。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-ex53-3",
+      "locationId": "ch5-q-ex53-3",
+      "title": "习题5.3 第3题：思路与检查",
+      "preview": "生产天数是一项资源，产量的配套又是一项条件。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "生产天数是一项资源，产量的配套又是一项条件。",
+      "learningAction": "检查所得天数能否按题设安排，并用日产量核对最终配套的产品数量。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "时间分配与产量",
+          "配套数量关系",
+          "整数天数的约束"
+        ],
+        "method": [
+          "以两种零件为两行，列生产天数、日产量和总产量；利用总天数表示两行时间。",
+          "按一件产品对两类零件的需求比较产量，再自行列出分配关系。",
+          "检查所得天数能否按题设安排，并用日产量核对最终配套的产品数量。"
+        ],
+        "cautions": [
+          "题设不在同一天制作两种零件，要检查天数安排是否符合这一条件。",
+          "日生产能力不同，不能仅按零件需求比直接分配天数。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-matching-workers",
+          "label": "配套数量的比较",
+          "purpose": "从成品需要出发比较不同日产量下的总产量。"
+        },
+        {
+          "locationId": "ch5-two-checks",
+          "label": "方程检验与情境检验",
+          "purpose": "检查生产天数与实际排程要求。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-work-total-time",
+      "locationId": "ch5-work-total-time",
+      "title": "所设时间包括前面的合作时间吗？",
+      "preview": "总用时与第二阶段用时不能混用。",
+      "paragraphs": [
+        "这道题有先合作、再单独工作的两个阶段。设未知数时，先写明它代表全过程的时间，还是只代表后一个阶段；同一个字母在列式和答语中必须保持这一含义。",
+        "工作量按阶段相加，时间也要按相应阶段理解。请用一条时间线核对自己所写的各段时间，没有遗漏，也没有把合作的1 h计算两次。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "题目按两阶段叙述却询问总时间，未知数指代不清容易重复计算前段时间。",
+      "learningAction": "能明确未知数的时间范围，并检查各阶段用时是否重叠或遗漏。",
+      "related": [
+        {
+          "locationId": "ch5-work-unit",
+          "label": "回顾工作量的单位",
+          "purpose": "分清完成比例、工作效率和用时，再自行表示各阶段完成量。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-ex53-4",
+      "locationId": "ch5-q-ex53-4",
+      "title": "习题5.3 第4题：思路与检查",
+      "preview": "问题所求是总时长，应包含先合作的那一段。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "问题所求是总时长，应包含先合作的那一段。",
+      "learningAction": "利用工作完成条件求解后，按未知数的含义换成题目所问的总时间并复核。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "工作效率与工作量",
+          "合作和单独工作的分阶段记录"
+        ],
+        "method": [
+          "由独做时间分别确定两人效率，再记录最初合作1 h完成的部分。",
+          "画两阶段时间线，明确你设的未知数表示全部用时，还是乙单独工作的用时。",
+          "利用工作完成条件求解后，按未知数的含义换成题目所问的总时间并复核。"
+        ],
+        "cautions": [
+          "合作阶段结束时工程并未重新开始，后一段只完成余下部分。",
+          "若设的是乙单独用时，答案不能遗漏最初合作的1 h。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-work-unit",
+          "label": "工作总量取1",
+          "purpose": "把各阶段工作量写成同一整体的份额。"
+        },
+        {
+          "locationId": "ch5-work-total-time",
+          "label": "总时间与分段时间",
+          "purpose": "区分所设阶段用时与最终所问总用时。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-ex53-5",
+      "locationId": "ch5-q-ex53-5",
+      "title": "习题5.3 第5题：思路与检查",
+      "preview": "先后人数不同，完成目标也只是整批数据的一部分。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "先后人数不同，完成目标也只是整批数据的一部分。",
+      "learningAction": "求解后说明最初、后来各有多少人，并核验两段合计的已完成比例。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "按人数、时间计算工作量",
+          "分阶段工作",
+          "整体与已完成比例"
+        ],
+        "method": [
+          "由一人整理全批数据的时间确定单位效率，以增员时刻把工作分成两段。",
+          "在两阶段分别记录人数和用时，注意完成目标对应整批数据的哪一部分。",
+          "求解后说明最初、后来各有多少人，并核验两段合计的已完成比例。"
+        ],
+        "cautions": [
+          "增加5人应体现在后一阶段的人数中。",
+          "不能把“完成四分之三”误读为全部完成。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-work-unit",
+          "label": "工作总量取1",
+          "purpose": "区分整批数据和已完成的比例。"
+        },
+        {
+          "locationId": "ch5-two-checks",
+          "label": "方程检验与情境检验",
+          "purpose": "检验人数与分阶段完成量。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-ex53-6",
+      "locationId": "ch5-q-ex53-6",
+      "title": "习题5.3 第6题：思路与检查",
+      "preview": "整箱和零散产品先合成组总量，再换算成每台机器的产量。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "整箱和零散产品先合成组总量，再换算成每台机器的产量。",
+      "learningAction": "求解后从整箱与零散产品的记录重新检查，并核对每台产量的差别。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "总产量与单台产量",
+          "按箱计数与按件计数的转换"
+        ],
+        "method": [
+          "设每箱产品数为未知数，把两类机器各自一天的总产量统一表示成件数。",
+          "将两组总量分别换为每台机器一天的产量，再阅读两类机器的比较条件。",
+          "求解后从整箱与零散产品的记录重新检查，并核对每台产量的差别。"
+        ],
+        "cautions": [
+          "5台与7台的组总量不可直接用“每台多1个”比较。",
+          "箱与个是不同计数单位，需先统一。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "数量关系与等量关系",
+          "purpose": "区分组总量及单台比较条件。"
+        },
+        {
+          "locationId": "ch5-two-checks",
+          "label": "方程检验与情境检验",
+          "purpose": "核验包装记录与每台产量。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-temperature-start",
+      "locationId": "ch5-temperature-start",
+      "title": "均匀升温不表示温度与时间成倍对应",
+      "preview": "均匀描述的是同样长时间内的变化量。",
+      "paragraphs": [
+        "从表中比较相邻两次记录时，要比较时间增加多少、温度随之增加多少。“均匀”指相等时间内的温度增加量相同，不表示时间加倍，温度就加倍。",
+        "还要留意时间为0时的温度。之后的温度包含这个起始值与后来发生的变化；请据此自行建立表示并回答两问。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "均匀变化易与量值直接成正比混淆，需要保留初始温度。",
+      "learningAction": "能区分相同时间内温度增加量相等与温度随时间成比例，并自主使用初始值。",
+      "related": []
+    },
+    {
+      "id": "ch5-q-ex53-7",
+      "locationId": "ch5-q-ex53-7",
+      "title": "习题5.3 第7题：思路与检查",
+      "preview": "温度均匀变化指等时间内的变化量相同，起始温度也要保留。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "温度均匀变化指等时间内的变化量相同，起始温度也要保留。",
+      "learningAction": "（2）把目标温度与起始温度作比较，设经过时间并自行建立关系；检验该时刻处于哪两个表中时刻之间。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "均匀变化的单位时间增量",
+          "初始量与变化量",
+          "正向计算与逆向求时间"
+        ],
+        "method": [
+          "比较表中相邻记录，用相同时间间隔核验温度是否按题设均匀变化。",
+          "（1）由单位时间的变化量追踪到21 min，再结合实验开始时的记录求温度。",
+          "（2）把目标温度与起始温度作比较，设经过时间并自行建立关系；检验该时刻处于哪两个表中时刻之间。"
+        ],
+        "cautions": [
+          "0 min时已有温度，不能把实际温度全部当作升高的温度。",
+          "第（1）问求温度，第（2）问求时间，单位应分别写清。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-temperature-start",
+          "label": "初始温度与变化量",
+          "purpose": "在均匀变化中保留起始量。"
+        },
+        {
+          "locationId": "ch5-unknown-as-number",
+          "label": "用字母表示未知量",
+          "purpose": "将逆向问题中的经过时间作为可运算的未知量。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-ex53-8",
+      "locationId": "ch5-q-ex53-8",
+      "title": "习题5.3 第8题：思路与检查",
+      "preview": "面粉用量要先转成月饼数量，再按装盒要求配套。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "面粉用量要先转成月饼数量，再按装盒要求配套。",
+      "learningAction": "确定面粉分配后，按两种月饼各能装成的盒数交叉检查，并核对总面粉用量。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "单位耗料与产量",
+          "配套装盒",
+          "总材料分配"
+        ],
+        "method": [
+          "分别列大、小月饼的单位耗料及分配的面粉，得到可制作数量。",
+          "把两种数量与每盒的装配需要对应，判断怎样避免某种月饼剩余。",
+          "确定面粉分配后，按两种月饼各能装成的盒数交叉检查，并核对总面粉用量。"
+        ],
+        "cautions": [
+          "大、小月饼每个耗料不同，不能只按每盒个数比分配面粉。",
+          "所求包括面粉分配；计算中保持kg与个、盒的区别。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-matching-workers",
+          "label": "配套数量的比较",
+          "purpose": "将不同月饼的产量换成相同的装盒基准。"
+        },
+        {
+          "locationId": "ch5-two-checks",
+          "label": "方程检验与情境检验",
+          "purpose": "检验耗料总量与可装盒数量。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-ex53-9",
+      "locationId": "ch5-q-ex53-9",
+      "title": "习题5.3 第9题：思路与检查",
+      "preview": "相遇后的剩余路段，可与另一人在相遇前走过的路段对应。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "相遇后的剩余路段，可与另一人在相遇前走过的路段对应。",
+      "learningAction": "先求两人的速度，再沿刘伟相遇后的剩余路段求所需时间；用整段行程检查。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "相遇问题的路段对应",
+          "速度、路程、时间",
+          "单位换算"
+        ],
+        "method": [
+          "画出A、B与相遇点，将24 min内两人所走的路段及两段路程差标清。",
+          "再标出李明相遇后6 min走到B的路段，比较它与相遇前图中哪一段相同。",
+          "先求两人的速度，再沿刘伟相遇后的剩余路段求所需时间；用整段行程检查。"
+        ],
+        "cautions": [
+          "题目问每小时的路程，计算中的分钟应与速度单位一致。",
+          "刘伟相遇后所需时间与他从出发到A的总时间不同。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-same-reference",
+          "label": "行程的比较基准",
+          "purpose": "把相遇前后实际相同的路段对应起来。"
+        },
+        {
+          "locationId": "ch5-elapsed-time",
+          "label": "时刻与时间长度",
+          "purpose": "区分相遇前、相遇后及全程用时。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-sales-quantity-base",
+      "locationId": "ch5-sales-quantity-base",
+      "title": "降价百分比和销量增长百分比在比较什么？",
+      "preview": "一个比较单价，一个比较数量，不能直接拿来相抵。",
+      "paragraphs": [
+        "降价率以原单价为基准，销量增长率以原销售数量为基准。它们说的不是同一种量，因此不能直接把降价20%当成销量也增加20%。",
+        "题目保持不变的是销售总金额。列式前先说明这个金额由哪些量共同决定，再分别表示变化后的量；所求百分比还需回到原销售数量作比较。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "单价下降与销量上升的百分比具有不同对象和基准，不能直接相抵。",
+      "learningAction": "能辨明两种百分比各自的对象与基准，自主用不变的总金额建立关系。",
+      "related": [
+        {
+          "locationId": "ch5-profit-base",
+          "label": "回顾相同百分数的基准问题",
+          "purpose": "先辨认百分数相对哪一种原数量，再判断能否直接比较。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-ex53-10",
+      "locationId": "ch5-q-ex53-10",
+      "title": "习题5.3 第10题：思路与检查",
+      "preview": "销量增加百分比以原销量为基数，不能照搬降价百分比。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "销量增加百分比以原销量为基数，不能照搬降价百分比。",
+      "learningAction": "最终给出题目要求的增长百分比，并用前后总金额检查。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "销售金额、单价与数量",
+          "增长率的基数"
+        ],
+        "method": [
+          "将促销前后分别列成两行，分开记录单价、销量和销售金额。",
+          "利用总销售金额不变的要求确定销量之间的关系，再考察增加量占原销量的比例。",
+          "最终给出题目要求的增长百分比，并用前后总金额检查。"
+        ],
+        "cautions": [
+          "销量比原来多多少与新销量是原来的多少倍不同。",
+          "降价率与销量增长率分别作用于不同的量。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-percent-base",
+          "label": "百分率的整体",
+          "purpose": "确定销量增长率以原销量为基数。"
+        },
+        {
+          "locationId": "ch5-same-total",
+          "label": "同一个量的两种表示",
+          "purpose": "利用促销前后相同的销售总金额。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-ex53-11",
+      "locationId": "ch5-q-ex53-11",
+      "title": "习题5.3 第11题：思路与检查",
+      "preview": "三问只改变人均实际工作量的比较条件，先固定各组的表示。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "三问只改变人均实际工作量的比较条件，先固定各组的表示。",
+      "learningAction": "每问独立核查比较方向、定额的实际意义与原组总量，不把上一问结果直接带入下一问。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "定额与实际完成量",
+          "总量转人均量",
+          "相等、多于、少于的比较方向"
+        ],
+        "method": [
+          "先用同一个人均定额表示两组总工作量，再按各组人数换成人均实际工作量。",
+          "（1）按人均相等比较；（2）再按甲比乙多2件比较；（3）改按甲比乙少2件比较，分别列式求解。",
+          "每问独立核查比较方向、定额的实际意义与原组总量，不把上一问结果直接带入下一问。"
+        ],
+        "cautions": [
+          "“完成若干人的定额”不等于组内恰好有若干人。",
+          "多20件、少20件修正的是组总量，之后才计算人均量。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "数量关系与等量关系",
+          "purpose": "固定总量与人均量的表示，再替换三问的比较条件。"
+        },
+        {
+          "locationId": "ch5-two-checks",
+          "label": "方程检验与情境检验",
+          "purpose": "逐问检查定额与实际人均工作量。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-ex53-12",
+      "locationId": "ch5-q-ex53-12",
+      "title": "习题5.3 第12题：思路与检查",
+      "preview": "自拟问题前先核实积分规则，确保问题可以由表中资料支持。",
+      "paragraphs": [],
+      "learningRole": "探究；练习",
+      "learningGap": "自拟问题前先核实积分规则，确保问题可以由表中资料支持。",
+      "learningAction": "检查已有条件是否足以列出一元一次方程，求解后用原表核验，并说明答案的实际含义。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "从表格提取数量关系",
+          "提出可解的方程问题",
+          "数据和规则的核验"
+        ],
+        "method": [
+          "收集本校联赛表，注明项目、每队场数以及胜负或平局的计分规则。",
+          "选取表中一个可由其他数据确定的量，尝试隐藏它并提出明确问题。",
+          "检查已有条件是否足以列出一元一次方程，求解后用原表核验，并说明答案的实际含义。"
+        ],
+        "cautions": [
+          "本校比赛可能有平局或不同场次，不能直接照搬课本篮球表的规则。",
+          "如果信息不足，应补充真实条件或调整问题，不能猜造数据。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-table-rule-check",
+          "label": "表格规则的核验",
+          "purpose": "确认学校实际规则与每一行记录相符。"
+        },
+        {
+          "locationId": "ch5-model-assumptions",
+          "label": "模型的适用条件",
+          "purpose": "检查所提问题是否有足够且一致的条件。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-ex53-13",
+      "locationId": "ch5-q-ex53-13",
+      "title": "习题5.3 第13题：思路与检查",
+      "preview": "先将一生按时间顺序分段，分清寿命的比例与具体年数。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "先将一生按时间顺序分段，分清寿命的比例与具体年数。",
+      "learningAction": "自拟一问：选择另一明确事件，核实时间线资料足以确定它，再计算并解释。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "部分与整体的分数关系",
+          "年龄和时间段",
+          "用同一未知数表达多个阶段"
+        ],
+        "method": [
+          "把墓碑叙述按先后排列成时间线，为每一段标明它是寿命的几分之几，还是给定年数。",
+          "（1）选择寿命为未知数，检查每段起止事件后自行列方程。",
+          "（2）沿时间线追踪到当父亲的时刻，取相应的已历阶段；不要把儿子的寿命当作父亲当时的年龄。",
+          "自拟一问：选择另一明确事件，核实时间线资料足以确定它，再计算并解释。"
+        ],
+        "cautions": [
+          "“儿子的寿命为父亲的一半”中，父亲指完整寿命这一整体。",
+          "各阶段不能重叠计入，也不能遗漏给出的具体年数。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-elapsed-time",
+          "label": "时刻与时间长度",
+          "purpose": "将人生事件转成相邻阶段的经历年数。"
+        },
+        {
+          "locationId": "ch5-percent-base",
+          "label": "比例所依据的整体",
+          "purpose": "为分数条件确认同一个寿命整体。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-ex53-14",
+      "locationId": "ch5-q-ex53-14",
+      "title": "习题5.3 第14题：思路与检查",
+      "preview": "先确认促销适用范围，再比较同一原价下的实际付款。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "先确认促销适用范围，再比较同一原价下的实际付款。",
+      "learningAction": "整理结论时明确原价范围；将门槛值和费用相同值单独核对。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "满减与折扣",
+          "分段费用比较",
+          "表格观察与计算验证"
+        ],
+        "method": [
+          "（1）围绕满减门槛选取原价，分别依照两种促销规则填写付款表，门槛前后都要有记录。",
+          "（2）观察差额变化，猜测可能的费用相同点及较省钱的范围，再用计算检验。",
+          "整理结论时明确原价范围；将门槛值和费用相同值单独核对。"
+        ],
+        "cautions": [
+          "折扣作用于原价，满减需先满足门槛。",
+          "题目未说明的“每满”或多次叠加优惠不能自行加进规则。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-discount-bases",
+          "label": "折扣的基数",
+          "purpose": "从书的同一原价计算折扣付款。"
+        },
+        {
+          "locationId": "ch5-model-assumptions",
+          "label": "模型的适用条件",
+          "purpose": "按给定促销规则与门槛范围建立比较。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-promotion-threshold",
+      "locationId": "ch5-promotion-threshold",
+      "title": "“满”字给出了使用条件",
+      "preview": "先确认原价是否达到门槛，再应用优惠。",
+      "paragraphs": [
+        "这项优惠有达到门槛的条件，不能对所有原价都直接减50元。列表示，可特别留意门槛以下、恰好达到门槛和门槛以上的原价，核对每行使用的规则。",
+        "题目写的是“满100元减50元”，没有写“每满100元”。不要自行增加反复减50元的规则；在题目给出的两种方式内比较。"
+      ],
+      "learningRole": "练习；探究",
+      "learningGap": "优惠口语中门槛与重复优惠条件易被混读，需要按原题限定适用范围。",
+      "learningAction": "能按门槛判断规则是否适用，并避免添加题目没有给出的重复满减条件。",
+      "related": []
+    },
+    {
+      "id": "ch5-model-assumptions",
+      "locationId": "ch5-model-assumptions",
+      "title": "假设决定了模型能用于哪些情况",
+      "preview": "方程算对了，还要看现实是否满足建模时采用的条件。",
+      "paragraphs": [
+        "例如本节整理图书的模型把人的工作效率看成相同，并按固定效率计算工作量。这样才能用人数和时间表示完成量；如果实际效率差别很大，原来的表示就需要调整。",
+        "检验模型时，不仅查运算，还要把使用的假设与实际情况对照。计算错误要改运算，假设不适用则要改数量关系或所用数据；这就是教材说有时需要改进数学模型的原因。"
+      ],
+      "learningRole": "回顾与整理",
+      "learningGap": "建模段落提到假设与改进，但未通过本节例子区分运算错误和模型条件不适用。",
+      "learningAction": "能指出一个模型依赖的假设，并区分修改运算与修改模型的原因。",
+      "related": [
+        {
+          "locationId": "ch5-work-unit",
+          "label": "回看整理图书中的效率条件",
+          "purpose": "找出人数与时间能相乘计算工作量所依赖的条件。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-activity1",
+      "locationId": "ch5-q-activity1",
+      "title": "数学活动1 生活中的阶梯计价问题：思路与检查",
+      "preview": "阶梯收费按各档用量累计，查得的地方规则也要完整记录。",
+      "paragraphs": [],
+      "learningRole": "活动；探究",
+      "learningGap": "阶梯收费按各档用量累计，查得的地方规则也要完整记录。",
+      "learningAction": "（4）调查另一种阶梯计价，写清分档条件、未知量及等量关系；说明哪一段可用一元一次方程解决，并展示检验过程。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "阶梯单价与分段累计费用",
+          "由费用反求数量",
+          "实际计费模型的条件"
+        ],
+        "method": [
+          "（1）选取各档内及分界附近的正整数年用水量，把每档用量与相应费用分别列在表中，再求合计。",
+          "（2）先由各档累计费用判断930元对应哪一档，再在该档内设未知数求年用水量，最后按原规则复算。",
+          "（3）查询本地收费规则时记录地区、适用人口、计费周期及各档标准，据真实规则提出并解决一个问题。",
+          "（4）调查另一种阶梯计价，写清分档条件、未知量及等量关系；说明哪一段可用一元一次方程解决，并展示检验过程。"
+        ],
+        "cautions": [
+          "较高档单价只适用于落入该档的用量，不对全部用量重新计价。",
+          "本表适用于规定的家庭人口和年用量；本地规则可能不同，应按实际资料分析。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-assumptions",
+          "label": "模型的适用条件",
+          "purpose": "核实人口、周期与地区等计费条件。"
+        },
+        {
+          "locationId": "ch5-energy-units",
+          "label": "用量到费用的单位转换",
+          "purpose": "让每档数量和单价相乘后具有同一费用单位。"
+        },
+        {
+          "locationId": "ch5-water-tier",
+          "label": "阶梯计价的分段累计",
+          "purpose": "在列表和反求用水量时保留前面各档费用。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-water-tier",
+      "locationId": "ch5-water-tier",
+      "title": "进入第二阶梯，先前用水怎样收费？",
+      "preview": "阶梯单价对应各段用水量，不能把全部用水改按新单价算。",
+      "paragraphs": [
+        "阶梯计价把用水量分成几段，每段按本段的单价计费，再合计。进入第二阶梯，只是新增的一段采用第二阶梯单价，已落在第一阶梯的用水仍按第一阶梯计算。",
+        "表中的范围要与第（1）问“t是正整数”一起读。请先自行分清各段用水量，再列费用；求出用水量后，也要核对它落在哪个阶梯。"
+      ],
+      "learningRole": "探究；练习",
+      "learningGap": "阶梯表只列范围与单价，未展开逐段计费的含义及正整数条件对范围的作用。",
+      "learningAction": "能说明阶梯计价不会重算较低阶梯部分，并独立按取值范围表示费用。",
+      "related": [
+        {
+          "locationId": "ch5-copy-tier",
+          "label": "对照复印题的“超过部分”",
+          "purpose": "比较两种收费文字怎样限定不同单价适用的部分。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-activity2",
+      "locationId": "ch5-q-activity2",
+      "title": "数学活动2 木杆挂重物问题：思路与检查",
+      "preview": "实验先控制条件，再用记录支持规律；最后才把规律写成方程。",
+      "paragraphs": [],
+      "learningRole": "活动；探究",
+      "learningGap": "实验先控制条件，再用记录支持规律；最后才把规律写成方程。",
+      "learningAction": "末尾任务：说明n、l、x分别表示什么，区分已知字母与未知数，再将发现的关系写成关于x的方程，核查距离单位及取值范围。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "控制变量与测量记录",
+          "从数据归纳数量关系",
+          "含已知字母的一元一次方程"
+        ],
+        "method": [
+          "（1）先检查均匀木杆在中点支撑时能否自行平衡；（2）两端各挂相同重物后观察并记录。",
+          "（3）（4）（5）每次只改变左侧重物个数，再寻找平衡位置；固定右侧悬挂位置与重物质量，逐次记录个数和到支点的距离。",
+          "比较记录，尝试用一句数量关系描述个数变化与平衡距离变化，并用多组记录检查自己的猜想。",
+          "末尾任务：说明n、l、x分别表示什么，区分已知字母与未知数，再将发现的关系写成关于x的方程，核查距离单位及取值范围。"
+        ],
+        "cautions": [
+          "距离应从支点量起，不能一组从端点量、一组从支点量。",
+          "测量会有误差，少量偏差不能直接证明或推翻猜想；若偏差明显，先检查控制条件。",
+          "n、l作为给定量时不都是未知数，方程的未知量由问题指定。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-assumptions",
+          "label": "模型的适用条件",
+          "purpose": "明确木杆均匀、重物相同及位置固定等前提。"
+        },
+        {
+          "locationId": "ch5-linear-definition",
+          "label": "一元一次方程的定义",
+          "purpose": "区分已知参数与所求未知数，判断所建方程类型。"
+        },
+        {
+          "locationId": "ch5-balance-controls",
+          "label": "实验中保持的条件",
+          "purpose": "让不同记录可以在相同条件下比较。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-balance-controls",
+      "locationId": "ch5-balance-controls",
+      "title": "为什么要求木杆均匀、重物等重？",
+      "preview": "实验先控制这些条件，才能比较重物个数和悬挂位置。",
+      "paragraphs": [
+        "木杆质地均匀、支点设在中间，使没有外加重物时的木杆能够左右平衡；小物体等重，使“几个物体”能用来比较两边挂的重量。",
+        "如果小物体重量各不相同，相同个数也可能代表不同重量，就不能只用个数和距离来找规律。实验时保持这些条件，再观察改变个数或位置带来的变化。"
+      ],
+      "learningRole": "探究",
+      "learningGap": "材料与操作条件已给出，但它们作为比较前提的作用尚未展开。",
+      "learningAction": "能说明均匀木杆与等重物体分别控制了什么条件，并按条件开展实验。",
+      "related": []
+    },
+    {
+      "id": "ch5-balance-data",
+      "locationId": "ch5-balance-data",
+      "title": "先让记录能够互相比较",
+      "preview": "每次都记录两侧的个数与到支点的距离，再寻找关系。",
+      "paragraphs": [
+        "每组记录都对应一次重新达到平衡的状态。可将左右两侧的物体个数、到支点的距离分别列表，距离统一使用同一单位；不要把到支点的距离与到杆端的距离混在一列。",
+        "提出猜想后，用其他组数据检查，再做一次新的摆放验证。测量略有差异时应重复测量并核对条件，不能凭一组看起来合适的数据就认定规律。请保留自己的观察与列式。"
+      ],
+      "learningRole": "探究",
+      "learningGap": "实验要求发现规律，但未说明记录应包含哪些可比信息和如何核对猜想。",
+      "learningAction": "能整理可比较的平衡实验记录，并用多组数据与新实验检验自己的猜想。",
+      "related": [
+        {
+          "locationId": "ch5-balance-controls",
+          "label": "回看实验的控制条件",
+          "purpose": "核对不同次记录是否在相同材料和支点条件下取得。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-standard-nonzero",
+      "locationId": "ch5-standard-nonzero",
+      "title": "标准形式为什么仍要写a≠0？",
+      "preview": "a非零，既保留一次项，也使最后的除法有依据。",
+      "paragraphs": [
+        "a是整理后x的系数。a≠0保证x的一次项没有消失，方程仍属于这里讨论的一元一次方程；也保证从ax=−b进一步求x时可以同除以a。",
+        "“已知数”说的是a、b在当前方程中已经确定，字母写法是为了概括许多不同的方程。不能因为标准形式里出现了a、b、x三个字母，就把它看成三个未知数。"
+      ],
+      "learningRole": "回顾与整理；定义概念",
+      "learningGap": "标准形式同时出现三个字母及非零条件，需要分清已知系数、未知数和可除条件。",
+      "learningAction": "能说明标准形式中只有x是未知数，并给出a≠0在定义和求解中的作用。",
+      "related": [
+        {
+          "locationId": "ch5-nonzero",
+          "label": "回顾两边同除的非零条件",
+          "purpose": "确认从ax=−b求x时，除数a为何必须非零。"
+        },
+        {
+          "locationId": "ch5-linear-definition",
+          "label": "回顾一元一次方程的条件",
+          "purpose": "把标准形式中的已知系数与原定义中的未知数分开。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-summary1",
+      "locationId": "ch5-q-summary1",
+      "title": "回顾与思考1：概念之间的包含关系",
+      "preview": "等式与方程；一元一次方程的定义。",
+      "paragraphs": [],
+      "learningRole": "回顾与整理",
+      "learningGap": "本题需同时辨认等式与方程、一元一次方程的定义，补充具体方法与条件检查以支持独立作答。",
+      "learningAction": "能辨认等式、方程及一元一次方程的关系并举例。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "等式与方程",
+          "一元一次方程的定义"
+        ],
+        "method": [
+          "分别举例，再检查例子是否含未知数、是否为整式方程、未知数的个数与次数。",
+          "用自己的例子说明等式、方程和一元一次方程之间的关系。"
+        ],
+        "cautions": [
+          "不能用字母出现几次代替未知数个数。",
+          "举出的反例应说明究竟不满足哪一项条件。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-equation",
+          "label": "方程的定义",
+          "purpose": "辨认方程相对于一般等式增加了什么条件。"
+        },
+        {
+          "locationId": "ch5-linear-definition",
+          "label": "一元一次方程的条件",
+          "purpose": "检查你举的例子是否同时满足定义的条件。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-summary2",
+      "locationId": "ch5-q-summary2",
+      "title": "回顾与思考2：解方程为什么用等式性质",
+      "preview": "等式的性质；保持方程解不变的变形。",
+      "paragraphs": [],
+      "learningRole": "回顾与整理",
+      "learningGap": "本题需同时辨认等式的性质、保持方程解不变的变形，补充具体方法与条件检查以支持独立作答。",
+      "learningAction": "能用等式性质说明一次求解变形的合法性。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "等式的性质",
+          "保持方程解不变的变形"
+        ],
+        "method": [
+          "选一次自己熟悉的变形，分别说出两边作了什么运算，以及它如何使未知数更容易求出。"
+        ],
+        "cautions": [
+          "区分“等式仍成立”和“方程的解保持不变”；对乘除操作检查非零条件。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-same-operation",
+          "label": "等式的性质1",
+          "purpose": "解释两边同加减对相等关系的作用。"
+        },
+        {
+          "locationId": "ch5-nonzero",
+          "label": "等式性质与非零条件",
+          "purpose": "检查把性质用于解方程时的条件。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-summary3",
+      "locationId": "ch5-q-summary3",
+      "title": "回顾与思考3：说明步骤为何适合例子",
+      "preview": "一元一次方程的常用步骤；等式性质与运算律。",
+      "paragraphs": [],
+      "learningRole": "回顾与整理",
+      "learningGap": "本题需同时辨认一元一次方程的常用步骤、等式性质与运算律，补充具体方法与条件检查以支持独立作答。",
+      "learningAction": "能按方程结构说明所选步骤的依据与目的。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "一元一次方程的常用步骤",
+          "等式性质与运算律"
+        ],
+        "method": [
+          "选不同结构的方程作例子，说明哪些步骤需要、哪些可以省去。",
+          "对每次变形同时说明依据与目的，再检查是否更接近x=常数的形式。"
+        ],
+        "cautions": [
+          "一般步骤不是必须逐项执行的清单。",
+          "去括号、合并同类项与移项的依据不同，要分别说明。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-steps-choice",
+          "label": "解方程的一般步骤",
+          "purpose": "根据方程结构解释省略或调整步骤顺序的理由。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-summary4",
+      "locationId": "ch5-q-summary4",
+      "title": "回顾与思考4：字母、代数式和方程怎样相接",
+      "preview": "用字母表示数；代数式与方程。",
+      "paragraphs": [],
+      "learningRole": "回顾与整理",
+      "learningGap": "本题需同时辨认用字母表示数、代数式与方程，补充具体方法与条件检查以支持独立作答。",
+      "learningAction": "能用同一情境说明字母、代数式和方程的不同作用。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "用字母表示数",
+          "代数式与方程"
+        ],
+        "method": [
+          "从同一个简单情境出发，分别说明字母表示什么量、式子表示什么数量、方程表达什么相等条件。"
+        ],
+        "cautions": [
+          "只有代数式还没有对未知数提出相等要求；方程中的每处同一字母要保持同一含义。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-unknown-as-number",
+          "label": "未知数的字母表示",
+          "purpose": "说明未知数值尚未求出时仍可先表达数量。"
+        },
+        {
+          "locationId": "ch5-equation",
+          "label": "方程的定义",
+          "purpose": "辨别含字母的式子与含未知数的等式。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-summary5",
+      "locationId": "ch5-q-summary5",
+      "title": "回顾与思考5：从数量关系到方程",
+      "preview": "设未知数；用相等关系建立方程。",
+      "paragraphs": [],
+      "learningRole": "回顾与整理",
+      "learningGap": "本题需同时辨认设未知数、用相等关系建立方程，补充具体方法与条件检查以支持独立作答。",
+      "learningAction": "能从具体问题中区分数量表示与相等关系。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "设未知数",
+          "用相等关系建立方程"
+        ],
+        "method": [
+          "选一个已学实际问题，指出哪些关系用来表示其他量，哪个相等关系用于限制未知数。",
+          "读出等号两边各自的数量含义，并说明为什么它们相等。"
+        ],
+        "cautions": [
+          "不能只说“按题意列式”；应指出题中具体的相等关系。",
+          "两边比较的量与单位应相容。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "数量表示与列方程",
+          "purpose": "区分用来表示其他量的关系和最终构成等式的关系。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-summary6",
+      "locationId": "ch5-q-summary6",
+      "title": "回顾与思考6：数据能支持什么问题",
+      "preview": "实际问题的方程模型；模型假设与检验。",
+      "paragraphs": [],
+      "learningRole": "回顾与整理",
+      "learningGap": "本题需同时辨认实际问题的方程模型、模型假设与检验，补充具体方法与条件检查以支持独立作答。",
+      "learningAction": "能依据所收集数据提出问题、说明假设并建立可检验的模型。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "实际问题的方程模型",
+          "模型假设与检验"
+        ],
+        "method": [
+          "收集数据后，先说明每项数据记录的量和单位，再提出一个需要求未知量的问题。",
+          "判断数据能否支持所用数量关系；说明必要假设，解答后回到资料和情境检验。"
+        ],
+        "cautions": [
+          "保留资料出处、时间与计量口径，避免混用不同范围的数据。",
+          "不能为了得到方程而添加资料没有支持的数量关系。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-assumptions",
+          "label": "数学模型的假设",
+          "purpose": "检查实际资料是否满足建立方程所依赖的条件。"
+        },
+        {
+          "locationId": "ch5-two-checks",
+          "label": "方程与情境检验",
+          "purpose": "分别核对运算结果和问题的实际意义。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-review1",
+      "locationId": "ch5-q-review1",
+      "title": "复习题1：把文字中的关系准确写成等式",
+      "preview": "根据数量关系列方程；百分数的基准；总量、时间与单位量。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需同时辨认根据数量关系列方程、百分数的基准、总量、时间与单位量，补充具体方法与条件检查以支持独立作答。",
+      "learningAction": "能分别指出四种语句中的比较基准及相等关系并独立列式。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "根据数量关系列方程",
+          "百分数的基准",
+          "总量、时间与单位量"
+        ],
+        "method": [
+          "（1）先辨认最高、最低与温差所比较的量；（2）先确定45%的整体与女生人数的关系。",
+          "（3）按价格变化的先后辨认每个价格；（4）区分总棵数、天数和每天棵数，再寻找同一个量的两种表示。"
+        ],
+        "cautions": [
+          "（1）温差与温度的记录不同，注意方向和单位。",
+          "（2）（3）百分数或倍数应对应题目指定的基准；（4）所有条件中x的含义保持一致，并留意x<60。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "根据相等关系列方程",
+          "purpose": "将四小题的数量表示与真正的相等关系分开。"
+        },
+        {
+          "locationId": "ch5-percent-base",
+          "label": "百分数的共同基准",
+          "purpose": "检查第（2）题中占比对应哪一群学生。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-review2",
+      "locationId": "ch5-q-review2",
+      "title": "复习题2：逐一检验候选值",
+      "preview": "方程的解；代入求值。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需同时辨认方程的解、代入求值，补充具体方法与条件检查以支持独立作答。",
+      "learningAction": "能对每个候选值逐一检验三条方程并说明判解依据。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "方程的解",
+          "代入求值"
+        ],
+        "method": [
+          "对每个候选值分别检验三条方程：同一个候选数替换方程中的所有x，左右两边分别计算。",
+          "把候选值和方程编号对应记录，避免把某一方程的结果用于另一方程。"
+        ],
+        "cautions": [
+          "代入后逐步计算，注意减号、小数与运算顺序。",
+          "解是未知数的取值，不是代入后两边得到的共同值。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-substitute-consistently",
+          "label": "方程解的代入检验",
+          "purpose": "检查同一个候选值是否使原方程左右两边相等。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-review3",
+      "locationId": "ch5-q-review3",
+      "title": "复习题3：根据结构选择整理步骤",
+      "preview": "去分母与去括号；移项与合并同类项；系数化为1。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需同时辨认去分母与去括号、移项与合并同类项、系数化为1，补充具体方法与条件检查以支持独立作答。",
+      "learningAction": "能按四条方程的结构独立选择变形并检查符号与条件。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "去分母与去括号",
+          "移项与合并同类项",
+          "系数化为1"
+        ],
+        "method": [
+          "（1）先识别分数系数；（2）注意小数系数及两边的含x项。",
+          "（3）观察括号外的分数系数；（4）把每个分式的分子视为整体。依据这些结构选择便于计算的变形。"
+        ],
+        "cautions": [
+          "去分母必须作用于等号两边每一项，整数项也不能遗漏。",
+          "去括号时系数要作用于括号内每一项；最后同除的系数不能为0。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-steps-choice",
+          "label": "一元一次方程的解法",
+          "purpose": "按四条方程的不同结构选择必要步骤。"
+        },
+        {
+          "locationId": "ch5-every-term",
+          "label": "去分母的整体运算",
+          "purpose": "检查带分数和分式的方程是否漏乘某一项。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-review4",
+      "locationId": "ch5-q-review4",
+      "title": "复习题4：两个式子的值相等",
+      "preview": "代数式的值；建立并求解一元一次方程。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需同时辨认代数式的值、建立并求解一元一次方程，补充具体方法与条件检查以支持独立作答。",
+      "learningAction": "能把两式值相等写成方程并检验所得值。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "代数式的值",
+          "建立并求解一元一次方程"
+        ],
+        "method": [
+          "先判断每组的两个式子各自是什么，再把“值相等”的要求写成含同一个未知数的等式。",
+          "两组分别选择合适的整理步骤，所得值要分别代回本组的两个原式比较。"
+        ],
+        "cautions": [
+          "不要把“两个式子”合并成一个和或差再直接求值。",
+          "第（2）组同时有分数系数和括号，处理时保留每一项及其符号。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-equation",
+          "label": "方程表达相等条件",
+          "purpose": "把题目要求的两个式子值相等转成方程。"
+        },
+        {
+          "locationId": "ch5-check-original",
+          "label": "原方程检验",
+          "purpose": "确认求得的值确实使本组两个原式相等。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-review5",
+      "locationId": "ch5-q-review5",
+      "title": "复习题5：在面积公式中分清已知与未知",
+      "preview": "公式代入；一元一次方程；已知量与未知量。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需同时辨认公式代入、一元一次方程、已知量与未知量，补充具体方法与条件检查以支持独立作答。",
+      "learningAction": "能分别辨明三小题的已知量与所求量并代入公式求解。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "公式代入",
+          "一元一次方程",
+          "已知量与未知量"
+        ],
+        "method": [
+          "（1）（2）先在公式中标出已知的三个量和所求量，再代入条件。",
+          "（3）有一个量通过已知量表示，先判断它能否确定，再处理所求的量。"
+        ],
+        "cautions": [
+          "各小题所求字母不同，不能把上题的未知量身份直接沿用。",
+          "面积单位和长度单位要配套，表示长度的结果应为正。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-standard-nonzero",
+          "label": "已知系数与未知数",
+          "purpose": "判断字母代表已知量还是未知量应依据本小题条件。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-formula-known",
+      "locationId": "ch5-formula-known",
+      "title": "有多个字母，就有多个未知数吗？",
+      "preview": "先用已知条件判断哪些量已经能够确定。",
+      "paragraphs": [
+        "面积公式保留多个字母，是为了表示各量之间的关系。到了具体小题，要按“已知”逐一检查：有的量直接给出，有的量通过已经给出的量表示，它们未必都是未知数。",
+        "先标明本问要求的量，再判断其余量是否已可确定，最后把条件代入公式。请自行完成代入与求解，并用长度、面积的意义检查结果。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "公式中字母较多，且b由已知a给出，易把字母个数当成未知数个数。",
+      "learningAction": "能区分公式中的字母与本题真正的未知量，自主代入已知条件求解。",
+      "related": [
+        {
+          "locationId": "ch5-standard-nonzero",
+          "label": "回看已知数与未知数的区别",
+          "purpose": "判断字母的作用要看题设，不单看字母是否出现。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-review6",
+      "locationId": "ch5-q-review6",
+      "title": "复习题6：总价由哪些部分构成",
+      "preview": "单价、数量和总价；根据总量列方程。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需同时辨认单价、数量和总价、根据总量列方程，补充具体方法与条件检查以支持独立作答。",
+      "learningAction": "能区分两种商品费用与总费用，独立列式并检查单位。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "单价、数量和总价",
+          "根据总量列方程"
+        ],
+        "method": [
+          "先区分已知的矿泉水费用与需要表示的毛巾费用，说明它们怎样组成总费用。",
+          "设元后检查含未知数的量是否与“每条毛巾的售价”一致，再独立列式求解。"
+        ],
+        "cautions": [
+          "总价22元不是某一种商品的费用。",
+          "单位中的“瓶”“条”和“元”要与对应商品配对。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "用数量关系建立方程",
+          "purpose": "从商品的单项费用与总费用之间寻找相等关系。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-review7",
+      "locationId": "ch5-q-review7",
+      "title": "复习题7：用同一个未知量联系三种数量",
+      "preview": "差量关系的代数表示；各部分数量与总数。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需同时辨认差量关系的代数表示、各部分数量与总数，补充具体方法与条件检查以支持独立作答。",
+      "learningAction": "能用同一未知量表达三种奖牌数量并利用总数求解。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "差量关系的代数表示",
+          "各部分数量与总数"
+        ],
+        "method": [
+          "选择一种奖牌的数量作为未知量后，依次检查另外两种数量能否用它表示。",
+          "把所表示的数量与总奖牌数对照，再自行建立方程。"
+        ],
+        "cautions": [
+          "每个差量都有自己的比较对象，先核对金银、银铜分别比较谁。",
+          "三种奖牌数都应是非负整数，且与题干总数一致。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "数量表示与总量关系",
+          "purpose": "先建立三种数量间的联系，再使用总数条件。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-review8",
+      "locationId": "ch5-q-review8",
+      "title": "复习题8：追及要比较同一时刻的位置",
+      "preview": "路程、速度与时间；追及中的时间差；统一参照的路程。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需同时辨认路程、速度与时间、追及中的时间差、统一参照的路程，补充具体方法与条件检查以支持独立作答。",
+      "learningAction": "能区分两匹马实际用时，按同一时刻的位置建立关系。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "路程、速度与时间",
+          "追及中的时间差",
+          "统一参照的路程"
+        ],
+        "method": [
+          "先在时间线上区分快马开始跑之前与之后；明确所设时间从谁出发时算起。",
+          "描述追上那一刻两匹马各自的位置，再选择能表达同一位置的路程关系。"
+        ],
+        "cautions": [
+          "慢马提前出发，不能直接给两匹马使用相同的总用时。",
+          "题目的里是古代长度单位，本题内部单位一致即可，不必换算现代长度。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-same-reference",
+          "label": "追及中的共同参照",
+          "purpose": "确认追上时比较的路程应从同一个起点计量。"
+        },
+        {
+          "locationId": "ch5-climb-time",
+          "label": "时刻与实际用时",
+          "purpose": "区分共同结束时刻和各自经历的时间长度。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-review9",
+      "locationId": "ch5-q-review9",
+      "title": "复习题9：收益率分别以哪笔投入为基准",
+      "preview": "百分数与对应基准；总额关系与相等收益。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需同时辨认百分数与对应基准、总额关系与相等收益，补充具体方法与条件检查以支持独立作答。",
+      "learningAction": "能区分收益与投入，用各自基准表示收益并独立列式。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "百分数与对应基准",
+          "总额关系与相等收益"
+        ],
+        "method": [
+          "先辨认A、B两部分投入及其总额，再分别说明收益率应作用在哪一部分。",
+          "选择未知量后，用题中“实际收益恰好相等”检查所列方程两边的含义。"
+        ],
+        "cautions": [
+          "收益率不同，收益金额相等不表示投入金额相等。",
+          "“实际收益”与连同本金的回收总额不同；结果还应符合总投资与正值条件。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-profit-base",
+          "label": "百分数的基准",
+          "purpose": "检查两种收益率各自依附的投入金额。"
+        },
+        {
+          "locationId": "ch5-two-checks",
+          "label": "实际问题的检验",
+          "purpose": "在方程成立之后核对总投入与收益关系。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-returns-base",
+      "locationId": "ch5-returns-base",
+      "title": "收益相等，不表示投入金额相等",
+      "preview": "收益率各自以购买该基金的金额为基准。",
+      "paragraphs": [
+        "本题“实际收益”指投入之外获得的收益金额，“收益率”则把这笔收益与各自投入金额比较。两个收益率不同，不能把“收益相等”直接改写成“投入相等”。",
+        "表示每只基金的收益前，先说清它对应的投入是哪一部分；两部分投入还有题干给出的总额关系。保留这些量的区别，再自行列方程。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "收益金额、投入金额与收益率三种量容易混淆，需要确认各自基准。",
+      "learningAction": "能区分收益与投入，并按各自投入解释收益率，自主利用总额和相等条件。",
+      "related": [
+        {
+          "locationId": "ch5-profit-base",
+          "label": "回顾百分数各自的基准",
+          "purpose": "比较相同金额与相同百分数是不同的条件。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-review10",
+      "locationId": "ch5-q-review10",
+      "title": "复习题10：首次相遇与再次相遇",
+      "preview": "环形跑道上的相遇；路程、速度与时间。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需同时辨认环形跑道上的相遇、路程、速度与时间，补充具体方法与条件检查以支持独立作答。",
+      "learningAction": "能区分首次相遇与再次相遇的路程及时间起点。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "环形跑道上的相遇",
+          "路程、速度与时间"
+        ],
+        "method": [
+          "画圆周示意，标出同一点反向出发的两人，观察首次相遇前他们合走的路程怎样对应跑道。",
+          "分析再次相遇时，先说明所用时间从出发还是从首次相遇算起，再与问题要求对照。"
+        ],
+        "cautions": [
+          "再次相遇既有“从出发累计多久”的时间，也有“两次相遇之间”的间隔，答语要明确。",
+          "两人的运动方向相反，不能直接套同向追及的距离关系。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-elapsed-time",
+          "label": "时刻与时间间隔",
+          "purpose": "区分从出发累计的时间和两次相遇之间的间隔。"
+        },
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "用数量关系建立方程",
+          "purpose": "结合环形路线独立判断相遇所对应的路程关系，再表示未知量。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-review11",
+      "locationId": "ch5-q-review11",
+      "title": "复习题11：联系两次居住安排",
+      "preview": "数量的变化；余量与总量；整数条件。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "两次安排之间又飞来5只鸽子，需要先区分变化前后的总数，才能比较两种表示。",
+      "learningAction": "能区分原有鸽子与新增后的总数，并用同一时刻的数量联系两次安排。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "数量的变化",
+          "余量与总量",
+          "整数条件"
+        ],
+        "method": [
+          "分别读两种居住安排，辨认每种安排中有多少鸽子进了笼、是否还有鸽子未进笼。",
+          "选择鸽笼数或鸽子数设元，先区分原来的鸽子总数与新飞来5只后的总数，再决定怎样把两种表示还原到同一时刻。"
+        ],
+        "cautions": [
+          "第二次安排比第一次多了5只鸽子，两次总数不能直接当作相等。",
+          "“剩余3只鸽子无鸽笼可住”表示笼外还有鸽子，不能按空位处理。",
+          "原来的鸽子数和鸽笼数应为正整数，并满足两次安排。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-same-total",
+          "label": "同一总量的两种表示",
+          "purpose": "先还原到同一时刻的总量，再联系两种安排中的数量表示。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-age-same-time",
+      "locationId": "ch5-age-same-time",
+      "title": "比较年龄，先确认说的是哪个时刻",
+      "preview": "现在与题设的另一个时刻要分开，经过的年数对两人相同。",
+      "paragraphs": [
+        "题干交替使用“现在”和“当……时”，这些词限定了每个年龄所属的时刻。可先做一个两人、两个时刻的空表，将题中的条件放在对应位置。",
+        "从一个时刻到另一个时刻，两个人经过的年数相同。因此不要只改变其中一人的年龄，也不要把另一个时刻的年龄直接与现在的年龄相加。请据此自己确定未知量与相等关系。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "同一句中出现两个时刻的父女年龄，需保持时间对应，避免跨时刻随意相加。",
+      "learningAction": "能把年龄按人和时刻对应，利用共同时间变化自主建立关系。",
+      "related": []
+    },
+    {
+      "id": "ch5-q-review12",
+      "locationId": "ch5-q-review12",
+      "title": "复习题12：将年龄按时刻对应",
+      "preview": "年龄问题中的共同时间变化；倍数关系与总和关系。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需同时辨认年龄问题中的共同时间变化、倍数关系与总和关系，补充具体方法与条件检查以支持独立作答。",
+      "learningAction": "能把父女年龄按时刻对应并利用共同时间变化独立列式。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "年龄问题中的共同时间变化",
+          "倍数关系与总和关系"
+        ],
+        "method": [
+          "把父亲和女儿分别按“现在”和题设另一个时刻对应记录。",
+          "先决定未知数表示哪一个人的现在年龄，再用同样流逝的年数连接另一时刻的两人年龄。"
+        ],
+        "cautions": [
+          "某一时刻的倍数关系不能直接用于现在。",
+          "两个人在同一时间段内都增长相同的岁数，检查不要只改变其中一人。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-climb-time",
+          "label": "共同时间段与各自用时",
+          "purpose": "借共同时间轴区分两个时刻，检查两人的年龄变化是否对应同一时间段。"
+        },
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "用数量关系建立方程",
+          "purpose": "分清表示两个时刻年龄的关系与最终限制未知数的条件。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-review13",
+      "locationId": "ch5-q-review13",
+      "title": "复习题13：由积分表找规则并检验可能性",
+      "preview": "从表中识别统一计分规则；一元一次方程；非负整数的实际约束。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需同时辨认从表中识别统一计分规则、一元一次方程、非负整数的实际约束，补充具体方法与条件检查以支持独立作答。",
+      "learningAction": "能从数据识别规则并结合整数约束回答求值和可行性两问。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "从表中识别统一计分规则",
+          "一元一次方程",
+          "非负整数的实际约束"
+        ],
+        "method": [
+          "先用表中数据分析答对与答错各怎样计分，并用其他行核对规则。",
+          "（1）按该规则表示总得分，独立求答对题数；（2）在同一规则下判断所称得分能否对应合法的答题数量。"
+        ],
+        "cautions": [
+          "每题必答，所以答对与答错的题数应合为总题数。",
+          "题数必须是非负整数，且不能超出总题数；不能用四舍五入代替可行性判断。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-table-rule-check",
+          "label": "用其他数据核对规则",
+          "purpose": "确认从部分行得到的计分规则能解释全部表格。"
+        },
+        {
+          "locationId": "ch5-context-integer",
+          "label": "实际数量的整数条件",
+          "purpose": "根据题数的整数与范围条件判断第（2）问是否可能。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-score-feasibility",
+      "locationId": "ch5-score-feasibility",
+      "title": "检验一种得分是否可能，要检查什么？",
+      "preview": "分数处于高低分之间，还不保证存在对应的答题情况。",
+      "paragraphs": [
+        "题目规定每题必答，答对、答错的题数既有总数限制，也都必须是非负整数。判断一种总得分是否可能，需要检查能否找到符合这些条件的答题情况。",
+        "若用方程计算，可先保留精确结果，再回到题数条件判断；不要先取整后宣布可能。计分规则和关键列式仍请根据表中数据自行确定。"
+      ],
+      "learningRole": "练习；探究",
+      "learningGap": "处于最高最低分之间的数不一定可实现，需要检查由离散题数产生的限制。",
+      "learningAction": "能结合总题数与非负整数条件检验一种得分是否可行，而不只检查分数大小。",
+      "related": [
+        {
+          "locationId": "ch5-context-integer",
+          "label": "回看场次不能取分数的原因",
+          "purpose": "将场次数量的限制迁移到答题数量，保留自己的计分推演。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-review14",
+      "locationId": "ch5-q-review14",
+      "title": "复习题14：先找费用相等，再比较两侧",
+      "preview": "固定费用与按次费用；费用差与相等点；次数范围。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需同时辨认固定费用与按次费用、费用差与相等点、次数范围，补充具体方法与条件检查以支持独立作答。",
+      "learningAction": "能比较两种费用组成、相等条件及变化后的高低关系。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "固定费用与按次费用",
+          "费用差与相等点",
+          "次数范围"
+        ],
+        "method": [
+          "分别辨认办会员与不办会员的费用组成，说明哪部分一次支付、哪部分随次数增加。",
+          "（1）寻找两种费用相等的情况；（2）（3）比较使用次数变化时两种费用之差，而不是只看单次票价。"
+        ],
+        "cautions": [
+          "比较时使用同一时期、同一游泳次数。",
+          "会员费不能漏计；次数是非负整数，且会员证限本人在规定月份使用。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-energy-units",
+          "label": "固定费用与累计费用",
+          "purpose": "用一次支出与随使用次数累积的支出分析两种方案。"
+        },
+        {
+          "locationId": "ch5-cost-difference",
+          "label": "费用差的含义",
+          "purpose": "在费用相等的界限两侧判断哪一种总费用较低。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-q-review15",
+      "locationId": "ch5-q-review15",
+      "title": "复习题15：产量、含油率与产油量分开表示",
+      "preview": "百分比与百分点；单位面积产量与总量；同一量的多步表示。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需同时辨认百分比与百分点、单位面积产量与总量、同一量的多步表示，补充具体方法与条件检查以支持独立作答。",
+      "learningAction": "能分清籽产量、含油率和油产量，用前后面积关系独立建模。",
+      "questionGuide": {
+        "knowledgePoints": [
+          "百分比与百分点",
+          "单位面积产量与总量",
+          "同一量的多步表示"
+        ],
+        "method": [
+          "先辨认每公顷油菜籽产量、含油率与每公顷产油量各表示什么，再整理两年的已知变化。",
+          "设种植面积后，检查前后两年的面积怎样联系，以及题目最终比较的是哪一种总量。"
+        ],
+        "cautions": [
+          "“提高10个百分点”不同于“相对提高10%”。",
+          "公顷、kg等单位须对应；不能把油菜籽产量的变化直接当成产油量的变化。",
+          "求得的面积应使前后两年的面积均为正，并满足题干总产油量关系。"
+        ]
+      },
+      "related": [
+        {
+          "locationId": "ch5-percentage-points",
+          "label": "百分点与相对增长率",
+          "purpose": "正确解释含油率的变化，再分析产油量。"
+        },
+        {
+          "locationId": "ch5-model-choose-relation",
+          "label": "用数量关系建立方程",
+          "purpose": "区分表示面积、籽产量和油产量的关系，再确定最终相等条件。"
+        }
+      ]
+    },
+    {
+      "id": "ch5-percentage-points",
+      "locationId": "ch5-percentage-points",
+      "title": "“百分点”与“百分之几”有什么不同？",
+      "preview": "百分点比较两个百分率本身的差。",
+      "paragraphs": [
+        "提高若干个百分点，是把前后百分率直接比较所得的差；提高百分之几，则还要以原百分率为基准比较变化的比例。两种说法不能互换。",
+        "补充用例：某比例从20%变为23%，提高了3个百分点；相对原来20%的增幅则是3÷20=15%。请按题目原话理解含油率变化，再自行分析产量与产油量的关系。"
+      ],
+      "learningRole": "练习；定义概念",
+      "learningGap": "题干使用百分点，未在本题展开它与相对增长率的不同。",
+      "learningAction": "能区分百分点增加与相对百分比增加，并按原词义自主分析含油率。",
+      "related": []
+    }
+  ],
+  "pageDecisions": [
+    {
+      "page": 117,
+      "decision": "核对1题：章引言登山追及。小学算术尝试、PDF118的回顾与追及旁问属于同题，只保留本页入口；章研究目标的两个“怎样”不作为独立练习。 PDF117页未显示印刷页码，依据原图记为null；PDF118–155逐页核对印刷111–148。"
+    },
+    {
+      "page": 118,
+      "decision": "核对1个新题：问题1。章引言回顾及旁注追及关系归入PDF117同题，不重复建入口。"
+    },
+    {
+      "page": 119,
+      "decision": "核对1题：问题2。历史说明和方程定义不是待作答题目。"
+    },
+    {
+      "page": 120,
+      "decision": "核对4题：例1含（1）（2），练习第1、2、3题各一条。例1右侧解释方程两边含义的旁问归入例1整题引导。"
+    },
+    {
+      "page": 121,
+      "decision": "核对3题：例2含（1）（2）；上方思考分别检验x=60、x=80；下方思考比较三个方程的共同特征。三个观察对象属于一次比较任务，不拆成三题。"
+    },
+    {
+      "page": 122,
+      "decision": "核对3题：练习第1题分别判断x=2、x=4，第2题含（1）—（3）；页末负数下等式性质的思考一题。"
+    },
+    {
+      "page": 123,
+      "decision": "核对2题：例3含（1）—（4），例4含（1）—（3）。例4的解答跨PDF124，仅在本页题干设整题入口。"
+    },
+    {
+      "page": 124,
+      "decision": "核对2个新题：练习第1、2题各含（1）—（4）。页首例4（2）（3）为PDF123题目续解，不另建题。"
+    },
+    {
+      "page": 125,
+      "decision": "核对习题5.1第1—6题共6题。第1题含（1）—（6），第2题含三幅图（1）—（3），第3、4题各含（1）—（4），第5、6题无独立小问。第1题旁注是说明，不另建题。"
+    },
+    {
+      "page": 126,
+      "decision": "核对习题5.1第7—11题共5题，均无编号小问。第7—10题沿用上一页“列方程”的要求；第11题另要求用方程解决，保留自主列式与求解。"
+    },
+    {
+      "page": 127,
+      "decision": "已查看实际原图并核对印刷页码、题号与公式，本页保留4个独立题目指南入口。问题1含检验旁问；合并同类项思考、例1两问、解释x=m为何是解的通则旁注分别设入口。例1续读128页。现有概念与步骤解读保留；指南不替学生完成关键列式、计算和推演。"
+    },
+    {
+      "page": 128,
+      "decision": "已查看实际原图并核对印刷页码、题号与公式，本页保留4个独立题目指南入口。含例2和练习1—3；练习1四问逐项覆盖。现有概念与步骤解读保留；指南不替学生完成关键列式、计算和推演。"
+    },
+    {
+      "page": 129,
+      "decision": "已查看实际原图并核对印刷页码、题号与公式，本页保留2个独立题目指南入口。问题2含总量表示旁问；独立求解思考含移项图的符号变化追问，问题2续读130页。现有概念与步骤解读保留；指南不替学生完成关键列式、计算和推演。"
+    },
+    {
+      "page": 130,
+      "decision": "已查看实际原图并核对印刷页码、题号与公式，本页保留3个独立题目指南入口。含移项作用思考、例3两问、例4及其等式含义旁问；例4续读131页。现有概念与步骤解读保留；指南不替学生完成关键列式、计算和推演。"
+    },
+    {
+      "page": 131,
+      "decision": "已查看实际原图并核对印刷页码、题号与公式，本页保留5个独立题目指南入口。含练习1—4与问题3；练习1四问覆盖，问题3续读132页。现有概念与步骤解读保留；指南不替学生完成关键列式、计算和推演。"
+    },
+    {
+      "page": 132,
+      "decision": "已查看实际原图并核对印刷页码、题号与公式，本页保留2个独立题目指南入口。含例5两问与例6；例6续读133页，问题3续解不重复建题。现有概念与步骤解读保留；指南不替学生完成关键列式、计算和推演。"
+    },
+    {
+      "page": 133,
+      "decision": "已查看实际原图并核对印刷页码、题号与公式，本页保留4个独立题目指南入口。含练习1—3与问题4；练习1四问覆盖，问题4连读134页时刻表及“还能列其他方程”旁问，并在本题指南覆盖。现有概念与步骤解读保留；指南不替学生完成关键列式、计算和推演。"
+    },
+    {
+      "page": 134,
+      "decision": "已查看实际原图并核对印刷页码、题号与公式，本页保留0个独立题目指南入口。本页问题4续解与“还能列出其他方程”旁问并入133页题干入口；页末框图示例与135页步骤依据提问连读，在135页建一个独立回顾入口。无遗漏题目，不重复建立入口。现有概念与步骤解读保留；指南不替学生完成关键列式、计算和推演。"
+    },
+    {
+      "page": 135,
+      "decision": "已查看实际原图并核对印刷页码、题号与公式，本页保留2个独立题目指南入口。含框图五步依据的独立提问及例7两问；例7续读136页。现有概念与步骤解读保留；指南不替学生完成关键列式、计算和推演。"
+    },
+    {
+      "page": 136,
+      "decision": "已查看实际原图并核对印刷页码、题号与公式，本页保留3个独立题目指南入口。含练习1—3；练习1四问覆盖，例7续解不重复建题。现有概念与步骤解读保留；指南不替学生完成关键列式、计算和推演。"
+    },
+    {
+      "page": 137,
+      "decision": "已查看实际原图并核对印刷页码、题号与公式，本页保留9个独立题目指南入口。含习题5.2第1—9题；第1—4题各四问，第9题两个小问在138页，跨页仍记一道题。现有概念与步骤解读保留；指南不替学生完成关键列式、计算和推演。"
+    },
+    {
+      "page": 138,
+      "decision": "已逐页查看原页图并核对印刷页码、题号与小问；本页新建8个独立题目指南。已查看本页题干定位叠图，框紧贴题号或标题，marker位于页边且纵向落在框内。"
+    },
+    {
+      "page": 139,
+      "decision": "已逐页查看原页图并核对印刷页码、题号与小问；本页新建1个独立题目指南。另含上一页习题5.2第17题（2）（3）的续题，入口仍在138页。已查看本页题干定位叠图，框紧贴题号或标题，marker位于页边且纵向落在框内。"
+    },
+    {
+      "page": 140,
+      "decision": "已逐页查看原页图并核对印刷页码、题号与小问；本页新建2个独立题目指南。已查看本页题干定位叠图，框紧贴题号或标题，marker位于页边且纵向落在框内。"
+    },
+    {
+      "page": 141,
+      "decision": "已逐页查看原页图并核对印刷页码、题号与小问；本页新建3个独立题目指南。另含例2续解，入口仍在140页。已查看本页题干定位叠图，框紧贴题号或标题，marker位于页边且纵向落在框内。"
+    },
+    {
+      "page": 142,
+      "decision": "已逐页查看原页图并核对印刷页码、题号与小问；本页新建1个独立题目指南。已查看本页题干定位叠图，框紧贴题号或标题，marker位于页边且纵向落在框内。"
+    },
+    {
+      "page": 143,
+      "decision": "已逐页查看原页图并核对印刷页码、题号与小问；本页新建3个独立题目指南。已查看本页题干定位叠图，框紧贴题号或标题，marker位于页边且纵向落在框内。"
+    },
+    {
+      "page": 144,
+      "decision": "已逐页查看原页图并核对印刷页码、题号与小问；本页新建2个独立题目指南。另含探究2续解及想一想，均并入143页探究2。已查看本页题干定位叠图，框紧贴题号或标题，marker位于页边且纵向落在框内。"
+    },
+    {
+      "page": 145,
+      "decision": "已逐页查看原页图并核对印刷页码、题号与小问；本页新建1个独立题目指南。另含144页练习第2题的续表，合并在原题入口。已查看本页题干定位叠图，框紧贴题号或标题，marker位于页边且纵向落在框内。"
+    },
+    {
+      "page": 146,
+      "decision": "已逐页查看原页图并核对印刷页码、题号与小问；本页新建2个独立题目指南。另含探究3续解，入口仍在145页。已查看本页题干定位叠图，框紧贴题号或标题，marker位于页边且纵向落在框内。"
+    },
+    {
+      "page": 147,
+      "decision": "已逐页查看原页图并核对印刷页码、题号与小问；本页新建9个独立题目指南。已查看本页题干定位叠图，框紧贴题号或标题，marker位于页边且纵向落在框内。"
+    },
+    {
+      "page": 148,
+      "decision": "已逐页查看原页图并核对印刷页码、题号与小问；本页新建5个独立题目指南。已查看本页题干定位叠图，框紧贴题号或标题，marker位于页边且纵向落在框内。"
+    },
+    {
+      "page": 149,
+      "decision": "已逐页查看原页图并核对印刷页码、题号与小问；本页新建0个独立题目指南。逐页原图核对：本页为数学模型介绍。“什么是模型呢”紧接定义说明，不是单独作答任务。"
+    },
+    {
+      "page": 150,
+      "decision": "已逐页查看原页图并核对印刷页码、题号与小问；本页新建2个独立题目指南。已查看本页题干定位叠图，框紧贴题号或标题，marker位于页边且纵向落在框内。"
+    },
+    {
+      "page": 151,
+      "decision": "已逐页查看原页图并核对印刷页码、题号与小问；本页新建0个独立题目指南。逐页原图核对：活动2的第（5）步、规律探究与列方程任务均并入150页活动2，未重复入口。"
+    },
+    {
+      "page": 152,
+      "decision": "已逐页查看原页图并核对印刷页码、题号与小问；本页新建0个独立题目指南。逐页原图核对：本页为小结结构图和陈述说明；六道明确复习思考题从153页开始，已在153页逐题登记。"
+    },
+    {
+      "page": 153,
+      "decision": "按原图逐题核对小结回顾与思考第1—6题、复习题5第1—2题，均有独立题干入口与知识、方法、注意事项及关联；四问与三问分别完整覆盖。原有概念和步骤解读保持。"
+    },
+    {
+      "page": 154,
+      "decision": "逐题补齐复习题5第3—9题，共7题；解方程4小问、两式相等2小问、公式3小问完整覆盖。保留公式字母与收益基准的局部解读，题目入口另定位题干。"
+    },
+    {
+      "page": 155,
+      "decision": "逐题补齐复习题5第10—15题，共6题；第13题2小问与第14题3小问完整覆盖。第10题首次和再次相遇都在指南中区分；保留年龄对应、整数可行性和百分点的局部解读。"
+    }
+  ],
+  "questionCoverage": {
+    "status": "source-checked",
+    "basis": "逐页查看PDF117–155：例题、问题、练习、习题、复习题及明确要求作答的思考、探究、活动共126个整题；连续小问和同题旁问合并，跨页题保留题干页唯一入口。单纯说明与提纲不另立题。",
+    "items": [
+      {
+        "label": "章引言：甲、乙两支登山队",
+        "page": 117,
+        "supplementId": "ch5-q-p117-intro",
+        "parts": []
+      },
+      {
+        "label": "问题1",
+        "page": 118,
+        "supplementId": "ch5-q-p118-problem1",
+        "parts": []
+      },
+      {
+        "label": "问题2",
+        "page": 119,
+        "supplementId": "ch5-q-p119-problem2",
+        "parts": []
+      },
+      {
+        "label": "例1",
+        "page": 120,
+        "supplementId": "ch5-q-p120-example1",
+        "parts": [
+          "（1）女生人数与全校人数",
+          "（2）正方形绿地加宽"
+        ]
+      },
+      {
+        "label": "练习 第1题",
+        "page": 120,
+        "supplementId": "ch5-q-p120-exercise1",
+        "parts": []
+      },
+      {
+        "label": "练习 第2题",
+        "page": 120,
+        "supplementId": "ch5-q-p120-exercise2",
+        "parts": []
+      },
+      {
+        "label": "练习 第3题",
+        "page": 120,
+        "supplementId": "ch5-q-p120-exercise3",
+        "parts": []
+      },
+      {
+        "label": "例2",
+        "page": 121,
+        "supplementId": "ch5-q-p121-example2",
+        "parts": [
+          "（1）x=2、x=3/2与方程2x=3",
+          "（2）x=10、x=20与方程3x=4(x−5)"
+        ]
+      },
+      {
+        "label": "思考：检验x=60、x=80",
+        "page": 121,
+        "supplementId": "ch5-q-p121-thinking1",
+        "parts": [
+          "x=60是否是解",
+          "x=80是否是解"
+        ]
+      },
+      {
+        "label": "思考：观察三个方程的共同特征",
+        "page": 121,
+        "supplementId": "ch5-q-p121-thinking2",
+        "parts": []
+      },
+      {
+        "label": "练习 第1题",
+        "page": 122,
+        "supplementId": "ch5-q-p122-exercise1",
+        "parts": [
+          "x=2是否是解",
+          "x=4是否是解"
+        ]
+      },
+      {
+        "label": "练习 第2题",
+        "page": 122,
+        "supplementId": "ch5-q-p122-exercise2",
+        "parts": [
+          "（1）2+3=3+2",
+          "（2）8y−9=9−y",
+          "（3）x²+2x+1=4"
+        ]
+      },
+      {
+        "label": "思考：引入负数后等式性质是否成立",
+        "page": 122,
+        "supplementId": "ch5-q-p122-thinking",
+        "parts": []
+      },
+      {
+        "label": "例3",
+        "page": 123,
+        "supplementId": "ch5-q-p123-example3",
+        "parts": [
+          "（1）2x=5−x的等式填空",
+          "（2）m+2n=5+2n的等式填空",
+          "（3）x=−4的等式填空",
+          "（4）3m=4n的等式填空"
+        ]
+      },
+      {
+        "label": "例4",
+        "page": 123,
+        "supplementId": "ch5-q-p123-example4",
+        "parts": [
+          "（1）x+7=26",
+          "（2）−5x=20",
+          "（3）−(1/3)x−5=4"
+        ]
+      },
+      {
+        "label": "练习 第1题",
+        "page": 124,
+        "supplementId": "ch5-q-p124-exercise1",
+        "parts": [
+          "（1）x=y时x+1的等式填空",
+          "（2）x+2=y+2的等式填空",
+          "（3）x=y时5y的等式填空",
+          "（4）3x=6y的等式填空"
+        ]
+      },
+      {
+        "label": "练习 第2题",
+        "page": 124,
+        "supplementId": "ch5-q-p124-exercise2",
+        "parts": [
+          "（1）x−5=6",
+          "（2）0.3x=45",
+          "（3）5x+4=0",
+          "（4）2−(1/4)x=3"
+        ]
+      },
+      {
+        "label": "习题5.1 第1题",
+        "page": 125,
+        "supplementId": "ch5-q-p125-exercise1",
+        "parts": [
+          "（1）比a大5的数",
+          "（2）b的三分之一",
+          "（3）x的2倍与10的和",
+          "（4）x的三分之一与y的差",
+          "（5）比a的3倍大5的数",
+          "（6）比b的一半小7的数"
+        ]
+      },
+      {
+        "label": "习题5.1 第2题",
+        "page": 125,
+        "supplementId": "ch5-q-p125-exercise2",
+        "parts": [
+          "（1）三角形的周长",
+          "（2）三角形的内角",
+          "（3）三角形的面积"
+        ]
+      },
+      {
+        "label": "习题5.1 第3题",
+        "page": 125,
+        "supplementId": "ch5-q-p125-exercise3",
+        "parts": [
+          "（1）5x+7=7−2x",
+          "（2）6x−8=8x−4",
+          "（3）3x−2=4+x",
+          "（4）2x−3=5x−6"
+        ]
+      },
+      {
+        "label": "习题5.1 第4题",
+        "page": 125,
+        "supplementId": "ch5-q-p125-exercise4",
+        "parts": [
+          "（1）x−4=29",
+          "（2）(1/2)x+2=6",
+          "（3）3x+1=4",
+          "（4）4x−2=2"
+        ]
+      },
+      {
+        "label": "习题5.1 第5题",
+        "page": 125,
+        "supplementId": "ch5-q-p125-exercise5",
+        "parts": []
+      },
+      {
+        "label": "习题5.1 第6题",
+        "page": 125,
+        "supplementId": "ch5-q-p125-exercise6",
+        "parts": []
+      },
+      {
+        "label": "习题5.1 第7题",
+        "page": 126,
+        "supplementId": "ch5-q-p126-exercise7",
+        "parts": []
+      },
+      {
+        "label": "习题5.1 第8题",
+        "page": 126,
+        "supplementId": "ch5-q-p126-exercise8",
+        "parts": []
+      },
+      {
+        "label": "习题5.1 第9题",
+        "page": 126,
+        "supplementId": "ch5-q-p126-exercise9",
+        "parts": []
+      },
+      {
+        "label": "习题5.1 第10题",
+        "page": 126,
+        "supplementId": "ch5-q-p126-exercise10",
+        "parts": []
+      },
+      {
+        "label": "习题5.1 第11题",
+        "page": 126,
+        "supplementId": "ch5-q-p126-exercise11",
+        "parts": []
+      },
+      {
+        "label": "问题1（三年购买计算机）",
+        "page": 127,
+        "supplementId": "ch5-q-p127-problem1",
+        "parts": [
+          "旁问：检验给出的数是否为方程的解"
+        ]
+      },
+      {
+        "label": "思考：合并同类项起了什么作用",
+        "page": 127,
+        "supplementId": "ch5-q-p127-think",
+        "parts": []
+      },
+      {
+        "label": "例1（含（1）（2））",
+        "page": 127,
+        "supplementId": "ch5-q-p127-example1",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "例1旁注：为什么得到x=m后m是解",
+        "page": 127,
+        "supplementId": "ch5-q-p127-why-solution",
+        "parts": []
+      },
+      {
+        "label": "例2（相邻三个数）",
+        "page": 128,
+        "supplementId": "ch5-q-p128-example2",
+        "parts": []
+      },
+      {
+        "label": "印刷121页练习第1题（含（1）—（4））",
+        "page": 128,
+        "supplementId": "ch5-q-p128-practice1",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）",
+          "（4）"
+        ]
+      },
+      {
+        "label": "印刷121页练习第2题",
+        "page": 128,
+        "supplementId": "ch5-q-p128-practice2",
+        "parts": []
+      },
+      {
+        "label": "印刷121页练习第3题",
+        "page": 128,
+        "supplementId": "ch5-q-p128-practice3",
+        "parts": []
+      },
+      {
+        "label": "问题2（分图书）",
+        "page": 129,
+        "supplementId": "ch5-q-p129-problem2",
+        "parts": [
+          "旁问：这批书的总数有几种表示方法？它们之间有什么关系？"
+        ]
+      },
+      {
+        "label": "思考：怎样化成x=m的形式",
+        "page": 129,
+        "supplementId": "ch5-q-p129-think",
+        "parts": [
+          "旁问：移到另一边时，这项有什么变化？"
+        ]
+      },
+      {
+        "label": "思考：移项起了什么作用",
+        "page": 130,
+        "supplementId": "ch5-q-p130-think",
+        "parts": []
+      },
+      {
+        "label": "例3（含（1）（2））",
+        "page": 130,
+        "supplementId": "ch5-q-p130-example3",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "例4（新旧工艺废水排量）",
+        "page": 130,
+        "supplementId": "ch5-q-p130-example4",
+        "parts": [
+          "旁问：等式两边代表哪个数量？"
+        ]
+      },
+      {
+        "label": "印刷124页练习第1题（含（1）—（4））",
+        "page": 131,
+        "supplementId": "ch5-q-p131-practice1",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）",
+          "（4）"
+        ]
+      },
+      {
+        "label": "印刷124页练习第2题",
+        "page": 131,
+        "supplementId": "ch5-q-p131-practice2",
+        "parts": []
+      },
+      {
+        "label": "印刷124页练习第3题",
+        "page": 131,
+        "supplementId": "ch5-q-p131-practice3",
+        "parts": []
+      },
+      {
+        "label": "印刷124页练习第4题",
+        "page": 131,
+        "supplementId": "ch5-q-p131-practice4",
+        "parts": []
+      },
+      {
+        "label": "问题3（工厂节约用电）",
+        "page": 131,
+        "supplementId": "ch5-q-p131-problem3",
+        "parts": []
+      },
+      {
+        "label": "例5（含（1）（2））",
+        "page": 132,
+        "supplementId": "ch5-q-p132-example5",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "例6（顺逆水航行）",
+        "page": 132,
+        "supplementId": "ch5-q-p132-example6",
+        "parts": []
+      },
+      {
+        "label": "印刷126页练习第1题（含（1）—（4））",
+        "page": 133,
+        "supplementId": "ch5-q-p133-practice1",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）",
+          "（4）"
+        ]
+      },
+      {
+        "label": "印刷126页练习第2题",
+        "page": 133,
+        "supplementId": "ch5-q-p133-practice2",
+        "parts": []
+      },
+      {
+        "label": "印刷126页练习第3题",
+        "page": 133,
+        "supplementId": "ch5-q-p133-practice3",
+        "parts": []
+      },
+      {
+        "label": "问题4（匀速汽车行程）",
+        "page": 133,
+        "supplementId": "ch5-q-p133-problem4",
+        "parts": [
+          "旁问：你还能列出其他方程吗？（续页）"
+        ]
+      },
+      {
+        "label": "解方程框图旁注：说出每个步骤的依据",
+        "page": 135,
+        "supplementId": "ch5-q-p135-step-reasons",
+        "parts": []
+      },
+      {
+        "label": "例7（含（1）（2））",
+        "page": 135,
+        "supplementId": "ch5-q-p135-example7",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "印刷129页练习第1题（含（1）—（4））",
+        "page": 136,
+        "supplementId": "ch5-q-p136-practice1",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）",
+          "（4）"
+        ]
+      },
+      {
+        "label": "印刷129页练习第2题",
+        "page": 136,
+        "supplementId": "ch5-q-p136-practice2",
+        "parts": []
+      },
+      {
+        "label": "印刷129页练习第3题",
+        "page": 136,
+        "supplementId": "ch5-q-p136-practice3",
+        "parts": []
+      },
+      {
+        "label": "习题5.2第1题（含（1）—（4））",
+        "page": 137,
+        "supplementId": "ch5-q-p137-hw1",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）",
+          "（4）"
+        ]
+      },
+      {
+        "label": "习题5.2第2题（含（1）—（4））",
+        "page": 137,
+        "supplementId": "ch5-q-p137-hw2",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）",
+          "（4）"
+        ]
+      },
+      {
+        "label": "习题5.2第3题（含（1）—（4））",
+        "page": 137,
+        "supplementId": "ch5-q-p137-hw3",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）",
+          "（4）"
+        ]
+      },
+      {
+        "label": "习题5.2第4题（含（1）—（4））",
+        "page": 137,
+        "supplementId": "ch5-q-p137-hw4",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）",
+          "（4）"
+        ]
+      },
+      {
+        "label": "习题5.2第5题",
+        "page": 137,
+        "supplementId": "ch5-q-p137-hw5",
+        "parts": []
+      },
+      {
+        "label": "习题5.2第6题",
+        "page": 137,
+        "supplementId": "ch5-q-p137-hw6",
+        "parts": []
+      },
+      {
+        "label": "习题5.2第7题",
+        "page": 137,
+        "supplementId": "ch5-q-p137-hw7",
+        "parts": []
+      },
+      {
+        "label": "习题5.2第8题",
+        "page": 137,
+        "supplementId": "ch5-q-p137-hw8",
+        "parts": []
+      },
+      {
+        "label": "习题5.2第9题（含（1）（2），续印刷131页）",
+        "page": 137,
+        "supplementId": "ch5-q-p137-hw9",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "习题5.2 第10题",
+        "page": 138,
+        "supplementId": "ch5-q-ex52-10",
+        "parts": []
+      },
+      {
+        "label": "习题5.2 第11题",
+        "page": 138,
+        "supplementId": "ch5-q-ex52-11",
+        "parts": [
+          "（1）用含x的式子表示李明的登山时间",
+          "（2）用方程求x，判断并求山高"
+        ]
+      },
+      {
+        "label": "习题5.2 第12题",
+        "page": 138,
+        "supplementId": "ch5-q-ex52-12",
+        "parts": []
+      },
+      {
+        "label": "习题5.2 第13题",
+        "page": 138,
+        "supplementId": "ch5-q-ex52-13",
+        "parts": [
+          "（1）求无风时平均航速",
+          "（2）求两机场间航程"
+        ]
+      },
+      {
+        "label": "习题5.2 第14题",
+        "page": 138,
+        "supplementId": "ch5-q-ex52-14",
+        "parts": []
+      },
+      {
+        "label": "习题5.2 第15题",
+        "page": 138,
+        "supplementId": "ch5-q-ex52-15",
+        "parts": []
+      },
+      {
+        "label": "习题5.2 第16题",
+        "page": 138,
+        "supplementId": "ch5-q-ex52-16",
+        "parts": []
+      },
+      {
+        "label": "习题5.2 第17题",
+        "page": 138,
+        "supplementId": "ch5-q-ex52-17",
+        "parts": [
+          "（1）表示通过灯下时的路程和速度",
+          "（2）表示通过隧道时的路程和速度（PDF139页）",
+          "（3）求火车长度（PDF139页）"
+        ]
+      },
+      {
+        "label": "探究与发现：无限循环小数化分数",
+        "page": 139,
+        "supplementId": "ch5-q-repeating-inquiry",
+        "parts": [
+          "判断无限循环小数能否化成整数之比并寻找方法",
+          "第一次想一想：循环节为1，2，…，9的各数",
+          "第二次想一想：循环节为10，12，…，98的各数",
+          "第三次想一想：循环节为735、8231的数，并总结一般方法"
+        ]
+      },
+      {
+        "label": "5.3 例1",
+        "page": 140,
+        "supplementId": "ch5-q-ex53-example1",
+        "parts": [
+          "分配生产螺栓、螺母的工人数",
+          "旁注追问：若改设生产螺母的人数为x，怎样列方程"
+        ]
+      },
+      {
+        "label": "5.3 例2",
+        "page": 140,
+        "supplementId": "ch5-q-ex53-example2",
+        "parts": []
+      },
+      {
+        "label": "印刷134页 练习第1题",
+        "page": 141,
+        "supplementId": "ch5-q-practice134-1",
+        "parts": []
+      },
+      {
+        "label": "印刷134页 练习第2题",
+        "page": 141,
+        "supplementId": "ch5-q-practice134-2",
+        "parts": []
+      },
+      {
+        "label": "印刷134页 练习第3题",
+        "page": 141,
+        "supplementId": "ch5-q-practice134-3",
+        "parts": [
+          "安排制作A、B部件的钢材用量",
+          "求最多可制成的仪器台数"
+        ]
+      },
+      {
+        "label": "探究1 销售中的盈亏",
+        "page": 142,
+        "supplementId": "ch5-q-inquiry1",
+        "parts": [
+          "先估计两件衣服总的盈亏",
+          "根据数据判断总的盈亏",
+          "反思计算与估计是否一致及对方程应用的新认识"
+        ]
+      },
+      {
+        "label": "印刷136页 练习第1题",
+        "page": 143,
+        "supplementId": "ch5-q-practice136-1",
+        "parts": []
+      },
+      {
+        "label": "印刷136页 练习第2题",
+        "page": 143,
+        "supplementId": "ch5-q-practice136-2",
+        "parts": []
+      },
+      {
+        "label": "探究2 球赛积分表问题",
+        "page": 143,
+        "supplementId": "ch5-q-inquiry2",
+        "parts": [
+          "（1）求胜一场与负一场的积分",
+          "（2）表示总积分与胜、负场数的数量关系",
+          "（3）判断胜场总积分能否等于负场总积分（续PDF144页）",
+          "PDF144页想一想：y表示的量、能否取非整数及相应结论"
+        ]
+      },
+      {
+        "label": "印刷137页 练习第1题",
+        "page": 144,
+        "supplementId": "ch5-q-practice137-1",
+        "parts": [
+          "（1）求9场不败比赛的胜场数和平场数",
+          "（2）判断胜场总积分能否等于平场总积分"
+        ]
+      },
+      {
+        "label": "印刷137页 练习第2题",
+        "page": 144,
+        "supplementId": "ch5-q-practice137-2",
+        "parts": []
+      },
+      {
+        "label": "探究3 不同能效空调的综合费用比较",
+        "page": 145,
+        "supplementId": "ch5-q-inquiry3",
+        "parts": [
+          "根据给定售价、电价与年耗电量比较两款空调综合费用",
+          "结合使用年数判断哪款费用较低（分析续PDF146页）"
+        ]
+      },
+      {
+        "label": "印刷139页 练习第1题",
+        "page": 146,
+        "supplementId": "ch5-q-practice139-1",
+        "parts": []
+      },
+      {
+        "label": "印刷139页 练习第2题",
+        "page": 146,
+        "supplementId": "ch5-q-practice139-2",
+        "parts": []
+      },
+      {
+        "label": "习题5.3 第1题",
+        "page": 147,
+        "supplementId": "ch5-q-ex53-1",
+        "parts": []
+      },
+      {
+        "label": "习题5.3 第2题",
+        "page": 147,
+        "supplementId": "ch5-q-ex53-2",
+        "parts": []
+      },
+      {
+        "label": "习题5.3 第3题",
+        "page": 147,
+        "supplementId": "ch5-q-ex53-3",
+        "parts": []
+      },
+      {
+        "label": "习题5.3 第4题",
+        "page": 147,
+        "supplementId": "ch5-q-ex53-4",
+        "parts": []
+      },
+      {
+        "label": "习题5.3 第5题",
+        "page": 147,
+        "supplementId": "ch5-q-ex53-5",
+        "parts": []
+      },
+      {
+        "label": "习题5.3 第6题",
+        "page": 147,
+        "supplementId": "ch5-q-ex53-6",
+        "parts": []
+      },
+      {
+        "label": "习题5.3 第7题",
+        "page": 147,
+        "supplementId": "ch5-q-ex53-7",
+        "parts": [
+          "（1）求实验进行21 min时的温度",
+          "（2）求温度为34 ℃时经过的时间"
+        ]
+      },
+      {
+        "label": "习题5.3 第8题",
+        "page": 147,
+        "supplementId": "ch5-q-ex53-8",
+        "parts": []
+      },
+      {
+        "label": "习题5.3 第9题",
+        "page": 147,
+        "supplementId": "ch5-q-ex53-9",
+        "parts": [
+          "求李明、刘伟各自每小时行进路程",
+          "求相遇后刘伟到达A地所需时间"
+        ]
+      },
+      {
+        "label": "习题5.3 第10题",
+        "page": 148,
+        "supplementId": "ch5-q-ex53-10",
+        "parts": []
+      },
+      {
+        "label": "习题5.3 第11题",
+        "page": 148,
+        "supplementId": "ch5-q-ex53-11",
+        "parts": [
+          "（1）两组人均实际工作量相等时求人均定额",
+          "（2）甲组人均比乙组多2件时求人均定额",
+          "（3）甲组人均比乙组少2件时求人均定额"
+        ]
+      },
+      {
+        "label": "习题5.3 第12题",
+        "page": 148,
+        "supplementId": "ch5-q-ex53-12",
+        "parts": []
+      },
+      {
+        "label": "习题5.3 第13题",
+        "page": 148,
+        "supplementId": "ch5-q-ex53-13",
+        "parts": [
+          "（1）求丢番图的寿命",
+          "（2）求丢番图开始当爸爸时的年龄",
+          "另提出问题并解决"
+        ]
+      },
+      {
+        "label": "习题5.3 第14题",
+        "page": 148,
+        "supplementId": "ch5-q-ex53-14",
+        "parts": [
+          "（1）按书的原价范围列两种促销方式的付款表",
+          "（2）观察表格选择省钱方式并计算验证"
+        ]
+      },
+      {
+        "label": "数学活动1 生活中的阶梯计价问题",
+        "page": 150,
+        "supplementId": "ch5-q-activity1",
+        "parts": [
+          "（1）按正整数年用水量列收费表",
+          "（2）由年水费求年用水量",
+          "（3）查询本地用水收费标准并提出、解决问题",
+          "（4）调查其他阶梯计价问题，提出可用一元一次方程解答的问题并表达过程"
+        ]
+      },
+      {
+        "label": "数学活动2 木杆挂重物问题",
+        "page": 150,
+        "supplementId": "ch5-q-activity2",
+        "parts": [
+          "（1）在中点设支点，使木杆自身平衡",
+          "（2）两端各挂一重物，观察平衡",
+          "（3）左侧加挂一个重物，移动并记录平衡位置",
+          "（4）左侧再加挂一个重物，移动并记录平衡位置",
+          "（5）继续加挂、重复并记录（续PDF151页）",
+          "根据记录寻找规律（PDF151页）",
+          "把n、l作为已知数，列出关于x的一元一次方程（PDF151页）"
+        ]
+      },
+      {
+        "label": "小结·回顾与思考第1题",
+        "page": 153,
+        "supplementId": "ch5-q-summary1",
+        "parts": []
+      },
+      {
+        "label": "小结·回顾与思考第2题",
+        "page": 153,
+        "supplementId": "ch5-q-summary2",
+        "parts": []
+      },
+      {
+        "label": "小结·回顾与思考第3题",
+        "page": 153,
+        "supplementId": "ch5-q-summary3",
+        "parts": []
+      },
+      {
+        "label": "小结·回顾与思考第4题",
+        "page": 153,
+        "supplementId": "ch5-q-summary4",
+        "parts": []
+      },
+      {
+        "label": "小结·回顾与思考第5题",
+        "page": 153,
+        "supplementId": "ch5-q-summary5",
+        "parts": []
+      },
+      {
+        "label": "小结·回顾与思考第6题",
+        "page": 153,
+        "supplementId": "ch5-q-summary6",
+        "parts": []
+      },
+      {
+        "label": "复习题5第1题",
+        "page": 153,
+        "supplementId": "ch5-q-review1",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）",
+          "（4）"
+        ]
+      },
+      {
+        "label": "复习题5第2题",
+        "page": 153,
+        "supplementId": "ch5-q-review2",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）"
+        ]
+      },
+      {
+        "label": "复习题5第3题",
+        "page": 154,
+        "supplementId": "ch5-q-review3",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）",
+          "（4）"
+        ]
+      },
+      {
+        "label": "复习题5第4题",
+        "page": 154,
+        "supplementId": "ch5-q-review4",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "复习题5第5题",
+        "page": 154,
+        "supplementId": "ch5-q-review5",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）"
+        ]
+      },
+      {
+        "label": "复习题5第6题",
+        "page": 154,
+        "supplementId": "ch5-q-review6",
+        "parts": []
+      },
+      {
+        "label": "复习题5第7题",
+        "page": 154,
+        "supplementId": "ch5-q-review7",
+        "parts": []
+      },
+      {
+        "label": "复习题5第8题",
+        "page": 154,
+        "supplementId": "ch5-q-review8",
+        "parts": []
+      },
+      {
+        "label": "复习题5第9题",
+        "page": 154,
+        "supplementId": "ch5-q-review9",
+        "parts": []
+      },
+      {
+        "label": "复习题5第10题",
+        "page": 155,
+        "supplementId": "ch5-q-review10",
+        "parts": [
+          "首次相遇",
+          "再次相遇所经过的时间"
+        ]
+      },
+      {
+        "label": "复习题5第11题",
+        "page": 155,
+        "supplementId": "ch5-q-review11",
+        "parts": []
+      },
+      {
+        "label": "复习题5第12题",
+        "page": 155,
+        "supplementId": "ch5-q-review12",
+        "parts": []
+      },
+      {
+        "label": "复习题5第13题",
+        "page": 155,
+        "supplementId": "ch5-q-review13",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "复习题5第14题",
+        "page": 155,
+        "supplementId": "ch5-q-review14",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）"
+        ]
+      },
+      {
+        "label": "复习题5第15题",
+        "page": 155,
+        "supplementId": "ch5-q-review15",
+        "parts": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,2060 @@
+{
+  "documentSha256": "6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249",
+  "coordinateSystem": "normalized-full-page-top-left",
+  "sourceIndex": "materials/indexes/人教版-数学-七年级上册/index.jsonl",
+  "sourceImages": "materials/indexes/人教版-数学-七年级上册/images/",
+  "locations": [
+    {
+      "id": "ch3-q-robot-introduction",
+      "page": 75,
+      "printedPage": null,
+      "indexAnchor": 1,
+      "anchorLabel": "问题（1）—（3）",
+      "locator": "章引问题（1）的起始问句“该机器人10 s能识别多大范围的苹果？60 s呢？t s呢？”；导读覆盖本组（1）至（3），共用前文机器人效率背景，分析续于已核对的PDF第76页。",
+      "region": {
+        "x": 0.13,
+        "y": 0.333,
+        "width": 0.63,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.346
+      },
+      "sourceImageSha256": "ca7323d048743ec6f67f8e9a0ce033042c3847d094ee954626c0f31474f943ce"
+    },
+    {
+      "id": "ch3-omitted-multiplication",
+      "page": 76,
+      "printedPage": "69",
+      "indexAnchor": 2,
+      "anchorLabel": "在含有字母的式子中如果出现乘号",
+      "locator": "右侧黄色便笺中“通常将数放在字母前，乘号写作·或省略不写”及5×t的写法。",
+      "region": {
+        "x": 0.681,
+        "y": 0.379,
+        "width": 0.22,
+        "height": 0.142
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.45
+      },
+      "sourceImageSha256": "cab0d41200a75bba8c6e31d71f5e878ded203f4ea7cc6e5f9106cee7ffce36e7"
+    },
+    {
+      "id": "ch3-letter-range",
+      "page": 76,
+      "printedPage": "69",
+      "indexAnchor": 1,
+      "anchorLabel": "工作量＝工作效率×工作时间",
+      "locator": "问题（1）分析中“含有字母t的式子5t表示机器人在任意时间t内完成的工作量”及一般性说明。",
+      "region": {
+        "x": 0.13,
+        "y": 0.547,
+        "width": 0.785,
+        "height": 0.049
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.5715
+      },
+      "sourceImageSha256": "cab0d41200a75bba8c6e31d71f5e878ded203f4ea7cc6e5f9106cee7ffce36e7"
+    },
+    {
+      "id": "ch3-rate-and-time-units",
+      "page": 76,
+      "printedPage": "69",
+      "indexAnchor": 1,
+      "anchorLabel": "工作量＝工作效率×工作时间",
+      "locator": "问题（3）解答中“=1/8×3600×m−1/5×3600”这一行。",
+      "region": {
+        "x": 0.174,
+        "y": 0.791,
+        "width": 0.326,
+        "height": 0.044
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.813
+      },
+      "sourceImageSha256": "cab0d41200a75bba8c6e31d71f5e878ded203f4ea7cc6e5f9106cee7ffce36e7"
+    },
+    {
+      "id": "ch3-q-two-quantity-problems",
+      "page": 76,
+      "printedPage": "69",
+      "indexAnchor": 3,
+      "anchorLabel": "（1）某工程队负责铺设一条长2 km的地下管道",
+      "locator": "PDF第76页末铺管道问题（1）的起始题干；（1）问句及正方形问题（2）续于已核对的PDF第77页页首，跨页按一组记录。",
+      "region": {
+        "x": 0.174,
+        "y": 0.893,
+        "width": 0.744,
+        "height": 0.031
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.9085
+      },
+      "sourceImageSha256": "cab0d41200a75bba8c6e31d71f5e878ded203f4ea7cc6e5f9106cee7ffce36e7"
+    },
+    {
+      "id": "ch3-division-context",
+      "page": 77,
+      "printedPage": "70",
+      "indexAnchor": 0,
+      "anchorLabel": "问题（1）（2）",
+      "locator": "页首铺管道分析的末两行：“平均每天铺设的管道长度为2/d km”。题干起于已核对的PDF第76页。",
+      "region": {
+        "x": 0.086,
+        "y": 0.154,
+        "width": 0.511,
+        "height": 0.069
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.1885
+      },
+      "sourceImageSha256": "85d2a986f8249a2375d0e27495067d8de93b3d8065bed8aa5b39e4bc1f8a362b"
+    },
+    {
+      "id": "ch3-expression-vs-relation",
+      "page": 77,
+      "printedPage": "70",
+      "indexAnchor": 1,
+      "anchorLabel": "代数式",
+      "locator": "“上述问题中列出的式子5t，n/5，450m−720，2/d，4a，a²”至代数式定义；不含右侧便笺。",
+      "region": {
+        "x": 0.085,
+        "y": 0.279,
+        "width": 0.518,
+        "height": 0.15
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.354
+      },
+      "sourceImageSha256": "85d2a986f8249a2375d0e27495067d8de93b3d8065bed8aa5b39e4bc1f8a362b"
+    },
+    {
+      "id": "ch3-q-example-1",
+      "page": 77,
+      "printedPage": "70",
+      "indexAnchor": 2,
+      "anchorLabel": "例1",
+      "locator": "蓝色“例1”题号；导读覆盖其后第（1）至（4）问，从苹果九折售价至水池中水的体积，原解答在题干下方。",
+      "region": {
+        "x": 0.13,
+        "y": 0.465,
+        "width": 0.047,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.4765
+      },
+      "sourceImageSha256": "85d2a986f8249a2375d0e27495067d8de93b3d8065bed8aa5b39e4bc1f8a362b"
+    },
+    {
+      "id": "ch3-context-and-unit",
+      "page": 77,
+      "printedPage": "70",
+      "indexAnchor": 2,
+      "anchorLabel": "例1",
+      "locator": "页底“在例1第（1）（2）题中，0.9p既可以表示苹果的售价，又可以表示长方形的面积”所在句。",
+      "region": {
+        "x": 0.086,
+        "y": 0.865,
+        "width": 0.79,
+        "height": 0.049
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.8895
+      },
+      "sourceImageSha256": "85d2a986f8249a2375d0e27495067d8de93b3d8065bed8aa5b39e4bc1f8a362b"
+    },
+    {
+      "id": "ch3-q-same-expression-context",
+      "page": 77,
+      "printedPage": "70",
+      "indexAnchor": 2,
+      "anchorLabel": "例1",
+      "locator": "页底“你能再举出一个例子吗？”问句；上文已比较0.9p在例1（1）（2）中的不同含义。",
+      "region": {
+        "x": 0.264,
+        "y": 0.892,
+        "width": 0.244,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.9035
+      },
+      "sourceImageSha256": "85d2a986f8249a2375d0e27495067d8de93b3d8065bed8aa5b39e4bc1f8a362b"
+    },
+    {
+      "id": "ch3-q-example-2",
+      "page": 78,
+      "printedPage": "71",
+      "indexAnchor": 0,
+      "anchorLabel": "例2",
+      "locator": "页首蓝色“例2”题号及“说出下列代数式的意义”共用题干；导读覆盖下列第（1）至（4）项。",
+      "region": {
+        "x": 0.174,
+        "y": 0.07,
+        "width": 0.314,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.0825
+      },
+      "sourceImageSha256": "5b58c122d11dbd07181494a5cdadc959f60e4a0a290177272b8487989100e3fc"
+    },
+    {
+      "id": "ch3-read-outer-operation",
+      "page": 78,
+      "printedPage": "71",
+      "indexAnchor": 0,
+      "anchorLabel": "例2",
+      "locator": "例2解答第（1）（2）行，分别解释2a+3与2(a+3)。",
+      "region": {
+        "x": 0.175,
+        "y": 0.148,
+        "width": 0.467,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.172
+      },
+      "sourceImageSha256": "5b58c122d11dbd07181494a5cdadc959f60e4a0a290177272b8487989100e3fc"
+    },
+    {
+      "id": "ch3-q-example-2-margin-context",
+      "page": 78,
+      "printedPage": "71",
+      "indexAnchor": 0,
+      "anchorLabel": "例2",
+      "locator": "例2右侧黄色便笺：“举例说明2a+3，2(a+3)所表示的实际问题中的数量关系”。",
+      "region": {
+        "x": 0.689,
+        "y": 0.179,
+        "width": 0.214,
+        "height": 0.067
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.2125
+      },
+      "sourceImageSha256": "5b58c122d11dbd07181494a5cdadc959f60e4a0a290177272b8487989100e3fc"
+    },
+    {
+      "id": "ch3-fraction-whole-denominator",
+      "page": 78,
+      "printedPage": "71",
+      "indexAnchor": 0,
+      "anchorLabel": "例2",
+      "locator": "例2解答第（3）项：“c/(ab)的意义是c除以a，b的积的商”。",
+      "region": {
+        "x": 0.175,
+        "y": 0.203,
+        "width": 0.471,
+        "height": 0.041
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.2235
+      },
+      "sourceImageSha256": "5b58c122d11dbd07181494a5cdadc959f60e4a0a290177272b8487989100e3fc"
+    },
+    {
+      "id": "ch3-q-p71-exercise-1",
+      "page": 78,
+      "printedPage": "71",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习框内第1题题号及“填空题”共用题干；导读覆盖后面的第（1）至（4）小问。",
+      "region": {
+        "x": 0.151,
+        "y": 0.366,
+        "width": 0.11,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.3785
+      },
+      "sourceImageSha256": "5b58c122d11dbd07181494a5cdadc959f60e4a0a290177272b8487989100e3fc"
+    },
+    {
+      "id": "ch3-q-p71-exercise-2",
+      "page": 78,
+      "printedPage": "71",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习框内第2题题号及“说出下列代数式的意义”共用题干；导读覆盖第（1）至（4）项。",
+      "region": {
+        "x": 0.151,
+        "y": 0.507,
+        "width": 0.28,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.5195
+      },
+      "sourceImageSha256": "5b58c122d11dbd07181494a5cdadc959f60e4a0a290177272b8487989100e3fc"
+    },
+    {
+      "id": "ch3-make-context-exercise",
+      "page": 78,
+      "printedPage": "71",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习框内第3题：为代数式100−2x举不同实际问题中的数量或数量关系的例子。",
+      "region": {
+        "x": 0.151,
+        "y": 0.582,
+        "width": 0.744,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.5945
+      },
+      "sourceImageSha256": "5b58c122d11dbd07181494a5cdadc959f60e4a0a290177272b8487989100e3fc"
+    },
+    {
+      "id": "ch3-q-sum-difference-thinking",
+      "page": 78,
+      "printedPage": "71",
+      "indexAnchor": 2,
+      "anchorLabel": "思考",
+      "locator": "“思考”框内问句：“如何用代数式表示a，b两数的和与差的积？”图解及结论续于已核对的PDF第79页页首。",
+      "region": {
+        "x": 0.198,
+        "y": 0.746,
+        "width": 0.444,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.758
+      },
+      "sourceImageSha256": "5b58c122d11dbd07181494a5cdadc959f60e4a0a290177272b8487989100e3fc"
+    },
+    {
+      "id": "ch3-q-example-3",
+      "page": 79,
+      "printedPage": "72",
+      "indexAnchor": 1,
+      "anchorLabel": "例3",
+      "locator": "蓝色“例3”题号及“用代数式表示”共用题干；导读覆盖其下购物、利息、售价第（1）至（3）问。",
+      "region": {
+        "x": 0.13,
+        "y": 0.098,
+        "width": 0.215,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.111
+      },
+      "sourceImageSha256": "3cd5c37a14461d260f6092414a12fd3d490d1e2935c58decbd163d9957b0099c"
+    },
+    {
+      "id": "ch3-interest-base",
+      "page": 79,
+      "printedPage": "72",
+      "indexAnchor": 1,
+      "anchorLabel": "例3",
+      "locator": "例3解答第（2）项：“a×2.75%×3=8.25%a”及到期利息的说明。",
+      "region": {
+        "x": 0.086,
+        "y": 0.383,
+        "width": 0.785,
+        "height": 0.047
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.4065
+      },
+      "sourceImageSha256": "3cd5c37a14461d260f6092414a12fd3d490d1e2935c58decbd163d9957b0099c"
+    },
+    {
+      "id": "ch3-q-example-4",
+      "page": 79,
+      "printedPage": "72",
+      "indexAnchor": 2,
+      "anchorLabel": "例4",
+      "locator": "例4蓝色题号及共享题干“甲、乙两地之间公路全长240 km……行驶速度为v km/h”；导读覆盖下方第（1）（2）问。",
+      "region": {
+        "x": 0.085,
+        "y": 0.466,
+        "width": 0.792,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.491
+      },
+      "sourceImageSha256": "3cd5c37a14461d260f6092414a12fd3d490d1e2935c58decbd163d9957b0099c"
+    },
+    {
+      "id": "ch3-new-speed-whole",
+      "page": 79,
+      "printedPage": "72",
+      "indexAnchor": 2,
+      "anchorLabel": "例4",
+      "locator": "例4解答第（2）项“240/(v+3) h”及提前时间的差式所在一行。",
+      "region": {
+        "x": 0.086,
+        "y": 0.766,
+        "width": 0.509,
+        "height": 0.041
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.7865
+      },
+      "sourceImageSha256": "3cd5c37a14461d260f6092414a12fd3d490d1e2935c58decbd163d9957b0099c"
+    },
+    {
+      "id": "ch3-q-p73-exercise-1",
+      "page": 80,
+      "printedPage": "73",
+      "indexAnchor": 0,
+      "anchorLabel": "练习",
+      "locator": "页首练习第1题题号及“用代数式表示”共用题干；导读覆盖其下第（1）至（3）小问。",
+      "region": {
+        "x": 0.151,
+        "y": 0.118,
+        "width": 0.18,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.1305
+      },
+      "sourceImageSha256": "3e3759ebb8bec2fa5205bb782352fd2fc1d02737e3a4a447b6b65f1c6d130b7b"
+    },
+    {
+      "id": "ch3-opposite-difference-exercise",
+      "page": 80,
+      "printedPage": "73",
+      "indexAnchor": 0,
+      "anchorLabel": "练习",
+      "locator": "页首练习第1题（2）：“a的相反数与b的一半的差”。",
+      "region": {
+        "x": 0.182,
+        "y": 0.172,
+        "width": 0.455,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.184
+      },
+      "sourceImageSha256": "3e3759ebb8bec2fa5205bb782352fd2fc1d02737e3a4a447b6b65f1c6d130b7b"
+    },
+    {
+      "id": "ch3-q-p73-exercise-2",
+      "page": 80,
+      "printedPage": "73",
+      "indexAnchor": 0,
+      "anchorLabel": "练习",
+      "locator": "页首练习第2题：每袋4.8元，一个月售m袋，表示销售收入。",
+      "region": {
+        "x": 0.151,
+        "y": 0.231,
+        "width": 0.744,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.256
+      },
+      "sourceImageSha256": "3e3759ebb8bec2fa5205bb782352fd2fc1d02737e3a4a447b6b65f1c6d130b7b"
+    },
+    {
+      "id": "ch3-q-p73-exercise-3",
+      "page": 80,
+      "printedPage": "73",
+      "indexAnchor": 0,
+      "anchorLabel": "练习",
+      "locator": "页首练习第3题：两块棉田面积分别m、n hm²，每公顷产量分别a、b kg，表示总产量。",
+      "region": {
+        "x": 0.151,
+        "y": 0.287,
+        "width": 0.744,
+        "height": 0.079
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.3265
+      },
+      "sourceImageSha256": "3e3759ebb8bec2fa5205bb782352fd2fc1d02737e3a4a447b6b65f1c6d130b7b"
+    },
+    {
+      "id": "ch3-q-p73-exercise-4",
+      "page": 80,
+      "printedPage": "73",
+      "indexAnchor": 0,
+      "anchorLabel": "练习",
+      "locator": "页首练习第4题：大正方形挖去小正方形，边长分别a、b mm，表示剩余面积。",
+      "region": {
+        "x": 0.151,
+        "y": 0.373,
+        "width": 0.744,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.398
+      },
+      "sourceImageSha256": "3e3759ebb8bec2fa5205bb782352fd2fc1d02737e3a4a447b6b65f1c6d130b7b"
+    },
+    {
+      "id": "ch3-direct-proportion-condition",
+      "page": 80,
+      "printedPage": "73",
+      "indexAnchor": 1,
+      "anchorLabel": "成正比例关系",
+      "locator": "练习下方机器人例子的“范围与所用时间的比值是一定的（等于5）”至正比例关系说明。",
+      "region": {
+        "x": 0.13,
+        "y": 0.493,
+        "width": 0.786,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.518
+      },
+      "sourceImageSha256": "3e3759ebb8bec2fa5205bb782352fd2fc1d02737e3a4a447b6b65f1c6d130b7b"
+    },
+    {
+      "id": "ch3-q-snow-problem",
+      "page": 80,
+      "printedPage": "73",
+      "indexAnchor": 2,
+      "anchorLabel": "问题",
+      "locator": "蓝色“问题”题号及造雪背景共用题干，止于“解答下列问题”；导读覆盖表3.1-1及第（1）（2）问，分析续于已核对的PDF第81页上半页，跨页按一题记录。",
+      "region": {
+        "x": 0.129,
+        "y": 0.632,
+        "width": 0.789,
+        "height": 0.06
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.662
+      },
+      "sourceImageSha256": "3e3759ebb8bec2fa5205bb782352fd2fc1d02737e3a4a447b6b65f1c6d130b7b"
+    },
+    {
+      "id": "ch3-inverse-not-decrease",
+      "page": 81,
+      "printedPage": "74",
+      "indexAnchor": 1,
+      "anchorLabel": "成反比例的量、反比例关系",
+      "locator": "中部定义段：“两个相关联的量……且这两个量的积一定”至反比例关系。",
+      "region": {
+        "x": 0.086,
+        "y": 0.396,
+        "width": 0.787,
+        "height": 0.08
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.436
+      },
+      "sourceImageSha256": "f8f29762cd014b661733eec190f77c982b51f0f626049a2f71241a6b38d1545a"
+    },
+    {
+      "id": "ch3-inverse-nonzero",
+      "page": 81,
+      "printedPage": "74",
+      "indexAnchor": 1,
+      "anchorLabel": "成反比例的量、反比例关系",
+      "locator": "定义后的字母表示段：“k是一个确定的值，且k≠0”以及xy=k。",
+      "region": {
+        "x": 0.086,
+        "y": 0.483,
+        "width": 0.785,
+        "height": 0.049
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.5075
+      },
+      "sourceImageSha256": "f8f29762cd014b661733eec190f77c982b51f0f626049a2f71241a6b38d1545a"
+    },
+    {
+      "id": "ch3-q-example-5",
+      "page": 81,
+      "printedPage": "74",
+      "indexAnchor": 2,
+      "anchorLabel": "例5",
+      "locator": "例5蓝色题号及左侧共享题干，止于“在这四个容器中注入300 cm³的水”；导读覆盖下方第（1）（2）问，图3.1-1在右侧。",
+      "region": {
+        "x": 0.085,
+        "y": 0.542,
+        "width": 0.525,
+        "height": 0.074
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.579
+      },
+      "sourceImageSha256": "f8f29762cd014b661733eec190f77c982b51f0f626049a2f71241a6b38d1545a"
+    },
+    {
+      "id": "ch3-water-volume-fixed",
+      "page": 81,
+      "printedPage": "74",
+      "indexAnchor": 2,
+      "anchorLabel": "例5",
+      "locator": "例5解答第（2）项：“xy=300，y与x成反比例关系。”",
+      "region": {
+        "x": 0.13,
+        "y": 0.89,
+        "width": 0.37,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.9015
+      },
+      "sourceImageSha256": "f8f29762cd014b661733eec190f77c982b51f0f626049a2f71241a6b38d1545a"
+    },
+    {
+      "id": "ch3-q-inverse-life",
+      "page": 82,
+      "printedPage": "75",
+      "indexAnchor": 0,
+      "anchorLabel": "思考",
+      "locator": "页首思考末句“你还能举出一些例子吗？”所在两行。",
+      "region": {
+        "x": 0.154,
+        "y": 0.105,
+        "width": 0.741,
+        "height": 0.078
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.144
+      },
+      "sourceImageSha256": "9e676fdb1a7d9ecc0a7d8683421d4456c6253a32756cd2c1b585f2bb04343531"
+    },
+    {
+      "id": "ch3-q-s31-practice1",
+      "page": 82,
+      "printedPage": "75",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习第1题“如果汽车行驶的路程一定”至“为什么”两行。",
+      "region": {
+        "x": 0.151,
+        "y": 0.246,
+        "width": 0.741,
+        "height": 0.049
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.2705
+      },
+      "sourceImageSha256": "9e676fdb1a7d9ecc0a7d8683421d4456c6253a32756cd2c1b585f2bb04343531"
+    },
+    {
+      "id": "ch3-q-s31-practice2",
+      "page": 82,
+      "printedPage": "75",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习第2题总题干“判断下面各题中的两个量是否成反比例关系，并说明理由”。",
+      "region": {
+        "x": 0.151,
+        "y": 0.305,
+        "width": 0.651,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.315
+      },
+      "sourceImageSha256": "9e676fdb1a7d9ecc0a7d8683421d4456c6253a32756cd2c1b585f2bb04343531"
+    },
+    {
+      "id": "ch3-inverse-test-exercise",
+      "page": 82,
+      "printedPage": "75",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习第2题（3）：购买荧光笔和中性笔的总费用一定，判断两类费用的关系。",
+      "region": {
+        "x": 0.182,
+        "y": 0.418,
+        "width": 0.701,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.4295
+      },
+      "sourceImageSha256": "9e676fdb1a7d9ecc0a7d8683421d4456c6253a32756cd2c1b585f2bb04343531"
+    },
+    {
+      "id": "ch3-q-s31-practice3",
+      "page": 82,
+      "printedPage": "75",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习第3题题干“某运输公司计划运输一批货物”及表格引入两行。",
+      "region": {
+        "x": 0.152,
+        "y": 0.446,
+        "width": 0.741,
+        "height": 0.047
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.4695
+      },
+      "sourceImageSha256": "9e676fdb1a7d9ecc0a7d8683421d4456c6253a32756cd2c1b585f2bb04343531"
+    },
+    {
+      "id": "ch3-table-pairing-exercise",
+      "page": 82,
+      "printedPage": "75",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习第3题下方第（3）问，用t和a表示运输天数与每天吨数的关系。",
+      "region": {
+        "x": 0.182,
+        "y": 0.622,
+        "width": 0.705,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.647
+      },
+      "sourceImageSha256": "9e676fdb1a7d9ecc0a7d8683421d4456c6253a32756cd2c1b585f2bb04343531"
+    },
+    {
+      "id": "ch3-q-exercise31-1",
+      "page": 82,
+      "printedPage": "75",
+      "indexAnchor": 2,
+      "anchorLabel": "习题3.1",
+      "locator": "习题3.1复习巩固第1题总题干“用代数式表示”。",
+      "region": {
+        "x": 0.153,
+        "y": 0.809,
+        "width": 0.274,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.8215
+      },
+      "sourceImageSha256": "9e676fdb1a7d9ecc0a7d8683421d4456c6253a32756cd2c1b585f2bb04343531"
+    },
+    {
+      "id": "ch3-q-exercise31-2",
+      "page": 83,
+      "printedPage": "76",
+      "indexAnchor": 0,
+      "anchorLabel": "习题3.1（续）",
+      "locator": "习题3.1第2题总题干“说出下列代数式的意义”。",
+      "region": {
+        "x": 0.108,
+        "y": 0.078,
+        "width": 0.31,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.0895
+      },
+      "sourceImageSha256": "8683ca599b0dfc08b33205f70e7abe5c921775b288a868b92098321e62bcd123"
+    },
+    {
+      "id": "ch3-fraction-reading-exercise",
+      "page": 83,
+      "printedPage": "76",
+      "indexAnchor": 0,
+      "anchorLabel": "习题3.1（续）",
+      "locator": "习题3.1第2题（4）的分式(n+1)/(n−1)。",
+      "region": {
+        "x": 0.668,
+        "y": 0.108,
+        "width": 0.107,
+        "height": 0.037
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.1265
+      },
+      "sourceImageSha256": "8683ca599b0dfc08b33205f70e7abe5c921775b288a868b92098321e62bcd123"
+    },
+    {
+      "id": "ch3-q-exercise31-3",
+      "page": 83,
+      "printedPage": "76",
+      "indexAnchor": 0,
+      "anchorLabel": "习题3.1（续）",
+      "locator": "习题3.1第3题总题干“用代数式表示”。",
+      "region": {
+        "x": 0.109,
+        "y": 0.152,
+        "width": 0.272,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.1625
+      },
+      "sourceImageSha256": "8683ca599b0dfc08b33205f70e7abe5c921775b288a868b92098321e62bcd123"
+    },
+    {
+      "id": "ch3-early-arrival-exercise",
+      "page": 83,
+      "printedPage": "76",
+      "indexAnchor": 0,
+      "anchorLabel": "习题3.1（续）",
+      "locator": "习题3.1第3题（4）：“原计划……需用时t h……提前1 h到达”及速度问题。",
+      "region": {
+        "x": 0.133,
+        "y": 0.512,
+        "width": 0.715,
+        "height": 0.074
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.549
+      },
+      "sourceImageSha256": "8683ca599b0dfc08b33205f70e7abe5c921775b288a868b92098321e62bcd123"
+    },
+    {
+      "id": "ch3-q-exercise31-4",
+      "page": 83,
+      "printedPage": "76",
+      "indexAnchor": 0,
+      "anchorLabel": "习题3.1（续）",
+      "locator": "习题3.1第4题总题干“判断下面各题中的两个量是否成反比例关系，并说明理由”。",
+      "region": {
+        "x": 0.109,
+        "y": 0.591,
+        "width": 0.694,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.6025
+      },
+      "sourceImageSha256": "8683ca599b0dfc08b33205f70e7abe5c921775b288a868b92098321e62bcd123"
+    },
+    {
+      "id": "ch3-q-exercise31-5",
+      "page": 83,
+      "printedPage": "76",
+      "indexAnchor": 2,
+      "anchorLabel": "第5题",
+      "locator": "习题3.1第5题糖果分装题干两行；第（3）问续于已核对的PDF第84页页首。",
+      "region": {
+        "x": 0.109,
+        "y": 0.72,
+        "width": 0.757,
+        "height": 0.046
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.743
+      },
+      "sourceImageSha256": "8683ca599b0dfc08b33205f70e7abe5c921775b288a868b92098321e62bcd123"
+    },
+    {
+      "id": "ch3-q-exercise31-6",
+      "page": 84,
+      "printedPage": "77",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "综合运用第6题题号和第（1）问首行；第（2）问及末尾举例要求在本页紧接其后。",
+      "region": {
+        "x": 0.152,
+        "y": 0.165,
+        "width": 0.596,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.175
+      },
+      "sourceImageSha256": "63f66e46b03e7f06f02dc9e5de824f77a9c5e5c477f1aa0403f65ba264aae7b7"
+    },
+    {
+      "id": "ch3-q-exercise31-7",
+      "page": 84,
+      "printedPage": "77",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "综合运用第7题比较意义并举例的总题干两行。",
+      "region": {
+        "x": 0.153,
+        "y": 0.346,
+        "width": 0.754,
+        "height": 0.045
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.3685
+      },
+      "sourceImageSha256": "63f66e46b03e7f06f02dc9e5de824f77a9c5e5c477f1aa0403f65ba264aae7b7"
+    },
+    {
+      "id": "ch3-q-exercise31-8",
+      "page": 84,
+      "printedPage": "77",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "综合运用第8题“观察一组数：5，10，15，20，25，…”一行。",
+      "region": {
+        "x": 0.153,
+        "y": 0.445,
+        "width": 0.452,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.455
+      },
+      "sourceImageSha256": "63f66e46b03e7f06f02dc9e5de824f77a9c5e5c477f1aa0403f65ba264aae7b7"
+    },
+    {
+      "id": "ch3-sequence-rule-exercise",
+      "page": 84,
+      "printedPage": "77",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "习题3.1第8题（1）：“你认为这组数有可能是按什么规律排列的”及描述要求。",
+      "region": {
+        "x": 0.178,
+        "y": 0.467,
+        "width": 0.722,
+        "height": 0.045
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.4895
+      },
+      "sourceImageSha256": "63f66e46b03e7f06f02dc9e5de824f77a9c5e5c477f1aa0403f65ba264aae7b7"
+    },
+    {
+      "id": "ch3-q-exercise31-9",
+      "page": 84,
+      "printedPage": "77",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "综合运用第9题“甲、乙、丙3名同学阅读同一本书，丙的阅读时间最长”一行。",
+      "region": {
+        "x": 0.153,
+        "y": 0.548,
+        "width": 0.64,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.558
+      },
+      "sourceImageSha256": "63f66e46b03e7f06f02dc9e5de824f77a9c5e5c477f1aa0403f65ba264aae7b7"
+    },
+    {
+      "id": "ch3-integer-scope-exercise",
+      "page": 84,
+      "printedPage": "77",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索",
+      "locator": "习题3.1第10题（1）：设n表示任意一个整数，表示任意一个偶数及奇数。",
+      "region": {
+        "x": 0.151,
+        "y": 0.734,
+        "width": 0.749,
+        "height": 0.045
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.7565
+      },
+      "sourceImageSha256": "63f66e46b03e7f06f02dc9e5de824f77a9c5e5c477f1aa0403f65ba264aae7b7"
+    },
+    {
+      "id": "ch3-q-exercise31-10",
+      "page": 84,
+      "printedPage": "77",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索",
+      "locator": "拓广探索第10题题号及第（1）问首行；第（2）问为同题数位表示。",
+      "region": {
+        "x": 0.153,
+        "y": 0.735,
+        "width": 0.747,
+        "height": 0.019
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.7445
+      },
+      "sourceImageSha256": "63f66e46b03e7f06f02dc9e5de824f77a9c5e5c477f1aa0403f65ba264aae7b7"
+    },
+    {
+      "id": "ch3-digits-place-exercise",
+      "page": 84,
+      "printedPage": "77",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索",
+      "locator": "习题3.1第10题（2）：个位a、十位b、百位c的三位数表示。",
+      "region": {
+        "x": 0.183,
+        "y": 0.784,
+        "width": 0.717,
+        "height": 0.047
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.8075
+      },
+      "sourceImageSha256": "63f66e46b03e7f06f02dc9e5de824f77a9c5e5c477f1aa0403f65ba264aae7b7"
+    },
+    {
+      "id": "ch3-matches-duplicate-exercise",
+      "page": 84,
+      "printedPage": "77",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索",
+      "locator": "拓广探索第11题单循环比赛的两行完整题干。",
+      "region": {
+        "x": 0.153,
+        "y": 0.839,
+        "width": 0.747,
+        "height": 0.046
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.862
+      },
+      "sourceImageSha256": "63f66e46b03e7f06f02dc9e5de824f77a9c5e5c477f1aa0403f65ba264aae7b7"
+    },
+    {
+      "id": "ch3-same-letter-consistency",
+      "page": 85,
+      "printedPage": "78",
+      "indexAnchor": 0,
+      "anchorLabel": "数字1与字母X的对话",
+      "locator": "对话中“x+y可以表示任何两个数的和”至“即加法满足交换律”。",
+      "region": {
+        "x": 0.263,
+        "y": 0.286,
+        "width": 0.585,
+        "height": 0.073
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.3225
+      },
+      "sourceImageSha256": "953b7ccf1e08721c5a28be8c141a591195efcb2b602021af99745c148c90afae"
+    },
+    {
+      "id": "ch3-q-p86-volleyball",
+      "page": 86,
+      "printedPage": "79",
+      "indexAnchor": 1,
+      "anchorLabel": "问题",
+      "locator": "3.2“问题”为了开展体育活动的题干首行，从“问题”至“学校要购置”附近。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "region": {
+        "x": 0.175,
+        "y": 0.259,
+        "width": 0.047,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.2715
+      },
+      "sourceImageSha256": "ab4b63682b4a5862b35ab6694d99895cbbcd48f5b2fcaf9cdeafb32f4d2b7c6e"
+    },
+    {
+      "id": "ch3-class-count-domain",
+      "page": 86,
+      "printedPage": "79",
+      "indexAnchor": 1,
+      "anchorLabel": "问题",
+      "locator": "购置排球问题中“记全校的班级数是n，则需要购置的排球总数是”一句。",
+      "region": {
+        "x": 0.175,
+        "y": 0.316,
+        "width": 0.485,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.327
+      },
+      "sourceImageSha256": "ab4b63682b4a5862b35ab6694d99895cbbcd48f5b2fcaf9cdeafb32f4d2b7c6e"
+    },
+    {
+      "id": "ch3-value-not-expression",
+      "page": 86,
+      "printedPage": "79",
+      "indexAnchor": 2,
+      "anchorLabel": "代数式的值",
+      "locator": "“代数式的值”定义段，重点是“按照代数式中的运算关系计算得出的结果”及“一般也不同”。",
+      "region": {
+        "x": 0.13,
+        "y": 0.486,
+        "width": 0.79,
+        "height": 0.047
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.5095
+      },
+      "sourceImageSha256": "ab4b63682b4a5862b35ab6694d99895cbbcd48f5b2fcaf9cdeafb32f4d2b7c6e"
+    },
+    {
+      "id": "ch3-q-p86-example1",
+      "page": 86,
+      "printedPage": "79",
+      "indexAnchor": 3,
+      "anchorLabel": "例1",
+      "locator": "例1题干首行“根据下列x，y的值”处。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "region": {
+        "x": 0.175,
+        "y": 0.542,
+        "width": 0.046,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.5545
+      },
+      "sourceImageSha256": "ab4b63682b4a5862b35ab6694d99895cbbcd48f5b2fcaf9cdeafb32f4d2b7c6e"
+    },
+    {
+      "id": "ch3-value-denominator-condition",
+      "page": 86,
+      "printedPage": "79",
+      "indexAnchor": 4,
+      "anchorLabel": "例2",
+      "locator": "例2题干中单独的代数式a²−b/a；两组数值在其下方，续解已核对PDF第87页。",
+      "region": {
+        "x": 0.593,
+        "y": 0.773,
+        "width": 0.076,
+        "height": 0.038
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.792
+      },
+      "sourceImageSha256": "ab4b63682b4a5862b35ab6694d99895cbbcd48f5b2fcaf9cdeafb32f4d2b7c6e"
+    },
+    {
+      "id": "ch3-q-p86-example2",
+      "page": 86,
+      "printedPage": "79",
+      "indexAnchor": 4,
+      "anchorLabel": "例2",
+      "locator": "例2题干首行“根据下列a，b的值”处；第（2）问解答续于已核对的PDF第87页。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "region": {
+        "x": 0.175,
+        "y": 0.777,
+        "width": 0.046,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.7895
+      },
+      "sourceImageSha256": "ab4b63682b4a5862b35ab6694d99895cbbcd48f5b2fcaf9cdeafb32f4d2b7c6e"
+    },
+    {
+      "id": "ch3-negative-substitution-base",
+      "page": 87,
+      "printedPage": "80",
+      "indexAnchor": 0,
+      "anchorLabel": "例2（续）",
+      "locator": "页首例2第（2）问等式中a²被替换为(−3)²的一步。",
+      "region": {
+        "x": 0.435,
+        "y": 0.103,
+        "width": 0.071,
+        "height": 0.029
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.1175
+      },
+      "sourceImageSha256": "8d030b40ab38f1da3972355386459eb46779975f1a2a5650128833ab8fa20a22"
+    },
+    {
+      "id": "ch3-q-p87-practice1",
+      "page": 87,
+      "printedPage": "80",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习第1题题号及“填图”一行。",
+      "region": {
+        "x": 0.107,
+        "y": 0.2,
+        "width": 0.12,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.2125
+      },
+      "sourceImageSha256": "8d030b40ab38f1da3972355386459eb46779975f1a2a5650128833ab8fa20a22"
+    },
+    {
+      "id": "ch3-same-letter-substitution",
+      "page": 87,
+      "printedPage": "80",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习第2题题干首行“根据下列x，y的值”处。",
+      "region": {
+        "x": 0.107,
+        "y": 0.367,
+        "width": 0.588,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.3795
+      },
+      "sourceImageSha256": "8d030b40ab38f1da3972355386459eb46779975f1a2a5650128833ab8fa20a22"
+    },
+    {
+      "id": "ch3-q-p87-practice3",
+      "page": 87,
+      "printedPage": "80",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习第3题题号及“一辆汽车从甲地出发”所在题干首行。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "region": {
+        "x": 0.107,
+        "y": 0.446,
+        "width": 0.025,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.4585
+      },
+      "sourceImageSha256": "8d030b40ab38f1da3972355386459eb46779975f1a2a5650128833ab8fa20a22"
+    },
+    {
+      "id": "ch3-formula-unit-match",
+      "page": 87,
+      "printedPage": "80",
+      "indexAnchor": 2,
+      "anchorLabel": "公式",
+      "locator": "公式说明段“用s表示路程，v表示速度，t表示时间，就可以得到行程公式s=vt”所在一行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.563,
+        "width": 0.742,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.5755
+      },
+      "sourceImageSha256": "8d030b40ab38f1da3972355386459eb46779975f1a2a5650128833ab8fa20a22"
+    },
+    {
+      "id": "ch3-q-p87-example3",
+      "page": 87,
+      "printedPage": "80",
+      "indexAnchor": 3,
+      "anchorLabel": "例3",
+      "locator": "例3题干首行“如图3.2-1，某学校操场最内侧的跑道”处；分析和解答续于已核对的PDF第88页。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "region": {
+        "x": 0.13,
+        "y": 0.71,
+        "width": 0.045,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.7225
+      },
+      "sourceImageSha256": "8d030b40ab38f1da3972355386459eb46779975f1a2a5650128833ab8fa20a22"
+    },
+    {
+      "id": "ch3-track-rounded-value",
+      "page": 88,
+      "printedPage": "81",
+      "indexAnchor": 0,
+      "anchorLabel": "例3（续）",
+      "locator": "例3第（2）问代入计算行末“≈300（m）”；取整数要求已核对PDF第87页题干。",
+      "region": {
+        "x": 0.62,
+        "y": 0.181,
+        "width": 0.115,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.1925
+      },
+      "sourceImageSha256": "2ab7c43dae727cb38631b4eb83ec9fd236134746f7b1ad2d748b634eedb01d72"
+    },
+    {
+      "id": "ch3-q-p88-example4",
+      "page": 88,
+      "printedPage": "81",
+      "indexAnchor": 1,
+      "anchorLabel": "例4",
+      "locator": "例4题干首行“一个三角尺的形状和尺寸”处。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "region": {
+        "x": 0.175,
+        "y": 0.241,
+        "width": 0.046,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.2535
+      },
+      "sourceImageSha256": "2ab7c43dae727cb38631b4eb83ec9fd236134746f7b1ad2d748b634eedb01d72"
+    },
+    {
+      "id": "ch3-triangle-base-height",
+      "page": 88,
+      "printedPage": "81",
+      "indexAnchor": 1,
+      "anchorLabel": "例4",
+      "locator": "例4解答首行“三角形的面积为1/2 ab”的公式位置；图3.2-2中a、b对应垂直的两边。",
+      "region": {
+        "x": 0.175,
+        "y": 0.352,
+        "width": 0.268,
+        "height": 0.039
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.3715
+      },
+      "sourceImageSha256": "2ab7c43dae727cb38631b4eb83ec9fd236134746f7b1ad2d748b634eedb01d72"
+    },
+    {
+      "id": "ch3-area-value-unit",
+      "page": 88,
+      "printedPage": "81",
+      "indexAnchor": 1,
+      "anchorLabel": "例4",
+      "locator": "例4结论句“因此，这个三角尺的面积是73.94 cm²”。",
+      "region": {
+        "x": 0.178,
+        "y": 0.526,
+        "width": 0.389,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.5385
+      },
+      "sourceImageSha256": "2ab7c43dae727cb38631b4eb83ec9fd236134746f7b1ad2d748b634eedb01d72"
+    },
+    {
+      "id": "ch3-q-p88-practice1",
+      "page": 88,
+      "printedPage": "81",
+      "indexAnchor": 2,
+      "anchorLabel": "练习",
+      "locator": "练习第1题题号及“填空题”一行。",
+      "region": {
+        "x": 0.152,
+        "y": 0.613,
+        "width": 0.12,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.6255
+      },
+      "sourceImageSha256": "2ab7c43dae727cb38631b4eb83ec9fd236134746f7b1ad2d748b634eedb01d72"
+    },
+    {
+      "id": "ch3-q-p88-practice2",
+      "page": 88,
+      "printedPage": "81",
+      "indexAnchor": 2,
+      "anchorLabel": "练习",
+      "locator": "练习第2题题号及“一个长方体纸箱的长是a”所在首行。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "region": {
+        "x": 0.152,
+        "y": 0.755,
+        "width": 0.025,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.7675
+      },
+      "sourceImageSha256": "2ab7c43dae727cb38631b4eb83ec9fd236134746f7b1ad2d748b634eedb01d72"
+    },
+    {
+      "id": "ch3-q-p88-practice3",
+      "page": 88,
+      "printedPage": "81",
+      "indexAnchor": 2,
+      "anchorLabel": "练习",
+      "locator": "练习第3题题号及“用代数式表示圆环的面积”所在首行。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "region": {
+        "x": 0.152,
+        "y": 0.842,
+        "width": 0.025,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.8545
+      },
+      "sourceImageSha256": "2ab7c43dae727cb38631b4eb83ec9fd236134746f7b1ad2d748b634eedb01d72"
+    },
+    {
+      "id": "ch3-q-p89-ex32-1",
+      "page": 89,
+      "printedPage": "82",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固",
+      "locator": "习题3.2第1题题号及“填空题”一行。",
+      "region": {
+        "x": 0.107,
+        "y": 0.161,
+        "width": 0.12,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.1735
+      },
+      "sourceImageSha256": "c5470cef4b692aa1a7666ec507633f34fff7913fa0e3bff20adf93e9283c87df"
+    },
+    {
+      "id": "ch3-q-p89-ex32-2",
+      "page": 89,
+      "printedPage": "82",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固",
+      "locator": "习题3.2第2题题号及“已知a=12，b=−18”所在题干。",
+      "region": {
+        "x": 0.107,
+        "y": 0.256,
+        "width": 0.45,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.2685
+      },
+      "sourceImageSha256": "c5470cef4b692aa1a7666ec507633f34fff7913fa0e3bff20adf93e9283c87df"
+    },
+    {
+      "id": "ch3-sum-square-structure",
+      "page": 89,
+      "printedPage": "82",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固",
+      "locator": "习题3.2第3题题号及“根据下列a，b的值”所在首行。",
+      "region": {
+        "x": 0.107,
+        "y": 0.345,
+        "width": 0.584,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.3575
+      },
+      "sourceImageSha256": "c5470cef4b692aa1a7666ec507633f34fff7913fa0e3bff20adf93e9283c87df"
+    },
+    {
+      "id": "ch3-q-p89-ex32-4",
+      "page": 89,
+      "printedPage": "82",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固",
+      "locator": "习题3.2第4题题号及“求下列代数式的值”一行。",
+      "region": {
+        "x": 0.107,
+        "y": 0.399,
+        "width": 0.23,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.4115
+      },
+      "sourceImageSha256": "c5470cef4b692aa1a7666ec507633f34fff7913fa0e3bff20adf93e9283c87df"
+    },
+    {
+      "id": "ch3-q-p89-ex32-5",
+      "page": 89,
+      "printedPage": "82",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固",
+      "locator": "习题3.2第5题题号及“已知圆锥的体积”所在首行。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "region": {
+        "x": 0.107,
+        "y": 0.477,
+        "width": 0.025,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.4895
+      },
+      "sourceImageSha256": "c5470cef4b692aa1a7666ec507633f34fff7913fa0e3bff20adf93e9283c87df"
+    },
+    {
+      "id": "ch3-q-p89-ex32-6",
+      "page": 89,
+      "printedPage": "82",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "习题3.2第6题题号及“一段钢管的形状和尺寸如图所示”所在首行。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "region": {
+        "x": 0.107,
+        "y": 0.573,
+        "width": 0.025,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.5855
+      },
+      "sourceImageSha256": "c5470cef4b692aa1a7666ec507633f34fff7913fa0e3bff20adf93e9283c87df"
+    },
+    {
+      "id": "ch3-q-p89-ex32-7",
+      "page": 89,
+      "printedPage": "82",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "习题3.2第7题题号及“A，B两地相距s km”所在首行。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "region": {
+        "x": 0.107,
+        "y": 0.676,
+        "width": 0.025,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.6885
+      },
+      "sourceImageSha256": "c5470cef4b692aa1a7666ec507633f34fff7913fa0e3bff20adf93e9283c87df"
+    },
+    {
+      "id": "ch3-travel-time-difference",
+      "page": 89,
+      "printedPage": "82",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "习题3.2第7题第（1）问“用代数式表示甲比乙少用的时间”。",
+      "region": {
+        "x": 0.135,
+        "y": 0.725,
+        "width": 0.43,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.7365
+      },
+      "sourceImageSha256": "c5470cef4b692aa1a7666ec507633f34fff7913fa0e3bff20adf93e9283c87df"
+    },
+    {
+      "id": "ch3-q-p89-ex32-8",
+      "page": 89,
+      "printedPage": "82",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索",
+      "locator": "习题3.2第8题题号及“摄氏温标与华氏温标”所在首行。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "region": {
+        "x": 0.107,
+        "y": 0.839,
+        "width": 0.025,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.8515
+      },
+      "sourceImageSha256": "c5470cef4b692aa1a7666ec507633f34fff7913fa0e3bff20adf93e9283c87df"
+    },
+    {
+      "id": "ch3-q-p90-activity1",
+      "page": 90,
+      "printedPage": "83",
+      "indexAnchor": 0,
+      "anchorLabel": "活动1 拼图小游戏",
+      "locator": "活动1第（1）项首行“如图1，用火柴棍拼成一排”处；同一活动的第（2）项在下方图2前。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "region": {
+        "x": 0.199,
+        "y": 0.179,
+        "width": 0.042,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.1915
+      },
+      "sourceImageSha256": "bea479c1ade09f1a2b30ec229b7516e664526eed6a53180474d10158070528be"
+    },
+    {
+      "id": "ch3-matchstick-shared-side",
+      "page": 90,
+      "printedPage": "83",
+      "indexAnchor": 0,
+      "anchorLabel": "活动1 拼图小游戏",
+      "locator": "活动1第（1）项末尾“如果图形中含有n个三角形，需要多少根火柴棍”的问题。",
+      "region": {
+        "x": 0.153,
+        "y": 0.207,
+        "width": 0.74,
+        "height": 0.052
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.233
+      },
+      "sourceImageSha256": "bea479c1ade09f1a2b30ec229b7516e664526eed6a53180474d10158070528be"
+    },
+    {
+      "id": "ch3-square-pattern-index",
+      "page": 90,
+      "printedPage": "83",
+      "indexAnchor": 0,
+      "anchorLabel": "活动1 拼图小游戏",
+      "locator": "活动1第（2）项“拼第1个正方形需要4个小正方形，拼第2个正方形需要9个小正方形”的两行。",
+      "region": {
+        "x": 0.155,
+        "y": 0.402,
+        "width": 0.74,
+        "height": 0.052
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.428
+      },
+      "sourceImageSha256": "bea479c1ade09f1a2b30ec229b7516e664526eed6a53180474d10158070528be"
+    },
+    {
+      "id": "ch3-q-p91-activity2",
+      "page": 91,
+      "printedPage": "84",
+      "indexAnchor": 1,
+      "anchorLabel": "请你研究以下问题",
+      "locator": "“请你研究以下问题”一行；上下文承已核对的PDF第90页活动2。",
+      "region": {
+        "x": 0.155,
+        "y": 0.197,
+        "width": 0.2,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.2095
+      },
+      "sourceImageSha256": "11a38f80a4156402153e407389bac9dc527bc5280f2c7f344f5d126d79e2b45e"
+    },
+    {
+      "id": "ch3-cipher-unambiguous-rule",
+      "page": 91,
+      "printedPage": "84",
+      "indexAnchor": 1,
+      "anchorLabel": "请你研究以下问题",
+      "locator": "活动2第（2）问“设计一种明文与密文的关系”及“通过游戏试一试”两行。",
+      "region": {
+        "x": 0.11,
+        "y": 0.387,
+        "width": 0.74,
+        "height": 0.051
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.4125
+      },
+      "sourceImageSha256": "11a38f80a4156402153e407389bac9dc527bc5280f2c7f344f5d126d79e2b45e"
+    },
+    {
+      "id": "ch3-expression-value-checks",
+      "page": 92,
+      "printedPage": "85",
+      "indexAnchor": 0,
+      "anchorLabel": "一、本章知识结构图",
+      "locator": "本章知识结构图右侧“列代数式”方框。",
+      "region": {
+        "x": 0.64,
+        "y": 0.265,
+        "width": 0.119,
+        "height": 0.031
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.2805
+      },
+      "sourceImageSha256": "88ce058702e5557b2064cb0c63140e488fd521d5d430a81122f0d98f2d93dee0"
+    },
+    {
+      "id": "ch3-q-p92-review1",
+      "page": 92,
+      "printedPage": "85",
+      "indexAnchor": 1,
+      "anchorLabel": "二、回顾与思考",
+      "locator": "回顾与思考第1题题号及“代数式可以简明地表示”所在行。",
+      "region": {
+        "x": 0.197,
+        "y": 0.684,
+        "width": 0.674,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.6965
+      },
+      "sourceImageSha256": "88ce058702e5557b2064cb0c63140e488fd521d5d430a81122f0d98f2d93dee0"
+    },
+    {
+      "id": "ch3-q-p92-review2",
+      "page": 92,
+      "printedPage": "85",
+      "indexAnchor": 1,
+      "anchorLabel": "二、回顾与思考",
+      "locator": "回顾与思考第2题题号及“同一个代数式可以表示不同实际问题”所在首行。",
+      "region": {
+        "x": 0.154,
+        "y": 0.713,
+        "width": 0.741,
+        "height": 0.053
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.7395
+      },
+      "sourceImageSha256": "88ce058702e5557b2064cb0c63140e488fd521d5d430a81122f0d98f2d93dee0"
+    },
+    {
+      "id": "ch3-q-p92-review3",
+      "page": 92,
+      "printedPage": "85",
+      "indexAnchor": 1,
+      "anchorLabel": "二、回顾与思考",
+      "locator": "回顾与思考第3题题号及“用代数式表示数量关系时”所在首行。",
+      "region": {
+        "x": 0.154,
+        "y": 0.77,
+        "width": 0.741,
+        "height": 0.053
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.7965
+      },
+      "sourceImageSha256": "88ce058702e5557b2064cb0c63140e488fd521d5d430a81122f0d98f2d93dee0"
+    },
+    {
+      "id": "ch3-q-p92-review4",
+      "page": 92,
+      "printedPage": "85",
+      "indexAnchor": 1,
+      "anchorLabel": "二、回顾与思考",
+      "locator": "回顾与思考第4题题号及“两个相关联的量何时满足反比例关系”所在行。",
+      "region": {
+        "x": 0.197,
+        "y": 0.827,
+        "width": 0.603,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.8395
+      },
+      "sourceImageSha256": "88ce058702e5557b2064cb0c63140e488fd521d5d430a81122f0d98f2d93dee0"
+    },
+    {
+      "id": "ch3-q-p92-review5",
+      "page": 92,
+      "printedPage": "85",
+      "indexAnchor": 1,
+      "anchorLabel": "二、回顾与思考",
+      "locator": "回顾与思考第5题题号及“在解决具体问题时，往往需要求代数式的值”所在首行。",
+      "region": {
+        "x": 0.154,
+        "y": 0.856,
+        "width": 0.741,
+        "height": 0.053
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.8825
+      },
+      "sourceImageSha256": "88ce058702e5557b2064cb0c63140e488fd521d5d430a81122f0d98f2d93dee0"
+    },
+    {
+      "id": "ch3-q-p93-review3-1",
+      "page": 93,
+      "printedPage": "86",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固",
+      "locator": "复习题3第1题题号及“用代数式表示”一行。",
+      "region": {
+        "x": 0.097,
+        "y": 0.182,
+        "width": 0.17,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.1945
+      },
+      "sourceImageSha256": "0d1d25dcf81b798d129bec979aca658e4205af4bb2c8d0766c4d9bfa84246e54"
+    },
+    {
+      "id": "ch3-verbal-operation-scope",
+      "page": 93,
+      "printedPage": "86",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固",
+      "locator": "复习题3第1题第（2）问“a的一半与b的和的平方”。",
+      "region": {
+        "x": 0.124,
+        "y": 0.235,
+        "width": 0.28,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.247
+      },
+      "sourceImageSha256": "0d1d25dcf81b798d129bec979aca658e4205af4bb2c8d0766c4d9bfa84246e54"
+    },
+    {
+      "id": "ch3-q-p93-review3-2",
+      "page": 93,
+      "printedPage": "86",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固",
+      "locator": "复习题3第2题题号及“用代数式表示”一行。",
+      "region": {
+        "x": 0.097,
+        "y": 0.365,
+        "width": 0.17,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.3775
+      },
+      "sourceImageSha256": "0d1d25dcf81b798d129bec979aca658e4205af4bb2c8d0766c4d9bfa84246e54"
+    },
+    {
+      "id": "ch3-q-p93-review3-3",
+      "page": 93,
+      "printedPage": "86",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固",
+      "locator": "复习题3第3题题号及第（1）问“若一个长方形的长为p”所在首行。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "region": {
+        "x": 0.097,
+        "y": 0.548,
+        "width": 0.024,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.5605
+      },
+      "sourceImageSha256": "0d1d25dcf81b798d129bec979aca658e4205af4bb2c8d0766c4d9bfa84246e54"
+    },
+    {
+      "id": "ch3-q-p93-review3-4",
+      "page": 93,
+      "printedPage": "86",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固",
+      "locator": "复习题3第4题题号及“用一根绳子围成一个长方形”所在首行。",
+      "region": {
+        "x": 0.097,
+        "y": 0.601,
+        "width": 0.616,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.6135
+      },
+      "sourceImageSha256": "0d1d25dcf81b798d129bec979aca658e4205af4bb2c8d0766c4d9bfa84246e54"
+    },
+    {
+      "id": "ch3-inverse-proportion-check",
+      "page": 93,
+      "printedPage": "86",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固",
+      "locator": "复习题3第4题第（3）问，比较周长一定和面积一定时是否成反比例关系。",
+      "region": {
+        "x": 0.124,
+        "y": 0.678,
+        "width": 0.744,
+        "height": 0.046
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.701
+      },
+      "sourceImageSha256": "0d1d25dcf81b798d129bec979aca658e4205af4bb2c8d0766c4d9bfa84246e54"
+    },
+    {
+      "id": "ch3-q-p93-review3-5",
+      "page": 93,
+      "printedPage": "86",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固",
+      "locator": "复习题3第5题题号及“根据下列a，b的值”所在首行。",
+      "region": {
+        "x": 0.097,
+        "y": 0.729,
+        "width": 0.585,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.7415
+      },
+      "sourceImageSha256": "0d1d25dcf81b798d129bec979aca658e4205af4bb2c8d0766c4d9bfa84246e54"
+    },
+    {
+      "id": "ch3-q-p93-review3-6",
+      "page": 93,
+      "printedPage": "86",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "复习题3第6题题号及“礼堂第1排有a个座位”所在首行。",
+      "region": {
+        "x": 0.097,
+        "y": 0.832,
+        "width": 0.57,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.8445
+      },
+      "sourceImageSha256": "0d1d25dcf81b798d129bec979aca658e4205af4bb2c8d0766c4d9bfa84246e54"
+    },
+    {
+      "id": "ch3-q-p94-review3-7",
+      "page": 94,
+      "printedPage": "87",
+      "indexAnchor": 0,
+      "anchorLabel": "综合运用（续）",
+      "locator": "复习题3第7题题号及“正方形ABCD的边长为a”所在首行。",
+      "region": {
+        "x": 0.14,
+        "y": 0.077,
+        "width": 0.33,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.0895
+      },
+      "sourceImageSha256": "c4cdba218c0aaef36a4d04f3ff11e8f2acb9b71a785b87007964fcce2f1f8176"
+    },
+    {
+      "id": "ch3-diagram-segment-label",
+      "page": 94,
+      "printedPage": "87",
+      "indexAnchor": 0,
+      "anchorLabel": "综合运用（续）",
+      "locator": "第7题右图上边AD上方标有4的尺寸线；左端位于AD内部，右端对应D。",
+      "region": {
+        "x": 0.76,
+        "y": 0.08,
+        "width": 0.105,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.0925
+      },
+      "sourceImageSha256": "c4cdba218c0aaef36a4d04f3ff11e8f2acb9b71a785b87007964fcce2f1f8176"
+    },
+    {
+      "id": "ch3-counter-pattern-corners",
+      "page": 94,
+      "printedPage": "87",
+      "indexAnchor": 1,
+      "anchorLabel": "拓广探索",
+      "locator": "复习题3第8题题号及“用棋子摆出一组形如正方形的图形”所在首行。",
+      "region": {
+        "x": 0.14,
+        "y": 0.293,
+        "width": 0.765,
+        "height": 0.046
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.316
+      },
+      "sourceImageSha256": "c4cdba218c0aaef36a4d04f3ff11e8f2acb9b71a785b87007964fcce2f1f8176"
+    },
+    {
+      "id": "ch3-q-p94-review3-9",
+      "page": 94,
+      "printedPage": "87",
+      "indexAnchor": 1,
+      "anchorLabel": "拓广探索",
+      "locator": "复习题3第9题题号及“冰糖葫芦是我国传统小吃”所在首行。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "region": {
+        "x": 0.14,
+        "y": 0.48,
+        "width": 0.024,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.4925
+      },
+      "sourceImageSha256": "c4cdba218c0aaef36a4d04f3ff11e8f2acb9b71a785b87007964fcce2f1f8176"
+    },
+    {
+      "id": "ch3-skewer-integer-domain",
+      "page": 94,
+      "printedPage": "87",
+      "indexAnchor": 1,
+      "anchorLabel": "拓广探索",
+      "locator": "复习题3第9题第（2）问首句“用200个山楂穿了b串冰糖葫芦，且每串的山楂个数相等”。",
+      "region": {
+        "x": 0.166,
+        "y": 0.66,
+        "width": 0.595,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.6715
+      },
+      "sourceImageSha256": "c4cdba218c0aaef36a4d04f3ff11e8f2acb9b71a785b87007964fcce2f1f8176"
+    }
+  ]
+}

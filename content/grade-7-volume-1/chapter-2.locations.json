@@ -1,0 +1,4606 @@
+{
+  "documentSha256": "6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249",
+  "coordinateSystem": "normalized-full-page-top-left",
+  "sourceIndex": "materials/indexes/人教版-数学-七年级上册/index.jsonl",
+  "sourceImages": "materials/indexes/人教版-数学-七年级上册/images/",
+  "locations": [
+    {
+      "id": "ch2-q-p31-intro-temperature",
+      "page": 31,
+      "printedPage": null,
+      "indexAnchor": 0,
+      "anchorLabel": "第二章 有理数的运算",
+      "locator": "章引言（1）：日温差的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.13,
+        "y": 0.249,
+        "width": 0.73,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.2605
+      },
+      "sourceImageSha256": "c24ca8d91aca5c8de5411ddb264045e3eeb410302ec303af8f693b5b1366efa9"
+    },
+    {
+      "id": "ch2-q-p31-intro-budget",
+      "page": 31,
+      "printedPage": null,
+      "indexAnchor": 1,
+      "anchorLabel": "收支情况表",
+      "locator": "章引言（2）：收支表中的结余的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.13,
+        "y": 0.48,
+        "width": 0.64,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.493
+      },
+      "sourceImageSha256": "c24ca8d91aca5c8de5411ddb264045e3eeb410302ec303af8f693b5b1366efa9"
+    },
+    {
+      "id": "ch2-signed-change",
+      "page": 31,
+      "printedPage": null,
+      "indexAnchor": 1,
+      "anchorLabel": "收支情况表",
+      "locator": "收支表下“要解决上面的问题，就要计算……”一行中的收支算式。",
+      "region": {
+        "x": 0.13,
+        "y": 0.508,
+        "width": 0.74,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.521
+      },
+      "sourceImageSha256": "c24ca8d91aca5c8de5411ddb264045e3eeb410302ec303af8f693b5b1366efa9"
+    },
+    {
+      "id": "ch2-q-p32-addition-intro",
+      "page": 32,
+      "printedPage": "25",
+      "indexAnchor": 1,
+      "anchorLabel": "2.1.1 有理数的加法",
+      "locator": "2.1.1引入：有理数范围内怎样加法的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.13,
+        "y": 0.269,
+        "width": 0.79,
+        "height": 0.052
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.295
+      },
+      "sourceImageSha256": "3bb1478e3cb011528c43a68a0fe5b1658d8548359577d6c6e655953050302bde"
+    },
+    {
+      "id": "ch2-q-p32-addition-cases",
+      "page": 32,
+      "printedPage": "25",
+      "indexAnchor": 2,
+      "anchorLabel": "思考",
+      "locator": "思考：有理数加法有哪几种情况的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.15,
+        "y": 0.451,
+        "width": 0.73,
+        "height": 0.049
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4755
+      },
+      "sourceImageSha256": "3bb1478e3cb011528c43a68a0fe5b1658d8548359577d6c6e655953050302bde"
+    },
+    {
+      "id": "ch2-motion-result",
+      "page": 32,
+      "printedPage": "25",
+      "indexAnchor": 2,
+      "anchorLabel": "思考",
+      "locator": "页下“一个物体沿着一条直线做左右方向的运动……向左运动5 m记作−5 m”两行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.634,
+        "width": 0.79,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.659
+      },
+      "sourceImageSha256": "3bb1478e3cb011528c43a68a0fe5b1658d8548359577d6c6e655953050302bde"
+    },
+    {
+      "id": "ch2-q-p32-right-motion",
+      "page": 32,
+      "printedPage": "25",
+      "indexAnchor": 2,
+      "anchorLabel": "思考",
+      "locator": "思考：向右运动5 m再向右运动3 m的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.15,
+        "y": 0.728,
+        "width": 0.73,
+        "height": 0.053
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.7545
+      },
+      "sourceImageSha256": "3bb1478e3cb011528c43a68a0fe5b1658d8548359577d6c6e655953050302bde"
+    },
+    {
+      "id": "ch2-q-p33-left-motion",
+      "page": 33,
+      "printedPage": "26",
+      "indexAnchor": 1,
+      "anchorLabel": "思考；探究",
+      "locator": "思考：向左运动5 m再向左运动3 m的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.1,
+        "y": 0.187,
+        "width": 0.77,
+        "height": 0.052
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.213
+      },
+      "sourceImageSha256": "d1856fa7d9dbe7d7e7979292a1eda0d1288ce2b8cbcf0b8c351d4885d81d9cc1"
+    },
+    {
+      "id": "ch2-q-p33-opposite-motion",
+      "page": 33,
+      "printedPage": "26",
+      "indexAnchor": 1,
+      "anchorLabel": "思考；探究",
+      "locator": "探究：先左后右与先右后左（含数轴旁注）的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.15,
+        "y": 0.552,
+        "width": 0.73,
+        "height": 0.106
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.605
+      },
+      "sourceImageSha256": "d1856fa7d9dbe7d7e7979292a1eda0d1288ce2b8cbcf0b8c351d4885d81d9cc1"
+    },
+    {
+      "id": "ch2-opposite-add-cancel",
+      "page": 33,
+      "printedPage": "26",
+      "indexAnchor": 1,
+      "anchorLabel": "思考；探究",
+      "locator": "页底从算式③④归纳异号两数相加的三行。",
+      "region": {
+        "x": 0.085,
+        "y": 0.845,
+        "width": 0.79,
+        "height": 0.074
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.882
+      },
+      "sourceImageSha256": "d1856fa7d9dbe7d7e7979292a1eda0d1288ce2b8cbcf0b8c351d4885d81d9cc1"
+    },
+    {
+      "id": "ch2-q-p34-return-origin",
+      "page": 34,
+      "printedPage": "27",
+      "indexAnchor": 0,
+      "anchorLabel": "探究",
+      "locator": "探究：向右5 m再向左5 m的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.15,
+        "y": 0.101,
+        "width": 0.73,
+        "height": 0.052
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.127
+      },
+      "sourceImageSha256": "7c23a658f9239e06aa1eae87375c558084ed15d23b10cf8bf02d2c60dda8585c"
+    },
+    {
+      "id": "ch2-q-p34-infer-add-rule",
+      "page": 34,
+      "printedPage": "27",
+      "indexAnchor": 1,
+      "anchorLabel": "有理数加法法则",
+      "locator": "归纳问题：从算式①～⑥归纳加法规律的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.13,
+        "y": 0.368,
+        "width": 0.79,
+        "height": 0.053
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3945
+      },
+      "sourceImageSha256": "7c23a658f9239e06aa1eae87375c558084ed15d23b10cf8bf02d2c60dda8585c"
+    },
+    {
+      "id": "ch2-opposite-add-zero",
+      "page": 34,
+      "printedPage": "27",
+      "indexAnchor": 1,
+      "anchorLabel": "有理数加法法则",
+      "locator": "加法法则第2条，从“绝对值不相等的异号两数相加”到“互为相反数的两个数相加得0”。",
+      "region": {
+        "x": 0.13,
+        "y": 0.479,
+        "width": 0.79,
+        "height": 0.054
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.506
+      },
+      "sourceImageSha256": "7c23a658f9239e06aa1eae87375c558084ed15d23b10cf8bf02d2c60dda8585c"
+    },
+    {
+      "id": "ch2-q-p34-addition-consistency",
+      "page": 34,
+      "printedPage": "27",
+      "indexAnchor": 1,
+      "anchorLabel": "有理数加法法则",
+      "locator": "思考：加法法则与小学运算一致吗的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.15,
+        "y": 0.637,
+        "width": 0.73,
+        "height": 0.052
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.663
+      },
+      "sourceImageSha256": "7c23a658f9239e06aa1eae87375c558084ed15d23b10cf8bf02d2c60dda8585c"
+    },
+    {
+      "id": "ch2-q-p34-example1",
+      "page": 34,
+      "printedPage": "27",
+      "indexAnchor": 2,
+      "anchorLabel": "例1",
+      "locator": "例1：五种有理数加法的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.17,
+        "y": 0.704,
+        "width": 0.2,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.7155
+      },
+      "sourceImageSha256": "7c23a658f9239e06aa1eae87375c558084ed15d23b10cf8bf02d2c60dda8585c"
+    },
+    {
+      "id": "ch2-sum-magnitude-step",
+      "page": 34,
+      "printedPage": "27",
+      "indexAnchor": 2,
+      "anchorLabel": "例1",
+      "locator": "例1解答第（4）问“(−4.7)+3.9=−(4.7−3.9)=−0.8”一行。",
+      "region": {
+        "x": 0.17,
+        "y": 0.892,
+        "width": 0.49,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.903
+      },
+      "sourceImageSha256": "7c23a658f9239e06aa1eae87375c558084ed15d23b10cf8bf02d2c60dda8585c"
+    },
+    {
+      "id": "ch2-q-p35-addition-order-effect",
+      "page": 35,
+      "printedPage": "28",
+      "indexAnchor": 0,
+      "anchorLabel": "例1（续）",
+      "locator": "思考：加正数或负数后与原数比较的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.1,
+        "y": 0.161,
+        "width": 0.77,
+        "height": 0.046
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.184
+      },
+      "sourceImageSha256": "59fb72be58ac51c2e808809974f349d5f7e05e5477a95179006d1cf70ba0ef4d"
+    },
+    {
+      "id": "ch2-q-p35-practice1",
+      "page": 35,
+      "printedPage": "28",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习第1题：用算式表示温度与收支的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.1,
+        "y": 0.295,
+        "width": 0.44,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3075
+      },
+      "sourceImageSha256": "59fb72be58ac51c2e808809974f349d5f7e05e5477a95179006d1cf70ba0ef4d"
+    },
+    {
+      "id": "ch2-q-p35-practice2",
+      "page": 35,
+      "printedPage": "28",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习第2题：九组加法口算的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.1,
+        "y": 0.36,
+        "width": 0.18,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3725
+      },
+      "sourceImageSha256": "59fb72be58ac51c2e808809974f349d5f7e05e5477a95179006d1cf70ba0ef4d"
+    },
+    {
+      "id": "ch2-q-p35-practice3",
+      "page": 35,
+      "printedPage": "28",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习第3题：整数、小数和分数相加的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.1,
+        "y": 0.465,
+        "width": 0.17,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4775
+      },
+      "sourceImageSha256": "59fb72be58ac51c2e808809974f349d5f7e05e5477a95179006d1cf70ba0ef4d"
+    },
+    {
+      "id": "ch2-q-p35-practice4",
+      "page": 35,
+      "printedPage": "28",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习第4题：用生活实例解释两式的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.1,
+        "y": 0.574,
+        "width": 0.77,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.586
+      },
+      "sourceImageSha256": "59fb72be58ac51c2e808809974f349d5f7e05e5477a95179006d1cf70ba0ef4d"
+    },
+    {
+      "id": "ch2-q-p35-add-laws-intro",
+      "page": 35,
+      "printedPage": "28",
+      "indexAnchor": 2,
+      "anchorLabel": "加法交换律",
+      "locator": "引入问题：加法交换律、结合律还成立吗的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.085,
+        "y": 0.632,
+        "width": 0.79,
+        "height": 0.051
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.6575
+      },
+      "sourceImageSha256": "59fb72be58ac51c2e808809974f349d5f7e05e5477a95179006d1cf70ba0ef4d"
+    },
+    {
+      "id": "ch2-q-p35-commute-inquiry",
+      "page": 35,
+      "printedPage": "28",
+      "indexAnchor": 2,
+      "anchorLabel": "加法交换律",
+      "locator": "探究：比较加数换位后的和的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.1,
+        "y": 0.733,
+        "width": 0.77,
+        "height": 0.108
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.787
+      },
+      "sourceImageSha256": "59fb72be58ac51c2e808809974f349d5f7e05e5477a95179006d1cf70ba0ef4d"
+    },
+    {
+      "id": "ch2-commute-whole-number",
+      "page": 35,
+      "printedPage": "28",
+      "indexAnchor": 2,
+      "anchorLabel": "加法交换律",
+      "locator": "页底“两个数相加，交换加数的位置，和不变”及加法交换律公式框。",
+      "region": {
+        "x": 0.13,
+        "y": 0.85,
+        "width": 0.74,
+        "height": 0.058
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.879
+      },
+      "sourceImageSha256": "59fb72be58ac51c2e808809974f349d5f7e05e5477a95179006d1cf70ba0ef4d"
+    },
+    {
+      "id": "ch2-q-p36-associate-inquiry",
+      "page": 36,
+      "printedPage": "29",
+      "indexAnchor": 0,
+      "anchorLabel": "加法结合律",
+      "locator": "探究：比较不同分组的三个数之和的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.15,
+        "y": 0.102,
+        "width": 0.73,
+        "height": 0.105
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.1545
+      },
+      "sourceImageSha256": "a9599ed662e6d9b3ef69cf6bb192a5f5daed4e456318680d4e01842f21002c60"
+    },
+    {
+      "id": "ch2-associate-order",
+      "page": 36,
+      "printedPage": "29",
+      "indexAnchor": 0,
+      "anchorLabel": "加法结合律",
+      "locator": "探究下“先把前两个数相加……和不变”及加法结合律公式框。",
+      "region": {
+        "x": 0.13,
+        "y": 0.229,
+        "width": 0.79,
+        "height": 0.085
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.2715
+      },
+      "sourceImageSha256": "a9599ed662e6d9b3ef69cf6bb192a5f5daed4e456318680d4e01842f21002c60"
+    },
+    {
+      "id": "ch2-q-p36-example2",
+      "page": 36,
+      "printedPage": "29",
+      "indexAnchor": 1,
+      "anchorLabel": "例2",
+      "locator": "例2：运算律简化加法（含旁注）的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.17,
+        "y": 0.435,
+        "width": 0.22,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4475
+      },
+      "sourceImageSha256": "a9599ed662e6d9b3ef69cf6bb192a5f5daed4e456318680d4e01842f21002c60"
+    },
+    {
+      "id": "ch2-zero-pair-choice",
+      "page": 36,
+      "printedPage": "29",
+      "indexAnchor": 1,
+      "anchorLabel": "例2",
+      "locator": "例2第（1）问解答中“=[8+(−8)]+(−6)=0+(−6)”这一行。",
+      "region": {
+        "x": 0.2,
+        "y": 0.516,
+        "width": 0.42,
+        "height": 0.028
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.53
+      },
+      "sourceImageSha256": "a9599ed662e6d9b3ef69cf6bb192a5f5daed4e456318680d4e01842f21002c60"
+    },
+    {
+      "id": "ch2-round-sum-choice",
+      "page": 36,
+      "printedPage": "29",
+      "indexAnchor": 1,
+      "anchorLabel": "例2",
+      "locator": "例2第（2）问解答“=(16+24)+[(−25)+(−35)]”一行。",
+      "region": {
+        "x": 0.17,
+        "y": 0.605,
+        "width": 0.39,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.6165
+      },
+      "sourceImageSha256": "a9599ed662e6d9b3ef69cf6bb192a5f5daed4e456318680d4e01842f21002c60"
+    },
+    {
+      "id": "ch2-q-p36-example3",
+      "page": 36,
+      "printedPage": "29",
+      "indexAnchor": 2,
+      "anchorLabel": "例3",
+      "locator": "例3：小麦质量和总偏差（含续页两解法比较）的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.13,
+        "y": 0.689,
+        "width": 0.79,
+        "height": 0.079
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.7285
+      },
+      "sourceImageSha256": "a9599ed662e6d9b3ef69cf6bb192a5f5daed4e456318680d4e01842f21002c60"
+    },
+    {
+      "id": "ch2-deviation-sum",
+      "page": 37,
+      "printedPage": "30",
+      "indexAnchor": 0,
+      "anchorLabel": "例3（续）",
+      "locator": "例3解法2把每袋超过50 kg的数记正、不足记负，列出10个偏差的三行。",
+      "region": {
+        "x": 0.085,
+        "y": 0.179,
+        "width": 0.79,
+        "height": 0.078
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.218
+      },
+      "sourceImageSha256": "674cb405de81cde7fccffa34451d5c317eedb6aaac07b93922cf104318914c8c"
+    },
+    {
+      "id": "ch2-restore-total",
+      "page": 37,
+      "printedPage": "30",
+      "indexAnchor": 0,
+      "anchorLabel": "例3（续）",
+      "locator": "例3解法2末尾“50×10+2.5=502.5”一行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.383,
+        "width": 0.32,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.394
+      },
+      "sourceImageSha256": "674cb405de81cde7fccffa34451d5c317eedb6aaac07b93922cf104318914c8c"
+    },
+    {
+      "id": "ch2-q-p37-practice1",
+      "page": 37,
+      "printedPage": "30",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习第1题：四组多项加法的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.1,
+        "y": 0.482,
+        "width": 0.18,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4945
+      },
+      "sourceImageSha256": "674cb405de81cde7fccffa34451d5c317eedb6aaac07b93922cf104318914c8c"
+    },
+    {
+      "id": "ch2-q-p37-practice2",
+      "page": 37,
+      "printedPage": "30",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习第2题：储蓄卡余额的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.1,
+        "y": 0.62,
+        "width": 0.77,
+        "height": 0.052
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.646
+      },
+      "sourceImageSha256": "674cb405de81cde7fccffa34451d5c317eedb6aaac07b93922cf104318914c8c"
+    },
+    {
+      "id": "ch2-q-p37-practice3",
+      "page": 37,
+      "printedPage": "30",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习第3题：飞机下降再上升的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.1,
+        "y": 0.676,
+        "width": 0.77,
+        "height": 0.052
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.702
+      },
+      "sourceImageSha256": "674cb405de81cde7fccffa34451d5c317eedb6aaac07b93922cf104318914c8c"
+    },
+    {
+      "id": "ch2-q-p37-temperature-think",
+      "page": 37,
+      "printedPage": "30",
+      "indexAnchor": 2,
+      "anchorLabel": "2.1.2 有理数的减法",
+      "locator": "减法引入思考：3 ℃比−3 ℃高多少的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.64,
+        "y": 0.81,
+        "width": 0.23,
+        "height": 0.08
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.85
+      },
+      "sourceImageSha256": "674cb405de81cde7fccffa34451d5c317eedb6aaac07b93922cf104318914c8c"
+    },
+    {
+      "id": "ch2-subtraction-inverse",
+      "page": 38,
+      "printedPage": "31",
+      "indexAnchor": 0,
+      "anchorLabel": "图2.1-4",
+      "locator": "页首从“减法是加法的逆运算”到“因为6与−3相加得3，所以这个数应该是6”的说明。",
+      "region": {
+        "x": 0.13,
+        "y": 0.07,
+        "width": 0.61,
+        "height": 0.135
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.1375
+      },
+      "sourceImageSha256": "b0273942826b78654f3d3569dd19de7d772a363bb329046aa8919c3424d08511"
+    },
+    {
+      "id": "ch2-q-p38-subtract-inquiry",
+      "page": 38,
+      "printedPage": "31",
+      "indexAnchor": 1,
+      "anchorLabel": "有理数减法法则",
+      "locator": "探究：减去−3与加什么数相同的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.15,
+        "y": 0.394,
+        "width": 0.73,
+        "height": 0.055
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4215
+      },
+      "sourceImageSha256": "b0273942826b78654f3d3569dd19de7d772a363bb329046aa8919c3424d08511"
+    },
+    {
+      "id": "ch2-subtract-add-opposite",
+      "page": 38,
+      "printedPage": "31",
+      "indexAnchor": 1,
+      "anchorLabel": "有理数减法法则",
+      "locator": "“减去一个数，等于加这个数的相反数”及其下公式a−b=a+(−b)。",
+      "region": {
+        "x": 0.13,
+        "y": 0.661,
+        "width": 0.51,
+        "height": 0.091
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.7065
+      },
+      "sourceImageSha256": "b0273942826b78654f3d3569dd19de7d772a363bb329046aa8919c3424d08511"
+    },
+    {
+      "id": "ch2-q-p38-example4",
+      "page": 38,
+      "printedPage": "31",
+      "indexAnchor": 2,
+      "anchorLabel": "例4",
+      "locator": "例4：五种有理数减法的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.17,
+        "y": 0.786,
+        "width": 0.2,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.798
+      },
+      "sourceImageSha256": "b0273942826b78654f3d3569dd19de7d772a363bb329046aa8919c3424d08511"
+    },
+    {
+      "id": "ch2-minus-two-roles",
+      "page": 38,
+      "printedPage": "31",
+      "indexAnchor": 2,
+      "anchorLabel": "例4",
+      "locator": "例4解答第（1）问“(−3)−(−5)=(−3)+5=2”一行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.893,
+        "width": 0.49,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.9045
+      },
+      "sourceImageSha256": "b0273942826b78654f3d3569dd19de7d772a363bb329046aa8919c3424d08511"
+    },
+    {
+      "id": "ch2-subtract-mixed-number",
+      "page": 39,
+      "printedPage": "32",
+      "indexAnchor": 0,
+      "anchorLabel": "例4（续）",
+      "locator": "例4第（5）问含负带分数的解答一行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.162,
+        "width": 0.48,
+        "height": 0.03
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.177
+      },
+      "sourceImageSha256": "f702f5da6803e4a554df1161fa2d2a877586dc146714d3e61a57af04ce7d60cc"
+    },
+    {
+      "id": "ch2-q-p39-smaller-subtract-larger",
+      "page": 39,
+      "printedPage": "32",
+      "indexAnchor": 0,
+      "anchorLabel": "例4（续）",
+      "locator": "思考：较小的数减较大的数的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.1,
+        "y": 0.246,
+        "width": 0.53,
+        "height": 0.046
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.269
+      },
+      "sourceImageSha256": "f702f5da6803e4a554df1161fa2d2a877586dc146714d3e61a57af04ce7d60cc"
+    },
+    {
+      "id": "ch2-q-p39-practice1",
+      "page": 39,
+      "printedPage": "32",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习第1题：九组有理数减法的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.1,
+        "y": 0.471,
+        "width": 0.18,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.483
+      },
+      "sourceImageSha256": "f702f5da6803e4a554df1161fa2d2a877586dc146714d3e61a57af04ce7d60cc"
+    },
+    {
+      "id": "ch2-q-p39-practice2",
+      "page": 39,
+      "printedPage": "32",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习第2题：比某温度低若干摄氏度的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.1,
+        "y": 0.606,
+        "width": 0.77,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.63
+      },
+      "sourceImageSha256": "f702f5da6803e4a554df1161fa2d2a877586dc146714d3e61a57af04ce7d60cc"
+    },
+    {
+      "id": "ch2-q-p39-example5",
+      "page": 39,
+      "printedPage": "32",
+      "indexAnchor": 2,
+      "anchorLabel": "例5",
+      "locator": "例5：加减混合运算（含续页运算律旁注）的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.13,
+        "y": 0.723,
+        "width": 0.61,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.736
+      },
+      "sourceImageSha256": "f702f5da6803e4a554df1161fa2d2a877586dc146714d3e61a57af04ce7d60cc"
+    },
+    {
+      "id": "ch2-mixed-convert-before-reorder",
+      "page": 39,
+      "printedPage": "32",
+      "indexAnchor": 2,
+      "anchorLabel": "例5",
+      "locator": "例5分析中“把减法转化为加法”至改写后的四项和及“再进行有理数的加法运算”。",
+      "region": {
+        "x": 0.085,
+        "y": 0.758,
+        "width": 0.79,
+        "height": 0.1
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.808
+      },
+      "sourceImageSha256": "f702f5da6803e4a554df1161fa2d2a877586dc146714d3e61a57af04ce7d60cc"
+    },
+    {
+      "id": "ch2-sum-abbreviation",
+      "page": 40,
+      "printedPage": "33",
+      "indexAnchor": 1,
+      "anchorLabel": "归纳",
+      "locator": "“算式……是−20，+3，+5，−7这四个数的和”至简写式−20+3+5−7。",
+      "region": {
+        "x": 0.13,
+        "y": 0.263,
+        "width": 0.79,
+        "height": 0.081
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3035
+      },
+      "sourceImageSha256": "01ca4e1a4cb353fa53a9ff0234ba9702add04964a6ea0e2cd68662ca0d5a4709"
+    },
+    {
+      "id": "ch2-q-p40-example6",
+      "page": 40,
+      "printedPage": "33",
+      "indexAnchor": 2,
+      "anchorLabel": "例6",
+      "locator": "例6：省略写法中的加减运算的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.17,
+        "y": 0.546,
+        "width": 0.38,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.558
+      },
+      "sourceImageSha256": "01ca4e1a4cb353fa53a9ff0234ba9702add04964a6ea0e2cd68662ca0d5a4709"
+    },
+    {
+      "id": "ch2-signed-reorder-step",
+      "page": 40,
+      "printedPage": "33",
+      "indexAnchor": 2,
+      "anchorLabel": "例6",
+      "locator": "例6解答从14−25+12−17改写为14+12−25−17的一行。",
+      "region": {
+        "x": 0.17,
+        "y": 0.605,
+        "width": 0.28,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.617
+      },
+      "sourceImageSha256": "01ca4e1a4cb353fa53a9ff0234ba9702add04964a6ea0e2cd68662ca0d5a4709"
+    },
+    {
+      "id": "ch2-q-p40-distance-investigation",
+      "page": 40,
+      "printedPage": "33",
+      "indexAnchor": 3,
+      "anchorLabel": "探究",
+      "locator": "探究：数轴上A、B两点的距离的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.15,
+        "y": 0.734,
+        "width": 0.73,
+        "height": 0.055
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.7615
+      },
+      "sourceImageSha256": "01ca4e1a4cb353fa53a9ff0234ba9702add04964a6ea0e2cd68662ca0d5a4709"
+    },
+    {
+      "id": "ch2-distance-inquiry",
+      "page": 40,
+      "printedPage": "33",
+      "indexAnchor": 3,
+      "anchorLabel": "探究",
+      "locator": "页底探究第（2）问及“一般地……距离与数a、b之间的关系吗”两段。",
+      "region": {
+        "x": 0.13,
+        "y": 0.822,
+        "width": 0.79,
+        "height": 0.082
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.863
+      },
+      "sourceImageSha256": "01ca4e1a4cb353fa53a9ff0234ba9702add04964a6ea0e2cd68662ca0d5a4709"
+    },
+    {
+      "id": "ch2-q-p41-practice1",
+      "page": 41,
+      "printedPage": "34",
+      "indexAnchor": 0,
+      "anchorLabel": "练习",
+      "locator": "练习第1题：四组加减混合运算的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.1,
+        "y": 0.116,
+        "width": 0.18,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.1275
+      },
+      "sourceImageSha256": "a50d8f76493649cfeb55dbd885bbf24b492c9c4b94e7610c3d87240844e61fd3"
+    },
+    {
+      "id": "ch2-rewrite-exercise",
+      "page": 41,
+      "printedPage": "34",
+      "indexAnchor": 0,
+      "anchorLabel": "练习",
+      "locator": "页上练习第2题题干：“将下列式子先改写成省略括号和加号的形式，再计算。”",
+      "region": {
+        "x": 0.1,
+        "y": 0.282,
+        "width": 0.58,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.294
+      },
+      "sourceImageSha256": "a50d8f76493649cfeb55dbd885bbf24b492c9c4b94e7610c3d87240844e61fd3"
+    },
+    {
+      "id": "ch2-q-p41-practice2",
+      "page": 41,
+      "printedPage": "34",
+      "indexAnchor": 0,
+      "anchorLabel": "练习",
+      "locator": "练习第2题：先改写简式再计算的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.1,
+        "y": 0.282,
+        "width": 0.58,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.294
+      },
+      "sourceImageSha256": "a50d8f76493649cfeb55dbd885bbf24b492c9c4b94e7610c3d87240844e61fd3"
+    },
+    {
+      "id": "ch2-q-p41-ex21-1",
+      "page": 41,
+      "printedPage": "34",
+      "indexAnchor": 1,
+      "anchorLabel": "习题2.1",
+      "locator": "习题2.1第1题的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.1,
+        "y": 0.521,
+        "width": 0.18,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.5325
+      },
+      "sourceImageSha256": "a50d8f76493649cfeb55dbd885bbf24b492c9c4b94e7610c3d87240844e61fd3"
+    },
+    {
+      "id": "ch2-q-p41-ex21-2",
+      "page": 41,
+      "printedPage": "34",
+      "indexAnchor": 1,
+      "anchorLabel": "习题2.1",
+      "locator": "习题2.1第2题的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.1,
+        "y": 0.643,
+        "width": 0.18,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.6545
+      },
+      "sourceImageSha256": "a50d8f76493649cfeb55dbd885bbf24b492c9c4b94e7610c3d87240844e61fd3"
+    },
+    {
+      "id": "ch2-q-p41-ex21-3",
+      "page": 41,
+      "printedPage": "34",
+      "indexAnchor": 1,
+      "anchorLabel": "习题2.1",
+      "locator": "习题2.1第3题的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.1,
+        "y": 0.791,
+        "width": 0.18,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.8025
+      },
+      "sourceImageSha256": "a50d8f76493649cfeb55dbd885bbf24b492c9c4b94e7610c3d87240844e61fd3"
+    },
+    {
+      "id": "ch2-q-p42-ex21-4",
+      "page": 42,
+      "printedPage": "35",
+      "indexAnchor": 0,
+      "anchorLabel": "习题2.1（续）",
+      "locator": "习题2.1第4题的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.15,
+        "y": 0.077,
+        "width": 0.18,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.0885
+      },
+      "sourceImageSha256": "c0356bd0ed67392ecf083634c52ae7850e87d0ea5e15c3bc8c6a9291db3c2108"
+    },
+    {
+      "id": "ch2-q-p42-ex21-5",
+      "page": 42,
+      "printedPage": "35",
+      "indexAnchor": 0,
+      "anchorLabel": "习题2.1（续）",
+      "locator": "习题2.1第5题的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.15,
+        "y": 0.284,
+        "width": 0.18,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.2955
+      },
+      "sourceImageSha256": "c0356bd0ed67392ecf083634c52ae7850e87d0ea5e15c3bc8c6a9291db3c2108"
+    },
+    {
+      "id": "ch2-height-difference-exercise",
+      "page": 42,
+      "printedPage": "35",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "习题2.1第6题题干“两处高度相差多少米”。",
+      "region": {
+        "x": 0.15,
+        "y": 0.499,
+        "width": 0.75,
+        "height": 0.049
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.5235
+      },
+      "sourceImageSha256": "c0356bd0ed67392ecf083634c52ae7850e87d0ea5e15c3bc8c6a9291db3c2108"
+    },
+    {
+      "id": "ch2-q-p42-ex21-6",
+      "page": 42,
+      "printedPage": "35",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "习题2.1第6题：两处海拔之差的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.15,
+        "y": 0.499,
+        "width": 0.75,
+        "height": 0.049
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.5235
+      },
+      "sourceImageSha256": "c0356bd0ed67392ecf083634c52ae7850e87d0ea5e15c3bc8c6a9291db3c2108"
+    },
+    {
+      "id": "ch2-q-p42-ex21-7",
+      "page": 42,
+      "printedPage": "35",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "习题2.1第7题：半夜气温的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.15,
+        "y": 0.774,
+        "width": 0.75,
+        "height": 0.047
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.7975
+      },
+      "sourceImageSha256": "c0356bd0ed67392ecf083634c52ae7850e87d0ea5e15c3bc8c6a9291db3c2108"
+    },
+    {
+      "id": "ch2-net-profit-exercise",
+      "page": 42,
+      "printedPage": "35",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "习题2.1第8题“一周中各天的盈亏情况”及“总的盈亏情况如何”。",
+      "region": {
+        "x": 0.15,
+        "y": 0.824,
+        "width": 0.75,
+        "height": 0.076
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.862
+      },
+      "sourceImageSha256": "c0356bd0ed67392ecf083634c52ae7850e87d0ea5e15c3bc8c6a9291db3c2108"
+    },
+    {
+      "id": "ch2-q-p42-ex21-8",
+      "page": 42,
+      "printedPage": "35",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "习题2.1第8题：一周总盈亏的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.15,
+        "y": 0.824,
+        "width": 0.75,
+        "height": 0.076
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.862
+      },
+      "sourceImageSha256": "c0356bd0ed67392ecf083634c52ae7850e87d0ea5e15c3bc8c6a9291db3c2108"
+    },
+    {
+      "id": "ch2-mass-total-exercise",
+      "page": 43,
+      "printedPage": "36",
+      "indexAnchor": 0,
+      "anchorLabel": "习题2.1（续）",
+      "locator": "习题2.1第9题开头“每筐25 kg为质量标准，超过的千克数记作正数，不足的千克数记作负数”的两行题干。",
+      "region": {
+        "x": 0.1,
+        "y": 0.075,
+        "width": 0.77,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.099
+      },
+      "sourceImageSha256": "ca82a1699cd5ebe5c91b449dda6be38a983414f39efd315a2aefab3d180131bc"
+    },
+    {
+      "id": "ch2-q-p43-ex21-9",
+      "page": 43,
+      "printedPage": "36",
+      "indexAnchor": 0,
+      "anchorLabel": "习题2.1（续）",
+      "locator": "习题2.1第9题：8筐白菜总质量的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.1,
+        "y": 0.075,
+        "width": 0.77,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.099
+      },
+      "sourceImageSha256": "ca82a1699cd5ebe5c91b449dda6be38a983414f39efd315a2aefab3d180131bc"
+    },
+    {
+      "id": "ch2-q-p43-ex21-10",
+      "page": 43,
+      "printedPage": "36",
+      "indexAnchor": 1,
+      "anchorLabel": "第10题",
+      "locator": "习题2.1第10题：一周温差比较的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.1,
+        "y": 0.184,
+        "width": 0.77,
+        "height": 0.051
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.2095
+      },
+      "sourceImageSha256": "ca82a1699cd5ebe5c91b449dda6be38a983414f39efd315a2aefab3d180131bc"
+    },
+    {
+      "id": "ch2-q-p43-ex21-11",
+      "page": 43,
+      "printedPage": "36",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索",
+      "locator": "习题2.1第11题：加法填空的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.1,
+        "y": 0.359,
+        "width": 0.18,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3705
+      },
+      "sourceImageSha256": "ca82a1699cd5ebe5c91b449dda6be38a983414f39efd315a2aefab3d180131bc"
+    },
+    {
+      "id": "ch2-q-p43-ex21-12",
+      "page": 43,
+      "printedPage": "36",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索",
+      "locator": "习题2.1第12题：重复相加与乘法猜想的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.1,
+        "y": 0.464,
+        "width": 0.46,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4765
+      },
+      "sourceImageSha256": "ca82a1699cd5ebe5c91b449dda6be38a983414f39efd315a2aefab3d180131bc"
+    },
+    {
+      "id": "ch2-repeated-add-inquiry",
+      "page": 43,
+      "printedPage": "36",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索",
+      "locator": "习题2.1第12题末问：“你能进一步猜出负数乘正数的法则吗？”",
+      "region": {
+        "x": 0.145,
+        "y": 0.646,
+        "width": 0.56,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.657
+      },
+      "sourceImageSha256": "ca82a1699cd5ebe5c91b449dda6be38a983414f39efd315a2aefab3d180131bc"
+    },
+    {
+      "id": "ch2-q-p43-ex21-13",
+      "page": 43,
+      "printedPage": "36",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索",
+      "locator": "习题2.1第13题：公路巡视与耗油的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.1,
+        "y": 0.671,
+        "width": 0.77,
+        "height": 0.076
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.709
+      },
+      "sourceImageSha256": "ca82a1699cd5ebe5c91b449dda6be38a983414f39efd315a2aefab3d180131bc"
+    },
+    {
+      "id": "ch2-road-two-questions",
+      "page": 43,
+      "printedPage": "36",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索",
+      "locator": "习题2.1第13题“假设汽车在同一行驶记录下是单向行驶”以及第（1）（2）问。",
+      "region": {
+        "x": 0.145,
+        "y": 0.771,
+        "width": 0.74,
+        "height": 0.076
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.809
+      },
+      "sourceImageSha256": "ca82a1699cd5ebe5c91b449dda6be38a983414f39efd315a2aefab3d180131bc"
+    },
+    {
+      "id": "ch2-ancient-word-scope",
+      "page": 44,
+      "printedPage": "37",
+      "indexAnchor": 1,
+      "anchorLabel": "《九章算术》",
+      "locator": "《九章算术》正负术引文中“同名相除，异名相益……”等古代术语。",
+      "region": {
+        "x": 0.15,
+        "y": 0.175,
+        "width": 0.75,
+        "height": 0.053
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.2015
+      },
+      "sourceImageSha256": "0b06c9307968ddac1a8a359068a2eab5f24eefc64de9ae9c351fe11ed5c61dd2"
+    },
+    {
+      "id": "ch2-q-p44-ancient-intro",
+      "page": 44,
+      "printedPage": "37",
+      "indexAnchor": 1,
+      "anchorLabel": "《九章算术》",
+      "locator": "阅读与思考：正负术的意思的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.48,
+        "y": 0.202,
+        "width": 0.2,
+        "height": 0.027
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.2155
+      },
+      "sourceImageSha256": "0b06c9307968ddac1a8a359068a2eab5f24eefc64de9ae9c351fe11ed5c61dd2"
+    },
+    {
+      "id": "ch2-q-p44-ancient-reading",
+      "page": 44,
+      "printedPage": "37",
+      "indexAnchor": 1,
+      "anchorLabel": "《九章算术》",
+      "locator": "阅读与思考：解释“同名相除”的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "region": {
+        "x": 0.15,
+        "y": 0.725,
+        "width": 0.62,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.7365
+      },
+      "sourceImageSha256": "0b06c9307968ddac1a8a359068a2eab5f24eefc64de9ae9c351fe11ed5c61dd2"
+    },
+    {
+      "id": "ch2-q-p45-multiplication-intro",
+      "page": 45,
+      "printedPage": "38",
+      "indexAnchor": 1,
+      "anchorLabel": "2.2.1 有理数的乘法",
+      "locator": "引入段末两行“并使乘法运算具有一致性，那么该怎样进行有理数的乘法运算呢”。",
+      "region": {
+        "x": 0.085,
+        "y": 0.351,
+        "width": 0.52,
+        "height": 0.053
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3775
+      },
+      "sourceImageSha256": "ac2bbe6f4d920ed71b228c5dd037e39930940bde3ef79993f3d9518d6631dc38"
+    },
+    {
+      "id": "ch2-multiplication-consistency",
+      "page": 45,
+      "printedPage": "38",
+      "indexAnchor": 1,
+      "anchorLabel": "2.2.1 有理数的乘法",
+      "locator": "2.2.1标题下首段中“并使乘法运算具有一致性”这一语句。",
+      "region": {
+        "x": 0.085,
+        "y": 0.352,
+        "width": 0.267,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3635
+      },
+      "sourceImageSha256": "ac2bbe6f4d920ed71b228c5dd037e39930940bde3ef79993f3d9518d6631dc38"
+    },
+    {
+      "id": "ch2-q-p45-multiplication-cases",
+      "page": 45,
+      "printedPage": "38",
+      "indexAnchor": 1,
+      "anchorLabel": "2.2.1 有理数的乘法",
+      "locator": "引入段右侧蓝色旁注末两行“乘法还有哪几种情况”。",
+      "region": {
+        "x": 0.635,
+        "y": 0.355,
+        "width": 0.215,
+        "height": 0.049
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3795
+      },
+      "sourceImageSha256": "ac2bbe6f4d920ed71b228c5dd037e39930940bde3ef79993f3d9518d6631dc38"
+    },
+    {
+      "id": "ch2-q-p45-think-products",
+      "page": 45,
+      "printedPage": "38",
+      "indexAnchor": 2,
+      "anchorLabel": "思考",
+      "locator": "思考栏目首句“分别观察下面的两列乘法算式，你能发现什么规律”；包含本页后续负乘数填空，归纳续至PDF第46页页首。",
+      "region": {
+        "x": 0.155,
+        "y": 0.452,
+        "width": 0.655,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4635
+      },
+      "sourceImageSha256": "ac2bbe6f4d920ed71b228c5dd037e39930940bde3ef79993f3d9518d6631dc38"
+    },
+    {
+      "id": "ch2-q-p46-think-negative",
+      "page": 46,
+      "printedPage": "39",
+      "indexAnchor": 0,
+      "anchorLabel": "思考",
+      "locator": "页上思考首句“利用上面归纳的结论计算下面的算式，你能发现什么规律”；包含其后按规律填写的四个算式及右侧“你能得出负数与0相乘的结果吗”旁注。",
+      "region": {
+        "x": 0.196,
+        "y": 0.168,
+        "width": 0.59,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.18
+      },
+      "sourceImageSha256": "4fd726f5d53b582206b878ba0f87e200d725d168f8a403ed50f1f64ebf6669e4"
+    },
+    {
+      "id": "ch2-multiplication-sign-magnitude",
+      "page": 46,
+      "printedPage": "39",
+      "indexAnchor": 1,
+      "anchorLabel": "有理数乘法法则",
+      "locator": "蓝色有理数乘法法则第一句：“两数相乘，同号得正，异号得负，且积的绝对值等于乘数的绝对值的积。”",
+      "region": {
+        "x": 0.175,
+        "y": 0.574,
+        "width": 0.735,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.586
+      },
+      "sourceImageSha256": "4fd726f5d53b582206b878ba0f87e200d725d168f8a403ed50f1f64ebf6669e4"
+    },
+    {
+      "id": "ch2-multiplication-letter-condition",
+      "page": 46,
+      "printedPage": "39",
+      "indexAnchor": 1,
+      "anchorLabel": "有理数乘法法则",
+      "locator": "“设a，b为正有理数，c为任意有理数，则”这一行。",
+      "region": {
+        "x": 0.175,
+        "y": 0.658,
+        "width": 0.46,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.67
+      },
+      "sourceImageSha256": "4fd726f5d53b582206b878ba0f87e200d725d168f8a403ed50f1f64ebf6669e4"
+    },
+    {
+      "id": "ch2-q-p46-example1",
+      "page": 46,
+      "printedPage": "39",
+      "indexAnchor": 2,
+      "anchorLabel": "例1",
+      "locator": "页下“例1 计算”题号与题干；第（2）（3）问解答续PDF第47页。",
+      "region": {
+        "x": 0.174,
+        "y": 0.803,
+        "width": 0.125,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.8145
+      },
+      "sourceImageSha256": "4fd726f5d53b582206b878ba0f87e200d725d168f8a403ed50f1f64ebf6669e4"
+    },
+    {
+      "id": "ch2-reciprocal-condition",
+      "page": 47,
+      "printedPage": "40",
+      "indexAnchor": 1,
+      "anchorLabel": "倒数",
+      "locator": "蓝色定义：“乘积是1的两个数互为倒数。”",
+      "region": {
+        "x": 0.13,
+        "y": 0.254,
+        "width": 0.29,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.2645
+      },
+      "sourceImageSha256": "bcf61450807d708d19a2663d1fff4b76ad2f457c7444b454393f32653ab639bc"
+    },
+    {
+      "id": "ch2-q-p47-example2",
+      "page": 47,
+      "printedPage": "40",
+      "indexAnchor": 2,
+      "anchorLabel": "例2",
+      "locator": "例2题号，题干为每登高1 km气温变化−6 ℃，求登高3 km后的变化。",
+      "region": {
+        "x": 0.13,
+        "y": 0.282,
+        "width": 0.048,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.294
+      },
+      "sourceImageSha256": "bcf61450807d708d19a2663d1fff4b76ad2f457c7444b454393f32653ab639bc"
+    },
+    {
+      "id": "ch2-temperature-change-product",
+      "page": 47,
+      "printedPage": "40",
+      "indexAnchor": 2,
+      "anchorLabel": "例2",
+      "locator": "例2解答后的答句：“登高3 km后，气温下降18 ℃。”",
+      "region": {
+        "x": 0.13,
+        "y": 0.365,
+        "width": 0.365,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.376
+      },
+      "sourceImageSha256": "bcf61450807d708d19a2663d1fff4b76ad2f457c7444b454393f32653ab639bc"
+    },
+    {
+      "id": "ch2-q-p47-practice1",
+      "page": 47,
+      "printedPage": "40",
+      "indexAnchor": 3,
+      "anchorLabel": "练习",
+      "locator": "练习框第1题“计算”题干。",
+      "region": {
+        "x": 0.108,
+        "y": 0.448,
+        "width": 0.145,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4595
+      },
+      "sourceImageSha256": "bcf61450807d708d19a2663d1fff4b76ad2f457c7444b454393f32653ab639bc"
+    },
+    {
+      "id": "ch2-q-p47-practice2",
+      "page": 47,
+      "printedPage": "40",
+      "indexAnchor": 3,
+      "anchorLabel": "练习",
+      "locator": "练习第2题“商店降价销售某种商品”两行题干。",
+      "region": {
+        "x": 0.108,
+        "y": 0.552,
+        "width": 0.748,
+        "height": 0.044
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.574
+      },
+      "sourceImageSha256": "bcf61450807d708d19a2663d1fff4b76ad2f457c7444b454393f32653ab639bc"
+    },
+    {
+      "id": "ch2-q-p47-practice3",
+      "page": 47,
+      "printedPage": "40",
+      "indexAnchor": 3,
+      "anchorLabel": "练习",
+      "locator": "练习第3题“写出下列各数的倒数”题干。",
+      "region": {
+        "x": 0.108,
+        "y": 0.611,
+        "width": 0.34,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.623
+      },
+      "sourceImageSha256": "bcf61450807d708d19a2663d1fff4b76ad2f457c7444b454393f32653ab639bc"
+    },
+    {
+      "id": "ch2-q-p47-laws-intro",
+      "page": 47,
+      "printedPage": "40",
+      "indexAnchor": 4,
+      "anchorLabel": "探究",
+      "locator": "探究栏目上方段落末行，询问乘法交换律、结合律和分配律对有理数是否仍成立。",
+      "region": {
+        "x": 0.085,
+        "y": 0.743,
+        "width": 0.79,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.755
+      },
+      "sourceImageSha256": "bcf61450807d708d19a2663d1fff4b76ad2f457c7444b454393f32653ab639bc"
+    },
+    {
+      "id": "ch2-q-p47-explore-commute",
+      "page": 47,
+      "printedPage": "40",
+      "indexAnchor": 4,
+      "anchorLabel": "探究",
+      "locator": "页底探究栏目“计算”题干，比较5×(−6)与(−6)×5。",
+      "region": {
+        "x": 0.156,
+        "y": 0.812,
+        "width": 0.074,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.8235
+      },
+      "sourceImageSha256": "bcf61450807d708d19a2663d1fff4b76ad2f457c7444b454393f32653ab639bc"
+    },
+    {
+      "id": "ch2-q-p48-explore-distribute",
+      "page": 48,
+      "printedPage": "41",
+      "indexAnchor": 1,
+      "anchorLabel": "分配律",
+      "locator": "中部探究栏目“计算”题干，比较5×[3+(−7)]与5×3+5×(−7)。",
+      "region": {
+        "x": 0.198,
+        "y": 0.424,
+        "width": 0.075,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.436
+      },
+      "sourceImageSha256": "3a63a4cd51de3e45387c400a6ea289ca6602f2b47af7ab06099ff4cddeff3c0c"
+    },
+    {
+      "id": "ch2-distribution-every-addend",
+      "page": 48,
+      "printedPage": "41",
+      "indexAnchor": 1,
+      "anchorLabel": "分配律",
+      "locator": "分配律公式框：“a(b+c)=ab+ac”。",
+      "region": {
+        "x": 0.245,
+        "y": 0.644,
+        "width": 0.28,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.6555
+      },
+      "sourceImageSha256": "3a63a4cd51de3e45387c400a6ea289ca6602f2b47af7ab06099ff4cddeff3c0c"
+    },
+    {
+      "id": "ch2-q-p48-example3",
+      "page": 48,
+      "printedPage": "41",
+      "indexAnchor": 2,
+      "anchorLabel": "例3",
+      "locator": "页下例3题号；（2）解答与比较两种解法的旁注续PDF第49页。",
+      "region": {
+        "x": 0.174,
+        "y": 0.701,
+        "width": 0.049,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.7125
+      },
+      "sourceImageSha256": "3a63a4cd51de3e45387c400a6ea289ca6602f2b47af7ab06099ff4cddeff3c0c"
+    },
+    {
+      "id": "ch2-reorder-whole-factor",
+      "page": 48,
+      "printedPage": "41",
+      "indexAnchor": 2,
+      "anchorLabel": "例3",
+      "locator": "例3（1）解答中“=(2×0.5)×[3×(−7)]”这一步。",
+      "region": {
+        "x": 0.265,
+        "y": 0.807,
+        "width": 0.27,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.8185
+      },
+      "sourceImageSha256": "3a63a4cd51de3e45387c400a6ea289ca6602f2b47af7ab06099ff4cddeff3c0c"
+    },
+    {
+      "id": "ch2-distribution-choice",
+      "page": 49,
+      "printedPage": "42",
+      "indexAnchor": 0,
+      "anchorLabel": "例3（续）",
+      "locator": "例3（2）解法2中“=1/4×12+1/6×12−1/2×12”这一步。",
+      "region": {
+        "x": 0.215,
+        "y": 0.267,
+        "width": 0.27,
+        "height": 0.035
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.2845
+      },
+      "sourceImageSha256": "27abf2bed4e661c1183edc74c4018d3c46fc321a8fe6062a4a72aa4f1425a6e0"
+    },
+    {
+      "id": "ch2-q-p49-explore-signs",
+      "page": 49,
+      "printedPage": "42",
+      "indexAnchor": 1,
+      "anchorLabel": "探究",
+      "locator": "探究首两行，说明改变例3（1）某些乘数的符号并判断三个积的正负。",
+      "region": {
+        "x": 0.109,
+        "y": 0.383,
+        "width": 0.75,
+        "height": 0.049
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4075
+      },
+      "sourceImageSha256": "27abf2bed4e661c1183edc74c4018d3c46fc321a8fe6062a4a72aa4f1425a6e0"
+    },
+    {
+      "id": "ch2-product-negative-parity",
+      "page": 49,
+      "printedPage": "42",
+      "indexAnchor": 2,
+      "anchorLabel": "几个不是0的数相乘",
+      "locator": "乘积符号归纳首行：“几个不为0的数相乘，负的乘数的个数是偶数时，积为正”；下一行接奇数个负乘数的情况。",
+      "region": {
+        "x": 0.247,
+        "y": 0.59,
+        "width": 0.623,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.6015
+      },
+      "sourceImageSha256": "27abf2bed4e661c1183edc74c4018d3c46fc321a8fe6062a4a72aa4f1425a6e0"
+    },
+    {
+      "id": "ch2-q-p50-practice1",
+      "page": 50,
+      "printedPage": "43",
+      "indexAnchor": 0,
+      "anchorLabel": "练习",
+      "locator": "页首练习框第1题“计算”题干。",
+      "region": {
+        "x": 0.151,
+        "y": 0.119,
+        "width": 0.15,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.131
+      },
+      "sourceImageSha256": "9cba73595fbbb40fc77f47ee797bbcc8920ec67fe1c0e6103b735c164c984db0"
+    },
+    {
+      "id": "ch2-q-p50-practice2",
+      "page": 50,
+      "printedPage": "43",
+      "indexAnchor": 0,
+      "anchorLabel": "练习",
+      "locator": "页首练习框第2题“计算”题干。",
+      "region": {
+        "x": 0.151,
+        "y": 0.294,
+        "width": 0.15,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.306
+      },
+      "sourceImageSha256": "9cba73595fbbb40fc77f47ee797bbcc8920ec67fe1c0e6103b735c164c984db0"
+    },
+    {
+      "id": "ch2-q-p50-think-division",
+      "page": 50,
+      "printedPage": "43",
+      "indexAnchor": 2,
+      "anchorLabel": "思考",
+      "locator": "除法小节思考框中“怎样计算8÷(−4)”。",
+      "region": {
+        "x": 0.198,
+        "y": 0.616,
+        "width": 0.21,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.628
+      },
+      "sourceImageSha256": "9cba73595fbbb40fc77f47ee797bbcc8920ec67fe1c0e6103b735c164c984db0"
+    },
+    {
+      "id": "ch2-q-p51-division-generalize",
+      "page": 51,
+      "printedPage": "44",
+      "indexAnchor": 0,
+      "anchorLabel": "有理数除法法则",
+      "locator": "页首蓝色旁注，要求换其他数讨论“除以a（a≠0）可以转化为乘1/a”是否成立。",
+      "region": {
+        "x": 0.63,
+        "y": 0.09,
+        "width": 0.225,
+        "height": 0.11
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.145
+      },
+      "sourceImageSha256": "ce65a47911e77799fc7b6eccbad4e1819afc2c04debd758a62bbfff49a1a1bdc"
+    },
+    {
+      "id": "ch2-division-reciprocal-reason",
+      "page": 51,
+      "printedPage": "44",
+      "indexAnchor": 0,
+      "anchorLabel": "有理数除法法则",
+      "locator": "蓝色除法法则：“除以一个不等于0的数，等于乘这个数的倒数。”",
+      "region": {
+        "x": 0.13,
+        "y": 0.225,
+        "width": 0.466,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.2355
+      },
+      "sourceImageSha256": "ce65a47911e77799fc7b6eccbad4e1819afc2c04debd758a62bbfff49a1a1bdc"
+    },
+    {
+      "id": "ch2-division-zero-boundary",
+      "page": 51,
+      "printedPage": "44",
+      "indexAnchor": 0,
+      "anchorLabel": "有理数除法法则",
+      "locator": "除法字母表达下方“两个有理数相除（除数不为0），商是一个有理数”中的括注“除数不为0”。",
+      "region": {
+        "x": 0.304,
+        "y": 0.334,
+        "width": 0.143,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3455
+      },
+      "sourceImageSha256": "ce65a47911e77799fc7b6eccbad4e1819afc2c04debd758a62bbfff49a1a1bdc"
+    },
+    {
+      "id": "ch2-q-p51-example4",
+      "page": 51,
+      "printedPage": "44",
+      "indexAnchor": 1,
+      "anchorLabel": "例4",
+      "locator": "中部“例4 计算”题干。",
+      "region": {
+        "x": 0.13,
+        "y": 0.476,
+        "width": 0.127,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.487
+      },
+      "sourceImageSha256": "ce65a47911e77799fc7b6eccbad4e1819afc2c04debd758a62bbfff49a1a1bdc"
+    },
+    {
+      "id": "ch2-q-p51-example5",
+      "page": 51,
+      "printedPage": "44",
+      "indexAnchor": 2,
+      "anchorLabel": "例5",
+      "locator": "页下“例5 化简”题干。",
+      "region": {
+        "x": 0.13,
+        "y": 0.633,
+        "width": 0.128,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.6445
+      },
+      "sourceImageSha256": "ce65a47911e77799fc7b6eccbad4e1819afc2c04debd758a62bbfff49a1a1bdc"
+    },
+    {
+      "id": "ch2-fraction-negative-placement",
+      "page": 51,
+      "printedPage": "44",
+      "indexAnchor": 2,
+      "anchorLabel": "例5",
+      "locator": "例5（1）解答：“(−2)/3=(−2)÷3=−(2÷3)=−2/3”。",
+      "region": {
+        "x": 0.13,
+        "y": 0.706,
+        "width": 0.435,
+        "height": 0.037
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.7245
+      },
+      "sourceImageSha256": "ce65a47911e77799fc7b6eccbad4e1819afc2c04debd758a62bbfff49a1a1bdc"
+    },
+    {
+      "id": "ch2-q-p52-practice1",
+      "page": 52,
+      "printedPage": "45",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习框第1题“计算”题干。",
+      "region": {
+        "x": 0.15,
+        "y": 0.305,
+        "width": 0.15,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.317
+      },
+      "sourceImageSha256": "0509f517ad74e609d512b17aac16cbdd5d9c32d364d41a486b95b877e86a94f9"
+    },
+    {
+      "id": "ch2-q-p52-practice2",
+      "page": 52,
+      "printedPage": "45",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习框第2题“化简”题干。",
+      "region": {
+        "x": 0.15,
+        "y": 0.415,
+        "width": 0.15,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.427
+      },
+      "sourceImageSha256": "0509f517ad74e609d512b17aac16cbdd5d9c32d364d41a486b95b877e86a94f9"
+    },
+    {
+      "id": "ch2-q-p52-example6",
+      "page": 52,
+      "printedPage": "45",
+      "indexAnchor": 2,
+      "anchorLabel": "例6",
+      "locator": "例6“计算”题干。",
+      "region": {
+        "x": 0.175,
+        "y": 0.61,
+        "width": 0.126,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.6215
+      },
+      "sourceImageSha256": "0509f517ad74e609d512b17aac16cbdd5d9c32d364d41a486b95b877e86a94f9"
+    },
+    {
+      "id": "ch2-mixed-number-distribution",
+      "page": 52,
+      "printedPage": "45",
+      "indexAnchor": 2,
+      "anchorLabel": "例6",
+      "locator": "例6（1）从原式到“=(125+5/7)×1/5”这一步。",
+      "region": {
+        "x": 0.255,
+        "y": 0.731,
+        "width": 0.175,
+        "height": 0.038
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.75
+      },
+      "sourceImageSha256": "0509f517ad74e609d512b17aac16cbdd5d9c32d364d41a486b95b877e86a94f9"
+    },
+    {
+      "id": "ch2-mixed-product-reciprocal",
+      "page": 52,
+      "printedPage": "45",
+      "indexAnchor": 2,
+      "anchorLabel": "例6",
+      "locator": "例6（2）转化为“=5/2×8/5×1/4”这一步。",
+      "region": {
+        "x": 0.611,
+        "y": 0.735,
+        "width": 0.155,
+        "height": 0.042
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.756
+      },
+      "sourceImageSha256": "0509f517ad74e609d512b17aac16cbdd5d9c32d364d41a486b95b877e86a94f9"
+    },
+    {
+      "id": "ch2-q-p53-example7",
+      "page": 53,
+      "printedPage": "46",
+      "indexAnchor": 1,
+      "anchorLabel": "例7",
+      "locator": "页上例7“计算”题干。",
+      "region": {
+        "x": 0.13,
+        "y": 0.129,
+        "width": 0.127,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.141
+      },
+      "sourceImageSha256": "329b4457e7b0e425b387863a1ac8a1b8ce2a638126275175dc76a6a2c3cfa9b5"
+    },
+    {
+      "id": "ch2-q-p53-example8",
+      "page": 53,
+      "printedPage": "46",
+      "indexAnchor": 2,
+      "anchorLabel": "例8",
+      "locator": "例8题号，按四个时段的平均月盈亏求全年总盈亏。",
+      "region": {
+        "x": 0.13,
+        "y": 0.298,
+        "width": 0.049,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3095
+      },
+      "sourceImageSha256": "329b4457e7b0e425b387863a1ac8a1b8ce2a638126275175dc76a6a2c3cfa9b5"
+    },
+    {
+      "id": "ch2-monthly-average-weight",
+      "page": 53,
+      "printedPage": "46",
+      "indexAnchor": 2,
+      "anchorLabel": "例8",
+      "locator": "例8列式中“21.7×4”这一项。",
+      "region": {
+        "x": 0.475,
+        "y": 0.408,
+        "width": 0.099,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4195
+      },
+      "sourceImageSha256": "329b4457e7b0e425b387863a1ac8a1b8ce2a638126275175dc76a6a2c3cfa9b5"
+    },
+    {
+      "id": "ch2-q-p54-practice1",
+      "page": 54,
+      "printedPage": "47",
+      "indexAnchor": 0,
+      "anchorLabel": "练习",
+      "locator": "页首练习第1题“计算”题干。",
+      "region": {
+        "x": 0.15,
+        "y": 0.119,
+        "width": 0.145,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.1305
+      },
+      "sourceImageSha256": "9ca333a881e824542270764bf0e9fe81bb1be098c64edff09f2ca32f04346601"
+    },
+    {
+      "id": "ch2-q-p54-practice2",
+      "page": 54,
+      "printedPage": "47",
+      "indexAnchor": 0,
+      "anchorLabel": "练习",
+      "locator": "页首练习第2题“计算”题干。",
+      "region": {
+        "x": 0.15,
+        "y": 0.246,
+        "width": 0.145,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.2575
+      },
+      "sourceImageSha256": "9ca333a881e824542270764bf0e9fe81bb1be098c64edff09f2ca32f04346601"
+    },
+    {
+      "id": "ch2-q-p54-practice3",
+      "page": 54,
+      "printedPage": "47",
+      "indexAnchor": 0,
+      "anchorLabel": "练习",
+      "locator": "练习第3题“用计算器计算”题干。",
+      "region": {
+        "x": 0.15,
+        "y": 0.351,
+        "width": 0.27,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3625
+      },
+      "sourceImageSha256": "9ca333a881e824542270764bf0e9fe81bb1be098c64edff09f2ca32f04346601"
+    },
+    {
+      "id": "ch2-q-exercise22-1",
+      "page": 54,
+      "printedPage": "47",
+      "indexAnchor": 1,
+      "anchorLabel": "习题2.2",
+      "locator": "习题2.2复习巩固第1题“计算”题干。",
+      "region": {
+        "x": 0.151,
+        "y": 0.611,
+        "width": 0.145,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.6225
+      },
+      "sourceImageSha256": "9ca333a881e824542270764bf0e9fe81bb1be098c64edff09f2ca32f04346601"
+    },
+    {
+      "id": "ch2-q-exercise22-2",
+      "page": 54,
+      "printedPage": "47",
+      "indexAnchor": 1,
+      "anchorLabel": "习题2.2",
+      "locator": "习题2.2第2题“计算”题干。",
+      "region": {
+        "x": 0.151,
+        "y": 0.689,
+        "width": 0.145,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.7005
+      },
+      "sourceImageSha256": "9ca333a881e824542270764bf0e9fe81bb1be098c64edff09f2ca32f04346601"
+    },
+    {
+      "id": "ch2-q-exercise22-3",
+      "page": 54,
+      "printedPage": "47",
+      "indexAnchor": 1,
+      "anchorLabel": "习题2.2",
+      "locator": "习题2.2第3题“写出下列各数的倒数”题干。",
+      "region": {
+        "x": 0.151,
+        "y": 0.802,
+        "width": 0.32,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.8135
+      },
+      "sourceImageSha256": "9ca333a881e824542270764bf0e9fe81bb1be098c64edff09f2ca32f04346601"
+    },
+    {
+      "id": "ch2-reciprocal-mixed-practice",
+      "page": 54,
+      "printedPage": "47",
+      "indexAnchor": 1,
+      "anchorLabel": "习题2.2",
+      "locator": "习题2.2第3题第（6）小题：写出−5又2/5的倒数。",
+      "region": {
+        "x": 0.65,
+        "y": 0.872,
+        "width": 0.13,
+        "height": 0.036
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.89
+      },
+      "sourceImageSha256": "9ca333a881e824542270764bf0e9fe81bb1be098c64edff09f2ca32f04346601"
+    },
+    {
+      "id": "ch2-q-exercise22-4",
+      "page": 55,
+      "printedPage": "48",
+      "indexAnchor": 0,
+      "anchorLabel": "习题2.2（续）",
+      "locator": "页首习题2.2第4题“计算”题干。",
+      "region": {
+        "x": 0.108,
+        "y": 0.081,
+        "width": 0.15,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.093
+      },
+      "sourceImageSha256": "2c0af61c4a3269debe1bffeb289b54b6fee17574fa6bb4f4f87610138cf69def"
+    },
+    {
+      "id": "ch2-q-exercise22-5",
+      "page": 55,
+      "printedPage": "48",
+      "indexAnchor": 0,
+      "anchorLabel": "习题2.2（续）",
+      "locator": "习题2.2第5题“计算”题干。",
+      "region": {
+        "x": 0.108,
+        "y": 0.199,
+        "width": 0.15,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.211
+      },
+      "sourceImageSha256": "2c0af61c4a3269debe1bffeb289b54b6fee17574fa6bb4f4f87610138cf69def"
+    },
+    {
+      "id": "ch2-q-exercise22-6",
+      "page": 55,
+      "printedPage": "48",
+      "indexAnchor": 0,
+      "anchorLabel": "习题2.2（续）",
+      "locator": "习题2.2第6题“计算”题干。",
+      "region": {
+        "x": 0.108,
+        "y": 0.293,
+        "width": 0.15,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.305
+      },
+      "sourceImageSha256": "2c0af61c4a3269debe1bffeb289b54b6fee17574fa6bb4f4f87610138cf69def"
+    },
+    {
+      "id": "ch2-q-exercise22-7",
+      "page": 55,
+      "printedPage": "48",
+      "indexAnchor": 0,
+      "anchorLabel": "习题2.2（续）",
+      "locator": "习题2.2第7题“填空题”题干。",
+      "region": {
+        "x": 0.108,
+        "y": 0.39,
+        "width": 0.15,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4015
+      },
+      "sourceImageSha256": "2c0af61c4a3269debe1bffeb289b54b6fee17574fa6bb4f4f87610138cf69def"
+    },
+    {
+      "id": "ch2-q-exercise22-8",
+      "page": 55,
+      "printedPage": "48",
+      "indexAnchor": 0,
+      "anchorLabel": "习题2.2（续）",
+      "locator": "习题2.2第8题“化简”题干。",
+      "region": {
+        "x": 0.108,
+        "y": 0.522,
+        "width": 0.15,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.5335
+      },
+      "sourceImageSha256": "2c0af61c4a3269debe1bffeb289b54b6fee17574fa6bb4f4f87610138cf69def"
+    },
+    {
+      "id": "ch2-q-exercise22-9",
+      "page": 55,
+      "printedPage": "48",
+      "indexAnchor": 0,
+      "anchorLabel": "习题2.2（续）",
+      "locator": "习题2.2第9题“计算”题干。",
+      "region": {
+        "x": 0.108,
+        "y": 0.593,
+        "width": 0.15,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.605
+      },
+      "sourceImageSha256": "2c0af61c4a3269debe1bffeb289b54b6fee17574fa6bb4f4f87610138cf69def"
+    },
+    {
+      "id": "ch2-q-exercise22-10",
+      "page": 55,
+      "printedPage": "48",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "页下综合运用第10题“计算”题干。",
+      "region": {
+        "x": 0.108,
+        "y": 0.719,
+        "width": 0.165,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.731
+      },
+      "sourceImageSha256": "2c0af61c4a3269debe1bffeb289b54b6fee17574fa6bb4f4f87610138cf69def"
+    },
+    {
+      "id": "ch2-absolute-value-scope-practice",
+      "page": 55,
+      "printedPage": "48",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "习题2.2第10题第（4）小题中“−|1/3−1/4|”这一项。",
+      "region": {
+        "x": 0.399,
+        "y": 0.858,
+        "width": 0.112,
+        "height": 0.044
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.88
+      },
+      "sourceImageSha256": "2c0af61c4a3269debe1bffeb289b54b6fee17574fa6bb4f4f87610138cf69def"
+    },
+    {
+      "id": "ch2-q-exercise22-11",
+      "page": 56,
+      "printedPage": "49",
+      "indexAnchor": 0,
+      "anchorLabel": "习题2.2（续）",
+      "locator": "页首第11题“用计算器计算（结果保留小数点后两位）”题干。",
+      "region": {
+        "x": 0.151,
+        "y": 0.079,
+        "width": 0.43,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.091
+      },
+      "sourceImageSha256": "bb7829c53a86ae457876133ad2ffb478379e90561db5493e973f9f8ac76e97ab"
+    },
+    {
+      "id": "ch2-q-exercise22-12",
+      "page": 56,
+      "printedPage": "49",
+      "indexAnchor": 0,
+      "anchorLabel": "习题2.2（续）",
+      "locator": "第12题题干“记盈利额为正数，用正数或负数填空”。",
+      "region": {
+        "x": 0.151,
+        "y": 0.209,
+        "width": 0.39,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.221
+      },
+      "sourceImageSha256": "bb7829c53a86ae457876133ad2ffb478379e90561db5493e973f9f8ac76e97ab"
+    },
+    {
+      "id": "ch2-q-exercise22-13",
+      "page": 56,
+      "printedPage": "49",
+      "indexAnchor": 0,
+      "anchorLabel": "习题2.2（续）",
+      "locator": "第13题题号，题干为从450 m开始先上升再下降后的高度。",
+      "region": {
+        "x": 0.151,
+        "y": 0.314,
+        "width": 0.055,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.326
+      },
+      "sourceImageSha256": "bb7829c53a86ae457876133ad2ffb478379e90561db5493e973f9f8ac76e97ab"
+    },
+    {
+      "id": "ch2-height-change-practice",
+      "page": 56,
+      "printedPage": "49",
+      "indexAnchor": 0,
+      "anchorLabel": "习题2.2（续）",
+      "locator": "习题2.2第13题题干末句：“这时直升机所在高度是多少？”",
+      "region": {
+        "x": 0.512,
+        "y": 0.339,
+        "width": 0.266,
+        "height": 0.021
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3495
+      },
+      "sourceImageSha256": "bb7829c53a86ae457876133ad2ffb478379e90561db5493e973f9f8ac76e97ab"
+    },
+    {
+      "id": "ch2-q-exercise22-14",
+      "page": 56,
+      "printedPage": "49",
+      "indexAnchor": 1,
+      "anchorLabel": "拓广探索",
+      "locator": "拓广探索第14题第一行计算题干及四个算式。",
+      "region": {
+        "x": 0.151,
+        "y": 0.4,
+        "width": 0.43,
+        "height": 0.036
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.418
+      },
+      "sourceImageSha256": "bb7829c53a86ae457876133ad2ffb478379e90561db5493e973f9f8ac76e97ab"
+    },
+    {
+      "id": "ch2-doubling-comparison-explore",
+      "page": 56,
+      "printedPage": "49",
+      "indexAnchor": 1,
+      "anchorLabel": "拓广探索",
+      "locator": "习题2.2第14题末段：“你认为一个非零有理数一定小于它的2倍吗？为什么？”",
+      "region": {
+        "x": 0.188,
+        "y": 0.442,
+        "width": 0.71,
+        "height": 0.045
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4645
+      },
+      "sourceImageSha256": "bb7829c53a86ae457876133ad2ffb478379e90561db5493e973f9f8ac76e97ab"
+    },
+    {
+      "id": "ch2-q-exercise22-15",
+      "page": 56,
+      "printedPage": "49",
+      "indexAnchor": 1,
+      "anchorLabel": "拓广探索",
+      "locator": "第15题“利用分配律可以得到”题干。",
+      "region": {
+        "x": 0.151,
+        "y": 0.496,
+        "width": 0.24,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.5075
+      },
+      "sourceImageSha256": "bb7829c53a86ae457876133ad2ffb478379e90561db5493e973f9f8ac76e97ab"
+    },
+    {
+      "id": "ch2-q-exercise22-16",
+      "page": 56,
+      "printedPage": "49",
+      "indexAnchor": 1,
+      "anchorLabel": "拓广探索",
+      "locator": "第16题开头，计算三个有理数除法算式后判断两组字母等式。",
+      "region": {
+        "x": 0.151,
+        "y": 0.601,
+        "width": 0.42,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.6125
+      },
+      "sourceImageSha256": "bb7829c53a86ae457876133ad2ffb478379e90561db5493e973f9f8ac76e97ab"
+    },
+    {
+      "id": "ch2-q-p57-special-products",
+      "page": 57,
+      "printedPage": "50",
+      "indexAnchor": 0,
+      "anchorLabel": "从数系扩充看有理数乘法法则",
+      "locator": "文章首段三个特殊算式后的“应当怎样规定这些运算呢”问句；对应1×(−1)、0×(−1)、(−1)×(−1)。",
+      "region": {
+        "x": 0.256,
+        "y": 0.287,
+        "width": 0.25,
+        "height": 0.02
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.297
+      },
+      "sourceImageSha256": "f8d17169182ebe75ffe6bae05c49979529d05e837a35ec35eaefc605b1d3f10c"
+    },
+    {
+      "id": "ch2-negative-product-zero-pair",
+      "page": 57,
+      "printedPage": "50",
+      "indexAnchor": 0,
+      "anchorLabel": "从数系扩充看有理数乘法法则",
+      "locator": "负数乘负数推导中“(−1)×(−1)+1×(−1)=[(−1)+1]×(−1)=0×(−1)=0”这一行。",
+      "region": {
+        "x": 0.18,
+        "y": 0.701,
+        "width": 0.581,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.712
+      },
+      "sourceImageSha256": "f8d17169182ebe75ffe6bae05c49979529d05e837a35ec35eaefc605b1d3f10c"
+    },
+    {
+      "id": "ch2-q-p57-general-proof",
+      "page": 57,
+      "printedPage": "50",
+      "indexAnchor": 2,
+      "anchorLabel": "一般地",
+      "locator": "页底“一般地，你能从数系扩充的角度说明有理数乘法法则的合理性吗”独立题干。",
+      "region": {
+        "x": 0.154,
+        "y": 0.854,
+        "width": 0.602,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.8655
+      },
+      "sourceImageSha256": "f8d17169182ebe75ffe6bae05c49979529d05e837a35ec35eaefc605b1d3f10c"
+    },
+    {
+      "id": "ch2-q-p58-sign-bracket-question",
+      "page": 58,
+      "printedPage": "51",
+      "indexAnchor": 2,
+      "anchorLabel": "乘方",
+      "locator": "上半页蓝色旁注“(−2)⁴与−2⁴相等吗？为什么”。",
+      "region": {
+        "x": 0.676,
+        "y": 0.423,
+        "width": 0.217,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.448
+      },
+      "sourceImageSha256": "2f5861fce1852c92519517f4dbc68d5fed88a5ae7a57b86b1cf1f6641fed4836"
+    },
+    {
+      "id": "ch2-power-whole-fraction-base",
+      "page": 58,
+      "printedPage": "51",
+      "indexAnchor": 2,
+      "anchorLabel": "乘方",
+      "locator": "负分数的五次方示例中“记作(−2/5)⁵，读作‘−2/5的5次方’”所在一行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.537,
+        "width": 0.345,
+        "height": 0.036
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.555
+      },
+      "sourceImageSha256": "2f5861fce1852c92519517f4dbc68d5fed88a5ae7a57b86b1cf1f6641fed4836"
+    },
+    {
+      "id": "ch2-power-factor-count",
+      "page": 58,
+      "printedPage": "51",
+      "indexAnchor": 2,
+      "anchorLabel": "乘方",
+      "locator": "一般乘方记法中“n个相同的乘数a相乘，即a·a···a，记作aⁿ”及其下方标注“n个”的括线。",
+      "region": {
+        "x": 0.175,
+        "y": 0.588,
+        "width": 0.603,
+        "height": 0.041
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.6085
+      },
+      "sourceImageSha256": "2f5861fce1852c92519517f4dbc68d5fed88a5ae7a57b86b1cf1f6641fed4836"
+    },
+    {
+      "id": "ch2-q-p58-example1",
+      "page": 58,
+      "printedPage": "51",
+      "indexAnchor": 3,
+      "anchorLabel": "例1",
+      "locator": "页底例1“计算”题干，解答续PDF第59页页首。",
+      "region": {
+        "x": 0.174,
+        "y": 0.853,
+        "width": 0.126,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.8645
+      },
+      "sourceImageSha256": "2f5861fce1852c92519517f4dbc68d5fed88a5ae7a57b86b1cf1f6641fed4836"
+    },
+    {
+      "id": "ch2-q-p59-explore-power-sign",
+      "page": 59,
+      "printedPage": "52",
+      "indexAnchor": 1,
+      "anchorLabel": "负数的奇次幂是负数，负数的偶次幂是正数",
+      "locator": "探究框题干“请再举一些计算乘方的例子……与指数有什么关系”。",
+      "region": {
+        "x": 0.109,
+        "y": 0.216,
+        "width": 0.745,
+        "height": 0.049
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.2405
+      },
+      "sourceImageSha256": "193636434e1ac63522995e92e9e116aa10f2c57628c2275f6fbe8e908703cd42"
+    },
+    {
+      "id": "ch2-power-negative-parity",
+      "page": 59,
+      "printedPage": "52",
+      "indexAnchor": 1,
+      "anchorLabel": "负数的奇次幂是负数，负数的偶次幂是正数",
+      "locator": "蓝色结论：“负数的奇次幂是负数，负数的偶次幂是正数。”",
+      "region": {
+        "x": 0.13,
+        "y": 0.309,
+        "width": 0.447,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.32
+      },
+      "sourceImageSha256": "193636434e1ac63522995e92e9e116aa10f2c57628c2275f6fbe8e908703cd42"
+    },
+    {
+      "id": "ch2-q-p59-example2",
+      "page": 59,
+      "printedPage": "52",
+      "indexAnchor": 2,
+      "anchorLabel": "例2",
+      "locator": "例2题号，题干用计算器计算两个负底数的幂。",
+      "region": {
+        "x": 0.13,
+        "y": 0.366,
+        "width": 0.048,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3775
+      },
+      "sourceImageSha256": "193636434e1ac63522995e92e9e116aa10f2c57628c2275f6fbe8e908703cd42"
+    },
+    {
+      "id": "ch2-q-p59-practice1",
+      "page": 59,
+      "printedPage": "52",
+      "indexAnchor": 3,
+      "anchorLabel": "练习",
+      "locator": "练习框第1题题号；（1）辨认(−7)⁸的底数指数，（2）辨认(−10)⁸并判断符号。",
+      "region": {
+        "x": 0.108,
+        "y": 0.675,
+        "width": 0.028,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.687
+      },
+      "sourceImageSha256": "193636434e1ac63522995e92e9e116aa10f2c57628c2275f6fbe8e908703cd42"
+    },
+    {
+      "id": "ch2-q-p59-practice2",
+      "page": 59,
+      "printedPage": "52",
+      "indexAnchor": 3,
+      "anchorLabel": "练习",
+      "locator": "练习框第2题“计算”题干。",
+      "region": {
+        "x": 0.108,
+        "y": 0.761,
+        "width": 0.15,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.773
+      },
+      "sourceImageSha256": "193636434e1ac63522995e92e9e116aa10f2c57628c2275f6fbe8e908703cd42"
+    },
+    {
+      "id": "ch2-q-p59-practice3",
+      "page": 59,
+      "printedPage": "52",
+      "indexAnchor": 3,
+      "anchorLabel": "练习",
+      "locator": "练习框第3题“用计算器计算”题干。",
+      "region": {
+        "x": 0.108,
+        "y": 0.869,
+        "width": 0.31,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.881
+      },
+      "sourceImageSha256": "193636434e1ac63522995e92e9e116aa10f2c57628c2275f6fbe8e908703cd42"
+    },
+    {
+      "id": "ch2-same-level-order",
+      "page": 60,
+      "printedPage": "53",
+      "indexAnchor": 0,
+      "anchorLabel": "先乘方，再乘除，最后加减",
+      "locator": "页首运算顺序第2条“同级运算，从左到右进行”。",
+      "region": {
+        "x": 0.17,
+        "y": 0.153,
+        "width": 0.3,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.1645
+      },
+      "sourceImageSha256": "268b3d0a7df24f797abc992deb7838d990511ad481e4228fc407b5e0a32d83a8"
+    },
+    {
+      "id": "ch2-q-p60-example3",
+      "page": 60,
+      "printedPage": "53",
+      "indexAnchor": 1,
+      "anchorLabel": "例3",
+      "locator": "例3：含乘方的混合运算的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.174,
+        "y": 0.211,
+        "width": 0.142,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.2225
+      },
+      "sourceImageSha256": "268b3d0a7df24f797abc992deb7838d990511ad481e4228fc407b5e0a32d83a8"
+    },
+    {
+      "id": "ch2-minus-square-step",
+      "page": 60,
+      "printedPage": "53",
+      "indexAnchor": 1,
+      "anchorLabel": "例3",
+      "locator": "例3（2）解答第一行的“(−16+2)”局部，对照题干中的“(−4²+2)”。",
+      "region": {
+        "x": 0.425,
+        "y": 0.381,
+        "width": 0.106,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3935
+      },
+      "sourceImageSha256": "268b3d0a7df24f797abc992deb7838d990511ad481e4228fc407b5e0a32d83a8"
+    },
+    {
+      "id": "ch2-q-p60-example4",
+      "page": 60,
+      "printedPage": "53",
+      "indexAnchor": 2,
+      "anchorLabel": "例4",
+      "locator": "例4：三行数的规律（续页为PDF第61页）的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.174,
+        "y": 0.495,
+        "width": 0.244,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.5065
+      },
+      "sourceImageSha256": "268b3d0a7df24f797abc992deb7838d990511ad481e4228fc407b5e0a32d83a8"
+    },
+    {
+      "id": "ch2-sequence-position",
+      "page": 61,
+      "printedPage": "54",
+      "indexAnchor": 0,
+      "anchorLabel": "例4（续）",
+      "locator": "例4（3）“每行中第10个数的和是”及其下一行列式；已核对PDF第60页三行数和分析。",
+      "region": {
+        "x": 0.13,
+        "y": 0.166,
+        "width": 0.54,
+        "height": 0.068
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.2
+      },
+      "sourceImageSha256": "3d8823f10b987d583080f11c400ad2eab0cb8025e349fc39041947c081311de8"
+    },
+    {
+      "id": "ch2-q-p61-practice",
+      "page": 61,
+      "printedPage": "54",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习：计算四个混合运算式的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.107,
+        "y": 0.404,
+        "width": 0.083,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4165
+      },
+      "sourceImageSha256": "3d8823f10b987d583080f11c400ad2eab0cb8025e349fc39041947c081311de8"
+    },
+    {
+      "id": "ch2-scientific-same-value",
+      "page": 61,
+      "printedPage": "54",
+      "indexAnchor": 2,
+      "anchorLabel": "2.3.2 科学记数法",
+      "locator": "“696 000=6.96×10⁵”这一等式。",
+      "region": {
+        "x": 0.37,
+        "y": 0.809,
+        "width": 0.215,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.8205
+      },
+      "sourceImageSha256": "3d8823f10b987d583080f11c400ad2eab0cb8025e349fc39041947c081311de8"
+    },
+    {
+      "id": "ch2-scientific-coefficient",
+      "page": 62,
+      "printedPage": "55",
+      "indexAnchor": 0,
+      "anchorLabel": "科学记数法",
+      "locator": "页首科学记数法定义中的“a大于或等于1，且a小于10，n是正整数”两行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.068,
+        "width": 0.79,
+        "height": 0.052
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.094
+      },
+      "sourceImageSha256": "58e0e0f1c6a3b120089a2da9590ccaa263889174bcbc7e9689c699788974f986"
+    },
+    {
+      "id": "ch2-q-p62-example5",
+      "page": 62,
+      "printedPage": "55",
+      "indexAnchor": 1,
+      "anchorLabel": "例5",
+      "locator": "例5：用科学记数法表示四个数的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.174,
+        "y": 0.181,
+        "width": 0.409,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.1935
+      },
+      "sourceImageSha256": "58e0e0f1c6a3b120089a2da9590ccaa263889174bcbc7e9689c699788974f986"
+    },
+    {
+      "id": "ch2-scientific-exponent-observe",
+      "page": 62,
+      "printedPage": "55",
+      "indexAnchor": 2,
+      "anchorLabel": "思考",
+      "locator": "“思考”中关于整数位数与10的指数关系的提问两行。",
+      "region": {
+        "x": 0.155,
+        "y": 0.335,
+        "width": 0.744,
+        "height": 0.054
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.362
+      },
+      "sourceImageSha256": "58e0e0f1c6a3b120089a2da9590ccaa263889174bcbc7e9689c699788974f986"
+    },
+    {
+      "id": "ch2-q-p62-thinking",
+      "page": 62,
+      "printedPage": "55",
+      "indexAnchor": 2,
+      "anchorLabel": "思考",
+      "locator": "思考：整数位数与10的指数的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.154,
+        "y": 0.335,
+        "width": 0.744,
+        "height": 0.054
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.362
+      },
+      "sourceImageSha256": "58e0e0f1c6a3b120089a2da9590ccaa263889174bcbc7e9689c699788974f986"
+    },
+    {
+      "id": "ch2-approximate-context",
+      "page": 62,
+      "printedPage": "55",
+      "indexAnchor": 3,
+      "anchorLabel": "2.3.3 近似数",
+      "locator": "近似数小节首段中“505”与“约有五百人”两种报道的对比。",
+      "region": {
+        "x": 0.13,
+        "y": 0.443,
+        "width": 0.79,
+        "height": 0.133
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.5095
+      },
+      "sourceImageSha256": "58e0e0f1c6a3b120089a2da9590ccaa263889174bcbc7e9689c699788974f986"
+    },
+    {
+      "id": "ch2-q-p63-example6",
+      "page": 63,
+      "printedPage": "56",
+      "indexAnchor": 0,
+      "anchorLabel": "例6",
+      "locator": "例6：按要求取近似数（含精确度旁注）的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.13,
+        "y": 0.069,
+        "width": 0.624,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.08
+      },
+      "sourceImageSha256": "2d50e616e142275851e8e48eaba597e2f8cddac798b68680c5c880537436f3fb"
+    },
+    {
+      "id": "ch2-approximate-trailing-zero",
+      "page": 63,
+      "printedPage": "56",
+      "indexAnchor": 0,
+      "anchorLabel": "例6",
+      "locator": "例6解答第（3）（4）行“1.804≈1.8”“1.804≈1.80”；旁注已一并核对。",
+      "region": {
+        "x": 0.13,
+        "y": 0.211,
+        "width": 0.19,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.236
+      },
+      "sourceImageSha256": "2d50e616e142275851e8e48eaba597e2f8cddac798b68680c5c880537436f3fb"
+    },
+    {
+      "id": "ch2-q-p63-practice1",
+      "page": 63,
+      "printedPage": "56",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习第1题：用科学记数法表示各数的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.107,
+        "y": 0.324,
+        "width": 0.47,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.336
+      },
+      "sourceImageSha256": "2d50e616e142275851e8e48eaba597e2f8cddac798b68680c5c880537436f3fb"
+    },
+    {
+      "id": "ch2-q-p63-practice2",
+      "page": 63,
+      "printedPage": "56",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习第2题：还原科学记数法表示的数的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.107,
+        "y": 0.383,
+        "width": 0.65,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.395
+      },
+      "sourceImageSha256": "2d50e616e142275851e8e48eaba597e2f8cddac798b68680c5c880537436f3fb"
+    },
+    {
+      "id": "ch2-q-p63-practice3",
+      "page": 63,
+      "printedPage": "56",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习第3题：陆地面积的科学记数法的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.107,
+        "y": 0.437,
+        "width": 0.7,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.449
+      },
+      "sourceImageSha256": "2d50e616e142275851e8e48eaba597e2f8cddac798b68680c5c880537436f3fb"
+    },
+    {
+      "id": "ch2-q-p63-practice4",
+      "page": 63,
+      "printedPage": "56",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习第4题：按指定精确度取近似数的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.107,
+        "y": 0.468,
+        "width": 0.63,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4805
+      },
+      "sourceImageSha256": "2d50e616e142275851e8e48eaba597e2f8cddac798b68680c5c880537436f3fb"
+    },
+    {
+      "id": "ch2-q-exercise23-1",
+      "page": 63,
+      "printedPage": "56",
+      "indexAnchor": 2,
+      "anchorLabel": "习题2.3",
+      "locator": "习题2.3第1题：计算乘方的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.107,
+        "y": 0.687,
+        "width": 0.128,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.699
+      },
+      "sourceImageSha256": "2d50e616e142275851e8e48eaba597e2f8cddac798b68680c5c880537436f3fb"
+    },
+    {
+      "id": "ch2-q-exercise23-2",
+      "page": 63,
+      "printedPage": "56",
+      "indexAnchor": 2,
+      "anchorLabel": "习题2.3",
+      "locator": "习题2.3第2题：用计算器计算的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.107,
+        "y": 0.785,
+        "width": 0.325,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.797
+      },
+      "sourceImageSha256": "2d50e616e142275851e8e48eaba597e2f8cddac798b68680c5c880537436f3fb"
+    },
+    {
+      "id": "ch2-q-exercise23-3",
+      "page": 63,
+      "printedPage": "56",
+      "indexAnchor": 2,
+      "anchorLabel": "习题2.3",
+      "locator": "习题2.3第3题：混合运算（续页为PDF第64页）的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.107,
+        "y": 0.837,
+        "width": 0.13,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.8495
+      },
+      "sourceImageSha256": "2d50e616e142275851e8e48eaba597e2f8cddac798b68680c5c880537436f3fb"
+    },
+    {
+      "id": "ch2-q-exercise23-4",
+      "page": 64,
+      "printedPage": "57",
+      "indexAnchor": 0,
+      "anchorLabel": "习题2.3（续）",
+      "locator": "习题2.3第4题：写成科学记数法的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.151,
+        "y": 0.172,
+        "width": 0.49,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.184
+      },
+      "sourceImageSha256": "bec80e6305aa6883ac11e0e597f17f9cbca5345924781c02c5a8e1c3b4578a98"
+    },
+    {
+      "id": "ch2-q-exercise23-5",
+      "page": 64,
+      "printedPage": "57",
+      "indexAnchor": 0,
+      "anchorLabel": "习题2.3（续）",
+      "locator": "习题2.3第5题：还原各数的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.151,
+        "y": 0.249,
+        "width": 0.67,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.261
+      },
+      "sourceImageSha256": "bec80e6305aa6883ac11e0e597f17f9cbca5345924781c02c5a8e1c3b4578a98"
+    },
+    {
+      "id": "ch2-q-exercise23-6",
+      "page": 64,
+      "printedPage": "57",
+      "indexAnchor": 0,
+      "anchorLabel": "习题2.3（续）",
+      "locator": "习题2.3第6题：四舍五入的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.151,
+        "y": 0.303,
+        "width": 0.62,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.315
+      },
+      "sourceImageSha256": "bec80e6305aa6883ac11e0e597f17f9cbca5345924781c02c5a8e1c3b4578a98"
+    },
+    {
+      "id": "ch2-q-exercise23-7",
+      "page": 64,
+      "printedPage": "57",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "习题2.3第7题：近似数的生活实例的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.151,
+        "y": 0.412,
+        "width": 0.75,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.424
+      },
+      "sourceImageSha256": "bec80e6305aa6883ac11e0e597f17f9cbca5345924781c02c5a8e1c3b4578a98"
+    },
+    {
+      "id": "ch2-q-exercise23-8",
+      "page": 64,
+      "printedPage": "57",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "习题2.3第8题：由平方、立方寻找原数的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.151,
+        "y": 0.438,
+        "width": 0.63,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.45
+      },
+      "sourceImageSha256": "bec80e6305aa6883ac11e0e597f17f9cbca5345924781c02c5a8e1c3b4578a98"
+    },
+    {
+      "id": "ch2-q-exercise23-9",
+      "page": 64,
+      "printedPage": "57",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "习题2.3第9题：长方体的体积与表面积的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.151,
+        "y": 0.465,
+        "width": 0.75,
+        "height": 0.051
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4905
+      },
+      "sourceImageSha256": "bec80e6305aa6883ac11e0e597f17f9cbca5345924781c02c5a8e1c3b4578a98"
+    },
+    {
+      "id": "ch2-q-exercise23-10",
+      "page": 64,
+      "printedPage": "57",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "习题2.3第10题：一年有多少秒的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.151,
+        "y": 0.518,
+        "width": 0.75,
+        "height": 0.047
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.5415
+      },
+      "sourceImageSha256": "bec80e6305aa6883ac11e0e597f17f9cbca5345924781c02c5a8e1c3b4578a98"
+    },
+    {
+      "id": "ch2-speed-unit-practice",
+      "page": 64,
+      "printedPage": "57",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "习题2.3第11题，比较“1.1×10⁵ km/h”与“340 m/s”的两行。",
+      "region": {
+        "x": 0.151,
+        "y": 0.563,
+        "width": 0.758,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.588
+      },
+      "sourceImageSha256": "bec80e6305aa6883ac11e0e597f17f9cbca5345924781c02c5a8e1c3b4578a98"
+    },
+    {
+      "id": "ch2-q-exercise23-11",
+      "page": 64,
+      "printedPage": "57",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "习题2.3第11题：比较两个速度的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.151,
+        "y": 0.563,
+        "width": 0.758,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.588
+      },
+      "sourceImageSha256": "bec80e6305aa6883ac11e0e597f17f9cbca5345924781c02c5a8e1c3b4578a98"
+    },
+    {
+      "id": "ch2-q-exercise23-12",
+      "page": 64,
+      "printedPage": "57",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索",
+      "locator": "习题2.3第12题：小数点移动与幂的变化的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.151,
+        "y": 0.648,
+        "width": 0.75,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.673
+      },
+      "sourceImageSha256": "bec80e6305aa6883ac11e0e597f17f9cbca5345924781c02c5a8e1c3b4578a98"
+    },
+    {
+      "id": "ch2-power-statement-practice",
+      "page": 64,
+      "printedPage": "57",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索",
+      "locator": "习题2.3第13题的四个待判断等式及其上方“当a<0时”条件。",
+      "region": {
+        "x": 0.151,
+        "y": 0.806,
+        "width": 0.752,
+        "height": 0.072
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.842
+      },
+      "sourceImageSha256": "bec80e6305aa6883ac11e0e597f17f9cbca5345924781c02c5a8e1c3b4578a98"
+    },
+    {
+      "id": "ch2-q-exercise23-13",
+      "page": 64,
+      "printedPage": "57",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索",
+      "locator": "习题2.3第13题：在a<0下判断幂的性质的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.151,
+        "y": 0.806,
+        "width": 0.752,
+        "height": 0.072
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.842
+      },
+      "sourceImageSha256": "bec80e6305aa6883ac11e0e597f17f9cbca5345924781c02c5a8e1c3b4578a98"
+    },
+    {
+      "id": "ch2-q-p65-activity1",
+      "page": 65,
+      "printedPage": "58",
+      "indexAnchor": 0,
+      "anchorLabel": "活动1 整理家庭收支账目",
+      "locator": "数学活动1：整理家庭收支账目的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.1,
+        "y": 0.141,
+        "width": 0.321,
+        "height": 0.028
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.155
+      },
+      "sourceImageSha256": "383fbffe53d1afbc9bdf0709bdcdb706827c79657163ba61d6a01e1504eeb541"
+    },
+    {
+      "id": "ch2-income-record-activity",
+      "page": 65,
+      "printedPage": "58",
+      "indexAnchor": 0,
+      "anchorLabel": "活动1 整理家庭收支账目",
+      "locator": "活动1首段，从“收入记为正数，支出记为负数”到“每日平均支出”等统计要求。",
+      "region": {
+        "x": 0.108,
+        "y": 0.179,
+        "width": 0.75,
+        "height": 0.079
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.2185
+      },
+      "sourceImageSha256": "383fbffe53d1afbc9bdf0709bdcdb706827c79657163ba61d6a01e1504eeb541"
+    },
+    {
+      "id": "ch2-q-p65-activity2",
+      "page": 65,
+      "printedPage": "58",
+      "indexAnchor": 1,
+      "anchorLabel": "活动2 填幻方",
+      "locator": "数学活动2：填幻方的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.1,
+        "y": 0.302,
+        "width": 0.205,
+        "height": 0.028
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.316
+      },
+      "sourceImageSha256": "383fbffe53d1afbc9bdf0709bdcdb706827c79657163ba61d6a01e1504eeb541"
+    },
+    {
+      "id": "ch2-rational-closure-review",
+      "page": 66,
+      "printedPage": "59",
+      "indexAnchor": 1,
+      "anchorLabel": "二、回顾与思考",
+      "locator": "页底“有理数的和、差、积、商（除数不为0）仍然是有理数”这一句。",
+      "region": {
+        "x": 0.15,
+        "y": 0.809,
+        "width": 0.749,
+        "height": 0.053
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.8355
+      },
+      "sourceImageSha256": "6170aad304c0fb0f7d8ce1fdd1c03ba65021f6cb166aca735dba26059156c7d3"
+    },
+    {
+      "id": "ch2-division-condition-review",
+      "page": 67,
+      "printedPage": "60",
+      "indexAnchor": 0,
+      "anchorLabel": "有理数的四则运算法则（续）",
+      "locator": "页首四则运算法则第（3）式及下一行“n，q均不为0”的条件。",
+      "region": {
+        "x": 0.109,
+        "y": 0.133,
+        "width": 0.475,
+        "height": 0.068
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.14
+      },
+      "sourceImageSha256": "fb55b52a8aa62f7851386f334eac7adf9451b7b2cd52d5d5b9b02309ece7a607"
+    },
+    {
+      "id": "ch2-law-order-review",
+      "page": 67,
+      "printedPage": "60",
+      "indexAnchor": 1,
+      "anchorLabel": "运算律",
+      "locator": "运算律段第二行“运算律不仅能给数的运算带来方便”这一分句。",
+      "region": {
+        "x": 0.264,
+        "y": 0.239,
+        "width": 0.381,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.256
+      },
+      "sourceImageSha256": "fb55b52a8aa62f7851386f334eac7adf9451b7b2cd52d5d5b9b02309ece7a607"
+    },
+    {
+      "id": "ch2-q-p67-review1",
+      "page": 67,
+      "printedPage": "60",
+      "indexAnchor": 2,
+      "anchorLabel": "请你带着下面的问题，复习一下全章的内容吧。",
+      "locator": "回顾与思考第1题：借助绝对值解释运算的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.109,
+        "y": 0.381,
+        "width": 0.744,
+        "height": 0.049
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4055
+      },
+      "sourceImageSha256": "fb55b52a8aa62f7851386f334eac7adf9451b7b2cd52d5d5b9b02309ece7a607"
+    },
+    {
+      "id": "ch2-q-p67-review2",
+      "page": 67,
+      "printedPage": "60",
+      "indexAnchor": 2,
+      "anchorLabel": "请你带着下面的问题，复习一下全章的内容吧。",
+      "locator": "回顾与思考第2题：用数轴说明加减法的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.154,
+        "y": 0.438,
+        "width": 0.691,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4505
+      },
+      "sourceImageSha256": "fb55b52a8aa62f7851386f334eac7adf9451b7b2cd52d5d5b9b02309ece7a607"
+    },
+    {
+      "id": "ch2-q-p67-review3",
+      "page": 67,
+      "printedPage": "60",
+      "indexAnchor": 2,
+      "anchorLabel": "请你带着下面的问题，复习一下全章的内容吧。",
+      "locator": "回顾与思考第3题：数系扩充与除法的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.109,
+        "y": 0.467,
+        "width": 0.744,
+        "height": 0.079
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.5065
+      },
+      "sourceImageSha256": "fb55b52a8aa62f7851386f334eac7adf9451b7b2cd52d5d5b9b02309ece7a607"
+    },
+    {
+      "id": "ch2-q-p67-review4",
+      "page": 67,
+      "printedPage": "60",
+      "indexAnchor": 2,
+      "anchorLabel": "请你带着下面的问题，复习一下全章的内容吧。",
+      "locator": "回顾与思考第4题：运算之间的联系的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.109,
+        "y": 0.554,
+        "width": 0.744,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.579
+      },
+      "sourceImageSha256": "fb55b52a8aa62f7851386f334eac7adf9451b7b2cd52d5d5b9b02309ece7a607"
+    },
+    {
+      "id": "ch2-q-p67-review5",
+      "page": 67,
+      "printedPage": "60",
+      "indexAnchor": 2,
+      "anchorLabel": "请你带着下面的问题，复习一下全章的内容吧。",
+      "locator": "回顾与思考第5题：运算律的作用的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.109,
+        "y": 0.61,
+        "width": 0.744,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.635
+      },
+      "sourceImageSha256": "fb55b52a8aa62f7851386f334eac7adf9451b7b2cd52d5d5b9b02309ece7a607"
+    },
+    {
+      "id": "ch2-q-p67-review6",
+      "page": 67,
+      "printedPage": "60",
+      "indexAnchor": 2,
+      "anchorLabel": "请你带着下面的问题，复习一下全章的内容吧。",
+      "locator": "回顾与思考第6题：乘方与混合运算的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.109,
+        "y": 0.669,
+        "width": 0.744,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.694
+      },
+      "sourceImageSha256": "fb55b52a8aa62f7851386f334eac7adf9451b7b2cd52d5d5b9b02309ece7a607"
+    },
+    {
+      "id": "ch2-q-p67-review7",
+      "page": 67,
+      "printedPage": "60",
+      "indexAnchor": 2,
+      "anchorLabel": "请你带着下面的问题，复习一下全章的内容吧。",
+      "locator": "回顾与思考第7题：理解有理数的分数形式的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.109,
+        "y": 0.728,
+        "width": 0.744,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.74
+      },
+      "sourceImageSha256": "fb55b52a8aa62f7851386f334eac7adf9451b7b2cd52d5d5b9b02309ece7a607"
+    },
+    {
+      "id": "ch2-q-p67-review8",
+      "page": 67,
+      "printedPage": "60",
+      "indexAnchor": 2,
+      "anchorLabel": "请你带着下面的问题，复习一下全章的内容吧。",
+      "locator": "回顾与思考第8题：梳理数系扩充的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.109,
+        "y": 0.802,
+        "width": 0.744,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.827
+      },
+      "sourceImageSha256": "fb55b52a8aa62f7851386f334eac7adf9451b7b2cd52d5d5b9b02309ece7a607"
+    },
+    {
+      "id": "ch2-q-review2-1",
+      "page": 68,
+      "printedPage": "61",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固",
+      "locator": "复习题2第1题：四则运算的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.14,
+        "y": 0.183,
+        "width": 0.13,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.195
+      },
+      "sourceImageSha256": "1a81dfc24f17caf9256c51aad2e2df5f0e919d91f220bc7f2ad3ddf5bbadd98b"
+    },
+    {
+      "id": "ch2-q-review2-2",
+      "page": 68,
+      "printedPage": "61",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固",
+      "locator": "复习题2第2题：混合运算的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.14,
+        "y": 0.326,
+        "width": 0.13,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.338
+      },
+      "sourceImageSha256": "1a81dfc24f17caf9256c51aad2e2df5f0e919d91f220bc7f2ad3ddf5bbadd98b"
+    },
+    {
+      "id": "ch2-q-review2-3",
+      "page": 68,
+      "printedPage": "61",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固",
+      "locator": "复习题2第3题：相反数的和与倒数的积的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.14,
+        "y": 0.548,
+        "width": 0.65,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.56
+      },
+      "sourceImageSha256": "1a81dfc24f17caf9256c51aad2e2df5f0e919d91f220bc7f2ad3ddf5bbadd98b"
+    },
+    {
+      "id": "ch2-q-review2-4",
+      "page": 68,
+      "printedPage": "61",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固",
+      "locator": "复习题2第4题：科学记数法的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.14,
+        "y": 0.574,
+        "width": 0.35,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.586
+      },
+      "sourceImageSha256": "1a81dfc24f17caf9256c51aad2e2df5f0e919d91f220bc7f2ad3ddf5bbadd98b"
+    },
+    {
+      "id": "ch2-q-review2-5",
+      "page": 68,
+      "printedPage": "61",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固",
+      "locator": "复习题2第5题：取近似数的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.14,
+        "y": 0.625,
+        "width": 0.52,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.637
+      },
+      "sourceImageSha256": "1a81dfc24f17caf9256c51aad2e2df5f0e919d91f220bc7f2ad3ddf5bbadd98b"
+    },
+    {
+      "id": "ch2-q-review2-6",
+      "page": 68,
+      "printedPage": "61",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固",
+      "locator": "复习题2第6题：绝对值与减法的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.14,
+        "y": 0.699,
+        "width": 0.13,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.711
+      },
+      "sourceImageSha256": "1a81dfc24f17caf9256c51aad2e2df5f0e919d91f220bc7f2ad3ddf5bbadd98b"
+    },
+    {
+      "id": "ch2-absolute-scope-practice",
+      "page": 68,
+      "printedPage": "61",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固",
+      "locator": "复习题2第6题的两个式子“−2−|−3|”与“|−2−(−3)|”。",
+      "region": {
+        "x": 0.167,
+        "y": 0.723,
+        "width": 0.51,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.7355
+      },
+      "sourceImageSha256": "1a81dfc24f17caf9256c51aad2e2df5f0e919d91f220bc7f2ad3ddf5bbadd98b"
+    },
+    {
+      "id": "ch2-q-review2-7",
+      "page": 68,
+      "printedPage": "61",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "复习题2第7题：三支球队的净胜球数的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.14,
+        "y": 0.783,
+        "width": 0.75,
+        "height": 0.079
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.8225
+      },
+      "sourceImageSha256": "1a81dfc24f17caf9256c51aad2e2df5f0e919d91f220bc7f2ad3ddf5bbadd98b"
+    },
+    {
+      "id": "ch2-q-review2-8",
+      "page": 68,
+      "printedPage": "61",
+      "indexAnchor": 1,
+      "anchorLabel": "综合运用",
+      "locator": "复习题2第8题：估算并计算平均成绩（续页为PDF第69页）的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.14,
+        "y": 0.865,
+        "width": 0.51,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.877
+      },
+      "sourceImageSha256": "1a81dfc24f17caf9256c51aad2e2df5f0e919d91f220bc7f2ad3ddf5bbadd98b"
+    },
+    {
+      "id": "ch2-q-review2-9",
+      "page": 69,
+      "printedPage": "62",
+      "indexAnchor": 0,
+      "anchorLabel": "综合运用（续）",
+      "locator": "复习题2第9题：补出星期六的盈亏的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.097,
+        "y": 0.133,
+        "width": 0.764,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.1455
+      },
+      "sourceImageSha256": "0015c1897bd64566808c209da20fe10f66685495ea7423a4d568fdee6c4b1083"
+    },
+    {
+      "id": "ch2-q-review2-10",
+      "page": 69,
+      "printedPage": "62",
+      "indexAnchor": 0,
+      "anchorLabel": "综合运用（续）",
+      "locator": "复习题2第10题：巡道员的位置与距离的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.097,
+        "y": 0.276,
+        "width": 0.764,
+        "height": 0.068
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.31
+      },
+      "sourceImageSha256": "0015c1897bd64566808c209da20fe10f66685495ea7423a4d568fdee6c4b1083"
+    },
+    {
+      "id": "ch2-q-review2-11",
+      "page": 69,
+      "printedPage": "62",
+      "indexAnchor": 0,
+      "anchorLabel": "综合运用（续）",
+      "locator": "复习题2第11题：金属丝随温度变化的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.097,
+        "y": 0.351,
+        "width": 0.764,
+        "height": 0.096
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.399
+      },
+      "sourceImageSha256": "0015c1897bd64566808c209da20fe10f66685495ea7423a4d568fdee6c4b1083"
+    },
+    {
+      "id": "ch2-q-review2-12",
+      "page": 69,
+      "printedPage": "62",
+      "indexAnchor": 0,
+      "anchorLabel": "综合运用（续）",
+      "locator": "复习题2第12题：天文单位的科学记数法的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.097,
+        "y": 0.457,
+        "width": 0.764,
+        "height": 0.068
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.491
+      },
+      "sourceImageSha256": "0015c1897bd64566808c209da20fe10f66685495ea7423a4d568fdee6c4b1083"
+    },
+    {
+      "id": "ch2-power-size-explore",
+      "page": 69,
+      "printedPage": "62",
+      "indexAnchor": 1,
+      "anchorLabel": "拓广探索",
+      "locator": "复习题2第13题两组待比较的数及条件。",
+      "region": {
+        "x": 0.097,
+        "y": 0.567,
+        "width": 0.661,
+        "height": 0.072
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.578
+      },
+      "sourceImageSha256": "0015c1897bd64566808c209da20fe10f66685495ea7423a4d568fdee6c4b1083"
+    },
+    {
+      "id": "ch2-q-review2-13",
+      "page": 69,
+      "printedPage": "62",
+      "indexAnchor": 1,
+      "anchorLabel": "拓广探索",
+      "locator": "复习题2第13题：比较数与它的幂的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.097,
+        "y": 0.567,
+        "width": 0.661,
+        "height": 0.072
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.603
+      },
+      "sourceImageSha256": "0015c1897bd64566808c209da20fe10f66685495ea7423a4d568fdee6c4b1083"
+    },
+    {
+      "id": "ch2-counterexample-review",
+      "page": 69,
+      "printedPage": "62",
+      "indexAnchor": 1,
+      "anchorLabel": "拓广探索",
+      "locator": "复习题2第14题题干中“如果认为正确，请说明理由；如果认为错误，请举出反例”。",
+      "region": {
+        "x": 0.097,
+        "y": 0.642,
+        "width": 0.764,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.688
+      },
+      "sourceImageSha256": "0015c1897bd64566808c209da20fe10f66685495ea7423a4d568fdee6c4b1083"
+    },
+    {
+      "id": "ch2-q-review2-14",
+      "page": 69,
+      "printedPage": "62",
+      "indexAnchor": 1,
+      "anchorLabel": "拓广探索",
+      "locator": "复习题2第14题：说明理由或举反例的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.097,
+        "y": 0.642,
+        "width": 0.764,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.667
+      },
+      "sourceImageSha256": "0015c1897bd64566808c209da20fe10f66685495ea7423a4d568fdee6c4b1083"
+    },
+    {
+      "id": "ch2-q-review2-15",
+      "page": 69,
+      "printedPage": "62",
+      "indexAnchor": 1,
+      "anchorLabel": "拓广探索",
+      "locator": "复习题2第15题：全由1组成的数相乘的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.097,
+        "y": 0.771,
+        "width": 0.764,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.7835
+      },
+      "sourceImageSha256": "0015c1897bd64566808c209da20fe10f66685495ea7423a4d568fdee6c4b1083"
+    },
+    {
+      "id": "ch2-q-p70-addition-memory",
+      "page": 70,
+      "printedPage": "63",
+      "indexAnchor": 0,
+      "anchorLabel": "进位制的认识与探究",
+      "locator": "实践引言：回忆最早学习加法的情景的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.13,
+        "y": 0.199,
+        "width": 0.502,
+        "height": 0.052
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.225
+      },
+      "sourceImageSha256": "203064f32e5f417df19d2c147e1f792d4753d19fee4bb22c0a705aa1f31d891c"
+    },
+    {
+      "id": "ch2-q-p70-introduction",
+      "page": 70,
+      "printedPage": "63",
+      "indexAnchor": 0,
+      "anchorLabel": "进位制的认识与探究",
+      "locator": "实践引言：围绕进位制提出的问题的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.13,
+        "y": 0.368,
+        "width": 0.79,
+        "height": 0.11
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.423
+      },
+      "sourceImageSha256": "203064f32e5f417df19d2c147e1f792d4753d19fee4bb22c0a705aa1f31d891c"
+    },
+    {
+      "id": "ch2-q-p70-preparation",
+      "page": 70,
+      "printedPage": "63",
+      "indexAnchor": 2,
+      "anchorLabel": "活动准备",
+      "locator": "活动准备：二进制资料与ICME-14标识的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.13,
+        "y": 0.638,
+        "width": 0.79,
+        "height": 0.051
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.6635
+      },
+      "sourceImageSha256": "203064f32e5f417df19d2c147e1f792d4753d19fee4bb22c0a705aa1f31d891c"
+    },
+    {
+      "id": "ch2-base-unit-exchange",
+      "page": 70,
+      "printedPage": "63",
+      "indexAnchor": 3,
+      "anchorLabel": "活动一 认识进位制，探究不同进位制的数之间的转换",
+      "locator": "活动一首段“逢十进一”“逢二进一”及基数定义。",
+      "region": {
+        "x": 0.129,
+        "y": 0.78,
+        "width": 0.79,
+        "height": 0.078
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.819
+      },
+      "sourceImageSha256": "203064f32e5f417df19d2c147e1f792d4753d19fee4bb22c0a705aa1f31d891c"
+    },
+    {
+      "id": "ch2-zero-power-place",
+      "page": 71,
+      "printedPage": "64",
+      "indexAnchor": 0,
+      "anchorLabel": "十进制的数位表示（续）",
+      "locator": "页首右侧旁注“规定当a≠0时，a⁰=1”。",
+      "region": {
+        "x": 0.637,
+        "y": 0.159,
+        "width": 0.219,
+        "height": 0.043
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.1805
+      },
+      "sourceImageSha256": "6f260f38727a20de4938b37e70fa585cf6fb22b0734a9c391c3630d5c0b28773"
+    },
+    {
+      "id": "ch2-q-p71-activity1-task1",
+      "page": 71,
+      "printedPage": "64",
+      "indexAnchor": 1,
+      "anchorLabel": "任务1—任务3",
+      "locator": "活动一任务1：将二进制1011转换为十进制的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.084,
+        "y": 0.242,
+        "width": 0.79,
+        "height": 0.078
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.281
+      },
+      "sourceImageSha256": "6f260f38727a20de4938b37e70fa585cf6fb22b0734a9c391c3630d5c0b28773"
+    },
+    {
+      "id": "ch2-base-zero-placeholder",
+      "page": 71,
+      "printedPage": "64",
+      "indexAnchor": 1,
+      "anchorLabel": "任务1—任务3",
+      "locator": "活动一任务2“把89转换为二进制数和八进制数”题干。",
+      "region": {
+        "x": 0.129,
+        "y": 0.387,
+        "width": 0.432,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3985
+      },
+      "sourceImageSha256": "6f260f38727a20de4938b37e70fa585cf6fb22b0734a9c391c3630d5c0b28773"
+    },
+    {
+      "id": "ch2-q-p71-activity1-task2",
+      "page": 71,
+      "printedPage": "64",
+      "indexAnchor": 1,
+      "anchorLabel": "任务1—任务3",
+      "locator": "活动一任务2：将89转换为二进制和八进制的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.129,
+        "y": 0.387,
+        "width": 0.432,
+        "height": 0.023
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3985
+      },
+      "sourceImageSha256": "6f260f38727a20de4938b37e70fa585cf6fb22b0734a9c391c3630d5c0b28773"
+    },
+    {
+      "id": "ch2-q-p71-activity1-task3",
+      "page": 71,
+      "printedPage": "64",
+      "indexAnchor": 1,
+      "anchorLabel": "任务1—任务3",
+      "locator": "活动一任务3：归纳转换发现并推广的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.084,
+        "y": 0.5,
+        "width": 0.79,
+        "height": 0.051
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.5255
+      },
+      "sourceImageSha256": "6f260f38727a20de4938b37e70fa585cf6fb22b0734a9c391c3630d5c0b28773"
+    },
+    {
+      "id": "ch2-q-p71-activity2-task1",
+      "page": 71,
+      "printedPage": "64",
+      "indexAnchor": 2,
+      "anchorLabel": "活动二 探究进制数的加法运算",
+      "locator": "活动二任务1：计算机选择二进制的原因的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.084,
+        "y": 0.683,
+        "width": 0.79,
+        "height": 0.051
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.7085
+      },
+      "sourceImageSha256": "6f260f38727a20de4938b37e70fa585cf6fb22b0734a9c391c3630d5c0b28773"
+    },
+    {
+      "id": "ch2-binary-addition-explore",
+      "page": 71,
+      "printedPage": "64",
+      "indexAnchor": 2,
+      "anchorLabel": "活动二 探究进制数的加法运算",
+      "locator": "活动二任务2“研究二进制数的加法运算法则，并填写表1中的活动记录单”两行。",
+      "region": {
+        "x": 0.085,
+        "y": 0.737,
+        "width": 0.79,
+        "height": 0.053
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.7635
+      },
+      "sourceImageSha256": "6f260f38727a20de4938b37e70fa585cf6fb22b0734a9c391c3630d5c0b28773"
+    },
+    {
+      "id": "ch2-q-p71-activity2-task2",
+      "page": 71,
+      "printedPage": "64",
+      "indexAnchor": 2,
+      "anchorLabel": "活动二 探究进制数的加法运算",
+      "locator": "活动二任务2：二进制加法（续页为PDF第72页）的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.084,
+        "y": 0.737,
+        "width": 0.79,
+        "height": 0.053
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.7635
+      },
+      "sourceImageSha256": "6f260f38727a20de4938b37e70fa585cf6fb22b0734a9c391c3630d5c0b28773"
+    },
+    {
+      "id": "ch2-base-addition-consistency",
+      "page": 72,
+      "printedPage": "65",
+      "indexAnchor": 0,
+      "anchorLabel": "任务2（续）",
+      "locator": "活动二任务2（2）③“比较①②的计算结果是否相同”。",
+      "region": {
+        "x": 0.176,
+        "y": 0.211,
+        "width": 0.335,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.222
+      },
+      "sourceImageSha256": "89206aa27a83fec9f3cb8ffc15cdcdfa1966aa51dcdb344846c09da83ed89176"
+    },
+    {
+      "id": "ch2-q-p72-activity2-task3",
+      "page": 72,
+      "printedPage": "65",
+      "indexAnchor": 1,
+      "anchorLabel": "任务3—任务4",
+      "locator": "活动二任务3：存储容量与文件大小的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.174,
+        "y": 0.239,
+        "width": 0.74,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.25
+      },
+      "sourceImageSha256": "89206aa27a83fec9f3cb8ffc15cdcdfa1966aa51dcdb344846c09da83ed89176"
+    },
+    {
+      "id": "ch2-q-p72-activity2-task4",
+      "page": 72,
+      "printedPage": "65",
+      "indexAnchor": 1,
+      "anchorLabel": "任务3—任务4",
+      "locator": "活动二任务4：其他进位制的加法的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.174,
+        "y": 0.354,
+        "width": 0.74,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.366
+      },
+      "sourceImageSha256": "89206aa27a83fec9f3cb8ffc15cdcdfa1966aa51dcdb344846c09da83ed89176"
+    },
+    {
+      "id": "ch2-time-base-boundary",
+      "page": 72,
+      "printedPage": "65",
+      "indexAnchor": 1,
+      "anchorLabel": "任务3—任务4",
+      "locator": "活动二任务4中“一星期7天、一年12个月、一个小时60分钟”的并列例子。",
+      "region": {
+        "x": 0.468,
+        "y": 0.381,
+        "width": 0.45,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3935
+      },
+      "sourceImageSha256": "89206aa27a83fec9f3cb8ffc15cdcdfa1966aa51dcdb344846c09da83ed89176"
+    },
+    {
+      "id": "ch2-q-p72-activity3-theme1",
+      "page": 72,
+      "printedPage": "65",
+      "indexAnchor": 2,
+      "anchorLabel": "活动三 任选下列主题之一进行研究",
+      "locator": "活动三主题1：解读大会标识中的记数符号（续页为PDF第73页）的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.13,
+        "y": 0.673,
+        "width": 0.563,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.698
+      },
+      "sourceImageSha256": "89206aa27a83fec9f3cb8ffc15cdcdfa1966aa51dcdb344846c09da83ed89176"
+    },
+    {
+      "id": "ch2-trigram-reading-order",
+      "page": 72,
+      "printedPage": "65",
+      "indexAnchor": 2,
+      "anchorLabel": "活动三 任选下列主题之一进行研究",
+      "locator": "活动三提示中“阳爻对应数字1，阴爻对应数字0”以及首组写为(011)₂的两行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.833,
+        "width": 0.79,
+        "height": 0.052
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.859
+      },
+      "sourceImageSha256": "89206aa27a83fec9f3cb8ffc15cdcdfa1966aa51dcdb344846c09da83ed89176"
+    },
+    {
+      "id": "ch2-q-p73-activity3-theme2",
+      "page": 73,
+      "printedPage": "66",
+      "indexAnchor": 0,
+      "anchorLabel": "活动三（续）",
+      "locator": "活动三主题2：撰写进位制研究文章的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.084,
+        "y": 0.126,
+        "width": 0.79,
+        "height": 0.108
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.18
+      },
+      "sourceImageSha256": "c434b0d9a78a9ed4dcc1164ae95528ca8c5ad6bd3ef990933d90a7760424cc63"
+    },
+    {
+      "id": "ch2-q-p73-process1",
+      "page": 73,
+      "printedPage": "66",
+      "indexAnchor": 1,
+      "anchorLabel": "活动过程",
+      "locator": "活动过程1：组建合作团队的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.129,
+        "y": 0.288,
+        "width": 0.21,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3005
+      },
+      "sourceImageSha256": "c434b0d9a78a9ed4dcc1164ae95528ca8c5ad6bd3ef990933d90a7760424cc63"
+    },
+    {
+      "id": "ch2-q-p73-process2",
+      "page": 73,
+      "printedPage": "66",
+      "indexAnchor": 1,
+      "anchorLabel": "活动过程",
+      "locator": "活动过程2：方案构思的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.129,
+        "y": 0.377,
+        "width": 0.139,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3895
+      },
+      "sourceImageSha256": "c434b0d9a78a9ed4dcc1164ae95528ca8c5ad6bd3ef990933d90a7760424cc63"
+    },
+    {
+      "id": "ch2-q-p73-process3",
+      "page": 73,
+      "printedPage": "66",
+      "indexAnchor": 1,
+      "anchorLabel": "活动过程",
+      "locator": "活动过程3：方案实施的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.129,
+        "y": 0.432,
+        "width": 0.139,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4445
+      },
+      "sourceImageSha256": "c434b0d9a78a9ed4dcc1164ae95528ca8c5ad6bd3ef990933d90a7760424cc63"
+    },
+    {
+      "id": "ch2-q-p73-process4",
+      "page": 73,
+      "printedPage": "66",
+      "indexAnchor": 1,
+      "anchorLabel": "活动过程",
+      "locator": "活动过程4：展示交流的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.129,
+        "y": 0.518,
+        "width": 0.139,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.5305
+      },
+      "sourceImageSha256": "c434b0d9a78a9ed4dcc1164ae95528ca8c5ad6bd3ef990933d90a7760424cc63"
+    },
+    {
+      "id": "ch2-q-p73-evaluation",
+      "page": 73,
+      "printedPage": "66",
+      "indexAnchor": 2,
+      "anchorLabel": "活动评价",
+      "locator": "活动评价：自评、互评与教师评价的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.089,
+        "y": 0.605,
+        "width": 0.157,
+        "height": 0.029
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.6195
+      },
+      "sourceImageSha256": "c434b0d9a78a9ed4dcc1164ae95528ca8c5ad6bd3ef990933d90a7760424cc63"
+    },
+    {
+      "id": "ch2-q-p74-report",
+      "page": 74,
+      "printedPage": "67",
+      "indexAnchor": 1,
+      "anchorLabel": "研究报告参考表",
+      "locator": "研究报告参考表：填写与评价分工的题号及题干起始处；连续小问共用此入口。",
+      "region": {
+        "x": 0.174,
+        "y": 0.07,
+        "width": 0.49,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.083
+      },
+      "sourceImageSha256": "bc09b68189e475fda6605c8137a85056bdcbeb4f54b050421c5a89d90f65e358"
+    }
+  ]
+}

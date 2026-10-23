@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-23T05:32:49.262763+00:00",
+  "title": "Design System: 课本解读",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "操作蓝"
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "内容白"
+      },
+      "background": {
+        "role": "neutral",
+        "displayName": "阅读浅灰"
+      }
+    },
+    "shadows": [
+      {
+        "name": "message",
+        "value": "0 4px 24px #0000001a",
+        "purpose": "加载或错误提示。"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile-max",
+        "value": "760px"
+      },
+      {
+        "name": "compact-max",
+        "value": "1000px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "图标按钮",
+      "kind": "button",
+      "refersTo": "icon-button",
+      "description": "上下页与收起、展开页面导航。",
+      "html": "<button class=\"ds-icon\" aria-label=\"下一页\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"m10 6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button>",
+      "css": ".ds-icon{font-family:-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"PingFang SC\", \"Helvetica Neue\", sans-serif;display:inline-grid;place-items:center;width:36px;height:36px;padding:0;border:0;border-radius:8px;background:transparent;color:var(--secondary, #6e6e73);cursor:pointer}.ds-icon:hover:not(:disabled){background:var(--hover, #ededf0);color:#1d1d1f}.ds-icon:focus-visible{outline:2px solid var(--accent, #0066cc);outline-offset:4px;}.ds-icon:disabled{color:#9b9b9f;cursor:default}"
+    },
+    {
+      "name": "蓝字按钮",
+      "kind": "button",
+      "refersTo": "text-button",
+      "description": "图片加载失败后的重试。",
+      "html": "<button class=\"ds-text\">重试</button>",
+      "css": ".ds-text{font-family:-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"PingFang SC\", \"Helvetica Neue\", sans-serif;display:inline-flex;align-items:center;gap:3px;padding:4px 0;min-height:32px;border:0;background:transparent;color:var(--accent, #0066cc);font-size:14px;line-height:1.5;text-align:left;cursor:pointer}.ds-text:hover:not(:disabled){text-decoration:underline;text-underline-offset:4px}.ds-text:focus-visible{outline:2px solid var(--accent, #0066cc);outline-offset:4px;}.ds-text:disabled{color:#9b9b9f;cursor:default}"
+    },
+    {
+      "name": "页码输入",
+      "kind": "input",
+      "refersTo": "page-input",
+      "description": "当前页输入与总页数；提交由 Reader 处理。",
+      "html": "<label class=\"ds-jump\"><input aria-label=\"PDF页码\" inputmode=\"numeric\" value=\"1\"><span>/ 202</span></label>",
+      "css": ".ds-jump{font-family:-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"PingFang SC\", \"Helvetica Neue\", sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;color:var(--secondary, #6e6e73);font-size:13px;font-variant-numeric:tabular-nums}.ds-jump input{box-sizing:border-box;width:42px;height:30px;padding:4px;border:1px solid #d2d2d7;border-radius:6px;background:var(--surface, #fff);color:#1d1d1f;font:inherit;text-align:center;caret-color:var(--accent, #0066cc)}.ds-jump input:focus-visible{outline:2px solid var(--accent, #0066cc);outline-offset:2px}.ds-jump input[aria-invalid=\"true\"]{border-color:#b42318}"
+    },
+    {
+      "name": "当前页缩略图",
+      "kind": "nav",
+      "refersTo": "page-thumbnail",
+      "description": "七年级上册封面缩略图；完整 202 页列表由 Reader 生成。",
+      "html": "<nav class=\"ds-nav\" aria-label=\"页面导航\"><button class=\"ds-thumb\" aria-current=\"page\" aria-label=\"跳转到第 1 页\"><img src=\"/textbooks/grade-7-volume-1/thumb-1.webp\" alt=\"\" width=\"80\" height=\"112\"><span>1</span></button></nav>",
+      "css": ".ds-nav{width:116px;padding:4px;background:#f5f5f7}.ds-thumb{font-family:-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"PingFang SC\", \"Helvetica Neue\", sans-serif;display:flex;flex-direction:column;align-items:center;gap:8px;width:100%;padding:8px 0;margin:0 0 12px;border:0;border-radius:6px;background:transparent;color:var(--secondary, #6e6e73);font-size:12px;font-variant-numeric:tabular-nums;cursor:pointer}.ds-thumb img{display:block;object-fit:contain;background:var(--surface, #fff)}.ds-thumb:hover{background:var(--hover, #ededf0)}.ds-thumb[aria-current=\"page\"]{color:var(--accent, #0066cc)}.ds-thumb[aria-current=\"page\"] img{outline:2px solid var(--accent, #0066cc);outline-offset:3px}.ds-thumb:focus-visible{outline:2px solid var(--accent, #0066cc);outline-offset:4px;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Apple 风格的极简阅读",
+    "overview": "沿用 DonQ 已指定的 Apple 风格与极简元素。白色和浅灰分开阅读区域，蓝色标出可操作内容；教材原页保持主体地位。",
+    "keyCharacteristics": [
+      "系统字体、平面阅读区。",
+      "全书连续滚动，控件保持轻量。",
+      "页面导航可收起，页码始终可用。"
+    ],
+    "rules": [],
+    "dos": [
+      "Do 沿用真实教材图像和现有控件，保持正文可读。",
+      "Do 保留键盘焦点、当前页和错误状态。"
+    ],
+    "donts": [
+      "Don't 增加额外信息、布局或装饰。",
+      "Don't 将阅读区包装成卡片。"
+    ]
+  }
+}

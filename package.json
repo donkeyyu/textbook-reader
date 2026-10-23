@@ -9,8 +9,10 @@
   "scripts": {
     "dev": "vite",
     "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test src/reader/session.test.ts src/textbook/catalog.test.ts",
     "build": "npm run typecheck && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare:textbook": "node scripts/prepare-textbook.mjs"
   },
   "dependencies": {
     "react": "^19.3.1",

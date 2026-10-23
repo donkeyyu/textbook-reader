@@ -1,0 +1,4 @@
+interface:
+  display_name: "教材下载"
+  short_description: "使用 tchMaterial-parser 查找并下载智慧教育平台教材"
+  default_prompt: "用 $fetch-textbook 下载人教版七年级上册数学，核对封面并保留来源记录。"

@@ -24,6 +24,11 @@
 
 ## Agent skills
 
+### Textbook download
+
+从国家中小学智慧教育平台获取教材时，读取
+[fetch-textbook](.agents/skills/fetch-textbook/SKILL.md)。
+
 ### Issue tracker
 
 任务使用本地 Markdown；创建、读取或更新任务时，读取

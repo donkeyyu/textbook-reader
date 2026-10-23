@@ -49,7 +49,7 @@ DonQ 提出的三个启发：
 以下是当前机器上的教材与样例来源，迁移项目时须重新确认可用性。下载的教材 PDF 仅保存在本地，已排除出 Git；来源记录保留在项目中。
 
 - 本轮下载教材：[`materials/textbooks/人教版-数学-七年级上册.pdf`](../materials/textbooks/人教版-数学-七年级上册.pdf)。2026-10-23 使用 [tchMaterial-parser](https://github.com/happycola233/tchMaterial-parser) 从国家中小学智慧教育平台获取，共202个 PDF 页面。封面显示2024年审定；平台标题标注根据2022年版课程标准修订；版权页未列出版年份与印次。来源、哈希与核对结果见[来源记录](../materials/textbooks/人教版-数学-七年级上册.source.json)。尚未建立全书 PDF 页序与印刷页码映射。
-- 下载技能：`~/.codex/skills/fetch-textbook/SKILL.md`，复用上游查询、解析和下载函数。此技能及其运行环境位于当前机器，迁移时另行安装。
+- 下载技能：[fetch-textbook](../.agents/skills/fetch-textbook/SKILL.md)，复用上游查询、解析和下载函数。技能随仓库维护，运行环境按技能说明在本机安装。
 - 配方法样例教材：`/Users/chengqiyu/Downloads/义务教育教科书·数学九年级上册.pdf`。已用样例为“21.2.1 配方法”中的印刷第7、8页；第7页包含例1题目与分析，第8页包含例1（2）的解答。版本信息以该 PDF 的封面、版权页为准。
 - 交互参考：`/Users/chengqiyu/.codex/visualizations/2026/10/22/01a163c6-29d5-7e01-98db-f7799e77c89f/completing-square-prototype.html`。
 

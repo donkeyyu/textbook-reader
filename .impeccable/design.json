@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-23T05:32:49.262763+00:00",
+  "generatedAt": "2026-10-23T06:08:20.023523+00:00",
   "title": "Design System: 课本解读",
   "extensions": {
     "colorMeta": {
@@ -22,6 +22,11 @@
         "name": "message",
         "value": "0 4px 24px #0000001a",
         "purpose": "加载或错误提示。"
+      },
+      {
+        "name": "supplement-preview",
+        "value": "0 6px 28px #00000024",
+        "purpose": "原位解读的悬浮预览。"
       }
     ],
     "breakpoints": [
@@ -33,7 +38,65 @@
         "name": "compact-max",
         "value": "1000px"
       }
-    ]
+    ],
+    "typographyRoles": {
+      "supplement-heading": {
+        "fontSize": "18px",
+        "fontWeight": 600,
+        "lineHeight": 1.5
+      },
+      "mobile-supplement-heading": {
+        "fontSize": "17px",
+        "fontWeight": 600,
+        "lineHeight": 1.5
+      },
+      "supplement-body": {
+        "fontSize": "15px",
+        "lineHeight": 1.9
+      },
+      "supplement-preview": {
+        "fontSize": "14px",
+        "lineHeight": 1.7
+      },
+      "related-purpose": {
+        "fontSize": "13px",
+        "lineHeight": 1.7
+      },
+      "related-link": {
+        "fontSize": "14px",
+        "lineHeight": 1.6
+      },
+      "related-page": {
+        "fontSize": "12px"
+      },
+      "supplement-marker": {
+        "fontSize": "22px",
+        "lineHeight": 1
+      },
+      "mobile-supplement-marker": {
+        "fontSize": "20px",
+        "lineHeight": 1
+      },
+      "mobile-return": {
+        "fontSize": "13px"
+      }
+    },
+    "supplementLayout": {
+      "desktopPanelWidth": "350px",
+      "compactPanelWidth": "310px",
+      "mobilePanelRows": "minmax(0, 1fr) minmax(180px, 45%)",
+      "previewWidth": "280px",
+      "source": "src/style.css"
+    },
+    "supplementFeedback": {
+      "surface": "#f4f8ff",
+      "arrival": "#dceaff",
+      "border": "2px solid #0066cc",
+      "duration": "240ms",
+      "easing": "cubic-bezier(.16, 1, .3, 1)",
+      "translation": "14px",
+      "reducedMotion": "120ms background color only"
+    }
   },
   "components": [
     {
@@ -48,7 +111,7 @@
       "name": "蓝字按钮",
       "kind": "button",
       "refersTo": "text-button",
-      "description": "图片加载失败后的重试。",
+      "description": "重试、展开解读、关联跳转及返回来源。",
       "html": "<button class=\"ds-text\">重试</button>",
       "css": ".ds-text{font-family:-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"PingFang SC\", \"Helvetica Neue\", sans-serif;display:inline-flex;align-items:center;gap:3px;padding:4px 0;min-height:32px;border:0;background:transparent;color:var(--accent, #0066cc);font-size:14px;line-height:1.5;text-align:left;cursor:pointer}.ds-text:hover:not(:disabled){text-decoration:underline;text-underline-offset:4px}.ds-text:focus-visible{outline:2px solid var(--accent, #0066cc);outline-offset:4px;}.ds-text:disabled{color:#9b9b9f;cursor:default}"
     },
@@ -67,15 +130,42 @@
       "description": "七年级上册封面缩略图；完整 202 页列表由 Reader 生成。",
       "html": "<nav class=\"ds-nav\" aria-label=\"页面导航\"><button class=\"ds-thumb\" aria-current=\"page\" aria-label=\"跳转到第 1 页\"><img src=\"/textbooks/grade-7-volume-1/thumb-1.webp\" alt=\"\" width=\"80\" height=\"112\"><span>1</span></button></nav>",
       "css": ".ds-nav{width:116px;padding:4px;background:#f5f5f7}.ds-thumb{font-family:-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"PingFang SC\", \"Helvetica Neue\", sans-serif;display:flex;flex-direction:column;align-items:center;gap:8px;width:100%;padding:8px 0;margin:0 0 12px;border:0;border-radius:6px;background:transparent;color:var(--secondary, #6e6e73);font-size:12px;font-variant-numeric:tabular-nums;cursor:pointer}.ds-thumb img{display:block;object-fit:contain;background:var(--surface, #fff)}.ds-thumb:hover{background:var(--hover, #ededf0)}.ds-thumb[aria-current=\"page\"]{color:var(--accent, #0066cc)}.ds-thumb[aria-current=\"page\"] img{outline:2px solid var(--accent, #0066cc);outline-offset:3px}.ds-thumb:focus-visible{outline:2px solid var(--accent, #0066cc);outline-offset:4px;}"
+    },
+    {
+      "name": "原位解读标记",
+      "kind": "button",
+      "refersTo": "supplement-marker",
+      "description": "归一化坐标定位于原页留白；悬停或聚焦预览，点击展开。",
+      "html": "<button class=\"ds-marker\" aria-label=\"解读：负的是偏差，不是质量\" aria-expanded=\"false\">💡</button>",
+      "css": ".ds-marker{display:inline-grid;place-items:center;width:36px;height:36px;padding:0;border:0;border-radius:6px;background:transparent;font-size:22px;line-height:1;cursor:pointer}.ds-marker:hover,.ds-marker[aria-expanded=\"true\"]{background:#f5f5f7d9}.ds-marker:focus-visible{outline:2px solid #0066cc;outline-offset:4px}@media(max-width:760px){.ds-marker{width:32px;height:32px;font-size:20px}}"
+    },
+    {
+      "name": "解读预览",
+      "kind": "tooltip",
+      "refersTo": "supplement-preview",
+      "description": "短预览优先使用教材页外的左右留白；两侧不足时在阅读区下方显示，不覆盖或缩窄正文。",
+      "html": "<div class=\"ds-preview\" role=\"tooltip\" aria-label=\"负的是偏差，不是质量\"><p>先看这个数记录的是实际质量，还是与标准的差别。</p><p class=\"ds-preview-hint\">点击灯泡展开解读</p></div>",
+      "css": ".ds-preview{box-sizing:border-box;width:280px;max-width:calc(100vw - 24px);padding:16px 20px 12px;border-radius:10px;background:#fff;color:#1d1d1f;box-shadow:0 6px 28px #00000024;font-family:-apple-system,BlinkMacSystemFont,\"SF Pro Text\",\"PingFang SC\",\"Helvetica Neue\",sans-serif;font-size:14px;line-height:1.7}.ds-preview p{margin:0 0 6px}.ds-preview .ds-preview-hint{color:#6e6e73;font-size:13px;margin-bottom:0}"
+    },
+    {
+      "name": "补充解读栏",
+      "kind": "panel",
+      "refersTo": "supplement-panel",
+      "description": "桌面位于教材右侧；手机位于教材下方。关联页码与目的相邻展示。",
+      "html": "<aside class=\"ds-supplement\" aria-label=\"补充解读\"><div class=\"ds-supplement-heading\"><h2>负的是偏差，不是质量</h2><button aria-label=\"关闭解读\">×</button></div><p>本例把标准质量作为比较基准。记录中的负号说明“比标准少”，并不表示橘子的实际质量是负数。</p><p>如果偏差记为0，表示恰好达到标准质量，不表示箱子里没有橘子。</p></aside>",
+      "css": ".ds-supplement{box-sizing:border-box;width:350px;max-width:100%;padding:28px 24px 40px;border-left:1px solid #e5e5e7;background:#fff;color:#1d1d1f;font-family:-apple-system,BlinkMacSystemFont,\"SF Pro Text\",\"PingFang SC\",\"Helvetica Neue\",sans-serif}.ds-supplement-heading{display:flex;align-items:start;gap:12px}.ds-supplement h2{flex:1;margin:5px 0 20px;font-size:18px;line-height:1.5;font-weight:600;text-wrap:balance}.ds-supplement-heading button{flex:none;display:grid;place-items:center;width:36px;height:36px;padding:0;border:0;border-radius:8px;background:transparent;color:#6e6e73;font-size:22px;cursor:pointer}.ds-supplement-heading button:focus-visible{outline:2px solid #0066cc;outline-offset:4px}.ds-supplement>p{margin:0 0 18px;font-size:15px;line-height:1.9;overflow-wrap:anywhere}@media(max-width:1000px) and (min-width:761px){.ds-supplement{width:310px;padding:20px}}@media(max-width:760px){.ds-supplement{width:100%;padding:16px 24px 24px;border-left:0;border-top:1px solid #e5e5e7}.ds-supplement h2{font-size:17px;margin-bottom:14px}}"
     }
   ],
   "narrative": {
     "northStar": "Apple 风格的极简阅读",
-    "overview": "沿用 DonQ 已指定的 Apple 风格与极简元素。白色和浅灰分开阅读区域，蓝色标出可操作内容；教材原页保持主体地位。",
+    "overview": "沿用 DonQ 已指定的 Apple 风格与极简元素。白色和浅灰分开阅读区域，蓝色标出可操作内容；教材原页保持主体地位。 第一章 12 条补充由原位 💡 进入，按需预览或展开；关联跳转高亮原文并支持返回。",
     "keyCharacteristics": [
       "系统字体、平面阅读区。",
       "全书连续滚动，控件保持轻量。",
-      "页面导航可收起，页码始终可用。"
+      "页面导航可收起，页码始终可用。",
+      "💡 对应核实过的原文位置，预览时用细矩形框和半透明浅蓝填充标出对应内容，短预览与全文按需出现。",
+      "桌面右栏、手机下方解读，教材始终保留可读区域。",
+      "关联目的、印刷页码、原文高亮与返回保持阅读上下文。"
     ],
     "rules": [],
     "dos": [

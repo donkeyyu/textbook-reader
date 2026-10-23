@@ -1,0 +1,20 @@
+{
+  "prompt": "Source: materials/textbooks/人教版-数学-七年级上册.pdf; physical PDF page 146; thumb; converted from verified index PNG with cwebp, not AI-generated.",
+  "createdAt": "2026-10-23T05:39:40.810Z",
+  "source": "materials/textbooks/人教版-数学-七年级上册.pdf",
+  "documentSha256": "6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249",
+  "physicalPage": 146,
+  "sourceImage": "materials/indexes/人教版-数学-七年级上册/images/page-000146.png",
+  "sourceImageSha256": "c4c5d2550f6467d29af339868b3f11ef55d2cf3ec0e3dffddb166dae64e3348e",
+  "outputSha256": "880344e770aa10aec01de886e645598fcdf16370982314799198c0dfac35a2d1",
+  "sourceWidth": 1304,
+  "sourceHeight": 1843,
+  "conversion": [
+    "cwebp",
+    "-resize",
+    "160",
+    "0",
+    "-q",
+    "75"
+  ]
+}

@@ -8,8 +8,9 @@ dist/
 .DS_Store
 __pycache__/
 
-# Downloaded textbooks stay local; source records can be tracked.
+# Keep other downloads local; include the current book for cross-PC testing.
 materials/textbooks/*.pdf
+!materials/textbooks/人教版-数学-七年级上册.pdf
 materials/textbooks/.textbook-*/
 
 # Local evidence for PDF indexes; retain manifests and navigation metadata.
@@ -17,6 +18,7 @@ materials/indexes/*/images/
 materials/indexes/*/text/
 materials/indexes/*/.work/
 
-# Locally rendered textbook pages and design review captures.
-public/textbooks/
+# Include the current book's prepared runtime assets, not temporary conversions.
+public/textbooks/*
+!public/textbooks/grade-7-volume-1/
 .impeccable/review/

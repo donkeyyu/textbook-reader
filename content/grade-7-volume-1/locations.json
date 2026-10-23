@@ -1,0 +1,312 @@
+{
+  "documentSha256": "6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249",
+  "coordinateSystem": "normalized-full-page-top-left",
+  "sourceIndex": "materials/indexes/人教版-数学-七年级上册/index.jsonl",
+  "sourceImages": "materials/indexes/人教版-数学-七年级上册/images/",
+  "locations": [
+    {
+      "id": "ch1-positive-negative",
+      "page": 9,
+      "printedPage": "2",
+      "indexAnchor": 1,
+      "anchorLabel": "正数；负数",
+      "locator": "页面下部“正数”“负数”定义及“0既不是正数，也不是负数”说明。",
+      "region": {
+        "x": 0.085,
+        "y": 0.728,
+        "width": 0.79,
+        "height": 0.19
+      },
+      "marker": {
+        "x": 0.945,
+        "y": 0.742
+      },
+      "sourceImageSha256": "a18d3af40da5234bb14eaabb06f78e3a3cb33e03dd6fbf8fb25ff0aeac09402d"
+    },
+    {
+      "id": "ch1-deviation",
+      "page": 10,
+      "printedPage": "3",
+      "indexAnchor": 1,
+      "anchorLabel": "例1",
+      "locator": "例1：标准质量为2.5 kg，正负数表示超过或不足标准质量的克数。",
+      "region": {
+        "x": 0.13,
+        "y": 0.33,
+        "width": 0.78,
+        "height": 0.175
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.353
+      },
+      "sourceImageSha256": "db70e624de3f76566bc1ae661673884fc92373c0fe78c320e25aeb30e3d3ad1a"
+    },
+    {
+      "id": "ch1-direction-exercise",
+      "page": 12,
+      "printedPage": "5",
+      "indexAnchor": 2,
+      "anchorLabel": "习题1.1",
+      "locator": "习题1.1第5题：约定向正后方移动记为负，判断两次移动的意义与最终位置。",
+      "region": {
+        "x": 0.15,
+        "y": 0.814,
+        "width": 0.75,
+        "height": 0.045
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.83
+      },
+      "sourceImageSha256": "a8fa482a2ea7e3d0360ca84a092802286d3a8444d1fdb841df8a1e4d74bdcc10"
+    },
+    {
+      "id": "ch1-measurement-exercise",
+      "page": 13,
+      "printedPage": "6",
+      "indexAnchor": 0,
+      "anchorLabel": "习题1.1（续）",
+      "locator": "习题1.1第6题续页：七组测量值，以平均值为标准记录超出或不足的部分；题干起于印刷第5页。",
+      "region": {
+        "x": 0.13,
+        "y": 0.074,
+        "width": 0.73,
+        "height": 0.077
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.115
+      },
+      "sourceImageSha256": "c0fee089411a64dc14a5f4929e105707545f3a75f1065d5a9455bf88dc9f27c7"
+    },
+    {
+      "id": "ch1-rational-form",
+      "page": 14,
+      "printedPage": "7",
+      "indexAnchor": 2,
+      "anchorLabel": "有理数",
+      "locator": "中下部：整数可写成分数形式之后的有理数定义及正、负有理数说明。",
+      "region": {
+        "x": 0.13,
+        "y": 0.725,
+        "width": 0.78,
+        "height": 0.06
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.741
+      },
+      "sourceImageSha256": "dd4d1deb8134f478a7096ddee6f3cc00c8bf46e707506dd8abfb2f575a105b90"
+    },
+    {
+      "id": "ch1-number-line-origin",
+      "page": 16,
+      "printedPage": "9",
+      "indexAnchor": 2,
+      "anchorLabel": "原点；正方向",
+      "locator": "页底数轴规定第（1）（2）条：原点及正方向；单位长度续印刷第10页。",
+      "region": {
+        "x": 0.13,
+        "y": 0.739,
+        "width": 0.505,
+        "height": 0.161
+      },
+      "marker": {
+        "x": 0.955,
+        "y": 0.812
+      },
+      "sourceImageSha256": "2a71a3fab23b7fa2247d1d2350a5ded5afce9121b42345046a3df5eed0c15a99"
+    },
+    {
+      "id": "ch1-number-line",
+      "page": 17,
+      "printedPage": "10",
+      "indexAnchor": 0,
+      "anchorLabel": "数轴",
+      "locator": "图1.2-4下方数轴定义及正半轴、负半轴说明；本页上部续单位长度规定。",
+      "region": {
+        "x": 0.085,
+        "y": 0.24,
+        "width": 0.79,
+        "height": 0.075
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.254
+      },
+      "sourceImageSha256": "883d03197d8874e8155534adf443ee6c41f063806328f7f08f9f6f568d3be846"
+    },
+    {
+      "id": "ch1-opposite-geometry",
+      "page": 18,
+      "printedPage": "11",
+      "indexAnchor": 2,
+      "anchorLabel": "探究；归纳",
+      "locator": "1.2.3 相反数：页底“归纳”段与图1.2-6，比较到原点距离相等且位于两侧的点。",
+      "region": {
+        "x": 0.13,
+        "y": 0.76,
+        "width": 0.78,
+        "height": 0.17
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.805
+      },
+      "sourceImageSha256": "c5156ad8f340713a50e72c1348c31761abe4c889513d0c458cc9df7269153e0e"
+    },
+    {
+      "id": "ch1-opposite-sign",
+      "page": 19,
+      "printedPage": "12",
+      "indexAnchor": 0,
+      "anchorLabel": "相反数",
+      "locator": "相反数定义后“一般地，a和−a互为相反数”段及右侧“−a一定是负数吗”提问。",
+      "region": {
+        "x": 0.085,
+        "y": 0.225,
+        "width": 0.78,
+        "height": 0.105
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.255
+      },
+      "sourceImageSha256": "ad8bb1bc7700586f1e590e247709b1f84ac6cb8655dbcf70e13516dd5e97ad5e"
+    },
+    {
+      "id": "ch1-absolute-definition",
+      "page": 20,
+      "printedPage": "13",
+      "indexAnchor": 1,
+      "anchorLabel": "绝对值",
+      "locator": "图1.2-7下方绝对值定义及 |10|、|−10| 的解释。",
+      "region": {
+        "x": 0.13,
+        "y": 0.3,
+        "width": 0.52,
+        "height": 0.135
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.33
+      },
+      "sourceImageSha256": "a19939145eb2d97dd918cb0e6f2f33e84f479dbe38b405f930421383a55585de"
+    },
+    {
+      "id": "ch1-absolute-negative",
+      "page": 20,
+      "printedPage": "13",
+      "indexAnchor": 2,
+      "anchorLabel": "探究",
+      "locator": "绝对值探究后分情况结论，第（3）条“如果a是负数，那么|a|=−a”。",
+      "region": {
+        "x": 0.17,
+        "y": 0.68,
+        "width": 0.39,
+        "height": 0.027
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.694
+      },
+      "sourceImageSha256": "a19939145eb2d97dd918cb0e6f2f33e84f479dbe38b405f930421383a55585de"
+    },
+    {
+      "id": "ch1-absolute-symbols-practice",
+      "page": 21,
+      "printedPage": "14",
+      "indexAnchor": 1,
+      "anchorLabel": "练习",
+      "locator": "练习第4题：绝对值符号内外还带有正负号的化简题。",
+      "region": {
+        "x": 0.105,
+        "y": 0.47,
+        "width": 0.75,
+        "height": 0.06
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.49
+      },
+      "sourceImageSha256": "871ca37c81208cbf9d67e914f34300c8e01946dab65106527397fb15d818ccbd"
+    },
+    {
+      "id": "ch1-negative-order",
+      "page": 22,
+      "printedPage": "15",
+      "indexAnchor": 1,
+      "anchorLabel": "有理数的大小比较",
+      "locator": "“一般地”后的第（2）条比较规则：两个负数的大小与绝对值的关系。",
+      "region": {
+        "x": 0.17,
+        "y": 0.573,
+        "width": 0.39,
+        "height": 0.022
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.584
+      },
+      "sourceImageSha256": "4d02d77d8ec4d505c84bc0b17371081753bce97cedef69310164d3dc4a3cb8b0"
+    },
+    {
+      "id": "ch1-opposite-distance-practice",
+      "page": 24,
+      "printedPage": "17",
+      "indexAnchor": 2,
+      "anchorLabel": "拓广探索",
+      "locator": "习题1.2“拓广探索”第8题：互为相反数的两点之间距离为5。",
+      "region": {
+        "x": 0.15,
+        "y": 0.734,
+        "width": 0.735,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.75
+      },
+      "sourceImageSha256": "203577c47eaf0b66bab149859554b0339663399523fea8c4817e77de39d9737f"
+    },
+    {
+      "id": "ch1-number-line-review",
+      "page": 28,
+      "printedPage": "21",
+      "indexAnchor": 1,
+      "anchorLabel": "本章知识结构图",
+      "locator": "“一、本章知识结构图”：有理数、数轴、相反数、绝对值和大小比较的关系图。",
+      "region": {
+        "x": 0.24,
+        "y": 0.2,
+        "width": 0.55,
+        "height": 0.205
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.29
+      },
+      "sourceImageSha256": "bfcefd42c0862720a2517fda1fc687b3c2ad4730d155a5bb1790778d974b1326"
+    },
+    {
+      "id": "ch1-number-scope-practice",
+      "page": 30,
+      "printedPage": "23",
+      "indexAnchor": 1,
+      "anchorLabel": "拓广探索",
+      "locator": "复习题1“拓广探索”第11题：区间中的负数、负整数与整数。",
+      "region": {
+        "x": 0.14,
+        "y": 0.425,
+        "width": 0.5,
+        "height": 0.16
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.55
+      },
+      "sourceImageSha256": "3c21cd6710f13599063f42e3ae76fe8f696eed95d35af76bd7eb8d3e72ca5319"
+    }
+  ]
+}

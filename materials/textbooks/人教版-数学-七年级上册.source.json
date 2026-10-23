@@ -1,0 +1,82 @@
+{
+  "content_id": "540ac93d-67fc-4353-9e49-1ef20d02b5a4",
+  "title": "（根据2022年版课程标准修订）义务教育教科书·数学七年级上册",
+  "edition": "人教版",
+  "classification": [
+    "初中",
+    "数学",
+    "人教版"
+  ],
+  "page_url": "https://basic.smartedu.cn/tchMaterial/detail?contentType=assets_document&contentId=540ac93d-67fc-4353-9e49-1ef20d02b5a4&catalogType=tchMaterial&subCatalog=tchMaterial",
+  "fetched_at": "2026-10-23T03:30:08.179766+00:00",
+  "local_file": "人教版-数学-七年级上册.pdf",
+  "bytes": 19315640,
+  "sha256": "6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249",
+  "pdf_page_count": 202,
+  "parser": {
+    "repository": "https://github.com/happycola233/tchMaterial-parser",
+    "version": "4.4",
+    "commit": "244170e17bf8bc97401f65e04d261533d252572a"
+  },
+  "verification": {
+    "status": "sample_pages_reviewed",
+    "review_date": "2026-10-23",
+    "publisher": "人民教育出版社",
+    "subject": "数学",
+    "grade": "七年级",
+    "volume": "上册",
+    "curriculum_standard_year": 2022,
+    "curriculum_standard_evidence": "平台资源标题标注根据2022年版课程标准修订。",
+    "approval_year": 2024,
+    "approval_year_evidence": "PDF第1页封面，国家教材委员会专家委员会审核通过标记。",
+    "publication_year": null,
+    "printing": null,
+    "publication_note": "PDF第3页版权页未列出版年份及印次。",
+    "isbn": "978-7-107-38246-8",
+    "isbn_evidence": "PDF第202页封底条码。",
+    "visual_checks": [
+      {
+        "pdf_page_number": 1,
+        "content": "封面：数学，七年级上册，人教社，2024年审定"
+      },
+      {
+        "pdf_page_number": 3,
+        "content": "版权页：义务教育教科书，数学七年级上册，人民教育出版社"
+      },
+      {
+        "pdf_page_number": 5,
+        "content": "目录起始页：第一章有理数、第二章有理数的运算"
+      },
+      {
+        "pdf_page_number": 8,
+        "content": "正文起始：第一章有理数"
+      },
+      {
+        "pdf_page_number": 9,
+        "printed_page": "2",
+        "content": "1.1 正数和负数"
+      },
+      {
+        "pdf_page_number": 199,
+        "printed_page": "192",
+        "content": "综合与实践：设计学校田径运动会比赛场地，正文末页"
+      },
+      {
+        "pdf_page_number": 202,
+        "content": "封底：数学七年级上册，ISBN条码"
+      }
+    ],
+    "page_mapping_status": "仅核对上述页面，尚未建立或验证全书页序与印刷页码映射。",
+    "integrity_checks": {
+      "bytes_match_server_metadata": true,
+      "repeated_download_sha256_matches": true,
+      "pdf_reader_page_count": 202,
+      "poppler_page_count": 202
+    },
+    "extraction_note": "pypdf 6.21.2 在本文件 extract_text() 时发生字体对象类型错误；pdftotext 可用于检索，但部分符号无法准确提取。Poppler 报 Marked Content 语法警告，抽查页渲染可读。公式和排版仍以原页为准。",
+    "usage_notice": "仅供个人学习使用，未经授权不得另做他用"
+  },
+  "resource_url": "https://r1-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/540ac93d-67fc-4353-9e49-1ef20d02b5a4.pkg/9787107382468_义务教育教科书•数学_七年级_上册_人民教育出版社_1787020812508.pdf",
+  "detail_url": "https://s-file-1.ykt.cbern.com.cn/zxx/ndrv2/resources/tch_material/details/540ac93d-67fc-4353-9e49-1ef20d02b5a4.json",
+  "server_file_size": 19315640
+}

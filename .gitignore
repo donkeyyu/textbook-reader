@@ -6,3 +6,7 @@ dist/
 !.env.example
 *.log
 .DS_Store
+
+# Downloaded textbooks stay local; source records can be tracked.
+materials/textbooks/*.pdf
+materials/textbooks/.textbook-*/

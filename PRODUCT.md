@@ -12,4 +12,4 @@ web
 
 ## Brand Commitments
 
-本轮用户指定 Apple 风格、极少元素、无额外信息、布局和装饰。沿用已讨论的教材左侧、解读右侧及原位提示。实际视觉规则记录在 DESIGN.md。
+视觉方向和组件说明统一见 [DESIGN.md](DESIGN.md)。本文件不另存布局或交互规则。

@@ -1435,16 +1435,35 @@
       "printedPage": "167",
       "indexAnchor": 2,
       "anchorLabel": "综合运用 第5—6题",
-      "locator": "习题6.2第6题（1）两行题干，从“把原来弯曲的河道改直”到“有什么变化”；同题（2）续在下方。",
+      "locator": "习题6.2第6题（1）河道改直情境的图（1）及图号，含固定端点A、B；不含右侧九曲桥图（2）。",
       "region": {
-        "x": 0.153,
-        "y": 0.523,
-        "width": 0.74,
-        "height": 0.043
+        "x": 0.245,
+        "y": 0.657,
+        "width": 0.245,
+        "height": 0.213
       },
       "marker": {
-        "x": 0.045,
-        "y": 0.546
+        "x": 0.1,
+        "y": 0.76
+      },
+      "sourceImageSha256": "67b52e7f2d3a8b7ae58af9ce5f3db085837ed28f1737ee687ab8d539ac68b7ec"
+    },
+    {
+      "id": "ch6-p174-exercises-6-bridge",
+      "page": 174,
+      "printedPage": "167",
+      "indexAnchor": 2,
+      "anchorLabel": "综合运用 第5—6题",
+      "locator": "习题6.2第6题（2）九曲桥情境的图（2）及图号；不含左侧河道改直图（1）。",
+      "region": {
+        "x": 0.54,
+        "y": 0.652,
+        "width": 0.258,
+        "height": 0.218
+      },
+      "marker": {
+        "x": 0.94,
+        "y": 0.76
       },
       "sourceImageSha256": "67b52e7f2d3a8b7ae58af9ce5f3db085837ed28f1737ee687ab8d539ac68b7ec"
     },
@@ -2205,6 +2224,25 @@
       "marker": {
         "x": 0.045,
         "y": 0.16
+      },
+      "sourceImageSha256": "55f30559a281399c421957c6699dcf0ae1a0f391ee2fc66c5e24e884fe897cfb"
+    },
+    {
+      "id": "ch6-complementary-definition",
+      "page": 183,
+      "printedPage": "176",
+      "indexAnchor": 2,
+      "anchorLabel": "余角、互余；补角、互补",
+      "locator": "印刷第176页图6.3-13上方余角定义的三行，含“一般地……如果两个角的和等于90°（直角）”及“其中一个角是另一个角的余角”；不含下方补角定义。",
+      "region": {
+        "x": 0.085,
+        "y": 0.338,
+        "width": 0.79,
+        "height": 0.079
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.3775
       },
       "sourceImageSha256": "55f30559a281399c421957c6699dcf0ae1a0f391ee2fc66c5e24e884fe897cfb"
     },
@@ -3069,16 +3107,54 @@
       "printedPage": "183",
       "indexAnchor": 1,
       "anchorLabel": "绘制五角星",
-      "locator": "数学活动2：绘制五角星及星形探索的题号及起始题干；指南覆盖本题所列全部小问。",
+      "locator": "数学活动2图4的连续作图过程及图号：画圆、连续作角、隔点连接、擦去多余线；不含下方折纸图5和艺术图案图6。",
       "region": {
-        "x": 0.195,
-        "y": 0.135,
-        "width": 0.485,
-        "height": 0.025
+        "x": 0.16,
+        "y": 0.279,
+        "width": 0.72,
+        "height": 0.15
       },
       "marker": {
-        "x": 0.045,
-        "y": 0.1475
+        "x": 0.95,
+        "y": 0.35
+      },
+      "sourceImageSha256": "669a7ee38ab0bb10ac50f6c68695719f671303de231c7bb6c98fb02cd2476550"
+    },
+    {
+      "id": "ch6-q-p190-activity2-fold",
+      "page": 190,
+      "printedPage": "183",
+      "indexAnchor": 1,
+      "anchorLabel": "绘制五角星",
+      "locator": "数学活动2图5的折纸、剪角过程及图号；不含上方作图图4和下方艺术图案图6。",
+      "region": {
+        "x": 0.195,
+        "y": 0.558,
+        "width": 0.655,
+        "height": 0.147
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.63
+      },
+      "sourceImageSha256": "669a7ee38ab0bb10ac50f6c68695719f671303de231c7bb6c98fb02cd2476550"
+    },
+    {
+      "id": "ch6-q-p190-activity2-pattern",
+      "page": 190,
+      "printedPage": "183",
+      "indexAnchor": 1,
+      "anchorLabel": "绘制五角星",
+      "locator": "数学活动2图6的五角星、六角星艺术图案及图号；不含上方作图图4、折纸图5。",
+      "region": {
+        "x": 0.388,
+        "y": 0.776,
+        "width": 0.27,
+        "height": 0.118
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.835
       },
       "sourceImageSha256": "669a7ee38ab0bb10ac50f6c68695719f671303de231c7bb6c98fb02cd2476550"
     },
@@ -3556,6 +3632,481 @@
         "y": 0.671
       },
       "sourceImageSha256": "a64edce08aaa1408309a7bf357b477b79108d83ddef259932b4dcf1492ecb6d9"
+    },
+    {
+      "id": "ch6-cylinder-net-figure",
+      "page": 161,
+      "printedPage": "154",
+      "indexAnchor": 1,
+      "anchorLabel": "探究",
+      "locator": "图6.1-10中上方的圆柱展开图：长方形及其两侧的两个圆；不包含下方圆锥展开图。",
+      "region": {
+        "x": 0.443,
+        "y": 0.262,
+        "width": 0.108,
+        "height": 0.066
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.295
+      },
+      "sourceImageSha256": "d75d2d1aa95bcc55612dbc7eb6e184ad985cd1827f4e303668be127cf3d38ba7"
+    },
+    {
+      "id": "ch6-source-geometric-figures",
+      "page": 157,
+      "printedPage": "150",
+      "indexAnchor": 2,
+      "anchorLabel": "几何图形",
+      "locator": "教材原文：几何研究的内容及几何图形的含义；已核对原页及局部边界。",
+      "region": {
+        "x": 0.082822,
+        "y": 0.721649,
+        "width": 0.794479,
+        "height": 0.167119
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.805209
+      },
+      "sourceImageSha256": "4802e90a7e3a24756d7b80d2d6a38b401bdf70dd7783a16e226a6d0e3c7b5c90"
+    },
+    {
+      "id": "ch6-source-solid-definition",
+      "page": 158,
+      "printedPage": "151",
+      "indexAnchor": 1,
+      "anchorLabel": "立体图形",
+      "locator": "教材原文：立体图形的定义；已核对原页及局部边界。",
+      "region": {
+        "x": 0.128067,
+        "y": 0.099295,
+        "width": 0.788344,
+        "height": 0.104721
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.151655
+      },
+      "sourceImageSha256": "c8a82a382c5aedda8ac6a2e31e4e206cc180306f5e2b9b73a13885217a05bc32"
+    },
+    {
+      "id": "ch6-source-solid-examples",
+      "page": 158,
+      "printedPage": "151",
+      "indexAnchor": 1,
+      "anchorLabel": "立体图形",
+      "locator": "教材原文：图6.1-2棱柱和棱锥的实例；已核对原页及局部边界。",
+      "region": {
+        "x": 0.128067,
+        "y": 0.099295,
+        "width": 0.788344,
+        "height": 0.409658
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.304124
+      },
+      "sourceImageSha256": "c8a82a382c5aedda8ac6a2e31e4e206cc180306f5e2b9b73a13885217a05bc32"
+    },
+    {
+      "id": "ch6-source-plane-definition",
+      "page": 158,
+      "printedPage": "151",
+      "indexAnchor": 3,
+      "anchorLabel": "平面图形",
+      "locator": "教材原文：平面图形的定义；已核对原页及局部边界。",
+      "region": {
+        "x": 0.128067,
+        "y": 0.826913,
+        "width": 0.788344,
+        "height": 0.052089
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.852957
+      },
+      "sourceImageSha256": "c8a82a382c5aedda8ac6a2e31e4e206cc180306f5e2b9b73a13885217a05bc32"
+    },
+    {
+      "id": "ch6-source-observation-example",
+      "page": 160,
+      "printedPage": "153",
+      "indexAnchor": 1,
+      "anchorLabel": "例",
+      "locator": "教材原文：组合正方体的三个方向观察例题；已核对原页及局部边界。",
+      "region": {
+        "x": 0.128067,
+        "y": 0.255019,
+        "width": 0.788344,
+        "height": 0.312534
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.411286
+      },
+      "sourceImageSha256": "1595bf975db56aaf9948201d3c2bcae22b86e96732980c199917e5c53128ff97"
+    },
+    {
+      "id": "ch6-source-net-definition",
+      "page": 160,
+      "printedPage": "153",
+      "indexAnchor": 2,
+      "anchorLabel": "展开图",
+      "locator": "教材展开图定义的前两句：包含平面图形围成立体图形、表面适当展开的条件。因同一行版面，框末附后例开头；后例及跨页操作另见相邻原文。",
+      "region": {
+        "x": 0.128067,
+        "y": 0.586544,
+        "width": 0.788344,
+        "height": 0.049376
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.611232
+      },
+      "sourceImageSha256": "1595bf975db56aaf9948201d3c2bcae22b86e96732980c199917e5c53128ff97"
+    },
+    {
+      "id": "ch6-source-face-definition",
+      "page": 162,
+      "printedPage": "155",
+      "indexAnchor": 3,
+      "anchorLabel": "体、面、线",
+      "locator": "教材原文：面包围体及平面、曲面；已核对原页及局部边界。",
+      "region": {
+        "x": 0.128067,
+        "y": 0.583288,
+        "width": 0.788344,
+        "height": 0.080304
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.62344
+      },
+      "sourceImageSha256": "3311fb244fe2edd2dfe302246294737308142e55f354848a88e00f74263b42f5"
+    },
+    {
+      "id": "ch6-source-motion-examples",
+      "page": 163,
+      "printedPage": "156",
+      "indexAnchor": 1,
+      "anchorLabel": "图6.1-14",
+      "locator": "教材原文：点动成线、线动成面、面动成体的实例；已核对原页及局部边界。",
+      "region": {
+        "x": 0.082822,
+        "y": 0.155182,
+        "width": 0.791411,
+        "height": 0.105263
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.207813
+      },
+      "sourceImageSha256": "74818efe2c8be8ff1363c5372915d612331e2d92027c646b418a5fa17cc9076d"
+    },
+    {
+      "id": "ch6-source-two-points-line",
+      "page": 169,
+      "printedPage": "162",
+      "indexAnchor": 3,
+      "anchorLabel": "两点确定一条直线",
+      "locator": "教材原文：两点确定一条直线；已核对原页及局部边界。",
+      "region": {
+        "x": 0.128834,
+        "y": 0.40369,
+        "width": 0.429448,
+        "height": 0.048833
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.428106
+      },
+      "sourceImageSha256": "a3cbe95b7adc4a03991820867051bec400a82f9b00a322a0b007c3bede4cd081"
+    },
+    {
+      "id": "ch6-source-intersection-definition",
+      "page": 169,
+      "printedPage": "162",
+      "indexAnchor": 5,
+      "anchorLabel": "相交、交点",
+      "locator": "教材原文：相交与交点的定义；已核对原页及局部边界。",
+      "region": {
+        "x": 0.082822,
+        "y": 0.86815,
+        "width": 0.791411,
+        "height": 0.049376
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.892838
+      },
+      "sourceImageSha256": "a3cbe95b7adc4a03991820867051bec400a82f9b00a322a0b007c3bede4cd081"
+    },
+    {
+      "id": "ch6-source-ray-segment-notation",
+      "page": 170,
+      "printedPage": "163",
+      "indexAnchor": 0,
+      "anchorLabel": "线段、射线的表示",
+      "locator": "教材原文：线段和射线的表示与图示；已核对原页及局部边界。",
+      "region": {
+        "x": 0.128067,
+        "y": 0.068909,
+        "width": 0.788344,
+        "height": 0.1758
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.15681
+      },
+      "sourceImageSha256": "9cbdd47f1da06a2f92f567d949503e143c6acf240247d467580f36b473108785"
+    },
+    {
+      "id": "ch6-source-extension-direction",
+      "page": 170,
+      "printedPage": "163",
+      "indexAnchor": 1,
+      "anchorLabel": "连接、延长与反向延长线段",
+      "locator": "教材原文：连接、延长与反向延长的说明与图示；已核对原页及局部边界。",
+      "region": {
+        "x": 0.128067,
+        "y": 0.257732,
+        "width": 0.788344,
+        "height": 0.142702
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.329083
+      },
+      "sourceImageSha256": "9cbdd47f1da06a2f92f567d949503e143c6acf240247d467580f36b473108785"
+    },
+    {
+      "id": "ch6-source-compass-copy",
+      "page": 171,
+      "printedPage": "164",
+      "indexAnchor": 1,
+      "anchorLabel": "尺规作图",
+      "locator": "教材原文：复制线段的工具与尺规作图；已核对原页及局部边界。",
+      "region": {
+        "x": 0.082822,
+        "y": 0.156267,
+        "width": 0.791411,
+        "height": 0.262615
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.287575
+      },
+      "sourceImageSha256": "bc3d3ab0ce1ff8d6630e7aa9216fa4f2ec811815e38b58c55d329fed645d7670"
+    },
+    {
+      "id": "ch6-source-segment-shortest",
+      "page": 172,
+      "printedPage": "165",
+      "indexAnchor": 1,
+      "anchorLabel": "两点之间，线段最短",
+      "locator": "教材原文：两点之间线段最短；已核对原页及局部边界。",
+      "region": {
+        "x": 0.173313,
+        "y": 0.317417,
+        "width": 0.483129,
+        "height": 0.050461
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.342648
+      },
+      "sourceImageSha256": "20845c4c6ebfe8efe7f731b6371cc03e325e3e12019695c53f22bfb4d13cc2b8"
+    },
+    {
+      "id": "ch6-source-distance-definition",
+      "page": 172,
+      "printedPage": "165",
+      "indexAnchor": 2,
+      "anchorLabel": "距离",
+      "locator": "教材原文：两点间距离的定义；已核对原页及局部边界。",
+      "region": {
+        "x": 0.173313,
+        "y": 0.402062,
+        "width": 0.589724,
+        "height": 0.022246
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.413185
+      },
+      "sourceImageSha256": "20845c4c6ebfe8efe7f731b6371cc03e325e3e12019695c53f22bfb4d13cc2b8"
+    },
+    {
+      "id": "ch6-source-segment-sum-difference",
+      "page": 172,
+      "printedPage": "165",
+      "indexAnchor": 3,
+      "anchorLabel": "线段的运算",
+      "locator": "教材原文：线段和差的条件、说明与图示；已核对原页及局部边界。",
+      "region": {
+        "x": 0.128067,
+        "y": 0.457406,
+        "width": 0.788344,
+        "height": 0.273467
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.59414
+      },
+      "sourceImageSha256": "20845c4c6ebfe8efe7f731b6371cc03e325e3e12019695c53f22bfb4d13cc2b8"
+    },
+    {
+      "id": "ch6-source-midpoint-definition",
+      "page": 173,
+      "printedPage": "166",
+      "indexAnchor": 1,
+      "anchorLabel": "中点",
+      "locator": "教材原文：中点、三等分点与四等分点；已核对原页及局部边界。",
+      "region": {
+        "x": 0.082822,
+        "y": 0.136734,
+        "width": 0.52454,
+        "height": 0.104721
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.189094
+      },
+      "sourceImageSha256": "3eaf0e83f84c8367cb5f20da4b5d87836825e5ea88d2ba95bc9d6cc010a3fe52"
+    },
+    {
+      "id": "ch6-source-angle-definition",
+      "page": 177,
+      "printedPage": "170",
+      "indexAnchor": 2,
+      "anchorLabel": "角",
+      "locator": "教材原文：角的顶点与两边；已核对原页及局部边界。",
+      "region": {
+        "x": 0.082822,
+        "y": 0.49159,
+        "width": 0.523773,
+        "height": 0.106348
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.544764
+      },
+      "sourceImageSha256": "039b94ac1482f6fd8c37dd2e47bcee02e6fe64dde99142ad60a5b218c489b7f7"
+    },
+    {
+      "id": "ch6-source-angle-units",
+      "page": 178,
+      "printedPage": "171",
+      "indexAnchor": 1,
+      "anchorLabel": "度、分、秒；角度制",
+      "locator": "教材原文：度、分、秒的等分定义；已核对原页及局部边界。",
+      "region": {
+        "x": 0.128067,
+        "y": 0.208356,
+        "width": 0.788344,
+        "height": 0.079761
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.248237
+      },
+      "sourceImageSha256": "4ca5d91bc93402e1b0d3d1527fd29ed4a41c1f8e37c96a559e9d8f0854e4aa4d"
+    },
+    {
+      "id": "ch6-source-angle-comparison",
+      "page": 180,
+      "printedPage": "173",
+      "indexAnchor": 1,
+      "anchorLabel": "比较两个角的大小",
+      "locator": "教材原文：角的测量比较、叠合比较及图示；已核对原页及局部边界。",
+      "region": {
+        "x": 0.128067,
+        "y": 0.128595,
+        "width": 0.788344,
+        "height": 0.322301
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.289745
+      },
+      "sourceImageSha256": "54f4c1da37da4043ad82198440343d64cbac7e79067dcc31d0a68aeaa136492e"
+    },
+    {
+      "id": "ch6-source-angle-sum-difference",
+      "page": 180,
+      "printedPage": "173",
+      "indexAnchor": 3,
+      "anchorLabel": "两个角的和与差",
+      "locator": "教材原文：角的和差说明及图6.3-7；已核对原页及局部边界。",
+      "region": {
+        "x": 0.128067,
+        "y": 0.467716,
+        "width": 0.788344,
+        "height": 0.228974
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.582203
+      },
+      "sourceImageSha256": "54f4c1da37da4043ad82198440343d64cbac7e79067dcc31d0a68aeaa136492e"
+    },
+    {
+      "id": "ch6-source-bisector-definition",
+      "page": 182,
+      "printedPage": "175",
+      "indexAnchor": 1,
+      "anchorLabel": "角的平分线",
+      "locator": "教材原文：角平分线的定义；已核对原页及局部边界。",
+      "region": {
+        "x": 0.128067,
+        "y": 0.269126,
+        "width": 0.788344,
+        "height": 0.051004
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.294628
+      },
+      "sourceImageSha256": "8b756fb5c0ee972518f9c184437d6e4105423f0fc8e7d8c3ed9c8beaa5104471"
+    },
+    {
+      "id": "ch6-source-supplementary-definition",
+      "page": 183,
+      "printedPage": "176",
+      "indexAnchor": 2,
+      "anchorLabel": "余角、互余；补角、互补",
+      "locator": "教材原文：补角、互补的完整定义；已核对原页及局部边界。",
+      "region": {
+        "x": 0.082822,
+        "y": 0.531199,
+        "width": 0.791411,
+        "height": 0.080304
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.571351
+      },
+      "sourceImageSha256": "55f30559a281399c421957c6699dcf0ae1a0f391ee2fc66c5e24e884fe897cfb"
+    },
+    {
+      "id": "ch6-source-equal-complements",
+      "page": 183,
+      "printedPage": "176",
+      "indexAnchor": 4,
+      "anchorLabel": "同角（等角）的余角相等",
+      "locator": "教材原文：同角或等角的余角、补角相等；已核对原页及局部边界。",
+      "region": {
+        "x": 0.128067,
+        "y": 0.823114,
+        "width": 0.374233,
+        "height": 0.077048
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.861639
+      },
+      "sourceImageSha256": "55f30559a281399c421957c6699dcf0ae1a0f391ee2fc66c5e24e884fe897cfb"
     }
   ]
 }

@@ -1,6 +1,0 @@
-{
-  "status": "unavailable",
-  "error": "CdpRequestTimeoutError: CDP request timed out: Page.captureScreenshot",
-  "version": "display-version.json",
-  "sample": "ch4-combine-rule"
-}

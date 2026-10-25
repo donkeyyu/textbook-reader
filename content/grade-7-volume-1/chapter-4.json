@@ -8,7 +8,7 @@
   "contentOrigin": "补充解释；不属于教材原文。例子另行标明，习题提示不提供答案。",
   "review": {
     "status": "source-checked",
-    "basis": "PDF95–116共22页及相邻94、117页原图核对，印刷页码、锚点与页图哈希已验证；46条初始解读及74题指南分别经独立内容复核，修正分数读法、取值、参照对象与方法条件。原有整题提示合并进指南，保留34条概念与局部步骤解读；逐页复核定位叠图，学习效果未验证。",
+    "basis": "2026-10-25按更新后的textbook-supplements与sloptrim逐条复核109条补充及75条题目引导，对照PDF第95–116页原图核对原句、数学条件、必要前置解释及关联用途；新增或调整的原文位置经裁图和哈希检查。分章审读后再独立交叉复核，修正名词、数量关系、关联范围与探究时序问题，题目清单及小问保持完整。本轮记录见docs/qa/chapters-2-6-learning-flow-2026-10-25.json；浏览器验收状态以该记录为准。",
     "reviewer": "AI-assisted authoring and review",
     "learningEffect": "未经学生使用验证。"
   },
@@ -16,16 +16,16 @@
     {
       "id": "ch4-q-intro-1",
       "locationId": "ch4-q-intro-1",
-      "title": "章引言问题（1）：作答指南",
-      "preview": "路程、速度与时间的关系；数与字母的积。",
+      "title": "章引言问题（1）",
+      "preview": "先认清汽车所在的路段，再把该路段的速度与时间配对。",
       "paragraphs": [],
       "learningRole": "引出问题",
       "learningGap": "需把主桥的具体速度与路程公式相连，保留列式。",
       "learningAction": "能识别主桥速度并用时间字母表示路程。",
       "questionGuide": {
         "knowledgePoints": [
-          "路程、速度与时间的关系",
-          "数与字母的积"
+          "路程=速度×时间；速度和时间配套使用，例如km/h与h相乘得到km。",
+          "数与字母相乘可以省略乘号，数字通常写在字母前；本问要把主桥速度与t表示的时间对应。"
         ],
         "method": [
           "先确认题目问的是哪一路段，再从引言找出该路段的速度。",
@@ -38,26 +38,25 @@
       },
       "related": [
         {
-          "locationId": "ch4-monomial-product",
-          "label": "单项式中的乘积结构",
-          "purpose": "用数字因数与字母的乘积理解路程式的组成。"
+          "locationId": "ch3-source-travel-formula",
+          "label": "路程、速度与时间的公式",
+          "purpose": "把每段的速度与各自用时配对，再表示路程。"
         }
       ]
     },
     {
       "id": "ch4-q-intro-2",
       "locationId": "ch4-q-intro-2",
-      "title": "章引言问题（2）：作答指南",
-      "preview": "倍数关系与共同的时间基准；路程=速度×时间；同类项与整式的加法。",
+      "title": "章引言问题（2）",
+      "preview": "a只表示隧道用时，另一段的用时要按题给倍数确定。",
       "paragraphs": [],
       "learningRole": "引出问题",
       "learningGap": "需区分两段路程与共同的时间基准，保留关系转换和列式。",
       "learningAction": "能分别表示两段时间与路程，再说明全长由哪些部分组成。",
       "questionGuide": {
         "knowledgePoints": [
-          "倍数关系与共同的时间基准",
-          "路程=速度×时间",
-          "同类项与整式的加法"
+          "路程=速度×时间；一段时间是另一段时间的1.25倍，表示用后者乘1.25。",
+          "全长由经过的两段路程相加得到；应先按各自速度和用时分别表示两段路程。"
         ],
         "method": [
           "先在示意图上找出香港口岸到西人工岛所包含的两段路程。",
@@ -71,26 +70,25 @@
       },
       "related": [
         {
-          "locationId": "ch4-combine-rule",
-          "label": "合并同类项的分配律依据",
-          "purpose": "列出全长后判断能否整理相同字母部分。"
+          "locationId": "ch3-source-travel-formula",
+          "label": "路程、速度与时间的公式",
+          "purpose": "把每段的速度与各自用时配对，再表示路程。"
         }
       ]
     },
     {
       "id": "ch4-q-intro-3",
       "locationId": "ch4-q-intro-3",
-      "title": "章引言问题（3）：作答指南",
-      "preview": "相差关系与括号表示的整体；路程=速度×时间；两个整式的和与差。",
+      "title": "章引言问题（3）",
+      "preview": "时间差要作为整体乘速度，长度的和与差比较不同对象。",
       "paragraphs": [],
       "learningRole": "引出问题",
       "learningGap": "需把少0.15小时解释为完整时间，并区分长度的和与差。",
       "learningAction": "能保持时间差整体，分别表示两段长度的和与差。",
       "questionGuide": {
         "knowledgePoints": [
-          "相差关系与括号表示的整体",
-          "路程=速度×时间",
-          "两个整式的和与差"
+          "路程=速度×时间；“比某段时间少0.15小时”，要从所比较的时间中扣除0.15小时，速度应乘整个时间。",
+          "求两段长度的和使用加法；求相差多少，使用较长路段长度减较短路段长度。"
         ],
         "method": [
           "先根据“比通过主桥的时间少”说明海底隧道用时。",
@@ -105,9 +103,9 @@
       },
       "related": [
         {
-          "locationId": "ch4-minus-bracket",
-          "label": "减去一个整体",
-          "purpose": "理解长度差中减去完整路程式时的符号作用。"
+          "locationId": "ch3-source-travel-formula",
+          "label": "路程、速度与时间的公式",
+          "purpose": "把每段的速度与各自用时配对，再表示路程。"
         }
       ]
     },
@@ -128,17 +126,16 @@
     {
       "id": "ch4-q-observe-monomial",
       "locationId": "ch4-q-observe-monomial",
-      "title": "4.1 观察：代数式的共同特点：作答指南",
-      "preview": "代数式中的运算结构；幂表示重复相乘；数字因数可以是分数。",
+      "title": "4.1 观察：代数式的共同特点",
+      "preview": "把省略的乘号补回去，检查每个式子是不是数或字母的积。",
       "paragraphs": [],
       "learningRole": "探究",
       "learningGap": "需观察运算结构而非字母外观，保留共同特点的归纳。",
       "learningAction": "能说明列出的代数式在运算结构上有何共同之处。",
       "questionGuide": {
         "knowledgePoints": [
-          "代数式中的运算结构",
-          "幂表示重复相乘",
-          "数字因数可以是分数"
+          "数与字母并写表示乘法；幂表示同一个数重复相乘，例如a²是a·a。",
+          "数字因数可以是分数。观察时，把整个式子的运算读出来，再比较是否具有共同的乘积结构。"
         ],
         "method": [
           "把省略的乘号或重复相乘在草稿中补出来，逐个读出式子的组成。",
@@ -151,9 +148,9 @@
       },
       "related": [
         {
-          "locationId": "ch4-monomial-product",
-          "label": "单项式的乘积结构",
-          "purpose": "归纳后用定义检查分数系数与字母乘积的关系。"
+          "locationId": "ch4-source-monomial-definition",
+          "label": "单项式的原文定义",
+          "purpose": "回看积的结构及单独数、字母的规定，再判断当前式子。"
         }
       ]
     },
@@ -188,10 +185,10 @@
     {
       "id": "ch4-degree-letters",
       "locationId": "ch4-degree-letters",
-      "title": "次数统计的是字母因子",
+      "title": "次数只看字母的指数",
       "preview": "数字因数的大小和幂，不计入单项式的次数。",
       "paragraphs": [
-        "先把数字因数与字母部分分开，再统计字母的指数。没有写指数的字母，指数是1；多个不同字母的指数也要相加。",
+        "单项式的次数是所有字母指数的和。没有写指数的字母，指数是1；多个不同字母的指数也要相加，数字因数的指数不参与计算。",
         "补充用例：5²ab³的数字因数是25，次数由a的1和b的3相加得到4。数字5上的2不能算进次数。次数也不是代入数值后计算结果的大小。"
       ],
       "learningRole": "定义概念",
@@ -205,7 +202,7 @@
       "title": "0次不等于式子的值是0",
       "preview": "“非零”限定了规定的适用对象；0另作处理。",
       "paragraphs": [
-        "一个非零常数没有字母因子，教材把它的次数规定为0。例如补充用例−6是零次单项式，它的值是−6，并不是0。",
+        "一个非零常数没有参与相乘的字母，教材把它的次数规定为0。例如补充用例−6是零次单项式，它的值是−6，并不是0。",
         "数字0本身也是单项式，但教材明确规定它没有次数。因此不能把“常数的次数为0”省去“非零”条件后套到0上。"
       ],
       "learningRole": "定义概念",
@@ -216,21 +213,22 @@
     {
       "id": "ch4-q-sec41-example1",
       "locationId": "ch4-q-sec41-example1",
-      "title": "4.1 例1：作答指南",
-      "preview": "用单项式表示数量关系；系数包含数字因数的符号；次数是字母指数的和。",
+      "title": "4.1 例1：列式后找系数与次数",
+      "preview": "先按数量关系列式，再分别找数字因数和字母指数。",
       "paragraphs": [],
       "learningRole": "示范方法",
       "learningGap": "需连接五种数量关系与单项式的系数、次数，避免只记例题结果。",
       "learningAction": "能解释每个单项式的来源，并独立识别系数和次数。",
       "questionGuide": {
         "knowledgePoints": [
-          "用单项式表示数量关系",
-          "系数包含数字因数的符号",
-          "次数是字母指数的和"
+          "三角形面积=底×对应的高÷2；长方体体积=长×宽×高。",
+          "长方形面积=长×高；先由题给长高比确定高与长的关系。",
+          "在一个数前添“−”号，表示它的相反数；总费用=单价×数量，单价的计数单位须与数量一致。",
+          "单项式的系数是带符号的数字因数，次数是所有字母指数的和。"
         ],
         "method": [
           "（1）对应三角形的底与这条底上的高，回顾面积关系。",
-          "（2）对应长方体的三个维度，回顾体积关系。",
+          "（2）对应长方体的长、宽、高，回顾体积关系。",
           "（3）用相反数的含义解释n前应怎样表示。",
           "（4）先分清一套、一张与一枚邮票，再确定每张费用与张数的关系。",
           "（5）先由长高比确定高与a的关系，再表示长方形面积。",
@@ -244,14 +242,29 @@
       },
       "related": [
         {
-          "locationId": "ch4-coefficient-sign",
-          "label": "带符号的系数",
-          "purpose": "列式后连同正负号读取完整数字因数。"
+          "locationId": "ch3-triangle-base-height",
+          "label": "三角形面积的底和高",
+          "purpose": "回顾第（1）问的底、高为什么必须对应。"
         },
         {
-          "locationId": "ch4-degree-letters",
-          "label": "单项式的次数",
-          "purpose": "只对字母指数求和，排除数字因数的指数。"
+          "locationId": "ch3-box-volume-formula",
+          "label": "长方体体积公式",
+          "purpose": "回顾第（2）问三个方向的长度怎样参与计算。"
+        },
+        {
+          "locationId": "ch4-source-coefficient",
+          "label": "系数及±1省写的原文规定",
+          "purpose": "识别完整数字因数，连同符号读取省写的系数。"
+        },
+        {
+          "locationId": "ch4-source-monomial-degree",
+          "label": "单项式次数的原文规定",
+          "purpose": "只求字母指数之和，并保留非零常数与0的特殊规定。"
+        },
+        {
+          "locationId": "ch1-source-opposite-minus",
+          "label": "添负号表示取相反数",
+          "purpose": "回看添负号的规定，解释n的相反数怎样表示，避免只凭式子前的符号断定正负。"
         }
       ]
     },
@@ -276,7 +289,7 @@
       "preview": "先用比例表示高，再看长与高相乘的结构。",
       "paragraphs": [
         "长与高的比是3∶2，长为a，相当于3份，那么1份是a/3，高就是2a/3。比例中的“2份”不能直接写成长度2。",
-        "面积为a·(2a/3)=(2/3)a²。两个a来自长和高这两个因子，不是因为题目出现了“面积”两个字就直接给a加平方。"
+        "面积为a·(2a/3)=(2/3)a²。两个a来自长和高这两个因数，不是因为题目出现了“面积”两个字就直接给a加平方。"
       ],
       "learningRole": "示范方法",
       "learningGap": "例1（5）省略由长高比求高以及面积中a²的来源。",
@@ -286,17 +299,16 @@
     {
       "id": "ch4-q-sec41-practice-p91-1",
       "locationId": "ch4-q-sec41-practice-p91-1",
-      "title": "4.1 练习第1题：作答指南",
-      "preview": "单项式的系数；单项式的次数；省略的系数与指数。",
+      "title": "4.1 练习第1题",
+      "preview": "负号属于系数；字母没有写出的指数是1。",
       "paragraphs": [],
       "learningRole": "练习",
       "learningGap": "需将系数与次数两种判断分别用于表格中的每个单项式。",
       "learningAction": "能逐项填写系数和次数，保留符号并正确统计指数。",
       "questionGuide": {
         "knowledgePoints": [
-          "单项式的系数",
-          "单项式的次数",
-          "省略的系数与指数"
+          "单项式的系数是带符号的数字因数；系数为1或−1时，1常省略不写。",
+          "单项式的次数是所有字母指数的和，未写指数的字母指数为1；数字因数不计入次数。"
         ],
         "method": [
           "对表中五个单项式分别圈出数字因数，并保留它的符号。",
@@ -310,32 +322,31 @@
       },
       "related": [
         {
-          "locationId": "ch4-coefficient-sign",
-          "label": "省略的系数与负号",
-          "purpose": "检查表中负系数以及省略的−1。"
+          "locationId": "ch4-source-coefficient",
+          "label": "系数及±1省写的原文规定",
+          "purpose": "识别完整数字因数，连同符号读取省写的系数。"
         },
         {
-          "locationId": "ch4-degree-letters",
-          "label": "字母指数的和",
-          "purpose": "用同一规则处理单字母、多字母和分数系数的单项式。"
+          "locationId": "ch4-source-monomial-degree",
+          "label": "单项式次数的原文规定",
+          "purpose": "只求字母指数之和，并保留非零常数与0的特殊规定。"
         }
       ]
     },
     {
       "id": "ch4-q-sec41-practice-p91-2",
       "locationId": "ch4-q-sec41-practice-p91-2",
-      "title": "4.1 练习第2题：作答指南",
-      "preview": "倍数关系；单位利润与总利润；圆锥的容积；单项式的系数与次数。",
+      "title": "4.1 练习第2题：排放量、利润与容积",
+      "preview": "倍数、单位利润和容积三种关系，分别决定式子中的因数。",
       "paragraphs": [],
       "learningRole": "练习",
       "learningGap": "需把三种情境正确列为单项式，再分别判断系数和次数。",
       "learningAction": "能按倍数、单位利润和圆锥容积关系列式并检查系数、次数。",
       "questionGuide": {
         "knowledgePoints": [
-          "倍数关系",
-          "单位利润与总利润",
-          "圆锥的容积",
-          "单项式的系数与次数"
+          "某量的几倍表示这个量乘相应倍数；本题两种制冷剂要在相同用量下比较。总利润=每件利润×件数。",
+          "圆锥容积=底面积×高÷3；圆底面积=π×半径×半径。",
+          "单项式的系数是带符号的数字因数，次数是字母指数的和；π表示固定的数，不计入次数。"
         ],
         "method": [
           "（1）先找出3985倍比较的两个碳排放量，以及m表示哪一个。",
@@ -351,31 +362,35 @@
       },
       "related": [
         {
-          "locationId": "ch4-monomial-product",
-          "label": "单项式的结构",
-          "purpose": "检查所列式子是否由数字与字母相乘形成。"
+          "locationId": "ch3-cone-volume-formula",
+          "label": "前章题干给出的圆锥体积公式",
+          "purpose": "回顾圆锥容积中半径、高和因数1/3的位置，再对应本题的集雨斗。"
         },
         {
-          "locationId": "ch4-degree-letters",
-          "label": "字母指数与次数",
-          "purpose": "列式后只统计表示变量的字母指数。"
+          "locationId": "ch4-source-monomial-degree",
+          "label": "单项式次数的原文规定",
+          "purpose": "只求字母指数之和，并保留非零常数与0的特殊规定。"
+        },
+        {
+          "locationId": "ch4-source-coefficient",
+          "label": "单项式系数的定义",
+          "purpose": "列式后把π、分数和正负号都计入完整数字因数。"
         }
       ]
     },
     {
       "id": "ch4-q-think-polynomial",
       "locationId": "ch4-q-think-polynomial",
-      "title": "4.1 思考：与单项式的区别和联系：作答指南",
-      "preview": "加减与乘法的结构层次；带符号的单项式；多项式的组成。",
+      "title": "4.1 思考：与单项式的区别和联系",
+      "preview": "先按最外层加减分开各部分，再检查每部分是否是单项式。",
       "paragraphs": [],
       "learningRole": "探究",
       "learningGap": "需从最外层运算比较各式，保留多项式结构的归纳。",
       "learningAction": "能把给定式子与单项式比较，并说明它们的组成。",
       "questionGuide": {
         "knowledgePoints": [
-          "加减与乘法的结构层次",
-          "带符号的单项式",
-          "多项式的组成"
+          "数或字母的积叫单项式，单独的数或字母也是单项式；数字因数可以是分数。",
+          "比较这组式子时，可先按最外层加减辨认各部分；减去一部分等于加上它的相反数，所以负号要随该部分保留。"
         ],
         "method": [
           "逐个观察最外层的运算，尝试把整个式子分成几个组成部分。",
@@ -389,9 +404,9 @@
       },
       "related": [
         {
-          "locationId": "ch4-signed-terms",
-          "label": "多项式中带符号的项",
-          "purpose": "核对怎样把减法读成带符号的各项相加。"
+          "locationId": "ch4-source-polynomial-definition",
+          "label": "多项式、项与常数项的定义",
+          "purpose": "将原式读成带符号的单项式之和，辨认各项。"
         }
       ]
     },
@@ -423,26 +438,25 @@
       "learningAction": "能依次确定项的次数与多项式次数，并区分项数和次数。",
       "related": [
         {
-          "locationId": "ch4-degree-letters",
-          "label": "回顾单项式的次数",
-          "purpose": "先确定每一项的次数，才能比较出多项式的次数。"
+          "locationId": "ch4-source-monomial-degree",
+          "label": "单项式次数的原文规定",
+          "purpose": "只求字母指数之和，并保留非零常数与0的特殊规定。"
         }
       ]
     },
     {
       "id": "ch4-q-degree-bubble",
       "locationId": "ch4-q-degree-bubble",
-      "title": "4.1 气泡：两个多项式的项与次数：作答指南",
-      "preview": "多项式的项与符号；多项式的次数；固定数与字母。",
+      "title": "4.1 气泡：两个多项式的项与次数",
+      "preview": "先列出带符号的项，再在每个多项式中比较各项次数。",
       "paragraphs": [],
       "learningRole": "练习",
       "learningGap": "需对两个多项式区分拆项和比较项次数，保留具体判断。",
       "learningAction": "能分别列出两个多项式的项并判断各自次数。",
       "questionGuide": {
         "knowledgePoints": [
-          "多项式的项与符号",
-          "多项式的次数",
-          "固定数与字母"
+          "几个单项式的和叫多项式，其中每个单项式是一项，项要带着原有符号；不含字母的项是常数项。",
+          "多项式的次数取各项次数中的最高值，不能把各项次数相加。π表示固定的数，不作为未知字母计入指数。"
         ],
         "method": [
           "对2a+3b和(1/2)ab−πr²分别辨认最外层加减。",
@@ -456,31 +470,31 @@
       },
       "related": [
         {
-          "locationId": "ch4-signed-terms",
-          "label": "带符号的多项式项",
-          "purpose": "列项时保留减项的负号。"
+          "locationId": "ch4-source-polynomial-definition",
+          "label": "多项式、项与常数项的定义",
+          "purpose": "将原式读成带符号的单项式之和，辨认各项。"
         },
         {
-          "locationId": "ch4-polynomial-degree",
-          "label": "多项式的次数",
-          "purpose": "由各项的次数比较确定整个式子的次数。"
+          "locationId": "ch4-source-polynomial-degree",
+          "label": "多项式次数的原文定义",
+          "purpose": "先确定每项次数，再取最高值，区分项数与次数。"
         }
       ]
     },
     {
       "id": "ch4-q-sec41-example2",
       "locationId": "ch4-q-sec41-example2",
-      "title": "4.1 例2：作答指南",
-      "preview": "多项式表示数量关系；减项与常数项；单项式次数和多项式次数。",
+      "title": "4.1 例2：各项表示什么数量？",
+      "preview": "列出的每一项都应对应边长、数量变化或一类面的面积。",
       "paragraphs": [],
       "learningRole": "示范方法",
       "learningGap": "需将四种情境与多项式各项意义相连，并区分项数和次数。",
       "learningAction": "能说明各项表示的数量，并按定义识别项与次数。",
       "questionGuide": {
         "knowledgePoints": [
-          "多项式表示数量关系",
-          "减项与常数项",
-          "单项式次数和多项式次数"
+          "长方形周长是四条边长的和；正方形面积=边长×边长，三角形面积=底×对应的高÷2。",
+          "总量包含起始数量和后续变化；按月与按年给出的数量要先统一时间。",
+          "多项式的项带有自身符号，次数取各项次数中的最高值。"
         ],
         "method": [
           "（1）从长方形四条边解释周长式各部分。",
@@ -497,14 +511,14 @@
       },
       "related": [
         {
-          "locationId": "ch4-signed-terms",
-          "label": "多项式中的项与负号",
-          "purpose": "理解差或回收量对应的负项。"
+          "locationId": "ch4-source-polynomial-definition",
+          "label": "多项式、项与常数项的定义",
+          "purpose": "将原式读成带符号的单项式之和，辨认各项。"
         },
         {
-          "locationId": "ch4-polynomial-degree",
-          "label": "多项式的次数",
-          "purpose": "分别统计项次数后再取最高次数。"
+          "locationId": "ch4-source-polynomial-degree",
+          "label": "多项式次数的原文定义",
+          "purpose": "先确定每项次数，再取最高值，区分项数与次数。"
         }
       ]
     },
@@ -514,7 +528,7 @@
       "title": "都是二次，为什么仍分成两项？",
       "preview": "次数只概括指数总数，不能说明字母结构相同。",
       "paragraphs": [
-        "a²来自a·a，ab来自a·b。它们的次数都为2，但两个乘积中的字母因子不相同。次数相同，不表示它们表达的是同一种字母部分。",
+        "a²来自a·a，ab来自a·b。它们的次数都为2，但参与相乘的字母不相同。次数相同，不表示它们具有相同的字母部分。",
         "这里18a²统计正方形面的面积，4ab统计三角形面的面积。它们可以相加表示总面积，却不能仅凭“都是二次”把18和4相加、随意留下一个字母部分。下一节的同类项条件会给出判断依据。"
       ],
       "learningRole": "示范方法",
@@ -522,26 +536,25 @@
       "learningAction": "能辨别a²与ab结构不同，并拒绝仅按次数合并。",
       "related": [
         {
-          "locationId": "ch4-like-terms",
-          "label": "继续看同类项的条件",
-          "purpose": "核对哪些字母结构相同的项才可以合并。"
+          "locationId": "ch4-source-like-terms",
+          "label": "同类项的完整条件",
+          "purpose": "逐个比较字母及其指数，常数项也按规定处理。"
         }
       ]
     },
     {
       "id": "ch4-q-sec41-practice-p93-1",
       "locationId": "ch4-q-sec41-practice-p93-1",
-      "title": "4.1 练习第1题：作答指南",
-      "preview": "单项式的乘积结构；多项式是几个单项式的和；单独的数也是单项式。",
+      "title": "4.1 练习第1题",
+      "preview": "先判断整个式子是一个积，还是几个单项式的和。",
       "paragraphs": [],
       "learningRole": "练习",
       "learningGap": "需依照组成结构分类，保留每个式子的判断。",
       "learningAction": "能按单项式、多项式的定义将五个代数式分类。",
       "questionGuide": {
         "knowledgePoints": [
-          "单项式的乘积结构",
-          "多项式是几个单项式的和",
-          "单独的数也是单项式"
+          "数或字母的积叫单项式，单独的数或字母也是单项式；数字因数可以是分数。",
+          "多项式是几个单项式的和；看见减法时，应把减去的部分连同负号当作一项。先判断整个式子的组成，再分类。"
         ],
         "method": [
           "逐个读出给定式子的最外层运算，判断它属于一个乘积还是几个单项式的和。",
@@ -555,31 +568,35 @@
       },
       "related": [
         {
-          "locationId": "ch4-monomial-product",
-          "label": "单项式的定义与分数系数",
-          "purpose": "检查分类时数字分母是否影响乘积结构。"
+          "locationId": "ch4-source-monomial-definition",
+          "label": "单项式的原文定义",
+          "purpose": "回看积的结构及单独数、字母的规定，再判断当前式子。"
         },
         {
-          "locationId": "ch4-signed-terms",
-          "label": "多项式的组成",
-          "purpose": "把最外层加减读成带符号的单项式之和。"
+          "locationId": "ch4-source-polynomial-definition",
+          "label": "多项式、项与常数项的定义",
+          "purpose": "将原式读成带符号的单项式之和，辨认各项。"
+        },
+        {
+          "locationId": "ch4-source-integral-definition",
+          "label": "整式的原文定义",
+          "purpose": "确认单项式与多项式统称整式，再辨认当前对象。"
         }
       ]
     },
     {
       "id": "ch4-degree-table",
       "locationId": "ch4-degree-table",
-      "title": "4.1 练习第2题：作答指南",
-      "preview": "多项式的项；多项式的次数；项的书写顺序。",
+      "title": "4.1 练习第2题",
+      "preview": "最高次项未必写在最前，要逐项算次数再比较。",
       "paragraphs": [],
       "learningRole": "练习",
       "learningGap": "需逐个完成项与次数两类信息，不以首项替代最高次判断。",
       "learningAction": "能为五个多项式列项并逐项比较次数。",
       "questionGuide": {
         "knowledgePoints": [
-          "多项式的项",
-          "多项式的次数",
-          "项的书写顺序"
+          "几个单项式的和叫多项式，其中每个单项式是一项，项要带着原有符号；不含字母的项是常数项。",
+          "多项式的次数取各项次数中的最高值，不能把各项次数相加。表格中每列都要先分别算出各项次数，最高次项未必写在最前。"
         ],
         "method": [
           "对表中每一列，先把各项连同符号分别列出。",
@@ -593,31 +610,29 @@
       },
       "related": [
         {
-          "locationId": "ch4-signed-terms",
-          "label": "拆项时保留符号",
-          "purpose": "完成表格的“项”一行时逐项核对。"
+          "locationId": "ch4-source-polynomial-definition",
+          "label": "多项式、项与常数项的定义",
+          "purpose": "将原式读成带符号的单项式之和，辨认各项。"
         },
         {
-          "locationId": "ch4-polynomial-degree",
-          "label": "多项式次数的比较层级",
-          "purpose": "完成“次数”一行时区分项内求和与项间比较。"
+          "locationId": "ch4-source-polynomial-degree",
+          "label": "多项式次数的原文定义",
+          "purpose": "先确定每项次数，再取最高值，区分项数与次数。"
         }
       ]
     },
     {
       "id": "ch4-q-sec41-practice-p93-3",
       "locationId": "ch4-q-sec41-practice-p93-3",
-      "title": "4.1 练习第3题：作答指南",
-      "preview": "长方形面积；组合图形的分割与补形；用多项式表示面积。",
+      "title": "4.1 练习第3题：分割或补成矩形",
+      "preview": "先把每个字母放回对应线段，再选择分割或补形的方法。",
       "paragraphs": [],
       "learningRole": "练习",
       "learningGap": "需从尺寸图中识别边长和面积部分，保留分割或补形方案。",
       "learningAction": "能选择不重叠不遗漏的面积表示方法，并解释式子各部分。",
       "questionGuide": {
         "knowledgePoints": [
-          "长方形面积",
-          "组合图形的分割与补形",
-          "用多项式表示面积"
+          "长方形面积=长×宽；分割或补成矩形时，各项分别对应所计入或扣除的区域。"
         ],
         "method": [
           "先在图中逐一指出a、b、c、d对应的线段。",
@@ -632,30 +647,30 @@
       },
       "related": [
         {
-          "locationId": "ch4-signed-terms",
-          "label": "多项式中加减项的意义",
-          "purpose": "用各项的正负对应保留或扣除的面积。"
+          "locationId": "ch4-source-polynomial-definition",
+          "label": "多项式、项与常数项的定义",
+          "purpose": "将原式读成带符号的单项式之和，辨认各项。"
         },
         {
-          "locationId": "ch4-monomial-product",
-          "label": "乘积表示数量",
-          "purpose": "检查每个矩形面积是否来自相应的两条边相乘。"
+          "locationId": "ch4-source-monomial-definition",
+          "label": "单项式的原文定义",
+          "purpose": "回看积的结构及单独数、字母的规定，再判断当前式子。"
         }
       ]
     },
     {
       "id": "ch4-q-hw41-1",
       "locationId": "ch4-q-hw41-1",
-      "title": "习题4.1 第1题：作答指南",
-      "preview": "系数包含负号；次数是所有字母指数的和。",
+      "title": "习题4.1 第1题",
+      "preview": "找系数时带上负号；找次数时只统计字母指数。",
       "paragraphs": [],
       "learningRole": "练习",
       "learningGap": "需分别识别多字母负单项式的数字因数和指数和。",
       "learningAction": "能独立填写给定单项式的系数和次数。",
       "questionGuide": {
         "knowledgePoints": [
-          "系数包含负号",
-          "次数是所有字母指数的和"
+          "单项式的系数是带符号的数字因数；系数为1或−1时，1常省略不写。",
+          "单项式的次数是所有字母指数的和，未写指数的字母指数为1；数字因数不计入次数。"
         ],
         "method": [
           "先分开数字因数与字母部分，再分别填写系数和次数。",
@@ -668,34 +683,34 @@
       },
       "related": [
         {
-          "locationId": "ch4-coefficient-sign",
-          "label": "带符号的数字因数",
-          "purpose": "判断系数时保留整个因数的符号。"
+          "locationId": "ch4-source-coefficient",
+          "label": "系数及±1省写的原文规定",
+          "purpose": "识别完整数字因数，连同符号读取省写的系数。"
         },
         {
-          "locationId": "ch4-degree-letters",
-          "label": "字母指数的和",
-          "purpose": "核对多字母单项式的次数计算规则。"
+          "locationId": "ch4-source-monomial-degree",
+          "label": "单项式次数的原文规定",
+          "purpose": "只求字母指数之和，并保留非零常数与0的特殊规定。"
         }
       ]
     },
     {
       "id": "ch4-many-monomials",
       "locationId": "ch4-many-monomials",
-      "title": "习题4.1 第2题：作答指南",
-      "preview": "单项式的系数；次数约束字母指数的和。",
+      "title": "习题4.1 第2题",
+      "preview": "写出的对象要符合单项式的积结构，再核对系数与次数。",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "需分别满足系数和次数两个约束，而不把构造题当作唯一答案题。",
-      "learningAction": "能自主写出符合条件的单项式，并用两个条件检验。",
+      "learningGap": "只满足系数和次数的数值约束还不够，构造的对象本身必须符合单项式定义。",
+      "learningAction": "能自主写出符合积结构、系数与次数要求的单项式，并逐项说明依据。",
       "questionGuide": {
         "knowledgePoints": [
-          "单项式的系数",
-          "次数约束字母指数的和"
+          "数或字母的积叫单项式，单独的数或字母也是单项式；数字因数可以是分数。",
+          "单项式的系数是带符号的数字因数；系数为1或−1时，1常省略不写。题目要求的次数，限制的是所选字母指数的总和。"
         ],
         "method": [
           "把题目的系数条件与次数条件分开记录。",
-          "自行选择字母部分，再检查完整式子是否同时满足两项要求。"
+          "自行选择乘积中的字母与指数；核对整个式子是否为数或字母的积，再检查数字因数和字母指数的和是否分别满足题设条件。"
         ],
         "cautions": [
           "题目要求写出一个，并不表示只有一种写法。",
@@ -704,30 +719,35 @@
       },
       "related": [
         {
-          "locationId": "ch4-coefficient-sign",
-          "label": "单项式的系数",
-          "purpose": "检查自己写出的数字因数。"
+          "locationId": "ch4-source-monomial-definition",
+          "label": "单项式的原文定义",
+          "purpose": "回看积的结构及单独数、字母的规定，再判断当前式子。"
         },
         {
-          "locationId": "ch4-degree-letters",
-          "label": "单项式的次数",
-          "purpose": "用字母指数的和检验构造结果。"
+          "locationId": "ch4-source-coefficient",
+          "label": "系数及±1省写的原文规定",
+          "purpose": "识别完整数字因数，连同符号读取省写的系数。"
+        },
+        {
+          "locationId": "ch4-source-monomial-degree",
+          "label": "单项式次数的原文规定",
+          "purpose": "只求字母指数之和，并保留非零常数与0的特殊规定。"
         }
       ]
     },
     {
       "id": "ch4-q-hw41-3",
       "locationId": "ch4-q-hw41-3",
-      "title": "习题4.1 第3题：作答指南",
-      "preview": "带符号的项；单项式与多项式次数的区别。",
+      "title": "习题4.1 第3题",
+      "preview": "多项式的次数来自最高次项，不能把各项次数相加。",
       "paragraphs": [],
       "learningRole": "练习",
       "learningGap": "需保留减项的符号并比较各项次数，不能只读最大单字母指数。",
       "learningAction": "能准确列项并确定多项式次数。",
       "questionGuide": {
         "knowledgePoints": [
-          "带符号的项",
-          "单项式与多项式次数的区别"
+          "几个单项式的和叫多项式，其中每个单项式是一项，项要带着原有符号；不含字母的项是常数项。",
+          "单项式的次数是所有字母指数的和，未写指数的字母指数为1；数字因数不计入次数。先求每项的次数，再取最高值作为整个多项式的次数。"
         ],
         "method": [
           "按最外层加减将原式读成各项之和。",
@@ -740,31 +760,30 @@
       },
       "related": [
         {
-          "locationId": "ch4-signed-terms",
-          "label": "多项式的项",
-          "purpose": "检查各项是否完整保留原式符号。"
+          "locationId": "ch4-source-polynomial-definition",
+          "label": "多项式、项与常数项的定义",
+          "purpose": "将原式读成带符号的单项式之和，辨认各项。"
         },
         {
-          "locationId": "ch4-polynomial-degree",
-          "label": "多项式的次数",
-          "purpose": "比较各项次数，区分项数与次数。"
+          "locationId": "ch4-source-polynomial-degree",
+          "label": "多项式次数的原文定义",
+          "purpose": "先确定每项次数，再取最高值，区分项数与次数。"
         }
       ]
     },
     {
       "id": "ch4-q-hw41-4",
       "locationId": "ch4-q-hw41-4",
-      "title": "习题4.1 第4题：作答指南",
-      "preview": "长方形面积；组合图形面积；多项式的次数。",
+      "title": "习题4.1 第4题",
+      "preview": "四个区域各有自己的长和宽，列式后逐项对应面积。",
       "paragraphs": [],
       "learningRole": "练习",
       "learningGap": "需把图中四个区域与面积项对应，再独立判断所得多项式的次数。",
       "learningAction": "能从标注尺寸构造建筑面积式，并检查各项与次数。",
       "questionGuide": {
         "knowledgePoints": [
-          "长方形面积",
-          "组合图形面积",
-          "多项式的次数"
+          "长方形面积=长×宽；总面积是互不重叠的各区域面积之和。",
+          "多项式次数取各项次数中的最高值。"
         ],
         "method": [
           "分别确认Ⅰ、Ⅱ、Ⅲ、Ⅳ四个区域的长与宽，把图中尺寸放回对应边上。",
@@ -779,31 +798,30 @@
       },
       "related": [
         {
-          "locationId": "ch4-monomial-product",
-          "label": "长与宽相乘的结构",
-          "purpose": "检查各个区域的面积项来自哪两个边长。"
+          "locationId": "ch4-source-monomial-definition",
+          "label": "单项式的原文定义",
+          "purpose": "回看积的结构及单独数、字母的规定，再判断当前式子。"
         },
         {
-          "locationId": "ch4-polynomial-degree",
-          "label": "多项式的次数",
-          "purpose": "列出总面积后按各项次数确定次数。"
+          "locationId": "ch4-source-polynomial-degree",
+          "label": "多项式次数的原文定义",
+          "purpose": "先确定每项次数，再取最高值，区分项数与次数。"
         }
       ]
     },
     {
       "id": "ch4-q-hw41-5",
       "locationId": "ch4-q-hw41-5",
-      "title": "习题4.1 第5题：作答指南",
-      "preview": "百分比的基准量；增长量与总量；数与字母的积。",
+      "title": "习题4.1 第5题：增加人数的比较基准",
+      "preview": "5.7%以去年人数为基准，题目求的是增加的人数。",
       "paragraphs": [],
       "learningRole": "练习",
       "learningGap": "需区分增长量和增长后的总量，保留百分数列式。",
       "learningAction": "能识别百分比基准并表示今年多接待的游客人数。",
       "questionGuide": {
         "knowledgePoints": [
-          "百分比的基准量",
-          "增长量与总量",
-          "数与字母的积"
+          "5.7%=5.7/100。增长率表示增加人数占原有人数的比例，本题的原有人数是去年同期游客人数。",
+          "区分增长量与增长后的总量；百分数可以作为数字因数。"
         ],
         "method": [
           "先指出5.7%是相对哪一年的人数而言。",
@@ -816,31 +834,30 @@
       },
       "related": [
         {
-          "locationId": "ch4-stock-and-change",
-          "label": "原有量与变化量",
-          "purpose": "借助原有库存和增减的区别，核对本题所求是原有人数之外的增加量。"
+          "locationId": "ch1-growth-rate-question",
+          "label": "增长率、百分数与比较基准",
+          "purpose": "回顾百分数怎样表示增减的比例，再把本题基准对应到去年同期人数。"
         },
         {
-          "locationId": "ch4-monomial-product",
-          "label": "分数系数的乘积",
-          "purpose": "理解百分数作为数字因数与原有量相乘的结构。"
+          "locationId": "ch4-source-monomial-definition",
+          "label": "单项式的定义",
+          "purpose": "列式后检查百分数数字因数与x的乘积结构。"
         }
       ]
     },
     {
       "id": "ch4-q-hw41-6",
       "locationId": "ch4-q-hw41-6",
-      "title": "习题4.1 第6题：作答指南",
-      "preview": "相邻量的差；连续变化中的间隔数；初始量与变化量。",
+      "title": "习题4.1 第6题：节气间隔与日影变化",
+      "preview": "从立春到立夏，要数相邻节气之间经过了几个间隔。",
       "paragraphs": [],
       "learningRole": "练习",
       "learningGap": "需按相邻节气的差建立连续变化关系，并区分节点数与间隔数。",
       "learningAction": "能判断相邻日影变化的方向与次数，表示目标节气的近似日影长。",
       "questionGuide": {
         "knowledgePoints": [
-          "相邻量的差",
-          "连续变化中的间隔数",
-          "初始量与变化量"
+          "相邻节气日影长的差是前一个节气日影长减后一个；从一个节气到下一个才经过一个间隔。",
+          "后来的日影长要由立春时的长度与经过各间隔的变化联系起来；节气个数与间隔个数不同。"
         ],
         "method": [
           "按题目给出的先后次序，从立春走到立夏，数清经过多少个相邻间隔。",
@@ -860,25 +877,25 @@
           "purpose": "检查结果是否同时包含立春的初始日影长及后续变化。"
         },
         {
-          "locationId": "ch4-signed-terms",
-          "label": "加减项与符号",
-          "purpose": "说明各次变化在最终表达式中为什么取相应符号。"
+          "locationId": "ch4-source-polynomial-definition",
+          "label": "多项式、项与常数项的定义",
+          "purpose": "将原式读成带符号的单项式之和，辨认各项。"
         }
       ]
     },
     {
       "id": "ch4-q-hw41-7",
       "locationId": "ch4-q-hw41-7",
-      "title": "习题4.1 第7题：作答指南",
-      "preview": "单位数量与总量；多项式中各项的实际意义。",
+      "title": "习题4.1 第7题",
+      "preview": "先查每类赛果对应的积分，再与该类场次配对。",
       "paragraphs": [],
       "learningRole": "练习",
       "learningGap": "需将不同赛果分别匹配计分规则，不把胜负场次或局数误当积分。",
       "learningAction": "能按各类赛果列出积分项并表示总积分。",
       "questionGuide": {
         "knowledgePoints": [
-          "单位数量与总量",
-          "多项式中各项的实际意义"
+          "一类比赛的积分=这类赛果每场得分×该类场数；总积分是各类积分之和。",
+          "a、b、c分别对应不同赛果，要按各自计分规则配对；多项式的每项应能读回一种积分来源。"
         ],
         "method": [
           "把a、b、c分别与题目中的三类赛果对应。",
@@ -892,30 +909,30 @@
       },
       "related": [
         {
-          "locationId": "ch4-monomial-product",
-          "label": "乘积表示一类数量",
-          "purpose": "把每场积分与对应场次数联系成一项。"
+          "locationId": "ch4-source-monomial-definition",
+          "label": "单项式的原文定义",
+          "purpose": "回看积的结构及单独数、字母的规定，再判断当前式子。"
         },
         {
-          "locationId": "ch4-signed-terms",
-          "label": "多项式各项的含义",
-          "purpose": "列式后检查每项代表的积分来源和符号。"
+          "locationId": "ch4-source-polynomial-definition",
+          "label": "多项式、项与常数项的定义",
+          "purpose": "将原式读成带符号的单项式之和，辨认各项。"
         }
       ]
     },
     {
       "id": "ch4-integer-remainder",
       "locationId": "ch4-integer-remainder",
-      "title": "习题4.1 第8题：作答指南",
-      "preview": "整数商与整除；被除数、除数、商、余数的关系。",
+      "title": "习题4.1 第8题",
+      "preview": "同一个整数商下，余数为0与为1会改变被除数。",
       "paragraphs": [],
       "learningRole": "练习",
       "learningGap": "需将整数条件与除法中的商、余数相连，保留两个代数式的构造。",
       "learningAction": "能分别表示整除和固定余数的整数，并说明n的作用。",
       "questionGuide": {
         "knowledgePoints": [
-          "整数商与整除",
-          "被除数、除数、商、余数的关系"
+          "被除数=除数×整数商+余数；整除时余数为0。",
+          "商必须是整数，才能保证被除数属于题目要求的整数类型。"
         ],
         "method": [
           "（1）回顾被除数、除数与整数商之间的关系，说明n可以扮演哪个量。",
@@ -939,17 +956,16 @@
     {
       "id": "ch4-q-hw41-9",
       "locationId": "ch4-q-hw41-9",
-      "title": "习题4.1 第9题：作答指南",
-      "preview": "对应数量之间的关系；固定增量与数值基准；用字母表示规律。",
+      "title": "习题4.1 第9题：两种鞋号怎样对应？",
+      "preview": "表中每列是一双鞋的两种鞋号，公式要符合所有配对。",
       "paragraphs": [],
       "learningRole": "探究",
       "learningGap": "需从对应数据中区分增量关系和整体对应，保留数值预测与公式构造。",
       "learningAction": "能根据表中数据构造转换关系，并用多组数据检查。",
       "questionGuide": {
         "knowledgePoints": [
-          "对应数量之间的关系",
-          "固定增量与数值基准",
-          "用字母表示规律"
+          "表中每列对应同一双鞋的新、旧鞋号。相邻列可看出两种鞋号各增加多少，而一组已知对应值可用来核对整体关系。",
+          "用m、n写关系时，要固定谁表示新鞋号、谁表示旧鞋号，再让式子符合所有已知配对。"
         ],
         "method": [
           "（1）比较相邻列的新鞋号和旧鞋号怎样同时变化，再把观察到的关系用于表中的空缺。",
@@ -964,14 +980,14 @@
       },
       "related": [
         {
-          "locationId": "ch4-monomial-product",
-          "label": "数字因数与字母的积",
-          "purpose": "理解把固定增量作用于变化次数或字母数量的写法。"
+          "locationId": "ch4-source-monomial-definition",
+          "label": "单项式的原文定义",
+          "purpose": "回看积的结构及单独数、字母的规定，再判断当前式子。"
         },
         {
-          "locationId": "ch4-signed-terms",
-          "label": "多项式中的加减项",
-          "purpose": "检查转换关系中的各项分别表示随数量变化的部分还是固定调整。"
+          "locationId": "ch4-source-polynomial-definition",
+          "label": "多项式、项与常数项的定义",
+          "purpose": "将原式读成带符号的单项式之和，辨认各项。"
         }
       ]
     },
@@ -992,16 +1008,16 @@
     {
       "id": "ch4-q-sec42-intro-compute",
       "locationId": "ch4-q-sec42-intro-compute",
-      "title": "4.2 导入：如何计算72a+120a：作答指南",
-      "preview": "同一个字母表示同一数量；分配律与共同因数。",
+      "title": "4.2 导入：如何计算72a+120a",
+      "preview": "两项都含同一个a，可以把它看成同一数量的不同倍数。",
       "paragraphs": [],
       "learningRole": "引出问题",
       "learningGap": "需把数量含义转向共同结构，保留运算法则的发现。",
       "learningAction": "能辨认两项共同的字母部分并说明需要研究的运算。",
       "questionGuide": {
         "knowledgePoints": [
-          "同一个字母表示同一数量",
-          "分配律与共同因数"
+          "a在两项中表示同一个数；两个乘积相加，可以利用分配律保留共同因数，把另两个因数相加。",
+          "本题两个系数已各自包含速度和时间倍数，不能把它们都当作实际速度。"
         ],
         "method": [
           "先读出两项中a的共同含义，再把各项看作同一个量的若干倍。",
@@ -1015,26 +1031,30 @@
       },
       "related": [
         {
-          "locationId": "ch4-combine-rule",
-          "label": "系数相加的依据",
-          "purpose": "研究共同字母部分怎样通过分配律保留。"
+          "locationId": "ch4-source-combine-rule",
+          "label": "合并同类项的原文法则",
+          "purpose": "完成本题计算、观察和理由说明后，对照后文的合并同类项法则，核对自己的归纳。"
+        },
+        {
+          "locationId": "ch2-source-distributive-law",
+          "label": "有理数乘法的分配律",
+          "purpose": "回看一个因数与和相乘的等式，辨认展开或收回共同因数的依据。"
         }
       ]
     },
     {
       "id": "ch4-q-sec42-inquiry-p95",
       "locationId": "ch4-q-sec42-inquiry-p95",
-      "title": "4.2 探究：作答指南",
-      "preview": "分配律；共同因数；数值试验与一般理由。",
+      "title": "4.2 探究",
+      "preview": "先找到重复的完整因数，再看分配律如何保留它。",
       "paragraphs": [],
       "learningRole": "探究",
       "learningGap": "需从具体数值运算抽取共同结构，保留计算和一般说明。",
       "learningAction": "能用同一运算律处理正数、负数与字母结构，并说明理由。",
       "questionGuide": {
         "knowledgePoints": [
-          "分配律",
-          "共同因数",
-          "数值试验与一般理由"
+          "分配律a(b+c)=ab+ac也可以从右向左使用：两个乘积有同一个因数时，将其保留，把另外两个因数相加。",
+          "负数也按数的运算律计算，重复出现的完整负数应作为同一个因数保留。数值试算可核验结果，运算律才支持一般的字母等式。"
         ],
         "method": [
           "（1）分别观察两道数值算式中重复出现的因数，选择运算律计算。",
@@ -1049,9 +1069,14 @@
       },
       "related": [
         {
-          "locationId": "ch4-combine-rule",
-          "label": "分配律与系数相加",
-          "purpose": "完成探究后用共同整体的分配律说明对照自己的计算，区分运算依据与有限次试算。"
+          "locationId": "ch4-source-combine-rule",
+          "label": "合并同类项的原文法则",
+          "purpose": "完成本题计算、观察和理由说明后，对照后文的合并同类项法则，核对自己的归纳。"
+        },
+        {
+          "locationId": "ch2-source-distributive-law",
+          "label": "有理数乘法的分配律",
+          "purpose": "回看一个因数与和相乘的等式，辨认展开或收回共同因数的依据。"
         }
       ]
     },
@@ -1069,26 +1094,30 @@
       "learningAction": "能区分数值验证与运算律证明，指出保持式子值不变的依据。",
       "related": [
         {
-          "locationId": "ch4-combine-rule",
-          "label": "继续看合并同类项",
-          "purpose": "查看分配律怎样形成系数相加的规则。"
+          "locationId": "ch4-source-combine-rule",
+          "label": "合并同类项的原文法则",
+          "purpose": "核对系数相加、字母及指数不变，再用于当前同类项。"
+        },
+        {
+          "locationId": "ch2-source-distributive-law",
+          "label": "有理数乘法的分配律",
+          "purpose": "回看一个因数与和相乘的等式，辨认展开或收回共同因数的依据。"
         }
       ]
     },
     {
       "id": "ch4-q-sec42-inquiry-p96",
       "locationId": "ch4-q-sec42-inquiry-p96",
-      "title": "4.2 探究：作答指南",
-      "preview": "分配律；共同字母部分；同类项的条件。",
+      "title": "4.2 探究",
+      "preview": "比较每次运算中改变的系数与保留的字母部分。",
       "paragraphs": [],
       "learningRole": "探究",
       "learningGap": "需比较三个算式的相同结构，保留填空与规律归纳。",
       "learningAction": "能运用分配律填空，并说明共同字母部分与系数的作用。",
       "questionGuide": {
         "knowledgePoints": [
-          "分配律",
-          "共同字母部分",
-          "同类项的条件"
+          "分配律把共同因数保留，把另外两个因数相加或相减；共同因数可以是一个字母，也可以是相同字母组成的乘积。",
+          "三次填空分别使用各式中重复的完整字母部分，比较时还要核对每个字母的指数。"
         ],
         "method": [
           "分别对（1）（2）（3）辨认重复的字母部分，把它暂时看作一个整体，再自行填空。",
@@ -1103,14 +1132,19 @@
       },
       "related": [
         {
-          "locationId": "ch4-like-terms",
-          "label": "同类项的两个条件",
-          "purpose": "形成猜想后核对共同字母部分需要满足的条件。"
+          "locationId": "ch4-source-like-terms",
+          "label": "同类项的完整条件",
+          "purpose": "先说明这些项有哪些共同特点，再对照下文的同类项定义，检查所观察的条件是否完整。"
         },
         {
-          "locationId": "ch4-combine-rule",
-          "label": "分配律与系数相加",
-          "purpose": "用共同整体检查三次计算及归纳的理由。"
+          "locationId": "ch4-source-combine-rule",
+          "label": "合并同类项的原文法则",
+          "purpose": "完成本题计算、观察和理由说明后，对照后文的合并同类项法则，核对自己的归纳。"
+        },
+        {
+          "locationId": "ch2-source-distributive-law",
+          "label": "有理数乘法的分配律",
+          "purpose": "回看一个因数与和相乘的等式，辨认展开或收回共同因数的依据。"
         }
       ]
     },
@@ -1120,7 +1154,7 @@
       "title": "同类项要逐个字母核对",
       "preview": "字母相同，还要同一个字母的指数分别相同。",
       "paragraphs": [
-        "补充用例：2a²b与−5ba²是同类项，交换乘法因子的顺序不会改变字母部分。a²b与ab²却不是同类项；虽然次数都是3，但a、b各自的指数对不上。",
+        "补充用例：2a²b与−5ba²是同类项，交换乘法因数的顺序不会改变字母部分。a²b与ab²却不是同类项；虽然次数都是3，但a、b各自的指数对不上。",
         "系数可以不同，正负号也可以不同。几个常数项没有字母部分，按教材的规定也是同类项，可以按数的加减合并。判断时不能只比较次数、系数或书写顺序。"
       ],
       "learningRole": "定义概念",
@@ -1148,34 +1182,38 @@
       "title": "合并时为什么只加系数？",
       "preview": "相加的是同一字母部分的若干倍，不是把字母部分相乘。",
       "paragraphs": [
-        "把共同的字母部分暂记为一个整体U，pU+qU=(p+q)U来自分配律。无论U表示一个字母还是几个字母的积，合并都只改变有多少个U。",
-        "补充用例：2x²+3x²=5x²，而不是5x⁴。这里做的是两个乘积的加法，没有再把x²与x²相乘；因此字母及其指数保持不变。"
+        "3m²和2m²都表示若干个m²。按分配律，3m²+2m²=(3+2)m²，相加的是m²的个数，所以只把系数相加，m²保持不变。",
+        "补充用例：2x²+3x²=5x²。这里做的是两个乘积的加法，没有把x²与x²再相乘，因此指数不增加。"
       ],
       "learningRole": "陈述性质或结论",
-      "learningGap": "法则给出操作结果，需进一步解释指数不变与加法结构的关系。",
+      "learningGap": "需用同一字母部分的若干倍解释系数为何相加、指数为何不变，避免引入多余字母。",
       "learningAction": "能用共同整体和分配律说明只合并系数，不改变字母指数。",
       "related": [
         {
-          "locationId": "ch4-like-terms",
-          "label": "回顾哪些项能合并",
-          "purpose": "先确保共同字母部分确实相同，再使用系数相加的规则。"
+          "locationId": "ch4-source-like-terms",
+          "label": "同类项的完整条件",
+          "purpose": "逐个比较字母及其指数，常数项也按规定处理。"
+        },
+        {
+          "locationId": "ch2-source-distributive-law",
+          "label": "有理数乘法的分配律",
+          "purpose": "回看一个因数与和相乘的等式，辨认展开或收回共同因数的依据。"
         }
       ]
     },
     {
       "id": "ch4-q-sec42-example1",
       "locationId": "ch4-q-sec42-example1",
-      "title": "4.2 例1：作答指南",
-      "preview": "同类项的判断；带符号的系数相加；零系数项。",
+      "title": "4.2 例1",
+      "preview": "先逐个核对字母和指数，再合并带符号的系数。",
       "paragraphs": [],
       "learningRole": "示范方法",
       "learningGap": "需在两题中区分可合并的字母结构，并解释零系数项和分数系数。",
       "learningAction": "能根据同类项条件分组，并说明合并时各部分怎样变化。",
       "questionGuide": {
         "knowledgePoints": [
-          "同类项的判断",
-          "带符号的系数相加",
-          "零系数项"
+          "所含字母相同，并且相同字母的指数也分别相同的项是同类项；几个常数项也是同类项。",
+          "合并同类项时，系数相加，字母及其指数保持不变。若一组系数相加为0，这一项对任何字母取值都为0，可从和中省去。"
         ],
         "method": [
           "（1）先识别省略的数字因数，再比较两个字母部分；用分配律解释系数运算。",
@@ -1190,14 +1228,14 @@
       },
       "related": [
         {
-          "locationId": "ch4-like-terms",
-          "label": "同类项的字母与指数条件",
-          "purpose": "检查第（2）小题的分组是否符合条件。"
+          "locationId": "ch4-source-like-terms",
+          "label": "同类项的完整条件",
+          "purpose": "逐个比较字母及其指数，常数项也按规定处理。"
         },
         {
-          "locationId": "ch4-combine-rule",
-          "label": "只合并系数的分配律依据",
-          "purpose": "解释两个小题为何保留共同字母部分。"
+          "locationId": "ch4-source-combine-rule",
+          "label": "合并同类项的原文法则",
+          "purpose": "核对系数相加、字母及指数不变，再用于当前同类项。"
         }
       ]
     },
@@ -1226,20 +1264,20 @@
       "learningAction": "能比较两式化简前后的结构，并解释先合并再代入为何减少计算。",
       "related": [
         {
-          "locationId": "ch4-like-terms",
-          "label": "同类项",
-          "purpose": "先核对字母和对应指数，才能决定本题哪些项可以合并。"
+          "locationId": "ch4-source-like-terms",
+          "label": "同类项的完整条件",
+          "purpose": "逐个比较字母及其指数，常数项也按规定处理。"
         },
         {
-          "locationId": "ch4-combine-rule",
-          "label": "合并同类项",
-          "purpose": "系数相加而字母部分不变，说明为什么合并后的式子与原式等值。"
+          "locationId": "ch4-source-combine-rule",
+          "label": "合并同类项的原文法则",
+          "purpose": "核对系数相加、字母及指数不变，再用于当前同类项。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "同类项的判断与合并",
-          "代数式求值与等值变形"
+          "所含字母相同，并且相同字母的指数也分别相同的项是同类项；几个常数项也是同类项。",
+          "合并同类项时，系数相加，字母及其指数保持不变。化简依据运算律，同一组取值下，原式与化简式的值相同，所以可以选择较短的式子代入。"
         ],
         "method": [
           "（1）哪些项的字母及对应指数相同？比较这些项在化简前后需要进行的计算。",
@@ -1266,9 +1304,9 @@
       "learningAction": "能说明化简后代入的依据，区分一般方法选择与题目明确要求。",
       "related": [
         {
-          "locationId": "ch4-combine-rule",
-          "label": "回顾合并的依据",
-          "purpose": "确认系数合并依靠分配律，因而保持每组取值下的结果。"
+          "locationId": "ch4-source-combine-rule",
+          "label": "合并同类项的原文法则",
+          "purpose": "核对系数相加、字母及指数不变，再用于当前同类项。"
         }
       ]
     },
@@ -1283,15 +1321,15 @@
       "learningAction": "能从重复运算和同类项抵消两方面比较求值方法。",
       "related": [
         {
-          "locationId": "ch4-combine-rule",
-          "label": "合并同类项",
-          "purpose": "用各同类项系数的和替换原来的系数，并保持字母及其指数不变。"
+          "locationId": "ch4-source-combine-rule",
+          "label": "合并同类项的原文法则",
+          "purpose": "核对系数相加、字母及指数不变，再用于当前同类项。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "代数式求值",
-          "合并同类项保持式子的值"
+          "求代数式的值，是把给定数替换字母，再按原式的运算关系计算。",
+          "合并同类项依据分配律，保持每组取值下的结果；可以比较直接代入与先合并再代入各自需要多少计算。"
         ],
         "method": [
           "对例2（1）（2）分别直接代入原式，把所需的乘方、乘法与加减步骤和教材的方法作比较。",
@@ -1306,38 +1344,78 @@
     {
       "id": "ch4-q-42-example3",
       "locationId": "ch4-q-42-example3",
-      "title": "例3：总变化量和最终数量怎样区分？",
-      "preview": "两题都用带符号的变化量，但最终所求不同。",
+      "title": "例3（1）：两天水位的总变化",
+      "preview": "先约定升降的正负方向，再检查两天的总变化。",
       "paragraphs": [],
       "learningRole": "示范方法",
-      "learningGap": "两个情境都涉及正负变化，但一个求总变化，另一个求计入原有数量后的库存。",
-      "learningAction": "能根据所求对象区分总变化和最终总量，解释每一项的符号与单位。",
+      "learningGap": "需要区分带方向的水位变化量与水面累计移动的路程。",
+      "learningAction": "能解释两天变化量的符号与单位，并自主判断总变化。",
       "related": [
         {
-          "locationId": "ch4-combine-rule",
-          "label": "合并同类项",
-          "purpose": "用各同类项系数的和替换原来的系数，并保持字母及其指数不变。"
+          "locationId": "ch4-source-combine-rule",
+          "label": "合并同类项的原文法则",
+          "purpose": "核对系数相加、字母及指数不变，再用于当前同类项。"
         },
         {
-          "locationId": "ch4-signed-terms",
-          "label": "带符号的项",
-          "purpose": "把减少量写成负项后，再把初始数量和各次变化合并。"
+          "locationId": "ch4-source-polynomial-definition",
+          "label": "多项式、项与常数项的定义",
+          "purpose": "将原式读成带符号的单项式之和，辨认各项。"
+        },
+        {
+          "locationId": "ch1-source-opposite-quantities",
+          "label": "用正负数表示相反意义的量",
+          "purpose": "先约定上升下降或购进售出的正负，再解释各项的符号。"
         }
       ],
       "questionGuide": {
+        "continuous": true,
         "knowledgePoints": [
-          "用正负数表示相反意义的量",
-          "数量变化的合并",
-          "同类项在实际问题中的意义"
+          "先约定上升为正、下降为负。每小时的变化量乘持续时间，得到这一天带方向的水位变化；两天的变化都要按同一约定记录。"
         ],
         "method": [
-          "（1）先约定水位升降的正负方向，分别表示两天的变化，再用总变化判断最终升降。",
-          "（2）区分原有大米质量、售出造成的变化和购进造成的变化，再判断题目所求是变化量还是剩余总量。"
+          "两天的变化量相加，比较的是最后与最初的水位。同一个a表示持续时间，合并同类项时只加带符号的系数，保留a，就能把两天变化写成一个变化量。"
         ],
         "cautions": [
-          "（1）a表示持续时间，水位变化量的单位是cm，负号表达下降方向。",
-          "（2）每袋包装相同是各项都能用同一个x表示的条件；售出袋数与售出质量要区分。",
-          "不要把两天的“总变化”误读成水面累计移动的路程，也不要把进出货的净变化当成现有库存。"
+          "合并结果为正表示最后较高，为负表示最后较低；绝对值表示相差多少。把两天变化的大小直接相加，算的是升降长度合计，不能代替最终变化。"
+        ]
+      }
+    },
+    {
+      "id": "ch4-q-42-example3-stock",
+      "locationId": "ch4-q-42-example3-stock",
+      "title": "例3（2）：进出货后的大米库存",
+      "preview": "原有量、售出量与购进量，各自在库存中起什么作用？",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "需要把原有库存与进出货变化区分，不能把净变化当成最终库存。",
+      "learningAction": "能区分库存与变化量，解释每项的符号和单位，并自主表示最终数量。",
+      "related": [
+        {
+          "locationId": "ch4-source-combine-rule",
+          "label": "合并同类项的原文法则",
+          "purpose": "核对系数相加、字母及指数不变，再用于当前同类项。"
+        },
+        {
+          "locationId": "ch4-source-polynomial-definition",
+          "label": "多项式、项与常数项的定义",
+          "purpose": "将原式读成带符号的单项式之和，辨认各项。"
+        },
+        {
+          "locationId": "ch1-source-opposite-quantities",
+          "label": "用正负数表示相反意义的量",
+          "purpose": "先约定上升下降或购进售出的正负，再解释各项的符号。"
+        }
+      ],
+      "questionGuide": {
+        "continuous": true,
+        "knowledgePoints": [
+          "库存要从原有大米算起：售出使库存减少，购进使库存增加。题目说明每袋质量相同，才可用同一个x表示各袋质量。"
+        ],
+        "method": [
+          "每项的系数记录相应袋数，符号说明它是在原有量上增加还是减少。合并时把这些带符号的系数相加，保留共同袋重x，仍表示同一批库存。"
+        ],
+        "cautions": [
+          "只合并售出和购进两次变化，得到的是比原来增减多少；题目求现有大米，还必须计入原有库存。袋数与大米质量的单位也要分清。"
         ]
       }
     },
@@ -1347,13 +1425,18 @@
       "title": "总变化不是所有升降长度相加",
       "preview": "结果比较的是最后与最初的水位。",
       "paragraphs": [
-        "这里把上升和下降记成相反符号，再相加，表示最后水位相对最初水位的变化。负结果说明最后较低，变化量的绝对值表示低了多少。",
-        "如果问水位上下变化的长度合计，就要把各段变化的大小相加，那是另一个问题。先读清所求的是最终变化，还是变化过程的长度总和。"
+        "总变化量的绝对值表示最终水位与最初水位相差多少，正负号则表示最终是高了还是低了。若题目问升降长度合计，就需分别考虑各次变化的大小；这是不同的量。"
       ],
       "learningRole": "示范方法",
       "learningGap": "“总的变化”可能被误读为升降绝对长度总和，需要明确比较的起点和终点。",
       "learningAction": "能区分净变化与各段变化大小之和，并解释负结果。",
-      "related": []
+      "related": [
+        {
+          "locationId": "ch1-source-absolute-definition",
+          "label": "绝对值的距离定义",
+          "purpose": "回顾绝对值怎样记录不计方向的大小，再区分水位变化的方向与大小。"
+        }
+      ]
     },
     {
       "id": "ch4-stock-and-change",
@@ -1361,11 +1444,10 @@
       "title": "原有量与变化量，不是同一件事",
       "preview": "库存结余要同时包含起始库存和后来的增减。",
       "paragraphs": [
-        "这里5x是原有库存，−3x与4x是后来两次变化。只把后两项相加，得到的是这一天增加或减少了多少，还不是最后库存。",
-        "式子能按袋数来合并，是因为题目说明每袋质量相同，都是x kg。若每袋质量不同，就不能把所有袋数直接乘同一个x。"
+        "教材把5x、−3x、4x合并时，使用了“每袋质量相同”的条件。三个系数记录不同来源的袋数，x始终是共同袋重；若每袋质量不同，就不能把全部袋数乘同一个x。"
       ],
       "learningRole": "示范方法",
-      "learningGap": "解答直接合并三项，需区分起始存量与变化量，并说明共同袋重条件。",
+      "learningGap": "原有量与变化量在题目入口连贯说明；此处只解释同袋重为何允许合并袋数。",
       "learningAction": "能判断库存式各项代表存量还是变化，并指出合并袋数依赖同样包装。",
       "related": []
     },
@@ -1380,20 +1462,20 @@
       "learningAction": "能在六个小题中识别同类项，保留指数并正确处理不同形式的系数。",
       "related": [
         {
-          "locationId": "ch4-like-terms",
-          "label": "同类项",
-          "purpose": "先核对字母和对应指数，才能决定本题哪些项可以合并。"
+          "locationId": "ch4-source-like-terms",
+          "label": "同类项的完整条件",
+          "purpose": "逐个比较字母及其指数，常数项也按规定处理。"
         },
         {
-          "locationId": "ch4-combine-rule",
-          "label": "合并同类项",
-          "purpose": "用各同类项系数的和替换原来的系数，并保持字母及其指数不变。"
+          "locationId": "ch4-source-combine-rule",
+          "label": "合并同类项的原文法则",
+          "purpose": "核对系数相加、字母及指数不变，再用于当前同类项。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "同类项的两个条件",
-          "分数、小数与负系数的合并"
+          "所含字母相同，并且相同字母的指数也分别相同的项是同类项；几个常数项也是同类项。",
+          "合并同类项时，系数相加，字母及其指数保持不变。分数、小数或负数作系数，都按有理数加减处理。"
         ],
         "method": [
           "（1）—（4）各式中，哪些项能看成同一字母部分的若干倍？用同类项的条件说明，再自行合并。",
@@ -1422,15 +1504,15 @@
           "purpose": "判断哪些同类项可先合并或抵消，从而减少本题代入后的计算。"
         },
         {
-          "locationId": "ch4-combine-rule",
-          "label": "合并同类项",
-          "purpose": "用各同类项系数的和替换原来的系数，并保持字母及其指数不变。"
+          "locationId": "ch4-source-combine-rule",
+          "label": "合并同类项的原文法则",
+          "purpose": "核对系数相加、字母及指数不变，再用于当前同类项。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "合并同类项",
-          "负数代入与乘方"
+          "合并同类项时，系数相加，字母及其指数保持不变。",
+          "负数代入时，负号和数一起替换字母；平方只作用于底数，平方外的系数还要按乘法处理。"
         ],
         "method": [
           "（1）先用字母及对应指数判断哪些项能合并，再检查代入时负数占据的完整位置。",
@@ -1453,21 +1535,20 @@
       "learningAction": "能从面积比例写出部分面积，并据阴影结构选择面积差。",
       "related": [
         {
-          "locationId": "ch4-monomial-product",
-          "label": "单项式",
-          "purpose": "圆面积是数与字母的积，需保留表示面积的平方因子。"
+          "locationId": "ch3-circle-area-formula",
+          "label": "圆面积与半径",
+          "purpose": "用R确定大圆面积；小圆面积按题给面积比例表示，不能把面积比当作半径比。"
         },
         {
-          "locationId": "ch4-combine-rule",
-          "label": "合并同类项",
-          "purpose": "用各同类项系数的和替换原来的系数，并保持字母及其指数不变。"
+          "locationId": "ch4-source-combine-rule",
+          "label": "合并同类项的原文法则",
+          "purpose": "核对系数相加、字母及指数不变，再用于当前同类项。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "圆的面积",
-          "整体与部分的面积差",
-          "同类项的合并"
+          "圆面积=π×半径×半径；图中阴影面积与两个圆的区域关系。",
+          "同一字母部分的项可以按系数合并。"
         ],
         "method": [
           "从图中确认R属于哪一个圆，用圆面积公式表示对应的面积。",
@@ -1493,9 +1574,9 @@
       "learningAction": "能解释括号保护的整体数量，并区分代数规则与情境取值限制。",
       "related": [
         {
-          "locationId": "ch4-distribute-every-term",
-          "label": "继续看去括号的依据",
-          "purpose": "检查速度怎样与表示时间的每一项相乘。"
+          "locationId": "ch4-source-remove-brackets",
+          "label": "去括号及括号前±号的规定",
+          "purpose": "核对外部因数怎样作用于每一项，保留完整符号。"
         }
       ]
     },
@@ -1510,21 +1591,15 @@
       "learningAction": "能指出两个括号项的整体符号，并用分配律说明展开后的符号差异。",
       "related": [
         {
-          "locationId": "ch4-distribute-every-term",
-          "label": "去括号与分配律",
-          "purpose": "括号外的数要作用于括号内每一项，支持本题展开后再分类合并。"
-        },
-        {
-          "locationId": "ch4-minus-bracket",
-          "label": "括号前的负号",
-          "purpose": "把减去一个整式看成乘以−1，核对括号内每一项的符号变化。"
+          "locationId": "ch4-source-remove-brackets",
+          "label": "去括号及括号前±号的规定",
+          "purpose": "核对外部因数怎样作用于每一项，保留完整符号。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "分配律",
-          "去括号中的符号",
-          "合并同类项"
+          "分配律使括号外的数与里面每一项相乘；减去整个乘积时，外部减号也要计入完整因数。",
+          "合并同类项时，系数相加，字母及其指数保持不变。先看清每项的来源及符号，再判断哪些字母部分相同。"
         ],
         "method": [
           "①与②中，括号内的式子相同，外部符号有什么不同？分别指出完整的带符号因数。",
@@ -1564,9 +1639,9 @@
       "learningAction": "能把括号前负号解释为−1，并说明各项符号变化的理由。",
       "related": [
         {
-          "locationId": "ch4-distribute-every-term",
-          "label": "回顾“每一项”",
-          "purpose": "用同一条分配律核对负号的作用范围。"
+          "locationId": "ch4-source-remove-brackets",
+          "label": "去括号及括号前±号的规定",
+          "purpose": "核对外部因数怎样作用于每一项，保留完整符号。"
         }
       ]
     },
@@ -1581,21 +1656,15 @@
       "learningAction": "能解释两个小题去括号时每项符号的来源。",
       "related": [
         {
-          "locationId": "ch4-distribute-every-term",
-          "label": "去括号与分配律",
-          "purpose": "括号外的数要作用于括号内每一项，支持本题展开后再分类合并。"
-        },
-        {
-          "locationId": "ch4-minus-bracket",
-          "label": "括号前的负号",
-          "purpose": "把减去一个整式看成乘以−1，核对括号内每一项的符号变化。"
+          "locationId": "ch4-source-remove-brackets",
+          "label": "去括号及括号前±号的规定",
+          "purpose": "核对外部因数怎样作用于每一项，保留完整符号。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "正负号对应的因数1与−1",
-          "分配律",
-          "整式化简"
+          "去括号时，括号外的数乘里面的每一项；括号前只有加号、减号时，分别相当于乘以1、−1。",
+          "合并同类项时，系数相加，字母及其指数保持不变。原有负项去括号后是否变号，由它与括号外因数的乘积决定。"
         ],
         "method": [
           "（1）把加上括号中的式子与直接加上它的各项对应起来。",
@@ -1610,16 +1679,21 @@
     {
       "id": "ch4-negative-factor",
       "locationId": "ch4-negative-factor",
-      "title": "−3与括号内的负项怎样相乘？",
-      "preview": "先把两个负号各自属于哪个因数看清楚。",
+      "title": "系数为正，整个项一定为正吗？",
+      "preview": "6是固定的正系数，6y的值还取决于y。",
       "paragraphs": [
-        "这一处参与相乘的是−3与−2y。把字母部分保留，数字因数相乘为(−3)·(−2)=6，所以得到6y。",
-        "这里判断的是系数6的符号，不能顺便断言6y的值一定为正；y的取值仍会影响乘积的符号。去括号时先算带符号的系数，再保留相应字母部分。"
+        "6y的系数是6，无论y取什么数，这个系数都不改变。6y的值却随y变化：y为正时它为正，y为负时它为负，y为0时它为0。因此，算出正系数以后，不能把含字母的整项直接判为正数。"
       ],
       "learningRole": "示范方法",
-      "learningGap": "旁注提问−3×(−2y)=6y，需要展开数字因数及符号的归属。",
-      "learningAction": "能识别−3和−2两个数字因数，解释正系数的来源而不误判式子值的符号。",
-      "related": []
+      "learningGap": "把数字因数相乘的理由集中在旁问，当前条目只区分正系数与整项的正负。",
+      "learningAction": "能根据y的取值判断6y的符号，同时保持对系数6的识别。",
+      "related": [
+        {
+          "locationId": "ch2-source-multiplication-rule",
+          "label": "有理数乘法的符号法则",
+          "purpose": "用6与y的同异号及0的情形判断乘积，不把系数符号当成整项符号。"
+        }
+      ]
     },
     {
       "id": "ch4-q-42-negative-product-question",
@@ -1628,33 +1702,35 @@
       "preview": "把数字因数和字母因数分清，说明等式的依据。",
       "paragraphs": [],
       "learningRole": "推导或证明",
-      "learningGap": "需要把含字母的乘积重新看成数字因数与字母因数，解释系数变号的依据。",
+      "learningGap": "需先说明负数乘法和乘法结合律，再解释旁问中6这个系数的来源。",
       "learningAction": "能通过数字因数重新结合，说明含字母乘积的系数为何改变。",
       "related": [
         {
-          "locationId": "ch4-monomial-product",
-          "label": "单项式的积结构",
-          "purpose": "把−2y拆看为数字因数与字母因数，才能解释系数的乘法。"
+          "locationId": "ch2-source-multiplication-rule",
+          "label": "有理数乘法的完整法则",
+          "purpose": "先定两个数字因数乘积的符号，再计算其大小。"
         },
         {
-          "locationId": "ch4-distribute-every-term",
-          "label": "去括号与分配律",
-          "purpose": "括号外的数要作用于括号内每一项，支持本题展开后再分类合并。"
+          "locationId": "ch4-source-monomial-definition",
+          "label": "单项式的原文定义",
+          "purpose": "回看积的结构及单独数、字母的规定，再判断当前式子。"
+        },
+        {
+          "locationId": "ch2-source-multiplication-laws",
+          "label": "乘法结合律",
+          "purpose": "把三个因数重新分组，先算两个数字因数而保留字母。"
         }
       ],
       "questionGuide": {
+        "continuous": true,
         "knowledgePoints": [
-          "有理数的乘法符号法则",
-          "乘法结合律",
-          "数与字母的积"
+          "有理数相乘，同号得正、异号得负，并把绝对值相乘；0与任何数相乘得0。−2y表示−2与y相乘。"
         ],
         "method": [
-          "把−2y看作−2与y的乘积，尝试只对数字因数重新结合。",
-          "用两个负数相乘的法则说明数字部分，再检查字母因数有没有改变。"
+          "所以−3×(−2y)可以按结合律先算−3与−2：两个数字因数同为负数，乘积是6，再与y相乘，就得到6y。"
         ],
         "cautions": [
-          "式子中有字母不改变有理数的乘法法则。",
-          "不要假定y一定为正；这里判断的是数字系数，字母y仍保留。"
+          "这说明的是数字系数为什么为正，不能据此认定6y的值一定为正；它的正负仍取决于y。"
         ]
       }
     },
@@ -1669,21 +1745,20 @@
       "learningAction": "能用位置关系区分相距与路程差，并解释对应整式加减的选择。",
       "related": [
         {
-          "locationId": "ch4-minus-bracket",
-          "label": "括号前的负号",
-          "purpose": "把减去一个整式看成乘以−1，核对括号内每一项的符号变化。"
+          "locationId": "ch4-source-remove-brackets",
+          "label": "去括号及括号前±号的规定",
+          "purpose": "核对外部因数怎样作用于每一项，保留完整符号。"
         },
         {
-          "locationId": "ch4-two-operations",
-          "label": "整式加减法则",
-          "purpose": "根据本题括号结构，连接去括号与合并同类项两个步骤。"
+          "locationId": "ch4-source-add-subtract-rule",
+          "label": "整式加减的原文法则",
+          "purpose": "根据当前式子有无括号，连接去括号与合并同类项。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "顺水速度与逆水速度",
-          "路程、速度和时间",
-          "整式的和与差"
+          "顺水速度=静水速度+水流速度；逆水速度=静水速度−水流速度。",
+          "路程=速度×时间；反向而行的间隔距离与两段路程的差要分别判断。"
         ],
         "method": [
           "先联系静水速度与水流速度，说明两船的实际速度为何不同。",
@@ -1722,20 +1797,15 @@
       "learningAction": "能按每一项的来源检查去括号过程，并说明改正依据。",
       "related": [
         {
-          "locationId": "ch4-minus-bracket",
-          "label": "括号前的负号",
-          "purpose": "把减去一个整式看成乘以−1，核对括号内每一项的符号变化。"
-        },
-        {
-          "locationId": "ch4-distribute-every-term",
-          "label": "去括号与分配律",
-          "purpose": "括号外的数要作用于括号内每一项，支持本题展开后再分类合并。"
+          "locationId": "ch4-source-remove-brackets",
+          "label": "去括号及括号前±号的规定",
+          "purpose": "核对外部因数怎样作用于每一项，保留完整符号。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "去括号法则",
-          "整式的项与符号"
+          "去括号时，括号外的数乘里面的每一项；括号前只有加号、减号时，分别相当于乘以1、−1。",
+          "式子中的每项都带着自己的符号。检查等号是否成立，要将原括号的各项与右边的对应项逐一核对。"
         ],
         "method": [
           "（1）逐项对照被减去的括号中的三项，检查每项的乘数是否一致。",
@@ -1758,14 +1828,15 @@
       "learningAction": "能把四题中每个括号前的符号对应到括号内每一项。",
       "related": [
         {
-          "locationId": "ch4-minus-bracket",
-          "label": "括号前的负号",
-          "purpose": "把减去一个整式看成乘以−1，核对括号内每一项的符号变化。"
+          "locationId": "ch4-source-remove-brackets",
+          "label": "去括号及括号前±号的规定",
+          "purpose": "核对外部因数怎样作用于每一项，保留完整符号。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "正号、负号前的去括号规则"
+          "去括号时，括号外的数乘里面的每一项；括号前只有加号、减号时，分别相当于乘以1、−1。",
+          "去括号要保持与原式相等；各括号前的符号不同，里面各项的处理也要分别判断。"
         ],
         "method": [
           "（1）检查加上的括号项；（2）同时留意括号外减号与括号内第一项的负号。",
@@ -1788,21 +1859,20 @@
       "learningAction": "能根据每个括号外的因数展开，再对同类项进行分组。",
       "related": [
         {
-          "locationId": "ch4-distribute-every-term",
-          "label": "去括号与分配律",
-          "purpose": "括号外的数要作用于括号内每一项，支持本题展开后再分类合并。"
+          "locationId": "ch4-source-remove-brackets",
+          "label": "去括号及括号前±号的规定",
+          "purpose": "核对外部因数怎样作用于每一项，保留完整符号。"
         },
         {
-          "locationId": "ch4-combine-rule",
-          "label": "合并同类项",
-          "purpose": "用各同类项系数的和替换原来的系数，并保持字母及其指数不变。"
+          "locationId": "ch4-source-combine-rule",
+          "label": "合并同类项的原文法则",
+          "purpose": "核对系数相加、字母及指数不变，再用于当前同类项。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "分配律",
-          "分数与小数系数",
-          "合并同类项"
+          "去括号时，括号外的数乘里面的每一项；括号前只有加号、减号时，分别相当于乘以1、−1。",
+          "所含字母相同，并且相同字母的指数也分别相同的项是同类项；几个常数项也是同类项。小数、分数系数也参与逐项相乘和系数加减，不改变字母部分的判断条件。"
         ],
         "method": [
           "（1）（2）分别找出括号外完整的带符号因数；小数和分数系数是否改变分配律的作用范围？",
@@ -1825,9 +1895,9 @@
       "learningAction": "能将两档用水量与各自单价匹配，检查是否重复收费或漏收费。",
       "related": [
         {
-          "locationId": "ch4-distribute-every-term",
-          "label": "去括号与分配律",
-          "purpose": "括号外的数要作用于括号内每一项，支持本题展开后再分类合并。"
+          "locationId": "ch4-source-remove-brackets",
+          "label": "去括号及括号前±号的规定",
+          "purpose": "核对外部因数怎样作用于每一项，保留完整符号。"
         },
         {
           "locationId": "ch4-bracket-time",
@@ -1837,9 +1907,8 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "分段计费的数量关系",
-          "单价乘数量",
-          "整式加法与去括号"
+          "一档水费=这一档的每立方米单价×按此单价收费的用量；不同档费用相加得到总水费。",
+          "超过15 m³的部分使用较高单价；a+2整个表示这一档单价，与该档用量相乘时要保留为整体。"
         ],
         "method": [
           "把20 m³的用水按收费标准划分为两部分，分别确定数量与单价。",
@@ -1862,21 +1931,20 @@
       "learningAction": "能解释整式和与差在去括号时的区别，并识别合并对象。",
       "related": [
         {
-          "locationId": "ch4-minus-bracket",
-          "label": "括号前的负号",
-          "purpose": "把减去一个整式看成乘以−1，核对括号内每一项的符号变化。"
+          "locationId": "ch4-source-remove-brackets",
+          "label": "去括号及括号前±号的规定",
+          "purpose": "核对外部因数怎样作用于每一项，保留完整符号。"
         },
         {
-          "locationId": "ch4-combine-rule",
-          "label": "合并同类项",
-          "purpose": "用各同类项系数的和替换原来的系数，并保持字母及其指数不变。"
+          "locationId": "ch4-source-combine-rule",
+          "label": "合并同类项的原文法则",
+          "purpose": "核对系数相加、字母及指数不变，再用于当前同类项。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "整式加减",
-          "去括号",
-          "同类项"
+          "去括号时，括号外的数乘里面的每一项；括号前只有加号、减号时，分别相当于乘以1、−1。",
+          "所含字母相同，并且相同字母的指数也分别相同的项是同类项；几个常数项也是同类项。合并同类项时，系数相加，字母及其指数保持不变。"
         ],
         "method": [
           "（1）把两个括号各自看成一个加数，说明展开后哪些项可归为同一组。",
@@ -1899,26 +1967,25 @@
       "learningAction": "能根据尺寸表表示每组面的面积，解释两问所用的整式和与差。",
       "related": [
         {
-          "locationId": "ch4-monomial-product",
-          "label": "单项式",
-          "purpose": "把每个面的面积看作两条边长的积，准确记录数与字母因数。"
+          "locationId": "ch4-box-surface",
+          "label": "长方体的三对面",
+          "purpose": "回顾每对面的两条边怎样决定面积，并检查放大后的各组边长。"
         },
         {
-          "locationId": "ch4-minus-bracket",
-          "label": "括号前的负号",
-          "purpose": "把减去一个整式看成乘以−1，核对括号内每一项的符号变化。"
+          "locationId": "ch4-source-remove-brackets",
+          "label": "去括号及括号前±号的规定",
+          "purpose": "核对外部因数怎样作用于每一项，保留完整符号。"
         },
         {
-          "locationId": "ch4-combine-rule",
-          "label": "合并同类项",
-          "purpose": "用各同类项系数的和替换原来的系数，并保持字母及其指数不变。"
+          "locationId": "ch4-source-combine-rule",
+          "label": "合并同类项的原文法则",
+          "purpose": "核对系数相加、字母及指数不变，再用于当前同类项。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "长方体表面积",
-          "数与字母的积",
-          "整式的和与差"
+          "长方体有三对相同的面，表面积=（长×宽+宽×高+高×长）×2；尺寸表中的每组长度各用于相应的面。",
+          "总用纸量比较两个表面积的和，多用纸量比较它们的差；整组相减时，减号作用于该表面积的全部各项。"
         ],
         "method": [
           "先从表中配对长、宽、高，辨认三组不同方向的面，并说明每组面积出现几次。",
@@ -1964,9 +2031,9 @@
           "purpose": "在章末对照另一种结构识别方式，尝试保留重复的整体。"
         },
         {
-          "locationId": "ch4-combine-rule",
-          "label": "回顾合并依据",
-          "purpose": "检查是否存在相同的字母部分。"
+          "locationId": "ch4-source-combine-rule",
+          "label": "合并同类项的原文法则",
+          "purpose": "核对系数相加、字母及指数不变，再用于当前同类项。"
         }
       ]
     },
@@ -1981,9 +2048,9 @@
       "learningAction": "能说明本题化简的作用，并检查负数与分数代入的范围。",
       "related": [
         {
-          "locationId": "ch4-two-operations",
-          "label": "整式加减法则",
-          "purpose": "根据本题括号结构，连接去括号与合并同类项两个步骤。"
+          "locationId": "ch4-source-add-subtract-rule",
+          "label": "整式加减的原文法则",
+          "purpose": "根据当前式子有无括号，连接去括号与合并同类项。"
         },
         {
           "locationId": "ch4-simplify-value",
@@ -1993,9 +2060,8 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "整式加减与化简",
-          "负数、分数代入",
-          "乘方的运算顺序"
+          "去括号时，括号外的数乘里面的每一项；括号前只有加号、减号时，分别相当于乘以1、−1。合并同类项时，系数相加，字母及其指数保持不变。",
+          "负数和分数都要整体代入；乘方先于乘法，不能只给分数的分子平方。化简前后应保持同一取值下的值相同。"
         ],
         "method": [
           "先辨认各个括号外的因数，再用同类项条件检查原式；哪些重复计算可能减少？结合教材解答说明理由。",
@@ -2033,21 +2099,20 @@
       "learningAction": "能针对三种括号结构逐项展开，并按字母和指数分组。",
       "related": [
         {
-          "locationId": "ch4-distribute-every-term",
-          "label": "去括号与分配律",
-          "purpose": "括号外的数要作用于括号内每一项，支持本题展开后再分类合并。"
+          "locationId": "ch4-source-remove-brackets",
+          "label": "去括号及括号前±号的规定",
+          "purpose": "核对外部因数怎样作用于每一项，保留完整符号。"
         },
         {
-          "locationId": "ch4-like-terms",
-          "label": "同类项",
-          "purpose": "先核对字母和对应指数，才能决定本题哪些项可以合并。"
+          "locationId": "ch4-source-like-terms",
+          "label": "同类项的完整条件",
+          "purpose": "逐个比较字母及其指数，常数项也按规定处理。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "整式加减",
-          "负号与负因数去括号",
-          "同类项与分数系数"
+          "去括号时，括号外的数乘里面的每一项；括号前只有加号、减号时，分别相当于乘以1、−1。",
+          "所含字母相同，并且相同字母的指数也分别相同的项是同类项；几个常数项也是同类项。常数项和分数系数也要保留符号，不能因它们不含字母就漏乘。"
         ],
         "method": [
           "（1）括号内的负项被减去后，符号由哪两个负号决定？再用同类项条件自行判断合并对象。",
@@ -2072,9 +2137,9 @@
       "learningAction": "能从括号结构中找出合并对象，再根据化简式决定代入计算。",
       "related": [
         {
-          "locationId": "ch4-two-operations",
-          "label": "整式加减法则",
-          "purpose": "根据本题括号结构，连接去括号与合并同类项两个步骤。"
+          "locationId": "ch4-source-add-subtract-rule",
+          "label": "整式加减的原文法则",
+          "purpose": "根据当前式子有无括号，连接去括号与合并同类项。"
         },
         {
           "locationId": "ch4-simplify-value",
@@ -2084,8 +2149,8 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "去括号与合并同类项",
-          "多字母代数式求值"
+          "去括号时，括号外的数乘里面的每一项；括号前只有加号、减号时，分别相当于乘以1、−1。合并同类项时，系数相加，字母及其指数保持不变。",
+          "多字母求值时，每个字母使用各自给定的值；化简后未出现的字母无需另做运算，字母取值不能改变同类项条件。"
         ],
         "method": [
           "先确定−2作用的括号范围，再检查各类项合并后哪些仍保留。",
@@ -2108,21 +2173,20 @@
       "learningAction": "能将相同单价对应的数量合并，并检查总费用的覆盖范围。",
       "related": [
         {
-          "locationId": "ch4-combine-rule",
-          "label": "合并同类项",
-          "purpose": "用各同类项系数的和替换原来的系数，并保持字母及其指数不变。"
+          "locationId": "ch4-source-combine-rule",
+          "label": "合并同类项的原文法则",
+          "purpose": "核对系数相加、字母及指数不变，再用于当前同类项。"
         },
         {
-          "locationId": "ch4-like-terms",
-          "label": "同类项",
-          "purpose": "先核对字母和对应指数，才能决定本题哪些项可以合并。"
+          "locationId": "ch4-source-like-terms",
+          "label": "同类项的完整条件",
+          "purpose": "逐个比较字母及其指数，常数项也按规定处理。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "总价等于单价乘数量",
-          "整式加法",
-          "同类项的实际意义"
+          "总价=单价×数量；同一种商品的相同单价可以作为共同因数。",
+          "同类项相加只加系数、保留共同字母部分；在这里可对应为同种商品的购买数量相加，单价保持不变。"
         ],
         "method": [
           "辨认x、y分别对应哪种商品，并从每个人的购买清单中找出对应数量。",
@@ -2145,20 +2209,20 @@
       "learningAction": "能处理省略、负数和小数系数，并区分两类不同的字母部分。",
       "related": [
         {
-          "locationId": "ch4-like-terms",
-          "label": "同类项",
-          "purpose": "先核对字母和对应指数，才能决定本题哪些项可以合并。"
+          "locationId": "ch4-source-like-terms",
+          "label": "同类项的完整条件",
+          "purpose": "逐个比较字母及其指数，常数项也按规定处理。"
         },
         {
-          "locationId": "ch4-combine-rule",
-          "label": "合并同类项",
-          "purpose": "用各同类项系数的和替换原来的系数，并保持字母及其指数不变。"
+          "locationId": "ch4-source-combine-rule",
+          "label": "合并同类项的原文法则",
+          "purpose": "核对系数相加、字母及指数不变，再用于当前同类项。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "合并同类项",
-          "省略的系数1与−1"
+          "所含字母相同，并且相同字母的指数也分别相同的项是同类项；几个常数项也是同类项。",
+          "单项式的系数是带符号的数字因数；系数为1或−1时，1常省略不写。合并同类项时，系数相加，字母及其指数保持不变。"
         ],
         "method": [
           "（1）（2）各项的数字因数分别是什么？把省略的系数读完整，再自行合并。",
@@ -2181,26 +2245,20 @@
       "learningAction": "能读出每个括号外的因数，并在展开后按同类项检查。",
       "related": [
         {
-          "locationId": "ch4-distribute-every-term",
-          "label": "去括号与分配律",
-          "purpose": "括号外的数要作用于括号内每一项，支持本题展开后再分类合并。"
+          "locationId": "ch4-source-remove-brackets",
+          "label": "去括号及括号前±号的规定",
+          "purpose": "核对外部因数怎样作用于每一项，保留完整符号。"
         },
         {
-          "locationId": "ch4-minus-bracket",
-          "label": "括号前的负号",
-          "purpose": "把减去一个整式看成乘以−1，核对括号内每一项的符号变化。"
-        },
-        {
-          "locationId": "ch4-like-terms",
-          "label": "同类项",
-          "purpose": "先核对字母和对应指数，才能决定本题哪些项可以合并。"
+          "locationId": "ch4-source-like-terms",
+          "label": "同类项的完整条件",
+          "purpose": "逐个比较字母及其指数，常数项也按规定处理。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "分配律",
-          "正负因数去括号",
-          "同类项"
+          "去括号时，括号外的数乘里面的每一项；括号前只有加号、减号时，分别相当于乘以1、−1。",
+          "所含字母相同，并且相同字母的指数也分别相同的项是同类项；几个常数项也是同类项。合并同类项时，系数相加，字母及其指数保持不变。"
         ],
         "method": [
           "（1）（2）分别指出括号外完整的因数，解释它是否也作用于常数项；再自行完成化简。",
@@ -2223,26 +2281,25 @@
       "learningAction": "能解释四题中括号范围的不同，并逐层检查符号与同类项。",
       "related": [
         {
-          "locationId": "ch4-two-operations",
-          "label": "整式加减法则",
-          "purpose": "根据本题括号结构，连接去括号与合并同类项两个步骤。"
+          "locationId": "ch4-source-add-subtract-rule",
+          "label": "整式加减的原文法则",
+          "purpose": "根据当前式子有无括号，连接去括号与合并同类项。"
         },
         {
-          "locationId": "ch4-minus-bracket",
-          "label": "括号前的负号",
-          "purpose": "把减去一个整式看成乘以−1，核对括号内每一项的符号变化。"
+          "locationId": "ch4-source-remove-brackets",
+          "label": "去括号及括号前±号的规定",
+          "purpose": "核对外部因数怎样作用于每一项，保留完整符号。"
         },
         {
-          "locationId": "ch4-like-terms",
-          "label": "同类项",
-          "purpose": "先核对字母和对应指数，才能决定本题哪些项可以合并。"
+          "locationId": "ch4-source-like-terms",
+          "label": "同类项的完整条件",
+          "purpose": "逐个比较字母及其指数，常数项也按规定处理。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "整式加减",
-          "嵌套括号",
-          "分数系数与同类项"
+          "去括号时，括号外的数乘里面的每一项；括号前只有加号、减号时，分别相当于乘以1、−1。",
+          "有两层括号时，每个负号都有自己的作用范围；处理一层须保留另一层的整体。展开后仍按字母及对应指数判断同类项。"
         ],
         "method": [
           "（1）（2）先读清两个整式之间的运算；哪些项能合并，需要逐项核对字母和指数，不能按前后位置配对。",
@@ -2269,9 +2326,9 @@
       "learningAction": "能辨认嵌套括号的两层范围，并自主逐层去括号。",
       "related": [
         {
-          "locationId": "ch4-minus-bracket",
-          "label": "回顾一个负号作用于什么",
-          "purpose": "把每层括号中的式子当作独立整体检查。"
+          "locationId": "ch4-source-remove-brackets",
+          "label": "去括号及括号前±号的规定",
+          "purpose": "核对外部因数怎样作用于每一项，保留完整符号。"
         }
       ]
     },
@@ -2286,14 +2343,14 @@
       "learningAction": "能分清两个三次项类别，检查负分数在不同指数位置的代入。",
       "related": [
         {
-          "locationId": "ch4-like-terms",
-          "label": "同类项",
-          "purpose": "先核对字母和对应指数，才能决定本题哪些项可以合并。"
+          "locationId": "ch4-source-like-terms",
+          "label": "同类项的完整条件",
+          "purpose": "逐个比较字母及其指数，常数项也按规定处理。"
         },
         {
-          "locationId": "ch4-distribute-every-term",
-          "label": "去括号与分配律",
-          "purpose": "括号外的数要作用于括号内每一项，支持本题展开后再分类合并。"
+          "locationId": "ch4-source-remove-brackets",
+          "label": "去括号及括号前±号的规定",
+          "purpose": "核对外部因数怎样作用于每一项，保留完整符号。"
         },
         {
           "locationId": "ch4-simplify-value",
@@ -2303,9 +2360,8 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "同类项的判断",
-          "分配律",
-          "负数代入与乘方"
+          "所含字母相同，并且相同字母的指数也分别相同的项是同类项；几个常数项也是同类项。",
+          "括号外的因数乘里面每一项，之后按同类项合并。给定的负分数在一次乘法和平方中所处位置不同，应整体代入。"
         ],
         "method": [
           "原式中的项是否都同类？逐个核对字母及指数，并辨认各括号外因数的作用范围，再自行化简。",
@@ -2328,21 +2384,20 @@
       "learningAction": "能用共同基准表示两地海拔，并检查海拔差中的整体减法。",
       "related": [
         {
-          "locationId": "ch4-minus-bracket",
-          "label": "括号前的负号",
-          "purpose": "把减去一个整式看成乘以−1，核对括号内每一项的符号变化。"
+          "locationId": "ch4-source-remove-brackets",
+          "label": "去括号及括号前±号的规定",
+          "purpose": "核对外部因数怎样作用于每一项，保留完整符号。"
         },
         {
-          "locationId": "ch4-signed-terms",
-          "label": "带符号的项",
-          "purpose": "升高与降低分别对应加上正量和负量，可先保持每一项的实际意义。"
+          "locationId": "ch4-source-polynomial-definition",
+          "label": "多项式、项与常数项的定义",
+          "purpose": "将原式读成带符号的单项式之和，辨认各项。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "用字母表示相对变化",
-          "整式的差",
-          "带括号的减法"
+          "相对甲地高多少，是在甲地海拔上增加；相对甲地低多少，是从甲地海拔扣除。各地海拔都使用同一个基准h。",
+          "两个海拔表达式相减时，整个减数都在减号作用范围内；括号前减号相当于乘以−1。"
         ],
         "method": [
           "分别将“比甲高”和“比甲低”转成相对于h的变化，核对两地海拔表达式。",
@@ -2365,9 +2420,9 @@
       "learningAction": "能分别判断具体值与一般值所需的证据，并独立用化简检验一般说法。",
       "related": [
         {
-          "locationId": "ch4-two-operations",
-          "label": "整式加减法则",
-          "purpose": "根据本题括号结构，连接去括号与合并同类项两个步骤。"
+          "locationId": "ch4-source-add-subtract-rule",
+          "label": "整式加减的原文法则",
+          "purpose": "根据当前式子有无括号，连接去括号与合并同类项。"
         },
         {
           "locationId": "ch4-values-and-law",
@@ -2377,9 +2432,8 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "整式化简与同类项",
-          "代入检验",
-          "一般结论与具体例子"
+          "化简利用去括号、合并同类项保持原式的值；它可以显示结果是否仍依赖a。",
+          "代入一个数只能检查这个取值；判断“任意有理数”时，需要能对所有允许的a成立的运算依据。"
         ],
         "method": [
           "分别读清甲、乙、丙的说法：前两人给定了具体数值，第三人谈的是任意有理数。",
@@ -2399,7 +2453,7 @@
       "preview": "检验一个取值，不能直接证明所有取值。",
       "paragraphs": [
         "甲、乙各讨论一个具体取值，丙讨论所有允许的取值。判断时先分清每句话覆盖的范围，再选择相应的依据。",
-        "数值代入可以检查具体情况；要判断是否对任意a成立，可以考察原式化简后是否仍随a变化。化简和结论由你完成，不能只从甲、乙两个结果相同就推断丙正确。"
+        "数值代入可以检查具体情况；要判断是否对任意a成立，可以考察原式化简后是否仍随a变化。不能只从甲、乙两个结果相同就推断丙正确。"
       ],
       "learningRole": "练习",
       "learningGap": "题目要求比较特称与全称说法，提示需区分证据范围而不宣布答案。",
@@ -2423,21 +2477,20 @@
       "learningAction": "能辨认连续比较中每句话的基准，独立表示各边并组织周长。",
       "related": [
         {
-          "locationId": "ch4-distribute-every-term",
-          "label": "去括号与分配律",
-          "purpose": "括号外的数要作用于括号内每一项，支持本题展开后再分类合并。"
+          "locationId": "ch4-source-remove-brackets",
+          "label": "去括号及括号前±号的规定",
+          "purpose": "核对外部因数怎样作用于每一项，保留完整符号。"
         },
         {
-          "locationId": "ch4-combine-rule",
-          "label": "合并同类项",
-          "purpose": "用各同类项系数的和替换原来的系数，并保持字母及其指数不变。"
+          "locationId": "ch4-source-combine-rule",
+          "label": "合并同类项的原文法则",
+          "purpose": "核对系数相加、字母及指数不变，再用于当前同类项。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "用代数式表示数量关系",
-          "数乘整式",
-          "周长与整式加法"
+          "比某条边短多少，要从该边长度中扣除；比某条边的2倍还长多少，先以该边的完整长度为倍数基准。",
+          "三角形周长是三条边长之和；若边长写成多项式，仍要把每条边作为完整数量计入。"
         ],
         "method": [
           "（1）第一条边是已知基准，先读清第二条边“短”的对象，再读第三条边中“2倍”修饰哪条边。",
@@ -2458,24 +2511,24 @@
       "paragraphs": [],
       "learningRole": "练习",
       "learningGap": "同一图形的面积计算和外框计量选取的对象不同，需要区分内部线段与外边界。",
-      "learningAction": "能从同一图形分别识别面积分块和外框边界，并检查量纲。",
+      "learningAction": "能从同一图形分别识别面积分块和外框边界，并检查面积与长度单位。",
       "related": [
         {
-          "locationId": "ch4-monomial-product",
-          "label": "单项式",
-          "purpose": "边长相乘得到面积时字母次数会变化，可据此区分长度项与面积项。"
+          "locationId": "ch3-circle-area-formula",
+          "label": "圆面积与半径",
+          "purpose": "回顾圆面积后，按图中半圆所占部分确定其面积，先检查半径与a的关系。"
         },
         {
-          "locationId": "ch4-combine-rule",
-          "label": "合并同类项",
-          "purpose": "用各同类项系数的和替换原来的系数，并保持字母及其指数不变。"
+          "locationId": "ch3-circle-circumference-formula",
+          "label": "圆周长与直径",
+          "purpose": "回顾整圆周长，再判断上部弧线占圆周的哪一部分；直线边界另行辨认。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "正方形与半圆的面积",
-          "半圆弧长",
-          "组合图形的外边界"
+          "正方形面积=边长×边长；半圆面积是同半径整圆面积的一半。",
+          "圆周长=π×直径；半圆弧长是同半径圆周长的一半，不包含直径。",
+          "组合图形的外框只沿外边界计算。"
         ],
         "method": [
           "先用小正方形边长a核对下部总宽、高及上部半圆的半径。",
@@ -2499,21 +2552,20 @@
       "learningAction": "能为两个百分比指定各自的基准，并区分售价降低与盈利。",
       "related": [
         {
-          "locationId": "ch4-monomial-product",
-          "label": "数与字母的积",
-          "purpose": "把“某数量的百分之几”看成数与完整数量相乘，保持每次乘法的基准。"
+          "locationId": "ch4-source-monomial-definition",
+          "label": "单项式的原文定义",
+          "purpose": "回看积的结构及单独数、字母的规定，再判断当前式子。"
         },
         {
-          "locationId": "ch4-minus-bracket",
-          "label": "括号前的负号",
-          "purpose": "把减去一个整式看成乘以−1，核对括号内每一项的符号变化。"
+          "locationId": "ch4-source-remove-brackets",
+          "label": "去括号及括号前±号的规定",
+          "purpose": "核对外部因数怎样作用于每一项，保留完整符号。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "百分比与单位量",
-          "用代数式表示售价",
-          "盈利等于售价与进价之差"
+          "百分数表示每100份中的多少份。某数量的20%是该数量乘20/100；九折表示现售价为原售价的90%。",
+          "盈利=售价−进价。本题加价和打折的基准不同，要分别说清“百分之几”是谁的百分之几。"
         ],
         "method": [
           "分清进价、原售价、现售价三个数量，逐句确认20%和90%分别作用于哪一个。",
@@ -2537,9 +2589,9 @@
       "learningAction": "能识别重复计数处，给出一般计数理由并自行完成三个给定值的计算。",
       "related": [
         {
-          "locationId": "ch4-combine-rule",
-          "label": "合并同类项",
-          "purpose": "用各同类项系数的和替换原来的系数，并保持字母及其指数不变。"
+          "locationId": "ch4-source-combine-rule",
+          "label": "合并同类项的原文法则",
+          "purpose": "核对系数相加、字母及指数不变，再用于当前同类项。"
         },
         {
           "locationId": "ch4-values-and-law",
@@ -2549,9 +2601,8 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "用字母表示图形规律",
-          "重复计数的校正",
-          "代数式求值"
+          "每条边上的点数包括两端顶点；按三条边分别数时，顶点会被重复登记，实际每点只计一次。",
+          "用n表示每边点数后，计数理由应适用于任意允许的图形，再代入具体n求值。"
         ],
         "method": [
           "观察n=2、3、4的图，比较按边计数与实际点数之间的差异。",
@@ -2575,21 +2626,20 @@
       "learningAction": "能区分可见面、外露面和接触面，并用不重不漏的方式组织表面积计算。",
       "related": [
         {
-          "locationId": "ch4-monomial-product",
-          "label": "单项式与面积",
-          "purpose": "将一个小正方形面的面积表示为边长的积，再乘同样大小的外露面数。"
+          "locationId": "ch3-square-perimeter-area-formulas",
+          "label": "正方形面积与边长",
+          "purpose": "回顾一个小正方形面的面积怎样由棱长确定；外露面数仍须按图辨认。"
         },
         {
-          "locationId": "ch4-combine-rule",
-          "label": "合并同类项",
-          "purpose": "用各同类项系数的和替换原来的系数，并保持字母及其指数不变。"
+          "locationId": "ch4-source-combine-rule",
+          "label": "合并同类项的原文法则",
+          "purpose": "核对系数相加、字母及指数不变，再用于当前同类项。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "正方体表面积",
-          "组合体外露面计数",
-          "同类面积的合并"
+          "正方形面积=边长×边长；相同大小外露面的总面积=一个面的面积×外露面数。",
+          "相接的面在组合体内部，不属于整个组合体的外表面。"
         ],
         "method": [
           "联系题目给出的10个正方体与图形层次，检查被遮挡的正方体和外表面。",
@@ -2613,24 +2663,22 @@
       "learningGap": "求平均值时需区分对整个总和作除法与只除一项，并与六个数据对应。",
       "learningAction": "能将六个数据与求和、平均表达式对应，检查分数线的作用范围。",
       "questionGuide": {
+        "continuous": true,
         "knowledgePoints": [
-          "代数式求值；平均数与总和、个数的关系。",
-          "单元格数据与字母取值的一一对应。"
+          "平均数=全部数据的总和÷数据个数。教材选了六个单元格，所以要把这六个数全部相加，再将整个和除以6。"
         ],
         "method": [
-          "把选中的六个单元格分别对应一个数，区分“求总和”与“求平均值”两个计算目标。",
-          "观察平均值表达式中分数线覆盖的范围，再核对选取的单元格数。"
+          "单元格地址表示数据的位置。例如A2指第A列第2行，不是A与2相乘。读求和、平均公式时，先让每个地址对应其数据，再看这些数怎样一起参与运算。"
         ],
         "cautions": [
-          "平均值是整个总和除以数据个数，不能只除最后一项。",
-          "单元格地址A2表示位置，不能读作字母A与数字2相乘。"
+          "平均值中，分数线覆盖的是全部六个数的和；若只让最后一项除以6，前五项就没有参加平均分配。"
         ]
       },
       "related": [
         {
-          "locationId": "ch4-substitute-whole",
-          "label": "代入时保持运算对象",
-          "purpose": "理解平均值中整个和作为被除数，读清括号或分数线范围。"
+          "locationId": "ch4-source-spreadsheet-average",
+          "label": "六个数的和与平均数原式",
+          "purpose": "对照同一组六个数，检查平均数中的总和与除以6的范围。"
         }
       ]
     },
@@ -2644,24 +2692,27 @@
       "learningGap": "电子表格公式需把单元格引用与同一代数式的不同取值对应。",
       "learningAction": "能读出公式各运算的对象，并核对两组数据使用的单元格引用。",
       "questionGuide": {
+        "continuous": true,
         "knowledgePoints": [
-          "多项式代入求值。",
-          "平方与乘法的运算顺序；单元格引用。"
+          "代数式求值是用给定数替换字母，再按原式运算。电子表格用单元格地址取得这些数，因此先要看清同一行的x、y分别放在哪个单元格。"
         ],
         "method": [
-          "对应教材的两组x、y取值，确认每组数据分别放入哪些单元格，再读公式中平方、乘法和加法的作用对象。",
-          "比较两组数据：保持同一数量关系，只更换对应的取值与单元格引用。"
+          "公式中的^表示乘方，*表示乘法，平方、乘法、加法的先后仍由原式决定。换到第二组数据时，数量关系不变，引用的位置要跟着换成第二组所在的单元格。"
         ],
         "cautions": [
-          "公式中的^表示乘方，*表示乘法，不能将单元格编号中的数字当成指数。",
-          "换到第二行计算时，要核对引用是否对应第二组数据，不能只改显示结果。"
+          "单元格地址中的数字是行号，不是指数；改变引用与直接改显示结果有不同含义，核对时应回到公式本身。"
         ]
       },
       "related": [
         {
-          "locationId": "ch4-substitute-whole",
-          "label": "代入求值",
-          "purpose": "把单元格中的整个数放进字母位置，并保留原有运算。"
+          "locationId": "ch3-source-expression-value",
+          "label": "代数式的值的定义",
+          "purpose": "把单元格中的数对应到字母，再保留原式运算求值。"
+        },
+        {
+          "locationId": "ch2-source-operation-order",
+          "label": "有理数混合运算顺序",
+          "purpose": "核对电子表格公式中乘方、乘法、加法的先后。"
         }
       ]
     },
@@ -2676,8 +2727,8 @@
       "learningAction": "能逐问观察、提出猜想、检查完整日期条件，并用位置关系尝试一般说明。",
       "questionGuide": {
         "knowledgePoints": [
-          "用字母表示有固定位置关系的数。",
-          "整式加减；从具体检验到一般说明。"
+          "同一行相邻日期相差1，同一列相邻日期相差7；完整的框内各日期都能按位置联系到一个参照日期。",
+          "用字母表示参照日期，可将其他日期写成与它有关的式子，再用整式加减比较日期之和；有限几个试算不能代替一般理由。"
         ],
         "method": [
           "（1）分别记录九数和与中心日期，比较它们；（2）在图2重复同样的比较，注意改变的是位置还是图案形状。",
@@ -2695,6 +2746,11 @@
           "locationId": "ch4-values-and-law",
           "label": "数值检验与一般理由",
           "purpose": "区分移动方框的试验结果与适用于任意完整日期区域的说明。"
+        },
+        {
+          "locationId": "ch4-source-add-subtract-rule",
+          "label": "整式加减法则",
+          "purpose": "把日期写成与参照日期有关的式子后，按法则比较日期之和。"
         }
       ]
     },
@@ -2705,7 +2761,7 @@
       "preview": "找出日期间不随位置改变的关系，并确认方框始终完整。",
       "paragraphs": [
         "移动方框可以检验你猜到的关系，但几个例子相同，还不足以说明任何位置都成立。可以选择一个日期作参照，用字母表示它，再研究其他位置与它的差怎样由月历的排列决定。",
-        "讨论之前也要确认所框的是同一个月内完整的日期区域，没有把月初、月末的空格当成日期。接着由你列式、比较并说明规律，提示不预先给出这9个数的和。"
+        "讨论之前也要确认所框的是同一个月内完整的日期区域，没有把月初、月末的空格当成日期。列式时，把各日期与参照日期的差写清，再比较所选区域的日期之和。"
       ],
       "learningRole": "探究",
       "learningGap": "活动要求从试验走向一般理由，需要补观察不变量与日期区域完整性的条件。",
@@ -2729,8 +2785,8 @@
       "learningAction": "能解释两位数示范的拆分目的，自主尝试更多数位的证明。",
       "questionGuide": {
         "knowledgePoints": [
-          "十进制位值表示与数字的取值范围。",
-          "整式拆分；整数倍的和仍是整数倍。"
+          "能被3整除，指这个数可以写成3乘一个整数；3的整数倍相加或相减，结果仍是3的整数倍。",
+          "十进制中，每个数字的贡献取决于所在数位；写成式子后，可将这个数与各位数字之和放在同一个等式中比较。"
         ],
         "method": [
           "两位数部分：跟随教材的等式，解释拆分怎样让“各位数字之和”出现，并指出剩余部分为什么能被3整除。",
@@ -2739,8 +2795,7 @@
         ],
         "cautions": [
           "最高位数字不能为0，其他各位可为0；各数字都是整数。",
-          "带横线的数字组合不是字母乘积。",
-          "只需把教材提出的规律说明清楚；更多数位的具体拆分由你完成。"
+          "带横线的数字组合不是字母乘积。"
         ]
       },
       "related": [
@@ -2776,8 +2831,8 @@
       "title": "为什么把10a拆成9a与a？",
       "preview": "拆分是为了把要判断的数与“数字之和”接起来。",
       "paragraphs": [
-        "这里的目标不是让式子更短，而是把两位数与a+b放在同一个等式里。10a拆出一个a后，剩余的9a必定是3的整数倍，因为a是整数。",
-        "因此，当a+b也是3的整数倍时，两部分的和也就是3的整数倍。推广到更多数位时，需要自己寻找同样的连接；本段只解释教材已经展示的两位数理由。"
+        "教材把两位数与数字和a+b放在同一个等式里，用来判断两者的整除关系。10a拆出一个a后，剩余9a必定是3的整数倍，因为a是整数。",
+        "若a+b是3的整数倍，加上9a后原数仍是3的整数倍；反过来，若原数能被3整除，减去9a后，a+b也能被3整除。推广到更多数位时，继续寻找能被3整除的部分与各位数字之和的联系。"
       ],
       "learningRole": "推导或证明",
       "learningGap": "教材给出10a到9a+a的变形，需补明拆分服务于连接数字和的目的。",
@@ -2790,22 +2845,27 @@
       "title": "同一条分配律，怎样做两件事？",
       "preview": "展开和合并，是在不同方向使用同一个等式。",
       "paragraphs": [
-        "分配律p(U+V)=pU+pV，从左往右可以把括号外的因数分到各项；把共同因数收回去，则可以理解同类项系数为什么相加。",
-        "两种操作看上去一个把式子展开、一个把式子缩短，却都依据数的运算律保持值不变。复习时可以选一个自己的式子，分别说明哪部分是共同因数、哪部分是和。"
+        "分配律a(b+c)=ab+ac从左往右使用时，a与括号内每一项相乘；从右往左使用时，把两个乘积共有的因数a保留，将b、c相加。",
+        "合并同类项时，共有的因数是相同字母部分；去括号时，是让外面的数作用于里面每一项。两种写法都由同一条运算律保证值不变。"
       ],
       "learningRole": "回顾与整理",
       "learningGap": "小结列出共同依据，需要把两种操作与同一等式的使用方向对应。",
       "learningAction": "能用分配律统一解释展开括号与合并同类项，并自主举例。",
       "related": [
         {
-          "locationId": "ch4-combine-rule",
-          "label": "回顾系数相加",
-          "purpose": "看共同字母部分作为因数保留的方向。"
+          "locationId": "ch4-source-combine-rule",
+          "label": "合并同类项的原文法则",
+          "purpose": "核对系数相加、字母及指数不变，再用于当前同类项。"
         },
         {
-          "locationId": "ch4-distribute-every-term",
-          "label": "回顾逐项相乘",
-          "purpose": "看括号外因数分到和的每一项的方向。"
+          "locationId": "ch4-source-remove-brackets",
+          "label": "去括号及括号前±号的规定",
+          "purpose": "核对外部因数怎样作用于每一项，保留完整符号。"
+        },
+        {
+          "locationId": "ch2-source-distributive-law",
+          "label": "有理数乘法的分配律",
+          "purpose": "回看一个因数与和相乘的等式，辨认展开或收回共同因数的依据。"
         }
       ]
     },
@@ -2820,12 +2880,12 @@
       "learningAction": "能举出有明确字母含义的实际例子并正确识别系数、项和次数。",
       "questionGuide": {
         "knowledgePoints": [
-          "单项式的系数和次数；多项式的项和次数。",
-          "用代数式表示实际数量关系。"
+          "数或字母的积叫单项式，单独的数或字母也是单项式；数字因数可以是分数。几个单项式的和叫多项式。",
+          "单项式的系数是带符号的数字因数；系数为1或−1时，1常省略不写。单项式的次数是所有字母指数的和，未写指数的字母指数为1；数字因数不计入次数。多项式每项连同符号识别，次数取各项次数最高值。"
         ],
         "method": [
           "选一个能说明各字母含义的实际情境，自行举出单项式与多项式的例子。",
-          "分别指出单项式的数字因数及字母指数，列出多项式带符号的项，再比较各项次数。"
+          "用单项式的积结构、多项式的单项式之和分别核对例子的归属，再指出数字因数、带符号的项和相应次数；不能仅因式子含字母就把它列入某一类。"
         ],
         "cautions": [
           "实际量的单位和字母取值需符合情境。",
@@ -2834,14 +2894,29 @@
       },
       "related": [
         {
-          "locationId": "ch4-coefficient-sign",
-          "label": "单项式的系数",
-          "purpose": "检查自举例子中数字因数及符号。"
+          "locationId": "ch4-source-monomial-definition",
+          "label": "单项式的原文定义",
+          "purpose": "回看积的结构及单独数、字母的规定，再判断当前式子。"
         },
         {
-          "locationId": "ch4-polynomial-degree",
-          "label": "多项式的次数",
-          "purpose": "区分每项的次数和整个多项式的次数。"
+          "locationId": "ch4-source-polynomial-definition",
+          "label": "多项式、项与常数项的定义",
+          "purpose": "将原式读成带符号的单项式之和，辨认各项。"
+        },
+        {
+          "locationId": "ch4-source-coefficient",
+          "label": "系数及±1省写的原文规定",
+          "purpose": "识别完整数字因数，连同符号读取省写的系数。"
+        },
+        {
+          "locationId": "ch4-source-polynomial-degree",
+          "label": "多项式次数的原文定义",
+          "purpose": "先确定每项次数，再取最高值，区分项数与次数。"
+        },
+        {
+          "locationId": "ch4-source-integral-definition",
+          "label": "整式的原文定义",
+          "purpose": "确认单项式与多项式统称整式，再辨认当前对象。"
         }
       ]
     },
@@ -2856,8 +2931,8 @@
       "learningAction": "能用自举例子说明两种变形为何都来自分配律。",
       "questionGuide": {
         "knowledgePoints": [
-          "分配律；合并同类项与去括号。",
-          "整式变形保持同一取值下的值不变。"
+          "分配律a(b+c)=ab+ac说明：展开时a要乘每一项；反向使用时，两个乘积的共同因数a可保留。",
+          "合并同类项将共同字母部分保留，系数相加；两种变形都使同一取值下的值保持相同。"
         ],
         "method": [
           "用自己选择的式子，分别标出共同因数、括号中的各项，以及改变前后的形式。",
@@ -2873,6 +2948,11 @@
           "locationId": "ch4-one-law-two-directions",
           "label": "分配律的两个使用方向",
           "purpose": "比较展开和合并与同一运算律的联系。"
+        },
+        {
+          "locationId": "ch2-source-distributive-law",
+          "label": "有理数乘法的分配律",
+          "purpose": "回看一个因数与和相乘的等式，辨认展开或收回共同因数的依据。"
         }
       ]
     },
@@ -2887,7 +2967,8 @@
       "learningAction": "能根据自己的式子解释整式加减的法则和各步适用条件。",
       "questionGuide": {
         "knowledgePoints": [
-          "整式相加减；去括号与合并同类项。"
+          "去括号时，括号外的数乘里面的每一项；括号前只有加号、减号时，分别相当于乘以1、−1。",
+          "所含字母相同，并且相同字母的指数也分别相同的项是同类项；几个常数项也是同类项。合并同类项时，系数相加，字母及其指数保持不变。"
         ],
         "method": [
           "自选几个整式，组织一组加减运算，并说明你怎样从整体运算过渡到各项的运算。",
@@ -2900,9 +2981,9 @@
       },
       "related": [
         {
-          "locationId": "ch4-two-operations",
-          "label": "整式加减的常用路线",
-          "purpose": "把去括号、合并两步与自己例子的结构对应起来。"
+          "locationId": "ch4-source-add-subtract-rule",
+          "label": "整式加减的原文法则",
+          "purpose": "根据当前式子有无括号，连接去括号与合并同类项。"
         }
       ]
     },
@@ -2917,11 +2998,11 @@
       "learningAction": "能分别对七个式子分类并按题意辨认系数、项和次数。",
       "questionGuide": {
         "knowledgePoints": [
-          "单项式与多项式的定义。",
-          "系数、项、常数项、次数的区别。"
+          "数或字母的积叫单项式，单独的数或字母也是单项式；数字因数可以是分数。几个单项式的和叫多项式。",
+          "单项式的系数是带符号的数字因数；系数为1或−1时，1常省略不写。单项式的次数是所有字母指数的和，未写指数的字母指数为1；数字因数不计入次数。多项式各项带符号，不含字母的是常数项，次数取各项的最高次数。"
         ],
         "method": [
-          "逐个观察七个式子的运算结构，先按定义自行分类；遇到分数线时，要辨认分母中是什么。",
+          "逐个读出七个式子的运算结构，依据数或字母的积、几个单项式的和自行分类；遇到分数线时，辨认分母中是什么，不能只凭外形判断。",
           "对你判作单项式的对象，核对数字因数和字母指数；对判作多项式的对象，列出带符号的项，再比较各项次数。"
         ],
         "cautions": [
@@ -2931,14 +3012,24 @@
       },
       "related": [
         {
-          "locationId": "ch4-monomial-product",
-          "label": "单项式的积结构",
-          "purpose": "先按运算结构分类，避免只看分数线作判断。"
+          "locationId": "ch4-source-monomial-definition",
+          "label": "单项式的原文定义",
+          "purpose": "回看积的结构及单独数、字母的规定，再判断当前式子。"
         },
         {
-          "locationId": "ch4-polynomial-degree",
-          "label": "多项式的次数",
-          "purpose": "逐项判断次数后比较，不能只看第一项。"
+          "locationId": "ch4-source-polynomial-definition",
+          "label": "多项式、项与常数项的定义",
+          "purpose": "将原式读成带符号的单项式之和，辨认各项。"
+        },
+        {
+          "locationId": "ch4-source-polynomial-degree",
+          "label": "多项式次数的原文定义",
+          "purpose": "先确定每项次数，再取最高值，区分项数与次数。"
+        },
+        {
+          "locationId": "ch4-source-integral-definition",
+          "label": "整式的原文定义",
+          "purpose": "确认单项式与多项式统称整式，再辨认当前对象。"
         }
       ]
     },
@@ -2953,12 +3044,12 @@
       "learningAction": "能提出并检验自己的单项式，使相加结果满足题意。",
       "questionGuide": {
         "knowledgePoints": [
-          "多项式的项；合并同类项。",
-          "相反的项相加为0。"
+          "数或字母的积叫单项式，单独的数或字母也是单项式；数字因数可以是分数。",
+          "合并同类项只加系数，保留字母及指数；若一组系数之和为0，该组项可从和中省去。构造时要分别检查添加对象与相加结果。"
         ],
         "method": [
           "先想清题目对“添加的式子”和“相加后的结果”各有什么限制。",
-          "提出自己的候选单项式后，实际合并检验结果是否仍含不同类的项。"
+          "提出候选式子时，用单项式的积结构检验它本身；与原式相加并合并后，再用同一定义检查所得结果，不能只检查发生了项的抵消。"
         ],
         "cautions": [
           "不能添加一个与原有两项都不同类的新项后就宣称完成。",
@@ -2967,14 +3058,19 @@
       },
       "related": [
         {
+          "locationId": "ch4-source-monomial-definition",
+          "label": "单项式的原文定义",
+          "purpose": "回看积的结构及单独数、字母的规定，再判断当前式子。"
+        },
+        {
           "locationId": "ch4-zero-coefficient",
           "label": "零系数项的省略",
           "purpose": "回顾一类项合并后何时不再出现在结果中。"
         },
         {
-          "locationId": "ch4-like-terms",
-          "label": "同类项",
-          "purpose": "检查你选择的项能与原式的哪些项合并。"
+          "locationId": "ch4-source-like-terms",
+          "label": "同类项的完整条件",
+          "purpose": "逐个比较字母及其指数，常数项也按规定处理。"
         }
       ]
     },
@@ -2989,8 +3085,8 @@
       "learningAction": "能逐题识别同类项并保留符号，独立完成五式计算。",
       "questionGuide": {
         "knowledgePoints": [
-          "同类项判断；合并同类项。",
-          "分数系数与负系数的加减；零系数项。"
+          "所含字母相同，并且相同字母的指数也分别相同的项是同类项；几个常数项也是同类项。",
+          "合并同类项时，系数相加，字母及其指数保持不变。系数为0的一项可省去，分数、负数作系数仍按有理数加减。"
         ],
         "method": [
           "（1）读出未写出的系数；（2）保留共同字母部分，处理分数系数；（3）区分含字母项与常数项。",
@@ -3003,9 +3099,9 @@
       },
       "related": [
         {
-          "locationId": "ch4-combine-rule",
-          "label": "合并同类项的法则",
-          "purpose": "说明本题五式中为什么只改变同类项的系数。"
+          "locationId": "ch4-source-combine-rule",
+          "label": "合并同类项的原文法则",
+          "purpose": "核对系数相加、字母及指数不变，再用于当前同类项。"
         },
         {
           "locationId": "ch4-move-signed-terms",
@@ -3025,8 +3121,8 @@
       "learningAction": "能分清加法、减法、数乘和嵌套层次，自主完成六题化简。",
       "questionGuide": {
         "knowledgePoints": [
-          "整式的加减；分配律。",
-          "正负因数去括号；嵌套括号的作用范围。"
+          "去括号时，括号外的数乘里面的每一项；括号前只有加号、减号时，分别相当于乘以1、−1。",
+          "同类项要逐个比较字母和指数；处理两层括号时，先分清每个因数作用于哪个整体，再合并系数。"
         ],
         "method": [
           "（1）识别两个整式相加；（2）识别减去整个第二个多项式；分别检查括号内原有的符号。",
@@ -3035,20 +3131,14 @@
         ],
         "cautions": [
           "乘数作用于常数项，也作用于带负号的项。",
-          "负号可能在不同层重复出现，不能只统计负号数量而忽略作用对象。",
-          "六题的化简结果由你逐题完成。"
+          "负号可能在不同层重复出现，不能只统计负号数量而忽略作用对象。"
         ]
       },
       "related": [
         {
-          "locationId": "ch4-distribute-every-term",
-          "label": "分配律与每一项",
-          "purpose": "检查是否有漏乘的项。"
-        },
-        {
-          "locationId": "ch4-minus-bracket",
-          "label": "减去一个整体",
-          "purpose": "处理外层负号时明确它覆盖的范围。"
+          "locationId": "ch4-source-remove-brackets",
+          "label": "去括号及括号前±号的规定",
+          "purpose": "核对外部因数怎样作用于每一项，保留完整符号。"
         }
       ]
     },
@@ -3063,7 +3153,8 @@
       "learningAction": "能先按结构化简，再按各题给定数值正确代入。",
       "questionGuide": {
         "knowledgePoints": [
-          "合并同类项；去括号；代入求值。"
+          "去括号时，括号外的数乘里面的每一项；括号前只有加号、减号时，分别相当于乘以1、−1。合并同类项时，系数相加，字母及其指数保持不变。",
+          "字母数值相等或绝对值相等，不会使不同字母部分成为同类项；先按式子结构化简，再用整组数值替换相应字母。"
         ],
         "method": [
           "（1）先按字母指数分组化简，再把给定的负数整体代入。",
@@ -3098,8 +3189,8 @@
       "learningAction": "能分别表示两个数，并按两小问要求独立求和或求差。",
       "questionGuide": {
         "knowledgePoints": [
-          "用代数式表示倍数及增减关系。",
-          "两个整式的和与差。"
+          "某数的几倍用乘法表示；“比某数的几倍大（小）若干”还要在倍数基础上增加（减去）该数量。",
+          "求两数的差须保留先后顺序；一个数写成多项式时，被减去的整个式子都在减号作用范围内。"
         ],
         "method": [
           "（1）分别解释“5倍大4”与“2倍小3”中的基准量和变化量，再求两个数的和。",
@@ -3112,9 +3203,9 @@
       },
       "related": [
         {
-          "locationId": "ch4-minus-bracket",
-          "label": "减去一个整体",
-          "purpose": "把语言描述的第二个数完整保留，再理解负号作用范围。"
+          "locationId": "ch4-source-remove-brackets",
+          "label": "去括号及括号前±号的规定",
+          "purpose": "核对外部因数怎样作用于每一项，保留完整符号。"
         }
       ]
     },
@@ -3125,16 +3216,16 @@
       "preview": "一个数即使写成多项式，仍要作为整体参与减法。",
       "paragraphs": [
         "先让每个式子各自对应题目描述的一个数，再判断“差”中谁减谁。用括号把被减去的式子暂时保留下来，可以防止只减掉它的第一项。",
-        "列式后可以反过来读：括号中的整体是否就是题目中的那个数？确认对应关系后，再由你去括号、合并同类项。"
+        "列式后可以反过来读：括号中的整体是否就是题目中的那个数？确认对应关系后，再去括号、合并同类项。"
       ],
       "learningRole": "练习",
       "learningGap": "语言描述与多项式相减之间需要整体对应的检查，不直接列出两个数或差式。",
       "learningAction": "能把被减数与减数分别视为整体，自主建立并计算差式。",
       "related": [
         {
-          "locationId": "ch4-minus-bracket",
-          "label": "回顾减去一个整体",
-          "purpose": "理解去括号时负号为什么作用于减数中的每一项。"
+          "locationId": "ch4-source-remove-brackets",
+          "label": "去括号及括号前±号的规定",
+          "purpose": "核对外部因数怎样作用于每一项，保留完整符号。"
         }
       ]
     },
@@ -3149,8 +3240,8 @@
       "learningAction": "能将两段实际速度与对应时间配对，自主求路程总和。",
       "questionGuide": {
         "knowledgePoints": [
-          "顺水、逆水速度与静水速度、水流速度的关系。",
-          "路程=速度×时间；整式加减。"
+          "顺水速度=静水速度+水流速度；逆水速度=静水速度−水流速度。",
+          "路程=速度×时间；总路程包括先后航行的两段。"
         ],
         "method": [
           "分别辨认顺水与逆水时的实际速度，再与各自的行驶时间配对。",
@@ -3180,8 +3271,8 @@
       "learningAction": "能依据图案构造独立得到第4图和第n图的计数，并说明重数检查。",
       "questionGuide": {
         "knowledgePoints": [
-          "用字母表示图案数量规律。",
-          "不重复、不遗漏的计数；整式表达。"
+          "相邻图案可能保留一部分并增加新部分，按图案块计数时，公共小正方形只计一次。",
+          "用n表示图案序号后，式子的每部分仍应对应涂色方格；一般规律需要图案构造支持，再用前三图检验。"
         ],
         "method": [
           "观察相邻图案中涂色的小正方形，把保留部分与新增部分区分开，据此尝试画出或描述第4个图案，并数出涂色部分。",
@@ -3211,8 +3302,8 @@
       "learningAction": "能按位值建立两数相加关系，自主说明整除结论及其条件。",
       "questionGuide": {
         "knowledgePoints": [
-          "十进制位值与两位数表示。",
-          "整式加法；整数倍与整除。"
+          "十位数字贡献它的10倍，个位数字贡献它本身；交换位置后，数字不变，位值改变。",
+          "能被11整除，指这个整数可以写成11乘另一个整数；构造和式后要说明剩余因数为什么是整数。"
         ],
         "method": [
           "用位值含义说明交换前后每个数字的贡献，先检查你写出的两个式子是否对应正确。",
@@ -3243,8 +3334,8 @@
       "learningAction": "能保留重复式子整体，按指数分别合并并完成两题。",
       "questionGuide": {
         "knowledgePoints": [
-          "共同整体与分配律。",
-          "同类项的指数条件；系数加减。"
+          "相同的完整式子也能作为共同因数。利用分配律，相加的是它的倍数，保留的是同一个整体。",
+          "同一个整体的一次幂与平方表示不同乘积，不能按同一种字母部分直接合并；没有写出的系数±1仍要计入。"
         ],
         "method": [
           "（1）把重复出现的a+b作为一个整体，识别各项前的系数后再合并。",
@@ -3257,14 +3348,19 @@
       },
       "related": [
         {
-          "locationId": "ch4-combine-rule",
-          "label": "共同整体与分配律",
-          "purpose": "把重复括号看成同一个因数，理解只合并系数的依据。"
+          "locationId": "ch4-source-combine-rule",
+          "label": "合并同类项的原文法则",
+          "purpose": "核对系数相加、字母及指数不变，再用于当前同类项。"
         },
         {
-          "locationId": "ch4-like-terms",
-          "label": "同类项的指数条件",
-          "purpose": "区分整体本身与整体的平方，分别合并。"
+          "locationId": "ch4-source-like-terms",
+          "label": "同类项的完整条件",
+          "purpose": "逐个比较字母及其指数，常数项也按规定处理。"
+        },
+        {
+          "locationId": "ch2-source-distributive-law",
+          "label": "有理数乘法的分配律",
+          "purpose": "回看一个因数与和相乘的等式，辨认展开或收回共同因数的依据。"
         }
       ]
     }
@@ -3308,7 +3404,7 @@
     },
     {
       "page": 104,
-      "decision": "例2两小问、旁注的直接代入比较、例3两小问均有指南；例3（2）续解核对PDF105页。保留零系数、等值求值和水位净变化解释。"
+      "decision": "例2两小问、旁注的直接代入比较、例3两小问均有指南；例3（2）续解核对PDF105页。保留零系数、等值求值和水位净变化解释。 例3按水位与大米库存两个独立情境拆分入口，各自对应完整题干。"
     },
     {
       "page": 105,
@@ -3361,7 +3457,7 @@
   ],
   "questionCoverage": {
     "status": "source-checked",
-    "basis": "逐页查看PDF95–116共22页原图，并核对94、117相邻页；独立盘点并对照74个题目/示例入口，逐一核对题号、小问、跨页续文和指南。包含两处信息技术示例；同题跨页仅在题干起始页记录一次。",
+    "basis": "逐页查看PDF95–116共22页原图，并核对94、117相邻页；独立盘点并对照74个题目/示例入口，逐一核对题号、小问、跨页续文和指南。包含两处信息技术示例；同题跨页仅在题干起始页记录一次。 2026-10-25原图复核：例3水位与大米库存拆为独立入口，原两问及跨页解答均保留。 本轮拆分后清单共75项（包含原题的分项入口）。",
     "items": [
       {
         "label": "章引言问题（1）",
@@ -3576,11 +3672,18 @@
         "parts": []
       },
       {
-        "label": "4.2例3（含（1）（2），解答续PDF105页）",
+        "label": "4.2例3（1）：水位总变化",
         "page": 104,
         "supplementId": "ch4-q-42-example3",
         "parts": [
-          "（1）",
+          "（1）"
+        ]
+      },
+      {
+        "label": "4.2例3（2）：大米库存（解答续PDF105页）",
+        "page": 104,
+        "supplementId": "ch4-q-42-example3-stock",
+        "parts": [
           "（2）"
         ]
       },

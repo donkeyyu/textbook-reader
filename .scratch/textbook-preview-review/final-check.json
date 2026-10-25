@@ -879,5 +879,293 @@
     "23": "dual-track dependencies pending"
   },
   "cleanup": "Old 17 round scripts, 1 run state and 5 unreferenced debug logs removed; worker temporary resources cleaned; retained text evidence whitespace normalized.",
-  "stagedFiles": 206
+  "stagedFiles": 206,
+  "contentReviewCommitPreparation": {
+    "date": "2026-10-25",
+    "scope": "提交已验收的内容、阅读交互和清理基线；继承已提交的工单01，工单02等后续增量另行提交。",
+    "contentBaselineHead": "9b4eafc9248ba42548caac7b24cfa164dfa0189c",
+    "inheritedCommit": "65a84a09ebdd0200c5b5fde3c9daf51dd92dca31",
+    "checks": {
+      "npmTest": "合并后的固定快照23项通过。",
+      "build": "合并后的固定快照类型检查与Vite构建通过，保留既有产物体积提示。",
+      "browser": "本轮内容基线的固定快照在1736×944、823×944中各完成7组，共14组通过；专用origin的个人内容已完整恢复。",
+      "markdownReferences": "本次改动的Markdown相对引用全部可解析。",
+      "stagedDiffCheck": "独立暂存区通过。"
+    },
+    "browserCases": [
+      {
+        "width": 1736,
+        "height": 944,
+        "name": "failure, retry, cancellation and rapid clicks",
+        "pass": true
+      },
+      {
+        "width": 1736,
+        "height": 944,
+        "name": "draft during image loading",
+        "pass": true
+      },
+      {
+        "width": 1736,
+        "height": 944,
+        "name": "reader journey and refresh",
+        "pass": true
+      },
+      {
+        "width": 1736,
+        "height": 944,
+        "name": "locate and two-level return",
+        "pass": true
+      },
+      {
+        "width": 1736,
+        "height": 944,
+        "name": "ch1-measurement-exercise → ch1-source-standard-comparison → return",
+        "pass": true
+      },
+      {
+        "width": 1736,
+        "height": 944,
+        "name": "ch1-number-line-review → ch1-source-absolute-definition → return",
+        "pass": true
+      },
+      {
+        "width": 1736,
+        "height": 944,
+        "name": "ch1-direction-exercise → ch1-source-opposite-quantities → return",
+        "pass": true
+      },
+      {
+        "width": 823,
+        "height": 944,
+        "name": "failure, retry, cancellation and rapid clicks",
+        "pass": true
+      },
+      {
+        "width": 823,
+        "height": 944,
+        "name": "draft during image loading",
+        "pass": true
+      },
+      {
+        "width": 823,
+        "height": 944,
+        "name": "reader journey and refresh",
+        "pass": true
+      },
+      {
+        "width": 823,
+        "height": 944,
+        "name": "locate and two-level return",
+        "pass": true
+      },
+      {
+        "width": 823,
+        "height": 944,
+        "name": "ch1-measurement-exercise → ch1-source-standard-comparison → return",
+        "pass": true
+      },
+      {
+        "width": 823,
+        "height": 944,
+        "name": "ch1-number-line-review → ch1-source-absolute-definition → return",
+        "pass": true
+      },
+      {
+        "width": 823,
+        "height": 944,
+        "name": "ch1-direction-exercise → ch1-source-opposite-quantities → return",
+        "pass": true
+      }
+    ],
+    "inheritedAsyncVerification": {
+      "thread": "01a173a6-f00d-7971-a115-69cfe86d0820",
+      "sourceHashesMatchFinalReport": true,
+      "sourceFiles": {
+        "src/reader/Reader.tsx": "71a382c09fe79c7d7a447a70cb8d98a056e2324805cad80127ce6fb4e397e3ba",
+        "src/reader/MarkdownEditor.tsx": "4a119fc572d3d0d242363c81b09b14c30846124fd888446a663ad6dc22ca8160",
+        "src/reader/PersonalPanel.tsx": "92ae0f7c884b47aefda5e051d80ea75a1562fd4056bd9948267e98ad312eb08a",
+        "scripts/check-async-save.mjs": "2ccfaa29dba7ed15c40fac13b50f4f18283a5fb4457f3954336fdb7b2da7a88f"
+      },
+      "coverage": "复用01会话已完成的异步保存、失败重试、关闭重开、旧回调、标题取消、删除重试、同步自动保存和加载期间草稿保护证据；本次未重复执行这些浏览器用例。"
+    },
+    "browserCorrections": [
+      "旧关联目标更新为现有教材原文目标。",
+      "两层定位回归保留有对应解读的目标，避免把定位回来源误判为定位到纯原文目标。",
+      "面板滚动以实际点击时刻取样；刷新检查使用真实记录页与页内位置，不固定假设第13页。",
+      "取消加载用例用键盘触发有效链接；实际鼠标关联往返另由三条来源目标用例覆盖。"
+    ],
+    "validatedFiles": [
+      {
+        "path": "content/grade-7-volume-1/chapter-1.json",
+        "sha256": "eba5a7c32f1d9010d1ca588a938d6209fb3fdea1fcdc5c573e9185ed1f241eb9"
+      },
+      {
+        "path": "content/grade-7-volume-1/chapter-2.json",
+        "sha256": "18ee2be6370cccc8b3d145d9eb32b6eaf5085525900829a157c3e16f68e1397a"
+      },
+      {
+        "path": "content/grade-7-volume-1/chapter-2.locations.json",
+        "sha256": "d40efbf310334037ae24287412e5bca81c26cf5b362c2ab14f380121688cc90d"
+      },
+      {
+        "path": "content/grade-7-volume-1/chapter-3.json",
+        "sha256": "e54eea71547998971f5773f97849b643d4c041c3dbf643551c795fd08c6c33a7"
+      },
+      {
+        "path": "content/grade-7-volume-1/chapter-3.locations.json",
+        "sha256": "9672b08760e9a80a5b66e7594b4a1d05f9fce8df8c5ebccec1f5c853ce684893"
+      },
+      {
+        "path": "content/grade-7-volume-1/chapter-4.json",
+        "sha256": "7a3c0d76a7b789a6bbefbbd41e489978d3a119412cf6350c047660f86784cff5"
+      },
+      {
+        "path": "content/grade-7-volume-1/chapter-4.locations.json",
+        "sha256": "152214363d0a4a0a34cf4ffbd35c6f8d62244a1708ed18c4fba2e0cb64a37bac"
+      },
+      {
+        "path": "content/grade-7-volume-1/chapter-5.json",
+        "sha256": "31846d186272220378b7658002291400bdecdcd9fbb88d48961635d410fa992d"
+      },
+      {
+        "path": "content/grade-7-volume-1/chapter-5.locations.json",
+        "sha256": "315e81b7bc1a01a68273e35955d6aba209c5972cbfa951078194e6d80d910726"
+      },
+      {
+        "path": "content/grade-7-volume-1/chapter-6.json",
+        "sha256": "f9afae392e173ff65d74b64a976c5e61f7e7c60685e352fd0741768deafd8a02"
+      },
+      {
+        "path": "content/grade-7-volume-1/chapter-6.locations.json",
+        "sha256": "18ecc54bef2f99e70500987bb6a488c30e9edad8b2bd89045d92a91f515be043"
+      },
+      {
+        "path": "content/grade-7-volume-1/locations.json",
+        "sha256": "9632353a2e43817246d1ffc782e17d92c8482d528be966e7864ff73a6262e7e2"
+      },
+      {
+        "path": "scripts/check-async-save.mjs",
+        "sha256": "2ccfaa29dba7ed15c40fac13b50f4f18283a5fb4457f3954336fdb7b2da7a88f"
+      },
+      {
+        "path": "scripts/check-page-navigation.mjs",
+        "sha256": "25ecc1e04c1a3fe17a1cb294f5905bc99a22df0d30a5afbc4907bb66119350f6"
+      },
+      {
+        "path": "scripts/check-related-return.mjs",
+        "sha256": "8c9ff9384f5797a43429efaaa1d45afc1ffe2dbe68fc5aa3b21c8edeaab49aeb"
+      },
+      {
+        "path": "scripts/prepare-textbook.mjs",
+        "sha256": "358ce073cf3658ff406f829bf8cd3891b2eda53f2c59bf5e4960738cd5abb634"
+      },
+      {
+        "path": "src/main.tsx",
+        "sha256": "3168fed3f5705ace9d15d22323bbaac4da9ed26361fc263293123edfc60a2c21"
+      },
+      {
+        "path": "src/reader/MarkdownEditor.tsx",
+        "sha256": "4a119fc572d3d0d242363c81b09b14c30846124fd888446a663ad6dc22ca8160"
+      },
+      {
+        "path": "src/reader/PanelResize.tsx",
+        "sha256": "fbb99d2b055f1316a1a1c5d0b3bbc6022707cecfadc60f18401bf01b5cc87b73"
+      },
+      {
+        "path": "src/reader/PersonalPanel.tsx",
+        "sha256": "92ae0f7c884b47aefda5e051d80ea75a1562fd4056bd9948267e98ad312eb08a"
+      },
+      {
+        "path": "src/reader/Reader.tsx",
+        "sha256": "71a382c09fe79c7d7a447a70cb8d98a056e2324805cad80127ce6fb4e397e3ba"
+      },
+      {
+        "path": "src/reader/RegionSelector.tsx",
+        "sha256": "5cde494fa0c14a8115422da7abf3f602dddfb206e8166d5ae024debe3a99affd"
+      },
+      {
+        "path": "src/reader/Supplement.tsx",
+        "sha256": "bcb8893211fb7f3c41b9e1a1f3f2e8c7d399eab67b2dab479c0b8bfe1cfa85d1"
+      },
+      {
+        "path": "src/reader/marker-groups.ts",
+        "sha256": "60c338f9be05eba3f5ba1d83fceccde8e31a65694da2bda89f0cacf0799a3766"
+      },
+      {
+        "path": "src/reader/personal.test.ts",
+        "sha256": "4fcb2bdfe2716c85b693c718b724b18be8b342ccc4630634a1d3dc614e0a2c35"
+      },
+      {
+        "path": "src/reader/personal.ts",
+        "sha256": "0128bef5d4dbfcbf5e35f1412ff690f3fd414e0fb1906db41db5a25dfffebb12"
+      },
+      {
+        "path": "src/reader/reading-record.ts",
+        "sha256": "456806337b77426309de5cba1ed11233e67f0394edd3d87673dd8f6eb5dbef08"
+      },
+      {
+        "path": "src/reader/session.test.ts",
+        "sha256": "d48c9f167f59b5825d73d8f653a9773b2b6f8fc6182e6e170b95367e83d42e1f"
+      },
+      {
+        "path": "src/reader/session.ts",
+        "sha256": "90b47510bc2db2f5bca45880f17aa720d78be323b01a6cf71e76264072191091"
+      },
+      {
+        "path": "src/reader/supplement-types.tsx",
+        "sha256": "78c753e2beef3ec6c013fe7e34ac540c2dae083cc3e571c63f6a93798ea96328"
+      },
+      {
+        "path": "src/style.css",
+        "sha256": "3890e45250f69b12822f4bf1bf21a86f9f3400fbe0afe2974dc7c29305bd654e"
+      },
+      {
+        "path": "src/textbook/book.json",
+        "sha256": "77d74c7b49e1474cbf736d2455260f9537b03e24667289bbc376d557a4d8a30b"
+      },
+      {
+        "path": "src/textbook/catalog.test.ts",
+        "sha256": "dda65127f9ce1d3f5e7891a8a05dc2148a34f4e69cc0d2dc16313c3f49d945d4"
+      },
+      {
+        "path": "src/textbook/catalog.ts",
+        "sha256": "e715d78b02e61ed87b30089335228d727feffc87f445c16124f312c923e17132"
+      },
+      {
+        "path": "src/textbook/chapters.ts",
+        "sha256": "e49493660875ad10c25f4486ce1d5d37c3503baa33228168fd4884fe2efc5f3a"
+      },
+      {
+        "path": "src/textbook/supplements.test.ts",
+        "sha256": "96c66c0ac2fc1cc1905a2131842b2782ad88f81100db6e5570d3dc05daec73f2"
+      },
+      {
+        "path": "src/textbook/supplements.ts",
+        "sha256": "6e646ff2973a17cb569f2811a7b2dd35432b12968f8c277ec970f843739ef501"
+      }
+    ],
+    "retiredFiles": [
+      ".scratch/textbook-preview-review/evidence/01-page-navigation/default-mode.snapshot.txt",
+      ".scratch/textbook-preview-review/evidence/02/round-05.txt",
+      ".scratch/textbook-preview-review/evidence/02/round-10.txt",
+      ".scratch/textbook-preview-review/evidence/02/round-11.txt",
+      ".scratch/textbook-preview-review/evidence/04/baseline-chapter-1.json",
+      ".scratch/textbook-preview-review/evidence/04/baseline-locations.json",
+      ".scratch/textbook-preview-review/evidence/04/display-0-6.json",
+      ".scratch/textbook-preview-review/evidence/04/display-1-6.json",
+      ".scratch/textbook-preview-review/evidence/06/sample-visual.json",
+      ".scratch/textbook-preview-review/evidence/10/display-failed.json",
+      ".scratch/textbook-preview-review/evidence/12/screenshot-result.json",
+      ".scratch/textbook-preview-review/evidence/14/source-122-detail.png",
+      ".scratch/textbook-preview-review/evidence/15/source-136-detail.png"
+    ],
+    "retainedEvidence": "保留7份最终QA报告、有效通过记录、复跑入口和待真人/真机执行的任务；历史失败原因与限制仍在说明中。",
+    "temporaryArtifacts": "本轮一次性脚本、临时工作副本、截图及缓存已退役；并行工单仍在使用的Git本地基线和文件不在清理范围。",
+    "limitations": [
+      "两种视口为浏览器仿真，不代表真机或学生学习效果。",
+      "本轮14组浏览器回归属于内容基线；工单01继承证据按完全一致的源文件哈希复用。",
+      "工单02等进行中的实现不包含在本次基线验收和提交中。"
+    ]
+  }
 }

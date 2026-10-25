@@ -257,16 +257,35 @@
       "printedPage": "4",
       "indexAnchor": 1,
       "anchorLabel": "思考",
-      "locator": "印刷第4页“思考”题干首行：“图1.1-4是地理中的分层设色地形图，图1.1-5是手机中的部分收支……”",
+      "locator": "印刷第4页“思考”图1.1-4：分层设色地形图及图号，不包含右侧图1.1-5收支账单。",
       "region": {
-        "x": 0.155,
-        "y": 0.377,
-        "width": 0.7,
-        "height": 0.024
+        "x": 0.132,
+        "y": 0.464,
+        "width": 0.341,
+        "height": 0.187
+      },
+      "marker": {
+        "x": 0.1,
+        "y": 0.55
+      },
+      "sourceImageSha256": "ce7fc7a49700a23128ff1e8cba06d12849c552016cb43610dc8160a8496b758e"
+    },
+    {
+      "id": "ch1-think-bill",
+      "page": 11,
+      "printedPage": "4",
+      "indexAnchor": 1,
+      "anchorLabel": "思考",
+      "locator": "印刷第4页“思考”图1.1-5：手机部分收支账单及图号，不包含左侧图1.1-4地形图。",
+      "region": {
+        "x": 0.568,
+        "y": 0.464,
+        "width": 0.234,
+        "height": 0.187
       },
       "marker": {
         "x": 0.95,
-        "y": 0.389
+        "y": 0.55
       },
       "sourceImageSha256": "ce7fc7a49700a23128ff1e8cba06d12849c552016cb43610dc8160a8496b758e"
     },
@@ -276,16 +295,35 @@
       "printedPage": "4",
       "indexAnchor": 2,
       "anchorLabel": "例2",
-      "locator": "1.1例2第（1）问题干首行：“一个月内，李明体重增加1.2 kg……”；第（2）问解答续PDF12。",
+      "locator": "1.1例2（1）题干：三人的月内体重变化及写增长值的要求；不含（2）手机销量情境。",
       "region": {
-        "x": 0.13,
+        "x": 0.085,
         "y": 0.665,
-        "width": 0.746,
-        "height": 0.024
+        "width": 0.791,
+        "height": 0.056
       },
       "marker": {
         "x": 0.95,
-        "y": 0.677
+        "y": 0.693
+      },
+      "sourceImageSha256": "ce7fc7a49700a23128ff1e8cba06d12849c552016cb43610dc8160a8496b758e"
+    },
+    {
+      "id": "ch1-example-1-2-sales-guide",
+      "page": 11,
+      "printedPage": "4",
+      "indexAnchor": 2,
+      "anchorLabel": "例2",
+      "locator": "1.1例2（2）题干：四种品牌手机销量的季度变化及写增长率的要求；解答续PDF12。",
+      "region": {
+        "x": 0.085,
+        "y": 0.723,
+        "width": 0.791,
+        "height": 0.108
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.779
       },
       "sourceImageSha256": "ce7fc7a49700a23128ff1e8cba06d12849c552016cb43610dc8160a8496b758e"
     },
@@ -329,22 +367,22 @@
     },
     {
       "id": "ch1-growth-rate-base",
-      "page": 12,
-      "printedPage": "5",
-      "indexAnchor": 0,
-      "anchorLabel": "例2（续）",
-      "locator": "页首例2（2）续解中“A品牌 −2%”一项；比较基准为上一页题干中的第一季度销量。",
+      "page": 11,
+      "printedPage": "4",
+      "indexAnchor": 2,
+      "anchorLabel": "例2",
+      "locator": "例2（2）原题：第二季度与第一季度相比，以及四种品牌增加、减少的百分数；只作原文回顾，不再为A品牌单列补充入口。",
       "region": {
-        "x": 0.174,
-        "y": 0.125,
-        "width": 0.17,
-        "height": 0.024
+        "x": 0.085,
+        "y": 0.723,
+        "width": 0.791,
+        "height": 0.108
       },
       "marker": {
-        "x": 0.125,
-        "y": 0.137
+        "x": 0.95,
+        "y": 0.779
       },
-      "sourceImageSha256": "a8fa482a2ea7e3d0360ca84a092802286d3a8444d1fdb841df8a1e4d74bdcc10"
+      "sourceImageSha256": "ce7fc7a49700a23128ff1e8cba06d12849c552016cb43610dc8160a8496b758e"
     },
     {
       "id": "ch1-practice-p5-1",
@@ -2435,6 +2473,291 @@
         "y": 0.6015
       },
       "sourceImageSha256": "3c21cd6710f13599063f42e3ae76fe8f696eed95d35af76bd7eb8d3e72ca5319"
+    },
+    {
+      "id": "ch1-source-positive-negative",
+      "page": 9,
+      "printedPage": "2",
+      "indexAnchor": 1,
+      "anchorLabel": "正数；负数",
+      "locator": "正数、负数、正号以及0归属的原文规定。",
+      "region": {
+        "x": 0.085,
+        "y": 0.727,
+        "width": 0.83,
+        "height": 0.193
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.8235
+      },
+      "sourceImageSha256": "a18d3af40da5234bb14eaabb06f78e3a3cb33e03dd6fbf8fb25ff0aeac09402d"
+    },
+    {
+      "id": "ch1-source-percent-sign",
+      "page": 9,
+      "printedPage": "2",
+      "indexAnchor": 0,
+      "anchorLabel": "1.1 正数和负数",
+      "locator": "增长与减少的百分率例子：7.8%与−0.7%；不是百分数定义。",
+      "region": {
+        "x": 0.085,
+        "y": 0.674,
+        "width": 0.79,
+        "height": 0.053
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.7005
+      },
+      "sourceImageSha256": "a18d3af40da5234bb14eaabb06f78e3a3cb33e03dd6fbf8fb25ff0aeac09402d"
+    },
+    {
+      "id": "ch1-source-temperature-sign",
+      "page": 9,
+      "printedPage": "2",
+      "indexAnchor": 0,
+      "anchorLabel": "1.1 正数和负数",
+      "locator": "零上、零下以0 ℃为分界，以及3 ℃与−3 ℃的记法。",
+      "region": {
+        "x": 0.085,
+        "y": 0.516,
+        "width": 0.79,
+        "height": 0.104
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.5680000000000001
+      },
+      "sourceImageSha256": "a18d3af40da5234bb14eaabb06f78e3a3cb33e03dd6fbf8fb25ff0aeac09402d"
+    },
+    {
+      "id": "ch1-source-opposite-quantities",
+      "page": 10,
+      "printedPage": "3",
+      "indexAnchor": 1,
+      "anchorLabel": "例1",
+      "locator": "例1前“如果一个问题中出现具有相反意义的量，就可以用正数和负数分别表示它们”一行。",
+      "region": {
+        "x": 0.175,
+        "y": 0.303,
+        "width": 0.74,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.315
+      },
+      "sourceImageSha256": "db70e624de3f76566bc1ae661673884fc92373c0fe78c320e25aeb30e3d3ad1a"
+    },
+    {
+      "id": "ch1-source-standard-comparison",
+      "page": 10,
+      "printedPage": "3",
+      "indexAnchor": 1,
+      "anchorLabel": "例1",
+      "locator": "例1题干“标准质量为2.5 kg，如果用正数表示超过标准质量的克数”的约定所在一行。",
+      "region": {
+        "x": 0.085,
+        "y": 0.355,
+        "width": 0.83,
+        "height": 0.026
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.368
+      },
+      "sourceImageSha256": "db70e624de3f76566bc1ae661673884fc92373c0fe78c320e25aeb30e3d3ad1a"
+    },
+    {
+      "id": "ch1-source-integer-types",
+      "page": 14,
+      "printedPage": "7",
+      "indexAnchor": 1,
+      "anchorLabel": "1.2.1 有理数的概念",
+      "locator": "“我们学习过正整数…；0；负整数…”及“正整数、0、负整数统称为整数”两行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.391,
+        "width": 0.79,
+        "height": 0.056
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.41900000000000004
+      },
+      "sourceImageSha256": "dd4d1deb8134f478a7096ddee6f3cc00c8bf46e707506dd8abfb2f575a105b90"
+    },
+    {
+      "id": "ch1-source-fraction-types",
+      "page": 14,
+      "printedPage": "7",
+      "indexAnchor": 1,
+      "anchorLabel": "1.2.1 有理数的概念",
+      "locator": "正分数、负分数及“它们都是分数”所在段落，不把小数旁注当作分类定义。",
+      "region": {
+        "x": 0.13,
+        "y": 0.46,
+        "width": 0.52,
+        "height": 0.115
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.5175000000000001
+      },
+      "sourceImageSha256": "dd4d1deb8134f478a7096ddee6f3cc00c8bf46e707506dd8abfb2f575a105b90"
+    },
+    {
+      "id": "ch1-source-rational-definition",
+      "page": 14,
+      "printedPage": "7",
+      "indexAnchor": 2,
+      "anchorLabel": "有理数",
+      "locator": "“可以写成分数形式的数称为有理数”以及正、负有理数的原文定义。",
+      "region": {
+        "x": 0.13,
+        "y": 0.726,
+        "width": 0.79,
+        "height": 0.055
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.7535
+      },
+      "sourceImageSha256": "dd4d1deb8134f478a7096ddee6f3cc00c8bf46e707506dd8abfb2f575a105b90"
+    },
+    {
+      "id": "ch1-source-number-line-definition",
+      "page": 17,
+      "printedPage": "10",
+      "indexAnchor": 0,
+      "anchorLabel": "数轴",
+      "locator": "图1.2-4下“规定了原点、正方向和单位长度的直线叫作数轴”一行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.24,
+        "width": 0.79,
+        "height": 0.031
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.2555
+      },
+      "sourceImageSha256": "883d03197d8874e8155534adf443ee6c41f063806328f7f08f9f6f568d3be846"
+    },
+    {
+      "id": "ch1-source-opposite-definition",
+      "page": 19,
+      "printedPage": "12",
+      "indexAnchor": 0,
+      "anchorLabel": "相反数",
+      "locator": "页首相反数的定义、3与−3的双向说明及“0的相反数是0”。",
+      "region": {
+        "x": 0.085,
+        "y": 0.074,
+        "width": 0.79,
+        "height": 0.145
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.1465
+      },
+      "sourceImageSha256": "ad8bb1bc7700586f1e590e247709b1f84ac6cb8655dbcf70e13516dd5e97ad5e"
+    },
+    {
+      "id": "ch1-source-opposite-minus",
+      "page": 19,
+      "printedPage": "12",
+      "indexAnchor": 0,
+      "anchorLabel": "相反数",
+      "locator": "“在任意一个数前面添上−号”表示相反数的规则及三个对应示例。",
+      "region": {
+        "x": 0.085,
+        "y": 0.333,
+        "width": 0.54,
+        "height": 0.111
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.3885
+      },
+      "sourceImageSha256": "ad8bb1bc7700586f1e590e247709b1f84ac6cb8655dbcf70e13516dd5e97ad5e"
+    },
+    {
+      "id": "ch1-source-absolute-definition",
+      "page": 20,
+      "printedPage": "13",
+      "indexAnchor": 1,
+      "anchorLabel": "绝对值",
+      "locator": "绝对值的距离定义及记号|a|两行，保留完整句子。",
+      "region": {
+        "x": 0.13,
+        "y": 0.302,
+        "width": 0.52,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.327
+      },
+      "sourceImageSha256": "a19939145eb2d97dd918cb0e6f2f33e84f479dbe38b405f930421383a55585de"
+    },
+    {
+      "id": "ch1-source-absolute-rule",
+      "page": 20,
+      "printedPage": "13",
+      "indexAnchor": 2,
+      "anchorLabel": "探究",
+      "locator": "探究后蓝字完整结论：正数、负数和0的绝对值分别怎样求。",
+      "region": {
+        "x": 0.13,
+        "y": 0.573,
+        "width": 0.79,
+        "height": 0.055
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.6004999999999999
+      },
+      "sourceImageSha256": "a19939145eb2d97dd918cb0e6f2f33e84f479dbe38b405f930421383a55585de"
+    },
+    {
+      "id": "ch1-source-comparison-rules",
+      "page": 22,
+      "printedPage": "15",
+      "indexAnchor": 1,
+      "anchorLabel": "有理数的大小比较",
+      "locator": "蓝字的正数、0、负数及两个负数大小比较规则，完整两行。",
+      "region": {
+        "x": 0.175,
+        "y": 0.54,
+        "width": 0.57,
+        "height": 0.055
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.5675
+      },
+      "sourceImageSha256": "4d02d77d8ec4d505c84bc0b17371081753bce97cedef69310164d3dc4a3cb8b0"
+    },
+    {
+      "id": "ch1-source-altitude-sign",
+      "page": 10,
+      "printedPage": "3",
+      "indexAnchor": 3,
+      "anchorLabel": "把0以外的数分为正数和负数",
+      "locator": "页底说明以海平面为基准，海平面海拔记0 m，高于海平面记正、低于海平面记负；续页的地点例子不是本规则本身。",
+      "region": {
+        "x": 0.085,
+        "y": 0.868,
+        "width": 0.83,
+        "height": 0.061
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.8985
+      },
+      "sourceImageSha256": "db70e624de3f76566bc1ae661673884fc92373c0fe78c320e25aeb30e3d3ad1a"
     }
   ]
 }

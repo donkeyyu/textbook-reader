@@ -1,0 +1,6767 @@
+{
+  "date": "2026-10-25",
+  "status": "content-source-and-browser-checked",
+  "scope": "将更新后的textbook-supplements与sloptrim及第一章案例应用于第二至六章；第一章内容和定位文件逐字节保留。",
+  "baseline": {
+    "files": [
+      {
+        "path": "content/grade-7-volume-1/chapter-2.json",
+        "sha256": "67a7fda0cbb121ea96d87b49780e17a30514fe974c56bc0fd005f0ef69860ba8"
+      },
+      {
+        "path": "content/grade-7-volume-1/locations.json",
+        "sha256": "9632353a2e43817246d1ffc782e17d92c8482d528be966e7864ff73a6262e7e2"
+      },
+      {
+        "path": "content/grade-7-volume-1/chapter-3.json",
+        "sha256": "9911fc2507f83643d011d137e7fc34f97fd07a79a086a99fed78f60826e5100c"
+      },
+      {
+        "path": "content/grade-7-volume-1/chapter-4.json",
+        "sha256": "8e0b12feef942b97a9c6d8559486914396a91cca4aa3533d93a54ad30e34ef80"
+      },
+      {
+        "path": "content/grade-7-volume-1/chapter-5.json",
+        "sha256": "bc60a412984b76f76bbb5b1543640360c6521216f3dc78492e295129707a41d7"
+      },
+      {
+        "path": "content/grade-7-volume-1/chapter-3.locations.json",
+        "sha256": "db57bee0906a11323bca0ba112b49f6baa17c9a8052b8e8f7136f7442d93877c"
+      },
+      {
+        "path": "content/grade-7-volume-1/chapter-6.json",
+        "sha256": "321749d7ed36de97b5be97ce6986a626e04ab31606692c30f1c7ef7b9c08de0f"
+      },
+      {
+        "path": "content/grade-7-volume-1/chapter-4.locations.json",
+        "sha256": "1dd4c7412b849fae51a11a29b7d5ab75500e4289a388713e254e4c4cc4dbd240"
+      },
+      {
+        "path": "content/grade-7-volume-1/chapter-5.locations.json",
+        "sha256": "4069c44a236b45c1cf23a655a3c4a427036110ca7bd41e39fb34912e7ae13a05"
+      },
+      {
+        "path": "content/grade-7-volume-1/chapter-2.locations.json",
+        "sha256": "3b3126cb5a29043de62ca63b7964405a1c5859afb6fdba1acf989ab9bb905ea8"
+      },
+      {
+        "path": "content/grade-7-volume-1/chapter-6.locations.json",
+        "sha256": "03ccb4eb85d971640b38f320752873b7829bfbbb7b12c2005e2cb0ffecc79e45"
+      },
+      {
+        "path": "content/grade-7-volume-1/chapter-1.json",
+        "sha256": "eba5a7c32f1d9010d1ca588a938d6209fb3fdea1fcdc5c573e9185ed1f241eb9"
+      },
+      {
+        "path": "README.md",
+        "sha256": "69f1a50626372d39df0a1157c0ed95d9394e8f6a5f091f502bfb704c3f9a1699"
+      },
+      {
+        "path": "docs/SPEC.md",
+        "sha256": "b7d69bd64086656ede3f2bd1131e0db6307e621e167e8c7f4a89db8591140a9c"
+      },
+      {
+        "path": "DESIGN.md",
+        "sha256": "3fc0e798390a4aa3e3fdb48c8a1911471f740fda41f98e3dd8657e6fadc623c8"
+      },
+      {
+        "path": "src/textbook/supplements.ts",
+        "sha256": "6e646ff2973a17cb569f2811a7b2dd35432b12968f8c277ec970f843739ef501"
+      },
+      {
+        "path": "src/reader/Supplement.tsx",
+        "sha256": "6791df7a5ecb06f618734a677b9970cfd783ba965921630823d8ffceb82e550d"
+      },
+      {
+        "path": "scripts/check-related-return.mjs",
+        "sha256": "e61927430e190c78c672c2e9b0ae87bee59598db0c4576e56939067472a50fd4"
+      }
+    ],
+    "snapshotRetention": "临时工作副本已退役；保留起点文件哈希。"
+  },
+  "totals": {
+    "supplementsReviewed": 842,
+    "questionGuidesReviewed": 576,
+    "studentVisibleRevised": 661,
+    "knowledgeGuidesRevised": 512,
+    "newTextbookOnlyTargets": 90,
+    "adjustedExistingLocations": 3,
+    "continuousGuides": 14
+  },
+  "chapters": [
+    {
+      "chapter": 2,
+      "reviewedSupplements": 247,
+      "guides": 175,
+      "supplementsAfter": 247,
+      "locationsAfter": 281,
+      "revisedSupplements": 226,
+      "removedIds": [],
+      "newLocations": 34,
+      "revisedLocations": 2,
+      "continuousGuides": 4,
+      "studentVisibleRevised": 226,
+      "knowledgeRevised": 165
+    },
+    {
+      "chapter": 3,
+      "reviewedSupplements": 110,
+      "guides": 70,
+      "supplementsAfter": 110,
+      "locationsAfter": 127,
+      "revisedSupplements": 74,
+      "removedIds": [],
+      "newLocations": 10,
+      "revisedLocations": 1,
+      "continuousGuides": 1,
+      "studentVisibleRevised": 74,
+      "knowledgeRevised": 53
+    },
+    {
+      "chapter": 4,
+      "reviewedSupplements": 109,
+      "guides": 75,
+      "supplementsAfter": 109,
+      "locationsAfter": 120,
+      "revisedSupplements": 91,
+      "removedIds": [],
+      "newLocations": 11,
+      "revisedLocations": 0,
+      "continuousGuides": 5,
+      "studentVisibleRevised": 91,
+      "knowledgeRevised": 66
+    },
+    {
+      "chapter": 5,
+      "reviewedSupplements": 187,
+      "guides": 126,
+      "supplementsAfter": 187,
+      "locationsAfter": 198,
+      "revisedSupplements": 133,
+      "removedIds": [],
+      "newLocations": 11,
+      "revisedLocations": 0,
+      "continuousGuides": 2,
+      "studentVisibleRevised": 123,
+      "knowledgeRevised": 103
+    },
+    {
+      "chapter": 6,
+      "reviewedSupplements": 189,
+      "guides": 130,
+      "supplementsAfter": 189,
+      "locationsAfter": 216,
+      "revisedSupplements": 150,
+      "removedIds": [],
+      "newLocations": 24,
+      "revisedLocations": 0,
+      "continuousGuides": 2,
+      "studentVisibleRevised": 147,
+      "knowledgeRevised": 125
+    }
+  ],
+  "approach": [
+    "必要概念和条件先于本题应用，默认说明提供可用含义，而非只有概念名。",
+    "沿用原题数量、单位、字母与比较方向，删无增量重复和另造名词。",
+    "连续理解问题按顺序连贯解释；可选练习提示继续折叠，不全章铺开。",
+    "定义、规则与用例按实际作用关联，后页归纳与已有依据分开说明。",
+    "保留学生选择、列式、计算、作图、判断和验证。"
+  ],
+  "sourceVerification": {
+    "pdf": "materials/textbooks/人教版-数学-七年级上册.pdf",
+    "documentSha256": "6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249",
+    "authorReviewedPdfPages": [
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181,
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      188,
+      189,
+      190,
+      191,
+      192,
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199
+    ],
+    "rootReviewedNewOrAdjustedRegions": 93,
+    "rootRegionEvidence": "93处新建或调整区域已逐一核对；临时裁图及审读副本已退役。",
+    "notes": [
+      "PDF70与71数位说明跨页，相关转换题同时提供起句与展开用例。",
+      "乘法交换/结合律与分配律分处PDF48不同段，分设目标避免混入中间探究题。",
+      "PDF160展开图定义受单矩形限制，框保留完整条件与定义，附少量同一行后例开头；定位描述如实说明。"
+    ]
+  },
+  "crossReviewResolutions": [
+    {
+      "ids": [
+        "ch3-expression-vs-relation"
+      ],
+      "issue": "区分代数式与等式的说明误链到代数式求值定义。",
+      "fix": "改为本页代数式原定义，按实际用途说明。",
+      "confirmed": "独立审查员已确认。"
+    },
+    {
+      "ids": [
+        "ch3-q-snow-problem",
+        "ch4-q-sec42-intro-compute",
+        "ch4-q-sec42-inquiry-p95",
+        "ch4-q-sec42-inquiry-p96"
+      ],
+      "issue": "探究中的后续定义或法则被写成已学前置依据。",
+      "fix": "明确完成观察、计算和归纳后再对照后文；已有分配律仍可前置回顾。",
+      "confirmed": "独立审查员已确认。"
+    },
+    {
+      "ids": [
+        "ch5-q-p126-exercise11"
+      ],
+      "issue": "把有顺序的两数之差概括为大数减小数。",
+      "fix": "沿用原题新数比原数小18，按原数与新数的顺序解释差额，保留数位列式。",
+      "confirmed": "独立审查员已确认。"
+    },
+    {
+      "ids": [
+        "ch5-q-ex52-15"
+      ],
+      "issue": "用余/欠替代未刷完/多刷，可能倒转增减方向。",
+      "fix": "恢复原题含义，区分计划墙面面积与实际完成面积，间数先换成面积再比较。",
+      "confirmed": "独立审查员已确认。"
+    },
+    {
+      "ids": [
+        "ch5-q-activity2"
+      ],
+      "issue": "使用原题不存在的a、b，并加入无用的除字母提醒。",
+      "fix": "明确n、l已知，x待求；删除无增量提醒。",
+      "confirmed": "独立审查员已确认。"
+    },
+    {
+      "ids": [
+        "ch5-q-review11"
+      ],
+      "issue": "将两次鸽子居住安排写成两堆物品转移。",
+      "fix": "按笼内/笼外及新飞来5只前后两个时刻解释；只有实际住鸽子的笼数参与相应乘法。",
+      "confirmed": "独立审查员已确认。"
+    },
+    {
+      "ids": [
+        "ch5-q-review5",
+        "ch5-q-review13"
+      ],
+      "issue": "一次方程的条件被笼统写成所有方程的定义。",
+      "fix": "补足一元一次限定，修复知识竞赛元数据中的场数残留。",
+      "confirmed": "独立审查员已确认。"
+    },
+    {
+      "ids": [
+        "ch6-q-61-10"
+      ],
+      "issue": "要求看棱锥图例，却跳到只有文字的立体定义。",
+      "fix": "直接指向已核对的棱柱、棱锥图例目标。",
+      "confirmed": "独立审查员已确认。"
+    },
+    {
+      "ids": [
+        "ch2-source-trigram-conventions"
+      ],
+      "issue": "提示要求从三爻首组判断数位顺序，原框却缺图2。",
+      "fix": "扩框至图2与完整提示；原页及新裁图已复核，余组仍由学生计算。",
+      "confirmed": "主线程原图与裁图复核。"
+    }
+  ],
+  "continuousEntries": [
+    {
+      "chapter": 2,
+      "id": "ch2-q-p31-intro-budget",
+      "pdfPage": 31,
+      "title": "章引言（2）：收支表中的结余"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-q-p47-example2",
+      "pdfPage": 47,
+      "title": "2.2.1 例2：登高后的气温变化"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-q-p53-example8",
+      "pdfPage": 53,
+      "title": "2.2.2 例8：全年盈亏合计"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-approximate-trailing-zero",
+      "pdfPage": 63,
+      "title": "旁注：1.8与1.80的精确度"
+    },
+    {
+      "chapter": 3,
+      "id": "ch3-q-p86-volleyball",
+      "pdfPage": 86,
+      "title": "3.2 问题：购置排球"
+    },
+    {
+      "chapter": 4,
+      "id": "ch4-q-42-example3",
+      "pdfPage": 104,
+      "title": "例3（1）：两天水位的总变化"
+    },
+    {
+      "chapter": 4,
+      "id": "ch4-q-42-example3-stock",
+      "pdfPage": 104,
+      "title": "例3（2）：进出货后的大米库存"
+    },
+    {
+      "chapter": 4,
+      "id": "ch4-q-42-negative-product-question",
+      "pdfPage": 106,
+      "title": "追问：负号与字母怎样一起参与乘法？"
+    },
+    {
+      "chapter": 4,
+      "id": "ch4-q-sheet-average",
+      "pdfPage": 111,
+      "title": "表格示例：求和与平均值"
+    },
+    {
+      "chapter": 4,
+      "id": "ch4-q-sheet-formula",
+      "pdfPage": 111,
+      "title": "表格示例：公式中的字母变成什么？"
+    },
+    {
+      "chapter": 5,
+      "id": "ch5-q-p121-example2",
+      "pdfPage": 121,
+      "title": "例2：一个候选值怎样接受检验"
+    },
+    {
+      "chapter": 5,
+      "id": "ch5-q-p127-think",
+      "pdfPage": 127,
+      "title": "思考：合并后为什么更容易求x"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-angle-single-letter",
+      "pdfPage": 177,
+      "title": "旁问：角的表示能否简写"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-fold-bisector-check",
+      "pdfPage": 182,
+      "title": "探究：折纸作角的平分线"
+    }
+  ],
+  "changedSupplements": [
+    {
+      "chapter": 2,
+      "changes": [
+        {
+          "id": "ch2-q-p31-intro-temperature",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p31-intro-budget",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-signed-change",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p32-addition-intro",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-q-p32-addition-cases",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-motion-result",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p32-right-motion",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-q-p33-left-motion",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p33-opposite-motion",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p33-number-line-note",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-opposite-add-cancel",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p34-return-origin",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p34-infer-add-rule",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-opposite-add-zero",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p34-addition-consistency",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p34-example1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-sum-magnitude-step",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p35-addition-order-effect",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p35-practice1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p35-practice2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p35-practice3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p35-practice4",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p35-add-laws-intro",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p35-commute-inquiry",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p36-associate-inquiry",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-associate-order",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p36-example2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p36-simplification-note",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-zero-pair-choice",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p36-example3",
+          "fields": [
+            "title",
+            "preview",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p37-compare-methods-note",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-deviation-sum",
+          "fields": [
+            "title",
+            "preview",
+            "paragraphs",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-restore-total",
+          "fields": [
+            "title",
+            "preview",
+            "paragraphs",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p37-practice1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p37-practice2",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-q-p37-practice3",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-q-p37-temperature-think",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-subtraction-inverse",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p38-subtract-inquiry",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-subtract-add-opposite",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p38-example4",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-minus-two-roles",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-subtract-mixed-number",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p39-smaller-subtract-larger",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p39-practice1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p39-practice2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p39-example5",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p40-laws-note",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-mixed-convert-before-reorder",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-sum-abbreviation",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p40-example6",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-signed-reorder-step",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p40-distance-investigation",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-distance-inquiry",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p41-practice1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-rewrite-exercise",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p41-practice2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p41-ex21-1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p41-ex21-2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p41-ex21-3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p42-ex21-4",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p42-ex21-5",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-height-difference-exercise",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p42-ex21-6",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-q-p42-ex21-7",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-q-p42-ex21-8",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-mass-total-exercise",
+          "fields": [
+            "title",
+            "preview",
+            "paragraphs",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p43-ex21-9",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p43-ex21-10",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p43-ex21-11",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p43-ex21-12",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-q-p43-ex21-13",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-q-p44-ancient-intro",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p44-ancient-reading",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p45-multiplication-cases",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p46-zero-product-note",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-multiplication-sign-magnitude",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-multiplication-letter-condition",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p46-example1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-reciprocal-condition",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p47-example2",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-temperature-change-product",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p47-practice1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p47-practice2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p47-practice3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p47-laws-intro",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p47-explore-commute",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p48-explore-distribute",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p48-example3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-distribution-choice",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p49-explore-signs",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-product-negative-parity",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p50-practice1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p50-practice2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p50-think-division",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p51-division-generalize",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-division-reciprocal-reason",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-division-zero-boundary",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p51-example4",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p51-example5",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-fraction-negative-placement",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p52-practice1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p52-practice2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p52-example6",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-mixed-number-distribution",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-mixed-product-reciprocal",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p53-example7",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p53-example8",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-monthly-average-weight",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p54-practice1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p54-practice2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p54-practice3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise22-1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise22-2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise22-3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-reciprocal-mixed-practice",
+          "fields": [
+            "paragraphs",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise22-4",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise22-5",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise22-6",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise22-7",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise22-8",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise22-9",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise22-10",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-absolute-value-scope-practice",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise22-11",
+          "fields": [
+            "title",
+            "preview",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise22-12",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise22-13",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise22-14",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-doubling-comparison-explore",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise22-15",
+          "fields": [
+            "preview",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise22-16",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p57-special-products",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-negative-product-zero-pair",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p57-general-proof",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-q-p58-sign-bracket-question",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-power-whole-fraction-base",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p58-example1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p59-explore-power-sign",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-power-negative-parity",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p59-example2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p59-practice1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p59-practice2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p59-practice3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p60-example3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-minus-square-step",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p60-example4",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p61-practice",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-scientific-coefficient",
+          "fields": [
+            "title",
+            "preview",
+            "paragraphs"
+          ]
+        },
+        {
+          "id": "ch2-q-p62-example5",
+          "fields": [
+            "preview",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-scientific-exponent-observe",
+          "fields": [
+            "paragraphs",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p62-thinking",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p63-example6",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-approximate-trailing-zero",
+          "fields": [
+            "paragraphs",
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-q-p63-practice1",
+          "fields": [
+            "preview",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p63-practice2",
+          "fields": [
+            "preview",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p63-practice3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p63-practice4",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise23-1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise23-2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise23-3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise23-4",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise23-5",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise23-6",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise23-7",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise23-8",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise23-9",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise23-10",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise23-11",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise23-12",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-power-statement-practice",
+          "fields": [
+            "paragraphs",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-exercise23-13",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p65-activity1",
+          "fields": [
+            "preview",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-income-record-activity",
+          "fields": [
+            "paragraphs",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p65-activity2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-rational-closure-review",
+          "fields": [
+            "paragraphs",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-division-condition-review",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-law-order-review",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p67-review1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p67-review2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p67-review3",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-q-p67-review4",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p67-review5",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-q-p67-review6",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p67-review7",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p67-review8",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-review2-1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-review2-2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-review2-3",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-review2-4",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-review2-5",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-review2-6",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-absolute-scope-practice",
+          "fields": [
+            "paragraphs",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-review2-7",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-review2-8",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-review2-9",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-q-review2-10",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-q-review2-11",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-q-review2-12",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-power-size-explore",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-review2-13",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-counterexample-review",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-review2-14",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-review2-15",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-q-p70-addition-memory",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p70-introduction",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p70-preparation",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-base-unit-exchange",
+          "fields": [
+            "paragraphs"
+          ]
+        },
+        {
+          "id": "ch2-q-p71-activity1-task1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-base-zero-placeholder",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p71-activity1-task2",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p71-activity1-task3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p71-activity2-task1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-binary-addition-explore",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p71-activity2-task2",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-base-addition-consistency",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p72-activity2-task3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p72-activity2-task4",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch2-q-p72-activity3-theme1",
+          "fields": [
+            "preview",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-trigram-reading-order",
+          "fields": [
+            "paragraphs",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p73-activity3-theme2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p73-process1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p73-process2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p73-process3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p73-process4",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p73-evaluation",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch2-q-p74-report",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        }
+      ]
+    },
+    {
+      "chapter": 3,
+      "changes": [
+        {
+          "id": "ch3-q-two-quantity-problems",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-square-quantity-problem",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-expression-vs-relation",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-example-1",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-example-2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-example-2-margin-context",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-p71-exercise-2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-make-context-exercise",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch3-q-sum-difference-thinking",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-example-3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-example-4",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-new-speed-whole",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-p73-exercise-1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-opposite-difference-exercise",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-p73-exercise-2",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch3-q-p73-exercise-3",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch3-q-snow-problem",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-inverse-not-decrease",
+          "fields": [
+            "paragraphs",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-inverse-nonzero",
+          "fields": [
+            "paragraphs"
+          ]
+        },
+        {
+          "id": "ch3-q-example-5",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-inverse-life",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-s31-practice1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-s31-practice2",
+          "fields": [
+            "preview",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-inverse-test-exercise",
+          "fields": [
+            "paragraphs",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-s31-practice3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-exercise31-1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-exercise31-2",
+          "fields": [
+            "preview",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-fraction-reading-exercise",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-exercise31-3",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-early-arrival-exercise",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-exercise31-4",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-exercise31-5",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-exercise31-6",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch3-q-exercise31-7",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-exercise31-8",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch3-q-exercise31-9",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-exercise31-10",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-matches-duplicate-exercise",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch3-q-p86-volleyball",
+          "fields": [
+            "learningGap",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-value-not-expression",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-p86-example1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-value-denominator-condition",
+          "fields": [
+            "paragraphs"
+          ]
+        },
+        {
+          "id": "ch3-q-p86-example2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-p87-practice1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-same-letter-substitution",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-p87-practice3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-p88-practice1",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch3-q-p89-ex32-1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-p89-ex32-2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-sum-square-structure",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-p89-ex32-4",
+          "fields": [
+            "preview",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-p89-ex32-5",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-p89-ex32-7",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-travel-time-difference",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-p89-ex32-8",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-p90-activity1",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch3-q-p90-activity1-squares",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch3-q-p91-activity2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-expression-value-checks",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-p92-review1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-p92-review2",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch3-q-p92-review3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-p92-review4",
+          "fields": [
+            "preview",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-p92-review5",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-p93-review3-1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-verbal-operation-scope",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-p93-review3-2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-p93-review3-3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-p93-review3-4",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-inverse-proportion-check",
+          "fields": [
+            "preview",
+            "paragraphs",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-p93-review3-5",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-q-p93-review3-6",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch3-counter-pattern-corners",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch3-q-p94-review3-9",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        }
+      ]
+    },
+    {
+      "chapter": 4,
+      "changes": [
+        {
+          "id": "ch4-q-intro-1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-intro-2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-intro-3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-observe-monomial",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-degree-letters",
+          "fields": [
+            "title",
+            "paragraphs"
+          ]
+        },
+        {
+          "id": "ch4-constant-degree",
+          "fields": [
+            "paragraphs"
+          ]
+        },
+        {
+          "id": "ch4-q-sec41-example1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-ratio-area",
+          "fields": [
+            "paragraphs"
+          ]
+        },
+        {
+          "id": "ch4-q-sec41-practice-p91-1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-sec41-practice-p91-2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-think-polynomial",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-polynomial-degree",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-degree-bubble",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-sec41-example2",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-same-degree-different",
+          "fields": [
+            "paragraphs",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-sec41-practice-p93-1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-degree-table",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-sec41-practice-p93-3",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-hw41-1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-many-monomials",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-hw41-3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-hw41-4",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-hw41-5",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-hw41-6",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-hw41-7",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-hw41-9",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-sec42-intro-compute",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-sec42-inquiry-p95",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-values-and-law",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-sec42-inquiry-p96",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-like-terms",
+          "fields": [
+            "paragraphs"
+          ]
+        },
+        {
+          "id": "ch4-combine-rule",
+          "fields": [
+            "paragraphs",
+            "learningGap",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-sec42-example1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-42-example2",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-simplify-value",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-42-compare-substitution",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-q-42-example3",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-q-42-example3-stock",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-net-water-change",
+          "fields": [
+            "paragraphs",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-stock-and-change",
+          "fields": [
+            "paragraphs",
+            "learningGap"
+          ]
+        },
+        {
+          "id": "ch4-q-p98-practice1",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-q-p98-practice2",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-area-not-radius",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-bracket-time",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-p98-bridge-simplify",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-minus-bracket",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-42-example4",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-negative-factor",
+          "fields": [
+            "title",
+            "preview",
+            "paragraphs",
+            "learningGap",
+            "learningAction",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-42-negative-product-question",
+          "fields": [
+            "learningGap",
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-q-42-example5",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-bracket-check-exercise",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-q-p100-practice2",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-q-p100-practice3",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-water-tiers",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-q-42-example6",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-q-42-example7",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-two-operations",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-42-example8",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-q-p101-practice1",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-q-p102-practice2",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-q-p102-practice3",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-q-42-exercise1",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-q-42-exercise2",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-q-42-exercise3",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-nested-bracket-check",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-42-exercise4",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-altitude-difference",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-q-42-exercise6",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-q-42-exercise7",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-price-bases",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-triangle-count",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-q-42-exercise11",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-sheet-average",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-sheet-formula",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-calendar",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-divisible-three",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-divisibility-split",
+          "fields": [
+            "paragraphs"
+          ]
+        },
+        {
+          "id": "ch4-one-law-two-directions",
+          "fields": [
+            "paragraphs",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-summary1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-summary2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-summary3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-classification-review",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-review2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-review3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-review4",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-review5",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-q-review6",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-difference-whole-review",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch4-q-review8",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-reversed-digits",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch4-whole-expression",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        }
+      ]
+    },
+    {
+      "chapter": 5,
+      "changes": [
+        {
+          "id": "ch5-q-p118-problem1",
+          "fields": [
+            "preview",
+            "learningGap",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p119-problem2",
+          "fields": [
+            "learningAction",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p120-example1",
+          "fields": [
+            "learningAction",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-model-choose-relation",
+          "fields": [
+            "learningAction"
+          ]
+        },
+        {
+          "id": "ch5-q-p120-exercise1",
+          "fields": [
+            "learningGap",
+            "learningAction",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p120-exercise2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p121-example2",
+          "fields": [
+            "preview",
+            "learningGap",
+            "learningAction",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-substitute-consistently",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p121-thinking1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p121-thinking2",
+          "fields": [
+            "learningAction",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p122-exercise1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p122-exercise2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p122-thinking",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p123-example3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p123-example4",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-undo-operation",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-negative-coefficient",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-check-original",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p124-exercise1",
+          "fields": [
+            "learningAction",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p124-exercise2",
+          "fields": [
+            "learningAction",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-p125-exercise1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p125-exercise3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p125-exercise4",
+          "fields": [
+            "learningGap",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p125-exercise5",
+          "fields": [
+            "learningAction",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p125-exercise6",
+          "fields": [
+            "learningAction",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p126-exercise7",
+          "fields": [
+            "learningAction",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-p126-exercise8",
+          "fields": [
+            "learningAction",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-p126-exercise9",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-p126-exercise10",
+          "fields": [
+            "learningAction",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p126-exercise11",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-p127-problem1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-coefficient-one",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p127-think",
+          "fields": [
+            "title",
+            "preview",
+            "learningGap",
+            "learningAction",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p127-example1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p127-why-solution",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p128-example2",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-p128-practice1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p128-practice2",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-p129-problem2",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-p129-think",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-transpose",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p130-think",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-p130-example3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-choose-side",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p130-example4",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-ratio-unit",
+          "fields": [
+            "paragraphs",
+            "learningGap",
+            "learningAction"
+          ]
+        },
+        {
+          "id": "ch5-q-p131-practice1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p131-practice3",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-p131-practice4",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p131-problem3",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-p132-example5",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-negative-bracket",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p133-practice1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p133-practice3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-lcm-convenience",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p135-step-reasons",
+          "fields": [
+            "preview",
+            "learningGap",
+            "learningAction",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p135-example7",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-whole-numerator",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p136-practice1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p136-practice2",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-p137-hw1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p137-hw2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p137-hw3",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-p137-hw4",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p137-hw6",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-p137-hw7",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-p137-hw8",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-p137-hw9",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-ex52-10",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-ex52-14",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-ex52-15",
+          "fields": [
+            "learningAction",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-train-reference",
+          "fields": [
+            "learningAction"
+          ]
+        },
+        {
+          "id": "ch5-q-repeating-inquiry",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-ex53-example1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-ex53-example2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-work-unit",
+          "fields": [
+            "learningGap"
+          ]
+        },
+        {
+          "id": "ch5-q-practice134-1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-practice134-2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-practice134-3",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-inquiry1",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-practice136-1",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-practice136-2",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-discount-bases",
+          "fields": [
+            "learningAction"
+          ]
+        },
+        {
+          "id": "ch5-q-inquiry2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-context-integer",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-practice137-1",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-practice137-2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-inquiry3",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-practice139-1",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-practice139-2",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-ex53-1",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-ex53-2",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-ex53-3",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-ex53-4",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-ex53-5",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-ex53-6",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-temperature-start",
+          "fields": [
+            "learningAction"
+          ]
+        },
+        {
+          "id": "ch5-q-ex53-7",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-ex53-8",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-sales-quantity-base",
+          "fields": [
+            "learningAction"
+          ]
+        },
+        {
+          "id": "ch5-q-ex53-10",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-ex53-11",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-ex53-12",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-ex53-13",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-ex53-14",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-activity1",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-activity2",
+          "fields": [
+            "learningAction",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-standard-nonzero",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-summary1",
+          "fields": [
+            "preview",
+            "learningGap",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-summary2",
+          "fields": [
+            "preview",
+            "learningGap",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-summary3",
+          "fields": [
+            "preview",
+            "learningGap",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-summary4",
+          "fields": [
+            "preview",
+            "learningGap",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-summary5",
+          "fields": [
+            "preview",
+            "learningGap",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-summary6",
+          "fields": [
+            "preview",
+            "learningGap",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-review1",
+          "fields": [
+            "preview",
+            "learningGap",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-review2",
+          "fields": [
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-review3",
+          "fields": [
+            "preview",
+            "learningGap",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-review4",
+          "fields": [
+            "preview",
+            "learningGap",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-review5",
+          "fields": [
+            "preview",
+            "learningGap",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-formula-known",
+          "fields": [
+            "learningAction"
+          ]
+        },
+        {
+          "id": "ch5-q-review6",
+          "fields": [
+            "preview",
+            "learningGap",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-review7",
+          "fields": [
+            "preview",
+            "learningGap",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-review8",
+          "fields": [
+            "preview",
+            "learningGap"
+          ]
+        },
+        {
+          "id": "ch5-q-review9",
+          "fields": [
+            "preview",
+            "learningGap",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-returns-base",
+          "fields": [
+            "learningAction"
+          ]
+        },
+        {
+          "id": "ch5-q-review10",
+          "fields": [
+            "preview",
+            "learningGap",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-review11",
+          "fields": [
+            "preview",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-age-same-time",
+          "fields": [
+            "learningAction"
+          ]
+        },
+        {
+          "id": "ch5-q-review12",
+          "fields": [
+            "preview",
+            "learningGap",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-q-review13",
+          "fields": [
+            "preview",
+            "learningGap",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-review14",
+          "fields": [
+            "preview",
+            "learningGap",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch5-q-review15",
+          "fields": [
+            "preview",
+            "learningGap",
+            "questionGuide",
+            "related"
+          ]
+        },
+        {
+          "id": "ch5-percentage-points",
+          "fields": [
+            "learningAction"
+          ]
+        }
+      ]
+    },
+    {
+      "chapter": 6,
+      "changes": [
+        {
+          "id": "ch6-q-intro-city",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-prism-pyramid-examples",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-solid-matching",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-plane-not-flat-object",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch6-q-plane-patterns",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-geometric-properties",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-solids-plane-faces",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-views-information",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch6-q-cubes-views-example",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-view-overlap",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch6-net-vs-view",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch6-q-chalkbox-unfold",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-nets-explore",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-prism-view-directions",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-net-matching",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-cube-net-condition",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-elements-intro",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-cuboid-count",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-flat-curved-examples",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-point-model",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch6-q-surfaces-practice",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-line-motion-practice",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-rotation-axis-practice",
+          "fields": [
+            "learningAction",
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-61-1",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-61-2",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-61-3",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-61-4",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-61-5",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-view-area-practice",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch6-q-61-6",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-61-7",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-opposite-faces-practice",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-61-9",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-61-10",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-decorated-net-practice",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-61-12",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-line-ray-segment-intro",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-lines-through-points",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-line-points-not-ends",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch6-intersection-one-point",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch6-p170-ray-line-question",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-extension-order",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch6-p170-exercise-1",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p170-exercise-2",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p170-exercise-3",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p171-tools-question",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p171-comparison-explore",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p171-comparison-cases",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p172-shortest-explore",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p172-shortest-application",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p172-example",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-estimate-then-verify",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p173-exercise-2",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-collinear-order-exercise",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p173-exercises-1",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p174-exercises-2",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p174-exercises-3",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p174-exercises-4",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-extension-midpoint-exercise",
+          "fields": [
+            "learningAction",
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p174-exercises-6",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p174-exercises-6-bridge",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-number-line-midpoint-exercise",
+          "fields": [
+            "learningAction",
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p175-exercises-8",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p175-exercises-9",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-cylinder-route-constraints",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch6-maximum-intersections-exercise",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p176-reading-units",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-screen-unit-exercise",
+          "fields": [
+            "learningAction"
+          ]
+        },
+        {
+          "id": "ch6-angle-rays-definition",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch6-angle-single-letter",
+          "fields": [
+            "preview",
+            "paragraphs",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p177-rotation-think",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p178-unit-fill",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p178-example-1",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-clock-hour-hand-moves",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p179-exercise-2",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p179-exercise-3",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-decimal-degree-comparison-exercise",
+          "fields": [
+            "paragraphs",
+            "learningAction",
+            "related"
+          ]
+        },
+        {
+          "id": "ch6-p179-exercise-4",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch6-p180-comparison-question",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p180-angle-sum-think",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p180-angle-difference-fill",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p180-triangles-explore",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p181-example-2",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-angle-borrow-same-quantity",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch6-p181-exercise-1",
+          "fields": [
+            "preview",
+            "related"
+          ]
+        },
+        {
+          "id": "ch6-p181-exercise-2",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p181-exercise-3",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p181-equal-angle-fill",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-fold-bisector-check",
+          "fields": [
+            "preview",
+            "paragraphs",
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p182-example-3",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p182-exercise-1",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch6-p183-exercise-2",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p183-exercise-3",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-p183-complements-think",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-equal-angle-complements",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch6-p183-equal-supplements-why",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-clock-continuous-motion",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch6-bearing-observation-base",
+          "fields": [
+            "learningAction",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-measurement-conjecture",
+          "fields": [
+            "learningAction",
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-view-versus-net",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch6-surface-route-correspondence",
+          "fields": [
+            "learningAction"
+          ]
+        },
+        {
+          "id": "ch6-fold-angle-evidence",
+          "fields": [
+            "learningAction"
+          ]
+        },
+        {
+          "id": "ch6-design-evidence",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch6-q-p184-example4",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p184-practice1",
+          "fields": [
+            "related"
+          ]
+        },
+        {
+          "id": "ch6-q-p184-practice2",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p184-practice3",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p184-practice4",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p185-e1",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p185-e2",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p185-e3",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p185-e4",
+          "fields": [
+            "preview",
+            "related"
+          ]
+        },
+        {
+          "id": "ch6-q-p185-e5",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p185-e6",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p185-e7",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p185-e8",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p185-e9",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p186-e10",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p186-e11",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p186-e12",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p187-e15",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p189-activity1",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p190-activity2",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p190-activity2-fold",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p190-activity2-pattern",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p192-recap1",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p192-recap2",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p192-recap3",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p192-recap4",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p192-recap5",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p192-recap6",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p192-review1",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p193-review2",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p193-review3",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p193-review4",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p193-review5",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p193-review6",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p194-review7",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p194-review8",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p194-review9",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p194-review10",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p195-review11",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p195-review12",
+          "fields": [
+            "preview",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p195-review13",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p195-review14",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p197-field-activity1",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p197-field-task1",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p198-field-task2",
+          "fields": [
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p198-field-task3",
+          "fields": [
+            "related",
+            "questionGuide"
+          ]
+        },
+        {
+          "id": "ch6-q-p198-field-activity3",
+          "fields": [
+            "questionGuide"
+          ]
+        }
+      ]
+    }
+  ],
+  "newOrAdjustedSourceTargets": [
+    {
+      "chapter": 2,
+      "id": "ch2-q-p31-intro-budget",
+      "new": false,
+      "pdfPage": 31,
+      "printedPage": null,
+      "anchorLabel": "收支情况表"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-base-unit-exchange",
+      "new": false,
+      "pdfPage": 70,
+      "printedPage": "63",
+      "anchorLabel": "活动一 认识进位制，探究不同进位制的数之间的转换"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-addition-rule",
+      "new": true,
+      "pdfPage": 34,
+      "printedPage": "27",
+      "anchorLabel": "有理数加法法则"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-addition-commutative",
+      "new": true,
+      "pdfPage": 35,
+      "printedPage": "28",
+      "anchorLabel": "加法交换律"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-addition-associative",
+      "new": true,
+      "pdfPage": 36,
+      "printedPage": "29",
+      "anchorLabel": "加法结合律"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-number-line-motion",
+      "new": true,
+      "pdfPage": 32,
+      "printedPage": "25",
+      "anchorLabel": "思考"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-subtraction-inverse",
+      "new": true,
+      "pdfPage": 38,
+      "printedPage": "31",
+      "anchorLabel": "图2.1-4"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-subtraction-rule",
+      "new": true,
+      "pdfPage": 38,
+      "printedPage": "31",
+      "anchorLabel": "有理数减法法则"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-sum-abbreviation",
+      "new": true,
+      "pdfPage": 40,
+      "printedPage": "33",
+      "anchorLabel": "归纳"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-wheat-records-example",
+      "new": true,
+      "pdfPage": 37,
+      "printedPage": "30",
+      "anchorLabel": "例3（续）"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-wheat-total-example",
+      "new": true,
+      "pdfPage": 37,
+      "printedPage": "30",
+      "anchorLabel": "例3（续）"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-multiplication-rule",
+      "new": true,
+      "pdfPage": 46,
+      "printedPage": "39",
+      "anchorLabel": "有理数乘法法则"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-reciprocal-definition",
+      "new": true,
+      "pdfPage": 47,
+      "printedPage": "40",
+      "anchorLabel": "倒数"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-multiplication-laws",
+      "new": true,
+      "pdfPage": 48,
+      "printedPage": "41",
+      "anchorLabel": "乘法交换律；乘法结合律"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-distributive-law",
+      "new": true,
+      "pdfPage": 48,
+      "printedPage": "41",
+      "anchorLabel": "分配律"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-product-signs",
+      "new": true,
+      "pdfPage": 49,
+      "printedPage": "42",
+      "anchorLabel": "几个不是0的数相乘"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-division-inverse",
+      "new": true,
+      "pdfPage": 50,
+      "printedPage": "43",
+      "anchorLabel": "2.2.2 有理数的除法"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-division-rule",
+      "new": true,
+      "pdfPage": 51,
+      "printedPage": "44",
+      "anchorLabel": "有理数除法法则"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-rational-fraction-form",
+      "new": true,
+      "pdfPage": 52,
+      "printedPage": "45",
+      "anchorLabel": "有理数写成分数的形式"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-four-operation-order",
+      "new": true,
+      "pdfPage": 53,
+      "printedPage": "46",
+      "anchorLabel": "先乘除，后加减"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-monthly-average-example",
+      "new": true,
+      "pdfPage": 53,
+      "printedPage": "46",
+      "anchorLabel": "例8"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-power-definition",
+      "new": true,
+      "pdfPage": 58,
+      "printedPage": "51",
+      "anchorLabel": "乘方"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-power-signs",
+      "new": true,
+      "pdfPage": 59,
+      "printedPage": "52",
+      "anchorLabel": "负数的奇次幂是负数，负数的偶次幂是正数"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-operation-order",
+      "new": true,
+      "pdfPage": 60,
+      "printedPage": "53",
+      "anchorLabel": "先乘方，再乘除，最后加减"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-scientific-definition",
+      "new": true,
+      "pdfPage": 62,
+      "printedPage": "55",
+      "anchorLabel": "科学记数法"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-approximation-precision",
+      "new": true,
+      "pdfPage": 62,
+      "printedPage": "55",
+      "anchorLabel": "2.3.3 近似数"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-nonnegative-definition",
+      "new": true,
+      "pdfPage": 66,
+      "printedPage": "59",
+      "anchorLabel": "二、回顾与思考"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-base-definition",
+      "new": true,
+      "pdfPage": 70,
+      "printedPage": "63",
+      "anchorLabel": "活动一 认识进位制，探究不同进位制的数之间的转换"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-place-value",
+      "new": true,
+      "pdfPage": 71,
+      "printedPage": "64",
+      "anchorLabel": "十进制的数位表示（续）"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-zero-power",
+      "new": true,
+      "pdfPage": 71,
+      "printedPage": "64",
+      "anchorLabel": "十进制的数位表示（续）"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-binary-context",
+      "new": true,
+      "pdfPage": 71,
+      "printedPage": "64",
+      "anchorLabel": "活动二 探究进制数的加法运算"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-trigram-conventions",
+      "new": true,
+      "pdfPage": 72,
+      "printedPage": "65",
+      "anchorLabel": "图1、图2"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-report-form",
+      "new": true,
+      "pdfPage": 74,
+      "printedPage": "67",
+      "anchorLabel": "研究报告参考表"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-report-process",
+      "new": true,
+      "pdfPage": 73,
+      "printedPage": "66",
+      "anchorLabel": "活动过程"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-place-value-start",
+      "new": true,
+      "pdfPage": 70,
+      "printedPage": "63",
+      "anchorLabel": "活动一 认识进位制，探究不同进位制的数之间的转换"
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-source-ancient-terms",
+      "new": true,
+      "pdfPage": 44,
+      "printedPage": "37",
+      "anchorLabel": "我国古代的正负数加减运算法则——正负术"
+    },
+    {
+      "chapter": 3,
+      "id": "ch3-q-p86-volleyball",
+      "new": false,
+      "pdfPage": 86,
+      "printedPage": "79",
+      "anchorLabel": "问题"
+    },
+    {
+      "chapter": 3,
+      "id": "ch3-source-expression-definition",
+      "new": true,
+      "pdfPage": 77,
+      "printedPage": "70",
+      "anchorLabel": "代数式"
+    },
+    {
+      "chapter": 3,
+      "id": "ch3-source-direct-proportion",
+      "new": true,
+      "pdfPage": 80,
+      "printedPage": "73",
+      "anchorLabel": "成正比例关系"
+    },
+    {
+      "chapter": 3,
+      "id": "ch3-source-inverse-proportion",
+      "new": true,
+      "pdfPage": 81,
+      "printedPage": "74",
+      "anchorLabel": "成反比例的量、反比例关系"
+    },
+    {
+      "chapter": 3,
+      "id": "ch3-source-expression-value",
+      "new": true,
+      "pdfPage": 86,
+      "printedPage": "79",
+      "anchorLabel": "代数式的值"
+    },
+    {
+      "chapter": 3,
+      "id": "ch3-source-average-length",
+      "new": true,
+      "pdfPage": 77,
+      "printedPage": "70",
+      "anchorLabel": "问题（1）（2）"
+    },
+    {
+      "chapter": 3,
+      "id": "ch3-source-price-interest",
+      "new": true,
+      "pdfPage": 79,
+      "printedPage": "72",
+      "anchorLabel": "例3"
+    },
+    {
+      "chapter": 3,
+      "id": "ch3-source-travel-formula",
+      "new": true,
+      "pdfPage": 87,
+      "printedPage": "80",
+      "anchorLabel": "公式"
+    },
+    {
+      "chapter": 3,
+      "id": "ch3-source-read-expression",
+      "new": true,
+      "pdfPage": 78,
+      "printedPage": "71",
+      "anchorLabel": "例2"
+    },
+    {
+      "chapter": 3,
+      "id": "ch3-source-fraction-reading",
+      "new": true,
+      "pdfPage": 78,
+      "printedPage": "71",
+      "anchorLabel": "例2"
+    },
+    {
+      "chapter": 3,
+      "id": "ch3-source-subtraction-order",
+      "new": true,
+      "pdfPage": 78,
+      "printedPage": "71",
+      "anchorLabel": "思考"
+    },
+    {
+      "chapter": 4,
+      "id": "ch4-source-monomial-definition",
+      "new": true,
+      "pdfPage": 96,
+      "printedPage": "89",
+      "anchorLabel": "单项式"
+    },
+    {
+      "chapter": 4,
+      "id": "ch4-source-coefficient",
+      "new": true,
+      "pdfPage": 96,
+      "printedPage": "89",
+      "anchorLabel": "系数、次数"
+    },
+    {
+      "chapter": 4,
+      "id": "ch4-source-monomial-degree",
+      "new": true,
+      "pdfPage": 96,
+      "printedPage": "89",
+      "anchorLabel": "系数、次数"
+    },
+    {
+      "chapter": 4,
+      "id": "ch4-source-polynomial-definition",
+      "new": true,
+      "pdfPage": 98,
+      "printedPage": "91",
+      "anchorLabel": "多项式、项、常数项"
+    },
+    {
+      "chapter": 4,
+      "id": "ch4-source-polynomial-degree",
+      "new": true,
+      "pdfPage": 99,
+      "printedPage": "92",
+      "anchorLabel": "多项式的次数"
+    },
+    {
+      "chapter": 4,
+      "id": "ch4-source-integral-definition",
+      "new": true,
+      "pdfPage": 99,
+      "printedPage": "92",
+      "anchorLabel": "整式"
+    },
+    {
+      "chapter": 4,
+      "id": "ch4-source-like-terms",
+      "new": true,
+      "pdfPage": 103,
+      "printedPage": "96",
+      "anchorLabel": "同类项"
+    },
+    {
+      "chapter": 4,
+      "id": "ch4-source-combine-rule",
+      "new": true,
+      "pdfPage": 103,
+      "printedPage": "96",
+      "anchorLabel": "合并同类项"
+    },
+    {
+      "chapter": 4,
+      "id": "ch4-source-remove-brackets",
+      "new": true,
+      "pdfPage": 106,
+      "printedPage": "99",
+      "anchorLabel": "去括号"
+    },
+    {
+      "chapter": 4,
+      "id": "ch4-source-add-subtract-rule",
+      "new": true,
+      "pdfPage": 108,
+      "printedPage": "101",
+      "anchorLabel": "整式加减的运算法则"
+    },
+    {
+      "chapter": 4,
+      "id": "ch4-source-spreadsheet-average",
+      "new": true,
+      "pdfPage": 111,
+      "printedPage": "104",
+      "anchorLabel": "利用电子表格可以进行数据计算"
+    },
+    {
+      "chapter": 5,
+      "id": "ch5-source-equation-definition",
+      "new": true,
+      "pdfPage": 119,
+      "printedPage": "112",
+      "anchorLabel": "方程"
+    },
+    {
+      "chapter": 5,
+      "id": "ch5-source-solution-definition",
+      "new": true,
+      "pdfPage": 121,
+      "printedPage": "114",
+      "anchorLabel": "方程的解、解方程"
+    },
+    {
+      "chapter": 5,
+      "id": "ch5-source-linear-definition",
+      "new": true,
+      "pdfPage": 122,
+      "printedPage": "115",
+      "anchorLabel": "一元一次方程"
+    },
+    {
+      "chapter": 5,
+      "id": "ch5-source-equality-transitive",
+      "new": true,
+      "pdfPage": 122,
+      "printedPage": "115",
+      "anchorLabel": "等式两边可以交换；相等关系可以传递"
+    },
+    {
+      "chapter": 5,
+      "id": "ch5-source-equality-add-subtract",
+      "new": true,
+      "pdfPage": 123,
+      "printedPage": "116",
+      "anchorLabel": "等式的性质1"
+    },
+    {
+      "chapter": 5,
+      "id": "ch5-source-equality-multiply-divide",
+      "new": true,
+      "pdfPage": 123,
+      "printedPage": "116",
+      "anchorLabel": "等式的性质2"
+    },
+    {
+      "chapter": 5,
+      "id": "ch5-source-transpose-rule",
+      "new": true,
+      "pdfPage": 129,
+      "printedPage": "122",
+      "anchorLabel": "移项"
+    },
+    {
+      "chapter": 5,
+      "id": "ch5-source-solving-steps",
+      "new": true,
+      "pdfPage": 135,
+      "printedPage": "128",
+      "anchorLabel": "归纳"
+    },
+    {
+      "chapter": 5,
+      "id": "ch5-source-work-person-formula",
+      "new": true,
+      "pdfPage": 141,
+      "printedPage": "134",
+      "anchorLabel": "例2（续）"
+    },
+    {
+      "chapter": 5,
+      "id": "ch5-source-modeling-process",
+      "new": true,
+      "pdfPage": 141,
+      "printedPage": "134",
+      "anchorLabel": "归纳"
+    },
+    {
+      "chapter": 5,
+      "id": "ch5-source-modeling-intro",
+      "new": true,
+      "pdfPage": 120,
+      "printedPage": "113",
+      "anchorLabel": "归纳"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-source-geometric-figures",
+      "new": true,
+      "pdfPage": 157,
+      "printedPage": "150",
+      "anchorLabel": "几何图形"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-source-solid-definition",
+      "new": true,
+      "pdfPage": 158,
+      "printedPage": "151",
+      "anchorLabel": "立体图形"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-source-solid-examples",
+      "new": true,
+      "pdfPage": 158,
+      "printedPage": "151",
+      "anchorLabel": "立体图形"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-source-plane-definition",
+      "new": true,
+      "pdfPage": 158,
+      "printedPage": "151",
+      "anchorLabel": "平面图形"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-source-observation-example",
+      "new": true,
+      "pdfPage": 160,
+      "printedPage": "153",
+      "anchorLabel": "例"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-source-net-definition",
+      "new": true,
+      "pdfPage": 160,
+      "printedPage": "153",
+      "anchorLabel": "展开图"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-source-face-definition",
+      "new": true,
+      "pdfPage": 162,
+      "printedPage": "155",
+      "anchorLabel": "体、面、线"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-source-motion-examples",
+      "new": true,
+      "pdfPage": 163,
+      "printedPage": "156",
+      "anchorLabel": "图6.1-14"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-source-two-points-line",
+      "new": true,
+      "pdfPage": 169,
+      "printedPage": "162",
+      "anchorLabel": "两点确定一条直线"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-source-intersection-definition",
+      "new": true,
+      "pdfPage": 169,
+      "printedPage": "162",
+      "anchorLabel": "相交、交点"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-source-ray-segment-notation",
+      "new": true,
+      "pdfPage": 170,
+      "printedPage": "163",
+      "anchorLabel": "线段、射线的表示"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-source-extension-direction",
+      "new": true,
+      "pdfPage": 170,
+      "printedPage": "163",
+      "anchorLabel": "连接、延长与反向延长线段"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-source-compass-copy",
+      "new": true,
+      "pdfPage": 171,
+      "printedPage": "164",
+      "anchorLabel": "尺规作图"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-source-segment-shortest",
+      "new": true,
+      "pdfPage": 172,
+      "printedPage": "165",
+      "anchorLabel": "两点之间，线段最短"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-source-distance-definition",
+      "new": true,
+      "pdfPage": 172,
+      "printedPage": "165",
+      "anchorLabel": "距离"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-source-segment-sum-difference",
+      "new": true,
+      "pdfPage": 172,
+      "printedPage": "165",
+      "anchorLabel": "线段的运算"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-source-midpoint-definition",
+      "new": true,
+      "pdfPage": 173,
+      "printedPage": "166",
+      "anchorLabel": "中点"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-source-angle-definition",
+      "new": true,
+      "pdfPage": 177,
+      "printedPage": "170",
+      "anchorLabel": "角"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-source-angle-units",
+      "new": true,
+      "pdfPage": 178,
+      "printedPage": "171",
+      "anchorLabel": "度、分、秒；角度制"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-source-angle-comparison",
+      "new": true,
+      "pdfPage": 180,
+      "printedPage": "173",
+      "anchorLabel": "比较两个角的大小"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-source-angle-sum-difference",
+      "new": true,
+      "pdfPage": 180,
+      "printedPage": "173",
+      "anchorLabel": "两个角的和与差"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-source-bisector-definition",
+      "new": true,
+      "pdfPage": 182,
+      "printedPage": "175",
+      "anchorLabel": "角的平分线"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-source-supplementary-definition",
+      "new": true,
+      "pdfPage": 183,
+      "printedPage": "176",
+      "anchorLabel": "余角、互余；补角、互补"
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-source-equal-complements",
+      "new": true,
+      "pdfPage": 183,
+      "printedPage": "176",
+      "anchorLabel": "同角（等角）的余角相等"
+    }
+  ],
+  "verification": {
+    "firstChapterUnchanged": true,
+    "questionInventoriesAndPartsUnchanged": true,
+    "uniqueSupplements": 970,
+    "uniqueLocations": 1087,
+    "allLinksResolve": true,
+    "duplicateOrSelfLinks": false,
+    "unusedLocationIds": [],
+    "newAndAdjustedImageHashesMatch": true,
+    "npmTest": "23项通过。",
+    "build": "通过；保留现有产物体积提示。",
+    "gitDiffCheck": "通过。"
+  },
+  "browserVerification": {
+    "origin": "http://127.0.0.1:5175/",
+    "isolation": "使用独立测试origin与agent自建验收空间，未操作个人笔记或个人补充。",
+    "newSpaceAuthorized": true,
+    "spaceId": 11,
+    "spaceFinished": true,
+    "plannedCases": 33,
+    "completedRoundTrips": 33,
+    "casesByChapter": {
+      "2": 8,
+      "3": 5,
+      "4": 6,
+      "5": 7,
+      "6": 7
+    },
+    "viewports": [
+      {
+        "width": 823,
+        "height": 944
+      },
+      {
+        "width": 1736,
+        "height": 944
+      }
+    ],
+    "roundTripViewport": {
+      "width": 823,
+      "height": 944
+    },
+    "assertions": [
+      "关联目标高亮区域处于教材阅读区可见范围内。",
+      "返回恢复原题、分组展开项、方法开合、原文高亮、阅读位置、面板滚动和来源链接焦点。",
+      "一次关联产生一个返回层级；当前目标不会再作为同一目标重复提供。",
+      "五章各选一个连续说明，两种实际CSS视口下没有知识/方法/注意事项模块标题与方法开关，也没有页面横向溢出。"
+    ],
+    "samplingNote": "初次检查把page.focus后的滚动位置当作点击位置，忽略了page.click将按钮滚入视野的动作。临时各章检查改在来源按钮实际click事件发生时记录面板滚动，再与返回后的值比对；生产返回逻辑没有因此修改。",
+    "caseResults": [
+      {
+        "chapter": 2,
+        "index": 15,
+        "source": "ch2-q-p34-example1",
+        "sourceTitle": "例1：五种有理数加法",
+        "target": "ch2-source-addition-rule",
+        "purpose": "核对先定和的符号、再求绝对值时分别使用的条件。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 317,
+          "clickScroll": 342.5,
+          "returnedScroll": 342.5
+        }
+      },
+      {
+        "chapter": 2,
+        "index": 114,
+        "source": "ch2-q-p51-example4",
+        "sourceTitle": "2.2.2 例4：有理数除法",
+        "target": "ch2-source-division-rule",
+        "purpose": "核对除数非零，并确认转成乘法时只对除数取倒数。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 354,
+          "clickScroll": 354,
+          "returnedScroll": 354
+        }
+      },
+      {
+        "chapter": 2,
+        "index": 170,
+        "source": "ch2-q-p58-sign-bracket-question",
+        "sourceTitle": "2.3.1 旁注：(−2)⁴与−2⁴相等吗",
+        "target": "ch2-source-power-definition",
+        "purpose": "按n个相同乘数的记号，确认完整底数和因数个数。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 412.5,
+          "clickScroll": 412.5,
+          "returnedScroll": 412.5
+        }
+      },
+      {
+        "chapter": 2,
+        "index": 186,
+        "source": "ch2-q-p60-example3",
+        "sourceTitle": "例3：含乘方的混合运算",
+        "target": "ch2-source-operation-order",
+        "purpose": "核对括号、乘方、乘除与加减的层次，并检查同级从左到右。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 520.5,
+          "clickScroll": 520.5,
+          "returnedScroll": 520.5
+        }
+      },
+      {
+        "chapter": 2,
+        "index": 197,
+        "source": "ch2-approximate-trailing-zero",
+        "sourceTitle": "旁注：1.8与1.80的精确度",
+        "target": "ch2-source-approximation-precision",
+        "purpose": "对照原数量、近似记录与精确数位，区分数值和记录要求。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 23,
+          "clickScroll": 0,
+          "returnedScroll": 0
+        }
+      },
+      {
+        "chapter": 2,
+        "index": 276,
+        "source": "ch2-q-p71-activity1-task1",
+        "sourceTitle": "活动一任务1：将二进制1011转换为十进制",
+        "target": "ch2-source-place-value-start",
+        "purpose": "先读十进制数位从右起的约定，再接看下一页的数位展开。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 393.5,
+          "clickScroll": 393.5,
+          "returnedScroll": 393.5
+        }
+      },
+      {
+        "chapter": 2,
+        "index": 277,
+        "source": "ch2-q-p71-activity1-task1",
+        "sourceTitle": "活动一任务1：将二进制1011转换为十进制",
+        "target": "ch2-source-place-value",
+        "purpose": "接前页数位说明，对照十进制展开用例，换成题给基数后自己配对与求和。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 415,
+          "clickScroll": 440.5,
+          "returnedScroll": 440.5
+        }
+      },
+      {
+        "chapter": 2,
+        "index": 274,
+        "source": "ch2-q-p70-preparation",
+        "sourceTitle": "活动准备：二进制资料与ICME-14标识",
+        "target": "ch2-source-trigram-conventions",
+        "purpose": "核对线条对应0或1的约定，并从首组用例确认上下数位。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 432.5,
+          "clickScroll": 432.5,
+          "returnedScroll": 432.5
+        }
+      },
+      {
+        "chapter": 3,
+        "index": 4,
+        "source": "ch3-q-square-quantity-problem",
+        "sourceTitle": "引入问题（2）：正方形的周长与面积",
+        "target": "ch3-source-expression-definition",
+        "purpose": "回看数、字母和运算怎样组成代数式，再对应当前数量。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 413,
+          "clickScroll": 413,
+          "returnedScroll": 413
+        }
+      },
+      {
+        "chapter": 3,
+        "index": 36,
+        "source": "ch3-q-snow-problem",
+        "sourceTitle": "问题：造雪天数",
+        "target": "ch3-source-inverse-proportion",
+        "purpose": "完成填表与变化观察后，对照下一页的反比例定义，检查自己的判断。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 462,
+          "clickScroll": 462,
+          "returnedScroll": 462
+        }
+      },
+      {
+        "chapter": 3,
+        "index": 79,
+        "source": "ch3-q-p86-volleyball",
+        "sourceTitle": "3.2 问题：购置排球",
+        "target": "ch3-source-expression-value",
+        "purpose": "确认求值是替换字母并保留原式运算关系。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 307.5,
+          "clickScroll": 330,
+          "returnedScroll": 330
+        }
+      },
+      {
+        "chapter": 3,
+        "index": 28,
+        "source": "ch3-q-p73-exercise-1",
+        "sourceTitle": "练习1：倍数、相反数与商",
+        "target": "ch3-source-subtraction-order",
+        "purpose": "确认文字中先说的数在减号前，后说的数在减号后。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 619,
+          "clickScroll": 619,
+          "returnedScroll": 619
+        }
+      },
+      {
+        "chapter": 3,
+        "index": 145,
+        "source": "ch3-q-p92-review5",
+        "sourceTitle": "回顾与思考 第5题",
+        "target": "ch2-source-operation-order",
+        "purpose": "回看乘方、乘除、加减和括号的顺序，再说明自己例子中每一步的依据。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 503,
+          "clickScroll": 503,
+          "returnedScroll": 503
+        }
+      },
+      {
+        "chapter": 4,
+        "index": 7,
+        "source": "ch4-q-sec41-example1",
+        "sourceTitle": "4.1 例1：列式后找系数与次数",
+        "target": "ch4-source-monomial-degree",
+        "purpose": "只求字母指数之和，并保留非零常数与0的特殊规定。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 709,
+          "clickScroll": 731.5,
+          "returnedScroll": 731.5
+        }
+      },
+      {
+        "chapter": 4,
+        "index": 52,
+        "source": "ch4-q-sec42-inquiry-p96",
+        "sourceTitle": "4.2 探究",
+        "target": "ch4-source-like-terms",
+        "purpose": "先说明这些项有哪些共同特点，再对照下文的同类项定义，检查所观察的条件是否完整。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 482,
+          "clickScroll": 482,
+          "returnedScroll": 482
+        }
+      },
+      {
+        "chapter": 4,
+        "index": 46,
+        "source": "ch4-q-sec42-intro-compute",
+        "sourceTitle": "4.2 导入：如何计算72a+120a",
+        "target": "ch4-source-combine-rule",
+        "purpose": "完成本题计算、观察和理由说明后，对照后文的合并同类项法则，核对自己的归纳。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 442.5,
+          "clickScroll": 442.5,
+          "returnedScroll": 442.5
+        }
+      },
+      {
+        "chapter": 4,
+        "index": 77,
+        "source": "ch4-q-p98-bridge-simplify",
+        "sourceTitle": "提问：两式中的括号受哪个数作用？",
+        "target": "ch4-source-remove-brackets",
+        "purpose": "核对外部因数怎样作用于每一项，保留完整符号。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 327,
+          "clickScroll": 352.5,
+          "returnedScroll": 352.5
+        }
+      },
+      {
+        "chapter": 4,
+        "index": 133,
+        "source": "ch4-q-sheet-average",
+        "sourceTitle": "表格示例：求和与平均值",
+        "target": "ch4-source-spreadsheet-average",
+        "purpose": "对照同一组六个数，检查平均数中的总和与除以6的范围。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 219.5,
+          "clickScroll": 242,
+          "returnedScroll": 242
+        }
+      },
+      {
+        "chapter": 4,
+        "index": 47,
+        "source": "ch4-q-sec42-intro-compute",
+        "sourceTitle": "4.2 导入：如何计算72a+120a",
+        "target": "ch2-source-distributive-law",
+        "purpose": "回看一个因数与和相乘的等式，辨认展开或收回共同因数的依据。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 415,
+          "clickScroll": 440.5,
+          "returnedScroll": 440.5
+        }
+      },
+      {
+        "chapter": 5,
+        "index": 13,
+        "source": "ch5-q-p121-thinking2",
+        "sourceTitle": "思考：怎样比较方程的结构",
+        "target": "ch5-source-linear-definition",
+        "purpose": "在完成观察后，对照下一页定义检查所提出的共同特征是否完整。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 327,
+          "clickScroll": 352.5,
+          "returnedScroll": 352.5
+        }
+      },
+      {
+        "chapter": 5,
+        "index": 22,
+        "source": "ch5-q-p122-thinking",
+        "sourceTitle": "思考：怎样用负数检验等式性质",
+        "target": "ch5-source-equality-multiply-divide",
+        "purpose": "除法试验先保证除数非零；完成后可对照下一页性质核对适用条件。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 462,
+          "clickScroll": 462,
+          "returnedScroll": 462
+        }
+      },
+      {
+        "chapter": 5,
+        "index": 10,
+        "source": "ch5-q-p121-example2",
+        "sourceTitle": "例2：一个候选值怎样接受检验",
+        "target": "ch5-source-solution-definition",
+        "purpose": "用定义判断每次检验要比较的是什么。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 219.5,
+          "clickScroll": 242,
+          "returnedScroll": 242
+        }
+      },
+      {
+        "chapter": 5,
+        "index": 130,
+        "source": "ch5-q-ex53-example2",
+        "sourceTitle": "5.3 例2：分阶段整理图书",
+        "target": "ch5-source-work-person-formula",
+        "purpose": "对照本例续页的关系，区分单人效率与整组效率，再给各阶段配人数和用时。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 717,
+          "clickScroll": 717,
+          "returnedScroll": 717
+        }
+      },
+      {
+        "chapter": 5,
+        "index": 2,
+        "source": "ch5-q-p119-problem2",
+        "sourceTitle": "问题2：比例与面积各提供什么条件",
+        "target": "ch5-source-modeling-intro",
+        "purpose": "先对照本页的长宽和面积式子；下一页归纳可用来核对“表示数量”与“写相等关系”的分工。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 403.5,
+          "clickScroll": 403.5,
+          "returnedScroll": 403.5
+        }
+      },
+      {
+        "chapter": 5,
+        "index": 136,
+        "source": "ch5-q-practice134-2",
+        "sourceTitle": "练习第2题：调入后的人数关系",
+        "target": "ch5-source-modeling-process",
+        "purpose": "回顾怎样用含未知数的等式表示相等关系，再检查本题等号两边分别表示的量。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 413.5,
+          "clickScroll": 413.5,
+          "returnedScroll": 413.5
+        }
+      },
+      {
+        "chapter": 5,
+        "index": 65,
+        "source": "ch5-q-p130-example3",
+        "sourceTitle": "例3：移项与系数符号",
+        "target": "ch5-source-transpose-rule",
+        "purpose": "两题的项分布在等号两边，需要按等式性质集中同类项。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 446,
+          "clickScroll": 446,
+          "returnedScroll": 446
+        }
+      },
+      {
+        "chapter": 6,
+        "index": 13,
+        "source": "ch6-q-chalkbox-unfold",
+        "sourceTitle": "6.1.1 活动：粉笔盒与它的展开图",
+        "target": "ch6-source-net-definition",
+        "purpose": "核对铺平后的图形怎样对应原来的表面。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 297.5,
+          "clickScroll": 320,
+          "returnedScroll": 320
+        }
+      },
+      {
+        "chapter": 6,
+        "index": 203,
+        "source": "ch6-q-p192-recap1",
+        "sourceTitle": "小结回顾与思考第1题：描述并画出数学名词",
+        "target": "ch6-source-distance-definition",
+        "purpose": "辨清距离所指的是长度。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 591.5,
+          "clickScroll": 614,
+          "returnedScroll": 614
+        }
+      },
+      {
+        "chapter": 6,
+        "index": 100,
+        "source": "ch6-p178-unit-fill",
+        "sourceTitle": "填空：周角、平角与度分秒",
+        "target": "ch6-source-angle-units",
+        "purpose": "本题要依据单位关系填写，不能套十进制位值。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 374,
+          "clickScroll": 374,
+          "returnedScroll": 374
+        }
+      },
+      {
+        "chapter": 6,
+        "index": 126,
+        "source": "ch6-p181-equal-angle-fill",
+        "sourceTitle": "填空：把角分成两等份",
+        "target": "ch6-source-bisector-definition",
+        "purpose": "此处的等分关系将在次页定义中明确，可用来检查整角与部分角。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 335,
+          "clickScroll": 335,
+          "returnedScroll": 335
+        }
+      },
+      {
+        "chapter": 6,
+        "index": 137,
+        "source": "ch6-p183-complements-think",
+        "sourceTitle": "思考：同一个角的余角与补角",
+        "target": "ch6-complementary-definition",
+        "purpose": "先用90°的度数和判断或表示互余关系。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 258.5,
+          "clickScroll": 284,
+          "returnedScroll": 284
+        }
+      },
+      {
+        "chapter": 6,
+        "index": 138,
+        "source": "ch6-p183-complements-think",
+        "sourceTitle": "思考：同一个角的余角与补角",
+        "target": "ch6-source-supplementary-definition",
+        "purpose": "用180°的度数和判断或表示互补关系，再与互余条件区分。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 452,
+          "clickScroll": 452,
+          "returnedScroll": 452
+        }
+      },
+      {
+        "chapter": 6,
+        "index": 141,
+        "source": "ch6-p183-equal-supplements-why",
+        "sourceTitle": "旁问：说明同角或等角的补角相等",
+        "target": "ch6-source-equal-complements",
+        "purpose": "本问类比余角性质，但仍须重新核对补角条件。",
+        "pass": true,
+        "viewport": {
+          "width": 823,
+          "height": 944
+        },
+        "scrollEvidence": {
+          "setupScroll": 337,
+          "clickScroll": 337,
+          "returnedScroll": 337
+        }
+      }
+    ],
+    "displayCases": [
+      {
+        "chapter": 2,
+        "id": "ch2-approximate-trailing-zero",
+        "narrow": {
+          "width": 823,
+          "height": 944,
+          "title": "旁注：1.8与1.80的精确度",
+          "headings": 0,
+          "methodToggle": false,
+          "text": "精确到十分位，是把近似值保留到0.1这一位；精确到百分位，是保留到0.01这一位。近似数的末位数字还记录了保留数位，因此普通小数数值相等，不保证记录的精确度相同。\n\n对照例6第（3）（4）问各自指定的保留数位，再检查末尾0是否仍在记录这个要求。\n\n判断能否省略0时，需要同时核对数值和题目所要求的精确数位。",
+          "overflow": false
+        },
+        "wide": {
+          "width": 1736,
+          "height": 944,
+          "headings": 0,
+          "methodToggle": false,
+          "overflow": false
+        }
+      },
+      {
+        "chapter": 3,
+        "id": "ch3-q-p86-volleyball",
+        "narrow": {
+          "width": 823,
+          "height": 944,
+          "title": "3.2 问题：购置排球",
+          "headings": 0,
+          "methodToggle": false,
+          "text": "每班配5个时，“每班个数×班级数”表示发给各班的总数；学校另留20个，只在全校总数中计一次。\n\n教材用n表示班级数，5n随班级数改变，20保持不变。给定15个班或20个班后，用该数替换n，再按同一个数量关系计算，这就是求代数式的值。\n\nn在这里表示班级数，应取正整数。能把一个数代入式子计算，并不说明它符合班级数的实际含义。",
+          "overflow": false
+        },
+        "wide": {
+          "width": 1736,
+          "height": 944,
+          "headings": 0,
+          "methodToggle": false,
+          "overflow": false
+        }
+      },
+      {
+        "chapter": 4,
+        "id": "ch4-q-42-negative-product-question",
+        "narrow": {
+          "width": 823,
+          "height": 944,
+          "title": "追问：负号与字母怎样一起参与乘法？",
+          "headings": 0,
+          "methodToggle": false,
+          "text": "有理数相乘，同号得正、异号得负，并把绝对值相乘；0与任何数相乘得0。−2y表示−2与y相乘。\n\n所以−3×(−2y)可以按结合律先算−3与−2：两个数字因数同为负数，乘积是6，再与y相乘，就得到6y。\n\n这说明的是数字系数为什么为正，不能据此认定6y的值一定为正；它的正负仍取决于y。",
+          "overflow": false
+        },
+        "wide": {
+          "width": 1736,
+          "height": 944,
+          "headings": 0,
+          "methodToggle": false,
+          "overflow": false
+        }
+      },
+      {
+        "chapter": 5,
+        "id": "ch5-q-p121-example2",
+        "narrow": {
+          "width": 823,
+          "height": 944,
+          "title": "例2：一个候选值怎样接受检验",
+          "headings": 0,
+          "methodToggle": false,
+          "text": "方程的解是使方程两边的值相等的未知数的值。“检验一个数”是暂把它当作未知数的值，算完两边后再判断，不能预先认定等号成立。\n\n教材把各个候选值分开检验。每次代入时，方程中所有x都换成同一个数；左右两边分别计算后，值相等才说明这个候选值是解。未知数出现在两边，也仍按这一做法检验。\n\n需要区分两个数：代入x的候选值是被检验的“解”，左右两边算出的共同值是式子的值。它们不必相同。",
+          "overflow": false
+        },
+        "wide": {
+          "width": 1736,
+          "height": 944,
+          "headings": 0,
+          "methodToggle": false,
+          "overflow": false
+        }
+      },
+      {
+        "chapter": 6,
+        "id": "ch6-angle-single-letter",
+        "narrow": {
+          "width": 823,
+          "height": 944,
+          "title": "旁问：角的表示能否简写",
+          "headings": 0,
+          "methodToggle": false,
+          "text": "用∠AOB表示角时，O是顶点，OA、OB是两条边。三个字母同时告诉我们从哪个顶点看哪两条射线，顶点字母必须写在中间。\n\n只写∠O会省去两边的信息。同一顶点处只有一个角时可以这样简写；出现多个角时，读者便不能只靠顶点确定所指的角。对照本图，先找所标角的两条边，再选择能唯一指出它的名称。\n\n数字或希腊字母也是图中角的名称，但要与标记所在的那一块角对应；换名字后仍应指向原来的两边。",
+          "overflow": false
+        },
+        "wide": {
+          "width": 1736,
+          "height": 944,
+          "headings": 0,
+          "methodToggle": false,
+          "overflow": false
+        }
+      }
+    ],
+    "extraChecks": {
+      "previewEntry": {
+        "filePage": 92,
+        "id": "ch3-q-p92-review5",
+        "pass": true,
+        "regression": "Before fix, click timed out after 5000 ms. After fix, the same click opens the guide."
+      },
+      "previewStates": [
+        {
+          "width": 823,
+          "height": 944,
+          "docked": true,
+          "previewHeight": 77.890625,
+          "previewTop": 866.109375,
+          "readerBottom": 866.109375,
+          "markerBottom": 765.34375,
+          "clickable": true
+        },
+        {
+          "width": 1736,
+          "height": 944,
+          "docked": false,
+          "previewHeight": 105.6875,
+          "previewTop": 815.640625,
+          "readerBottom": 944,
+          "markerBottom": 851.640625,
+          "clickable": true
+        }
+      ],
+      "sourceScreenshots": [
+        "source-trigram-narrow.png",
+        "source-net-wide.png"
+      ]
+    },
+    "visualReview": {
+      "reviewer": "root",
+      "screenshots": [
+        {
+          "sha256": "d69757bc020b41db2997957d66dbbe002c28c6b843f5068b72f48e42ffb34c0f",
+          "name": "ch2-narrow.png"
+        },
+        {
+          "sha256": "9356c7beafa975a2187375981927fd4157aa01cf078d573b1b97e6a84eac82f7",
+          "name": "ch2-wide.png"
+        },
+        {
+          "sha256": "3dfd5bdb5352346d18e535429fddd080bdc017f75a8459e22d3bc541d5202e30",
+          "name": "ch3-narrow.png"
+        },
+        {
+          "sha256": "0c7d7ab4028d72d306ae13bceec4d26004a38c88188260585199f1a1189f98e3",
+          "name": "ch3-wide.png"
+        },
+        {
+          "sha256": "4dd01fb5415a013d284a0b550bd3fe56e21ef2ca28da5deb94abbad7cef39143",
+          "name": "ch4-narrow.png"
+        },
+        {
+          "sha256": "fc68781da36ab5518efa756ce7be3b82033925bbb30eff3f1fecdfdade546a4b",
+          "name": "ch4-wide.png"
+        },
+        {
+          "sha256": "a6277412d19bd40ca75dc1035d99881465592d4e9b1f8c41bf3f83c4dfc70146",
+          "name": "ch5-narrow.png"
+        },
+        {
+          "sha256": "b2c800528e8245258f3ef69a502d2ef2c1a5db8a138363d187b4b5f52e701076",
+          "name": "ch5-wide.png"
+        },
+        {
+          "sha256": "9be726a7a4b98ab8403054cd13a72a81ca6c20525ed0dee9739499bf9e7f6a33",
+          "name": "ch6-narrow.png"
+        },
+        {
+          "sha256": "d232df25f2ecdf8ad212d41caf2f0067ebe5eb712f30ce5901d2d4ba0cabe4bf",
+          "name": "ch6-wide.png"
+        },
+        {
+          "sha256": "3364a9b14cd5a42717153594116c35bcc664961e308430a57317556b9f7b9669",
+          "name": "preview-bottom-entry-fixed.png"
+        },
+        {
+          "sha256": "c96cc18026c7a4c58c65ab93e5f5064c3e397b40ac27a0adef0d2fa37efde94d",
+          "name": "preview-823.png"
+        },
+        {
+          "sha256": "914071a0573d6bb697dc171e3d8d3c44d63b04af5c2aa72a0e1a8ac422112de4",
+          "name": "preview-1736.png"
+        },
+        {
+          "sha256": "7511992120754a1101e765c6ad9709f55c33379b30b4e87a9288733f033aad8d",
+          "name": "source-trigram-narrow.png"
+        },
+        {
+          "sha256": "8ba02c27da9c7101f5c80041da9c759118e96e6dd6c49a960453d1575d7530c4",
+          "name": "source-net-wide.png"
+        }
+      ],
+      "observations": [
+        "已逐张查看五章十张最终布局截图，连续说明与来源高亮可读。",
+        "购置排球的原题框覆盖完整两行题干。",
+        "二进制关联同时框出图2与完整0/1约定；展开图关联保留原定义的条件与名称。",
+        "页底入口修复后能打开解读；普通底部预览与宽屏侧预览均保留可点击的原入口。"
+      ],
+      "artifactRetention": "临时截图已在视觉核对后退役。"
+    },
+    "checkedImplementationFiles": [
+      {
+        "path": "src/reader/Reader.tsx",
+        "sha256": "857f56a09deb36c7d78306b2d321383bd858c4757b14f6b915da25b90e8f3df8"
+      },
+      {
+        "path": "src/reader/Supplement.tsx",
+        "sha256": "bcb8893211fb7f3c41b9e1a1f3f2e8c7d399eab67b2dab479c0b8bfe1cfa85d1"
+      },
+      {
+        "path": "scripts/check-related-return.mjs",
+        "sha256": "f7532032740af4e29ffa85e263103bf2a9dbbadb55e2c4720abdf84d43935d68"
+      }
+    ],
+    "temporaryEvidenceNote": "浏览器脚本、结果副本与截图已在提交前清理；33条实际结果、截图名称和哈希保留在本记录。",
+    "testOriginClosed": true,
+    "acceptanceOriginRestored": "http://127.0.0.1:5173/"
+  },
+  "limitations": [
+    "浏览器检查为33条选定关联路径、五个连续说明样例及预览回归；没有逐一点击全书1375条关联。",
+    "823×944和1736×944为浏览器视口仿真，没有真机或学生使用证据，不据此推断学习效果。"
+  ],
+  "implementationFixes": [
+    {
+      "issue": "第三章PDF92页底入口悬停时，底部预览压缩阅读区，入口中心被裁掉，鼠标点击反复超时。",
+      "change": "底部预览高度以入口下方的剩余空间为上限；不足64像素时不显示预览，保留标记直接打开解读。",
+      "files": [
+        "src/reader/Reader.tsx",
+        "src/reader/Supplement.tsx",
+        "scripts/check-related-return.mjs",
+        "DESIGN.md",
+        "README.md"
+      ],
+      "regression": {
+        "helper": "checkPreviewEntry(page, 92, \"ch3-q-p92-review5\")",
+        "before": "鼠标点击在5000ms后被div拦截并超时。",
+        "after": "同一入口鼠标点击打开解读；普通底部预览和宽屏侧预览仍正常。"
+      }
+    }
+  ]
+}

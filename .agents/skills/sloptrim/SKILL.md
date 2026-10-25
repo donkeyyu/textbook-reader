@@ -12,6 +12,10 @@ contracts.
 State findings, evidence and consequences directly. Use concrete subjects, active
 verbs and language suited to the reader.
 
+Introduce unfamiliar terms before relying on them. Keep a single line of reasoning
+in connected prose; use headings when they separate distinct topics or tasks.
+Each paragraph should add a necessary fact or reasoning step.
+
 Cut generic filler, inflated praise, process narration and repeated caveats. Remove
 empty “不是X，而是Y” / “not X, but Y” turns that deny an unraised alternative or
 repeat the same idea. Keep contrasts that establish a material distinction or test

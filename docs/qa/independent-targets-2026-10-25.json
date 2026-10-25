@@ -1,0 +1,992 @@
+{
+  "date": "2026-10-25",
+  "scope": "六章原有内容与定位的多图、多情境、独立旁注错配筛查；候选原页视觉核对。不是全书每页重新进行教学内容审查。",
+  "basis": "DonQ 要求图1.1-4与图1.1-5拆成两个入口，各自高亮对应图，并排查同类情况。",
+  "method": "逐章扫描原有解读、定位描述和覆盖清单；看候选原PNG；分开独立对象，保留共同比较目标及同一序列；叠加新框检查续行和图号。主线程复核分工结果。",
+  "screenedSupplementCount": 958,
+  "chapters": [
+    {
+      "chapter": 1,
+      "screenedSupplementCount": 127,
+      "supplementCount": 129,
+      "locationCount": 130,
+      "coverageItemCount": 90
+    },
+    {
+      "chapter": 2,
+      "screenedSupplementCount": 242,
+      "supplementCount": 247,
+      "locationCount": 247,
+      "coverageItemCount": 175
+    },
+    {
+      "chapter": 3,
+      "screenedSupplementCount": 108,
+      "supplementCount": 110,
+      "locationCount": 110,
+      "coverageItemCount": 70
+    },
+    {
+      "chapter": 4,
+      "screenedSupplementCount": 108,
+      "supplementCount": 109,
+      "locationCount": 109,
+      "coverageItemCount": 75
+    },
+    {
+      "chapter": 5,
+      "screenedSupplementCount": 187,
+      "supplementCount": 187,
+      "locationCount": 187,
+      "coverageItemCount": 126
+    },
+    {
+      "chapter": 6,
+      "screenedSupplementCount": 186,
+      "supplementCount": 189,
+      "locationCount": 190,
+      "coverageItemCount": 130
+    }
+  ],
+  "visualPages": {
+    "1": [
+      11,
+      12,
+      13,
+      16,
+      20,
+      21,
+      27,
+      29
+    ],
+    "2": [
+      33,
+      35,
+      36,
+      37,
+      38,
+      40,
+      45,
+      46,
+      63,
+      65,
+      70,
+      72
+    ],
+    "3": [
+      75,
+      76,
+      77,
+      81,
+      90,
+      92
+    ],
+    "4": [
+      97,
+      104,
+      110,
+      112
+    ],
+    "5": [
+      125,
+      132
+    ],
+    "6": [
+      164,
+      165,
+      166,
+      170,
+      174,
+      190
+    ]
+  },
+  "groups": [
+    {
+      "chapter": 1,
+      "pages": [
+        11
+      ],
+      "actions": [
+        "地形图与账单分入口",
+        "体重增长值与销量增长率分入口"
+      ]
+    },
+    {
+      "chapter": 2,
+      "pages": [
+        33,
+        36,
+        37,
+        40,
+        46,
+        63
+      ],
+      "actions": [
+        "五处独立旁注新增入口",
+        "精确度旁注复用已有入口并调整位置"
+      ]
+    },
+    {
+      "chapter": 3,
+      "pages": [
+        76,
+        77,
+        90,
+        92
+      ],
+      "actions": [
+        "管道与正方形分入口",
+        "火柴三角形与方格图分入口",
+        "列式与求值共同说明框覆盖两个分支"
+      ]
+    },
+    {
+      "chapter": 4,
+      "pages": [
+        104
+      ],
+      "actions": [
+        "水位与库存分入口"
+      ]
+    },
+    {
+      "chapter": 5,
+      "pages": [
+        125
+      ],
+      "actions": [
+        "共同读图原则改为对应共同题干，撤掉三图大框"
+      ]
+    },
+    {
+      "chapter": 6,
+      "pages": [
+        174,
+        190
+      ],
+      "actions": [
+        "河道与桥分入口",
+        "绘制、折纸、艺术图案分入口"
+      ]
+    }
+  ],
+  "exclusions": [
+    "数轴与温度计的共同规则、同一星期气温图、体重调查同一数据表，保留共同任务。",
+    "第二章两列公式归纳、幻方、标识解码等共同目标保留；活动准备已框完整段落。",
+    "第三四章同一容器比较、月历连续探究、同一图案序列及共用目标的算式小问保留。",
+    "第五章三图共同读图原则保留；第六章同一匹配、旋转或展开任务及线段对比保留。"
+  ],
+  "changes": [
+    {
+      "chapter": 1,
+      "id": "ch1-think-map-bill",
+      "page": 11,
+      "printedPage": "4",
+      "sourceImageSha256": "ce7fc7a49700a23128ff1e8cba06d12849c552016cb43610dc8160a8496b758e",
+      "before": {
+        "region": {
+          "x": 0.155,
+          "y": 0.377,
+          "width": 0.7,
+          "height": 0.024
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.389
+        },
+        "locator": "印刷第4页“思考”题干首行：“图1.1-4是地理中的分层设色地形图，图1.1-5是手机中的部分收支……”"
+      },
+      "after": {
+        "region": {
+          "x": 0.132,
+          "y": 0.464,
+          "width": 0.341,
+          "height": 0.187
+        },
+        "marker": {
+          "x": 0.1,
+          "y": 0.55
+        },
+        "locator": "印刷第4页“思考”图1.1-4：分层设色地形图及图号，不包含右侧图1.1-5收支账单。"
+      }
+    },
+    {
+      "chapter": 1,
+      "id": "ch1-think-bill",
+      "page": 11,
+      "printedPage": "4",
+      "sourceImageSha256": "ce7fc7a49700a23128ff1e8cba06d12849c552016cb43610dc8160a8496b758e",
+      "before": null,
+      "after": {
+        "region": {
+          "x": 0.568,
+          "y": 0.464,
+          "width": 0.234,
+          "height": 0.187
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.55
+        },
+        "locator": "印刷第4页“思考”图1.1-5：手机部分收支账单及图号，不包含左侧图1.1-4地形图。"
+      }
+    },
+    {
+      "chapter": 1,
+      "id": "ch1-example-1-2-guide",
+      "page": 11,
+      "printedPage": "4",
+      "sourceImageSha256": "ce7fc7a49700a23128ff1e8cba06d12849c552016cb43610dc8160a8496b758e",
+      "before": {
+        "region": {
+          "x": 0.13,
+          "y": 0.665,
+          "width": 0.746,
+          "height": 0.024
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.677
+        },
+        "locator": "1.1例2第（1）问题干首行：“一个月内，李明体重增加1.2 kg……”；第（2）问解答续PDF12。"
+      },
+      "after": {
+        "region": {
+          "x": 0.085,
+          "y": 0.665,
+          "width": 0.791,
+          "height": 0.056
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.693
+        },
+        "locator": "1.1例2（1）题干：三人的月内体重变化及写增长值的要求；不含（2）手机销量情境。"
+      }
+    },
+    {
+      "chapter": 1,
+      "id": "ch1-example-1-2-sales-guide",
+      "page": 11,
+      "printedPage": "4",
+      "sourceImageSha256": "ce7fc7a49700a23128ff1e8cba06d12849c552016cb43610dc8160a8496b758e",
+      "before": null,
+      "after": {
+        "region": {
+          "x": 0.085,
+          "y": 0.723,
+          "width": 0.791,
+          "height": 0.108
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.779
+        },
+        "locator": "1.1例2（2）题干：四种品牌手机销量的季度变化及写增长率的要求；解答续PDF12。"
+      }
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-q-p33-opposite-motion",
+      "page": 33,
+      "printedPage": "26",
+      "sourceImageSha256": "d1856fa7d9dbe7d7e7979292a1eda0d1288ce2b8cbcf0b8c351d4885d81d9cc1",
+      "before": {
+        "region": {
+          "x": 0.105,
+          "y": 0.552,
+          "width": 0.775,
+          "height": 0.106
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.605
+        },
+        "locator": "探究：先左后右与先右后左（含数轴旁注）的题号、题干或明确作答语句；跨页内容按题目连续阅读。"
+      },
+      "after": {
+        "region": {
+          "x": 0.105,
+          "y": 0.552,
+          "width": 0.775,
+          "height": 0.106
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.605
+        },
+        "locator": "“探究”第（1）（2）问：先左后右、先右后左的两种运动；页底数轴旁注另设入口。"
+      }
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-q-p33-number-line-note",
+      "page": 33,
+      "printedPage": "26",
+      "sourceImageSha256": "d1856fa7d9dbe7d7e7979292a1eda0d1288ce2b8cbcf0b8c351d4885d81d9cc1",
+      "before": null,
+      "after": {
+        "region": {
+          "x": 0.62,
+          "y": 0.736,
+          "width": 0.238,
+          "height": 0.055
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.7625
+        },
+        "locator": "页底蓝色旁注“你能用数轴表示算式③④吗”的两行文字。"
+      }
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-q-p36-example2",
+      "page": 36,
+      "printedPage": "29",
+      "sourceImageSha256": "a9599ed662e6d9b3ef69cf6bb192a5f5daed4e456318680d4e01842f21002c60",
+      "before": {
+        "region": {
+          "x": 0.17,
+          "y": 0.435,
+          "width": 0.22,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.4475
+        },
+        "locator": "例2：运算律简化加法（含旁注）的题号、题干或明确作答语句；跨页内容按题目连续阅读。"
+      },
+      "after": {
+        "region": {
+          "x": 0.17,
+          "y": 0.435,
+          "width": 0.22,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.4475
+        },
+        "locator": "例2“计算”及题干起始处；右侧询问简化方式和依据的旁注另设入口。"
+      }
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-q-p36-simplification-note",
+      "page": 36,
+      "printedPage": "29",
+      "sourceImageSha256": "a9599ed662e6d9b3ef69cf6bb192a5f5daed4e456318680d4e01842f21002c60",
+      "before": null,
+      "after": {
+        "region": {
+          "x": 0.671,
+          "y": 0.562,
+          "width": 0.23,
+          "height": 0.057
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.573
+        },
+        "locator": "例2右侧蓝色旁注“例2中是怎样使计算简化的？依据是什么？”的两行文字。"
+      }
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-q-p36-example3",
+      "page": 36,
+      "printedPage": "29",
+      "sourceImageSha256": "a9599ed662e6d9b3ef69cf6bb192a5f5daed4e456318680d4e01842f21002c60",
+      "before": {
+        "region": {
+          "x": 0.13,
+          "y": 0.689,
+          "width": 0.79,
+          "height": 0.081
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.7285
+        },
+        "locator": "例3：小麦质量和总偏差（含续页两解法比较）的题号、题干或明确作答语句；跨页内容按题目连续阅读。"
+      },
+      "after": {
+        "region": {
+          "x": 0.13,
+          "y": 0.689,
+          "width": 0.79,
+          "height": 0.081
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.7285
+        },
+        "locator": "例3小麦称重的题干三行：总质量及相对每袋50 kg的总偏差；解答续PDF第37页，续页比较运算律的旁注另设入口。"
+      }
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-q-p37-compare-methods-note",
+      "page": 37,
+      "printedPage": "30",
+      "sourceImageSha256": "674cb405de81cde7fccffa34451d5c317eedb6aaac07b93922cf104318914c8c",
+      "before": null,
+      "after": {
+        "region": {
+          "x": 0.619,
+          "y": 0.31,
+          "width": 0.247,
+          "height": 0.059
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.3375
+        },
+        "locator": "例3解法2右侧蓝色旁注“比较两种解法。解法2中使用了哪些运算律？”的两行文字。"
+      }
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-q-p39-example5",
+      "page": 39,
+      "printedPage": "32",
+      "sourceImageSha256": "f702f5da6803e4a554df1161fa2d2a877586dc146714d3e61a57af04ce7d60cc",
+      "before": {
+        "region": {
+          "x": 0.13,
+          "y": 0.723,
+          "width": 0.61,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.736
+        },
+        "locator": "例5：加减混合运算（含续页运算律旁注）的题号、题干或明确作答语句；跨页内容按题目连续阅读。"
+      },
+      "after": {
+        "region": {
+          "x": 0.13,
+          "y": 0.723,
+          "width": 0.61,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.736
+        },
+        "locator": "例5加减混合运算的题干起始处；解答续PDF第40页，续页询问运算律的旁注另设入口。"
+      }
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-q-p40-laws-note",
+      "page": 40,
+      "printedPage": "33",
+      "sourceImageSha256": "01ca4e1a4cb353fa53a9ff0234ba9702add04964a6ea0e2cd68662ca0d5a4709",
+      "before": null,
+      "after": {
+        "region": {
+          "x": 0.669,
+          "y": 0.086,
+          "width": 0.232,
+          "height": 0.054
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.1115
+        },
+        "locator": "页首蓝色旁注“这里使用了哪些运算律？”的两行文字。"
+      }
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-q-p46-think-negative",
+      "page": 46,
+      "printedPage": "39",
+      "sourceImageSha256": "4fd726f5d53b582206b878ba0f87e200d725d168f8a403ed50f1f64ebf6669e4",
+      "before": {
+        "region": {
+          "x": 0.196,
+          "y": 0.168,
+          "width": 0.59,
+          "height": 0.024
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.18
+        },
+        "locator": "页上思考首句“利用上面归纳的结论计算下面的算式，你能发现什么规律”；包含其后按规律填写的四个算式及右侧“你能得出负数与0相乘的结果吗”旁注。"
+      },
+      "after": {
+        "region": {
+          "x": 0.196,
+          "y": 0.168,
+          "width": 0.59,
+          "height": 0.024
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.18
+        },
+        "locator": "页上思考首句及后续按规律填写的四个算式；右侧“负数与0相乘”的独立旁注另设入口。"
+      }
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-q-p46-zero-product-note",
+      "page": 46,
+      "printedPage": "39",
+      "sourceImageSha256": "4fd726f5d53b582206b878ba0f87e200d725d168f8a403ed50f1f64ebf6669e4",
+      "before": null,
+      "after": {
+        "region": {
+          "x": 0.668,
+          "y": 0.36,
+          "width": 0.233,
+          "height": 0.054
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.3855
+        },
+        "locator": "思考填空右侧蓝色旁注“你能得出负数与0相乘的结果吗？”的两行文字。"
+      }
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-q-p63-example6",
+      "page": 63,
+      "printedPage": "56",
+      "sourceImageSha256": "2d50e616e142275851e8e48eaba597e2f8cddac798b68680c5c880537436f3fb",
+      "before": {
+        "region": {
+          "x": 0.13,
+          "y": 0.069,
+          "width": 0.624,
+          "height": 0.022
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.08
+        },
+        "locator": "例6：按要求取近似数（含精确度旁注）的题号及题干起始处；连续小问共用此入口。"
+      },
+      "after": {
+        "region": {
+          "x": 0.13,
+          "y": 0.069,
+          "width": 0.624,
+          "height": 0.022
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.08
+        },
+        "locator": "例6按括号要求取近似数的题干起始处；右侧精确度旁注使用已有独立入口。"
+      }
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-approximate-trailing-zero",
+      "page": 63,
+      "printedPage": "56",
+      "sourceImageSha256": "2d50e616e142275851e8e48eaba597e2f8cddac798b68680c5c880537436f3fb",
+      "before": {
+        "region": {
+          "x": 0.13,
+          "y": 0.211,
+          "width": 0.19,
+          "height": 0.05
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.236
+        },
+        "locator": "例6解答第（3）（4）行“1.804≈1.8”“1.804≈1.80”；旁注已一并核对。"
+      },
+      "after": {
+        "region": {
+          "x": 0.619,
+          "y": 0.163,
+          "width": 0.238,
+          "height": 0.101
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.2085
+        },
+        "locator": "例6右侧蓝色旁注：比较近似数1.8与1.80的精确度，并询问1.80末尾的0能否去掉。"
+      }
+    },
+    {
+      "chapter": 3,
+      "id": "ch3-q-two-quantity-problems",
+      "page": 76,
+      "printedPage": "69",
+      "sourceImageSha256": "cab0d41200a75bba8c6e31d71f5e878ded203f4ea7cc6e5f9106cee7ffce36e7",
+      "before": {
+        "region": {
+          "x": 0.174,
+          "y": 0.893,
+          "width": 0.744,
+          "height": 0.031
+        },
+        "marker": {
+          "x": 0.96,
+          "y": 0.9085
+        },
+        "locator": "PDF第76页末铺管道问题（1）的起始题干；（1）问句及正方形问题（2）续于已核对的PDF第77页页首，跨页按一组记录。"
+      },
+      "after": {
+        "region": {
+          "x": 0.174,
+          "y": 0.893,
+          "width": 0.744,
+          "height": 0.031
+        },
+        "marker": {
+          "x": 0.96,
+          "y": 0.9085
+        },
+        "locator": "印刷第69页页末问题（1）：铺设2 km地下管道的题干，问句续于已核对的PDF77页页首；仅对应铺管道，不含正方形问题。"
+      }
+    },
+    {
+      "chapter": 3,
+      "id": "ch3-q-square-quantity-problem",
+      "page": 77,
+      "printedPage": "70",
+      "sourceImageSha256": "85d2a986f8249a2375d0e27495067d8de93b3d8065bed8aa5b39e4bc1f8a362b",
+      "before": null,
+      "after": {
+        "region": {
+          "x": 0.13,
+          "y": 0.098,
+          "width": 0.75,
+          "height": 0.028
+        },
+        "marker": {
+          "x": 0.96,
+          "y": 0.111
+        },
+        "locator": "印刷第70页页首问题（2）：一个正方形边长是a，分别询问周长l和面积S；仅定位此问题，不含铺管道问题。"
+      }
+    },
+    {
+      "chapter": 3,
+      "id": "ch3-q-p90-activity1",
+      "page": 90,
+      "printedPage": "83",
+      "sourceImageSha256": "bea479c1ade09f1a2b30ec229b7516e664526eed6a53180474d10158070528be",
+      "before": {
+        "region": {
+          "x": 0.199,
+          "y": 0.179,
+          "width": 0.042,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.96,
+          "y": 0.1915
+        },
+        "locator": "活动1第（1）项首行“如图1，用火柴棍拼成一排”处；同一活动的第（2）项在下方图2前。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。"
+      },
+      "after": {
+        "region": {
+          "x": 0.258,
+          "y": 0.274,
+          "width": 0.53,
+          "height": 0.116
+        },
+        "marker": {
+          "x": 0.96,
+          "y": 0.332
+        },
+        "locator": "印刷第83页活动1第（1）项的图1：火柴棍拼成一排三角形及图号；不包含下方图2方格拼图。"
+      }
+    },
+    {
+      "chapter": 3,
+      "id": "ch3-q-p90-activity1-squares",
+      "page": 90,
+      "printedPage": "83",
+      "sourceImageSha256": "bea479c1ade09f1a2b30ec229b7516e664526eed6a53180474d10158070528be",
+      "before": null,
+      "after": {
+        "region": {
+          "x": 0.205,
+          "y": 0.523,
+          "width": 0.635,
+          "height": 0.134
+        },
+        "marker": {
+          "x": 0.96,
+          "y": 0.59
+        },
+        "locator": "印刷第83页活动1第（2）项的图2：单个小方格及第1、2、3个正方形序列和图号；不包含上方图1火柴棍。"
+      }
+    },
+    {
+      "chapter": 3,
+      "id": "ch3-expression-value-checks",
+      "page": 92,
+      "printedPage": "85",
+      "sourceImageSha256": "88ce058702e5557b2064cb0c63140e488fd521d5d430a81122f0d98f2d93dee0",
+      "before": {
+        "region": {
+          "x": 0.64,
+          "y": 0.265,
+          "width": 0.119,
+          "height": 0.031
+        },
+        "marker": {
+          "x": 0.96,
+          "y": 0.2805
+        },
+        "locator": "本章知识结构图右侧“列代数式”方框。"
+      },
+      "after": {
+        "region": {
+          "x": 0.64,
+          "y": 0.265,
+          "width": 0.138,
+          "height": 0.086
+        },
+        "marker": {
+          "x": 0.96,
+          "y": 0.308
+        },
+        "locator": "本章知识结构图右侧“列代数式”与“代数式的值”两个方框；此解读比较列式与求值的检查任务，不含上方“代数式的意义”。"
+      }
+    },
+    {
+      "chapter": 4,
+      "id": "ch4-q-42-example3",
+      "page": 104,
+      "printedPage": "97",
+      "sourceImageSha256": "9e392fe7f61e6a919fac2a21d6dd7e973f5ad2c4adf34aa328dc81fbb7de73d2",
+      "before": {
+        "region": {
+          "x": 0.174,
+          "y": 0.696,
+          "width": 0.732,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.709
+        },
+        "locator": "例3题号及第（1）问开头“水库水位第一天……”一行；第（2）问在下方，解答续于已核对PDF105页。"
+      },
+      "after": {
+        "region": {
+          "x": 0.13,
+          "y": 0.696,
+          "width": 0.79,
+          "height": 0.052
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.722
+        },
+        "locator": "印刷第97页例3第（1）问“水库水位”的完整两行题干；仅对应两天总变化，不包含第（2）问大米库存。"
+      }
+    },
+    {
+      "chapter": 4,
+      "id": "ch4-q-42-example3-stock",
+      "page": 104,
+      "printedPage": "97",
+      "sourceImageSha256": "9e392fe7f61e6a919fac2a21d6dd7e973f5ad2c4adf34aa328dc81fbb7de73d2",
+      "before": null,
+      "after": {
+        "region": {
+          "x": 0.13,
+          "y": 0.753,
+          "width": 0.79,
+          "height": 0.052
+        },
+        "marker": {
+          "x": 0.1,
+          "y": 0.779
+        },
+        "locator": "印刷第97页例3第（2）问“大米”情境的完整两行题干；解答续于已核对PDF105页，不包含第（1）问水位题。"
+      }
+    },
+    {
+      "chapter": 5,
+      "id": "ch5-diagram-evidence",
+      "page": 125,
+      "printedPage": "118",
+      "sourceImageSha256": "1efa9ed1a89aab37f1c2f09f869d71803fff370166344d2daa4ecce2dc008b6b",
+      "before": {
+        "region": {
+          "x": 0.175,
+          "y": 0.369,
+          "width": 0.61,
+          "height": 0.145
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.4415
+        },
+        "locator": "习题5.1第2题的三幅图及边长、角度、面积标注；不包含上方题干。"
+      },
+      "after": {
+        "region": {
+          "x": 0.105,
+          "y": 0.34,
+          "width": 0.65,
+          "height": 0.023
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.3515
+        },
+        "locator": "习题5.1第2题共同题干：“根据下列图形中标出的量及其满足的关系，列出方程”；此说明比较三图的读图原则，不以大框同时覆盖三幅图。"
+      }
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-p174-exercises-6",
+      "page": 174,
+      "printedPage": "167",
+      "sourceImageSha256": "67b52e7f2d3a8b7ae58af9ce5f3db085837ed28f1737ee687ab8d539ac68b7ec",
+      "before": {
+        "region": {
+          "x": 0.153,
+          "y": 0.523,
+          "width": 0.74,
+          "height": 0.043
+        },
+        "marker": {
+          "x": 0.045,
+          "y": 0.546
+        },
+        "locator": "习题6.2第6题（1）两行题干，从“把原来弯曲的河道改直”到“有什么变化”；同题（2）续在下方。"
+      },
+      "after": {
+        "region": {
+          "x": 0.245,
+          "y": 0.657,
+          "width": 0.245,
+          "height": 0.213
+        },
+        "marker": {
+          "x": 0.1,
+          "y": 0.76
+        },
+        "locator": "习题6.2第6题（1）河道改直情境的图（1）及图号，含固定端点A、B；不含右侧九曲桥图（2）。"
+      }
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-p174-exercises-6-bridge",
+      "page": 174,
+      "printedPage": "167",
+      "sourceImageSha256": "67b52e7f2d3a8b7ae58af9ce5f3db085837ed28f1737ee687ab8d539ac68b7ec",
+      "before": null,
+      "after": {
+        "region": {
+          "x": 0.54,
+          "y": 0.652,
+          "width": 0.258,
+          "height": 0.218
+        },
+        "marker": {
+          "x": 0.94,
+          "y": 0.76
+        },
+        "locator": "习题6.2第6题（2）九曲桥情境的图（2）及图号；不含左侧河道改直图（1）。"
+      }
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-q-p190-activity2",
+      "page": 190,
+      "printedPage": "183",
+      "sourceImageSha256": "669a7ee38ab0bb10ac50f6c68695719f671303de231c7bb6c98fb02cd2476550",
+      "before": {
+        "region": {
+          "x": 0.195,
+          "y": 0.135,
+          "width": 0.485,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.045,
+          "y": 0.1475
+        },
+        "locator": "数学活动2：绘制五角星及星形探索的题号及起始题干；指南覆盖本题所列全部小问。"
+      },
+      "after": {
+        "region": {
+          "x": 0.16,
+          "y": 0.279,
+          "width": 0.72,
+          "height": 0.15
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.35
+        },
+        "locator": "数学活动2图4的连续作图过程及图号：画圆、连续作角、隔点连接、擦去多余线；不含下方折纸图5和艺术图案图6。"
+      }
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-q-p190-activity2-fold",
+      "page": 190,
+      "printedPage": "183",
+      "sourceImageSha256": "669a7ee38ab0bb10ac50f6c68695719f671303de231c7bb6c98fb02cd2476550",
+      "before": null,
+      "after": {
+        "region": {
+          "x": 0.195,
+          "y": 0.558,
+          "width": 0.655,
+          "height": 0.147
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.63
+        },
+        "locator": "数学活动2图5的折纸、剪角过程及图号；不含上方作图图4和下方艺术图案图6。"
+      }
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-q-p190-activity2-pattern",
+      "page": 190,
+      "printedPage": "183",
+      "sourceImageSha256": "669a7ee38ab0bb10ac50f6c68695719f671303de231c7bb6c98fb02cd2476550",
+      "before": null,
+      "after": {
+        "region": {
+          "x": 0.388,
+          "y": 0.776,
+          "width": 0.27,
+          "height": 0.118
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.835
+        },
+        "locator": "数学活动2图6的五角星、六角星艺术图案及图号；不含上方作图图4、折纸图5。"
+      }
+    }
+  ],
+  "verification": {
+    "sourceFrames": "新框已由作者叠图核对，并经主线程目视复核。",
+    "runtime": "13个新增入口逐项打开并核对目标高亮；复用的精确度入口打开及高亮通过；共同图形原则入口正文打开、悬停高亮共同题干通过。抽查第一、二、三、四、六章的新入口关联跳转与返回焦点恢复。390px下火柴图/方格图、绘制/折纸/星形图案五个入口均可访问。",
+    "tests": "npm run build（含类型检查）、npm test 23项、两个浏览器回归脚本语法及git diff --check通过。",
+    "learningEffect": "未经学生使用验证。",
+    "pageControls": "823px收起侧栏、390px展开侧栏：原位替换几何一致，Enter首中末页跳转、无效输入保留位置、Escape焦点恢复、失焦取消通过；无额外按钮。",
+    "limits": "候选原页已核对，未重新逐页审核整本教材；浏览器未穷举所有旧入口的全部关联链，也未进行学生学习效果验证。",
+    "automationNotes": "自动点击在目标部分超出视口时两次未命中；按正常阅读路径跳页或滚动到可见区域后通过。共同概念解读沿用悬停高亮行为，直接打开不要求保留高亮。"
+  },
+  "correctedCaseCount": 15
+}

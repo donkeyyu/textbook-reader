@@ -1,0 +1,803 @@
+{
+  "date": "2026-10-25",
+  "trigger": "DonQ指出PDF14例1只讲正负与整数分类，漏掉有理数的定义及前置关联。",
+  "scope": "六章666条questionGuide的必要定义、判据与适用条件定向筛查；候选及新增关联目标核对原PNG。不是全书逐页重审。",
+  "criteria": [
+    "辨认当前题目所用对象、关系或结论的核心判据。",
+    "检查说明是否把判据用于本题，而非仅列概念名或运算流程。",
+    "核对回顾入口是否直达必要原文；原文充分或已有明确判据时不重复扩写。",
+    "保留学生应用条件、构造、计算和判断的工作。"
+  ],
+  "chapters": [
+    {
+      "chapter": 1,
+      "guidesScanned": 90
+    },
+    {
+      "chapter": 2,
+      "guidesScanned": 175
+    },
+    {
+      "chapter": 3,
+      "guidesScanned": 70
+    },
+    {
+      "chapter": 4,
+      "guidesScanned": 75
+    },
+    {
+      "chapter": 5,
+      "guidesScanned": 126
+    },
+    {
+      "chapter": 6,
+      "guidesScanned": 130
+    }
+  ],
+  "changes": [
+    {
+      "chapter": 1,
+      "id": "ch1-example-1-2-1-guide",
+      "source": {
+        "pdfPage": 14,
+        "printedPage": "7"
+      },
+      "change": "补上有理数的定义，连接不同写法与正负/整数分类，并直达原定义。",
+      "relatedTargets": [
+        {
+          "id": "ch1-rational-denominator",
+          "pdfPage": 14,
+          "printedPage": "7"
+        },
+        {
+          "id": "ch1-classification-overlap",
+          "pdfPage": 15,
+          "printedPage": "8"
+        },
+        {
+          "id": "ch1-decimal-rational",
+          "pdfPage": 14,
+          "printedPage": "7"
+        }
+      ]
+    },
+    {
+      "chapter": 1,
+      "id": "ch1-practice-p8-2",
+      "source": {
+        "pdfPage": 15,
+        "printedPage": "8"
+      },
+      "change": "补上有理数范围判据及原定义关联。",
+      "relatedTargets": [
+        {
+          "id": "ch1-rational-denominator",
+          "pdfPage": 14,
+          "printedPage": "7"
+        },
+        {
+          "id": "ch1-classification-overlap",
+          "pdfPage": 15,
+          "printedPage": "8"
+        },
+        {
+          "id": "ch1-rational-form",
+          "pdfPage": 14,
+          "printedPage": "7"
+        }
+      ]
+    },
+    {
+      "chapter": 1,
+      "id": "ch1-practice-p8-3",
+      "source": {
+        "pdfPage": 15,
+        "printedPage": "8"
+      },
+      "change": "补上有理数范围判据及原定义关联。",
+      "relatedTargets": [
+        {
+          "id": "ch1-rational-denominator",
+          "pdfPage": 14,
+          "printedPage": "7"
+        },
+        {
+          "id": "ch1-classification-overlap",
+          "pdfPage": 15,
+          "printedPage": "8"
+        },
+        {
+          "id": "ch1-decimal-rational",
+          "pdfPage": 14,
+          "printedPage": "7"
+        }
+      ]
+    },
+    {
+      "chapter": 1,
+      "id": "ch1-q-exercise12-1",
+      "source": {
+        "pdfPage": 23,
+        "printedPage": "16"
+      },
+      "change": "解释题干已给有理数范围，补定义入口，不要求逐数重做转换。",
+      "relatedTargets": [
+        {
+          "id": "ch1-rational-denominator",
+          "pdfPage": 14,
+          "printedPage": "7"
+        },
+        {
+          "id": "ch1-classification-overlap",
+          "pdfPage": 15,
+          "printedPage": "8"
+        },
+        {
+          "id": "ch1-rational-form",
+          "pdfPage": 14,
+          "printedPage": "7"
+        }
+      ]
+    },
+    {
+      "chapter": 1,
+      "id": "ch1-q-recall-3",
+      "source": {
+        "pdfPage": 28,
+        "printedPage": "21"
+      },
+      "change": "先明确分类总范围，再选分类标准。",
+      "relatedTargets": [
+        {
+          "id": "ch1-rational-denominator",
+          "pdfPage": 14,
+          "printedPage": "7"
+        },
+        {
+          "id": "ch1-classification-overlap",
+          "pdfPage": 15,
+          "printedPage": "8"
+        },
+        {
+          "id": "ch1-rational-form",
+          "pdfPage": 14,
+          "printedPage": "7"
+        }
+      ]
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-q-exercise22-10",
+      "source": {
+        "pdfPage": 55,
+        "printedPage": "48"
+      },
+      "change": "补绝对值距离意义，说明外层负号仍保留，并新增直达已核对定义的入口。",
+      "relatedTargets": [
+        {
+          "id": "ch2-same-level-order",
+          "pdfPage": 60,
+          "printedPage": "53"
+        },
+        {
+          "id": "ch2-division-zero-boundary",
+          "pdfPage": 51,
+          "printedPage": "44"
+        },
+        {
+          "id": "ch2-absolute-value-scope-practice",
+          "pdfPage": 55,
+          "printedPage": "48"
+        },
+        {
+          "id": "ch1-absolute-definition",
+          "pdfPage": 20,
+          "printedPage": "13"
+        }
+      ]
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-q-review2-3",
+      "source": {
+        "pdfPage": 68,
+        "printedPage": "61"
+      },
+      "change": "将题目恢复为两问求和；用两种定义选数、再研究所问的和；修正覆盖清单。",
+      "relatedTargets": [
+        {
+          "id": "ch1-opposite-pair",
+          "pdfPage": 19,
+          "printedPage": "12"
+        },
+        {
+          "id": "ch2-reciprocal-condition",
+          "pdfPage": 47,
+          "printedPage": "40"
+        }
+      ]
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-q-review2-6",
+      "source": {
+        "pdfPage": 68,
+        "printedPage": "61"
+      },
+      "change": "补定义、将单数/算式两种对象连接到距离意义，新增定义原文关联。",
+      "relatedTargets": [
+        {
+          "id": "ch2-absolute-scope-practice",
+          "pdfPage": 68,
+          "printedPage": "61"
+        },
+        {
+          "id": "ch1-absolute-definition",
+          "pdfPage": 20,
+          "printedPage": "13"
+        }
+      ]
+    },
+    {
+      "chapter": 2,
+      "id": "ch2-q-review2-14",
+      "source": {
+        "pdfPage": 69,
+        "printedPage": "62"
+      },
+      "change": "把a与−a、重复相同因数的意义用于原有三问方法，补两处必要原文关联，不给判定结论或反例。",
+      "relatedTargets": [
+        {
+          "id": "ch2-counterexample-review",
+          "pdfPage": 69,
+          "printedPage": "62"
+        },
+        {
+          "id": "ch2-reciprocal-condition",
+          "pdfPage": 47,
+          "printedPage": "40"
+        },
+        {
+          "id": "ch1-opposite-sign",
+          "pdfPage": 19,
+          "printedPage": "12"
+        },
+        {
+          "id": "ch2-power-factor-count",
+          "pdfPage": 58,
+          "printedPage": "51"
+        }
+      ]
+    },
+    {
+      "chapter": 3,
+      "id": "ch3-integer-scope-exercise",
+      "source": {
+        "pdfPage": 84,
+        "printedPage": "77"
+      },
+      "change": "增加整除2依据及如何用于构造检验，保留原范围/覆盖解释。",
+      "relatedTargets": []
+    },
+    {
+      "chapter": 3,
+      "id": "ch3-q-exercise31-10",
+      "source": {
+        "pdfPage": 84,
+        "printedPage": "77"
+      },
+      "change": "补奇偶判据，以生成与覆盖两方向检验构造；关联本题任意整数的条件说明，不直接给出答案式。",
+      "relatedTargets": [
+        {
+          "id": "ch3-letter-range",
+          "pdfPage": 76,
+          "printedPage": "69"
+        },
+        {
+          "id": "ch3-omitted-multiplication",
+          "pdfPage": 76,
+          "printedPage": "69"
+        },
+        {
+          "id": "ch3-integer-scope-exercise",
+          "pdfPage": 84,
+          "printedPage": "77"
+        }
+      ]
+    },
+    {
+      "chapter": 4,
+      "id": "ch4-many-monomials",
+      "source": {
+        "pdfPage": 101,
+        "printedPage": "94"
+      },
+      "change": "先检查单项式积结构，再检查系数和次数。",
+      "relatedTargets": [
+        {
+          "id": "ch4-monomial-product",
+          "pdfPage": 96,
+          "printedPage": "89"
+        },
+        {
+          "id": "ch4-coefficient-sign",
+          "pdfPage": 96,
+          "printedPage": "89"
+        },
+        {
+          "id": "ch4-degree-letters",
+          "pdfPage": 96,
+          "printedPage": "89"
+        }
+      ]
+    },
+    {
+      "chapter": 4,
+      "id": "ch4-q-review2",
+      "source": {
+        "pdfPage": 115,
+        "printedPage": "108"
+      },
+      "change": "用单项式定义分别检验添加对象与相加结果。",
+      "relatedTargets": [
+        {
+          "id": "ch4-monomial-product",
+          "pdfPage": 96,
+          "printedPage": "89"
+        },
+        {
+          "id": "ch4-zero-coefficient",
+          "pdfPage": 104,
+          "printedPage": "97"
+        },
+        {
+          "id": "ch4-like-terms",
+          "pdfPage": 103,
+          "printedPage": "96"
+        }
+      ]
+    },
+    {
+      "chapter": 4,
+      "id": "ch4-q-summary1",
+      "source": {
+        "pdfPage": 114,
+        "printedPage": "107"
+      },
+      "change": "举例先按单项式、多项式结构检验归属，增加两处定义关联。",
+      "relatedTargets": [
+        {
+          "id": "ch4-monomial-product",
+          "pdfPage": 96,
+          "printedPage": "89"
+        },
+        {
+          "id": "ch4-signed-terms",
+          "pdfPage": 98,
+          "printedPage": "91"
+        },
+        {
+          "id": "ch4-coefficient-sign",
+          "pdfPage": 96,
+          "printedPage": "89"
+        },
+        {
+          "id": "ch4-polynomial-degree",
+          "pdfPage": 99,
+          "printedPage": "92"
+        }
+      ]
+    },
+    {
+      "chapter": 4,
+      "id": "ch4-classification-review",
+      "source": {
+        "pdfPage": 115,
+        "printedPage": "108"
+      },
+      "change": "补全两种类别结构判据与多项式定义关联。",
+      "relatedTargets": [
+        {
+          "id": "ch4-monomial-product",
+          "pdfPage": 96,
+          "printedPage": "89"
+        },
+        {
+          "id": "ch4-signed-terms",
+          "pdfPage": 98,
+          "printedPage": "91"
+        },
+        {
+          "id": "ch4-polynomial-degree",
+          "pdfPage": 99,
+          "printedPage": "92"
+        }
+      ]
+    },
+    {
+      "chapter": 5,
+      "id": "ch5-q-review2",
+      "source": {
+        "pdfPage": 153,
+        "printedPage": "146"
+      },
+      "change": "补使左右两边值相等的解定义及原文入口，将代入结果用于判定。",
+      "relatedTargets": [
+        {
+          "id": "ch5-solution",
+          "pdfPage": 121,
+          "printedPage": "114"
+        },
+        {
+          "id": "ch5-substitute-consistently",
+          "pdfPage": 121,
+          "printedPage": "114"
+        }
+      ]
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-p183-complements-think",
+      "source": {
+        "pdfPage": 183,
+        "printedPage": "176"
+      },
+      "change": "明确或直达互余90°、互补180°定义条件，与当前任务连接。",
+      "relatedTargets": [
+        {
+          "id": "ch6-complementary-position-independent",
+          "pdfPage": 183,
+          "printedPage": "176"
+        },
+        {
+          "id": "ch6-complementary-definition",
+          "pdfPage": 183,
+          "printedPage": "176"
+        }
+      ]
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-q-p184-example4",
+      "source": {
+        "pdfPage": 184,
+        "printedPage": "177"
+      },
+      "change": "明确或直达互余90°、互补180°定义条件，与当前任务连接。",
+      "relatedTargets": [
+        {
+          "id": "ch6-bisector-ray-conditions",
+          "pdfPage": 182,
+          "printedPage": "175"
+        },
+        {
+          "id": "ch6-complementary-position-independent",
+          "pdfPage": 183,
+          "printedPage": "176"
+        },
+        {
+          "id": "ch6-complementary-definition",
+          "pdfPage": 183,
+          "printedPage": "176"
+        }
+      ]
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-q-p184-practice1",
+      "source": {
+        "pdfPage": 184,
+        "printedPage": "177"
+      },
+      "change": "明确或直达互余90°、互补180°定义条件，与当前任务连接。",
+      "relatedTargets": [
+        {
+          "id": "ch6-example4-complement-pairs",
+          "pdfPage": 184,
+          "printedPage": "177"
+        },
+        {
+          "id": "ch6-complementary-position-independent",
+          "pdfPage": 183,
+          "printedPage": "176"
+        },
+        {
+          "id": "ch6-complementary-definition",
+          "pdfPage": 183,
+          "printedPage": "176"
+        }
+      ]
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-q-p184-practice2",
+      "source": {
+        "pdfPage": 184,
+        "printedPage": "177"
+      },
+      "change": "明确或直达互余90°、互补180°定义条件，与当前任务连接。",
+      "relatedTargets": [
+        {
+          "id": "ch6-complementary-position-independent",
+          "pdfPage": 183,
+          "printedPage": "176"
+        },
+        {
+          "id": "ch6-compound-angle-units",
+          "pdfPage": 178,
+          "printedPage": "171"
+        },
+        {
+          "id": "ch6-complementary-definition",
+          "pdfPage": 183,
+          "printedPage": "176"
+        }
+      ]
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-q-p185-e2",
+      "source": {
+        "pdfPage": 185,
+        "printedPage": "178"
+      },
+      "change": "明确或直达互余90°、互补180°定义条件；判断题另补平角反向射线条件。",
+      "relatedTargets": [
+        {
+          "id": "ch6-angle-rays-definition",
+          "pdfPage": 177,
+          "printedPage": "170"
+        },
+        {
+          "id": "ch6-complementary-position-independent",
+          "pdfPage": 183,
+          "printedPage": "176"
+        },
+        {
+          "id": "ch6-angle-sum-interior-ray",
+          "pdfPage": 180,
+          "printedPage": "173"
+        },
+        {
+          "id": "ch6-complementary-definition",
+          "pdfPage": 183,
+          "printedPage": "176"
+        },
+        {
+          "id": "ch6-straight-angle-opposite-rays",
+          "pdfPage": 181,
+          "printedPage": "174"
+        }
+      ]
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-q-p185-e4",
+      "source": {
+        "pdfPage": 185,
+        "printedPage": "178"
+      },
+      "change": "明确或直达互余90°、互补180°定义条件，与当前任务连接。",
+      "relatedTargets": [
+        {
+          "id": "ch6-complementary-position-independent",
+          "pdfPage": 183,
+          "printedPage": "176"
+        },
+        {
+          "id": "ch6-example4-complement-pairs",
+          "pdfPage": 184,
+          "printedPage": "177"
+        },
+        {
+          "id": "ch6-complementary-definition",
+          "pdfPage": 183,
+          "printedPage": "176"
+        }
+      ]
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-q-p185-e7",
+      "source": {
+        "pdfPage": 185,
+        "printedPage": "178"
+      },
+      "change": "明确或直达互余90°、互补180°定义条件，与当前任务连接。",
+      "relatedTargets": [
+        {
+          "id": "ch6-equal-angle-complements",
+          "pdfPage": 183,
+          "printedPage": "176"
+        },
+        {
+          "id": "ch6-complementary-definition",
+          "pdfPage": 183,
+          "printedPage": "176"
+        }
+      ]
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-q-p186-e11",
+      "source": {
+        "pdfPage": 186,
+        "printedPage": "179"
+      },
+      "change": "明确或直达互余90°、互补180°定义条件，与当前任务连接。",
+      "relatedTargets": [
+        {
+          "id": "ch6-angle-sum-interior-ray",
+          "pdfPage": 180,
+          "printedPage": "173"
+        },
+        {
+          "id": "ch6-complementary-position-independent",
+          "pdfPage": 183,
+          "printedPage": "176"
+        },
+        {
+          "id": "ch6-complementary-definition",
+          "pdfPage": 183,
+          "printedPage": "176"
+        }
+      ]
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-q-p192-recap1",
+      "source": {
+        "pdfPage": 192,
+        "printedPage": "185"
+      },
+      "change": "明确或直达互余90°、互补180°定义条件，与当前任务连接。",
+      "relatedTargets": [
+        {
+          "id": "ch6-solid-not-coplanar",
+          "pdfPage": 158,
+          "printedPage": "151"
+        },
+        {
+          "id": "ch6-net-vs-view",
+          "pdfPage": 160,
+          "printedPage": "153"
+        },
+        {
+          "id": "ch6-distance-is-length",
+          "pdfPage": 172,
+          "printedPage": "165"
+        },
+        {
+          "id": "ch6-midpoint-two-conditions",
+          "pdfPage": 173,
+          "printedPage": "166"
+        },
+        {
+          "id": "ch6-bisector-ray-conditions",
+          "pdfPage": 182,
+          "printedPage": "175"
+        },
+        {
+          "id": "ch6-complementary-position-independent",
+          "pdfPage": 183,
+          "printedPage": "176"
+        },
+        {
+          "id": "ch6-complementary-definition",
+          "pdfPage": 183,
+          "printedPage": "176"
+        }
+      ]
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-q-p192-recap5",
+      "source": {
+        "pdfPage": 192,
+        "printedPage": "185"
+      },
+      "change": "明确或直达互余90°、互补180°定义条件，与当前任务连接。",
+      "relatedTargets": [
+        {
+          "id": "ch6-angle-rays-definition",
+          "pdfPage": 177,
+          "printedPage": "170"
+        },
+        {
+          "id": "ch6-angle-sum-interior-ray",
+          "pdfPage": 180,
+          "printedPage": "173"
+        },
+        {
+          "id": "ch6-equal-angle-complements",
+          "pdfPage": 183,
+          "printedPage": "176"
+        },
+        {
+          "id": "ch6-complementary-definition",
+          "pdfPage": 183,
+          "printedPage": "176"
+        },
+        {
+          "id": "ch6-complementary-position-independent",
+          "pdfPage": 183,
+          "printedPage": "176"
+        }
+      ]
+    },
+    {
+      "chapter": 6,
+      "id": "ch6-q-p193-review6",
+      "source": {
+        "pdfPage": 193,
+        "printedPage": "186"
+      },
+      "change": "明确或直达互余90°、互补180°定义条件，与当前任务连接。",
+      "relatedTargets": [
+        {
+          "id": "ch6-clock-continuous-motion",
+          "pdfPage": 185,
+          "printedPage": "178"
+        },
+        {
+          "id": "ch6-compound-angle-units",
+          "pdfPage": 178,
+          "printedPage": "171"
+        },
+        {
+          "id": "ch6-complementary-position-independent",
+          "pdfPage": 183,
+          "printedPage": "176"
+        },
+        {
+          "id": "ch6-complementary-definition",
+          "pdfPage": 183,
+          "printedPage": "176"
+        }
+      ]
+    }
+  ],
+  "changedSupplementCount": 27,
+  "newLocation": {
+    "id": "ch6-complementary-definition",
+    "page": 183,
+    "printedPage": "176",
+    "indexAnchor": 2,
+    "anchorLabel": "余角、互余；补角、互补",
+    "locator": "印刷第176页图6.3-13上方余角定义的三行，含“一般地……如果两个角的和等于90°（直角）”及“其中一个角是另一个角的余角”；不含下方补角定义。",
+    "region": {
+      "x": 0.085,
+      "y": 0.338,
+      "width": 0.79,
+      "height": 0.079
+    },
+    "marker": {
+      "x": 0.925,
+      "y": 0.3775
+    },
+    "sourceImageSha256": "55f30559a281399c421957c6699dcf0ae1a0f391ee2fc66c5e24e884fe897cfb"
+  },
+  "locatorCorrection": {
+    "id": "ch2-q-review2-3",
+    "reason": "原页两问均求和；改正旧定位描述中的倒数的积，原坐标保留。"
+  },
+  "excluded": [
+    "相反数和绝对值指南已有配对条件/距离定义及直接原文关联，不统一添加定义段。",
+    "已有同类项、分配律条件的整式运算不机械补单项式定义。",
+    "方程建模及其他检验题已有左右相等判据，保留原有解释。",
+    "平面图形、中点、平分线及比例候选已有必要条件与准确关联，不重复展开。"
+  ],
+  "verification": [
+    "npm test：23项通过。",
+    "npm run build：通过。",
+    "git diff --check：通过。",
+    "新增余角原文位置已叠框核对，实际PNG哈希与索引元数据匹配。",
+    "第一章5条新增定义关联的浏览器跳转、阅读位置/方法状态/焦点返回检查通过。",
+    "第六章新增纯原文余角定义入口的跳转、原文高亮、方法状态和焦点返回检查通过。",
+    "验收服务 http://127.0.0.1:5173/ 返回HTTP 200；继续运行。"
+  ],
+  "limitations": [
+    "未对本轮未改条目逐页重新核对所有教材原图。",
+    "未据本轮内容检查推断学生学习效果。"
+  ]
+}

@@ -8,7 +8,7 @@
   "contentOrigin": "补充解释；不属于教材原文。例子另行标明，习题提示不提供答案。",
   "review": {
     "status": "source-checked",
-    "basis": "逐页查看PDF第156–199页原图与155、200页边界上下文，核对44页的内容取舍、127道题及连续小问；独立审读186条补充的数学条件、解释增量和不代答边界，逐页叠图核对187个教材位置、实际印刷页码、索引锚点、原图哈希和知识关联。学习效果尚无学生使用证据。",
+    "basis": "2026-10-25按更新后的textbook-supplements与sloptrim逐条复核189条补充及130条题目引导，对照PDF第156–199页原图核对原句、数学条件、必要前置解释及关联用途；新增或调整的原文位置经裁图和哈希检查。分章审读后再独立交叉复核，修正名词、数量关系、关联范围与探究时序问题，题目清单及小问保持完整。本轮记录见docs/qa/chapters-2-6-learning-flow-2026-10-25.json；浏览器验收状态以该记录为准。",
     "reviewer": "AI-assisted authoring and review",
     "learningEffect": "未经学生使用验证。"
   },
@@ -24,15 +24,15 @@
       "learningAction": "选择章前图中的一处建筑，分别观察它的整体外形和某个局部轮廓，找出与已学图形相似的部分。",
       "related": [
         {
-          "locationId": "ch6-abstract-shape",
-          "label": "实物与几何图形",
-          "purpose": "用抽象的含义说明建筑的哪些特征被保留。"
+          "locationId": "ch6-source-geometric-figures",
+          "label": "教材：几何图形的说明（下一页）",
+          "purpose": "先从章前图找熟悉的外形，再对照下一页说明核对哪些形状、大小和位置关系被保留。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "实物外形与几何图形",
-          "立体图形与平面图形"
+          "从实物中只取形状、大小和位置关系，可得到几何图形；颜色和材质不决定这种图形。",
+          "各部分都在同一平面内的是平面图形；各部分不都在同一平面内的是立体图形。"
         ],
         "method": [
           "选择章前图中的一处建筑，分别观察它的整体外形和某个局部轮廓，找出与已学图形相似的部分。",
@@ -83,20 +83,20 @@
       "learningAction": "对照图6.1-2，分别寻找整体形状接近棱柱、棱锥的物体。",
       "related": [
         {
-          "locationId": "ch6-solid-not-coplanar",
-          "label": "立体图形",
-          "purpose": "结合定义及邻近棱柱、棱锥图例辨认整体形状。"
+          "locationId": "ch6-source-solid-examples",
+          "label": "教材：棱柱、棱锥的图例",
+          "purpose": "对照棱柱、棱锥的完整图例，比较底面、侧面和顶点的形状。"
         },
         {
-          "locationId": "ch6-abstract-shape",
-          "label": "实物与几何图形",
+          "locationId": "ch6-source-geometric-figures",
+          "label": "教材：几何研究什么",
           "purpose": "说明实物与理想图形的近似对应。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "棱柱和棱锥的直观形状",
-          "由实物抽象立体图形"
+          "对照教材图例：棱柱有两个相对的、形状大小相同的底面；棱锥的各侧面是三角形，并交于一个顶点。",
+          "辨认实物时只看整体外形，包装图案、颜色和材料不影响对应的立体图形。"
         ],
         "method": [
           "对照图6.1-2，分别寻找整体形状接近棱柱、棱锥的物体。",
@@ -133,15 +133,15 @@
       "learningAction": "逐一观察图6.1-3中的六件实物，先描述其整体外形，再与下排图形比较。",
       "related": [
         {
-          "locationId": "ch6-solid-not-coplanar",
-          "label": "立体图形",
-          "purpose": "依据整体形状比较图中物体与常见立体图形。"
+          "locationId": "ch6-source-solid-examples",
+          "label": "教材：棱柱、棱锥的图例",
+          "purpose": "对照棱柱、棱锥的完整图例，比较底面、侧面和顶点的形状。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "常见立体图形的辨认",
-          "实物形状的抽象"
+          "可按底面形状、侧面是平面还是曲面、是否收拢到一个顶点辨认常见立体图形。",
+          "先忽略实物颜色和用途，再看它的底面、侧面及整体外形。"
         ],
         "method": [
           "逐一观察图6.1-3中的六件实物，先描述其整体外形，再与下排图形比较。",
@@ -167,8 +167,8 @@
       "learningAction": "能根据研究对象而非厚薄或摆放方向判断是否为平面图形。",
       "related": [
         {
-          "locationId": "ch6-solid-not-coplanar",
-          "label": "对照立体图形的条件",
+          "locationId": "ch6-source-solid-definition",
+          "label": "教材：立体图形的定义",
           "purpose": "比较“全部在同一平面”与“不都在同一平面”的区别。"
         }
       ]
@@ -184,15 +184,15 @@
       "learningAction": "对图6.1-4的各幅图，选取清楚的边界或色块，用手指出你正在辨认的部分，再说它与哪个已学平面图形相符。",
       "related": [
         {
-          "locationId": "ch6-plane-not-flat-object",
-          "label": "平面图形",
+          "locationId": "ch6-source-plane-definition",
+          "label": "教材：平面图形的定义",
           "purpose": "核对被选出的对象是否位于同一平面，并区分实物与所取表面。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "平面图形的辨认",
-          "复杂图案中的简单图形"
+          "平面图形的各部分都在同一平面内；找图案中的图形时须指出完整边界。",
+          "一个图案可由三角形、四边形、圆等图形组成；同一种基本形状可以有不同大小和朝向。"
         ],
         "method": [
           "对图6.1-4的各幅图，选取清楚的边界或色块，用手指出你正在辨认的部分，再说它与哪个已学平面图形相符。",
@@ -215,15 +215,15 @@
       "learningAction": "阅读铁球的每一项性质，分别判断它描述物体的哪一方面，再选出属于几何研究内容的项。",
       "related": [
         {
-          "locationId": "ch6-abstract-shape",
-          "label": "几何图形与实物属性",
+          "locationId": "ch6-source-geometric-figures",
+          "label": "教材：几何研究什么",
           "purpose": "区分研究形状和大小所需的信息与材料等属性。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "几何研究的内容",
-          "实物属性与几何属性"
+          "几何研究物体的形状、大小和位置关系，例如长度、面积、相交、平行。",
+          "颜色、质量和材质是实物的属性；形状、大小和位置关系才是本节研究的内容。"
         ],
         "method": [
           "阅读铁球的每一项性质，分别判断它描述物体的哪一方面，再选出属于几何研究内容的项。",
@@ -246,8 +246,8 @@
       "learningAction": "对五个立体图形逐个检查各部分表面，辨认其中平的面及其边界形状。",
       "related": [
         {
-          "locationId": "ch6-plane-not-flat-object",
-          "label": "平面图形",
+          "locationId": "ch6-source-plane-definition",
+          "label": "教材：平面图形的定义",
           "purpose": "用各部分是否在同一平面判断所找的面。"
         },
         {
@@ -258,8 +258,8 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "立体图形的表面",
-          "平面图形与曲面"
+          "包围体的是面；辨认表面时要包括背面等图上被遮住的部分。",
+          "平面是平的，曲面是弯曲的；立体图形的表面可以同时包含这两种面。"
         ],
         "method": [
           "对五个立体图形逐个检查各部分表面，辨认其中平的面及其边界形状。",
@@ -285,9 +285,9 @@
       "learningAction": "能举例说明一幅观察图可能遗漏的信息，并解释补充观察方向的目的。",
       "related": [
         {
-          "locationId": "ch6-view-overlap",
-          "label": "看组合正方体的观察例题",
-          "purpose": "继续辨认前后重合的部分如何出现在同一幅观察图中。"
+          "locationId": "ch6-source-observation-example",
+          "label": "教材：三个方向观察的例题（下一页）",
+          "purpose": "下一页用组合正方体展示三种方向，便于核对哪些部分沿观察方向重合。"
         }
       ]
     },
@@ -302,20 +302,15 @@
       "learningAction": "从前面看时，对照立体图与解答图，检查左右位置及每处的高低怎样保留，前后重合的部分怎样合并。",
       "related": [
         {
-          "locationId": "ch6-views-information",
-          "label": "从不同方向观察立体图形",
+          "locationId": "ch6-source-observation-example",
+          "label": "教材：三个方向观察的例题",
           "purpose": "了解三幅观察图为何分别保留不同的信息。"
-        },
-        {
-          "locationId": "ch6-view-overlap",
-          "label": "观察图中的重合",
-          "purpose": "用例题中的局部图解释前后重合的表示。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "从不同方向观察立体图形",
-          "沿观察方向重合的部分"
+          "从前、左、上观察时，只画这个方向看到的轮廓和分界；前后重叠的部分不能画成两层。",
+          "沿观察方向落在同一位置的物体会互相遮挡，观察图不把被挡住的物体移到旁边。"
         ],
         "method": [
           "从前面看时，对照立体图与解答图，检查左右位置及每处的高低怎样保留，前后重合的部分怎样合并。",
@@ -341,8 +336,8 @@
       "learningAction": "能解释视线方向上的重合，并据此检查观察图是否多画方格。",
       "related": [
         {
-          "locationId": "ch6-views-information",
-          "label": "回顾多个观察方向的作用",
+          "locationId": "ch6-source-observation-example",
+          "label": "教材：三个方向观察的例题",
           "purpose": "确认一个观察方向为什么不能保留全部立体信息。"
         }
       ]
@@ -361,8 +356,8 @@
       "learningAction": "能根据取得方式区分观察图与展开图，并说明展开图为何需保留完整表面。",
       "related": [
         {
-          "locationId": "ch6-view-overlap",
-          "label": "对照前面的观察图",
+          "locationId": "ch6-source-observation-example",
+          "label": "教材：三个方向观察的例题",
           "purpose": "比较观察时的遮挡和展开时保留各个面的区别。"
         }
       ]
@@ -378,15 +373,15 @@
       "learningAction": "在粉笔盒上给准备观察的面作记号，选择剪开的边，将表面铺平。",
       "related": [
         {
-          "locationId": "ch6-net-vs-view",
-          "label": "展开图",
+          "locationId": "ch6-source-net-definition",
+          "label": "教材：展开图的含义",
           "purpose": "核对铺平后的图形怎样对应原来的表面。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "立体图形的展开图",
-          "面与面之间的连接"
+          "把立体图形的表面适当展开、铺到平面上，得到与原来各面对应的展开图。",
+          "展开前相邻的两个面，若共同边没有剪开，展开后仍沿这条边相连。"
         ],
         "method": [
           "在粉笔盒上给准备观察的面作记号，选择剪开的边，将表面铺平。",
@@ -409,15 +404,15 @@
       "learningAction": "回想已有的长方体、圆柱展开经验；对图6.1-10各图，观察平面部分的形状、数量和连接，再提出它能围成什么的猜想。",
       "related": [
         {
-          "locationId": "ch6-net-vs-view",
-          "label": "展开图",
+          "locationId": "ch6-source-net-definition",
+          "label": "教材：展开图的含义",
           "purpose": "根据各部分能否复原为表面来验证猜想。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "展开图与立体图形的对应",
-          "平面与曲面的围成方式"
+          "展开图的每个面要对应原立体的一个面；折回时不能重叠，也不能少面。",
+          "曲面有的能沿适当位置剪开铺平；检查展开图时须看它能否围回原来表面的形状。"
         ],
         "method": [
           "回想已有的长方体、圆柱展开经验；对图6.1-10各图，观察平面部分的形状、数量和连接，再提出它能围成什么的猜想。",
@@ -440,15 +435,15 @@
       "learningAction": "对（1）—（3）逐幅辨认外轮廓和内部线条，再想象从前面、左面、上面正对棱柱观察时，哪些边会重合或分开。",
       "related": [
         {
-          "locationId": "ch6-views-information",
-          "label": "从不同方向观察立体图形",
+          "locationId": "ch6-source-observation-example",
+          "label": "教材：三个方向观察的例题",
           "purpose": "将各方向保留的信息与三幅观察图逐一对应。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "立体图形的观察方向",
-          "观察图中的边界和内部线条"
+          "从前、左、上观察分别沿不同方向看；先固定方向，再判断哪些部分重叠。",
+          "外边界表示该方向看到的整体轮廓；内部线条是否画出，要看是否存在可见的面或棱的分界。"
         ],
         "method": [
           "对（1）—（3）逐幅辨认外轮廓和内部线条，再想象从前面、左面、上面正对棱柱观察时，哪些边会重合或分开。",
@@ -471,15 +466,15 @@
       "learningAction": "先观察左侧每个立体图形由哪些平面或曲面围成，再逐一检查右侧（1）—（6）的组成与排列是否相符。",
       "related": [
         {
-          "locationId": "ch6-net-vs-view",
-          "label": "展开图",
+          "locationId": "ch6-source-net-definition",
+          "label": "教材：展开图的含义",
           "purpose": "用表面展开与还原的关系检验每一组连线。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "立体图形与展开图",
-          "展开图的连接与边界"
+          "展开图把原来的表面铺平；每个平面区域都应能找到原来对应的面。",
+          "未剪开的共同边保持相连；剪开的边折回后要正确对接，才能围成原立体。"
         ],
         "method": [
           "先观察左侧每个立体图形由哪些平面或曲面围成，再逐一检查右侧（1）—（6）的组成与排列是否相符。",
@@ -505,15 +500,15 @@
       "learningAction": "能用折叠后的面是否重叠和边是否合拢检验候选图，不只按六块计数。",
       "related": [
         {
-          "locationId": "ch6-net-vs-view",
-          "label": "展开图",
+          "locationId": "ch6-source-net-definition",
+          "label": "教材：展开图的含义",
           "purpose": "用能否折回完整立体的要求判断候选图。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "正方体的面",
-          "正方体展开图的条件"
+          "正方体有六个大小相同的正方形面，相邻面沿一条棱连接。",
+          "六个正方形连在一起还不够，折回时须不重叠、无缺口，恰好围成六个面。"
         ],
         "method": [
           "对每个候选图作折叠检验，追踪六块正方形能否分别占据六个不同的面，再作选择。",
@@ -536,8 +531,8 @@
       "learningAction": "借助本页长方体图，指出可以单独研究的部分，再阅读本节给它们的名称。",
       "related": [
         {
-          "locationId": "ch6-surface-and-solid",
-          "label": "面与体",
+          "locationId": "ch6-source-face-definition",
+          "label": "教材：平面、曲面与体",
           "purpose": "从边界与内部的关系理解构成元素。"
         },
         {
@@ -548,8 +543,8 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "点、线、面、体",
-          "整体与组成部分"
+          "体由面包围，面与面相交可形成线，线与线相交可形成点；点是构成图形的基本元素。",
+          "看一个体的组成时，分别找包围它的面、面相交处的线和线相交处的点。"
         ],
         "method": [
           "借助本页长方体图，指出可以单独研究的部分，再阅读本节给它们的名称。",
@@ -572,8 +567,8 @@
       "learningAction": "沿固定顺序分别数面、棱和顶点；每计过一个部分作一个记录，避免随视线跳动重复计数。",
       "related": [
         {
-          "locationId": "ch6-surface-and-solid",
-          "label": "面与体",
+          "locationId": "ch6-source-face-definition",
+          "label": "教材：平面、曲面与体",
           "purpose": "确认面是长方体的边界部分。"
         },
         {
@@ -584,8 +579,8 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "长方体的面、棱和顶点",
-          "立体图中的实线与虚线"
+          "包围长方体的是面，相邻面相交的线段是棱，棱相交的位置是顶点。",
+          "立体示意图常用实线画能看见的棱，用虚线画被遮住的棱；虚线对应的棱也要计数。"
         ],
         "method": [
           "沿固定顺序分别数面、棱和顶点；每计过一个部分作一个记录，避免随视线跳动重复计数。",
@@ -628,20 +623,20 @@
       "learningAction": "分别寻找一个能给出平面形象、一个能给出曲面形象的物体表面，并指出所选部位。",
       "related": [
         {
-          "locationId": "ch6-surface-and-solid",
-          "label": "面",
+          "locationId": "ch6-source-face-definition",
+          "label": "教材：平面、曲面与体",
           "purpose": "区分物体整体与它的具体表面。"
         },
         {
-          "locationId": "ch6-plane-not-flat-object",
-          "label": "平面图形",
+          "locationId": "ch6-source-plane-definition",
+          "label": "教材：平面图形的定义",
           "purpose": "按所选对象是否在同一平面理解平面的形象。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "平面与曲面",
-          "实物表面的几何抽象"
+          "面分平的面和曲的面，圆的边界是曲线，但圆面本身仍是平面图形。",
+          "可取实物的一块表面来研究，先说明取的是平的部分还是弯曲的部分。"
         ],
         "method": [
           "分别寻找一个能给出平面形象、一个能给出曲面形象的物体表面，并指出所选部位。",
@@ -667,8 +662,8 @@
       "learningAction": "能说明用点表示实物时忽略了什么，并区分几何点与纸上的点标记。",
       "related": [
         {
-          "locationId": "ch6-abstract-shape",
-          "label": "回顾从实物得到图形",
+          "locationId": "ch6-source-geometric-figures",
+          "label": "教材：几何研究什么",
           "purpose": "说明为什么同一实物可随研究目的采用不同简化。"
         }
       ]
@@ -698,20 +693,20 @@
       "learningAction": "对（1）—（5）分别指出围成图形的各部分表面，再判断哪些是平的、哪些是曲的。",
       "related": [
         {
-          "locationId": "ch6-surface-and-solid",
-          "label": "面与体",
+          "locationId": "ch6-source-face-definition",
+          "label": "教材：平面、曲面与体",
           "purpose": "明确要辨认的是围住立体的表面。"
         },
         {
-          "locationId": "ch6-plane-not-flat-object",
-          "label": "平面图形",
+          "locationId": "ch6-source-plane-definition",
+          "label": "教材：平面图形的定义",
           "purpose": "用是否处于同一平面判断各部分。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "平面与曲面",
-          "立体图形的表面"
+          "面分平的面和曲的面，圆的边界是曲线，但圆面本身仍是平面图形。",
+          "包围体的是面；辨认表面时要包括背面等图上被遮住的部分。"
         ],
         "method": [
           "对（1）—（5）分别指出围成图形的各部分表面，再判断哪些是平的、哪些是曲的。",
@@ -734,15 +729,15 @@
       "learningAction": "对表示平移的三幅图，保持原线的形状与方向，想象它沿箭头移动经过的区域，再与下方图形比较。",
       "related": [
         {
-          "locationId": "ch6-motion-needs-direction",
-          "label": "线的运动与形成的面",
+          "locationId": "ch6-source-motion-examples",
+          "label": "教材：点、线、面的运动实例",
           "purpose": "结合具体运动方向理解运动留下的区域。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "线动成面",
-          "平移与绕定点旋转"
+          "线运动经过的位置可以形成面；形成什么形状还取决于线怎样运动。",
+          "平移时各点朝同一方向移动相同距离；绕定点旋转时，该点不动，其余点围着它转。"
         ],
         "method": [
           "对表示平移的三幅图，保持原线的形状与方向，想象它沿箭头移动经过的区域，再与下方图形比较。",
@@ -765,7 +760,7 @@
       ],
       "learningRole": "练习",
       "learningGap": "图形连线题给出旋转轴，但未提示轴的位置如何约束旋转结果。",
-      "learningAction": "能先找旋转轴，再用各位置离轴远近检验旋转想象，保留自主连线。",
+      "learningAction": "能先找旋转轴，再用各位置离轴远近检验旋转想象，保留连线。",
       "related": [
         {
           "locationId": "ch6-face-rotation",
@@ -773,15 +768,15 @@
           "purpose": "对照长方形绕边旋转的教材说明，检查题目给定的轴与旋转方式。"
         },
         {
-          "locationId": "ch6-motion-needs-direction",
-          "label": "图形的运动方式",
+          "locationId": "ch6-source-motion-examples",
+          "label": "教材：点、线、面的运动实例",
           "purpose": "把运动生成图形与题中指定的轴相联系。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "面动成体",
-          "绕轴旋转一周"
+          "一个面运动经过的位置可以形成体；运动方向和旋转轴会影响形成的形状。",
+          "绕给定直线转满一周时，轴上的点不动，其余点绕轴画圆；点到轴的距离决定这个圆的大小。"
         ],
         "method": [
           "对五个平面图形逐个确定给定的旋转轴，观察各部分到轴的远近，再想象绕轴一周经过的空间。",
@@ -804,15 +799,15 @@
       "learningAction": "逐个观察图中的立体图形，描述它有哪些平面或曲面，以及这些面如何围在一起。",
       "related": [
         {
-          "locationId": "ch6-solid-not-coplanar",
-          "label": "立体图形",
-          "purpose": "结合邻近棱柱、棱锥图例辨认共同形状。"
+          "locationId": "ch6-source-solid-examples",
+          "label": "教材：棱柱、棱锥的图例",
+          "purpose": "对照棱柱、棱锥的完整图例，比较底面、侧面和顶点的形状。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "常见立体图形",
-          "立体图形的表面特征"
+          "辨认立体图形可看底面的形状、侧面是平面还是曲面，以及侧面是否汇聚到一个顶点。",
+          "一个立体可以有平面，也可以有曲面；看不见的背面同样属于它的表面。"
         ],
         "method": [
           "逐个观察图中的立体图形，描述它有哪些平面或曲面，以及这些面如何围在一起。",
@@ -835,15 +830,15 @@
       "learningAction": "分别对三个立体图形建立“前面、左面、上面”的记录，按指定方向正对观察后画出外轮廓。",
       "related": [
         {
-          "locationId": "ch6-views-information",
-          "label": "从不同方向观察立体图形",
+          "locationId": "ch6-source-observation-example",
+          "label": "教材：三个方向观察的例题",
           "purpose": "确认方向决定观察图保留的信息。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "从不同方向观察立体图形",
-          "观察图与立体图"
+          "从前、左、上观察时，只画这个方向看到的轮廓和分界；前后重叠的部分不能画成两层。",
+          "观察图只保留一个方向看到的形状，不能直接从一幅观察图确定所有前后位置。"
         ],
         "method": [
           "分别对三个立体图形建立“前面、左面、上面”的记录，按指定方向正对观察后画出外轮廓。",
@@ -873,8 +868,8 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "面绕轴旋转成体",
-          "旋转轴与到轴距离"
+          "把平面图形绕指定轴旋转一周，观察图中每一点经过的位置，合起来看形成的体。",
+          "轴上的点不动；离轴越远的点绕成的圆越大，最远距离影响体的外边界。"
         ],
         "method": [
           "对（A）—（D）分别观察平面图形的上下边界以及各处到旋转轴的远近，想象旋转一周后的外形。",
@@ -897,15 +892,15 @@
       "learningAction": "逐个分析下排立体图形的平面或曲面，再与上排展开图中各部分的形状和数量比较。",
       "related": [
         {
-          "locationId": "ch6-net-vs-view",
-          "label": "展开图",
+          "locationId": "ch6-source-net-definition",
+          "label": "教材：展开图的含义",
           "purpose": "通过将表面展开和还原的过程核对连线。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "展开图",
-          "立体图形表面的组成"
+          "展开图把原立体表面适当铺平；各面要能按连接关系折回原立体。",
+          "画表面展开图时应包含原立体的各个面，辅助粘贴边不另算一个面。"
         ],
         "method": [
           "逐个分析下排立体图形的平面或曲面，再与上排展开图中各部分的形状和数量比较。",
@@ -940,9 +935,9 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "平面图形绕轴旋转",
-          "立体图形的观察图",
-          "平面图形面积"
+          "先认准旋转轴；轴上点保持不动，其他点绕轴一周，形成的形状随轴的位置改变。",
+          "从一个方向观察时，沿这个方向前后重合的部分只占观察图中的同一位置。",
+          "面积计算的是平面内一个区域的大小；先辨认题目问的是哪幅图、哪个区域。"
         ],
         "method": [
           "先固定正方形一边所在的旋转轴，想象整个正方形绕轴一周得到的几何体。",
@@ -968,8 +963,8 @@
       "learningAction": "能指出题目所求面积属于前面观察图，并自行确定其尺寸后计算。",
       "related": [
         {
-          "locationId": "ch6-views-information",
-          "label": "回顾观察图保留的信息",
+          "locationId": "ch6-source-observation-example",
+          "label": "教材：三个方向观察的例题",
           "purpose": "区分所观察的几何体与某个方向看到的平面图形。"
         }
       ]
@@ -985,8 +980,8 @@
       "learningAction": "对（1）—（6）逐个编号追踪各块正方形，检验折起后是否重复占据同一面或留有缺口，并记录判断。",
       "related": [
         {
-          "locationId": "ch6-net-vs-view",
-          "label": "展开图",
+          "locationId": "ch6-source-net-definition",
+          "label": "教材：展开图的含义",
           "purpose": "用展开后能够还原完整表面的要求核对候选图。"
         },
         {
@@ -997,8 +992,8 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "正方体展开图",
-          "六个面的连接"
+          "正方体展开图有六个大小相同的正方形，折回后应各占一个面。",
+          "正方体的面沿棱相连；展开时保留的共同边决定各面折回的位置。"
         ],
         "method": [
           "对（1）—（6）逐个编号追踪各块正方形，检验折起后是否重复占据同一面或留有缺口，并记录判断。",
@@ -1021,15 +1016,15 @@
       "learningAction": "先辨认诗句“横看”“侧看”所改变的是观察的哪一方面，再用本节观察立体图形的经验解释。",
       "related": [
         {
-          "locationId": "ch6-views-information",
-          "label": "从不同方向观察立体图形",
+          "locationId": "ch6-source-observation-example",
+          "label": "教材：三个方向观察的例题",
           "purpose": "用观察方向与所见形状的关系解释诗句。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "从不同方向观察立体图形",
-          "实物与观察图"
+          "从前、左、上观察时，只画这个方向看到的轮廓和分界；前后重叠的部分不能画成两层。",
+          "观察图表示从指定方向看到的外形，实物的前后摆放会使部分形状互相遮挡。"
         ],
         "method": [
           "先辨认诗句“横看”“侧看”所改变的是观察的哪一方面，再用本节观察立体图形的经验解释。",
@@ -1055,15 +1050,15 @@
       "learningAction": "能用折起后的面关系判断相对面，保留字所在面的追踪工作。",
       "related": [
         {
-          "locationId": "ch6-net-vs-view",
-          "label": "展开图",
+          "locationId": "ch6-source-net-definition",
+          "label": "教材：展开图的含义",
           "purpose": "把纸面上的排列还原为立体表面的关系。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "正方体相邻面与相对面",
-          "展开图折回正方体"
+          "相邻面有共同棱；相对面没有共同棱，展开图上暂时分开或相接不直接决定是否相对。",
+          "选一面固定，沿未剪开的共同边依次折起其余面，再看每面最终朝向。"
         ],
         "method": [
           "选择一个面作为观察基准，按展开图保留的连接关系逐步想象折起，追踪每个字所在的位置。",
@@ -1086,15 +1081,15 @@
       "learningAction": "对四幅图逐一观察各部分的形状及连接；区分哪些部分需要折起，哪些需要弯曲，再猜想能围成的立体。",
       "related": [
         {
-          "locationId": "ch6-net-vs-view",
-          "label": "展开图",
+          "locationId": "ch6-source-net-definition",
+          "label": "教材：展开图的含义",
           "purpose": "根据各部分能否构成立体表面检查四幅图。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "展开图与立体图形",
-          "边界对接与表面组成"
+          "展开前后的各个面一一对应；折回时还要检查共同边能否对接。",
+          "展开图外边界上的某些边折回后会重合，面既不能重叠也不能留下缺口。"
         ],
         "method": [
           "对四幅图逐一观察各部分的形状及连接；区分哪些部分需要折起，哪些需要弯曲，再猜想能围成的立体。",
@@ -1117,20 +1112,20 @@
       "learningAction": "先对照本节棱锥图例，明确三棱锥外表面的形状与连接目标，再在正方形纸片上试折。",
       "related": [
         {
-          "locationId": "ch6-solid-not-coplanar",
-          "label": "棱锥的形象",
+          "locationId": "ch6-source-solid-examples",
+          "label": "教材：棱柱、棱锥的图例",
           "purpose": "对照棱锥图例明确折叠的目标结构。"
         },
         {
-          "locationId": "ch6-net-vs-view",
-          "label": "展开与还原",
+          "locationId": "ch6-source-net-definition",
+          "label": "教材：展开图的含义",
           "purpose": "利用展开后检查、再折回验证的过程修正尝试。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "棱锥的表面形状",
-          "折叠与立体构造"
+          "棱锥有一个多边形底面，各个三角形侧面汇聚于同一个顶点。",
+          "折起相邻面时以共同边为折痕，检查自由边能否对接成题目要求的体。"
         ],
         "method": [
           "先对照本节棱锥图例，明确三棱锥外表面的形状与连接目标，再在正方形纸片上试折。",
@@ -1149,7 +1144,7 @@
       "preview": "还要考虑有图案的面是否转到了看不见的位置。",
       "paragraphs": [
         "立体图通常只能展示一部分表面。比较带图案的展开图与候选立体图时，没有画出某个图案，可能是它所在的面被遮住了，不能单凭这一点排除。",
-        "应继续检查看得见的图案及其相邻关系是否能同时成立，并保持同一块面上的图案一起转动。具体哪些候选图符合这些条件，仍需你追踪和判断。"
+        "应继续检查看得见的图案及其相邻关系是否能同时成立，并保持同一块面上的图案一起转动。"
       ],
       "learningRole": "练习",
       "learningGap": "第11题需要匹配带图案的展开图，未显式说明隐藏面与面内图案随面转动的约束。",
@@ -1161,15 +1156,15 @@
           "purpose": "理解未直接显示的面仍可能带有图案。"
         },
         {
-          "locationId": "ch6-net-vs-view",
-          "label": "展开图",
+          "locationId": "ch6-source-net-definition",
+          "label": "教材：展开图的含义",
           "purpose": "按保留的面连接追踪各组图案。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "带图案的展开图",
-          "相邻面的连接与遮挡"
+          "面上的图案随这个面一起折起；图案在面上的位置和朝向也要跟着追踪。",
+          "相邻面沿共同边折起，前面的面可能挡住后面的面；不能把遮住的图案删去。"
         ],
         "method": [
           "第（1）问追踪星形和线条所在的面；第（2）问追踪有色三角形如何在相邻面上衔接；第（3）问追踪色块与分格的位置。分别与各自的（A）—（C）比较。",
@@ -1192,15 +1187,15 @@
       "learningAction": "选择一个生活或生产场景查找图片与资料，辨认其中使用的形状、大小或位置关系，并记录资料来源。",
       "related": [
         {
-          "locationId": "ch6-abstract-shape",
-          "label": "几何研究的对象",
+          "locationId": "ch6-source-geometric-figures",
+          "label": "教材：几何研究什么",
           "purpose": "从形状、大小和位置关系中选择并解释实际应用。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "几何研究的内容",
-          "几何图形的实际应用"
+          "几何研究物体的形状、大小和位置关系，例如长度、面积、相交、平行。",
+          "几何图形可描述实物形状、尺寸和摆放位置，说明用途时应指出具体用了哪个特征。"
         ],
         "method": [
           "选择一个生活或生产场景查找图片与资料，辨认其中使用的形状、大小或位置关系，并记录资料来源。",
@@ -1230,8 +1225,8 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "直线、射线、线段",
-          "端点与延伸方向"
+          "直线向两端无限延伸，没有端点；射线有一个端点；线段有两个端点且有确定长度。",
+          "端点限定图形到哪里为止；射线只从端点向一个方向延伸，线段两端都有限制。"
         ],
         "method": [
           "分别画出已学的三种图形，在图旁记录它们的端点和向哪些方向延伸，再据此比较区别。",
@@ -1261,8 +1256,8 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "点与直线的位置关系",
-          "直线的方向与经过条件"
+          "点在直线上，表示直线经过这个点；点在直线外，表示直线不经过这个点。",
+          "改变过一个点的直线方向仍可经过这个点；再要求经过另一个不同点时，方向就受两点共同限制。"
         ],
         "method": [
           "先固定一个点，尝试改变直尺方向，检查所得线是否仍经过它，并记录观察。",
@@ -1302,8 +1297,8 @@
       "learningAction": "能指出命名点不限定直线范围，并区分有限图示与无限延伸的直线。",
       "related": [
         {
-          "locationId": "ch6-two-points-unique",
-          "label": "回顾两点确定直线",
+          "locationId": "ch6-source-two-points-line",
+          "label": "教材：两点确定一条直线",
           "purpose": "理解两个点为什么能够命名一条直线，而不成为它的端点。"
         },
         {
@@ -1327,8 +1322,8 @@
       "learningAction": "能用两点确定一条直线说明交点的唯一性，并区分相交与重合。",
       "related": [
         {
-          "locationId": "ch6-two-points-unique",
-          "label": "查看“两点确定一条直线”",
+          "locationId": "ch6-source-two-points-line",
+          "label": "教材：两点确定一条直线",
           "purpose": "用“只有一条”解释为什么不同直线不能共有两个不同的点。"
         }
       ]
@@ -1354,12 +1349,12 @@
       "preview": "从线段到射线或直线，端点与延伸方式有什么变化？",
       "paragraphs": [],
       "learningRole": "探究",
-      "learningGap": "本题需要把线段、射线和直线的端点与延伸方式用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成旁问：由线段得到射线或直线的各项任务，并核对题目条件。",
+      "learningGap": "从线段到射线或直线，端点与延伸方式有什么变化？",
+      "learningAction": "能按端点与延伸方向将线段画成指定的射线或直线。",
       "related": [
         {
-          "locationId": "ch6-ray-name-order",
-          "label": "射线与线段的表示",
+          "locationId": "ch6-source-ray-segment-notation",
+          "label": "教材：射线与线段的表示",
           "purpose": "本问需要辨认端点保留与延伸后得到的图形。"
         },
         {
@@ -1370,7 +1365,7 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "线段、射线和直线的端点与延伸方式"
+          "线段有两个端点，射线只保留一个端点并向一方延伸，直线向两方延伸且没有端点。"
         ],
         "method": [
           "先比较三种图形保留几个端点，再决定原线段的哪些端需要继续延伸。",
@@ -1395,8 +1390,8 @@
       "learningAction": "能根据“延长AB”或“反向延长AB”确定继续作图的一端。",
       "related": [
         {
-          "locationId": "ch6-ray-name-order",
-          "label": "回顾射线名字中的起点与方向",
+          "locationId": "ch6-source-ray-segment-notation",
+          "label": "教材：射线与线段的表示",
           "purpose": "比较“图形名称”和“作图指令”怎样表达方向。"
         }
       ]
@@ -1408,12 +1403,12 @@
       "preview": "图形的范围与命名规则，分别影响哪些判断？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题需要把直线、射线、线段的组成、几何图形的字母表示用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成练习第1题：判断题的各项任务，并核对题目条件。",
+      "learningGap": "图形的范围与命名规则，分别影响哪些判断？",
+      "learningAction": "能用端点、延伸方向和字母顺序说明四句判断的依据。",
       "related": [
         {
-          "locationId": "ch6-ray-name-order",
-          "label": "射线命名字母顺序",
+          "locationId": "ch6-source-ray-segment-notation",
+          "label": "教材：射线与线段的表示",
           "purpose": "第（2）（3）问需要比较交换字母后的对象。"
         },
         {
@@ -1424,8 +1419,8 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "直线、射线、线段的组成",
-          "几何图形的字母表示"
+          "直线、射线和线段包含的点和延伸范围不同，图上画出的有限一截不等于图形本身的全部范围。",
+          "直线可用线上两点命名；线段用两端点命名；射线用端点和方向上的另一点命名，端点写在前。"
         ],
         "method": [
           "（1）（4）依据端点和延伸方式判断图形之间的关系。",
@@ -1444,8 +1439,8 @@
       "preview": "作图语句中，哪些关系已经给定，哪些尚未限定？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题需要把点与直线的位置关系、线段的端点、相交及连接用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成练习第2题：按语句画图的各项任务，并核对题目条件。",
+      "learningGap": "作图语句中，哪些关系已经给定，哪些尚未限定？",
+      "learningAction": "能把经过、在外、端点和交点条件画到图中，并逐项核对。",
       "related": [
         {
           "locationId": "ch6-point-on-not-endpoint",
@@ -1453,15 +1448,15 @@
           "purpose": "第（3）（4）问需要防止把共用点一律当作端点。"
         },
         {
-          "locationId": "ch6-extension-order",
-          "label": "连接线段的含义",
+          "locationId": "ch6-source-extension-direction",
+          "label": "教材：连接、延长与反向延长",
           "purpose": "第（4）问要辨明“连接AD”要求画出的对象。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "点与直线的位置关系",
-          "线段的端点、相交及连接"
+          "点在直线上，表示直线经过这个点；点在直线外，表示直线不经过这个点。",
+          "线段名的两个字母表示端点；“连接AB”要求画以A、B为端点的线段；相交处是交点。"
         ],
         "method": [
           "（1）（2）把“经过”和“在外”转成点是否落在线上的要求。",
@@ -1495,8 +1490,8 @@
       "preview": "点的位置与图旁字母的位置，需要分清。",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题需要把点在直线上或直线外、直线相交与交点用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成练习第3题：表述点与直线的关系的各项任务，并核对题目条件。",
+      "learningGap": "点的位置与图旁字母的位置，需要分清。",
+      "learningAction": "能用点与线的实际位置表述在上、在外和相交关系。",
       "related": [
         {
           "locationId": "ch6-line-points-not-ends",
@@ -1504,15 +1499,15 @@
           "purpose": "两幅图都需要准确找到字母所标的点和直线。"
         },
         {
-          "locationId": "ch6-intersection-one-point",
-          "label": "相交与交点",
+          "locationId": "ch6-source-intersection-definition",
+          "label": "教材：相交与交点的定义",
           "purpose": "图（2）涉及两条直线共有的点。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "点在直线上或直线外",
-          "直线相交与交点"
+          "点在线上等于直线经过该点，点在线外等于直线不经过该点。",
+          "两条不同直线有公共点时称为相交，这个公共点叫交点。"
         ],
         "method": [
           "分别选定一个点和一条直线，再用“在……上/外”或“经过/不经过”表述。",
@@ -1544,19 +1539,19 @@
       "preview": "不读出长度的数值，也能保证两条线段等长吗？",
       "paragraphs": [],
       "learningRole": "探究",
-      "learningGap": "本题需要把测量长度与转移长度、尺规作图的工具规则用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成旁问：两种作图方法的工具分工的各项任务，并核对题目条件。",
+      "learningGap": "不读出长度的数值，也能保证两条线段等长吗？",
+      "learningAction": "能说明刻度尺与圆规怎样分别测量或转移长度。",
       "related": [
         {
-          "locationId": "ch6-compass-copy-length",
-          "label": "圆规复制长度",
+          "locationId": "ch6-source-compass-copy",
+          "label": "教材：圆规复制长度与尺规作图",
           "purpose": "本问要说明没有读数时长度怎样被保持。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "测量长度与转移长度",
-          "尺规作图的工具规则"
+          "刻度尺给出长度的数值，圆规保持两脚间距可把同样长的一段转移到别处。",
+          "尺规作图使用无刻度的直尺和圆规，直尺只画直线，圆规保留或截取距离。"
         ],
         "method": [
           "对照正文的两种方法，逐步指出哪种工具确定长度、哪种工具确定直线。",
@@ -1574,8 +1569,8 @@
       "preview": "比身高与比线段长短，需要怎样的共同标准？",
       "paragraphs": [],
       "learningRole": "探究",
-      "learningGap": "本题需要把长度比较的共同标准、测量比较与叠合比较用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成探究：比较线段长短的各项任务，并核对题目条件。",
+      "learningGap": "比身高与比线段长短，需要怎样的共同标准？",
+      "learningAction": "能把统一起点或单位的要求用于线段长短比较。",
       "related": [
         {
           "locationId": "ch6-segment-comparison-alignment",
@@ -1585,8 +1580,8 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "长度比较的共同标准",
-          "测量比较与叠合比较"
+          "比较线段长短时，两次测量要用同一长度单位；叠合时要对齐一个端点并朝同一方向放置。",
+          "可测出长度再比数值，也可把线段放在同一直线上、一个端点重合，再比较另一端的位置。"
         ],
         "method": [
           "观察比身高时怎样让起点或测量标准一致，再把这个要求迁移到线段。",
@@ -1619,8 +1614,8 @@
       "preview": "叠合后另一个端点的位置，怎样反映长短关系？",
       "paragraphs": [],
       "learningRole": "探究",
-      "learningGap": "本题需要把线段叠合比较、另一端点的位置与长度关系用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成想一想：线段大于或等于的情况的各项任务，并核对题目条件。",
+      "learningGap": "叠合后另一个端点的位置，怎样反映长短关系？",
+      "learningAction": "能由同射线上另一端点的位置说明线段长短关系。",
       "related": [
         {
           "locationId": "ch6-segment-comparison-alignment",
@@ -1630,8 +1625,8 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "线段叠合比较",
-          "另一端点的位置与长度关系"
+          "把两线段放在同一直线上、一个端点重合并向同一方向延伸，再看另一端点。",
+          "对齐一个端点且方向相同后，另一端更远的线段更长，两端分别重合则等长。"
         ],
         "method": [
           "保留图6.2-11的共同起点与方向，尝试改变另一端点的落点。",
@@ -1649,19 +1644,19 @@
       "preview": "比较道路长短时，哪些条件必须相同？",
       "paragraphs": [],
       "learningRole": "探究",
-      "learningGap": "本题需要把连接固定两点的路线、长度比较用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成探究：两地之间的最短道路的各项任务，并核对题目条件。",
+      "learningGap": "比较道路长短时，哪些条件必须相同？",
+      "learningAction": "能保持同一对端点提出路线，并比较其长度。",
       "related": [
         {
-          "locationId": "ch6-shortest-same-endpoints",
-          "label": "两点之间线段最短",
+          "locationId": "ch6-source-segment-shortest",
+          "label": "教材：两点之间线段最短",
           "purpose": "探究后用基本事实检查候选路线及比较范围。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "连接固定两点的路线",
-          "长度比较"
+          "比较路线时必须保持起点、终点相同，再比较各条路线的实际长度。",
+          "路线外观的弯曲程度不能代替测量，可把软线沿路线放置后展直比较长度。"
         ],
         "method": [
           "保持A、B不变提出候选路线，再比较它与原图道路的长度。",
@@ -1693,19 +1688,19 @@
       "preview": "几何上的最短连线，在所举情境中是否可行？",
       "paragraphs": [],
       "learningRole": "探究",
-      "learningGap": "本题需要把两点之间线段最短、几何模型与实际条件用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成提问：线段最短的生活应用的各项任务，并核对题目条件。",
+      "learningGap": "几何上的最短连线，在所举情境中是否可行？",
+      "learningAction": "能举出端点固定且直线路线可行的实例，说明最短结论的用途。",
       "related": [
         {
-          "locationId": "ch6-shortest-same-endpoints",
-          "label": "两点之间线段最短",
+          "locationId": "ch6-source-segment-shortest",
+          "label": "教材：两点之间线段最短",
           "purpose": "本问需要说明基本事实在所举情境中的适用条件。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "两点之间线段最短",
-          "几何模型与实际条件"
+          "连接相同两点的所有路线中，线段最短；起点或终点改变就不能直接使用这一比较。",
+          "实际路线若受河道、障碍或表面限制，须先检查连接两点的线段是不是允许走的路线。"
         ],
         "method": [
           "选择一个生活情境，明确固定的两个位置及要比较的路线。",
@@ -1771,24 +1766,24 @@
       "preview": "教材构造中的每一段，怎样对应目标长度式？",
       "paragraphs": [],
       "learningRole": "示范方法",
-      "learningGap": "本题需要把用圆规作等长线段、线段的和与差用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成例：作线段等于2a−b的各项任务，并核对题目条件。",
+      "learningGap": "教材构造中的每一段，怎样对应目标长度式？",
+      "learningAction": "能指出作图各段与a、b的对应，并说明整段符合目标长度。",
       "related": [
         {
-          "locationId": "ch6-compass-copy-length",
-          "label": "圆规复制长度",
+          "locationId": "ch6-source-compass-copy",
+          "label": "教材：圆规复制长度与尺规作图",
           "purpose": "本例的构造需要保持已知长度。"
         },
         {
-          "locationId": "ch6-segment-difference-positive",
-          "label": "线段差的条件",
+          "locationId": "ch6-source-segment-sum-difference",
+          "label": "教材：线段和差的条件与图示",
           "purpose": "本例含减去一段的操作，需要检查剩余段的长度。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "用圆规作等长线段",
-          "线段的和与差"
+          "圆规两脚间距取成已知线段长，再在指定直线上截取同样长的一段。",
+          "两段首尾接在同一直线上可组成它们的和；从较长线段中截去较短线段得到它们的差。"
         ],
         "method": [
           "把目标式中的倍数、和差分别理解成长度之间的关系，再检查教材构造怎样表达这些关系。",
@@ -1821,7 +1816,7 @@
       "preview": "先保留估计，再用同一种可比较的长度依据检查。",
       "paragraphs": [
         "目测可以帮助提出一个判断，但图形朝向和周围线条会影响直觉。题目要求的“检验”，就是把目测判断与测量或保持长度的叠合结果比较。",
-        "检验时应记录所用工具与比较结果；若与估计不同，再检查端点是否对准、刻度是否读对。这里由你完成判断和检验，不把示意图的外观当作已知条件。"
+        "检验时应记录所用工具与比较结果；若与估计不同，再检查端点是否对准、刻度是否读对。不要把示意图的外观当作已知条件。"
       ],
       "learningRole": "练习",
       "learningGap": "题目区分估计与工具检验，需说明两种证据的作用不同，不能用第二次目测代替检验。",
@@ -1835,8 +1830,8 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "线段长短的目测与检验",
-          "测量法与叠合法"
+          "目测只能先猜长短，刻度尺测量或圆规叠合才能检查猜测。",
+          "测量比较须统一单位；叠合比较须在同一直线上对齐一个端点并朝同一方向。"
         ],
         "method": [
           "三幅图分别先作估计，再选用刻度尺或圆规检查。",
@@ -1854,24 +1849,24 @@
       "preview": "目标长度中的a、b和倍数，怎样对应图中的线段？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题需要把等长线段的复制、线段的和用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成练习第2题：作线段等于a+2b的各项任务，并核对题目条件。",
+      "learningGap": "目标长度中的a、b和倍数，怎样对应图中的线段？",
+      "learningAction": "能用圆规转移已知长度，并检查各段怎样组成目标长度。",
       "related": [
         {
-          "locationId": "ch6-compass-copy-length",
-          "label": "圆规复制长度",
+          "locationId": "ch6-source-compass-copy",
+          "label": "教材：圆规复制长度与尺规作图",
           "purpose": "本题需要准确转移给定的两种长度。"
         },
         {
-          "locationId": "ch6-segment-sum-between",
-          "label": "线段加法的点序条件",
+          "locationId": "ch6-source-segment-sum-difference",
+          "label": "教材：线段和差的条件与图示",
           "purpose": "本题须检查构造的各段怎样组成整段。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "等长线段的复制",
-          "线段的和"
+          "圆规张开到已知线段的长度后保持开口，在指定射线上截取同样长的一段。",
+          "把几段在同一直线上首尾相接，各段不重叠，得到的整段长度等于各段长度的和。"
         ],
         "method": [
           "先把目标长度看作已知长度的组合，自己选择构造。",
@@ -1896,15 +1891,15 @@
       "learningAction": "能识别未给定的点序，自行画出不同情况并选择相应的线段关系。",
       "related": [
         {
-          "locationId": "ch6-segment-sum-between",
-          "label": "线段加法的点序条件",
+          "locationId": "ch6-source-segment-sum-difference",
+          "label": "教材：线段和差的条件与图示",
           "purpose": "本题应先确定中间点，再判断哪些长度相加。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "三点共线与点的次序",
-          "线段的和差"
+          "三个点在同一直线上，只说明共线；还要确定哪个点在另外两点之间，才能写出对应的线段和差。",
+          "点B在线段AC内部时，AB+BC=AC；改变点的先后顺序，等式中表示整段的名称也会改变。"
         ],
         "method": [
           "检查题干是否限制了中间点，再画出满足两个给定长度的草图。",
@@ -1923,12 +1918,12 @@
       "preview": "直线、射线与“连接”，要求画出的范围有何不同？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题需要把直线、射线、线段的表示用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成习题6.2第1题：按给定点作图的各项任务，并核对题目条件。",
+      "learningGap": "直线、射线与“连接”，要求画出的范围有何不同？",
+      "learningAction": "能由名称判断要画的端点及延伸范围，完成三种作图。",
       "related": [
         {
-          "locationId": "ch6-ray-name-order",
-          "label": "射线与线段的表示",
+          "locationId": "ch6-source-ray-segment-notation",
+          "label": "教材：射线与线段的表示",
           "purpose": "本题要从名称识别端点和延伸方向。"
         },
         {
@@ -1939,7 +1934,7 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "直线、射线、线段的表示"
+          "直线名的两点不限定范围；射线名的第一个字母表示端点；线段名的两字母表示两个端点。"
         ],
         "method": [
           "三个小问分别先确定所作对象与用到的点，再按端点、延伸方式检查。",
@@ -1958,8 +1953,8 @@
       "preview": "“共线”“在……之间”和“相交”，分别限定了哪些位置关系？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题需要把点与直线的位置关系、相交、交点与点序用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成习题6.2第2题：读语句画图的各项任务，并核对题目条件。",
+      "learningGap": "“共线”“在……之间”和“相交”，分别限定了哪些位置关系？",
+      "learningAction": "能把四句中的点序、公共点和相交条件逐项画清。",
       "related": [
         {
           "locationId": "ch6-point-on-not-endpoint",
@@ -1967,15 +1962,15 @@
           "purpose": "第（2）问的交点不必是两线段的端点。"
         },
         {
-          "locationId": "ch6-intersection-one-point",
-          "label": "相交与交点",
+          "locationId": "ch6-source-intersection-definition",
+          "label": "教材：相交与交点的定义",
           "purpose": "本题需要把公共点条件表达为准确图形。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "点与直线的位置关系",
-          "相交、交点与点序"
+          "点在直线上，表示直线经过这个点；点在直线外，表示直线不经过这个点。",
+          "相交说明存在公共点，交点说明公共点的位置；点在线上的先后次序要另由题意或图示确定。"
         ],
         "method": [
           "（1）除共线外，单独检查“在……之间”的位置要求。",
@@ -1995,19 +1990,19 @@
       "preview": "一个固定位置与两个不同的固定位置，对直线的限制有何不同？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题需要把经过一点的直线、两点确定一条直线用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成习题6.2第3题：钉木条说明的事实的各项任务，并核对题目条件。",
+      "learningGap": "一个固定位置与两个不同的固定位置，对直线的限制有何不同？",
+      "learningAction": "能用直线是否唯一说明一颗与两颗钉子固定方向的区别。",
       "related": [
         {
-          "locationId": "ch6-two-points-unique",
-          "label": "两点确定一条直线",
+          "locationId": "ch6-source-two-points-line",
+          "label": "教材：两点确定一条直线",
           "purpose": "本题用生活现象比较一个点与两个点对直线的约束。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "经过一点的直线",
-          "两点确定一条直线"
+          "经过一个点的直线可以改变方向，画图时这个点始终留在每条直线上。",
+          "经过两个不同点的直线有且只有一条，两点不能重合。"
         ],
         "method": [
           "把钉子位置看作点，把木条所在方向看作直线，比较两个情境保留了多少位置条件。",
@@ -2026,24 +2021,24 @@
       "preview": "中点、等分点和倍数，都要先说清相对于哪条整段。",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题需要把中点的两个条件、线段等分与倍数关系用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成习题6.2第4题：中点、等分点与倍数的各项任务，并核对题目条件。",
+      "learningGap": "中点、等分点和倍数，都要先说清相对于哪条整段。",
+      "learningAction": "能先确定整段，再由等长关系辨认等分点和比较倍数。",
       "related": [
         {
-          "locationId": "ch6-midpoint-two-conditions",
-          "label": "中点与等分的条件",
+          "locationId": "ch6-source-midpoint-definition",
+          "label": "教材：线段中点与等分点",
           "purpose": "本题要根据所在位置及等长关系识别等分点。"
         },
         {
-          "locationId": "ch6-segment-sum-between",
-          "label": "线段加法的点序条件",
+          "locationId": "ch6-source-segment-sum-difference",
+          "label": "教材：线段和差的条件与图示",
           "purpose": "倍数比较需要把相邻小段与整段对应起来。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "中点的两个条件",
-          "线段等分与倍数关系"
+          "线段的中点在这条线段上，并把它分成两条相等的线段；缺少其中一项都不能判定中点。",
+          "线段n等分后，各小段长度相等，每小段是整段的1/n；先认清被等分的是哪条线段。"
         ],
         "method": [
           "（1）每次先确定所说的整条线段，再检查分出的相邻各段是否等长。",
@@ -2062,28 +2057,28 @@
       "preview": "先确定延长方向和每个“中点”属于哪条线段。",
       "paragraphs": [
         "“延长AB至点C”规定了C相对于A、B的位置；“D是AC的中点”规定的是AC的分法。不要把AB和AC混作同一条整段。",
-        "先依据文字画出草图，把每个已知量标到它对应的那一段上，再检查你要比较的两段是否相邻、谁是整段。具体怎样由这些条件求出AB，留给你选择和推演。"
+        "先依据文字画出草图，把每个已知量标到它对应的那一段上，再检查你要比较的两段是否相邻、谁是整段。"
       ],
       "learningRole": "练习",
       "learningGap": "多个线段名与延长、中点条件同时出现，容易把中点所属整段或给定长度的位置读错。",
-      "learningAction": "能把文字中的位置条件和长度条件准确对应到草图，再自主选择长度关系。",
+      "learningAction": "能把文字中的位置条件和长度条件准确对应到草图，再选择长度关系。",
       "related": [
         {
-          "locationId": "ch6-extension-order",
-          "label": "延长线段的方向",
+          "locationId": "ch6-source-extension-direction",
+          "label": "教材：连接、延长与反向延长",
           "purpose": "本题须确定C与原线段两端的位置关系。"
         },
         {
-          "locationId": "ch6-midpoint-two-conditions",
-          "label": "中点的两个条件",
+          "locationId": "ch6-source-midpoint-definition",
+          "label": "教材：线段中点与等分点",
           "purpose": "本题须确认D平分的是哪条整线段。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "延长线段的方向",
-          "中点所属整段",
-          "线段长度关系"
+          "延长AB按从A到B的方向越过B；反向延长AB按从B到A的方向越过A。",
+          "“某段的中点”必须在所说的这条线段上，把这条整段分成相等两段。",
+          "先按点的次序认出整段和部分，再用整段=各部分之和或等长关系表示长度。"
         ],
         "method": [
           "将延长方向与中点所属的线段先画清，再把各长度条件标到对应线段上。",
@@ -2098,30 +2093,57 @@
     {
       "id": "ch6-p174-exercises-6",
       "locationId": "ch6-p174-exercises-6",
-      "title": "习题6.2第6题：河道与九曲桥",
-      "preview": "同样比较路线长短，两种生活情境的目的有什么不同？",
+      "title": "习题6.2第6题（1）：河道改直",
+      "preview": "改直前后比较的端点是否保持不变？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题需要把固定两点之间的路线长短、数学结论与实际目的用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成习题6.2第6题：河道与九曲桥的各项任务，并核对题目条件。",
+      "learningGap": "河道改直后的长度变化，需要以固定两点间的路线比较为依据。",
+      "learningAction": "能在图（1）中确认同一对端点，并用线段最短解释河道长度的变化。",
       "related": [
         {
-          "locationId": "ch6-shortest-same-endpoints",
-          "label": "两点之间线段最短",
-          "purpose": "两问都比较固定端点之间不同路线，但实际目的不同。"
+          "locationId": "ch6-source-segment-shortest",
+          "label": "教材：两点之间线段最短",
+          "purpose": "核对比较两条路线时必须保留的端点条件。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "固定两点之间的路线长短",
-          "数学结论与实际目的"
+          "起点、终点固定时，连接它们的线段不长于任何其他路线。"
         ],
         "method": [
-          "（1）确认改直前后比较的是同一对端点，再依据路线形状说明长度变化。",
-          "（2）比较直桥与曲折桥提供的行走路线，联系观赏目的解释，不只写“哪条更短”。"
+          "确认图（1）中改直前后比较的是同一对端点，再依据路线形状说明长度变化。"
         ],
         "cautions": [
-          "第（2）问同时要求生活作用与数学依据，两者要相互对应。"
+          "比较的是河道路线长度，不能把端点位置也随改直而改变。"
+        ]
+      }
+    },
+    {
+      "id": "ch6-p174-exercises-6-bridge",
+      "locationId": "ch6-p174-exercises-6-bridge",
+      "title": "习题6.2第6题（2）：九曲桥的观赏作用",
+      "preview": "路线是否最短，与观赏游览的目的有什么联系？",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "曲折桥的问题同时要求说明观赏作用与数学依据，不能只比较长短。",
+      "learningAction": "能结合图（2）的行走路线，将观赏作用与固定两点间的路线比较相联系。",
+      "related": [
+        {
+          "locationId": "ch6-source-segment-shortest",
+          "label": "教材：两点之间线段最短",
+          "purpose": "先核对路线比较的数学依据，再联系题目给出的观赏目的。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "在起点和终点相同的路线中比较长度，最短路线的结论不能跨不同端点使用。",
+          "若实际目标是路线尽量短，可检查能否使用线段；若还有服务地点或障碍限制，也要同时满足。"
+        ],
+        "method": [
+          "比较图（2）中直桥与曲折桥提供的行走路线，联系观赏目的解释，不只写“哪条更短”。"
+        ],
+        "cautions": [
+          "同时说明生活作用与数学依据，使两者相互对应；不把最短当作所有实际问题的唯一目标。"
         ]
       }
     },
@@ -2132,11 +2154,11 @@
       "preview": "长度说明离多远；数轴上的位置还需要方向。",
       "paragraphs": [
         "题目给出A的位置和AB的长度，但要另看有没有限定B在A的哪一侧。不能把一个正的长度直接当作B表示的数。",
-        "在数轴上分别检查满足已知距离的位置，再利用中点条件判断C的位置。要由你决定需要保留哪些情况，以及怎样把长度关系转成数轴上的位置。"
+        "在数轴上分别检查满足已知距离的位置，再利用中点条件判断C的位置。逐种记录有效位置，避免遗漏满足条件的点。"
       ],
       "learningRole": "练习",
       "learningGap": "给定点的位置数与线段长度并不唯一确定另一个点的方向，需避免把长度或中点关系当成单一数值答案。",
-      "learningAction": "能区分位置数和长度，自主检查方向条件后确定中点的可能位置。",
+      "learningAction": "能区分位置数和长度，检查方向条件后确定中点的可能位置。",
       "related": [
         {
           "locationId": "ch1-number-line-distance",
@@ -2144,15 +2166,15 @@
           "purpose": "本题需要区分已知的位置数与不带方向的长度。"
         },
         {
-          "locationId": "ch6-midpoint-two-conditions",
-          "label": "中点的两个条件",
+          "locationId": "ch6-source-midpoint-definition",
+          "label": "教材：线段中点与等分点",
           "purpose": "本题用中点条件把位置与等长关系连接起来。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "数轴的位置数与距离",
-          "中点的等长条件"
+          "数轴上的数带方向，表示位置；两点距离是连接它们的线段长度，是非负数。",
+          "中点位于整段上，并且到两端的距离相等；求出的点必须同时满足位置与长度条件。"
         ],
         "method": [
           "先检查AB的长度是否给定了B相对A的方向，再画出满足条件的位置。",
@@ -2170,24 +2192,24 @@
       "preview": "作差后的剩余线段，需要满足什么长度条件？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题需要把圆规转移长度、线段的和差与可作条件用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成习题6.2第8题：作线段等于a+2b−c的各项任务，并核对题目条件。",
+      "learningGap": "作差后的剩余线段，需要满足什么长度条件？",
+      "learningAction": "能作出目标长度，说明各已知段的用途并检查作差条件。",
       "related": [
         {
-          "locationId": "ch6-compass-copy-length",
-          "label": "圆规复制长度",
+          "locationId": "ch6-source-compass-copy",
+          "label": "教材：圆规复制长度与尺规作图",
           "purpose": "本题有三种给定长度需要准确转移。"
         },
         {
-          "locationId": "ch6-segment-difference-positive",
-          "label": "线段差的条件",
+          "locationId": "ch6-source-segment-sum-difference",
+          "label": "教材：线段和差的条件与图示",
           "purpose": "本题包含截去一段，必须检查是否得到所需剩余线段。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "圆规转移长度",
-          "线段的和差与可作条件"
+          "圆规开口保留一段长度，不读出数值也能在另一处截取等长线段。",
+          "作差时被减的段要够长；先用已知长度比较能否留下题目要求的线段。"
         ],
         "method": [
           "把目标长度表达为已知长度之间的关系，选择自己的构造顺序。",
@@ -2206,28 +2228,33 @@
       "preview": "端点、表面和绕行圈数，共同限定了可比较的路线。",
       "paragraphs": [],
       "learningRole": "探究",
-      "learningGap": "本题需要把两点之间路线的长度比较、表面限制与绕行圈数用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成习题6.2第9题：圆柱表面的最短路线的各项任务，并核对题目条件。",
+      "learningGap": "端点、表面和绕行圈数，共同限定了可比较的路线。",
+      "learningAction": "能在表面、端点和圈数限制下比较候选路线，并说明最短依据。",
       "related": [
         {
-          "locationId": "ch6-shortest-same-endpoints",
-          "label": "两点之间线段最短",
+          "locationId": "ch6-source-segment-shortest",
+          "label": "教材：两点之间线段最短",
           "purpose": "本题要比较同一对端点之间的有效路线。"
         },
         {
           "locationId": "ch6-cylinder-route-constraints",
           "label": "圆柱路线的表面与圈数限制",
           "purpose": "第（2）问需要先检查候选路线是否满足题目限制。"
+        },
+        {
+          "locationId": "ch6-cylinder-net-figure",
+          "label": "圆柱的展开图",
+          "purpose": "回顾圆柱侧面与展开图中长方形的对应，思考展平能否帮助比较表面路线；点的位置与圈数仍需逐项核对。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "两点之间路线的长度比较",
-          "表面限制与绕行圈数"
+          "起终点相同时，连接它们的线段最短；受表面限制的路线要先转成满足同样限制的候选路线。",
+          "圆柱表面上的路线必须留在规定表面内；绕行圈数还要根据路线绕轴的实际过程检查。"
         ],
         "method": [
           "（1）先识别两点的位置和允许爬行的表面，再提出并检验路线。",
-          "（2）分别记录一圈、两圈的条件；使用图示或纸模型时检查是否保留端点与圈数。",
+          "（2）分别记录一圈、两圈的条件。回顾圆柱展开图，思考把侧面展平是否便于比较路线，再检查端点与圈数是否保留。",
           "说明理由时，要比较同一组限制下的路线。"
         ],
         "cautions": [
@@ -2250,9 +2277,14 @@
       "learningAction": "能在探索最短路线时先检查表面、端点及圈数约束，而不直接选空间直线。",
       "related": [
         {
-          "locationId": "ch6-shortest-same-endpoints",
-          "label": "回顾最短路线的比较范围",
+          "locationId": "ch6-source-segment-shortest",
+          "label": "教材：两点之间线段最短",
           "purpose": "确认几何长度比较与允许路线的条件要一起检查。"
+        },
+        {
+          "locationId": "ch6-cylinder-net-figure",
+          "label": "圆柱的展开图",
+          "purpose": "回顾圆柱侧面与展开图中长方形的对应，思考展平能否帮助比较表面路线；点的位置与圈数仍需逐项核对。"
         }
       ]
     },
@@ -2270,20 +2302,20 @@
       "learningAction": "能避免重复计算共用交点，并用不同图形探索使交点数最多的条件。",
       "related": [
         {
-          "locationId": "ch6-intersection-one-point",
-          "label": "两条不同直线至多一个交点",
+          "locationId": "ch6-source-intersection-definition",
+          "label": "教材：相交与交点的定义",
           "purpose": "本题需要控制每对直线能够产生的交点。"
         },
         {
-          "locationId": "ch6-two-points-unique",
-          "label": "两点确定一条直线",
+          "locationId": "ch6-source-two-points-line",
+          "label": "教材：两点确定一条直线",
           "purpose": "本题中不同直线的交点限制以这一基本事实为依据。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "两条不同直线的交点",
-          "不同交点计数与最大值"
+          "两条不同直线至多有一个交点；多条直线可能在同一点相交，交点数不能按线的对数直接累加。",
+          "计数对象是位置不同的交点，同一点出现多次只计一次；最大值还需画出能达到的安排。"
         ],
         "method": [
           "改变直线的摆放，比较哪些交点会重合、哪些交点不会出现。",
@@ -2302,8 +2334,8 @@
       "preview": "屏幕尺寸指哪条长度？换单位会改变这条实际长度吗？",
       "paragraphs": [],
       "learningRole": "探究",
-      "learningGap": "本题需要把长度单位的换算、屏幕对角线作为测量对象用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成阅读与思考：长度单位换算与屏幕尺寸的各项任务，并核对题目条件。",
+      "learningGap": "屏幕尺寸指哪条长度？换单位会改变这条实际长度吗？",
+      "learningAction": "能查明单位关系，把屏幕对角线统一单位后比较长度。",
       "related": [
         {
           "locationId": "ch6-screen-unit-exercise",
@@ -2313,8 +2345,8 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "长度单位的换算",
-          "屏幕对角线作为测量对象"
+          "同一长度用不同单位表示时数值会改变，先按题中单位关系换算，再比较数值。",
+          "屏幕尺寸指可视区域一条对角线的长度，不是宽或高，也不包括外边框。"
         ],
         "method": [
           "查到具体单位之间的关系后，记录所用来源与对应关系。",
@@ -2333,11 +2365,11 @@
       "preview": "这里比较的是屏幕对角线，并且最后要用同一单位表达。",
       "paragraphs": [
         "题目已经说明，手机的英寸数指向屏幕对角线的长度，不是屏幕的宽或高。比较之前先认准所量的对象，不能把对角线的差说成宽度的差。",
-        "查到英寸与厘米的对应关系后，再判断怎样把同一种长度用统一单位表示。换单位改变数值的写法，不改变屏幕的实际长度；具体查找与换算仍由你完成。"
+        "查到英寸与厘米的对应关系后，再判断怎样把同一种长度用统一单位表示。换单位改变数值的写法，不改变屏幕的实际长度。"
       ],
       "learningRole": "练习",
       "learningGap": "生活中的屏幕尺寸简称容易掩盖测量对象，混用单位也会使数值差失去意义。",
-      "learningAction": "能明确测量对象为对角线，并查证单位关系后自主完成同单位比较。",
+      "learningAction": "能明确测量对象为对角线，并查证单位关系后完成同单位比较。",
       "related": []
     },
     {
@@ -2354,8 +2386,8 @@
       "learningAction": "能识别角的顶点与两条射线，并说明改变画出部分的长短不改变角。",
       "related": [
         {
-          "locationId": "ch6-ray-name-order",
-          "label": "回顾射线的端点和方向",
+          "locationId": "ch6-source-ray-segment-notation",
+          "label": "教材：射线与线段的表示",
           "purpose": "按射线的组成辨认角的两条边。"
         }
       ]
@@ -2364,10 +2396,8 @@
       "id": "ch6-angle-single-letter",
       "locationId": "ch6-angle-single-letter",
       "title": "旁问：角的表示能否简写",
-      "preview": "不同的角名，分别保留了哪些识别信息？",
-      "paragraphs": [
-        "三字母名称记录顶点和两边上的点；只有一个顶点字母时，保留的信息较少。请结合图中需要区分的角，判断这些信息是否足以确定同一个对象。"
-      ],
+      "preview": "先认准顶点和两边，再判断单写顶点会不会混淆。",
+      "paragraphs": [],
       "learningRole": "定义概念；探究",
       "learningGap": "旁问要求判断简写，需给出无歧义的检验标准，同时保留学生为图中角命名的工作。",
       "learningAction": "能用是否唯一确定两条边来判断单字母表示法是否合适。",
@@ -2380,17 +2410,15 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "三字母表示角",
-          "单字母表示的无歧义条件"
+          "用∠AOB表示角时，O是顶点，OA、OB是两条边。三个字母同时告诉我们从哪个顶点看哪两条射线，顶点字母必须写在中间。"
         ],
         "method": [
-          "先从角的两条边确定所指的角，再检查同一顶点处是否还有其他角需要区分。",
-          "换一种表示时，用新名称反查顶点与两边是否仍是原来的对象。"
+          "只写∠O会省去两边的信息。同一顶点处只有一个角时可以这样简写；出现多个角时，读者便不能只靠顶点确定所指的角。对照本图，先找所标角的两条边，再选择能唯一指出它的名称。"
         ],
         "cautions": [
-          "三字母角名的中间字母表示顶点。",
-          "数字或希腊字母须对应图中的标记区域，不能自行错配。"
-        ]
+          "数字或希腊字母也是图中角的名称，但要与标记所在的那一块角对应；换名字后仍应指向原来的两边。"
+        ],
+        "continuous": true
       }
     },
     {
@@ -2414,19 +2442,19 @@
       "preview": "终边的位置相同，是否说明转动的过程也相同？",
       "paragraphs": [],
       "learningRole": "探究",
-      "learningGap": "本题需要把角的顶点、始边与终边、旋转位置与旋转过程用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成思考：射线旋转形成的角的各项任务，并核对题目条件。",
+      "learningGap": "终边的位置相同，是否说明转动的过程也相同？",
+      "learningAction": "能同时记录终边位置和旋转过程，辨认平角与周角。",
       "related": [
         {
-          "locationId": "ch6-angle-rays-definition",
-          "label": "角由有公共端点的两条射线组成",
+          "locationId": "ch6-source-angle-definition",
+          "label": "教材：角的顶点与两边",
           "purpose": "本活动保持顶点不动，观察两条边之间的关系。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "角的顶点、始边与终边",
-          "旋转位置与旋转过程"
+          "射线绕端点旋转时，端点是顶点，起始位置是始边，停止位置是终边。",
+          "终边停在同一位置也可能经历不同的转动过程；平角、周角还要看射线转过多少。"
         ],
         "method": [
           "固定端点和始边，顺着旋转过程观察终边的两个指定位置。",
@@ -2444,19 +2472,19 @@
       "preview": "周角、平角和度分秒的等分关系，分别表达什么？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题需要把角度单位的等分定义、周角与平角用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成填空：周角、平角与度分秒的各项任务，并核对题目条件。",
+      "learningGap": "周角、平角和度分秒的等分关系，分别表达什么？",
+      "learningAction": "能由单位的等分定义说明周角、平角和度分秒之间的关系。",
       "related": [
         {
-          "locationId": "ch6-compound-angle-units",
-          "label": "度分秒与小数度的区别",
+          "locationId": "ch6-source-angle-units",
+          "label": "教材：度、分、秒的定义",
           "purpose": "本题要依据单位关系填写，不能套十进制位值。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "角度单位的等分定义",
-          "周角与平角"
+          "周角360等分，每份是1°；1°的60等分每份是1′，1′的60等分每份是1″。",
+          "射线转一周得到周角，转半周时两边成反向射线得到平角。"
         ],
         "method": [
           "回到本页对周角等分和度、分、秒的定义，分别判断每个空连接的是哪两个单位或角。",
@@ -2474,8 +2502,8 @@
       "title": "48°56′37″为什么不能把符号去掉当小数？",
       "preview": "度、分、秒是三个单位，后两项不是小数点后的数位。",
       "paragraphs": [
-        "48°56′37″表示48度，再加56分和37秒。度、分、秒之间按60换单位；十进制小数的数位却按10进退，所以不能把它拼成48.5637°。",
-        "解释用例：0.5°是半度，换成分是30′，不是50′。把小数度与度分秒比较或互换时，要换算单位，不能只更换小数点与符号。"
+        "48°56′37″表示48度，再加56分和37秒。1°=60′，1′=60″；这些单位按60换算，不能把它拼成48.5637°。",
+        "补充用例：0.5°是半度，换成分是30′。小数度与度分秒互换时，要先换算单位，再合并同单位的部分。"
       ],
       "learningRole": "定义概念；示范方法",
       "learningGap": "复合单位的写法与小数读数相似，需说明数位制和单位制不同，不能直接拼接。",
@@ -2489,8 +2517,8 @@
       "preview": "方位词中的基准、偏向和角度，各自提供什么信息？",
       "paragraphs": [],
       "learningRole": "示范方法",
-      "learningGap": "本题需要把方位角的基准、偏向与大小、射线表示方向用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成例1：用射线表示方位的各项任务，并核对题目条件。",
+      "learningGap": "方位词中的基准、偏向和角度，各自提供什么信息？",
+      "learningAction": "能从方位词读出基准方向、偏向与偏角，并核对作图。",
       "related": [
         {
           "locationId": "ch6-bearing-reference-direction",
@@ -2500,8 +2528,8 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "方位角的基准、偏向与大小",
-          "射线表示方向"
+          "“北偏东θ°”从正北方向向东量θ°；“南偏西θ°”从正南方向向西量θ°，顶点在观察者处。",
+          "方向用从观察点出发的射线表示；同一方向上距离不同的目标可在同一射线上。"
         ],
         "method": [
           "对每个方位词分别找出基准方向、向哪侧偏及偏转大小，再选择相应作图。",
@@ -2534,28 +2562,28 @@
       "preview": "分针在走，时针也在连续转动。",
       "paragraphs": [
         "钟面的时针并不是到整点才跳一下。时间从一个整点走向下一个整点时，时针也逐渐走过两个相邻整点刻度之间的间隔。",
-        "判断题中角度前，先把两根指针在相应时刻的位置画清楚，再选择它们所成的角。不要只移动分针而把时针留在前一个整点的位置；具体位置和角度由你确定。"
+        "判断题中角度前，先把两根指针在相应时刻的位置画清楚，再选择它们所成的角。不要只移动分针而把时针留在前一个整点的位置。"
       ],
       "learningRole": "练习",
       "learningGap": "半点钟面角需要考虑时针连续运动，不能沿用整点时针的位置。",
       "learningAction": "能在非整点时同时确定两根指针的位置，再自行求夹角。",
       "related": [
         {
-          "locationId": "ch6-angle-rays-definition",
-          "label": "角的顶点与两边",
+          "locationId": "ch6-source-angle-definition",
+          "label": "教材：角的顶点与两边",
           "purpose": "本题需把钟表指针的方向抽象成两条射线。"
         },
         {
-          "locationId": "ch6-compound-angle-units",
-          "label": "角度单位",
+          "locationId": "ch6-source-angle-units",
+          "label": "教材：度、分、秒的定义",
           "purpose": "本题最终要用角度单位表达判断。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "周角的等分",
-          "时针和分针的位置",
-          "非整点时的连续运动"
+          "一周是360°，等分为n份时，每份角度=360°÷n。",
+          "分针转一圈时针只走一大格；两针分别按各自速度连续移动。",
+          "分针走动时，时针也在继续转，不能把非整点的时针留在前一个整点刻度上。"
         ],
         "method": [
           "分别确定每个时刻两根指针的位置，再选择教材所讨论的两针夹角。",
@@ -2574,8 +2602,8 @@
       "preview": "怎样检查两种名称仍指向同一个角？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题需要把角的三字母、单字母与数字表示用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成练习第2题：同一角的不同表示的各项任务，并核对题目条件。",
+      "learningGap": "怎样检查两种名称仍指向同一个角？",
+      "learningAction": "能由顶点和两边核对不同角名是否指同一个角。",
       "related": [
         {
           "locationId": "ch6-angle-three-letter-name",
@@ -2590,7 +2618,7 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "角的三字母、单字母与数字表示"
+          "三字母角名把顶点写在中间；单字母角名须不引起歧义；数字角名对应图中标出的那一块角。"
         ],
         "method": [
           "逐列表达时先找顶点，再沿该角的两条边选取合适的字母或标记。",
@@ -2609,19 +2637,19 @@
       "preview": "复合单位与小数度，能只看数字写法比较吗？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题需要把度、分、秒的单位关系、小数度与复合角度单位用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成练习第3题：角度单位换算与比较的各项任务，并核对题目条件。",
+      "learningGap": "复合单位与小数度，能只看数字写法比较吗？",
+      "learningAction": "能逐层换算角度单位，并在统一单位后比较大小。",
       "related": [
         {
-          "locationId": "ch6-compound-angle-units",
-          "label": "度分秒与小数度的区别",
+          "locationId": "ch6-source-angle-units",
+          "label": "教材：度、分、秒的定义",
           "purpose": "两问都要按单位关系换算，第（2）问还须区分写法。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "度、分、秒的单位关系",
-          "小数度与复合角度单位"
+          "1°=60′，1′=60″；分、秒分别表示度、分的六十分之一。",
+          "小数度的小数部分仍以“度”为单位，换成分要乘60；度分秒的相邻单位按60换算。"
         ],
         "method": [
           "（1）先确定目标单位，检查从度到分、从度到秒分别经过哪些换算层级。",
@@ -2640,15 +2668,15 @@
       "preview": "先辨认15′和0.15°各表示什么，再比较。",
       "paragraphs": [
         "这两个写法相似，但一个把不足一度的部分写成“分”，另一个写成“度的小数部分”。比较数值前，先把要比较的部分改写为相同单位。",
-        "你可以选择统一成度，也可以统一成分。选好单位后独立完成换算与大小判断，并用结果检查两种写法是否确实相同。"
+        "你可以选择统一成度，也可以统一成分。选好单位后完成换算与大小判断，并用结果检查两种写法是否确实相同。"
       ],
       "learningRole": "练习",
       "learningGap": "题目针对复合单位与小数度混淆，需提醒统一单位而不直接给出换算或比较结论。",
-      "learningAction": "能识别不同角度单位的表达，自主选择统一单位后判断大小。",
+      "learningAction": "能识别不同角度单位的表达，选择统一单位后判断大小。",
       "related": [
         {
-          "locationId": "ch6-compound-angle-units",
-          "label": "回顾度分秒与小数度",
+          "locationId": "ch6-source-angle-units",
+          "label": "教材：度、分、秒的定义",
           "purpose": "确认为什么不能只比较符号前后的数字。"
         }
       ]
@@ -2660,25 +2688,24 @@
       "preview": "正六边形的边和角，都有哪些需要检验的条件？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题需要把正六边形给定的等边等角条件、圆规保持长度、角与周角的等分用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成练习第4题：画正六边形的各项任务，并核对题目条件。",
+      "learningGap": "正六边形的边和角，都有哪些需要检验的条件？",
+      "learningAction": "能使用给定工具画正六边形，并检查边与角的条件。",
       "related": [
         {
-          "locationId": "ch6-compass-copy-length",
-          "label": "圆规复制长度",
+          "locationId": "ch6-source-compass-copy",
+          "label": "教材：圆规复制长度与尺规作图",
           "purpose": "本题需利用圆规保持长度关系。"
         },
         {
-          "locationId": "ch6-angle-rays-definition",
-          "label": "角的顶点与两边",
+          "locationId": "ch6-source-angle-definition",
+          "label": "教材：角的顶点与两边",
           "purpose": "本题要区分图中中心处的角与六边形顶点处的角。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "正六边形给定的等边等角条件",
-          "圆规保持长度",
-          "角与周角的等分"
+          "正六边形有六条相等的边和六个相等的内角；图中中心处的一周角是360°。",
+          "圆规保持两脚间的距离，三角尺提供已知角度；分别检查它们能保留什么作图条件。"
         ],
         "method": [
           "先读清图中中心、圆周及所标角分别提供什么信息，再选取三角尺和圆规完成作图。",
@@ -2686,7 +2713,7 @@
         ],
         "cautions": [
           "本题要求边与角同时符合条件；只数出六条边还不够。",
-          "画图与检验的具体选择由你完成，示意图比例不是证明。"
+          "示意图的比例不能证明边相等或角相等。"
         ]
       }
     },
@@ -2717,19 +2744,19 @@
       "preview": "叠合后的边的位置，为什么能表示角的大小关系？",
       "paragraphs": [],
       "learningRole": "探究",
-      "learningGap": "本题需要把测量比较角度、叠合比较角度的条件用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成提问：描述角的比较方法与结果的各项任务，并核对题目条件。",
+      "learningGap": "叠合后的边的位置，为什么能表示角的大小关系？",
+      "learningAction": "能说明叠合比较的对齐条件，并由另一条边的位置比较角。",
       "related": [
         {
-          "locationId": "ch6-angle-overlap-conditions",
-          "label": "角叠合比较的条件",
+          "locationId": "ch6-source-angle-comparison",
+          "label": "教材：比较角的方法与图示",
           "purpose": "本问需要完整描述图示比较所满足的条件。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "测量比较角度",
-          "叠合比较角度的条件"
+          "用量角器分别读出角度时，中心对准顶点，零刻度线对准一边，再比较度数。",
+          "顶点和一边重合，另一边放在共同边同侧，再看它落在另一个角内部、边上还是外部。"
         ],
         "method": [
           "对三幅图分别说明哪些顶点和边已重合，再观察另外两边的位置。",
@@ -2747,19 +2774,19 @@
       "preview": "哪些位置关系支持把角合成整角或分出一部分？",
       "paragraphs": [],
       "learningRole": "探究",
-      "learningGap": "本题需要把整角与角的分割、角的度数加减用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成思考：两个角的和与差的各项任务，并核对题目条件。",
+      "learningGap": "哪些位置关系支持把角合成整角或分出一部分？",
+      "learningAction": "能指出整角及无重叠、无遗漏的部分角，说明和差关系。",
       "related": [
         {
-          "locationId": "ch6-angle-sum-interior-ray",
-          "label": "内部射线与角的加法",
+          "locationId": "ch6-source-angle-sum-difference",
+          "label": "教材：角的和差与图6.3-7",
           "purpose": "本问要说明图形分割怎样支持角度加减。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "整角与角的分割",
-          "角的度数加减"
+          "射线从顶点出发并位于角内部时，分成的两个角恰好合成原角，不重叠也不遗漏。",
+          "内部射线把原角分成两部分，原角度数=两部分度数之和；已知整体和一部分可作差。"
         ],
         "method": [
           "先在图中指出整角及其中的两部分，说明它们之间是否有重叠或遗漏。",
@@ -2791,12 +2818,12 @@
       "preview": "角名怎样记录减法后剩余的图形？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题需要把角的差、三字母表示角用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成填空：∠AOC−∠AOB的各项任务，并核对题目条件。",
+      "learningGap": "角名怎样记录减法后剩余的图形？",
+      "learningAction": "能从图中辨认减去一部分后剩下的角，并正确命名。",
       "related": [
         {
-          "locationId": "ch6-angle-sum-interior-ray",
-          "label": "内部射线与角的加法",
+          "locationId": "ch6-source-angle-sum-difference",
+          "label": "教材：角的和差与图6.3-7",
           "purpose": "本题用同一分割关系确定减去一部分后的角。"
         },
         {
@@ -2807,8 +2834,8 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "角的差",
-          "三字母表示角"
+          "从整角的度数减去其中一部分角的度数，得到余下部分角的度数；先确认包含关系。",
+          "用∠AOB表示角时，中间的O是顶点，OA、OB是两条边；边上的点可选，顶点不能换。"
         ],
         "method": [
           "先用图找出被减去的部分，再辨认余下部分的顶点与两边，自己命名。"
@@ -2825,24 +2852,24 @@
       "preview": "同一副三角尺的不同摆法，会怎样改变所成的角？",
       "paragraphs": [],
       "learningRole": "探究",
-      "learningGap": "本题需要把三角尺中的已知角、角的和与差用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成探究：用一副三角尺画角的各项任务，并核对题目条件。",
+      "learningGap": "同一副三角尺的不同摆法，会怎样改变所成的角？",
+      "learningAction": "能用三角尺摆放表示角的和差，检验所得角并排除重复。",
       "related": [
         {
-          "locationId": "ch6-angle-sum-interior-ray",
-          "label": "角的和差所需图形关系",
+          "locationId": "ch6-source-angle-sum-difference",
+          "label": "教材：角的和差与图6.3-7",
           "purpose": "本活动要判断三角尺摆放后是合并角还是取去角。"
         },
         {
-          "locationId": "ch6-angle-overlap-conditions",
-          "label": "角的叠合条件",
+          "locationId": "ch6-source-angle-comparison",
+          "label": "教材：比较角的方法与图示",
           "purpose": "摆放时需统一顶点和基准方向。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "三角尺中的已知角",
-          "角的和与差"
+          "一副三角尺的角分别为30°、60°、90°和45°、45°、90°，拼合时只按实际相邻或重叠的角计算。",
+          "两小角无重叠地拼成一个角时可相加；从整角中去掉一部分角时可相减。"
         ],
         "method": [
           "先辨认每块三角尺本有的角，再尝试不同摆放并预测两条外边所成的角。",
@@ -2861,8 +2888,8 @@
       "preview": "本例把哪个角作为总量？图中的位置条件支持这个选择吗？",
       "paragraphs": [],
       "learningRole": "示范方法",
-      "learningGap": "本题需要把平角的反向射线条件、角的和差、度分减法用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成例2：平角中的角度计算的各项任务，并核对题目条件。",
+      "learningGap": "本例把哪个角作为总量？图中的位置条件支持这个选择吗？",
+      "learningAction": "能由反向射线确定平角，再说明角度减法和单位改写的依据。",
       "related": [
         {
           "locationId": "ch6-straight-angle-opposite-rays",
@@ -2877,9 +2904,9 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "平角的反向射线条件",
-          "角的和差",
-          "度分减法"
+          "平角的两边是反向射线，度数为180°；只知道三点共线还须确认顶点在另外两点之间。",
+          "从同一顶点出发的内部射线把整角分为两部分，整角等于两部分角之和；减去一部分可得另一部分。",
+          "度、分分别相减；分数不够减时，从度数中取1°换成60′再减。"
         ],
         "method": [
           "先核对图中点序与各射线位置，说明选择哪个角作为整角的依据。",
@@ -2919,8 +2946,8 @@
       "learningAction": "能解释借位保持总角度不变，并检查度、分是否成对换算。",
       "related": [
         {
-          "locationId": "ch6-compound-angle-units",
-          "label": "回顾复合角度单位",
+          "locationId": "ch6-source-angle-units",
+          "label": "教材：度、分、秒的定义",
           "purpose": "把度、分理解为同一总角度中的不同单位部分。"
         }
       ]
@@ -2929,22 +2956,26 @@
       "id": "ch6-p181-exercise-1",
       "locationId": "ch6-p181-exercise-1",
       "title": "练习第1题：角大小关系填空",
-      "preview": "两条角度关系，怎样共同约束首尾两个角？",
+      "preview": "两条关系共用一个中间角，怎样据此比较首尾两个角？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题需要把角的度数比较、相等与大小关系的传递用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成练习第1题：角大小关系填空的各项任务，并核对题目条件。",
+      "learningGap": "两条角度关系，怎样共同约束首尾两个角？",
+      "learningAction": "能通过同一个中间角连接两条度数关系，说明比较结果。",
       "related": [
         {
-          "locationId": "ch6-angle-overlap-conditions",
-          "label": "角的大小比较",
+          "locationId": "ch6-source-angle-comparison",
+          "label": "教材：比较角的方法与图示",
           "purpose": "本题中的相等和大于是角度关系，可用同一比较标准理解。"
+        },
+        {
+          "locationId": "ch5-source-equality-transitive",
+          "label": "教材：相等关系的传递",
+          "purpose": "回顾两个量都等于同一个量时怎样联系起来；本题比较的是角的度数。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "角的度数比较",
-          "相等与大小关系的传递"
+          "角的大小按度数比较；把两条“大于”关系按共同的中间角接起来，再比较首尾两个角。两条相等关系也要通过同一个中间角连接。"
         ],
         "method": [
           "每问把同一个中间角作为联系，检查两条已知关系怎样连接首尾两个角。",
@@ -2963,12 +2994,12 @@
       "preview": "角的和差，要与图中的哪些分割关系相符？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题需要把内部射线分割角、角的和差与角名用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成练习第2题：按图填写角的和差的各项任务，并核对题目条件。",
+      "learningGap": "角的和差，要与图中的哪些分割关系相符？",
+      "learningAction": "能从图中分割关系确定所填角名，并说明每个和差的依据。",
       "related": [
         {
-          "locationId": "ch6-angle-sum-interior-ray",
-          "label": "内部射线与角的加法",
+          "locationId": "ch6-source-angle-sum-difference",
+          "label": "教材：角的和差与图6.3-7",
           "purpose": "四个小问都依赖原图中的整角和部分角关系。"
         },
         {
@@ -2979,8 +3010,8 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "内部射线分割角",
-          "角的和差与角名"
+          "角内部的一条射线须从这个角的顶点出发，分成的两个角共用这条边。",
+          "读角名时先找中间字母所指的顶点，再辨认两边；加减的角须与图中的整体、部分对应。"
         ],
         "method": [
           "（1）（2）分别指出两个所加角的共同边及外侧两边，再检查合并的角。",
@@ -2999,8 +3030,8 @@
       "preview": "度与分的改写，为什么必须保持总角度不变？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题需要把度分加法进位、度分减法借位用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成练习第3题：度分加减的各项任务，并核对题目条件。",
+      "learningGap": "度与分的改写，为什么必须保持总角度不变？",
+      "learningAction": "能按六十进制完成度分加减，并检验进位或借位后的总量。",
       "related": [
         {
           "locationId": "ch6-angle-borrow-same-quantity",
@@ -3008,15 +3039,15 @@
           "purpose": "第（2）问需要解释单位改写的合理性。"
         },
         {
-          "locationId": "ch6-compound-angle-units",
-          "label": "度分秒与小数度的区别",
+          "locationId": "ch6-source-angle-units",
+          "label": "教材：度、分、秒的定义",
           "purpose": "两问都不能把复合单位直接当小数计算。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "度分加法进位",
-          "度分减法借位"
+          "同单位相加，分数每满60′可换成1°，秒数每满60″可换成1′。",
+          "同单位相减，不够减时把上一级的1单位换成下一级的60单位，角度总量保持不变。"
         ],
         "method": [
           "两问都先让相同单位对应，再分别检查相加是否需要进位、相减是否需要借位。",
@@ -3035,24 +3066,24 @@
       "preview": "两部分相等时，整角与每一部分有什么数量联系？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题需要把两个相等的部分角、整角与一半的倍数关系用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成填空：把角分成两等份的各项任务，并核对题目条件。",
+      "learningGap": "两部分相等时，整角与每一部分有什么数量联系？",
+      "learningAction": "能将两等份关系分别写成整角与部分角的关系。",
       "related": [
         {
-          "locationId": "ch6-bisector-ray-conditions",
-          "label": "角平分线的条件",
+          "locationId": "ch6-source-bisector-definition",
+          "label": "教材：角平分线的定义",
           "purpose": "此处的等分关系将在次页定义中明确，可用来检查整角与部分角。"
         },
         {
-          "locationId": "ch6-angle-sum-interior-ray",
-          "label": "角的分割与加法",
+          "locationId": "ch6-source-angle-sum-difference",
+          "label": "教材：角的和差与图6.3-7",
           "purpose": "将两份合成整角前应确认分割关系。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "两个相等的部分角",
-          "整角与一半的倍数关系"
+          "射线把原角分成两部分且两部分相等时，每部分都是原角的一半。",
+          "两个相等部分组成整角，整角是每部分的2倍，每部分是整角的一半。"
         ],
         "method": [
           "先结合次页图6.3-10指出整角和两部分，再把“两部分相等”转成数量关系。",
@@ -3081,34 +3112,29 @@
       "id": "ch6-fold-bisector-check",
       "locationId": "ch6-fold-bisector-check",
       "title": "探究：折纸作角的平分线",
-      "preview": "检验的是两条边是否重合，以及折痕是否经过顶点。",
-      "paragraphs": [
-        "图中的P、R只是分别标在两条边上的点，题目没有规定它们到Q等远。折纸时不能把“P与R必须重合”另添为条件，要观察两条边所在的射线能否重合。",
-        "两边重合后，折痕两侧的角也能相互重合，这才支持“分成相等的两个角”。请用自己的折纸结果检查：折痕是否经过顶点，两边是否对齐，再判断所得射线是否符合定义。"
-      ],
+      "preview": "角平分线从顶点出发，把原角分成相等的两角；用这个条件检查折纸。",
+      "paragraphs": [],
       "learningRole": "探究",
       "learningGap": "折纸示意中两边上标了点，需区分边重合与任意标点重合，并给出可操作的验证标准。",
       "learningAction": "能按两边重合及折痕经过顶点验证折纸结果，不误加两个标点重合的条件。",
       "related": [
         {
-          "locationId": "ch6-bisector-ray-conditions",
-          "label": "角平分线的条件",
+          "locationId": "ch6-source-bisector-definition",
+          "label": "教材：角平分线的定义",
           "purpose": "本探究需要用定义验证折纸得到的射线。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "角平分线的定义",
-          "折叠重合与角相等"
+          "角平分线是从角的顶点出发，把这个角分成两个相等的角的射线。折纸时，要检查折痕能否提供这样的射线。"
         ],
         "method": [
-          "对照图6.3-12完成折纸，观察两条边怎样对齐及折痕是否经过顶点。",
-          "展开后用定义检查所得射线的位置与两部分角的关系。"
+          "图中的P、R分别标在两条边上，题目没有规定它们到Q等远。需要对齐的是两条边所在的射线，不必另要求P、R这两个标点重合。两边重合时，折痕两侧的角也能重合，由此检查它们是否相等。"
         ],
         "cautions": [
-          "P、R是边上的标点，题目没有要求它们到Q等远，不要把点重合另加为条件。",
-          "折痕在角内的相应射线才是本题要识别的对象。"
-        ]
+          "用自己的折纸结果核对：折痕是否经过Q，两条边是否对齐。展开后，沿折痕从Q伸向原角内部的那条射线，才是要按定义检验的对象。"
+        ],
+        "continuous": true
       }
     },
     {
@@ -3118,12 +3144,12 @@
       "preview": "等分的准确值与精确到分的近似值，有什么区别？",
       "paragraphs": [],
       "learningRole": "示范方法",
-      "learningGap": "本题需要把等分角与除法、度分换算、精确到分的舍入用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成例3：把周角七等分的各项任务，并核对题目条件。",
+      "learningGap": "等分的准确值与精确到分的近似值，有什么区别？",
+      "learningAction": "能说明等分中的余量怎样换单位，并区分准确值与舍入值。",
       "related": [
         {
-          "locationId": "ch6-compound-angle-units",
-          "label": "度分秒的单位关系",
+          "locationId": "ch6-source-angle-units",
+          "label": "教材：度、分、秒的定义",
           "purpose": "本例除不尽时需要把余量换成较小单位。"
         },
         {
@@ -3134,9 +3160,9 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "等分角与除法",
-          "度分换算",
-          "精确到分的舍入"
+          "把一个角n等分，每份角度=原角度数÷n，计算前确认被等分的整角。",
+          "1°=60′；除法中剩余的度可换成分后继续分，不能把余数直接写成分。",
+          "先算出不足一分的部分，再按四舍五入保留到分；若进成60′还要换成1°。"
         ],
         "method": [
           "先确认被等分的总角和份数，再阅读解答怎样处理不能整除的单位部分。",
@@ -3169,24 +3195,23 @@
       "preview": "整个蛋糕对应的总角、份数与每份角，各表示什么？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题需要把周角与等分、总角、每份角和份数的关系用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成练习第1题：蛋糕的等分角的各项任务，并核对题目条件。",
+      "learningGap": "整个蛋糕对应的总角、份数与每份角，各表示什么？",
+      "learningAction": "能由整周角、每份角和份数的关系处理两种等分问题。",
       "related": [
         {
-          "locationId": "ch6-bisector-ray-conditions",
-          "label": "角的等分关系",
+          "locationId": "ch6-source-bisector-definition",
+          "label": "教材：角平分线的定义",
           "purpose": "本题把分成相等角的思想用于多份等分。"
         },
         {
-          "locationId": "ch6-compound-angle-units",
-          "label": "角度单位",
+          "locationId": "ch6-source-angle-units",
+          "label": "教材：度、分、秒的定义",
           "purpose": "本题须用角度理解总量和每份量，不能混成长度。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "周角与等分",
-          "总角、每份角和份数的关系"
+          "整个圆面在圆心处对应一个周角。等分时，每份中心角×份数=一周的角度。"
         ],
         "method": [
           "两问分别辨认给出的是份数还是每份角，再选择对应的数量关系。",
@@ -3205,25 +3230,25 @@
       "preview": "已知的平分线，究竟把哪个角分成了两份？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题需要把平角的点序条件、角平分线、角的和差用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成练习第2题：平角平分后的角度的各项任务，并核对题目条件。",
+      "learningGap": "已知的平分线，究竟把哪个角分成了两份？",
+      "learningAction": "能认清被平分的角，并按图中整角与部分角的关系求角。",
       "related": [
         {
-          "locationId": "ch6-bisector-ray-conditions",
-          "label": "角平分线的条件",
+          "locationId": "ch6-source-bisector-definition",
+          "label": "教材：角平分线的定义",
           "purpose": "本题的已知平分线提供等角关系。"
         },
         {
-          "locationId": "ch6-angle-sum-interior-ray",
-          "label": "角的和差关系",
+          "locationId": "ch6-source-angle-sum-difference",
+          "label": "教材：角的和差与图6.3-7",
           "purpose": "本题须按射线的位置把所求角与已知角联系起来。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "平角的点序条件",
-          "角平分线",
-          "角的和差"
+          "O在A、B之间时，OA、OB是反向射线，∠AOB为平角；O在线段AB外时不满足这一条件。",
+          "角平分线是从顶点出发、把原角分成两个相等部分的射线；先确认它平分哪一个角。",
+          "从同一顶点出发的内部射线把整角分为两部分，整角等于两部分角之和；减去一部分可得另一部分。"
         ],
         "method": [
           "先从图和题干确认平分的是哪个角，再确定所求角与已知角在图中的关系。",
@@ -3242,12 +3267,12 @@
       "preview": "运算后怎样保持单位含义，并符合精度要求？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题需要把度分乘法与进位、角度除法与换单位、精确到分用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成练习第3题：角度乘除的各项任务，并核对题目条件。",
+      "learningGap": "运算后怎样保持单位含义，并符合精度要求？",
+      "learningAction": "能在乘除中换算角度单位，并按要求将商精确到分。",
       "related": [
         {
-          "locationId": "ch6-compound-angle-units",
-          "label": "复合角度单位",
+          "locationId": "ch6-source-angle-units",
+          "label": "教材：度、分、秒的定义",
           "purpose": "两问都要保持单位意义后再进行运算。"
         },
         {
@@ -3258,9 +3283,9 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "度分乘法与进位",
-          "角度除法与换单位",
-          "精确到分"
+          "度、分分别乘同一个数，所得分数每满60′换成1°后合并。",
+          "先除较大单位，不能整除的度换成分继续除；若还不足，可换成秒。",
+          "结果保留到分，剩余秒数达到30″向上进1′，不足30″舍去。"
         ],
         "method": [
           "（1）检查各单位部分的倍数以及是否需要整理单位。",
@@ -3293,23 +3318,28 @@
       "preview": "比较余角或补角时，为什么要看它们分别与谁配对？",
       "paragraphs": [],
       "learningRole": "探究",
-      "learningGap": "本题需要把互余与互补的度数和、同一条件下两个角的比较用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成思考：同一个角的余角与补角的各项任务，并核对题目条件。",
+      "learningGap": "比较余角或补角时，为什么要看它们分别与谁配对？",
+      "learningAction": "能把与同一个角互余或互补的条件写成度数关系，再作比较。",
       "related": [
         {
-          "locationId": "ch6-complementary-position-independent",
-          "label": "互余与互补的数量关系",
-          "purpose": "本活动须先把两种关系表达成相应的度数和。"
+          "locationId": "ch6-complementary-definition",
+          "label": "教材：余角的定义（和为90°）",
+          "purpose": "先用90°的度数和判断或表示互余关系。"
+        },
+        {
+          "locationId": "ch6-source-supplementary-definition",
+          "label": "教材：补角的定义（和为180°）",
+          "purpose": "用180°的度数和判断或表示互补关系，再与互余条件区分。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "互余与互补的度数和",
-          "同一条件下两个角的比较"
+          "互余的两个角之和为90°；互补的两个角之和为180°",
+          "若两个角分别与同一个角互余，可分别用90°减这个角来表示；互补时用180°作总量。"
         ],
         "method": [
-          "选择图示或度数关系说明你的比较依据，把“同一个角”和“分别互余”两个条件都用进去。",
-          "补角情形需要重新核对定义中的总量；不要只凭角在图上的摆放作比较。"
+          "将每一组互余条件表达为两角之和等于90°，再以同一个角为比较对象，说明两组关系怎样联系。",
+          "补角情形用两角之和等于180°重新检查；不要只凭角在图上的摆放作比较。"
         ],
         "cautions": [
           "要检查两个被比较角是与同一个角配对，不能只看到“余角”或“补角”就断言相等。"
@@ -3330,9 +3360,14 @@
       "learningAction": "能区分同角与等角，并在使用余角或补角相等性质前核对所对应角的相等条件。",
       "related": [
         {
-          "locationId": "ch6-complementary-position-independent",
-          "label": "回顾互余、互补的数量关系",
-          "purpose": "确认结论比较的是角度，不要求两角位置重合。"
+          "locationId": "ch6-complementary-definition",
+          "label": "教材：余角的定义（和为90°）",
+          "purpose": "先用90°的度数和判断或表示互余关系。"
+        },
+        {
+          "locationId": "ch6-source-supplementary-definition",
+          "label": "教材：补角的定义（和为180°）",
+          "purpose": "用180°的度数和判断或表示互补关系，再与互余条件区分。"
         }
       ]
     },
@@ -3343,25 +3378,25 @@
       "preview": "“同角”与“等角”的条件，怎样进入补角的理由？",
       "paragraphs": [],
       "learningRole": "推导或证明",
-      "learningGap": "本题需要把互补的定义、同角与等角的区别、相等数量的替换用于题干条件，并保留学生的作答过程。",
-      "learningAction": "能根据知识回顾自行完成旁问：说明同角或等角的补角相等的各项任务，并核对题目条件。",
+      "learningGap": "“同角”与“等角”的条件，怎样进入补角的理由？",
+      "learningAction": "能把同角或等角条件用于180°的度数关系，说明补角相等。",
       "related": [
         {
-          "locationId": "ch6-equal-angle-complements",
-          "label": "同角与等角的使用条件",
+          "locationId": "ch6-source-equal-complements",
+          "label": "教材：同角或等角的余角、补角性质",
           "purpose": "本问类比余角性质，但仍须重新核对补角条件。"
         },
         {
-          "locationId": "ch6-complementary-position-independent",
-          "label": "互补的数量关系",
-          "purpose": "本问的推理应从互补定义出发。"
+          "locationId": "ch6-source-supplementary-definition",
+          "label": "教材：补角的定义（和为180°）",
+          "purpose": "回顾两角度数和为180°的条件，再检查本题所给的角及射线位置。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "互补的定义",
-          "同角与等角的区别",
-          "相等数量的替换"
+          "两个角的度数之和等于180°，它们就互为补角，不要求两个角相邻。",
+          "同角是同一个角，等角是大小相等的角；替换角度数只需大小相等。",
+          "两个角度数相等时，可在度数等式中用一个替换另一个，已知总和不会改变。"
         ],
         "method": [
           "选择能把“分别互补”用于比较的表示，并说明“同角”与“等角”各提供什么条件。",
@@ -3408,7 +3443,7 @@
       "preview": "先检查射线的位置条件，再决定角度能否直接相加。",
       "paragraphs": [
         "两个角有公共边OB，并不自动说明它们拼在一起就是∠AOC。先检查题干是否规定了OA、OC在OB的哪一侧。",
-        "画草图时，让每幅图都满足给定的两个度数，再检查是否还存在其他位置。由你判断这些位置对结论有什么影响；不要只用第一幅顺手画出的图作判断。"
+        "画草图时，让每幅图都满足给定的两个度数，再检查是否还存在其他位置。逐图比较目标角；不要把第一幅图当作唯一情况。"
       ],
       "learningRole": "练习",
       "learningGap": "判断题没有图示，学生可能把公共边两侧的位置当作已知，直接相加。",
@@ -3429,8 +3464,8 @@
       "learningAction": "能区分1 h与1 min对应的转动量，并在求钟面夹角前统一时间单位和起始时刻。",
       "related": [
         {
-          "locationId": "ch6-angle-rays-definition",
-          "label": "角的两条边",
+          "locationId": "ch6-source-angle-definition",
+          "label": "教材：角的顶点与两边",
           "purpose": "确定所求夹角的两边应是同一时刻两根指针所在的射线。"
         }
       ]
@@ -3445,8 +3480,8 @@
         "在各自观测点读出题设方向后，检查你表示的船的位置能否同时满足两处观测。方向与观测点都要对应，不能只保留角度数值。"
       ],
       "learningRole": "练习",
-      "learningGap": "本题指南需将方位角、射线的端点、共同满足两个条件与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据方位角、射线的端点，独立完成“由两处方位确定船的位置”并按注意事项核对条件。",
+      "learningGap": "方位要连同观测点一起读，北向标只规定共同方向。",
+      "learningAction": "能从两处观察点画出对应方向射线，并按交点检查船的位置。",
       "related": [
         {
           "locationId": "ch6-bearing-reference-direction",
@@ -3456,9 +3491,9 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "方位角",
-          "射线的端点",
-          "共同满足两个条件"
+          "方位角先以观察点作顶点，按“北偏东”等名称指定起量方向和转向，再量所给度数。",
+          "射线从端点出发向一个方向无限延伸；方位题中端点在观察者的位置。",
+          "目标点若同时满足两个观察条件，画出的两条方向射线必须在同一个位置相交。"
         ],
         "method": [
           "分别以A、B为观测点，依据共同北向读出各自的方位条件。",
@@ -3480,20 +3515,20 @@
         "多幅图出现共同现象，可以据此提出猜想。要声称所有符合条件的四边形都如此，还需要说明对所有这些图都适用的理由。本题先把观察结果与猜想分开记录。"
       ],
       "learningRole": "探究",
-      "learningGap": "本题指南需将按给定角度作图、角的度量、观察与猜想与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据按给定角度作图、角的度量，独立完成“测量四边形的第四个角”并按注意事项核对条件。",
+      "learningGap": "测量能帮助提出猜想；有限个图不能代替一般理由。",
+      "learningAction": "能按给定三个角作图和测量第四个角，并区分测量发现与一般结论。",
       "related": [
         {
-          "locationId": "ch6-compound-angle-units",
-          "label": "角的度量",
+          "locationId": "ch6-source-angle-units",
+          "label": "教材：度、分、秒的定义",
           "purpose": "按统一单位记录和比较每次测量的角度。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "按给定角度作图",
-          "角的度量",
-          "观察与猜想"
+          "量角器中心对准顶点，零刻度线对准给定边，按度数标点后从顶点画射线。",
+          "量角器要与角共顶点、一边对准零刻度线，选择从这条边的0°开始的刻度读数。",
+          "作图测量可帮助提出关系，读数有误差，所得关系还需要由题中精确条件说明。"
         ],
         "method": [
           "画出的各个四边形都要保留题设的三个角度，再测量未指定的那个角。",
@@ -3532,7 +3567,7 @@
       "preview": "制作时需要的粘贴边，不一定是成品外表面的一个面。",
       "paragraphs": [
         "图1的灰绿色窄边用于把纸片粘接起来。折好后，这些部分会贴在别的面上，不能因为展开时看见一块纸，就把它单独数作立体图形的一个面。",
-        "想象折叠时，先分清表示各个面的蓝色部分与粘贴边，再检查相接的边是否能对齐。立体图形的形状仍由你根据展开图判断。"
+        "想象折叠时，先分清表示各个面的蓝色部分与粘贴边，再检查相接的边是否能对齐。"
       ],
       "learningRole": "探究",
       "learningGap": "制作展开图同时含几何面和粘贴边，未明确两者在辨认立体图形时的区别。",
@@ -3567,13 +3602,13 @@
       "learningAction": "能根据观察或折叠任务，区分观察图与展开图应保留的信息。",
       "related": [
         {
-          "locationId": "ch6-net-vs-view",
-          "label": "展开图",
+          "locationId": "ch6-source-net-definition",
+          "label": "教材：展开图的含义",
           "purpose": "回到表面展开的定义，核对展开图需要保留的面及连接信息。"
         },
         {
-          "locationId": "ch6-view-overlap",
-          "label": "观察图中的遮挡与重叠",
+          "locationId": "ch6-source-observation-example",
+          "label": "教材：三个方向观察的例题",
           "purpose": "对照从一个方向看时保留的信息，理解它与展开图的区别。"
         }
       ]
@@ -3617,7 +3652,7 @@
       ],
       "learningRole": "练习",
       "learningGap": "立体表面展平后点可能在边界上出现对应位置，未说明最短判断前需保留路线约束。",
-      "learningAction": "能先核对展开与卷回的点边对应及路线条件，再自主比较选项。",
+      "learningAction": "能先核对展开与卷回的点边对应及路线条件，再比较选项。",
       "related": []
     },
     {
@@ -3627,11 +3662,11 @@
       "preview": "折叠前后的重合关系能提供等角，不能只凭示意图量角。",
       "paragraphs": [
         "对折后重合的两条边，和折痕分别组成的角相等。可把折叠前的一条边、它折叠后的位置和折痕标成一组，检查这一组怎样对应。",
-        "本题有两次对折，应分别从题目给出的对应点识别等角，再由你组合这些关系求目标角。图画得是否对称、量起来是多少，都不能代替对折条件给出的依据。"
+        "本题有两次对折，应分别从题目给出的对应点识别等角，再检查这些等角关系怎样联系目标角。图画得是否对称、量起来是多少，都不能代替对折条件给出的依据。"
       ],
       "learningRole": "练习",
       "learningGap": "题干以操作叙述给出条件，学生需要把折叠过程转换为角相等的关系。",
-      "learningAction": "能从两次对折分别识别等角依据，再自主建立目标角的关系。",
+      "learningAction": "能从两次对折分别识别等角依据，再建立目标角的关系。",
       "related": []
     },
     {
@@ -3675,7 +3710,7 @@
       "preview": "长度按同一个比例缩小，位置与大小关系才可比较；角度不跟着缩小。",
       "paragraphs": [
         "在同一张按比例绘制的图中，各条实际长度应使用同一个缩放比例。先统一实际长度的单位，再换算成图上长度；否则不同项目看似都画得下，却可能不符合实际大小关系。",
-        "长度缩小不会让角度也按相同比例变小。画好后，可选一条已标注的实际长度，按图上的比例反算检查。比例由你根据场地尺寸和纸面空间选择；分别绘制的图可以各选比例，但要各自标明。"
+        "长度缩小不会让角度也按相同比例变小。画好后，可选一条已标注的实际长度，按图上的比例反算检查。根据场地尺寸和纸面空间选择比例；分别绘制的图可以各选比例，但要各自标明。"
       ],
       "learningRole": "探究",
       "learningGap": "“适当的比例”未展开同图比例一致、单位统一及角度保持的要求。",
@@ -3715,7 +3750,7 @@
       "preview": "先把项目规则和完整路线确定，再检验起点到终点的实际赛程。",
       "paragraphs": [
         "起跑线不能只从照片上照搬。先确认这个项目的终点、跑进方向、是否分道以及何时允许改变所跑路线，再沿规定路线核对从起点到终点的长度。",
-        "不同项目即使总距离相同，路线约束也可能不同。把所用规则的来源与赛程计算一同写入设计说明，再由你决定各起点的位置；不能只用图上起点是否排齐来判断设计。"
+        "不同项目即使总距离相同，路线约束也可能不同。把所用规则的来源与赛程计算一同写入设计说明，据此检查各起点的位置，不能只看起点是否排齐。"
       ],
       "learningRole": "探究",
       "learningGap": "任务要求设计起跑线，未明确设计验证要同时满足赛程和项目路线条件。",
@@ -3735,7 +3770,7 @@
       "preview": "先把每个尺寸绑定到它描述的图形，再统一比例作图。",
       "paragraphs": [
         "题目先问圆的半径，再问扇形所在圆的半径；它们描述的是不同部分，不能因为都叫“半径”就使用同一个数值。应在自己的示意图中分别标明它们的圆心、边界和长度单位。",
-        "照片用于认识场地组成，不提供可直接按比例量取的平面尺寸。应根据适用的资料分别取得所需数据，再检查这些数据与自己画出的部分是否对应；具体数值和面积仍由你调查、计算。"
+        "照片用于认识场地组成，不提供可直接按比例量取的平面尺寸。应根据适用的资料分别取得所需数据，再检查这些数据与自己画出的部分是否对应。"
       ],
       "learningRole": "探究",
       "learningGap": "实践题同时出现两个半径，未明确同名长度应绑定不同几何对象，也未说明照片不可直接代替比例图。",
@@ -3755,7 +3790,7 @@
       "preview": "除了面积，还要检查边界、方向和活动时占用的空间。",
       "paragraphs": [
         "各项目面积之和小于运动场面积，只能检查总量，不能保证每个场地都能按所需形状与位置放进去。细长场地还受长度、宽度和朝向限制，不能仅比较平方米的数量。",
-        "把已核实的助跑、投掷、通行等活动范围也画进同一比例图，检查它们是否越界或相互交叉，再结合是否同时进行来检验布局。项目位置和安排仍由小组决定，并向体育老师核实相关要求。"
+        "把已核实的助跑、投掷、通行等活动范围也画进同一比例图，检查它们是否越界或相互交叉，再结合是否同时进行来检验布局。向体育老师核实相关场地要求。"
       ],
       "learningRole": "探究",
       "learningGap": "“合理安排、互不干扰”需要转成可检查的空间条件，面积总量容易被误当成充分条件。",
@@ -3789,7 +3824,7 @@
         {
           "locationId": "ch6-field-layout-constraints",
           "label": "检查场地布局的验证依据",
-          "purpose": "说明各项目边界和活动范围怎样满足空间约束。"
+          "purpose": "说明各项目边界和活动范围怎样满足空间条件。"
         }
       ]
     },
@@ -3800,29 +3835,34 @@
       "preview": "图中的平角条件与等分条件，分别提供什么依据？",
       "paragraphs": [],
       "learningRole": "示范方法",
-      "learningGap": "本题指南需将平角与补角、角平分线的定义、余角的定义、等量替换与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据平角与补角、角平分线的定义，独立完成“辨认互为余角的角”并按注意事项核对条件。",
+      "learningGap": "图中的平角条件与等分条件，分别提供什么依据？",
+      "learningAction": "能指出平角与平分线提供的条件，说明分析中的等量替换。",
       "related": [
         {
-          "locationId": "ch6-bisector-ray-conditions",
-          "label": "角的平分线",
+          "locationId": "ch6-source-bisector-definition",
+          "label": "教材：角平分线的定义",
           "purpose": "把两条平分线分别转换成角相等及半角的关系。"
         },
         {
-          "locationId": "ch6-complementary-position-independent",
-          "label": "补角",
-          "purpose": "核对由平角得到的两角和，再理解本例的分析路线。"
+          "locationId": "ch6-complementary-definition",
+          "label": "教材：余角的定义（和为90°）",
+          "purpose": "先用90°的度数和判断或表示互余关系。"
+        },
+        {
+          "locationId": "ch6-source-supplementary-definition",
+          "label": "教材：补角的定义（和为180°）",
+          "purpose": "用180°的度数和判断或表示互补关系，再与互余条件区分。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "平角与补角",
-          "角平分线的定义",
-          "余角的定义",
-          "等量替换"
+          "平角的度数为180°；两个角的和为180°时互补，它们不必拼成同一个平角。",
+          "从角的顶点出发，把这个角分成两个相等的角的射线，叫作这个角的平分线。",
+          "余角的定义：两个角的和等于90°",
+          "两个角已知相等时，可把一个的度数代入另一个所在的加减关系中。"
         ],
         "method": [
-          "先把图中点的顺序和两条平分线所给的条件分别标出，区分已知关系与要找的角对。",
+          "先明确要找的角对须满足两角之和等于90°；再把图中点的顺序和两条平分线给出的条件分别标出，区分已知关系与目标条件。",
           "阅读分析与解答时，检查互补关系怎样用于求两角之和，再解释末句“同理”省略的等角替换。"
         ],
         "cautions": [
@@ -3838,8 +3878,8 @@
       "preview": "互余与互补比较的是度数，还是图中的位置？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将余角与补角的定义与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据余角与补角的定义，独立完成“找互余与互补的角”并按注意事项核对条件。",
+      "learningGap": "互余与互补比较的是度数，还是图中的位置？",
+      "learningAction": "能分别用90°和180°的和逐对判断互余、互补，并避免漏项。",
       "related": [
         {
           "locationId": "ch6-example4-complement-pairs",
@@ -3847,18 +3887,23 @@
           "purpose": "理解互余只看两角之和，避免按角的位置配对。"
         },
         {
-          "locationId": "ch6-complementary-position-independent",
-          "label": "补角",
-          "purpose": "按两角之和检查互补角对。"
+          "locationId": "ch6-complementary-definition",
+          "label": "教材：余角的定义（和为90°）",
+          "purpose": "先用90°的度数和判断或表示互余关系。"
+        },
+        {
+          "locationId": "ch6-source-supplementary-definition",
+          "label": "教材：补角的定义（和为180°）",
+          "purpose": "用180°的度数和判断或表示互补关系，再与互余条件区分。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "余角与补角的定义"
+          "互余以两角之和为90°判定；互补以两角之和为180°判定"
         ],
         "method": [
-          "互余部分：从图中一个已知度数出发，查找与它合起来满足余角定义的另一个角。",
-          "互补部分：改用补角定义重新配对，整理结果时逐对检查是否重复或遗漏。"
+          "互余部分：从图中一个已知度数出发，查找与它合起来等于90°的另一个角。",
+          "互补部分：改用两角之和为180°的条件重新配对；逐对检查依据，避免重复或遗漏。"
         ],
         "cautions": [
           "角画在不同位置不影响互余、互补的判断。",
@@ -3873,27 +3918,32 @@
       "preview": "余角与补角各自满足什么条件？度分写法怎样保持同一角度？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将余角与补角、度、分的六十进制换算与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据余角与补角、度、分的六十进制换算，独立完成“求70°39′角的余角与补角”并按注意事项核对条件。",
+      "learningGap": "余角与补角各自满足什么条件？度分写法怎样保持同一角度？",
+      "learningAction": "能分别用余角和补角的定义求角，并检验度分借位。",
       "related": [
         {
-          "locationId": "ch6-complementary-position-independent",
-          "label": "补角",
-          "purpose": "区分补角的总量与余角的总量。"
+          "locationId": "ch6-complementary-definition",
+          "label": "教材：余角的定义（和为90°）",
+          "purpose": "先用90°的度数和判断或表示互余关系。"
         },
         {
-          "locationId": "ch6-compound-angle-units",
-          "label": "度、分、秒",
+          "locationId": "ch6-source-supplementary-definition",
+          "label": "教材：补角的定义（和为180°）",
+          "purpose": "用180°的度数和判断或表示互补关系，再与互余条件区分。"
+        },
+        {
+          "locationId": "ch6-source-angle-units",
+          "label": "教材：度、分、秒的定义",
           "purpose": "核对角度单位之间的进率，处理减法中的换算。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "余角与补角",
-          "度、分的六十进制换算"
+          "余角与原角之和为90°；补角与原角之和为180°。",
+          "1°=60′，度与分分别相减；分不够减时，把1°换成60′再减。"
         ],
         "method": [
-          "分别用定义说明已知角与所求角应满足什么关系，再自行选择运算。",
+          "将已知角分别与所求余角、补角配成一组，按90°、180°的度数和条件表达关系，再自行选择运算。",
           "核对你的度分改写是否保持同一个角度；两项结果分别用各自定义检验。"
         ],
         "cautions": [
@@ -3909,19 +3959,19 @@
       "preview": "“补角”与“3倍”是两个条件，需要同时满足。",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将补角的定义、倍数关系与相等总量与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据补角的定义、倍数关系与相等总量，独立完成“由补角的倍数关系求角”并按注意事项核对条件。",
+      "learningGap": "“补角”与“3倍”是两个条件，需要同时满足。",
+      "learningAction": "能同时表示互补和倍数条件，求解后用两条条件检查。",
       "related": [
         {
-          "locationId": "ch6-complementary-position-independent",
-          "label": "补角",
-          "purpose": "用补角定义确定两个角应满足的总量条件。"
+          "locationId": "ch6-source-supplementary-definition",
+          "label": "教材：补角的定义（和为180°）",
+          "purpose": "回顾两角度数和为180°的条件，再检查本题所给的角及射线位置。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "补角的定义",
-          "倍数关系与相等总量"
+          "两个角的度数和等于180°时互为补角；一个角的补角度数为180°减去这个角的度数。",
+          "把较大的角表示为较小角的倍数，再用已知的两角总度数联系这两个量。"
         ],
         "method": [
           "把所求角与它的补角作为两个量，分别记录“和的关系”和“3倍的关系”。",
@@ -3940,25 +3990,25 @@
       "preview": "测量方案既要有角度依据，也要满足墙外可操作的限制。",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将射线与延长方向、角的和差、补角与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据射线与延长方向、角的和差，独立完成“不能进入围墙时测量夹角”并按注意事项核对条件。",
+      "learningGap": "测量方案既要有角度依据，也要满足墙外可操作的限制。",
+      "learningAction": "能提出墙外可操作的测量方案，并说明外部角与目标角的关系。",
       "related": [
         {
-          "locationId": "ch6-extension-order",
-          "label": "线段的延长方向",
+          "locationId": "ch6-source-extension-direction",
+          "label": "教材：连接、延长与反向延长",
           "purpose": "检查怎样把墙的方向延伸到可以进行测量的位置。"
         },
         {
-          "locationId": "ch6-complementary-position-independent",
-          "label": "补角",
-          "purpose": "判断所选外部角能否与目标角建立可用关系。"
+          "locationId": "ch6-source-supplementary-definition",
+          "label": "教材：补角的定义（和为180°）",
+          "purpose": "回顾两角度数和为180°的条件，再检查本题所给的角及射线位置。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "射线与延长方向",
-          "角的和差",
-          "补角"
+          "延长AB是从A向B越过B；判断延长后形成的角时，先确认哪条射线与原来的边反向。",
+          "从同一顶点出发的内部射线把整角分为两部分，整角等于两部分角之和；减去一部分可得另一部分。",
+          "互补的两个角度数之和为180°，只凭位置相邻不能判断互补。"
         ],
         "method": [
           "先在草图上区分围墙内的目标角与人能到达的位置，保留两堵墙所确定的方向。",
@@ -3977,8 +4027,8 @@
       "preview": "指定一条边后，怎样辨认并完整记录不同的角？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将角的两条边、角的三字母表示与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据角的两条边、角的三字母表示，独立完成“以OC为边表示角”并按注意事项核对条件。",
+      "learningGap": "指定一条边后，怎样辨认并完整记录不同的角？",
+      "learningAction": "能固定公共边枚举不同的角，并用顶点与两边命名。",
       "related": [
         {
           "locationId": "ch6-angle-three-letter-name",
@@ -3988,8 +4038,8 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "角的两条边",
-          "角的三字母表示"
+          "角的两边是有公共端点的两条射线；看图时先确认公共端点和两条延伸方向。",
+          "∠ABC的顶点是B，两边是射线BA、BC；中间字母决定顶点。"
         ],
         "method": [
           "固定题目指定的边OC，按图中射线的顺序逐一选择另一条边。",
@@ -4008,34 +4058,45 @@
       "preview": "各句的结论，是否由它给出的条件充分支持？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将角与平角的含义、余角和补角、角的和差与位置条件与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据角与平角的含义、余角和补角，独立完成“角概念与关系判断”并按注意事项核对条件。",
+      "learningGap": "各句的结论，是否由它给出的条件充分支持？",
+      "learningAction": "能逐句检查定义和位置条件，用依据或有效反例说明判断。",
       "related": [
         {
-          "locationId": "ch6-angle-rays-definition",
-          "label": "角的定义",
+          "locationId": "ch6-source-angle-definition",
+          "label": "教材：角的顶点与两边",
           "purpose": "检查公共端点等定义条件是否被省略。"
         },
         {
-          "locationId": "ch6-complementary-position-independent",
-          "label": "补角",
-          "purpose": "用数量关系判断互补及相等条件。"
+          "locationId": "ch6-complementary-definition",
+          "label": "教材：余角的定义（和为90°）",
+          "purpose": "先用90°的度数和判断或表示互余关系。"
         },
         {
-          "locationId": "ch6-angle-sum-interior-ray",
-          "label": "角的和差",
+          "locationId": "ch6-source-supplementary-definition",
+          "label": "教材：补角的定义（和为180°）",
+          "purpose": "用180°的度数和判断或表示互补关系，再与互余条件区分。"
+        },
+        {
+          "locationId": "ch6-source-angle-sum-difference",
+          "label": "教材：角的和差与图6.3-7",
           "purpose": "检查直接相加需要的射线位置条件。"
+        },
+        {
+          "locationId": "ch6-straight-angle-opposite-rays",
+          "label": "平角的反向射线条件",
+          "purpose": "第（2）问须从平角的组成辨认对象，不能仅因画在一条直线上就把角与直线等同。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "角与平角的含义",
-          "余角和补角",
-          "角的和差与位置条件"
+          "角由有公共端点的两条射线组成；平角的两边是反向射线",
+          "互余的两个角之和为90°；互补的两个角之和为180°",
+          "加减角度前先看射线的位置：内部射线把整体分成两部分，反向射线组成180°的平角。"
         ],
         "method": [
-          "对每一句，先确定适用的定义或性质，检查已给条件是否足够支持结论。",
-          "需要检验不同位置或数值时，自行画图或举例；判断为真须说明条件怎样支持结论，判断为假须给满足原条件的反例。"
+          "（1）（2）按角的定义检查两条射线的公共端点；讨论平角时，再核对反向射线条件，区分角与直线这两个对象。",
+          "（3）（4）用互补的180°条件、互余的90°条件分别表达涉及的角，再检查句子中的相等或大小关系是否必然成立。",
+          "（5）检查所给角的位置条件是否足以支持所声称的和；需要检验时，自行画满足原条件的图或举例，判断为真须说明依据，判断为假须给反例。"
         ],
         "cautions": [
           "判断题要求语句在其条件下必然成立；单幅顺手画出的图不足以证明必然性。",
@@ -4050,19 +4111,19 @@
       "preview": "五个填空中，单位、运算与结果写法各有什么要求？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将度、分、秒的进率、角度的加法、乘法和除法与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据度、分、秒的进率、角度的加法、乘法和除法，独立完成“角度单位与运算填空”并按注意事项核对条件。",
+      "learningGap": "五个填空中，单位、运算与结果写法各有什么要求？",
+      "learningAction": "能按各空要求选择角度单位与运算，并用另一单位复核。",
       "related": [
         {
-          "locationId": "ch6-compound-angle-units",
-          "label": "度、分、秒",
+          "locationId": "ch6-source-angle-units",
+          "label": "教材：度、分、秒的定义",
           "purpose": "统一各小问的换算依据，避免把复名数当成十进制小数。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "度、分、秒的进率",
-          "角度的加法、乘法和除法"
+          "1°=60′，1′=60″；向小单位换算乘60，向大单位换算除以60。",
+          "同单位才能直接加减；乘除后按1°=60′、1′=60″处理进位或余数。"
         ],
         "method": [
           "五问的起始单位、目标单位和运算各有什么要求？为你选用的做法说明单位依据。",
@@ -4078,16 +4139,21 @@
       "id": "ch6-q-p185-e4",
       "locationId": "ch6-q-p185-e4",
       "title": "习题6.3第4题：由补角求余角",
-      "preview": "已知补角与所求余角，共同参照的是哪一个角？",
+      "preview": "补角和余角都要先确认：它们与哪一个原角相加？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将同一个角的余角与补角与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据同一个角的余角与补角，独立完成“由补角求余角”并按注意事项核对条件。",
+      "learningGap": "已知补角与所求余角，共同参照的是哪一个角？",
+      "learningAction": "能用同一原角连接已知补角与所求余角的度数关系。",
       "related": [
         {
-          "locationId": "ch6-complementary-position-independent",
-          "label": "补角",
-          "purpose": "识别已知量与原角之间的数量关系。"
+          "locationId": "ch6-complementary-definition",
+          "label": "教材：余角的定义（和为90°）",
+          "purpose": "先用90°的度数和判断或表示互余关系。"
+        },
+        {
+          "locationId": "ch6-source-supplementary-definition",
+          "label": "教材：补角的定义（和为180°）",
+          "purpose": "用180°的度数和判断或表示互补关系，再与互余条件区分。"
         },
         {
           "locationId": "ch6-example4-complement-pairs",
@@ -4097,10 +4163,10 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "同一个角的余角与补角"
+          "同一原角与其余角之和为90°，与其补角之和为180°"
         ],
         "method": [
-          "原角、已知补角与所求余角分别是哪一个量？选择能同时使用两种定义的表示，说明三个量怎样联系。"
+          "原角、已知补角与所求余角分别是哪一个量？以同一原角为对象，分别用180°、90°的度数和条件表达关系，再说明三个量怎样联系。"
         ],
         "cautions": [
           "两个问到的角都以同一个原角为参照。",
@@ -4115,8 +4181,8 @@
       "preview": "同一个方位，怎样用基准方向与偏转来确定？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将方向十字线、方位角的基准方向与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据方向十字线、方位角的基准方向，独立完成“按方位画射线”并按注意事项核对条件。",
+      "learningGap": "同一个方位，怎样用基准方向与偏转来确定？",
+      "learningAction": "能按方位词确定共同端点、基准方向和偏转后画射线。",
       "related": [
         {
           "locationId": "ch6-bearing-reference-direction",
@@ -4126,8 +4192,8 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "方向十字线",
-          "方位角的基准方向"
+          "东西方向相反、南北方向相反，横竖两方向相交成90°；十字线的交点放在观察者处。",
+          "“北偏东”从北向东量，“南偏东”从南向东量；起量方向不同，即使度数相同也不是同一方向。"
         ],
         "method": [
           "对照每个方位词，说明所选的起始方向与偏转方向怎样由题设确定，再独立作图。",
@@ -4146,12 +4212,12 @@
       "preview": "转动的角度与某一时刻的夹角，是同一个量吗？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将周角的等分、匀速转动的角度、两射线所成的角与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据周角的等分、匀速转动的角度，独立完成“时针与分针的转动”并按注意事项核对条件。",
+      "learningGap": "转动的角度与某一时刻的夹角，是同一个量吗？",
+      "learningAction": "能区分指针转动量与同一时刻的夹角，并统一所用时间单位。",
       "related": [
         {
-          "locationId": "ch6-compound-angle-units",
-          "label": "周角与角的度量",
+          "locationId": "ch6-source-angle-units",
+          "label": "教材：度、分、秒的定义",
           "purpose": "把一周的转动按时间等分，建立转动量。"
         },
         {
@@ -4162,9 +4228,9 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "周角的等分",
-          "匀速转动的角度",
-          "两射线所成的角"
+          "一周是360°，等分为n份时，每份角度=360°÷n。",
+          "匀速转动时，转过角度=每单位时间转过角度×经过时间，时间单位须统一。",
+          "钟针间夹角要由同一时刻两条方向射线确定，转过角度与两针当前夹角是两个量。"
         ],
         "method": [
           "前两问分别以哪根指针的一周为参照？计算转动量时，检查所用时间单位。",
@@ -4183,23 +4249,28 @@
       "preview": "两个直角条件，为比较目标角提供了什么依据？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将余角的定义、同角的余角相等、角的和差与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据余角的定义、同角的余角相等，独立完成“比较∠AOB与∠COD”并按注意事项核对条件。",
+      "learningGap": "两个直角条件，为比较目标角提供了什么依据？",
+      "learningAction": "能从两个直角条件识别互余关系，再检查余角相等性质的条件。",
       "related": [
         {
-          "locationId": "ch6-equal-angle-complements",
-          "label": "同角（等角）的余角相等",
+          "locationId": "ch6-source-equal-complements",
+          "label": "教材：同角或等角的余角、补角性质",
           "purpose": "检查两目标角是否满足这条性质的使用条件。"
+        },
+        {
+          "locationId": "ch6-complementary-definition",
+          "label": "教材：余角的定义（和为90°）",
+          "purpose": "先用90°的度数和确认互余关系，再检验余角相等性质的条件。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "余角的定义",
-          "同角的余角相等",
-          "角的和差"
+          "余角以两角之和等于90°为定义条件",
+          "两个角分别与同一个角互余时，都等于90°减去这个角，因此大小相等。",
+          "从同一顶点出发的内部射线把整角分为两部分，整角等于两部分角之和；减去一部分可得另一部分。"
         ],
         "method": [
-          "从两个90°条件中，你能找到哪些支持目标角比较的数量关系？选用性质时，说明为什么满足它的条件。"
+          "从两个90°条件中辨认可用的互余关系，分别说明目标角与哪个角合为90°；再检查是否满足同角或等角的余角性质，说明比较的依据。"
         ],
         "cautions": [
           "结论必须由题设的90°关系支持，不能凭图形看起来对称或量角器测值确定。"
@@ -4213,23 +4284,23 @@
       "preview": "两次平分分别属于哪个整角？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将角平分线、角的包含关系与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据角平分线、角的包含关系，独立完成“连续两次角平分”并按注意事项核对条件。",
+      "learningGap": "两次平分分别属于哪个整角？",
+      "learningAction": "能分别标出两次平分所属的角，并把两层关系联系到目标角。",
       "related": [
         {
-          "locationId": "ch6-bisector-ray-conditions",
-          "label": "角的平分线",
+          "locationId": "ch6-source-bisector-definition",
+          "label": "教材：角平分线的定义",
           "purpose": "将两次平分分别对应到正确的原角。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "角平分线",
-          "角的包含关系"
+          "角平分线是从顶点出发、把原角分成两个相等部分的射线；先确认它平分哪一个角。",
+          "比较角的和差前，先看哪条射线在角内部；只有真实被分割的两部分才能合成这个整角。"
         ],
         "method": [
           "分别读出OC平分哪个角、OD平分哪个角，把这两组等角关系分开标注。",
-          "从已知∠COD出发，追查它属于哪个被平分的角，再由你把两层关系与目标∠AOB连接起来。"
+          "从已知∠COD出发，追查它属于哪个被平分的角，检查这两层关系怎样联系目标∠AOB。"
         ],
         "cautions": [
           "不能把两条平分线当作平分同一个角。",
@@ -4244,20 +4315,20 @@
       "preview": "公共边与两个度数，是否已经限定了唯一的位置关系？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将按度数画角、角的和差、射线的位置条件与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据按度数画角、角的和差，独立完成“以公共边画角并求夹角”并按注意事项核对条件。",
+      "learningGap": "公共边与两个度数，是否已经限定了唯一的位置关系？",
+      "learningAction": "能画出满足两个度数的不同位置关系，并逐图选择和差关系。",
       "related": [
         {
-          "locationId": "ch6-angle-sum-interior-ray",
-          "label": "角的和差",
+          "locationId": "ch6-source-angle-sum-difference",
+          "label": "教材：角的和差与图6.3-7",
           "purpose": "从射线的位置判断应当使用哪一种和差关系。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "按度数画角",
-          "角的和差",
-          "射线的位置条件"
+          "用量角器对准顶点和已知边，在指定一侧按度数标出另一边方向。",
+          "从同一顶点出发的内部射线把整角分为两部分，整角等于两部分角之和；减去一部分可得另一部分。",
+          "同一条给定边两侧都可能画出指定度数的角；题目没有限定时要检查不同位置。"
         ],
         "method": [
           "画∠AOC前，检查题目是否规定了OC相对于OB的位置。",
@@ -4276,29 +4347,29 @@
       "preview": "位置条件与两次平分，各自支持哪些角度关系？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将角的和差、角平分线、数量关系的字母表示与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据角的和差、角平分线，独立完成“由角平分线填写角关系”并按注意事项核对条件。",
+      "learningGap": "位置条件与两次平分，各自支持哪些角度关系？",
+      "learningAction": "能按射线位置及平分条件填写角关系，并将关系用于n°。",
       "related": [
         {
-          "locationId": "ch6-bisector-ray-conditions",
-          "label": "角的平分线",
+          "locationId": "ch6-source-bisector-definition",
+          "label": "教材：角平分线的定义",
           "purpose": "分别核对OD、OE提供的半角关系。"
         },
         {
-          "locationId": "ch6-angle-sum-interior-ray",
-          "label": "角的和差",
+          "locationId": "ch6-source-angle-sum-difference",
+          "label": "教材：角的和差与图6.3-7",
           "purpose": "根据内部射线识别可相加的角。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "角的和差",
-          "角平分线",
-          "数量关系的字母表示"
+          "从同一顶点出发的内部射线把整角分为两部分，整角等于两部分角之和；减去一部分可得另一部分。",
+          "角平分线是从顶点出发、把原角分成两个相等部分的射线；先确认它平分哪一个角。",
+          "用同一个字母表示选定角度后，把题中一半、倍数、和差关系转为相应式子。"
         ],
         "method": [
           "四组填空分别使用什么位置条件或平分条件？为所选角名指出对应的两条边，并说明关系的依据。",
-          "由具体度数转向n°时，检查你建立的关系是否仍适用；具体角度关系和运算由你完成。"
+          "由具体度数转向n°时，检查你建立的关系是否仍适用。"
         ],
         "cautions": [
           "等式中的每一个角都应能在图上指出两条边。",
@@ -4313,29 +4384,34 @@
       "preview": "三角尺的角度不变，摆放关系怎样影响α与β？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将直角和平角、角的和差、余角与补角与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据直角和平角、角的和差，独立完成“三角尺不同摆放下的角关系”并按注意事项核对条件。",
+      "learningGap": "三角尺的角度不变，摆放关系怎样影响α与β？",
+      "learningAction": "能从三角尺的直角与摆放位置判断目标角相等、互余或互补。",
       "related": [
         {
-          "locationId": "ch6-angle-sum-interior-ray",
-          "label": "角的和差",
+          "locationId": "ch6-source-angle-sum-difference",
+          "label": "教材：角的和差与图6.3-7",
           "purpose": "把三角尺提供的角与α、β建立正确的组合关系。"
         },
         {
-          "locationId": "ch6-complementary-position-independent",
-          "label": "补角",
-          "purpose": "检查互补依据来自角度之和。"
+          "locationId": "ch6-complementary-definition",
+          "label": "教材：余角的定义（和为90°）",
+          "purpose": "先用90°的度数和判断或表示互余关系。"
+        },
+        {
+          "locationId": "ch6-source-supplementary-definition",
+          "label": "教材：补角的定义（和为180°）",
+          "purpose": "用180°的度数和判断或表示互补关系，再与互余条件区分。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "直角和平角",
-          "角的和差",
-          "余角与补角"
+          "直角为90°，平角为180°；图上看似成直角或平角还须有题意、标记或反向射线依据。",
+          "从同一顶点出发的内部射线把整角分为两部分，整角等于两部分角之和；减去一部分可得另一部分。",
+          "互余要求两角之和为90°；互补要求两角之和为180°"
         ],
         "method": [
           "逐幅图寻找由三角尺直接给出的直角，以及由同一直线上的反向射线形成的平角。",
-          "检查α、β与这些已知角是组成、重叠还是相减的关系，再分别归入互余、互补或相等的类别。"
+          "检查α、β与已知角是组成、重叠还是相减的关系；判断互余或互补时，分别用两角之和为90°、180°的条件检验，判断相等时则说明等角关系的依据。"
         ],
         "cautions": [
           "三角尺改变摆放方向后，其固定角度不变。",
@@ -4350,12 +4426,12 @@
       "preview": "齿的个数与一周中的间隔数，怎样对应？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将周角等分、度与分的换算、近似数与精确到分与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据周角等分、度与分的换算，独立完成“相邻齿中心线的夹角”并按注意事项核对条件。",
+      "learningGap": "齿的个数与一周中的间隔数，怎样对应？",
+      "learningAction": "能由一周的间隔数确定等分角，并按要求舍入到分。",
       "related": [
         {
-          "locationId": "ch6-compound-angle-units",
-          "label": "周角与度、分",
+          "locationId": "ch6-source-angle-units",
+          "label": "教材：度、分、秒的定义",
           "purpose": "把整周角按间隔等分，并处理余下度数的换算。"
         },
         {
@@ -4366,9 +4442,9 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "周角等分",
-          "度与分的换算",
-          "近似数与精确到分"
+          "一周角是360°，分成n个相等的角，每个角为360°÷n。",
+          "1°=60′，不足一度的部分换成分要乘60。",
+          "度数除不尽时先继续换成分、秒计算，再按四舍五入保留到分。"
         ],
         "method": [
           "两种齿数各对应一周中的多少个等角间隔？说明所选数量关系为何适用。",
@@ -4387,25 +4463,25 @@
       "preview": "换图后，哪些选角规则必须保持一致？",
       "paragraphs": [],
       "learningRole": "探究",
-      "learningGap": "本题指南需将射线与延长方向、角的度量、同类观察的比较与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据射线与延长方向、角的度量，独立完成“延长边所得角的和”并按注意事项核对条件。",
+      "learningGap": "换图后，哪些选角规则必须保持一致？",
+      "learningAction": "能保持同一选角规则测量不同图形，比较记录并提出猜想。",
       "related": [
         {
-          "locationId": "ch6-extension-order",
-          "label": "延长方向",
+          "locationId": "ch6-source-extension-direction",
+          "label": "教材：连接、延长与反向延长",
           "purpose": "确定每个顶点所选的角与哪条边的延长线有关。"
         },
         {
-          "locationId": "ch6-compound-angle-units",
-          "label": "角的度量",
+          "locationId": "ch6-source-angle-units",
+          "label": "教材：度、分、秒的定义",
           "purpose": "统一各角测量、求和的单位。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "射线与延长方向",
-          "角的度量",
-          "同类观察的比较"
+          "延长AB是从A向B越过B；判断延长后形成的角时，先确认哪条射线与原来的边反向。",
+          "量角器要与角共顶点、一边对准零刻度线，选择从这条边的0°开始的刻度读数。",
+          "改变给定射线的度数或位置时，要保持题中其他已知条件，分别记录角的关系是否仍成立。"
         ],
         "method": [
           "（1）辨认三条射线在各顶点形成的指定角，测量、求和，再换画满足相同选角规则的图比较。",
@@ -4425,12 +4501,12 @@
       "preview": "制作辅助部分与几何面有什么区别？连接改变时应观察什么？",
       "paragraphs": [],
       "learningRole": "探究",
-      "learningGap": "本题指南需将展开图与立体图形、面与连接边、图形组合与观察与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据展开图与立体图形、面与连接边，独立完成“制作纸魔方”并按注意事项核对条件。",
+      "learningGap": "制作辅助部分与几何面有什么区别？连接改变时应观察什么？",
+      "learningAction": "能分清粘贴边与几何面，制作并记录连接变化所得的形状。",
       "related": [
         {
-          "locationId": "ch6-net-vs-view",
-          "label": "展开图",
+          "locationId": "ch6-source-net-definition",
+          "label": "教材：展开图的含义",
           "purpose": "检查平面各部分怎样折回并围成立体图形。"
         },
         {
@@ -4441,9 +4517,9 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "展开图与立体图形",
-          "面与连接边",
-          "图形组合与观察"
+          "展开前后的各个面一一对应；折回时还要检查共同边能否对接。",
+          "纸模中各面围成立体表面；为了粘合额外加出的连接边不算这个立体的面。",
+          "组合图形先看各部分怎样相连，再检查从指定方向看有哪些重合和遮挡。"
         ],
         "method": [
           "（1）按标注尺寸作图，先辨认实际构成各个面的部分与粘贴边，再用折叠检验自己对立体形状的判断。",
@@ -4460,16 +4536,16 @@
     {
       "id": "ch6-q-p190-activity2",
       "locationId": "ch6-q-p190-activity2",
-      "title": "数学活动2：绘制五角星及星形探索",
-      "preview": "等角、连线与折叠，分别怎样支持星形的构造？",
+      "title": "数学活动2：绘制五角星与六角星探索",
+      "preview": "等角与隔点连线，各为星形构造提供什么条件？",
       "paragraphs": [],
       "learningRole": "探究",
-      "learningGap": "本题指南需将周角等分、射线与圆的交点、线段连接、图形的重复与组合与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据周角等分、射线与圆的交点，独立完成“绘制五角星及星形探索”并按注意事项核对条件。",
+      "learningGap": "绘图步骤需要与圆周等分和连线规则对应，其他画法及六角星也要重新检查条件。",
+      "learningAction": "能解释图4的作图依据，并检验自己提出的其他画法或六角星构造。",
       "related": [
         {
-          "locationId": "ch6-compound-angle-units",
-          "label": "周角与角的度量",
+          "locationId": "ch6-source-angle-units",
+          "label": "教材：度、分、秒的定义",
           "purpose": "检验连续等角是否组成完整的一周。"
         },
         {
@@ -4480,24 +4556,79 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "周角等分",
-          "射线与圆的交点",
-          "线段连接",
-          "图形的重复与组合"
+          "一周角是360°，分成n个相等的角，每个角为360°÷n。",
+          "从圆心出发的射线与圆相交处确定圆上的一个点；射线夹角决定相邻点在圆周上的位置。",
+          "连接两点就是画以这两个点为端点的线段；星形须按题中指定次序连接。"
         ],
         "method": [
           "步骤（1）（2）：固定圆心，按教材给出的方向和角度连续作图，检查五个交点是否恰好分布一周。",
           "步骤（3）（4）：给交点按环绕顺序做临时标记，依照“每隔一点”检查连接，再辨认需要保留的外边界。",
           "画法理由：对照每一步，分别说明圆与等角提供了哪些一致条件、连线规则保留了什么关系。",
-          "其他画法与六角星：先提出自己的构造规则，再检查所得角、线段连接和尖角分布是否符合设计目标；不能只更改一个数字就认为所有步骤都适用。",
-          "折纸制作：追踪每次折叠时哪些边重合，按图5操作后展开检验。",
-          "改变剪角：保持同一折法，分别记录剪角与展开后的形状，依据比较结果说明自己的审美选择。",
-          "艺术图案：在已有星形上确定重复的着色或组合规则，画出新图案，并说明它与原星形的联系。"
+          "其他画法与六角星：先提出自己的构造规则，再检查所得角、线段连接和尖角分布是否符合设计目标；不能只更改一个数字就认为所有步骤都适用。"
         ],
         "cautions": [
           "连续画角时，后一个角应接着前一个角画，不能都从第一条射线量起。",
-          "实验比较剪角时，若同时改变折法，就难以判断差异由什么造成。",
           "保留辅助作图记录，便于解释画法；不以成品看起来像星形代替条件检查。"
+        ]
+      }
+    },
+    {
+      "id": "ch6-q-p190-activity2-fold",
+      "locationId": "ch6-q-p190-activity2-fold",
+      "title": "数学活动2：折纸剪出五角星",
+      "preview": "折法相同时，改变剪角会怎样影响展开后的星形？",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "比较剪角与成品形状，需要追踪同一折法下的重合关系并控制比较条件。",
+      "learningAction": "能按图5追踪折叠并制作星形，再在相同折法下比较不同剪角所得的形状。",
+      "related": [
+        {
+          "locationId": "ch6-fold-bisector-check",
+          "label": "折叠时的边与角的对应",
+          "purpose": "回顾折叠中怎样追踪重合的边，再检查图5展开后的对应关系。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "折叠时同一条边、同一个点要前后对应；两边重合可用来说明相关角相等。",
+          "折叠前后的角需先找到对应边；边重合或展开后的位置决定出现的角关系。"
+        ],
+        "method": [
+          "折纸制作：追踪每次折叠时哪些边重合，按图5操作后展开检验。",
+          "改变剪角：保持同一折法，分别记录剪角与展开后的形状，依据比较结果说明自己的审美选择。"
+        ],
+        "cautions": [
+          "实验比较剪角时，若同时改变折法，就难以判断差异由什么造成。",
+          "记录每次剪角及对应成品，再根据观察说明自己的审美选择。"
+        ]
+      }
+    },
+    {
+      "id": "ch6-q-p190-activity2-pattern",
+      "locationId": "ch6-q-p190-activity2-pattern",
+      "title": "数学活动2：设计星形艺术图案",
+      "preview": "保留哪些星形结构，再用怎样的着色或组合规则设计图案？",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "图案设计需要明确原星形与新增着色、组合规则之间的联系。",
+      "learningAction": "能以已有五角星或六角星为基础设计图案，并说明使用的着色或组合规则。",
+      "related": [
+        {
+          "locationId": "ch6-q-p190-activity2",
+          "label": "回顾星形的绘制",
+          "purpose": "先确认原星形的构造，再说明新图案保留和改变的部分。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "把同一个基本图形按一定方向、距离或转角重复摆放，可组成新图案。",
+          "说明新图案时指出基本图形用了几次、位置和朝向如何变化，便于别人照着重现。"
+        ],
+        "method": [
+          "艺术图案：在已有星形上确定重复的着色或组合规则，画出新图案，并说明它与原星形的联系。"
+        ],
+        "cautions": [
+          "先保留原星形的结构，再说明新增的着色或组合；不能只以“像星形”代替对设计规则的说明。"
         ]
       }
     },
@@ -4508,47 +4639,52 @@
       "preview": "描述一个概念时，图和文字分别要保留哪些条件？",
       "paragraphs": [],
       "learningRole": "回顾与整理",
-      "learningGap": "本题指南需将立体图形和平面图形、展开图、距离与线段中点、余角与补角、角平分线与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据立体图形和平面图形、展开图，独立完成“描述并画出数学名词”并按注意事项核对条件。",
+      "learningGap": "描述一个概念时，图和文字分别要保留哪些条件？",
+      "learningAction": "能用图和文字说明各概念的对象、位置及数量条件。",
       "related": [
         {
-          "locationId": "ch6-solid-not-coplanar",
-          "label": "立体图形",
+          "locationId": "ch6-source-solid-definition",
+          "label": "教材：立体图形的定义",
           "purpose": "核对空间图形的辨认条件。"
         },
         {
-          "locationId": "ch6-net-vs-view",
-          "label": "展开图",
+          "locationId": "ch6-source-net-definition",
+          "label": "教材：展开图的含义",
           "purpose": "区分展开表面与从一个方向观察。"
         },
         {
-          "locationId": "ch6-distance-is-length",
-          "label": "两点间的距离",
+          "locationId": "ch6-source-distance-definition",
+          "label": "教材：两点间距离的定义",
           "purpose": "辨清距离所指的是长度。"
         },
         {
-          "locationId": "ch6-midpoint-two-conditions",
-          "label": "线段的中点",
+          "locationId": "ch6-source-midpoint-definition",
+          "label": "教材：线段中点与等分点",
           "purpose": "检查中点的位置和等长条件。"
         },
         {
-          "locationId": "ch6-bisector-ray-conditions",
-          "label": "角的平分线",
+          "locationId": "ch6-source-bisector-definition",
+          "label": "教材：角平分线的定义",
           "purpose": "检查射线及等角条件。"
         },
         {
-          "locationId": "ch6-complementary-position-independent",
-          "label": "补角",
-          "purpose": "用两个角之间的数量关系说明概念。"
+          "locationId": "ch6-complementary-definition",
+          "label": "教材：余角的定义（和为90°）",
+          "purpose": "先用90°的度数和判断或表示互余关系。"
+        },
+        {
+          "locationId": "ch6-source-supplementary-definition",
+          "label": "教材：补角的定义（和为180°）",
+          "purpose": "用180°的度数和判断或表示互补关系，再与互余条件区分。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "立体图形和平面图形",
-          "展开图",
-          "距离与线段中点",
-          "余角与补角",
-          "角平分线"
+          "平面图形的各部分都在同一平面内，立体图形各部分不都在同一平面内。",
+          "展开图把原立体表面适当铺平；各面要能按连接关系折回原立体。",
+          "两点的距离是连接它们的线段长度；中点在线段上且把整段分成相等两段。",
+          "两角和为90°时互余，和为180°时互补；两种关系都由度数和判断。",
+          "角平分线是从顶点出发、把原角分成两个相等部分的射线；先确认它平分哪一个角。"
         ],
         "method": [
           "立体图形、平面图形、展开图：分别说清对象的特征，画图时表示出它们需要保留的空间或表面信息。",
@@ -4569,24 +4705,24 @@
       "preview": "生活实例中的哪个部分，提供了所说的几何形象？",
       "paragraphs": [],
       "learningRole": "回顾与整理",
-      "learningGap": "本题指南需将从实物抽象几何图形、立体图形与平面图形与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据从实物抽象几何图形、立体图形与平面图形，独立完成“举几何图形的实例”并按注意事项核对条件。",
+      "learningGap": "生活实例中的哪个部分，提供了所说的几何形象？",
+      "learningAction": "能指出生活实例中所取的部分，并说明保留的几何特征。",
       "related": [
         {
-          "locationId": "ch6-solid-not-coplanar",
-          "label": "立体图形",
+          "locationId": "ch6-source-solid-definition",
+          "label": "教材：立体图形的定义",
           "purpose": "根据各部分是否都在同一平面内检查立体实例。"
         },
         {
-          "locationId": "ch6-plane-not-flat-object",
-          "label": "平面图形",
+          "locationId": "ch6-source-plane-definition",
+          "label": "教材：平面图形的定义",
           "purpose": "说明实物的哪个部分可以抽象为平面图形。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "从实物抽象几何图形",
-          "立体图形与平面图形"
+          "忽略物体的颜色、材质等，只保留形状、大小和位置关系来研究。",
+          "各部分都在同一平面内的是平面图形；各部分不都在同一平面内的是立体图形。"
         ],
         "method": [
           "分别选择生活中的立体形状和可看作平面部分的例子，说明观察的是整个物体、一个表面，还是它的轮廓。",
@@ -4604,25 +4740,25 @@
       "preview": "展开图与观察图，各自保留了立体的哪些信息？",
       "paragraphs": [],
       "learningRole": "回顾与整理",
-      "learningGap": "本题指南需将展开图、不同方向的观察图、图形信息的保留与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据展开图、不同方向的观察图，独立完成“展开图与观察图”并按注意事项核对条件。",
+      "learningGap": "展开图与观察图，各自保留了立体的哪些信息？",
+      "learningAction": "能为同一个立体作展开图和观察图，说明各自保留的信息。",
       "related": [
         {
-          "locationId": "ch6-net-vs-view",
-          "label": "展开图与观察图",
+          "locationId": "ch6-source-net-definition",
+          "label": "教材：展开图的含义",
           "purpose": "区分本题要求的两种平面表示。"
         },
         {
-          "locationId": "ch6-view-overlap",
-          "label": "观察中的重叠",
+          "locationId": "ch6-source-observation-example",
+          "label": "教材：三个方向观察的例题",
           "purpose": "检查某一方向看图时哪些部分会重叠。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "展开图",
-          "不同方向的观察图",
-          "图形信息的保留"
+          "展开图把原立体表面适当铺平；各面要能按连接关系折回原立体。",
+          "从不同方向看同一立体，会有不同的重叠和遮挡，得到的平面形状可能不同。",
+          "观察图保留一个方向的轮廓，展开图保留各面的连接方式，两者提供的信息不同。"
         ],
         "method": [
           "选择便于展开的简单立体图形，画出各个面如何相连，并检查能否折回原形。",
@@ -4642,25 +4778,25 @@
       "preview": "关于直线与线段的结论，各自回答什么问题？",
       "paragraphs": [],
       "learningRole": "回顾与整理",
-      "learningGap": "本题指南需将两点确定一条直线、两点之间线段最短、线段的表示与度量与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据两点确定一条直线、两点之间线段最短，独立完成“直线和线段的重要结论”并按注意事项核对条件。",
+      "learningGap": "关于直线与线段的结论，各自回答什么问题？",
+      "learningAction": "能分别说明两点确定直线与线段最短的条件及用途。",
       "related": [
         {
-          "locationId": "ch6-two-points-unique",
-          "label": "两点确定一条直线",
+          "locationId": "ch6-source-two-points-line",
+          "label": "教材：两点确定一条直线",
           "purpose": "核对存在性与唯一性的完整结论。"
         },
         {
-          "locationId": "ch6-shortest-same-endpoints",
-          "label": "两点之间线段最短",
+          "locationId": "ch6-source-segment-shortest",
+          "label": "教材：两点之间线段最短",
           "purpose": "明确最短比较的端点必须固定。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "两点确定一条直线",
-          "两点之间线段最短",
-          "线段的表示与度量"
+          "经过两个不同点的直线有且只有一条，两点不能重合。",
+          "连接相同两点的所有路线中，线段最短；起点或终点改变就不能直接使用这一比较。",
+          "线段可用两端点字母表示；度量线段是求长度的数值，要同时写出长度单位。"
         ],
         "method": [
           "按“确定位置”和“比较路线”区分本章两个基本事实，分别说明它们的条件与结论。",
@@ -4678,31 +4814,41 @@
       "preview": "角的各项知识，怎样连成带有条件的关系？",
       "paragraphs": [],
       "learningRole": "回顾与整理",
-      "learningGap": "本题指南需将角的定义、表示与度量、角的比较和运算、角平分线、余角和补角的性质与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据角的定义、表示与度量、角的比较和运算，独立完成“角的知识与结论”并按注意事项核对条件。",
+      "learningGap": "角的各项知识，怎样连成带有条件的关系？",
+      "learningAction": "能整理角的知识，并为各定义和性质标明使用条件。",
       "related": [
         {
-          "locationId": "ch6-angle-rays-definition",
-          "label": "角的定义",
+          "locationId": "ch6-source-angle-definition",
+          "label": "教材：角的顶点与两边",
           "purpose": "用顶点和两条边组织角的基本概念。"
         },
         {
-          "locationId": "ch6-angle-sum-interior-ray",
-          "label": "角的和差",
+          "locationId": "ch6-source-angle-sum-difference",
+          "label": "教材：角的和差与图6.3-7",
           "purpose": "整理角运算时保留位置条件。"
         },
         {
-          "locationId": "ch6-equal-angle-complements",
-          "label": "同角（等角）的余角相等",
+          "locationId": "ch6-source-equal-complements",
+          "label": "教材：同角或等角的余角、补角性质",
           "purpose": "将性质的条件与结论对应起来。"
+        },
+        {
+          "locationId": "ch6-complementary-definition",
+          "label": "教材：余角的定义（和为90°）",
+          "purpose": "整理余角的定义及性质时，先核对90°的度数和条件。"
+        },
+        {
+          "locationId": "ch6-source-supplementary-definition",
+          "label": "教材：补角的定义（和为180°）",
+          "purpose": "用180°的度数和判断或表示互补关系，再与互余条件区分。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "角的定义、表示与度量",
-          "角的比较和运算",
-          "角平分线",
-          "余角和补角的性质"
+          "角由有公共端点的两条射线组成；三字母角名中间写顶点，度数表示两边张开的大小。",
+          "角可测量或叠合比较；按图中整体与部分的包含关系可作度数加减。",
+          "角平分线是从顶点出发、把原角分成两个相等部分的射线；先确认它平分哪一个角。",
+          "同角或等角的余角相等，同角或等角的补角也相等；先核对两组总和同为90°或同为180°。"
         ],
         "method": [
           "按概念、表示与度量、比较与运算、特殊关系整理本章关于角的知识。",
@@ -4721,8 +4867,8 @@
       "preview": "线段与角可以类比哪些思路？哪些条件仍须分别核对？",
       "paragraphs": [],
       "learningRole": "回顾与整理",
-      "learningGap": "本题指南需将线段与角的比较、和差、中点与平分线、类比的作用和边界与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据线段与角的比较、和差、中点与平分线，独立完成“线段与角的类比”并按注意事项核对条件。",
+      "learningGap": "线段与角可以类比哪些思路？哪些条件仍须分别核对？",
+      "learningAction": "能举例说明线段与角的研究方法如何类比，指出对象与条件的区别。",
       "related": [
         {
           "locationId": "ch6-analogy-boundaries",
@@ -4732,9 +4878,9 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "线段与角的比较、和差",
-          "中点与平分线",
-          "类比的作用和边界"
+          "线段按长度比较，角按度数比较；作和差时分别检查线段点序与角的包含关系。",
+          "中点把线段分成相等两段；角平分线从顶点出发，把角分成相等两角。",
+          "线段与角可借用相似的研究步骤，但长度和度数的对象不同，定义条件须分别核对。"
         ],
         "method": [
           "从线段与角的研究中选取相对应的问题，例如比较、求和差或等分，说明两者怎样采用相似思路。",
@@ -4752,13 +4898,13 @@
       "preview": "立体图形的名称，由哪些结构特征支持？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将常见立体图形、底面与侧面、虚线表示被遮挡的棱与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据常见立体图形、底面与侧面，独立完成“说出立体图形名称”并按注意事项核对条件。",
+      "learningGap": "立体图形的名称，由哪些结构特征支持？",
+      "learningAction": "能由底面、侧面和连接方式命名立体，计入被遮挡的结构。",
       "related": [
         {
-          "locationId": "ch6-solid-not-coplanar",
-          "label": "常见立体图形",
-          "purpose": "用底面、侧面等形状特征辨认图形。"
+          "locationId": "ch6-source-solid-examples",
+          "label": "教材：棱柱、棱锥的图例",
+          "purpose": "对照棱柱、棱锥的完整图例，比较底面、侧面和顶点的形状。"
         },
         {
           "locationId": "ch6-hidden-edges",
@@ -4768,9 +4914,9 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "常见立体图形",
-          "底面与侧面",
-          "虚线表示被遮挡的棱"
+          "辨认立体图形可看底面的形状、侧面是平面还是曲面，以及侧面是否汇聚到一个顶点。",
+          "按立体图形原有的结构辨认底面和侧面，不能把纸上画在最下面的面一律叫底面。",
+          "示意图中虚线常表示被遮住的棱，实际棱仍存在，不能在计数或判断连接时漏掉。"
         ],
         "method": [
           "逐个观察图形的面、底面形状和连接方式，再与本章常见立体图形的特征对应。",
@@ -4789,19 +4935,19 @@
       "preview": "从上面看时，哪些轮廓显露，哪些部分重叠？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将从上面观察立体图形、遮挡与重叠与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据从上面观察立体图形、遮挡与重叠，独立完成“俯视图对应”并按注意事项核对条件。",
+      "learningGap": "从上面看时，哪些轮廓显露，哪些部分重叠？",
+      "learningAction": "能固定俯视方向，依据轮廓、空缺与重叠匹配观察图。",
       "related": [
         {
-          "locationId": "ch6-view-overlap",
-          "label": "观察图中的遮挡与重叠",
+          "locationId": "ch6-source-observation-example",
+          "label": "教材：三个方向观察的例题",
           "purpose": "确定俯视图保留哪些轮廓，哪些部分在视线中重合。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "从上面观察立体图形",
-          "遮挡与重叠"
+          "从上向下看，沿竖直方向重叠的部分落在同一个位置，只保留看见的轮廓和分界。",
+          "前后或上下重合的部分在观察图中可能占同一位置，遮住不代表原立体少了这一部分。"
         ],
         "method": [
           "固定从上往下的观察方向，逐个辨认物体在该方向上的外轮廓。",
@@ -4820,19 +4966,19 @@
       "preview": "同一个立体的三个方向，各自显示哪些信息？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将观察方向、组合立体图形的轮廓与分界与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据观察方向、组合立体图形的轮廓与分界，独立完成“从三个方向观察”并按注意事项核对条件。",
+      "learningGap": "同一个立体的三个方向，各自显示哪些信息？",
+      "learningAction": "能分别从三个方向观察每个立体，画出轮廓及必要分界。",
       "related": [
         {
-          "locationId": "ch6-view-overlap",
-          "label": "不同方向的观察图",
+          "locationId": "ch6-source-observation-example",
+          "label": "教材：三个方向观察的例题",
           "purpose": "判断组合部分在各方向如何重叠和显露。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "观察方向",
-          "组合立体图形的轮廓与分界"
+          "观察方向决定哪些部分在前、哪些部分会被挡住；换方向后须重新判断。",
+          "轮廓表示这一方向看到的外边界，内部线条只在确有可见分界时保留。"
         ],
         "method": [
           "依次固定前面、左面、上面三个方向，对每一个立体图形分别记录看到的外轮廓。",
@@ -4851,25 +4997,25 @@
       "preview": "名称、延长指令与长度条件，分别限定什么？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将直线、射线、线段、射线的端点、反向延长与长度条件与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据直线、射线、线段、射线的端点，独立完成“按语句画图”并按注意事项核对条件。",
+      "learningGap": "名称、延长指令与长度条件，分别限定什么？",
+      "learningAction": "能区分图形名称与延长指令，逐项检查范围、方向和长度。",
       "related": [
         {
-          "locationId": "ch6-ray-name-order",
-          "label": "射线与线段的表示",
+          "locationId": "ch6-source-ray-segment-notation",
+          "label": "教材：射线与线段的表示",
           "purpose": "检查字母顺序怎样决定射线端点和方向。"
         },
         {
-          "locationId": "ch6-extension-order",
-          "label": "线段的延长方向",
+          "locationId": "ch6-source-extension-direction",
+          "label": "教材：连接、延长与反向延长",
           "purpose": "解释第四问的反向延长指令。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "直线、射线、线段",
-          "射线的端点",
-          "反向延长与长度条件"
+          "直线向两端无限延伸，没有端点；射线有一个端点；线段有两个端点且有确定长度。",
+          "射线从端点出发向一个方向无限延伸；方位题中端点在观察者的位置。",
+          "反向延长AB从B朝A越过A；题中另给长度时，要在这一方向上截取指定长度。"
         ],
         "method": [
           "（1）按两点确定直线的要求作图，检查两端的延伸。",
@@ -4890,20 +5036,20 @@
       "preview": "零件图的尺寸线，怎样对应整段和部分？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将线段的和差、点在线段上的顺序、长度单位与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据线段的和差、点在线段上的顺序，独立完成“零件图中的线段长度”并按注意事项核对条件。",
+      "learningGap": "零件图的尺寸线，怎样对应整段和部分？",
+      "learningAction": "能把尺寸线对应到整段与部分，按点序求线段长并保留单位。",
       "related": [
         {
-          "locationId": "ch6-segment-sum-between",
-          "label": "线段的和差",
+          "locationId": "ch6-source-segment-sum-difference",
+          "label": "教材：线段和差的条件与图示",
           "purpose": "根据点的先后顺序建立整体与部分的长度关系。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "线段的和差",
-          "点在线段上的顺序",
-          "长度单位"
+          "点B在线段AC内部时，AB+BC=AC；改变点的先后顺序，等式中表示整段的名称也会改变。",
+          "先按已知条件排出同一直线上各点的先后，才可判断哪几段相加组成整段。",
+          "同一等式中比较或相加的长度须统一单位，cm、m的数值不能直接混加。"
         ],
         "method": [
           "先按零件图读出A、B、C、D的顺序，把已知尺寸分别标到它所覆盖的整段上。",
@@ -4922,8 +5068,8 @@
       "preview": "钟面位置、角度运算和余补关系，各有什么条件要核对？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将钟针连续转动、角度运算、余角与补角与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据钟针连续转动、角度运算，独立完成“角度填空”并按注意事项核对条件。",
+      "learningGap": "钟面位置、角度运算和余补关系，各有什么条件要核对？",
+      "learningAction": "能分别处理钟面角、单位换算和余补关系，并按空格形式表示。",
       "related": [
         {
           "locationId": "ch6-clock-continuous-motion",
@@ -4931,25 +5077,30 @@
           "purpose": "在比较两根指针的转动之前，统一小时、分钟及起始时刻。"
         },
         {
-          "locationId": "ch6-compound-angle-units",
-          "label": "度与分",
+          "locationId": "ch6-source-angle-units",
+          "label": "教材：度、分、秒的定义",
           "purpose": "核对第（2）（3）问的六十进制运算。"
         },
         {
-          "locationId": "ch6-complementary-position-independent",
-          "label": "补角",
-          "purpose": "区分所求余角和补角对应的总量。"
+          "locationId": "ch6-complementary-definition",
+          "label": "教材：余角的定义（和为90°）",
+          "purpose": "先用90°的度数和判断或表示互余关系。"
+        },
+        {
+          "locationId": "ch6-source-supplementary-definition",
+          "label": "教材：补角的定义（和为180°）",
+          "purpose": "用180°的度数和判断或表示互补关系，再与互余条件区分。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "钟针连续转动",
-          "角度运算",
-          "余角与补角"
+          "非整点时两针都已离开原刻度；每分钟的转角按各针转一周所用时间分别计算。",
+          "度、分、秒按60进位；计算夹角前先把两针位置或各部分角统一到同一单位。",
+          "余角与原角之和为90°；补角与原角之和为180°"
         ],
         "method": [
           "第（1）问需要表示同一时刻两根指针的位置；选择草图或转动量，说明定位依据。",
-          "第（2）（3）问分别要满足哪些单位要求或定义条件？先说明依据，再自行完成运算并按空格要求表示结果。"
+          "第（2）问检查角度单位的转换条件；第（3）问把原角分别与余角、补角配成一组，核对90°、180°的度数和条件，再自行运算并按空格要求表示结果。"
         ],
         "cautions": [
           "时针不会停在6时整的位置等分针走完。",
@@ -4964,26 +5115,25 @@
       "preview": "角度的写法、范围与数量关系，分别能支持什么判断？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将角度单位换算、同角的补角相等、补角的定义、锐角与钝角与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据角度单位换算、同角的补角相等，独立完成“角度与余补关系判断”并按注意事项核对条件。",
+      "learningGap": "角度的写法、范围与数量关系，分别能支持什么判断？",
+      "learningAction": "能用单位、角度范围和互补条件检验语句，并说明依据或反例。",
       "related": [
         {
-          "locationId": "ch6-compound-angle-units",
-          "label": "度与分",
+          "locationId": "ch6-source-angle-units",
+          "label": "教材：度、分、秒的定义",
           "purpose": "把第（1）问中的不同表示统一后比较。"
         },
         {
-          "locationId": "ch6-complementary-position-independent",
-          "label": "补角",
-          "purpose": "检查各判断是否满足两角和的要求。"
+          "locationId": "ch6-source-supplementary-definition",
+          "label": "教材：补角的定义（和为180°）",
+          "purpose": "回顾两角度数和为180°的条件，再检查本题所给的角及射线位置。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "角度单位换算",
-          "互补条件下的角度比较",
-          "补角的定义",
-          "锐角与钝角"
+          "1°=60′，1′=60″；同一角的不同单位写法应保持总角度不变。",
+          "两个角的度数和等于180°时互为补角；一个角的补角度数为180°减去这个角的度数。",
+          "大于0°且小于90°的是锐角，大于90°且小于180°的是钝角；90°本身是直角。"
         ],
         "method": [
           "对四句分别选择适用的单位关系、定义或性质，并检查题设条件能否支持结论。",
@@ -5002,24 +5152,24 @@
       "preview": "候选立体是否同时满足三个方向的观察信息？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将不同方向的观察图、常见立体图形与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据不同方向的观察图、常见立体图形，独立完成“由三个观察图辨认立体图形”并按注意事项核对条件。",
+      "learningGap": "候选立体是否同时满足三个方向的观察信息？",
+      "learningAction": "能提出同时符合三个观察图的立体，并反向观察检验。",
       "related": [
         {
-          "locationId": "ch6-view-overlap",
-          "label": "不同方向的观察图",
+          "locationId": "ch6-source-observation-example",
+          "label": "教材：三个方向观察的例题",
           "purpose": "同时使用各方向保留的信息来检验候选立体图形。"
         },
         {
-          "locationId": "ch6-solid-not-coplanar",
-          "label": "常见立体图形",
-          "purpose": "用已学图形的结构特征提出候选对象。"
+          "locationId": "ch6-source-solid-definition",
+          "label": "教材：立体图形与常见名称",
+          "purpose": "回顾立体图形与平面图形的区别及常见名称，再综合比较三幅观察图。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "不同方向的观察图",
-          "常见立体图形"
+          "从不同方向看同一立体，会有不同的重叠和遮挡，得到的平面形状可能不同。",
+          "辨认立体图形可看底面的形状、侧面是平面还是曲面，以及侧面是否汇聚到一个顶点。"
         ],
         "method": [
           "先分别记录前面、左面、上面三个观察图对形状提出的限制，在本章常见立体图形中寻找能同时符合它们的对象。",
@@ -5038,25 +5188,30 @@
       "preview": "展平改变了图的位置，哪些点和路线条件仍须保留？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将圆柱侧面展开、剪缝两侧的点对应、两点之间线段最短与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据圆柱侧面展开、剪缝两侧的点对应，独立完成“圆柱侧面的一圈最短路线”并按注意事项核对条件。",
+      "learningGap": "展平改变了图的位置，哪些点和路线条件仍须保留？",
+      "learningAction": "能核对展开图卷回后的点边对应，比较满足一圈限制的路线。",
       "related": [
         {
-          "locationId": "ch6-net-vs-view",
-          "label": "展开图",
+          "locationId": "ch6-source-net-definition",
+          "label": "教材：展开图的含义",
           "purpose": "把侧面上的路线与展平后的图对应。"
         },
         {
-          "locationId": "ch6-shortest-same-endpoints",
-          "label": "两点之间线段最短",
+          "locationId": "ch6-source-segment-shortest",
+          "label": "教材：两点之间线段最短",
           "purpose": "在端点与路径条件核对之后比较长度。"
+        },
+        {
+          "locationId": "ch6-cylinder-net-figure",
+          "label": "圆柱的展开图",
+          "purpose": "回顾圆柱侧面与展开图中长方形的对应，思考展平能否帮助比较表面路线；点的位置与圈数仍需逐项核对。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "圆柱侧面展开",
-          "剪缝两侧的点对应",
-          "两点之间线段最短"
+          "圆柱侧面沿适当位置剪开展平可得长方形，一边对应底面周长，另一边对应圆柱的高。",
+          "剪缝两侧边界在卷回圆柱时会重合，展开图上的不同位置可能对应原表面同一个点。",
+          "连接相同两点的所有路线中，线段最短；起点或终点改变就不能直接使用这一比较。"
         ],
         "method": [
           "先确认题目要求金属丝在侧面上、经过指定两点且绕一圈，这些条件在展开后都要保留。",
@@ -5075,20 +5230,20 @@
       "preview": "运动方向与旋转轴，怎样影响形成的整体？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将面运动形成体、平移方向、旋转轴与点的运动轨迹与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据面运动形成体、平移方向，独立完成“图形运动形成立体”并按注意事项核对条件。",
+      "learningGap": "运动方向与旋转轴，怎样影响形成的整体？",
+      "learningAction": "能按平移方向或给定旋转轴追踪图形，匹配形成的立体。",
       "related": [
         {
-          "locationId": "ch6-motion-needs-direction",
-          "label": "图形运动与方向",
+          "locationId": "ch6-source-motion-examples",
+          "label": "教材：点、线、面的运动实例",
           "purpose": "把运动方式和方向一同作为形成图形的条件。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "面运动形成体",
-          "平移方向",
-          "旋转轴与点的运动轨迹"
+          "研究一个面运动经过的全部位置，才能判断形成的体；只看运动后的最后位置不够。",
+          "平面图形平移时，各点朝同一方向移动相同距离；移动方向影响扫过的形状。",
+          "绕轴旋转时，轴上点不动，其余点到轴距离不变并绕成圆。"
         ],
         "method": [
           "平移情形：保持三角形的形状和方向，观察它沿箭头移动时扫过的范围。",
@@ -5108,29 +5263,29 @@
       "preview": "两次对折各自提供了哪些可用的角度条件？",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将对折与等角、角平分线、平角与角的和差与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据对折与等角、角平分线，独立完成“两次对折后的夹角”并按注意事项核对条件。",
+      "learningGap": "两次对折各自提供了哪些可用的角度条件？",
+      "learningAction": "能从两次对折识别等角条件，并联系位置关系推求目标角。",
       "related": [
         {
-          "locationId": "ch6-bisector-ray-conditions",
-          "label": "角的平分线",
+          "locationId": "ch6-source-bisector-definition",
+          "label": "教材：角平分线的定义",
           "purpose": "把折叠得到的等角与折痕所对应的射线联系起来。"
         },
         {
-          "locationId": "ch6-angle-sum-interior-ray",
-          "label": "角的和差",
+          "locationId": "ch6-source-angle-sum-difference",
+          "label": "教材：角的和差与图6.3-7",
           "purpose": "检查目标角与已知等角之间能建立的组合关系。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "对折与等角",
-          "角平分线",
-          "平角与角的和差"
+          "对折后重合的边到折痕所成角相等，但必须先确认对应的是哪些边和哪个顶点。",
+          "角平分线是从顶点出发、把原角分成两个相等部分的射线；先确认它平分哪一个角。",
+          "两边是反向射线时组成180°平角；内部各部分角的度数相加等于180°。"
         ],
         "method": [
           "分别追踪两次折叠中的原边、折后位置和折痕，把每次对折提供的等角关系标在图上。",
-          "检查这些关系怎样与原长方形边上的位置关系联系，再由你选取可用于目标∠NEM的角。"
+          "检查这些关系怎样与原长方形边上的位置关系联系，辨认哪些角能联系目标∠NEM。"
         ],
         "cautions": [
           "两次对折应分别核对对应点，不要把B′和A′混用。",
@@ -5142,11 +5297,11 @@
       "id": "ch6-q-p195-review12",
       "locationId": "ch6-q-p195-review12",
       "title": "复习题6第12题：动物园导游图的方向",
-      "preview": "图中北向与题目参照点，分别决定什么？",
+      "preview": "先把大门作为观察点，再按图中北向标确定各景点方向。",
       "paragraphs": [],
       "learningRole": "练习",
-      "learningGap": "本题指南需将方位的参照点、北向标、方向射线与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据方位的参照点、北向标，独立完成“动物园导游图的方向”并按注意事项核对条件。",
+      "learningGap": "图中北向与题目参照点，分别决定什么？",
+      "learningAction": "能以大门为参照，按北向标描述各景点方向。",
       "related": [
         {
           "locationId": "ch6-bearing-reference-direction",
@@ -5156,9 +5311,9 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "方位的参照点",
-          "北向标",
-          "方向射线"
+          "表示“从甲看乙”的方向时，以甲的位置作顶点；换成“从乙看甲”就要把顶点移到乙。",
+          "地图上的北向标指定正北方向，先据此确定同一幅图中的南、东、西方向。",
+          "表示目标方向的射线从观察者出发并经过目标，距离远近不改变这条方向。"
         ],
         "method": [
           "以大门的位置为共同参照，依据图中北向标确定各个基本方向。",
@@ -5177,25 +5332,25 @@
       "preview": "构造条件与测量记录，怎样支持你提出猜想？",
       "paragraphs": [],
       "learningRole": "探究",
-      "learningGap": "本题指南需将线段中点、长度与角度的测量、保持条件的观察与猜想与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据线段中点、长度与角度的测量，独立完成“连接四边中点后的探究”并按注意事项核对条件。",
+      "learningGap": "构造条件与测量记录，怎样支持你提出猜想？",
+      "learningAction": "能准确构造四边中点，记录长度与角度并比较不同图形。",
       "related": [
         {
-          "locationId": "ch6-midpoint-two-conditions",
-          "label": "线段的中点",
+          "locationId": "ch6-source-midpoint-definition",
+          "label": "教材：线段中点与等分点",
           "purpose": "检查探究开始前必须满足的位置和等长条件。"
         },
         {
-          "locationId": "ch6-compound-angle-units",
-          "label": "角的度量",
+          "locationId": "ch6-source-angle-units",
+          "label": "教材：度、分、秒的定义",
           "purpose": "统一角度测量和比较的记录方式。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "线段中点",
-          "长度与角度的测量",
-          "保持条件的观察与猜想"
+          "中点在原线段上，且到两个端点的距离相等；两个条件缺一不可。",
+          "长度用刻度尺或圆规核对，角度用量角器核对；测量前分别认准端点或顶点和两边。",
+          "移动图中点时要保持题目给出的中点、共线等条件，再观察某关系是否随之改变。"
         ],
         "method": [
           "先核对E、F、G、H确为各边中点，再按顺序连接，测量新图形的各边并记录比较结果。",
@@ -5215,28 +5370,28 @@
       "preview": "怎样说明四段长度的总和最小，而不只让某一段变短？",
       "paragraphs": [],
       "learningRole": "探究",
-      "learningGap": "本题指南需将两点间的距离、两点之间线段最短、总量比较与条件保持与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据两点间的距离、两点之间线段最短，独立完成“四个距离之和最小”并按注意事项核对条件。",
+      "learningGap": "怎样说明四段长度的总和最小，而不只让某一段变短？",
+      "learningAction": "能比较四段距离的总和，说明最小条件并检查能否同时满足。",
       "related": [
         {
-          "locationId": "ch6-shortest-same-endpoints",
-          "label": "两点之间线段最短",
+          "locationId": "ch6-source-segment-shortest",
+          "label": "教材：两点之间线段最短",
           "purpose": "寻找固定端点之间可用于比较折线路程的依据。"
         },
         {
-          "locationId": "ch6-distance-is-length",
-          "label": "两点间的距离",
+          "locationId": "ch6-source-distance-definition",
+          "label": "教材：两点间距离的定义",
           "purpose": "把待比较的四个距离明确为对应线段的长度。"
         }
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "两点间的距离",
-          "两点之间线段最短",
-          "总量比较与条件保持"
+          "两点间距离是连接它们的线段长度，不是随意选取的一条绕行路线长度。",
+          "连接相同两点的所有路线中，线段最短；起点或终点改变就不能直接使用这一比较。",
+          "比较总路程时，要在相同端点和限制下分别求整条路线长度，不能只比其中一段。"
         ],
         "method": [
-          "寻找点O时，比较移动O会怎样改变四段长度；考虑哪些固定端点间的连线可作为比较的参照，由你选择分组和推理路线。",
+          "寻找点O时，比较移动O会怎样改变四段长度；考虑哪些固定端点间的连线可作为比较的参照，尝试将四段长度分组比较。",
           "说明理由时，要比较的是四段长度的总和，并检查你给出的最小值条件能否同时满足。",
           "概括结论和举应用时，写明实际问题中的点、距离以及允许选择位置的范围，检查是否符合本题条件。"
         ],
@@ -5253,8 +5408,8 @@
       "preview": "项目规格与学校实际空间，怎样在比例图中对应？",
       "paragraphs": [],
       "learningRole": "探究",
-      "learningGap": "本题指南需将资料数据的对象与单位、比例作图、长度和角度的表示与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据资料数据的对象与单位、比例作图，独立完成“了解场地设计要求”并按注意事项核对条件。",
+      "learningGap": "项目规格与学校实际空间，怎样在比例图中对应？",
+      "learningAction": "能记录有来源和适用范围的场地规格，并按统一比例作图。",
       "related": [
         {
           "locationId": "ch6-field-data-sources",
@@ -5269,9 +5424,9 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "资料数据的对象与单位",
-          "比例作图",
-          "长度和角度的表示"
+          "先记下数值对应的项目、测量对象和单位，例如赛道长度不能直接作为场地宽度。",
+          "选定图上长度与实际长度的比例后，各长度都按同一个比例换算；角度保持原来大小。",
+          "长度数值必须配长度单位，角度数值必须配角度单位，作图时分别按比例和原角度表示。"
         ],
         "method": [
           "分别记录学校拟设项目所需的场地要求，区分项目之间共有的要求和各自的限制。",
@@ -5292,8 +5447,8 @@
       "preview": "跑道一圈、比赛赛程与测量路线，是同一项信息吗？",
       "paragraphs": [],
       "learningRole": "探究",
-      "learningGap": "本题指南需将完整路线的长度、直段与弯曲部分的分解、比例作图、统一测量口径与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据完整路线的长度、直段与弯曲部分的分解，独立完成“径赛项目跑道的设计”并按注意事项核对条件。",
+      "learningGap": "跑道一圈、比赛赛程与测量路线，是同一项信息吗？",
+      "learningAction": "能按实际路线分解赛程长度，计算并验证各项目起跑线。",
       "related": [
         {
           "locationId": "ch6-track-measurement-route",
@@ -5308,10 +5463,10 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "完整路线的长度",
-          "直段与弯曲部分的分解",
-          "比例作图",
-          "统一测量口径"
+          "赛程长度沿规定跑进路线计算，要把直段和弯道等实际经过的各部分都算入。",
+          "直段按线段长度计，弯道按规定路线的弧长计，不能用两端之间的直线距离代替弯道。",
+          "选定图上长度与实际长度的比例后，各长度都按同一个比例换算；角度保持原来大小。",
+          "比较跑道或起点时，要采用同一条规定测量线及同一长度单位。"
         ],
         "method": [
           "（1）分别确认直道、第一分道总长和弯道所用的测量路线，记录弯道形状与尺寸，再比较各分道的长度规律。",
@@ -5333,8 +5488,8 @@
       "preview": "同名尺寸可能描述不同对象，比例图怎样保留这种区别？",
       "paragraphs": [],
       "learningRole": "探究",
-      "learningGap": "本题指南需将场地尺寸与几何对象、比例作图、长度与面积的单位、圆、扇形与长方形与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据场地尺寸与几何对象、比例作图，独立完成“田赛项目场地的设计”并按注意事项核对条件。",
+      "learningGap": "同名尺寸可能描述不同对象，比例图怎样保留这种区别？",
+      "learningAction": "能把各项目尺寸对应到正确部位，统一比例绘制场地图。",
       "related": [
         {
           "locationId": "ch6-field-data-sources",
@@ -5354,10 +5509,10 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "场地尺寸与几何对象",
-          "比例作图",
-          "长度与面积的单位",
-          "圆、扇形与长方形"
+          "每个尺寸须对应明确的边、半径或活动区域，先从图中认清它所限制的对象。",
+          "选定图上长度与实际长度的比例后，各长度都按同一个比例换算；角度保持原来大小。",
+          "长度用m、cm等，面积用m²、cm²等；面积不是把长度按同一个倍数简单缩放。",
+          "圆由半径确定大小，扇形还需圆心角，长方形需长和宽；分别核对作图所需数据。"
         ],
         "method": [
           "（1）调查跳高所需的场地条件，说明各项要求对应场地的哪一部分，并记录来源。",
@@ -5378,12 +5533,12 @@
       "preview": "面积、形状、方向与活动范围，怎样共同限制布局？",
       "paragraphs": [],
       "learningRole": "探究",
-      "learningGap": "本题指南需将位置、方向与边界、活动范围的比较、比例图上的空间约束与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据位置、方向与边界、活动范围的比较，独立完成“比赛场地互不干扰”并按注意事项核对条件。",
+      "learningGap": "面积、形状、方向与活动范围，怎样共同限制布局？",
+      "learningAction": "能用边界、方向和活动范围检查候选布局是否互相干扰。",
       "related": [
         {
           "locationId": "ch6-field-layout-constraints",
-          "label": "场地布局的空间约束",
+          "label": "场地布局的空间条件",
           "purpose": "把“互不干扰”落实为可检查的边界、方向和活动范围关系。"
         },
         {
@@ -5394,9 +5549,9 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "位置、方向与边界",
-          "活动范围的比较",
-          "比例图上的空间约束"
+          "布局先确定各场地的位置和朝向，再画边界，边界限定实际占用区域。",
+          "比较的不只是设施本身，还包括题目规定的活动或安全区域；范围不能互相侵占。",
+          "在同一比例图中比较完整边界和间距，检查活动区域是否越出场地或互相重叠。"
         ],
         "method": [
           "（1）先把已核实的铅球场地与相关活动范围画到总体图上，比较不同位置与其他项目、通行区域的关系，再说明选择理由。",
@@ -5415,8 +5570,8 @@
       "preview": "你提出的问题，需要哪些数据和关系才能检验？",
       "paragraphs": [],
       "learningRole": "探究",
-      "learningGap": "本题指南需将从实际问题识别数量与图形关系、数据的单位和来源、计算或作图验证与题干条件及所列小问对应，保留学生的关键判断和推演。",
-      "learningAction": "能依据从实际问题识别数量与图形关系、数据的单位和来源，独立完成“提出并解决自己的问题”并按注意事项核对条件。",
+      "learningGap": "你提出的问题，需要哪些数据和关系才能检验？",
+      "learningAction": "能提出数据足以支持的问题，并用计算或作图检验方案。",
       "related": [
         {
           "locationId": "ch6-field-data-sources",
@@ -5431,9 +5586,9 @@
       ],
       "questionGuide": {
         "knowledgePoints": [
-          "从实际问题识别数量与图形关系",
-          "数据的单位和来源",
-          "计算或作图验证"
+          "先把问题对应到可测量的长度、角度、面积或位置，再选择计算或作图方法。",
+          "每项数据记录出处、测量对象和单位；不同来源若规定不同，应先核对采用条件。",
+          "用计算或按比例的图检查提出的方案是否满足已列出的尺寸、位置和活动范围条件。"
         ],
         "method": [
           "从学校场地规划中选择一个尚未解决的问题，说清对象、待确定的量和必须满足的条件。",
@@ -5522,7 +5677,7 @@
     },
     {
       "page": 174,
-      "decision": "已核对原页可见印刷页码167及相邻上下文。习题6.2第2—6题全部提供指南，包含四项读句画图、两种木条现象、等分与倍数、延长中点条件及两种道路情境。"
+      "decision": "已核对原页可见印刷页码167及相邻上下文。习题6.2第2—6题全部提供指南，包含四项读句画图、两种木条现象、等分与倍数、延长中点条件及两种道路情境。 第6题按图（1）河道改直、图（2）九曲桥分成两个入口，各自定位对应图并保留原小问要求。"
     },
     {
       "page": 175,
@@ -5586,7 +5741,7 @@
     },
     {
       "page": 190,
-      "decision": "已核对原图印刷第183页；本页1道题进入questionCoverage。数学活动2共用一个活动入口，覆盖四个作图步骤、画法理由、其他画法、六角星、折纸、剪角比较与艺术图案设计；连续作角的局部说明保留。"
+      "decision": "已核对原图印刷第183页；数学活动2仍为1道题，按图4绘制与画法探索、图5折纸和剪角比较、图6艺术图案设计分为3项入口，各自定位对应图。四个连续绘制步骤仍共用图4入口，连续作角的局部说明保留。"
     },
     {
       "page": 191,
@@ -5627,7 +5782,7 @@
   ],
   "questionCoverage": {
     "status": "source-checked",
-    "basis": "逐页查看PDF第156–199页原图及155、200页边界上下文，独立列出并复核全部例题、练习、习题、复习题及明确作答的思考、探究、旁问、填空和活动；按独立题号计题，连续小问逐项记录，跨页题仅计一次。章引言用于举例说明研究动机的泛问、活动准备与实施展示等流程文字不另计数学题。题单与每题指南及已核对知识位置逐一对应。",
+    "basis": "逐页查看PDF第156–199页原图及155、200页边界上下文，独立列出并复核全部例题、练习、习题、复习题及明确作答的思考、探究、旁问、填空和活动；按独立题号计题，连续小问逐项记录，跨页题仅计一次。章引言用于举例说明研究动机的泛问、活动准备与实施展示等流程文字不另计数学题。题单与每题指南及已核对知识位置逐一对应。 2026-10-25按独立情境或活动图分入口：习题6.2第6题按河道、九曲桥分两项，数学活动2按图4绘制、图5折纸、图6艺术图案分三项；不增加原题数量。",
     "items": [
       {
         "label": "章引言：辨认章前图中的图形",
@@ -6058,11 +6213,18 @@
         ]
       },
       {
-        "label": "习题6.2第6题：河道与九曲桥",
+        "label": "习题6.2第6题（1）：河道改直",
         "page": 174,
         "supplementId": "ch6-p174-exercises-6",
         "parts": [
-          "（1）弯曲河道改直后的长度",
+          "（1）弯曲河道改直后的长度"
+        ]
+      },
+      {
+        "label": "习题6.2第6题（2）：九曲桥的观赏作用",
+        "page": 174,
+        "supplementId": "ch6-p174-exercises-6-bridge",
+        "parts": [
           "（2）曲折桥对观赏的作用及数学道理"
         ]
       },
@@ -6512,7 +6674,7 @@
         ]
       },
       {
-        "label": "数学活动2：绘制五角星及星形探索",
+        "label": "数学活动2：绘制五角星与六角星探索",
         "page": 190,
         "supplementId": "ch6-q-p190-activity2",
         "parts": [
@@ -6522,9 +6684,23 @@
           "步骤（4）擦去多余线",
           "说明画法的道理",
           "探索其他画法",
-          "画六角星",
+          "画六角星"
+        ]
+      },
+      {
+        "label": "数学活动2：折纸剪出五角星",
+        "page": 190,
+        "supplementId": "ch6-q-p190-activity2-fold",
+        "parts": [
           "折纸制作五角星",
-          "改变剪角并比较",
+          "改变剪角并比较"
+        ]
+      },
+      {
+        "label": "数学活动2：设计星形艺术图案",
+        "page": 190,
+        "supplementId": "ch6-q-p190-activity2-pattern",
+        "parts": [
           "着色和设计图案"
         ]
       },

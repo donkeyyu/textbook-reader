@@ -1,0 +1,294 @@
+{
+  "date": "2026-10-25",
+  "scope": "第一章实际显示、15处新增教材原文目标及增长率原题目标的往返；按DonQ本轮反馈，仅调整增长率旁问的文字与展示。",
+  "browser": {
+    "tool": "ego-browser",
+    "url": "http://127.0.0.1:5173/",
+    "note": "内置浏览器未向工具开放；在ego-browser打开同一地址，以CSS视口实测，不以Mac窗口大小代替。"
+  },
+  "feedback": {
+    "instruction": "先解释增长率和百分比，再解释减少2%怎样记为−2%，最后强调正负的含义；不重复，不强制拆分模块。",
+    "supplementId": "ch1-growth-rate-question",
+    "change": "改为三段连续正文，移除模块标题、方法开关、重复的100部用例及重复追问。增长率为零的判断留给学生。",
+    "implementation": "仅此条设置questionGuide.continuous；未设置该字段的题目引导继续使用原有模块与折叠方法。"
+  },
+  "display": {
+    "narrow": {
+      "width": 823,
+      "height": 944,
+      "paragraphs": [
+        "增长率表示与原来相比增加或减少的比例，通常用百分数表示。百分数表示每100份中的多少份：2%=2/100，就是每100份中的2份。",
+        "例2以第一季度销量为基准。“减少2%”表示少卖的数量占第一季度销量的2%。统一写成“增长率”时，减少要用负号记录，因此“减少2%”记为−2%。",
+        "正负号说明增减方向：正数表示增加，负数表示减少，正号通常可以省略；百分数说明增减的比例。−2%中的负号没有把实际销量变成负数。"
+      ],
+      "headings": 0,
+      "methodToggle": false,
+      "overflow": false
+    },
+    "wide": {
+      "width": 1736,
+      "height": 944,
+      "headings": 0,
+      "methodToggle": false,
+      "overflow": false
+    }
+  },
+  "sourceAndReturnCases": [
+    {
+      "index": 0,
+      "source": "ch1-why-negative",
+      "target": "ch1-source-positive-negative",
+      "pass": true,
+      "viewport": {
+        "width": 823,
+        "height": 944
+      }
+    },
+    {
+      "index": 6,
+      "source": "ch1-practice-p3-3",
+      "target": "ch1-source-temperature-sign",
+      "pass": true,
+      "viewport": {
+        "width": 823,
+        "height": 944
+      }
+    },
+    {
+      "index": 14,
+      "source": "ch1-growth-amount",
+      "target": "ch1-source-opposite-quantities",
+      "pass": true,
+      "viewport": {
+        "width": 823,
+        "height": 944
+      }
+    },
+    {
+      "index": 3,
+      "source": "ch1-example-1-1-guide",
+      "target": "ch1-source-standard-comparison",
+      "pass": true,
+      "viewport": {
+        "width": 823,
+        "height": 944
+      }
+    },
+    {
+      "index": 34,
+      "source": "ch1-example-1-2-1-guide",
+      "target": "ch1-source-integer-types",
+      "pass": true,
+      "viewport": {
+        "width": 823,
+        "height": 944
+      }
+    },
+    {
+      "index": 35,
+      "source": "ch1-example-1-2-1-guide",
+      "target": "ch1-source-fraction-types",
+      "pass": true,
+      "viewport": {
+        "width": 823,
+        "height": 944
+      }
+    },
+    {
+      "index": 36,
+      "source": "ch1-example-1-2-1-guide",
+      "target": "ch1-source-rational-definition",
+      "pass": true,
+      "viewport": {
+        "width": 823,
+        "height": 944
+      }
+    },
+    {
+      "index": 62,
+      "source": "ch1-practice-p11-1",
+      "target": "ch1-source-number-line-definition",
+      "pass": true,
+      "viewport": {
+        "width": 823,
+        "height": 944
+      }
+    },
+    {
+      "index": 79,
+      "source": "ch1-q-example-3",
+      "target": "ch1-source-opposite-definition",
+      "pass": true,
+      "viewport": {
+        "width": 823,
+        "height": 944
+      }
+    },
+    {
+      "index": 124,
+      "source": "ch1-q-example-5",
+      "target": "ch1-source-opposite-minus",
+      "pass": true,
+      "viewport": {
+        "width": 823,
+        "height": 944
+      }
+    },
+    {
+      "index": 97,
+      "source": "ch1-q-example-4",
+      "target": "ch1-source-absolute-definition",
+      "pass": true,
+      "viewport": {
+        "width": 823,
+        "height": 944
+      }
+    },
+    {
+      "index": 96,
+      "source": "ch1-q-example-4",
+      "target": "ch1-source-absolute-rule",
+      "pass": true,
+      "viewport": {
+        "width": 823,
+        "height": 944
+      }
+    },
+    {
+      "index": 2,
+      "source": "ch1-intro-production-question",
+      "target": "ch1-source-percent-sign",
+      "pass": true,
+      "viewport": {
+        "width": 823,
+        "height": 944
+      }
+    },
+    {
+      "index": 123,
+      "source": "ch1-q-example-5",
+      "target": "ch1-source-comparison-rules",
+      "pass": true,
+      "viewport": {
+        "width": 823,
+        "height": 944
+      }
+    },
+    {
+      "index": 9,
+      "source": "ch1-think-map-bill",
+      "target": "ch1-source-altitude-sign",
+      "pass": true,
+      "viewport": {
+        "width": 823,
+        "height": 944
+      }
+    },
+    {
+      "index": 15,
+      "source": "ch1-growth-rate-question",
+      "target": "ch1-growth-rate-base",
+      "pass": true,
+      "viewport": {
+        "width": 823,
+        "height": 944
+      }
+    }
+  ],
+  "additionalCheckedSourcePairs": [
+    {
+      "source": "ch1-growth-rate-question",
+      "target": "ch1-source-percent-sign",
+      "viewport": {
+        "width": 823,
+        "height": 944
+      },
+      "pass": true,
+      "note": "在连续正文启用后实测，两条增长率关联均能返回原阅读状态。"
+    }
+  ],
+  "assertedBehavior": [
+    "关联目标在教材阅读区可见。",
+    "来源解读、已展开的分组条目和方法状态在返回后恢复。",
+    "返回焦点回到原关联按钮；面板滚动误差小于2px，原页相对阅读位置误差小于0.005。",
+    "纯教材目标保留来源说明和返回入口，当前目标不会重复出现在关联列表。"
+  ],
+  "visualChecks": [
+    "1736×944：三段正文完整可读，原文旁问高亮准确，关联入口位于正文之后，无横向溢出。",
+    "823×944：三段正文直接可读，标题、定位和关闭控件无重叠，无模块标题或方法开关，无横向溢出。",
+    "绝对值求法目标显示教材正数、负数和0的完整三种情况。",
+    "体重说明直接对照“减少0.5 kg”与“增长−0.5 kg”，未引入“增长量”。"
+  ],
+  "verification": {
+    "npmTest": "23项通过。",
+    "build": "通过；保留现有产物体积提示。",
+    "impeccableDetector": "src/reader/Supplement.tsx返回[]。",
+    "gitDiffCheck": "通过。"
+  },
+  "unchangedContentAndLocationFiles": [
+    {
+      "path": "content/grade-7-volume-1/chapter-2.json",
+      "sha256": "67a7fda0cbb121ea96d87b49780e17a30514fe974c56bc0fd005f0ef69860ba8"
+    },
+    {
+      "path": "content/grade-7-volume-1/locations.json",
+      "sha256": "9632353a2e43817246d1ffc782e17d92c8482d528be966e7864ff73a6262e7e2"
+    },
+    {
+      "path": "content/grade-7-volume-1/chapter-3.json",
+      "sha256": "9911fc2507f83643d011d137e7fc34f97fd07a79a086a99fed78f60826e5100c"
+    },
+    {
+      "path": "content/grade-7-volume-1/chapter-4.json",
+      "sha256": "8e0b12feef942b97a9c6d8559486914396a91cca4aa3533d93a54ad30e34ef80"
+    },
+    {
+      "path": "content/grade-7-volume-1/chapter-5.json",
+      "sha256": "bc60a412984b76f76bbb5b1543640360c6521216f3dc78492e295129707a41d7"
+    },
+    {
+      "path": "content/grade-7-volume-1/chapter-3.locations.json",
+      "sha256": "db57bee0906a11323bca0ba112b49f6baa17c9a8052b8e8f7136f7442d93877c"
+    },
+    {
+      "path": "content/grade-7-volume-1/chapter-6.json",
+      "sha256": "321749d7ed36de97b5be97ce6986a626e04ab31606692c30f1c7ef7b9c08de0f"
+    },
+    {
+      "path": "content/grade-7-volume-1/chapter-4.locations.json",
+      "sha256": "1dd4c7412b849fae51a11a29b7d5ab75500e4289a388713e254e4c4cc4dbd240"
+    },
+    {
+      "path": "content/grade-7-volume-1/chapter-5.locations.json",
+      "sha256": "4069c44a236b45c1cf23a655a3c4a427036110ca7bd41e39fb34912e7ae13a05"
+    },
+    {
+      "path": "content/grade-7-volume-1/chapter-2.locations.json",
+      "sha256": "3b3126cb5a29043de62ca63b7964405a1c5859afb6fdba1acf989ab9bb905ea8"
+    },
+    {
+      "path": "content/grade-7-volume-1/chapter-6.locations.json",
+      "sha256": "03ccb4eb85d971640b38f320752873b7829bfbbb7b12c2005e2cb0ffecc79e45"
+    }
+  ],
+  "limitations": [
+    "没有逐一点击第一章全部227条关联；本次往返覆盖16个教材目标及增长率两条关联。",
+    "没有操作个人笔记或个人补充。",
+    "没有真机或学生使用证据，不能据此判断学习效果。"
+  ],
+  "retiredScreenshotArtifacts": [
+    {
+      "name": "growth-flow-wide-final.png",
+      "sha256": "af50d4da0c997278b266f5e0642e27cfd103e89518652d667c4570e4b661a901"
+    },
+    {
+      "name": "growth-flow-narrow-final.png",
+      "sha256": "7a218d523eaf0a29efc7b9a7f2cef9dc184c0ddb3d9efe461c1aee1fdde67b87"
+    },
+    {
+      "name": "absolute-rule-target.png",
+      "sha256": "a1bbc09f18a8b955f60562316a25ebdd234957e86390a87ce82ebedafcfe0382"
+    }
+  ],
+  "artifactRetention": "临时截图在核验后清理；保留核验结果及可取得的截图哈希。"
+}

@@ -28,20 +28,20 @@ npm run preview   # 预览构建结果
 
 首次打开从封面开始，有有效记录时恢复上次原页阅读位置。全部页面按 PDF 文件顺序连续排列；居中的页码控件可原位输入，关联目标另显示已核对的教材页码。布局与组件说明见 [DESIGN.md](DESIGN.md)，行为要求见 [SPEC.md](docs/SPEC.md)。
 
-六章共接入 970 条补充和 997 个经原图核对的位置，覆盖 PDF 第 8–199 页的逐页取舍记录。入口对应段落、关键语句、例题步骤或题目；27 个位置仅作为关联回顾目标。数量描述当前交付，不是各章的固定配额。
+六章共接入 970 条补充和 1087 个经原图核对的位置，覆盖 PDF 第 8–199 页的逐页取舍记录。入口对应段落、关键语句、例题步骤或题目；117 个位置仅作为关联回顾目标。数量描述当前交付，不是各章的固定配额。
 
 | 章节 | 逐题清单 | 补充条数 | 定位数 |
 | --- | ---: | ---: | ---: |
 | 第一章 有理数 | 90 | 128 | 145 |
-| 第二章 有理数的运算 | 175 | 247 | 247 |
-| 第三章 代数式 | 70 | 110 | 117 |
-| 第四章 整式的加减 | 75 | 109 | 109 |
-| 第五章 一元一次方程 | 126 | 187 | 187 |
-| 第六章 几何图形初步 | 130 | 189 | 192 |
+| 第二章 有理数的运算 | 175 | 247 | 281 |
+| 第三章 代数式 | 70 | 110 | 127 |
+| 第四章 整式的加减 | 75 | 109 | 120 |
+| 第五章 一元一次方程 | 126 | 187 | 198 |
+| 第六章 几何图形初步 | 130 | 189 | 216 |
 
-共 666 项逐题清单，覆盖例题、练习、习题、复习题和明确作答的思考、探究、活动。每题显示考查知识点、思路与方法、注意事项及相关知识入口；同题小问逐一涵盖，跨页的同一分项只计一次；独立情境、活动图及旁注按实际入口分项记录。一般概念及步骤解读继续保留，标题不重复标注当前位置页码。
+共 666 项逐题清单，覆盖例题、练习、习题、复习题和明确作答的思考、探究、活动。每题涵盖所需知识、方法思路、注意条件及相关知识入口，按理解过程组织为连续说明或分节内容；同题小问逐一涵盖，跨页的同一分项只计一次；独立情境、活动图及旁注按实际入口分项记录。一般概念及步骤解读继续保留，标题不重复标注当前位置页码。
 
-类型标记指向原页区域，密集入口合并后按题号选择；方法由读者主动展开。解读提供定位、关联查阅与返回。默认补充的个人笔记实时保存，自选段落的个人补充另有显式保存流程；两者均支持 Markdown。定位、返回及续读的状态区别见 [架构说明](docs/ARCHITECTURE.md#阅读状态与跳转)。
+类型标记指向原页区域，密集入口合并后按题号选择；必要解释直接可读，可选方法由读者主动展开。解读提供定位、关联查阅与返回。默认补充的个人笔记实时保存，自选段落的个人补充另有显式保存流程；两者均支持 Markdown。定位、返回及续读的状态区别见 [架构说明](docs/ARCHITECTURE.md#阅读状态与跳转)。
 
 当前内容通过静态 JSON 接入，并检查来源身份、位置和关联引用。六章分别维护 `chapter-N.json` 和定位文件，由 `src/textbook/chapters.ts` 统一注册；第一章定位沿用 `locations.json`，其余章节使用 `chapter-N.locations.json`。各章逐题覆盖均已完成原图核对。通用内容编译器尚未实现；补充内容的学习效果尚无学生使用证据。
 
@@ -52,13 +52,14 @@ npm run preview   # 预览构建结果
 | 修改范围 | 现有入口 |
 | --- | --- |
 | 页码位置、原位输入、侧栏开合 | [check-page-navigation.mjs](scripts/check-page-navigation.mjs)：`checkToolbarPageControls(page)`、`checkPageNavigation(page, expanded)` |
+| 页底预览与入口点击 | [check-related-return.mjs](scripts/check-related-return.mjs)：`checkPreviewEntry(page, 文件页序, 条目ID)`，可传各章真实标记 |
 | 单条与分组入口、关联返回 | [check-related-return.mjs](scripts/check-related-return.mjs)：`checkReviewCase(page, index)`、`checkAccordion(page, id)`；`reviewCases` 是第一章关联清单，不代表全书全集 |
 | 多层返回、退出、失败和取消 | 同模块的 `checkReviewChain`、`checkReviewExit`、`checkReviewFailures`、`checkRelatedReturn` |
 | 方法开合、续读与完整路径 | 同模块的 `checkOnDemandMethod`、`checkMethodReturnChain`、`checkReaderJourney` |
 | 滚走后定位并保留上下文 | 同模块的 `checkLocate`、`checkLocateGroup`、`checkLocateReturn` |
 | 笔记、草稿与外部修订 | 同模块的 `checkNoteAutosave`、`checkMethodDraft`、`checkTitleDraft`、`checkDraftDuringNavigation`、`checkStalePersonalWrite` |
 
-`check-related-return.mjs` 的题目、关联样本和位置查找绑定第一章；带条目 ID 的检查不能直接传入其他章 ID。其他章节须使用该章真实入口与位置，沿相同阅读路径单独核验，不以第一章用例代替。
+`check-related-return.mjs` 的题目、关联样本和位置查找绑定第一章；依赖这些数据的检查不能直接传入其他章 ID。其他章节须使用该章真实入口与位置，沿相同阅读路径单独核验，不以第一章用例代替。`checkPreviewEntry` 只使用传入的文件页序与标记 ID，可跨章检查。
 
 按实际改动选取入口，核对原文位置、展开项、方法状态、面板滚动、焦点和返回层级；动作预期见架构说明。复用公共交互检查不代表已经点击全书每条链接。
 

@@ -35,7 +35,7 @@ Category: enhancement
 - 2026-10-25（产品路径进展）：Ego TaskSpace 30 的真实本地阅读器已通过桌面导航展开和收起两套找页演示：课本 3→文件 10；文件 1、101、202、8、31；空输入、3.0、999、缺失印刷标签 1、文件 0/203/1.5；错误前后页码及原页 scrollTop 相同；Enter 打开和跳页、Escape 取消并返回页码按钮焦点。可复运行入口为 `scripts/check-page-navigation.mjs` 的 `checkPageNavigation(page, expanded)`。生成脚本的资源替换前校验阶段已实际执行，202 张原图哈希和目录输出一致，未重写页图。窄屏和关联标签仍在验证。
 
 - 2026-10-25（本票验收完成）：A1–A4 及上述六项验收均已满足。桌面 1772×909 的导航展开/收起，以及 390×844 视口仿真的浮动导航展开/收起，均运行完整找页、首中末页、无印刷页码、错误保位、改值/切模式恢复、Enter 提交和 Escape 焦点恢复。另在 1440×900、390×844、320×740 实测弹出表单与模式选择框的边界，无横向溢出。刷新后未选择模式即打开输入，确认默认仍为课本页码。关联样本“回顾与思考第1题”显示“课本第 21 页”和“文件第 8 页”，跳到无印刷页码的文件第 8 页及返回均通过；标题未增加当前位置页码。
-- 2026-10-25（证据与版本）：[验证及文件哈希](../evidence/01-page-navigation/verification.json)、[布局实测](../evidence/01-page-navigation/layout.json)、[刷新后默认模式快照](../evidence/01-page-navigation/default-mode.snapshot.txt)。运行 `npm run typecheck`、`npm test`（21 项）、`npm run build`、两个浏览器脚本语法检查及 `git diff --check` 均通过。机械设计检测仅报告既有圆角建议；本票未扩展其他页面样式。自己的 TaskSpace 30 已正常 finish，未重置他人会话或本地个人内容。
+- 2026-10-25（证据与版本）：[验证及文件哈希](../evidence/01-page-navigation/verification.json)、[布局实测](../evidence/01-page-navigation/layout.json)；刷新后默认模式结论保留在验证记录中。运行 `npm run typecheck`、`npm test`（21 项）、`npm run build`、两个浏览器脚本语法检查及 `git diff --check` 均通过。机械设计检测仅报告既有圆角建议；本票未扩展其他页面样式。自己的 TaskSpace 30 已正常 finish，未重置他人会话或本地个人内容。
 - 2026-10-25（限制）：截图调用分别出现 CDP 超时和 `Unable to capture screenshot`，因此本票证据为真实浏览器操作、语义快照与实测布局，未完成像素级截图审阅。原生 select 的弹出菜单键盘自动化不稳定；已验证的键盘范围为页码入口、输入提交、Escape 取消与焦点恢复，模式切换通过原生选择控件完成。390px/320px 为视口仿真，不能替代父规格 Q3 的真实手机验证；无学生学习效果观察。本票工程完成不代表父规格或内容共读线完成。Status 保持既有分流语义，不自动提交或关闭父规格。
 
 - 2026-10-25（主会话最终复核）：主会话已同步public教材source.json的全书印刷页码映射；现有catalog资源测试校验其来源身份、映射来源及202页记录与book.json一致。统一23项测试、类型检查、构建通过；未重新转换位图。

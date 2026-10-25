@@ -21,7 +21,7 @@
 - 首次聚焦滚动未捕获预览，改用实际hover后通过；08练习第3题一次hover未稳定，延长动作稳定等待后通过。
 - 07例7一次键盘返回未触发，页面仍在目标；实际点击可返回。随后该条完整复测通过阅读区域、方法状态与来源链接焦点恢复。未确定未触发的工具/产品原因，未擅改产品代码。
 - 最初共享5173服务退出后，本组在5198独立服务继续，失败与有效版本均保留在display.json。
-- 样本Page.captureScreenshot请求超时，见sample-visual.json；未产生图片，像素外观没有通过证据。现有证据为实际DOM、键盘、目标页及往返状态。真实手机、学生学习与家长共读没有本组证据，不能以此代验20或全规格学习效果。
+- 样本Page.captureScreenshot请求超时，失败结果副本已退役；未产生图片，像素外观没有通过证据。现有证据为实际DOM、键盘、目标页及往返状态。真实手机、学生学习与家长共读没有本组证据，不能以此代验20或全规格学习效果。
 - Ego0.6.0.16提示可更新；未升级工具。
 
 ## 精确修改范围
@@ -31,7 +31,7 @@
 - `.scratch/textbook-preview-review/issues/07-chapter-2-pages-45-58.md`
 - `.scratch/textbook-preview-review/issues/08-chapter-2-pages-59-68.md`
 - `.scratch/textbook-preview-review/issues/09-chapter-2-pages-69-74.md`
-- `evidence/06/`：本文件、review.md、review.json、changes.json、checks.json、display.json、sample.md、sample-display.json、sample-visual.json。
+- `evidence/06/`：本文件、review.md、review.json、changes.json、checks.json、display.json、sample.md、sample-display.json。
 - `evidence/07/`、`evidence/08/`、`evidence/09/`：各自review.md、review.json、changes.json、checks.json、display.json。
 
 以上evidence路径相对`.scratch/textbook-preview-review/`。未改Reader、CSS、全局配置、SPEC、根索引或他人文件；未stage/commit。

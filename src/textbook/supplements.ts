@@ -23,6 +23,7 @@ export type Supplement = {
   learningGap: string;
   learningAction: string;
   questionGuide?: {
+    continuous?: boolean;
     knowledgePoints: string[];
     method: string[];
     cautions: string[];

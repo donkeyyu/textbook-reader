@@ -8,7 +8,7 @@
 - 原PDF SHA-256：`6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249`；本次实际查看封面、版权页和文件第9页原图。
 - 位置：文件页序9，印刷第2页，1.1“正数和负数”定义及页底“0既不是正数，也不是负数”。
 - [PDF](../../../../materials/textbooks/人教版-数学-七年级上册.pdf)、[原页PNG](../../../../materials/indexes/人教版-数学-七年级上册/images/page-000009.png)、[运行页图](../../../../public/textbooks/grade-7-volume-1/page-9.webp)。运行页图路径已核实。
-- 解读ID与位置ID：`ch1-zero-boundary`。本次不修改样本文字。内容逐字快照见[开始时内容](baseline-chapter-1.json)中此ID。
+- 解读ID与位置ID：`ch1-zero-boundary`。本次不修改样本文字。该样本当前文字见[第一章内容](../../../../content/grade-7-volume-1/chapter-1.json)中此ID；初始内容哈希保留在版本记录中。
 - 内容及应用初始版本：HEAD `ebe956a90b7b2b12f08f331c423fa76ec3a6d8e5` 加当前未提交工作区，文件哈希见[初始版本记录](sample-version-initial.json)。不能仅以HEAD表示运行版本。
 
 ## 原文与补充的分工

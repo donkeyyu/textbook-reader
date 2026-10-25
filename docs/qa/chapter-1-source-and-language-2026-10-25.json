@@ -1,0 +1,1056 @@
+{
+  "date": "2026-10-25",
+  "trigger": "DonQ对增长率旁问、百分数入口位置和“增长量”用语提出三处反馈，并要求本轮只修第一章。",
+  "scope": {
+    "chapter": 1,
+    "pdfPages": [
+      8,
+      30
+    ],
+    "supplementsReviewed": 129,
+    "questionGuidesReviewed": 90,
+    "supplementsRevised": 106,
+    "supplementsRemoved": 1,
+    "supplementsAfter": 128,
+    "locationsAfter": 145,
+    "questionInventoryUnchanged": true
+  },
+  "criteria": "对成绩一般或较差的学生，这条补充是否能帮助理解当前原句或题目，并直接找回上下文和相关教材知识；必要解释先出现，计算、判断和归纳留给学生。",
+  "appliedSkills": [
+    ".agents/skills/textbook-supplements/SKILL.md",
+    ".agents/skills/sloptrim/SKILL.md"
+  ],
+  "feedback": [
+    {
+      "comment": 1,
+      "problem": "知识栏只有概念标签，学生还需猜标签的含义；回顾入口又指向补充。",
+      "change": "90条逐题知识栏改为本题可用的含义、定义或规则；常用定义关联改为教材原文目标。",
+      "examples": [
+        "ch1-growth-rate-question",
+        "ch1-example-1-2-1-guide",
+        "ch1-q-example-4"
+      ]
+    },
+    {
+      "comment": 2,
+      "problem": "增长率解释分散到旁问和A品牌附近，百分数的必要解释藏在另一条补充中。",
+      "change": "删除重复补充入口ch1-growth-rate-base，将负号、2%=2/100和第一季度这个比较对象直接写进旁问的知识栏；100部的数值例另标“补充用例”。旧位置ID保留为例2（2）的原文目标，范围覆盖季度比较和四个品牌，其他章节原有关联继续可用。",
+      "examples": [
+        "ch1-growth-rate-question",
+        "ch1-growth-rate-base"
+      ]
+    },
+    {
+      "comment": 3,
+      "problem": "用“增长量”重命名原句，给学生增加了不必要的新名词。",
+      "change": "沿用“增长−0.5 kg”，直接对照题目的“减少0.5 kg”，分别说明负号和0.5 kg；同时区分体重增长的记录与当前体重。",
+      "examples": [
+        "ch1-growth-amount"
+      ]
+    }
+  ],
+  "additionalFindings": [
+    {
+      "problem": "分类回顾入口把例1中“其中”的用法当成分类定义。",
+      "change": "按题目需要直接关联正整数、零、负整数以及正负分数的定义；保留“其中”的入口时明确它只解释例题用词。",
+      "examples": [
+        "ch1-practice-p8-1",
+        "ch1-practice-p8-2",
+        "ch1-q-exercise12-1"
+      ]
+    },
+    {
+      "problem": "绝对值应用题只链接负数或零的一种情况，学生仍找不到完整规则。",
+      "change": "应用题改为直达教材正数、负数、零的三条绝对值规则；概念引入保留距离定义，探究题保留学生归纳。",
+      "examples": [
+        "ch1-q-example-4",
+        "ch1-q-absolute-practice-1",
+        "ch1-absolute-inverse-practice",
+        "ch1-q-absolute-inquiry"
+      ]
+    },
+    {
+      "problem": "“偏差”“位置数”“一维位置模型”“严格端点”等说法增加了读题负担。",
+      "change": "改为比标准多或少、离车站向东或向西多少米、两数之间是否包含端点等原题可直接对应的说法；教材实际出现的半轴、分数形式等概念保留。",
+      "examples": [
+        "ch1-example-1-1-guide",
+        "ch1-deviation",
+        "ch1-road-number",
+        "ch1-road-model",
+        "ch1-number-scope-practice"
+      ]
+    },
+    {
+      "problem": "数轴方向和圆盘旋转方向必须服从当前图或题目的约定，不能套用一般印象。",
+      "change": "数轴说明区分本题图和课本向右为正的画法；密码盘按原题核对“+”为逆时针、“−”为顺时针。",
+      "examples": [
+        "ch1-practice-p11-1",
+        "ch1-q-absolute-inquiry",
+        "ch1-exercise-1-1-8"
+      ]
+    },
+    {
+      "problem": "图示提示仍可能只说检查图像，缺少读图的具体入口。",
+      "change": "温度图先解释“～”两侧温度的含义，再提示分列最低和最高温度；具体数值、比较和结论由学生完成。",
+      "examples": [
+        "ch1-q-temperature-thinking"
+      ]
+    },
+    {
+      "problem": "复习题第5题把“整个式子”写成尚未在第一章介绍的“整式”，容易让学生误以为需要新知识。",
+      "change": "沿用本题语境，改为“确定整个式子表示哪个数”。",
+      "examples": [
+        "ch1-q-review-5"
+      ]
+    },
+    {
+      "problem": "探究提示说“分数”可以表示距离，但本章的分数包括负分数，适用范围不清。",
+      "change": "按原题给定的3和1/2，改为“正整数和正分数都能表示到原点的距离”，保留学生找点和归纳。",
+      "examples": [
+        "ch1-opposite-inquiry"
+      ]
+    }
+  ],
+  "sourceVerification": {
+    "pdf": "materials/textbooks/人教版-数学-七年级上册.pdf",
+    "documentSha256": "6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249",
+    "method": "对照教材原页与定位裁图核对新目标的语义范围；16个新增或修改位置的本地PNG哈希与索引匹配。",
+    "newTextbookOnlyTargets": [
+      {
+        "id": "ch1-source-positive-negative",
+        "pdfPage": 9,
+        "printedPage": "2",
+        "anchorLabel": "正数；负数"
+      },
+      {
+        "id": "ch1-source-percent-sign",
+        "pdfPage": 9,
+        "printedPage": "2",
+        "anchorLabel": "1.1 正数和负数"
+      },
+      {
+        "id": "ch1-source-temperature-sign",
+        "pdfPage": 9,
+        "printedPage": "2",
+        "anchorLabel": "1.1 正数和负数"
+      },
+      {
+        "id": "ch1-source-opposite-quantities",
+        "pdfPage": 10,
+        "printedPage": "3",
+        "anchorLabel": "例1"
+      },
+      {
+        "id": "ch1-source-standard-comparison",
+        "pdfPage": 10,
+        "printedPage": "3",
+        "anchorLabel": "例1"
+      },
+      {
+        "id": "ch1-source-integer-types",
+        "pdfPage": 14,
+        "printedPage": "7",
+        "anchorLabel": "1.2.1 有理数的概念"
+      },
+      {
+        "id": "ch1-source-fraction-types",
+        "pdfPage": 14,
+        "printedPage": "7",
+        "anchorLabel": "1.2.1 有理数的概念"
+      },
+      {
+        "id": "ch1-source-rational-definition",
+        "pdfPage": 14,
+        "printedPage": "7",
+        "anchorLabel": "有理数"
+      },
+      {
+        "id": "ch1-source-number-line-definition",
+        "pdfPage": 17,
+        "printedPage": "10",
+        "anchorLabel": "数轴"
+      },
+      {
+        "id": "ch1-source-opposite-definition",
+        "pdfPage": 19,
+        "printedPage": "12",
+        "anchorLabel": "相反数"
+      },
+      {
+        "id": "ch1-source-opposite-minus",
+        "pdfPage": 19,
+        "printedPage": "12",
+        "anchorLabel": "相反数"
+      },
+      {
+        "id": "ch1-source-absolute-definition",
+        "pdfPage": 20,
+        "printedPage": "13",
+        "anchorLabel": "绝对值"
+      },
+      {
+        "id": "ch1-source-absolute-rule",
+        "pdfPage": 20,
+        "printedPage": "13",
+        "anchorLabel": "探究"
+      },
+      {
+        "id": "ch1-source-comparison-rules",
+        "pdfPage": 22,
+        "printedPage": "15",
+        "anchorLabel": "有理数的大小比较"
+      },
+      {
+        "id": "ch1-source-altitude-sign",
+        "pdfPage": 10,
+        "printedPage": "3",
+        "anchorLabel": "把0以外的数分为正数和负数"
+      }
+    ],
+    "reusedTextbookOnlyTarget": {
+      "id": "ch1-growth-rate-base",
+      "pdfPage": 11,
+      "printedPage": "4",
+      "reason": "保留原有引用ID，改为例2（2）完整题干。"
+    },
+    "note": "ch1-source-percent-sign是本册使用正负百分数的实例，不标作百分数定义的出处；百分数前置解释属于补充内容。"
+  },
+  "changedSupplements": [
+    {
+      "id": "ch1-why-negative",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-intro-profit-question",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-intro-production-question",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-example-1-1-guide",
+      "fields": [
+        "title",
+        "preview",
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-deviation",
+      "fields": [
+        "title",
+        "preview",
+        "paragraphs"
+      ]
+    },
+    {
+      "id": "ch1-practice-p3-1",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-practice-p3-2",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-practice-p3-3",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-practice-p3-4",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-think-map-bill",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-think-bill",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-example-1-2-guide",
+      "fields": [
+        "preview",
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-example-1-2-sales-guide",
+      "fields": [
+        "preview",
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-growth-amount",
+      "fields": [
+        "title",
+        "preview",
+        "paragraphs",
+        "learningGap",
+        "learningAction",
+        "related"
+      ]
+    },
+    {
+      "id": "ch1-growth-rate-question",
+      "fields": [
+        "title",
+        "preview",
+        "learningGap",
+        "learningAction",
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-practice-p5-1",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-practice-p5-2",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-practice-p5-3",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-exercise-1-1-1",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-exercise-1-1-2",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-exercise-1-1-3",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-exercise-1-1-4",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-direction-exercise",
+      "fields": [
+        "preview",
+        "paragraphs",
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-measurement-exercise",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-exercise-1-1-7",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-exercise-1-1-8",
+      "fields": [
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-tolerance-question",
+      "fields": [
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-rational-think",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-rational-denominator",
+      "fields": [
+        "related"
+      ]
+    },
+    {
+      "id": "ch1-example-1-2-1-guide",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-practice-p8-1",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-practice-p8-2",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-practice-p8-3",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-road-question",
+      "fields": [
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-road-model",
+      "fields": [
+        "paragraphs",
+        "related"
+      ]
+    },
+    {
+      "id": "ch1-road-think",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-road-number",
+      "fields": [
+        "title",
+        "preview",
+        "paragraphs",
+        "learningGap",
+        "learningAction",
+        "related"
+      ]
+    },
+    {
+      "id": "ch1-thermometer-think",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-example-1-2-2-guide",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-practice-p11-1",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-practice-p11-2",
+      "fields": [
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-practice-p11-3",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-number-line-move",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-opposite-inquiry",
+      "fields": [
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-opposite-sign",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-opposite-geometry",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-opposite-twice",
+      "fields": [
+        "related"
+      ]
+    },
+    {
+      "id": "ch1-q-example-3",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-opposite-inverse-example",
+      "fields": [
+        "related"
+      ]
+    },
+    {
+      "id": "ch1-q-opposite-practice-1",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-opposite-practice-2",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-opposite-practice-3",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-opposite-practice-4",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-absolute-intro",
+      "fields": [
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-absolute-zero",
+      "fields": [
+        "related"
+      ]
+    },
+    {
+      "id": "ch1-q-absolute-inquiry",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-absolute-negative",
+      "fields": [
+        "related"
+      ]
+    },
+    {
+      "id": "ch1-q-example-4",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-absolute-example-distance",
+      "fields": [
+        "related"
+      ]
+    },
+    {
+      "id": "ch1-q-absolute-practice-1",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-absolute-practice-2",
+      "fields": [
+        "preview",
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-absolute-inverse-practice",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-absolute-symbols-practice",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-order-intro",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-temperature-thinking",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-order-old-rule",
+      "fields": [
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-order-thinking",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-negative-order",
+      "fields": [
+        "related"
+      ]
+    },
+    {
+      "id": "ch1-q-example-5",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-comparison-simplify",
+      "fields": [
+        "related"
+      ]
+    },
+    {
+      "id": "ch1-q-order-practice-1",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-order-practice-2",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-order-practice-3",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-exercise12-1",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-exercise12-2",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-exercise12-3",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-exercise12-4",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-exercise12-5",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-exercise12-6",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-exercise12-7",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-opposite-distance-practice",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-opposite-conditions-practice",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-activity-1",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-deviation-distance-activity",
+      "fields": [
+        "related"
+      ]
+    },
+    {
+      "id": "ch1-q-activity-2",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-number-extension-review",
+      "fields": [
+        "related"
+      ]
+    },
+    {
+      "id": "ch1-number-line-review",
+      "fields": [
+        "related"
+      ]
+    },
+    {
+      "id": "ch1-q-recall-1",
+      "fields": [
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-recall-2",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-recall-3",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-recall-4",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-recall-5",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-recall-6",
+      "fields": [
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-review-1",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-review-2",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-review-3",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-review-4",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-review-5",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-review-6",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-growth-rate-practice",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-review-8",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-order-without-scale",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-review-10",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-q-review-11",
+      "fields": [
+        "preview",
+        "related",
+        "questionGuide"
+      ]
+    },
+    {
+      "id": "ch1-number-scope-practice",
+      "fields": [
+        "paragraphs"
+      ]
+    },
+    {
+      "id": "ch1-q-review-12",
+      "fields": [
+        "related",
+        "questionGuide"
+      ]
+    }
+  ],
+  "preservedStudentWork": [
+    "不给习题完整答案或逐项结果。",
+    "保留绝对值规则探究和大小比较思考的归纳。",
+    "提示读图和判断的起点，保留数值读取、画图、计算、分类和论证。"
+  ],
+  "unchangedOtherChapterFiles": [
+    {
+      "path": "content/grade-7-volume-1/chapter-2.json",
+      "sha256": "67a7fda0cbb121ea96d87b49780e17a30514fe974c56bc0fd005f0ef69860ba8"
+    },
+    {
+      "path": "content/grade-7-volume-1/chapter-2.locations.json",
+      "sha256": "3b3126cb5a29043de62ca63b7964405a1c5859afb6fdba1acf989ab9bb905ea8"
+    },
+    {
+      "path": "content/grade-7-volume-1/chapter-3.json",
+      "sha256": "9911fc2507f83643d011d137e7fc34f97fd07a79a086a99fed78f60826e5100c"
+    },
+    {
+      "path": "content/grade-7-volume-1/chapter-3.locations.json",
+      "sha256": "db57bee0906a11323bca0ba112b49f6baa17c9a8052b8e8f7136f7442d93877c"
+    },
+    {
+      "path": "content/grade-7-volume-1/chapter-4.json",
+      "sha256": "8e0b12feef942b97a9c6d8559486914396a91cca4aa3533d93a54ad30e34ef80"
+    },
+    {
+      "path": "content/grade-7-volume-1/chapter-4.locations.json",
+      "sha256": "1dd4c7412b849fae51a11a29b7d5ab75500e4289a388713e254e4c4cc4dbd240"
+    },
+    {
+      "path": "content/grade-7-volume-1/chapter-5.json",
+      "sha256": "bc60a412984b76f76bbb5b1543640360c6521216f3dc78492e295129707a41d7"
+    },
+    {
+      "path": "content/grade-7-volume-1/chapter-5.locations.json",
+      "sha256": "4069c44a236b45c1cf23a655a3c4a427036110ca7bd41e39fb34912e7ae13a05"
+    },
+    {
+      "path": "content/grade-7-volume-1/chapter-6.json",
+      "sha256": "321749d7ed36de97b5be97ce6986a626e04ab31606692c30f1c7ef7b9c08de0f"
+    },
+    {
+      "path": "content/grade-7-volume-1/chapter-6.locations.json",
+      "sha256": "03ccb4eb85d971640b38f320752873b7829bfbbb7b12c2005e2cb0ffecc79e45"
+    }
+  ],
+  "verification": [
+    {
+      "check": "npm test",
+      "result": "23项通过，含六章题目覆盖、引用与来源结构检查。"
+    },
+    {
+      "check": "npm run build",
+      "result": "通过；保留现有产物体积警告。"
+    },
+    {
+      "check": "引用检查",
+      "result": "所有位置ID和补充ID唯一；所有关联可解析，无自关联、重复关联或未使用位置。"
+    },
+    {
+      "check": "逐题清单",
+      "result": "第一章questionCoverage与本轮起点完全一致，仍有90项。"
+    },
+    {
+      "check": "修改范围",
+      "result": "第二至六章内容和定位文件与本轮起点逐字节一致。"
+    },
+    {
+      "check": "测试服务",
+      "result": "http://127.0.0.1:5173/ 返回HTTP 200。"
+    },
+    {
+      "check": "本轮浏览器实测",
+      "result": "本阶段因Mac锁定未完成；解锁后已补验，见followUp记录。"
+    },
+    {
+      "check": "git diff --check",
+      "result": "通过。"
+    },
+    {
+      "check": "最终内容复核",
+      "result": "只读对照本轮第一章差异与教材原页，检查知识栏、方向约定、关联范围和答案边界；修正“整式”与“分数表示距离”两处残留问题，未见其余可行动问题。"
+    }
+  ],
+  "limitations": [
+    "本轮经验先留在第一章审核记录，未推广为其他章节的修改或新增规格。",
+    "无学生使用证据，不以内容检查或自动测试推断学习效果。"
+  ],
+  "followUp": {
+    "record": "docs/qa/chapter-1-browser-2026-10-25.json",
+    "status": "browser-checked",
+    "note": "解锁后已补验实际显示和关联往返；增长率旁问按后续反馈改为连续三段，替代此记录中的知识栏及100部用例。"
+  }
+}

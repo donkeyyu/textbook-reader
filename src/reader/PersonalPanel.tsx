@@ -2,13 +2,14 @@ import { useRef, useState } from 'react';
 import { MarkdownContent, MarkdownEditor } from './MarkdownEditor';
 import type { PersonalSupplement } from './personal';
 
-export function PersonalPanel({ item, isNew, onSave, onClose, onDelete, onEdit }: {
+export function PersonalPanel({ item, isNew, onSave, onClose, onDelete, onEdit, onLocate }: {
   item: PersonalSupplement;
   isNew: boolean;
   onSave: (item: PersonalSupplement) => void | Promise<void>;
   onClose: () => void;
   onDelete: () => void | Promise<void>;
   onEdit: () => void;
+  onLocate: () => void;
 }) {
   const [editing, setEditing] = useState(isNew);
   const [title, setTitle] = useState(item.title);
@@ -16,10 +17,13 @@ export function PersonalPanel({ item, isNew, onSave, onClose, onDelete, onEdit }
   latestTitle.current = title;
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [error, setError] = useState('');
-  return <aside id="supplement-panel" className="supplement-panel" aria-label="我的补充">
+  return <aside id="supplement-panel" className="supplement-panel" aria-label="我的补充" data-supplement-type="personal">
     <div className="supplement-heading">
       <h2 id="supplement-title" tabIndex={-1}>{isNew ? '添加补充' : item.title}</h2>
-      {!editing && <button className="text-button" onClick={onClose}>关闭</button>}
+      <div className="heading-actions">
+        <button id="locate-personal" className="text-button locate-button" type="button" onClick={onLocate}>定位</button>
+        {!editing && <button className="text-button" onClick={onClose}>关闭</button>}
+      </div>
     </div>
     {editing ? <>
       <label className="personal-title">标题

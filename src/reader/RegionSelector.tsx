@@ -55,6 +55,6 @@ export function RegionSelector({ onSelect }: { onSelect: (region: Region) => voi
         y: Math.max(0, Math.min(1 - previous.height, previous.y + dy)),
       });
     }}>
-    <div className="location-highlight" style={{ left: `${region.x * 100}%`, top: `${region.y * 100}%`, width: `${region.width * 100}%`, height: `${region.height * 100}%` }} />
+    <div className="location-highlight" data-supplement-type="personal" style={{ left: `${region.x * 100}%`, top: `${region.y * 100}%`, width: `${region.width * 100}%`, height: `${region.height * 100}%` }} />
   </div>;
 }

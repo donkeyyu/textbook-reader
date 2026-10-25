@@ -86,7 +86,7 @@
       "printedPage": "69",
       "indexAnchor": 3,
       "anchorLabel": "（1）某工程队负责铺设一条长2 km的地下管道",
-      "locator": "PDF第76页末铺管道问题（1）的起始题干；（1）问句及正方形问题（2）续于已核对的PDF第77页页首，跨页按一组记录。",
+      "locator": "印刷第69页页末问题（1）：铺设2 km地下管道的题干，问句续于已核对的PDF77页页首；仅对应铺管道，不含正方形问题。",
       "region": {
         "x": 0.174,
         "y": 0.893,
@@ -98,6 +98,25 @@
         "y": 0.9085
       },
       "sourceImageSha256": "cab0d41200a75bba8c6e31d71f5e878ded203f4ea7cc6e5f9106cee7ffce36e7"
+    },
+    {
+      "id": "ch3-q-square-quantity-problem",
+      "page": 77,
+      "printedPage": "70",
+      "indexAnchor": 0,
+      "anchorLabel": "问题（1）（2）",
+      "locator": "印刷第70页页首问题（2）：一个正方形边长是a，分别询问周长l和面积S；仅定位此问题，不含铺管道问题。",
+      "region": {
+        "x": 0.13,
+        "y": 0.098,
+        "width": 0.75,
+        "height": 0.028
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.111
+      },
+      "sourceImageSha256": "85d2a986f8249a2375d0e27495067d8de93b3d8065bed8aa5b39e4bc1f8a362b"
     },
     {
       "id": "ch3-division-context",
@@ -1074,16 +1093,16 @@
       "printedPage": "79",
       "indexAnchor": 1,
       "anchorLabel": "问题",
-      "locator": "3.2“问题”为了开展体育活动的题干首行，从“问题”至“学校要购置”附近。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "locator": "3.2排球问题的完整两行题干，包含每班配5个、学校另留20个及总购置个数的问句；不含后面的n说明与已解算式。",
       "region": {
-        "x": 0.175,
+        "x": 0.13,
         "y": 0.259,
-        "width": 0.047,
-        "height": 0.025
+        "width": 0.79,
+        "height": 0.05
       },
       "marker": {
         "x": 0.96,
-        "y": 0.2715
+        "y": 0.284
       },
       "sourceImageSha256": "ab4b63682b4a5862b35ab6694d99895cbbcd48f5b2fcaf9cdeafb32f4d2b7c6e"
     },
@@ -1606,16 +1625,35 @@
       "printedPage": "83",
       "indexAnchor": 0,
       "anchorLabel": "活动1 拼图小游戏",
-      "locator": "活动1第（1）项首行“如图1，用火柴棍拼成一排”处；同一活动的第（2）项在下方图2前。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "locator": "印刷第83页活动1第（1）项的图1：火柴棍拼成一排三角形及图号；不包含下方图2方格拼图。",
       "region": {
-        "x": 0.199,
-        "y": 0.179,
-        "width": 0.042,
-        "height": 0.025
+        "x": 0.258,
+        "y": 0.274,
+        "width": 0.53,
+        "height": 0.116
       },
       "marker": {
         "x": 0.96,
-        "y": 0.1915
+        "y": 0.332
+      },
+      "sourceImageSha256": "bea479c1ade09f1a2b30ec229b7516e664526eed6a53180474d10158070528be"
+    },
+    {
+      "id": "ch3-q-p90-activity1-squares",
+      "page": 90,
+      "printedPage": "83",
+      "indexAnchor": 0,
+      "anchorLabel": "活动1 拼图小游戏",
+      "locator": "印刷第83页活动1第（2）项的图2：单个小方格及第1、2、3个正方形序列和图号；不包含上方图1火柴棍。",
+      "region": {
+        "x": 0.205,
+        "y": 0.523,
+        "width": 0.635,
+        "height": 0.134
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.59
       },
       "sourceImageSha256": "bea479c1ade09f1a2b30ec229b7516e664526eed6a53180474d10158070528be"
     },
@@ -1701,16 +1739,16 @@
       "printedPage": "85",
       "indexAnchor": 0,
       "anchorLabel": "一、本章知识结构图",
-      "locator": "本章知识结构图右侧“列代数式”方框。",
+      "locator": "本章知识结构图右侧“列代数式”与“代数式的值”两个方框；此解读比较列式与求值的检查任务，不含上方“代数式的意义”。",
       "region": {
         "x": 0.64,
         "y": 0.265,
-        "width": 0.119,
-        "height": 0.031
+        "width": 0.138,
+        "height": 0.086
       },
       "marker": {
         "x": 0.96,
-        "y": 0.2805
+        "y": 0.308
       },
       "sourceImageSha256": "88ce058702e5557b2064cb0c63140e488fd521d5d430a81122f0d98f2d93dee0"
     },
@@ -2055,6 +2093,329 @@
         "y": 0.6715
       },
       "sourceImageSha256": "c4cdba218c0aaef36a4d04f3ff11e8f2acb9b71a785b87007964fcce2f1f8176"
+    },
+    {
+      "id": "ch3-circle-circumference-formula",
+      "page": 88,
+      "printedPage": "81",
+      "indexAnchor": 0,
+      "anchorLabel": "例3（续）",
+      "locator": "例3续解中“两段弯道组成一个圆，它的直径为b，周长为πb”；对应PDF87页跑道图3.2-1，两行原文一起保留。",
+      "region": {
+        "x": 0.13,
+        "y": 0.095,
+        "width": 0.79,
+        "height": 0.06
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.125
+      },
+      "sourceImageSha256": "2ab7c43dae727cb38631b4eb83ec9fd236134746f7b1ad2d748b634eedb01d72"
+    },
+    {
+      "id": "ch3-circle-area-formula",
+      "page": 88,
+      "printedPage": "81",
+      "indexAnchor": 1,
+      "anchorLabel": "例4",
+      "locator": "例4解答首行“圆的面积为πr²”；图3.2-2中r为圆孔半径。",
+      "region": {
+        "x": 0.45,
+        "y": 0.351,
+        "width": 0.175,
+        "height": 0.039
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.3705
+      },
+      "sourceImageSha256": "2ab7c43dae727cb38631b4eb83ec9fd236134746f7b1ad2d748b634eedb01d72"
+    },
+    {
+      "id": "ch3-work-quantity-formula",
+      "page": 76,
+      "printedPage": "69",
+      "indexAnchor": 1,
+      "anchorLabel": "工作量＝工作效率×工作时间",
+      "locator": "“工作量＝工作效率×工作时间”一行；承接已核对PDF75页机器人问题。",
+      "region": {
+        "x": 0.37,
+        "y": 0.284,
+        "width": 0.31,
+        "height": 0.031
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.2995
+      },
+      "sourceImageSha256": "cab0d41200a75bba8c6e31d71f5e878ded203f4ea7cc6e5f9106cee7ffce36e7"
+    },
+    {
+      "id": "ch3-square-perimeter-area-formulas",
+      "page": 77,
+      "printedPage": "70",
+      "indexAnchor": 0,
+      "anchorLabel": "问题（1）（2）",
+      "locator": "问题（2）分析中的“周长l=4a，面积S=a²”一行，a为正方形边长。",
+      "region": {
+        "x": 0.13,
+        "y": 0.257,
+        "width": 0.29,
+        "height": 0.031
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.2725
+      },
+      "sourceImageSha256": "85d2a986f8249a2375d0e27495067d8de93b3d8065bed8aa5b39e4bc1f8a362b"
+    },
+    {
+      "id": "ch3-box-volume-formula",
+      "page": 77,
+      "printedPage": "70",
+      "indexAnchor": 2,
+      "anchorLabel": "例1",
+      "locator": "例1（4）解答中的“由长方体的体积＝长×宽×高”；仅框一般公式，不含本题水池体积式。",
+      "region": {
+        "x": 0.175,
+        "y": 0.756,
+        "width": 0.32,
+        "height": 0.031
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.7715
+      },
+      "sourceImageSha256": "85d2a986f8249a2375d0e27495067d8de93b3d8065bed8aa5b39e4bc1f8a362b"
+    },
+    {
+      "id": "ch3-cylinder-volume-formula",
+      "page": 81,
+      "printedPage": "74",
+      "indexAnchor": 2,
+      "anchorLabel": "例5",
+      "locator": "例5分析中圆柱体积、底面积、高的关系两行，保留体积＝底面积×高及高＝体积÷底面积的完整分式。",
+      "region": {
+        "x": 0.085,
+        "y": 0.735,
+        "width": 0.79,
+        "height": 0.076
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.773
+      },
+      "sourceImageSha256": "f8f29762cd014b661733eec190f77c982b51f0f626049a2f71241a6b38d1545a"
+    },
+    {
+      "id": "ch3-cone-volume-formula",
+      "page": 89,
+      "printedPage": "82",
+      "indexAnchor": 0,
+      "anchorLabel": "复习巩固",
+      "locator": "习题3.2第5题题干给出的圆锥体积公式V=(1/3)πr²h及r、h含义；不含本题给定尺寸。",
+      "region": {
+        "x": 0.135,
+        "y": 0.469,
+        "width": 0.64,
+        "height": 0.04
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.489
+      },
+      "sourceImageSha256": "c5470cef4b692aa1a7666ec507633f34fff7913fa0e3bff20adf93e9283c87df"
+    },
+    {
+      "id": "ch3-source-expression-definition",
+      "page": 77,
+      "printedPage": "70",
+      "indexAnchor": 1,
+      "anchorLabel": "代数式",
+      "locator": "代数式定义左栏整段，包含前文各式及“用运算符号把数或表示数的字母连接起来”；避开右侧便笺。",
+      "region": {
+        "x": 0.085,
+        "y": 0.279,
+        "width": 0.518,
+        "height": 0.15
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.354
+      },
+      "sourceImageSha256": "85d2a986f8249a2375d0e27495067d8de93b3d8065bed8aa5b39e4bc1f8a362b"
+    },
+    {
+      "id": "ch3-source-direct-proportion",
+      "page": 80,
+      "printedPage": "73",
+      "indexAnchor": 1,
+      "anchorLabel": "成正比例关系",
+      "locator": "机器人识别范围与时间的比值固定为5的完整说明，含成正比例关系的结论。",
+      "region": {
+        "x": 0.13,
+        "y": 0.465,
+        "width": 0.79,
+        "height": 0.078
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.504
+      },
+      "sourceImageSha256": "3e3759ebb8bec2fa5205bb782352fd2fc1d02737e3a4a447b6b65f1c6d130b7b"
+    },
+    {
+      "id": "ch3-source-inverse-proportion",
+      "page": 81,
+      "printedPage": "74",
+      "indexAnchor": 1,
+      "anchorLabel": "成反比例的量、反比例关系",
+      "locator": "反比例定义及xy=k的字母表示两段，完整保留k是确定的值且k≠0的条件。",
+      "region": {
+        "x": 0.085,
+        "y": 0.394,
+        "width": 0.79,
+        "height": 0.138
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.463
+      },
+      "sourceImageSha256": "f8f29762cd014b661733eec190f77c982b51f0f626049a2f71241a6b38d1545a"
+    },
+    {
+      "id": "ch3-source-expression-value",
+      "page": 86,
+      "printedPage": "79",
+      "indexAnchor": 2,
+      "anchorLabel": "代数式的值",
+      "locator": "代数式的值的定义及“一般也不同”的完整两行。",
+      "region": {
+        "x": 0.13,
+        "y": 0.485,
+        "width": 0.79,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.51
+      },
+      "sourceImageSha256": "ab4b63682b4a5862b35ab6694d99895cbbcd48f5b2fcaf9cdeafb32f4d2b7c6e"
+    },
+    {
+      "id": "ch3-source-average-length",
+      "page": 77,
+      "printedPage": "70",
+      "indexAnchor": 0,
+      "anchorLabel": "问题（1）（2）",
+      "locator": "问题（1）的完整分析段，包含平均每天长度＝铺设总长度÷工作天数及本题的式子，避免把接续句截断。",
+      "region": {
+        "x": 0.085,
+        "y": 0.127,
+        "width": 0.52,
+        "height": 0.093
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.1735
+      },
+      "sourceImageSha256": "85d2a986f8249a2375d0e27495067d8de93b3d8065bed8aa5b39e4bc1f8a362b"
+    },
+    {
+      "id": "ch3-source-price-interest",
+      "page": 79,
+      "printedPage": "72",
+      "indexAnchor": 1,
+      "anchorLabel": "例3",
+      "locator": "例3分析两行，完整包含总钱数、利息＝本金×年利率×存期、现售价与降价数的数量关系。",
+      "region": {
+        "x": 0.085,
+        "y": 0.267,
+        "width": 0.79,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.292
+      },
+      "sourceImageSha256": "3cd5c37a14461d260f6092414a12fd3d490d1e2935c58decbd163d9957b0099c"
+    },
+    {
+      "id": "ch3-source-travel-formula",
+      "page": 87,
+      "printedPage": "80",
+      "indexAnchor": 2,
+      "anchorLabel": "公式",
+      "locator": "公式段完整一段，包含s、v、t的量义、s=vt及用已知量求值的说明。",
+      "region": {
+        "x": 0.085,
+        "y": 0.536,
+        "width": 0.79,
+        "height": 0.164
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.618
+      },
+      "sourceImageSha256": "8d030b40ab38f1da3972355386459eb46779975f1a2a5650128833ab8fa20a22"
+    },
+    {
+      "id": "ch3-source-read-expression",
+      "page": 78,
+      "printedPage": "71",
+      "indexAnchor": 0,
+      "anchorLabel": "例2",
+      "locator": "例2解答第（1）（2）项的完整读法，对照无括号与有括号时2倍的作用范围。",
+      "region": {
+        "x": 0.175,
+        "y": 0.148,
+        "width": 0.467,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.172
+      },
+      "sourceImageSha256": "5b58c122d11dbd07181494a5cdadc959f60e4a0a290177272b8487989100e3fc"
+    },
+    {
+      "id": "ch3-source-fraction-reading",
+      "page": 78,
+      "printedPage": "71",
+      "indexAnchor": 0,
+      "anchorLabel": "例2",
+      "locator": "例2（3）c除以a、b的积的商的完整读法。",
+      "region": {
+        "x": 0.175,
+        "y": 0.203,
+        "width": 0.471,
+        "height": 0.041
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.2235
+      },
+      "sourceImageSha256": "5b58c122d11dbd07181494a5cdadc959f60e4a0a290177272b8487989100e3fc"
+    },
+    {
+      "id": "ch3-source-subtraction-order",
+      "page": 78,
+      "printedPage": "71",
+      "indexAnchor": 2,
+      "anchorLabel": "思考",
+      "locator": "页底便笺关于a、b两数的差均指a−b的书写约定，保留整个便笺文字。",
+      "region": {
+        "x": 0.675,
+        "y": 0.812,
+        "width": 0.238,
+        "height": 0.107
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.8655
+      },
+      "sourceImageSha256": "5b58c122d11dbd07181494a5cdadc959f60e4a0a290177272b8487989100e3fc"
     }
   ]
 }

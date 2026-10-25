@@ -2,7 +2,7 @@
 
 2026-10-25；独立Ego空间35/p1。先复用5173，随后该服务不可达；worker启动独立5183端口的Vite开发服务恢复。未停止其他服务、重置浏览器或清理个人数据，未写共享dist。
 
-失败记录：[display-failed.json](display-failed.json)只含第一项失败，不算通过。曾从实际页面快照核对到练习4的原位入口、默认知识/注意/方法收起；这部分快照不代替最终4项批量路径结果。恢复后的正式结果见[display-results.json](display-results.json)，以其中逐项pass和源码SHA256解释。
+首轮只完成第一项失败记录，不算通过；该失败结果副本已退役。曾从实际页面快照核对到练习4的原位入口、默认知识/注意/方法收起；这部分快照不代替最终4项批量路径结果。恢复后的正式结果见[display-results.json](display-results.json)，以其中逐项pass和源码SHA256解释。
 
 截图命令曾报`CdpRequestTimeoutError: Page.captureScreenshot`，没有产出可审核的图片。视口按每次实际返回值记录，先前1772×909一次测量不覆盖后续886×455的运行。未将窄屏仿真写成真实手机检查；像素遮挡与真机触控未验证。
 

@@ -865,16 +865,35 @@
       "printedPage": "97",
       "indexAnchor": 2,
       "anchorLabel": "例3",
-      "locator": "例3题号及第（1）问开头“水库水位第一天……”一行；第（2）问在下方，解答续于已核对PDF105页。",
+      "locator": "印刷第97页例3第（1）问“水库水位”的完整两行题干；仅对应两天总变化，不包含第（2）问大米库存。",
       "region": {
-        "x": 0.174,
+        "x": 0.13,
         "y": 0.696,
-        "width": 0.732,
-        "height": 0.026
+        "width": 0.79,
+        "height": 0.052
       },
       "marker": {
         "x": 0.95,
-        "y": 0.709
+        "y": 0.722
+      },
+      "sourceImageSha256": "9e392fe7f61e6a919fac2a21d6dd7e973f5ad2c4adf34aa328dc81fbb7de73d2"
+    },
+    {
+      "id": "ch4-q-42-example3-stock",
+      "page": 104,
+      "printedPage": "97",
+      "indexAnchor": 2,
+      "anchorLabel": "例3",
+      "locator": "印刷第97页例3第（2）问“大米”情境的完整两行题干；解答续于已核对PDF105页，不包含第（1）问水位题。",
+      "region": {
+        "x": 0.13,
+        "y": 0.753,
+        "width": 0.79,
+        "height": 0.052
+      },
+      "marker": {
+        "x": 0.1,
+        "y": 0.779
       },
       "sourceImageSha256": "9e392fe7f61e6a919fac2a21d6dd7e973f5ad2c4adf34aa328dc81fbb7de73d2"
     },
@@ -2055,6 +2074,215 @@
         "y": 0.4335
       },
       "sourceImageSha256": "221485d472c3a1e99deb4fc7c8d40835eebc6af74d96ca91429b67137110ec42"
+    },
+    {
+      "id": "ch4-source-monomial-definition",
+      "page": 96,
+      "printedPage": "89",
+      "indexAnchor": 2,
+      "anchorLabel": "单项式",
+      "locator": "单项式定义两行，包含数或字母的积及单独的数或字母。",
+      "region": {
+        "x": 0.13,
+        "y": 0.505,
+        "width": 0.79,
+        "height": 0.051
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.5305
+      },
+      "sourceImageSha256": "62583b1c7d6b15943bf641d8a83f3276617a48cf09b73de9371ed8ece74d7938"
+    },
+    {
+      "id": "ch4-source-coefficient",
+      "page": 96,
+      "printedPage": "89",
+      "indexAnchor": 3,
+      "anchorLabel": "系数、次数",
+      "locator": "系数定义及其数值示例、系数±1的省写约定，整段保留。",
+      "region": {
+        "x": 0.13,
+        "y": 0.561,
+        "width": 0.79,
+        "height": 0.126
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.624
+      },
+      "sourceImageSha256": "62583b1c7d6b15943bf641d8a83f3276617a48cf09b73de9371ed8ece74d7938"
+    },
+    {
+      "id": "ch4-source-monomial-degree",
+      "page": 96,
+      "printedPage": "89",
+      "indexAnchor": 3,
+      "anchorLabel": "系数、次数",
+      "locator": "单项式次数定义及例子；连同页底非零常数为0次、0没有次数的规定。",
+      "region": {
+        "x": 0.13,
+        "y": 0.695,
+        "width": 0.79,
+        "height": 0.18
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.785
+      },
+      "sourceImageSha256": "62583b1c7d6b15943bf641d8a83f3276617a48cf09b73de9371ed8ece74d7938"
+    },
+    {
+      "id": "ch4-source-polynomial-definition",
+      "page": 98,
+      "printedPage": "91",
+      "indexAnchor": 2,
+      "anchorLabel": "多项式、项、常数项",
+      "locator": "多项式、项、常数项定义及带负号的常数项示例，三行完整保留。",
+      "region": {
+        "x": 0.13,
+        "y": 0.832,
+        "width": 0.79,
+        "height": 0.085
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.8745
+      },
+      "sourceImageSha256": "b7d4f0b81be1ea9b82cd67999b7f7e7b94cc692ee6f31ebfb2b29484fe334bcd"
+    },
+    {
+      "id": "ch4-source-polynomial-degree",
+      "page": 99,
+      "printedPage": "92",
+      "indexAnchor": 0,
+      "anchorLabel": "多项式的次数",
+      "locator": "页首左栏多项式次数的完整定义及两个次数示例，不含右栏旁问。",
+      "region": {
+        "x": 0.085,
+        "y": 0.068,
+        "width": 0.52,
+        "height": 0.135
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.1355
+      },
+      "sourceImageSha256": "77886f214be57a25111cce3207a1344d4c24238b5beb921800d268f96b00fffa"
+    },
+    {
+      "id": "ch4-source-integral-definition",
+      "page": 99,
+      "printedPage": "92",
+      "indexAnchor": 1,
+      "anchorLabel": "整式",
+      "locator": "“单项式与多项式统称整式”及英文术语，不含随后列举的原式。",
+      "region": {
+        "x": 0.13,
+        "y": 0.207,
+        "width": 0.49,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.2195
+      },
+      "sourceImageSha256": "77886f214be57a25111cce3207a1344d4c24238b5beb921800d268f96b00fffa"
+    },
+    {
+      "id": "ch4-source-like-terms",
+      "page": 103,
+      "printedPage": "96",
+      "indexAnchor": 2,
+      "anchorLabel": "同类项",
+      "locator": "同类项归纳整段，包含所含字母相同、相同字母指数相同，以及常数项也是同类项。",
+      "region": {
+        "x": 0.085,
+        "y": 0.401,
+        "width": 0.79,
+        "height": 0.165
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.4835
+      },
+      "sourceImageSha256": "2c8ea3c6ecba4ef14f747ed19beab9c3106e9ade4705183c76dfee04373b1852"
+    },
+    {
+      "id": "ch4-source-combine-rule",
+      "page": 103,
+      "printedPage": "96",
+      "indexAnchor": 3,
+      "anchorLabel": "合并同类项",
+      "locator": "合并同类项定义和蓝色法则，包含系数求和、字母及指数不变。",
+      "region": {
+        "x": 0.13,
+        "y": 0.766,
+        "width": 0.75,
+        "height": 0.078
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.805
+      },
+      "sourceImageSha256": "2c8ea3c6ecba4ef14f747ed19beab9c3106e9ade4705183c76dfee04373b1852"
+    },
+    {
+      "id": "ch4-source-remove-brackets",
+      "page": 106,
+      "printedPage": "99",
+      "indexAnchor": 1,
+      "anchorLabel": "去括号",
+      "locator": "去括号的一般规则及乘以1、−1的两种特殊情形，含完整等式。",
+      "region": {
+        "x": 0.13,
+        "y": 0.096,
+        "width": 0.79,
+        "height": 0.163
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.1775
+      },
+      "sourceImageSha256": "c261e362057cac0d58495783d4bbc95388f416435e982e61fe8b0c9f2d7b294a"
+    },
+    {
+      "id": "ch4-source-add-subtract-rule",
+      "page": 108,
+      "printedPage": "101",
+      "indexAnchor": 1,
+      "anchorLabel": "整式加减的运算法则",
+      "locator": "蓝色整式加减法则一行，包含“如果有括号”和“再合并同类项”。",
+      "region": {
+        "x": 0.175,
+        "y": 0.45,
+        "width": 0.66,
+        "height": 0.025
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.4625
+      },
+      "sourceImageSha256": "b91963ec0ce1147903151ad831fc446409bcc84b055a3237832ea02b4523ec92"
+    },
+    {
+      "id": "ch4-source-spreadsheet-average",
+      "page": 111,
+      "printedPage": "104",
+      "indexAnchor": 3,
+      "anchorLabel": "利用电子表格可以进行数据计算",
+      "locator": "六个单元格数据的示范段，完整保留求和与平均数的分数表达式及各数据对应。",
+      "region": {
+        "x": 0.12,
+        "y": 0.313,
+        "width": 0.75,
+        "height": 0.139
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.3825
+      },
+      "sourceImageSha256": "2261f5b5095ebbe2991b8bac8d07f22b0f43df9e4e531f21e8cc303e183fa5b1"
     }
   ]
 }

@@ -1,0 +1,1361 @@
+{
+  "date": "2026-10-25",
+  "sourcePdfSha256": "6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249",
+  "coreRule": "该信息对于成绩一般或者较差的学生，是否能起到明确的帮助作用，帮助他们理解这段话，这道题，是否能快速找到上下文以及相关联的知识点。",
+  "scope": "六章全部971条补充，含666项题目引导；逐字段审查标题、预览、正文、知识、方法、条件、关联及编写记录。实质修改与新增目标核对原PNG和相邻上下文；本轮没有重新逐页审查全部202页。",
+  "sloptrim": {
+    "skill": ".agents/skills/sloptrim/SKILL.md",
+    "appliedToAllSupplements": true,
+    "method": "保留清楚的解释和有辨认作用的对比；删除无信息标题、重复尾句、泛化元数据和同义标签。预览改为具体辨认线索；新增说明只补当前理解所需的依据。"
+  },
+  "summary": {
+    "supplementsScanned": 971,
+    "questionGuides": 666,
+    "changedSupplements": 446,
+    "studentVisibleChanged": 246,
+    "authoringRecordOnlyChanged": 200,
+    "substantiveEntries": 78,
+    "newKnowledgeLinks": 41,
+    "removedOrReplacedLinks": 21,
+    "currentKnowledgeLinks": 1319,
+    "newTextbookLocations": 8,
+    "currentTextbookLocations": 982
+  },
+  "chapters": [
+    {
+      "chapter": 1,
+      "supplementsScanned": 129,
+      "questionGuides": 90,
+      "changedSupplements": 60,
+      "studentVisibleChanged": 14,
+      "locations": 130,
+      "sourceBeforeSha256": "13d8e386f3628b5fa6f8569edc36f528d12c9c77eb2768a54f69abd70a278726",
+      "sourceAfterSha256": "f9efa745bb92535c43a889980943976afd1e32d292588831ff480967c9655470"
+    },
+    {
+      "chapter": 2,
+      "supplementsScanned": 247,
+      "questionGuides": 175,
+      "changedSupplements": 79,
+      "studentVisibleChanged": 26,
+      "locations": 247,
+      "sourceBeforeSha256": "32d40221a9a33a6136d7278f84c41beec554c412d42cce8ae2165cfcdcaec391",
+      "sourceAfterSha256": "67a7fda0cbb121ea96d87b49780e17a30514fe974c56bc0fd005f0ef69860ba8"
+    },
+    {
+      "chapter": 3,
+      "supplementsScanned": 110,
+      "questionGuides": 70,
+      "changedSupplements": 72,
+      "studentVisibleChanged": 72,
+      "locations": 117,
+      "sourceBeforeSha256": "224853df277fe722a9900d5a09c1b048446f6a46a862f856f28987a99595fe6d",
+      "sourceAfterSha256": "9911fc2507f83643d011d137e7fc34f97fd07a79a086a99fed78f60826e5100c"
+    },
+    {
+      "chapter": 4,
+      "supplementsScanned": 109,
+      "questionGuides": 75,
+      "changedSupplements": 40,
+      "studentVisibleChanged": 40,
+      "locations": 109,
+      "sourceBeforeSha256": "bb807c8e8770256d21a891299995451226134bed32729be44bb9adacaaf6cb6e",
+      "sourceAfterSha256": "8e0b12feef942b97a9c6d8559486914396a91cca4aa3533d93a54ad30e34ef80"
+    },
+    {
+      "chapter": 5,
+      "supplementsScanned": 187,
+      "questionGuides": 126,
+      "changedSupplements": 95,
+      "studentVisibleChanged": 70,
+      "locations": 187,
+      "sourceBeforeSha256": "935df820962ef632c456862958e7e52c18e9a7db96c5edcaab925f77a3e1f1be",
+      "sourceAfterSha256": "bc60a412984b76f76bbb5b1543640360c6521216f3dc78492e295129707a41d7"
+    },
+    {
+      "chapter": 6,
+      "supplementsScanned": 189,
+      "questionGuides": 130,
+      "changedSupplements": 100,
+      "studentVisibleChanged": 24,
+      "locations": 192,
+      "sourceBeforeSha256": "f802c24efa57598d5e3fb4a56d6b2185990faf1847c902063ce8469a00768eac",
+      "sourceAfterSha256": "321749d7ed36de97b5be97ce6986a626e04ab31606692c30f1c7ef7b9c08de0f"
+    }
+  ],
+  "substantiveChanges": [
+    {
+      "id": "ch1-measurement-exercise",
+      "sourcePdfPage": 12,
+      "sourcePrintedPage": "5",
+      "change": "补平均数的总和÷个数关系，保留七组数据的计算和偏差判断。",
+      "verifiedPdfPages": [
+        12,
+        13
+      ]
+    },
+    {
+      "id": "ch1-growth-rate-base",
+      "sourcePdfPage": 12,
+      "sourcePrintedPage": "5",
+      "change": "补增长率的比值与正的比较基准，不增加原题计算。",
+      "verifiedPdfPages": [
+        11,
+        12
+      ]
+    },
+    {
+      "id": "ch1-growth-rate-question",
+      "sourcePdfPage": 12,
+      "sourcePrintedPage": "5",
+      "change": "把仅回顾增长量的入口改为直接解释增长率及基准的入口。",
+      "verifiedPdfPages": [
+        11,
+        12
+      ]
+    },
+    {
+      "id": "ch2-monthly-average-weight",
+      "sourcePdfPage": 53,
+      "sourcePrintedPage": "46",
+      "change": "补平均数、总量和份数的双向关系，供平均利润与平均成绩回顾。",
+      "verifiedPdfPages": [
+        53,
+        54,
+        56,
+        68,
+        69
+      ]
+    },
+    {
+      "id": "ch2-q-exercise22-12",
+      "sourcePdfPage": 56,
+      "sourcePrintedPage": "49",
+      "change": "明确平均与总量的关系，保留三问数字、天数对应与符号判断。",
+      "verifiedPdfPages": [
+        53,
+        56
+      ]
+    },
+    {
+      "id": "ch2-q-review2-8",
+      "sourcePdfPage": 68,
+      "sourcePrintedPage": "61",
+      "change": "补平均成绩公式并连接平均数关系，保留先估后算与全部数据计算。",
+      "verifiedPdfPages": [
+        53,
+        68,
+        69
+      ]
+    },
+    {
+      "id": "ch2-q-exercise23-9",
+      "sourcePdfPage": 64,
+      "sourcePrintedPage": "57",
+      "change": "补体积与表面积依据，替换量纲术语；未写本题a、h表达式或数值答案。",
+      "verifiedPdfPages": [
+        63,
+        64
+      ]
+    },
+    {
+      "id": "ch2-speed-unit-practice",
+      "sourcePdfPage": 64,
+      "sourcePrintedPage": "57",
+      "change": "补千米/米、小时/秒换算及速度的商关系，保留原题换算和比较。",
+      "verifiedPdfPages": [
+        64
+      ]
+    },
+    {
+      "id": "ch2-q-exercise23-11",
+      "sourcePdfPage": 64,
+      "sourcePrintedPage": "57",
+      "change": "让速度单位换算所需的关系可直接查到，不给原题结果。",
+      "verifiedPdfPages": [
+        64
+      ]
+    },
+    {
+      "id": "ch2-power-size-explore",
+      "sourcePdfPage": 69,
+      "sourcePrintedPage": "62",
+      "change": "补乘小于1的正数表示取一部分的观察依据，不给两问排列结果。",
+      "verifiedPdfPages": [
+        58,
+        59,
+        68,
+        69
+      ]
+    },
+    {
+      "id": "ch2-base-unit-exchange",
+      "sourcePdfPage": 70,
+      "sourcePrintedPage": "63",
+      "change": "补二/八进制位值序列，让后续转换有具体起点。",
+      "verifiedPdfPages": [
+        70,
+        71
+      ]
+    },
+    {
+      "id": "ch2-q-p71-activity1-task2",
+      "sourcePdfPage": 71,
+      "sourcePrintedPage": "64",
+      "change": "明确位值、允许数字与回顾入口，未分拆89或给出任何位的数字。",
+      "verifiedPdfPages": [
+        70,
+        71
+      ]
+    },
+    {
+      "id": "ch3-q-robot-introduction",
+      "sourcePdfPage": 75,
+      "sourcePrintedPage": null,
+      "change": "将相关知识直达当前需要的教材依据。",
+      "verifiedPdfPages": [
+        75,
+        76
+      ]
+    },
+    {
+      "id": "ch3-q-square-quantity-problem",
+      "sourcePdfPage": 77,
+      "sourcePrintedPage": "70",
+      "change": "将相关知识直达当前需要的教材依据。",
+      "verifiedPdfPages": [
+        77
+      ]
+    },
+    {
+      "id": "ch3-q-example-1",
+      "sourcePdfPage": 77,
+      "sourcePrintedPage": "70",
+      "change": "补足当前题目需要的前置数量关系，使用量名保留列式与计算。",
+      "verifiedPdfPages": [
+        77,
+        78
+      ]
+    },
+    {
+      "id": "ch3-q-p71-exercise-1",
+      "sourcePdfPage": 78,
+      "sourcePrintedPage": "71",
+      "change": "补足当前题目需要的前置数量关系，使用量名保留列式与计算。",
+      "verifiedPdfPages": [
+        76,
+        77,
+        78
+      ]
+    },
+    {
+      "id": "ch3-q-p73-exercise-4",
+      "sourcePdfPage": 80,
+      "sourcePrintedPage": "73",
+      "change": "将相关知识直达当前需要的教材依据。",
+      "verifiedPdfPages": [
+        77,
+        80
+      ]
+    },
+    {
+      "id": "ch3-q-example-5",
+      "sourcePdfPage": 81,
+      "sourcePrintedPage": "74",
+      "change": "将相关知识直达当前需要的教材依据。",
+      "verifiedPdfPages": [
+        81
+      ]
+    },
+    {
+      "id": "ch3-q-exercise31-3",
+      "sourcePdfPage": 83,
+      "sourcePrintedPage": "76",
+      "change": "补足当前题目需要的前置数量关系，使用量名保留列式与计算。",
+      "verifiedPdfPages": [
+        77,
+        79,
+        83
+      ]
+    },
+    {
+      "id": "ch3-q-exercise31-4",
+      "sourcePdfPage": 83,
+      "sourcePrintedPage": "76",
+      "change": "补足当前题目需要的前置数量关系，使用量名保留列式与计算。",
+      "verifiedPdfPages": [
+        81,
+        83,
+        88
+      ]
+    },
+    {
+      "id": "ch3-q-p87-example3",
+      "sourcePdfPage": 87,
+      "sourcePrintedPage": "80",
+      "change": "将相关知识直达当前需要的教材依据。",
+      "verifiedPdfPages": [
+        87,
+        88,
+        92
+      ]
+    },
+    {
+      "id": "ch3-q-p88-example4",
+      "sourcePdfPage": 88,
+      "sourcePrintedPage": "81",
+      "change": "将相关知识直达当前需要的教材依据。",
+      "verifiedPdfPages": [
+        88
+      ]
+    },
+    {
+      "id": "ch3-q-p88-practice1",
+      "sourcePdfPage": 88,
+      "sourcePrintedPage": "81",
+      "change": "补平行四边形、梯形的一般面积关系，用量名保留本题字母对应与求值。",
+      "verifiedPdfPages": [
+        88
+      ]
+    },
+    {
+      "id": "ch3-q-p88-practice2",
+      "sourcePdfPage": 88,
+      "sourcePrintedPage": "81",
+      "change": "将相关知识直达当前需要的教材依据。",
+      "verifiedPdfPages": [
+        77,
+        87,
+        88
+      ]
+    },
+    {
+      "id": "ch3-q-p88-practice3",
+      "sourcePdfPage": 88,
+      "sourcePrintedPage": "81",
+      "change": "将相关知识直达当前需要的教材依据。",
+      "verifiedPdfPages": [
+        88
+      ]
+    },
+    {
+      "id": "ch3-q-p89-ex32-6",
+      "sourcePdfPage": 89,
+      "sourcePrintedPage": "82",
+      "change": "将相关知识直达当前需要的教材依据。",
+      "verifiedPdfPages": [
+        81,
+        88,
+        89
+      ]
+    },
+    {
+      "id": "ch3-q-p93-review3-4",
+      "sourcePdfPage": 93,
+      "sourcePrintedPage": "86",
+      "change": "补足当前题目需要的前置数量关系，使用量名保留列式与计算。",
+      "verifiedPdfPages": [
+        81,
+        93
+      ]
+    },
+    {
+      "id": "ch3-q-p94-review3-7",
+      "sourcePdfPage": 94,
+      "sourcePrintedPage": "87",
+      "change": "补足当前题目需要的前置数量关系，使用量名保留列式与计算。",
+      "verifiedPdfPages": [
+        88,
+        94
+      ]
+    },
+    {
+      "id": "ch4-q-sec41-example1",
+      "sourcePdfPage": 97,
+      "sourcePrintedPage": "90",
+      "change": "将相关知识直达当前需要的教材依据。",
+      "verifiedPdfPages": [
+        77,
+        88,
+        96,
+        97
+      ]
+    },
+    {
+      "id": "ch4-q-sec41-practice-p91-2",
+      "sourcePdfPage": 98,
+      "sourcePrintedPage": "91",
+      "change": "将相关知识直达当前需要的教材依据。",
+      "verifiedPdfPages": [
+        89,
+        96,
+        98
+      ]
+    },
+    {
+      "id": "ch4-q-sec41-example2",
+      "sourcePdfPage": 99,
+      "sourcePrintedPage": "92",
+      "change": "补足当前题目需要的前置数量关系，使用量名保留列式与计算。",
+      "verifiedPdfPages": [
+        98,
+        99
+      ]
+    },
+    {
+      "id": "ch4-q-sec41-practice-p93-3",
+      "sourcePdfPage": 100,
+      "sourcePrintedPage": "93",
+      "change": "补足当前题目需要的前置数量关系，使用量名保留列式与计算。",
+      "verifiedPdfPages": [
+        96,
+        98,
+        100
+      ]
+    },
+    {
+      "id": "ch4-q-hw41-4",
+      "sourcePdfPage": 101,
+      "sourcePrintedPage": "94",
+      "change": "补足当前题目需要的前置数量关系，使用量名保留列式与计算。",
+      "verifiedPdfPages": [
+        96,
+        99,
+        101
+      ]
+    },
+    {
+      "id": "ch4-q-hw41-5",
+      "sourcePdfPage": 101,
+      "sourcePrintedPage": "94",
+      "change": "将相关知识直达当前需要的教材依据。",
+      "verifiedPdfPages": [
+        12,
+        96,
+        101
+      ]
+    },
+    {
+      "id": "ch4-integer-remainder",
+      "sourcePdfPage": 101,
+      "sourcePrintedPage": "94",
+      "change": "补足当前题目需要的前置数量关系，使用量名保留列式与计算。",
+      "verifiedPdfPages": [
+        101,
+        113
+      ]
+    },
+    {
+      "id": "ch4-area-not-radius",
+      "sourcePdfPage": 105,
+      "sourcePrintedPage": "98",
+      "change": "将相关知识直达当前需要的教材依据。",
+      "verifiedPdfPages": [
+        88,
+        103,
+        105
+      ]
+    },
+    {
+      "id": "ch4-negative-factor",
+      "sourcePdfPage": 106,
+      "sourcePrintedPage": "99",
+      "change": "将相关知识直达当前需要的教材依据。",
+      "verifiedPdfPages": [
+        46,
+        106
+      ]
+    },
+    {
+      "id": "ch4-q-42-negative-product-question",
+      "sourcePdfPage": 106,
+      "sourcePrintedPage": "99",
+      "change": "将相关知识直达当前需要的教材依据。",
+      "verifiedPdfPages": [
+        46,
+        96,
+        106
+      ]
+    },
+    {
+      "id": "ch4-q-42-example5",
+      "sourcePdfPage": 106,
+      "sourcePrintedPage": "99",
+      "change": "补足当前题目需要的前置数量关系，使用量名保留列式与计算。",
+      "verifiedPdfPages": [
+        106,
+        108
+      ]
+    },
+    {
+      "id": "ch4-q-42-example7",
+      "sourcePdfPage": 107,
+      "sourcePrintedPage": "100",
+      "change": "将相关知识直达当前需要的教材依据。",
+      "verifiedPdfPages": [
+        103,
+        106,
+        107,
+        108
+      ]
+    },
+    {
+      "id": "ch4-q-42-exercise8",
+      "sourcePdfPage": 110,
+      "sourcePrintedPage": "103",
+      "change": "将相关知识直达当前需要的教材依据。",
+      "verifiedPdfPages": [
+        88,
+        110
+      ]
+    },
+    {
+      "id": "ch4-q-42-exercise11",
+      "sourcePdfPage": 110,
+      "sourcePrintedPage": "103",
+      "change": "将相关知识直达当前需要的教材依据。",
+      "verifiedPdfPages": [
+        77,
+        103,
+        110
+      ]
+    },
+    {
+      "id": "ch4-q-divisible-three",
+      "sourcePdfPage": 113,
+      "sourcePrintedPage": "106",
+      "change": "核对知识关联的目标、标签和阅读目的，使入口符合所需依据。",
+      "verifiedPdfPages": [
+        113
+      ]
+    },
+    {
+      "id": "ch4-q-review4",
+      "sourcePdfPage": 115,
+      "sourcePrintedPage": "108",
+      "change": "核对知识关联的目标、标签和阅读目的，使入口符合所需依据。",
+      "verifiedPdfPages": [
+        106,
+        115
+      ]
+    },
+    {
+      "id": "ch4-q-review7",
+      "sourcePdfPage": 116,
+      "sourcePrintedPage": "109",
+      "change": "补足当前题目需要的前置数量关系，使用量名保留列式与计算。",
+      "verifiedPdfPages": [
+        106,
+        116
+      ]
+    },
+    {
+      "id": "ch5-same-operation",
+      "sourcePdfPage": 123,
+      "sourcePrintedPage": "116",
+      "change": "用具体等量说明两边同加同减，再连接一般式，降低初次接触时的抽象负担。",
+      "verifiedPdfPages": [
+        123
+      ]
+    },
+    {
+      "id": "ch5-q-p125-exercise2",
+      "sourcePdfPage": 125,
+      "sourcePrintedPage": "118",
+      "change": "补出三角形周长、内角和及面积关系，保留按图选关系与列方程。",
+      "verifiedPdfPages": [
+        125
+      ]
+    },
+    {
+      "id": "ch5-q-p126-exercise9",
+      "sourcePdfPage": 126,
+      "sourcePrintedPage": "119",
+      "change": "补出圆柱表面积的组成与侧面长宽来源，保留设半径和列方程。",
+      "verifiedPdfPages": [
+        126
+      ]
+    },
+    {
+      "id": "ch5-q-p120-exercise3",
+      "sourcePdfPage": 120,
+      "sourcePrintedPage": "113",
+      "change": "补出圆面积及圆环面积关系，保留区域辨认、设元与列方程。",
+      "verifiedPdfPages": [
+        120
+      ]
+    },
+    {
+      "id": "ch5-q-p119-problem2",
+      "sourcePdfPage": 119,
+      "sourcePrintedPage": "112",
+      "change": "把长方形面积与比的份量含义写明，帮助读懂教材方程。",
+      "verifiedPdfPages": [
+        119
+      ]
+    },
+    {
+      "id": "ch5-q-p120-example1",
+      "sourcePdfPage": 120,
+      "sourcePrintedPage": "113",
+      "change": "补出百分数与面积的基本关系，保留两问原有观察目标。",
+      "verifiedPdfPages": [
+        120
+      ]
+    },
+    {
+      "id": "ch5-q-p133-practice2",
+      "sourcePdfPage": 133,
+      "sourcePrintedPage": "126",
+      "change": "补明面积相等的关系依据。",
+      "verifiedPdfPages": [
+        133
+      ]
+    },
+    {
+      "id": "ch5-q-p137-hw5",
+      "sourcePdfPage": 137,
+      "sourcePrintedPage": "130",
+      "change": "补明整圈绳长与长方形周长的关系。",
+      "verifiedPdfPages": [
+        137
+      ]
+    },
+    {
+      "id": "ch5-q-p128-practice3",
+      "sourcePdfPage": 128,
+      "sourcePrintedPage": "121",
+      "change": "把按比例设元所依赖的份量含义写明。",
+      "verifiedPdfPages": [
+        128
+      ]
+    },
+    {
+      "id": "ch5-q-p117-intro",
+      "sourcePdfPage": 117,
+      "sourcePrintedPage": null,
+      "change": "将速度、路程、时间的名称补成可用于本题的数量关系。",
+      "verifiedPdfPages": [
+        117
+      ]
+    },
+    {
+      "id": "ch5-q-p131-practice2",
+      "sourcePdfPage": 131,
+      "sourcePrintedPage": "124",
+      "change": "将速度、路程、时间的名称补成可用于本题的数量关系。",
+      "verifiedPdfPages": [
+        131
+      ]
+    },
+    {
+      "id": "ch5-q-p132-example6",
+      "sourcePdfPage": 132,
+      "sourcePrintedPage": "125",
+      "change": "将速度、路程、时间的名称补成可用于本题的数量关系。",
+      "verifiedPdfPages": [
+        132
+      ]
+    },
+    {
+      "id": "ch5-q-p136-practice3",
+      "sourcePdfPage": 136,
+      "sourcePrintedPage": "129",
+      "change": "将速度、路程、时间的名称补成可用于本题的数量关系。",
+      "verifiedPdfPages": [
+        136
+      ]
+    },
+    {
+      "id": "ch5-q-ex52-11",
+      "sourcePdfPage": 138,
+      "sourcePrintedPage": "131",
+      "change": "将速度、路程、时间的名称补成可用于本题的数量关系。",
+      "verifiedPdfPages": [
+        138
+      ]
+    },
+    {
+      "id": "ch5-q-ex52-12",
+      "sourcePdfPage": 138,
+      "sourcePrintedPage": "131",
+      "change": "将速度、路程、时间的名称补成可用于本题的数量关系。",
+      "verifiedPdfPages": [
+        138
+      ]
+    },
+    {
+      "id": "ch5-q-ex52-13",
+      "sourcePdfPage": 138,
+      "sourcePrintedPage": "131",
+      "change": "将速度、路程、时间的名称补成可用于本题的数量关系。",
+      "verifiedPdfPages": [
+        138
+      ]
+    },
+    {
+      "id": "ch5-q-ex52-16",
+      "sourcePdfPage": 138,
+      "sourcePrintedPage": "131",
+      "change": "将速度、路程、时间的名称补成可用于本题的数量关系。",
+      "verifiedPdfPages": [
+        138
+      ]
+    },
+    {
+      "id": "ch5-q-ex52-17",
+      "sourcePdfPage": 138,
+      "sourcePrintedPage": "131",
+      "change": "将速度、路程、时间的名称补成可用于本题的数量关系。",
+      "verifiedPdfPages": [
+        138
+      ]
+    },
+    {
+      "id": "ch5-q-ex53-9",
+      "sourcePdfPage": 147,
+      "sourcePrintedPage": "140",
+      "change": "将速度、路程、时间的名称补成可用于本题的数量关系。",
+      "verifiedPdfPages": [
+        147
+      ]
+    },
+    {
+      "id": "ch5-q-review8",
+      "sourcePdfPage": 154,
+      "sourcePrintedPage": "147",
+      "change": "将速度、路程、时间的名称补成可用于本题的数量关系。",
+      "verifiedPdfPages": [
+        154
+      ]
+    },
+    {
+      "id": "ch5-q-review10",
+      "sourcePdfPage": 155,
+      "sourcePrintedPage": "148",
+      "change": "将速度、路程、时间的名称补成可用于本题的数量关系。",
+      "verifiedPdfPages": [
+        155
+      ]
+    },
+    {
+      "id": "ch5-q-p133-problem4",
+      "sourcePdfPage": 133,
+      "sourcePrintedPage": "126",
+      "change": "把匀速条件和时间间隔转成可检查的关系，保留路段选择。",
+      "verifiedPdfPages": [
+        133
+      ]
+    },
+    {
+      "id": "ch5-q-practice134-1",
+      "sourcePdfPage": 141,
+      "sourcePrintedPage": "134",
+      "change": "把独做时间、效率和完成量的关系写明。",
+      "verifiedPdfPages": [
+        141
+      ]
+    },
+    {
+      "id": "ch5-q-ex53-4",
+      "sourcePdfPage": 147,
+      "sourcePrintedPage": "140",
+      "change": "把独做时间、效率和完成量的关系写明。",
+      "verifiedPdfPages": [
+        147
+      ]
+    },
+    {
+      "id": "ch5-q-ex53-5",
+      "sourcePdfPage": 147,
+      "sourcePrintedPage": "140",
+      "change": "把独做时间、效率和完成量的关系写明。",
+      "verifiedPdfPages": [
+        147
+      ]
+    },
+    {
+      "id": "ch5-q-p126-exercise10",
+      "sourcePdfPage": 126,
+      "sourcePrintedPage": "119",
+      "change": "明确总量与人均量的转换，避免只列概念名。",
+      "verifiedPdfPages": [
+        126
+      ]
+    },
+    {
+      "id": "ch5-q-ex52-15",
+      "sourcePdfPage": 138,
+      "sourcePrintedPage": "131",
+      "change": "明确总量与人均量的转换，避免只列概念名。",
+      "verifiedPdfPages": [
+        138
+      ]
+    },
+    {
+      "id": "ch5-q-ex53-11",
+      "sourcePdfPage": 148,
+      "sourcePrintedPage": "141",
+      "change": "明确总量与人均量的转换，避免只列概念名。",
+      "verifiedPdfPages": [
+        148
+      ]
+    },
+    {
+      "id": "ch6-compound-angle-units",
+      "sourcePdfPage": 178,
+      "sourcePrintedPage": "171",
+      "change": "明确相邻角度单位的换算关系，保留具体换算题的计算。",
+      "verifiedPdfPages": [
+        178
+      ]
+    },
+    {
+      "id": "ch6-p181-exercise-1",
+      "sourcePdfPage": 181,
+      "sourcePrintedPage": "174",
+      "change": "将角度关系的传递写成可理解的数量比较，保留两问判断。",
+      "verifiedPdfPages": [
+        181
+      ]
+    },
+    {
+      "id": "ch6-p179-exercise-4",
+      "sourcePdfPage": 179,
+      "sourcePrintedPage": "172",
+      "change": "将等边、等角和工具作用具体化，保留作图选择。",
+      "verifiedPdfPages": [
+        179
+      ]
+    },
+    {
+      "id": "ch6-p182-exercise-1",
+      "sourcePdfPage": 182,
+      "sourcePrintedPage": "175",
+      "change": "写出总角、份数、每份角的关系，保留两问计算。",
+      "verifiedPdfPages": [
+        182
+      ]
+    },
+    {
+      "id": "ch6-p175-exercises-9",
+      "sourcePdfPage": 175,
+      "sourcePrintedPage": "168",
+      "change": "增加已学圆柱展开图的回顾启发，保留路线、点对应和圈数表示的判断。",
+      "verifiedPdfPages": [
+        175
+      ]
+    }
+  ],
+  "addedLinks": [
+    {
+      "sourceId": "ch1-growth-rate-question",
+      "targetId": "ch1-growth-rate-base",
+      "purpose": "把负增长率中的符号和百分数分别对应到变化方向、变化量与原量的比。"
+    },
+    {
+      "sourceId": "ch2-q-review2-8",
+      "targetId": "ch2-monthly-average-weight",
+      "purpose": "把平均月金额中的“总量÷月数”对应为本题的“成绩总和÷人数”。"
+    },
+    {
+      "sourceId": "ch2-power-size-explore",
+      "targetId": "ch2-power-factor-count",
+      "purpose": "把相邻两次幂的差别看成多乘一次底数，再检查底数的范围。"
+    },
+    {
+      "sourceId": "ch2-q-p71-activity1-task2",
+      "targetId": "ch2-base-unit-exchange",
+      "purpose": "先查二进制和八进制的位值，再决定怎样分拆89。"
+    },
+    {
+      "sourceId": "ch3-q-robot-introduction",
+      "targetId": "ch3-work-quantity-formula",
+      "purpose": "回顾三种量的关系，并分别对应识别和采摘任务。"
+    },
+    {
+      "sourceId": "ch3-q-robot-introduction",
+      "targetId": "ch3-rate-and-time-units",
+      "purpose": "区分采摘一个苹果的用时与每秒采摘效率，核对小时和秒的换算。"
+    },
+    {
+      "sourceId": "ch3-q-square-quantity-problem",
+      "targetId": "ch3-square-perimeter-area-formulas",
+      "purpose": "对照本题下方分析，检查两种公式分别表示什么量。"
+    },
+    {
+      "sourceId": "ch3-q-p73-exercise-4",
+      "targetId": "ch3-square-perimeter-area-formulas",
+      "purpose": "用边长确定每块正方形的面积，再判断它们与剩余部分的关系。"
+    },
+    {
+      "sourceId": "ch3-q-example-5",
+      "targetId": "ch3-cylinder-volume-formula",
+      "purpose": "回顾求水高所需的关系，辨认底面积和水占据的高度。"
+    },
+    {
+      "sourceId": "ch3-q-p87-example3",
+      "targetId": "ch3-circle-circumference-formula",
+      "purpose": "对照续解中两段半圆弧合成整圆的理由，检查b表示直径。"
+    },
+    {
+      "sourceId": "ch3-q-p88-example4",
+      "targetId": "ch3-triangle-base-height",
+      "purpose": "检查图中a、b为什么能用于三角形面积公式。"
+    },
+    {
+      "sourceId": "ch3-q-p88-example4",
+      "targetId": "ch3-circle-area-formula",
+      "purpose": "检查r对应圆孔的半径，并辨认原式中要扣除的面积。"
+    },
+    {
+      "sourceId": "ch3-q-p88-practice2",
+      "targetId": "ch3-box-volume-formula",
+      "purpose": "回顾三个方向的长度都要参与体积计算，检查本题宽和高如何对应。"
+    },
+    {
+      "sourceId": "ch3-q-p88-practice3",
+      "targetId": "ch3-circle-area-formula",
+      "purpose": "回顾每个圆的面积怎样由它自己的半径决定，再判断圆环所占区域。"
+    },
+    {
+      "sourceId": "ch3-q-p89-ex32-6",
+      "targetId": "ch3-cylinder-volume-formula",
+      "purpose": "把钢管长度对应到圆柱的高，检查所求体积与横截面面积的关系。"
+    },
+    {
+      "sourceId": "ch3-q-p89-ex32-6",
+      "targetId": "ch3-circle-area-formula",
+      "purpose": "分别用外、内半径确定对应圆的面积，材料区域的组合由图形判断。"
+    },
+    {
+      "sourceId": "ch4-q-sec41-example1",
+      "targetId": "ch3-triangle-base-height",
+      "purpose": "回顾第（1）问的底、高为什么必须对应。"
+    },
+    {
+      "sourceId": "ch4-q-sec41-example1",
+      "targetId": "ch3-box-volume-formula",
+      "purpose": "回顾第（2）问三个方向的长度怎样参与计算。"
+    },
+    {
+      "sourceId": "ch4-q-sec41-practice-p91-2",
+      "targetId": "ch3-cone-volume-formula",
+      "purpose": "回顾圆锥容积中半径、高和系数1/3的位置，再对应本题的漏斗。"
+    },
+    {
+      "sourceId": "ch4-q-hw41-5",
+      "targetId": "ch1-growth-rate-base",
+      "purpose": "确认5.7%相对于去年同期人数，区分增加量和今年总人数。"
+    },
+    {
+      "sourceId": "ch4-area-not-radius",
+      "targetId": "ch3-circle-area-formula",
+      "purpose": "用R确定大圆面积；小圆面积按题给面积比例表示，不能把面积比当作半径比。"
+    },
+    {
+      "sourceId": "ch4-negative-factor",
+      "targetId": "ch2-multiplication-sign-magnitude",
+      "purpose": "回顾负数字因数相乘为什么得到正系数，并与含字母项的值区分。"
+    },
+    {
+      "sourceId": "ch4-q-42-negative-product-question",
+      "targetId": "ch2-multiplication-sign-magnitude",
+      "purpose": "先回顾两个负数相乘的符号，再检查数字因数的大小。"
+    },
+    {
+      "sourceId": "ch4-q-42-example7",
+      "targetId": "ch4-box-surface",
+      "purpose": "回顾每对面的两条边怎样决定面积，并检查放大后的各组边长。"
+    },
+    {
+      "sourceId": "ch4-q-42-exercise8",
+      "targetId": "ch3-circle-area-formula",
+      "purpose": "回顾圆面积后，按图中半圆所占部分确定其面积，先检查半径与a的关系。"
+    },
+    {
+      "sourceId": "ch4-q-42-exercise8",
+      "targetId": "ch3-circle-circumference-formula",
+      "purpose": "回顾整圆周长，再判断上部弧线占圆周的哪一部分；直线边界另行辨认。"
+    },
+    {
+      "sourceId": "ch4-q-42-exercise11",
+      "targetId": "ch3-square-perimeter-area-formulas",
+      "purpose": "回顾一个小正方形面的面积怎样由棱长确定；外露面数仍须按图辨认。"
+    },
+    {
+      "sourceId": "ch5-q-p120-exercise3",
+      "targetId": "ch3-circle-area-formula",
+      "purpose": "回顾πr²用半径计算整个圆的面积，再辨认本题的圆环与内圆。"
+    },
+    {
+      "sourceId": "ch5-q-p126-exercise9",
+      "targetId": "ch3-circle-circumference-formula",
+      "purpose": "回顾圆周长=π×直径；本题设半径时，先把半径换成直径。"
+    },
+    {
+      "sourceId": "ch5-q-p126-exercise9",
+      "targetId": "ch3-circle-area-formula",
+      "purpose": "回顾πr²中的r表示半径，用于计算两个底面的面积。"
+    },
+    {
+      "sourceId": "ch5-q-p127-example1",
+      "targetId": "ch4-combine-rule",
+      "purpose": "回顾合并时只加减系数、字母及其指数保持不变，再检查本题的含未知数项。"
+    },
+    {
+      "sourceId": "ch5-q-p128-practice1",
+      "targetId": "ch4-combine-rule",
+      "purpose": "回顾合并时只加减系数、字母及其指数保持不变，再检查本题的含未知数项。"
+    },
+    {
+      "sourceId": "ch5-q-p128-practice3",
+      "targetId": "ch5-q-p119-problem2",
+      "purpose": "回顾教材怎样由同样大小的份量表示长和宽，再检查本题三种数量的比例。"
+    },
+    {
+      "sourceId": "ch5-q-p132-example5",
+      "targetId": "ch4-minus-bracket",
+      "purpose": "回顾括号前的负号如何作为−1作用于括号内每一项。"
+    },
+    {
+      "sourceId": "ch5-q-p133-practice1",
+      "targetId": "ch4-minus-bracket",
+      "purpose": "回顾括号前的负号如何作为−1作用于括号内每一项。"
+    },
+    {
+      "sourceId": "ch5-q-p137-hw1",
+      "targetId": "ch4-combine-rule",
+      "purpose": "回顾合并时只加减系数、字母及其指数保持不变，再检查本题的含未知数项。"
+    },
+    {
+      "sourceId": "ch5-q-p137-hw2",
+      "targetId": "ch4-minus-bracket",
+      "purpose": "回顾括号前的负号如何作为−1作用于括号内每一项。"
+    },
+    {
+      "sourceId": "ch6-p175-exercises-9",
+      "targetId": "ch6-cylinder-net-figure",
+      "purpose": "回顾圆柱侧面与展开图中长方形的对应，思考展平能否帮助比较表面路线；点的位置与圈数仍需逐项核对。"
+    },
+    {
+      "sourceId": "ch6-cylinder-route-constraints",
+      "targetId": "ch6-cylinder-net-figure",
+      "purpose": "回顾圆柱侧面与展开图中长方形的对应，思考展平能否帮助比较表面路线；点的位置与圈数仍需逐项核对。"
+    },
+    {
+      "sourceId": "ch6-p181-exercise-1",
+      "targetId": "ch5-equality-transitive",
+      "purpose": "回顾两个量都等于同一个量时怎样联系起来；本题比较的是角的度数。"
+    },
+    {
+      "sourceId": "ch6-q-p194-review9",
+      "targetId": "ch6-cylinder-net-figure",
+      "purpose": "回顾圆柱侧面与展开图中长方形的对应，思考展平能否帮助比较表面路线；点的位置与圈数仍需逐项核对。"
+    }
+  ],
+  "removedLinks": [
+    {
+      "sourceId": "ch1-growth-rate-question",
+      "targetId": "ch1-growth-amount"
+    },
+    {
+      "sourceId": "ch3-q-robot-introduction",
+      "targetId": "ch3-omitted-multiplication"
+    },
+    {
+      "sourceId": "ch3-q-robot-introduction",
+      "targetId": "ch3-division-context"
+    },
+    {
+      "sourceId": "ch3-q-p73-exercise-4",
+      "targetId": "ch3-read-outer-operation"
+    },
+    {
+      "sourceId": "ch3-q-example-5",
+      "targetId": "ch3-context-and-unit"
+    },
+    {
+      "sourceId": "ch3-q-p87-example3",
+      "targetId": "ch3-formula-unit-match"
+    },
+    {
+      "sourceId": "ch3-q-p88-example4",
+      "targetId": "ch3-expression-value-checks"
+    },
+    {
+      "sourceId": "ch3-q-p88-example4",
+      "targetId": "ch3-context-and-unit"
+    },
+    {
+      "sourceId": "ch3-q-p88-practice2",
+      "targetId": "ch3-expression-value-checks"
+    },
+    {
+      "sourceId": "ch3-q-p88-practice3",
+      "targetId": "ch3-expression-value-checks"
+    },
+    {
+      "sourceId": "ch3-q-p89-ex32-6",
+      "targetId": "ch3-expression-value-checks"
+    },
+    {
+      "sourceId": "ch3-q-p89-ex32-6",
+      "targetId": "ch3-area-value-unit"
+    },
+    {
+      "sourceId": "ch4-q-sec41-practice-p91-2",
+      "targetId": "ch4-monomial-product"
+    },
+    {
+      "sourceId": "ch4-q-hw41-5",
+      "targetId": "ch4-stock-and-change"
+    },
+    {
+      "sourceId": "ch4-area-not-radius",
+      "targetId": "ch4-monomial-product"
+    },
+    {
+      "sourceId": "ch4-q-42-negative-product-question",
+      "targetId": "ch4-distribute-every-term"
+    },
+    {
+      "sourceId": "ch4-q-42-example7",
+      "targetId": "ch4-monomial-product"
+    },
+    {
+      "sourceId": "ch4-q-42-exercise8",
+      "targetId": "ch4-monomial-product"
+    },
+    {
+      "sourceId": "ch4-q-42-exercise8",
+      "targetId": "ch4-combine-rule"
+    },
+    {
+      "sourceId": "ch4-q-42-exercise11",
+      "targetId": "ch4-monomial-product"
+    },
+    {
+      "sourceId": "ch5-q-p128-practice3",
+      "targetId": "ch5-ratio-unit"
+    }
+  ],
+  "newLocations": [
+    {
+      "id": "ch3-circle-circumference-formula",
+      "pdfPage": 88,
+      "printedPage": "81",
+      "locator": "例3续解中“两段弯道组成一个圆，它的直径为b，周长为πb”；对应PDF87页跑道图3.2-1，两行原文一起保留。",
+      "imageSha256": "2ab7c43dae727cb38631b4eb83ec9fd236134746f7b1ad2d748b634eedb01d72"
+    },
+    {
+      "id": "ch3-circle-area-formula",
+      "pdfPage": 88,
+      "printedPage": "81",
+      "locator": "例4解答首行“圆的面积为πr²”；图3.2-2中r为圆孔半径。",
+      "imageSha256": "2ab7c43dae727cb38631b4eb83ec9fd236134746f7b1ad2d748b634eedb01d72"
+    },
+    {
+      "id": "ch3-work-quantity-formula",
+      "pdfPage": 76,
+      "printedPage": "69",
+      "locator": "“工作量＝工作效率×工作时间”一行；承接已核对PDF75页机器人问题。",
+      "imageSha256": "cab0d41200a75bba8c6e31d71f5e878ded203f4ea7cc6e5f9106cee7ffce36e7"
+    },
+    {
+      "id": "ch3-square-perimeter-area-formulas",
+      "pdfPage": 77,
+      "printedPage": "70",
+      "locator": "问题（2）分析中的“周长l=4a，面积S=a²”一行，a为正方形边长。",
+      "imageSha256": "85d2a986f8249a2375d0e27495067d8de93b3d8065bed8aa5b39e4bc1f8a362b"
+    },
+    {
+      "id": "ch3-box-volume-formula",
+      "pdfPage": 77,
+      "printedPage": "70",
+      "locator": "例1（4）解答中的“由长方体的体积＝长×宽×高”；仅框一般公式，不含本题水池体积式。",
+      "imageSha256": "85d2a986f8249a2375d0e27495067d8de93b3d8065bed8aa5b39e4bc1f8a362b"
+    },
+    {
+      "id": "ch3-cylinder-volume-formula",
+      "pdfPage": 81,
+      "printedPage": "74",
+      "locator": "例5分析中圆柱体积、底面积、高的关系两行，保留体积＝底面积×高及高＝体积÷底面积的完整分式。",
+      "imageSha256": "f8f29762cd014b661733eec190f77c982b51f0f626049a2f71241a6b38d1545a"
+    },
+    {
+      "id": "ch3-cone-volume-formula",
+      "pdfPage": 89,
+      "printedPage": "82",
+      "locator": "习题3.2第5题题干给出的圆锥体积公式V=(1/3)πr²h及r、h含义；不含本题给定尺寸。",
+      "imageSha256": "c5470cef4b692aa1a7666ec507633f34fff7913fa0e3bff20adf93e9283c87df"
+    },
+    {
+      "id": "ch6-cylinder-net-figure",
+      "pdfPage": 161,
+      "printedPage": "154",
+      "locator": "图6.1-10中上方的圆柱展开图：长方形及其两侧的两个圆；不包含下方圆锥展开图。",
+      "imageSha256": "d75d2d1aa95bcc55612dbc7eb6e184ad985cd1827f4e303668be127cf3d38ba7"
+    }
+  ],
+  "visualReviewPdfPages": [
+    9,
+    10,
+    11,
+    12,
+    13,
+    29,
+    30,
+    46,
+    47,
+    53,
+    54,
+    56,
+    58,
+    59,
+    60,
+    62,
+    63,
+    64,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    83,
+    87,
+    88,
+    89,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    110,
+    112,
+    113,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    131,
+    132,
+    133,
+    134,
+    136,
+    137,
+    138,
+    140,
+    141,
+    147,
+    148,
+    150,
+    151,
+    154,
+    155,
+    160,
+    161,
+    172,
+    174,
+    175,
+    176,
+    179,
+    181,
+    182,
+    194
+  ],
+  "studentWorkPreserved": [
+    "几何公式用一般量名回顾；原题的字母对应、区域组合、列式和数值计算由学生完成。",
+    "进制说明提供数位单位和允许数字，不分拆89，也不给其二进制或八进制表示。",
+    "圆柱路线只提供展开图回顾和比较方向，不给一圈、两圈的对应画法或路线。",
+    "未新增原题答案，未删题目、题目分项或原有具体条件。"
+  ],
+  "verification": {
+    "supplementIdsAndQuestionInventoryUnchanged": true,
+    "existingLocationRecordsUnchanged": true,
+    "allLinksResolveWithoutSelfLinksOrDuplicateTargets": true,
+    "newLocationImagesMatchHashes": true,
+    "commands": [
+      {
+        "command": "npm test",
+        "result": "23 passed, 0 failed"
+      },
+      {
+        "command": "node --experimental-strip-types --test src/textbook/supplements.test.ts",
+        "result": "最终内容8 passed, 0 failed"
+      },
+      {
+        "command": "npm run build",
+        "result": "passed"
+      },
+      {
+        "command": "git diff --check",
+        "result": "passed"
+      },
+      {
+        "command": "pdf_index.py check with existing index.jsonl",
+        "result": "PDF、202页图及既有索引身份检查通过；不作为本轮逐页重审记录"
+      }
+    ],
+    "browser": {
+      "viewport": "desktop 1772×909",
+      "cases": [
+        {
+          "source": "ch2-q-exercise23-9",
+          "result": "体积、表面积依据和单位显示完整，保留本题字母式与数值计算。"
+        },
+        {
+          "source": "ch2-q-p71-activity1-task2",
+          "target": "ch2-base-unit-exchange",
+          "result": "分组入口展开、查阅位值、返回后方法保持展开。"
+        },
+        {
+          "source": "ch4-q-42-negative-product-question",
+          "target": "ch2-multiplication-sign-magnitude",
+          "result": "跨章到达乘法法则，返回原题高亮。"
+        },
+        {
+          "source": "ch4-q-42-exercise8",
+          "target": "ch3-circle-area-formula",
+          "result": "直达完整圆面积公式，保留来源解读；返回恢复方法展开、来源高亮和入口焦点。"
+        },
+        {
+          "source": "ch6-p175-exercises-9",
+          "target": "ch6-cylinder-net-figure",
+          "result": "直达长方形和两个圆的精确图形；返回恢复原题高亮、方法展开和入口焦点。"
+        }
+      ],
+      "narrowViewport": "未复验；浏览器控制层保持固定视口，尺寸模拟未生效。"
+    }
+  },
+  "learningEffect": "未经学生使用验证。",
+  "unresolvedContentItems": []
+}

@@ -637,16 +637,16 @@
       "printedPage": "118",
       "indexAnchor": 1,
       "anchorLabel": "复习巩固 第1—4题",
-      "locator": "习题5.1第2题的三幅图及边长、角度、面积标注；不包含上方题干。",
+      "locator": "习题5.1第2题共同题干：“根据下列图形中标出的量及其满足的关系，列出方程”；此说明比较三图的读图原则，不以大框同时覆盖三幅图。",
       "region": {
-        "x": 0.175,
-        "y": 0.369,
-        "width": 0.61,
-        "height": 0.145
+        "x": 0.105,
+        "y": 0.34,
+        "width": 0.65,
+        "height": 0.023
       },
       "marker": {
         "x": 0.935,
-        "y": 0.4415
+        "y": 0.3515
       },
       "sourceImageSha256": "1efa9ed1a89aab37f1c2f09f869d71803fff370166344d2daa4ecce2dc008b6b"
     },
@@ -3556,6 +3556,215 @@
         "y": 0.834
       },
       "sourceImageSha256": "d966e9d17d8fb42a5fb67b01691ab8de9df0bbeef73d72337055610a2c31c9fe"
+    },
+    {
+      "id": "ch5-source-equation-definition",
+      "page": 119,
+      "printedPage": "112",
+      "indexAnchor": 1,
+      "anchorLabel": "方程",
+      "locator": "教材原文：含未知数的等式叫作方程；已核对原页及局部边界。",
+      "region": {
+        "x": 0.082822,
+        "y": 0.40586,
+        "width": 0.52684,
+        "height": 0.077048
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.444384
+      },
+      "sourceImageSha256": "c9a3164189705c711a36415fa8c5ab056b83242a81d0e26d0c7855770b3f7ec5"
+    },
+    {
+      "id": "ch5-source-solution-definition",
+      "page": 121,
+      "printedPage": "114",
+      "indexAnchor": 0,
+      "anchorLabel": "方程的解、解方程",
+      "locator": "教材原文：方程的解、解方程；已核对原页及局部边界。",
+      "region": {
+        "x": 0.082822,
+        "y": 0.208899,
+        "width": 0.795245,
+        "height": 0.078676
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.248237
+      },
+      "sourceImageSha256": "b2e3d50e80365e318fd96a1e7d3fba8ac711b6bd7d58d5b01ec4db2ad0403dcd"
+    },
+    {
+      "id": "ch5-source-linear-definition",
+      "page": 122,
+      "printedPage": "115",
+      "indexAnchor": 0,
+      "anchorLabel": "一元一次方程",
+      "locator": "教材原文：一元一次方程的完整定义；已核对原页及局部边界。",
+      "region": {
+        "x": 0.127301,
+        "y": 0.067824,
+        "width": 0.792945,
+        "height": 0.078676
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.107162
+      },
+      "sourceImageSha256": "96927d8350d4ffa7a8391d457f016e75f4d73b616b7ddfbf0a575c4ed63611ec"
+    },
+    {
+      "id": "ch5-source-equality-transitive",
+      "page": 122,
+      "printedPage": "115",
+      "indexAnchor": 4,
+      "anchorLabel": "等式两边可以交换；相等关系可以传递",
+      "locator": "教材原文：相等关系可以传递；已核对原页及局部边界。",
+      "region": {
+        "x": 0.173313,
+        "y": 0.760174,
+        "width": 0.566718,
+        "height": 0.026587
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.773467
+      },
+      "sourceImageSha256": "96927d8350d4ffa7a8391d457f016e75f4d73b616b7ddfbf0a575c4ed63611ec"
+    },
+    {
+      "id": "ch5-source-equality-add-subtract",
+      "page": 123,
+      "printedPage": "116",
+      "indexAnchor": 0,
+      "anchorLabel": "等式的性质1",
+      "locator": "教材原文：等式的性质1及公式；已核对原页及局部边界。",
+      "region": {
+        "x": 0.128834,
+        "y": 0.097667,
+        "width": 0.71089,
+        "height": 0.077048
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.136191
+      },
+      "sourceImageSha256": "e0fd1d55fa73f5b037a63fa63630d13390dee1bba2195388139f8d8f9197e6f4"
+    },
+    {
+      "id": "ch5-source-equality-multiply-divide",
+      "page": 123,
+      "printedPage": "116",
+      "indexAnchor": 1,
+      "anchorLabel": "等式的性质2",
+      "locator": "教材原文：等式的性质2及非零条件；已核对原页及局部边界。",
+      "region": {
+        "x": 0.128834,
+        "y": 0.183939,
+        "width": 0.743865,
+        "height": 0.113402
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.24064
+      },
+      "sourceImageSha256": "e0fd1d55fa73f5b037a63fa63630d13390dee1bba2195388139f8d8f9197e6f4"
+    },
+    {
+      "id": "ch5-source-transpose-rule",
+      "page": 129,
+      "printedPage": "122",
+      "indexAnchor": 3,
+      "anchorLabel": "移项",
+      "locator": "教材原文：移项的定义；已核对原页及局部边界。",
+      "region": {
+        "x": 0.129601,
+        "y": 0.773196,
+        "width": 0.615798,
+        "height": 0.022789
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.78459
+      },
+      "sourceImageSha256": "049cabfdf0eeeec3acd25b2c92ba7fbf5807cc7b62683da736b77bdbbc644afa"
+    },
+    {
+      "id": "ch5-source-solving-steps",
+      "page": 135,
+      "printedPage": "128",
+      "indexAnchor": 1,
+      "anchorLabel": "归纳",
+      "locator": "教材原文：解一元一次方程的一般步骤；已核对原页及局部边界。",
+      "region": {
+        "x": 0.107362,
+        "y": 0.485621,
+        "width": 0.773006,
+        "height": 0.078676
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.524959
+      },
+      "sourceImageSha256": "72c3b8ceaf9934a4cc180c60eafbdb274e5ae406e5e158c1e02587f3df41bfe6"
+    },
+    {
+      "id": "ch5-source-work-person-formula",
+      "page": 141,
+      "printedPage": "134",
+      "indexAnchor": 0,
+      "anchorLabel": "例2（续）",
+      "locator": "教材原文：工作量与人均效率、人数、时间的关系；已核对原页及局部边界。",
+      "region": {
+        "x": 0.638037,
+        "y": 0.096582,
+        "width": 0.222393,
+        "height": 0.120998
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.157081
+      },
+      "sourceImageSha256": "807d1ba33179e78a82a0685782325d43ece4b7891a9d29f0454c0332b9749d43"
+    },
+    {
+      "id": "ch5-source-modeling-process",
+      "page": 141,
+      "printedPage": "134",
+      "indexAnchor": 1,
+      "anchorLabel": "归纳",
+      "locator": "教材原文：用一元一次方程解决实际问题的基本过程；已核对原页及局部边界。",
+      "region": {
+        "x": 0.105061,
+        "y": 0.302767,
+        "width": 0.743865,
+        "height": 0.272382
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.438958
+      },
+      "sourceImageSha256": "807d1ba33179e78a82a0685782325d43ece4b7891a9d29f0454c0332b9749d43"
+    },
+    {
+      "id": "ch5-source-modeling-intro",
+      "page": 120,
+      "printedPage": "113",
+      "indexAnchor": 1,
+      "anchorLabel": "归纳",
+      "locator": "教材“归纳”：分析数量关系、根据相等关系列方程的完整两句及流程图。",
+      "region": {
+        "x": 0.152607,
+        "y": 0.510581,
+        "width": 0.740798,
+        "height": 0.107434
+      },
+      "marker": {
+        "x": 0.925,
+        "y": 0.564297
+      },
+      "sourceImageSha256": "af5c0284a6e20ddb5f461bcef7d6332ffadf9eb4e8668c1d76adce697b94953c"
     }
   ]
 }

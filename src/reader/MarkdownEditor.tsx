@@ -19,12 +19,12 @@ export function MarkdownEditor({ value, onSave, onSaved, onCancel, label = 'Mark
   onEdit?: () => void;
 }) {
   const [draft, setDraft] = useState(value);
-  const [preview, setPreview] = useState(false);
+  const [preview, setPreview] = useState(note && !!value.trim());
   const [savedDraft, setSavedDraft] = useState(value);
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
   const dirty = saving || draft !== (note ? savedDraft : value) || additionalDirty || error !== null;
-  const canSave = note ? dirty && !!(value.trim() || draft.trim()) : !!draft.trim();
+  const canSave = !!draft.trim();
   const callbacks = useRef({ onSave, onSaved, onEdit, note });
   callbacks.current = { onSave, onSaved, onEdit, note };
   const latestDraft = useRef(value);
@@ -74,6 +74,7 @@ export function MarkdownEditor({ value, onSave, onSaved, onCancel, label = 'Mark
           latestDraft.current = next;
           setDraft(next);
           callbacks.current.onEdit?.();
+          if (callbacks.current.note) void save(next);
         }),
       ],
     });
@@ -96,15 +97,17 @@ export function MarkdownEditor({ value, onSave, onSaved, onCancel, label = 'Mark
   </>;
   return <form className="markdown-editor" data-dirty={dirty} data-saving={saving} onSubmit={(event) => {
     event.preventDefault();
-    if (canSave && !saving) void save(draft);
+    if (!note && canSave && !saving) void save(draft);
   }}>
     <span id={id} className="sr-only">{label}</span>
     {note && <div className="note-heading"><h3>我的笔记</h3>
-      <div className="note-actions">{saveActions}</div>
+      <button type="button" className="text-button note-mode-toggle" aria-pressed={preview} onClick={() => setPreview(!preview)}>{preview ? '源码' : '预览'}</button>
     </div>}
     <div ref={editorHost} className="markdown-source" hidden={preview} />
     {preview && <div className="editor-preview" aria-label="Markdown 预览">{draft.trim() ? <MarkdownContent>{draft}</MarkdownContent> : <p>还没有内容</p>}</div>}
-    {error && <p role="alert">{error}</p>}
+    {error && <div className="editor-save-error"><p role="alert">{error}</p>
+      {note && <button type="button" className="text-button note-retry" disabled={saving} onClick={() => { void save(draft); }}>重试</button>}
+    </div>}
     {!note && <div className="editor-actions">
       <button type="button" className="text-button editor-preview-toggle" aria-pressed={preview} onClick={() => setPreview(!preview)}>{preview ? '继续编辑' : '预览'}</button>
       {saveActions}

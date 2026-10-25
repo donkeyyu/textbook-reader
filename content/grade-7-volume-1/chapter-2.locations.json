@@ -29,16 +29,16 @@
       "printedPage": null,
       "indexAnchor": 1,
       "anchorLabel": "收支情况表",
-      "locator": "章引言（2）：收支表中的结余的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "locator": "章引言第（2）问完整题干、收支情况表及表后两项结余如何得到的提问。",
       "region": {
-        "x": 0.13,
-        "y": 0.48,
-        "width": 0.64,
-        "height": 0.026
+        "x": 0.085,
+        "y": 0.276,
+        "width": 0.79,
+        "height": 0.228
       },
       "marker": {
         "x": 0.95,
-        "y": 0.493
+        "y": 0.39
       },
       "sourceImageSha256": "c24ca8d91aca5c8de5411ddb264045e3eeb410302ec303af8f693b5b1366efa9"
     },
@@ -162,7 +162,7 @@
       "printedPage": "26",
       "indexAnchor": 1,
       "anchorLabel": "思考；探究",
-      "locator": "探究：先左后右与先右后左（含数轴旁注）的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "locator": "“探究”第（1）（2）问：先左后右、先右后左的两种运动；页底数轴旁注另设入口。",
       "region": {
         "x": 0.105,
         "y": 0.552,
@@ -172,6 +172,25 @@
       "marker": {
         "x": 0.95,
         "y": 0.605
+      },
+      "sourceImageSha256": "d1856fa7d9dbe7d7e7979292a1eda0d1288ce2b8cbcf0b8c351d4885d81d9cc1"
+    },
+    {
+      "id": "ch2-q-p33-number-line-note",
+      "page": 33,
+      "printedPage": "26",
+      "indexAnchor": 1,
+      "anchorLabel": "思考；探究",
+      "locator": "页底蓝色旁注“你能用数轴表示算式③④吗”的两行文字。",
+      "region": {
+        "x": 0.62,
+        "y": 0.736,
+        "width": 0.238,
+        "height": 0.055
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.7625
       },
       "sourceImageSha256": "d1856fa7d9dbe7d7e7979292a1eda0d1288ce2b8cbcf0b8c351d4885d81d9cc1"
     },
@@ -504,7 +523,7 @@
       "printedPage": "29",
       "indexAnchor": 1,
       "anchorLabel": "例2",
-      "locator": "例2：运算律简化加法（含旁注）的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "locator": "例2“计算”及题干起始处；右侧询问简化方式和依据的旁注另设入口。",
       "region": {
         "x": 0.17,
         "y": 0.435,
@@ -514,6 +533,25 @@
       "marker": {
         "x": 0.95,
         "y": 0.4475
+      },
+      "sourceImageSha256": "a9599ed662e6d9b3ef69cf6bb192a5f5daed4e456318680d4e01842f21002c60"
+    },
+    {
+      "id": "ch2-q-p36-simplification-note",
+      "page": 36,
+      "printedPage": "29",
+      "indexAnchor": 1,
+      "anchorLabel": "例2",
+      "locator": "例2右侧蓝色旁注“例2中是怎样使计算简化的？依据是什么？”的两行文字。",
+      "region": {
+        "x": 0.671,
+        "y": 0.562,
+        "width": 0.23,
+        "height": 0.057
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.573
       },
       "sourceImageSha256": "a9599ed662e6d9b3ef69cf6bb192a5f5daed4e456318680d4e01842f21002c60"
     },
@@ -561,7 +599,7 @@
       "printedPage": "29",
       "indexAnchor": 2,
       "anchorLabel": "例3",
-      "locator": "例3：小麦质量和总偏差（含续页两解法比较）的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "locator": "例3小麦称重的题干三行：总质量及相对每袋50 kg的总偏差；解答续PDF第37页，续页比较运算律的旁注另设入口。",
       "region": {
         "x": 0.13,
         "y": 0.689,
@@ -573,6 +611,25 @@
         "y": 0.7285
       },
       "sourceImageSha256": "a9599ed662e6d9b3ef69cf6bb192a5f5daed4e456318680d4e01842f21002c60"
+    },
+    {
+      "id": "ch2-q-p37-compare-methods-note",
+      "page": 37,
+      "printedPage": "30",
+      "indexAnchor": 0,
+      "anchorLabel": "例3（续）",
+      "locator": "例3解法2右侧蓝色旁注“比较两种解法。解法2中使用了哪些运算律？”的两行文字。",
+      "region": {
+        "x": 0.619,
+        "y": 0.31,
+        "width": 0.247,
+        "height": 0.059
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3375
+      },
+      "sourceImageSha256": "674cb405de81cde7fccffa34451d5c317eedb6aaac07b93922cf104318914c8c"
     },
     {
       "id": "ch2-deviation-sum",
@@ -865,7 +922,7 @@
       "printedPage": "32",
       "indexAnchor": 2,
       "anchorLabel": "例5",
-      "locator": "例5：加减混合运算（含续页运算律旁注）的题号、题干或明确作答语句；跨页内容按题目连续阅读。",
+      "locator": "例5加减混合运算的题干起始处；解答续PDF第40页，续页询问运算律的旁注另设入口。",
       "region": {
         "x": 0.13,
         "y": 0.723,
@@ -877,6 +934,25 @@
         "y": 0.736
       },
       "sourceImageSha256": "f702f5da6803e4a554df1161fa2d2a877586dc146714d3e61a57af04ce7d60cc"
+    },
+    {
+      "id": "ch2-q-p40-laws-note",
+      "page": 40,
+      "printedPage": "33",
+      "indexAnchor": 0,
+      "anchorLabel": "例5（续）",
+      "locator": "页首蓝色旁注“这里使用了哪些运算律？”的两行文字。",
+      "region": {
+        "x": 0.669,
+        "y": 0.086,
+        "width": 0.232,
+        "height": 0.054
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.1115
+      },
+      "sourceImageSha256": "01ca4e1a4cb353fa53a9ff0234ba9702add04964a6ea0e2cd68662ca0d5a4709"
     },
     {
       "id": "ch2-mixed-convert-before-reorder",
@@ -1530,7 +1606,7 @@
       "printedPage": "39",
       "indexAnchor": 0,
       "anchorLabel": "思考",
-      "locator": "页上思考首句“利用上面归纳的结论计算下面的算式，你能发现什么规律”；包含其后按规律填写的四个算式及右侧“你能得出负数与0相乘的结果吗”旁注。",
+      "locator": "页上思考首句及后续按规律填写的四个算式；右侧“负数与0相乘”的独立旁注另设入口。",
       "region": {
         "x": 0.196,
         "y": 0.168,
@@ -1540,6 +1616,25 @@
       "marker": {
         "x": 0.95,
         "y": 0.18
+      },
+      "sourceImageSha256": "4fd726f5d53b582206b878ba0f87e200d725d168f8a403ed50f1f64ebf6669e4"
+    },
+    {
+      "id": "ch2-q-p46-zero-product-note",
+      "page": 46,
+      "printedPage": "39",
+      "indexAnchor": 0,
+      "anchorLabel": "思考",
+      "locator": "思考填空右侧蓝色旁注“你能得出负数与0相乘的结果吗？”的两行文字。",
+      "region": {
+        "x": 0.668,
+        "y": 0.36,
+        "width": 0.233,
+        "height": 0.054
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3855
       },
       "sourceImageSha256": "4fd726f5d53b582206b878ba0f87e200d725d168f8a403ed50f1f64ebf6669e4"
     },
@@ -3126,7 +3221,7 @@
       "printedPage": "56",
       "indexAnchor": 0,
       "anchorLabel": "例6",
-      "locator": "例6：按要求取近似数（含精确度旁注）的题号及题干起始处；连续小问共用此入口。",
+      "locator": "例6按括号要求取近似数的题干起始处；右侧精确度旁注使用已有独立入口。",
       "region": {
         "x": 0.13,
         "y": 0.069,
@@ -3145,16 +3240,16 @@
       "printedPage": "56",
       "indexAnchor": 0,
       "anchorLabel": "例6",
-      "locator": "例6解答第（3）（4）行“1.804≈1.8”“1.804≈1.80”；旁注已一并核对。",
+      "locator": "例6右侧蓝色旁注：比较近似数1.8与1.80的精确度，并询问1.80末尾的0能否去掉。",
       "region": {
-        "x": 0.13,
-        "y": 0.211,
-        "width": 0.19,
-        "height": 0.05
+        "x": 0.619,
+        "y": 0.163,
+        "width": 0.238,
+        "height": 0.101
       },
       "marker": {
         "x": 0.95,
-        "y": 0.236
+        "y": 0.2085
       },
       "sourceImageSha256": "2d50e616e142275851e8e48eaba597e2f8cddac798b68680c5c880537436f3fb"
     },
@@ -3829,7 +3924,7 @@
       "printedPage": "61",
       "indexAnchor": 0,
       "anchorLabel": "复习巩固",
-      "locator": "复习题2第3题：相反数的和与倒数的积的题号及题干起始处；连续小问共用此入口。",
+      "locator": "复习题2第3题：分别求互为相反数、互为倒数的两个数之和。",
       "region": {
         "x": 0.14,
         "y": 0.548,
@@ -4190,16 +4285,16 @@
       "printedPage": "63",
       "indexAnchor": 3,
       "anchorLabel": "活动一 认识进位制，探究不同进位制的数之间的转换",
-      "locator": "活动一首段“逢十进一”“逢二进一”及基数定义。",
+      "locator": "活动一开头进位制、基数的定义；后续数位说明续于已核对的PDF71。",
       "region": {
-        "x": 0.129,
-        "y": 0.78,
+        "x": 0.13,
+        "y": 0.783,
         "width": 0.79,
-        "height": 0.078
+        "height": 0.075
       },
       "marker": {
         "x": 0.95,
-        "y": 0.819
+        "y": 0.8205
       },
       "sourceImageSha256": "203064f32e5f417df19d2c147e1f792d4753d19fee4bb22c0a705aa1f31d891c"
     },
@@ -4601,6 +4696,652 @@
         "y": 0.083
       },
       "sourceImageSha256": "bc09b68189e475fda6605c8137a85056bdcbeb4f54b050421c5a89d90f65e358"
+    },
+    {
+      "id": "ch2-source-addition-rule",
+      "page": 34,
+      "printedPage": "27",
+      "indexAnchor": 1,
+      "anchorLabel": "有理数加法法则",
+      "locator": "蓝字有理数加法法则的三条完整规定，包含异号绝对值相等及与0相加。",
+      "region": {
+        "x": 0.13,
+        "y": 0.45,
+        "width": 0.79,
+        "height": 0.113
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.5065
+      },
+      "sourceImageSha256": "7c23a658f9239e06aa1eae87375c558084ed15d23b10cf8bf02d2c60dda8585c"
+    },
+    {
+      "id": "ch2-source-addition-commutative",
+      "page": 35,
+      "printedPage": "28",
+      "indexAnchor": 2,
+      "anchorLabel": "加法交换律",
+      "locator": "页底加法交换律的蓝字陈述及a+b=b+a公式框。",
+      "region": {
+        "x": 0.085,
+        "y": 0.853,
+        "width": 0.66,
+        "height": 0.063
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.8845
+      },
+      "sourceImageSha256": "59fb72be58ac51c2e808809974f349d5f7e05e5477a95179006d1cf70ba0ef4d"
+    },
+    {
+      "id": "ch2-source-addition-associative",
+      "page": 36,
+      "printedPage": "29",
+      "indexAnchor": 0,
+      "anchorLabel": "加法结合律",
+      "locator": "探究后加法结合律的完整陈述、公式和多个数相加的推广。",
+      "region": {
+        "x": 0.13,
+        "y": 0.225,
+        "width": 0.79,
+        "height": 0.146
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.298
+      },
+      "sourceImageSha256": "a9599ed662e6d9b3ef69cf6bb192a5f5daed4e456318680d4e01842f21002c60"
+    },
+    {
+      "id": "ch2-source-number-line-motion",
+      "page": 32,
+      "printedPage": "25",
+      "indexAnchor": 2,
+      "anchorLabel": "思考",
+      "locator": "下方思考前规定向右为正、向左为负以及运动长度记法的两行原文。",
+      "region": {
+        "x": 0.13,
+        "y": 0.629,
+        "width": 0.79,
+        "height": 0.066
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.662
+      },
+      "sourceImageSha256": "3bb1478e3cb011528c43a68a0fe5b1658d8548359577d6c6e655953050302bde"
+    },
+    {
+      "id": "ch2-source-subtraction-inverse",
+      "page": 38,
+      "printedPage": "31",
+      "indexAnchor": 0,
+      "anchorLabel": "图2.1-4",
+      "locator": "页首减法是加法逆运算及推广到有理数后仍保留该关系的原文。",
+      "region": {
+        "x": 0.13,
+        "y": 0.069,
+        "width": 0.61,
+        "height": 0.078
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.108
+      },
+      "sourceImageSha256": "b0273942826b78654f3d3569dd19de7d772a363bb329046aa8919c3424d08511"
+    },
+    {
+      "id": "ch2-source-subtraction-rule",
+      "page": 38,
+      "printedPage": "31",
+      "indexAnchor": 1,
+      "anchorLabel": "有理数减法法则",
+      "locator": "有理数减法法则：减去一个数等于加这个数的相反数，及a−b=a+(−b)公式。",
+      "region": {
+        "x": 0.175,
+        "y": 0.636,
+        "width": 0.465,
+        "height": 0.115
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.6935
+      },
+      "sourceImageSha256": "b0273942826b78654f3d3569dd19de7d772a363bb329046aa8919c3424d08511"
+    },
+    {
+      "id": "ch2-source-sum-abbreviation",
+      "page": 40,
+      "printedPage": "33",
+      "indexAnchor": 1,
+      "anchorLabel": "归纳",
+      "locator": "归纳后将四个数的和省略括号和加号的说明、简写和两种读法；是记法用例。",
+      "region": {
+        "x": 0.13,
+        "y": 0.265,
+        "width": 0.79,
+        "height": 0.131
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.3305
+      },
+      "sourceImageSha256": "01ca4e1a4cb353fa53a9ff0234ba9702add04964a6ea0e2cd68662ca0d5a4709"
+    },
+    {
+      "id": "ch2-source-wheat-records-example",
+      "page": 37,
+      "printedPage": "30",
+      "indexAnchor": 0,
+      "anchorLabel": "例3（续）",
+      "locator": "例3解法2开头：超过50 kg记正、不足记负的约定和完整10袋记录，不含下一行求和式；作为用例。",
+      "region": {
+        "x": 0.085,
+        "y": 0.182,
+        "width": 0.79,
+        "height": 0.084
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.224
+      },
+      "sourceImageSha256": "674cb405de81cde7fccffa34451d5c317eedb6aaac07b93922cf104318914c8c"
+    },
+    {
+      "id": "ch2-source-wheat-total-example",
+      "page": 37,
+      "printedPage": "30",
+      "indexAnchor": 0,
+      "anchorLabel": "例3（续）",
+      "locator": "例3解法2的50×10+2.5以及答句；对照总计超过量和总质量的用例。",
+      "region": {
+        "x": 0.13,
+        "y": 0.383,
+        "width": 0.67,
+        "height": 0.051
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4085
+      },
+      "sourceImageSha256": "674cb405de81cde7fccffa34451d5c317eedb6aaac07b93922cf104318914c8c"
+    },
+    {
+      "id": "ch2-source-multiplication-rule",
+      "page": 46,
+      "printedPage": "39",
+      "indexAnchor": 1,
+      "anchorLabel": "有理数乘法法则",
+      "locator": "有理数乘法法则蓝字两行，完整包含同号、异号、绝对值和与0相乘。",
+      "region": {
+        "x": 0.175,
+        "y": 0.574,
+        "width": 0.73,
+        "height": 0.052
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.6
+      },
+      "sourceImageSha256": "4fd726f5d53b582206b878ba0f87e200d725d168f8a403ed50f1f64ebf6669e4"
+    },
+    {
+      "id": "ch2-source-reciprocal-definition",
+      "page": 47,
+      "printedPage": "40",
+      "indexAnchor": 1,
+      "anchorLabel": "倒数",
+      "locator": "例1之后蓝字“乘积是1的两个数互为倒数”；不以例1的特定数对代替定义。",
+      "region": {
+        "x": 0.13,
+        "y": 0.252,
+        "width": 0.53,
+        "height": 0.024
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.264
+      },
+      "sourceImageSha256": "bcf61450807d708d19a2663d1fff4b76ad2f457c7444b454393f32653ab639bc"
+    },
+    {
+      "id": "ch2-source-multiplication-laws",
+      "page": 48,
+      "printedPage": "41",
+      "indexAnchor": 0,
+      "anchorLabel": "乘法交换律；乘法结合律",
+      "locator": "上半页连续的乘法交换律、结合律陈述及公式，止于结合律公式框；分配律另有入口。",
+      "region": {
+        "x": 0.13,
+        "y": 0.069,
+        "width": 0.52,
+        "height": 0.248
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.193
+      },
+      "sourceImageSha256": "3a63a4cd51de3e45387c400a6ea289ca6602f2b47af7ab06099ff4cddeff3c0c"
+    },
+    {
+      "id": "ch2-source-distributive-law",
+      "page": 48,
+      "printedPage": "41",
+      "indexAnchor": 1,
+      "anchorLabel": "分配律",
+      "locator": "探究之后分配律的完整蓝字陈述和a(b+c)=ab+ac公式框，不包含上面的待解探究。",
+      "region": {
+        "x": 0.13,
+        "y": 0.544,
+        "width": 0.52,
+        "height": 0.137
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.6125
+      },
+      "sourceImageSha256": "3a63a4cd51de3e45387c400a6ea289ca6602f2b47af7ab06099ff4cddeff3c0c"
+    },
+    {
+      "id": "ch2-source-product-signs",
+      "page": 49,
+      "printedPage": "42",
+      "indexAnchor": 2,
+      "anchorLabel": "几个不是0的数相乘",
+      "locator": "多个数相乘的完整结论：先限定非零，再区分负乘数个数奇偶，并单列含0情况。",
+      "region": {
+        "x": 0.085,
+        "y": 0.592,
+        "width": 0.79,
+        "height": 0.074
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.629
+      },
+      "sourceImageSha256": "27abf2bed4e661c1183edc74c4018d3c46fc321a8fe6062a4a72aa4f1425a6e0"
+    },
+    {
+      "id": "ch2-source-division-inverse",
+      "page": 50,
+      "printedPage": "43",
+      "indexAnchor": 1,
+      "anchorLabel": "2.2.2 有理数的除法",
+      "locator": "有理数除法小节开头：除法是乘法的逆运算，推广后仍保留这一关系。",
+      "region": {
+        "x": 0.13,
+        "y": 0.489,
+        "width": 0.79,
+        "height": 0.075
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.5265
+      },
+      "sourceImageSha256": "9cba73595fbbb40fc77f47ee797bbcc8920ec67fe1c0e6103b735c164c984db0"
+    },
+    {
+      "id": "ch2-source-division-rule",
+      "page": 51,
+      "printedPage": "44",
+      "indexAnchor": 0,
+      "anchorLabel": "有理数除法法则",
+      "locator": "有理数除法法则、b≠0公式，以及同异号与0作被除数的完整另一种说法。",
+      "region": {
+        "x": 0.085,
+        "y": 0.198,
+        "width": 0.53,
+        "height": 0.27
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.333
+      },
+      "sourceImageSha256": "ce65a47911e77799fc7b6eccbad4e1819afc2c04debd758a62bbfff49a1a1bdc"
+    },
+    {
+      "id": "ch2-source-rational-fraction-form",
+      "page": 52,
+      "printedPage": "45",
+      "indexAnchor": 0,
+      "anchorLabel": "有理数写成分数的形式",
+      "locator": "页首有理数写作p/q的原文，包含p、q均为整数、q≠0以及整数写成分母1的说明。",
+      "region": {
+        "x": 0.13,
+        "y": 0.071,
+        "width": 0.52,
+        "height": 0.172
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.157
+      },
+      "sourceImageSha256": "0509f517ad74e609d512b17aac16cbdd5d9c32d364d41a486b95b877e86a94f9"
+    },
+    {
+      "id": "ch2-source-four-operation-order",
+      "page": 53,
+      "printedPage": "46",
+      "indexAnchor": 0,
+      "anchorLabel": "先乘除，后加减",
+      "locator": "页首四则混合运算“先乘除，后加减”的陈述，保留没有括号指定其他次序的条件。",
+      "region": {
+        "x": 0.085,
+        "y": 0.071,
+        "width": 0.79,
+        "height": 0.048
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.095
+      },
+      "sourceImageSha256": "329b4457e7b0e425b387863a1ac8a1b8ce2a638126275175dc76a6a2c3cfa9b5"
+    },
+    {
+      "id": "ch2-source-monthly-average-example",
+      "page": 53,
+      "printedPage": "46",
+      "indexAnchor": 2,
+      "anchorLabel": "例8",
+      "locator": "例8平均每月盈亏、时段月份与全年合计的完整用例；不是平均数定义。",
+      "region": {
+        "x": 0.085,
+        "y": 0.294,
+        "width": 0.79,
+        "height": 0.218
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.403
+      },
+      "sourceImageSha256": "329b4457e7b0e425b387863a1ac8a1b8ce2a638126275175dc76a6a2c3cfa9b5"
+    },
+    {
+      "id": "ch2-source-power-definition",
+      "page": 58,
+      "printedPage": "51",
+      "indexAnchor": 2,
+      "anchorLabel": "乘方",
+      "locator": "一般n个a相乘的记号、乘方与幂、底数与指数的定义，以及一次方省略指数的说明。",
+      "region": {
+        "x": 0.13,
+        "y": 0.585,
+        "width": 0.79,
+        "height": 0.208
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.689
+      },
+      "sourceImageSha256": "2f5861fce1852c92519517f4dbc68d5fed88a5ae7a57b86b1cf1f6641fed4836"
+    },
+    {
+      "id": "ch2-source-power-signs",
+      "page": 59,
+      "printedPage": "52",
+      "indexAnchor": 1,
+      "anchorLabel": "负数的奇次幂是负数，负数的偶次幂是正数",
+      "locator": "负数奇偶次幂、正数的正整数次幂和0的正整数次幂的完整原文。",
+      "region": {
+        "x": 0.13,
+        "y": 0.282,
+        "width": 0.79,
+        "height": 0.076
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.32
+      },
+      "sourceImageSha256": "193636434e1ac63522995e92e9e116aa10f2c57628c2275f6fbe8e908703cd42"
+    },
+    {
+      "id": "ch2-source-operation-order",
+      "page": 60,
+      "printedPage": "53",
+      "indexAnchor": 0,
+      "anchorLabel": "先乘方，再乘除，最后加减",
+      "locator": "页首混合运算顺序三条完整规定：乘方、乘除、加减，同级从左到右，括号由内向外。",
+      "region": {
+        "x": 0.13,
+        "y": 0.07,
+        "width": 0.79,
+        "height": 0.133
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.1365
+      },
+      "sourceImageSha256": "268b3d0a7df24f797abc992deb7838d990511ad481e4228fc407b5e0a32d83a8"
+    },
+    {
+      "id": "ch2-source-scientific-definition",
+      "page": 62,
+      "printedPage": "55",
+      "indexAnchor": 0,
+      "anchorLabel": "科学记数法",
+      "locator": "科学记数法原文定义，包含1≤a<10、n为正整数，并接负数的对应说明与用例。",
+      "region": {
+        "x": 0.13,
+        "y": 0.07,
+        "width": 0.79,
+        "height": 0.105
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.1225
+      },
+      "sourceImageSha256": "58e0e0f1c6a3b120089a2da9590ccaa263889174bcbc7e9689c699788974f986"
+    },
+    {
+      "id": "ch2-source-approximation-precision",
+      "page": 62,
+      "printedPage": "55",
+      "indexAnchor": 3,
+      "anchorLabel": "2.3.3 近似数",
+      "locator": "精确度说明与π按个位、十分位、百分位、千分位、万分位取近似数的数位对照。",
+      "region": {
+        "x": 0.13,
+        "y": 0.667,
+        "width": 0.79,
+        "height": 0.244
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.789
+      },
+      "sourceImageSha256": "58e0e0f1c6a3b120089a2da9590ccaa263889174bcbc7e9689c699788974f986"
+    },
+    {
+      "id": "ch2-source-nonnegative-definition",
+      "page": 66,
+      "printedPage": "59",
+      "indexAnchor": 1,
+      "anchorLabel": "二、回顾与思考",
+      "locator": "回顾首段“正有理数、0统称非负有理数”的括号说明及扩充到有理数的上下文。",
+      "region": {
+        "x": 0.13,
+        "y": 0.495,
+        "width": 0.79,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.52
+      },
+      "sourceImageSha256": "6170aad304c0fb0f7d8ce1fdd1c03ba65021f6cb166aca735dba26059156c7d3"
+    },
+    {
+      "id": "ch2-source-base-definition",
+      "page": 70,
+      "printedPage": "63",
+      "indexAnchor": 3,
+      "anchorLabel": "活动一 认识进位制，探究不同进位制的数之间的转换",
+      "locator": "活动一开头进位制和基数的原文：逢几进一就是几进制，几进制的基数就是几。",
+      "region": {
+        "x": 0.13,
+        "y": 0.783,
+        "width": 0.79,
+        "height": 0.075
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.8205
+      },
+      "sourceImageSha256": "203064f32e5f417df19d2c147e1f792d4753d19fee4bb22c0a705aa1f31d891c"
+    },
+    {
+      "id": "ch2-source-place-value",
+      "page": 71,
+      "printedPage": "64",
+      "indexAnchor": 0,
+      "anchorLabel": "十进制的数位表示（续）",
+      "locator": "续接PDF70页末“从右起，第一位是个位”的数位说明；本页有3721幂展开和各位数量求和的归纳，起句须连同前页阅读。",
+      "region": {
+        "x": 0.085,
+        "y": 0.071,
+        "width": 0.79,
+        "height": 0.158
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.15
+      },
+      "sourceImageSha256": "6f260f38727a20de4938b37e70fa585cf6fb22b0734a9c391c3630d5c0b28773"
+    },
+    {
+      "id": "ch2-source-zero-power",
+      "page": 71,
+      "printedPage": "64",
+      "indexAnchor": 0,
+      "anchorLabel": "十进制的数位表示（续）",
+      "locator": "页首黄色旁注：规定当a≠0时，a⁰=1，保留非零条件。",
+      "region": {
+        "x": 0.638,
+        "y": 0.129,
+        "width": 0.23,
+        "height": 0.078
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.168
+      },
+      "sourceImageSha256": "6f260f38727a20de4938b37e70fa585cf6fb22b0734a9c391c3630d5c0b28773"
+    },
+    {
+      "id": "ch2-source-binary-context",
+      "page": 71,
+      "printedPage": "64",
+      "indexAnchor": 2,
+      "anchorLabel": "活动二 探究进制数的加法运算",
+      "locator": "活动二开头0、1与电路断通两种状态对应，以及输入转换、运算、输出的入门说明。",
+      "region": {
+        "x": 0.085,
+        "y": 0.593,
+        "width": 0.79,
+        "height": 0.079
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.6325
+      },
+      "sourceImageSha256": "6f260f38727a20de4938b37e70fa585cf6fb22b0734a9c391c3630d5c0b28773"
+    },
+    {
+      "id": "ch2-source-trigram-conventions",
+      "page": 72,
+      "printedPage": "65",
+      "indexAnchor": 3,
+      "anchorLabel": "图1、图2",
+      "locator": "页下图2的四组三爻符号及完整提示，包含阳爻/阴爻与1/0的约定，以及首组记作(011)₂的用例；保留图文对应以核对上下数位，不代填其余组。",
+      "region": {
+        "x": 0.13,
+        "y": 0.733,
+        "width": 0.79,
+        "height": 0.155
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.8105
+      },
+      "sourceImageSha256": "89206aa27a83fec9f3cb8ffc15cdcdfa1966aa51dcdb344846c09da83ed89176"
+    },
+    {
+      "id": "ch2-source-report-form",
+      "page": 74,
+      "printedPage": "67",
+      "indexAnchor": 1,
+      "anchorLabel": "研究报告参考表",
+      "locator": "完整研究报告参考表，包含活动名称、成员分工、意义、方案、过程、成果、体会与评价责任。",
+      "region": {
+        "x": 0.13,
+        "y": 0.158,
+        "width": 0.79,
+        "height": 0.745
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.5305
+      },
+      "sourceImageSha256": "bc09b68189e475fda6605c8137a85056bdcbeb4f54b050421c5a89d90f65e358"
+    },
+    {
+      "id": "ch2-source-report-process",
+      "page": 73,
+      "printedPage": "66",
+      "indexAnchor": 1,
+      "anchorLabel": "活动过程",
+      "locator": "活动过程的组建团队、方案构思、方案实施及展示交流四个连续步骤，用于核对报告栏目与实际工作的对应。",
+      "region": {
+        "x": 0.085,
+        "y": 0.287,
+        "width": 0.79,
+        "height": 0.307
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.4405
+      },
+      "sourceImageSha256": "c434b0d9a78a9ed4dcc1164ae95528ca8c5ad6bd3ef990933d90a7760424cc63"
+    },
+    {
+      "id": "ch2-source-place-value-start",
+      "page": 70,
+      "printedPage": "63",
+      "indexAnchor": 3,
+      "anchorLabel": "活动一 认识进位制，探究不同进位制的数之间的转换",
+      "locator": "页末十进制使用0～9及从右起第一位为个位的完整页内两行，语句“表示几个一”续于PDF71页首。",
+      "region": {
+        "x": 0.13,
+        "y": 0.866,
+        "width": 0.79,
+        "height": 0.05
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.891
+      },
+      "sourceImageSha256": "203064f32e5f417df19d2c147e1f792d4753d19fee4bb22c0a705aa1f31d891c"
+    },
+    {
+      "id": "ch2-source-ancient-terms",
+      "page": 44,
+      "printedPage": "37",
+      "indexAnchor": 0,
+      "anchorLabel": "我国古代的正负数加减运算法则——正负术",
+      "locator": "正负术阅读中已解释句子与现代加减算式的连续对照，不含页末尚待学生解释的“同名相除”问题。",
+      "region": {
+        "x": 0.16,
+        "y": 0.229,
+        "width": 0.735,
+        "height": 0.494
+      },
+      "marker": {
+        "x": 0.95,
+        "y": 0.476
+      },
+      "sourceImageSha256": "0b06c9307968ddac1a8a359068a2eab5f24eefc64de9ae9c351fe11ed5c61dd2"
     }
   ]
 }

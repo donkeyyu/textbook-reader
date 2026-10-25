@@ -1,8 +1,8 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { bookTitle, getPage, pageCount, pages, pageLabel, resolvePageInput, type PageInputMode } from "../textbook/catalog";
+import { bookTitle, getPage, pageCount, pages, pageLabel, resolvePageInput } from "../textbook/catalog";
 import { getLocation, getSupplement, supplementsForPage } from "../textbook/supplements";
 import { loadPersonal, savePersonal, type PersonalData, type PersonalSupplement } from './personal';
-import { MarkdownContent, MarkdownEditor } from './MarkdownEditor';
+import { MarkdownEditor } from './MarkdownEditor';
 import { PanelResize } from './PanelResize';
 import { PersonalPanel } from './PersonalPanel';
 import { RegionSelector } from './RegionSelector';
@@ -66,7 +66,6 @@ export function Reader() {
   const personalWrites = useRef(Promise.resolve());
   const [personalItem, setPersonalItem] = useState<PersonalSupplement | null>(null);
   const [selectionPage, setSelectionPage] = useState<number | null>(null);
-  const [editingNote, setEditingNote] = useState<string | null>(null);
   const [hiddenTypes, setHiddenTypes] = useState<SupplementType[]>([]);
   const [hiddenIds, setHiddenIds] = useState<string[]>([]);
   function storePersonal(update: (current: PersonalData) => PersonalData) {
@@ -90,7 +89,6 @@ export function Reader() {
   }
   const [currentPage, setCurrentPage] = useState(1);
   const [pageInput, setPageInput] = useState("");
-  const [pageMode, setPageMode] = useState<PageInputMode>("printed");
   const [pageError, setPageError] = useState("");
   const [editingPage, setEditingPage] = useState(false);
   const [navigationOpen, setNavigationOpen] = useState(() => window.matchMedia("(min-width: 761px)").matches);
@@ -206,7 +204,7 @@ export function Reader() {
 
   useEffect(() => {
     if (!editingPage) {
-      setPageInput(pageMode === "printed" ? getPage(currentPage).printedPage ?? "" : String(currentPage));
+      setPageInput(String(currentPage));
       setPageError("");
     }
     const list = thumbnailList.current;
@@ -217,7 +215,7 @@ export function Reader() {
         list.scrollTop = selected.offsetTop + selected.offsetHeight - list.clientHeight;
       }
     }
-  }, [currentPage, navigationOpen, pageMode, editingPage]);
+  }, [currentPage, navigationOpen, editingPage]);
 
   useLayoutEffect(() => {
     if (!commit || !scroller.current || !pageList.current) return;
@@ -233,7 +231,7 @@ export function Reader() {
     anchor.current = { page: commit.page, fraction: (element.scrollTop - metric.top) / metric.height };
     current.current = commit.page;
     setCurrentPage(commit.page);
-    setPageInput(pageMode === "printed" ? getPage(commit.page).printedPage ?? "" : String(commit.page));
+    setPageInput(String(commit.page));
     setPageError("");
     const panel = document.getElementById("supplement-panel");
     const focused = document.getElementById(commit.focusId);
@@ -254,6 +252,17 @@ export function Reader() {
     setCommit(null);
   }, [commit]);
 
+  useLayoutEffect(() => {
+    const panel = document.getElementById("supplement-panel");
+    const heading = panel?.querySelector<HTMLElement>(".supplement-heading");
+    if (!panel || !heading) return;
+    const measure = () => panel.style.setProperty("--heading-height", `${heading.offsetHeight}px`);
+    const observer = new ResizeObserver(measure);
+    observer.observe(heading);
+    measure();
+    return () => observer.disconnect();
+  }, [supplementId, choiceIds, personalItem]);
+
   useEffect(() => {
     const closePreview = () => clearPreview();
     window.addEventListener("resize", closePreview);
@@ -272,6 +281,7 @@ export function Reader() {
   function clearPreview() { setPreview(null); setGroupPreview(null); }
   function showGroupPreview(ids: string[]) {
     keepPreview();
+    if (choiceIds?.some((id) => ids.includes(id))) { clearPreview(); return; }
     setPreview(null);
     setGroupPreview(ids);
   }
@@ -282,6 +292,7 @@ export function Reader() {
   }
   function showPreview(id: string, button: HTMLButtonElement) {
     keepPreview();
+    if (supplementId === id) { clearPreview(); return; }
     setGroupPreview(null);
     const paper = button.closest(".paper")?.getBoundingClientRect();
     const reader = scroller.current?.getBoundingClientRect();
@@ -291,10 +302,13 @@ export function Reader() {
     const docked = Math.max(rightSpace, leftSpace) < 220;
     const onRight = rightSpace >= 220;
     const width = Math.min(280, onRight ? rightSpace : leftSpace);
+    const buttonBounds = button.getBoundingClientRect();
+    const maxHeight = docked ? Math.min(window.innerHeight * .35, reader.bottom - buttonBounds.bottom - 12) : undefined;
+    if (maxHeight !== undefined && maxHeight < 64) { clearPreview(); return; }
     setPreview({ id, anchor: {
-      top: button.getBoundingClientRect().top,
-      left: onRight ? paper.right + 12 : paper.left - width - 12,
-      width, docked,
+      top: buttonBounds.top,
+      left: docked ? reader.left : onRight ? paper.right + 12 : paper.left - width - 12,
+      width: docked ? reader.width : width, docked, maxHeight,
     } });
   }
 
@@ -358,6 +372,18 @@ export function Reader() {
     const location = id ? getLocation(getSupplement(id)!.locationId) : undefined;
     setSelectedLocation(location?.id ?? null);
     if (location) setCommit({ page: location.page, locationId: location.id, focusId: `choice-${id}` });
+  }
+
+  function locateSupplement() {
+    cancelJump(); keepPreview(); clearPreview();
+    const panelScroll = document.getElementById("supplement-panel")?.scrollTop ?? 0;
+    if (personalItem) {
+      setCommit({ page: personalItem.page, fraction: personalItem.region.y, focusId: "locate-personal", panelScroll });
+    } else if (supplementId) {
+      const location = getLocation(getSupplement(supplementId)!.locationId);
+      setSelectedLocation(location.id);
+      setCommit({ page: location.page, locationId: location.id, focusId: "locate-supplement", panelScroll });
+    }
   }
 
   function closeSupplement() {
@@ -425,7 +451,7 @@ export function Reader() {
       if (window.matchMedia("(max-width: 760px)").matches) setNavigationOpen(false);
     } catch {
       if (requestId.current === id) {
-        setPageInput(pageMode === "printed" ? getPage(current.current).printedPage ?? "" : String(current.current));
+        setPageInput(String(current.current));
         setError(`文件第 ${jump.page} 页暂时无法加载，当前阅读位置已保留。`);
       }
     } finally {
@@ -452,46 +478,32 @@ export function Reader() {
     requestAnimationFrame(() => document.querySelector<HTMLButtonElement>('.page-index')?.focus());
   }
 
-  const currentPrintedPage = getPage(currentPage).printedPage;
   const pageControls = <div className="page-controls">
-    <button className="page-index" type="button" aria-label={`文件页序 ${currentPage}/${pageCount}，${currentPrintedPage === null ? "无印刷页码" : `课本第 ${currentPrintedPage} 页`}，点击跳转`}
-      aria-expanded={editingPage} aria-controls="page-jump" title="跳转页面"
-      onClick={() => {
-        setPageInput(pageMode === "printed" ? currentPrintedPage ?? "" : String(currentPage));
-        setPageError(""); setEditingPage(!editingPage);
-      }}>
-      <span>文件页序 {currentPage}/{pageCount}</span>
-      <span>{currentPrintedPage === null ? "无印刷页码" : `课本第 ${currentPrintedPage} 页`}</span>
-    </button>
-    {editingPage && <form id="page-jump" className="page-jump" aria-label="跳转页面" onKeyDown={(event) => {
+    <button className="icon-button" aria-label="上一页" disabled={currentPage === 1 || pending} onClick={() => { void navigate({ page: currentPage - 1 }); }}><Chevron direction="left" /></button>
+    {editingPage ? <form id="page-jump" className="page-jump" aria-label="跳转页面" onBlur={() => {
+      setEditingPage(false); setPageError("");
+    }} onKeyDown={(event) => {
       if (event.key === 'Escape') { event.preventDefault(); event.stopPropagation(); closePageInput(); }
     }} onSubmit={(event) => {
       event.preventDefault();
-      const result = resolvePageInput(pageInput, pageMode);
+      const result = resolvePageInput(pageInput);
       if (result.error !== undefined) { setPageError(result.error); return; }
       setEditingPage(false); setPageError("");
       void navigate({ page: result.page });
     }}>
-      <select aria-label="跳页方式" value={pageMode} onChange={(event) => {
-        const mode = event.target.value as PageInputMode;
-        setPageMode(mode); setPageError("");
-        setPageInput(mode === "printed" ? currentPrintedPage ?? "" : String(currentPage));
-      }}>
-        <option value="printed">课本页码</option>
-        <option value="file">文件页序</option>
-      </select>
-      <input id="page-input" aria-label={pageMode === "printed" ? "课本页码" : "文件页序"} aria-invalid={!!pageError}
-        aria-describedby={pageError ? "page-input-error" : undefined} placeholder={pageMode === "printed" ? "课本页码" : `1–${pageCount}`}
-        autoFocus inputMode="numeric" value={pageInput} onChange={(event) => { setPageInput(event.target.value); setPageError(""); }}
+      <input id="page-input" aria-label="页码" aria-invalid={!!pageError}
+        aria-describedby={pageError ? "page-input-error" : undefined} placeholder={`1–${pageCount}`}
+        autoFocus inputMode="numeric" enterKeyHint="go" value={pageInput} onChange={(event) => { setPageInput(event.target.value); setPageError(""); }}
         onFocus={(event) => event.currentTarget.select()} />
-      <button className="text-button" type="submit">跳转</button>
-      <button className="text-button" type="button" onClick={closePageInput}>取消</button>
+      <span>/{pageCount}</span>
       {pageError && <p id="page-input-error" className="page-input-error" role="alert">{pageError}</p>}
-    </form>}
-    <div className="page-step-controls">
-      <button className="icon-button" aria-label="上一页" disabled={currentPage === 1 || pending} onClick={() => { void navigate({ page: currentPage - 1 }); }}><Chevron direction="left" /></button>
-      <button className="icon-button" aria-label="下一页" disabled={currentPage === pageCount || pending} onClick={() => { void navigate({ page: currentPage + 1 }); }}><Chevron direction="right" /></button>
-    </div>
+    </form> : <button className="page-index" type="button" aria-label={`第 ${currentPage} 页，共 ${pageCount} 页，点击输入页码`}
+      title="输入页码，按 Enter 跳转" onClick={() => {
+        setPageInput(String(currentPage)); setPageError(""); setEditingPage(true);
+      }}>
+      <span>{currentPage}/{pageCount}</span>
+    </button>}
+    <button className="icon-button" aria-label="下一页" disabled={currentPage === pageCount || pending} onClick={() => { void navigate({ page: currentPage + 1 }); }}><Chevron direction="right" /></button>
   </div>;
 
   return <div className="reader-app" onSubmitCapture={(event) => {
@@ -500,7 +512,7 @@ export function Reader() {
     }
   }} onClickCapture={(event) => {
     const target = event.target as HTMLElement;
-    if (target.closest('.markdown-editor, .personal-title, .method-toggle')) return;
+    if (target.closest('.markdown-editor, .personal-title, .method-toggle, .locate-button')) return;
     if (document.querySelector('[data-dirty="true"]') && target.closest('button, summary, input') && !window.confirm('有尚未保存的内容，放弃修改？')) {
       event.preventDefault(); event.stopPropagation();
     }
@@ -514,7 +526,7 @@ export function Reader() {
     }
     if (selectionPage) { setSelectionPage(null); return; }
     if (personalItem) return;
-    if (editingNote || event.currentTarget.querySelector('.markdown-editor[data-dirty="true"]')) return;
+    if (event.currentTarget.querySelector('.markdown-editor[data-dirty="true"]')) return;
     if (preview || groupPreview) {
       const id = preview?.id ?? groupPreview![0]!;
       clearPreview();
@@ -533,8 +545,8 @@ export function Reader() {
         </button>
         <h1>{bookTitle}</h1>
       </div>
+      {pageControls}
       <div className="toolbar-actions">
-        {!navigationOpen && pageControls}
         <details className="supplement-filters" onPointerLeave={(event) => {
           if (event.pointerType !== 'mouse') return;
           const filters = event.currentTarget;
@@ -549,7 +561,7 @@ export function Reader() {
             </svg>
           </summary>
           <div className="filter-options">
-            {(Object.entries(supplementTypes) as [SupplementType, string][]).map(([type, label]) => <label key={type}>
+            {(Object.entries(supplementTypes) as [SupplementType, string][]).map(([type, label]) => <label key={type} data-supplement-type={type}>
               <TypeMarker type={type} /><span>{label}</span>
               <input className="sr-only" type="checkbox" checked={!hiddenTypes.includes(type)} onChange={() => {
                 setHiddenTypes(hiddenTypes.includes(type) ? hiddenTypes.filter((value) => value !== type) : [...hiddenTypes, type]);
@@ -570,7 +582,6 @@ export function Reader() {
     {readingError && <p className="storage-error" role="status">{readingError}</p>}
     <main className={`reading-layout${navigationOpen ? " navigation-open" : ""}${note || choiceIds || personalItem ? " supplement-open" : ""}`}>
       <nav id="page-sidebar" className="page-sidebar" hidden={!navigationOpen} aria-label="页面导航">
-        {navigationOpen && pageControls}
         <div className="page-thumbnails" ref={thumbnailList}>
           {pages.map((page) => <button id={`thumbnail-${page.page}`} key={page.page} className="page-thumbnail"
             tabIndex={page.page === currentPage ? 0 : -1} aria-label={`跳转到文件第 ${page.page} 页，${page.printedPage === null ? "无印刷页码" : pageLabel(page)}`} aria-current={page.page === currentPage ? "page" : undefined}
@@ -590,7 +601,7 @@ export function Reader() {
           if (!bottomPanel && !preview?.anchor.docked) return;
           if (document.querySelector('[data-dirty="true"]') && !window.confirm('有尚未保存的内容，放弃修改？')) return;
           keepPreview(); clearPreview();
-          if (bottomPanel) { closeSupplement(); setPersonalItem(null); setEditingNote(null); }
+          if (bottomPanel) { closeSupplement(); setPersonalItem(null); }
         }}
         onWheel={cancelJump} onTouchStart={cancelJump} onKeyDown={(event) => {
           if (["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End", " "].includes(event.key)) cancelJump();
@@ -599,9 +610,13 @@ export function Reader() {
           {pages.map((page) => <section id={`page-${page.page}`} key={page.page} className="paper" tabIndex={-1}
             aria-label={`教材文件第 ${page.page} 页，${page.printedPage === null ? "无印刷页码" : pageLabel(page)}`} style={{ aspectRatio: `${page.width} / ${page.height}` }}>
             <PageImage page={page} />
-            {highlightedLocations.filter((location) => location.page === page.page).map((highlighted) => <div key={highlighted.id} id={`location-${highlighted.id}`} className={`location-highlight${previewNote || groupPreview ? " preview-highlight" : ""}`} tabIndex={-1}
-              aria-label={`教材位置：${highlighted.anchorLabel}`} style={{ left: `${highlighted.region.x * 100}%`, top: `${highlighted.region.y * 100}%`,
-                width: `${highlighted.region.width * 100}%`, height: `${highlighted.region.height * 100}%` }} />)}
+            {highlightedLocations.filter((location) => location.page === page.page).map((highlighted) => {
+              const highlightedNote = supplementsForPage(page.page).find((item) => item.locationId === highlighted.id);
+              return <div key={highlighted.id} id={`location-${highlighted.id}`} className={`location-highlight${previewNote || groupPreview ? " preview-highlight" : ""}`} tabIndex={-1}
+                data-supplement-type={highlightedNote ? supplementType(highlightedNote) : 'review'}
+                aria-label={`教材位置：${highlighted.anchorLabel}`} style={{ left: `${highlighted.region.x * 100}%`, top: `${highlighted.region.y * 100}%`,
+                  width: `${highlighted.region.width * 100}%`, height: `${highlighted.region.height * 100}%` }} />;
+            })}
             {groupMarkers(supplementsForPage(page.page).filter((item) => !hiddenIds.includes(item.id) && !hiddenTypes.includes(supplementType(item))).map((item) => {
               const { marker } = getLocation(item.locationId);
               return { id: item.id, x: marker.x * paperWidth, y: marker.y * paperWidth * page.height / page.width };
@@ -610,7 +625,8 @@ export function Reader() {
               const location = getLocation(item.locationId);
               const ids = group.map(({ id }) => id);
               const grouped = group.length > 1;
-              return <button key={item.id} id={`supplement-${item.id}`} className="supplement-marker" data-supplement-ids={ids.join(' ')}
+              const types = new Set(group.map(({ id }) => supplementType(getSupplement(id)!)));
+              return <button key={item.id} id={`supplement-${item.id}`} className="supplement-marker" data-supplement-ids={ids.join(' ')} data-supplement-type={types.size === 1 ? supplementType(item) : 'group'}
                 style={{ left: `${location.marker.x * 100}%`, top: `${location.marker.y * 100}%` }}
                 aria-label={grouped ? `选择此处的${group.length}条解读` : `${supplementTypes[supplementType(item)]}：${item.title}`}
                 aria-expanded={ids.includes(supplementId ?? '') || !!choiceIds?.some((id) => ids.includes(id)) || preview?.id === item.id}
@@ -623,10 +639,10 @@ export function Reader() {
                 {grouped && <span className="marker-count" aria-hidden="true">{group.length}</span>}
               </button>;
             })}
-            {!hiddenTypes.includes('personal') && personal.supplements.filter((item) => item.page === page.page && !hiddenIds.includes(item.id)).map((item) => <button key={item.id} className="supplement-marker personal-marker" aria-label={`我的补充：${item.title}`}
+            {!hiddenTypes.includes('personal') && personal.supplements.filter((item) => item.page === page.page && !hiddenIds.includes(item.id)).map((item) => <button key={item.id} className="supplement-marker personal-marker" data-supplement-type="personal" aria-label={`我的补充：${item.title}`}
               style={{ left: `${Math.min(.97, item.region.x + item.region.width) * 100}%`, top: `${item.region.y * 100}%` }}
               onClick={() => { closeSupplement(); clearPreview(); setPersonalItem(item); setSelectionPage(null); }}><TypeMarker type="personal" /></button>)}
-            {personalItem?.page === page.page && <div className="location-highlight" style={{ left: `${personalItem.region.x * 100}%`, top: `${personalItem.region.y * 100}%`, width: `${personalItem.region.width * 100}%`, height: `${personalItem.region.height * 100}%` }} />}
+            {personalItem?.page === page.page && <div className="location-highlight" data-supplement-type="personal" style={{ left: `${personalItem.region.x * 100}%`, top: `${personalItem.region.y * 100}%`, width: `${personalItem.region.width * 100}%`, height: `${personalItem.region.height * 100}%` }} />}
             {selectionPage === page.page && <RegionSelector onSelect={(region) => {
               setPersonalItem({ id: crypto.randomUUID(), title: '', markdown: '', page: page.page, region });
               setSelectionPage(null);
@@ -635,7 +651,7 @@ export function Reader() {
         </div>
       </div>
       {(personalItem || choiceIds || note) && <PanelResize />}
-      {personalItem && <PersonalPanel onEdit={cancelJump} key={personalItem.id} item={personalItem} isNew={!personal.supplements.some((item) => item.id === personalItem.id)}
+      {personalItem && <PersonalPanel onLocate={locateSupplement} onEdit={cancelJump} key={personalItem.id} item={personalItem} isNew={!personal.supplements.some((item) => item.id === personalItem.id)}
         onClose={() => setPersonalItem(null)} onSave={async (item) => {
           await storePersonal((current) => ({ ...current, supplements: [...current.supplements.filter((value) => value.id !== item.id), item] }));
           setHiddenTypes((types) => types.filter((type) => type !== 'personal'));
@@ -646,15 +662,10 @@ export function Reader() {
         }} />}
       {!personalItem && (choiceIds || note) && <SupplementPanel key={choiceIds?.join(" ") ?? note?.id} notes={choiceIds ? choiceIds.map((id) => getSupplement(id)!) : [note!]}
         methodOpenIds={methodOpenIds} onMethodToggle={(id) => setMethodOpenIds((open) => open.includes(id) ? open.filter((value) => value !== id) : [...open, id])}
-        expandedId={supplementId} onSelect={selectAccordion} pending={pending} onClose={closeSupplement} onRelated={relatedJump}
+        expandedId={supplementId} onSelect={selectAccordion} pending={pending} onClose={closeSupplement} onLocate={locateSupplement} onRelated={relatedJump}
         onHide={(id) => { setHiddenIds([...hiddenIds, id]); closeSupplement(); }}
         renderPersonal={(item) => <section className="personal-note" aria-label="我的笔记">
-          {!personal.notes[item.id] || editingNote === item.id ? <MarkdownEditor onEdit={() => { cancelJump(); setEditingNote(item.id); }} key={item.id} note value={personal.notes[item.id] ?? ''} label="笔记 Markdown" onSave={(value) => saveNote(item.id, value)} onSaved={() => setEditingNote(null)} onCancel={personal.notes[item.id] ? () => setEditingNote(null) : undefined} /> : <>
-            <div className="note-heading"><h3>我的笔记</h3>
-              <button className="text-button" onClick={() => setEditingNote(item.id)}>编辑</button>
-            </div>
-            <MarkdownContent>{personal.notes[item.id]!}</MarkdownContent>
-          </>}
+          <MarkdownEditor onEdit={cancelJump} key={item.id} note value={personal.notes[item.id] ?? ''} label="笔记 Markdown" onSave={(value) => saveNote(item.id, value)} />
         </section>}
         activeLocationId={selectedLocation}
         onBack={previous ? () => { void navigate({ page: previous.page, restore: previous }); } : undefined} />}

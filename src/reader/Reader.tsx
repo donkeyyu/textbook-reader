@@ -62,22 +62,31 @@ export function Reader() {
     catch { return { data: { supplements: [], notes: {} } as PersonalData, error: '本地笔记无法读取。请检查浏览器存储后刷新；当前不会覆盖已存内容。' }; }
   });
   const [personal, setPersonal] = useState(loaded.data);
+  const personalState = useRef(loaded.data);
+  const personalWrites = useRef(Promise.resolve());
   const [personalItem, setPersonalItem] = useState<PersonalSupplement | null>(null);
   const [selectionPage, setSelectionPage] = useState<number | null>(null);
   const [editingNote, setEditingNote] = useState<string | null>(null);
   const [hiddenTypes, setHiddenTypes] = useState<SupplementType[]>([]);
   const [hiddenIds, setHiddenIds] = useState<string[]>([]);
-  function storePersonal(data: PersonalData) {
-    if (loaded.error) throw new Error(loaded.error);
-    savePersonal(data, personal);
-    setPersonal(data);
+  function storePersonal(update: (current: PersonalData) => PersonalData) {
+    const write = personalWrites.current.then(async () => {
+      if (loaded.error) throw new Error(loaded.error);
+      const data = update(personalState.current);
+      await savePersonal(data, personalState.current);
+      personalState.current = data;
+      setPersonal(data);
+    });
+    personalWrites.current = write.catch(() => {});
+    return write;
   }
   function saveNote(id: string, value: string) {
-    const notes = { ...personal.notes };
-    if (value.trim()) notes[id] = value;
-    else delete notes[id];
-    storePersonal({ ...personal, notes });
-    setEditingNote(null);
+    return storePersonal((current) => {
+      const notes = { ...current.notes };
+      if (value.trim()) notes[id] = value;
+      else delete notes[id];
+      return { ...current, notes };
+    });
   }
   const [currentPage, setCurrentPage] = useState(1);
   const [pageInput, setPageInput] = useState("");
@@ -627,16 +636,20 @@ export function Reader() {
       </div>
       {(personalItem || choiceIds || note) && <PanelResize />}
       {personalItem && <PersonalPanel onEdit={cancelJump} key={personalItem.id} item={personalItem} isNew={!personal.supplements.some((item) => item.id === personalItem.id)}
-        onClose={() => setPersonalItem(null)} onSave={(item) => {
-          storePersonal({ ...personal, supplements: [...personal.supplements.filter((value) => value.id !== item.id), item] });
-          setHiddenTypes(hiddenTypes.filter((type) => type !== 'personal')); setPersonalItem(item);
-        }} onDelete={() => { storePersonal({ ...personal, supplements: personal.supplements.filter((item) => item.id !== personalItem.id) }); setPersonalItem(null); }} />}
+        onClose={() => setPersonalItem(null)} onSave={async (item) => {
+          await storePersonal((current) => ({ ...current, supplements: [...current.supplements.filter((value) => value.id !== item.id), item] }));
+          setHiddenTypes((types) => types.filter((type) => type !== 'personal'));
+          setPersonalItem((current) => current?.id === item.id ? item : current);
+        }} onDelete={async () => {
+          await storePersonal((current) => ({ ...current, supplements: current.supplements.filter((item) => item.id !== personalItem.id) }));
+          setPersonalItem((current) => current?.id === personalItem.id ? null : current);
+        }} />}
       {!personalItem && (choiceIds || note) && <SupplementPanel key={choiceIds?.join(" ") ?? note?.id} notes={choiceIds ? choiceIds.map((id) => getSupplement(id)!) : [note!]}
         methodOpenIds={methodOpenIds} onMethodToggle={(id) => setMethodOpenIds((open) => open.includes(id) ? open.filter((value) => value !== id) : [...open, id])}
         expandedId={supplementId} onSelect={selectAccordion} pending={pending} onClose={closeSupplement} onRelated={relatedJump}
         onHide={(id) => { setHiddenIds([...hiddenIds, id]); closeSupplement(); }}
         renderPersonal={(item) => <section className="personal-note" aria-label="我的笔记">
-          {!personal.notes[item.id] || editingNote === item.id ? <MarkdownEditor onEdit={cancelJump} key={personal.notes[item.id] ? 'existing-note' : 'empty-note'} note value={personal.notes[item.id] ?? ''} label="笔记 Markdown" onSave={(value) => saveNote(item.id, value)} onCancel={personal.notes[item.id] ? () => setEditingNote(null) : undefined} /> : <>
+          {!personal.notes[item.id] || editingNote === item.id ? <MarkdownEditor onEdit={() => { cancelJump(); setEditingNote(item.id); }} key={item.id} note value={personal.notes[item.id] ?? ''} label="笔记 Markdown" onSave={(value) => saveNote(item.id, value)} onSaved={() => setEditingNote(null)} onCancel={personal.notes[item.id] ? () => setEditingNote(null) : undefined} /> : <>
             <div className="note-heading"><h3>我的笔记</h3>
               <button className="text-button" onClick={() => setEditingNote(item.id)}>编辑</button>
             </div>

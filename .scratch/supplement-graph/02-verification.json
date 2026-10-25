@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "ticket": "issues/02-local-content-migration.md",
+  "verificationDate": "2026-10-26",
+  "timezone": "Asia/Shanghai",
+  "triageStatus": "ready-for-agent",
+  "triageMeaning": "Routing label retained; the acceptance result below records completion.",
+  "acceptanceClosed": true,
+  "acceptanceScope": "Supabase storage migration and development-only test-account password login, as most recently confirmed by DonQ.",
+  "confirmedDecisions": {
+    "projectRef": "ttibfyiittkyteodrwgf",
+    "defaultContent": "public_read_only",
+    "personalContent": "private_per_account_and_book",
+    "otherDevices": "same_account_can_read_persisted_cloud_content",
+    "productionLoginDirection": "email_magic_link",
+    "currentAcceptanceLogin": "development_only_password_test_account",
+    "excluded": [
+      "realtime_collaboration",
+      "offline_writes_or_queue",
+      "multi_user_sharing"
+    ]
+  },
+  "sourceContent": {
+    "bookId": "6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249",
+    "nodeCount": 970,
+    "revision": "ea0ece369ba08ca95726065d0ab851e966aa1dfbcdb819fb54f18fb114def672",
+    "matchesPublishedEvidence": true,
+    "runtimeSource": "Supabase reader_books; shared loaded snapshot for textbook and future graph queries"
+  },
+  "checks": {
+    "project": {
+      "unitTests": {
+        "passed": 23,
+        "total": 23
+      },
+      "typecheck": "passed",
+      "productionBuild": "passed",
+      "latestConfirmation": "Coordinator verification report, 2026-10-26"
+    },
+    "database": {
+      "actualRemoteTransactions": "passed",
+      "fixturesRolledBack": true,
+      "hashDedup": true,
+      "mergeOnlyMissing": true,
+      "tombstonesPreventLegacyResurrection": true,
+      "persistedInitialAndLateConflictFlags": true,
+      "defaultUpdatesPreservePersonalContent": true,
+      "rlsOwnerAndAnonymousAccess": "passed"
+    },
+    "publicContent": {
+      "completeSourceFieldsAndBodiesMatched": true,
+      "sourceScopedStableKeys": true,
+      "anonymousPrivateReadDenied": true
+    },
+    "legacy": {
+      "sameOrigin": "http://127.0.0.1:5192",
+      "writerSha256": "0128bef5d4dbfcbf5e35f1412ff690f3fd414e0fb1906db41db5a25dfffebb12",
+      "frozenBuild": {
+        "indexSha256": "2edc92201aa415b435bbe6d2f1329982f20eafa208301ba2a95d2de03dcba8bd",
+        "assets": [
+          {
+            "path": "/legacy/assets/index-CdeYZ1dQ.js",
+            "sha256": "99f90a8b7eb342c8e3b27bf0e51fa786f61866883402c1f48b42d938fbc583bb",
+            "bytes": 2658521
+          },
+          {
+            "path": "/legacy/assets/index-DOvcX3Iq.css",
+            "sha256": "4c3764ba38261ec5e5de6274dd80764abd0ce9768a8c3fac5ecc029307fbe8f0",
+            "bytes": 18499
+          }
+        ]
+      },
+      "firstMigration": true,
+      "legacyIdentityAndCoordinates": true,
+      "realOldUiSaves": 2,
+      "openPageConflict": true,
+      "newerClosedStartupConflict": true,
+      "copiesAfterRefresh": 3,
+      "refreshDedup": true,
+      "recoveryView": {
+        "rawVisible": true,
+        "readonly": true,
+        "copyButtonPayload": true,
+        "comparedVersions": true
+      }
+    },
+    "asyncCloud": {
+      "noteSave": true,
+      "personalSave": true,
+      "originalLegacyStorageUntouched": true
+    },
+    "migratedPersonal": {
+      "editSaveFailureRetainedDraft": true,
+      "realSaveRetry": true,
+      "refreshPreservedIdPageRegionMarkdown": true,
+      "deleteFailurePreservedNode": true,
+      "deleteRetrySucceeded": true,
+      "originalFixtureRestored": true
+    },
+    "staleNote": {
+      "staleWriteRejected": true,
+      "latestDraftRetained": true,
+      "cloudValueAndRevisionUnchanged": true,
+      "actualDiscardPrompt": true
+    },
+    "failedSave": {
+      "latestDraftRetained": true,
+      "failedWritesLeftCloudUnchanged": true,
+      "realRetryPersisted": true,
+      "originalNoteRestored": true
+    },
+    "legacyReadFailure": {
+      "faultAttempts": 1,
+      "cloudContentsAndRevisionPreserved": true,
+      "sourceIdentityRestoredExactly": true,
+      "realRetrySucceeded": true
+    },
+    "legacyQuotaFailure": {
+      "faultAttempts": 1,
+      "cloudContentsAndRevisionPreserved": true,
+      "sourceIdentityRestoredExactly": true,
+      "realRetrySucceeded": true
+    },
+    "accountSwitch": {
+      "heldAfterRealAResponse": true,
+      "authenticatedSubjectMatchedOwner": true,
+      "staleACompletionKeptDraft": true,
+      "bDataRevisionAndHistoryUnchanged": true,
+      "bViewExcludedANodesAndNotes": true,
+      "crossAccountReadDenied": true,
+      "actualDiscardPrompt": true,
+      "returnARecoveredAndSaved": true,
+      "existingLegacyAndSourcePreserved": true
+    },
+    "invalidEmailCallback": {
+      "hash": {
+        "expiredCallbackExplained": true,
+        "loginRequestCanBeRetried": true,
+        "noEmailSent": true
+      },
+      "query": {
+        "expiredCallbackExplained": true,
+        "loginRequestCanBeRetried": true,
+        "noEmailSent": true
+      }
+    },
+    "businessConflict": {
+      "sqlstate": "PT409",
+      "httpStatus": 409,
+      "observedMs": [
+        599,
+        708
+      ],
+      "cloudUnchanged": true,
+      "performancePromise": false
+    },
+    "developmentPasswordLogin": {
+      "wrongPasswordRejected": true,
+      "emailRetainedForRetry": true,
+      "passwordLoginSucceeded": true,
+      "cloudSaveAndRefresh": true,
+      "signOutRemovedPrivateAccess": true,
+      "signInAgainPreservedData": true,
+      "passwordCleared": true,
+      "noEmailSent": true,
+      "ownNoteRemoved": true,
+      "productionTestEntryAbsent": true,
+      "productionEmailEntryKept": true,
+      "originalUserLegacyDataUnchanged": true
+    }
+  },
+  "formalEmailFollowup": {
+    "includedInCurrentAcceptance": false,
+    "smtpDeliveryVerified": false,
+    "actualEmailReceivedVerified": false,
+    "validMagicLinkCallbackVerified": false,
+    "requiredBeforePublicRelease": true
+  },
+  "limits": {
+    "physicalDeviceTested": false,
+    "browserProcessRestartTested": false,
+    "cloudQuotaActuallyExhausted": false,
+    "quotaFaultTarget": "legacy_browser_storage",
+    "studentLearningEffectEstablished": false
+  },
+  "downstream": {
+    "storagePrerequisiteFor03And04": "satisfied",
+    "graph03": "not_implemented_by_02",
+    "freeNodes04": "not_implemented_by_02",
+    "stableLinks05": "not_implemented_by_02",
+    "backlinks06": "not_implemented_by_02",
+    "splitReading07": "not_implemented_by_02",
+    "sharedFileWindows": "coordinator_controlled"
+  },
+  "privacy": {
+    "testAddressesIncluded": false,
+    "credentialsIncluded": false,
+    "accessOrRefreshTokensIncluded": false,
+    "privateNoteBodiesIncluded": false,
+    "actualLoginEmailSentByChecks": false
+  },
+  "evidence": [
+    {
+      "file": ".git/supplement-graph-orchestration/02-handoff.json",
+      "sha256": "24fdeff14ec5c6b5b104bd2ccd9321aa9f22164052762b9e35db10158be0ceee",
+      "recordedAt": "2026-10-25T18:11:26.524321+00:00"
+    },
+    {
+      "file": ".git/supplement-graph-orchestration/02-work-state.json",
+      "sha256": "a639f4d33d698940a03f9c9ed43f7246c1a4418e15b540cfa6792bca942cfab4",
+      "recordedAt": "2026-10-25T18:11:26.524321+00:00"
+    },
+    {
+      "file": ".git/supplement-graph-orchestration/02-owned-files.json",
+      "sha256": "d5fb3dde332e3a89b16597c8cd496b4d4d43e5d38054e2a9a378c70738d165ba",
+      "recordedAt": "2026-10-25T18:11:26.524321+00:00"
+    },
+    {
+      "file": ".git/supplement-graph-orchestration/mixed-version-02.json",
+      "sha256": "f04ae2fb039943a031a9a9e101d989847b0597ae6c05270fe64a04dde15b8ce7",
+      "recordedAt": null
+    },
+    {
+      "file": ".git/supplement-graph-orchestration/async-cloud-02.json",
+      "sha256": "a847c7d6a254660a65b6de5a68e4b17a1f7e36f71cbf6b9d108718a159f7cbaf",
+      "recordedAt": "2026-10-25T17:38:45.740Z"
+    },
+    {
+      "file": ".git/supplement-graph-orchestration/migration-extra-02.json",
+      "sha256": "0db86d840adce8870e30fa263e3e1c08e1f7b53d7d5d6658c07198236865d983",
+      "recordedAt": "2026-10-25T17:54:07.798Z"
+    },
+    {
+      "file": ".git/supplement-graph-orchestration/auth-browser-02.json",
+      "sha256": "5d3c6741b36c75be4323380bb2ecd94c664f543ec48c83835cd8b6cb8ba9fe71",
+      "recordedAt": "2026-10-25T17:59:19.089Z"
+    },
+    {
+      "file": ".git/supplement-graph-orchestration/conflict-http-02.json",
+      "sha256": "d133cce1b384bccf3ccc8e0b2a3154c883f0670688e02d296e6083bdd63ab097",
+      "recordedAt": "2026-10-25T17:53:31.198Z"
+    },
+    {
+      "file": ".git/supplement-graph-orchestration/password-login-02.json",
+      "sha256": "8004ce8e61038662b63b7ce1973a1aff99d206078b85f2c84eae15cca56b8a35",
+      "recordedAt": "2026-10-25T23:32:32.539Z"
+    }
+  ],
+  "reviewedCodeSha256": {
+    "package.json": "ed863b9ca4646ca598d559a39725456b1e603aa47ece67ca5817ab4b8b038ded",
+    "package-lock.json": "14cb54fdc48423e686e6103ce5fd3f54e3fd4a5806e24799113b443650826282",
+    "README.md": "11765fa28312e836dc57a8ec75be6797955d27fbe8e5163b4394e1d89f6f93b9",
+    "DESIGN.md": "a8578574bc7fb30bbf688508519222d9e01753451c4b0d1e9aed6d102319a2de",
+    "docs/ARCHITECTURE.md": "f328d4539c3fef93a146044a486add99ca30589976a99a1ae0e7e3066fcf852c",
+    "scripts/check-async-save.mjs": "3849c7fee97b1fc54976975886423dbf0e32389b7d6804b47198ded21743a3ad",
+    "scripts/check-cloud-content.mjs": "1162ee76bfe65ed8fafaee8302225ecd09e3cda53c32a3d9cc643b1b0f1427a0",
+    "scripts/check-content-migration.mjs": "724cdfa17a00f334d05fe9e400cc09f67d5552db2d108c69614160a02a2d0122",
+    "scripts/check-content-migration-extra.mjs": "f378869d0fee90bc950b51dc0d73f88cec680f7ea88a254c9173c9627622315e",
+    "scripts/check-content-auth.mjs": "5786b6a3c0c7a432d5e32261872cbf4f139c0493c746623c93ed9ef003bd590e",
+    "scripts/prepare-cloud-content.mjs": "a8bfc99af44564b50db9c67b557614caf45d55d776c7997b9ab6213b7214eadc",
+    "src/reader/Reader.tsx": "ab6cf4699de9f4d8989c859f095d592d04d1796a9275615ddeba2fdf5fde3d30",
+    "src/reader/personal.ts": "1f6b0a089eb5ce8365a45170b8399078887384c9574a4ff6e10e3bb202c9d6be",
+    "src/reader/supplement-types.tsx": "a1c32160568ccc56328e7b0c7c0ce8c53eccf5af29cb0e3df05f6d184cc52b8f",
+    "src/reader/AccountControl.tsx": "36455f675b1c171d061d96599c6075c3a5751393e9d29020343a62f51b058e97",
+    "src/reader/AccountControl.css": "f7dcdf333d5ecfe4160d348e9396d742fc5ff65e18ade574ae83b85cb30eb8ad",
+    "src/reader/LegacyCopies.tsx": "be6df2666109726c2be639ee56c9cf9d6df9f410b27b3af9cf6308448babb758",
+    "src/reader/LegacyCopies.css": "977a2ad4913735b3809ecab1c654959746294107d57079319bb90a11471e7873",
+    "src/reader/cloud-personal.ts": "7c97831f2995505135d87ab6cb95a75c470fe9ada571967c14984895ed97b330",
+    "src/reader/useBookContent.ts": "69c1d2079e26dd515e7308d1fac0bca083d6f9cda7310732e9725614f2728801",
+    "src/reader/supabase.ts": "d28370b2cb597b89ab752ab0958094ada3f2e39face714e09776e613a91473c0",
+    "src/textbook/content.ts": "d2702132380b973d653fbdbb15a5d6d2e668dfd7ed8f50fdbea2c75a9c3500b7",
+    "src/textbook/content-store.ts": "5e7e27b264e34a78de6025248ee31581c2ea347446f6a9a82a08fd83c8b88900",
+    "src/textbook/sections.ts": "3a302a7e78f7e8eba22d635df9a9411890ce08fa2526cc5fc3920997ed824b74",
+    "supabase/migrations/20261025160810_reader_content.sql": "aaa4f6ae0df9e301d1967d27111cda202334dc424b0395f612fd9bf8e1bd163d",
+    "supabase/migrations/20261025162103_reader_legacy_conflicts.sql": "2b991149d60425afc9629babab0da5ac6880eda668ced5abd2b79a985fb043ca",
+    "supabase/migrations/20261025175252_reader_conflict_http_status.sql": "db59c91af6dc46db89664768c2357e2ac46ce4426d97563ea1b010074e3c8055",
+    "supabase/tests/reader-content.sql": "62433c2f6622ef5e7c4fc9569a93fa9ae1e5aef68395d8863c673cde4214ced3",
+    "src/style.css": "f7a4e30b2c64756141cc2d1aabc9f9fdcef84874d5e50751a5509f83ccd8f29f",
+    "scripts/check-test-login.mjs": "95f364a4e3f0cf9040362ddf090ee170487e194e1bfe243ff955a24fe3b40f54"
+  },
+  "coordinatorReview": {
+    "date": "2026-10-26",
+    "baseCommit": "efb81b2",
+    "standards": "One P2 native details-close password cleanup gap fixed with onToggle; no other confirmed finding",
+    "spec": "No actionable findings; all 30 pre-fix source hashes matched the accepted evidence",
+    "passwordCloseFix": {
+      "beforeSha256": "072890158f28f9b07faa8f1a6d6e93e4ed2f9582a5a647a50a419df89acbe48e",
+      "afterSha256": "36455f675b1c171d061d96599c6075c3a5751393e9d29020343a62f51b058e97",
+      "behavior": "Native details close clears password and test mode, alongside existing close/escape/success paths",
+      "browserReplayed": false,
+      "verification": "Source review and current typecheck/production build; existing accepted authentication browser evidence retained"
+    },
+    "advisors": "No schema/RLS warning; leaked password protection remains disabled for the test-password deployment",
+    "advisoryRemediation": "https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection"
+  }
+}

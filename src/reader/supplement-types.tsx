@@ -1,14 +1,12 @@
 import type { Supplement } from '../textbook/supplements';
+import { supplementKind } from '../textbook/content';
 
 export const supplementTypes = {
   concept: '概念与性质', method: '方法与推理', question: '题目引导', review: '回顾与探究', personal: '我的补充',
 };
 export type SupplementType = keyof typeof supplementTypes;
 export function supplementType(note: Supplement): SupplementType {
-  if (note.questionGuide) return 'question';
-  if (/定义概念|陈述性质/.test(note.learningRole)) return 'concept';
-  if (/示范方法|推导或证明/.test(note.learningRole)) return 'method';
-  return 'review';
+  return supplementKind(note);
 }
 export function TypeMarker({ type }: { type: SupplementType | 'group' }) {
   const paths = {

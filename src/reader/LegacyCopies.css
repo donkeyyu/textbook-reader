@@ -1,0 +1,14 @@
+.legacy-copies { flex: 0 0 auto; background: var(--surface); border-bottom: 1px solid var(--separator); font-size: 14px; }
+.content-status { flex: 0 0 auto; margin: 0; padding: 8px 24px; color: var(--secondary); font-size: 13px; }
+.legacy-copies > summary { padding: 8px 24px; color: var(--accent); cursor: pointer; }
+.legacy-copy-body { max-height: 45vh; overflow: auto; padding: 0 24px 16px; }
+.legacy-copy-body > p { max-width: 70ch; line-height: 1.6; }
+.legacy-copy-body label { display: block; margin: 12px 0 6px; }
+.legacy-copy-body select { max-width: 100%; min-height: 36px; font: inherit; }
+.legacy-copy-body textarea { display: block; width: 100%; min-height: 120px; padding: 10px; margin-bottom: 8px; resize: vertical; color: var(--text); background: var(--background); border: 1px solid var(--separator); border-radius: 6px; font: 13px/1.5 ui-monospace, monospace; }
+.legacy-copy-body :is(select, textarea):focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.legacy-comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 140ch; margin: 20px 0; }
+.legacy-comparison > section { min-width: 0; overflow-wrap: anywhere; }
+.legacy-comparison h2 { font-size: 16px; }
+.legacy-comparison h3 { margin-top: 20px; font-size: 14px; }
+@media (max-width: 760px) { .legacy-comparison { grid-template-columns: 1fr; gap: 16px; } .legacy-copy-body { padding-inline: 16px; } }

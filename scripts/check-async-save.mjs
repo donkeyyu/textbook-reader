@@ -1,10 +1,137 @@
 import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
-import { readFile } from 'node:fs/promises';
 import { openNote } from './check-related-return.mjs';
 
-const book = JSON.parse(await readFile(new URL('../src/textbook/book.json', import.meta.url), 'utf8'));
-const personalKey = `textbook-personal-v1:${book.documentSha256}`;
+async function assertAsyncServer(testOrigin) {
+  const response = await fetch(new URL('/__async_save_check', testOrigin));
+  assert.equal(response.status, 200, 'Use startAsyncSaveServer(), not the user acceptance server');
+  assert.equal((await response.json()).kind, 'reader-async-cloud-save');
+}
+
+// Call on the JSON marker page before loading the app or signing in.
+export async function assertUnusedAsyncOrigin(page, { testOrigin } = {}) {
+  assert.ok(testOrigin, 'Pass a dedicated testOrigin');
+  assert.equal(new URL(await page.url()).origin, new URL(testOrigin).origin);
+  await assertAsyncServer(testOrigin);
+  await page.evaluate(() => {
+    if (localStorage.length !== 0) {
+      throw new Error('This origin has existing personal content or login data. Use another origin; nothing was cleared.');
+    }
+  });
+}
+
+async function readCloud(page, expectedUserId) {
+  const snapshot = await page.evaluate(async () => {
+    const [{ supabase }, { readPersonal }] = await Promise.all([
+      import('/src/reader/supabase.ts'), import('/src/reader/cloud-personal.ts'),
+    ]);
+    const { data, error } = await supabase.auth.getSession();
+    if (error) throw error;
+    if (!data.session) throw new Error('Sign in to the dedicated QA account before running async-save checks');
+    // The read RPC verifies the session owner on the server.
+    return readPersonal(data.session.user.id);
+  });
+  if (expectedUserId) assert.equal(snapshot.userId, expectedUserId, 'The QA account must not change during a check');
+  return snapshot;
+}
+
+async function prepareCloudCheck(page, testOrigin) {
+  assert.ok(testOrigin, 'Pass a dedicated testOrigin');
+  assert.equal(new URL(await page.url()).origin, new URL(testOrigin).origin);
+  await assertAsyncServer(testOrigin);
+  assert.equal(await page.evaluate(() => !!document.querySelector('[data-dirty="true"]')), false);
+  await page.waitForFunction(() => [...document.querySelectorAll('.toolbar-actions button')]
+    .some((button) => button.textContent === '添加补充' && !button.disabled));
+  return readCloud(page);
+}
+
+async function rememberConfirm(page) {
+  await page.evaluate(() => {
+    if (window.asyncSaveCleanup || window.asyncSaveTest) throw new Error('An async-save check is already active');
+    window.asyncSaveCleanup = { confirm: window.confirm };
+  });
+}
+
+async function reloadReader(page, continueCheck = false) {
+  assert.equal(await page.evaluate(() => !!document.querySelector('[data-dirty="true"]')), false, 'Close dirty editors through the UI before reload');
+  await page.evaluate(() => {
+    if (window.asyncSaveCleanup) window.confirm = window.asyncSaveCleanup.confirm;
+    delete window.asyncSaveCleanup;
+    delete window.asyncSaveTest;
+    delete window.asyncSaveConfirm;
+  });
+  await page.reload();
+  await page.waitForSelector('.page-index');
+  if (continueCheck) await rememberConfirm(page);
+}
+
+async function finishCloudCheck(page, before, noteIds = [], supplementIds = []) {
+  let writesSettled = false;
+  try {
+    await page.evaluate(() => {
+      const test = window.asyncSaveTest;
+      if (test) {
+        test.failAll = true;
+        for (const request of test.requests) request.release(true);
+      }
+      // This confirmation applies only to this check's draft on its own origin.
+      window.confirm = () => true;
+    });
+    await page.waitForFunction(() => !document.querySelector('[data-saving="true"]') &&
+      (!window.asyncSaveTest || window.asyncSaveTest.requests.every((request) => request.settled)));
+    writesSettled = true;
+    if (await page.evaluate(() => !!document.querySelector('button[aria-label="关闭解读"]'))) {
+      await page.click('button[aria-label="关闭解读"]');
+    } else {
+      if (await page.evaluate(() => !!document.querySelector('#supplement-panel .editor-actions'))) {
+        await page.click('#supplement-panel .editor-actions button:nth-child(2)');
+        await page.waitForFunction(() => !document.querySelector('#supplement-panel .editor-actions'));
+      }
+      if (await page.evaluate(() => !!document.querySelector('#supplement-panel .heading-actions button:last-child'))) {
+        await page.click('#supplement-panel .heading-actions button:last-child');
+      }
+    }
+    await page.waitForFunction(() => !document.querySelector('[data-dirty="true"]'));
+    await page.evaluate(async ({ userId, notes, supplementIds }) => {
+      // Disable deferral only after pending test writes and their editors settle.
+      delete window.asyncSaveTest;
+      const [{ supabase }, { readPersonal, savePersonal }] = await Promise.all([
+        import('/src/reader/supabase.ts'), import('/src/reader/cloud-personal.ts'),
+      ]);
+      for (let attempt = 0; attempt < 3; attempt++) {
+        const { data, error } = await supabase.auth.getSession();
+        if (error) throw error;
+        if (data.session?.user.id !== userId) throw new Error('QA account changed; cleanup will not write to another account');
+        const previous = await readPersonal(userId);
+        const next = structuredClone(previous.data);
+        for (const note of notes) {
+          if (note.exists) next.notes[note.id] = note.value;
+          else delete next.notes[note.id];
+        }
+        next.supplements = next.supplements.filter((item) => !supplementIds.includes(item.id));
+        if (JSON.stringify(next) === JSON.stringify(previous.data)) return;
+        try { await savePersonal(next, previous); return; }
+        catch (cause) {
+          // Re-read on a genuine revision conflict; never restore a stale document.
+          if (!['PT409', '40001'].includes(cause?.cause?.code) || attempt === 2) throw cause;
+        }
+      }
+    }, {
+      userId: before.userId,
+      notes: noteIds.map((id) => ({ id, exists: Object.hasOwn(before.data.notes, id), value: before.data.notes[id] ?? null })),
+      supplementIds,
+    });
+  } finally {
+    await page.evaluate((writesSettled) => {
+      if (window.asyncSaveCleanup) window.confirm = window.asyncSaveCleanup.confirm;
+      delete window.asyncSaveCleanup;
+      // Keep rejecting queued writes if an in-flight request did not settle.
+      if (writesSettled) delete window.asyncSaveTest;
+      delete window.asyncSaveConfirm;
+    }, writesSettled);
+  }
+  await reloadReader(page);
+}
 
 async function replaceNote(page, text) {
   if (await page.evaluate(() => document.querySelector('.note-mode-toggle').getAttribute('aria-pressed') === 'true')) await page.click('.note-mode-toggle');
@@ -15,38 +142,17 @@ async function replaceNote(page, text) {
 }
 
 async function savedNote(page, id, expected) {
-  await page.waitForFunction(({ key, id, expected }) => {
-    const value = JSON.parse(localStorage.getItem(key))?.notes?.[id] ?? null;
-    return value === expected && !document.querySelector('.personal-note [data-dirty="true"]');
-  }, { key: personalKey, id, expected });
+  await page.waitForFunction(() => !document.querySelector('.personal-note [data-dirty="true"]'));
+  const snapshot = await readCloud(page);
+  assert.equal(snapshot.data.notes[id] ?? null, expected, 'The clean editor must match durable cloud content');
 }
 
 async function withEmptyNotes(page, ids, { testOrigin } = {}, run) {
-  assert.ok(testOrigin, 'Pass a dedicated testOrigin');
-  assert.equal(new URL(await page.url()).origin, new URL(testOrigin).origin);
-  assert.equal(await page.evaluate(() => !!document.querySelector('[data-dirty="true"]')), false);
-  const raw = await page.evaluate((key) => localStorage.getItem(key), personalKey);
-  const data = raw === null ? { notes: {} } : JSON.parse(raw);
-  for (const id of ids) assert.ok(!data.notes[id]?.trim(), `Test source already has a note: ${id}`);
+  const before = await prepareCloudCheck(page, testOrigin);
+  for (const id of ids) assert.ok(!before.data.notes[id]?.trim(), `Test source already has a note: ${id}`);
+  await rememberConfirm(page);
   try { await run(); }
-  finally {
-    await page.evaluate(() => {
-      const test = window.asyncSaveTest;
-      if (test) {
-        test.failAll = true;
-        for (const request of test.requests) request.release(true);
-        if (test.confirm) window.confirm = test.confirm;
-      }
-    });
-    await page.waitForFunction(() => !document.querySelector('[data-saving="true"]'));
-    await page.evaluate(({ key, raw }) => {
-      delete window.asyncSaveTest;
-      if (raw === null) localStorage.removeItem(key);
-      else localStorage.setItem(key, raw);
-    }, { key: personalKey, raw });
-    await page.reload();
-    await page.waitForSelector('.page-index');
-  }
+  finally { await finishCloudCheck(page, before, ids); }
 }
 
 // Dedicated Vite server: defer the real storage function without adding a test
@@ -55,28 +161,44 @@ export async function startAsyncSaveServer(port = 5181) {
   const { createServer } = await import('vite');
   const server = await createServer({
     root: fileURLToPath(new URL('..', import.meta.url)),
+    cacheDir: `node_modules/.vite-async-save-${port}`,
     server: { host: '127.0.0.1', port, strictPort: true },
     plugins: [{
       name: 'async-save-browser-check', enforce: 'pre',
+      configureServer(vite) {
+        vite.middlewares.use((request, response, next) => {
+          if (request.url !== '/__async_save_check') return next();
+          response.setHeader('Content-Type', 'application/json');
+          response.setHeader('Cache-Control', 'no-store');
+          response.end(JSON.stringify({ kind: 'reader-async-cloud-save' }));
+        });
+      },
       transform(source, id) {
-        if (!id.endsWith('/src/reader/personal.ts')) return;
-        assert.ok(source.includes('export function savePersonal('));
-        return source.replace('export function savePersonal(', 'function savePersonalSync(') + `
-export function savePersonal(...args: Parameters<typeof savePersonalSync>) {
+        if (!id.endsWith('/src/reader/cloud-personal.ts')) return;
+        assert.ok(source.includes('export async function savePersonal('));
+        return source.replace('export async function savePersonal(', 'async function savePersonalReal(') + `
+export function savePersonal(...args: Parameters<typeof savePersonalReal>): ReturnType<typeof savePersonalReal> {
   const test = (window as any).asyncSaveTest;
-  if (!test) return savePersonalSync(...args);
+  if (!test) return savePersonalReal(...args);
   if (test.failAll) return Promise.reject(new Error('Test cleanup'));
-  return new Promise<void>((resolve, reject) => {
-    let released = false;
-    test.requests.push({ data: args[0], release(fail = false) {
-      if (released) return;
-      released = true;
-      try {
-        if (fail) throw new Error('Delayed save failed');
-        savePersonalSync(...args);
-        resolve();
-      } catch (cause) { reject(cause); }
-    }});
+  return new Promise<Awaited<ReturnType<typeof savePersonalReal>>>((resolve, reject) => {
+    const request = { data: args[0], released: false, settled: false, release(fail = false) {
+      if (request.released) return;
+      request.released = true;
+      if (fail) {
+        request.settled = true;
+        reject(new Error('Delayed save failed'));
+        return;
+      }
+      return savePersonalReal(...args).then((value) => {
+        request.settled = true;
+        resolve(value);
+      }, (cause) => {
+        request.settled = true;
+        reject(cause);
+      });
+    }};
+    test.requests.push(request);
   });
 }`;
       },
@@ -161,26 +283,28 @@ export async function checkAsyncNoteSave(page, options) {
       assert.equal(await page.evaluate(() => document.querySelector('.personal-note .cm-content').textContent), 'After reopen latest', 'Cross-mount writes retain their original order');
       console.log('PASS async notes: serial revisions, delayed success, failure/retry, pending deletion, protected close/switch, close/reopen during writes');
     } finally {
-      await page.evaluate(() => { window.confirm = window.asyncSaveTest.confirm ?? window.confirm; });
+      await page.evaluate(() => { window.confirm = window.asyncSaveTest?.confirm ?? window.confirm; });
     }
   });
 }
 
 export async function checkAsyncPersonalSave(page, { testOrigin } = {}) {
-  assert.ok(testOrigin, 'Pass a dedicated testOrigin');
-  assert.equal(new URL(await page.url()).origin, new URL(testOrigin).origin);
-  assert.equal(await page.evaluate(() => !!document.querySelector('[data-dirty="true"]')), false);
-  const raw = await page.evaluate(() => Object.entries(localStorage).find(([key]) => key.startsWith('textbook-personal-v1:')) ?? null);
-  assert.equal(raw, null, 'Personal check requires an unused test origin');
-  await page.click('button:text-is("添加补充")');
-  await page.press('.region-selector', 'Enter');
-  await page.fill('.personal-title input', 'QA async title');
-  await page.focus('.markdown-source .cm-content');
-  await page.keyboard.insertText('First personal body');
-  await page.evaluate(() => { window.asyncSaveTest = { requests: [] }; });
+  const before = await prepareCloudCheck(page, testOrigin);
+  assert.ok(!before.data.supplements.some((item) => ['QA async title', 'Newer title', 'Final title'].includes(item.title)), 'QA titles must not already exist');
+  const createdIds = [];
+  await rememberConfirm(page);
   try {
+    await page.click('button:text-is("添加补充")');
+    await page.press('.region-selector', 'Enter');
+    await page.fill('.personal-title input', 'QA async title');
+    await page.focus('.markdown-source .cm-content');
+    await page.keyboard.insertText('First personal body');
+    await page.evaluate(() => { window.asyncSaveTest = { requests: [] }; });
     await page.click('.editor-actions button[type="submit"]');
     await requestCount(page, 1);
+    const createdId = await page.evaluate(() => window.asyncSaveTest.requests[0].data.supplements.find((item) => item.title === 'QA async title')?.id);
+    assert.ok(createdId && !before.data.supplements.some((item) => item.id === createdId), 'Track only the node created by this check');
+    createdIds.push(createdId);
     assert.equal(await page.evaluate(() => document.querySelector('.editor-actions button[type="submit"]').disabled), true);
     await page.fill('.personal-title input', 'Newer title');
     await page.press('.markdown-source .cm-content', 'ControlOrMeta+a');
@@ -209,12 +333,11 @@ export async function checkAsyncPersonalSave(page, { testOrigin } = {}) {
     await release(page, 3);
     await page.waitForSelector('.personal-actions');
     assert.equal(await page.evaluate(() => document.querySelector('#supplement-title').textContent), 'Final title');
-    await page.click('button:text-is("关闭")');
+    await page.click('#supplement-panel .heading-actions button:text-is("关闭")');
     assert.equal(await page.evaluate(() => !!document.querySelector('#supplement-panel')), false);
-    await page.reload();
-    await page.waitForSelector('.page-index');
+    await reloadReader(page, true);
     await page.click('[aria-label="我的补充：Final title"]');
-    assert.equal(await page.evaluate(() => document.querySelector('.markdown-content').textContent), 'Newer body');
+    assert.equal(await page.evaluate(() => document.querySelector('#supplement-panel .markdown-content').textContent), 'Newer body');
     await page.click('.personal-actions button:first-child');
     await page.fill('.personal-title input', 'Canceled title');
     await page.evaluate(() => {
@@ -231,7 +354,7 @@ export async function checkAsyncPersonalSave(page, { testOrigin } = {}) {
     await page.keyboard.insertText('After cancel: ');
     await page.click('.editor-actions button[type="submit"]');
     await page.waitForSelector('.personal-actions');
-    assert.equal(await page.evaluate(() => document.querySelector('#supplement-title').textContent), 'Final title', 'Canceling a title edit does not prevent a later synchronous save from closing editing');
+    assert.equal(await page.evaluate(() => document.querySelector('#supplement-title').textContent), 'Final title', 'Canceling a title edit does not prevent a later un-deferred save from closing editing');
     await page.evaluate(() => { window.asyncSaveTest = { requests: [] }; });
     await page.click('.personal-actions button:first-child');
     await page.press('.cm-content', 'ControlOrMeta+a');
@@ -244,7 +367,7 @@ export async function checkAsyncPersonalSave(page, { testOrigin } = {}) {
     });
     try {
       await page.click('.editor-actions button:nth-child(2)');
-      await page.click('button:text-is("关闭")');
+      await page.click('#supplement-panel .heading-actions button:text-is("关闭")');
     } finally {
       await page.evaluate(() => { window.confirm = window.asyncSaveConfirm; delete window.asyncSaveConfirm; });
     }
@@ -253,7 +376,8 @@ export async function checkAsyncPersonalSave(page, { testOrigin } = {}) {
     await page.press('.cm-content', 'ControlOrMeta+a');
     await page.keyboard.insertText('New editing session');
     await release(page, 0);
-    await page.waitForFunction((key) => JSON.parse(localStorage.getItem(key)).supplements[0]?.markdown === 'Older pending body', personalKey);
+    const stored = await readCloud(page, before.userId);
+    assert.equal(stored.data.supplements.find((item) => item.id === createdId)?.markdown, 'Older pending body', 'Released saves must reach the real cloud record');
     assert.equal(await page.evaluate(() => document.querySelector('.cm-content')?.textContent), 'New editing session', 'An unmounted editor cannot close a newer editing session');
     await page.click('.editor-actions button[type="submit"]');
     await requestCount(page, 2);
@@ -270,14 +394,8 @@ export async function checkAsyncPersonalSave(page, { testOrigin } = {}) {
     await requestCount(page, 2);
     await release(page, 1);
     await page.waitForFunction(() => !document.querySelector('#supplement-panel'));
-    console.log('PASS async personal supplement: explicit save, newer title/body, failure/retry, title-only edit, durable refresh, cancel/reopen/sync save, stale editor completion, delayed delete/retry');
+    console.log('PASS async personal supplement: explicit save, newer title/body, failure/retry, title-only edit, durable cloud refresh, cancel/reopen/save, stale editor completion, delayed delete/retry');
   } finally {
-    await page.evaluate(() => {
-      delete window.asyncSaveTest;
-      const key = Object.keys(localStorage).find((key) => key.startsWith('textbook-personal-v1:'));
-      if (key) localStorage.removeItem(key);
-    });
-    await page.reload();
-    await page.waitForSelector('.page-index');
+    await finishCloudCheck(page, before, [], createdIds);
   }
 }

@@ -1,7 +1,12 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { bookTitle, getPage, pageCount, pages, pageLabel, resolvePageInput } from "../textbook/catalog";
-import { getLocation, getSupplement, supplementsForPage } from "../textbook/supplements";
-import { loadPersonal, savePersonal, type PersonalData, type PersonalSupplement } from './personal';
+import { getLocation } from "../textbook/supplements";
+import { bookId, supplementQueries } from '../textbook/content';
+import type { PersonalData, PersonalSupplement } from './personal';
+import { useBookContent } from './useBookContent';
+import { AccountControl } from './AccountControl';
+import { LegacyCopies } from './LegacyCopies';
+import { signIn, signInWithPassword, signOut } from './supabase';
 import { MarkdownEditor } from './MarkdownEditor';
 import { PanelResize } from './PanelResize';
 import { PersonalPanel } from './PersonalPanel';
@@ -57,28 +62,17 @@ export function Reader() {
     catch (cause) { return { position: null, error: (cause as Error).message }; }
   });
   const [readingError, setReadingError] = useState(resume.error);
-  const [loaded] = useState(() => {
-    try { return { data: loadPersonal(), error: '' }; }
-    catch { return { data: { supplements: [], notes: {} } as PersonalData, error: '本地笔记无法读取。请检查浏览器存储后刷新；当前不会覆盖已存内容。' }; }
-  });
-  const [personal, setPersonal] = useState(loaded.data);
-  const personalState = useRef(loaded.data);
-  const personalWrites = useRef(Promise.resolve());
+  const content = useBookContent();
+  const ownsPersonal = !!content.user && content.personal?.userId === content.user.id;
+  const personal: PersonalData = ownsPersonal ? content.personal!.data : { supplements: [], notes: {} };
+  const { getSupplement, supplementsForPage } = useMemo(() => supplementQueries(content.published ?? {
+    documentSha256: bookId, pageCount, chapters: [], sections: [], supplements: [],
+  }), [content.published]);
+  const storePersonal = content.updatePersonal;
   const [personalItem, setPersonalItem] = useState<PersonalSupplement | null>(null);
   const [selectionPage, setSelectionPage] = useState<number | null>(null);
   const [hiddenTypes, setHiddenTypes] = useState<SupplementType[]>([]);
   const [hiddenIds, setHiddenIds] = useState<string[]>([]);
-  function storePersonal(update: (current: PersonalData) => PersonalData) {
-    const write = personalWrites.current.then(async () => {
-      if (loaded.error) throw new Error(loaded.error);
-      const data = update(personalState.current);
-      await savePersonal(data, personalState.current);
-      personalState.current = data;
-      setPersonal(data);
-    });
-    personalWrites.current = write.catch(() => {});
-    return write;
-  }
   function saveNote(id: string, value: string) {
     return storePersonal((current) => {
       const notes = { ...current.notes };
@@ -116,6 +110,15 @@ export function Reader() {
   const navigationPending = useRef(false);
   const retryJump = useRef<Jump>({ page: 1 });
   const toggleButton = useRef<HTMLButtonElement>(null);
+  const previousAccount = useRef(content.user?.id);
+
+  useEffect(() => {
+    if (previousAccount.current !== content.user?.id && !document.querySelector('[data-dirty="true"]')) {
+      setPersonalItem(null);
+      setSelectionPage(null);
+    }
+    previousAccount.current = content.user?.id;
+  }, [content.user?.id]);
 
   useLayoutEffect(() => {
     const element = scroller.current;
@@ -512,7 +515,7 @@ export function Reader() {
     }
   }} onClickCapture={(event) => {
     const target = event.target as HTMLElement;
-    if (target.closest('.markdown-editor, .personal-title, .method-toggle, .locate-button')) return;
+    if (target.closest('.markdown-editor, .personal-title, .method-toggle, .locate-button, .account-control, .legacy-copies')) return;
     if (document.querySelector('[data-dirty="true"]') && target.closest('button, summary, input') && !window.confirm('有尚未保存的内容，放弃修改？')) {
       event.preventDefault(); event.stopPropagation();
     }
@@ -574,11 +577,24 @@ export function Reader() {
             {hiddenIds.length > 0 && <button className="text-button" onClick={() => setHiddenIds([])}>恢复隐藏的 {hiddenIds.length} 条补充</button>}
           </div>
         </details>
-        <button className="text-button" onClick={() => { closeSupplement(); setPersonalItem(null); clearPreview(); setSelectionPage(currentPage); }}>添加补充</button>
+        <button className="text-button" disabled={!ownsPersonal || content.loading} onClick={() => { closeSupplement(); setPersonalItem(null); clearPreview(); setSelectionPage(currentPage); }}>添加补充</button>
+        <AccountControl user={content.user} onSignIn={signIn} onPasswordSignIn={import.meta.env.DEV ? signInWithPassword : undefined} onSignOut={async () => {
+          if (document.querySelector('[data-dirty="true"]') && !window.confirm('有尚未保存的内容，放弃修改并退出登录？')) throw new Error('已保留草稿，尚未退出登录。');
+          closeSupplement(); setPersonalItem(null); setSelectionPage(null);
+          await signOut();
+        }} />
       </div>
     </header>
     {selectionPage !== null && <div className="selection-help" role="status">在第 {selectionPage} 页拖动框选段落；键盘可用方向键调整，Enter 确认。<button className="text-button" onClick={() => setSelectionPage(null)}>取消</button></div>}
-    {loaded.error && <p className="storage-error" role="alert">{loaded.error}</p>}
+    {content.loading && <p className="content-status" role="status">正在载入补充与个人内容…</p>}
+    {(content.error || content.notice) && <div className={content.error ? 'storage-error' : 'content-status'} role={content.error ? 'alert' : 'status'}>
+      <span>{content.error || content.notice}</span>{' '}
+      <button className="text-button" onClick={() => {
+        closeSupplement(); setPersonalItem(null); setSelectionPage(null);
+        void content.refresh();
+      }}>重新读取</button>
+    </div>}
+    {ownsPersonal && <LegacyCopies copies={content.personal!.copies} current={personal} titleForNote={(id) => getSupplement(id)?.title ?? id} />}
     {readingError && <p className="storage-error" role="status">{readingError}</p>}
     <main className={`reading-layout${navigationOpen ? " navigation-open" : ""}${note || choiceIds || personalItem ? " supplement-open" : ""}`}>
       <nav id="page-sidebar" className="page-sidebar" hidden={!navigationOpen} aria-label="页面导航">
@@ -665,7 +681,8 @@ export function Reader() {
         expandedId={supplementId} onSelect={selectAccordion} pending={pending} onClose={closeSupplement} onLocate={locateSupplement} onRelated={relatedJump}
         onHide={(id) => { setHiddenIds([...hiddenIds, id]); closeSupplement(); }}
         renderPersonal={(item) => <section className="personal-note" aria-label="我的笔记">
-          <MarkdownEditor onEdit={cancelJump} key={item.id} note value={personal.notes[item.id] ?? ''} label="笔记 Markdown" onSave={(value) => saveNote(item.id, value)} />
+          {content.personal ? <MarkdownEditor onEdit={cancelJump} key={`${content.personal.userId}:${item.id}`} note value={content.personal.data.notes[item.id] ?? ''} label="笔记 Markdown" onSave={(value) => saveNote(item.id, value)} />
+            : <p>{content.user ? '个人笔记尚未载入，请读取成功后再编辑。' : '登录后可保存个人笔记。'}</p>}
         </section>}
         activeLocationId={selectedLocation}
         onBack={previous ? () => { void navigate({ page: previous.page, restore: previous }); } : undefined} />}

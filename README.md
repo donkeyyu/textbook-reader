@@ -43,7 +43,26 @@ npm run preview   # 预览构建结果
 
 类型标记指向原页区域，密集入口合并后按题号选择；必要解释直接可读，可选方法由读者主动展开。解读提供定位、关联查阅与返回。默认补充的个人笔记实时保存，自选段落的个人补充另有显式保存流程；两者均支持 Markdown。定位、返回及续读的状态区别见 [架构说明](docs/ARCHITECTURE.md#阅读状态与跳转)。
 
-当前内容通过静态 JSON 接入，并检查来源身份、位置和关联引用。六章分别维护 `chapter-N.json` 和定位文件，由 `src/textbook/chapters.ts` 统一注册；第一章定位沿用 `locations.json`，其余章节使用 `chapter-N.locations.json`。各章逐题覆盖均已完成原图核对。通用内容编译器尚未实现；补充内容的学习效果尚无学生使用证据。
+默认解读从 Supabase 读取；静态 JSON 保留为发布源，并检查来源身份、位置和关联引用。六章分别维护 `chapter-N.json` 和定位文件，由 `src/textbook/chapters.ts` 统一注册；第一章定位沿用 `locations.json`，其余章节使用 `chapter-N.locations.json`。各章逐题覆盖均已完成原图核对。通用内容编译器尚未实现；补充内容的学习效果尚无学生使用证据。
+
+## Supabase 与个人内容
+
+默认解读无需登录。点击工具栏“登录”，用邮箱接收登录链接；登录后，笔记和个人补充保存到该账号，在其他设备登录同一邮箱可读取。MCP 登录仅供开发工具使用，不会代替读者登录。当前项目地址和公开客户端密钥在 `src/reader/supabase.ts`；可用 `VITE_SUPABASE_URL`、`VITE_SUPABASE_PUBLISHABLE_KEY` 覆盖，浏览器不得使用 service-role 密钥。
+
+本地开发模式另有“测试账号登录”：打开“登录”浮层后切换，输入专用测试账号的邮箱与密码。它使用同一 Supabase Auth 和个人数据权限，不依赖邮件发送；生产构建不显示该入口。测试账号由管理员单独提供，凭据不纳入 Git。02 本轮按 DonQ 的后续决定使用此入口验收，SMTP 与真实邮件送达留待正式开放前配置。
+
+首次登录会把本浏览器的旧个人内容导入该账号，并绑定旧内容的来源。原 localStorage 内容保留；后续换账号不会再次导入给另一人。仍打开的旧版页面继续保存时，新版会保留原始副本并提示，在“查看升级前副本”中比较、复制；旧副本不会覆盖云端较新的记录。保存失败或其他页面已更新时，编辑器保留草稿，待复制或处理后再刷新。续读位置仍保存在本浏览器。
+
+数据库结构及权限见 `supabase/migrations/`；真实数据库回滚检查见 `supabase/tests/reader-content.sql`。发布默认内容时，先应用迁移，再生成 SQL 并通过管理员连接执行：
+
+```sh
+node --experimental-strip-types scripts/prepare-cloud-content.mjs /tmp/reader-publish.sql
+node --experimental-strip-types scripts/check-cloud-content.mjs
+```
+
+发布按内容哈希更新同一教材，不改个人记录。上线地址须加入 Supabase Auth 的回跳白名单，并核对邮件发送配置；本地已配置的回跳地址不自动适用于新域名。
+
+当前项目尚未启用自定义 SMTP。[Supabase 默认发信服务](https://supabase.com/docs/guides/auth/auth-smtp)仅向项目成员发送邮件；向普通读者开放邮箱登录前，须配置发信服务并实测送达与回跳。自动回归拦截邮件请求，不代表已完成邮件送达验收。
 
 ## 浏览器回归
 
@@ -57,13 +76,19 @@ npm run preview   # 预览构建结果
 | 多层返回、退出、失败和取消 | 同模块的 `checkReviewChain`、`checkReviewExit`、`checkReviewFailures`、`checkRelatedReturn` |
 | 方法开合、续读与完整路径 | 同模块的 `checkOnDemandMethod`、`checkMethodReturnChain`、`checkReaderJourney` |
 | 滚走后定位并保留上下文 | 同模块的 `checkLocate`、`checkLocateGroup`、`checkLocateReturn` |
-| 笔记、草稿与外部修订 | 同模块的 `checkNoteAutosave`、`checkMethodDraft`、`checkTitleDraft`、`checkDraftDuringNavigation`、`checkStalePersonalWrite` |
+| 云端笔记与个人补充的异步保存 | [check-async-save.mjs](scripts/check-async-save.mjs)：`startAsyncSaveServer(port)`、`assertUnusedAsyncOrigin(page, { testOrigin })`，再运行 `checkAsyncNoteSave`、`checkAsyncPersonalSave` |
+| 首次导入、真实旧版页面后到保存与重开 | [check-content-migration.mjs](scripts/check-content-migration.mjs)：`startContentMigrationServer`、`checkContentMigration(task, { testOrigin, credentials })`；须提供修改存储前冻结的实际旧版构建 |
+| 云端修订冲突、网络失败与浏览器存储故障 | [check-content-migration-extra.mjs](scripts/check-content-migration-extra.mjs)：`checkContentMigrationExtras(task, result)`，使用上项返回的 QA 结果 |
+| 账号隔离、旧账号延迟响应与失效登录链接 | [check-content-auth.mjs](scripts/check-content-auth.mjs)：`startContentAuthServer`、`checkContentAuth`、`checkExpiredEmailCallback`；另用独立空 origin，失效链接检查拦截发送请求，不发邮件 |
+| 开发模式测试密码登录 | [check-test-login.mjs](scripts/check-test-login.mjs)：`checkTestPasswordLogin(page, { testOrigin, credentials })`，专用账号验证错误密码重试、保存、刷新、退出与重新登录；`checkProductionPasswordLoginHidden(page)` 核对生产构建隐藏测试入口；不发邮件 |
 
 `check-related-return.mjs` 的题目、关联样本和位置查找绑定第一章；依赖这些数据的检查不能直接传入其他章 ID。其他章节须使用该章真实入口与位置，沿相同阅读路径单独核验，不以第一章用例代替。`checkPreviewEntry` 只使用传入的文件页序与标记 ID，可跨章检查。
 
 按实际改动选取入口，核对原文位置、展开项、方法状态、面板滚动、焦点和返回层级；动作预期见架构说明。复用公共交互检查不代表已经点击全书每条链接。
 
 涉及个人内容或阅读记录写入的检查，使用独立测试 origin 和自己的浏览器页面，不接管用户验收页。要求 `{ testOrigin }` 的函数须显式传入；先检查各函数的存储及草稿前置条件，结束后恢复原始状态。多个检查不要并发修改同一页面或存储。
+
+云端检查还须使用可清理的专用 QA 账号。`check-related-return.mjs` 中直接读写旧 localStorage 的笔记、草稿和跨标签检查只适用于冻结的旧版；新版存储行为使用上表的云端入口。测试脚本不得打印账号凭据或清空浏览器全局存储。
 
 ## 验证记录
 

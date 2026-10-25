@@ -9,13 +9,17 @@
 | `scripts/prepare-textbook.mjs` | 核对源 PDF、索引和 PNG 哈希，生成运行页图、缩略图与目录数据 |
 | `src/textbook/book.json`、`catalog.ts` | 教材身份、文件页序、印刷页码映射、图像尺寸与页面查询；映射服务来源核对和关联标签，当前跳页界面按 SPEC R7 |
 | `content/grade-7-volume-1/chapter-N.json`、`chapter-N.locations.json` | 分章补充、逐页取舍、逐题清单及来源区域；第一章定位沿用 `locations.json` |
-| `src/textbook/chapters.ts`、`supplements.ts` | 注册六章数据，检查教材身份，查询位置、补充和逐题引导 |
+| `src/textbook/chapters.ts`、`supplements.ts` | 注册六章发布源，检查教材身份，查询已核对的教材位置 |
+| `src/textbook/content.ts`、`content-store.ts`、`sections.ts` | 从 Supabase 读取完整默认正文，提供统一节点身份、章／节和位置投影，以及运行时补充查询 |
 | `src/reader/session.ts` | 阅读页判断和尺寸变化后的滚动几何计算；不是完整会话状态机 |
 | `src/reader/reading-record.ts` | 按教材身份读写页序及页内比例，校验记录并报告存储失败 |
 | `src/reader/Reader.tsx` | 原页、入口、预览、分组选择、筛选与隐藏状态、导航事务、返回栈、滚动与焦点协调 |
 | `src/reader/Supplement.tsx` | 预览、解读、分组折叠、方法开合及关联入口 |
 | `src/reader/marker-groups.ts`、`supplement-types.tsx` | 按显示像素合并碰撞入口；提供类型、图标和名称 |
-| `src/reader/personal.ts` | 个人补充与笔记的本地存储、教材隔离及修订冲突检查 |
+| `src/reader/personal.ts` | 个人内容类型与校验、旧 localStorage 格式及兼容读写 |
+| `src/reader/cloud-personal.ts`、`useBookContent.ts` | 云端读取、旧内容导入、乐观修订保存、更新通知、账号切换及异步结果保护 |
+| `src/reader/supabase.ts`、`AccountControl.tsx`、`LegacyCopies.tsx` | 邮箱登录、开发模式测试密码登录、账号操作及旧版原始副本的只读比较与复制 |
+| `supabase/migrations/` | 默认内容与个人数据表、RLS、事务保存及迁移 RPC |
 | `src/reader/PersonalPanel.tsx`、`MarkdownEditor.tsx` | 个人补充编辑、笔记自动保存、Markdown 预览与草稿保护 |
 | `src/reader/RegionSelector.tsx`、`PanelResize.tsx` | 原页框选和下方面板高度调整 |
 
@@ -26,7 +30,7 @@
   → 页级索引、页码表、原页核对
   → 分章补充、逐题清单、定位与关联
   → 结构检查及内容审核
-  → 静态 JSON 与按需加载的页图
+  → 静态 JSON 发布到 Supabase；页图按需从静态资源加载
   → 阅读器
 ```
 
@@ -63,7 +67,13 @@
 
 默认补充正文保持独立，笔记按补充 ID 保存；个人补充有自己的标题、Markdown 和原页区域。类型筛选与单条隐藏只保存在 Reader 内存中，刷新后清除；不属于个人内容存储。笔记实时保存与个人补充显式保存的界面区别见 DESIGN，不从一种编辑器推定另一种流程。
 
-Markdown 预览通过现有渲染组件处理，原始 HTML 不执行；CodeMirror 提供编辑与撤销历史。写入失败保留草稿，旧标签写入不得覆盖较新修订。当前没有账号或跨设备同步。
+Markdown 预览通过现有渲染组件处理，原始 HTML 不执行；CodeMirror 提供编辑与撤销历史。邮箱登录使用 Supabase Auth。个人内容按账号与教材隔离，数据库 RLS 和 RPC 同时核对当前身份；默认内容公开只读，客户端只持有公开密钥。
+
+`useBookContent()` 是阅读器的内容入口。`nodes` 使用 `{ bookId, source, id }` 标识节点，`nodeKey()` 编码完整身份，默认与个人来源的同名 ID 不会碰撞。默认节点携带完整 `supplement`；个人节点携带 `personal`。章节和节可空，节点位置类型也允许为空；当前框选个人补充仍有原页位置，自由节点由后续任务扩展。
+
+`readPersonal()` 返回账号、整册修订、个人数据及旧版副本；`savePersonal(data, previous)` 用读取时的修订完成事务保存。并行页面的旧修订会失败，编辑器保留草稿；同页写入串行执行，成功后才更新本页快照并发出 `onPersonalSaved` 通知。外部更新只提示刷新，不在后台替换编辑基线。账号切换使旧异步结果失效，保留的旧账号草稿不能写入新账号。
+
+旧 localStorage 来源在首次上传前绑定账号。迁移事务同时提交内容和导入记录，失败可重试；原字符串保留，重复导入按哈希去重，已删除项不会被旧来源复活。新版在启动、旧存储事件和重新获得焦点时检查后到写入，保存为不可变副本；云端较新内容不被重新导入覆盖。提交后再次检查旧存储，覆盖读取与数据库提交之间的旧版写入窗口。原始副本可在 `LegacyCopies` 比较和复制。
 
 ## 资源与验证
 

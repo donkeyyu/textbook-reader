@@ -1,0 +1,118 @@
+[ego-browser:notice] Ego Lite update is available (current 0.6.0.16). Finish the current browser task, then ask the user before running `ego-browser upgrade`; re-read the ego-browser Skill afterward.
+Accepted controlled test draft unload dialog
+PASS dirty draft refresh position { page: 13, fraction: 0.2041025641025641 }
+PASS unsaved draft and expanded method do not survive refresh; saved notes remain
+[p4 "课本解读" | space "教材续读 B1–B4 验证"(33): 1 managed, 1 untracked — p4* "课本解读"]
+root
+  container
+    container
+      button "收起页面导航" [ref=70, loc=css:button[aria-label="收起页面导航"]]
+        svg_root
+      heading
+        text "数学 · 七年级上册"
+    container
+      container "显示补充类型" [ref=71]
+        svg_root
+      button [ref=72]
+        text "添加补充"
+  container
+    container "页面导航"
+      container
+        button "文件页序 13/202，课本第 6 页，点击跳转" [ref=73, loc=css:button[aria-label="文件页序 13/202，课本第 6 页，点击跳转"]]
+          container
+            text "文件页序"
+            text "13"
+            text "/"
+            text "202"
+          text "课本第 6 页"
+        container
+          button "上一页" [ref=74, loc=css:button[aria-label="上一页"]]
+            svg_root
+          button "下一页" [ref=75, loc=css:button[aria-label="下一页"]]
+            svg_root
+      container [ref=76]
+        button "跳转到文件第 10 页，课本第 3 页" [ref=77, loc=css:button[aria-label="跳转到文件第 10 页，课本第 3 页"]]
+          image
+          container
+            text "文件第"
+            text "10"
+            text "页"
+          text "课本第 3 页"
+        button "跳转到文件第 11 页，课本第 4 页" [ref=78, loc=css:button[aria-label="跳转到文件第 11 页，课本第 4 页"]]
+          image
+          container
+            text "文件第"
+            text "11"
+            text "页"
+          text "课本第 4 页"
+        button "跳转到文件第 12 页，课本第 5 页" [ref=79, loc=css:button[aria-label="跳转到文件第 12 页，课本第 5 页"]]
+          image
+          container
+            text "文件第"
+            text "12"
+            text "页"
+          text "课本第 5 页"
+        button "跳转到文件第 13 页，课本第 6 页" [ref=80, loc=css:button[aria-label="跳转到文件第 13 页，课本第 6 页"]]
+          image
+          container
+            text "文件第"
+            text "13"
+            text "页"
+          text "课本第 6 页"
+    container "教材连续阅读" [ref=81]
+      container "教材文件第 13 页，课本第 6 页" [ref=82]
+        image
+        button "题目引导：习题1.1第7题" [ref=83, loc=css:button[aria-label="题目引导：习题1.1第7题"]]
+          svg_root
+        button "题目引导：习题1.1第8题" [ref=84, loc=css:button[aria-label="题目引导：习题1.1第8题"]]
+          svg_root
+        button "概念与性质：±记录允许的范围，不是一次测量值" [ref=85, loc=css:button[aria-label="概念与性质：±记录允许的范围，不是一次测量值"]]
+          svg_root
+        button "题目引导：阅读与思考：用正负数表示允许偏差" [ref=86, loc=css:button[aria-label="题目引导：阅读与思考：用正负数表示允许偏差"]]
+          svg_root
+      container "教材文件第 14 页，课本第 7 页" [ref=87]
+        image
+    container "补充解读"
+      container
+        heading [ref=88]
+          text "习题1.1第8题"
+        button "关闭解读" [ref=89, loc=css:button[aria-label="关闭解读"]]
+          svg_root
+      button "隐藏解读：习题1.1第8题" [ref=90, loc=css:button[aria-label="隐藏解读：习题1.1第8题"]]
+        text "隐藏此解读"
+      container
+        container "考查知识点"
+          heading
+            text "考查知识点"
+          paragraph
+            text "正负号记录相反旋转方向；每次转动量与当前刻度；连续移动。"
+        container "思路与方法"
+          heading
+            button [ref=91]
+              text "思路与方法"
+              text "展开"
+        container "注意事项"
+          heading
+            text "注意事项"
+          paragraph
+            text "只在开始开锁前对齐0，不是每次转动前都回到0；锁盘是环形，越过0时应沿原图刻度继续读，不能把负的转动记录直接当作锁盘上的刻度数。"
+      container "关联教材"
+        heading
+          text "相关知识"
+        container
+          paragraph
+            text "比较每次移动记录与连续移动后的最终位置。"
+          button [ref=92]
+            text "连续移动与最终位置"
+            text "课本第 5 页"
+            svg_root
+      container "我的笔记"
+        form
+          container
+            heading
+              text "我的笔记"
+            button [ref=93]
+              text "保存"
+          container [ref=94]
+            textfield "笔记 Markdown" [ref=95]
+              text "支持标题、列表、加粗和链接"

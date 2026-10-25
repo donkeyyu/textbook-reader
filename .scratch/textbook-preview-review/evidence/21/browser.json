@@ -1,0 +1,8 @@
+{
+  "dirty": false,
+  "label": "文件页序 13/202课本第 6 页",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+  "platform": "MacIntel",
+  "realBeforeUnloadPrompt": "unverified: Page.reload exposed no dialog; Page.handleJavaScriptDialog returned No dialog is showing",
+  "screenshotError": "Error: Unable to capture screenshot"
+}

@@ -1,0 +1,159 @@
+{
+  "date": "2026-10-25",
+  "url": "http://127.0.0.1:5183/",
+  "taskSpace": 35,
+  "beforeVersion": {
+    "content/grade-7-volume-1/chapter-3.json": "42465e052bc0c7e90c8bb547b69eef2ffd72f57a01ba7e2392e72abb2f0486c3",
+    "content/grade-7-volume-1/chapter-3.locations.json": "cae6ce6d93075554eb9c6bf492bd88b16598bfa22f7d58ae5664e2bce938891c",
+    "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+    "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+    "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315"
+  },
+  "viewport": {
+    "width": 1772,
+    "height": 909
+  },
+  "checks": [
+    {
+      "id": "ch3-q-p89-ex32-6",
+      "links": [
+        {
+          "target": "ch3-area-value-unit",
+          "targetPage": "page-88",
+          "pass": true,
+          "focus": "related-ch3-q-p89-ex32-6-ch3-area-value-unit",
+          "positionDelta": 0
+        },
+        {
+          "target": "ch3-expression-value-checks",
+          "targetPage": "page-92",
+          "pass": true,
+          "focus": "related-ch3-q-p89-ex32-6-ch3-expression-value-checks",
+          "positionDelta": 0
+        }
+      ],
+      "entryPage": "page-89",
+      "preview": "text matches",
+      "defaultContent": "title/knowledge/cautions/paragraphs/method/purposes match; method hidden",
+      "region": {
+        "left": 0.107,
+        "top": 0.573,
+        "width": 0.025,
+        "height": 0.025
+      },
+      "toggle": "open/close/open; source region retained",
+      "pass": true
+    },
+    {
+      "id": "ch3-q-p89-ex32-7",
+      "links": [
+        {
+          "target": "ch3-formula-unit-match",
+          "targetPage": "page-87",
+          "pass": true,
+          "focus": "related-ch3-q-p89-ex32-7-ch3-formula-unit-match",
+          "positionDelta": 0
+        },
+        {
+          "target": "ch3-new-speed-whole",
+          "targetPage": "page-79",
+          "pass": true,
+          "focus": "related-ch3-q-p89-ex32-7-ch3-new-speed-whole",
+          "positionDelta": 0
+        }
+      ],
+      "entryPage": "page-89",
+      "preview": "text matches",
+      "defaultContent": "title/knowledge/cautions/paragraphs/method/purposes match; method hidden",
+      "region": {
+        "left": 0.107,
+        "top": 0.6759999999999999,
+        "width": 0.025,
+        "height": 0.025
+      },
+      "toggle": "open/close/open; source region retained",
+      "pass": true
+    },
+    {
+      "id": "ch3-q-p91-activity2",
+      "links": [
+        {
+          "target": "ch3-integer-scope-exercise",
+          "targetPage": "page-84",
+          "pass": true,
+          "focus": "related-ch3-q-p91-activity2-ch3-integer-scope-exercise",
+          "positionDelta": 0
+        },
+        {
+          "target": "ch3-value-not-expression",
+          "targetPage": "page-86",
+          "pass": true,
+          "focus": "related-ch3-q-p91-activity2-ch3-value-not-expression",
+          "positionDelta": 0
+        }
+      ],
+      "entryPage": "page-91",
+      "preview": "text matches",
+      "defaultContent": "title/knowledge/cautions/paragraphs/method/purposes match; method hidden",
+      "region": {
+        "left": 0.155,
+        "top": 0.19699999999999998,
+        "width": 0.2,
+        "height": 0.025
+      },
+      "toggle": "open/close/open; source region retained",
+      "pass": true
+    },
+    {
+      "id": "ch3-q-p94-review3-9",
+      "links": [
+        {
+          "target": "ch3-direct-proportion-condition",
+          "targetPage": "page-80",
+          "pass": true,
+          "focus": "related-ch3-q-p94-review3-9-ch3-direct-proportion-condition",
+          "positionDelta": 0
+        },
+        {
+          "target": "ch3-inverse-not-decrease",
+          "targetPage": "page-81",
+          "pass": true,
+          "focus": "related-ch3-q-p94-review3-9-ch3-inverse-not-decrease",
+          "positionDelta": 0,
+          "recovery": true
+        },
+        {
+          "target": "ch3-class-count-domain",
+          "targetPage": "page-86",
+          "pass": true,
+          "focus": "related-ch3-q-p94-review3-9-ch3-class-count-domain",
+          "positionDelta": 0,
+          "recovery": true
+        }
+      ],
+      "entryPage": "page-94",
+      "preview": "text matches",
+      "defaultContent": "title/knowledge/cautions/paragraphs/method/purposes match; method hidden",
+      "region": {
+        "left": 0.14,
+        "top": 0.48,
+        "width": 0.024,
+        "height": 0.025
+      },
+      "toggle": "open/close/open; source region retained",
+      "pass": true,
+      "attemptFailures": [
+        "Error: page.waitForSelector timed out after 10000ms: #location-ch3-inverse-not-decrease"
+      ],
+      "recovery": "Current snapshot still showed the source and link; retry only remaining two links with pointer activation."
+    }
+  ],
+  "afterVersion": {
+    "content/grade-7-volume-1/chapter-3.json": "42465e052bc0c7e90c8bb547b69eef2ffd72f57a01ba7e2392e72abb2f0486c3",
+    "content/grade-7-volume-1/chapter-3.locations.json": "cae6ce6d93075554eb9c6bf492bd88b16598bfa22f7d58ae5664e2bce938891c",
+    "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+    "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+    "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315"
+  },
+  "versionStable": true
+}

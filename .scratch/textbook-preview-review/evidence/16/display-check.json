@@ -1,0 +1,103 @@
+[
+  {
+    "id": "ch5-q-review12",
+    "sourcePage": 155,
+    "noteSha256": "9981c9d3a7703bf9f310bb4f8a2f173a084ee4123d321e5a20d5a58818fd648f",
+    "preview": {
+      "mode": "individual",
+      "title": "复习题12：将年龄按时刻对应",
+      "text": "年龄问题中的共同时间变化；倍数关系与总和关系。"
+    },
+    "group": [
+      "ch5-q-review12"
+    ],
+    "default": {
+      "title": "复习题12：将年龄按时刻对应",
+      "collapsed": true,
+      "knowledgeMatches": true,
+      "cautionsMatches": true,
+      "methodMatches": true,
+      "sourceHighlight": "location-ch5-q-review12"
+    },
+    "methodMouseKeyboard": true,
+    "methodTogglesKeepPage": true,
+    "links": [
+      {
+        "target": "ch5-age-same-time",
+        "targetPage": 155,
+        "button": {
+          "id": "related-ch5-q-review12-ch5-age-same-time",
+          "text": "同一时刻的年龄比较课本第 148 页",
+          "purpose": "对齐现在与另一个时刻，检查父亲和女儿经历的年数相同。"
+        },
+        "visited": true,
+        "targetState": {
+          "highlight": "location-ch5-age-same-time",
+          "nav": "文件页序 155/202课本第 148 页",
+          "title": "比较年龄，先确认说的是哪个时刻",
+          "body": "题干交替使用“现在”和“当……时”，这些词限定了每个年龄所属的时刻。可先做一个两人、两个时刻的空表，将题中的条件放在对应位置。从一个时刻到另一个时刻，两个人经过的年数相同。因此不要只改变其中一人的年龄，也不要把另一个时刻的年龄直接与现在的年龄相加。请据此自己确定未知量与相等关系。"
+        },
+        "returnRestored": true
+      },
+      {
+        "target": "ch5-model-choose-relation",
+        "targetPage": 120,
+        "button": {
+          "id": "related-ch5-q-review12-ch5-model-choose-relation",
+          "text": "用数量关系建立方程课本第 113 页",
+          "purpose": "分清表示两个时刻年龄的关系与最终限制未知数的条件。"
+        },
+        "visited": false
+      }
+    ],
+    "commonReturnEvidence": "../14/display-check.json; 未改变关联的条目只核对按钮，并非逐链点击",
+    "checkedAt": "2026-10-25T05:43:42.987Z"
+  },
+  {
+    "id": "ch5-q-review14",
+    "sourcePage": 155,
+    "noteSha256": "d329278b91d9ed15ff8254eaf3fd8fd17db831b972cceaf9e92b5b57db3c0e58",
+    "preview": {
+      "mode": "individual",
+      "title": "复习题14：会员费与游泳总费用",
+      "text": "固定费用与按次费用；费用差与相等点；次数范围。"
+    },
+    "group": [
+      "ch5-q-review14"
+    ],
+    "default": {
+      "title": "复习题14：会员费与游泳总费用",
+      "collapsed": true,
+      "knowledgeMatches": true,
+      "cautionsMatches": true,
+      "methodMatches": true,
+      "sourceHighlight": "location-ch5-q-review14"
+    },
+    "methodMouseKeyboard": true,
+    "methodTogglesKeepPage": true,
+    "links": [
+      {
+        "target": "ch5-energy-units",
+        "targetPage": 145,
+        "button": {
+          "id": "related-ch5-q-review14-ch5-energy-units",
+          "text": "固定费用与累计费用课本第 138 页",
+          "purpose": "用一次支出与随使用次数累积的支出分析两种方案。"
+        },
+        "visited": false
+      },
+      {
+        "target": "ch5-cost-difference",
+        "targetPage": 146,
+        "button": {
+          "id": "related-ch5-q-review14-ch5-cost-difference",
+          "text": "费用差的含义课本第 139 页",
+          "purpose": "在费用相等的界限两侧判断哪一种总费用较低。"
+        },
+        "visited": false
+      }
+    ],
+    "commonReturnEvidence": "../14/display-check.json; 未改变关联的条目只核对按钮，并非逐链点击",
+    "checkedAt": "2026-10-25T05:43:49.799Z"
+  }
+]

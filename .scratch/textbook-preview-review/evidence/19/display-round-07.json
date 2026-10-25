@@ -1,0 +1,737 @@
+{
+  "date": "2026-10-25T05:50:00.597Z",
+  "url": "http://127.0.0.1:5196/",
+  "space": 39,
+  "input": "public DOM controls and focus; no React state access; DOM assertions, not pixel review",
+  "versions": {
+    "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+    "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+    "content/grade-7-volume-1/chapter-6.json": "a800d8e822fdc13f1740403c0bb852debfd01b3c3068febebc07325d81c6b845"
+  },
+  "results": [
+    {
+      "id": "ch6-q-p186-e10",
+      "page": 186,
+      "printedPage": "179",
+      "noteSha256": "081d3fb20943c34f874b74770e57ed03907a90ca80a1f2d05553a289fbc733f3",
+      "preview": {
+        "group": [
+          "ch6-q-p186-e10"
+        ],
+        "aria": "题目引导：习题6.3第10题：由角平分线填写角关系",
+        "text": "位置条件与两次平分，各自支持哪些角度关系？",
+        "highlights": [
+          "location-ch6-q-p186-e10"
+        ],
+        "sourcePaper": "page-186",
+        "region": {
+          "x": 0.15,
+          "y": 0.079,
+          "width": 0.5670000000000001,
+          "height": 0.047
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "习题6.3第10题：由角平分线填写角关系",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p186-e10",
+        "sourcePage": 186,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-bisector-ray-conditions",
+            "id": "related-ch6-q-p186-e10-ch6-bisector-ray-conditions",
+            "label": "角的平分线",
+            "purposeMatches": true,
+            "pageLabel": "课本第 175 页",
+            "targetFilePage": 182,
+            "clicked": true
+          },
+          {
+            "target": "ch6-angle-sum-interior-ray",
+            "id": "related-ch6-q-p186-e10-ch6-angle-sum-interior-ray",
+            "label": "角的和差",
+            "purposeMatches": true,
+            "pageLabel": "课本第 173 页",
+            "targetFilePage": 180,
+            "clicked": true
+          }
+        ],
+        "roundTrips": [
+          {
+            "target": "ch6-bisector-ray-conditions",
+            "page": 182,
+            "regionMatches": true,
+            "returnFocus": "related-ch6-q-p186-e10-ch6-bisector-ray-conditions",
+            "positionDelta": 0,
+            "panelDelta": 0,
+            "methodRestored": true
+          },
+          {
+            "target": "ch6-angle-sum-interior-ray",
+            "page": 180,
+            "regionMatches": true,
+            "returnFocus": "related-ch6-q-p186-e10-ch6-angle-sum-interior-ray",
+            "positionDelta": 0,
+            "panelDelta": 0,
+            "methodRestored": true
+          }
+        ]
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p186-e11",
+      "page": 186,
+      "printedPage": "179",
+      "noteSha256": "fd02cc9bc274be957a95a62761a058431d8f542b8dc67d82abaf3d5abbbfbf39",
+      "preview": {
+        "group": [
+          "ch6-q-p186-e11"
+        ],
+        "aria": "题目引导：习题6.3第11题：三角尺不同摆放下的角关系",
+        "text": "三角尺的角度不变，摆放关系怎样影响α与β？",
+        "highlights": [
+          "location-ch6-q-p186-e11"
+        ],
+        "sourcePaper": "page-186",
+        "region": {
+          "x": 0.15,
+          "y": 0.299,
+          "width": 0.752,
+          "height": 0.047
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "习题6.3第11题：三角尺不同摆放下的角关系",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p186-e11",
+        "sourcePage": 186,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-angle-sum-interior-ray",
+            "id": "related-ch6-q-p186-e11-ch6-angle-sum-interior-ray",
+            "label": "角的和差",
+            "purposeMatches": true,
+            "pageLabel": "课本第 173 页",
+            "targetFilePage": 180,
+            "clicked": false
+          },
+          {
+            "target": "ch6-complementary-position-independent",
+            "id": "related-ch6-q-p186-e11-ch6-complementary-position-independent",
+            "label": "补角",
+            "purposeMatches": true,
+            "pageLabel": "课本第 176 页",
+            "targetFilePage": 183,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p186-e12",
+      "page": 186,
+      "printedPage": "179",
+      "noteSha256": "ee93607168beda94a9507458a9146d73c1635c46529e20d3998db03541083a8b",
+      "preview": {
+        "group": [
+          "ch6-q-p186-e12"
+        ],
+        "aria": "题目引导：习题6.3第12题：相邻齿中心线的夹角",
+        "text": "齿的个数与一周中的间隔数，怎样对应？",
+        "highlights": [
+          "location-ch6-q-p186-e12"
+        ],
+        "sourcePaper": "page-186",
+        "region": {
+          "x": 0.15,
+          "y": 0.517,
+          "width": 0.75,
+          "height": 0.047
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "习题6.3第12题：相邻齿中心线的夹角",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p186-e12",
+        "sourcePage": 186,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-compound-angle-units",
+            "id": "related-ch6-q-p186-e12-ch6-compound-angle-units",
+            "label": "周角与度、分",
+            "purposeMatches": true,
+            "pageLabel": "课本第 171 页",
+            "targetFilePage": 178,
+            "clicked": false
+          },
+          {
+            "target": "ch6-angle-round-to-minute",
+            "id": "related-ch6-q-p186-e12-ch6-angle-round-to-minute",
+            "label": "精确到分",
+            "purposeMatches": true,
+            "pageLabel": "课本第 175 页",
+            "targetFilePage": 182,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p187-e15",
+      "page": 187,
+      "printedPage": "180",
+      "noteSha256": "7d8a272a18577cab63a644d0bbe979a5831a929f1a4327881a56d14c7ee6d729",
+      "preview": {
+        "group": [
+          "ch6-q-p187-e15"
+        ],
+        "aria": "题目引导：习题6.3第15题：延长边所得角的和",
+        "text": "换图后，哪些选角规则必须保持一致？",
+        "highlights": [
+          "location-ch6-q-p187-e15"
+        ],
+        "sourcePaper": "page-187",
+        "region": {
+          "x": 0.10800000000000001,
+          "y": 0.079,
+          "width": 0.748,
+          "height": 0.048
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "习题6.3第15题：延长边所得角的和",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p187-e15",
+        "sourcePage": 187,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-extension-order",
+            "id": "related-ch6-q-p187-e15-ch6-extension-order",
+            "label": "延长方向",
+            "purposeMatches": true,
+            "pageLabel": "课本第 163 页",
+            "targetFilePage": 170,
+            "clicked": false
+          },
+          {
+            "target": "ch6-compound-angle-units",
+            "id": "related-ch6-q-p187-e15-ch6-compound-angle-units",
+            "label": "角的度量",
+            "purposeMatches": true,
+            "pageLabel": "课本第 171 页",
+            "targetFilePage": 178,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p189-activity1",
+      "page": 189,
+      "printedPage": "182",
+      "noteSha256": "143d9b1e4f3af36c2d1af548aa825a6e3d0b948fd546d2d06c69fc7e6b3d39e8",
+      "preview": {
+        "group": [
+          "ch6-q-p189-activity1"
+        ],
+        "aria": "题目引导：数学活动1：制作纸魔方",
+        "text": "制作辅助部分与几何面有什么区别？连接改变时应观察什么？",
+        "highlights": [
+          "location-ch6-q-p189-activity1"
+        ],
+        "sourcePaper": "page-189",
+        "region": {
+          "x": 0.11,
+          "y": 0.18,
+          "width": 0.745,
+          "height": 0.046
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "数学活动1：制作纸魔方",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p189-activity1",
+        "sourcePage": 189,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-net-vs-view",
+            "id": "related-ch6-q-p189-activity1-ch6-net-vs-view",
+            "label": "展开图",
+            "purposeMatches": true,
+            "pageLabel": "课本第 153 页",
+            "targetFilePage": 160,
+            "clicked": false
+          },
+          {
+            "target": "ch6-paper-glue-tabs",
+            "id": "related-ch6-q-p189-activity1-ch6-paper-glue-tabs",
+            "label": "面与粘贴边",
+            "purposeMatches": true,
+            "pageLabel": "课本第 182 页",
+            "targetFilePage": 189,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p190-activity2",
+      "page": 190,
+      "printedPage": "183",
+      "noteSha256": "8c9bbbb7210b4c203a9d87d3c1fbc7d72302a9d88c9e1d32468f4d1df635e20c",
+      "preview": {
+        "group": [
+          "ch6-q-p190-activity2"
+        ],
+        "aria": "题目引导：数学活动2：绘制五角星及星形探索",
+        "text": "等角、连线与折叠，分别怎样支持星形的构造？",
+        "highlights": [
+          "location-ch6-q-p190-activity2"
+        ],
+        "sourcePaper": "page-190",
+        "region": {
+          "x": 0.195,
+          "y": 0.135,
+          "width": 0.485,
+          "height": 0.025
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "数学活动2：绘制五角星及星形探索",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p190-activity2",
+        "sourcePage": 190,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-compound-angle-units",
+            "id": "related-ch6-q-p190-activity2-ch6-compound-angle-units",
+            "label": "周角与角的度量",
+            "purposeMatches": true,
+            "pageLabel": "课本第 171 页",
+            "targetFilePage": 178,
+            "clicked": false
+          },
+          {
+            "target": "ch6-star-consecutive-angles",
+            "id": "related-ch6-q-p190-activity2-ch6-star-consecutive-angles",
+            "label": "连续作等角",
+            "purposeMatches": true,
+            "pageLabel": "课本第 183 页",
+            "targetFilePage": 190,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p192-recap1",
+      "page": 192,
+      "printedPage": "185",
+      "noteSha256": "21ebfca776379d93b6cc4077357e81e7f5fa18974c878b25266de44105e89589",
+      "preview": {
+        "group": [
+          "ch6-q-p192-recap1"
+        ],
+        "aria": "题目引导：小结回顾与思考第1题：描述并画出数学名词",
+        "text": "描述一个概念时，图和文字分别要保留哪些条件？",
+        "highlights": [
+          "location-ch6-q-p192-recap1"
+        ],
+        "sourcePaper": "page-192",
+        "region": {
+          "x": 0.15,
+          "y": 0.22399999999999998,
+          "width": 0.735,
+          "height": 0.048
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "小结回顾与思考第1题：描述并画出数学名词",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p192-recap1",
+        "sourcePage": 192,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-solid-not-coplanar",
+            "id": "related-ch6-q-p192-recap1-ch6-solid-not-coplanar",
+            "label": "立体图形",
+            "purposeMatches": true,
+            "pageLabel": "课本第 151 页",
+            "targetFilePage": 158,
+            "clicked": false
+          },
+          {
+            "target": "ch6-net-vs-view",
+            "id": "related-ch6-q-p192-recap1-ch6-net-vs-view",
+            "label": "展开图",
+            "purposeMatches": true,
+            "pageLabel": "课本第 153 页",
+            "targetFilePage": 160,
+            "clicked": false
+          },
+          {
+            "target": "ch6-distance-is-length",
+            "id": "related-ch6-q-p192-recap1-ch6-distance-is-length",
+            "label": "两点间的距离",
+            "purposeMatches": true,
+            "pageLabel": "课本第 165 页",
+            "targetFilePage": 172,
+            "clicked": false
+          },
+          {
+            "target": "ch6-midpoint-two-conditions",
+            "id": "related-ch6-q-p192-recap1-ch6-midpoint-two-conditions",
+            "label": "线段的中点",
+            "purposeMatches": true,
+            "pageLabel": "课本第 166 页",
+            "targetFilePage": 173,
+            "clicked": false
+          },
+          {
+            "target": "ch6-bisector-ray-conditions",
+            "id": "related-ch6-q-p192-recap1-ch6-bisector-ray-conditions",
+            "label": "角的平分线",
+            "purposeMatches": true,
+            "pageLabel": "课本第 175 页",
+            "targetFilePage": 182,
+            "clicked": false
+          },
+          {
+            "target": "ch6-complementary-position-independent",
+            "id": "related-ch6-q-p192-recap1-ch6-complementary-position-independent",
+            "label": "补角",
+            "purposeMatches": true,
+            "pageLabel": "课本第 176 页",
+            "targetFilePage": 183,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p192-recap2",
+      "page": 192,
+      "printedPage": "185",
+      "noteSha256": "78a478f81786caa5dccf70d7d4f7f177d157e93b183dcffe5f4fdc1db1caf5ae",
+      "preview": {
+        "group": [
+          "ch6-q-p192-recap2"
+        ],
+        "aria": "题目引导：小结回顾与思考第2题：举几何图形的实例",
+        "text": "生活实例中的哪个部分，提供了所说的几何形象？",
+        "highlights": [
+          "location-ch6-q-p192-recap2"
+        ],
+        "sourcePaper": "page-192",
+        "region": {
+          "x": 0.195,
+          "y": 0.34,
+          "width": 0.515,
+          "height": 0.023
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "小结回顾与思考第2题：举几何图形的实例",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p192-recap2",
+        "sourcePage": 192,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-solid-not-coplanar",
+            "id": "related-ch6-q-p192-recap2-ch6-solid-not-coplanar",
+            "label": "立体图形",
+            "purposeMatches": true,
+            "pageLabel": "课本第 151 页",
+            "targetFilePage": 158,
+            "clicked": false
+          },
+          {
+            "target": "ch6-plane-not-flat-object",
+            "id": "related-ch6-q-p192-recap2-ch6-plane-not-flat-object",
+            "label": "平面图形",
+            "purposeMatches": true,
+            "pageLabel": "课本第 151 页",
+            "targetFilePage": 158,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p192-recap3",
+      "page": 192,
+      "printedPage": "185",
+      "noteSha256": "7a736fab28b48e81a572bcda41d7d5511c4084a3c1eeb0c639967380c06bbeb1",
+      "preview": {
+        "group": [
+          "ch6-q-p192-recap3"
+        ],
+        "aria": "题目引导：小结回顾与思考第3题：展开图与观察图",
+        "text": "展开图与观察图，各自保留了立体的哪些信息？",
+        "highlights": [
+          "location-ch6-q-p192-recap3"
+        ],
+        "sourcePaper": "page-192",
+        "region": {
+          "x": 0.15,
+          "y": 0.369,
+          "width": 0.7440000000000001,
+          "height": 0.048
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "小结回顾与思考第3题：展开图与观察图",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p192-recap3",
+        "sourcePage": 192,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-net-vs-view",
+            "id": "related-ch6-q-p192-recap3-ch6-net-vs-view",
+            "label": "展开图与观察图",
+            "purposeMatches": true,
+            "pageLabel": "课本第 153 页",
+            "targetFilePage": 160,
+            "clicked": false
+          },
+          {
+            "target": "ch6-view-overlap",
+            "id": "related-ch6-q-p192-recap3-ch6-view-overlap",
+            "label": "观察中的重叠",
+            "purposeMatches": true,
+            "pageLabel": "课本第 153 页",
+            "targetFilePage": 160,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p192-recap4",
+      "page": 192,
+      "printedPage": "185",
+      "noteSha256": "1dbd3f98fa21373872e4e1c7cd665eebd22f668f60663f6ee500d07ebd656231",
+      "preview": {
+        "group": [
+          "ch6-q-p192-recap4"
+        ],
+        "aria": "题目引导：小结回顾与思考第4题：直线和线段的重要结论",
+        "text": "关于直线与线段的结论，各自回答什么问题？",
+        "highlights": [
+          "location-ch6-q-p192-recap4"
+        ],
+        "sourcePaper": "page-192",
+        "region": {
+          "x": 0.195,
+          "y": 0.426,
+          "width": 0.64,
+          "height": 0.023
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "小结回顾与思考第4题：直线和线段的重要结论",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p192-recap4",
+        "sourcePage": 192,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-two-points-unique",
+            "id": "related-ch6-q-p192-recap4-ch6-two-points-unique",
+            "label": "两点确定一条直线",
+            "purposeMatches": true,
+            "pageLabel": "课本第 162 页",
+            "targetFilePage": 169,
+            "clicked": false
+          },
+          {
+            "target": "ch6-shortest-same-endpoints",
+            "id": "related-ch6-q-p192-recap4-ch6-shortest-same-endpoints",
+            "label": "两点之间线段最短",
+            "purposeMatches": true,
+            "pageLabel": "课本第 165 页",
+            "targetFilePage": 172,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p192-recap5",
+      "page": 192,
+      "printedPage": "185",
+      "noteSha256": "d7c53672900fa565702c452103483344c568012af15098b58eb37418e5afcda9",
+      "preview": {
+        "group": [
+          "ch6-q-p192-recap5"
+        ],
+        "aria": "题目引导：小结回顾与思考第5题：角的知识与结论",
+        "text": "角的各项知识，怎样连成带有条件的关系？",
+        "highlights": [
+          "location-ch6-q-p192-recap5"
+        ],
+        "sourcePaper": "page-192",
+        "region": {
+          "x": 0.195,
+          "y": 0.455,
+          "width": 0.68,
+          "height": 0.023
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "小结回顾与思考第5题：角的知识与结论",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p192-recap5",
+        "sourcePage": 192,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-angle-rays-definition",
+            "id": "related-ch6-q-p192-recap5-ch6-angle-rays-definition",
+            "label": "角的定义",
+            "purposeMatches": true,
+            "pageLabel": "课本第 170 页",
+            "targetFilePage": 177,
+            "clicked": false
+          },
+          {
+            "target": "ch6-angle-sum-interior-ray",
+            "id": "related-ch6-q-p192-recap5-ch6-angle-sum-interior-ray",
+            "label": "角的和差",
+            "purposeMatches": true,
+            "pageLabel": "课本第 173 页",
+            "targetFilePage": 180,
+            "clicked": false
+          },
+          {
+            "target": "ch6-equal-angle-complements",
+            "id": "related-ch6-q-p192-recap5-ch6-equal-angle-complements",
+            "label": "同角（等角）的余角相等",
+            "purposeMatches": true,
+            "pageLabel": "课本第 176 页",
+            "targetFilePage": 183,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "date": "2026-10-25T05:24:39.559Z",
+  "space": 39,
+  "versions": {
+    "src/reader/Reader.tsx": "4c0876f92937145a7b2d19c61a18aa64d7218cfc1af43b35b043c1cf3b19cedc",
+    "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+    "content/grade-7-volume-1/chapter-6.json": "951f72660d4869b36979430049a08b7ce6747af4ec09ee0ebc692d845f62d586"
+  },
+  "results": [
+    {
+      "id": "ch6-q-geometric-properties",
+      "page": 159,
+      "printedPage": "152",
+      "preview": {
+        "group": 1,
+        "aria": "题目引导：6.1.1 练习第1题：辨认几何属性",
+        "text": "逐条辨别描述的是形状、大小、位置，还是物质的其他性质。",
+        "highlights": [
+          "location-ch6-q-geometric-properties"
+        ]
+      },
+      "default": {
+        "title": "6.1.1 练习第1题：辨认几何属性",
+        "knowledge": [
+          "几何研究的内容",
+          "实物属性与几何属性"
+        ],
+        "cautions": [
+          "描述中含有数字，不代表它一定属于几何属性。",
+          "同一实物可具有多类性质，不应把“铁球”的所有性质一起归类。"
+        ],
+        "paragraphs": [],
+        "methodExpanded": "false",
+        "methodHidden": true,
+        "highlight": "location-ch6-q-geometric-properties"
+      },
+      "links": [
+        {
+          "target": "ch6-abstract-shape",
+          "targetPage": "page-157",
+          "returnFocus": "related-ch6-q-geometric-properties-ch6-abstract-shape",
+          "positionDelta": 0,
+          "methodRestored": true
+        }
+      ],
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-solids-plane-faces",
+      "page": 159,
+      "printedPage": "152",
+      "preview": {
+        "group": 1,
+        "aria": "题目引导：6.1.1 练习第2题：寻找立体表面的平面图形",
+        "text": "先找实际的面，再说明它是什么图形、位于哪里。",
+        "highlights": [
+          "location-ch6-q-solids-plane-faces"
+        ]
+      },
+      "default": {
+        "title": "6.1.1 练习第2题：寻找立体表面的平面图形",
+        "knowledge": [
+          "立体图形的表面",
+          "平面图形与曲面"
+        ],
+        "cautions": [
+          "透视画中倾斜的面可能看起来变形，要按它所表示的立体理解。",
+          "不能因为纸上能画出一个封闭轮廓，就认定它表示一个平面。"
+        ],
+        "paragraphs": [],
+        "methodExpanded": "false",
+        "methodHidden": true,
+        "highlight": "location-ch6-q-solids-plane-faces"
+      },
+      "links": [
+        {
+          "target": "ch6-plane-not-flat-object",
+          "targetPage": "page-158",
+          "returnFocus": "related-ch6-q-solids-plane-faces-ch6-plane-not-flat-object",
+          "positionDelta": 0,
+          "methodRestored": true
+        },
+        {
+          "target": "ch6-hidden-edges",
+          "targetPage": "page-158",
+          "returnFocus": "related-ch6-q-solids-plane-faces-ch6-hidden-edges",
+          "positionDelta": 0,
+          "methodRestored": true
+        }
+      ],
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-prism-view-directions",
+      "page": 161,
+      "printedPage": "154",
+      "preview": {
+        "group": 1,
+        "aria": "题目引导：6.1.1 练习第1题：辨认观察方向",
+        "text": "把每幅平面图分别与棱柱在各方向显示的轮廓相比较。",
+        "highlights": [
+          "location-ch6-q-prism-view-directions"
+        ]
+      },
+      "default": {
+        "title": "6.1.1 练习第1题：辨认观察方向",
+        "knowledge": [
+          "立体图形的观察方向",
+          "观察图中的边界和内部线条"
+        ],
+        "cautions": [
+          "图中画在左右的顺序不是观察方向的答案顺序。",
+          "内部线条是否出现也提供信息，不只比较最外面的形状。"
+        ],
+        "paragraphs": [],
+        "methodExpanded": "false",
+        "methodHidden": true,
+        "highlight": "location-ch6-q-prism-view-directions"
+      },
+      "links": [
+        {
+          "target": "ch6-views-information",
+          "targetPage": "page-159",
+          "returnFocus": "related-ch6-q-prism-view-directions-ch6-views-information",
+          "positionDelta": 0,
+          "methodRestored": true
+        }
+      ],
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-net-matching",
+      "page": 161,
+      "printedPage": "154",
+      "preview": {
+        "group": 1,
+        "aria": "题目引导：6.1.1 练习第2题：匹配展开图",
+        "text": "既比较各部分的形状，也检查它们能否围成相应表面。",
+        "highlights": [
+          "location-ch6-q-net-matching"
+        ]
+      },
+      "default": {
+        "title": "6.1.1 练习第2题：匹配展开图",
+        "knowledge": [
+          "立体图形与展开图",
+          "展开图的连接与边界"
+        ],
+        "cautions": [
+          "外观相似的两张展开图也可能只是摆放方向不同；不要只按纸面朝向排除。",
+          "要检查六个候选图，不能发现一组匹配后就停止。"
+        ],
+        "paragraphs": [],
+        "methodExpanded": "false",
+        "methodHidden": true,
+        "highlight": "location-ch6-q-net-matching"
+      },
+      "links": [
+        {
+          "target": "ch6-net-vs-view",
+          "targetPage": "page-160",
+          "returnFocus": "related-ch6-q-net-matching-ch6-net-vs-view",
+          "positionDelta": 0,
+          "methodRestored": true
+        }
+      ],
+      "result": "pass"
+    }
+  ]
+}

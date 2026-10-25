@@ -1,5 +1,6 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import { getLocation, type Supplement } from "../textbook/supplements";
+import { getPage, pageLabel } from "../textbook/catalog";
 
 export type PreviewAnchor = { left: number; top: number; width: number; docked: boolean };
 
@@ -20,11 +21,15 @@ export function SupplementPreview({ note, anchor, onKeep, onLeave }: {
     style={anchor.docked ? undefined : { left: anchor.left, top, width: anchor.width }} onPointerEnter={onKeep} onPointerLeave={onLeave} onFocus={onKeep}
     onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) onLeave(); }}>
     <p>{note.preview}</p>
-    <p className="preview-hint">点击灯泡展开解读</p>
+    <p className="preview-hint">点击标记展开解读</p>
   </div>;
 }
 
-export function SupplementPanel({ notes, expandedId, pending, onSelect, onClose, onRelated, onBack, activeLocationId }: {
+export function SupplementPanel({ notes, expandedId, pending, onSelect, onClose, onRelated, onBack, activeLocationId, renderPersonal, onHide, methodOpenIds, onMethodToggle }: {
+  onHide: (id: string) => void;
+  renderPersonal: (note: Supplement) => ReactNode;
+  methodOpenIds: string[];
+  onMethodToggle: (id: string) => void;
   notes: Supplement[];
   expandedId: string | null;
   pending: boolean;
@@ -55,13 +60,17 @@ export function SupplementPanel({ notes, expandedId, pending, onSelect, onClose,
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </summary>
       <div id={`content-${note.id}`} className="supplement-accordion-content" role="region" aria-labelledby={`choice-${note.id}`}>
-        {expandedId === note.id && <SupplementContent note={note} pending={pending} onRelated={onRelated} activeLocationId={activeLocationId} />}
+        {expandedId === note.id && <SupplementContent note={note} pending={pending} onRelated={onRelated} activeLocationId={activeLocationId} personal={renderPersonal(note)} onHide={onHide} methodOpen={methodOpenIds.includes(note.id)} onMethodToggle={() => onMethodToggle(note.id)} />}
       </div>
-    </details> : <SupplementContent key={note.id} note={note} pending={pending} onRelated={onRelated} activeLocationId={activeLocationId} />)}
+    </details> : <SupplementContent key={note.id} note={note} pending={pending} onRelated={onRelated} activeLocationId={activeLocationId} personal={renderPersonal(note)} onHide={onHide} methodOpen={methodOpenIds.includes(note.id)} onMethodToggle={() => onMethodToggle(note.id)} />)}
   </aside>;
 }
 
-function SupplementContent({ note, pending, onRelated, activeLocationId }: {
+function SupplementContent({ note, pending, onRelated, activeLocationId, personal, onHide, methodOpen, onMethodToggle }: {
+  onHide: (id: string) => void;
+  personal: ReactNode;
+  methodOpen: boolean;
+  onMethodToggle: () => void;
   note: Supplement;
   pending: boolean;
   onRelated: (locationId: string, focusId: string) => void;
@@ -69,6 +78,7 @@ function SupplementContent({ note, pending, onRelated, activeLocationId }: {
 }) {
   const relatedLinks = note.related.filter(({ locationId }) => locationId !== activeLocationId);
   return <>
+    <button className="text-button hide-supplement" aria-label={`隐藏解读：${note.title}`} title={`隐藏解读：${note.title}`} onClick={() => onHide(note.id)}>隐藏此解读</button>
     <div className="supplement-body">
       {note.questionGuide && <div className="question-guide">
         {([
@@ -76,8 +86,18 @@ function SupplementContent({ note, pending, onRelated, activeLocationId }: {
           ['思路与方法', note.questionGuide.method],
           ['注意事项', note.questionGuide.cautions],
         ] as const).map(([label, items]) => <section key={label} aria-label={label}>
-          <h3>{label}</h3>
-          {items.map((item, index) => <p key={index}>{item}</p>)}
+          {label === '思路与方法' ? <>
+            <h3><button id={`method-${note.id}`} type="button" className="text-button method-toggle"
+              aria-expanded={methodOpen} aria-controls={`method-content-${note.id}`} onClick={onMethodToggle}>
+              思路与方法<span>{methodOpen ? '收起' : '展开'}</span>
+            </button></h3>
+            <div id={`method-content-${note.id}`} hidden={!methodOpen}>
+              {items.map((item, index) => <p key={index}>{item}</p>)}
+            </div>
+          </> : <>
+            <h3>{label}</h3>
+            {items.map((item, index) => <p key={index}>{item}</p>)}
+          </>}
         </section>)}
       </div>}
       {note.paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
@@ -91,11 +111,12 @@ function SupplementContent({ note, pending, onRelated, activeLocationId }: {
           <p>{related.purpose}</p>
           <button id={focusId} className="text-button" disabled={pending}
             onClick={() => onRelated(related.locationId, focusId)}>
-            {related.label}<span className="related-page">{location.printedPage === null ? `PDF 第 ${location.page} 页` : `第 ${location.printedPage} 页`}</span>
+            {related.label}<span className="related-page">{pageLabel(getPage(location.page))}</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </button>
         </div>;
       })}
     </div>}
+    {personal}
   </>;
 }

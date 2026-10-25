@@ -1,0 +1,19 @@
+{
+  "titleBefore": {
+    "value": "Changed title",
+    "dirty": "true",
+    "beforeUnloadProtected": false
+  },
+  "titleAfter": {
+    "editor": false,
+    "prompts": 0
+  },
+  "pendingBefore": {
+    "draft": "Pending draft",
+    "pending": true
+  },
+  "pendingAfter": {
+    "draft": "支持标题、列表、加粗和链接",
+    "highlight": "location-ch1-deviation"
+  }
+}

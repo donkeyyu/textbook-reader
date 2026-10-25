@@ -1,0 +1,396 @@
+{
+  "checkedAt": "2026-10-25T04:54:55.397Z",
+  "gitHead": "ebe956a90b7b2b12f08f331c423fa76ec3a6d8e5",
+  "workingTree": true,
+  "scope": {
+    "pages": [
+      8,
+      20
+    ],
+    "questionCount": 47,
+    "ids": [
+      "ch1-why-negative",
+      "ch1-intro-profit-question",
+      "ch1-intro-production-question",
+      "ch1-example-1-1-guide",
+      "ch1-practice-p3-1",
+      "ch1-practice-p3-2",
+      "ch1-practice-p3-3",
+      "ch1-practice-p3-4",
+      "ch1-think-map-bill",
+      "ch1-example-1-2-guide",
+      "ch1-growth-rate-question",
+      "ch1-practice-p5-1",
+      "ch1-practice-p5-2",
+      "ch1-practice-p5-3",
+      "ch1-exercise-1-1-1",
+      "ch1-exercise-1-1-2",
+      "ch1-exercise-1-1-3",
+      "ch1-exercise-1-1-4",
+      "ch1-direction-exercise",
+      "ch1-measurement-exercise",
+      "ch1-exercise-1-1-7",
+      "ch1-exercise-1-1-8",
+      "ch1-tolerance-question",
+      "ch1-rational-think",
+      "ch1-example-1-2-1-guide",
+      "ch1-practice-p8-1",
+      "ch1-practice-p8-2",
+      "ch1-practice-p8-3",
+      "ch1-road-question",
+      "ch1-road-think",
+      "ch1-thermometer-think",
+      "ch1-example-1-2-2-guide",
+      "ch1-practice-p11-1",
+      "ch1-practice-p11-2",
+      "ch1-practice-p11-3",
+      "ch1-number-line-move",
+      "ch1-opposite-inquiry",
+      "ch1-q-opposite-sign",
+      "ch1-q-opposite-geometry",
+      "ch1-q-example-3",
+      "ch1-q-opposite-practice-1",
+      "ch1-q-opposite-practice-2",
+      "ch1-q-opposite-practice-3",
+      "ch1-q-opposite-practice-4",
+      "ch1-q-absolute-intro",
+      "ch1-q-absolute-inquiry",
+      "ch1-q-example-4"
+    ]
+  },
+  "changed": [
+    {
+      "id": "ch1-practice-p3-1",
+      "fields": [
+        "preview"
+      ],
+      "questionFields": []
+    },
+    {
+      "id": "ch1-practice-p3-3",
+      "fields": [
+        "preview"
+      ],
+      "questionFields": []
+    },
+    {
+      "id": "ch1-growth-rate-question",
+      "fields": [
+        "preview"
+      ],
+      "questionFields": []
+    },
+    {
+      "id": "ch1-practice-p5-1",
+      "fields": [
+        "preview"
+      ],
+      "questionFields": []
+    },
+    {
+      "id": "ch1-practice-p5-3",
+      "fields": [
+        "preview"
+      ],
+      "questionFields": []
+    },
+    {
+      "id": "ch1-direction-exercise",
+      "fields": [
+        "preview",
+        "paragraphs",
+        "questionGuide"
+      ],
+      "questionFields": [
+        "method"
+      ]
+    },
+    {
+      "id": "ch1-measurement-exercise",
+      "fields": [
+        "preview",
+        "paragraphs"
+      ],
+      "questionFields": []
+    },
+    {
+      "id": "ch1-exercise-1-1-8",
+      "fields": [
+        "questionGuide"
+      ],
+      "questionFields": [
+        "method"
+      ]
+    },
+    {
+      "id": "ch1-tolerance-question",
+      "fields": [
+        "preview"
+      ],
+      "questionFields": []
+    },
+    {
+      "id": "ch1-practice-p8-3",
+      "fields": [
+        "preview"
+      ],
+      "questionFields": []
+    },
+    {
+      "id": "ch1-road-question",
+      "fields": [
+        "preview",
+        "questionGuide"
+      ],
+      "questionFields": [
+        "method"
+      ]
+    },
+    {
+      "id": "ch1-road-think",
+      "fields": [
+        "questionGuide"
+      ],
+      "questionFields": [
+        "method"
+      ]
+    },
+    {
+      "id": "ch1-thermometer-think",
+      "fields": [
+        "questionGuide"
+      ],
+      "questionFields": [
+        "knowledgePoints",
+        "method"
+      ]
+    },
+    {
+      "id": "ch1-example-1-2-2-guide",
+      "fields": [
+        "preview",
+        "questionGuide"
+      ],
+      "questionFields": [
+        "method"
+      ]
+    },
+    {
+      "id": "ch1-practice-p11-1",
+      "fields": [
+        "preview"
+      ],
+      "questionFields": []
+    },
+    {
+      "id": "ch1-practice-p11-2",
+      "fields": [
+        "preview",
+        "questionGuide"
+      ],
+      "questionFields": [
+        "method"
+      ]
+    },
+    {
+      "id": "ch1-practice-p11-3",
+      "fields": [
+        "preview",
+        "questionGuide"
+      ],
+      "questionFields": [
+        "method"
+      ]
+    },
+    {
+      "id": "ch1-number-line-move",
+      "fields": [
+        "preview",
+        "paragraphs",
+        "questionGuide"
+      ],
+      "questionFields": [
+        "method"
+      ]
+    },
+    {
+      "id": "ch1-opposite-inquiry",
+      "fields": [
+        "preview",
+        "questionGuide"
+      ],
+      "questionFields": [
+        "method"
+      ]
+    },
+    {
+      "id": "ch1-q-opposite-sign",
+      "fields": [
+        "questionGuide"
+      ],
+      "questionFields": [
+        "cautions"
+      ]
+    },
+    {
+      "id": "ch1-q-opposite-practice-1",
+      "fields": [
+        "questionGuide"
+      ],
+      "questionFields": [
+        "method"
+      ]
+    },
+    {
+      "id": "ch1-q-opposite-practice-2",
+      "fields": [
+        "preview",
+        "questionGuide"
+      ],
+      "questionFields": [
+        "method"
+      ]
+    },
+    {
+      "id": "ch1-q-opposite-practice-3",
+      "fields": [
+        "preview"
+      ],
+      "questionFields": []
+    },
+    {
+      "id": "ch1-q-opposite-practice-4",
+      "fields": [
+        "preview"
+      ],
+      "questionFields": []
+    },
+    {
+      "id": "ch1-q-absolute-intro",
+      "fields": [
+        "questionGuide"
+      ],
+      "questionFields": [
+        "knowledgePoints",
+        "method",
+        "cautions"
+      ]
+    }
+  ],
+  "unchangedCount": 22,
+  "sampleUnchanged": true,
+  "coverageUnchanged": true,
+  "locationsEditedBy04": false,
+  "viewedOriginalImages": [
+    {
+      "page": 1,
+      "printedPage": null,
+      "sha256": "5019e6ae63a20c7b62fc8d74be5d598b6ee800f0e9d14a2500f8203707026f9c"
+    },
+    {
+      "page": 3,
+      "printedPage": null,
+      "sha256": "23ff04618f745527951778229b3c76a579ecb930973739808779c55b05a267c4"
+    },
+    {
+      "page": 8,
+      "printedPage": null,
+      "sha256": "f1691755af1bacd9fedc2c430415ebc8c124bb6e9aca3f9ec8a13329f4858940"
+    },
+    {
+      "page": 9,
+      "printedPage": "2",
+      "sha256": "a18d3af40da5234bb14eaabb06f78e3a3cb33e03dd6fbf8fb25ff0aeac09402d"
+    },
+    {
+      "page": 10,
+      "printedPage": "3",
+      "sha256": "db70e624de3f76566bc1ae661673884fc92373c0fe78c320e25aeb30e3d3ad1a"
+    },
+    {
+      "page": 11,
+      "printedPage": "4",
+      "sha256": "ce7fc7a49700a23128ff1e8cba06d12849c552016cb43610dc8160a8496b758e"
+    },
+    {
+      "page": 12,
+      "printedPage": "5",
+      "sha256": "a8fa482a2ea7e3d0360ca84a092802286d3a8444d1fdb841df8a1e4d74bdcc10"
+    },
+    {
+      "page": 13,
+      "printedPage": "6",
+      "sha256": "c0fee089411a64dc14a5f4929e105707545f3a75f1065d5a9455bf88dc9f27c7"
+    },
+    {
+      "page": 14,
+      "printedPage": "7",
+      "sha256": "dd4d1deb8134f478a7096ddee6f3cc00c8bf46e707506dd8abfb2f575a105b90"
+    },
+    {
+      "page": 15,
+      "printedPage": "8",
+      "sha256": "47b5b9f02afe9bec3e6d81ead91c702c84999e21b93cee16565c4e8147af644d"
+    },
+    {
+      "page": 16,
+      "printedPage": "9",
+      "sha256": "2a71a3fab23b7fa2247d1d2350a5ded5afce9121b42345046a3df5eed0c15a99"
+    },
+    {
+      "page": 17,
+      "printedPage": "10",
+      "sha256": "883d03197d8874e8155534adf443ee6c41f063806328f7f08f9f6f568d3be846"
+    },
+    {
+      "page": 18,
+      "printedPage": "11",
+      "sha256": "c5156ad8f340713a50e72c1348c31761abe4c889513d0c458cc9df7269153e0e"
+    },
+    {
+      "page": 19,
+      "printedPage": "12",
+      "sha256": "ad8bb1bc7700586f1e590e247709b1f84ac6cb8655dbcf70e13516dd5e97ad5e"
+    },
+    {
+      "page": 20,
+      "printedPage": "13",
+      "sha256": "a19939145eb2d97dd918cb0e6f2f33e84f479dbe38b405f930421383a55585de"
+    },
+    {
+      "page": 21,
+      "printedPage": "14",
+      "sha256": "871ca37c81208cbf9d67e914f34300c8e01946dab65106527397fb15d818ccbd"
+    }
+  ],
+  "checks": {
+    "npmTest": {
+      "passed": 21,
+      "failed": 0
+    },
+    "typecheck": "passed via npm run build",
+    "build": "passed; existing chunk-size warning"
+  },
+  "files": {
+    "content/grade-7-volume-1/chapter-1.json": "6ef5888d0d442895d49980644f875b82e3b18d89043f1086c33ab65f07380dd3",
+    "content/grade-7-volume-1/locations.json": "fd94dcb7987a51f6f556555352bb3e493f6a0c09ff7e3f6e9a866cc0f39864a4",
+    "src/reader/Reader.tsx": "b837fbdcbd73c52ce35225ee57646f7e41087575e2ebb2a63630ddfaf1e9fb2c",
+    "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+    "src/reader/session.ts": "90b47510bc2db2f5bca45880f17aa720d78be323b01a6cf71e76264072191091",
+    "src/reader/reading-record.ts": "a66bf4630718d1ddef4554b60cd63397791f02177a1746d706e52860a92f8d49",
+    "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315",
+    "src/textbook/catalog.ts": "751ffccfe183cb905b076c6d06663a378ca3c3e4758fc2efcf6baa2944381388",
+    "src/textbook/book.json": "77d74c7b49e1474cbf736d2455260f9537b03e24667289bbc376d557a4d8a30b",
+    "scripts/check-related-return.mjs": "28ed68145a5677cfea02595bab6123a39e2f9ca9f42055cd3f41827c26c41076",
+    "package.json": "e972dc109c62a655e81dd7dee86eb685f90309bb5b36d154a90d127b0f8c291c",
+    "package-lock.json": "b9432a2ad1988dfbddb034dcec925804711ed3789888534ee174b051e5a4c6f1"
+  },
+  "displayCompletion": {
+    "date": "2026-10-25",
+    "report": "display-completed.json",
+    "changedCount": 25,
+    "relatedReturnCount": 37,
+    "focusRecheck": "passed",
+    "contentUntouchedInFollowUp": true
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-25",
+  "command": "npm test",
+  "tests": 23,
+  "pass": 23,
+  "fail": 0,
+  "scope": "包含内容引用与68项逐题覆盖；最终build/typecheck由主会话统一执行",
+  "files": {
+    "content/grade-7-volume-1/chapter-3.json": "42465e052bc0c7e90c8bb547b69eef2ffd72f57a01ba7e2392e72abb2f0486c3",
+    "content/grade-7-volume-1/chapter-3.locations.json": "cae6ce6d93075554eb9c6bf492bd88b16598bfa22f7d58ae5664e2bce938891c"
+  },
+  "chapter3": {
+    "ticket10": {
+      "reviewed": 44,
+      "changed": 4,
+      "displayPassed": 4,
+      "returnPathsPassed": 8
+    },
+    "ticket11": {
+      "reviewed": 24,
+      "changed": 4,
+      "displayPassed": 0,
+      "pending": "按主会话编排暂停新的浏览器批次"
+    }
+  }
+}

@@ -1,0 +1,1979 @@
+{
+  "checkedAt": "2026-10-25T05:46:46.910401+00:00",
+  "spaceId": 34,
+  "origin": "http://127.0.0.1:5194/",
+  "perItemRequirement": "真实入口、可用预览或分组行为、标题、默认知识/注意/段落、方法默认隐藏与开合、方法文字及全部关联按钮ID/标签/页码。",
+  "returnRequirement": "按DonQ本轮核验收敛指示，未变关联复用同章样本与21共同交互；不将未点击按钮计为实际往返。",
+  "batches": [
+    {
+      "checkedAt": "2026-10-25T05:36:50.077Z",
+      "beforeVersion": {
+        "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+        "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+        "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315",
+        "src/textbook/catalog.ts": "751ffccfe183cb905b076c6d06663a378ca3c3e4758fc2efcf6baa2944381388",
+        "src/textbook/book.json": "77d74c7b49e1474cbf736d2455260f9537b03e24667289bbc376d557a4d8a30b",
+        "content/grade-7-volume-1/chapter-1.json": "289aa3279f754288f4dc41b34ae32a0be5185e4caca7d22fb07becbc4427d665",
+        "content/grade-7-volume-1/locations.json": "fd94dcb7987a51f6f556555352bb3e493f6a0c09ff7e3f6e9a866cc0f39864a4"
+      },
+      "afterVersion": {
+        "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+        "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+        "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315",
+        "src/textbook/catalog.ts": "751ffccfe183cb905b076c6d06663a378ca3c3e4758fc2efcf6baa2944381388",
+        "src/textbook/book.json": "77d74c7b49e1474cbf736d2455260f9537b03e24667289bbc376d557a4d8a30b",
+        "content/grade-7-volume-1/chapter-1.json": "289aa3279f754288f4dc41b34ae32a0be5185e4caca7d22fb07becbc4427d665",
+        "content/grade-7-volume-1/locations.json": "fd94dcb7987a51f6f556555352bb3e493f6a0c09ff7e3f6e9a866cc0f39864a4"
+      },
+      "finishedAt": "2026-10-25T05:38:26.590Z",
+      "error": "Error: page.waitForFunction timed out after 10000ms on page p1; last URL was \"http://127.0.0.1:5194/\"; last title was \"课本解读\".\n    at waitForFunctionTimeoutError (file:////[eval1]:19509:12)\n    at file:////[eval1]:18834:19\n    at async file:////[eval1]:16940:28"
+    },
+    {
+      "checkedAt": "2026-10-25T05:39:19.417Z",
+      "beforeVersion": {
+        "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+        "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+        "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315",
+        "src/textbook/catalog.ts": "751ffccfe183cb905b076c6d06663a378ca3c3e4758fc2efcf6baa2944381388",
+        "src/textbook/book.json": "77d74c7b49e1474cbf736d2455260f9537b03e24667289bbc376d557a4d8a30b",
+        "content/grade-7-volume-1/chapter-1.json": "289aa3279f754288f4dc41b34ae32a0be5185e4caca7d22fb07becbc4427d665",
+        "content/grade-7-volume-1/locations.json": "fd94dcb7987a51f6f556555352bb3e493f6a0c09ff7e3f6e9a866cc0f39864a4"
+      },
+      "afterVersion": {
+        "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+        "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+        "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315",
+        "src/textbook/catalog.ts": "751ffccfe183cb905b076c6d06663a378ca3c3e4758fc2efcf6baa2944381388",
+        "src/textbook/book.json": "77d74c7b49e1474cbf736d2455260f9537b03e24667289bbc376d557a4d8a30b",
+        "content/grade-7-volume-1/chapter-1.json": "289aa3279f754288f4dc41b34ae32a0be5185e4caca7d22fb07becbc4427d665",
+        "content/grade-7-volume-1/locations.json": "fd94dcb7987a51f6f556555352bb3e493f6a0c09ff7e3f6e9a866cc0f39864a4"
+      },
+      "finishedAt": "2026-10-25T05:41:00.831Z",
+      "interruptedAt": "2026-10-25T05:41:19.518753+00:00",
+      "interruptedReason": "按DonQ核验收敛指示停止未变关联的重复往返；已完成3项保留，不重跑，未完成当项不计通过。",
+      "error": "Error: page.waitForFunction timed out after 10000ms on page p1; last URL was \"http://127.0.0.1:5194/\"; last title was \"课本解读\".\n    at waitForFunctionTimeoutError (file:////[eval1]:19509:12)\n    at file:////[eval1]:18834:19\n    at async file:////[eval1]:16940:28"
+    },
+    {
+      "checkedAt": "2026-10-25T05:41:29.694Z",
+      "beforeVersion": {
+        "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+        "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+        "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315",
+        "src/textbook/catalog.ts": "751ffccfe183cb905b076c6d06663a378ca3c3e4758fc2efcf6baa2944381388",
+        "src/textbook/book.json": "77d74c7b49e1474cbf736d2455260f9537b03e24667289bbc376d557a4d8a30b",
+        "content/grade-7-volume-1/chapter-1.json": "289aa3279f754288f4dc41b34ae32a0be5185e4caca7d22fb07becbc4427d665",
+        "content/grade-7-volume-1/locations.json": "fd94dcb7987a51f6f556555352bb3e493f6a0c09ff7e3f6e9a866cc0f39864a4"
+      },
+      "afterVersion": {
+        "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+        "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+        "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315",
+        "src/textbook/catalog.ts": "751ffccfe183cb905b076c6d06663a378ca3c3e4758fc2efcf6baa2944381388",
+        "src/textbook/book.json": "77d74c7b49e1474cbf736d2455260f9537b03e24667289bbc376d557a4d8a30b",
+        "content/grade-7-volume-1/chapter-1.json": "289aa3279f754288f4dc41b34ae32a0be5185e4caca7d22fb07becbc4427d665",
+        "content/grade-7-volume-1/locations.json": "fd94dcb7987a51f6f556555352bb3e493f6a0c09ff7e3f6e9a866cc0f39864a4"
+      },
+      "finishedAt": "2026-10-25T05:42:11.004Z",
+      "error": "Error: page.waitForSelector timed out after 10000ms: #method-ch1-q-exercise12-4\n    at waitForSelectorInPage (file:////[eval1]:16399:11)\n    at async file:////[eval1]:16940:28"
+    },
+    {
+      "checkedAt": "2026-10-25T05:43:23.584Z",
+      "beforeVersion": {
+        "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+        "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+        "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315",
+        "src/textbook/catalog.ts": "751ffccfe183cb905b076c6d06663a378ca3c3e4758fc2efcf6baa2944381388",
+        "src/textbook/book.json": "77d74c7b49e1474cbf736d2455260f9537b03e24667289bbc376d557a4d8a30b",
+        "content/grade-7-volume-1/chapter-1.json": "289aa3279f754288f4dc41b34ae32a0be5185e4caca7d22fb07becbc4427d665",
+        "content/grade-7-volume-1/locations.json": "fd94dcb7987a51f6f556555352bb3e493f6a0c09ff7e3f6e9a866cc0f39864a4"
+      },
+      "afterVersion": {
+        "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+        "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+        "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315",
+        "src/textbook/catalog.ts": "751ffccfe183cb905b076c6d06663a378ca3c3e4758fc2efcf6baa2944381388",
+        "src/textbook/book.json": "77d74c7b49e1474cbf736d2455260f9537b03e24667289bbc376d557a4d8a30b",
+        "content/grade-7-volume-1/chapter-1.json": "289aa3279f754288f4dc41b34ae32a0be5185e4caca7d22fb07becbc4427d665",
+        "content/grade-7-volume-1/locations.json": "fd94dcb7987a51f6f556555352bb3e493f6a0c09ff7e3f6e9a866cc0f39864a4"
+      },
+      "finishedAt": "2026-10-25T05:46:09.665Z"
+    }
+  ],
+  "results": [
+    {
+      "id": "ch1-q-absolute-practice-1",
+      "page": 21,
+      "preview": {
+        "markerPage": "page-21",
+        "marker": "题目引导：1.2.4练习第1题",
+        "group": 1,
+        "tooltip": "括号、负号与绝对值符号各有自己的作用。点击标记展开解读",
+        "rect": {
+          "x": 819.984375,
+          "y": 334.375
+        },
+        "viewport": [
+          886,
+          455
+        ]
+      },
+      "defaults": {
+        "title": "1.2.4练习第1题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "正数、负数与0的绝对值",
+          "相反数符号的化简"
+        ],
+        "cautions": [
+          "0要单独检查，不能把“非负”写成“正”。",
+          "不能把括号外负号与绝对值符号视为同一种操作。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-q-absolute-practice-1-ch1-absolute-definition",
+            "label": "绝对值与到原点的距离课本第 13 页"
+          },
+          {
+            "id": "related-ch1-q-absolute-practice-1-ch1-opposite-sign",
+            "label": "负号表示取相反数课本第 12 页"
+          },
+          {
+            "id": "related-ch1-q-absolute-practice-1-ch1-absolute-zero",
+            "label": "绝对值的0边界课本第 13 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "对整数、小数、分数逐一判断符号，再按定义求到原点的距离。",
+          "最后两个数还带有括号和外层负号，要先分清整个式子表示哪个数。",
+          "把各项结果与距离不小于0这一特点对照检查。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-absolute-definition",
+          "target": {
+            "highlight": "location-ch1-absolute-definition",
+            "page": "page-20",
+            "title": "绝对值保留了什么信息？"
+          },
+          "before": {
+            "fraction": 0.2285216998920243,
+            "panelScroll": 581.5,
+            "title": "1.2.4练习第1题",
+            "expanded": null,
+            "focus": "related-ch1-q-absolute-practice-1-ch1-absolute-definition",
+            "highlight": "location-ch1-q-absolute-practice-1",
+            "back": false,
+            "methods": [
+              "method-ch1-q-absolute-practice-1"
+            ]
+          },
+          "after": {
+            "fraction": 0.2285216998920243,
+            "panelScroll": 581.5,
+            "title": "1.2.4练习第1题",
+            "expanded": null,
+            "focus": "related-ch1-q-absolute-practice-1-ch1-absolute-definition",
+            "highlight": "location-ch1-q-absolute-practice-1",
+            "back": false,
+            "methods": [
+              "method-ch1-q-absolute-practice-1"
+            ]
+          }
+        },
+        {
+          "locationId": "ch1-opposite-sign",
+          "target": {
+            "highlight": "location-ch1-opposite-sign",
+            "page": "page-19",
+            "title": "−a 中的“−”表示什么？"
+          },
+          "before": {
+            "fraction": 0.2285216998920243,
+            "panelScroll": 604,
+            "title": "1.2.4练习第1题",
+            "expanded": null,
+            "focus": "related-ch1-q-absolute-practice-1-ch1-opposite-sign",
+            "highlight": "location-ch1-q-absolute-practice-1",
+            "back": false,
+            "methods": [
+              "method-ch1-q-absolute-practice-1"
+            ]
+          },
+          "after": {
+            "fraction": 0.2285216998920243,
+            "panelScroll": 604,
+            "title": "1.2.4练习第1题",
+            "expanded": null,
+            "focus": "related-ch1-q-absolute-practice-1-ch1-opposite-sign",
+            "highlight": "location-ch1-q-absolute-practice-1",
+            "back": false,
+            "methods": [
+              "method-ch1-q-absolute-practice-1"
+            ]
+          }
+        },
+        {
+          "locationId": "ch1-absolute-zero",
+          "target": {
+            "highlight": "location-ch1-absolute-zero",
+            "page": "page-20",
+            "title": "绝对值能不能等于0？"
+          },
+          "before": {
+            "fraction": 0.2285216998920243,
+            "panelScroll": 757.5,
+            "title": "1.2.4练习第1题",
+            "expanded": null,
+            "focus": "related-ch1-q-absolute-practice-1-ch1-absolute-zero",
+            "highlight": "location-ch1-q-absolute-practice-1",
+            "back": false,
+            "methods": [
+              "method-ch1-q-absolute-practice-1"
+            ]
+          },
+          "after": {
+            "fraction": 0.2285216998920243,
+            "panelScroll": 757.5,
+            "title": "1.2.4练习第1题",
+            "expanded": null,
+            "focus": "related-ch1-q-absolute-practice-1-ch1-absolute-zero",
+            "highlight": "location-ch1-q-absolute-practice-1",
+            "back": false,
+            "methods": [
+              "method-ch1-q-absolute-practice-1"
+            ]
+          }
+        }
+      ],
+      "relatedButtonsChecked": [
+        {
+          "locationId": "ch1-absolute-definition",
+          "page": 20,
+          "printedPage": "13",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-opposite-sign",
+          "page": 19,
+          "printedPage": "12",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-absolute-zero",
+          "page": 20,
+          "printedPage": "13",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        }
+      ],
+      "checkType": "逐项展示＋完整往返样本"
+    },
+    {
+      "id": "ch1-absolute-inverse-practice",
+      "page": 21,
+      "preview": {
+        "markerPage": "page-21",
+        "marker": "题目引导：1.2.4练习第3题",
+        "group": 1,
+        "tooltip": "只给绝对值与另加负数条件，允许的位置有什么不同？点击标记展开解读",
+        "rect": {
+          "x": 819.984375,
+          "y": 245.4296875
+        },
+        "viewport": [
+          886,
+          455
+        ]
+      },
+      "defaults": {
+        "title": "1.2.4练习第3题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "已知绝对值寻找可能的原数",
+          "负数条件对位置的限制"
+        ],
+        "cautions": [
+          "不能把绝对值的值直接当作原数。",
+          "两句的条件不同，不能照搬前一句得到的候选个数。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-absolute-inverse-practice-ch1-absolute-definition",
+            "label": "绝对值与到原点的距离课本第 13 页"
+          },
+          {
+            "id": "related-ch1-absolute-inverse-practice-ch1-opposite-geometry",
+            "label": "相反数在数轴上的位置课本第 11 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "第一句先弄清右边表示的距离，再在数轴上检查符合距离条件的所有位置。",
+          "第二句除距离外还给出了m的符号；检查这一条件是否排除部分位置。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-absolute-definition",
+          "target": {
+            "highlight": "location-ch1-absolute-definition",
+            "page": "page-20",
+            "title": "绝对值保留了什么信息？"
+          },
+          "before": {
+            "fraction": 0.3914844241027542,
+            "panelScroll": 542,
+            "title": "1.2.4练习第3题",
+            "expanded": null,
+            "focus": "related-ch1-absolute-inverse-practice-ch1-absolute-definition",
+            "highlight": "location-ch1-absolute-inverse-practice",
+            "back": false,
+            "methods": [
+              "method-ch1-absolute-inverse-practice"
+            ]
+          },
+          "after": {
+            "fraction": 0.3914844241027542,
+            "panelScroll": 542,
+            "title": "1.2.4练习第3题",
+            "expanded": null,
+            "focus": "related-ch1-absolute-inverse-practice-ch1-absolute-definition",
+            "highlight": "location-ch1-absolute-inverse-practice",
+            "back": false,
+            "methods": [
+              "method-ch1-absolute-inverse-practice"
+            ]
+          }
+        },
+        {
+          "locationId": "ch1-opposite-geometry",
+          "target": {
+            "highlight": "location-ch1-opposite-geometry",
+            "page": "page-18",
+            "title": "“距离相等的两个点”为什么要限定a为正数？"
+          },
+          "before": {
+            "fraction": 0.3914844241027542,
+            "panelScroll": 564.5,
+            "title": "1.2.4练习第3题",
+            "expanded": null,
+            "focus": "related-ch1-absolute-inverse-practice-ch1-opposite-geometry",
+            "highlight": "location-ch1-absolute-inverse-practice",
+            "back": false,
+            "methods": [
+              "method-ch1-absolute-inverse-practice"
+            ]
+          },
+          "after": {
+            "fraction": 0.3914844241027542,
+            "panelScroll": 564.5,
+            "title": "1.2.4练习第3题",
+            "expanded": null,
+            "focus": "related-ch1-absolute-inverse-practice-ch1-opposite-geometry",
+            "highlight": "location-ch1-absolute-inverse-practice",
+            "back": false,
+            "methods": [
+              "method-ch1-absolute-inverse-practice"
+            ]
+          }
+        }
+      ],
+      "relatedButtonsChecked": [
+        {
+          "locationId": "ch1-absolute-definition",
+          "page": 20,
+          "printedPage": "13",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-opposite-geometry",
+          "page": 18,
+          "printedPage": "11",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        }
+      ],
+      "checkType": "逐项展示＋完整往返样本"
+    },
+    {
+      "id": "ch1-q-order-intro",
+      "page": 21,
+      "preview": {
+        "markerPage": "page-21",
+        "marker": "题目引导：大小比较引入问题",
+        "group": 1,
+        "tooltip": "引入负数后，要检查原来的比较方法是否仍够用。点击标记展开解读",
+        "rect": {
+          "x": 819.984375,
+          "y": 245.3203125
+        },
+        "viewport": [
+          886,
+          455
+        ]
+      },
+      "defaults": {
+        "title": "大小比较引入问题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "正数、负数与0的位置",
+          "用数轴比较大小"
+        ],
+        "cautions": [
+          "不能把小学比较正数时“数字部分更大”的直觉直接用于负数。",
+          "同一组中的数必须放在同一条数轴和同一尺度下比较。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-q-order-intro-ch1-number-line",
+            "label": "数轴的三要素课本第 10 页"
+          },
+          {
+            "id": "related-ch1-q-order-intro-ch1-negative-order",
+            "label": "两个负数的大小比较课本第 15 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "比较这三组数时，小学只比较正数的经验缺少哪些条件？",
+          "可以借助同一条数轴提出判断，再用这些数组检查依据是否一致。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-number-line",
+          "target": {
+            "highlight": "location-ch1-number-line",
+            "page": "page-17",
+            "title": "三个要素各管一件事"
+          },
+          "before": {
+            "fraction": 0.6266458235967188,
+            "panelScroll": 542,
+            "title": "大小比较引入问题",
+            "expanded": null,
+            "focus": "related-ch1-q-order-intro-ch1-number-line",
+            "highlight": "location-ch1-q-order-intro",
+            "back": false,
+            "methods": [
+              "method-ch1-q-order-intro"
+            ]
+          },
+          "after": {
+            "fraction": 0.6266458235967188,
+            "panelScroll": 542,
+            "title": "大小比较引入问题",
+            "expanded": null,
+            "focus": "related-ch1-q-order-intro-ch1-number-line",
+            "highlight": "location-ch1-q-order-intro",
+            "back": false,
+            "methods": [
+              "method-ch1-q-order-intro"
+            ]
+          }
+        },
+        {
+          "locationId": "ch1-negative-order",
+          "target": {
+            "highlight": "location-ch1-negative-order",
+            "page": "page-22",
+            "title": "为什么两个负数“距离越大，数反而越小”？"
+          },
+          "before": {
+            "fraction": 0.6266458235967188,
+            "panelScroll": 564.5,
+            "title": "大小比较引入问题",
+            "expanded": null,
+            "focus": "related-ch1-q-order-intro-ch1-negative-order",
+            "highlight": "location-ch1-q-order-intro",
+            "back": false,
+            "methods": [
+              "method-ch1-q-order-intro"
+            ]
+          },
+          "after": {
+            "fraction": 0.6266458235967188,
+            "panelScroll": 564.5,
+            "title": "大小比较引入问题",
+            "expanded": null,
+            "focus": "related-ch1-q-order-intro-ch1-negative-order",
+            "highlight": "location-ch1-q-order-intro",
+            "back": false,
+            "methods": [
+              "method-ch1-q-order-intro"
+            ]
+          }
+        }
+      ],
+      "relatedButtonsChecked": [
+        {
+          "locationId": "ch1-number-line",
+          "page": 17,
+          "printedPage": "10",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-negative-order",
+          "page": 22,
+          "printedPage": "15",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        }
+      ],
+      "checkType": "逐项展示＋完整往返样本"
+    },
+    {
+      "id": "ch1-q-temperature-thinking",
+      "page": 21,
+      "preview": {
+        "markerPage": "page-21",
+        "marker": "题目引导：大小比较思考：天气预报",
+        "group": 1,
+        "tooltip": "最高、最低与每日最低值排序，读取的数据并不相同。点击标记展开解读",
+        "rect": {
+          "x": 819.984375,
+          "y": 245.3671875
+        },
+        "viewport": [
+          886,
+          455
+        ]
+      },
+      "defaults": {
+        "title": "大小比较思考：天气预报",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "温度与有理数的大小",
+          "图表数据读取与排序"
+        ],
+        "cautions": [
+          "不要把某一天的最高值混入“每日最低气温”的排序。",
+          "负温度的数字部分越大，不意味着温度越高。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-q-temperature-thinking-ch1-number-line",
+            "label": "数轴的三要素课本第 10 页"
+          },
+          {
+            "id": "related-ch1-q-temperature-thinking-ch1-negative-order",
+            "label": "两个负数的大小比较课本第 15 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "每个日期的两个温度分别表示什么？三个问题所需的数据范围是否相同？",
+          "为排序选择一个能说明高低的依据，并检查日期与数据是否仍然对应。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-number-line",
+          "target": {
+            "highlight": "location-ch1-number-line",
+            "page": "page-17",
+            "title": "三个要素各管一件事"
+          },
+          "before": {
+            "fraction": 0.7215355111118273,
+            "panelScroll": 542,
+            "title": "大小比较思考：天气预报",
+            "expanded": null,
+            "focus": "related-ch1-q-temperature-thinking-ch1-number-line",
+            "highlight": "location-ch1-q-temperature-thinking",
+            "back": false,
+            "methods": [
+              "method-ch1-q-temperature-thinking"
+            ]
+          },
+          "after": {
+            "fraction": 0.7215355111118273,
+            "panelScroll": 542,
+            "title": "大小比较思考：天气预报",
+            "expanded": null,
+            "focus": "related-ch1-q-temperature-thinking-ch1-number-line",
+            "highlight": "location-ch1-q-temperature-thinking",
+            "back": false,
+            "methods": [
+              "method-ch1-q-temperature-thinking"
+            ]
+          }
+        },
+        {
+          "locationId": "ch1-negative-order",
+          "target": {
+            "highlight": "location-ch1-negative-order",
+            "page": "page-22",
+            "title": "为什么两个负数“距离越大，数反而越小”？"
+          },
+          "before": {
+            "fraction": 0.7215355111118273,
+            "panelScroll": 564.5,
+            "title": "大小比较思考：天气预报",
+            "expanded": null,
+            "focus": "related-ch1-q-temperature-thinking-ch1-negative-order",
+            "highlight": "location-ch1-q-temperature-thinking",
+            "back": false,
+            "methods": [
+              "method-ch1-q-temperature-thinking"
+            ]
+          },
+          "after": {
+            "fraction": 0.7215355111118273,
+            "panelScroll": 564.5,
+            "title": "大小比较思考：天气预报",
+            "expanded": null,
+            "focus": "related-ch1-q-temperature-thinking-ch1-negative-order",
+            "highlight": "location-ch1-q-temperature-thinking",
+            "back": false,
+            "methods": [
+              "method-ch1-q-temperature-thinking"
+            ]
+          }
+        }
+      ],
+      "relatedButtonsChecked": [
+        {
+          "locationId": "ch1-number-line",
+          "page": 17,
+          "printedPage": "10",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-negative-order",
+          "page": 22,
+          "printedPage": "15",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        }
+      ],
+      "checkType": "逐项展示＋完整往返样本"
+    },
+    {
+      "id": "ch1-q-order-thinking",
+      "page": 22,
+      "preview": {
+        "markerPage": "page-22",
+        "marker": "题目引导：大小比较思考：归纳比较规则",
+        "group": 1,
+        "tooltip": "分别观察不同类别之间的次序，以及同为负数时的次序。点击标记展开解读",
+        "rect": {
+          "x": 819.984375,
+          "y": 245.59375
+        },
+        "viewport": [
+          886,
+          455
+        ]
+      },
+      "defaults": {
+        "title": "大小比较思考：归纳比较规则",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "正数、0、负数在数轴上的位置",
+          "两个负数的绝对值与大小关系"
+        ],
+        "cautions": [
+          "关于两个负数的规律不能直接推广到正数或异号数。",
+          "温度实例可帮助检验，解释一般规律仍需说明位置关系。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-q-order-thinking-ch1-number-line",
+            "label": "数轴的三要素课本第 10 页"
+          },
+          {
+            "id": "related-ch1-q-order-thinking-ch1-absolute-definition",
+            "label": "绝对值与到原点的距离课本第 13 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "比较不同类别的数，以及同为负数的两个数，所需的位置信息有何不同？",
+          "用自己提出的方法检查前页气温排序，并说明数轴为什么支持这种方法。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-number-line",
+          "target": {
+            "highlight": "location-ch1-number-line",
+            "page": "page-17",
+            "title": "三个要素各管一件事"
+          },
+          "before": {
+            "fraction": 0.4239254806530112,
+            "panelScroll": 542,
+            "title": "大小比较思考：归纳比较规则",
+            "expanded": null,
+            "focus": "related-ch1-q-order-thinking-ch1-number-line",
+            "highlight": "location-ch1-q-order-thinking",
+            "back": false,
+            "methods": [
+              "method-ch1-q-order-thinking"
+            ]
+          },
+          "after": {
+            "fraction": 0.4239254806530112,
+            "panelScroll": 542,
+            "title": "大小比较思考：归纳比较规则",
+            "expanded": null,
+            "focus": "related-ch1-q-order-thinking-ch1-number-line",
+            "highlight": "location-ch1-q-order-thinking",
+            "back": false,
+            "methods": [
+              "method-ch1-q-order-thinking"
+            ]
+          }
+        },
+        {
+          "locationId": "ch1-absolute-definition",
+          "target": {
+            "highlight": "location-ch1-absolute-definition",
+            "page": "page-20",
+            "title": "绝对值保留了什么信息？"
+          },
+          "before": {
+            "fraction": 0.4239254806530112,
+            "panelScroll": 564.5,
+            "title": "大小比较思考：归纳比较规则",
+            "expanded": null,
+            "focus": "related-ch1-q-order-thinking-ch1-absolute-definition",
+            "highlight": "location-ch1-q-order-thinking",
+            "back": false,
+            "methods": [
+              "method-ch1-q-order-thinking"
+            ]
+          },
+          "after": {
+            "fraction": 0.4239254806530112,
+            "panelScroll": 564.5,
+            "title": "大小比较思考：归纳比较规则",
+            "expanded": null,
+            "focus": "related-ch1-q-order-thinking-ch1-absolute-definition",
+            "highlight": "location-ch1-q-order-thinking",
+            "back": false,
+            "methods": [
+              "method-ch1-q-order-thinking"
+            ]
+          }
+        }
+      ],
+      "relatedButtonsChecked": [
+        {
+          "locationId": "ch1-number-line",
+          "page": 17,
+          "printedPage": "10",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-absolute-definition",
+          "page": 20,
+          "printedPage": "13",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        }
+      ],
+      "checkType": "逐项展示＋完整往返样本"
+    },
+    {
+      "id": "ch1-q-order-practice-1",
+      "page": 23,
+      "preview": {
+        "markerPage": "page-23",
+        "marker": "题目引导：1.2.5练习第1题",
+        "group": 1,
+        "tooltip": "同号、异号与带有多层符号的比较，条件各有不同。点击标记展开解读",
+        "rect": {
+          "x": 819.984375,
+          "y": 314.109375
+        },
+        "viewport": [
+          886,
+          455
+        ]
+      },
+      "defaults": {
+        "title": "1.2.5练习第1题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "异号与同号数的大小比较",
+          "绝对值及相反数的符号作用",
+          "分数大小比较"
+        ],
+        "cautions": [
+          "绝对值外的负号仍须保留其作用。",
+          "（6）涉及有限小数与分数，不能用随意截取的小数近似值代替精确比较。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-q-order-practice-1-ch1-negative-order",
+            "label": "两个负数的大小比较课本第 15 页"
+          },
+          {
+            "id": "related-ch1-q-order-practice-1-ch1-opposite-sign",
+            "label": "负号表示取相反数课本第 12 页"
+          },
+          {
+            "id": "related-ch1-q-order-practice-1-ch1-absolute-definition",
+            "label": "绝对值与到原点的距离课本第 13 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "（1）（2）对照异号与同为负数时，需要依据哪些不同信息。",
+          "（3）（5）（6）先辨明括号或绝对值内外的操作，确定实际比较的对象。",
+          "（4）比较负分数时，可先选用已学的分数比较方法处理距离，再检查如何回到原数。"
+        ]
+      },
+      "checkType": "逐项展示；复用共同往返证据",
+      "links": [],
+      "relatedButtonsChecked": [
+        {
+          "locationId": "ch1-negative-order",
+          "page": 22,
+          "printedPage": "15",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-opposite-sign",
+          "page": 19,
+          "printedPage": "12",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-absolute-definition",
+          "page": 20,
+          "printedPage": "13",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-order-practice-2",
+      "page": 23,
+      "preview": {
+        "markerPage": "page-23",
+        "marker": "题目引导：1.2.5练习第2题",
+        "group": 1,
+        "tooltip": "两组数的表示方式不同，排序都需检查整体次序。点击标记展开解读",
+        "rect": {
+          "x": 819.984375,
+          "y": 245.4375
+        },
+        "viewport": [
+          886,
+          455
+        ]
+      },
+      "defaults": {
+        "title": "1.2.5练习第2题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "有理数的整体排序",
+          "负分数、负小数的比较"
+        ],
+        "cautions": [
+          "题目要求从小到大，并用“<”连接，不能只列出未排序的分类。",
+          "转换表示方式时数值不能变；负数内部的顺序不要沿用绝对值的顺序。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-q-order-practice-2-ch1-negative-order",
+            "label": "两个负数的大小比较课本第 15 页"
+          },
+          {
+            "id": "related-ch1-q-order-practice-2-ch1-number-line",
+            "label": "数轴的三要素课本第 10 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "（1）注意负整数的次序；（2）分数与小数的比较要保持数值准确。",
+          "为每组安排所有数的位置后，逐个检查相邻关系，并确认每个原数恰好出现一次。"
+        ]
+      },
+      "checkType": "逐项展示；复用共同往返证据",
+      "links": [],
+      "relatedButtonsChecked": [
+        {
+          "locationId": "ch1-negative-order",
+          "page": 22,
+          "printedPage": "15",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-number-line",
+          "page": 17,
+          "printedPage": "10",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-exercise12-4",
+      "page": 24,
+      "preview": {
+        "markerPage": "page-24",
+        "marker": "选择此处的2条解读",
+        "group": 2,
+        "tooltip": null,
+        "rect": {
+          "x": 819.984375,
+          "y": 307.359375
+        },
+        "viewport": [
+          886,
+          455
+        ]
+      },
+      "defaults": {
+        "title": "习题1.2第4题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "绝对值的求法",
+          "非负数的大小比较"
+        ],
+        "cautions": [
+          "不要先按原数的大小排，再把两端当作绝对值的极值。",
+          "0、很小的负小数和负整数都要用同一距离标准检查。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-q-exercise12-4-ch1-absolute-definition",
+            "label": "绝对值与到原点的距离课本第 13 页"
+          },
+          {
+            "id": "related-ch1-q-exercise12-4-ch1-absolute-zero",
+            "label": "绝对值的0边界课本第 13 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "对六个数按符号求绝对值，并保留原数与绝对值的对应。",
+          "比较这些距离，确定最大和最小后，检查题目要求写的是原数还是它的绝对值。"
+        ]
+      },
+      "checkType": "逐项展示；复用共同往返证据",
+      "links": [],
+      "relatedButtonsChecked": [
+        {
+          "locationId": "ch1-absolute-definition",
+          "page": 20,
+          "printedPage": "13",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-absolute-zero",
+          "page": 20,
+          "printedPage": "13",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-exercise12-5",
+      "page": 24,
+      "preview": {
+        "markerPage": "page-24",
+        "marker": "题目引导：习题1.2第5题",
+        "group": 1,
+        "tooltip": "六组比较的符号与分数形式各有不同。点击标记展开解读",
+        "rect": {
+          "x": 819.984375,
+          "y": 407.703125
+        },
+        "viewport": [
+          886,
+          455
+        ]
+      },
+      "defaults": {
+        "title": "习题1.2第5题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "负数与0的比较",
+          "两个负数的比较",
+          "分数比较与符号化简"
+        ],
+        "cautions": [
+          "负数比较中的不等号不能照抄绝对值的比较结果。",
+          "整数化为分数或通分时要保持数值相等，不能只改分母。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-q-exercise12-5-ch1-negative-order",
+            "label": "两个负数的大小比较课本第 15 页"
+          },
+          {
+            "id": "related-ch1-q-exercise12-5-ch1-opposite-sign",
+            "label": "负号表示取相反数课本第 12 页"
+          },
+          {
+            "id": "related-ch1-q-exercise12-5-ch1-absolute-definition",
+            "label": "绝对值与到原点的距离课本第 13 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "（1）–（5）的符号和分数写法不同，哪些组能使用同一种比较依据？说明所用规则的条件。",
+          "（6）需辨明括号与绝对值内外的符号作用；实际比较的是哪两个数？"
+        ]
+      },
+      "checkType": "逐项展示；复用共同往返证据",
+      "links": [],
+      "relatedButtonsChecked": [
+        {
+          "locationId": "ch1-negative-order",
+          "page": 22,
+          "printedPage": "15",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-opposite-sign",
+          "page": 19,
+          "printedPage": "12",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-absolute-definition",
+          "page": 20,
+          "printedPage": "13",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-exercise12-6",
+      "page": 24,
+      "preview": {
+        "markerPage": "page-24",
+        "marker": "题目引导：习题1.2第6题",
+        "group": 1,
+        "tooltip": "选择能准确表示整数、分数和小数的统一尺度。点击标记展开解读",
+        "rect": {
+          "x": 819.984375,
+          "y": 245.59375
+        },
+        "viewport": [
+          886,
+          455
+        ]
+      },
+      "defaults": {
+        "title": "习题1.2第6题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "数轴上的描点",
+          "分数、小数与带分数的定位"
+        ],
+        "cautions": [
+          "同一条数轴的单位长度必须一致，不能为了放下某个分数临时改一格的长度。",
+          "负带分数的负号作用于整个带分数。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-q-exercise12-6-ch1-number-line",
+            "label": "数轴的三要素课本第 10 页"
+          },
+          {
+            "id": "related-ch1-q-exercise12-6-ch1-number-line-fraction",
+            "label": "分数在数轴上的位置课本第 10 页"
+          },
+          {
+            "id": "related-ch1-q-exercise12-6-ch1-opposite-geometry",
+            "label": "相反数在数轴上的位置课本第 11 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "选择的单位长度能否准确表示题中的半单位和五分之一单位？检查八个数需要的左右范围。",
+          "自主描点后，用整数基准和相反数的位置关系检查点位；不要只看数的书写形式。"
+        ]
+      },
+      "checkType": "逐项展示；复用共同往返证据",
+      "links": [],
+      "relatedButtonsChecked": [
+        {
+          "locationId": "ch1-number-line",
+          "page": 17,
+          "printedPage": "10",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-number-line-fraction",
+          "page": 17,
+          "printedPage": "10",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-opposite-geometry",
+          "page": 18,
+          "printedPage": "11",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-exercise12-7",
+      "page": 24,
+      "preview": {
+        "markerPage": "page-24",
+        "marker": "题目引导：习题1.2第7题",
+        "group": 1,
+        "tooltip": "负的D记录与题设所说的近视度数，含义并不相同。点击标记展开解读",
+        "rect": {
+          "x": 819.984375,
+          "y": 245.5078125
+        },
+        "viewport": [
+          886,
+          455
+        ]
+      },
+      "defaults": {
+        "title": "习题1.2第7题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "负数记录的实际意义",
+          "绝对值与程度",
+          "严格大于的边界"
+        ],
+        "cautions": [
+          "数轴上更小的负数与更小的程度不是一回事。",
+          "“超过”不包括恰好等于边界；此处只依据题干条件完成数学筛选，不将其推广为个人配镜结论。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-q-exercise12-7-ch1-absolute-definition",
+            "label": "绝对值与到原点的距离课本第 13 页"
+          },
+          {
+            "id": "related-ch1-q-exercise12-7-ch1-negative-order",
+            "label": "两个负数的大小比较课本第 15 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "从题干给出的对应实例确认D值与所述度数如何对应，不直接把负记录当作负的程度。",
+          "统一记录方式与比较条件的单位，逐条检查是否满足题目给定的“超过”要求，再统计人数。"
+        ]
+      },
+      "checkType": "逐项展示；复用共同往返证据",
+      "links": [],
+      "relatedButtonsChecked": [
+        {
+          "locationId": "ch1-absolute-definition",
+          "page": 20,
+          "printedPage": "13",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-negative-order",
+          "page": 22,
+          "printedPage": "15",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        }
+      ]
+    },
+    {
+      "id": "ch1-opposite-conditions-practice",
+      "page": 24,
+      "preview": {
+        "markerPage": "page-24",
+        "marker": "题目引导：习题1.2第9题",
+        "group": 1,
+        "tooltip": "找的是一类a的条件，代入个例只能帮助观察。点击标记展开解读",
+        "rect": {
+          "x": 819.984375,
+          "y": 245.2734375
+        },
+        "viewport": [
+          886,
+          455
+        ]
+      },
+      "defaults": {
+        "title": "习题1.2第9题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "相反数的位置关系",
+          "相等与大小关系的条件",
+          "按符号分类讨论"
+        ],
+        "cautions": [
+          "不要假定−a一定为负。",
+          "“满足什么条件”应说明完整范围；一个例子成立不等于已经找全条件。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-opposite-conditions-practice-ch1-opposite-sign",
+            "label": "负号表示取相反数课本第 12 页"
+          },
+          {
+            "id": "related-ch1-opposite-conditions-practice-ch1-opposite-geometry",
+            "label": "相反数在数轴上的位置课本第 11 页"
+          },
+          {
+            "id": "related-ch1-opposite-conditions-practice-ch1-order-on-axis",
+            "label": "数轴上的大小顺序课本第 15 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "借助相反数的对称位置，怎样比较a与−a？分别为（1）的相等关系与（2）（3）的不等关系寻找成立条件。",
+          "用数轴解释所得条件为何包含所有可能；代入例子可以检验，但不能代替一般理由。"
+        ]
+      },
+      "checkType": "逐项展示；复用共同往返证据",
+      "links": [],
+      "relatedButtonsChecked": [
+        {
+          "locationId": "ch1-opposite-sign",
+          "page": 19,
+          "printedPage": "12",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-opposite-geometry",
+          "page": 18,
+          "printedPage": "11",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-order-on-axis",
+          "page": 22,
+          "printedPage": "15",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-activity-2",
+      "page": 27,
+      "preview": {
+        "markerPage": "page-27",
+        "marker": "题目引导：数学活动2：猜数游戏",
+        "group": 1,
+        "tooltip": "把“大了、小了、相等”转换成有效的候选范围。点击标记展开解读",
+        "rect": {
+          "x": 819.984375,
+          "y": 245.4375
+        },
+        "viewport": [
+          886,
+          455
+        ]
+      },
+      "defaults": {
+        "title": "数学活动2：猜数游戏",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "整数范围与有理数大小",
+          "多个条件同时成立",
+          "用记录检验猜测策略"
+        ],
+        "cautions": [
+          "已经排除的数不应又被列回候选范围。",
+          "一次碰巧猜中不足以说明策略更快；区间两端和中间的数都应参与检验。",
+          "只要求选择整数，不要在调整过程中把小数当作秘密数候选。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-q-activity-2-ch1-negative-order",
+            "label": "两个负数的大小比较课本第 15 页"
+          },
+          {
+            "id": "related-ch1-q-activity-2-ch1-number-line",
+            "label": "数轴的三要素课本第 10 页"
+          },
+          {
+            "id": "related-ch1-q-activity-2-ch1-guess-range",
+            "label": "回答怎样缩小范围课本第 20 页"
+          },
+          {
+            "id": "related-ch1-q-activity-2-ch1-guess-strategy-check",
+            "label": "怎样检验策略课本第 20 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "听到“大了”时，是谁比谁大？下一次猜测应如何兼顾以前的所有回答？",
+          "自己提出猜测的办法，用同一组秘密数记录每轮候选范围和所用次数，检查办法怎样利用已有反馈。"
+        ]
+      },
+      "checkType": "逐项展示；复用共同往返证据",
+      "links": [],
+      "relatedButtonsChecked": [
+        {
+          "locationId": "ch1-negative-order",
+          "page": 22,
+          "printedPage": "15",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-number-line",
+          "page": 17,
+          "printedPage": "10",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-guess-range",
+          "page": 27,
+          "printedPage": "20",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-guess-strategy-check",
+          "page": 27,
+          "printedPage": "20",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-recall-1",
+      "page": 28,
+      "preview": {
+        "markerPage": "page-28",
+        "marker": "题目引导：回顾与思考第1题",
+        "group": 1,
+        "tooltip": "数的范围每次扩大，都对应原有数难以表达的需要。点击标记展开解读",
+        "rect": {
+          "x": 819.984375,
+          "y": 245.5
+        },
+        "viewport": [
+          886,
+          455
+        ]
+      },
+      "defaults": {
+        "title": "回顾与思考第1题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "数的范围扩充",
+          "实际问题与数概念的联系"
+        ],
+        "cautions": [
+          "不同写法未必代表不同的新数类，不能把每一种小数写法都算作一次范围扩大。",
+          "扩大范围会包含原有数，不是把原有数替换掉。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-q-recall-1-ch1-number-extension-review",
+            "label": "扩大范围与保留原有数课本第 21 页"
+          },
+          {
+            "id": "related-ch1-q-recall-1-ch1-why-negative",
+            "label": "为什么引入负数文件第 8 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "先回忆已经学过哪些数，把原有数与新加入的数分开整理。",
+          "对每次扩充，找一个原有范围不够表达的实际问题，说明新数解决了什么需要，再确定自己的整理顺序与次数。"
+        ]
+      },
+      "checkType": "逐项展示；复用共同往返证据",
+      "links": [],
+      "relatedButtonsChecked": [
+        {
+          "locationId": "ch1-number-extension-review",
+          "page": 28,
+          "printedPage": "21",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-why-negative",
+          "page": 8,
+          "printedPage": null,
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-recall-3",
+      "page": 28,
+      "preview": {
+        "markerPage": "page-28",
+        "marker": "选择此处的2条解读",
+        "group": 2,
+        "tooltip": null,
+        "rect": {
+          "x": 819.984375,
+          "y": 245.53125
+        },
+        "viewport": [
+          886,
+          455
+        ]
+      },
+      "defaults": {
+        "title": "回顾与思考第3题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "有理数的分类",
+          "分类的完整性与同层类别关系"
+        ],
+        "cautions": [
+          "同一层不要混用不相容的标准，造成某些数无处可放或被误认为只能属于一类。",
+          "0需要单独核对，不能仅根据写法判断整数或分数。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-q-recall-3-ch1-classification-overlap",
+            "label": "有理数分类的两种标准课本第 8 页"
+          },
+          {
+            "id": "related-ch1-q-recall-3-ch1-rational-form",
+            "label": "数值与数的类别课本第 7 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "先选择按正负还是按整数、分数分组，再决定下一层是否还需细分。",
+          "用正整数、负分数和0等不同类型的数逐一检查图，确认是否都能归入合适位置。"
+        ]
+      },
+      "checkType": "逐项展示；复用共同往返证据",
+      "links": [],
+      "relatedButtonsChecked": [
+        {
+          "locationId": "ch1-classification-overlap",
+          "page": 15,
+          "printedPage": "8",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-rational-form",
+          "page": 14,
+          "printedPage": "7",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-review-2",
+      "page": 29,
+      "preview": {
+        "markerPage": "page-29",
+        "marker": "选择此处的2条解读",
+        "group": 2,
+        "tooltip": null,
+        "rect": {
+          "x": 819.984375,
+          "y": 245.296875
+        },
+        "viewport": [
+          886,
+          455
+        ]
+      },
+      "defaults": {
+        "title": "复习题1第2题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "具有相反意义的同类量",
+          "正负数表示数量"
+        ],
+        "cautions": [
+          "不能把不相关的两种量只因一增一减就配成一对。",
+          "例子的数值可以不同；“相反意义”不等于“互为相反数”。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-q-review-2-ch1-opposite-meanings",
+            "label": "具有相反意义的量课本第 3 页"
+          },
+          {
+            "id": "related-ch1-q-review-2-ch1-positive-negative",
+            "label": "正数和负数课本第 2 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "选取几种不同情境，分别说清一对相反意义及统一的单位或基准。",
+          "在每个情境中先给正负约定，再用具体记录说明两类量。"
+        ]
+      },
+      "checkType": "逐项展示；复用共同往返证据",
+      "links": [],
+      "relatedButtonsChecked": [
+        {
+          "locationId": "ch1-opposite-meanings",
+          "page": 10,
+          "printedPage": "3",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-positive-negative",
+          "page": 9,
+          "printedPage": "2",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-review-3",
+      "page": 29,
+      "preview": {
+        "markerPage": "page-29",
+        "marker": "选择此处的2条解读",
+        "group": 2,
+        "tooltip": null,
+        "rect": {
+          "x": 819.984375,
+          "y": 245.296875
+        },
+        "viewport": [
+          886,
+          455
+        ]
+      },
+      "defaults": {
+        "title": "复习题1第3题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "整数在数轴上的表示",
+          "从小到大的次序与不等号"
+        ],
+        "cautions": [
+          "负数的绝对值大，不代表它应排在更大的位置。",
+          "原点处的数也要纳入排序，不能在只关注正负数时漏掉。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-q-review-3-ch1-number-line",
+            "label": "数轴的三要素课本第 10 页"
+          },
+          {
+            "id": "related-ch1-q-review-3-ch1-negative-order",
+            "label": "两个负数的大小比较课本第 15 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "六个数都要在同一条数轴上定位，怎样选定原点和尺度才能完整表示？",
+          "描点与排序是两种表达；完成后，用图上的位置检查每个相邻不等关系，并核对有无漏项。"
+        ]
+      },
+      "checkType": "逐项展示；复用共同往返证据",
+      "links": [],
+      "relatedButtonsChecked": [
+        {
+          "locationId": "ch1-number-line",
+          "page": 17,
+          "printedPage": "10",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-negative-order",
+          "page": 22,
+          "printedPage": "15",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-review-5",
+      "page": 29,
+      "preview": {
+        "markerPage": "page-29",
+        "marker": "选择此处的2条解读",
+        "group": 2,
+        "tooltip": null,
+        "rect": {
+          "x": 819.984375,
+          "y": 245.453125
+        },
+        "viewport": [
+          886,
+          455
+        ]
+      },
+      "defaults": {
+        "title": "复习题1第5题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "正负号与绝对值的作用范围",
+          "有理数大小比较",
+          "分数大小比较"
+        ],
+        "cautions": [
+          "不要只数式子里有几个负号，而忽略括号和竖线限定的作用范围。",
+          "绝对值非负的性质只直接约束绝对值这一层，不一定约束整个式子。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-q-review-5-ch1-opposite-sign",
+            "label": "负号表示取相反数课本第 12 页"
+          },
+          {
+            "id": "related-ch1-q-review-5-ch1-absolute-definition",
+            "label": "绝对值与到原点的距离课本第 13 页"
+          },
+          {
+            "id": "related-ch1-q-review-5-ch1-negative-order",
+            "label": "两个负数的大小比较课本第 15 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "（1）区分保留括号内数与取其相反数的操作。",
+          "（2）（3）分别检查绝对值竖线内外是否还有符号，确定整式表示什么数。",
+          "（4）完成符号辨认后，使用合适的分数比较方法，并核对负数比较的方向。"
+        ]
+      },
+      "checkType": "逐项展示；复用共同往返证据",
+      "links": [],
+      "relatedButtonsChecked": [
+        {
+          "locationId": "ch1-opposite-sign",
+          "page": 19,
+          "printedPage": "12",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-absolute-definition",
+          "page": 20,
+          "printedPage": "13",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-negative-order",
+          "page": 22,
+          "printedPage": "15",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-review-8",
+      "page": 29,
+      "preview": {
+        "markerPage": "page-29",
+        "marker": "选择此处的2条解读",
+        "group": 2,
+        "tooltip": null,
+        "rect": {
+          "x": 819.984375,
+          "y": 245.6015625
+        },
+        "viewport": [
+          886,
+          455
+        ]
+      },
+      "defaults": {
+        "title": "复习题1第8题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "整数的范围",
+          "数轴上的严格大小限制"
+        ],
+        "cautions": [
+          "边界写的是严格不等号，不能擅自把端点纳入。",
+          "区间里的非整数虽也能画在数轴上，却不符合本题对x的要求。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-q-review-8-ch1-number-line",
+            "label": "数轴的三要素课本第 10 页"
+          },
+          {
+            "id": "related-ch1-q-review-8-ch1-rational-form",
+            "label": "数值与数的类别课本第 7 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "“整数”和两个严格大小限制分别限定了什么？可借助数轴找出同时符合全部条件的位置。",
+          "自主确定候选后，检查是否既无遗漏，也未把不合条件的点算入。"
+        ]
+      },
+      "checkType": "逐项展示；复用共同往返证据",
+      "links": [],
+      "relatedButtonsChecked": [
+        {
+          "locationId": "ch1-number-line",
+          "page": 17,
+          "printedPage": "10",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-rational-form",
+          "page": 14,
+          "printedPage": "7",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        }
+      ]
+    },
+    {
+      "id": "ch1-order-without-scale",
+      "page": 29,
+      "preview": {
+        "markerPage": "page-29",
+        "marker": "选择此处的2条解读",
+        "group": 2,
+        "tooltip": null,
+        "rect": {
+          "x": 819.984375,
+          "y": 245.6015625
+        },
+        "viewport": [
+          886,
+          455
+        ]
+      },
+      "defaults": {
+        "title": "复习题1第9题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "相反数的数轴位置",
+          "按左右次序比较大小"
+        ],
+        "cautions": [
+          "不必猜a、b的具体数值；任意代入可能改变图中的位置条件。",
+          "题干与选项在本页，图在次页，核对时不要遗漏配图或仅凭符号猜选项。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-order-without-scale-ch1-opposite-geometry",
+            "label": "相反数在数轴上的位置课本第 11 页"
+          },
+          {
+            "id": "related-ch1-order-without-scale-ch1-number-line",
+            "label": "数轴的三要素课本第 10 页"
+          },
+          {
+            "id": "related-ch1-order-without-scale-ch1-negative-order",
+            "label": "两个负数的大小比较课本第 15 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "次页配图中，a、b的左右与远近给出了哪些限制？相反数的位置能从哪些已知信息确定？",
+          "自主检查四个选项；说明判断所需的位置关系，不必猜出a、b的具体数值。"
+        ]
+      },
+      "checkType": "逐项展示；复用共同往返证据",
+      "links": [],
+      "relatedButtonsChecked": [
+        {
+          "locationId": "ch1-opposite-geometry",
+          "page": 18,
+          "printedPage": "11",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-number-line",
+          "page": 17,
+          "printedPage": "10",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        },
+        {
+          "locationId": "ch1-negative-order",
+          "page": 22,
+          "printedPage": "15",
+          "labelMatches": true,
+          "targetIdMatches": true,
+          "pageLabelMatches": true
+        }
+      ]
+    }
+  ],
+  "recoveries": [
+    "一次返回键盘激活后仍停留目标页，首次检查未计通过；观察当前页后重新激活返回成功，随后重新打开同项并等待返回按钮可用，双关联往返全部通过。没有据此断言产品原因。",
+    "一次密集入口仍停在首个题号，未计通过；实际点击目标题号后正确显示，再等分组焦点稳定重新核对全项通过。",
+    "按DonQ收敛安排中止未变关联的重复往返；中止前完整结果保留，未完成当项重做展示，不计作已完成往返。"
+  ],
+  "limitations": [
+    "Page.captureScreenshot在04的补充尝试仍超时，未取得界面截图；本轮证据为真实DOM、位置和交互结果。",
+    "没有真实手机、学生或家长观察；不以自动化代替学习效果。"
+  ],
+  "perItemDisplayCount": 20,
+  "relatedButtonCount": 49,
+  "fullReturnSampleIds": [
+    "ch1-q-absolute-practice-1",
+    "ch1-absolute-inverse-practice",
+    "ch1-q-order-intro",
+    "ch1-q-temperature-thinking",
+    "ch1-q-order-thinking"
+  ],
+  "fullReturnCount": 11,
+  "versionStableWithinBatches": true
+}

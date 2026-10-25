@@ -1,0 +1,1231 @@
+[
+  {
+    "id": "ch2-q-p45-multiplication-intro",
+    "page": 45,
+    "printedPage": "38",
+    "label": "正文引问：有理数范围内怎样进行乘法运算",
+    "parts": [],
+    "decision": "保留",
+    "reason": "辨已有与新增范围，并要求一致性，不替规定新乘法。",
+    "related": [
+      {
+        "locationId": "ch2-multiplication-consistency",
+        "label": "乘法的一致性",
+        "purpose": "明确研究新乘法规则时需要保留的已有关系。",
+        "page": 45,
+        "printedPage": "38"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p45-multiplication-cases",
+    "page": 45,
+    "printedPage": "38",
+    "label": "旁注：引入负数后乘法有哪几种情况",
+    "parts": [],
+    "decision": "保留",
+    "reason": "以正负0为分类维度，未直接列完所有组合。",
+    "related": [
+      {
+        "locationId": "ch1-zero-boundary",
+        "label": "正数、负数与0",
+        "purpose": "用三个互不混淆的类别检查乘数类型是否列全。",
+        "page": 9,
+        "printedPage": "2"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p45-think-products",
+    "page": 45,
+    "printedPage": "38",
+    "label": "思考：观察两列乘法算式并推广",
+    "parts": [
+      "观察（1）与（2）两列算式的规律",
+      "按规律计算3×（−2）、3×（−3）、（−1）×3、（−2）×3、（−3）×3",
+      "归纳正数与负数相乘的符号和绝对值规律"
+    ],
+    "decision": "保留",
+    "reason": "两列乘数递减与填空归纳均覆盖；未给新增积。",
+    "related": [
+      {
+        "locationId": "ch2-multiplication-consistency",
+        "label": "运算的一致性",
+        "purpose": "明确将算式延伸到负数时希望保留哪一种关系。",
+        "page": 45,
+        "printedPage": "38"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p46-think-negative",
+    "page": 46,
+    "printedPage": "39",
+    "label": "思考：负数乘负数的规律（含旁注）",
+    "parts": [
+      "计算（−3）×3、（−3）×2、（−3）×1并找规律",
+      "填写（−3）×0、（−3）×（−1）、（−3）×（−2）、（−3）×（−3）",
+      "旁注：负数与0相乘的结果"
+    ],
+    "decision": "保留",
+    "reason": "前三积、0旁注、负负积均覆盖；保持变化关系，不给填空。",
+    "related": [
+      {
+        "locationId": "ch2-multiplication-consistency",
+        "label": "乘法规律的一致性",
+        "purpose": "保持前后算式的变化关系，检查新情况。",
+        "page": 45,
+        "printedPage": "38"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p46-example1",
+    "page": 46,
+    "printedPage": "39",
+    "label": "例1（2.2.1 有理数的乘法）",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）"
+    ],
+    "decision": "修订",
+    "reason": "46–47三问原解已核；原预览复述完整符号计算路线，改为两部分依据问题；方法保留用于解释例题。",
+    "related": [
+      {
+        "locationId": "ch2-multiplication-sign-magnitude",
+        "label": "有理数乘法法则",
+        "purpose": "分别检查三小问的符号判断和绝对值计算。",
+        "page": 46,
+        "printedPage": "39"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p47-example2",
+    "page": 47,
+    "printedPage": "40",
+    "label": "例2（2.2.1 有理数的乘法）",
+    "parts": [],
+    "decision": "修订",
+    "reason": "原预览串起全部列式读答路线，改为变化量/最终温度的含义；例题方法不重抄乘式。",
+    "related": [
+      {
+        "locationId": "ch2-temperature-change-product",
+        "label": "变化量与最终温度",
+        "purpose": "确定乘积回答的量，并用完整语句解释其符号。",
+        "page": 47,
+        "printedPage": "40"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p47-practice1",
+    "page": 47,
+    "printedPage": "40",
+    "label": "练习1（印刷第40页）",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）",
+      "（5）",
+      "（6）"
+    ],
+    "decision": "保留",
+    "reason": "六问符号、零、分数线索为必要条件，未给各式符号结果。",
+    "related": [
+      {
+        "locationId": "ch2-multiplication-sign-magnitude",
+        "label": "有理数乘法法则",
+        "purpose": "选择适用于各小问的乘法规则，并检查含0的特例。",
+        "page": 46,
+        "printedPage": "39"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p47-practice2",
+    "page": 47,
+    "printedPage": "40",
+    "label": "练习2（印刷第40页）",
+    "parts": [],
+    "decision": "保留",
+    "reason": "比较同样60件的差额，未给乘式或差额。",
+    "related": [
+      {
+        "locationId": "ch2-temperature-change-product",
+        "label": "单位变化量与总变化量",
+        "purpose": "对照每个单位对应的变化如何合成，并保持变化量的含义。",
+        "page": 47,
+        "printedPage": "40"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p47-practice3",
+    "page": 47,
+    "printedPage": "40",
+    "label": "练习3（印刷第40页）",
+    "parts": [
+      "1",
+      "−1",
+      "1/3",
+      "−1/3",
+      "5",
+      "−5",
+      "2/3",
+      "−2/3"
+    ],
+    "decision": "保留",
+    "reason": "用乘积1核验候选，八个倒数仍需自行寻找。",
+    "related": [
+      {
+        "locationId": "ch2-reciprocal-condition",
+        "label": "倒数的定义",
+        "purpose": "用同一乘积条件检查八个不同写法的数。",
+        "page": 47,
+        "printedPage": "40"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p47-laws-intro",
+    "page": 47,
+    "printedPage": "40",
+    "label": "正文引问：有理数乘法的运算律是否仍成立",
+    "parts": [],
+    "decision": "保留",
+    "reason": "交换/结合/分配三者区分，例证限度清楚，未代构造。",
+    "related": [
+      {
+        "locationId": "ch2-reorder-whole-factor",
+        "label": "乘法交换律与结合律",
+        "purpose": "区分变换次序与变换分组各自检查什么。",
+        "page": 48,
+        "printedPage": "41"
+      },
+      {
+        "locationId": "ch2-distribution-every-addend",
+        "label": "分配律",
+        "purpose": "确认整和相乘与两个乘积的和之间的对应。",
+        "page": 48,
+        "printedPage": "41"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p47-explore-commute",
+    "page": 47,
+    "printedPage": "40",
+    "label": "探究：乘法交换律",
+    "parts": [
+      "比较5×（−6）与（−6）×5",
+      "换几组乘数再试",
+      "归纳结论"
+    ],
+    "decision": "保留",
+    "reason": "只给保号换位条件，归纳和算值保留。",
+    "related": [
+      {
+        "locationId": "ch2-reorder-whole-factor",
+        "label": "交换完整乘数",
+        "purpose": "检查对照算式确实只改变乘数的位置。",
+        "page": 48,
+        "printedPage": "41"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p48-explore-distribute",
+    "page": 48,
+    "printedPage": "41",
+    "label": "探究：乘法分配律",
+    "parts": [
+      "比较5×[3+（−7）]与5×3+5×（−7）",
+      "换几组数再试",
+      "归纳结论"
+    ],
+    "decision": "保留",
+    "reason": "比较两结构并逐项对应，未预先断言结果相等。",
+    "related": [
+      {
+        "locationId": "ch2-distribution-every-addend",
+        "label": "分配律",
+        "purpose": "检查猜想中的每个加数是否都与外部乘数对应。",
+        "page": 48,
+        "printedPage": "41"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p48-example3",
+    "page": 48,
+    "printedPage": "41",
+    "label": "例3（2.2.1，含旁注）",
+    "parts": [
+      "（1）",
+      "（2）",
+      "旁注：两种解法的运算顺序区别、解法2用了什么律、哪种更简便"
+    ],
+    "decision": "保留",
+    "reason": "48–49两问及旁注完整核；比较计算量与依据，不重复教材算式。",
+    "related": [
+      {
+        "locationId": "ch2-reorder-whole-factor",
+        "label": "交换律与结合律",
+        "purpose": "解释（1）改变分组的依据。",
+        "page": 48,
+        "printedPage": "41"
+      },
+      {
+        "locationId": "ch2-distribution-choice",
+        "label": "分配律的简便条件",
+        "purpose": "比较（2）的两个方案如何利用12与分母的关系。",
+        "page": 49,
+        "printedPage": "42"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p49-explore-signs",
+    "page": 49,
+    "printedPage": "42",
+    "label": "探究：多个有理数相乘的符号",
+    "parts": [
+      "观察三个四因数乘积的正负",
+      "归纳积的符号与负因数个数的关系",
+      "有因数为0时积的特点"
+    ],
+    "decision": "保留",
+    "reason": "记录负乘数个数并检验，奇偶结论和零结果未代给。",
+    "related": [
+      {
+        "locationId": "ch2-reorder-whole-factor",
+        "label": "乘法分组",
+        "purpose": "用允许的分组方式检验符号猜想。",
+        "page": 48,
+        "printedPage": "41"
+      },
+      {
+        "locationId": "ch2-multiplication-sign-magnitude",
+        "label": "有理数乘法法则",
+        "purpose": "回到两个数相乘的法则判断每组乘积。",
+        "page": 46,
+        "printedPage": "39"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p50-practice1",
+    "page": 50,
+    "printedPage": "43",
+    "label": "练习1（印刷第43页）",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）"
+    ],
+    "decision": "修订",
+    "reason": "原四问逐项指定运算律方向，改为先辨外层结构自行选律；保留带分数/负号条件。",
+    "related": [
+      {
+        "locationId": "ch2-reorder-whole-factor",
+        "label": "乘法交换律与结合律",
+        "purpose": "支持（1）（2）选择分组。",
+        "page": 48,
+        "printedPage": "41"
+      },
+      {
+        "locationId": "ch2-distribution-every-addend",
+        "label": "分配律",
+        "purpose": "支持（3）（4）辨认分配律的两种方向。",
+        "page": 48,
+        "printedPage": "41"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p50-practice2",
+    "page": 50,
+    "printedPage": "43",
+    "label": "练习2（印刷第43页）",
+    "parts": [
+      "（1）",
+      "（2）"
+    ],
+    "decision": "保留",
+    "reason": "先查非零再选规则，未直接宣告第（2）问答案。",
+    "related": [
+      {
+        "locationId": "ch2-product-negative-parity",
+        "label": "多个乘数的符号",
+        "purpose": "先检查是否适用非零乘积的符号规则，再处理零的情况。",
+        "page": 49,
+        "printedPage": "42"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p50-think-division",
+    "page": 50,
+    "printedPage": "43",
+    "label": "思考：怎样计算8÷（−4）",
+    "parts": [],
+    "decision": "保留",
+    "reason": "商的位置与乘回核验增加理解，未给商。",
+    "related": [
+      {
+        "locationId": "ch2-division-reciprocal-reason",
+        "label": "除法与倒数",
+        "purpose": "通过乘回除数的检查解释除法与乘法的联系。",
+        "page": 51,
+        "printedPage": "44"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p51-division-generalize",
+    "page": 51,
+    "printedPage": "44",
+    "label": "旁注：除以a能否转为乘1/a",
+    "parts": [],
+    "decision": "保留",
+    "reason": "非零a、举例限度与一般核验齐全，不代给证明。",
+    "related": [
+      {
+        "locationId": "ch2-reciprocal-condition",
+        "label": "倒数的定义",
+        "purpose": "确认候选倒数需要满足的乘积条件。",
+        "page": 47,
+        "printedPage": "40"
+      },
+      {
+        "locationId": "ch2-division-zero-boundary",
+        "label": "除数非零条件",
+        "purpose": "检查推广时为何保留a≠0。",
+        "page": 51,
+        "printedPage": "44"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p51-example4",
+    "page": 51,
+    "printedPage": "44",
+    "label": "例4（2.2.2 有理数的除法）",
+    "parts": [
+      "（1）",
+      "（2）"
+    ],
+    "decision": "保留",
+    "reason": "辨除数并核倒置对象，对照已给例题而未重抄变形。",
+    "related": [
+      {
+        "locationId": "ch2-division-reciprocal-reason",
+        "label": "除法与倒数",
+        "purpose": "解释（2）为何只对除数取倒数。",
+        "page": 51,
+        "printedPage": "44"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p51-example5",
+    "page": 51,
+    "printedPage": "44",
+    "label": "例5（2.2.2 有理数的除法）",
+    "parts": [
+      "（1）",
+      "（2）"
+    ],
+    "decision": "保留",
+    "reason": "解释分数线与整个商，符号和约分由读者核对。",
+    "related": [
+      {
+        "locationId": "ch2-fraction-negative-placement",
+        "label": "负分数与除法",
+        "purpose": "解释化简时整个商的符号如何确定。",
+        "page": 51,
+        "printedPage": "44"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p52-practice1",
+    "page": 52,
+    "printedPage": "45",
+    "label": "练习1（印刷第45页）",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）",
+      "（5）",
+      "（6）"
+    ],
+    "decision": "保留",
+    "reason": "六类除法按结构选算法，未写完整改写式或商。",
+    "related": [
+      {
+        "locationId": "ch2-division-reciprocal-reason",
+        "label": "除法与倒数",
+        "purpose": "对照直接除法与乘倒数两种组织方式。",
+        "page": 51,
+        "printedPage": "44"
+      },
+      {
+        "locationId": "ch2-division-zero-boundary",
+        "label": "除数非零条件",
+        "purpose": "单独核对（4）的零是否允许。",
+        "page": 51,
+        "printedPage": "44"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p52-practice2",
+    "page": 52,
+    "printedPage": "45",
+    "label": "练习2（印刷第45页）",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）"
+    ],
+    "decision": "修订",
+    "reason": "原预览把符号/约分/0整套方法默认给出，改为分数线与边界线索；四问方法只给一般辨认途径。",
+    "related": [
+      {
+        "locationId": "ch2-fraction-negative-placement",
+        "label": "分数线与符号",
+        "purpose": "将四种写法统一读成除法并检查整体符号。",
+        "page": 51,
+        "printedPage": "44"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p52-example6",
+    "page": 52,
+    "printedPage": "45",
+    "label": "例6（2.2.2 有理数的除法）",
+    "parts": [
+      "（1）",
+      "（2）"
+    ],
+    "decision": "保留",
+    "reason": "带分数两种写法是比较选项而非唯一法；第二问角色未直接给定。",
+    "related": [
+      {
+        "locationId": "ch2-mixed-number-distribution",
+        "label": "带分数与分配律",
+        "purpose": "理解（1）选择拆分的数字条件。",
+        "page": 52,
+        "printedPage": "45"
+      },
+      {
+        "locationId": "ch2-mixed-product-reciprocal",
+        "label": "乘除转化中的数的角色",
+        "purpose": "检查（2）中各数的变化。",
+        "page": 52,
+        "printedPage": "45"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p53-example7",
+    "page": 53,
+    "printedPage": "46",
+    "label": "例7（2.2.2 有理数的除法）",
+    "parts": [
+      "（1）",
+      "（2）"
+    ],
+    "decision": "修订",
+    "reason": "原预览已给例题整套先后步骤，改为负数整体与减号问题；原方法留作教材步骤解释。",
+    "related": [
+      {
+        "locationId": "ch2-same-level-order",
+        "label": "混合运算顺序",
+        "purpose": "明确两个小问中乘除与加减的先后。",
+        "page": 60,
+        "printedPage": "53"
+      },
+      {
+        "locationId": "ch2-subtract-add-opposite",
+        "label": "减法转化为加法",
+        "purpose": "理解（2）最后处理减去负数时的依据。",
+        "page": 38,
+        "printedPage": "31"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p53-example8",
+    "page": 53,
+    "printedPage": "46",
+    "label": "例8（2.2.2 有理数的除法）",
+    "parts": [],
+    "decision": "修订",
+    "reason": "原知识与预览共同给完全年路线，改为量的区别与月份权重；原方法不含算式和答案。",
+    "related": [
+      {
+        "locationId": "ch2-monthly-average-weight",
+        "label": "平均额与时段总额",
+        "purpose": "检查每个平均数应按多少个月还原为总额。",
+        "page": 53,
+        "printedPage": "46"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p54-practice1",
+    "page": 54,
+    "printedPage": "47",
+    "label": "练习1（印刷第47页）",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）"
+    ],
+    "decision": "保留",
+    "reason": "连续除数逐个辨认，未替选定各式倒数和分组。",
+    "related": [
+      {
+        "locationId": "ch2-division-reciprocal-reason",
+        "label": "除法与倒数",
+        "purpose": "检查每次除法应对哪一个数取倒数。",
+        "page": 51,
+        "printedPage": "44"
+      },
+      {
+        "locationId": "ch2-same-level-order",
+        "label": "混合运算顺序",
+        "purpose": "检查未转化前的同级运算次序。",
+        "page": 60,
+        "printedPage": "53"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p54-practice2",
+    "page": 54,
+    "printedPage": "47",
+    "label": "练习2（印刷第47页）",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）"
+    ],
+    "decision": "保留",
+    "reason": "四式外层与项内需自行辨，未给中间积商。",
+    "related": [
+      {
+        "locationId": "ch2-same-level-order",
+        "label": "混合运算顺序",
+        "purpose": "确定各项内部乘除与项间加减的层次。",
+        "page": 60,
+        "printedPage": "53"
+      },
+      {
+        "locationId": "ch2-subtract-add-opposite",
+        "label": "减法转化为加法",
+        "purpose": "检查最后的减法是否需要加相反数。",
+        "page": 38,
+        "printedPage": "31"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p54-practice3",
+    "page": 54,
+    "printedPage": "47",
+    "label": "练习3（印刷第47页）",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）"
+    ],
+    "decision": "保留",
+    "reason": "四问计算器符号与最后舍入的条件保留，不给按键序列和结果。",
+    "related": [
+      {
+        "locationId": "ch2-minus-two-roles",
+        "label": "负号与减号",
+        "purpose": "检查（2）（4）的输入是否区分数的符号与减法。",
+        "page": 38,
+        "printedPage": "31"
+      },
+      {
+        "locationId": "ch2-same-level-order",
+        "label": "混合运算顺序",
+        "purpose": "用运算结构核对计算器输入。",
+        "page": 60,
+        "printedPage": "53"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise22-1",
+    "page": 54,
+    "printedPage": "47",
+    "label": "习题2.2 第1题",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）",
+      "（5）",
+      "（6）"
+    ],
+    "decision": "保留",
+    "reason": "数位与符号两类检查，未给六问计算结果。",
+    "related": [
+      {
+        "locationId": "ch2-multiplication-sign-magnitude",
+        "label": "有理数乘法法则",
+        "purpose": "统一检查六问的符号与绝对值。",
+        "page": 46,
+        "printedPage": "39"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise22-2",
+    "page": 54,
+    "printedPage": "47",
+    "label": "习题2.2 第2题",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）"
+    ],
+    "decision": "保留",
+    "reason": "约分机会与同值表示可选，分组和数值仍自行算。",
+    "related": [
+      {
+        "locationId": "ch2-multiplication-sign-magnitude",
+        "label": "有理数乘法法则",
+        "purpose": "判断符号后用同值写法处理乘积大小。",
+        "page": 46,
+        "printedPage": "39"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise22-3",
+    "page": 54,
+    "printedPage": "47",
+    "label": "习题2.2 第3题",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）",
+      "（5）",
+      "（6）"
+    ],
+    "decision": "保留",
+    "reason": "六种完整数求倒数，乘积核验不替写倒数。",
+    "related": [
+      {
+        "locationId": "ch2-reciprocal-condition",
+        "label": "倒数的定义",
+        "purpose": "用同一定义验证六种数的倒数。",
+        "page": 47,
+        "printedPage": "40"
+      },
+      {
+        "locationId": "ch2-reciprocal-mixed-practice",
+        "label": "带分数的完整数值",
+        "purpose": "检查（5）（6）求倒数的对象。",
+        "page": 54,
+        "printedPage": "47"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise22-4",
+    "page": 55,
+    "printedPage": "48",
+    "label": "习题2.2 第4题",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）"
+    ],
+    "decision": "保留",
+    "reason": "连续乘法/分配是结构线索；未给具体组合，方便不等于必须。",
+    "related": [
+      {
+        "locationId": "ch2-reorder-whole-factor",
+        "label": "乘法交换律与结合律",
+        "purpose": "支持（1）（2）选择便利分组。",
+        "page": 48,
+        "printedPage": "41"
+      },
+      {
+        "locationId": "ch2-distribution-every-addend",
+        "label": "分配律",
+        "purpose": "支持（3）（4）选择并核验分配。",
+        "page": 48,
+        "printedPage": "41"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise22-5",
+    "page": 55,
+    "printedPage": "48",
+    "label": "习题2.2 第5题",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）"
+    ],
+    "decision": "保留",
+    "reason": "先查全体因数和零条件，不给各题符号结论。",
+    "related": [
+      {
+        "locationId": "ch2-product-negative-parity",
+        "label": "多个乘数的符号",
+        "purpose": "区分非零乘积的奇偶判断与含零情况。",
+        "page": 49,
+        "printedPage": "42"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise22-6",
+    "page": 55,
+    "printedPage": "48",
+    "label": "习题2.2 第6题",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）",
+      "（5）",
+      "（6）"
+    ],
+    "decision": "保留",
+    "reason": "逐问认除数，不给倒数或商；有限小数不强求。",
+    "related": [
+      {
+        "locationId": "ch2-division-reciprocal-reason",
+        "label": "除法与倒数",
+        "purpose": "检查各题的除法转化和商的验证方法。",
+        "page": 51,
+        "printedPage": "44"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise22-7",
+    "page": 55,
+    "printedPage": "48",
+    "label": "习题2.2 第7题",
+    "parts": [
+      "1×（−5）",
+      "1÷（−5）",
+      "1+（−5）",
+      "1−（−5）",
+      "−1×（−5）",
+      "−1÷（−5）",
+      "−1+（−5）",
+      "−1−（−5）"
+    ],
+    "decision": "保留",
+    "reason": "八式按运算区别而非同一符号口诀，结果均未给。",
+    "related": [
+      {
+        "locationId": "ch2-multiplication-sign-magnitude",
+        "label": "有理数乘法法则",
+        "purpose": "只在乘法式中使用乘积符号规则。",
+        "page": 46,
+        "printedPage": "39"
+      },
+      {
+        "locationId": "ch2-division-reciprocal-reason",
+        "label": "除法与倒数",
+        "purpose": "在除法式中核对倒数作用。",
+        "page": 51,
+        "printedPage": "44"
+      },
+      {
+        "locationId": "ch2-subtract-add-opposite",
+        "label": "减法转化为加法",
+        "purpose": "在减法式中区分负号与减号。",
+        "page": 38,
+        "printedPage": "31"
+      },
+      {
+        "locationId": "ch2-opposite-add-cancel",
+        "label": "异号加法",
+        "purpose": "在加法式中选择绝对值比较，而非套用乘法规则。",
+        "page": 33,
+        "printedPage": "26"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise22-8",
+    "page": 55,
+    "printedPage": "48",
+    "label": "习题2.2 第8题",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）"
+    ],
+    "decision": "保留",
+    "reason": "分数线、整体符号及同倍扩大条件正确，未给各式化简。",
+    "related": [
+      {
+        "locationId": "ch2-fraction-negative-placement",
+        "label": "分数形式与整体符号",
+        "purpose": "比较四问负号所在位置和整个商之间的关系。",
+        "page": 51,
+        "printedPage": "44"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise22-9",
+    "page": 55,
+    "printedPage": "48",
+    "label": "习题2.2 第9题",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）"
+    ],
+    "decision": "保留",
+    "reason": "连续除法顺序及零条件明确，未代写四式转乘形式。",
+    "related": [
+      {
+        "locationId": "ch2-division-reciprocal-reason",
+        "label": "除法与倒数",
+        "purpose": "确认转乘法时哪些数应取倒数。",
+        "page": 51,
+        "printedPage": "44"
+      },
+      {
+        "locationId": "ch2-same-level-order",
+        "label": "混合运算顺序",
+        "purpose": "核验保留除法时的运算顺序。",
+        "page": 60,
+        "printedPage": "53"
+      },
+      {
+        "locationId": "ch2-division-zero-boundary",
+        "label": "除数非零条件",
+        "purpose": "核验（3）的定义条件。",
+        "page": 51,
+        "printedPage": "44"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise22-10",
+    "page": 55,
+    "printedPage": "48",
+    "label": "习题2.2 第10题",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）"
+    ],
+    "decision": "保留",
+    "reason": "重复括号与绝对值对象仍需学生辨认和计算，不给关键中间值。",
+    "related": [
+      {
+        "locationId": "ch2-same-level-order",
+        "label": "混合运算顺序",
+        "purpose": "确定（1）（2）（3）的运算层次。",
+        "page": 60,
+        "printedPage": "53"
+      },
+      {
+        "locationId": "ch2-division-zero-boundary",
+        "label": "除数非零条件",
+        "purpose": "检查（3）作除数的整体是否非零。",
+        "page": 51,
+        "printedPage": "44"
+      },
+      {
+        "locationId": "ch2-absolute-value-scope-practice",
+        "label": "绝对值的作用范围",
+        "purpose": "检查（4）哪些运算位于绝对值内部。",
+        "page": 55,
+        "printedPage": "48"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise22-11",
+    "page": 56,
+    "printedPage": "49",
+    "label": "习题2.2 第11题",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）"
+    ],
+    "decision": "保留",
+    "reason": "四问保留两位条件与输入检查，不给按键或中间数。",
+    "related": [
+      {
+        "locationId": "ch2-same-level-order",
+        "label": "混合运算顺序",
+        "purpose": "检查四式的输入层次。",
+        "page": 60,
+        "printedPage": "53"
+      },
+      {
+        "locationId": "ch2-minus-two-roles",
+        "label": "负号与减号",
+        "purpose": "检查负数输入和减法运算是否混淆。",
+        "page": 38,
+        "printedPage": "31"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise22-12",
+    "page": 56,
+    "printedPage": "49",
+    "label": "习题2.2 第12题",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）"
+    ],
+    "decision": "保留",
+    "reason": "三问区分总额/平均额与天数，未给乘除式或填数。",
+    "related": [
+      {
+        "locationId": "ch2-monthly-average-weight",
+        "label": "平均额与时段总额",
+        "purpose": "区分从平均还原总量和由总量求平均的两种方向。",
+        "page": 53,
+        "printedPage": "46"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise22-13",
+    "page": 56,
+    "printedPage": "49",
+    "label": "习题2.2 第13题",
+    "parts": [],
+    "decision": "保留",
+    "reason": "起始高度/方向/速时单位是必要条件，未列两段计算。",
+    "related": [
+      {
+        "locationId": "ch2-height-change-practice",
+        "label": "位置与变化量",
+        "purpose": "检查列式最终回答的是高度还是运动变化。",
+        "page": 56,
+        "printedPage": "49"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise22-14",
+    "page": 56,
+    "printedPage": "49",
+    "label": "习题2.2 第14题",
+    "parts": [
+      "计算给出的四个乘法算式",
+      "判断非零有理数是否一定小于它的2倍并解释"
+    ],
+    "decision": "保留",
+    "reason": "“一定”及反例作用可回顾，四式比较与结论保留。",
+    "related": [
+      {
+        "locationId": "ch2-doubling-comparison-explore",
+        "label": "倍数与大小比较",
+        "purpose": "区分数值顺序和绝对值，并判断证据的作用。",
+        "page": 56,
+        "printedPage": "49"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise22-15",
+    "page": 56,
+    "printedPage": "49",
+    "label": "习题2.2 第15题",
+    "parts": [],
+    "decision": "保留",
+    "reason": "原题已指定分配律，提示相同a的结构，不给化简结果。",
+    "related": [
+      {
+        "locationId": "ch2-distribution-every-addend",
+        "label": "分配律",
+        "purpose": "识别共同乘数并说明从具体数到字母时运算律仍适用。",
+        "page": 48,
+        "printedPage": "41"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise22-16",
+    "page": 56,
+    "printedPage": "49",
+    "label": "习题2.2 第16题",
+    "parts": [
+      "计算给出的三个除法算式",
+      "（1）判断分数符号关系",
+      "（2）判断分子分母均为负号时的关系",
+      "归纳规律"
+    ],
+    "decision": "保留",
+    "reason": "a可正负0、b非零，未直接判断两条字母等式。",
+    "related": [
+      {
+        "locationId": "ch2-fraction-negative-placement",
+        "label": "分数线与整体负号",
+        "purpose": "辨认负号改变的是分子、分母还是整个商。",
+        "page": 51,
+        "printedPage": "44"
+      },
+      {
+        "locationId": "ch1-opposite-sign",
+        "label": "−a的含义",
+        "purpose": "避免把字母前的负号一律当成负数。",
+        "page": 19,
+        "printedPage": "12"
+      },
+      {
+        "locationId": "ch2-division-zero-boundary",
+        "label": "除数非零条件",
+        "purpose": "确认每个分母的非零条件。",
+        "page": 51,
+        "printedPage": "44"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p57-special-products",
+    "page": 57,
+    "printedPage": "50",
+    "label": "探究与发现：怎样规定含负数的乘法",
+    "parts": [
+      "1×（−1）",
+      "0×（−1）",
+      "（−1）×（−1）"
+    ],
+    "decision": "保留",
+    "reason": "三特例的依赖关系需自行标出，未替重抄分配推导。",
+    "related": [
+      {
+        "locationId": "ch2-multiplication-consistency",
+        "label": "乘法运算的一致性",
+        "purpose": "理解提出新乘法规定时必须保留的原有关系。",
+        "page": 45,
+        "printedPage": "38"
+      },
+      {
+        "locationId": "ch2-negative-product-zero-pair",
+        "label": "用分配律构造和为0的关系",
+        "purpose": "辨认教材三个特例中确定未知积的理由。",
+        "page": 57,
+        "printedPage": "50"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p57-general-proof",
+    "page": 57,
+    "printedPage": "50",
+    "label": "探究与发现：从数系扩充说明乘法法则的合理性",
+    "parts": [],
+    "decision": "保留",
+    "reason": "正字母代表大小与新符号组合需自行推广，未给一般证明链。",
+    "related": [
+      {
+        "locationId": "ch2-negative-product-zero-pair",
+        "label": "用分配律构造和为0的关系",
+        "purpose": "辨认特例中确定未知积的理由，为自己的推广提供参照。",
+        "page": 57,
+        "printedPage": "50"
+      },
+      {
+        "locationId": "ch2-multiplication-letter-condition",
+        "label": "符号分类的字母条件",
+        "purpose": "明确用于代表正负组合的字母取值。",
+        "page": 46,
+        "printedPage": "39"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p58-sign-bracket-question",
+    "page": 58,
+    "printedPage": "51",
+    "label": "旁注：（−2）的四次方与−2的四次方相等吗",
+    "parts": [],
+    "decision": "保留",
+    "reason": "指数对象需自行圈出，未直接给相等与否或值。",
+    "related": [
+      {
+        "locationId": "ch2-power-factor-count",
+        "label": "乘方、底数和指数",
+        "purpose": "确定指数计数的完整底数。",
+        "page": 58,
+        "printedPage": "51"
+      },
+      {
+        "locationId": "ch2-minus-square-step",
+        "label": "负号与乘方的作用范围",
+        "purpose": "用已核对的另一处教材例子对照括号如何决定底数。",
+        "page": 60,
+        "printedPage": "53"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p58-example1",
+    "page": 58,
+    "printedPage": "51",
+    "label": "例1（2.3.1 乘方）",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）"
+    ],
+    "decision": "保留",
+    "reason": "58–59例1三问完整核对；按定义检查因数而非抄幂值。",
+    "related": [
+      {
+        "locationId": "ch2-power-factor-count",
+        "label": "乘方、底数和指数",
+        "purpose": "检查展开后的因数数量。",
+        "page": 58,
+        "printedPage": "51"
+      },
+      {
+        "locationId": "ch2-power-whole-fraction-base",
+        "label": "分数作为完整底数",
+        "purpose": "核对（3）展开时每个因数的范围。",
+        "page": 58,
+        "printedPage": "51"
+      }
+    ]
+  }
+]

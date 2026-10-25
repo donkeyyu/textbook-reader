@@ -1,0 +1,15 @@
+{
+  "capturedAt": "2026-10-25T04:36:34.636Z",
+  "gitHead": "ebe956a90b7b2b12f08f331c423fa76ec3a6d8e5",
+  "workingTree": true,
+  "files": {
+    "content/grade-7-volume-1/chapter-1.json": "440ac0f75ed4a6d7e158db2d267fd494563dc0f32b3dff6bfe57b9eecbe5b730",
+    "content/grade-7-volume-1/locations.json": "fd94dcb7987a51f6f556555352bb3e493f6a0c09ff7e3f6e9a866cc0f39864a4",
+    "src/reader/Reader.tsx": "424bf9f5fa21da2dda98e3498e460cb179ec8c20021df0a572def8e6e827ea51",
+    "src/reader/Supplement.tsx": "c90337502cba7ec9306c4e8c495c71418a26fc6d8620df9ec03f088d64ca56f6",
+    "src/reader/session.ts": "90b47510bc2db2f5bca45880f17aa720d78be323b01a6cf71e76264072191091",
+    "src/style.css": "dd7dbbc84705f4870e591ebeb9508679b217882e7b459e0dadb64d4982cee4ee",
+    "package.json": "e972dc109c62a655e81dd7dee86eb685f90309bb5b36d154a90d127b0f8c291c",
+    "package-lock.json": "b9432a2ad1988dfbddb034dcec925804711ed3789888534ee174b051e5a4c6f1"
+  }
+}

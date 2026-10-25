@@ -1,0 +1,66 @@
+[
+  {
+    "name": "printed/file navigation expanded",
+    "result": "pass",
+    "viewport": [
+      1400,
+      1000
+    ]
+  },
+  {
+    "name": "printed/file navigation collapsed",
+    "result": "pass",
+    "viewport": [
+      1400,
+      1000
+    ]
+  },
+  {
+    "name": "title-only draft protection",
+    "result": "pass",
+    "viewport": [
+      1400,
+      1000
+    ]
+  },
+  {
+    "name": "edit during delayed navigation",
+    "result": "pass",
+    "viewport": [
+      1400,
+      1000
+    ]
+  },
+  {
+    "name": "method default/click/keyboard/reopen/refresh",
+    "result": "pass",
+    "viewport": [
+      1400,
+      1000
+    ]
+  },
+  {
+    "name": "method draft remains intact",
+    "result": "pass",
+    "viewport": [
+      1400,
+      1000
+    ]
+  },
+  {
+    "name": "multi-level method return",
+    "result": "pass",
+    "viewport": [
+      1400,
+      1000
+    ]
+  },
+  {
+    "name": "image failure/retry/cancel/rapid clicks",
+    "result": "pass",
+    "viewport": [
+      1400,
+      1000
+    ]
+  }
+]

@@ -1,0 +1,620 @@
+{
+  "date": "2026-10-25T05:43:35.663Z",
+  "url": "http://127.0.0.1:5196/",
+  "space": 39,
+  "input": "public DOM controls and focus; no React state access; DOM assertions, not pixel review",
+  "versions": {
+    "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+    "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+    "content/grade-7-volume-1/chapter-6.json": "a800d8e822fdc13f1740403c0bb852debfd01b3c3068febebc07325d81c6b845"
+  },
+  "results": [
+    {
+      "id": "ch6-p174-exercises-2",
+      "page": 174,
+      "printedPage": "167",
+      "noteSha256": "008293133aba88467c8cd0ea661bb35e00c15099a4f3b510948c30d0ba382f5f",
+      "preview": {
+        "group": [
+          "ch6-p174-exercises-2"
+        ],
+        "aria": "题目引导：习题6.2第2题：读语句画图",
+        "text": "“共线”“在……之间”和“相交”，分别限定了哪些位置关系？",
+        "highlights": [
+          "location-ch6-p174-exercises-2"
+        ],
+        "sourcePaper": "page-174",
+        "region": {
+          "x": 0.153,
+          "y": 0.08,
+          "width": 0.31,
+          "height": 0.02
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "习题6.2第2题：读语句画图",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p174-exercises-2",
+        "sourcePage": 174,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-point-on-not-endpoint",
+            "id": "related-ch6-p174-exercises-2-ch6-point-on-not-endpoint",
+            "label": "点在线段上与端点",
+            "purposeMatches": true,
+            "pageLabel": "课本第 163 页",
+            "targetFilePage": 170,
+            "clicked": false
+          },
+          {
+            "target": "ch6-intersection-one-point",
+            "id": "related-ch6-p174-exercises-2-ch6-intersection-one-point",
+            "label": "相交与交点",
+            "purposeMatches": true,
+            "pageLabel": "课本第 162 页",
+            "targetFilePage": 169,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p174-exercises-3",
+      "page": 174,
+      "printedPage": "167",
+      "noteSha256": "d858310c1b736bb0c397612301ef78277822ae2fae30ad6b27bc1484493e2f83",
+      "preview": {
+        "group": [
+          "ch6-p174-exercises-3"
+        ],
+        "aria": "题目引导：习题6.2第3题：钉木条说明的事实",
+        "text": "一个固定位置与两个不同的固定位置，对直线的限制有何不同？",
+        "highlights": [
+          "location-ch6-p174-exercises-3"
+        ],
+        "sourcePaper": "page-174",
+        "region": {
+          "x": 0.153,
+          "y": 0.21,
+          "width": 0.74,
+          "height": 0.021
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "习题6.2第3题：钉木条说明的事实",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p174-exercises-3",
+        "sourcePage": 174,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-two-points-unique",
+            "id": "related-ch6-p174-exercises-3-ch6-two-points-unique",
+            "label": "两点确定一条直线",
+            "purposeMatches": true,
+            "pageLabel": "课本第 162 页",
+            "targetFilePage": 169,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p174-exercises-4",
+      "page": 174,
+      "printedPage": "167",
+      "noteSha256": "a0759b9f6ac5d433cace626388e88a38fc22db3a316fb921da4f057a2fe275cf",
+      "preview": {
+        "group": [
+          "ch6-p174-exercises-4"
+        ],
+        "aria": "题目引导：习题6.2第4题：中点、等分点与倍数",
+        "text": "中点、等分点和倍数，都要先说清相对于哪条整段。",
+        "highlights": [
+          "location-ch6-p174-exercises-4"
+        ],
+        "sourcePaper": "page-174",
+        "region": {
+          "x": 0.153,
+          "y": 0.289,
+          "width": 0.54,
+          "height": 0.02
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "习题6.2第4题：中点、等分点与倍数",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p174-exercises-4",
+        "sourcePage": 174,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-midpoint-two-conditions",
+            "id": "related-ch6-p174-exercises-4-ch6-midpoint-two-conditions",
+            "label": "中点与等分的条件",
+            "purposeMatches": true,
+            "pageLabel": "课本第 166 页",
+            "targetFilePage": 173,
+            "clicked": false
+          },
+          {
+            "target": "ch6-segment-sum-between",
+            "id": "related-ch6-p174-exercises-4-ch6-segment-sum-between",
+            "label": "线段加法的点序条件",
+            "purposeMatches": true,
+            "pageLabel": "课本第 165 页",
+            "targetFilePage": 172,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p174-exercises-6",
+      "page": 174,
+      "printedPage": "167",
+      "noteSha256": "3e62b6e4f264c531871edbc5e739bad28fdccde07720c3fce52dfafa39016999",
+      "preview": {
+        "group": [
+          "ch6-p174-exercises-6"
+        ],
+        "aria": "题目引导：习题6.2第6题：河道与九曲桥",
+        "text": "同样比较路线长短，两种生活情境的目的有什么不同？",
+        "highlights": [
+          "location-ch6-p174-exercises-6"
+        ],
+        "sourcePaper": "page-174",
+        "region": {
+          "x": 0.153,
+          "y": 0.523,
+          "width": 0.74,
+          "height": 0.043
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "习题6.2第6题：河道与九曲桥",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p174-exercises-6",
+        "sourcePage": 174,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-shortest-same-endpoints",
+            "id": "related-ch6-p174-exercises-6-ch6-shortest-same-endpoints",
+            "label": "两点之间线段最短",
+            "purposeMatches": true,
+            "pageLabel": "课本第 165 页",
+            "targetFilePage": 172,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p175-exercises-8",
+      "page": 175,
+      "printedPage": "168",
+      "noteSha256": "af1a4fabcbcb5d9599ba19ed637170546083d5fa92dc6ed15c577e0dd9e4717f",
+      "preview": {
+        "group": [
+          "ch6-p175-exercises-8"
+        ],
+        "aria": "题目引导：习题6.2第8题：作线段等于a+2b−c",
+        "text": "作差后的剩余线段，需要满足什么长度条件？",
+        "highlights": [
+          "location-ch6-p175-exercises-8"
+        ],
+        "sourcePaper": "page-175",
+        "region": {
+          "x": 0.11,
+          "y": 0.133,
+          "width": 0.57,
+          "height": 0.02
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "习题6.2第8题：作线段等于a+2b−c",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p175-exercises-8",
+        "sourcePage": 175,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-compass-copy-length",
+            "id": "related-ch6-p175-exercises-8-ch6-compass-copy-length",
+            "label": "圆规复制长度",
+            "purposeMatches": true,
+            "pageLabel": "课本第 164 页",
+            "targetFilePage": 171,
+            "clicked": false
+          },
+          {
+            "target": "ch6-segment-difference-positive",
+            "id": "related-ch6-p175-exercises-8-ch6-segment-difference-positive",
+            "label": "线段差的条件",
+            "purposeMatches": true,
+            "pageLabel": "课本第 165 页",
+            "targetFilePage": 172,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p175-exercises-9",
+      "page": 175,
+      "printedPage": "168",
+      "noteSha256": "50969c5703eb0c440c49efd265c75f5c2d210cff01f0c124633c882e2b34d4ff",
+      "preview": {
+        "group": [
+          "ch6-p175-exercises-9"
+        ],
+        "aria": "题目引导：习题6.2第9题：圆柱表面的最短路线",
+        "text": "端点、表面和绕行圈数，共同限定了可比较的路线。",
+        "highlights": [
+          "location-ch6-p175-exercises-9"
+        ],
+        "sourcePaper": "page-175",
+        "region": {
+          "x": 0.11,
+          "y": 0.201,
+          "width": 0.74,
+          "height": 0.045
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "习题6.2第9题：圆柱表面的最短路线",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p175-exercises-9",
+        "sourcePage": 175,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-shortest-same-endpoints",
+            "id": "related-ch6-p175-exercises-9-ch6-shortest-same-endpoints",
+            "label": "两点之间线段最短",
+            "purposeMatches": true,
+            "pageLabel": "课本第 165 页",
+            "targetFilePage": 172,
+            "clicked": false
+          },
+          {
+            "target": "ch6-cylinder-route-constraints",
+            "id": "related-ch6-p175-exercises-9-ch6-cylinder-route-constraints",
+            "label": "圆柱路线的表面与圈数限制",
+            "purposeMatches": true,
+            "pageLabel": "课本第 168 页",
+            "targetFilePage": 175,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p176-reading-units",
+      "page": 176,
+      "printedPage": "169",
+      "noteSha256": "4629db4afd5ea57adc6b402309ca4da7f282f7a8dd7248476ceba6059ee5cab6",
+      "preview": {
+        "group": [
+          "ch6-p176-reading-units"
+        ],
+        "aria": "题目引导：阅读与思考：长度单位换算与屏幕尺寸",
+        "text": "屏幕尺寸指哪条长度？换单位会改变这条实际长度吗？",
+        "highlights": [
+          "location-ch6-p176-reading-units"
+        ],
+        "sourcePaper": "page-176",
+        "region": {
+          "x": 0.16399999999999998,
+          "y": 0.659,
+          "width": 0.725,
+          "height": 0.069
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "阅读与思考：长度单位换算与屏幕尺寸",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p176-reading-units",
+        "sourcePage": 176,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-screen-unit-exercise",
+            "id": "related-ch6-p176-reading-units-ch6-screen-unit-exercise",
+            "label": "测量对象与长度单位",
+            "purposeMatches": true,
+            "pageLabel": "课本第 169 页",
+            "targetFilePage": 176,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-angle-single-letter",
+      "page": 177,
+      "printedPage": "170",
+      "noteSha256": "a8c119a8bdaaca4472451f85311cdac871510935d92ff151dded89776c48a947",
+      "preview": {
+        "group": [
+          "ch6-angle-single-letter"
+        ],
+        "aria": "题目引导：旁问：角的表示能否简写",
+        "text": "不同的角名，分别保留了哪些识别信息？",
+        "highlights": [
+          "location-ch6-angle-single-letter"
+        ],
+        "sourcePaper": "page-177",
+        "region": {
+          "x": 0.634,
+          "y": 0.606,
+          "width": 0.22399999999999998,
+          "height": 0.068
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "旁问：角的表示能否简写",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-angle-single-letter",
+        "sourcePage": 177,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-angle-three-letter-name",
+            "id": "related-ch6-angle-single-letter-ch6-angle-three-letter-name",
+            "label": "三字母表示角",
+            "purposeMatches": true,
+            "pageLabel": "课本第 170 页",
+            "targetFilePage": 177,
+            "clicked": true
+          }
+        ],
+        "roundTrips": [
+          {
+            "target": "ch6-angle-three-letter-name",
+            "page": 177,
+            "regionMatches": true,
+            "returnFocus": "related-ch6-angle-single-letter-ch6-angle-three-letter-name",
+            "positionDelta": 0,
+            "panelDelta": 0,
+            "methodRestored": true
+          }
+        ]
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p177-rotation-think",
+      "page": 177,
+      "printedPage": "170",
+      "noteSha256": "326c8a05eec1cb841e22749b37084f4f20b3688c23cc99af976af66da1be623b",
+      "preview": {
+        "group": [
+          "ch6-p177-rotation-think"
+        ],
+        "aria": "题目引导：思考：射线旋转形成的角",
+        "text": "终边的位置相同，是否说明转动的过程也相同？",
+        "highlights": [
+          "location-ch6-p177-rotation-think"
+        ],
+        "sourcePaper": "page-177",
+        "region": {
+          "x": 0.11,
+          "y": 0.787,
+          "width": 0.74,
+          "height": 0.076
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "思考：射线旋转形成的角",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p177-rotation-think",
+        "sourcePage": 177,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-angle-rays-definition",
+            "id": "related-ch6-p177-rotation-think-ch6-angle-rays-definition",
+            "label": "角由有公共端点的两条射线组成",
+            "purposeMatches": true,
+            "pageLabel": "课本第 170 页",
+            "targetFilePage": 177,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p178-unit-fill",
+      "page": 178,
+      "printedPage": "171",
+      "noteSha256": "00cd018d2c483efa39bbe16587244150ce278469a2bdde45af3de69888f12e94",
+      "preview": {
+        "group": [
+          "ch6-p178-unit-fill"
+        ],
+        "aria": "题目引导：填空：周角、平角与度分秒",
+        "text": "周角、平角和度分秒的等分关系，分别表达什么？",
+        "highlights": [
+          "location-ch6-p178-unit-fill"
+        ],
+        "sourcePaper": "page-178",
+        "region": {
+          "x": 0.175,
+          "y": 0.521,
+          "width": 0.63,
+          "height": 0.025
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "填空：周角、平角与度分秒",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p178-unit-fill",
+        "sourcePage": 178,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-compound-angle-units",
+            "id": "related-ch6-p178-unit-fill-ch6-compound-angle-units",
+            "label": "度分秒与小数度的区别",
+            "purposeMatches": true,
+            "pageLabel": "课本第 171 页",
+            "targetFilePage": 178,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p178-example-1",
+      "page": 178,
+      "printedPage": "171",
+      "noteSha256": "438a558972edf2d8227a030852aacdedbc5def2ea5f2aec39de693fec9f3b8cf",
+      "preview": {
+        "group": [
+          "ch6-p178-example-1"
+        ],
+        "aria": "题目引导：例1：用射线表示方位",
+        "text": "方位词中的基准、偏向和角度，各自提供什么信息？",
+        "highlights": [
+          "location-ch6-p178-example-1"
+        ],
+        "sourcePaper": "page-178",
+        "region": {
+          "x": 0.13,
+          "y": 0.868,
+          "width": 0.79,
+          "height": 0.048
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "例1：用射线表示方位",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p178-example-1",
+        "sourcePage": 178,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-bearing-reference-direction",
+            "id": "related-ch6-p178-example-1-ch6-bearing-reference-direction",
+            "label": "方位角的基准方向",
+            "purposeMatches": true,
+            "pageLabel": "课本第 172 页",
+            "targetFilePage": 179,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    }
+  ]
+}

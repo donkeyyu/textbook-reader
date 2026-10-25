@@ -1,0 +1,71 @@
+{
+  "version": {
+    "spaceId": 36,
+    "url": "http://127.0.0.1:5198/",
+    "contentSha256": "4be1f83939c5caaf5d76fc77230d2db18c83413b5c2138dc4f57bd5d018430ad",
+    "app": {
+      "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+      "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+      "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315"
+    }
+  },
+  "results": [
+    {
+      "id": "ch2-q-p72-activity3-theme1",
+      "displayChecked": true,
+      "verifiedContentSha256": "4be1f83939c5caaf5d76fc77230d2db18c83413b5c2138dc4f57bd5d018430ad",
+      "linkTargetsChecked": [
+        {
+          "locationId": "ch2-trigram-reading-order",
+          "page": 72,
+          "printedPage": "65"
+        },
+        {
+          "locationId": "ch2-base-zero-placeholder",
+          "page": 71,
+          "printedPage": "64"
+        }
+      ],
+      "page": 72,
+      "marker": {
+        "ids": "ch2-q-p72-activity3-theme1",
+        "label": "题目引导：活动三主题1：解读大会标识中的记数符号"
+      },
+      "preview": "先固定符号与位序，再逐组转换并保留分组记录。点击标记展开解读",
+      "previewMode": "single-note-preview",
+      "state": {
+        "title": "活动三主题1：解读大会标识中的记数符号",
+        "knowledge": [
+          "二进制符号编码；数位顺序；二进制、八进制和十进制的等值转换。"
+        ],
+        "cautions": [
+          "阳爻、阴爻的数字映射与上下读取方向是两项不同约定。",
+          "四个八进制数字组成一个数时，各自所处位置不同，不能把四个数字直接相加当成该数。"
+        ],
+        "expanded": "false",
+        "hidden": true,
+        "method": [
+          "先用教材首组示例检验自己采用的符号映射与上下位序，列出其余各组的对应记录。三爻能表示的数量范围，为什么适合与一位八进制数字对应？",
+          "整体转换时，区分“一组内的位序”和“四组之间的位置”。自行完成各组和整体的计算，再用展开还原或其他独立方法检查结果，供交流时说明依据。"
+        ],
+        "related": [
+          {
+            "id": "related-ch2-q-p72-activity3-theme1-ch2-trigram-reading-order",
+            "label": "符号编码与位序约定课本第 65 页",
+            "purpose": "核对符号对应与位序的一致性。"
+          },
+          {
+            "id": "related-ch2-q-p72-activity3-theme1-ch2-base-zero-placeholder",
+            "label": "进制转换与占位0课本第 64 页",
+            "purpose": "在分组及整体转换中保留必要的占位。"
+          }
+        ],
+        "highlight": "location-ch2-q-p72-activity3-theme1"
+      },
+      "links": []
+    }
+  ],
+  "failure": null,
+  "finalContentSha256": "4be1f83939c5caaf5d76fc77230d2db18c83413b5c2138dc4f57bd5d018430ad",
+  "displayedFieldsMatchFinalContent": true
+}

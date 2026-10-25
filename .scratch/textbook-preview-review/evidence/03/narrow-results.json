@@ -1,0 +1,52 @@
+[
+  {
+    "result": "default collapsed, real method pointer, native Enter/Space",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    }
+  },
+  {
+    "result": "DOM method activation and native Enter/Space preserve unsaved draft; no discard confirmation; emulator reapplied after editor input/undo",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    }
+  },
+  {
+    "result": "two-level return restores method, source guide, textbook region, panel scroll and focus after editors mount",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    }
+  },
+  {
+    "result": "dense marker, native Enter/Space, switching, reopened method defaults collapsed",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    }
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "control": {
+      "width": 350,
+      "height": 44
+    },
+    "horizontalOverflow": false,
+    "panelOverflow": false,
+    "pageImageVisible": true,
+    "methodVisible": false,
+    "paragraphs": true
+  },
+  {
+    "result": "non-question content",
+    "state": {
+      "methodControls": 0,
+      "paragraphs": true,
+      "width": 390,
+      "height": 844
+    }
+  }
+]

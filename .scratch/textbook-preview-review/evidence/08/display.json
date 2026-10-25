@@ -1,0 +1,326 @@
+{
+  "version": {
+    "spaceId": 36,
+    "url": "http://127.0.0.1:5198/",
+    "contentSha256": "4be1f83939c5caaf5d76fc77230d2db18c83413b5c2138dc4f57bd5d018430ad",
+    "app": {
+      "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+      "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+      "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315"
+    }
+  },
+  "results": [
+    {
+      "id": "ch2-q-p59-practice2",
+      "displayChecked": true,
+      "verifiedContentSha256": "4be1f83939c5caaf5d76fc77230d2db18c83413b5c2138dc4f57bd5d018430ad",
+      "linkTargetsChecked": [
+        {
+          "locationId": "ch2-power-factor-count",
+          "page": 58,
+          "printedPage": "51"
+        },
+        {
+          "locationId": "ch2-power-negative-parity",
+          "page": 59,
+          "printedPage": "52"
+        }
+      ],
+      "page": 59,
+      "marker": {
+        "ids": "ch2-q-p59-practice2",
+        "label": "题目引导：2.3.1 练习第2题：乘方计算"
+      },
+      "preview": "相同负底数可以有不同符号的幂；指数怎样告诉你因数的个数？点击标记展开解读",
+      "previewMode": "single-note-preview",
+      "state": {
+        "title": "2.3.1 练习第2题：乘方计算",
+        "knowledge": [
+          "（1）（2）底数为−1；（3）正整数底数；（4）负整数底数；（5）正小数底数；（6）负分数底数；（7）（8）同为−10而指数不同。"
+        ],
+        "cautions": [
+          "不可把高次方写成底数乘指数；（6）分母也参与每次相乘；（5）不能因指数变大就预设数值一定更大。"
+        ],
+        "expanded": "false",
+        "hidden": true,
+        "method": [
+          "先按底数符号与指数辨认结果符号，再计算大小；（1）（2）留意单位绝对值重复相乘，（5）（6）按小数或分数乘法核对，（7）（8）作成对比较。"
+        ],
+        "related": [
+          {
+            "id": "related-ch2-q-p59-practice2-ch2-power-factor-count",
+            "label": "乘方、底数和指数课本第 51 页",
+            "purpose": "检查八问是否都按重复相乘解释。"
+          },
+          {
+            "id": "related-ch2-q-p59-practice2-ch2-power-negative-parity",
+            "label": "幂的符号课本第 52 页",
+            "purpose": "对照相同负底数而指数不同的情况。"
+          }
+        ],
+        "highlight": "location-ch2-q-p59-practice2"
+      },
+      "links": []
+    },
+    {
+      "id": "ch2-q-p59-practice3",
+      "displayChecked": true,
+      "verifiedContentSha256": "4be1f83939c5caaf5d76fc77230d2db18c83413b5c2138dc4f57bd5d018430ad",
+      "linkTargetsChecked": [
+        {
+          "locationId": "ch2-power-negative-parity",
+          "page": 59,
+          "printedPage": "52"
+        },
+        {
+          "locationId": "ch2-power-factor-count",
+          "page": 58,
+          "printedPage": "51"
+        }
+      ],
+      "page": 59,
+      "marker": {
+        "ids": "ch2-q-p59-practice3",
+        "label": "题目引导：2.3.1 练习第3题：计算器乘方"
+      },
+      "preview": "计算器要接收完整底数和指数；负号、小数点与括号各有作用。点击标记展开解读",
+      "previewMode": "single-note-preview",
+      "state": {
+        "title": "2.3.1 练习第3题：计算器乘方",
+        "knowledge": [
+          "（1）负整数的偶次方；（2）正整数的幂；（3）正小数的幂；（4）负小数的幂，均需要正确输入完整底数和指数。"
+        ],
+        "cautions": [
+          "（1）（4）负号属于底数，不能漏括号；（3）（4）小数点的位置错误会使结果大小显著改变；题目未要求另行保留小数位数。"
+        ],
+        "expanded": "false",
+        "hidden": true,
+        "method": [
+          "按所用计算器说明输入每个底数，确认小数点、负号与括号，再输入指数；计算后用符号规律和合理数量级做初步检查。"
+        ],
+        "related": [
+          {
+            "id": "related-ch2-q-p59-practice3-ch2-power-negative-parity",
+            "label": "幂的符号课本第 52 页",
+            "purpose": "独立检查四个显示结果的符号。"
+          },
+          {
+            "id": "related-ch2-q-p59-practice3-ch2-power-factor-count",
+            "label": "乘方、底数和指数课本第 51 页",
+            "purpose": "确认计算器中输入的指数对应什么操作。"
+          }
+        ],
+        "highlight": "location-ch2-q-p59-practice3"
+      },
+      "links": []
+    },
+    {
+      "id": "ch2-q-p60-example4",
+      "displayChecked": true,
+      "verifiedContentSha256": "4be1f83939c5caaf5d76fc77230d2db18c83413b5c2138dc4f57bd5d018430ad",
+      "linkTargetsChecked": [
+        {
+          "locationId": "ch2-sequence-position",
+          "page": 61,
+          "printedPage": "54"
+        },
+        {
+          "locationId": "ch2-power-factor-count",
+          "page": 58,
+          "printedPage": "51"
+        }
+      ],
+      "page": 60,
+      "marker": {
+        "ids": "ch2-q-p60-example4",
+        "label": "题目引导：例4：三行数的规律"
+      },
+      "preview": "横向看同一行的变化，纵向看相同位置的对应。点击标记展开解读",
+      "previewMode": "single-note-preview",
+      "state": {
+        "title": "例4：三行数的规律",
+        "knowledge": [
+          "（1）乘方可表示重复乘同一个数；符号与绝对值可分别观察。",
+          "（2）对应项之间的加法或乘法关系；（3）位置编号与幂的指数。"
+        ],
+        "cautions": [
+          "位置对应才能讨论两行数的关系，不能把相邻两列混配。",
+          "第10个数不表示把第一个数乘10；说明行间关系时，要确认所述运算作用于对应的整个数。"
+        ],
+        "expanded": "false",
+        "hidden": true,
+        "method": [
+          "把第①行的符号变化与绝对值变化分开观察，解释教材为何用同一底数的幂表示。",
+          "（2）对齐同一列再比较第②、③行与第①行；（3）保留这些对应关系，检查续页为何取相同位置的三个数相加。"
+        ],
+        "related": [
+          {
+            "id": "related-ch2-q-p60-example4-ch2-sequence-position",
+            "label": "数列位置与指数的对应课本第 54 页",
+            "purpose": "理解第（3）问的位置编号如何进入列式。"
+          },
+          {
+            "id": "related-ch2-q-p60-example4-ch2-power-factor-count",
+            "label": "乘方的底数与指数课本第 51 页",
+            "purpose": "区别指数计数与普通乘数。"
+          }
+        ],
+        "highlight": "location-ch2-q-p60-example4"
+      },
+      "links": []
+    },
+    {
+      "id": "ch2-q-p67-review4",
+      "displayChecked": true,
+      "verifiedContentSha256": "4be1f83939c5caaf5d76fc77230d2db18c83413b5c2138dc4f57bd5d018430ad",
+      "linkTargetsChecked": [
+        {
+          "locationId": "ch2-subtract-add-opposite",
+          "page": 38,
+          "printedPage": "31"
+        },
+        {
+          "locationId": "ch2-division-reciprocal-reason",
+          "page": 51,
+          "printedPage": "44"
+        }
+      ],
+      "page": 67,
+      "marker": {
+        "ids": "ch2-q-p67-review4",
+        "label": "题目引导：回顾与思考第4题：运算之间的联系"
+      },
+      "preview": "说明转换规则时，同时保留它的条件。点击标记展开解读",
+      "previewMode": "single-note-preview",
+      "state": {
+        "title": "回顾与思考第4题：运算之间的联系",
+        "knowledge": [
+          "相反数、倒数与正整数次幂的定义；运算转换及其适用条件。"
+        ],
+        "cautions": [
+          "除以0的式子本来就没有意义，不能借“转为乘法”消除限制。",
+          "变成加法后要保留完整加数，变成乘法后要保留完整因数与原有括号关系。"
+        ],
+        "expanded": "false",
+        "hidden": true,
+        "method": [
+          "分别用定义或具体例子说明加减、乘除之间的联系，再检查混合式中的每类运算能怎样表达。",
+          "讨论含乘方的式子时，回顾本章正整数次幂的定义；说明转换前后如何保持同一个值。"
+        ],
+        "related": [
+          {
+            "id": "related-ch2-q-p67-review4-ch2-subtract-add-opposite",
+            "label": "减法的定义与依据课本第 31 页",
+            "purpose": "回顾减法中各量的关系，支持自己说明加法与减法的联系。"
+          },
+          {
+            "id": "related-ch2-q-p67-review4-ch2-division-reciprocal-reason",
+            "label": "除法的定义与条件课本第 44 页",
+            "purpose": "回顾除法如何确定商，并核对除数非零的条件。"
+          }
+        ],
+        "highlight": "location-ch2-q-p67-review4"
+      },
+      "links": [
+        {
+          "target": "ch2-subtract-add-opposite",
+          "targetPage": 38,
+          "returned": true,
+          "sourceRegionDelta": 0,
+          "focus": "related-ch2-q-p67-review4-ch2-subtract-add-opposite",
+          "methodRestored": true
+        },
+        {
+          "target": "ch2-division-reciprocal-reason",
+          "targetPage": 51,
+          "returned": true,
+          "sourceRegionDelta": 0,
+          "focus": "related-ch2-q-p67-review4-ch2-division-reciprocal-reason",
+          "methodRestored": true
+        }
+      ]
+    },
+    {
+      "id": "ch2-q-review2-1",
+      "displayChecked": true,
+      "verifiedContentSha256": "4be1f83939c5caaf5d76fc77230d2db18c83413b5c2138dc4f57bd5d018430ad",
+      "linkTargetsChecked": [
+        {
+          "locationId": "ch2-subtract-add-opposite",
+          "page": 38,
+          "printedPage": "31"
+        },
+        {
+          "locationId": "ch2-multiplication-sign-magnitude",
+          "page": 46,
+          "printedPage": "39"
+        },
+        {
+          "locationId": "ch2-division-reciprocal-reason",
+          "page": 51,
+          "printedPage": "44"
+        }
+      ],
+      "page": 68,
+      "marker": {
+        "ids": "ch2-q-review2-1",
+        "label": "题目引导：复习题2第1题：四则运算"
+      },
+      "preview": "按加减、乘法、除法三组辨认规则，别把符号法则混用。点击标记展开解读",
+      "previewMode": "single-note-preview",
+      "state": {
+        "title": "复习题2第1题：四则运算",
+        "knowledge": [
+          "有理数加、减、乘、除的不同法则；符号、绝对值与除数的条件。"
+        ],
+        "cautions": [
+          "乘法的同号得正不能用于同号相加。",
+          "减去负数与负数作除数是不同结构；分数参与除法时要认清哪个数是除数。"
+        ],
+        "expanded": "false",
+        "hidden": true,
+        "method": [
+          "逐式读清运算符号，自行把九问分类，并说明每类选择的法则。对于同样带负号的式子，为什么不能统一用“同号得正”？",
+          "检查减数、乘数与除数各自所指的完整数；含分数时尤其要辨清一次运算的对象，再独立计算。"
+        ],
+        "related": [
+          {
+            "id": "related-ch2-q-review2-1-ch2-subtract-add-opposite",
+            "label": "减去一个数与加其相反数课本第 31 页",
+            "purpose": "检查（3）（4）的减法转换。"
+          },
+          {
+            "id": "related-ch2-q-review2-1-ch2-multiplication-sign-magnitude",
+            "label": "乘法的符号与绝对值课本第 39 页",
+            "purpose": "区分乘法的符号判断与加法规则。"
+          },
+          {
+            "id": "related-ch2-q-review2-1-ch2-division-reciprocal-reason",
+            "label": "除法转化为乘倒数课本第 44 页",
+            "purpose": "处理（7）—（9）的除法。"
+          }
+        ],
+        "highlight": "location-ch2-q-review2-1"
+      },
+      "links": []
+    }
+  ],
+  "failure": null,
+  "recoveredFailures": [
+    "ElementResolutionError: page.hover timed out after 3000ms: page.hover failed: element is not stable\n    at #retryElementAction (file:////[eval1]:19158:27)\n    at async file:////[eval1]:19242:29\n    at async file:////[eval1]:16940:28"
+  ],
+  "resumeVersions": [
+    {
+      "spaceId": 36,
+      "url": "http://127.0.0.1:5198/",
+      "contentSha256": "4be1f83939c5caaf5d76fc77230d2db18c83413b5c2138dc4f57bd5d018430ad",
+      "app": {
+        "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+        "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+        "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315"
+      }
+    }
+  ],
+  "finalContentSha256": "4be1f83939c5caaf5d76fc77230d2db18c83413b5c2138dc4f57bd5d018430ad",
+  "displayedFieldsMatchFinalContent": true
+}

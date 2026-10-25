@@ -1,0 +1,221 @@
+{
+  "date": "2026-10-25T05:39:37.825Z",
+  "url": "http://127.0.0.1:5196/",
+  "space": 39,
+  "input": "public DOM controls and focus; no React state access; DOM assertions, not pixel review",
+  "versions": {
+    "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+    "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+    "content/grade-7-volume-1/chapter-6.json": "a800d8e822fdc13f1740403c0bb852debfd01b3c3068febebc07325d81c6b845"
+  },
+  "results": [
+    {
+      "id": "ch6-p170-ray-line-question",
+      "page": 170,
+      "printedPage": "163",
+      "noteSha256": "34647f5cb0e2a625316e72cba0f0713ad0a2ea26b840a3d56777c21b92f54b5b",
+      "preview": {
+        "group": [
+          "ch6-p170-ray-line-question"
+        ],
+        "aria": "题目引导：旁问：由线段得到射线或直线",
+        "text": "从线段到射线或直线，端点与延伸方式有什么变化？",
+        "highlights": [
+          "location-ch6-p170-ray-line-question"
+        ],
+        "viewport": {
+          "width": 1772,
+          "height": 909
+        }
+      },
+      "path": {
+        "title": "旁问：由线段得到射线或直线",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p170-ray-line-question",
+        "sourcePage": 170,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "links": [
+          {
+            "target": "ch6-ray-name-order",
+            "page": 170,
+            "regionMatches": true,
+            "returnFocus": "related-ch6-p170-ray-line-question-ch6-ray-name-order",
+            "positionDelta": 0,
+            "panelDelta": 0,
+            "methodRestored": true
+          },
+          {
+            "target": "ch6-line-points-not-ends",
+            "page": 169,
+            "regionMatches": true,
+            "returnFocus": "related-ch6-p170-ray-line-question-ch6-line-points-not-ends",
+            "positionDelta": 0,
+            "panelDelta": 0,
+            "methodRestored": true
+          }
+        ]
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p170-exercise-1",
+      "page": 170,
+      "printedPage": "163",
+      "noteSha256": "15a7b56be5008826d68947ede0f97606cbf85835832164551dd03ff91f18f75b",
+      "preview": {
+        "group": [
+          "ch6-p170-exercise-1"
+        ],
+        "aria": "题目引导：练习第1题：判断题",
+        "text": "图形的范围与命名规则，分别影响哪些判断？",
+        "highlights": [
+          "location-ch6-p170-exercise-1"
+        ],
+        "viewport": {
+          "width": 1772,
+          "height": 909
+        }
+      },
+      "path": {
+        "title": "练习第1题：判断题",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p170-exercise-1",
+        "sourcePage": 170,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "links": [
+          {
+            "target": "ch6-ray-name-order",
+            "page": 170,
+            "regionMatches": true,
+            "returnFocus": "related-ch6-p170-exercise-1-ch6-ray-name-order",
+            "positionDelta": 0,
+            "panelDelta": 0,
+            "methodRestored": true
+          },
+          {
+            "target": "ch6-line-points-not-ends",
+            "page": 169,
+            "regionMatches": true,
+            "returnFocus": "related-ch6-p170-exercise-1-ch6-line-points-not-ends",
+            "positionDelta": 0,
+            "panelDelta": 0,
+            "methodRestored": true
+          }
+        ]
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p170-exercise-2",
+      "page": 170,
+      "printedPage": "163",
+      "noteSha256": "150b53a38a5544b67c873fca66ce474cb3983b198a475bc62cf86c5a3919c00e",
+      "preview": {
+        "group": [
+          "ch6-p170-exercise-2"
+        ],
+        "aria": "题目引导：练习第2题：按语句画图",
+        "text": "作图语句中，哪些关系已经给定，哪些尚未限定？",
+        "highlights": [
+          "location-ch6-p170-exercise-2"
+        ],
+        "viewport": {
+          "width": 1772,
+          "height": 909
+        }
+      },
+      "path": {
+        "title": "练习第2题：按语句画图",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p170-exercise-2",
+        "sourcePage": 170,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "links": [
+          {
+            "target": "ch6-point-on-not-endpoint",
+            "page": 170,
+            "regionMatches": true,
+            "returnFocus": "related-ch6-p170-exercise-2-ch6-point-on-not-endpoint",
+            "positionDelta": 0,
+            "panelDelta": 0,
+            "methodRestored": true
+          },
+          {
+            "target": "ch6-extension-order",
+            "page": 170,
+            "regionMatches": true,
+            "returnFocus": "related-ch6-p170-exercise-2-ch6-extension-order",
+            "positionDelta": 0,
+            "panelDelta": 0,
+            "methodRestored": true
+          }
+        ]
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p170-exercise-3",
+      "page": 170,
+      "printedPage": "163",
+      "noteSha256": "299e8e26f229c05c9fc74875c0fcdda4d4afeb9b76c5e90ad23d8353ec00efcc",
+      "preview": {
+        "group": [
+          "ch6-p170-exercise-3"
+        ],
+        "aria": "题目引导：练习第3题：表述点与直线的关系",
+        "text": "点的位置与图旁字母的位置，需要分清。",
+        "highlights": [
+          "location-ch6-p170-exercise-3"
+        ],
+        "viewport": {
+          "width": 1772,
+          "height": 909
+        }
+      },
+      "path": {
+        "title": "练习第3题：表述点与直线的关系",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p170-exercise-3",
+        "sourcePage": 170,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "links": [
+          {
+            "target": "ch6-line-points-not-ends",
+            "page": 169,
+            "regionMatches": true,
+            "returnFocus": "related-ch6-p170-exercise-3-ch6-line-points-not-ends",
+            "positionDelta": 0,
+            "panelDelta": 0,
+            "methodRestored": true
+          },
+          {
+            "target": "ch6-intersection-one-point",
+            "page": 169,
+            "regionMatches": true,
+            "returnFocus": "related-ch6-p170-exercise-3-ch6-intersection-one-point",
+            "positionDelta": 0,
+            "panelDelta": 0,
+            "methodRestored": true
+          }
+        ]
+      },
+      "result": "pass"
+    }
+  ]
+}

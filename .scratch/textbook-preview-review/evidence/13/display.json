@@ -1,0 +1,1260 @@
+[
+  {
+    "id": "ch4-q-p102-practice2",
+    "sourcePage": 109,
+    "printedPage": "102",
+    "title": "练习2：分数取值与式子的结构",
+    "links": [
+      {
+        "target": "ch4-two-operations",
+        "page": 108,
+        "printedPage": "101",
+        "label": "整式加减法则课本第 101 页",
+        "purpose": "根据本题括号结构，连接去括号与合并同类项两个步骤。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      },
+      {
+        "target": "ch4-simplify-value",
+        "page": 104,
+        "printedPage": "97",
+        "label": "先化简再求值课本第 97 页",
+        "purpose": "判断哪些同类项可先合并或抵消，从而减少本题代入后的计算。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "../12/display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 1772,
+      "height": 909
+    },
+    "marker": {
+      "ids": "ch4-q-p102-practice2",
+      "label": "题目引导：练习2：分数取值与式子的结构",
+      "rect": {
+        "x": 1254.5,
+        "y": 238.265625
+      }
+    },
+    "preview": "给定两个字母的值，求值时哪些运算对象需要分清？",
+    "sourceHighlight": "location-ch4-q-p102-practice2",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "去括号与合并同类项",
+        "多字母代数式求值"
+      ],
+      "cautions": [
+        "x是负分数，xy是两个数相乘，不能把xy看作一个两位数。",
+        "题目给出两个字母的值，不代表化简后一定还需要计算两种字母的幂。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-42-exercise1",
+    "sourcePage": 109,
+    "printedPage": "102",
+    "title": "习题1：系数带符号，字母部分要相同",
+    "links": [
+      {
+        "target": "ch4-like-terms",
+        "page": 103,
+        "printedPage": "96",
+        "label": "同类项课本第 96 页",
+        "purpose": "先核对字母和对应指数，才能决定本题哪些项可以合并。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      },
+      {
+        "target": "ch4-combine-rule",
+        "page": 103,
+        "printedPage": "96",
+        "label": "合并同类项课本第 96 页",
+        "purpose": "用各同类项系数的和替换原来的系数，并保持字母及其指数不变。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "../12/display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 1772,
+      "height": 909
+    },
+    "marker": {
+      "ids": "ch4-q-42-exercise1",
+      "label": "题目引导：习题1：系数带符号，字母部分要相同",
+      "rect": {
+        "x": 1254.5,
+        "y": 484.5
+      }
+    },
+    "preview": "小数系数和省略的系数，不改变同类项的判断条件。",
+    "sourceHighlight": "location-ch4-q-42-exercise1",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "合并同类项",
+        "省略的系数1与−1"
+      ],
+      "cautions": [
+        "系数的加减不改变字母的指数。",
+        "（4）需要逐项核对同类项条件，不能仅按项的位置或系数大小判断。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-42-exercise2",
+    "sourcePage": 109,
+    "printedPage": "102",
+    "title": "习题2：逐个括号检查外部因数",
+    "links": [
+      {
+        "target": "ch4-distribute-every-term",
+        "page": 106,
+        "printedPage": "99",
+        "label": "去括号与分配律课本第 99 页",
+        "purpose": "括号外的数要作用于括号内每一项，支持本题展开后再分类合并。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      },
+      {
+        "target": "ch4-minus-bracket",
+        "page": 106,
+        "printedPage": "99",
+        "label": "括号前的负号课本第 99 页",
+        "purpose": "把减去一个整式看成乘以−1，核对括号内每一项的符号变化。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      },
+      {
+        "target": "ch4-like-terms",
+        "page": 103,
+        "printedPage": "96",
+        "label": "同类项课本第 96 页",
+        "purpose": "先核对字母和对应指数，才能决定本题哪些项可以合并。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "../12/display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 1772,
+      "height": 909
+    },
+    "marker": {
+      "ids": "ch4-q-42-exercise2",
+      "label": "题目引导：习题2：逐个括号检查外部因数",
+      "rect": {
+        "x": 1254.5,
+        "y": 560.078125
+      }
+    },
+    "preview": "正因数、负因数与多组括号的作用范围。",
+    "sourceHighlight": "location-ch4-q-42-exercise2",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "分配律",
+        "正负因数去括号",
+        "同类项"
+      ],
+      "cautions": [
+        "（3）括号外没有写数字的减号相当于因数−1。",
+        "（4）同一字母出现时还要比较指数；去括号时不要遗漏括号内已有的负号。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-42-exercise3",
+    "sourcePage": 109,
+    "printedPage": "102",
+    "title": "习题3：整组相减和嵌套括号怎样辨认？",
+    "links": [
+      {
+        "target": "ch4-two-operations",
+        "page": 108,
+        "printedPage": "101",
+        "label": "整式加减法则课本第 101 页",
+        "purpose": "根据本题括号结构，连接去括号与合并同类项两个步骤。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      },
+      {
+        "target": "ch4-minus-bracket",
+        "page": 106,
+        "printedPage": "99",
+        "label": "括号前的负号课本第 99 页",
+        "purpose": "把减去一个整式看成乘以−1，核对括号内每一项的符号变化。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      },
+      {
+        "target": "ch4-like-terms",
+        "page": 103,
+        "printedPage": "96",
+        "label": "同类项课本第 96 页",
+        "purpose": "先核对字母和对应指数，才能决定本题哪些项可以合并。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "../12/display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 1772,
+      "height": 909
+    },
+    "marker": {
+      "ids": "ch4-q-42-exercise3",
+      "label": "题目引导：习题3：整组相减和嵌套括号怎样辨认？",
+      "rect": {
+        "x": 1254.5,
+        "y": 638.5859375
+      }
+    },
+    "preview": "每次去括号都先确认它的作用范围。",
+    "sourceHighlight": "location-ch4-q-42-exercise3",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "整式加减",
+        "嵌套括号",
+        "分数系数与同类项"
+      ],
+      "cautions": [
+        "（2）同类项可能出现在括号内不同位置，不能只按书写顺序配对。",
+        "（3）分数系数与括号外整数都要参与相乘。",
+        "（4）每去掉一层括号都要保留等值关系，不能让某个负号跨过未处理的括号随意作用。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-42-exercise4",
+    "sourcePage": 109,
+    "printedPage": "102",
+    "title": "习题4：a²b和ab²是否属于一类？",
+    "links": [
+      {
+        "target": "ch4-like-terms",
+        "page": 103,
+        "printedPage": "96",
+        "label": "同类项课本第 96 页",
+        "purpose": "先核对字母和对应指数，才能决定本题哪些项可以合并。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      },
+      {
+        "target": "ch4-distribute-every-term",
+        "page": 106,
+        "printedPage": "99",
+        "label": "去括号与分配律课本第 99 页",
+        "purpose": "括号外的数要作用于括号内每一项，支持本题展开后再分类合并。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      },
+      {
+        "target": "ch4-simplify-value",
+        "page": 104,
+        "printedPage": "97",
+        "label": "先化简再求值课本第 97 页",
+        "purpose": "判断哪些同类项可先合并或抵消，从而减少本题代入后的计算。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "../12/display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 886,
+      "height": 455
+    },
+    "marker": {
+      "ids": "ch4-nested-bracket-check ch4-q-42-exercise4",
+      "label": "选择此处的2条解读",
+      "rect": {
+        "x": 809.6953125,
+        "y": 675.78125
+      }
+    },
+    "preview": "Grouped marker: no single-note tooltip; choice title checked after opening.",
+    "sourceHighlight": "location-ch4-q-42-exercise4",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "同类项的判断",
+        "分配律",
+        "负数代入与乘方"
+      ],
+      "cautions": [
+        "判断同类项不能只比较总次数，需分别核对各字母的指数。",
+        "b的给定值为负分数，负数平方与负数参与一次乘法的符号处理不同。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-42-exercise6",
+    "sourcePage": 109,
+    "printedPage": "102",
+    "title": "习题6：检验两个数值能说明任意值吗？",
+    "links": [
+      {
+        "target": "ch4-two-operations",
+        "page": 108,
+        "printedPage": "101",
+        "label": "整式加减法则课本第 101 页",
+        "purpose": "根据本题括号结构，连接去括号与合并同类项两个步骤。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      },
+      {
+        "target": "ch4-values-and-law",
+        "page": 102,
+        "printedPage": "95",
+        "label": "字母表示数与运算律课本第 95 页",
+        "purpose": "本题的一般判断需要用对所有允许取值成立的运算律，而不是只靠几个代入例子。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "../12/display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 886,
+      "height": 455
+    },
+    "marker": {
+      "ids": "ch4-q-42-exercise6",
+      "label": "题目引导：习题6：检验两个数值能说明任意值吗？",
+      "rect": {
+        "x": 809.6953125,
+        "y": 886.6640625
+      }
+    },
+    "preview": "区分具体代入与对所有有理数的判断。",
+    "sourceHighlight": "location-ch4-q-42-exercise6",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "整式化简与同类项",
+        "代入检验",
+        "一般结论与具体例子"
+      ],
+      "cautions": [
+        "第6题从本页题干延续到下一页三位同学的说法，需一起阅读。",
+        "少数代入结果一致，只能提供线索，不能单独证明“任意有理数”都成立。",
+        "化简时要核对字母与指数；两个括号前的符号不同，不要仅按项的位置配对。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-42-exercise8",
+    "sourcePage": 110,
+    "printedPage": "103",
+    "title": "习题8：窗户面积与外框长度",
+    "links": [
+      {
+        "target": "ch4-monomial-product",
+        "page": 96,
+        "printedPage": "89",
+        "label": "单项式课本第 89 页",
+        "purpose": "边长相乘得到面积时字母次数会变化，可据此区分长度项与面积项。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      },
+      {
+        "target": "ch4-combine-rule",
+        "page": 103,
+        "printedPage": "96",
+        "label": "合并同类项课本第 96 页",
+        "purpose": "用各同类项系数的和替换原来的系数，并保持字母及其指数不变。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "../12/display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 886,
+      "height": 455
+    },
+    "marker": {
+      "ids": "ch4-q-42-exercise8",
+      "label": "题目引导：习题8：窗户面积与外框长度",
+      "rect": {
+        "x": 809.6953125,
+        "y": 341.8046875
+      }
+    },
+    "preview": "同一幅窗户图，两个问题需要不同的图形信息。",
+    "sourceHighlight": "location-ch4-q-42-exercise8",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "正方形与半圆的面积",
+        "半圆弧长",
+        "组合图形的外边界"
+      ],
+      "cautions": [
+        "图中的内部横线、竖线及半圆内斜线不是外框。",
+        "半圆弧长与半圆周长不同，是否包含直径要结合外边界判断。",
+        "面积与长度分别使用cm²与cm，不能合并不同单位的量。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-sheet-average",
+    "sourcePage": 111,
+    "printedPage": "104",
+    "title": "表格示例：求和与平均值",
+    "links": [
+      {
+        "target": "ch4-substitute-whole",
+        "page": 108,
+        "printedPage": "101",
+        "label": "代入时保持运算对象课本第 101 页",
+        "purpose": "理解平均值中整个和作为被除数，读清括号或分数线范围。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "../12/display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 886,
+      "height": 455
+    },
+    "marker": {
+      "ids": "ch4-q-sheet-average",
+      "label": "题目引导：表格示例：求和与平均值",
+      "rect": {
+        "x": 809.6953125,
+        "y": 366.59375
+      }
+    },
+    "preview": "同一组数据可以求总量，也可以求平均水平；两者的运算对象有何不同？",
+    "sourceHighlight": "location-ch4-q-sheet-average",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "代数式求值；平均数与总和、个数的关系。",
+        "单元格数据与字母取值的一一对应。"
+      ],
+      "cautions": [
+        "平均值是整个总和除以数据个数，不能只除最后一项。",
+        "单元格地址A2表示位置，不能读作字母A与数字2相乘。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-sheet-formula",
+    "sourcePage": 111,
+    "printedPage": "104",
+    "title": "表格示例：公式中的字母变成什么？",
+    "links": [
+      {
+        "target": "ch4-substitute-whole",
+        "page": 108,
+        "printedPage": "101",
+        "label": "代入求值课本第 101 页",
+        "purpose": "把单元格中的整个数放进字母位置，并保留原有运算。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "../12/display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 886,
+      "height": 455
+    },
+    "marker": {
+      "ids": "ch4-q-sheet-formula",
+      "label": "题目引导：表格示例：公式中的字母变成什么？",
+      "rect": {
+        "x": 809.6953125,
+        "y": 737.9296875
+      }
+    },
+    "preview": "单元格地址表示数据位置，字母表示代数式里的数量。",
+    "sourceHighlight": "location-ch4-q-sheet-formula",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "多项式代入求值。",
+        "平方与乘法的运算顺序；单元格引用。"
+      ],
+      "cautions": [
+        "公式中的^表示乘方，*表示乘法，不能将单元格编号中的数字当成指数。",
+        "换到第二行计算时，要核对引用是否对应第二组数据，不能只改显示结果。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-calendar",
+    "sourcePage": 112,
+    "printedPage": "105",
+    "title": "活动1：由月历观察走向一般理由",
+    "links": [
+      {
+        "target": "ch4-values-and-law",
+        "page": 102,
+        "printedPage": "95",
+        "label": "数值检验与一般理由课本第 95 页",
+        "purpose": "区分移动方框的试验结果与适用于任意完整日期区域的说明。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "../12/display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 886,
+      "height": 455
+    },
+    "marker": {
+      "ids": "ch4-q-calendar",
+      "label": "题目引导：活动1：由月历观察走向一般理由",
+      "rect": {
+        "x": 809.6953125,
+        "y": 225.0703125
+      }
+    },
+    "preview": "日期之间有固定的位置关系；移动图形与改变图形需要分开研究。",
+    "sourceHighlight": "location-ch4-q-calendar",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "用字母表示有固定位置关系的数。",
+        "整式加减；从具体检验到一般说明。"
+      ],
+      "cautions": [
+        "月初、月末的空格不能当作日期；方框须落在完整日期区域中。",
+        "同一日期只计一次，图形的点数与布局变化后要重新判断。",
+        "几个数值例子只能检验猜想，不能替代一般理由。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-divisible-three",
+    "sourcePage": 113,
+    "printedPage": "106",
+    "title": "活动2：把数与各位数字之和联系起来",
+    "links": [
+      {
+        "target": "ch4-digit-notation",
+        "page": 113,
+        "printedPage": "106",
+        "label": "十进制位值与数字范围课本第 106 页",
+        "purpose": "保证表示的对象是数位组成的自然数。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      },
+      {
+        "target": "ch4-divisibility-split",
+        "page": 113,
+        "printedPage": "106",
+        "label": "拆分式子的目的课本第 106 页",
+        "purpose": "借两位数示范理解怎样把数字和放进同一个等式。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "../12/display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 886,
+      "height": 455
+    },
+    "marker": {
+      "ids": "ch4-q-divisible-three",
+      "label": "题目引导：活动2：把数与各位数字之和联系起来",
+      "rect": {
+        "x": 809.6953125,
+        "y": 180.046875
+      }
+    },
+    "preview": "位值表示把各个数字的贡献写清，整除关系还需要整数条件。",
+    "sourceHighlight": "location-ch4-q-divisible-three",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "十进制位值表示与数字的取值范围。",
+        "整式拆分；整数倍的和仍是整数倍。"
+      ],
+      "cautions": [
+        "最高位数字不能为0，其他各位可为0；各数字都是整数。",
+        "带横线的数字组合不是字母乘积。",
+        "只需把教材提出的规律说明清楚；更多数位的具体拆分由你完成。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-summary1",
+    "sourcePage": 114,
+    "printedPage": "107",
+    "title": "回顾1：自己举例，再辨认结构",
+    "links": [
+      {
+        "target": "ch4-coefficient-sign",
+        "page": 96,
+        "printedPage": "89",
+        "label": "单项式的系数课本第 89 页",
+        "purpose": "检查自举例子中数字因数及符号。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      },
+      {
+        "target": "ch4-polynomial-degree",
+        "page": 99,
+        "printedPage": "92",
+        "label": "多项式的次数课本第 92 页",
+        "purpose": "区分每项的次数和整个多项式的次数。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "../12/display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 886,
+      "height": 455
+    },
+    "marker": {
+      "ids": "ch4-q-summary1",
+      "label": "题目引导：回顾1：自己举例，再辨认结构",
+      "rect": {
+        "x": 809.6953125,
+        "y": 756.9609375
+      }
+    },
+    "preview": "实际数量关系与式子的结构，分别需要哪些说明？",
+    "sourceHighlight": "location-ch4-q-summary1",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "单项式的系数和次数；多项式的项和次数。",
+        "用代数式表示实际数量关系。"
+      ],
+      "cautions": [
+        "实际量的单位和字母取值需符合情境。",
+        "常数、隐含的系数±1及负项的符号不要漏读；项数不等于次数。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-summary2",
+    "sourcePage": 114,
+    "printedPage": "107",
+    "title": "回顾2：两种变形，各用什么依据？",
+    "links": [
+      {
+        "target": "ch4-one-law-two-directions",
+        "page": 114,
+        "printedPage": "107",
+        "label": "分配律的两个使用方向课本第 107 页",
+        "purpose": "比较展开和合并与同一运算律的联系。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "../12/display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 886,
+      "height": 455
+    },
+    "marker": {
+      "ids": "ch4-q-summary2",
+      "label": "题目引导：回顾2：两种变形，各用什么依据？",
+      "rect": {
+        "x": 809.6953125,
+        "y": 813.1953125
+      }
+    },
+    "preview": "合并与展开看起来方向不同，能否找到共同的运算依据？",
+    "sourceHighlight": "location-ch4-q-summary2",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "分配律；合并同类项与去括号。",
+        "整式变形保持同一取值下的值不变。"
+      ],
+      "cautions": [
+        "不能只背操作口令而不说依据。",
+        "使用负数例子时，把每一项的符号纳入乘法与加法。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-summary3",
+    "sourcePage": 114,
+    "printedPage": "107",
+    "title": "回顾3：用自己的例子说明加减法则",
+    "links": [
+      {
+        "target": "ch4-two-operations",
+        "page": 108,
+        "printedPage": "101",
+        "label": "整式加减的常用路线课本第 101 页",
+        "purpose": "把去括号、合并两步与自己例子的结构对应起来。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "../12/display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 886,
+      "height": 455
+    },
+    "marker": {
+      "ids": "ch4-q-summary3",
+      "label": "题目引导：回顾3：用自己的例子说明加减法则",
+      "rect": {
+        "x": 809.6953125,
+        "y": 869.9140625
+      }
+    },
+    "preview": "一个完整的整式与它的各项，处于不同的运算层次。",
+    "sourceHighlight": "location-ch4-q-summary3",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "整式相加减；去括号与合并同类项。"
+      ],
+      "cautions": [
+        "若例子没有括号，不必为了展示步骤而人为加括号。",
+        "合并后没有同类项的部分可以保留；不要求所有式子都变成单项式。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-classification-review",
+    "sourcePage": 115,
+    "printedPage": "108",
+    "title": "复习1：从结构判断类别、系数与次数",
+    "links": [
+      {
+        "target": "ch4-monomial-product",
+        "page": 96,
+        "printedPage": "89",
+        "label": "单项式的积结构课本第 89 页",
+        "purpose": "先按运算结构分类，避免只看分数线作判断。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      },
+      {
+        "target": "ch4-polynomial-degree",
+        "page": 99,
+        "printedPage": "92",
+        "label": "多项式的次数课本第 92 页",
+        "purpose": "逐项判断次数后比较，不能只看第一项。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "../12/display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 886,
+      "height": 455
+    },
+    "marker": {
+      "ids": "ch4-classification-review",
+      "label": "题目引导：复习1：从结构判断类别、系数与次数",
+      "rect": {
+        "x": 809.6953125,
+        "y": 284.3671875
+      }
+    },
+    "preview": "式子的类别、系数和次数，需要区分哪些判断对象？",
+    "sourceHighlight": "location-ch4-classification-review",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "单项式与多项式的定义。",
+        "系数、项、常数项、次数的区别。"
+      ],
+      "cautions": [
+        "数字系数可为负数或分数；数字32不是字母的指数。",
+        "次数由字母的指数决定，不能用项数或首项位置代替。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-review2",
+    "sourcePage": 115,
+    "printedPage": "108",
+    "title": "复习2：怎样让和符合单项式的条件？",
+    "links": [
+      {
+        "target": "ch4-zero-coefficient",
+        "page": 104,
+        "printedPage": "97",
+        "label": "零系数项的省略课本第 97 页",
+        "purpose": "回顾一类项合并后何时不再出现在结果中。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      },
+      {
+        "target": "ch4-like-terms",
+        "page": 103,
+        "printedPage": "96",
+        "label": "同类项课本第 96 页",
+        "purpose": "检查你选择的项能与原式的哪些项合并。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "../12/display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 886,
+      "height": 455
+    },
+    "marker": {
+      "ids": "ch4-q-review2 ch4-q-review3",
+      "label": "选择此处的2条解读",
+      "rect": {
+        "x": 809.6953125,
+        "y": 367.265625
+      }
+    },
+    "preview": "Grouped marker: no single-note tooltip; choice title checked after opening.",
+    "sourceHighlight": "location-ch4-q-review2",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "多项式的项；合并同类项。",
+        "相反的项相加为0。"
+      ],
+      "cautions": [
+        "不能添加一个与原有两项都不同类的新项后就宣称完成。",
+        "写出的对象本身也必须是单项式；无需假定只有一种选择。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-review3",
+    "sourcePage": 115,
+    "printedPage": "108",
+    "title": "复习3：给每一类项保留自己的系数",
+    "links": [
+      {
+        "target": "ch4-combine-rule",
+        "page": 103,
+        "printedPage": "96",
+        "label": "合并同类项的法则课本第 96 页",
+        "purpose": "说明本题五式中为什么只改变同类项的系数。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      },
+      {
+        "target": "ch4-move-signed-terms",
+        "page": 103,
+        "printedPage": "96",
+        "label": "带符号整理各项课本第 96 页",
+        "purpose": "把分散的同类项收在一起时保持原式。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "../12/display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 886,
+      "height": 455
+    },
+    "marker": {
+      "ids": "ch4-q-review2 ch4-q-review3",
+      "label": "选择此处的2条解读",
+      "rect": {
+        "x": 809.6953125,
+        "y": 367.265625
+      }
+    },
+    "preview": "Grouped marker: no single-note tooltip; choice title checked after opening.",
+    "sourceHighlight": "location-ch4-q-review3",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "同类项判断；合并同类项。",
+        "分数系数与负系数的加减；零系数项。"
+      ],
+      "cautions": [
+        "合并是加减系数，不能把字母指数相加。",
+        "移动各项时携带符号；常数项也要检查是否有同类项。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-review4",
+    "sourcePage": 115,
+    "printedPage": "108",
+    "title": "复习4：按括号层次处理每个因数",
+    "links": [
+      {
+        "target": "ch4-distribute-every-term",
+        "page": 106,
+        "printedPage": "99",
+        "label": "分配律与每一项课本第 99 页",
+        "purpose": "检查是否有漏乘的项。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      },
+      {
+        "target": "ch4-minus-bracket",
+        "page": 106,
+        "printedPage": "99",
+        "label": "减去一个整体课本第 99 页",
+        "purpose": "处理外层负号时明确它覆盖的范围。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "../12/display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 886,
+      "height": 455
+    },
+    "marker": {
+      "ids": "ch4-q-review4",
+      "label": "题目引导：复习4：按括号层次处理每个因数",
+      "rect": {
+        "x": 809.6953125,
+        "y": 529.6640625
+      }
+    },
+    "preview": "括号外的符号或数属于哪一层，会影响哪些项？",
+    "sourceHighlight": "location-ch4-q-review4",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "整式的加减；分配律。",
+        "正负因数去括号；嵌套括号的作用范围。"
+      ],
+      "cautions": [
+        "乘数作用于常数项，也作用于带负号的项。",
+        "负号可能在不同层重复出现，不能只统计负号数量而忽略作用对象。",
+        "六题的化简结果由你逐题完成。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-review5",
+    "sourcePage": 115,
+    "printedPage": "108",
+    "title": "复习5：先化简，再按整组数据求值",
+    "links": [
+      {
+        "target": "ch4-simplify-value",
+        "page": 104,
+        "printedPage": "97",
+        "label": "先化简再求值课本第 97 页",
+        "purpose": "理解为什么可以使用化简式计算原式的值。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      },
+      {
+        "target": "ch4-substitute-whole",
+        "page": 108,
+        "printedPage": "101",
+        "label": "代入时保持整体课本第 101 页",
+        "purpose": "检查负数、乘法与指数的作用范围。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "../12/display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 886,
+      "height": 455
+    },
+    "marker": {
+      "ids": "ch4-q-review5",
+      "label": "题目引导：复习5：先化简，再按整组数据求值",
+      "rect": {
+        "x": 809.6953125,
+        "y": 723.0859375
+      }
+    },
+    "preview": "式子的结构与某次给定的数值，是两类不同的信息。",
+    "sourceHighlight": "location-ch4-q-review5",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "合并同类项；去括号；代入求值。"
+      ],
+      "cautions": [
+        "（2）两个字母的绝对值相等，也不能据此认定含它们的项是同类项。",
+        "题目明确要求先化简，应保留这个过程；代入负数时注意括号。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-review6",
+    "sourcePage": 115,
+    "printedPage": "108",
+    "title": "复习6：把语言描述的数当成整体",
+    "links": [
+      {
+        "target": "ch4-minus-bracket",
+        "page": 106,
+        "printedPage": "99",
+        "label": "减去一个整体课本第 99 页",
+        "purpose": "把语言描述的第二个数完整保留，再理解负号作用范围。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "../12/display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 886,
+      "height": 455
+    },
+    "marker": {
+      "ids": "ch4-q-review6",
+      "label": "题目引导：复习6：把语言描述的数当成整体",
+      "rect": {
+        "x": 809.6953125,
+        "y": 861.25
+      }
+    },
+    "preview": "倍数、增减与比较顺序，怎样影响式子所表示的数？",
+    "sourceHighlight": "location-ch4-q-review6",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "用代数式表示倍数及增减关系。",
+        "两个整式的和与差。"
+      ],
+      "cautions": [
+        "“比某数的几倍大或小”与“某数加减后再乘几倍”不同。",
+        "（2）减去的是整个数，不能只减掉其中一项。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-review7",
+    "sourcePage": 116,
+    "printedPage": "109",
+    "title": "复习7：顺逆水两段路程如何合计？",
+    "links": [
+      {
+        "target": "ch4-boats-two-questions",
+        "page": 106,
+        "printedPage": "99",
+        "label": "船行路程的和与差课本第 99 页",
+        "purpose": "回顾速度的组成，并比较本题先后两段与例题同时间两船的区别。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "../12/display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 886,
+      "height": 455
+    },
+    "marker": {
+      "ids": "ch4-q-review7",
+      "label": "题目引导：复习7：顺逆水两段路程如何合计？",
+      "rect": {
+        "x": 809.6953125,
+        "y": 177.75
+      }
+    },
+    "preview": "两段航行的方向和持续时间不同，不能只凭前例的结果判断。",
+    "sourceHighlight": "location-ch4-q-review7",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "顺水、逆水速度与静水速度、水流速度的关系。",
+        "路程=速度×时间；整式加减。"
+      ],
+      "cautions": [
+        "两段时间不同，不能直接沿用例5中两船同时间的抵消结论。",
+        "逆水前进需要静水速度大于水流速度；相应字母要符合速度情境。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-review8",
+    "sourcePage": 116,
+    "printedPage": "109",
+    "title": "复习8：新增部分与已有部分怎样衔接？",
+    "links": [
+      {
+        "target": "ch4-triangle-count",
+        "page": 110,
+        "printedPage": "103",
+        "label": "计数中的重复与一般表达课本第 103 页",
+        "purpose": "回顾怎样检查重复计数，并把该检查用于本题的公共小正方形。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "../12/display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 886,
+      "height": 455
+    },
+    "marker": {
+      "ids": "ch4-q-review8",
+      "label": "题目引导：复习8：新增部分与已有部分怎样衔接？",
+      "rect": {
+        "x": 809.6953125,
+        "y": 227.1953125
+      }
+    },
+    "preview": "图案的数量规律需要与涂色部分的组成对应。",
+    "sourceHighlight": "location-ch4-q-review8",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "用字母表示图案数量规律。",
+        "不重复、不遗漏的计数；整式表达。"
+      ],
+      "cautions": [
+        "只统计涂色的小正方形，不计白色部分；相邻图案块有公共小正方形，按块计数时要检查是否重复。",
+        "只从前三个数量猜出的式子，还需要与图案的构造规则对应。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-reversed-digits",
+    "sourcePage": 116,
+    "printedPage": "109",
+    "title": "复习9：数位交换与整除",
+    "links": [
+      {
+        "target": "ch4-digit-notation",
+        "page": 113,
+        "printedPage": "106",
+        "label": "十进制位值与数字范围课本第 106 页",
+        "purpose": "按数位表示交换前后的数，并检查数字取值条件。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "../12/display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 886,
+      "height": 455
+    },
+    "marker": {
+      "ids": "ch4-reversed-digits",
+      "label": "题目引导：复习9：数位交换与整除",
+      "rect": {
+        "x": 809.6953125,
+        "y": 446.3125
+      }
+    },
+    "preview": "交换位置后，数字本身与它所在的数位要分开看。",
+    "sourceHighlight": "location-ch4-reversed-digits",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "十进制位值与两位数表示。",
+        "整式加法；整数倍与整除。"
+      ],
+      "cautions": [
+        "两个数字不应写成乘积ab。",
+        "原个位为0时，交换后的数不再是通常写法的两位数，但其数值仍可参与计算。",
+        "判断整除需要说明另一个因数是整数，不能只试几组数字。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-whole-expression",
+    "sourcePage": 116,
+    "printedPage": "109",
+    "title": "复习10：重复括号的整体与指数",
+    "links": [
+      {
+        "target": "ch4-combine-rule",
+        "page": 103,
+        "printedPage": "96",
+        "label": "共同整体与分配律课本第 96 页",
+        "purpose": "把重复括号看成同一个因数，理解只合并系数的依据。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      },
+      {
+        "target": "ch4-like-terms",
+        "page": 103,
+        "printedPage": "96",
+        "label": "同类项的指数条件课本第 96 页",
+        "purpose": "区分整体本身与整体的平方，分别合并。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "../12/display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 886,
+      "height": 455
+    },
+    "marker": {
+      "ids": "ch4-whole-expression",
+      "label": "题目引导：复习10：重复括号的整体与指数",
+      "rect": {
+        "x": 809.6953125,
+        "y": 498.1875
+      }
+    },
+    "preview": "题目要求保留的整体相同，它出现的幂次也相同吗？",
+    "sourceHighlight": "location-ch4-whole-expression",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "共同整体与分配律。",
+        "同类项的指数条件；系数加减。"
+      ],
+      "cautions": [
+        "整体相同但指数不同，不能归入同一组。",
+        "没有写出的系数及负号仍要计入；不必先展开括号才进行结构判断。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  }
+]

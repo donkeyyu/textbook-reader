@@ -1,0 +1,8 @@
+ElementResolutionError: page.click timed out after 3000ms: page.click failed: <aside id="supplement-panel"> intercepts pointer events
+    at #retryElementAction (file:////[eval1]:19158:27)
+    at async file:////[eval1]:19242:29
+    at async file:////[eval1]:16940:28
+[ego-browser:notice] Ego Lite update is available (current 0.6.0.16). Finish the current browser task, then ask the user before running `ego-browser upgrade`; re-read the ego-browser Skill afterward.
+PASS narrow related → return after scrolling the explanation panel { before: { fraction: -0.030712839385743214, panelScroll: 345.5, title: '一次回答怎样缩小下一次的范围？', expanded: null, focus: 'related-ch1-guess-range-ch1-order-on-axis', highlight: null, back: false, methods: [] }, after: { fraction: -0.030712839385743214, panelScroll: 345.5, title: '一次回答怎样缩小下一次的范围？', expanded: null, focus: 'related-ch1-guess-range-ch1-order-on-axis', highlight: null, back: false, methods: [] } }
+
+ego's nodejs process exited with code 1.

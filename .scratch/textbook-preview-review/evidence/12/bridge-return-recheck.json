@@ -1,0 +1,34 @@
+{
+  "id": "ch4-q-p98-bridge-simplify",
+  "targetLink": "#related-ch4-q-p98-bridge-simplify-ch4-distribute-every-term",
+  "before": {
+    "fraction": 0.7679169403810103,
+    "panelScroll": 27,
+    "title": "提问：两式中的括号受哪个数作用？",
+    "expanded": null,
+    "focus": "related-ch4-q-p98-bridge-simplify-ch4-distribute-every-term",
+    "highlight": "location-ch4-q-p98-bridge-simplify",
+    "back": false,
+    "methods": [
+      "method-ch4-q-p98-bridge-simplify"
+    ]
+  },
+  "target": {
+    "highlight": "location-ch4-distribute-every-term",
+    "title": "“每一项”为什么不能漏？"
+  },
+  "after": {
+    "fraction": 0.7679169403810103,
+    "panelScroll": 27,
+    "title": "提问：两式中的括号受哪个数作用？",
+    "expanded": null,
+    "focus": "related-ch4-q-p98-bridge-simplify-ch4-distribute-every-term",
+    "highlight": "location-ch4-q-p98-bridge-simplify",
+    "back": false,
+    "methods": [
+      "method-ch4-q-p98-bridge-simplify"
+    ]
+  },
+  "version": "display-version.json",
+  "route": "pointer click link and return after enabled; source method expanded"
+}

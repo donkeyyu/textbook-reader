@@ -1,0 +1,349 @@
+{
+  "reviewDate": "2026-10-25",
+  "documentSha256": "6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249",
+  "scope": [
+    21,
+    30
+  ],
+  "questionCount": 41,
+  "beforeChapterSha256": "6ef5888d0d442895d49980644f875b82e3b18d89043f1086c33ab65f07380dd3",
+  "beforeQuestionCoverageSha256": "4d5687f2cc17c8eb38184cea63ff1b14648ea64c2c001094ae8b75b88f5cc068",
+  "viewedOriginalImages": [
+    {
+      "page": 1,
+      "printedPage": null,
+      "sha256": "0a1517c66bcc545543be5ad1b50cda01681f2a5bc80e8ec944384516b6d86aef"
+    },
+    {
+      "page": 3,
+      "printedPage": null,
+      "sha256": "d2bc22bee9e7cf5a3e84f5eeae0ffb9f8e5dea924acf841576e6c03d3b03edb8"
+    },
+    {
+      "page": 8,
+      "printedPage": null,
+      "sha256": "5d56ea629c1e5fd3534a5e7ac90d680d7887f5658fb19b1214289ddffa07a873"
+    },
+    {
+      "page": 9,
+      "printedPage": "2",
+      "sha256": "a9d4c11a8c56d1090e3a9457ad7cf9fd6c08988be679b0226841d8e42508ef28"
+    },
+    {
+      "page": 10,
+      "printedPage": "3",
+      "sha256": "d03f593e56ac25d92bbc32c77aa32b87ea4a95f708ac8602e11268ab019f8ae4"
+    },
+    {
+      "page": 11,
+      "printedPage": "4",
+      "sha256": "27680d3c19a71fa4a86d9bca3cd8c08c794ab3bbdb72ad818e9e3ce9bd322585"
+    },
+    {
+      "page": 12,
+      "printedPage": "5",
+      "sha256": "0fc5db83c375590f5eb01a6fbe9a32fb9f656df029e3234726e1c5b78ffe17c3"
+    },
+    {
+      "page": 13,
+      "printedPage": "6",
+      "sha256": "4f34c3587e096ff7e82522f0b3caf1d896e1d2edeec08d4efb64029561bb2486"
+    },
+    {
+      "page": 14,
+      "printedPage": "7",
+      "sha256": "09b2c05a01ff79554a745bb6efaa77ecfe375116456541ea490c46e4ad5dcfa7"
+    },
+    {
+      "page": 15,
+      "printedPage": "8",
+      "sha256": "07db7ff4b929b1be3bdd00e78078608070fa62888e9bd0e5d08805370d600af2"
+    },
+    {
+      "page": 16,
+      "printedPage": "9",
+      "sha256": "1d2c065770aee0e8ee60c7637a1c1b8e8d8b167469ea6d6220607b2ea7988a9b"
+    },
+    {
+      "page": 17,
+      "printedPage": "10",
+      "sha256": "d13d22fc126839bf655e2a7f2650e69ed3fdf808d989edbbe44c0ce42d50438d"
+    },
+    {
+      "page": 18,
+      "printedPage": "11",
+      "sha256": "0b8f04b2256bc396bd720a6e50eaef6cd133672fc6028b7125ba21ebecd7f355"
+    },
+    {
+      "page": 19,
+      "printedPage": "12",
+      "sha256": "19279d71863ebaa29eb419ae3c87fd5482e67a07ebdd9a4af7d9218551fc7ed0"
+    },
+    {
+      "page": 20,
+      "printedPage": "13",
+      "sha256": "34da6b2d66e142180cf83486d27e16df8f20d8b92b21f00a11935898169b390b"
+    },
+    {
+      "page": 21,
+      "printedPage": "14",
+      "sha256": "50e1bd7c43e4fc29c47aa5287251b068415da1402382bf837f217814afe446c6"
+    },
+    {
+      "page": 22,
+      "printedPage": "15",
+      "sha256": "67cdc32f4866b8efc6fead397b19f5cd954cfc6e95188c8d2e59d0eee2916577"
+    },
+    {
+      "page": 23,
+      "printedPage": "16",
+      "sha256": "3decd42b9982beb4f01f62421f60b3b85126592eb491e2b64841f7f789b0b19a"
+    },
+    {
+      "page": 24,
+      "printedPage": "17",
+      "sha256": "83742bcc873958deda63d79a1ee3155e16da38cee058bc0101d93774bd2b1916"
+    },
+    {
+      "page": 25,
+      "printedPage": "18",
+      "sha256": "96589882c47123b5ba8fc3b531627c3802eb1f2e06c553f315a6f893518ebc3f"
+    },
+    {
+      "page": 26,
+      "printedPage": "19",
+      "sha256": "5c9e10d2ffbb1a0229e20599f9032118b936858e15f155713885514370fe7ee3"
+    },
+    {
+      "page": 27,
+      "printedPage": "20",
+      "sha256": "c7228e059c55b14153cf49d9d09d204a8a7a033f1954dba6ff59cbaf84e8164c"
+    },
+    {
+      "page": 28,
+      "printedPage": "21",
+      "sha256": "5fbc845032207a05f9aaa4807973fbf163e07c0f83f7f2b55ecb6daabb95aa52"
+    },
+    {
+      "page": 29,
+      "printedPage": "22",
+      "sha256": "38408f8766d9f4dbe75d1acf804d613b269dfa79128093f274aab51972222cb3"
+    },
+    {
+      "page": 30,
+      "printedPage": "23",
+      "sha256": "41accbfda1718e36c53f5af644219bdc53e50780060d96692cce3483f1282656"
+    }
+  ],
+  "relatedTargets": [
+    {
+      "locationId": "ch1-absolute-definition",
+      "page": 20,
+      "printedPage": "13",
+      "review": "原页、位置与目的核对通过"
+    },
+    {
+      "locationId": "ch1-absolute-zero",
+      "page": 20,
+      "printedPage": "13",
+      "review": "原页、位置与目的核对通过"
+    },
+    {
+      "locationId": "ch1-classification-overlap",
+      "page": 15,
+      "printedPage": "8",
+      "review": "原页、位置与目的核对通过"
+    },
+    {
+      "locationId": "ch1-comparison-simplify",
+      "page": 23,
+      "printedPage": "16",
+      "review": "原页、位置与目的核对通过"
+    },
+    {
+      "locationId": "ch1-deviation",
+      "page": 10,
+      "printedPage": "3",
+      "review": "原页、位置与目的核对通过"
+    },
+    {
+      "locationId": "ch1-growth-rate-base",
+      "page": 12,
+      "printedPage": "5",
+      "review": "原页、位置与目的核对通过"
+    },
+    {
+      "locationId": "ch1-guess-range",
+      "page": 27,
+      "printedPage": "20",
+      "review": "原页、位置与目的核对通过"
+    },
+    {
+      "locationId": "ch1-guess-strategy-check",
+      "page": 27,
+      "printedPage": "20",
+      "review": "原页、位置与目的核对通过"
+    },
+    {
+      "locationId": "ch1-negative-order",
+      "page": 22,
+      "printedPage": "15",
+      "review": "原页、位置与目的核对通过"
+    },
+    {
+      "locationId": "ch1-number-extension-review",
+      "page": 28,
+      "printedPage": "21",
+      "review": "原页、位置与目的核对通过"
+    },
+    {
+      "locationId": "ch1-number-line",
+      "page": 17,
+      "printedPage": "10",
+      "review": "原页、位置与目的核对通过"
+    },
+    {
+      "locationId": "ch1-number-line-fraction",
+      "page": 17,
+      "printedPage": "10",
+      "review": "原页、位置与目的核对通过"
+    },
+    {
+      "locationId": "ch1-number-line-review",
+      "page": 28,
+      "printedPage": "21",
+      "review": "原页、位置与目的核对通过"
+    },
+    {
+      "locationId": "ch1-opposite-geometry",
+      "page": 18,
+      "printedPage": "11",
+      "review": "原页、位置与目的核对通过"
+    },
+    {
+      "locationId": "ch1-opposite-meanings",
+      "page": 10,
+      "printedPage": "3",
+      "review": "原页、位置与目的核对通过"
+    },
+    {
+      "locationId": "ch1-opposite-pair",
+      "page": 19,
+      "printedPage": "12",
+      "review": "原页、位置与目的核对通过"
+    },
+    {
+      "locationId": "ch1-opposite-sign",
+      "page": 19,
+      "printedPage": "12",
+      "review": "原页、位置与目的核对通过"
+    },
+    {
+      "locationId": "ch1-order-on-axis",
+      "page": 22,
+      "printedPage": "15",
+      "review": "原页、位置与目的核对通过"
+    },
+    {
+      "locationId": "ch1-positive-negative",
+      "page": 9,
+      "printedPage": "2",
+      "review": "原页、位置与目的核对通过"
+    },
+    {
+      "locationId": "ch1-rational-form",
+      "page": 14,
+      "printedPage": "7",
+      "review": "原页、位置与目的核对通过"
+    },
+    {
+      "locationId": "ch1-why-negative",
+      "page": 8,
+      "printedPage": null,
+      "review": "原页、位置与目的核对通过"
+    }
+  ],
+  "checkedAt": "2026-10-25T05:36:30.119139+00:00",
+  "gitHead": "ebe956a90b7b2b12f08f331c423fa76ec3a6d8e5",
+  "workingTree": true,
+  "chapterSha256": "289aa3279f754288f4dc41b34ae32a0be5185e4caca7d22fb07becbc4427d665",
+  "changedCount": 20,
+  "unchangedCount": 21,
+  "coverageUnchanged": true,
+  "locationsEditedBy05": false,
+  "allFourGuideSectionsRetained": true,
+  "tests": {
+    "command": "npm test",
+    "passed": 23,
+    "failed": 0,
+    "scope": "现有测试，含内容引用与逐题覆盖；最终build/typecheck由主会话执行"
+  },
+  "ids": [
+    "ch1-q-absolute-practice-1",
+    "ch1-q-absolute-practice-2",
+    "ch1-absolute-inverse-practice",
+    "ch1-absolute-symbols-practice",
+    "ch1-q-order-intro",
+    "ch1-q-temperature-thinking",
+    "ch1-q-order-old-rule",
+    "ch1-q-order-thinking",
+    "ch1-q-example-5",
+    "ch1-q-order-practice-1",
+    "ch1-q-order-practice-2",
+    "ch1-q-order-practice-3",
+    "ch1-q-exercise12-1",
+    "ch1-q-exercise12-2",
+    "ch1-q-exercise12-3",
+    "ch1-q-exercise12-4",
+    "ch1-q-exercise12-5",
+    "ch1-q-exercise12-6",
+    "ch1-q-exercise12-7",
+    "ch1-opposite-distance-practice",
+    "ch1-opposite-conditions-practice",
+    "ch1-q-activity-1",
+    "ch1-q-activity-2",
+    "ch1-q-recall-1",
+    "ch1-q-recall-2",
+    "ch1-q-recall-3",
+    "ch1-q-recall-4",
+    "ch1-q-recall-5",
+    "ch1-q-recall-6",
+    "ch1-q-review-1",
+    "ch1-q-review-2",
+    "ch1-q-review-3",
+    "ch1-q-review-4",
+    "ch1-q-review-5",
+    "ch1-q-review-6",
+    "ch1-growth-rate-practice",
+    "ch1-q-review-8",
+    "ch1-order-without-scale",
+    "ch1-q-review-10",
+    "ch1-q-review-11",
+    "ch1-q-review-12"
+  ],
+  "outsideScopeUnchangedBy05": true,
+  "changedFields": {
+    "preview": 12,
+    "questionGuide.method": 11,
+    "learningGap": 1
+  },
+  "sharedInteractionEvidence": {
+    "issue": "../../issues/21-reader-journey-validation.md",
+    "journeys": "../21/journeys.json",
+    "version": "../21/version.json",
+    "coreSourceMatchCount": 16,
+    "coreSourceDifferences": [],
+    "use": "根据DonQ本轮收敛指示，复用同一产品实现的桌面/窄屏完整链路；本票逐条展示另记，不将未点击的关联写作往返。"
+  },
+  "chapterSha256AfterDisplay": "289aa3279f754288f4dc41b34ae32a0be5185e4caca7d22fb07becbc4427d665",
+  "04DisplayedContentStillMatches": true,
+  "displayCompletion": {
+    "report": "display-completed.json",
+    "perItemDisplayCount": 20,
+    "relatedButtonsChecked": 49,
+    "fullReturnSamples": 5,
+    "fullReturnCount": 11,
+    "interactionEvidenceReused": "../21/journeys.json",
+    "noChangedRelatedLinks": true
+  }
+}

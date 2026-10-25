@@ -1,0 +1,557 @@
+{
+  "date": "2026-10-25T05:52:59.857Z",
+  "url": "http://127.0.0.1:5196/",
+  "space": 39,
+  "input": "public DOM controls and focus; no React state access; DOM assertions, not pixel review",
+  "versions": {
+    "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+    "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+    "content/grade-7-volume-1/chapter-6.json": "a800d8e822fdc13f1740403c0bb852debfd01b3c3068febebc07325d81c6b845"
+  },
+  "results": [
+    {
+      "id": "ch6-q-p195-review11",
+      "page": 195,
+      "printedPage": "188",
+      "noteSha256": "d5403a4caf2b390666dbd78d7241b4afa5357980bc51dab219b916ee0235f832",
+      "preview": {
+        "group": [
+          "ch6-q-p195-review11",
+          "ch6-fold-angle-evidence"
+        ],
+        "aria": "选择此处的2条解读",
+        "highlights": [
+          "location-ch6-q-p195-review11",
+          "location-ch6-fold-angle-evidence"
+        ],
+        "sourcePaper": "page-195",
+        "region": {
+          "x": 0.095,
+          "y": 0.08,
+          "width": 0.767,
+          "height": 0.073
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        },
+        "singlePreview": "not shown by grouped-marker design"
+      },
+      "path": {
+        "title": "复习题6第11题：两次对折后的夹角",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p195-review11",
+        "sourcePage": 195,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-bisector-ray-conditions",
+            "id": "related-ch6-q-p195-review11-ch6-bisector-ray-conditions",
+            "label": "角的平分线",
+            "purposeMatches": true,
+            "pageLabel": "课本第 175 页",
+            "targetFilePage": 182,
+            "clicked": false
+          },
+          {
+            "target": "ch6-angle-sum-interior-ray",
+            "id": "related-ch6-q-p195-review11-ch6-angle-sum-interior-ray",
+            "label": "角的和差",
+            "purposeMatches": true,
+            "pageLabel": "课本第 173 页",
+            "targetFilePage": 180,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p195-review12",
+      "page": 195,
+      "printedPage": "188",
+      "noteSha256": "02e272b760ef27796cd4aa49ffda2753b6eafc9c3d12c5f6e72e9e861663a7ce",
+      "preview": {
+        "group": [
+          "ch6-q-p195-review12"
+        ],
+        "aria": "题目引导：复习题6第12题：动物园导游图的方向",
+        "text": "图中北向与题目参照点，分别决定什么？",
+        "highlights": [
+          "location-ch6-q-p195-review12"
+        ],
+        "sourcePaper": "page-195",
+        "region": {
+          "x": 0.095,
+          "y": 0.451,
+          "width": 0.765,
+          "height": 0.048
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "复习题6第12题：动物园导游图的方向",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p195-review12",
+        "sourcePage": 195,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-bearing-reference-direction",
+            "id": "related-ch6-q-p195-review12-ch6-bearing-reference-direction",
+            "label": "方位角与基准方向",
+            "purposeMatches": true,
+            "pageLabel": "课本第 172 页",
+            "targetFilePage": 179,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p195-review13",
+      "page": 195,
+      "printedPage": "188",
+      "noteSha256": "13e5728b6dbd6ddfcd3721af722512679ef8a502d18aa8441fab2e10db1c5292",
+      "preview": {
+        "group": [
+          "ch6-midpoint-investigation-check",
+          "ch6-q-p195-review13"
+        ],
+        "aria": "选择此处的2条解读",
+        "highlights": [
+          "location-ch6-midpoint-investigation-check",
+          "location-ch6-q-p195-review13"
+        ],
+        "sourcePaper": "page-195",
+        "region": {
+          "x": 0.095,
+          "y": 0.535,
+          "width": 0.767,
+          "height": 0.048
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        },
+        "singlePreview": "not shown by grouped-marker design"
+      },
+      "path": {
+        "title": "复习题6第13题：连接四边中点后的探究",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p195-review13",
+        "sourcePage": 195,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-midpoint-two-conditions",
+            "id": "related-ch6-q-p195-review13-ch6-midpoint-two-conditions",
+            "label": "线段的中点",
+            "purposeMatches": true,
+            "pageLabel": "课本第 166 页",
+            "targetFilePage": 173,
+            "clicked": false
+          },
+          {
+            "target": "ch6-compound-angle-units",
+            "id": "related-ch6-q-p195-review13-ch6-compound-angle-units",
+            "label": "角的度量",
+            "purposeMatches": true,
+            "pageLabel": "课本第 171 页",
+            "targetFilePage": 178,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p195-review14",
+      "page": 195,
+      "printedPage": "188",
+      "noteSha256": "88d87c4d780e9f3aa778f290c516102cad2e7e00caece2aa93f05badad6dd0e2",
+      "preview": {
+        "group": [
+          "ch6-q-p195-review14"
+        ],
+        "aria": "题目引导：复习题6第14题：四个距离之和最小",
+        "text": "怎样说明四段长度的总和最小，而不只让某一段变短？",
+        "highlights": [
+          "location-ch6-q-p195-review14"
+        ],
+        "sourcePaper": "page-195",
+        "region": {
+          "x": 0.095,
+          "y": 0.7879999999999999,
+          "width": 0.765,
+          "height": 0.075
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "复习题6第14题：四个距离之和最小",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p195-review14",
+        "sourcePage": 195,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-shortest-same-endpoints",
+            "id": "related-ch6-q-p195-review14-ch6-shortest-same-endpoints",
+            "label": "两点之间线段最短",
+            "purposeMatches": true,
+            "pageLabel": "课本第 165 页",
+            "targetFilePage": 172,
+            "clicked": false
+          },
+          {
+            "target": "ch6-distance-is-length",
+            "id": "related-ch6-q-p195-review14-ch6-distance-is-length",
+            "label": "两点间的距离",
+            "purposeMatches": true,
+            "pageLabel": "课本第 165 页",
+            "targetFilePage": 172,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p197-field-activity1",
+      "page": 197,
+      "printedPage": "190",
+      "noteSha256": "026a18e652ddcea1c373f9839eee51d735124d7b90030db71d1c59541517c0c2",
+      "preview": {
+        "group": [
+          "ch6-q-p197-field-activity1"
+        ],
+        "aria": "题目引导：综合与实践活动一：了解场地设计要求",
+        "text": "项目规格与学校实际空间，怎样在比例图中对应？",
+        "highlights": [
+          "location-ch6-q-p197-field-activity1"
+        ],
+        "sourcePaper": "page-197",
+        "region": {
+          "x": 0.13,
+          "y": 0.271,
+          "width": 0.7440000000000001,
+          "height": 0.023
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "综合与实践活动一：了解场地设计要求",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p197-field-activity1",
+        "sourcePage": 197,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-field-data-sources",
+            "id": "related-ch6-q-p197-field-activity1-ch6-field-data-sources",
+            "label": "规格数据与实测数据",
+            "purposeMatches": true,
+            "pageLabel": "课本第 189 页",
+            "targetFilePage": 196,
+            "clicked": false
+          },
+          {
+            "target": "ch6-field-scale-consistency",
+            "id": "related-ch6-q-p197-field-activity1-ch6-field-scale-consistency",
+            "label": "比例作图",
+            "purposeMatches": true,
+            "pageLabel": "课本第 190 页",
+            "targetFilePage": 197,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p197-field-task1",
+      "page": 197,
+      "printedPage": "190",
+      "noteSha256": "0eb9d8cf1d92fec4f42c165f3deb793fc846a56aca24968d8e84545a7479795c",
+      "preview": {
+        "group": [
+          "ch6-q-p197-field-task1"
+        ],
+        "aria": "题目引导：综合与实践任务1：径赛项目跑道的设计",
+        "text": "跑道一圈、比赛赛程与测量路线，是同一项信息吗？",
+        "highlights": [
+          "location-ch6-q-p197-field-task1"
+        ],
+        "sourcePaper": "page-197",
+        "region": {
+          "x": 0.13,
+          "y": 0.48200000000000004,
+          "width": 0.31,
+          "height": 0.024
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "综合与实践任务1：径赛项目跑道的设计",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p197-field-task1",
+        "sourcePage": 197,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-track-measurement-route",
+            "id": "related-ch6-q-p197-field-task1-ch6-track-measurement-route",
+            "label": "跑道的测量路线",
+            "purposeMatches": true,
+            "pageLabel": "课本第 190 页",
+            "targetFilePage": 197,
+            "clicked": false
+          },
+          {
+            "target": "ch6-field-scale-consistency",
+            "id": "related-ch6-q-p197-field-task1-ch6-field-scale-consistency",
+            "label": "比例作图",
+            "purposeMatches": true,
+            "pageLabel": "课本第 190 页",
+            "targetFilePage": 197,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p198-field-task2",
+      "page": 198,
+      "printedPage": "191",
+      "noteSha256": "91b4cc3fdaea34e28ef8e4aff82c907a254995aafdf03d8690248c980da08d02",
+      "preview": {
+        "group": [
+          "ch6-q-p198-field-task2"
+        ],
+        "aria": "题目引导：综合与实践任务2：田赛项目场地的设计",
+        "text": "同名尺寸可能描述不同对象，比例图怎样保留这种区别？",
+        "highlights": [
+          "location-ch6-q-p198-field-task2"
+        ],
+        "sourcePaper": "page-198",
+        "region": {
+          "x": 0.175,
+          "y": 0.069,
+          "width": 0.302,
+          "height": 0.024
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "综合与实践任务2：田赛项目场地的设计",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p198-field-task2",
+        "sourcePage": 198,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-field-data-sources",
+            "id": "related-ch6-q-p198-field-task2-ch6-field-data-sources",
+            "label": "规格数据的对象与来源",
+            "purposeMatches": true,
+            "pageLabel": "课本第 189 页",
+            "targetFilePage": 196,
+            "clicked": false
+          },
+          {
+            "target": "ch6-field-scale-consistency",
+            "id": "related-ch6-q-p198-field-task2-ch6-field-scale-consistency",
+            "label": "比例作图",
+            "purposeMatches": true,
+            "pageLabel": "课本第 190 页",
+            "targetFilePage": 197,
+            "clicked": false
+          },
+          {
+            "target": "ch6-throwing-radii-distinction",
+            "id": "related-ch6-q-p198-field-task2-ch6-throwing-radii-distinction",
+            "label": "半径与几何对象",
+            "purposeMatches": true,
+            "pageLabel": "课本第 191 页",
+            "targetFilePage": 198,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p198-field-task3",
+      "page": 198,
+      "printedPage": "191",
+      "noteSha256": "d9795fa507db15825eca3207a04e4583c583629b513012e2fa4b0a38e5a7a5e2",
+      "preview": {
+        "group": [
+          "ch6-q-p198-field-task3"
+        ],
+        "aria": "题目引导：综合与实践任务3：比赛场地互不干扰",
+        "text": "面积、形状、方向与活动范围，怎样共同限制布局？",
+        "highlights": [
+          "location-ch6-q-p198-field-task3"
+        ],
+        "sourcePaper": "page-198",
+        "region": {
+          "x": 0.13,
+          "y": 0.46799999999999997,
+          "width": 0.785,
+          "height": 0.049
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "综合与实践任务3：比赛场地互不干扰",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p198-field-task3",
+        "sourcePage": 198,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-field-layout-constraints",
+            "id": "related-ch6-q-p198-field-task3-ch6-field-layout-constraints",
+            "label": "场地布局的空间约束",
+            "purposeMatches": true,
+            "pageLabel": "课本第 191 页",
+            "targetFilePage": 198,
+            "clicked": false
+          },
+          {
+            "target": "ch6-field-scale-consistency",
+            "id": "related-ch6-q-p198-field-task3-ch6-field-scale-consistency",
+            "label": "比例作图",
+            "purposeMatches": true,
+            "pageLabel": "课本第 190 页",
+            "targetFilePage": 197,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p198-field-activity3",
+      "page": 198,
+      "printedPage": "191",
+      "noteSha256": "0534c389ee8b8ac0089a575f51bf1e26fd53ae6e4e991ecc9314008d28c7c80e",
+      "preview": {
+        "group": [
+          "ch6-q-p198-field-activity3"
+        ],
+        "aria": "题目引导：综合与实践活动三：提出并解决自己的问题",
+        "text": "你提出的问题，需要哪些数据和关系才能检验？",
+        "highlights": [
+          "location-ch6-q-p198-field-activity3"
+        ],
+        "sourcePaper": "page-198",
+        "region": {
+          "x": 0.13,
+          "y": 0.647,
+          "width": 0.78,
+          "height": 0.048
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "综合与实践活动三：提出并解决自己的问题",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p198-field-activity3",
+        "sourcePage": 198,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-field-data-sources",
+            "id": "related-ch6-q-p198-field-activity3-ch6-field-data-sources",
+            "label": "数据的来源与适用范围",
+            "purposeMatches": true,
+            "pageLabel": "课本第 189 页",
+            "targetFilePage": 196,
+            "clicked": false
+          },
+          {
+            "target": "ch6-design-evidence",
+            "id": "related-ch6-q-p198-field-activity3-ch6-design-evidence",
+            "label": "设计的验证依据",
+            "purposeMatches": true,
+            "pageLabel": "课本第 192 页",
+            "targetFilePage": 199,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    }
+  ]
+}

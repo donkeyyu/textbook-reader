@@ -1,0 +1,43 @@
+[ego-browser:notice] Ego Lite update is available (current 0.6.0.16). Finish the current browser task, then ask the user before running `ego-browser upgrade`; re-read the ego-browser Skill afterward.
+PASS narrow related target refresh { page: 22, fraction: 0.2381852551984877 }
+PASS target page remains; explanation, return history and drafts absent; saved note retained
+[p4 "课本解读" | space "教材续读 B1–B4 验证"(33): 1 managed, 1 untracked — p4* "课本解读"]
+root
+  container
+    container
+      button "展开页面导航" [ref=56, loc=css:button[aria-label="展开页面导航"]]
+        svg_root
+      heading
+        text "数学 · 七年级上册"
+    container
+      button "文件页序 22/202，课本第 15 页，点击跳转" [ref=57, loc=css:button[aria-label="文件页序 22/202，课本第 15 页，点击跳转"]]
+        container
+          text "文件页序"
+          text "22"
+          text "/"
+          text "202"
+        text "课本第 15 页"
+      container "显示补充类型" [ref=58]
+        svg_root
+      button [ref=59]
+        text "添加补充"
+  container "教材连续阅读" [ref=60]
+    container "教材文件第 22 页，课本第 15 页" [ref=61]
+      image
+      button "题目引导：大小比较旁注思考" [ref=62, loc=css:button[aria-label="题目引导：大小比较旁注思考"]]
+        svg_root
+      button "题目引导：大小比较思考：归纳比较规则" [ref=63, loc=css:button[aria-label="题目引导：大小比较思考：归纳比较规则"]]
+        svg_root
+      button "选择此处的2条解读" [ref=64]
+        svg_root
+        text "2"
+    container "教材文件第 23 页，课本第 16 页" [ref=65]
+      image
+      button "方法与推理：比较前，为什么先化简符号？" [ref=66, loc=css:button[aria-label="方法与推理：比较前，为什么先化简符号？"]]
+        svg_root
+      button "题目引导：1.2.5练习第1题" [ref=67, loc=css:button[aria-label="题目引导：1.2.5练习第1题"]]
+        svg_root
+      button "题目引导：1.2.5练习第2题" [ref=68, loc=css:button[aria-label="题目引导：1.2.5练习第2题"]]
+        svg_root
+      button "题目引导：1.2.5练习第3题" [ref=69, loc=css:button[aria-label="题目引导：1.2.5练习第3题"]]
+        svg_root

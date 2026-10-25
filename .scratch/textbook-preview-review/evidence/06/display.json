@@ -1,0 +1,271 @@
+{
+  "version": {
+    "spaceId": 36,
+    "url": "http://127.0.0.1:5173/",
+    "contentSha256": "dea5888e7a89af2add61fc65488259db331b150e6db85d769f644184058e238e",
+    "app": {
+      "src/reader/Reader.tsx": "4c0876f92937145a7b2d19c61a18aa64d7218cfc1af43b35b043c1cf3b19cedc",
+      "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+      "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315"
+    }
+  },
+  "results": [
+    {
+      "id": "ch2-q-p34-example1",
+      "page": 34,
+      "marker": {
+        "ids": "ch2-q-p34-example1",
+        "label": "题目引导：例1：五种有理数加法"
+      },
+      "preview": "五问分别涉及同号、异号、0与相反数。读解答时区分和的符号与绝对值。点击标记展开解读",
+      "state": {
+        "title": "例1：五种有理数加法",
+        "knowledge": [
+          "同号和异号加法；零与相反数；小数与分数的符号。"
+        ],
+        "cautions": [
+          "（4）外部负号与括号内绝对值之差作用不同；（5）不要在绝对值相等时硬选“较大的那个”。"
+        ],
+        "expanded": "false",
+        "hidden": true,
+        "method": [
+          "（1）识别同号，（2）识别与0相加；（3）（4）先比较绝对值再确定和的符号；（5）检查两个加数的关系，再对照教材步骤。"
+        ],
+        "highlight": "location-ch2-q-p34-example1"
+      },
+      "links": [
+        {
+          "target": "ch2-sum-magnitude-step",
+          "targetPage": 34,
+          "returned": true,
+          "sourceRegionDelta": 0,
+          "focus": "related-ch2-q-p34-example1-ch2-sum-magnitude-step",
+          "methodRestored": true
+        }
+      ]
+    },
+    {
+      "id": "ch2-q-p35-practice2",
+      "page": 35,
+      "marker": {
+        "ids": "ch2-q-p35-practice2",
+        "label": "题目引导：练习第2题：九组加法口算"
+      },
+      "preview": "九个和中，符号关系、绝对值关系和0的位置各有什么不同？点击标记展开解读",
+      "state": {
+        "title": "练习第2题：九组加法口算",
+        "knowledge": [
+          "同号、异号、相反数及与0相加。"
+        ],
+        "cautions": [
+          "（2）与（3）、（5）与（6）中，同一组绝对值配上的正负号不同，要检查较大绝对值对应的符号；0的交换位置不改变其作用。"
+        ],
+        "expanded": "false",
+        "hidden": true,
+        "method": [
+          "把九式按你判断的加数关系分组，并说明每组适用哪条法则。检查异号且绝对值相等的情形是否需要单列，再独立口算。"
+        ],
+        "highlight": "location-ch2-q-p35-practice2"
+      },
+      "links": [
+        {
+          "target": "ch2-opposite-add-zero",
+          "targetPage": 34,
+          "returned": true,
+          "sourceRegionDelta": 0,
+          "focus": "related-ch2-q-p35-practice2-ch2-opposite-add-zero",
+          "methodRestored": true
+        }
+      ]
+    },
+    {
+      "id": "ch2-q-p35-practice3",
+      "page": 35,
+      "marker": {
+        "ids": "ch2-q-p35-practice3",
+        "label": "题目引导：练习第3题：整数、小数和分数相加"
+      },
+      "preview": "整数、小数和分数都服从同一加法法则；数的写法会影响比较大小的方式。点击标记展开解读",
+      "state": {
+        "title": "练习第3题：整数、小数和分数相加",
+        "knowledge": [
+          "异号加法与同号加法；分数通分。"
+        ],
+        "cautions": [
+          "通分不改变数的正负；最后应把计算出的绝对值与已确定的和的符号配合。"
+        ],
+        "expanded": "false",
+        "hidden": true,
+        "method": [
+          "逐问判断加数的符号关系，再说明需要哪些绝对值信息。（4）的分数可以怎样改写，才能便于比较？据此选择法则并计算。"
+        ],
+        "highlight": "location-ch2-q-p35-practice3"
+      },
+      "links": [
+        {
+          "target": "ch2-sum-magnitude-step",
+          "targetPage": 34,
+          "returned": true,
+          "sourceRegionDelta": 0,
+          "focus": "related-ch2-q-p35-practice3-ch2-sum-magnitude-step",
+          "methodRestored": true
+        }
+      ]
+    },
+    {
+      "id": "ch2-q-p39-practice1",
+      "page": 39,
+      "marker": {
+        "ids": "ch2-q-p39-practice1",
+        "label": "题目引导：练习第1题：九组有理数减法"
+      },
+      "preview": "九式中减数的正负、0的位置和分数写法不同；先分清运算符号与数的符号。点击标记展开解读",
+      "state": {
+        "title": "练习第1题：九组有理数减法",
+        "knowledge": [
+          "减法转加法；正负数、0及分数。"
+        ],
+        "cautions": [
+          "（4）（5）的0位于被减数处；（8）（9）还需按分数运算处理大小。不能把减号等同于结果负号。"
+        ],
+        "expanded": "false",
+        "hidden": true,
+        "method": [
+          "逐问指出哪个数是完整的减数，说明怎样用减法法则得到等值的加法。（4）（5）比较0作被减数时的情况；（8）（9）还要独立完成分数运算。"
+        ],
+        "highlight": "location-ch2-q-p39-practice1"
+      },
+      "links": [
+        {
+          "target": "ch2-subtract-add-opposite",
+          "targetPage": 38,
+          "returned": true,
+          "sourceRegionDelta": 0,
+          "focus": "related-ch2-q-p39-practice1-ch2-subtract-add-opposite",
+          "methodRestored": true
+        }
+      ]
+    },
+    {
+      "id": "ch2-q-p41-ex21-1",
+      "page": 41,
+      "marker": {
+        "ids": "ch2-q-p41-ex21-1",
+        "label": "题目引导：习题2.1第1题"
+      },
+      "preview": "加法判断要同时看符号和绝对值；分数与带分数仍是完整的加数。点击标记展开解读",
+      "state": {
+        "title": "习题2.1第1题",
+        "knowledge": [
+          "同号、异号有理数加法；小数和分数。"
+        ],
+        "cautions": [
+          "不要把加法误套“同号得正”；异号相加取较大绝对值对应的符号，不是较大加数的符号。"
+        ],
+        "expanded": "false",
+        "hidden": true,
+        "method": [
+          "对（1）～（9）逐一选择适用的加法法则，并说明选择依据。（7）（8）比较分母不同会给绝对值比较带来什么影响；（9）先辨清负带分数表示的整体。"
+        ],
+        "highlight": "location-ch2-q-p41-ex21-1"
+      },
+      "links": [
+        {
+          "target": "ch2-opposite-add-cancel",
+          "targetPage": 33,
+          "returned": true,
+          "sourceRegionDelta": 0,
+          "focus": "related-ch2-q-p41-ex21-1-ch2-opposite-add-cancel",
+          "methodRestored": true
+        }
+      ]
+    },
+    {
+      "id": "ch2-q-p42-ex21-5",
+      "page": 42,
+      "marker": {
+        "ids": "ch2-q-p42-ex21-5",
+        "label": "题目引导：习题2.1第5题"
+      },
+      "preview": "前五问涉及不同写法的加减，第（6）问还含绝对值；各符号的作用范围要分清。点击标记展开解读",
+      "state": {
+        "title": "习题2.1第5题",
+        "knowledge": [
+          "多项加减；小数、分数与带分数；0参与运算；绝对值。"
+        ],
+        "cautions": [
+          "第（6）问含绝对值符号，先辨认其作用范围；不能把外层的加法与竖线内部运算混同。"
+        ],
+        "expanded": "false",
+        "hidden": true,
+        "method": [
+          "（1）（2）从简写辨认加数，（3）（4）检查括号前的符号，（5）辨认带分数整体。（6）先标明两处绝对值各以哪个数或式子为对象，说明它们与外层加法的关系，再自行安排计算。"
+        ],
+        "highlight": "location-ch2-q-p42-ex21-5"
+      },
+      "links": [
+        {
+          "target": "ch1-absolute-definition",
+          "targetPage": 20,
+          "returned": true,
+          "sourceRegionDelta": 0,
+          "focus": "related-ch2-q-p42-ex21-5-ch1-absolute-definition",
+          "methodRestored": true
+        }
+      ]
+    },
+    {
+      "id": "ch2-q-p43-ex21-10",
+      "page": 43,
+      "marker": {
+        "ids": "ch2-q-p43-ex21-10",
+        "label": "题目引导：习题2.1第10题：一周温差比较"
+      },
+      "preview": "温差描述一天内两个温度之间的间隔；最高温相同的两天，温差一定相同吗？点击标记展开解读",
+      "state": {
+        "title": "习题2.1第10题：一周温差比较",
+        "knowledge": [
+          "温差的意义；有理数减法与大小比较。"
+        ],
+        "cautions": [
+          "不能只比较最高温或最低温；表格的每一列对应同一天，单位要一致。"
+        ],
+        "expanded": "false",
+        "hidden": true,
+        "method": [
+          "逐列核对同一天的两项温度，说明要比较的“温差”与它们有什么关系。含负温度的日期可借数轴检查，再自行比较一周的情况。"
+        ],
+        "highlight": "location-ch2-q-p43-ex21-10"
+      },
+      "links": [
+        {
+          "target": "ch2-subtraction-inverse",
+          "targetPage": 38,
+          "returned": true,
+          "sourceRegionDelta": 0,
+          "focus": "related-ch2-q-p43-ex21-10-ch2-subtraction-inverse",
+          "methodRestored": true
+        }
+      ]
+    }
+  ],
+  "failure": null,
+  "recoveredFailures": [
+    "Error: page.waitForFunction timed out after 30000ms on page p1; last URL was \"http://127.0.0.1:5173/\"; last title was \"课本解读\".\n    at waitForFunctionTimeoutError (file:////[eval1]:19509:12)\n    at file:////[eval1]:18834:19\n    at async file:////[eval1]:16940:28"
+  ],
+  "resumeVersions": [
+    {
+      "spaceId": 36,
+      "url": "http://127.0.0.1:5198/",
+      "contentSha256": "dea5888e7a89af2add61fc65488259db331b150e6db85d769f644184058e238e",
+      "app": {
+        "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+        "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+        "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315"
+      }
+    }
+  ],
+  "finalContentSha256": "4be1f83939c5caaf5d76fc77230d2db18c83413b5c2138dc4f57bd5d018430ad",
+  "displayedFieldsMatchFinalContent": true,
+  "acceptanceNote": "本票7项既有展示不重跑；最终仅08的另一条关联文案变化，本票已捕获字段与最终内容逐一比对一致。"
+}

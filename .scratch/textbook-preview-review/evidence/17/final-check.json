@@ -1,0 +1,139 @@
+{
+  "date": "2026-10-25",
+  "pdfSha256": "6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249",
+  "chapterSha256": "a800d8e822fdc13f1740403c0bb852debfd01b3c3068febebc07325d81c6b845",
+  "positioningSha256": "06131428915d1ba23f95edfda7458b8e50e848a54c59231119a9556fff1fae91",
+  "coverageCount": 46,
+  "changedCount": 16,
+  "unchangedCount": 30,
+  "changedNotesSha256": {
+    "ch6-q-geometric-properties": "440a2e5eb1d6aad8c46d44aed04d3adc4e286a9ef107508b26208b38b585f659",
+    "ch6-q-solids-plane-faces": "1b0dab4569ab804fde3335c16e79dad992d7215160df70df5d1219d9dccd2471",
+    "ch6-q-prism-view-directions": "0db32eef60534402c7c0105d9006c8d148156471bd9b7ca7fef85adde878baae",
+    "ch6-q-net-matching": "180dbc6836970a9554359b085d5219a4de4c89270978f0a7ea2dc0d9bf4ada56",
+    "ch6-p170-ray-line-question": "b2853dd128959a7bee349721e453b86c30243aad49fb57fafcaf0b5d00e37a56",
+    "ch6-p170-exercise-1": "d66b4e1343516c2285ee405f6fb08b50451c76fbf9f1a1de1a7996aa83cdbdec",
+    "ch6-p170-exercise-2": "06d9bdfdd2e72f89ae3bb6f1f587dc825de48358d795897a9ca2b7e146e81988",
+    "ch6-p170-exercise-3": "192a7abe0f37c7ef4ff71cc0ac4073749d1eca271d22bc03e43e24a5995e5b1b",
+    "ch6-p171-tools-question": "01ca21e8c94e4e0056176da57e48929b1fcfff49e9aa1580df927206d7bfecbb",
+    "ch6-p171-comparison-explore": "ccf7b0bdfb1303abd036f9513e55378778860d0255f5a1edcb42e472cb70f8e9",
+    "ch6-p171-comparison-cases": "f678a3e068c95d75078cbb5984dd1a1d2059174a3651b194d981ba2b2d2dc1d0",
+    "ch6-p172-shortest-explore": "9b09f1be73ea0bfd45bf4e94fe24ca1b0e307029815864e084ce2ba6d3d5692e",
+    "ch6-p172-shortest-application": "210a59598ae384c27118bc90a4c7a3bd5038cc4ad8e980c767115f208521933b",
+    "ch6-p172-example": "ce46ab19161b063c0a95dbb3ea46e8a1da62e6ad87d4cf33bb25034529f74a2c",
+    "ch6-p173-exercise-2": "0f10b060ac1a020fa7d9ae2d24616c51b06b4ce5af3d8e1a67c5f59eafdcf53c",
+    "ch6-p173-exercises-1": "e88eda2a8bb6ea2dd3c6dfd7ec38689f2962ff1e874529747fba1523e09d0a1d"
+  },
+  "checks": {
+    "npm test": "23 passed; includes coverage/source refs and all current reader data checks",
+    "scoped git diff --check": "passed",
+    "typecheck/build": "deferred to main session, not run here",
+    "scoped edit audit": "90 recorded items match actual HEAD diff; undoing each narrow revision restores original item; all metadata, inventory, positions and unrelated items unchanged",
+    "final display audit": "all modified IDs have accepted actual-reader records; note hashes/text and link targets match current content"
+  },
+  "displayStatus": {
+    "pass": 16,
+    "pending": 0,
+    "complete": true,
+    "conceptSample": "passed",
+    "completeRoundTripItems": 12,
+    "actualRoundTrips": 20,
+    "pixelScreenshots": "Page.captureScreenshot timeout; not verified",
+    "realPhone": "not verified"
+  },
+  "learningEffect": "未经真实学生或家长使用验证；真机未验证",
+  "continuation": {
+    "status": "complete",
+    "browserSpace": 39,
+    "finished": true,
+    "devUrl": "http://127.0.0.1:5196/",
+    "devStopped": true,
+    "temporaryScriptsRemoved": true
+  },
+  "displayCases": [
+    {
+      "id": "ch6-q-geometric-properties",
+      "evidence": "display-0-4.json",
+      "roundTrips": 1
+    },
+    {
+      "id": "ch6-q-solids-plane-faces",
+      "evidence": "display-0-4.json",
+      "roundTrips": 2
+    },
+    {
+      "id": "ch6-q-prism-view-directions",
+      "evidence": "display-0-4.json",
+      "roundTrips": 1
+    },
+    {
+      "id": "ch6-q-net-matching",
+      "evidence": "display-0-4.json",
+      "roundTrips": 1
+    },
+    {
+      "id": "ch6-p170-ray-line-question",
+      "evidence": "display-round-01.json",
+      "roundTrips": 2
+    },
+    {
+      "id": "ch6-p170-exercise-1",
+      "evidence": "display-round-01.json",
+      "roundTrips": 2
+    },
+    {
+      "id": "ch6-p170-exercise-2",
+      "evidence": "display-round-01.json",
+      "roundTrips": 2
+    },
+    {
+      "id": "ch6-p170-exercise-3",
+      "evidence": "display-round-01.json",
+      "roundTrips": 2
+    },
+    {
+      "id": "ch6-p171-tools-question",
+      "evidence": "display-round-02.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p171-comparison-explore",
+      "evidence": "display-round-02.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p171-comparison-cases",
+      "evidence": "display-round-02.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p172-shortest-explore",
+      "evidence": "display-4-16.json",
+      "roundTrips": 1
+    },
+    {
+      "id": "ch6-p172-shortest-application",
+      "evidence": "display-round-02.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p172-example",
+      "evidence": "display-4-16.json",
+      "roundTrips": 2
+    },
+    {
+      "id": "ch6-p173-exercise-2",
+      "evidence": "display-recovered-4-16.json",
+      "roundTrips": 2
+    },
+    {
+      "id": "ch6-p173-exercises-1",
+      "evidence": "display-recovered-4-16.json",
+      "roundTrips": 2
+    }
+  ],
+  "conceptSampleEvidence": {
+    "id": "ch6-solid-not-coplanar",
+    "evidence": "display-round-02.json"
+  }
+}

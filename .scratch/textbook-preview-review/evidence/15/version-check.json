@@ -1,0 +1,54 @@
+{
+  "checkedOn": "2026-10-25",
+  "documentSha256": "6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249",
+  "sourcePages": [
+    133,
+    147
+  ],
+  "questionCount": 50,
+  "semanticAudit": "complete",
+  "guideRevisionIds": [
+    "ch5-q-p133-practice2",
+    "ch5-q-p135-step-reasons",
+    "ch5-q-p137-hw7",
+    "ch5-q-ex52-15"
+  ],
+  "npmTest": {
+    "tests": 23,
+    "pass": 23,
+    "fail": 0,
+    "scope": "包含第5章定位/索引对应、每项及全部关联可解析、126项四项说明与逐题清单一致"
+  },
+  "diffCheck": "pass",
+  "display": "pass; 4项真实阅读器逐项展示（14含未修改样本）",
+  "url": "http://127.0.0.1:5195",
+  "taskSpaceId": 40,
+  "sourceSha256": {
+    "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+    "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+    "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315",
+    "content/grade-7-volume-1/chapter-5.json": "01a7c197e51f5ca23e378b67b6616d7a85a237a84f53823b776b1f45290b7b6c",
+    "content/grade-7-volume-1/chapter-5.locations.json": "4450bf190a5f047d2ed3bc4479ee772c789e47ce676f9376d3b3768094b167f3",
+    "scripts/check-related-return.mjs": "8305f96684c74ff533fc96b5a45e11134c39785a7af4b5943a3cd6985b6cefbe"
+  },
+  "noteSha256": {
+    "ch5-q-p133-practice2": "27f9d86269ecf4457770d3bd542b9f24399704f6fefb015026e6e7a75123561d",
+    "ch5-q-p135-step-reasons": "e84ae7a858ff3fb148f582e7541b915e32bfebb4e237db81f4c05b70fc88d420",
+    "ch5-q-p137-hw7": "bd9d1be81157139b8b14344abbacb822e8e695d70c5b591cc5698203c5ef10d8",
+    "ch5-q-ex52-15": "33c7cf39b5b2aebc07ebffa3cdf633663c0b08cc87abf6a1e1e3b25b71817b77"
+  },
+  "limitations": [
+    "未进行真实手机与学生/家长观察，不推断学习效果",
+    "build/typecheck按分工留主会话统一完成"
+  ],
+  "guideRevisionCount": 4,
+  "misreadCorrection": "原转录正确；本轮误读已恢复。详情及240dpi细节图见review.md。不计有效修改。",
+  "finalChapterSha256": "01a7c197e51f5ca23e378b67b6616d7a85a237a84f53823b776b1f45290b7b6c",
+  "finalIndependentReview": "主会话独立复核7项指南变化通过C1–C6；questionCoverage与HEAD一致；两处误读已恢复原正确转录。",
+  "displayRecord": "display-check.json",
+  "groupBehavior": "ch5-q-p133-practice2为2条分组入口，没有单条悬停预览；点击后标题和正文正确。",
+  "completion": "本票规定内容、必要修订、展示与引用覆盖检查完成；Status仍表示分流。",
+  "actualReturnCases": [],
+  "commonInteractionEvidence": "14/display-check.json两次实际往返；本票未变关联仅核对按钮，未点击。",
+  "cleanup": "taskSpace40已finish；仅停止本组5195开发服务；本轮自建临时脚本/渲染图和技能副本已删除，保留/tmp/ch5-review内原有2026-10-23材料；没有stage/commit。"
+}

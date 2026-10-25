@@ -1,0 +1,6 @@
+AssertionError [ERR_ASSERTION]: scroll writes are throttled
+    at Module.checkFirstWriteAndFlush (file:///Users/chengqiyu/dev/%E8%AF%BE%E6%9C%AC%E8%A7%A3%E8%AF%BB/.scratch/textbook-preview-review/evidence/02/browser-checks.mjs:118:12)
+    at async file:////[eval2]:5:1
+[ego-browser:notice] Ego Lite update is available (current 0.6.0.16). Finish the current browser task, then ask the user before running `ego-browser upgrade`; re-read the ego-browser Skill afterward.
+
+ego's nodejs process exited with code 1.

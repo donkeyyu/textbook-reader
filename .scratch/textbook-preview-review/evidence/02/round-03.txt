@@ -1,0 +1,76 @@
+[ego-browser:notice] Ego Lite update is available (current 0.6.0.16). Finish the current browser task, then ask the user before running `ego-browser upgrade`; re-read the ego-browser Skill afterward.
+PASS desktop refresh { page: 10, fraction: 0.42 }
+PASS saved note retained; panel, history, and drafts absent
+PASS close and reopen { page: 'p3', position: { page: 10, fraction: 0.42 } }
+[p3 "课本解读" | space "教材续读 B1–B4 验证"(33): 1 managed, 1 untracked — p3* "课本解读"]
+root
+  container
+    container
+      button "收起页面导航" [ref=1, loc=css:button[aria-label="收起页面导航"]]
+        svg_root
+      heading
+        text "数学 · 七年级上册"
+    container
+      container "显示补充类型" [ref=2]
+        svg_root
+      button [ref=3]
+        text "添加补充"
+  container
+    container "页面导航"
+      container
+        button "文件页序 10/202，课本第 3 页，点击跳转" [ref=4, loc=css:button[aria-label="文件页序 10/202，课本第 3 页，点击跳转"]]
+          container
+            text "文件页序"
+            text "10"
+            text "/"
+            text "202"
+          text "课本第 3 页"
+        container
+          button "上一页" [ref=5, loc=css:button[aria-label="上一页"]]
+            svg_root
+          button "下一页" [ref=6, loc=css:button[aria-label="下一页"]]
+            svg_root
+      container [ref=7]
+        button "跳转到文件第 7 页，无印刷页码" [ref=8, loc=css:button[aria-label="跳转到文件第 7 页，无印刷页码"]]
+          image
+          container
+            text "文件第"
+            text "7"
+            text "页"
+          text "无印刷页码"
+        button "跳转到文件第 8 页，无印刷页码" [ref=9, loc=css:button[aria-label="跳转到文件第 8 页，无印刷页码"]]
+          image
+          container
+            text "文件第"
+            text "8"
+            text "页"
+          text "无印刷页码"
+        button "跳转到文件第 9 页，课本第 2 页" [ref=10, loc=css:button[aria-label="跳转到文件第 9 页，课本第 2 页"]]
+          image
+          container
+            text "文件第"
+            text "9"
+            text "页"
+          text "课本第 2 页"
+        button "跳转到文件第 10 页，课本第 3 页" [ref=11, loc=css:button[aria-label="跳转到文件第 10 页，课本第 3 页"]]
+          image
+          container
+            text "文件第"
+            text "10"
+            text "页"
+          text "课本第 3 页"
+    container "教材连续阅读" [ref=12]
+      container "教材文件第 10 页，课本第 3 页" [ref=13]
+        image
+        button "概念与性质：负的是偏差，不是质量" [ref=14, loc=css:button[aria-label="概念与性质：负的是偏差，不是质量"]]
+          svg_root
+        button "题目引导：练习第1题" [ref=15]
+          svg_root
+        button "选择此处的2条解读" [ref=16]
+          svg_root
+          text "2"
+        button "题目引导：练习第4题" [ref=17]
+          svg_root
+      container "教材文件第 11 页，课本第 4 页" [ref=18]
+        image
+        button "概念与性质：0要和它记录的量一起读" [ref=19, loc=css:button[aria-label="概念与性质：0要和它记录的量一起读"]]

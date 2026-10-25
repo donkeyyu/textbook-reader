@@ -1,0 +1,578 @@
+{
+  "date": "2026-10-25T05:48:07.759Z",
+  "url": "http://127.0.0.1:5196/",
+  "space": 39,
+  "input": "public DOM controls and focus; no React state access; DOM assertions, not pixel review",
+  "versions": {
+    "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+    "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+    "content/grade-7-volume-1/chapter-6.json": "a800d8e822fdc13f1740403c0bb852debfd01b3c3068febebc07325d81c6b845"
+  },
+  "results": [
+    {
+      "id": "ch6-q-p184-practice4",
+      "page": 184,
+      "printedPage": "177",
+      "noteSha256": "ae13fd75e4bb41482cddf52cb2ce38b723536512e087d933e2cc1ae3ac08c509",
+      "preview": {
+        "group": [
+          "ch6-q-p184-practice4"
+        ],
+        "aria": "题目引导：练习第4题：不能进入围墙时测量夹角",
+        "text": "测量方案既要有角度依据，也要满足墙外可操作的限制。",
+        "highlights": [
+          "location-ch6-q-p184-practice4"
+        ],
+        "sourcePaper": "page-184",
+        "region": {
+          "x": 0.15,
+          "y": 0.813,
+          "width": 0.52,
+          "height": 0.05
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "练习第4题：不能进入围墙时测量夹角",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p184-practice4",
+        "sourcePage": 184,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-extension-order",
+            "id": "related-ch6-q-p184-practice4-ch6-extension-order",
+            "label": "线段的延长方向",
+            "purposeMatches": true,
+            "pageLabel": "课本第 163 页",
+            "targetFilePage": 170,
+            "clicked": false
+          },
+          {
+            "target": "ch6-complementary-position-independent",
+            "id": "related-ch6-q-p184-practice4-ch6-complementary-position-independent",
+            "label": "补角",
+            "purposeMatches": true,
+            "pageLabel": "课本第 176 页",
+            "targetFilePage": 183,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p185-e1",
+      "page": 185,
+      "printedPage": "178",
+      "noteSha256": "c6609f55eb7870bd02baab0bcf4342bf83b87fe023e6a49affbabe5811956068",
+      "preview": {
+        "group": [
+          "ch6-q-p185-e1"
+        ],
+        "aria": "题目引导：习题6.3第1题：以OC为边表示角",
+        "text": "指定一条边后，怎样辨认并完整记录不同的角？",
+        "highlights": [
+          "location-ch6-q-p185-e1"
+        ],
+        "sourcePaper": "page-185",
+        "region": {
+          "x": 0.10800000000000001,
+          "y": 0.159,
+          "width": 0.48200000000000004,
+          "height": 0.024
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "习题6.3第1题：以OC为边表示角",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p185-e1",
+        "sourcePage": 185,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-angle-three-letter-name",
+            "id": "related-ch6-q-p185-e1-ch6-angle-three-letter-name",
+            "label": "角的表示",
+            "purposeMatches": true,
+            "pageLabel": "课本第 170 页",
+            "targetFilePage": 177,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p185-e2",
+      "page": 185,
+      "printedPage": "178",
+      "noteSha256": "06f43ad6ea2fa4ec3c23f32e6288d2e2a2e46c230bfca675177c471dfe7598e4",
+      "preview": {
+        "group": [
+          "ch6-q-p185-e2"
+        ],
+        "aria": "题目引导：习题6.3第2题：角概念与关系判断",
+        "text": "各句的结论，是否由它给出的条件充分支持？",
+        "highlights": [
+          "location-ch6-q-p185-e2"
+        ],
+        "sourcePaper": "page-185",
+        "region": {
+          "x": 0.10800000000000001,
+          "y": 0.185,
+          "width": 0.16,
+          "height": 0.023
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "习题6.3第2题：角概念与关系判断",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p185-e2",
+        "sourcePage": 185,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-angle-rays-definition",
+            "id": "related-ch6-q-p185-e2-ch6-angle-rays-definition",
+            "label": "角的定义",
+            "purposeMatches": true,
+            "pageLabel": "课本第 170 页",
+            "targetFilePage": 177,
+            "clicked": false
+          },
+          {
+            "target": "ch6-complementary-position-independent",
+            "id": "related-ch6-q-p185-e2-ch6-complementary-position-independent",
+            "label": "补角",
+            "purposeMatches": true,
+            "pageLabel": "课本第 176 页",
+            "targetFilePage": 183,
+            "clicked": false
+          },
+          {
+            "target": "ch6-angle-sum-interior-ray",
+            "id": "related-ch6-q-p185-e2-ch6-angle-sum-interior-ray",
+            "label": "角的和差",
+            "purposeMatches": true,
+            "pageLabel": "课本第 173 页",
+            "targetFilePage": 180,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p185-e3",
+      "page": 185,
+      "printedPage": "178",
+      "noteSha256": "fa55fccf72c364643b44b8a458dc037ef2527c125c424d0229fc9580dfde86de",
+      "preview": {
+        "group": [
+          "ch6-q-p185-e3"
+        ],
+        "aria": "题目引导：习题6.3第3题：角度单位与运算填空",
+        "text": "五个填空中，单位、运算与结果写法各有什么要求？",
+        "highlights": [
+          "location-ch6-q-p185-e3"
+        ],
+        "sourcePaper": "page-185",
+        "region": {
+          "x": 0.10800000000000001,
+          "y": 0.344,
+          "width": 0.16,
+          "height": 0.024
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "习题6.3第3题：角度单位与运算填空",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p185-e3",
+        "sourcePage": 185,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-compound-angle-units",
+            "id": "related-ch6-q-p185-e3-ch6-compound-angle-units",
+            "label": "度、分、秒",
+            "purposeMatches": true,
+            "pageLabel": "课本第 171 页",
+            "targetFilePage": 178,
+            "clicked": true
+          }
+        ],
+        "roundTrips": [
+          {
+            "target": "ch6-compound-angle-units",
+            "page": 178,
+            "regionMatches": true,
+            "returnFocus": "related-ch6-q-p185-e3-ch6-compound-angle-units",
+            "positionDelta": 0,
+            "panelDelta": 0,
+            "methodRestored": true
+          }
+        ]
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p185-e4",
+      "page": 185,
+      "printedPage": "178",
+      "noteSha256": "4e37946d98ebfa22888e6d283814733857bca16d70c79436a006601fab839168",
+      "preview": {
+        "group": [
+          "ch6-q-p185-e4"
+        ],
+        "aria": "题目引导：习题6.3第4题：由补角求余角",
+        "text": "已知补角与所求余角，共同参照的是哪一个角？",
+        "highlights": [
+          "location-ch6-q-p185-e4"
+        ],
+        "sourcePaper": "page-185",
+        "region": {
+          "x": 0.10800000000000001,
+          "y": 0.447,
+          "width": 0.682,
+          "height": 0.025
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "习题6.3第4题：由补角求余角",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p185-e4",
+        "sourcePage": 185,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-complementary-position-independent",
+            "id": "related-ch6-q-p185-e4-ch6-complementary-position-independent",
+            "label": "补角",
+            "purposeMatches": true,
+            "pageLabel": "课本第 176 页",
+            "targetFilePage": 183,
+            "clicked": false
+          },
+          {
+            "target": "ch6-example4-complement-pairs",
+            "id": "related-ch6-q-p185-e4-ch6-example4-complement-pairs",
+            "label": "余角的数量关系",
+            "purposeMatches": true,
+            "pageLabel": "课本第 177 页",
+            "targetFilePage": 184,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p185-e5",
+      "page": 185,
+      "printedPage": "178",
+      "noteSha256": "fe735d0515494840784c55924dfd5dfc1516d88c9c1ed949872ac0eb7fdeb339",
+      "preview": {
+        "group": [
+          "ch6-q-p185-e5"
+        ],
+        "aria": "题目引导：习题6.3第5题：按方位画射线",
+        "text": "同一个方位，怎样用基准方向与偏转来确定？",
+        "highlights": [
+          "location-ch6-q-p185-e5"
+        ],
+        "sourcePaper": "page-185",
+        "region": {
+          "x": 0.10800000000000001,
+          "y": 0.475,
+          "width": 0.742,
+          "height": 0.05
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "习题6.3第5题：按方位画射线",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p185-e5",
+        "sourcePage": 185,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-bearing-reference-direction",
+            "id": "related-ch6-q-p185-e5-ch6-bearing-reference-direction",
+            "label": "方位角",
+            "purposeMatches": true,
+            "pageLabel": "课本第 172 页",
+            "targetFilePage": 179,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p185-e6",
+      "page": 185,
+      "printedPage": "178",
+      "noteSha256": "1976ebc539817df42574d76256848215b4153cb0f5f1b16b8bc305587226ad3f",
+      "preview": {
+        "group": [
+          "ch6-q-p185-e6"
+        ],
+        "aria": "题目引导：习题6.3第6题：时针与分针的转动",
+        "text": "转动的角度与某一时刻的夹角，是同一个量吗？",
+        "highlights": [
+          "location-ch6-q-p185-e6"
+        ],
+        "sourcePaper": "page-185",
+        "region": {
+          "x": 0.10800000000000001,
+          "y": 0.5760000000000001,
+          "width": 0.433,
+          "height": 0.025
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "习题6.3第6题：时针与分针的转动",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p185-e6",
+        "sourcePage": 185,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-compound-angle-units",
+            "id": "related-ch6-q-p185-e6-ch6-compound-angle-units",
+            "label": "周角与角的度量",
+            "purposeMatches": true,
+            "pageLabel": "课本第 171 页",
+            "targetFilePage": 178,
+            "clicked": false
+          },
+          {
+            "target": "ch6-clock-continuous-motion",
+            "id": "related-ch6-q-p185-e6-ch6-clock-continuous-motion",
+            "label": "钟面角与时间单位",
+            "purposeMatches": true,
+            "pageLabel": "课本第 178 页",
+            "targetFilePage": 185,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p185-e7",
+      "page": 185,
+      "printedPage": "178",
+      "noteSha256": "467a30aec78a8b21f30e830fb0c69d310a758869bd02d32d1ed8da1e2f421e6d",
+      "preview": {
+        "group": [
+          "ch6-q-p185-e7"
+        ],
+        "aria": "题目引导：习题6.3第7题：比较∠AOB与∠COD",
+        "text": "两个直角条件，为比较目标角提供了什么依据？",
+        "highlights": [
+          "location-ch6-q-p185-e7"
+        ],
+        "sourcePaper": "page-185",
+        "region": {
+          "x": 0.10800000000000001,
+          "y": 0.654,
+          "width": 0.75,
+          "height": 0.025
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "习题6.3第7题：比较∠AOB与∠COD",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p185-e7",
+        "sourcePage": 185,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-equal-angle-complements",
+            "id": "related-ch6-q-p185-e7-ch6-equal-angle-complements",
+            "label": "同角（等角）的余角相等",
+            "purposeMatches": true,
+            "pageLabel": "课本第 176 页",
+            "targetFilePage": 183,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p185-e8",
+      "page": 185,
+      "printedPage": "178",
+      "noteSha256": "8b9c261eee0e3615fe695ba16f3e138e298f46feb92b8891647ee82fcc01834a",
+      "preview": {
+        "group": [
+          "ch6-q-p185-e8"
+        ],
+        "aria": "题目引导：习题6.3第8题：连续两次角平分",
+        "text": "两次平分分别属于哪个整角？",
+        "highlights": [
+          "location-ch6-q-p185-e8"
+        ],
+        "sourcePaper": "page-185",
+        "region": {
+          "x": 0.10800000000000001,
+          "y": 0.807,
+          "width": 0.742,
+          "height": 0.024
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "习题6.3第8题：连续两次角平分",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p185-e8",
+        "sourcePage": 185,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-bisector-ray-conditions",
+            "id": "related-ch6-q-p185-e8-ch6-bisector-ray-conditions",
+            "label": "角的平分线",
+            "purposeMatches": true,
+            "pageLabel": "课本第 175 页",
+            "targetFilePage": 182,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p185-e9",
+      "page": 185,
+      "printedPage": "178",
+      "noteSha256": "fd9100c34ffc09343486346d7b7ff9fca03a248cca3713a16be907f2fe34f204",
+      "preview": {
+        "group": [
+          "ch6-q-p185-e9"
+        ],
+        "aria": "题目引导：习题6.3第9题：以公共边画角并求夹角",
+        "text": "公共边与两个度数，是否已经限定了唯一的位置关系？",
+        "highlights": [
+          "location-ch6-q-p185-e9"
+        ],
+        "sourcePaper": "page-185",
+        "region": {
+          "x": 0.10800000000000001,
+          "y": 0.8640000000000001,
+          "width": 0.76,
+          "height": 0.025
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "习题6.3第9题：以公共边画角并求夹角",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p185-e9",
+        "sourcePage": 185,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-angle-sum-interior-ray",
+            "id": "related-ch6-q-p185-e9-ch6-angle-sum-interior-ray",
+            "label": "角的和差",
+            "purposeMatches": true,
+            "pageLabel": "课本第 173 页",
+            "targetFilePage": 180,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    }
+  ]
+}

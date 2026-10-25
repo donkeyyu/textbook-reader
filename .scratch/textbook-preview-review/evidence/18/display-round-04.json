@@ -1,0 +1,639 @@
+{
+  "date": "2026-10-25T05:44:47.259Z",
+  "url": "http://127.0.0.1:5196/",
+  "space": 39,
+  "input": "public DOM controls and focus; no React state access; DOM assertions, not pixel review",
+  "versions": {
+    "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+    "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+    "content/grade-7-volume-1/chapter-6.json": "a800d8e822fdc13f1740403c0bb852debfd01b3c3068febebc07325d81c6b845"
+  },
+  "results": [
+    {
+      "id": "ch6-p179-exercise-2",
+      "page": 179,
+      "printedPage": "172",
+      "noteSha256": "585fbcd40efe3d4a0e448c41dfa38ec41445db5bbaf6eb6a36410ad4426eea07",
+      "preview": {
+        "group": [
+          "ch6-p179-exercise-2"
+        ],
+        "aria": "题目引导：练习第2题：同一角的不同表示",
+        "text": "怎样检查两种名称仍指向同一个角？",
+        "highlights": [
+          "location-ch6-p179-exercise-2"
+        ],
+        "sourcePaper": "page-179",
+        "region": {
+          "x": 0.11,
+          "y": 0.5529999999999999,
+          "width": 0.455,
+          "height": 0.047
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "练习第2题：同一角的不同表示",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p179-exercise-2",
+        "sourcePage": 179,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-angle-three-letter-name",
+            "id": "related-ch6-p179-exercise-2-ch6-angle-three-letter-name",
+            "label": "三字母表示角",
+            "purposeMatches": true,
+            "pageLabel": "课本第 170 页",
+            "targetFilePage": 177,
+            "clicked": false
+          },
+          {
+            "target": "ch6-angle-single-letter",
+            "id": "related-ch6-p179-exercise-2-ch6-angle-single-letter",
+            "label": "单字母表示的条件",
+            "purposeMatches": true,
+            "pageLabel": "课本第 170 页",
+            "targetFilePage": 177,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p179-exercise-3",
+      "page": 179,
+      "printedPage": "172",
+      "noteSha256": "90c628a38e991653d49d7087c22e2824da8878767898eaae2b1bc36c1fa93591",
+      "preview": {
+        "group": [
+          "ch6-p179-exercise-3",
+          "ch6-decimal-degree-comparison-exercise"
+        ],
+        "aria": "选择此处的2条解读",
+        "highlights": [
+          "location-ch6-p179-exercise-3",
+          "location-ch6-decimal-degree-comparison-exercise"
+        ],
+        "sourcePaper": "page-179",
+        "region": {
+          "x": 0.11,
+          "y": 0.688,
+          "width": 0.38,
+          "height": 0.02
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        },
+        "singlePreview": "not shown by grouped-marker design"
+      },
+      "path": {
+        "title": "练习第3题：角度单位换算与比较",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p179-exercise-3",
+        "sourcePage": 179,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-compound-angle-units",
+            "id": "related-ch6-p179-exercise-3-ch6-compound-angle-units",
+            "label": "度分秒与小数度的区别",
+            "purposeMatches": true,
+            "pageLabel": "课本第 171 页",
+            "targetFilePage": 178,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p179-exercise-4",
+      "page": 179,
+      "printedPage": "172",
+      "noteSha256": "8f7fcc6708c24bafc9a418ae94c865e28c72ae32aaf310e2d393d17fecc60af8",
+      "preview": {
+        "group": [
+          "ch6-p179-exercise-4"
+        ],
+        "aria": "题目引导：练习第4题：画正六边形",
+        "text": "正六边形的边和角，都有哪些需要检验的条件？",
+        "highlights": [
+          "location-ch6-p179-exercise-4"
+        ],
+        "sourcePaper": "page-179",
+        "region": {
+          "x": 0.11,
+          "y": 0.746,
+          "width": 0.32,
+          "height": 0.046
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "练习第4题：画正六边形",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p179-exercise-4",
+        "sourcePage": 179,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-compass-copy-length",
+            "id": "related-ch6-p179-exercise-4-ch6-compass-copy-length",
+            "label": "圆规复制长度",
+            "purposeMatches": true,
+            "pageLabel": "课本第 164 页",
+            "targetFilePage": 171,
+            "clicked": false
+          },
+          {
+            "target": "ch6-angle-rays-definition",
+            "id": "related-ch6-p179-exercise-4-ch6-angle-rays-definition",
+            "label": "角的顶点与两边",
+            "purposeMatches": true,
+            "pageLabel": "课本第 170 页",
+            "targetFilePage": 177,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p180-comparison-question",
+      "page": 180,
+      "printedPage": "173",
+      "noteSha256": "098c911924d8e420c240ce5a8bbbf686836c77d5bd8e9b34ef9fdde9c1e70f24",
+      "preview": {
+        "group": [
+          "ch6-p180-comparison-question"
+        ],
+        "aria": "题目引导：提问：描述角的比较方法与结果",
+        "text": "叠合后的边的位置，为什么能表示角的大小关系？",
+        "highlights": [
+          "location-ch6-p180-comparison-question"
+        ],
+        "sourcePaper": "page-180",
+        "region": {
+          "x": 0.13,
+          "y": 0.185,
+          "width": 0.79,
+          "height": 0.046
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "提问：描述角的比较方法与结果",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p180-comparison-question",
+        "sourcePage": 180,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-angle-overlap-conditions",
+            "id": "related-ch6-p180-comparison-question-ch6-angle-overlap-conditions",
+            "label": "角叠合比较的条件",
+            "purposeMatches": true,
+            "pageLabel": "课本第 173 页",
+            "targetFilePage": 180,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p180-angle-sum-think",
+      "page": 180,
+      "printedPage": "173",
+      "noteSha256": "e2647745fda146d8a7de9fa09597508d9310022af1cc6894fdee68b77783a6dc",
+      "preview": {
+        "group": [
+          "ch6-p180-angle-sum-think"
+        ],
+        "aria": "题目引导：思考：两个角的和与差",
+        "text": "哪些位置关系支持把角合成整角或分出一部分？",
+        "highlights": [
+          "location-ch6-p180-angle-sum-think"
+        ],
+        "sourcePaper": "page-180",
+        "region": {
+          "x": 0.153,
+          "y": 0.504,
+          "width": 0.51,
+          "height": 0.046
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "思考：两个角的和与差",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p180-angle-sum-think",
+        "sourcePage": 180,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-angle-sum-interior-ray",
+            "id": "related-ch6-p180-angle-sum-think-ch6-angle-sum-interior-ray",
+            "label": "内部射线与角的加法",
+            "purposeMatches": true,
+            "pageLabel": "课本第 173 页",
+            "targetFilePage": 180,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p180-angle-difference-fill",
+      "page": 180,
+      "printedPage": "173",
+      "noteSha256": "45a1bbc99160873a24975d9d51fa9a0f1b0eaa778bc8b2d2e07fe8dbf500e784",
+      "preview": {
+        "group": [
+          "ch6-p180-angle-difference-fill"
+        ],
+        "aria": "题目引导：填空：∠AOC−∠AOB",
+        "text": "角名怎样记录减法后剩余的图形？",
+        "highlights": [
+          "location-ch6-p180-angle-difference-fill"
+        ],
+        "sourcePaper": "page-180",
+        "region": {
+          "x": 0.13,
+          "y": 0.674,
+          "width": 0.4,
+          "height": 0.02
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "填空：∠AOC−∠AOB",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p180-angle-difference-fill",
+        "sourcePage": 180,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-angle-sum-interior-ray",
+            "id": "related-ch6-p180-angle-difference-fill-ch6-angle-sum-interior-ray",
+            "label": "内部射线与角的加法",
+            "purposeMatches": true,
+            "pageLabel": "课本第 173 页",
+            "targetFilePage": 180,
+            "clicked": false
+          },
+          {
+            "target": "ch6-angle-three-letter-name",
+            "id": "related-ch6-p180-angle-difference-fill-ch6-angle-three-letter-name",
+            "label": "三字母表示角",
+            "purposeMatches": true,
+            "pageLabel": "课本第 170 页",
+            "targetFilePage": 177,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p180-triangles-explore",
+      "page": 180,
+      "printedPage": "173",
+      "noteSha256": "b0f8a0fab7cf220ddee78f18c9ede2b8936a6068e5f75c1c0fe3176a521990a2",
+      "preview": {
+        "group": [
+          "ch6-p180-triangles-explore"
+        ],
+        "aria": "题目引导：探究：用一副三角尺画角",
+        "text": "同一副三角尺的不同摆法，会怎样改变所成的角？",
+        "highlights": [
+          "location-ch6-p180-triangles-explore"
+        ],
+        "sourcePaper": "page-180",
+        "region": {
+          "x": 0.153,
+          "y": 0.743,
+          "width": 0.25,
+          "height": 0.10400000000000001
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "探究：用一副三角尺画角",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p180-triangles-explore",
+        "sourcePage": 180,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-angle-sum-interior-ray",
+            "id": "related-ch6-p180-triangles-explore-ch6-angle-sum-interior-ray",
+            "label": "角的和差所需图形关系",
+            "purposeMatches": true,
+            "pageLabel": "课本第 173 页",
+            "targetFilePage": 180,
+            "clicked": false
+          },
+          {
+            "target": "ch6-angle-overlap-conditions",
+            "id": "related-ch6-p180-triangles-explore-ch6-angle-overlap-conditions",
+            "label": "角的叠合条件",
+            "purposeMatches": true,
+            "pageLabel": "课本第 173 页",
+            "targetFilePage": 180,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p181-example-2",
+      "page": 181,
+      "printedPage": "174",
+      "noteSha256": "034c0e7e300be54b863efd5192167ced4d136759e58b1844e0f02e42b9c1405e",
+      "preview": {
+        "group": [
+          "ch6-p181-example-2"
+        ],
+        "aria": "题目引导：例2：平角中的角度计算",
+        "text": "本例把哪个角作为总量？图中的位置条件支持这个选择吗？",
+        "highlights": [
+          "location-ch6-p181-example-2"
+        ],
+        "sourcePaper": "page-181",
+        "region": {
+          "x": 0.085,
+          "y": 0.071,
+          "width": 0.79,
+          "height": 0.047
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "例2：平角中的角度计算",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p181-example-2",
+        "sourcePage": 181,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-straight-angle-opposite-rays",
+            "id": "related-ch6-p181-example-2-ch6-straight-angle-opposite-rays",
+            "label": "平角的反向射线条件",
+            "purposeMatches": true,
+            "pageLabel": "课本第 174 页",
+            "targetFilePage": 181,
+            "clicked": false
+          },
+          {
+            "target": "ch6-angle-borrow-same-quantity",
+            "id": "related-ch6-p181-example-2-ch6-angle-borrow-same-quantity",
+            "label": "度分借位保持总量",
+            "purposeMatches": true,
+            "pageLabel": "课本第 174 页",
+            "targetFilePage": 181,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p181-exercise-1",
+      "page": 181,
+      "printedPage": "174",
+      "noteSha256": "0507916ac71479207d08cfac6b9c01475ce8471cf55a11c9e1e28deec113dd17",
+      "preview": {
+        "group": [
+          "ch6-p181-exercise-1"
+        ],
+        "aria": "题目引导：练习第1题：角大小关系填空",
+        "text": "两条角度关系，怎样共同约束首尾两个角？",
+        "highlights": [
+          "location-ch6-p181-exercise-1"
+        ],
+        "sourcePaper": "page-181",
+        "region": {
+          "x": 0.11,
+          "y": 0.49700000000000005,
+          "width": 0.13,
+          "height": 0.02
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "练习第1题：角大小关系填空",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p181-exercise-1",
+        "sourcePage": 181,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-angle-overlap-conditions",
+            "id": "related-ch6-p181-exercise-1-ch6-angle-overlap-conditions",
+            "label": "角的大小比较",
+            "purposeMatches": true,
+            "pageLabel": "课本第 173 页",
+            "targetFilePage": 180,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p181-exercise-2",
+      "page": 181,
+      "printedPage": "174",
+      "noteSha256": "95f63f5fe8e549cf5ff8781d1a99e3fe1a71d7b6e01f9ccdecba4ab504d7f7fb",
+      "preview": {
+        "group": [
+          "ch6-p181-exercise-2"
+        ],
+        "aria": "题目引导：练习第2题：按图填写角的和差",
+        "text": "角的和差，要与图中的哪些分割关系相符？",
+        "highlights": [
+          "location-ch6-p181-exercise-2"
+        ],
+        "sourcePaper": "page-181",
+        "region": {
+          "x": 0.11,
+          "y": 0.584,
+          "width": 0.145,
+          "height": 0.02
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "练习第2题：按图填写角的和差",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p181-exercise-2",
+        "sourcePage": 181,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-angle-sum-interior-ray",
+            "id": "related-ch6-p181-exercise-2-ch6-angle-sum-interior-ray",
+            "label": "内部射线与角的加法",
+            "purposeMatches": true,
+            "pageLabel": "课本第 173 页",
+            "targetFilePage": 180,
+            "clicked": false
+          },
+          {
+            "target": "ch6-angle-three-letter-name",
+            "id": "related-ch6-p181-exercise-2-ch6-angle-three-letter-name",
+            "label": "三字母表示角",
+            "purposeMatches": true,
+            "pageLabel": "课本第 170 页",
+            "targetFilePage": 177,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p181-exercise-3",
+      "page": 181,
+      "printedPage": "174",
+      "noteSha256": "cf835f445c4b165a3a9b39b7ada20dc701200db05d28b43011ee8226f2d58c3c",
+      "preview": {
+        "group": [
+          "ch6-p181-exercise-3"
+        ],
+        "aria": "题目引导：练习第3题：度分加减",
+        "text": "度与分的改写，为什么必须保持总角度不变？",
+        "highlights": [
+          "location-ch6-p181-exercise-3"
+        ],
+        "sourcePaper": "page-181",
+        "region": {
+          "x": 0.11,
+          "y": 0.726,
+          "width": 0.095,
+          "height": 0.02
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "练习第3题：度分加减",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p181-exercise-3",
+        "sourcePage": 181,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-angle-borrow-same-quantity",
+            "id": "related-ch6-p181-exercise-3-ch6-angle-borrow-same-quantity",
+            "label": "度分借位保持总量",
+            "purposeMatches": true,
+            "pageLabel": "课本第 174 页",
+            "targetFilePage": 181,
+            "clicked": false
+          },
+          {
+            "target": "ch6-compound-angle-units",
+            "id": "related-ch6-p181-exercise-3-ch6-compound-angle-units",
+            "label": "度分秒与小数度的区别",
+            "purposeMatches": true,
+            "pageLabel": "课本第 171 页",
+            "targetFilePage": 178,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    }
+  ]
+}

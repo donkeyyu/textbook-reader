@@ -1,0 +1,146 @@
+[
+  {
+    "id": "ch6-q-geometric-properties",
+    "before": {
+      "title": "6.1.1 练习 第1题"
+    },
+    "after": {
+      "title": "6.1.1 练习第1题：辨认几何属性"
+    }
+  },
+  {
+    "id": "ch6-q-solids-plane-faces",
+    "before": {
+      "title": "6.1.1 练习 第2题"
+    },
+    "after": {
+      "title": "6.1.1 练习第2题：寻找立体表面的平面图形"
+    }
+  },
+  {
+    "id": "ch6-q-prism-view-directions",
+    "before": {
+      "title": "6.1.1 练习 第1题"
+    },
+    "after": {
+      "title": "6.1.1 练习第1题：辨认观察方向"
+    }
+  },
+  {
+    "id": "ch6-q-net-matching",
+    "before": {
+      "title": "6.1.1 练习 第2题"
+    },
+    "after": {
+      "title": "6.1.1 练习第2题：匹配展开图"
+    }
+  },
+  {
+    "id": "ch6-p170-ray-line-question",
+    "before": {
+      "preview": "先比较三种图形保留几个端点，再决定原线段的哪些端需要继续延伸。"
+    },
+    "after": {
+      "preview": "从线段到射线或直线，端点与延伸方式有什么变化？"
+    }
+  },
+  {
+    "id": "ch6-p170-exercise-1",
+    "before": {
+      "preview": "（1）（4）依据端点和延伸方式判断图形之间的关系。"
+    },
+    "after": {
+      "preview": "图形的范围与命名规则，分别影响哪些判断？"
+    }
+  },
+  {
+    "id": "ch6-p170-exercise-2",
+    "before": {
+      "preview": "（1）（2）把“经过”和“在外”转成点是否落在线上的要求。"
+    },
+    "after": {
+      "preview": "作图语句中，哪些关系已经给定，哪些尚未限定？"
+    }
+  },
+  {
+    "id": "ch6-p170-exercise-3",
+    "before": {
+      "preview": "分别选定一个点和一条直线，再用“在……上/外”或“经过/不经过”表述。"
+    },
+    "after": {
+      "preview": "点的位置与图旁字母的位置，需要分清。"
+    }
+  },
+  {
+    "id": "ch6-p171-tools-question",
+    "before": {
+      "preview": "对照正文的两种方法，逐步指出哪种工具确定长度、哪种工具确定直线。"
+    },
+    "after": {
+      "preview": "不读出长度的数值，也能保证两条线段等长吗？"
+    }
+  },
+  {
+    "id": "ch6-p171-comparison-explore",
+    "before": {
+      "preview": "观察比身高时怎样让起点或测量标准一致，再把这个要求迁移到线段。"
+    },
+    "after": {
+      "preview": "比身高与比线段长短，需要怎样的共同标准？"
+    }
+  },
+  {
+    "id": "ch6-p171-comparison-cases",
+    "before": {
+      "preview": "保留图6.2-11的共同起点与方向，尝试改变另一端点的落点。"
+    },
+    "after": {
+      "preview": "叠合后另一个端点的位置，怎样反映长短关系？"
+    }
+  },
+  {
+    "id": "ch6-p172-shortest-explore",
+    "before": {
+      "preview": "保持A、B不变提出候选路线，再比较它与原图道路的长度。"
+    },
+    "after": {
+      "preview": "比较道路长短时，哪些条件必须相同？"
+    }
+  },
+  {
+    "id": "ch6-p172-shortest-application",
+    "before": {
+      "preview": "选择一个生活情境，明确固定的两个位置及要比较的路线。"
+    },
+    "after": {
+      "preview": "几何上的最短连线，在所举情境中是否可行？"
+    }
+  },
+  {
+    "id": "ch6-p172-example",
+    "before": {
+      "preview": "把目标式中的倍数、和差分别理解成长度之间的关系，再检查教材构造怎样表达这些关系。"
+    },
+    "after": {
+      "preview": "教材构造中的每一段，怎样对应目标长度式？"
+    }
+  },
+  {
+    "id": "ch6-p173-exercise-2",
+    "before": {
+      "preview": "先把目标长度看作已知长度的组合，自己选择构造。"
+    },
+    "after": {
+      "preview": "目标长度中的a、b和倍数，怎样对应图中的线段？"
+    }
+  },
+  {
+    "id": "ch6-p173-exercises-1",
+    "before": {
+      "preview": "三个小问分别先确定所作对象与用到的点，再按端点、延伸方式检查。"
+    },
+    "after": {
+      "preview": "直线、射线与“连接”，要求画出的范围有何不同？"
+    }
+  }
+]

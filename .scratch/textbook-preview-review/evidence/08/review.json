@@ -1,0 +1,1180 @@
+[
+  {
+    "id": "ch2-q-p59-explore-power-sign",
+    "page": 59,
+    "printedPage": "52",
+    "label": "探究：负数的幂的正负与指数的关系",
+    "parts": [
+      "再举乘方例子",
+      "结合例1归纳负数的幂的正负与指数的关系"
+    ],
+    "decision": "保留",
+    "reason": "负底数与不同指数的观察不代给奇偶结论，需用因数个数解释。",
+    "related": [
+      {
+        "locationId": "ch2-product-negative-parity",
+        "label": "多个乘数的符号",
+        "purpose": "用多个乘数的符号规律解释自主发现的关系。",
+        "page": 49,
+        "printedPage": "42"
+      },
+      {
+        "locationId": "ch2-power-factor-count",
+        "label": "乘方、底数和指数",
+        "purpose": "把指数与负乘数个数对应。",
+        "page": 58,
+        "printedPage": "51"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p59-example2",
+    "page": 59,
+    "printedPage": "52",
+    "label": "例2（2.3.1 乘方）",
+    "parts": [
+      "（−8）⁵",
+      "（−3）⁶"
+    ],
+    "decision": "保留",
+    "reason": "计算器输入整体及符号核验，不提供两幂值。",
+    "related": [
+      {
+        "locationId": "ch2-power-negative-parity",
+        "label": "幂的符号",
+        "purpose": "在不重复全部计算的情况下检查两项结果的符号。",
+        "page": 59,
+        "printedPage": "52"
+      },
+      {
+        "locationId": "ch2-power-whole-fraction-base",
+        "label": "完整底数的范围",
+        "purpose": "检查负号是否包含在参与乘方的底数内。",
+        "page": 58,
+        "printedPage": "51"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p59-practice1",
+    "page": 59,
+    "printedPage": "52",
+    "label": "练习1（印刷第52页）",
+    "parts": [
+      "（1）",
+      "（2）"
+    ],
+    "decision": "保留",
+    "reason": "按定义辨底数指数并推符号，未直接说出各数。",
+    "related": [
+      {
+        "locationId": "ch2-power-factor-count",
+        "label": "乘方、底数和指数",
+        "purpose": "按定义识别底数与指数。",
+        "page": 58,
+        "printedPage": "51"
+      },
+      {
+        "locationId": "ch2-power-negative-parity",
+        "label": "幂的符号",
+        "purpose": "用符号规律核验（2）的判断理由。",
+        "page": 59,
+        "printedPage": "52"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p59-practice2",
+    "page": 59,
+    "printedPage": "52",
+    "label": "练习2（印刷第52页）",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）",
+      "（5）",
+      "（6）",
+      "（7）",
+      "（8）"
+    ],
+    "decision": "修订",
+    "reason": "原预览把八问分类及计算路线完整展开，改为指数与因数的关系；方法无数值结果。",
+    "related": [
+      {
+        "locationId": "ch2-power-factor-count",
+        "label": "乘方、底数和指数",
+        "purpose": "检查八问是否都按重复相乘解释。",
+        "page": 58,
+        "printedPage": "51"
+      },
+      {
+        "locationId": "ch2-power-negative-parity",
+        "label": "幂的符号",
+        "purpose": "对照相同负底数而指数不同的情况。",
+        "page": 59,
+        "printedPage": "52"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p59-practice3",
+    "page": 59,
+    "printedPage": "52",
+    "label": "练习3（印刷第52页）",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）"
+    ],
+    "decision": "修订",
+    "reason": "原预览给完输入核验流程，改为输入对象；方法仍需按本机自查。",
+    "related": [
+      {
+        "locationId": "ch2-power-negative-parity",
+        "label": "幂的符号",
+        "purpose": "独立检查四个显示结果的符号。",
+        "page": 59,
+        "printedPage": "52"
+      },
+      {
+        "locationId": "ch2-power-factor-count",
+        "label": "乘方、底数和指数",
+        "purpose": "确认计算器中输入的指数对应什么操作。",
+        "page": 58,
+        "printedPage": "51"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p60-example3",
+    "page": 60,
+    "printedPage": "53",
+    "label": "例3：含乘方的混合运算",
+    "parts": [
+      "（1）",
+      "（2）"
+    ],
+    "decision": "保留",
+    "reason": "例3两问的运算对象需读者标出和解释，未重抄推演。",
+    "related": [
+      {
+        "locationId": "ch2-minus-square-step",
+        "label": "负号与乘方底数的范围",
+        "purpose": "解释第（2）问把−4²写成−16的依据。",
+        "page": 60,
+        "printedPage": "53"
+      },
+      {
+        "locationId": "ch2-same-level-order",
+        "label": "混合运算顺序",
+        "purpose": "核对同级乘除和加减的次序。",
+        "page": 60,
+        "printedPage": "53"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p60-example4",
+    "page": 60,
+    "printedPage": "53",
+    "label": "例4：三行数的规律（续页为PDF第61页）",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）"
+    ],
+    "decision": "修订",
+    "reason": "60–61三问完整核；原默认注意直接说出第（2）问“加2/取一半”，去掉答案关系，保留对应整体条件。",
+    "related": [
+      {
+        "locationId": "ch2-sequence-position",
+        "label": "数列位置与指数的对应",
+        "purpose": "理解第（3）问的位置编号如何进入列式。",
+        "page": 61,
+        "printedPage": "54"
+      },
+      {
+        "locationId": "ch2-power-factor-count",
+        "label": "乘方的底数与指数",
+        "purpose": "区别指数计数与普通乘数。",
+        "page": 58,
+        "printedPage": "51"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p61-practice",
+    "page": 61,
+    "printedPage": "54",
+    "label": "练习：计算四个混合运算式",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）"
+    ],
+    "decision": "保留",
+    "reason": "四式按结构检查，未给幂、差或倒数的具体值，计算保留。",
+    "related": [
+      {
+        "locationId": "ch2-same-level-order",
+        "label": "混合运算顺序",
+        "purpose": "确定各式的合法计算次序。",
+        "page": 60,
+        "printedPage": "53"
+      },
+      {
+        "locationId": "ch2-division-reciprocal-reason",
+        "label": "除法转化为乘倒数",
+        "purpose": "核对第（3）式的分数除法。",
+        "page": 51,
+        "printedPage": "44"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p62-example5",
+    "page": 62,
+    "printedPage": "55",
+    "label": "例5：用科学记数法表示四个数",
+    "parts": [
+      "第1个数",
+      "第2个数",
+      "第3个数",
+      "第4个数"
+    ],
+    "decision": "保留",
+    "reason": "科学记数法四式条件和中间0检查，未给系数或指数。",
+    "related": [
+      {
+        "locationId": "ch2-scientific-coefficient",
+        "label": "科学记数法的形式条件",
+        "purpose": "检查四个表示式是否满足科学记数法的形式。",
+        "page": 62,
+        "printedPage": "55"
+      },
+      {
+        "locationId": "ch2-scientific-exponent-observe",
+        "label": "整数位数与指数的观察",
+        "purpose": "比较最后一个数与前三个数的数位结构。",
+        "page": 62,
+        "printedPage": "55"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p62-thinking",
+    "page": 62,
+    "printedPage": "55",
+    "label": "思考：整数位数与10的指数",
+    "parts": [
+      "观察位数与指数的关系",
+      "填写n位整数所对应的指数"
+    ],
+    "decision": "保留",
+    "reason": "n≥2与数位观察保留，未代填n−1。",
+    "related": [
+      {
+        "locationId": "ch2-scientific-exponent-observe",
+        "label": "整数位数与指数的观察",
+        "purpose": "按数位变化寻找关系，避免只数末尾0。",
+        "page": 62,
+        "printedPage": "55"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p63-example6",
+    "page": 63,
+    "printedPage": "56",
+    "label": "例6：按要求取近似数（含精确度旁注）",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）",
+      "旁注：近似数1.8与1.80精确度是否相同，1.80后面的0能否去掉"
+    ],
+    "decision": "保留",
+    "reason": "近似数四问和旁注均核；区分数值与精确度，不抄原近似结果。",
+    "related": [
+      {
+        "locationId": "ch2-approximate-trailing-zero",
+        "label": "近似数的精确度",
+        "purpose": "理解（3）（4）为什么保留不同的小数位。",
+        "page": 63,
+        "printedPage": "56"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p63-practice1",
+    "page": 63,
+    "printedPage": "56",
+    "label": "练习第1题：用科学记数法表示各数",
+    "parts": [
+      "第1个数",
+      "第2个数",
+      "第3个数",
+      "第4个数"
+    ],
+    "decision": "保留",
+    "reason": "四数需自行定系数指数，原数信息保留不等于答案。",
+    "related": [
+      {
+        "locationId": "ch2-scientific-coefficient",
+        "label": "科学记数法的形式条件",
+        "purpose": "用形式条件检查四个独立结果。",
+        "page": 62,
+        "printedPage": "55"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p63-practice2",
+    "page": 63,
+    "printedPage": "56",
+    "label": "练习第2题：还原科学记数法表示的数",
+    "parts": [
+      "第1个数",
+      "第2个数",
+      "第3个数",
+      "第4个数",
+      "第5个数"
+    ],
+    "decision": "保留",
+    "reason": "五数按数位还原，未写还原结果或确定所有0数量。",
+    "related": [
+      {
+        "locationId": "ch2-scientific-same-value",
+        "label": "科学记数法的等值改写",
+        "purpose": "用等值改写来理解反向还原。",
+        "page": 61,
+        "printedPage": "54"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p63-practice3",
+    "page": 63,
+    "printedPage": "56",
+    "label": "练习第3题：陆地面积的科学记数法",
+    "parts": [],
+    "decision": "保留",
+    "reason": "数值等值与原数据近似性分开，单位不与指数混用。",
+    "related": [
+      {
+        "locationId": "ch2-scientific-same-value",
+        "label": "科学记数法的等值改写",
+        "purpose": "区分等值改写与原数据本身的近似性质。",
+        "page": 61,
+        "printedPage": "54"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p63-practice4",
+    "page": 63,
+    "printedPage": "56",
+    "label": "练习第4题：按指定精确度取近似数",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）"
+    ],
+    "decision": "保留",
+    "reason": "四问保留位与下一位需学生找出，无舍入结果。",
+    "related": [
+      {
+        "locationId": "ch2-approximate-trailing-zero",
+        "label": "近似数的精确度",
+        "purpose": "检查结果的小数位是否准确表达要求。",
+        "page": 63,
+        "printedPage": "56"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise23-1",
+    "page": 63,
+    "printedPage": "56",
+    "label": "习题2.3第1题：计算乘方",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）",
+      "（5）",
+      "（6）"
+    ],
+    "decision": "保留",
+    "reason": "六问含外部负号和两个幂的积，未给结果符号或关键数值。",
+    "related": [
+      {
+        "locationId": "ch2-power-negative-parity",
+        "label": "负数幂的符号",
+        "purpose": "判断各个负底数幂的符号。",
+        "page": 59,
+        "printedPage": "52"
+      },
+      {
+        "locationId": "ch2-minus-square-step",
+        "label": "负号与乘方底数的范围",
+        "purpose": "区别乘方外面的负号与底数中的负号。",
+        "page": 60,
+        "printedPage": "53"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise23-2",
+    "page": 63,
+    "printedPage": "56",
+    "label": "习题2.3第2题：用计算器计算",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）"
+    ],
+    "decision": "保留",
+    "reason": "计算器输入条件与独立预测保留，未给幂值。",
+    "related": [
+      {
+        "locationId": "ch2-power-factor-count",
+        "label": "乘方的底数与指数",
+        "purpose": "确认输入的指数表示重复乘底数的次数。",
+        "page": 58,
+        "printedPage": "51"
+      },
+      {
+        "locationId": "ch2-power-negative-parity",
+        "label": "负数幂的符号",
+        "purpose": "用符号判断检查显示结果。",
+        "page": 59,
+        "printedPage": "52"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise23-3",
+    "page": 63,
+    "printedPage": "56",
+    "label": "习题2.3第3题：混合运算（续页为PDF第64页）",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）",
+      "（5）",
+      "（6）"
+    ],
+    "decision": "保留",
+    "reason": "63–64跨页六问全部核；−2³的底数范围提示必要，无中间值。",
+    "related": [
+      {
+        "locationId": "ch2-same-level-order",
+        "label": "混合运算顺序",
+        "purpose": "确定六式中各运算链的顺序。",
+        "page": 60,
+        "printedPage": "53"
+      },
+      {
+        "locationId": "ch2-minus-square-step",
+        "label": "负号与乘方底数的范围",
+        "purpose": "辨别第（5）式的幂前负号。",
+        "page": 60,
+        "printedPage": "53"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise23-4",
+    "page": 64,
+    "printedPage": "57",
+    "label": "习题2.3第4题：写成科学记数法",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）"
+    ],
+    "decision": "保留",
+    "reason": "四式数字信息须保留，系数和指数自行定。",
+    "related": [
+      {
+        "locationId": "ch2-scientific-coefficient",
+        "label": "科学记数法的形式条件",
+        "purpose": "核对四种写法的形式条件。",
+        "page": 62,
+        "printedPage": "55"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise23-5",
+    "page": 64,
+    "printedPage": "57",
+    "label": "习题2.3第5题：还原各数",
+    "parts": [
+      "第1个数",
+      "第2个数",
+      "第3个数",
+      "第4个数"
+    ],
+    "decision": "保留",
+    "reason": "四数还原兼顾系数中0与新占位0，未给还原结果。",
+    "related": [
+      {
+        "locationId": "ch2-scientific-same-value",
+        "label": "科学记数法的等值改写",
+        "purpose": "用两种写法表示同一数来检查还原。",
+        "page": 61,
+        "printedPage": "54"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise23-6",
+    "page": 64,
+    "printedPage": "57",
+    "label": "习题2.3第6题：四舍五入",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）"
+    ],
+    "decision": "保留",
+    "reason": "四舍五入只作一次，进位与精确度条件正确，不代填数。",
+    "related": [
+      {
+        "locationId": "ch2-approximate-trailing-zero",
+        "label": "近似数的精确度",
+        "purpose": "核对四个近似结果表达的精确度。",
+        "page": 63,
+        "printedPage": "56"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise23-7",
+    "page": 64,
+    "printedPage": "57",
+    "label": "习题2.3第7题：近似数的生活实例",
+    "parts": [],
+    "decision": "保留",
+    "reason": "自选生活来源与近似目的，不虚构准确测量值。",
+    "related": [
+      {
+        "locationId": "ch2-approximate-context",
+        "label": "准确数与近似数",
+        "purpose": "依据来源和用途辨别所举数据是否近似。",
+        "page": 62,
+        "printedPage": "55"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise23-8",
+    "page": 64,
+    "printedPage": "57",
+    "label": "习题2.3第8题：由平方、立方寻找原数",
+    "parts": [
+      "什么数的平方等于9",
+      "什么数的立方等于−27"
+    ],
+    "decision": "保留",
+    "reason": "平方/立方候选需自行找出，提醒符号遗漏但不提供±3/−3。",
+    "related": [
+      {
+        "locationId": "ch2-power-negative-parity",
+        "label": "负数幂的符号",
+        "purpose": "按指数奇偶检查候选数的符号与是否遗漏。",
+        "page": 59,
+        "printedPage": "52"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise23-9",
+    "page": 64,
+    "printedPage": "57",
+    "label": "习题2.3第9题：长方体的体积与表面积",
+    "parts": [
+      "长宽均为a、高为h时的体积和表面积",
+      "a=2 cm、h=5 cm时的体积和表面积"
+    ],
+    "decision": "保留",
+    "reason": "体积/表面积式子未直接给定；相同长宽与高区分，平方立方单位正确。",
+    "related": [
+      {
+        "locationId": "ch2-power-factor-count",
+        "label": "乘方的底数与指数",
+        "purpose": "将两条相同边长的乘积与平方记法联系起来。",
+        "page": 58,
+        "printedPage": "51"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise23-10",
+    "page": 64,
+    "printedPage": "57",
+    "label": "习题2.3第10题：一年有多少秒",
+    "parts": [],
+    "decision": "保留",
+    "reason": "365天条件来自题设，未给总秒数和标准式。",
+    "related": [
+      {
+        "locationId": "ch2-scientific-coefficient",
+        "label": "科学记数法的形式条件",
+        "purpose": "核对总秒数的最终表示符合科学记数法。",
+        "page": 62,
+        "printedPage": "55"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise23-11",
+    "page": 64,
+    "printedPage": "57",
+    "label": "习题2.3第11题：比较两个速度",
+    "parts": [],
+    "decision": "保留",
+    "reason": "两种单位都统一是比较前提，未选定换算方式或给结果。",
+    "related": [
+      {
+        "locationId": "ch2-speed-unit-practice",
+        "label": "速度单位统一",
+        "purpose": "识别两种速度单位中都要统一的部分。",
+        "page": 64,
+        "printedPage": "57"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise23-12",
+    "page": 64,
+    "printedPage": "57",
+    "label": "习题2.3第12题：小数点移动与幂的变化",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）"
+    ],
+    "decision": "保留",
+    "reason": "三组幂展开追踪倍率，未给平方立方四次方的小数点结论。",
+    "related": [
+      {
+        "locationId": "ch2-power-factor-count",
+        "label": "乘方的底数与指数",
+        "purpose": "用指数表示因数个数来解释观察到的变化。",
+        "page": 58,
+        "printedPage": "51"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-exercise23-13",
+    "page": 64,
+    "printedPage": "57",
+    "label": "习题2.3第13题：在a<0下判断幂的性质",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）"
+    ],
+    "decision": "保留",
+    "reason": "a<0与负号作用范围为判断边界，四条真假及理由保留。",
+    "related": [
+      {
+        "locationId": "ch2-power-negative-parity",
+        "label": "负数幂的符号",
+        "purpose": "为各式的符号判断提供依据。",
+        "page": 59,
+        "printedPage": "52"
+      },
+      {
+        "locationId": "ch2-minus-square-step",
+        "label": "负号与乘方底数的范围",
+        "purpose": "区别底数中的负号与幂前负号。",
+        "page": 60,
+        "printedPage": "53"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p65-activity1",
+    "page": 65,
+    "printedPage": "58",
+    "label": "数学活动1：整理家庭收支账目",
+    "parts": [
+      "记录一个月（或一星期）的家庭生活收支",
+      "计算总收入",
+      "计算总支出",
+      "计算总结余",
+      "计算每日平均支出",
+      "提出合理化建议",
+      "妥善保存账目"
+    ],
+    "decision": "保留",
+    "reason": "活动全部统计要求、建议与保存均覆盖；没有代造家庭账或算出数据。",
+    "related": [
+      {
+        "locationId": "ch2-income-record-activity",
+        "label": "带符号的收支与金额",
+        "purpose": "区分账目中负的支出记录和所报告的支出金额。",
+        "page": 65,
+        "printedPage": "58"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p65-activity2",
+    "page": 65,
+    "printedPage": "58",
+    "label": "数学活动2：填幻方",
+    "parts": [
+      "按图1圆圈中圆点个数填写图2",
+      "将−4至4这9个数填入图3",
+      "与同学交流填写方法"
+    ],
+    "decision": "保留",
+    "reason": "图1计数、图2对照、图3九数各一次及交流方法均覆盖，未给幻方填法。",
+    "related": [
+      {
+        "locationId": "ch2-zero-pair-choice",
+        "label": "相反数相加的配对",
+        "purpose": "利用相反数配对检查若干数的和，但自行决定填法。",
+        "page": 36,
+        "printedPage": "29"
+      },
+      {
+        "locationId": "ch2-associate-order",
+        "label": "加法结合律",
+        "purpose": "比较不同分组计算同一条线总和的依据。",
+        "page": 36,
+        "printedPage": "29"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p67-review1",
+    "page": 67,
+    "printedPage": "60",
+    "label": "回顾与思考第1题：借助绝对值解释运算",
+    "parts": [],
+    "decision": "保留",
+    "reason": "自选含负数例子解释绝对值，不直接算给某道题。",
+    "related": [
+      {
+        "locationId": "ch2-multiplication-sign-magnitude",
+        "label": "乘法的符号与绝对值",
+        "purpose": "参考乘法中符号与绝对值分别承担的任务。",
+        "page": 46,
+        "printedPage": "39"
+      },
+      {
+        "locationId": "ch1-absolute-definition",
+        "label": "绝对值的定义",
+        "purpose": "先说明绝对值保留了哪些信息。",
+        "page": 20,
+        "printedPage": "13"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p67-review2",
+    "page": 67,
+    "printedPage": "60",
+    "label": "回顾与思考第2题：用数轴说明加减法",
+    "parts": [],
+    "decision": "保留",
+    "reason": "自选加减各一例并说明数轴约定，未给图或终点。",
+    "related": [
+      {
+        "locationId": "ch2-motion-result",
+        "label": "数轴上的位移与路程",
+        "purpose": "区分运算表示的位置变化与走过的路程。",
+        "page": 32,
+        "printedPage": "25"
+      },
+      {
+        "locationId": "ch1-number-line",
+        "label": "数轴的三个要素",
+        "purpose": "保证所画数轴具备三个必要要素。",
+        "page": 17,
+        "printedPage": "10"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p67-review3",
+    "page": 67,
+    "printedPage": "60",
+    "label": "回顾与思考第3题：数系扩充与除法",
+    "parts": [],
+    "decision": "保留",
+    "reason": "扩数域与非零除数分开，保留自选例子说明。",
+    "related": [
+      {
+        "locationId": "ch2-division-condition-review",
+        "label": "除法的非零条件",
+        "purpose": "区分数的范围扩充与除数非零的限制。",
+        "page": 67,
+        "printedPage": "60"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p67-review4",
+    "page": 67,
+    "printedPage": "60",
+    "label": "回顾与思考第4题：运算之间的联系",
+    "parts": [
+      "加法与减法、乘法与除法的关系",
+      "混合运算能否都转为加法与乘法"
+    ],
+    "decision": "修订",
+    "reason": "原默认知识及关联标签直接回答两类转化；改为定义、量的关系与条件线索，保留非零条件和原目标，方法需自行说明联系。",
+    "related": [
+      {
+        "locationId": "ch2-subtract-add-opposite",
+        "label": "减法的定义与依据",
+        "purpose": "回顾减法中各量的关系，支持自己说明加法与减法的联系。",
+        "page": 38,
+        "printedPage": "31"
+      },
+      {
+        "locationId": "ch2-division-reciprocal-reason",
+        "label": "除法的定义与条件",
+        "purpose": "回顾除法如何确定商，并核对除数非零的条件。",
+        "page": 51,
+        "printedPage": "44"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p67-review5",
+    "page": 67,
+    "printedPage": "60",
+    "label": "回顾与思考第5题：运算律的作用",
+    "parts": [
+      "有哪些运算律",
+      "结合例子说明作用"
+    ],
+    "decision": "保留",
+    "reason": "运算律名称作回顾线索，仍须自选例子解释作用，未代论证。",
+    "related": [
+      {
+        "locationId": "ch2-law-order-review",
+        "label": "运算律与运算顺序",
+        "purpose": "区分运算律带来的等值改写与原式的运算顺序。",
+        "page": 67,
+        "printedPage": "60"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p67-review6",
+    "page": 67,
+    "printedPage": "60",
+    "label": "回顾与思考第6题：乘方与混合运算",
+    "parts": [
+      "什么是有理数的乘方",
+      "混合运算按什么顺序进行"
+    ],
+    "decision": "保留",
+    "reason": "乘方含义与运算分层需复述，未代写一般流程答案。",
+    "related": [
+      {
+        "locationId": "ch2-power-factor-count",
+        "label": "乘方的底数与指数",
+        "purpose": "用因数个数解释乘方。",
+        "page": 58,
+        "printedPage": "51"
+      },
+      {
+        "locationId": "ch2-same-level-order",
+        "label": "混合运算顺序",
+        "purpose": "准确说明同级运算的次序。",
+        "page": 60,
+        "printedPage": "53"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p67-review7",
+    "page": 67,
+    "printedPage": "60",
+    "label": "回顾与思考第7题：理解有理数的分数形式",
+    "parts": [],
+    "decision": "保留",
+    "reason": "p、q条件与整数表示需自行举例说明，0边界不混。",
+    "related": [
+      {
+        "locationId": "ch1-rational-form",
+        "label": "有理数的分数形式",
+        "purpose": "把整数与分数放到同一个有理数表示条件下理解。",
+        "page": 14,
+        "printedPage": "7"
+      },
+      {
+        "locationId": "ch2-rational-closure-review",
+        "label": "有理数的分数表示与运算",
+        "purpose": "联系本章运算结果为何仍是有理数。",
+        "page": 66,
+        "printedPage": "59"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p67-review8",
+    "page": 67,
+    "printedPage": "60",
+    "label": "回顾与思考第8题：梳理数系扩充",
+    "parts": [
+      "梳理从非负有理数系扩充到有理数系的过程",
+      "对数系扩充的认识"
+    ],
+    "decision": "保留",
+    "reason": "新增数与旧规则的连续性，不代列数系扩充完整叙述。",
+    "related": [
+      {
+        "locationId": "ch1-number-extension-review",
+        "label": "数的范围扩充",
+        "purpose": "说明新数加入后原来的数仍保留。",
+        "page": 28,
+        "printedPage": "21"
+      },
+      {
+        "locationId": "ch2-multiplication-consistency",
+        "label": "有理数运算的一致性",
+        "purpose": "理解扩大数的范围时保留原运算意义的要求。",
+        "page": 45,
+        "printedPage": "38"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-review2-1",
+    "page": 68,
+    "printedPage": "61",
+    "label": "复习题2第1题：四则运算",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）",
+      "（5）",
+      "（6）",
+      "（7）",
+      "（8）",
+      "（9）"
+    ],
+    "decision": "修订",
+    "reason": "原知识已预判逐问同异号，改为自行分类选择法则；各式计算未给出。",
+    "related": [
+      {
+        "locationId": "ch2-subtract-add-opposite",
+        "label": "减去一个数与加其相反数",
+        "purpose": "检查（3）（4）的减法转换。",
+        "page": 38,
+        "printedPage": "31"
+      },
+      {
+        "locationId": "ch2-multiplication-sign-magnitude",
+        "label": "乘法的符号与绝对值",
+        "purpose": "区分乘法的符号判断与加法规则。",
+        "page": 46,
+        "printedPage": "39"
+      },
+      {
+        "locationId": "ch2-division-reciprocal-reason",
+        "label": "除法转化为乘倒数",
+        "purpose": "处理（7）—（9）的除法。",
+        "page": 51,
+        "printedPage": "44"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-review2-2",
+    "page": 68,
+    "printedPage": "61",
+    "label": "复习题2第2题：混合运算",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）",
+      "（5）",
+      "（6）"
+    ],
+    "decision": "保留",
+    "reason": "六式各自结构线索无中间值，学生仍选下一步与简算。",
+    "related": [
+      {
+        "locationId": "ch2-same-level-order",
+        "label": "混合运算顺序",
+        "purpose": "判断六式的运算次序。",
+        "page": 60,
+        "printedPage": "53"
+      },
+      {
+        "locationId": "ch2-law-order-review",
+        "label": "运算律与运算顺序",
+        "purpose": "为选用的简算改写说明依据。",
+        "page": 67,
+        "printedPage": "60"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-review2-3",
+    "page": 68,
+    "printedPage": "61",
+    "label": "复习题2第3题：相反数的和与倒数的积",
+    "parts": [
+      "互为相反数的两数之和",
+      "互为倒数的两数之积"
+    ],
+    "decision": "保留",
+    "reason": "区分相反数与倒数，未默认给和0/积1；定义与0边界需回顾。",
+    "related": [
+      {
+        "locationId": "ch1-opposite-pair",
+        "label": "相反数的定义",
+        "purpose": "回顾相反数所描述的两数关系。",
+        "page": 19,
+        "printedPage": "12"
+      },
+      {
+        "locationId": "ch2-reciprocal-condition",
+        "label": "倒数的定义与条件",
+        "purpose": "回顾倒数的定义与非零边界。",
+        "page": 47,
+        "printedPage": "40"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-review2-4",
+    "page": 68,
+    "printedPage": "61",
+    "label": "复习题2第4题：科学记数法",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）"
+    ],
+    "decision": "保留",
+    "reason": "三个数系数指数自行定，未丢原非零数字或作近似。",
+    "related": [
+      {
+        "locationId": "ch2-scientific-coefficient",
+        "label": "科学记数法的形式条件",
+        "purpose": "检查三个表示式的系数条件。",
+        "page": 62,
+        "printedPage": "55"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-review2-5",
+    "page": 68,
+    "printedPage": "61",
+    "label": "复习题2第5题：取近似数",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）"
+    ],
+    "decision": "保留",
+    "reason": "四问保留位为概念线索，不给舍入值，保留末尾0条件。",
+    "related": [
+      {
+        "locationId": "ch2-approximate-trailing-zero",
+        "label": "近似数的精确度",
+        "purpose": "解释第（3）问等结果中末尾0的记录作用。",
+        "page": 63,
+        "printedPage": "56"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-review2-6",
+    "page": 68,
+    "printedPage": "61",
+    "label": "复习题2第6题：绝对值与减法",
+    "parts": [
+      "（1）",
+      "（2）"
+    ],
+    "decision": "保留",
+    "reason": "两式竖线对象不同，未给各自绝对值与整式结果。",
+    "related": [
+      {
+        "locationId": "ch2-absolute-scope-practice",
+        "label": "绝对值符号的作用范围",
+        "purpose": "对照两式的绝对值作用范围。",
+        "page": 68,
+        "printedPage": "61"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-review2-7",
+    "page": 68,
+    "printedPage": "61",
+    "label": "复习题2第7题：三支球队的净胜球数",
+    "parts": [
+      "三个球队各自的净胜球数"
+    ],
+    "decision": "保留",
+    "reason": "三队两场的角色需自行整理，未给任何净胜球。",
+    "related": [
+      {
+        "locationId": "ch1-opposite-meanings",
+        "label": "相反意义的量",
+        "purpose": "将进球与失球作为同一量的相反方面记录。",
+        "page": 10,
+        "printedPage": "3"
+      },
+      {
+        "locationId": "ch2-signed-change",
+        "label": "正负变化的合并",
+        "purpose": "理解正负记录为何能共同进入求和。",
+        "page": 31,
+        "printedPage": null
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-review2-8",
+    "page": 68,
+    "printedPage": "61",
+    "label": "复习题2第8题：估算并计算平均成绩（续页为PDF第69页）",
+    "parts": [
+      "估算10名学生的平均成绩",
+      "计算平均成绩并检验估值"
+    ],
+    "decision": "保留",
+    "reason": "68–69跨页完整核；先估后算且记录依据，未直接给均值。",
+    "related": [
+      {
+        "locationId": "ch2-deviation-sum",
+        "label": "偏差与实际数量的关系",
+        "purpose": "借助统一基准理解成绩偏差与实际总量的关系。",
+        "page": 37,
+        "printedPage": "30"
+      }
+    ]
+  }
+]

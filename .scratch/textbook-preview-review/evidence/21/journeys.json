@@ -1,0 +1,179 @@
+[
+  {
+    "name": "desktop full printed-page journey with native CDP pointer and keys",
+    "result": "pass",
+    "viewport": [
+      1400,
+      1000
+    ],
+    "details": {
+      "before": {
+        "fraction": -0.21117395414416867,
+        "panelScroll": 13,
+        "title": "习题1.1第6题",
+        "expanded": null,
+        "focus": "related-ch1-measurement-exercise-ch1-deviation",
+        "highlight": "location-ch1-measurement-exercise",
+        "back": false,
+        "methods": [
+          "method-ch1-measurement-exercise"
+        ]
+      },
+      "returned": {
+        "fraction": -0.21117395414416867,
+        "panelScroll": 13,
+        "title": "习题1.1第6题",
+        "expanded": null,
+        "focus": "related-ch1-measurement-exercise-ch1-deviation",
+        "highlight": "location-ch1-measurement-exercise",
+        "back": false,
+        "methods": [
+          "method-ch1-measurement-exercise"
+        ]
+      },
+      "saved": {
+        "version": 1,
+        "documentSha256": "6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249",
+        "page": 13,
+        "fraction": -0.21076923076923076
+      },
+      "refreshed": {
+        "fraction": -0.21117395414416867,
+        "panelScroll": 0,
+        "expanded": null,
+        "focus": "",
+        "highlight": null,
+        "back": false,
+        "methods": []
+      }
+    }
+  },
+  {
+    "name": "narrow expanded navigation/boundaries, native keyboard and DOM button activation",
+    "result": "pass",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "name": "narrow collapsed navigation/boundaries, native keyboard and DOM button activation",
+    "result": "pass",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "name": "narrow full printed-page journey with native CDP pointer and keys",
+    "result": "pass",
+    "viewport": [
+      390,
+      844
+    ],
+    "details": {
+      "before": {
+        "fraction": -0.19775639604487208,
+        "panelScroll": 830,
+        "title": "此处解读",
+        "expanded": "choice-ch1-measurement-exercise",
+        "focus": "related-ch1-measurement-exercise-ch1-deviation",
+        "highlight": "location-ch1-measurement-exercise",
+        "back": false,
+        "methods": [
+          "method-ch1-measurement-exercise"
+        ]
+      },
+      "returned": {
+        "fraction": -0.19775639604487208,
+        "panelScroll": 830,
+        "title": "此处解读",
+        "expanded": "choice-ch1-measurement-exercise",
+        "focus": "related-ch1-measurement-exercise-ch1-deviation",
+        "highlight": "location-ch1-measurement-exercise",
+        "back": false,
+        "methods": [
+          "method-ch1-measurement-exercise"
+        ]
+      },
+      "saved": {
+        "version": 1,
+        "documentSha256": "6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249",
+        "page": 13,
+        "fraction": -0.19754253308128544
+      },
+      "refreshed": {
+        "fraction": -0.19775639604487208,
+        "panelScroll": 0,
+        "expanded": null,
+        "focus": "",
+        "highlight": null,
+        "back": false,
+        "methods": []
+      }
+    }
+  },
+  {
+    "name": "narrow method draft protection",
+    "result": "pass",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "name": "narrow grouped choice/keyboard/switching",
+    "result": "pass",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "name": "narrow method multi-level return/context/focus",
+    "result": "pass",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "name": "narrow failure/retry/cancel/rapid-click",
+    "result": "pass",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "name": "narrow title-only draft",
+    "result": "pass",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "name": "narrow draft input cancels delayed navigation",
+    "result": "pass",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "name": "narrow stacked panel keyboard resize preserves region",
+    "result": "pass",
+    "viewport": [
+      390,
+      844
+    ],
+    "details": {
+      "size": "50",
+      "horizontalOverflow": false,
+      "panelHeight": 368,
+      "paperHeight": 370,
+      "imageWidth": 1304
+    }
+  }
+]

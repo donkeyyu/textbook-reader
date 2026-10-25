@@ -1,0 +1,56 @@
+[
+  {
+    "id": "ch5-q-p130-think",
+    "sourcePage": 130,
+    "noteSha256": "c583cb2a72adf819183bf60990b2c4ba61eb6f26f8599152b7ee475085595a9d",
+    "preview": {
+      "title": "思考：移项为后面的哪一步准备",
+      "text": "对照变形前后的项，自己说明这一步怎样帮助求解。"
+    },
+    "default": {
+      "collapsed": true,
+      "knowledgeMatches": true,
+      "cautionsMatches": true,
+      "methodMatches": true
+    },
+    "methodMouseKeyboard": true,
+    "links": [
+      {
+        "target": {
+          "highlight": "location-ch5-choose-side",
+          "nav": "文件页序 130/202课本第 123 页"
+        },
+        "targetPage": 130,
+        "returnRestored": true
+      }
+    ],
+    "checkedAt": "2026-10-25T05:39:01.477Z"
+  },
+  {
+    "id": "ch5-q-p129-problem2",
+    "sourcePage": 129,
+    "noteSha256": "24a68e2174e51aa5559044498499bda51b0b409fd3dc0b76d74b4f71b75455f5",
+    "preview": {
+      "title": "问题2：两次分法指向同一批书",
+      "text": "分清实际书数、需要书数与剩余或缺少的数量。"
+    },
+    "default": {
+      "collapsed": true,
+      "knowledgeMatches": true,
+      "cautionsMatches": true,
+      "methodMatches": true
+    },
+    "methodMouseKeyboard": true,
+    "links": [
+      {
+        "target": {
+          "highlight": "location-ch5-same-total",
+          "nav": "文件页序 129/202课本第 122 页"
+        },
+        "targetPage": 129,
+        "returnRestored": true
+      }
+    ],
+    "checkedAt": "2026-10-25T05:39:17.324Z"
+  }
+]

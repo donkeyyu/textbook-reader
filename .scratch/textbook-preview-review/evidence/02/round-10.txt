@@ -1,0 +1,6 @@
+Error: page.waitForSelector timed out after 10000ms: #location-ch1-order-on-axis
+    at waitForSelectorInPage (file:////[eval1]:16399:11)
+    at async file:////[eval1]:16940:28
+[ego-browser:notice] Ego Lite update is available (current 0.6.0.16). Finish the current browser task, then ask the user before running `ego-browser upgrade`; re-read the ego-browser Skill afterward.
+
+ego's nodejs process exited with code 1.

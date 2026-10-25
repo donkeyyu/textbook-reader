@@ -1,0 +1,655 @@
+{
+  "date": "2026-10-25T05:46:25.754Z",
+  "url": "http://127.0.0.1:5196/",
+  "space": 39,
+  "input": "public DOM controls and focus; no React state access; DOM assertions, not pixel review",
+  "versions": {
+    "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+    "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+    "content/grade-7-volume-1/chapter-6.json": "a800d8e822fdc13f1740403c0bb852debfd01b3c3068febebc07325d81c6b845"
+  },
+  "results": [
+    {
+      "id": "ch6-p181-equal-angle-fill",
+      "page": 181,
+      "printedPage": "174",
+      "noteSha256": "1579a7472e7791ea857da095ab25c2cc14acf31e59f649720003b4725d3e48b6",
+      "preview": {
+        "group": [
+          "ch6-p181-equal-angle-fill"
+        ],
+        "aria": "题目引导：填空：把角分成两等份",
+        "text": "两部分相等时，整角与每一部分有什么数量联系？",
+        "highlights": [
+          "location-ch6-p181-equal-angle-fill"
+        ],
+        "sourcePaper": "page-181",
+        "region": {
+          "x": 0.175,
+          "y": 0.879,
+          "width": 0.6,
+          "height": 0.036000000000000004
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "填空：把角分成两等份",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p181-equal-angle-fill",
+        "sourcePage": 181,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-bisector-ray-conditions",
+            "id": "related-ch6-p181-equal-angle-fill-ch6-bisector-ray-conditions",
+            "label": "角平分线的条件",
+            "purposeMatches": true,
+            "pageLabel": "课本第 175 页",
+            "targetFilePage": 182,
+            "clicked": false
+          },
+          {
+            "target": "ch6-angle-sum-interior-ray",
+            "id": "related-ch6-p181-equal-angle-fill-ch6-angle-sum-interior-ray",
+            "label": "角的分割与加法",
+            "purposeMatches": true,
+            "pageLabel": "课本第 173 页",
+            "targetFilePage": 180,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p182-example-3",
+      "page": 182,
+      "printedPage": "175",
+      "noteSha256": "59e3a9089a93467e366f7a2828c995929f08a52cd74d7fb061809413c8b07c57",
+      "preview": {
+        "group": [
+          "ch6-p182-example-3"
+        ],
+        "aria": "题目引导：例3：把周角七等分",
+        "text": "等分的准确值与精确到分的近似值，有什么区别？",
+        "highlights": [
+          "location-ch6-p182-example-3"
+        ],
+        "sourcePaper": "page-182",
+        "region": {
+          "x": 0.175,
+          "y": 0.524,
+          "width": 0.59,
+          "height": 0.02
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "例3：把周角七等分",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p182-example-3",
+        "sourcePage": 182,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-compound-angle-units",
+            "id": "related-ch6-p182-example-3-ch6-compound-angle-units",
+            "label": "度分秒的单位关系",
+            "purposeMatches": true,
+            "pageLabel": "课本第 171 页",
+            "targetFilePage": 178,
+            "clicked": false
+          },
+          {
+            "target": "ch6-angle-round-to-minute",
+            "id": "related-ch6-p182-example-3-ch6-angle-round-to-minute",
+            "label": "精确到分的舍入",
+            "purposeMatches": true,
+            "pageLabel": "课本第 175 页",
+            "targetFilePage": 182,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p182-exercise-1",
+      "page": 182,
+      "printedPage": "175",
+      "noteSha256": "0b7c7903ac10a78d2a0ac7a7e002adf6204fcfe391cd019563e4cd4c7f4db68c",
+      "preview": {
+        "group": [
+          "ch6-p182-exercise-1"
+        ],
+        "aria": "题目引导：练习第1题：蛋糕的等分角",
+        "text": "整个蛋糕对应的总角、份数与每份角，各表示什么？",
+        "highlights": [
+          "location-ch6-p182-exercise-1"
+        ],
+        "sourcePaper": "page-182",
+        "region": {
+          "x": 0.153,
+          "y": 0.773,
+          "width": 0.57,
+          "height": 0.073
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "练习第1题：蛋糕的等分角",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p182-exercise-1",
+        "sourcePage": 182,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-bisector-ray-conditions",
+            "id": "related-ch6-p182-exercise-1-ch6-bisector-ray-conditions",
+            "label": "角的等分关系",
+            "purposeMatches": true,
+            "pageLabel": "课本第 175 页",
+            "targetFilePage": 182,
+            "clicked": false
+          },
+          {
+            "target": "ch6-compound-angle-units",
+            "id": "related-ch6-p182-exercise-1-ch6-compound-angle-units",
+            "label": "角度单位",
+            "purposeMatches": true,
+            "pageLabel": "课本第 171 页",
+            "targetFilePage": 178,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p183-exercise-2",
+      "page": 183,
+      "printedPage": "176",
+      "noteSha256": "9f2a6c06d557eb265ccdafff639887a5e166c97c12517168f605c90d7ea6ba2a",
+      "preview": {
+        "group": [
+          "ch6-p183-exercise-2"
+        ],
+        "aria": "题目引导：练习第2题：平角平分后的角度",
+        "text": "已知的平分线，究竟把哪个角分成了两份？",
+        "highlights": [
+          "location-ch6-p183-exercise-2"
+        ],
+        "sourcePaper": "page-183",
+        "region": {
+          "x": 0.11,
+          "y": 0.092,
+          "width": 0.55,
+          "height": 0.047
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "练习第2题：平角平分后的角度",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p183-exercise-2",
+        "sourcePage": 183,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-bisector-ray-conditions",
+            "id": "related-ch6-p183-exercise-2-ch6-bisector-ray-conditions",
+            "label": "角平分线的条件",
+            "purposeMatches": true,
+            "pageLabel": "课本第 175 页",
+            "targetFilePage": 182,
+            "clicked": false
+          },
+          {
+            "target": "ch6-angle-sum-interior-ray",
+            "id": "related-ch6-p183-exercise-2-ch6-angle-sum-interior-ray",
+            "label": "角的和差关系",
+            "purposeMatches": true,
+            "pageLabel": "课本第 173 页",
+            "targetFilePage": 180,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p183-exercise-3",
+      "page": 183,
+      "printedPage": "176",
+      "noteSha256": "aed3751e222609847195a54b29cf50191ab951f8edd1842fafe831c2d3e9bda9",
+      "preview": {
+        "group": [
+          "ch6-p183-exercise-3"
+        ],
+        "aria": "题目引导：练习第3题：角度乘除",
+        "text": "运算后怎样保持单位含义，并符合精度要求？",
+        "highlights": [
+          "location-ch6-p183-exercise-3"
+        ],
+        "sourcePaper": "page-183",
+        "region": {
+          "x": 0.11,
+          "y": 0.149,
+          "width": 0.095,
+          "height": 0.02
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "练习第3题：角度乘除",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p183-exercise-3",
+        "sourcePage": 183,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-compound-angle-units",
+            "id": "related-ch6-p183-exercise-3-ch6-compound-angle-units",
+            "label": "复合角度单位",
+            "purposeMatches": true,
+            "pageLabel": "课本第 171 页",
+            "targetFilePage": 178,
+            "clicked": false
+          },
+          {
+            "target": "ch6-angle-round-to-minute",
+            "id": "related-ch6-p183-exercise-3-ch6-angle-round-to-minute",
+            "label": "精确到分的舍入",
+            "purposeMatches": true,
+            "pageLabel": "课本第 175 页",
+            "targetFilePage": 182,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p183-complements-think",
+      "page": 183,
+      "printedPage": "176",
+      "noteSha256": "7570428357656eb2700d53bf63757b33529bd7823e6d20026a7f93b81b40a7c0",
+      "preview": {
+        "group": [
+          "ch6-p183-complements-think"
+        ],
+        "aria": "题目引导：思考：同一个角的余角与补角",
+        "text": "比较余角或补角时，为什么要看它们分别与谁配对？",
+        "highlights": [
+          "location-ch6-p183-complements-think"
+        ],
+        "sourcePaper": "page-183",
+        "region": {
+          "x": 0.153,
+          "y": 0.6890000000000001,
+          "width": 0.6,
+          "height": 0.048
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "思考：同一个角的余角与补角",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p183-complements-think",
+        "sourcePage": 183,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-complementary-position-independent",
+            "id": "related-ch6-p183-complements-think-ch6-complementary-position-independent",
+            "label": "互余与互补的数量关系",
+            "purposeMatches": true,
+            "pageLabel": "课本第 176 页",
+            "targetFilePage": 183,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p183-equal-supplements-why",
+      "page": 183,
+      "printedPage": "176",
+      "noteSha256": "f47121ed34e54a1001760a9253ef44c712b322f87dde00e1568c3313d186082e",
+      "preview": {
+        "group": [
+          "ch6-p183-equal-supplements-why"
+        ],
+        "aria": "题目引导：旁问：说明同角或等角的补角相等",
+        "text": "“同角”与“等角”的条件，怎样进入补角的理由？",
+        "highlights": [
+          "location-ch6-p183-equal-supplements-why"
+        ],
+        "sourcePaper": "page-183",
+        "region": {
+          "x": 0.638,
+          "y": 0.84,
+          "width": 0.22,
+          "height": 0.07200000000000001
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "旁问：说明同角或等角的补角相等",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p183-equal-supplements-why",
+        "sourcePage": 183,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-equal-angle-complements",
+            "id": "related-ch6-p183-equal-supplements-why-ch6-equal-angle-complements",
+            "label": "同角与等角的使用条件",
+            "purposeMatches": true,
+            "pageLabel": "课本第 176 页",
+            "targetFilePage": 183,
+            "clicked": false
+          },
+          {
+            "target": "ch6-complementary-position-independent",
+            "id": "related-ch6-p183-equal-supplements-why-ch6-complementary-position-independent",
+            "label": "互补的数量关系",
+            "purposeMatches": true,
+            "pageLabel": "课本第 176 页",
+            "targetFilePage": 183,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p184-example4",
+      "page": 184,
+      "printedPage": "177",
+      "noteSha256": "794dfad9d6e77c64c7e63240d4413ab5e5164a20b6dffd0e3555be19c0acd0f8",
+      "preview": {
+        "group": [
+          "ch6-q-p184-example4"
+        ],
+        "aria": "题目引导：例4：辨认互为余角的角",
+        "text": "图中的平角条件与等分条件，分别提供什么依据？",
+        "highlights": [
+          "location-ch6-q-p184-example4"
+        ],
+        "sourcePaper": "page-184",
+        "region": {
+          "x": 0.13,
+          "y": 0.07,
+          "width": 0.7879999999999999,
+          "height": 0.046
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "例4：辨认互为余角的角",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p184-example4",
+        "sourcePage": 184,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-bisector-ray-conditions",
+            "id": "related-ch6-q-p184-example4-ch6-bisector-ray-conditions",
+            "label": "角的平分线",
+            "purposeMatches": true,
+            "pageLabel": "课本第 175 页",
+            "targetFilePage": 182,
+            "clicked": false
+          },
+          {
+            "target": "ch6-complementary-position-independent",
+            "id": "related-ch6-q-p184-example4-ch6-complementary-position-independent",
+            "label": "补角",
+            "purposeMatches": true,
+            "pageLabel": "课本第 176 页",
+            "targetFilePage": 183,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p184-practice1",
+      "page": 184,
+      "printedPage": "177",
+      "noteSha256": "9ca18b7cdd2d717a90c8ac92ca8b5fb00f168821632e124afd0cf138993309bb",
+      "preview": {
+        "group": [
+          "ch6-q-p184-practice1"
+        ],
+        "aria": "题目引导：练习第1题：找互余与互补的角",
+        "text": "互余与互补比较的是度数，还是图中的位置？",
+        "highlights": [
+          "location-ch6-q-p184-practice1"
+        ],
+        "sourcePaper": "page-184",
+        "region": {
+          "x": 0.15,
+          "y": 0.507,
+          "width": 0.713,
+          "height": 0.024
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "练习第1题：找互余与互补的角",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p184-practice1",
+        "sourcePage": 184,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-example4-complement-pairs",
+            "id": "related-ch6-q-p184-practice1-ch6-example4-complement-pairs",
+            "label": "余角的数量关系",
+            "purposeMatches": true,
+            "pageLabel": "课本第 177 页",
+            "targetFilePage": 184,
+            "clicked": false
+          },
+          {
+            "target": "ch6-complementary-position-independent",
+            "id": "related-ch6-q-p184-practice1-ch6-complementary-position-independent",
+            "label": "补角",
+            "purposeMatches": true,
+            "pageLabel": "课本第 176 页",
+            "targetFilePage": 183,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p184-practice2",
+      "page": 184,
+      "printedPage": "177",
+      "noteSha256": "3162b8f53e93bef1e20b68014fbeba8899056a18af09318ba29b55624d358898",
+      "preview": {
+        "group": [
+          "ch6-q-p184-practice2"
+        ],
+        "aria": "题目引导：练习第2题：求70°39′角的余角与补角",
+        "text": "余角与补角各自满足什么条件？度分写法怎样保持同一角度？",
+        "highlights": [
+          "location-ch6-q-p184-practice2"
+        ],
+        "sourcePaper": "page-184",
+        "region": {
+          "x": 0.15,
+          "y": 0.755,
+          "width": 0.49200000000000005,
+          "height": 0.024
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "练习第2题：求70°39′角的余角与补角",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p184-practice2",
+        "sourcePage": 184,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-complementary-position-independent",
+            "id": "related-ch6-q-p184-practice2-ch6-complementary-position-independent",
+            "label": "补角",
+            "purposeMatches": true,
+            "pageLabel": "课本第 176 页",
+            "targetFilePage": 183,
+            "clicked": false
+          },
+          {
+            "target": "ch6-compound-angle-units",
+            "id": "related-ch6-q-p184-practice2-ch6-compound-angle-units",
+            "label": "度、分、秒",
+            "purposeMatches": true,
+            "pageLabel": "课本第 171 页",
+            "targetFilePage": 178,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p184-practice3",
+      "page": 184,
+      "printedPage": "177",
+      "noteSha256": "cbd0482c197237bf8ef4314ffe4e3fda770245fa45aaf0f22d876818c64fef16",
+      "preview": {
+        "group": [
+          "ch6-q-p184-practice3"
+        ],
+        "aria": "题目引导：练习第3题：由补角的倍数关系求角",
+        "text": "“补角”与“3倍”是两个条件，需要同时满足。",
+        "highlights": [
+          "location-ch6-q-p184-practice3"
+        ],
+        "sourcePaper": "page-184",
+        "region": {
+          "x": 0.15,
+          "y": 0.784,
+          "width": 0.45,
+          "height": 0.024
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "练习第3题：由补角的倍数关系求角",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p184-practice3",
+        "sourcePage": 184,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-complementary-position-independent",
+            "id": "related-ch6-q-p184-practice3-ch6-complementary-position-independent",
+            "label": "补角",
+            "purposeMatches": true,
+            "pageLabel": "课本第 176 页",
+            "targetFilePage": 183,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    }
+  ]
+}

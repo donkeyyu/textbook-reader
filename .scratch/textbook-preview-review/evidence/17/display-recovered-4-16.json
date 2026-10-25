@@ -1,0 +1,164 @@
+{
+  "date": "2026-10-25T05:35:22.980Z",
+  "space": 39,
+  "versions": {
+    "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+    "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+    "content/grade-7-volume-1/chapter-6.json": "951f72660d4869b36979430049a08b7ce6747af4ec09ee0ebc692d845f62d586"
+  },
+  "results": [
+    {
+      "id": "ch6-p173-exercise-2",
+      "page": 173,
+      "printedPage": "166",
+      "preview": {
+        "group": 1,
+        "aria": "题目引导：练习第2题：作线段等于a+2b",
+        "text": "目标长度中的a、b和倍数，怎样对应图中的线段？",
+        "highlights": [
+          "location-ch6-p173-exercise-2"
+        ]
+      },
+      "default": {
+        "title": "练习第2题：作线段等于a+2b",
+        "knowledge": [
+          "等长线段的复制",
+          "线段的和"
+        ],
+        "cautions": [
+          "2b说明长度关系，不是只把写着b的图形随意放大。"
+        ],
+        "paragraphs": [],
+        "methodExpanded": "false",
+        "methodHidden": true,
+        "highlight": "location-ch6-p173-exercise-2"
+      },
+      "links": [
+        {
+          "target": "ch6-compass-copy-length",
+          "targetPage": "page-171",
+          "returnFocus": "related-ch6-p173-exercise-2-ch6-compass-copy-length",
+          "positionDelta": 0,
+          "methodRestored": true
+        },
+        {
+          "target": "ch6-segment-sum-between",
+          "targetPage": "page-172",
+          "returnFocus": "related-ch6-p173-exercise-2-ch6-segment-sum-between",
+          "positionDelta": 0,
+          "methodRestored": true
+        }
+      ],
+      "input": "hover native; controls via DOM click; first batch separately covered Enter/Space",
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p173-exercises-1",
+      "page": 173,
+      "printedPage": "166",
+      "preview": {
+        "group": 1,
+        "aria": "题目引导：习题6.2第1题：按给定点作图",
+        "text": "直线、射线与“连接”，要求画出的范围有何不同？",
+        "highlights": [
+          "location-ch6-p173-exercises-1"
+        ]
+      },
+      "default": {
+        "title": "习题6.2第1题：按给定点作图",
+        "knowledge": [
+          "直线、射线、线段的表示"
+        ],
+        "cautions": [
+          "“连接”与“画直线”要求的图形不同。",
+          "射线字母次序给定了端点，不可互换。"
+        ],
+        "paragraphs": [],
+        "methodExpanded": "false",
+        "methodHidden": true,
+        "highlight": "location-ch6-p173-exercises-1"
+      },
+      "links": [
+        {
+          "target": "ch6-ray-name-order",
+          "targetPage": "page-170",
+          "returnFocus": "related-ch6-p173-exercises-1-ch6-ray-name-order",
+          "positionDelta": 0,
+          "methodRestored": true
+        },
+        {
+          "target": "ch6-line-points-not-ends",
+          "targetPage": "page-169",
+          "returnFocus": "related-ch6-p173-exercises-1-ch6-line-points-not-ends",
+          "positionDelta": 0,
+          "methodRestored": true
+        }
+      ],
+      "input": "hover native; controls via DOM click; first batch separately covered Enter/Space",
+      "result": "pass"
+    }
+  ],
+  "priorFailures": [
+    {
+      "id": "ch6-p170-ray-line-question",
+      "reason": "ElementResolutionError: page.hover timed out after 3000ms: page.hover failed: element is not visible in the viewport",
+      "accepted": false,
+      "resolution": "see later accepted display records"
+    },
+    {
+      "id": "ch6-p170-exercise-1",
+      "reason": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:",
+      "accepted": false,
+      "resolution": "see later accepted display records"
+    },
+    {
+      "id": "ch6-p170-exercise-2",
+      "reason": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:",
+      "accepted": false,
+      "resolution": "see later accepted display records"
+    },
+    {
+      "id": "ch6-p170-exercise-3",
+      "reason": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:",
+      "accepted": false,
+      "resolution": "see later accepted display records"
+    },
+    {
+      "id": "ch6-p171-tools-question",
+      "reason": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:",
+      "accepted": false,
+      "resolution": "see later accepted display records"
+    },
+    {
+      "id": "ch6-p171-comparison-explore",
+      "reason": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:",
+      "accepted": false,
+      "resolution": "see later accepted display records"
+    },
+    {
+      "id": "ch6-p171-comparison-cases",
+      "reason": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:",
+      "accepted": false,
+      "resolution": "see later accepted display records"
+    },
+    {
+      "id": "ch6-p172-shortest-explore",
+      "reason": "ElementResolutionError: page.press timed out after 3000ms: Selector #page-input matched 0 elements",
+      "accepted": false,
+      "resolution": "see later accepted display records"
+    },
+    {
+      "id": "ch6-p172-shortest-application",
+      "reason": "Error: page.waitForFunction timed out after 10000ms on page p1; last URL was \"http://127.0.0.1:5196/\"; last title was \"课本解读\".",
+      "accepted": false,
+      "resolution": "see later accepted display records"
+    },
+    {
+      "id": "ch6-p172-example",
+      "reason": "Error: page.waitForFunction timed out after 10000ms on page p1; last URL was \"http://127.0.0.1:5196/\"; last title was \"课本解读\".",
+      "accepted": false,
+      "resolution": "see later accepted display records"
+    }
+  ],
+  "evidenceScope": "Only listed pass records are accepted. Prior failures are condensed and were retested; batch filename does not imply all items passed."
+}

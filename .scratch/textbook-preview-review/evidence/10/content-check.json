@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-25",
+  "command": "node --experimental-strip-types --test src/textbook/supplements.test.ts",
+  "tests": 8,
+  "pass": 8,
+  "fail": 0,
+  "scope": "受影响内容引用与逐题覆盖；最终全仓build/typecheck由主会话执行",
+  "files": {
+    "content/grade-7-volume-1/chapter-3.json": "a721f155366d20a0cf15193ae33b0a66c3b705726852447f2250704f9fa52239",
+    "content/grade-7-volume-1/chapter-3.locations.json": "cae6ce6d93075554eb9c6bf492bd88b16598bfa22f7d58ae5664e2bce938891c"
+  }
+}

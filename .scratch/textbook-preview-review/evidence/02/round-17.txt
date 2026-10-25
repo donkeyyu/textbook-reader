@@ -1,0 +1,42 @@
+[ego-browser:notice] Ego Lite update is available (current 0.6.0.16). Finish the current browser task, then ask the user before running `ego-browser upgrade`; re-read the ego-browser Skill afterward.
+PASS latest integrated build restores desktop { page: 10, fraction: 0.42 }
+PASS latest integrated build restores narrow { page: 10, fraction: 0.41965973534971646 }
+PASS latest build original page bitmap loaded and saved notes retained { viewport: [ 390, 844 ], image: [ 1304, 1843 ] }
+[p4 "课本解读" | space "教材续读 B1–B4 验证"(33): 1 managed, 1 untracked — p4* "课本解读"]
+root
+  container
+    container
+      button "展开页面导航" [ref=96, loc=css:button[aria-label="展开页面导航"]]
+        svg_root
+      heading
+        text "数学 · 七年级上册"
+    container
+      button "文件页序 10/202，课本第 3 页，点击跳转" [ref=97, loc=css:button[aria-label="文件页序 10/202，课本第 3 页，点击跳转"]]
+        container
+          text "文件页序"
+          text "10"
+          text "/"
+          text "202"
+        text "课本第 3 页"
+      container "显示补充类型" [ref=98]
+        svg_root
+      button [ref=99]
+        text "添加补充"
+  container "教材连续阅读" [ref=100]
+    container "教材文件第 10 页，课本第 3 页" [ref=101]
+      image
+      button "概念与性质：负的是偏差，不是质量" [ref=102, loc=css:button[aria-label="概念与性质：负的是偏差，不是质量"]]
+        svg_root
+      button "题目引导：练习第1题" [ref=103]
+        svg_root
+      button "选择此处的3条解读" [ref=104]
+        svg_root
+        text "3"
+    container "教材文件第 11 页，课本第 4 页" [ref=105]
+      image
+      button "概念与性质：0要和它记录的量一起读" [ref=106, loc=css:button[aria-label="概念与性质：0要和它记录的量一起读"]]
+        svg_root
+      button "题目引导：思考：地形图与收支账单" [ref=107, loc=css:button[aria-label="题目引导：思考：地形图与收支账单"]]
+        svg_root
+      button "题目引导：1.1例2：增长值与增长率" [ref=108, loc=css:button[aria-label="题目引导：1.1例2：增长值与增长率"]]
+        svg_root

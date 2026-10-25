@@ -1,0 +1,43 @@
+{
+  "spaceId": 36,
+  "url": "http://127.0.0.1:5198/",
+  "contentSha256": "4be1f83939c5caaf5d76fc77230d2db18c83413b5c2138dc4f57bd5d018430ad",
+  "page": 38,
+  "printedPage": "31",
+  "id": "ch2-subtraction-inverse",
+  "sourceChecked": true,
+  "links": [
+    {
+      "target": "ch2-opposite-add-cancel",
+      "targetPage": 33,
+      "returned": true,
+      "focus": "related-ch2-subtraction-inverse-ch2-opposite-add-cancel",
+      "sourceRegionDelta": 0
+    }
+  ],
+  "failure": null,
+  "app": {
+    "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+    "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+    "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315"
+  },
+  "preview": "把求得的差与减数相加，应回到被减数。点击标记展开解读",
+  "source": {
+    "title": "怎样用加法检查一次减法？",
+    "paragraphs": [
+      "“减法是加法的逆运算”给了一个检验关系：差加上减数，应该等于被减数。这里要求的不是“3与−3相加”，而是找一个数，加上−3后得到3。",
+      "这个关系不因减数为负数而改变。补充用例：若认为2−(−1)的结果是3，就检查3+(−1)是否回到2；检验时要加回原来的减数−1。"
+    ],
+    "methodToggles": 0,
+    "viewport": [
+      1772,
+      909
+    ],
+    "image": [
+      {
+        "complete": true,
+        "width": 1304
+      }
+    ]
+  }
+}

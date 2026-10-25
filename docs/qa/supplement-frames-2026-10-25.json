@@ -1,0 +1,3073 @@
+{
+  "date": "2026-10-25",
+  "book": "人教版数学七年级上册（2024审定）",
+  "sourcePdfSha256": "6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249",
+  "scope": "全书已有补充解读及关联入口；PDF8–199逐页原图核对。PDF页码与印刷页码分别记录。",
+  "method": "原始PNG叠加定位框，逐页核对定位说明及解读主题；修正后逐条裁图复核。题号、完整开头短句或首行可作为整题入口，不强行扩展为整题大框。",
+  "sourceImageHashesVerified": true,
+  "chapters": [
+    {
+      "chapter": 1,
+      "pdfPagesReviewed": [
+        8,
+        30
+      ],
+      "locationCount": 128,
+      "supplementCount": 127
+    },
+    {
+      "chapter": 2,
+      "pdfPagesReviewed": [
+        31,
+        74
+      ],
+      "locationCount": 242,
+      "supplementCount": 242
+    },
+    {
+      "chapter": 3,
+      "pdfPagesReviewed": [
+        75,
+        94
+      ],
+      "locationCount": 108,
+      "supplementCount": 108
+    },
+    {
+      "chapter": 4,
+      "pdfPagesReviewed": [
+        95,
+        116
+      ],
+      "locationCount": 108,
+      "supplementCount": 108
+    },
+    {
+      "chapter": 5,
+      "pdfPagesReviewed": [
+        117,
+        155
+      ],
+      "locationCount": 187,
+      "supplementCount": 187
+    },
+    {
+      "chapter": 6,
+      "pdfPagesReviewed": [
+        156,
+        199
+      ],
+      "locationCount": 187,
+      "supplementCount": 186
+    }
+  ],
+  "locationCount": 960,
+  "changedLocationCount": 94,
+  "changes": [
+    {
+      "id": "ch1-decimal-rational",
+      "pdfPage": 14,
+      "printedPage": "7",
+      "reason": "补全黄色旁注的算式与解释，避免框边截断分数。",
+      "before": {
+        "region": {
+          "x": 0.69,
+          "y": 0.54,
+          "width": 0.208,
+          "height": 0.112
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.541
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.689,
+          "y": 0.473,
+          "width": 0.211,
+          "height": 0.181
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.541
+        }
+      }
+    },
+    {
+      "id": "ch1-rational-form",
+      "pdfPage": 14,
+      "printedPage": "7",
+      "reason": "补全2/1的分母。",
+      "before": {
+        "region": {
+          "x": 0.13,
+          "y": 0.586,
+          "width": 0.515,
+          "height": 0.065
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.645
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.13,
+          "y": 0.586,
+          "width": 0.515,
+          "height": 0.077
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.645
+        }
+      }
+    },
+    {
+      "id": "ch1-classification-overlap",
+      "pdfPage": 15,
+      "printedPage": "8",
+      "reason": "补全1/9的分母。",
+      "before": {
+        "region": {
+          "x": 0.13,
+          "y": 0.073,
+          "width": 0.71,
+          "height": 0.029
+        },
+        "marker": {
+          "x": 0.925,
+          "y": 0.088
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.13,
+          "y": 0.071,
+          "width": 0.71,
+          "height": 0.039
+        },
+        "marker": {
+          "x": 0.925,
+          "y": 0.088
+        }
+      }
+    },
+    {
+      "id": "ch1-number-line-fraction",
+      "pdfPage": 17,
+      "printedPage": "10",
+      "reason": "补全相邻−3刻度的负号。",
+      "before": {
+        "region": {
+          "x": 0.298,
+          "y": 0.786,
+          "width": 0.083,
+          "height": 0.045
+        },
+        "marker": {
+          "x": 0.925,
+          "y": 0.811
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.29,
+          "y": 0.786,
+          "width": 0.095,
+          "height": 0.045
+        },
+        "marker": {
+          "x": 0.925,
+          "y": 0.811
+        }
+      }
+    },
+    {
+      "id": "ch1-opposite-pair",
+      "pdfPage": 19,
+      "printedPage": "12",
+      "reason": "补全定义段首末行的分数。",
+      "before": {
+        "region": {
+          "x": 0.085,
+          "y": 0.073,
+          "width": 0.79,
+          "height": 0.105
+        },
+        "marker": {
+          "x": 0.925,
+          "y": 0.1
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.085,
+          "y": 0.068,
+          "width": 0.79,
+          "height": 0.118
+        },
+        "marker": {
+          "x": 0.925,
+          "y": 0.1
+        }
+      }
+    },
+    {
+      "id": "ch1-q-exercise12-5",
+      "pdfPage": 24,
+      "printedPage": "17",
+      "reason": "将错落在题干上方的框移至“比较大小”。",
+      "before": {
+        "region": {
+          "x": 0.151,
+          "y": 0.315,
+          "width": 0.132,
+          "height": 0.022
+        },
+        "marker": {
+          "x": 0.965,
+          "y": 0.326
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.151,
+          "y": 0.331,
+          "width": 0.132,
+          "height": 0.019
+        },
+        "marker": {
+          "x": 0.965,
+          "y": 0.3405
+        }
+      }
+    },
+    {
+      "id": "ch2-q-p32-addition-cases",
+      "pdfPage": 32,
+      "printedPage": "25",
+      "reason": "首行末尾的0超出原框右边；完整包含两行提问。",
+      "before": {
+        "region": {
+          "x": 0.15,
+          "y": 0.451,
+          "width": 0.73,
+          "height": 0.049
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.4755
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.15,
+          "y": 0.451,
+          "width": 0.75,
+          "height": 0.049
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.4755
+        }
+      }
+    },
+    {
+      "id": "ch2-q-p32-right-motion",
+      "pdfPage": 32,
+      "printedPage": "25",
+      "reason": "首行末尾“两次”的次超出原框右边。",
+      "before": {
+        "region": {
+          "x": 0.15,
+          "y": 0.728,
+          "width": 0.73,
+          "height": 0.053
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.7545
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.15,
+          "y": 0.728,
+          "width": 0.75,
+          "height": 0.053
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.7545
+        }
+      }
+    },
+    {
+      "id": "ch2-q-p33-opposite-motion",
+      "pdfPage": 33,
+      "printedPage": "26",
+      "reason": "第（1）（2）问的续行左端“两次”被截掉，左边界应包含续行。",
+      "before": {
+        "region": {
+          "x": 0.15,
+          "y": 0.552,
+          "width": 0.73,
+          "height": 0.106
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.605
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.105,
+          "y": 0.552,
+          "width": 0.775,
+          "height": 0.106
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.605
+        }
+      }
+    },
+    {
+      "id": "ch2-q-p34-return-origin",
+      "pdfPage": 34,
+      "printedPage": "27",
+      "reason": "首行末尾“两次”的次被右边界截断。",
+      "before": {
+        "region": {
+          "x": 0.15,
+          "y": 0.101,
+          "width": 0.73,
+          "height": 0.052
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.127
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.15,
+          "y": 0.101,
+          "width": 0.75,
+          "height": 0.052
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.127
+        }
+      }
+    },
+    {
+      "id": "ch2-q-p34-addition-consistency",
+      "pdfPage": 34,
+      "printedPage": "27",
+      "reason": "首行末尾“正数”的数被右边界截断。",
+      "before": {
+        "region": {
+          "x": 0.15,
+          "y": 0.637,
+          "width": 0.73,
+          "height": 0.052
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.663
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.15,
+          "y": 0.637,
+          "width": 0.75,
+          "height": 0.052
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.663
+        }
+      }
+    },
+    {
+      "id": "ch2-q-p35-addition-order-effect",
+      "pdfPage": 35,
+      "printedPage": "28",
+      "reason": "原框漏掉末行“行说明”，补齐三行思考要求。",
+      "before": {
+        "region": {
+          "x": 0.1,
+          "y": 0.161,
+          "width": 0.77,
+          "height": 0.046
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.184
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.1,
+          "y": 0.161,
+          "width": 0.77,
+          "height": 0.078
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.184
+        }
+      }
+    },
+    {
+      "id": "ch2-q-p35-practice2",
+      "pdfPage": 35,
+      "printedPage": "28",
+      "reason": "原框上边界切过“口算”字形，向上留出正文范围。",
+      "before": {
+        "region": {
+          "x": 0.1,
+          "y": 0.36,
+          "width": 0.18,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.3725
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.1,
+          "y": 0.354,
+          "width": 0.18,
+          "height": 0.031
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.3725
+        }
+      }
+    },
+    {
+      "id": "ch2-q-p36-associate-inquiry",
+      "pdfPage": 36,
+      "printedPage": "29",
+      "reason": "原框下边界切到末行提问的字形，向下留出完整行。",
+      "before": {
+        "region": {
+          "x": 0.15,
+          "y": 0.102,
+          "width": 0.73,
+          "height": 0.105
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.1545
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.15,
+          "y": 0.102,
+          "width": 0.73,
+          "height": 0.11
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.1545
+        }
+      }
+    },
+    {
+      "id": "ch2-q-p36-example3",
+      "pdfPage": 36,
+      "printedPage": "29",
+      "reason": "原框下边界切到题干末行“足多少千克”，补全三行题干。",
+      "before": {
+        "region": {
+          "x": 0.13,
+          "y": 0.689,
+          "width": 0.79,
+          "height": 0.079
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.7285
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.13,
+          "y": 0.689,
+          "width": 0.79,
+          "height": 0.081
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.7285
+        }
+      }
+    },
+    {
+      "id": "ch2-q-p37-temperature-think",
+      "pdfPage": 37,
+      "printedPage": "30",
+      "reason": "旁注第二行首字“出”在原框左侧，补全旁注三行。",
+      "before": {
+        "region": {
+          "x": 0.64,
+          "y": 0.81,
+          "width": 0.23,
+          "height": 0.08
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.85
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.625,
+          "y": 0.81,
+          "width": 0.245,
+          "height": 0.08
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.85
+        }
+      }
+    },
+    {
+      "id": "ch2-q-p38-subtract-inquiry",
+      "pdfPage": 38,
+      "printedPage": "31",
+      "reason": "解读同时覆盖替换被减数及9−8、15−7两组检验，原框只含开头两行；覆盖整段探究要求。",
+      "before": {
+        "region": {
+          "x": 0.15,
+          "y": 0.394,
+          "width": 0.73,
+          "height": 0.055
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.4215
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.15,
+          "y": 0.394,
+          "width": 0.75,
+          "height": 0.197
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.4215
+        }
+      }
+    },
+    {
+      "id": "ch2-subtract-mixed-number",
+      "pdfPage": 39,
+      "printedPage": "32",
+      "reason": "原框上下边界穿过带分数分子及分母，扩展保全整行分数。",
+      "before": {
+        "region": {
+          "x": 0.13,
+          "y": 0.162,
+          "width": 0.48,
+          "height": 0.03
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.177
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.13,
+          "y": 0.155,
+          "width": 0.48,
+          "height": 0.042
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.177
+        }
+      }
+    },
+    {
+      "id": "ch2-q-p39-smaller-subtract-larger",
+      "pdfPage": 39,
+      "printedPage": "32",
+      "reason": "原框只包含“小学a≥b”的背景，漏掉较小减较大及差的符号两项真正提问；覆盖左侧完整思考文本，避开右侧旁注。",
+      "before": {
+        "region": {
+          "x": 0.1,
+          "y": 0.246,
+          "width": 0.53,
+          "height": 0.046
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.269
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.1,
+          "y": 0.246,
+          "width": 0.49,
+          "height": 0.165
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.269
+        }
+      }
+    },
+    {
+      "id": "ch2-ancient-word-scope",
+      "pdfPage": 44,
+      "printedPage": "37",
+      "reason": "解释古文“除”字的意义，应锚定“同名相除”词组；原大框连带覆盖旁边独立提问“你知道它的意思吗”，造成错误重叠。",
+      "before": {
+        "region": {
+          "x": 0.15,
+          "y": 0.175,
+          "width": 0.75,
+          "height": 0.053
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.2015
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.247,
+          "y": 0.179,
+          "width": 0.105,
+          "height": 0.024
+        },
+        "marker": {
+          "x": 0.12,
+          "y": 0.191
+        }
+      }
+    },
+    {
+      "id": "ch2-q-p47-practice2",
+      "pdfPage": 47,
+      "printedPage": "40",
+      "reason": "原框下边界穿过第二行文字，补全降价问题。",
+      "before": {
+        "region": {
+          "x": 0.108,
+          "y": 0.552,
+          "width": 0.748,
+          "height": 0.044
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.574
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.108,
+          "y": 0.552,
+          "width": 0.748,
+          "height": 0.05
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.574
+        }
+      }
+    },
+    {
+      "id": "ch2-fraction-negative-placement",
+      "pdfPage": 51,
+      "printedPage": "44",
+      "reason": "原框下边界穿过分母3，向下保全分数。",
+      "before": {
+        "region": {
+          "x": 0.13,
+          "y": 0.706,
+          "width": 0.435,
+          "height": 0.037
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.7245
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.13,
+          "y": 0.706,
+          "width": 0.435,
+          "height": 0.042
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.7245
+        }
+      }
+    },
+    {
+      "id": "ch2-mixed-number-distribution",
+      "pdfPage": 52,
+      "printedPage": "45",
+      "reason": "原框下边界穿过分母7和5，补全该步算式。",
+      "before": {
+        "region": {
+          "x": 0.255,
+          "y": 0.731,
+          "width": 0.175,
+          "height": 0.038
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.75
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.255,
+          "y": 0.731,
+          "width": 0.175,
+          "height": 0.044
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.75
+        }
+      }
+    },
+    {
+      "id": "ch2-doubling-comparison-explore",
+      "pdfPage": 56,
+      "printedPage": "49",
+      "reason": "末行“什么”被下边界压住，补全提问。",
+      "before": {
+        "region": {
+          "x": 0.188,
+          "y": 0.442,
+          "width": 0.71,
+          "height": 0.045
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.4645
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.188,
+          "y": 0.442,
+          "width": 0.71,
+          "height": 0.049
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.4645
+        }
+      }
+    },
+    {
+      "id": "ch2-power-whole-fraction-base",
+      "pdfPage": 58,
+      "printedPage": "51",
+      "reason": "下边界穿过两个分母5，保全分数的五次方记法和读法。",
+      "before": {
+        "region": {
+          "x": 0.13,
+          "y": 0.537,
+          "width": 0.345,
+          "height": 0.036
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.555
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.13,
+          "y": 0.537,
+          "width": 0.345,
+          "height": 0.043
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.555
+        }
+      }
+    },
+    {
+      "id": "ch2-q-exercise23-6",
+      "pdfPage": 64,
+      "printedPage": "57",
+      "reason": "上边界穿过“四舍五入”首行字顶，向上补齐。",
+      "before": {
+        "region": {
+          "x": 0.151,
+          "y": 0.303,
+          "width": 0.62,
+          "height": 0.024
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.315
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.151,
+          "y": 0.3,
+          "width": 0.62,
+          "height": 0.027
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.315
+        }
+      }
+    },
+    {
+      "id": "ch2-q-exercise23-10",
+      "pdfPage": 64,
+      "printedPage": "57",
+      "reason": "第10题框底部侵入第11题框顶部空隙，收紧至第10题末行之后。",
+      "before": {
+        "region": {
+          "x": 0.151,
+          "y": 0.518,
+          "width": 0.75,
+          "height": 0.047
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.5415
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.151,
+          "y": 0.518,
+          "width": 0.75,
+          "height": 0.042
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.5415
+        }
+      }
+    },
+    {
+      "id": "ch2-q-p67-review7",
+      "pdfPage": 67,
+      "printedPage": "60",
+      "reason": "原框漏掉第二行关键的分数形式及q≠0条件，且字顶被切；补全整个问题。",
+      "before": {
+        "region": {
+          "x": 0.109,
+          "y": 0.728,
+          "width": 0.744,
+          "height": 0.024
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.74
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.109,
+          "y": 0.725,
+          "width": 0.744,
+          "height": 0.067
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.74
+        }
+      }
+    },
+    {
+      "id": "ch2-q-review2-7",
+      "pdfPage": 68,
+      "printedPage": "61",
+      "reason": "三行题干前两行末尾“蓝”“球”超出右边界。",
+      "before": {
+        "region": {
+          "x": 0.14,
+          "y": 0.783,
+          "width": 0.75,
+          "height": 0.079
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.8225
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.14,
+          "y": 0.783,
+          "width": 0.767,
+          "height": 0.079
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.8225
+        }
+      }
+    },
+    {
+      "id": "ch2-q-review2-11",
+      "pdfPage": 69,
+      "printedPage": "62",
+      "reason": "末行字形被框底压住，补齐长度变化问题。",
+      "before": {
+        "region": {
+          "x": 0.097,
+          "y": 0.351,
+          "width": 0.764,
+          "height": 0.096
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.399
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.097,
+          "y": 0.351,
+          "width": 0.764,
+          "height": 0.099
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.399
+        }
+      }
+    },
+    {
+      "id": "ch2-q-review2-12",
+      "pdfPage": 69,
+      "printedPage": "62",
+      "reason": "末行“千米”被框底压住，保留完整单位。",
+      "before": {
+        "region": {
+          "x": 0.097,
+          "y": 0.457,
+          "width": 0.764,
+          "height": 0.068
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.491
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.097,
+          "y": 0.457,
+          "width": 0.764,
+          "height": 0.072
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.491
+        }
+      }
+    },
+    {
+      "id": "ch3-context-and-unit",
+      "pdfPage": 77,
+      "printedPage": "70",
+      "reason": "原框包含下方独立提问。改为直接对应本解读讨论的两条含单位解答。",
+      "before": {
+        "region": {
+          "x": 0.086,
+          "y": 0.865,
+          "width": 0.79,
+          "height": 0.049
+        },
+        "marker": {
+          "x": 0.96,
+          "y": 0.8895
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.13,
+          "y": 0.668,
+          "width": 0.365,
+          "height": 0.053
+        },
+        "marker": {
+          "x": 0.96,
+          "y": 0.6945
+        }
+      }
+    },
+    {
+      "id": "ch3-integer-scope-exercise",
+      "pdfPage": 84,
+      "printedPage": "77",
+      "reason": "原框覆盖整个第（1）问并与整题入口重叠；改为本解读聚焦的整数条件。",
+      "before": {
+        "region": {
+          "x": 0.151,
+          "y": 0.734,
+          "width": 0.749,
+          "height": 0.045
+        },
+        "marker": {
+          "x": 0.96,
+          "y": 0.7565
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.234,
+          "y": 0.734,
+          "width": 0.228,
+          "height": 0.021
+        },
+        "marker": {
+          "x": 0.96,
+          "y": 0.7445
+        }
+      }
+    },
+    {
+      "id": "ch3-q-exercise31-10",
+      "pdfPage": 84,
+      "printedPage": "77",
+      "reason": "整题导读改用题号入口，与整数条件解读分开。",
+      "before": {
+        "region": {
+          "x": 0.153,
+          "y": 0.735,
+          "width": 0.747,
+          "height": 0.019
+        },
+        "marker": {
+          "x": 0.96,
+          "y": 0.7445
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.151,
+          "y": 0.734,
+          "width": 0.031,
+          "height": 0.021
+        },
+        "marker": {
+          "x": 0.96,
+          "y": 0.7445
+        }
+      }
+    },
+    {
+      "id": "ch4-ratio-area",
+      "pdfPage": 97,
+      "printedPage": "90",
+      "reason": "原框上沿截过2/3的分子；向上扩展以容纳完整分式。",
+      "before": {
+        "region": {
+          "x": 0.131,
+          "y": 0.853,
+          "width": 0.46,
+          "height": 0.03
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.868
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.13,
+          "y": 0.846,
+          "width": 0.46,
+          "height": 0.039
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.8655
+        }
+      }
+    },
+    {
+      "id": "ch5-q-p117-intro",
+      "pdfPage": 117,
+      "printedPage": null,
+      "reason": "题干入口止于完整的“同时向一山峰进发。”",
+      "before": {
+        "region": {
+          "x": 0.13,
+          "y": 0.16,
+          "width": 0.36,
+          "height": 0.029
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.17450000000000002
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.13,
+          "y": 0.16,
+          "width": 0.515,
+          "height": 0.029
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.17450000000000002
+        }
+      }
+    },
+    {
+      "id": "ch5-q-p118-problem1",
+      "pdfPage": 118,
+      "printedPage": "111",
+      "reason": "题干入口止于“用买3个大水杯的钱”，避免切字。",
+      "before": {
+        "region": {
+          "x": 0.175,
+          "y": 0.725,
+          "width": 0.39,
+          "height": 0.03
+        },
+        "marker": {
+          "x": 0.055,
+          "y": 0.74
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.175,
+          "y": 0.725,
+          "width": 0.31,
+          "height": 0.03
+        },
+        "marker": {
+          "x": 0.055,
+          "y": 0.74
+        }
+      }
+    },
+    {
+      "id": "ch5-q-p119-problem2",
+      "pdfPage": 119,
+      "printedPage": "112",
+      "reason": "首行右缘补齐“共产党”中的“产”，不切字。",
+      "before": {
+        "region": {
+          "x": 0.13,
+          "y": 0.064,
+          "width": 0.44,
+          "height": 0.03
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.079
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.13,
+          "y": 0.064,
+          "width": 0.475,
+          "height": 0.03
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.079
+        }
+      }
+    },
+    {
+      "id": "ch5-equation",
+      "pdfPage": 119,
+      "printedPage": "112",
+      "reason": "缩到左栏定义段，排除右侧未知数历史旁注。",
+      "before": {
+        "region": {
+          "x": 0.085,
+          "y": 0.407,
+          "width": 0.57,
+          "height": 0.08
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.447
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.085,
+          "y": 0.407,
+          "width": 0.525,
+          "height": 0.08
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.447
+        }
+      }
+    },
+    {
+      "id": "ch5-q-p120-exercise1",
+      "pdfPage": 120,
+      "printedPage": "113",
+      "reason": "补全题干首行。",
+      "before": {
+        "region": {
+          "x": 0.15,
+          "y": 0.705,
+          "width": 0.58,
+          "height": 0.03
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.72
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.15,
+          "y": 0.705,
+          "width": 0.745,
+          "height": 0.03
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.72
+        }
+      }
+    },
+    {
+      "id": "ch5-q-p120-exercise2",
+      "pdfPage": 120,
+      "printedPage": "113",
+      "reason": "补全题干首行。",
+      "before": {
+        "region": {
+          "x": 0.15,
+          "y": 0.76,
+          "width": 0.54,
+          "height": 0.03
+        },
+        "marker": {
+          "x": 0.055,
+          "y": 0.775
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.15,
+          "y": 0.76,
+          "width": 0.575,
+          "height": 0.03
+        },
+        "marker": {
+          "x": 0.055,
+          "y": 0.775
+        }
+      }
+    },
+    {
+      "id": "ch5-q-p121-example2",
+      "pdfPage": 121,
+      "printedPage": "114",
+      "reason": "补齐3/2分子。",
+      "before": {
+        "region": {
+          "x": 0.13,
+          "y": 0.302,
+          "width": 0.55,
+          "height": 0.038
+        },
+        "marker": {
+          "x": 0.055,
+          "y": 0.321
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.13,
+          "y": 0.297,
+          "width": 0.55,
+          "height": 0.043
+        },
+        "marker": {
+          "x": 0.055,
+          "y": 0.321
+        }
+      }
+    },
+    {
+      "id": "ch5-q-p121-thinking1",
+      "pdfPage": 121,
+      "printedPage": "114",
+      "reason": "补齐5/8分子。",
+      "before": {
+        "region": {
+          "x": 0.15,
+          "y": 0.718,
+          "width": 0.61,
+          "height": 0.037
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.7364999999999999
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.15,
+          "y": 0.712,
+          "width": 0.61,
+          "height": 0.043
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.7364999999999999
+        }
+      }
+    },
+    {
+      "id": "ch5-q-p122-exercise1",
+      "pdfPage": 122,
+      "printedPage": "115",
+      "reason": "相邻两题留出间隙，排除下一题。",
+      "before": {
+        "region": {
+          "x": 0.15,
+          "y": 0.403,
+          "width": 0.64,
+          "height": 0.03
+        },
+        "marker": {
+          "x": 0.055,
+          "y": 0.41800000000000004
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.15,
+          "y": 0.403,
+          "width": 0.64,
+          "height": 0.027
+        },
+        "marker": {
+          "x": 0.055,
+          "y": 0.41800000000000004
+        }
+      }
+    },
+    {
+      "id": "ch5-q-p122-thinking",
+      "pdfPage": 122,
+      "printedPage": "115",
+      "reason": "补全首行，避免右缘切字。",
+      "before": {
+        "region": {
+          "x": 0.15,
+          "y": 0.825,
+          "width": 0.7,
+          "height": 0.03
+        },
+        "marker": {
+          "x": 0.055,
+          "y": 0.84
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.15,
+          "y": 0.825,
+          "width": 0.745,
+          "height": 0.03
+        },
+        "marker": {
+          "x": 0.055,
+          "y": 0.84
+        }
+      }
+    },
+    {
+      "id": "ch5-undo-operation",
+      "pdfPage": 123,
+      "printedPage": "116",
+      "reason": "补齐末行字形，不触及下一行解答。",
+      "before": {
+        "region": {
+          "x": 0.085,
+          "y": 0.719,
+          "width": 0.79,
+          "height": 0.078
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.758
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.085,
+          "y": 0.719,
+          "width": 0.79,
+          "height": 0.083
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.758
+        }
+      }
+    },
+    {
+      "id": "ch5-diagram-evidence",
+      "pdfPage": 125,
+      "printedPage": "118",
+      "reason": "图形依据解读改指向三幅有标注的图，和题干导读分开。",
+      "before": {
+        "region": {
+          "x": 0.105,
+          "y": 0.331,
+          "width": 0.65,
+          "height": 0.033
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.3475
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.175,
+          "y": 0.369,
+          "width": 0.61,
+          "height": 0.145
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.4415
+        }
+      }
+    },
+    {
+      "id": "ch5-q-p125-exercise5",
+      "pdfPage": 125,
+      "printedPage": "118",
+      "reason": "补齐4/5分子分母和题干首行。",
+      "before": {
+        "region": {
+          "x": 0.105,
+          "y": 0.79,
+          "width": 0.69,
+          "height": 0.024
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.802
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.105,
+          "y": 0.783,
+          "width": 0.745,
+          "height": 0.032
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.802
+        }
+      }
+    },
+    {
+      "id": "ch5-q-p125-exercise6",
+      "pdfPage": 125,
+      "printedPage": "118",
+      "reason": "补全首行至“二”，避免半截标点。",
+      "before": {
+        "region": {
+          "x": 0.105,
+          "y": 0.85,
+          "width": 0.7,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.055,
+          "y": 0.8624999999999999
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.105,
+          "y": 0.85,
+          "width": 0.745,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.055,
+          "y": 0.8624999999999999
+        }
+      }
+    },
+    {
+      "id": "ch5-q-p126-exercise10",
+      "pdfPage": 126,
+      "printedPage": "119",
+      "reason": "右缘留足字形间距。",
+      "before": {
+        "region": {
+          "x": 0.15,
+          "y": 0.234,
+          "width": 0.74,
+          "height": 0.03
+        },
+        "marker": {
+          "x": 0.055,
+          "y": 0.249
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.15,
+          "y": 0.234,
+          "width": 0.75,
+          "height": 0.03
+        },
+        "marker": {
+          "x": 0.055,
+          "y": 0.249
+        }
+      }
+    },
+    {
+      "id": "ch5-q-p127-why-solution",
+      "pdfPage": 127,
+      "printedPage": "120",
+      "reason": "框住完整旁注文本，包含最后一行，排除顶部图钉空白。",
+      "before": {
+        "region": {
+          "x": 0.643,
+          "y": 0.748,
+          "width": 0.213,
+          "height": 0.118
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.807
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.643,
+          "y": 0.773,
+          "width": 0.213,
+          "height": 0.117
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.8315
+        }
+      }
+    },
+    {
+      "id": "ch5-successive-ratio",
+      "pdfPage": 128,
+      "printedPage": "121",
+      "reason": "补齐第二行文字下沿。",
+      "before": {
+        "region": {
+          "x": 0.13,
+          "y": 0.305,
+          "width": 0.74,
+          "height": 0.05
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.33
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.13,
+          "y": 0.305,
+          "width": 0.74,
+          "height": 0.055
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.33
+        }
+      }
+    },
+    {
+      "id": "ch5-same-total",
+      "pdfPage": 129,
+      "printedPage": "122",
+      "reason": "补齐第二行文字下沿。",
+      "before": {
+        "region": {
+          "x": 0.085,
+          "y": 0.265,
+          "width": 0.525,
+          "height": 0.05
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.29
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.085,
+          "y": 0.265,
+          "width": 0.525,
+          "height": 0.054
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.29
+        }
+      }
+    },
+    {
+      "id": "ch5-transpose",
+      "pdfPage": 129,
+      "printedPage": "122",
+      "reason": "补齐移项定义下沿。",
+      "before": {
+        "region": {
+          "x": 0.085,
+          "y": 0.739,
+          "width": 0.79,
+          "height": 0.053
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.7655
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.085,
+          "y": 0.739,
+          "width": 0.79,
+          "height": 0.057
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.7655
+        }
+      }
+    },
+    {
+      "id": "ch5-monthly-total",
+      "pdfPage": 131,
+      "printedPage": "124",
+      "reason": "缩到左栏用电量表达式，排除右侧单位旁注。",
+      "before": {
+        "region": {
+          "x": 0.085,
+          "y": 0.854,
+          "width": 0.575,
+          "height": 0.052
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.88
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.085,
+          "y": 0.854,
+          "width": 0.525,
+          "height": 0.052
+        },
+        "marker": {
+          "x": 0.935,
+          "y": 0.88
+        }
+      }
+    },
+    {
+      "id": "ch5-q-p133-practice2",
+      "pdfPage": 133,
+      "printedPage": "126",
+      "reason": "补齐首行“面积”，避免切字。",
+      "before": {
+        "region": {
+          "x": 0.108,
+          "y": 0.477,
+          "width": 0.527,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.49
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.108,
+          "y": 0.477,
+          "width": 0.54,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.49
+        }
+      }
+    },
+    {
+      "id": "ch5-q-p133-practice3",
+      "pdfPage": 133,
+      "printedPage": "126",
+      "reason": "补齐首行“已知”，避免切字。",
+      "before": {
+        "region": {
+          "x": 0.108,
+          "y": 0.563,
+          "width": 0.527,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.576
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.108,
+          "y": 0.563,
+          "width": 0.54,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.576
+        }
+      }
+    },
+    {
+      "id": "ch5-q-ex52-10",
+      "pdfPage": 138,
+      "printedPage": "131",
+      "reason": "原题头边界截断后续文字；调整至完整开头短句。",
+      "before": {
+        "region": {
+          "x": 0.152,
+          "y": 0.139,
+          "width": 0.349,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.1515
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.152,
+          "y": 0.139,
+          "width": 0.478,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.1515
+        }
+      }
+    },
+    {
+      "id": "ch5-climb-time",
+      "pdfPage": 138,
+      "printedPage": "131",
+      "reason": "条件框排除整题导读题号。",
+      "before": {
+        "region": {
+          "x": 0.15,
+          "y": 0.216,
+          "width": 0.747,
+          "height": 0.047
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.2395
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.19,
+          "y": 0.216,
+          "width": 0.707,
+          "height": 0.047
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.2395
+        }
+      }
+    },
+    {
+      "id": "ch5-q-ex52-11",
+      "pdfPage": 138,
+      "printedPage": "131",
+      "reason": "整题导读用题号，避免与登山时间条件解读重叠。",
+      "before": {
+        "region": {
+          "x": 0.152,
+          "y": 0.217,
+          "width": 0.235,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.2295
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.152,
+          "y": 0.217,
+          "width": 0.029,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.2295
+        }
+      }
+    },
+    {
+      "id": "ch5-q-ex52-12",
+      "pdfPage": 138,
+      "printedPage": "131",
+      "reason": "原题头边界截断后续文字；调整至完整开头短句。",
+      "before": {
+        "region": {
+          "x": 0.152,
+          "y": 0.321,
+          "width": 0.322,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.3335
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.152,
+          "y": 0.321,
+          "width": 0.495,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.3335
+        }
+      }
+    },
+    {
+      "id": "ch5-q-ex52-14",
+      "pdfPage": 138,
+      "printedPage": "131",
+      "reason": "原题头边界截断后续文字；调整至完整开头短句。",
+      "before": {
+        "region": {
+          "x": 0.152,
+          "y": 0.477,
+          "width": 0.365,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.4895
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.152,
+          "y": 0.477,
+          "width": 0.316,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.4895
+        }
+      }
+    },
+    {
+      "id": "ch5-q-ex52-15",
+      "pdfPage": 138,
+      "printedPage": "131",
+      "reason": "原题头边界截断后续文字；调整至完整开头短句。",
+      "before": {
+        "region": {
+          "x": 0.152,
+          "y": 0.613,
+          "width": 0.428,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.6255
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.152,
+          "y": 0.613,
+          "width": 0.342,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.6255
+        }
+      }
+    },
+    {
+      "id": "ch5-q-ex52-16",
+      "pdfPage": 138,
+      "printedPage": "131",
+      "reason": "原题头边界截断后续文字；调整至完整开头短句。",
+      "before": {
+        "region": {
+          "x": 0.152,
+          "y": 0.716,
+          "width": 0.329,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.7285
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.152,
+          "y": 0.716,
+          "width": 0.307,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.7285
+        }
+      }
+    },
+    {
+      "id": "ch5-q-ex52-17",
+      "pdfPage": 138,
+      "printedPage": "131",
+      "reason": "原题头边界截断后续文字；调整至完整开头短句。",
+      "before": {
+        "region": {
+          "x": 0.152,
+          "y": 0.795,
+          "width": 0.269,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.8075
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.152,
+          "y": 0.795,
+          "width": 0.218,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.8075
+        }
+      }
+    },
+    {
+      "id": "ch5-q-ex53-example2",
+      "pdfPage": 140,
+      "printedPage": "133",
+      "reason": "原题头边界截断后续文字；调整至完整开头短句。",
+      "before": {
+        "region": {
+          "x": 0.175,
+          "y": 0.662,
+          "width": 0.255,
+          "height": 0.027
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.6755
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.175,
+          "y": 0.662,
+          "width": 0.217,
+          "height": 0.027
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.6755
+        }
+      }
+    },
+    {
+      "id": "ch5-q-practice134-1",
+      "pdfPage": 141,
+      "printedPage": "134",
+      "reason": "原题头边界截断后续文字；调整至完整开头短句。",
+      "before": {
+        "region": {
+          "x": 0.109,
+          "y": 0.638,
+          "width": 0.36,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.651
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.109,
+          "y": 0.638,
+          "width": 0.461,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.651
+        }
+      }
+    },
+    {
+      "id": "ch5-q-practice134-2",
+      "pdfPage": 141,
+      "printedPage": "134",
+      "reason": "原题头边界截断后续文字；调整至完整开头短句。",
+      "before": {
+        "region": {
+          "x": 0.109,
+          "y": 0.696,
+          "width": 0.291,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.709
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.109,
+          "y": 0.696,
+          "width": 0.204,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.709
+        }
+      }
+    },
+    {
+      "id": "ch5-q-practice134-3",
+      "pdfPage": 141,
+      "printedPage": "134",
+      "reason": "原题头边界截断后续文字；调整至完整开头短句。",
+      "before": {
+        "region": {
+          "x": 0.109,
+          "y": 0.781,
+          "width": 0.305,
+          "height": 0.027
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.7945
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.109,
+          "y": 0.781,
+          "width": 0.459,
+          "height": 0.027
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.7945
+        }
+      }
+    },
+    {
+      "id": "ch5-q-practice136-1",
+      "pdfPage": 143,
+      "printedPage": "136",
+      "reason": "原题头边界截断后续文字；调整至完整开头短句。",
+      "before": {
+        "region": {
+          "x": 0.109,
+          "y": 0.119,
+          "width": 0.27,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.132
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.109,
+          "y": 0.119,
+          "width": 0.222,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.132
+        }
+      }
+    },
+    {
+      "id": "ch5-q-practice136-2",
+      "pdfPage": 143,
+      "printedPage": "136",
+      "reason": "整题导读用题号，避免与折扣条件解读重叠。",
+      "before": {
+        "region": {
+          "x": 0.109,
+          "y": 0.199,
+          "width": 0.383,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.212
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.109,
+          "y": 0.199,
+          "width": 0.02,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.212
+        }
+      }
+    },
+    {
+      "id": "ch5-discount-bases",
+      "pdfPage": 143,
+      "printedPage": "136",
+      "reason": "排除整题题号及下一句开头，保留两种百分数的完整条件。",
+      "before": {
+        "region": {
+          "x": 0.109,
+          "y": 0.2,
+          "width": 0.741,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.2125
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.137,
+          "y": 0.2,
+          "width": 0.676,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.2125
+        }
+      }
+    },
+    {
+      "id": "ch5-q-practice137-1",
+      "pdfPage": 144,
+      "printedPage": "137",
+      "reason": "原题头边界截断后续文字；调整至完整开头短句。",
+      "before": {
+        "region": {
+          "x": 0.151,
+          "y": 0.679,
+          "width": 0.301,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.692
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.151,
+          "y": 0.679,
+          "width": 0.186,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.692
+        }
+      }
+    },
+    {
+      "id": "ch5-q-practice137-2",
+      "pdfPage": 144,
+      "printedPage": "137",
+      "reason": "原题头边界截断后续文字；调整至完整开头短句。",
+      "before": {
+        "region": {
+          "x": 0.151,
+          "y": 0.821,
+          "width": 0.446,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.834
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.151,
+          "y": 0.821,
+          "width": 0.744,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.834
+        }
+      }
+    },
+    {
+      "id": "ch5-q-practice139-1",
+      "pdfPage": 146,
+      "printedPage": "139",
+      "reason": "原题头边界截断后续文字；调整至完整开头短句。",
+      "before": {
+        "region": {
+          "x": 0.151,
+          "y": 0.649,
+          "width": 0.446,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.662
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.151,
+          "y": 0.649,
+          "width": 0.34,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.662
+        }
+      }
+    },
+    {
+      "id": "ch5-q-practice139-2",
+      "pdfPage": 146,
+      "printedPage": "139",
+      "reason": "原题头边界截断后续文字；调整至完整开头短句。",
+      "before": {
+        "region": {
+          "x": 0.151,
+          "y": 0.765,
+          "width": 0.452,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.778
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.151,
+          "y": 0.765,
+          "width": 0.351,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.778
+        }
+      }
+    },
+    {
+      "id": "ch5-q-ex53-3",
+      "pdfPage": 147,
+      "printedPage": "140",
+      "reason": "原题头边界截断后续文字；调整至完整开头短句。",
+      "before": {
+        "region": {
+          "x": 0.109,
+          "y": 0.239,
+          "width": 0.385,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.252
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.109,
+          "y": 0.239,
+          "width": 0.36,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.252
+        }
+      }
+    },
+    {
+      "id": "ch5-q-ex53-4",
+      "pdfPage": 147,
+      "printedPage": "140",
+      "reason": "整题导读用题号，与共同工作及单独工作的时间条件框分开。",
+      "before": {
+        "region": {
+          "x": 0.109,
+          "y": 0.316,
+          "width": 0.311,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.329
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.109,
+          "y": 0.316,
+          "width": 0.019,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.329
+        }
+      }
+    },
+    {
+      "id": "ch5-q-ex53-5",
+      "pdfPage": 147,
+      "printedPage": "140",
+      "reason": "原题头边界截断后续文字；调整至完整开头短句。",
+      "before": {
+        "region": {
+          "x": 0.109,
+          "y": 0.368,
+          "width": 0.264,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.381
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.109,
+          "y": 0.368,
+          "width": 0.165,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.381
+        }
+      }
+    },
+    {
+      "id": "ch5-q-ex53-6",
+      "pdfPage": 147,
+      "printedPage": "140",
+      "reason": "原题头边界截断后续文字；调整至完整开头短句。",
+      "before": {
+        "region": {
+          "x": 0.109,
+          "y": 0.472,
+          "width": 0.396,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.485
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.109,
+          "y": 0.472,
+          "width": 0.364,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.485
+        }
+      }
+    },
+    {
+      "id": "ch5-temperature-start",
+      "pdfPage": 147,
+      "printedPage": "140",
+      "reason": "原框包含前半句与导读入口重叠；收紧至本解读所讨论的均匀变化假设。",
+      "before": {
+        "region": {
+          "x": 0.136,
+          "y": 0.549,
+          "width": 0.692,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.5615
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.553,
+          "y": 0.549,
+          "width": 0.247,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.5615
+        }
+      }
+    },
+    {
+      "id": "ch5-q-ex53-8",
+      "pdfPage": 147,
+      "printedPage": "140",
+      "reason": "原题头边界截断后续文字；调整至完整开头短句。",
+      "before": {
+        "region": {
+          "x": 0.109,
+          "y": 0.7,
+          "width": 0.333,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.713
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.109,
+          "y": 0.7,
+          "width": 0.397,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.713
+        }
+      }
+    },
+    {
+      "id": "ch5-q-ex53-9",
+      "pdfPage": 147,
+      "printedPage": "140",
+      "reason": "原题头边界截断后续文字；调整至完整开头短句。",
+      "before": {
+        "region": {
+          "x": 0.109,
+          "y": 0.803,
+          "width": 0.503,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.816
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.109,
+          "y": 0.803,
+          "width": 0.392,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.816
+        }
+      }
+    },
+    {
+      "id": "ch5-sales-quantity-base",
+      "pdfPage": 148,
+      "printedPage": "141",
+      "reason": "条件框排除整题导读题号。",
+      "before": {
+        "region": {
+          "x": 0.15,
+          "y": 0.077,
+          "width": 0.748,
+          "height": 0.049
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.1015
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.19,
+          "y": 0.077,
+          "width": 0.708,
+          "height": 0.049
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.1015
+        }
+      }
+    },
+    {
+      "id": "ch5-q-ex53-10",
+      "pdfPage": 148,
+      "printedPage": "141",
+      "reason": "整题导读改用题号，避免与销售金额条件解读重叠。",
+      "before": {
+        "region": {
+          "x": 0.151,
+          "y": 0.077,
+          "width": 0.334,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.09
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.151,
+          "y": 0.077,
+          "width": 0.03,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.09
+        }
+      }
+    },
+    {
+      "id": "ch5-q-ex53-11",
+      "pdfPage": 148,
+      "printedPage": "141",
+      "reason": "原题头边界截断后续文字；调整至完整开头短句。",
+      "before": {
+        "region": {
+          "x": 0.151,
+          "y": 0.132,
+          "width": 0.416,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.145
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.151,
+          "y": 0.132,
+          "width": 0.744,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.145
+        }
+      }
+    },
+    {
+      "id": "ch5-q-ex53-12",
+      "pdfPage": 148,
+      "printedPage": "141",
+      "reason": "原题头边界截断后续文字；调整至完整开头短句。",
+      "before": {
+        "region": {
+          "x": 0.151,
+          "y": 0.344,
+          "width": 0.46,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.357
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.151,
+          "y": 0.344,
+          "width": 0.686,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.357
+        }
+      }
+    },
+    {
+      "id": "ch5-q-ex53-14",
+      "pdfPage": 148,
+      "printedPage": "141",
+      "reason": "去除下沿多余空间，避免与下一行促销方式框相交。",
+      "before": {
+        "region": {
+          "x": 0.151,
+          "y": 0.707,
+          "width": 0.404,
+          "height": 0.026
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.72
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.151,
+          "y": 0.707,
+          "width": 0.404,
+          "height": 0.023
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.7185
+        }
+      }
+    },
+    {
+      "id": "ch5-q-summary2",
+      "pdfPage": 153,
+      "printedPage": "146",
+      "reason": "原框右沿截过“关系”的“系”，扩展至完整问句。",
+      "before": {
+        "region": {
+          "x": 0.15,
+          "y": 0.168,
+          "width": 0.62,
+          "height": 0.024
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.18
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.15,
+          "y": 0.168,
+          "width": 0.64,
+          "height": 0.024
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.18
+        }
+      }
+    },
+    {
+      "id": "ch5-age-same-time",
+      "pdfPage": 155,
+      "printedPage": "148",
+      "reason": "条件框排除整题导读题号。",
+      "before": {
+        "region": {
+          "x": 0.097,
+          "y": 0.237,
+          "width": 0.76,
+          "height": 0.061
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.2675
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.133,
+          "y": 0.237,
+          "width": 0.724,
+          "height": 0.061
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.2675
+        }
+      }
+    },
+    {
+      "id": "ch5-q-review12",
+      "pdfPage": 155,
+      "printedPage": "148",
+      "reason": "整题导读改用题号，避免与同一时刻年龄条件解读重叠。",
+      "before": {
+        "region": {
+          "x": 0.097,
+          "y": 0.237,
+          "width": 0.76,
+          "height": 0.024
+        },
+        "marker": {
+          "x": 0.055,
+          "y": 0.249
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.097,
+          "y": 0.237,
+          "width": 0.03,
+          "height": 0.024
+        },
+        "marker": {
+          "x": 0.055,
+          "y": 0.249
+        }
+      }
+    },
+    {
+      "id": "ch5-score-feasibility",
+      "pdfPage": 155,
+      "printedPage": "148",
+      "reason": "去除下沿多余空间，避免触及下一题游泳会员框。",
+      "before": {
+        "region": {
+          "x": 0.133,
+          "y": 0.591,
+          "width": 0.507,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.6035
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.133,
+          "y": 0.591,
+          "width": 0.507,
+          "height": 0.022
+        },
+        "marker": {
+          "x": 0.955,
+          "y": 0.602
+        }
+      }
+    },
+    {
+      "id": "ch6-segment-comparison-alignment",
+      "pdfPage": 171,
+      "printedPage": "164",
+      "reason": "收紧到叠合比较的端点位置条件，移除后续独立提问的误覆盖。",
+      "before": {
+        "region": {
+          "x": 0.085,
+          "y": 0.843,
+          "width": 0.79,
+          "height": 0.075
+        },
+        "marker": {
+          "x": 0.045,
+          "y": 0.878
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.13,
+          "y": 0.843,
+          "width": 0.615,
+          "height": 0.025
+        },
+        "marker": {
+          "x": 0.045,
+          "y": 0.855
+        }
+      }
+    },
+    {
+      "id": "ch6-angle-overlap-conditions",
+      "pdfPage": 180,
+      "printedPage": "173",
+      "reason": "收紧到本解读补足条件的原文短句，移除下一行独立提问的误覆盖。",
+      "before": {
+        "region": {
+          "x": 0.13,
+          "y": 0.157,
+          "width": 0.79,
+          "height": 0.046
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.18
+        }
+      },
+      "after": {
+        "region": {
+          "x": 0.174,
+          "y": 0.158,
+          "width": 0.355,
+          "height": 0.022
+        },
+        "marker": {
+          "x": 0.95,
+          "y": 0.169
+        }
+      }
+    }
+  ],
+  "retainedSharedSourceOverlaps": [
+    {
+      "page": 41,
+      "ids": [
+        "ch2-rewrite-exercise",
+        "ch2-q-p41-practice2"
+      ],
+      "reason": "两个解读合法地锚定同一题干、同一要求或题干中的关键短语。"
+    },
+    {
+      "page": 42,
+      "ids": [
+        "ch2-height-difference-exercise",
+        "ch2-q-p42-ex21-6"
+      ],
+      "reason": "两个解读合法地锚定同一题干、同一要求或题干中的关键短语。"
+    },
+    {
+      "page": 42,
+      "ids": [
+        "ch2-net-profit-exercise",
+        "ch2-q-p42-ex21-8"
+      ],
+      "reason": "两个解读合法地锚定同一题干、同一要求或题干中的关键短语。"
+    },
+    {
+      "page": 43,
+      "ids": [
+        "ch2-mass-total-exercise",
+        "ch2-q-p43-ex21-9"
+      ],
+      "reason": "两个解读合法地锚定同一题干、同一要求或题干中的关键短语。"
+    },
+    {
+      "page": 45,
+      "ids": [
+        "ch2-q-p45-multiplication-intro",
+        "ch2-multiplication-consistency"
+      ],
+      "reason": "两个解读合法地锚定同一题干、同一要求或题干中的关键短语。"
+    },
+    {
+      "page": 62,
+      "ids": [
+        "ch2-scientific-exponent-observe",
+        "ch2-q-p62-thinking"
+      ],
+      "reason": "两个解读合法地锚定同一题干、同一要求或题干中的关键短语。"
+    },
+    {
+      "page": 64,
+      "ids": [
+        "ch2-speed-unit-practice",
+        "ch2-q-exercise23-11"
+      ],
+      "reason": "两个解读合法地锚定同一题干、同一要求或题干中的关键短语。"
+    },
+    {
+      "page": 64,
+      "ids": [
+        "ch2-power-statement-practice",
+        "ch2-q-exercise23-13"
+      ],
+      "reason": "两个解读合法地锚定同一题干、同一要求或题干中的关键短语。"
+    },
+    {
+      "page": 69,
+      "ids": [
+        "ch2-power-size-explore",
+        "ch2-q-review2-13"
+      ],
+      "reason": "两个解读合法地锚定同一题干、同一要求或题干中的关键短语。"
+    },
+    {
+      "page": 69,
+      "ids": [
+        "ch2-counterexample-review",
+        "ch2-q-review2-14"
+      ],
+      "reason": "两个解读合法地锚定同一题干、同一要求或题干中的关键短语。"
+    },
+    {
+      "page": 71,
+      "ids": [
+        "ch2-base-zero-placeholder",
+        "ch2-q-p71-activity1-task2"
+      ],
+      "reason": "两个解读合法地锚定同一题干、同一要求或题干中的关键短语。"
+    },
+    {
+      "page": 71,
+      "ids": [
+        "ch2-binary-addition-explore",
+        "ch2-q-p71-activity2-task2"
+      ],
+      "reason": "两个解读合法地锚定同一题干、同一要求或题干中的关键短语。"
+    },
+    {
+      "page": 176,
+      "ids": [
+        "ch6-p176-reading-units",
+        "ch6-screen-unit-exercise"
+      ],
+      "reason": "共同解释同一英制长度单位换算、手机屏幕对角线问题。"
+    },
+    {
+      "page": 194,
+      "ids": [
+        "ch6-surface-route-correspondence",
+        "ch6-q-p194-review9"
+      ],
+      "reason": "共同定位复习题9圆柱侧面最短金属丝路径及展开条件。"
+    },
+    {
+      "page": 195,
+      "ids": [
+        "ch6-fold-angle-evidence",
+        "ch6-q-p195-review11"
+      ],
+      "reason": "共同定位复习题11折纸求角题干。"
+    },
+    {
+      "page": 195,
+      "ids": [
+        "ch6-midpoint-investigation-check",
+        "ch6-q-p195-review13"
+      ],
+      "reason": "共同定位复习题13四边中点连接探究。"
+    },
+    {
+      "page": 198,
+      "ids": [
+        "ch6-field-layout-constraints",
+        "ch6-q-p198-field-task3"
+      ],
+      "reason": "共同定位任务3比赛场地安全、互不干扰的布局条件。"
+    },
+    {
+      "page": 30,
+      "ids": [
+        "ch1-between-numbers-practice",
+        "ch1-q-review-11"
+      ],
+      "reason": "第11题整题入口为题号，专门解读对应其第（1）问，两者确属同题。"
+    },
+    {
+      "page": 126,
+      "ids": [
+        "ch5-digit-value",
+        "ch5-q-p126-exercise11"
+      ],
+      "reason": "共同对应第11题数位交换条件，专门解读与整题导读共享原文。"
+    },
+    {
+      "page": 133,
+      "ids": [
+        "ch5-change-dimensions",
+        "ch5-q-p133-practice2"
+      ],
+      "reason": "共同对应练习第2题长宽变化及面积不变条件。"
+    }
+  ],
+  "verification": {
+    "tests": {
+      "command": "npm test",
+      "passed": 16,
+      "failed": 0
+    },
+    "build": {
+      "command": "npm run build",
+      "status": "passed",
+      "existingWarning": "主包体积超过500 kB"
+    },
+    "responsiveBrowser": {
+      "status": "passed",
+      "viewportWidths": [
+        320,
+        694,
+        1440
+      ],
+      "checks": 18,
+      "coverage": "每章各一处修正定位，核对框与教材图片的缩放对应，无横向溢出；另目视复核三种宽度的图形标注框。"
+    },
+    "diffCheck": "passed"
+  }
+}

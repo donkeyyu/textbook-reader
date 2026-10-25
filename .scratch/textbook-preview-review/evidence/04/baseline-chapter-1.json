@@ -1,0 +1,4697 @@
+{
+  "documentSha256": "6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249",
+  "chapter": "第一章 有理数",
+  "pageRange": [
+    8,
+    30
+  ],
+  "contentOrigin": "补充解释；不属于教材原文。例子另行标明，习题提示不提供答案。",
+  "review": {
+    "status": "source-checked",
+    "basis": "PDF第8–30页原图及跨页上下文核对；原有概念与步骤解读保留，新增逐题清单88项；逐条复核知识点、方法、注意条件、相关知识与练习边界，修正不适用提示和关联。",
+    "reviewer": "AI-assisted authoring and review",
+    "learningEffect": "未经学生使用验证。"
+  },
+  "supplements": [
+    {
+      "id": "ch1-why-negative",
+      "locationId": "ch1-why-negative",
+      "title": "章引言（1）：零上与零下温度",
+      "preview": "同样是3 ℃的差别，还需要记录它位于0 ℃的哪一侧。",
+      "paragraphs": [
+        "只记录3，能保留“与0 ℃相差多少”，却不能区分零上和零下。要把这两种情况都写进一个数里，还需要表示它处于分界点的哪一侧。",
+        "引入负号后，原来必须用“零上”“零下”补充的信息，也能进入数的表示。负数扩充的是我们表达数量的能力；并不是原来学过的3失去了意义。"
+      ],
+      "learningRole": "引出问题",
+      "learningGap": "同样是3 ℃的差别，还需要记录它位于0 ℃的哪一侧。",
+      "learningAction": "能用统一基准表示零上与零下温度，并解释符号承载的信息。",
+      "related": [
+        {
+          "locationId": "ch1-positive-negative",
+          "label": "正数和负数的记法",
+          "purpose": "查看符号如何把温度分界点两侧的信息写进一个数。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "正负数表示具有相反意义的量；0 ℃是温度的分界基准。"
+        ],
+        "method": [
+          "先用自己的话说清两个温度的共同点与不同点，再选择能同时保留差距和两侧信息的数的写法。"
+        ],
+        "cautions": [
+          "不要把“零下”丢掉而只写温度与0 ℃相差的数；记录温度还需保留单位。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-intro-profit-question",
+      "locationId": "ch1-intro-profit-question",
+      "title": "章引言（2）：盈利与亏损",
+      "preview": "先约定盈利与亏损的符号，金额大小是另一条信息。",
+      "paragraphs": [],
+      "learningRole": "引出问题",
+      "learningGap": "先约定盈利与亏损的符号，金额大小是另一条信息。",
+      "learningAction": "能建立并沿用盈亏的符号约定，分别表示两个记录。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-meanings",
+          "label": "相反意义与数量大小",
+          "purpose": "区分两个方面的意义与各自数量。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "盈利和亏损是具有相反意义的量；符号约定与金额单位。"
+        ],
+        "method": [
+          "先说明选哪一种情况用正数表示，再用同一约定分别记录两个月的情况；把符号所指的意义与金额大小分别检查。"
+        ],
+        "cautions": [
+          "盈利与亏损意义相反，不要求两个金额相等；题目要求分别表示，不是在求两个月的合计。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-intro-production-question",
+      "locationId": "ch1-intro-production-question",
+      "title": "章引言（3）：产量增长与减少",
+      "preview": "记录的是相对上年的变化率，符号表示变化方向。",
+      "paragraphs": [],
+      "learningRole": "引出问题",
+      "learningGap": "记录的是相对上年的变化率，符号表示变化方向。",
+      "learningAction": "能按同一约定记录两种变化率，并区分变化率与实际产量。",
+      "related": [
+        {
+          "locationId": "ch1-growth-rate-base",
+          "label": "增长率的比较基准",
+          "purpose": "后页例2用增长率说明百分数相对哪个原数量。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "正负数表示增长和减少；百分数表示变化相对原量的比例。"
+        ],
+        "method": [
+          "把两种作物各自与上年的比较关系读清，再选统一的增长、减少符号约定，分别写出变化率。"
+        ],
+        "cautions": [
+          "这两个百分数不是实际产量；两种作物各自的上年产量可能不同，不能从百分数直接推出具体增减了多少吨。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-positive-negative",
+      "locationId": "ch1-positive-negative",
+      "title": "这里的“−”在说明一个数",
+      "preview": "−3是一个数；这里的负号不要求先做一道减法。",
+      "paragraphs": [
+        "在“−3”中，负号和3合在一起表示一个负数。这里不是一道缺少前一个数的减法题。读数时，应把“负3”作为一个整体。",
+        "同一个“−”也能在两个数之间表示减法，例如补充用例“5−3”。判断符号的作用，要看它在整个式子中的位置。当前定义中的“−”写在正数前面，用来表示对应的负数。"
+      ],
+      "learningRole": "定义概念",
+      "learningGap": "负号与减号形状相同，原定义没有对比单个负数与减法算式的读取方式。",
+      "learningAction": "能把单个负数整体读出，并区分负号与两个数之间的减号。",
+      "related": []
+    },
+    {
+      "id": "ch1-zero-boundary",
+      "locationId": "ch1-zero-boundary",
+      "title": "为什么0要单独留下？",
+      "preview": "正数与负数分居0的两边，0本身不属于任何一边。",
+      "paragraphs": [
+        "正数的条件是“大于0”，0不满足这个条件；负数对应分界点另一侧的数，0也没有落在那一侧。它是两边共同的分界点，而不是其中一类的成员。",
+        "因此，判断数的符号时，应留出“等于0”这一种情况。没有负号，不能单凭这一点就判为正数；补充用例0、+0和−0都表示同一个0。"
+      ],
+      "learningRole": "定义概念",
+      "learningGap": "原文给出了0的归属结论，但未连起严格大于条件、分界点与按符号分类的三种情况。",
+      "learningAction": "能在正、负之外单独检查0，解释为什么没有负号不足以判定正数。",
+      "related": []
+    },
+    {
+      "id": "ch1-opposite-meanings",
+      "locationId": "ch1-opposite-meanings",
+      "title": "“相反意义”不要求数量相等",
+      "preview": "先找同一种量的两个相反方面，再谈多大或多少。",
+      "paragraphs": [
+        "这里的“相反”说的是数量的意义，例如增加与减少、超过标准与不足标准。它们属于同一种比较，却朝相反的方向变化。",
+        "两个方面的数量不必相等。章引言中的盈利50万元和亏损10万元，金额不同，仍可分别用正数和负数表示。不能因为一个数带正号、另一个带负号，就认为两者的数量大小相同。"
+      ],
+      "learningRole": "陈述性质或结论",
+      "learningGap": "一般表述易让相反意义与数量相等混在一起，需要分清方向与数量两个信息。",
+      "learningAction": "能判断哪些量具有相反意义，并说明数量不等也可分别用正负数记录。",
+      "related": []
+    },
+    {
+      "id": "ch1-example-1-1-guide",
+      "locationId": "ch1-example-1-1-guide",
+      "title": "1.1例1：质量偏差",
+      "preview": "两问方向相反：先把偏差写成数，再把数读回偏差。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "两问方向相反：先把偏差写成数，再把数读回偏差。",
+      "learningAction": "能在偏差的文字描述与带符号记录之间双向转换。",
+      "related": [
+        {
+          "locationId": "ch1-deviation",
+          "label": "实际质量与偏差",
+          "purpose": "检查两问的记录对象是否始终是相对标准的差别。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "相对标准的偏差；正负数与具有相反意义的量；数量与单位。"
+        ],
+        "method": [
+          "第（1）问先找标准和“超过为正”的约定，再分别判断给定的两种情况应怎样记录。",
+          "第（2）问从数的符号读出偏差方向，从数值和单位读出偏差大小；用“相对标准……”的完整语句解释。"
+        ],
+        "cautions": [
+          "2.5 kg是标准质量，题中以g记录的是偏差；不要把有正负的记录直接说成橘子的实际质量。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-deviation",
+      "locationId": "ch1-deviation",
+      "title": "负的是偏差，不是质量",
+      "preview": "先看这个数记录的是实际质量，还是与标准的差别。",
+      "paragraphs": [
+        "本例把标准质量作为比较基准。记录中的负号说明“比标准少”，并不表示橘子的实际质量是负数。读记录时，要把“实际有多重”和“比标准多或少多少”分开。",
+        "如果偏差记为0，表示恰好达到标准质量，不表示箱子里没有橘子。同一个0，必须结合正在记录的量来理解。"
+      ],
+      "learningRole": "示范方法；定义概念",
+      "learningGap": "例题给出了偏差的读写结果，但未展开区分实际质量与有正负的偏差，尤其偏差0与质量0。",
+      "learningAction": "能说明正负偏差和偏差0对应的实际质量状态，避免把偏差当作实际质量。",
+      "related": []
+    },
+    {
+      "id": "ch1-practice-p3-1",
+      "locationId": "ch1-practice-p3-1",
+      "title": "练习第1题",
+      "preview": "按数与0的关系分类，分数或小数的外形不决定正负。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "按数与0的关系分类，分数或小数的外形不决定正负。",
+      "learningAction": "能逐个判断所列数的符号并按要求分类。",
+      "related": [
+        {
+          "locationId": "ch1-positive-negative",
+          "label": "正数与负数",
+          "purpose": "确认数前的符号如何读取。"
+        },
+        {
+          "locationId": "ch1-zero-boundary",
+          "label": "0的分类位置",
+          "purpose": "检查分类时是否遗漏分界点的情形。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "正数、负数与0的区分；正号可以省略。"
+        ],
+        "method": [
+          "逐个读出数的符号，并单独检查是否为0；再按题目要求整理正数和负数两类。"
+        ],
+        "cautions": [
+          "不要把没有负号的数一律放入正数；分数线与小数点不改变符号判断。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-practice-p3-2",
+      "locationId": "ch1-practice-p3-2",
+      "title": "练习第2题",
+      "preview": "题目已经给出一种方向的记法，另一方向要沿用同一约定。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "题目已经给出一种方向的记法，另一方向要沿用同一约定。",
+      "learningAction": "能从给定记录识别方向约定，并应用到另一段移动。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-meanings",
+          "label": "具有相反意义的量",
+          "purpose": "用相反方向与数量大小两个信息检查记录。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "相反方向的符号表示；移动方向与移动距离。"
+        ],
+        "method": [
+          "先从已给记录读出哪个方向被选为正，再判断所问方向与它的关系，最后保留题目给出的距离。"
+        ],
+        "cautions": [
+          "符号表示方向，数值表示走多远；不能因为记录规则里出现80，就把所问距离也写成80。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-practice-p3-3",
+      "locationId": "ch1-practice-p3-3",
+      "title": "练习第3题",
+      "preview": "温度记录先看0 ℃的哪一侧，再保留对应的温度数值。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "温度记录先看0 ℃的哪一侧，再保留对应的温度数值。",
+      "learningAction": "能按已给温度约定记录另一个温度并保留单位。",
+      "related": [
+        {
+          "locationId": "ch1-zero-reference",
+          "label": "0 ℃作为基准",
+          "purpose": "确认负温度是在温度基准哪一侧的记录。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "用正负数表示零上、零下温度；统一分界基准。"
+        ],
+        "method": [
+          "比较白天和夜间的温度描述，判断它们分别处于分界点哪一侧，再沿用题目已示范的记录方式。"
+        ],
+        "cautions": [
+          "题目要求记录夜间温度，不是计算昼夜温差；不要把白天的数值带入夜间记录。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-practice-p3-4",
+      "locationId": "ch1-practice-p3-4",
+      "title": "练习第4题",
+      "preview": "进球、失球要从同一支队伍的角度记录。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "进球、失球要从同一支队伍的角度记录。",
+      "learningAction": "能从同一球队的立场应用进失球的符号约定。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-meanings",
+          "label": "相反意义的判断",
+          "purpose": "先确认同一种比较中的两个相反方面，再确定符号。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "具有相反意义的量；符号约定依赖记录对象。"
+        ],
+        "method": [
+          "固定以甲队为观察对象，先读出进球的记录约定，再判断失球与这一约定的关系。"
+        ],
+        "cautions": [
+          "不要中途改成对方球队的角度；题目问失球的记录，不是在求净胜球。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-zero-reference",
+      "locationId": "ch1-zero-reference",
+      "title": "0要和它记录的量一起读",
+      "preview": "温度为0 ℃，不等于“没有温度”；海拔为0 m也不等于“没有高度”。",
+      "paragraphs": [
+        "计数时，0可以表示一个物体也没有；用温度或海拔作记录时，0还可以表示选定的基准。数值相同，所记录的量不同，读法就不能照搬。",
+        "海拔记录的是相对海平面的高度。海拔为0 m，只说明位置落在这个高度基准上；要问它离楼顶、山顶或另一个地点有多高，还需知道那个地点的位置。"
+      ],
+      "learningRole": "定义概念",
+      "learningGap": "旁注指出0不只是没有，但未展开一个0的记录如何依赖所记录的量与参照基准。",
+      "learningAction": "能从量的名称和基准解释0，并避免把海拔0误读为一切高度都为0。",
+      "related": [
+        {
+          "locationId": "ch1-deviation",
+          "label": "对照标准质量与偏差",
+          "purpose": "检查偏差为0时，是哪一种量为0。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-think-map-bill",
+      "locationId": "ch1-think-map-bill",
+      "title": "思考：地形图与收支账单",
+      "preview": "同样的正负号，放进地图和账单后记录的是不同的量。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "同样的正负号，放进地图和账单后记录的是不同的量。",
+      "learningAction": "能分别解释地图和账单的正负记录，并给出约定明确的新例子。",
+      "related": [
+        {
+          "locationId": "ch1-zero-reference",
+          "label": "基准与记录对象",
+          "purpose": "检查地形图里的0与账单里的0各在记录什么。"
+        },
+        {
+          "locationId": "ch1-opposite-meanings",
+          "label": "相反意义",
+          "purpose": "检验自选例子是不是同一种量的相反方面。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "海拔的基准；收支的相反意义；生活情境中的符号约定。"
+        ],
+        "method": [
+          "先看地形图图例，确定数值的单位与海拔基准，再解释所标位置的正负意义。",
+          "读账单时先确定账户的观察角度，再解释款项进入或离开与符号的关系。",
+          "另举例时，选择同一种量的两个相反方面，说明基准或约定，再给出一对记录。"
+        ],
+        "cautions": [
+          "地形图中的负数不是负的路程，账单中的负数也不是不存在的货币；自己的例子要使别人仅凭说明就能读懂符号。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-example-1-2-guide",
+      "locationId": "ch1-example-1-2-guide",
+      "title": "1.1例2：增长值与增长率",
+      "preview": "增长值和增长率都记录变化，但一个带质量单位，一个带百分号。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "增长值和增长率都记录变化，但一个带质量单位，一个带百分号。",
+      "learningAction": "能分别记录变化量和变化率，并说明二者的含义与单位区别。",
+      "related": [
+        {
+          "locationId": "ch1-growth-amount",
+          "label": "增长值与实际量",
+          "purpose": "分清记录的是体重还是变化。"
+        },
+        {
+          "locationId": "ch1-growth-rate-base",
+          "label": "增长率的基准",
+          "purpose": "确认每个百分数是相对什么数量。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "正负数统一表示增加、减少与没有变化；增长值与增长率。"
+        ],
+        "method": [
+          "第（1）问以各人月初的体重为比较状态，分别辨认三种变化，再按统一的增长记法记录。",
+          "第（2）问先确认比较的是每种品牌第二季度与第一季度的销量，再把各自的变化方向和百分数合成增长率记录。"
+        ],
+        "cautions": [
+          "不要把体重增长值当作当前体重；四个品牌的销量基数可能不同，增长率不能直接当作销量的增减数量。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-growth-amount",
+      "locationId": "ch1-growth-amount",
+      "title": "“增长”为什么可以写负数？",
+      "preview": "这里的“增长值”统一记录变化，负号表示变化方向相反。",
+      "paragraphs": [
+        "例2把“增加多少”“减少多少”“没有变化”统一写成增长值。先约定增加为正，减少就用负数表示；因此“增长−0.5 kg”不是说体重变成负数。",
+        "增长值比较的是本月结束时与开始时的体重。增长值为0，只能说明前后一样，不能据此知道这个人具体有多重。读变化量时，始终要分清“变化了多少”与“现在有多少”。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "例2解答把减少改写为负增长，未解释增长值名称为何容纳负数，以及增长值不同于体重。",
+      "learningAction": "能把负增长读成相对原状态的减少，并区分变化量与当前实际量。",
+      "related": []
+    },
+    {
+      "id": "ch1-growth-rate-question",
+      "locationId": "ch1-growth-rate-question",
+      "title": "例2旁问：负增长率与零增长率",
+      "preview": "把负号与百分数分开解释，再检查零增长率对应的变化。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "把负号与百分数分开解释，再检查零增长率对应的变化。",
+      "learningAction": "能解释负增长率的两部分信息，并自主判断零增长率的情形。",
+      "related": [
+        {
+          "locationId": "ch1-growth-amount",
+          "label": "变化量的三种情况",
+          "purpose": "把增加、减少和未变放在同一个记录框架中检查。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "增长率中的方向与比例；变化量相对原数量的比较。"
+        ],
+        "method": [
+          "解释第一个问题时，要同时说出比较基准、变化方向和百分数所比较的量。",
+          "对第二个问题，可设想销量增加、减少或保持原状三种情况，检查各自变化量占原量的比例。"
+        ],
+        "cautions": [
+          "不能把增长率的符号当作实际销量的符号；“增长”这个记录名称并不先行保证变化向上。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-growth-rate-base",
+      "locationId": "ch1-growth-rate-base",
+      "title": "增长率的百分数，是和谁比？",
+      "preview": "先确定比较的原数量，负号再说明相对它减少。",
+      "paragraphs": [
+        "本例比较第二季度与第一季度，百分数以第一季度的销量为基准。“增长−2%”的含义是：减少的数量相当于第一季度销量的2%，并不是第二季度销量成了负数。",
+        "补充用例：若原来为100，增长−2%后就是98。换一个原数量，即使增长率仍是−2%，减少的数量也会改变。增长率为0则表示与原数量相比没有变化。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "负增长率的解答给了符号结果，但未解释百分数的比较基准，以及变化率和实际销量的区别。",
+      "learningAction": "能指出增长率的比较基准，并说明相同负增长率不等于减少相同数量。",
+      "related": [
+        {
+          "locationId": "ch1-growth-amount",
+          "label": "对照增长值",
+          "purpose": "先分清实际数量和变化量，再理解变化量相对原数量所占的比例。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-practice-p5-1",
+      "locationId": "ch1-practice-p5-1",
+      "title": "练习第1题",
+      "preview": "先区分水位变化与水位本身，再检查下降和未变两种情况。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "先区分水位变化与水位本身，再检查下降和未变两种情况。",
+      "learningAction": "能按给定约定记录水位下降与未变。",
+      "related": [
+        {
+          "locationId": "ch1-growth-amount",
+          "label": "变化量与实际量",
+          "purpose": "借用增长值的读法区分水位和水位变化。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "水位变化的符号约定；零变化与实际水位。"
+        ],
+        "method": [
+          "沿用题目对升高的记法，分别判断下降与不升不降应怎样记录；可以用同一条水位基准线对照变化前后。"
+        ],
+        "cautions": [
+          "“不升不降”描述前后状态的关系，不等于水库没有水；填写的是变化，不是最后水位。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-practice-p5-2",
+      "locationId": "ch1-practice-p5-2",
+      "title": "练习第2题",
+      "preview": "解释每个记录时都要带上同一个标准质量。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "解释每个记录时都要带上同一个标准质量。",
+      "learningAction": "能解释正、负和零偏差记录对应的质量状态。",
+      "related": [
+        {
+          "locationId": "ch1-deviation",
+          "label": "标准质量与偏差",
+          "purpose": "用例1的记录对象检查面粉题中的三个数。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "实际质量与相对标准的偏差；正、负及零偏差。"
+        ],
+        "method": [
+          "把每个给定记录拆成偏差方向与偏差大小，再用“这袋面粉相对标准……”的语句逐一说明。"
+        ],
+        "cautions": [
+          "三个数都是偏差记录，不能直接当作面粉质量；对无偏差的情形也要说明它与标准的关系。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-practice-p5-3",
+      "locationId": "ch1-practice-p5-3",
+      "title": "练习第3题",
+      "preview": "先遵守涨价为正的约定，百分比仍表示价格的变化程度。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "先遵守涨价为正的约定，百分比仍表示价格的变化程度。",
+      "learningAction": "能依题设对涨价和降价的百分数进行符号记录。",
+      "related": [
+        {
+          "locationId": "ch1-growth-rate-base",
+          "label": "变化率的比较基准",
+          "purpose": "辨认百分数记录的是相对原价的变化。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "涨价和降价的相反意义；价格变化率。"
+        ],
+        "method": [
+          "分别把两件商品的变化方向与题目约定对照，再保留各自的变化百分数。"
+        ],
+        "cautions": [
+          "不要把百分数改写成货币金额；两件商品原价未给出，题目也未要求比较它们最后的价格。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-exercise-1-1-1",
+      "locationId": "ch1-exercise-1-1-1",
+      "title": "习题1.1第1题",
+      "preview": "很小的小数仍要按符号判断，0需要单独检查。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "很小的小数仍要按符号判断，0需要单独检查。",
+      "learningAction": "能辨认包括很小小数在内的正负数并避免漏项。",
+      "related": [
+        {
+          "locationId": "ch1-zero-boundary",
+          "label": "0的边界",
+          "purpose": "检查非常接近0的数与0本身的区别。"
+        },
+        {
+          "locationId": "ch1-positive-negative",
+          "label": "符号的读取",
+          "purpose": "把负号与它所修饰的数一起读取。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "正数、负数与0；带正号及省略正号的表示。"
+        ],
+        "method": [
+          "逐个读取所列数，先确认它是否为0，再按与0的关系整理两类；最后与原列表逐项核对。"
+        ],
+        "cautions": [
+          "小数位多或数值接近0，不等于这个数就是0；负号应与整个分数或小数一同读取。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-exercise-1-1-2",
+      "locationId": "ch1-exercise-1-1-2",
+      "title": "习题1.1第2题",
+      "preview": "每一年的“比上年”，对应的是各自前一年的降水量。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "每一年的“比上年”，对应的是各自前一年的降水量。",
+      "learningAction": "能逐年确认比较对象并分别记录降水增长量。",
+      "related": [
+        {
+          "locationId": "ch1-growth-amount",
+          "label": "增长值记录变化",
+          "purpose": "确认记录对象是与原状态相比的变化量。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "正负数记录增减量；相邻年份的比较基准。"
+        ],
+        "method": [
+          "按年份顺序分别标出每条记录的比较对象，辨认增加或减少，再用统一的增长量记法表示。"
+        ],
+        "cautions": [
+          "题目要求三个逐年变化量，不是三年的实际降水量；不要把三条记录都误读成与最初同一年比较。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-exercise-1-1-3",
+      "locationId": "ch1-exercise-1-1-3",
+      "title": "习题1.1第3题",
+      "preview": "“不是”排除一类之后，是否只剩另一类，需要逐类检查。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "“不是”排除一类之后，是否只剩另一类，需要逐类检查。",
+      "learningAction": "能逐句判断两条全称说法，并用分类或反例说明依据。",
+      "related": [
+        {
+          "locationId": "ch1-zero-boundary",
+          "label": "正负数的分界",
+          "purpose": "回看完整分类，再检查排除某一类后还剩哪些情形。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "正数、负数与0的分类；用反例检验“一定”。"
+        ],
+        "method": [
+          "把题中的两句话分开检查：先确定前半句允许哪些数，再检验这些数是否都满足后半句。",
+          "若判断一句话不成立，要给出符合前半句却不符合后半句的例子，并解释它违反了哪里。"
+        ],
+        "cautions": [
+          "举一个符合说法的例子不能证明“一定”；两句话都需要给出理由，不能只回答对或错。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-exercise-1-1-4",
+      "locationId": "ch1-exercise-1-1-4",
+      "title": "习题1.1第4题",
+      "preview": "正负电荷的名称由题设给出，先按该约定辨认记录对象。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "正负电荷的名称由题设给出，先按该约定辨认记录对象。",
+      "learningAction": "能使用题目给定的电荷约定记录两个对象。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-meanings",
+          "label": "相反意义与数量",
+          "purpose": "分开判断电荷类别与数量两个信息。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "用正负数记录两种相反意义的量；给定的物理符号约定。"
+        ],
+        "method": [
+          "圈出题干对原子核和核外电子电荷的规定，再把每个对象与相应符号对应，同时保留所带电荷的数量。"
+        ],
+        "cautions": [
+          "“各带1个电荷”表示数量相同，并没有取消两类电荷的区别；不要把正负号理解成物体数量的多少。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-direction-exercise",
+      "locationId": "ch1-direction-exercise",
+      "title": "习题1.1第5题",
+      "preview": "移动记录与最后位置不同，判断两问时都要守住同一个起点。",
+      "paragraphs": [
+        "“向前”不总是正，“向后”也不总是负。题目可以选定其中一个方向为正；读这道题时，要先找到它已经给出的约定，再判断与之相反的方向怎样记录。",
+        "移动量描述一次移动的方向和远近，最终位置描述移动结束后相对起点在哪里。可画一条带方向的直线核对这两件事，再自行判断题目所问的距离。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "移动记录与最后位置不同，判断两问时都要守住同一个起点。",
+      "learningAction": "能按约定解释第二次移动，并自主追踪终点、求与原位置的距离。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-meanings",
+          "label": "方向和数量的分工",
+          "purpose": "确认符号与移动距离各说明什么。"
+        },
+        {
+          "locationId": "ch1-number-line-distance",
+          "label": "位置数与距离",
+          "purpose": "用数轴区分终点所在位置与两点间距离。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "方向的正负约定；连续移动；移动距离与相对起点的位置。"
+        ],
+        "method": [
+          "先依据题目已给的向后记录解释第二次移动的符号和距离。",
+          "再画一条带方向的直线，按发生顺序追踪两次移动，最后检查终点与两次移动前位置之间的距离。"
+        ],
+        "cautions": [
+          "第二次移动从第一次的终点开始，不能再次从最初位置出发；题目最后问距离，不是两次走过的总路程。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-measurement-exercise",
+      "locationId": "ch1-measurement-exercise",
+      "title": "习题1.1第6题",
+      "preview": "先确定所有数据共用的平均值，再以它为标准逐个记录偏差。",
+      "paragraphs": [
+        "这道题中的原始数据记录楼高；接下来要记录的数表示“比同一个标准多或少多少”。它们记录的量不同，因此不能只看原始数据是否大于0，就决定偏差的符号。",
+        "题目指定平均值为标准。求出这个标准后，再比较每组数据与它的关系：符号说明高于还是低于标准，记录时还要写出相差多少。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "先确定所有数据共用的平均值，再以它为标准逐个记录偏差。",
+      "learningAction": "能求数据平均值并以统一标准自主记录七组偏差。",
+      "related": [
+        {
+          "locationId": "ch1-deviation",
+          "label": "实际量与偏差",
+          "purpose": "借助标准质量例题，检查测量值与偏差是否被混读。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "平均数；相对同一标准的偏差；正负数表示超出或不足。"
+        ],
+        "method": [
+          "求平均值时核对共有几组数据，并检查各组数据的单位一致。",
+          "记录偏差时，每组都与刚得到的同一个平均值比较，分别确定方向与差距；最后逐组对照原始数据。"
+        ],
+        "cautions": [
+          "楼高测量值与偏差是两种不同记录；不要用前一组数据替代平均值作下一组的标准，也不要漏掉可能等于标准的情形。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-exercise-1-1-7",
+      "locationId": "ch1-exercise-1-1-7",
+      "title": "习题1.1第7题",
+      "preview": "两次下降按时间顺序发生，后一次以当时温度为起点。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "两次下降按时间顺序发生，后一次以当时温度为起点。",
+      "learningAction": "能按时间顺序处理连续温度变化，并自主读取最终温度。",
+      "related": [
+        {
+          "locationId": "ch1-zero-reference",
+          "label": "温度的零基准",
+          "purpose": "检查温度经过0 ℃后应怎样记录。"
+        },
+        {
+          "locationId": "ch1-growth-amount",
+          "label": "变化量与当前量",
+          "purpose": "区分下降了多少与下降后温度是多少。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "零上与零下温度；温度变化；连续变化的时间顺序。"
+        ],
+        "method": [
+          "先核对题目所问时刻与两段时间的关系，再用温度计示意图按顺序追踪温度的变化。"
+        ],
+        "cautions": [
+          "第二次下降不是重新从最初温度开始；若温度变化经过0 ℃，应继续按同一刻度和方向读数。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-exercise-1-1-8",
+      "locationId": "ch1-exercise-1-1-8",
+      "title": "习题1.1第8题",
+      "preview": "密码记录每次怎样转，不是直接给出每次停在哪个刻度。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "密码记录每次怎样转，不是直接给出每次停在哪个刻度。",
+      "learningAction": "能按同一旋转约定解释两组密码并自主追踪最终刻度。",
+      "related": [
+        {
+          "locationId": "ch1-direction-exercise",
+          "label": "连续移动与最终位置",
+          "purpose": "比较每次移动记录与连续移动后的最终位置。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "正负号记录相反旋转方向；每次转动量与当前刻度；连续移动。"
+        ],
+        "method": [
+          "先读清题目规定的正、负旋转方向，用图示或纸盘按第一组密码的顺序追踪标记线所对刻度。",
+          "对第二组密码，先把每个带符号记录读成方向和小格数，再从题目指定的初始状态连续操作并检查最后刻度。"
+        ],
+        "cautions": [
+          "只在开始开锁前对齐0，不是每次转动前都回到0；锁盘是环形，越过0时应沿原图刻度继续读，不能把负的转动记录直接当作锁盘上的刻度数。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-tolerance-range",
+      "locationId": "ch1-tolerance-range",
+      "title": "±记录允许的范围，不是一次测量值",
+      "preview": "一个球只有一个实际直径；±0.05 mm给出向两侧偏离的限度。",
+      "paragraphs": [
+        "“40 mm±0.05 mm”包含标准值和允许偏差两部分。±不是说一个球同时有两个直径，而是规定实际直径可以比40 mm稍大，也可以稍小。",
+        "允许偏差还包含两端之间的数，不只允许“恰好多0.05 mm”或“恰好少0.05 mm”。例如补充用例，偏差为+0.02 mm也在允许范围内；判断是否合格，要检查实际偏差有没有超过规定的上下限。"
+      ],
+      "learningRole": "陈述性质或结论",
+      "learningGap": "原文列出最大最小直径，但±容易被当成两种离散测量结果，需要区分标准、实际值与允许区间。",
+      "learningAction": "能区分实际测量值与允许偏差，并判断区间内部的偏差也属于允许范围。",
+      "related": [
+        {
+          "locationId": "ch1-deviation",
+          "label": "回顾实际质量和偏差",
+          "purpose": "把实际值与偏离标准多少分开，再理解允许偏差。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-tolerance-question",
+      "locationId": "ch1-tolerance-question",
+      "title": "阅读与思考：用正负数表示允许偏差",
+      "preview": "解释允许偏差时，要同时说清标准、上下限和中间允许的范围。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "解释允许偏差时，要同时说清标准、上下限和中间允许的范围。",
+      "learningAction": "能解释质量允许偏差，并给出约定和单位明确的另一例子。",
+      "related": [
+        {
+          "locationId": "ch1-tolerance-range",
+          "label": "允许偏差的范围",
+          "purpose": "回看直径说明，迁移到质量规格。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "标准值与实际值；正负允许偏差；允许区间。"
+        ],
+        "method": [
+          "仿照直径说明，先识别质量规格中的标准和允许偏差，再用文字说明实际质量被允许落在什么范围。",
+          "另举例时，可选一个有明确规格的物品，写出标准、偏差和单位，并说明哪些实际值合格；自拟数据要明确标为举例。"
+        ],
+        "cautions": [
+          "±给出两侧限度，不是说物品同时有两个质量；不要只列两个端点而遗漏它们之间的允许值。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-rational-think",
+      "locationId": "ch1-rational-think",
+      "title": "1.2.1思考：已经认识了哪些数",
+      "preview": "回顾时既列具体例子，也检查数的种类有没有遗漏。",
+      "paragraphs": [],
+      "learningRole": "回顾与整理",
+      "learningGap": "回顾时既列具体例子，也检查数的种类有没有遗漏。",
+      "learningAction": "能列举已学数并用明确依据整理它们。",
+      "related": [
+        {
+          "locationId": "ch1-rational-form",
+          "label": "数值与写法",
+          "purpose": "检查回顾时是否把相同数的不同写法当成不同类别。"
+        },
+        {
+          "locationId": "ch1-zero-boundary",
+          "label": "回顾0",
+          "purpose": "核对回顾是否保留了分界点的情况。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "已学数的类型；正负数与0；整数、分数及小数表示。"
+        ],
+        "method": [
+          "先从计数、测量和上一节的情境各选一些已认识的数，再尝试按同一标准整理；给每一类写一个能说明其特点的例子。"
+        ],
+        "cautions": [
+          "同一个数可能有多种写法，不要把写法变化当作增加一种新数；分类标准应说清，避免一会儿按符号、一会儿只按小数点分组。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-decimal-rational",
+      "locationId": "ch1-decimal-rational",
+      "title": "小数的写法，也可以表示有理数",
+      "preview": "要判断能否写成分数，不能只看有没有小数点。",
+      "paragraphs": [
+        "有限小数能利用小数位数改写成分数。补充用例：0.25表示25个百分之一，所以0.25=25/100=1/4。小数形式和分数形式可以记录同一个数。",
+        "循环小数中的点表示指定数字会按同一规律不断重复，而不是到这里停止。教材旁注的循环小数与1/3对应；判断它属于有理数，依据是能够写成分数，不是把它截成有限位后的近似数。"
+      ],
+      "learningRole": "陈述性质或结论",
+      "learningGap": "旁注直接说明两类小数可化成分数，需要明确有限小数转换依据与循环记号不是有限位截断。",
+      "learningAction": "能解释有限小数为何可改写为分数，并区分循环小数本身与有限位近似写法。",
+      "related": []
+    },
+    {
+      "id": "ch1-rational-form",
+      "locationId": "ch1-rational-form",
+      "title": "写成分数，不会改变数的类别",
+      "preview": "分数形式是一种写法，整数也能使用这种写法。",
+      "paragraphs": [
+        "“整数可以写成分数的形式”是在说同一个数能有不同写法。补充用例：6/3和2.0都表示整数2，写出分数线或小数点并不会把2变成非整数。",
+        "因此要分清“是整数”和“能写成分数形式”这两句话。前者判断数的类别，后者判断它能怎样表示；一个整数可以同时满足两句话。"
+      ],
+      "learningRole": "定义概念",
+      "learningGap": "原有说明混合写法、分母条件和交叉分类；此处单独解释书写形式不改变数的类别。",
+      "learningAction": "能按数值判断整数，解释整数写成分数形式后仍是整数。",
+      "related": []
+    },
+    {
+      "id": "ch1-rational-denominator",
+      "locationId": "ch1-rational-denominator",
+      "title": "“分数形式”要满足什么条件？",
+      "preview": "分子和分母都取整数，分母还必须非0。",
+      "paragraphs": [
+        "这里的分数形式，是用一个整数作分子、一个非0整数作分母。只要一个数能这样表示，它就是有理数；不要求它眼下已经写成分数。",
+        "分母不能为0，因为这会要求做除以0的运算。分子可以为0，例如教材中的0/1，所以0也是有理数。正数、负数之外的0，并没有被有理数的定义排除。"
+      ],
+      "learningRole": "定义概念",
+      "learningGap": "原定义简写分数形式，未单独列清整数分子、非零整数分母及分子可为0的条件。",
+      "learningAction": "能判断一种表示是否满足有理数分数形式的条件，并说明0属于有理数。",
+      "related": [
+        {
+          "locationId": "ch1-zero-boundary",
+          "label": "回看0的符号归属",
+          "purpose": "分清“不属于正数或负数”和“不属于有理数”这两种不同判断。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-example-1-2-1-guide",
+      "locationId": "ch1-example-1-2-1-guide",
+      "title": "1.2例1：正负有理数与正负整数",
+      "preview": "正负与整数是两项判断，写法复杂也要按数值检查。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "正负与整数是两项判断，写法复杂也要按数值检查。",
+      "learningAction": "能完成正负有理数与正负整数的交叉分类，并说明判断依据。",
+      "related": [
+        {
+          "locationId": "ch1-classification-overlap",
+          "label": "分类中的包含关系",
+          "purpose": "查看例题里的“其中”怎样连接两种分类。"
+        },
+        {
+          "locationId": "ch1-decimal-rational",
+          "label": "小数与有理数",
+          "purpose": "核对循环记号及小数表示。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "有理数的符号分类；正整数与负整数；百分数、循环小数与分数形式。"
+        ],
+        "method": [
+          "先判断各数属于正有理数还是负有理数，再在相应类别里检查哪些数的值是整数。",
+          "对百分数和循环小数先读懂其数值含义，再作整数判断；可用分类表核对四项要求是否都有回应。"
+        ],
+        "cautions": [
+          "“其中”表示从已经列出的类别中继续选，不能把四种名称当作互不重叠的四组；不要仅凭分数线或小数点判断整数。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-classification-overlap",
+      "locationId": "ch1-classification-overlap",
+      "title": "“其中”说明两类数是什么关系？",
+      "preview": "先按正负分组，再在组内找整数，不是在分互不相交的四组。",
+      "paragraphs": [
+        "“正有理数”按正负来判断，“整数”按数值是不是整数来判断。两种条件可以同时满足，所以解答先列正有理数，再从这些数中找正整数。",
+        "补充用例：2既是正有理数，也是整数；−2既是负有理数，也是整数；0是整数和有理数，却不属于正有理数或负有理数。分类前先说清依据，才能判断一个数是否可以出现在不止一类中。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "例1列举了嵌套类别，但未展开其中一词体现的包含关系和两种分类标准。",
+      "learningAction": "能按符号和整数属性分别判断，并解释同一个数为何可以属于两类。",
+      "related": [
+        {
+          "locationId": "ch1-rational-form",
+          "label": "回看写法与类别",
+          "purpose": "核对分数线或小数点不能单独决定整数属性。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-practice-p8-1",
+      "locationId": "ch1-practice-p8-1",
+      "title": "练习第1题",
+      "preview": "集合名称给出归属条件，按条件逐个放入所给数。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "集合名称给出归属条件，按条件逐个放入所给数。",
+      "learningAction": "能按集合的符号条件整理所给有理数。",
+      "related": [
+        {
+          "locationId": "ch1-rational-denominator",
+          "label": "有理数的范围",
+          "purpose": "确认集合成员的共同范围。"
+        },
+        {
+          "locationId": "ch1-positive-negative",
+          "label": "正负号",
+          "purpose": "据符号判断集合归属。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "正有理数集合与负有理数集合；按符号判断归属。"
+        ],
+        "method": [
+          "先说清每个集合接收什么样的数，再逐个核对所给数的符号；填写后回到原列表检查是否漏项或重复。"
+        ],
+        "cautions": [
+          "省略号表示这类数不止题目列出的几个，不要求你继续编造新数；不能只看一个数写成整数还是分数来决定正负集合。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-practice-p8-2",
+      "locationId": "ch1-practice-p8-2",
+      "title": "练习第2题",
+      "preview": "三个名称用了两种分类标准，某个数可以满足不止一个。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "三个名称用了两种分类标准，某个数可以满足不止一个。",
+      "learningAction": "能在三类之间保留正确的交叉归属，并正确处理0和带分数。",
+      "related": [
+        {
+          "locationId": "ch1-classification-overlap",
+          "label": "两种分类的交叉",
+          "purpose": "检查一个数同时属于两类时是否被误删。"
+        },
+        {
+          "locationId": "ch1-rational-form",
+          "label": "写法与数值",
+          "purpose": "判断整数时以数值为准。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "正负有理数与整数的交叉分类；0的归属；带分数的数值。"
+        ],
+        "method": [
+          "分别建立符号和是否为整数两项判断，再按题目要求列出三类；对带分数先读出完整数值再分类。"
+        ],
+        "cautions": [
+          "整数一栏不能只检查前两栏有没有出现过这个数；0需依相应定义单独判断，不能凭外观省略。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-practice-p8-3",
+      "locationId": "ch1-practice-p8-3",
+      "title": "练习第3题",
+      "preview": "先分类再计数，比边读边报个数更容易核对。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "先分类再计数，比边读边报个数更容易核对。",
+      "learningAction": "能先建立逐数分类记录，再自主统计四类数量。",
+      "related": [
+        {
+          "locationId": "ch1-classification-overlap",
+          "label": "先分类，再理解其中",
+          "purpose": "核对四项计数的包含关系。"
+        },
+        {
+          "locationId": "ch1-decimal-rational",
+          "label": "循环小数",
+          "purpose": "正确读取循环点再判断数值。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "正负有理数及正负整数；百分数和循环小数的数值；分类计数。"
+        ],
+        "method": [
+          "给每个数分别标出符号与是否为整数，再据此统计四个空格要求的类别。",
+          "统计后检查“其中”的关系：每类整数是否都来自相应的有理数类别。"
+        ],
+        "cautions": [
+          "百分号和循环点属于数的写法，不能看漏；不要把“正有理数个数”误读成“正分数个数”，也不要因一个数满足两项条件就漏记。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-road-question",
+      "locationId": "ch1-road-question",
+      "title": "1.2.2问题：画图表示马路旁物体的位置",
+      "preview": "画图前先定共同基准、方向和尺度，再把四个物体放到图上。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "画图前先定共同基准、方向和尺度，再把四个物体放到图上。",
+      "learningAction": "能按统一基准和比例画出道路上各物体的相对位置。",
+      "related": [
+        {
+          "locationId": "ch1-road-model",
+          "label": "道路图保留什么信息",
+          "purpose": "明确简图需要保留的基准、方向和尺度。"
+        },
+        {
+          "locationId": "ch1-number-line-unit",
+          "label": "统一单位长度",
+          "purpose": "检查各段距离是否按同一尺度表达。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "一维位置模型；相对位置的方向与距离；统一比例。"
+        ],
+        "method": [
+          "选出所有距离共同参照的位置，并在图上标明东西方向；用同一长度尺度把各物体依题意定位。",
+          "图画好后逐项检查每个物体在基准哪一侧、离基准多远，保证两类条件同时符合。"
+        ],
+        "cautions": [
+          "不能把相邻物体间距与到汽车站的距离混读；图上不同位置必须使用同一比例，不必画出物体的外形。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-road-model",
+      "locationId": "ch1-road-model",
+      "title": "为什么一条直线就能表示这条路？",
+      "preview": "这道题只需要沿路的相对位置，图中可以保留这些信息。",
+      "paragraphs": [
+        "题目给出的物体都按同一条东西向马路定位。要回答它们在汽车站哪一侧、相隔多远，暂时不需要树的形状、路的宽度或标志杆的高度，因此可以用一条直线和几个点表示。",
+        "简化时不能把关键条件也省掉：汽车站作为比较位置，东西方向区别两侧，单位长度保留距离尺度。图形越简洁，越要明确它保留的是哪种关系。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "原文给出道路图的画法，但未说明为何可以忽略实物外形并只保留一维位置。",
+      "learningAction": "能说出道路图省略和保留的信息，说明这一简化为什么支持当前定位问题。",
+      "related": [
+        {
+          "locationId": "ch1-road-number",
+          "label": "继续看位置怎样写成数",
+          "purpose": "观察基准、方向、距离怎样合并成一个位置数。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-road-think",
+      "locationId": "ch1-road-think",
+      "title": "思考：用数表示相对位置",
+      "preview": "每个位置要同时带上方向和距离信息，单独一个正距离还不够。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "每个位置要同时带上方向和距离信息，单独一个正距离还不够。",
+      "learningAction": "能用一致的符号与尺度表示图中物体相对位置。",
+      "related": [
+        {
+          "locationId": "ch1-road-number",
+          "label": "位置数承载的信息",
+          "purpose": "检查一个数中的符号与数值各承担什么作用。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "位置的符号表示；基准点与距离尺度。"
+        ],
+        "method": [
+          "先说明哪个位置用0表示、两个方向怎样约定，再尝试用一个带符号的数记录每个物体；用图1.2-1逐点核对。"
+        ],
+        "cautions": [
+          "约定要对所有物体一致；不能把图中连接两点的距离数字直接当作某点的位置数。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-road-number",
+      "locationId": "ch1-road-number",
+      "title": "一个位置数怎样同时带上方向和距离？",
+      "preview": "符号选汽车站的哪一侧，数值中的大小确定离站多远。",
+      "paragraphs": [
+        "图1.2-2先把汽车站的位置定为0，并选向东为正。这样，读一个位置数时，正负告诉你去哪一侧，去掉符号后的数值告诉你与汽车站相距多少个单位长度。",
+        "这就是道路上的位置可以简写成一个数的原因。但它依赖已经定好的基准、方向和尺度；换一处作0，原来同一棵树的位置数就可能改变，树本身并没有移动。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "原文给出位置数与实物的对应，需要解释一个数如何承载方向和距离及其对基准的依赖。",
+      "learningAction": "能按已定基准读取位置数的两部分信息，并说明改变基准会改变位置数。",
+      "related": [
+        {
+          "locationId": "ch1-deviation",
+          "label": "联系相对标准的记录",
+          "purpose": "比较位置数和偏差都需要先确定一个参照。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-thermometer-think",
+      "locationId": "ch1-thermometer-think",
+      "title": "思考：温度计与数值直线的共同点",
+      "preview": "比较两幅图时，看表示数的共同规则，不只看横着还是竖着。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "比较两幅图时，看表示数的共同规则，不只看横着还是竖着。",
+      "learningAction": "能从表示规则而非外观归纳温度计与数值直线的共同点。",
+      "related": [
+        {
+          "locationId": "ch1-number-line",
+          "label": "数轴的三个要素",
+          "purpose": "用三个约定检查两幅图共同的数表示结构。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "用直线上的点表示数；零位置、方向与等距尺度。"
+        ],
+        "method": [
+          "把温度计与图1.2-2并排对照，分别找出起参照作用的位置、数的变化方向及刻度间距代表的数量，再整理共同点。"
+        ],
+        "cautions": [
+          "外形、摆放方向和生活用途不同，不妨碍它们采用相同的表示规则；不要把温度单位与道路长度单位说成相同。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-number-line-origin",
+      "locationId": "ch1-number-line-origin",
+      "title": "原点可以任选，选定后为什么不能随便换？",
+      "preview": "“任取”说的是开始建立数轴时的自由。",
+      "paragraphs": [
+        "一条直线本来没有哪个点天生代表0。建立数轴时，可以挑一个方便的点作为原点；这就是“任取”的含义。",
+        "一旦开始表示和读取数，所有点都以这个原点为参照。若中途把别处改成0，各点的数值就必须重新确定，不能沿用旧标签。这和测量长度时要先对齐起点是同一个道理。"
+      ],
+      "learningRole": "定义概念",
+      "learningGap": "原点规定里的任取容易被读成读数过程中也可随意改动，需要区分建立约定与使用约定。",
+      "learningAction": "能说明原点开始时可选而使用过程中必须固定，并判断改变原点会影响数值。",
+      "related": []
+    },
+    {
+      "id": "ch1-number-line-direction",
+      "locationId": "ch1-number-line-direction",
+      "title": "正方向是约定，箭头不是装饰",
+      "preview": "先确认正方向，才能把“在哪一边”读成正数或负数。",
+      "paragraphs": [
+        "教材说“通常”向右或向上为正方向，这是为了让大家按共同习惯读图。直线画成横的或竖的，并不决定数的本质；图上选定的正方向才决定从原点往哪边表示正数。",
+        "沿用本书的通常约定画数轴时，要把正方向标清，再保持整个图一致。不能在同一张图中一会儿按向右为正、一会儿又按向左为正来读取点。"
+      ],
+      "learningRole": "定义概念",
+      "learningGap": "原文列出通常的方向约定，但未解释方向标记对读数的一致性作用。",
+      "learningAction": "能依据数轴的正方向判断点的符号，并保持同一图中的方向约定一致。",
+      "related": []
+    },
+    {
+      "id": "ch1-number-line-unit",
+      "locationId": "ch1-number-line-unit",
+      "title": "单位长度能选，为什么不能一格长一格短？",
+      "preview": "一次选定的“1”必须在这条数轴上重复使用。",
+      "paragraphs": [
+        "“选取适当的长度”让你按纸面大小选定画多长表示1。选好后，每一个单位长度都要相等，否则同样长的一段路会在不同位置表示不同的数值，图上的距离就失去了统一尺度。",
+        "相邻写出的数字不一定相差1。补充用例：若只标0、2、4，每两个相邻标签之间应有两个单位长度；单位长度由数值差和图上距离共同确定，不能只数写了几个标签。"
+      ],
+      "learningRole": "定义概念；示范方法",
+      "learningGap": "单位长度规定未展开同轴等距的理由，以及单位长度与相邻已写标签间隔的区别。",
+      "learningAction": "能检查单位长度是否一致，并在不连续标数的数轴上辨认一个单位长度。",
+      "related": []
+    },
+    {
+      "id": "ch1-number-line",
+      "locationId": "ch1-number-line",
+      "title": "三个要素各管一件事",
+      "preview": "原点定参照，正方向定朝向，单位长度定尺度。",
+      "paragraphs": [
+        "原点告诉我们从哪里起算，正方向告诉我们往哪边表示正数，单位长度告诉我们走多远表示1。三个约定一起确定后，点的位置才能对应到确定的数。",
+        "例如，只看一个点在原点右边，还不能读出它是2还是3；这还要检查单位长度。看图读数时，可以依次问“从哪里量、往哪边、量了几个单位”，而不凭点在纸上的大概位置猜数。"
+      ],
+      "learningRole": "定义概念",
+      "learningGap": "原有三要素说明混入单位与标签间隔的另一问题；本条聚焦三要素如何共同确定读数。",
+      "learningAction": "能分别说出三要素的作用，并用三个约定检查一个点的读数。",
+      "related": [
+        {
+          "locationId": "ch1-number-line-origin",
+          "label": "原点：固定参照位置",
+          "purpose": "确认任选原点与使用时保持原点不变的区别。"
+        },
+        {
+          "locationId": "ch1-number-line-unit",
+          "label": "单位长度：固定读数尺度",
+          "purpose": "检查图上的一段长度究竟代表几个单位。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-number-line-distance",
+      "locationId": "ch1-number-line-distance",
+      "title": "表示−a的点，距离为什么仍是a？",
+      "preview": "这里先规定a为正数；负号负责方向，距离不用负数记录。",
+      "paragraphs": [
+        "“设a是一个正数”先确定a可以表示正的距离数。点表示−a，说明它在负半轴；与原点相距a个单位长度，说明它离原点有多远。这两句话分别描述方向和距离。",
+        "补充用例：点表示−2，意思是向负方向离开原点2个单位长度，不能把它到原点的距离写成−2。只给出距离2还不能选定一个点，因为正方向也有离原点同样远的位置。"
+      ],
+      "learningRole": "陈述性质或结论",
+      "learningGap": "归纳把点的数值与距离相邻书写，需要拆开负号决定方向、正数a决定距离及仅有距离不能唯一定位。",
+      "learningAction": "能区分点表示的数与到原点的距离，并解释仅给正距离还缺方向。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-geometry",
+          "label": "继续看同样远的两个点",
+          "purpose": "查看距离确定而方向不同的两个位置怎样成对出现。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-example-1-2-2-guide",
+      "locationId": "ch1-example-1-2-2-guide",
+      "title": "1.2例2：在数轴上表示数",
+      "preview": "画出完整数轴后，正负决定方向，距离决定落点。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "画出完整数轴后，正负决定方向，距离决定落点。",
+      "learningAction": "能在尺度一致的数轴上表示整数、分数、小数与0。",
+      "related": [
+        {
+          "locationId": "ch1-number-line",
+          "label": "数轴三要素",
+          "purpose": "确认画出的图已经能确定读数。"
+        },
+        {
+          "locationId": "ch1-number-line-fraction",
+          "label": "分数点的位置",
+          "purpose": "回看等分一个单位长度的定位依据。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "数轴三要素；整数、分数与小数的点表示；0的位置。"
+        ],
+        "method": [
+          "先按待表示数的范围选择合适的单位长度，标清数轴三要素。",
+          "对每个数分别判断方向与到原点的距离；遇到非整数时等分单位长度，最后按原列表核对所有点。"
+        ],
+        "cautions": [
+          "不能把分数就近挪到整数刻度；同一条数轴只用一种尺度，点的标签要能与点一一对应。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-number-line-fraction",
+      "locationId": "ch1-number-line-fraction",
+      "title": "分数对应的点，不必落在整数刻度上",
+      "preview": "把一个单位长度再等分，就能确定分数的位置。",
+      "paragraphs": [
+        "图上的整数刻度只是帮助定位，刻度之间也有点可以表示数。例2中的−5/2，先把5/2读成2.5个单位长度，再按负号从原点向负方向定位。",
+        "定位分数时，可以按分母把一个单位长度等分。分母为2时，一个单位分成相等的两半；不能因为数轴只写了整数刻度，就把这个数挪到最近的整数点上。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "例2直接画出分数点，未解释如何通过等分单位长度从数值确定非整数点位。",
+      "learningAction": "能用单位长度的等分解释分数点的位置，并保留分数与邻近整数的区别。",
+      "related": [
+        {
+          "locationId": "ch1-number-line-unit",
+          "label": "回顾单位长度",
+          "purpose": "先确定完整的一单位，再作等分。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-practice-p11-1",
+      "locationId": "ch1-practice-p11-1",
+      "title": "练习第1题",
+      "preview": "先把字母与它下方的点对准，再读取对应刻度。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "先把字母与它下方的点对准，再读取对应刻度。",
+      "learningAction": "能将五个字母点准确对应到数轴刻度。",
+      "related": [
+        {
+          "locationId": "ch1-number-line",
+          "label": "数轴的读数条件",
+          "purpose": "先确认三个约定，再依位置读取数。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "数轴读数；点的标签与所表示数的对应；非整数点。"
+        ],
+        "method": [
+          "先核对原点、正方向和单位长度，再分别追踪每个字母所标的点，读取该点而非旁边点的刻度。"
+        ],
+        "cautions": [
+          "题目列字母的顺序不等于图上从左到右的顺序；非整数刻度也有对应点，不能只读整数标签。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-practice-p11-2",
+      "locationId": "ch1-practice-p11-2",
+      "title": "练习第2题",
+      "preview": "整数与半单位的数共用同一尺度，先把单位长度选得便于等分。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "整数与半单位的数共用同一尺度，先把单位长度选得便于等分。",
+      "learningAction": "能选用适当尺度并自主标出所有给定有理数。",
+      "related": [
+        {
+          "locationId": "ch1-number-line-unit",
+          "label": "单位长度的一致性",
+          "purpose": "先确定一单位再作等分。"
+        },
+        {
+          "locationId": "ch1-number-line-distance",
+          "label": "符号和距离",
+          "purpose": "检查负分数的方向与距离。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "数轴三要素；分数、小数与整数的点表示。"
+        ],
+        "method": [
+          "先看所给数涉及的范围和分数分母，选择方便等分的单位长度。",
+          "依次检查每个数的符号和距离，把它定位后再与原列表逐项核对，确认每个点与自己的标签对应。"
+        ],
+        "cautions": [
+          "负分数的位置由负方向和正的距离共同确定；不要把所有分数都放到0与1之间，或每标一个数就另换尺度。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-practice-p11-3",
+      "locationId": "ch1-practice-p11-3",
+      "title": "练习第3题",
+      "preview": "这次明确包含两端；计数前还要筛出表示整数的点。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "这次明确包含两端；计数前还要筛出表示整数的点。",
+      "learningAction": "能结合包含端点与整数条件列数，并分别完成两次计数。",
+      "related": [
+        {
+          "locationId": "ch1-number-line",
+          "label": "数轴表示数",
+          "purpose": "借助点与刻度确定候选整数。"
+        },
+        {
+          "locationId": "ch1-zero-boundary",
+          "label": "0的符号归属",
+          "purpose": "负整数计数时按完整分类检查。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "整数与负整数；数轴上的区间；包含端点的条件。"
+        ],
+        "method": [
+          "先按题意在图上确定范围和端点是否保留，再依次找出其中表示整数的点。",
+          "写出这些整数后据表计总数，再按负整数的条件作第二次检查和计数。"
+        ],
+        "cautions": [
+          "题目数的是点，不是单位长度小段；三个空格分别问总个数、具体整数及负整数个数，要区分。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-number-line-move",
+      "locationId": "ch1-number-line-move",
+      "title": "练习第4题",
+      "preview": "“某一方向”没有选定朝向，需要检查可能的移动情形。",
+      "paragraphs": [
+        "题目给了出发点和移动的单位数，但“向某一方向”没有指定向正方向还是负方向。距离只说明走多远，本身不会替你选定方向。",
+        "可从同一个出发点分别检查不同方向的情况，画完后核对每条路线都走了题目要求的单位数。不要把“移动4个单位长度”直接读成“到表示4的点”。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "“某个方向”没有选定朝向，需要检查可能的移动情形。",
+      "learningAction": "能识别未定方向并自主检查各可能终点。",
+      "related": [
+        {
+          "locationId": "ch1-number-line-distance",
+          "label": "位置数与距离",
+          "purpose": "确认距离本身并未包含方向信息。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "数轴上的移动；起点数值与移动距离；方向未定时的分类。"
+        ],
+        "method": [
+          "先固定题目给出的起点，再检查移动方向是否已确定；按所有符合题意的方向画出移动。",
+          "每条路线完成后，用终点到起点的距离复核是否满足题设，并据同一数轴读取终点。"
+        ],
+        "cautions": [
+          "正的距离值不等于已指定正方向；4个单位长度说的是从A出发走多远，不是终点必须表示4。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-opposite-inquiry",
+      "locationId": "ch1-opposite-inquiry",
+      "title": "1.2.3探究：与原点等距的点",
+      "preview": "只给到原点的距离时，要在两侧都检查，再比较所得数的关系。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "只给到原点的距离时，要在两侧都检查，再比较所得数的关系。",
+      "learningAction": "能对两种距离条件完整找点，并自主归纳其位置与数值关系。",
+      "related": [
+        {
+          "locationId": "ch1-number-line-distance",
+          "label": "方向与距离分别说明什么",
+          "purpose": "用距离条件寻找全部候选位置。"
+        },
+        {
+          "locationId": "ch1-number-line-fraction",
+          "label": "半单位的定位",
+          "purpose": "用等分单位长度处理第二个距离条件。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "数轴中的方向与距离；整数和分数位置；通过对照观察数的关系。"
+        ],
+        "method": [
+          "先在同一条数轴上寻找满足第一个距离条件的全部点，写出它们表示的数并比较相同和不同之处。",
+          "再对1/2的距离作同样检查，比较两次观察是否支持同一个关系；说明关系时同时提到位置与数的表示。"
+        ],
+        "cautions": [
+          "不能只在正半轴找点；两个数一正一负还不足以说明本探究中的关系，要核对它们到原点是否同样远。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-opposite-geometry",
+      "locationId": "ch1-opposite-geometry",
+      "title": "“距离相等的两个点”为什么要限定a为正数？",
+      "preview": "距离大于0时，才能在原点两侧各找到一个点。",
+      "paragraphs": [
+        "从原点向两侧各走a个单位长度，就得到两个不同的点。它们与原点同样远，方向相反，因此一个表示a，另一个表示−a；这也说明两点关于原点对称。",
+        "条件“a是一个正数”不能省略。若距离是0，两侧的出发位置都还是原点，不会出现两个不同的点。若只说两个数一正一负，也还不够：它们还必须到原点同样远，才符合这段归纳描述的成对关系。"
+      ],
+      "learningRole": "推导或证明；陈述性质或结论",
+      "learningGap": "归纳说明两个等距点，但需解释正距离条件保证两点不同，以及异号还须配合同距。",
+      "learningAction": "能说明a>0对两个不同点的作用，并用异侧且同距检查这一成对关系。",
+      "related": [
+        {
+          "locationId": "ch1-number-line-distance",
+          "label": "回顾数值、方向和距离",
+          "purpose": "用前一段的距离解释核对a与−a为何在两侧。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-opposite-pair",
+      "locationId": "ch1-opposite-pair",
+      "title": "相反数说的是两个数的关系",
+      "preview": "符号相反还不够，所表示的大小部分也要相同。",
+      "paragraphs": [
+        "“互为”说明这是两个数之间的关系。说一个数的相反数时，要知道它与哪个数配成一对，不能把“相反数”当成像“负数”那样只看一个数就能判断的名称。",
+        "除0外，一对相反数不但符号相反，在数轴上到原点的距离也相同。补充用例：2和−5虽然一正一负，却不是相反数，因为它们离原点的距离不同。"
+      ],
+      "learningRole": "定义概念",
+      "learningGap": "“互为”与“只有符号不同”两个关键词未展开，容易把任意正数与负数配成相反数。",
+      "learningAction": "能说清相反数描述两个数的关系，并用距离条件排除仅符号相反的数对。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-geometry",
+          "label": "回看相反数的数轴位置",
+          "purpose": "用两点到原点的距离检查“只有符号不同”这一条件。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-opposite-zero",
+      "locationId": "ch1-opposite-zero",
+      "title": "为什么0的相反数还是0？",
+      "preview": "原点关于自身对称后，位置不变。",
+      "paragraphs": [
+        "取相反数可以看成找关于原点对称的位置。0就在原点上，把它放到关于原点对称的位置，仍然是原点，所以结果还是0。",
+        "如果一个点不在原点，对称后的点就会落在原点另一侧，两个位置不同。因此，0也是唯一与自己的相反数相等的数。"
+      ],
+      "learningRole": "陈述性质或结论；推导或证明",
+      "learningGap": "教材直接陈述0的相反数，未说明为何0是取相反数后位置不变的例外。",
+      "learningAction": "能用数轴解释0的相反数是0，并说明其他数为什么不具备这一特点。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-geometry",
+          "label": "从对称位置理解相反数",
+          "purpose": "把一般位置与原点这个特殊位置作对照。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-opposite-sign",
+      "locationId": "ch1-q-opposite-sign",
+      "title": "相反数旁注思考：−a一定是负数吗",
+      "preview": "字母取值没有确定时，先检查负号表示什么。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "字母取值没有确定时，先检查负号表示什么。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能覆盖a的三种符号情况，判断含“一定”的表述并给出数轴理由。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-sign",
+          "label": "负号表示取相反数",
+          "purpose": "分清取相反数这一操作与结果的正负。"
+        },
+        {
+          "locationId": "ch1-opposite-geometry",
+          "label": "相反数在数轴上的位置",
+          "purpose": "用关于原点的位置关系辨认和检查相反数。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "相反数的符号表示",
+          "正数、负数与0的分类"
+        ],
+        "method": [
+          "把−a读作“a的相反数”，再分别考虑a位于原点右侧、左侧和原点时会发生什么。",
+          "可以先用不同类别的数试验，再用数轴位置解释自己的判断。"
+        ],
+        "cautions": [
+          "“一定”要求对所有允许的a成立，不能只取一个正数就下结论。",
+          "式子前有负号，不等于整个式子表示负数。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-opposite-sign",
+      "locationId": "ch1-opposite-sign",
+      "title": "−a 中的“−”表示什么？",
+      "preview": "它表示取 a 的相反数；结果的正负还要看 a。",
+      "paragraphs": [
+        "在 −a 中，“−”表示取 a 的相反数，不是在宣布结果一定为负。判断 −a 的正负前，要先知道 a 在数轴的哪一侧。",
+        "补充用例：若 a=−2，则 −a=−(−2)=2。用数轴看，就是把表示 a 的点移到原点另一侧、距离相同的位置。若 a=0，这个位置仍是原点。"
+      ],
+      "learningRole": "定义概念",
+      "learningGap": "教材提出“−a一定是负数吗”，但没有展开字母前的负号与结果正负之间的区别。",
+      "learningAction": "能依据 a 的取值判断 −a 的正负，并用数轴解释。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-geometry",
+          "label": "数轴上的相反数",
+          "purpose": "回看关于原点的对称位置，解释为何取相反数不等于得到负数。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-opposite-geometry",
+      "locationId": "ch1-q-opposite-geometry",
+      "title": "相反数旁注思考：说明−(−5)=+5",
+      "preview": "用数轴解释括号内外两层符号的作用。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "用数轴解释括号内外两层符号的作用。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能把内外两层符号转成数轴位置操作，解释给定等式。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-sign",
+          "label": "负号表示取相反数",
+          "purpose": "分清取相反数这一操作与结果的正负。"
+        },
+        {
+          "locationId": "ch1-opposite-geometry",
+          "label": "相反数在数轴上的位置",
+          "purpose": "用关于原点的位置关系辨认和检查相反数。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "相反数的几何意义",
+          "括号表示整体"
+        ],
+        "method": [
+          "先在数轴上确认括号内的数所对应的点，再说明外面的负号要求找什么位置。",
+          "用两点相对原点的方向和距离说明等式，不只写“两个负号消掉”。"
+        ],
+        "cautions": [
+          "外层负号作用于括号中的整个数。",
+          "这道题要求数轴理由，仅写化简结果还没有完成说明。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-opposite-twice",
+      "locationId": "ch1-opposite-twice",
+      "title": "−(−5)为什么表示正数？",
+      "preview": "外面的“−”对括号里的整个数取相反数。",
+      "paragraphs": [
+        "读−(−5)时，括号里的−5先作为一个完整的数；外面的“−”再表示取这个数的相反数。它不是把两个负数相加，也不是只看最左边的符号就判断正负。",
+        "从数轴看，−5的点在原点左侧，取相反数后到达右侧相同距离的位置。更一般地，对一个数连续取两次相反数，就回到原来的位置；0也符合这个结论。"
+      ],
+      "learningRole": "示范方法；推导或证明",
+      "learningGap": "符号化简已有结果，但外层负号作用于整体以及连续取相反数的位置意义尚未展开。",
+      "learningAction": "能按括号内外解释−(−5)，并用位置变化说明连续取两次相反数回到原数。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-sign",
+          "label": "“−a”表示取相反数",
+          "purpose": "区分负号表示的操作和最后结果的正负。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-example-3",
+      "locationId": "ch1-q-example-3",
+      "title": "例3",
+      "preview": "分别识别“求相反数”和“已知相反数反求原数”。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "分别识别“求相反数”和“已知相反数反求原数”。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能分别说明求相反数与反求原数的依据，并用互反关系检查。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-pair",
+          "label": "相反数的定义",
+          "purpose": "核对两个数怎样才构成一对相反数。"
+        },
+        {
+          "locationId": "ch1-opposite-inverse-example",
+          "label": "反求原数的依据",
+          "purpose": "检查例3（2）如何使用“互为”关系。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "相反数的定义与互反关系",
+          "整数、分数都可以求相反数"
+        ],
+        "method": [
+          "（1）检查每个给定数的符号和到原点的距离，再确定与它配对的数。",
+          "（2）先说清已知数与a的关系，利用“互为”判断反求原数能使用什么方法。",
+          "把得到的数再取相反数，可检查是否回到已知数。"
+        ],
+        "cautions": [
+          "求相反数改变方向，不改变到原点的距离。",
+          "不要因为（2）给出了一个数，就把它直接当成a。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-opposite-inverse-example",
+      "locationId": "ch1-opposite-inverse-example",
+      "title": "知道相反数，怎样找回原数？",
+      "preview": "“互为”允许把这对数反过来读。",
+      "paragraphs": [
+        "这一问给的是a的相反数，要求找a。因为相反数是相互的，既然给出的数是a的相反数，a也就是给出的数的相反数。这里反过来使用了定义中的“互为”。",
+        "核对时，可以从找到的数出发再取一次相反数，看能否回到题目给的数。这与直接抄下已知数不同：要找的是和它配对的另一个数。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "例3（2）直接给出a的值，未拆开“已知相反数反求原数”为何仍用同一方法。",
+      "learningAction": "能说明反求原数所用的互反关系，并用再次取相反数检查结果。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-pair",
+          "label": "相反数的“互为”",
+          "purpose": "回到定义理解已知数与待求数为什么能交换角色。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-opposite-practice-1",
+      "locationId": "ch1-q-opposite-practice-1",
+      "title": "1.2.3练习第1题",
+      "preview": "逐句检查是否说清对象、配对条件和取值范围。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "逐句检查是否说清对象、配对条件和取值范围。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能逐句检查对象、配对条件及全称范围，并自主判定六句话。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-pair",
+          "label": "相反数的定义",
+          "purpose": "核对两个数怎样才构成一对相反数。"
+        },
+        {
+          "locationId": "ch1-opposite-geometry",
+          "label": "相反数在数轴上的位置",
+          "purpose": "用关于原点的位置关系辨认和检查相反数。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "相反数是两个数之间的关系",
+          "相反数的符号与距离条件"
+        ],
+        "method": [
+          "（1）（2）先看“相反数”前后有没有交代它是谁的相反数。",
+          "（3）（4）核对指定的两个数是否满足定义；（5）检查正负相反是否已经足够。",
+          "（6）按正数、负数和0检查是否遗漏某类数。"
+        ],
+        "cautions": [
+          "判断含“任何”“正数和负数”等一般表述时，要检查全部允许的情况。",
+          "不成立的句子可用反例或缺少的条件说明，不能只凭读起来熟悉。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-opposite-practice-2",
+      "locationId": "ch1-q-opposite-practice-2",
+      "title": "1.2.3练习第2题",
+      "preview": "对每个给定数保留距离，检查相反的方向。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "对每个给定数保留距离，检查相反的方向。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能依据统一定义写出八个整数、分数和小数的相反数。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-pair",
+          "label": "相反数的定义",
+          "purpose": "核对两个数怎样才构成一对相反数。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "相反数的定义",
+          "分数、小数与整数的符号"
+        ],
+        "method": [
+          "依次判断八个数的符号，再写与它距离相同、方向相反的数。",
+          "完成后将每一对数放回定义检查，注意列表中正数和负数混合出现。"
+        ],
+        "cautions": [
+          "分母、数字大小和小数位不因求相反数而改变。",
+          "正数省略正号后仍是正数；不能因没有符号而漏掉处理。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-opposite-practice-3",
+      "locationId": "ch1-q-opposite-practice-3",
+      "title": "1.2.3练习第3题",
+      "preview": "把数相等的条件，转换为数轴上的点重合。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "把数相等的条件，转换为数轴上的点重合。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能将a=−a转成点重合条件，自主确定并说明符合的数轴位置。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-geometry",
+          "label": "相反数在数轴上的位置",
+          "purpose": "用关于原点的位置关系辨认和检查相反数。"
+        },
+        {
+          "locationId": "ch1-number-line",
+          "label": "数轴的三要素",
+          "purpose": "根据原点、正方向和统一单位长度读点或描点。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "数与数轴上的点的对应",
+          "相反数关于原点的位置关系"
+        ],
+        "method": [
+          "分别想象a的点与−a的点应怎样对应，再检查a=−a要求这两个点具有什么关系。",
+          "用一个满足两种位置要求的草图说明判断，而不只尝试几个数。"
+        ],
+        "cautions": [
+          "题目问的是点的位置，作答时需要说明它相对原点在哪里。",
+          "a尚未给定，不能先假定a是正数或负数。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-opposite-practice-4",
+      "locationId": "ch1-q-opposite-practice-4",
+      "title": "1.2.3练习第4题",
+      "preview": "先识别括号里的数，再处理括号外的负号。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "先识别括号里的数，再处理括号外的负号。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能按括号内外的符号作用独立化简四个式子。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-sign",
+          "label": "负号表示取相反数",
+          "purpose": "分清取相反数这一操作与结果的正负。"
+        },
+        {
+          "locationId": "ch1-opposite-pair",
+          "label": "相反数的定义",
+          "purpose": "核对两个数怎样才构成一对相反数。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "负号表示取相反数",
+          "括号内外符号的作用范围"
+        ],
+        "method": [
+          "对四个式子分别确认括号内完整的数，再说明最外层负号对它做什么。",
+          "按原数与结果是否互为相反数检查，不必把整数与小数分成两套规则。"
+        ],
+        "cautions": [
+          "不要把最左边的负号直接当成结果的符号。",
+          "化简时保留原数的大小部分和小数精度。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-absolute-intro",
+      "locationId": "ch1-q-absolute-intro",
+      "title": "绝对值引入问题",
+      "preview": "比较一对相反数在数轴上相同与不同的信息。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "比较一对相反数在数轴上相同与不同的信息。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能将相反数中相同的大小部分与数轴上的可比较特征对应。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-geometry",
+          "label": "相反数在数轴上的位置",
+          "purpose": "用关于原点的位置关系辨认和检查相反数。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "相反数的位置关系",
+          "点到原点的距离"
+        ],
+        "method": [
+          "借助已学相反数的数轴表示，分别观察两点所在的方向与到原点的远近。",
+          "把数中相同的大小部分与图中的一个可测量特征对应起来，再用自己的话回答。"
+        ],
+        "cautions": [
+          "比较的是各点到原点的关系，不是两点之间的距离。",
+          "原文已限定“除0以外”，观察时要保留这一条件。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-absolute-definition",
+      "locationId": "ch1-absolute-definition",
+      "title": "绝对值保留了什么信息？",
+      "preview": "它保留离原点的远近，不保留在原点哪一侧。",
+      "paragraphs": [
+        "一个数在数轴上的位置，既有“在原点哪一侧”的信息，也有“离原点多远”的信息。求绝对值时，只读出后者，所以结果不能小于0。",
+        "教材中的10和−10位置不同，距离却相同。这说明知道绝对值，不一定就能知道原数；还要留意有没有给出正负等其他条件。绝对值符号是在要求求距离，不是一个可以随意删掉的外框。"
+      ],
+      "learningRole": "定义概念",
+      "learningGap": "定义给出了距离含义，但未说明从数到绝对值时保留距离、舍去方向所造成的信息变化。",
+      "learningAction": "能说明两个不同的数为何可能有相同的绝对值，并区分原数与表示距离的数。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-geometry",
+          "label": "相反数与原点的距离",
+          "purpose": "从相反数的位置关系看出距离相等不代表数相等。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-absolute-zero",
+      "locationId": "ch1-absolute-zero",
+      "title": "绝对值能不能等于0？",
+      "preview": "距离可以为0，但只有原点到原点的距离为0。",
+      "paragraphs": [
+        "绝对值表示距离，距离可以等于0：当表示这个数的点恰好在原点时，两点重合，距离就是0。因此应说绝对值“不小于0”，不能说所有数的绝对值都“大于0”。",
+        "反过来，如果一个数的绝对值等于0，它的点到原点没有距离，只能与原点重合。于是，不仅0的绝对值是0，绝对值为0的数也只有0。"
+      ],
+      "learningRole": "陈述性质或结论；推导或证明",
+      "learningGap": "教材只直接陈述|0|=0，尚未展开非负与正的边界以及距离为0的唯一性。",
+      "learningAction": "能区分绝对值为正与非负，并说明绝对值等于0时原数为什么只能是0。",
+      "related": [
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "用距离检查绝对值",
+          "purpose": "把等于0的情况放回距离定义检验。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-absolute-inquiry",
+      "locationId": "ch1-q-absolute-inquiry",
+      "title": "绝对值探究",
+      "preview": "取例要覆盖不同符号，猜想还要回到距离定义检验。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "取例要覆盖不同符号，猜想还要回到距离定义检验。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能选取覆盖不同符号的数提出猜想，再用距离定义解释规律。",
+      "related": [
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "绝对值与到原点的距离",
+          "purpose": "把绝对值条件转成距离条件，检查保留和缺少的信息。"
+        },
+        {
+          "locationId": "ch1-opposite-sign",
+          "label": "负号表示取相反数",
+          "purpose": "分清取相反数这一操作与结果的正负。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "绝对值的距离定义",
+          "按正数、负数和0分类"
+        ],
+        "method": [
+          "选取不同类别的数，分别记录原数和它到原点的距离。",
+          "比较每类中绝对值与原数的关系，再检查自己提出的规律能否由距离定义解释。"
+        ],
+        "cautions": [
+          "只取正数试验，不能得到关于所有数的结论。",
+          "写含字母的规律时，应同时写出字母满足的条件。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-absolute-negative",
+      "locationId": "ch1-absolute-negative",
+      "title": "为什么负数的绝对值写成 −a？",
+      "preview": "当 a 为负数时，−a 才表示那个正的距离。",
+      "paragraphs": [
+        "绝对值表示距离，结果不能小于 0。这里先给出了 a 是负数这一条件，−a 是这个负数的相反数，因而是正数；式子右侧出现“−”不代表距离为负。",
+        "补充用例：取 a=−2，则 |a|=2，−a=2。若 a 是正数，−a 就是负数，不能拿它表示这段距离。因此使用 |a|=−a 时，要核对 a 的符号；a=0 时两边也都为 0。"
+      ],
+      "learningRole": "陈述性质或结论",
+      "learningGap": "负数绝对值公式右边的负号容易被理解成负的距离，需解释条件如何决定 −a 的值。",
+      "learningAction": "能说明 a 为负数时 |a|=−a 的理由，并检查公式适用条件。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-sign",
+          "label": "a 与 −a",
+          "purpose": "先分清取相反数这一操作和结果的正负。"
+        },
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "绝对值的距离含义",
+          "purpose": "回到定义检查所得结果能否表示到原点的距离。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-example-4",
+      "locationId": "ch1-q-example-4",
+      "title": "例4",
+      "preview": "区分求具体距离与只比较距离远近。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "区分求具体距离与只比较距离远近。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能区分求绝对值与比较绝对值所需的信息，并解释两个小问的方法。",
+      "related": [
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "绝对值与到原点的距离",
+          "purpose": "把绝对值条件转成距离条件，检查保留和缺少的信息。"
+        },
+        {
+          "locationId": "ch1-absolute-negative",
+          "label": "负数绝对值的条件",
+          "purpose": "核对负数求绝对值时为什么要取相反数。"
+        },
+        {
+          "locationId": "ch1-absolute-example-distance",
+          "label": "例4（2）的取信息方法",
+          "purpose": "理解为何比较距离无需精确读出每个点的数值。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "绝对值的定义及分情况求值",
+          "绝对值大小与到原点距离的关系"
+        ],
+        "method": [
+          "（1）按三个数各自的符号，选择绝对值与原数之间的关系。",
+          "（2）确认题目比较的是绝对值，再从图中寻找足以比较这一量的信息。",
+          "对照续页解答，说明为什么第二问不必先确定四个字母的精确数值。"
+        ],
+        "cautions": [
+          "负数的绝对值不能写成负距离。",
+          "“数最小”与“绝对值最小”不是同一个要求。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-absolute-example-distance",
+      "locationId": "ch1-absolute-example-distance",
+      "title": "不知道各点的准确数值，也能比较吗？",
+      "preview": "比较绝对值，只需比较到原点的远近。",
+      "paragraphs": [
+        "本题要比较的是绝对值，不是求出a、b、c、d各是多少。按定义，绝对值就是到原点的距离，所以图中只要能确定哪个点离原点最近，就足以完成这一步判断。",
+        "这也解释了为什么不必先估计每个点表示的小数。先看问题需要什么信息，再从图中读取相应的信息，可以避免把近似读数误当成精确数值。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "例4（2）使用图形远近直接比较，未解释为何无需先确定各字母的精确数值。",
+      "learningAction": "能区分求数值与比较绝对值所需的信息，并说明直接比较距离的依据。",
+      "related": [
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "绝对值的距离定义",
+          "purpose": "确认本题只需比较哪些距离。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-absolute-practice-1",
+      "locationId": "ch1-q-absolute-practice-1",
+      "title": "1.2.4练习第1题",
+      "preview": "先确定整个给定式子表示的数，再求绝对值。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "先确定整个给定式子表示的数，再求绝对值。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能按整式符号与绝对值定义求值，检查零和括号形式的边界。",
+      "related": [
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "绝对值与到原点的距离",
+          "purpose": "把绝对值条件转成距离条件，检查保留和缺少的信息。"
+        },
+        {
+          "locationId": "ch1-opposite-sign",
+          "label": "负号表示取相反数",
+          "purpose": "分清取相反数这一操作与结果的正负。"
+        },
+        {
+          "locationId": "ch1-absolute-zero",
+          "label": "绝对值的0边界",
+          "purpose": "检查距离为0及非负结论的边界。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "正数、负数与0的绝对值",
+          "相反数符号的化简"
+        ],
+        "method": [
+          "对整数、小数、分数逐一判断符号，再按定义求到原点的距离。",
+          "最后两个数还带有括号和外层负号，要先分清整个式子表示哪个数。",
+          "把各项结果与距离不小于0这一特点对照检查。"
+        ],
+        "cautions": [
+          "0要单独检查，不能把“非负”写成“正”。",
+          "不能把括号外负号与绝对值符号视为同一种操作。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-absolute-practice-2",
+      "locationId": "ch1-q-absolute-practice-2",
+      "title": "1.2.4练习第2题",
+      "preview": "检验判断句时，注意边界、前提和是否漏掉候选数。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "检验判断句时，注意边界、前提和是否漏掉候选数。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能分别检查判断句的例外、非零前提和整数候选是否完整。",
+      "related": [
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "绝对值与到原点的距离",
+          "purpose": "把绝对值条件转成距离条件，检查保留和缺少的信息。"
+        },
+        {
+          "locationId": "ch1-absolute-zero",
+          "label": "绝对值的0边界",
+          "purpose": "检查距离为0及非负结论的边界。"
+        },
+        {
+          "locationId": "ch1-number-line",
+          "label": "数轴的三要素",
+          "purpose": "根据原点、正方向和统一单位长度读点或描点。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "绝对值与原数的关系",
+          "绝对值的非负性",
+          "整数与距离条件"
+        ],
+        "method": [
+          "（1）检查“等于本身”的范围是否只包含句子说的那一类数。",
+          "（2）观察a≠0这个前提排除了什么位置，再用距离解释结论。",
+          "（3）把“整数”和“距离小于2”同时放到数轴上，检查所列对象是否完整。"
+        ],
+        "cautions": [
+          "判断题不能只找一个符合的例子，还要检查可能的例外。",
+          "严格“小于”不含距离等于边界的点。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-absolute-inverse-practice",
+      "locationId": "ch1-absolute-inverse-practice",
+      "title": "1.2.4练习第3题",
+      "preview": "对照两句条件：距离相同，方向限制却不同。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "对照两句条件：距离相同，方向限制却不同。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能区分距离条件与额外符号条件，自主找全两句中的可能原数。",
+      "related": [
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "绝对值与到原点的距离",
+          "purpose": "把绝对值条件转成距离条件，检查保留和缺少的信息。"
+        },
+        {
+          "locationId": "ch1-opposite-geometry",
+          "label": "相反数在数轴上的位置",
+          "purpose": "用关于原点的位置关系辨认和检查相反数。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "已知绝对值寻找可能的原数",
+          "负数条件对位置的限制"
+        ],
+        "method": [
+          "第一句先弄清右边表示的距离，再在数轴上检查符合距离条件的所有位置。",
+          "第二句除距离外还给出了m的符号；检查这一条件是否排除部分位置。"
+        ],
+        "cautions": [
+          "不能把绝对值的值直接当作原数。",
+          "两句的条件不同，不能照搬前一句得到的候选个数。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-absolute-symbols-practice",
+      "locationId": "ch1-absolute-symbols-practice",
+      "title": "1.2.4练习第4题",
+      "preview": "六个式子都要分清竖线内外的符号。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "六个式子都要分清竖线内外的符号。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能识别绝对值内外各层操作，自主化简并检查六个式子。",
+      "related": [
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "绝对值与到原点的距离",
+          "purpose": "把绝对值条件转成距离条件，检查保留和缺少的信息。"
+        },
+        {
+          "locationId": "ch1-opposite-sign",
+          "label": "负号表示取相反数",
+          "purpose": "分清取相反数这一操作与结果的正负。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "绝对值的作用范围",
+          "正负号与取相反数"
+        ],
+        "method": [
+          "前面三式先圈出绝对值内部，再判断外部符号是否还要作用于所得距离。",
+          "后面三式的括号和正负号在绝对值里面，先确认内部整个式子表示什么数。",
+          "按各层符号的作用检查六式，而不把所有符号一次删去。"
+        ],
+        "cautions": [
+          "绝对值的结果非负，不代表带有外部负号的整个式子非负。",
+          "正号与负号作用不同，分数也遵循同样规则。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-order-intro",
+      "locationId": "ch1-q-order-intro",
+      "title": "大小比较引入问题",
+      "preview": "引入负数后，要检查原来的比较方法是否仍够用。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "引入负数后，要检查原来的比较方法是否仍够用。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能识别含负数的不同比较情形，并从数轴寻找共同判断依据。",
+      "related": [
+        {
+          "locationId": "ch1-number-line",
+          "label": "数轴的三要素",
+          "purpose": "根据原点、正方向和统一单位长度读点或描点。"
+        },
+        {
+          "locationId": "ch1-negative-order",
+          "label": "两个负数的大小比较",
+          "purpose": "检查大小比较规则的适用条件及数轴依据。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "正数、负数与0的位置",
+          "用数轴比较大小"
+        ],
+        "method": [
+          "把引入段列出的三组数分别看作同为负数、含0或异号的情况，比较它们需要哪些信息。",
+          "可以先在数轴上标出这些数，寻找能同时适用的判断依据，再与后面的规定核对。"
+        ],
+        "cautions": [
+          "不能把小学比较正数时“数字部分更大”的直觉直接用于负数。",
+          "同一组中的数必须放在同一条数轴和同一尺度下比较。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-temperature-thinking",
+      "locationId": "ch1-q-temperature-thinking",
+      "title": "大小比较思考：天气预报",
+      "preview": "最高、最低与每日最低值排序，读取的数据并不相同。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "最高、最低与每日最低值排序，读取的数据并不相同。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能分别提取最高、最低及每日最低值，并自主完成温度比较和排序。",
+      "related": [
+        {
+          "locationId": "ch1-number-line",
+          "label": "数轴的三要素",
+          "purpose": "根据原点、正方向和统一单位长度读点或描点。"
+        },
+        {
+          "locationId": "ch1-negative-order",
+          "label": "两个负数的大小比较",
+          "purpose": "检查大小比较规则的适用条件及数轴依据。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "温度与有理数的大小",
+          "图表数据读取与排序"
+        ],
+        "method": [
+          "先分清每一天两个温度分别表示什么；寻找一周最高和最低时，检查所选数据是否符合问题。",
+          "排序每日最低气温时，每天只取对应的一项，并保持日期与数据的对应。",
+          "借助数轴或温度计方向核对从低到高的次序，再与续页说明比较。"
+        ],
+        "cautions": [
+          "不要把某一天的最高值混入“每日最低气温”的排序。",
+          "负温度的数字部分越大，不意味着温度越高。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-order-old-rule",
+      "locationId": "ch1-q-order-old-rule",
+      "title": "大小比较旁注思考",
+      "preview": "用熟悉的正数和0检验数轴上的新规定。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "用熟悉的正数和0检验数轴上的新规定。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能用小学熟悉的比较实例检查数轴规定与原有知识是否一致。",
+      "related": [
+        {
+          "locationId": "ch1-order-on-axis",
+          "label": "数轴上的大小顺序",
+          "purpose": "回到左小右大的规定，检查它与小学比较正数的方法是否一致。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "正数和0的已有大小关系",
+          "数轴上的左右次序"
+        ],
+        "method": [
+          "选取在小学已能比较的一对数，将它们标在同一条数轴上。",
+          "比较原来的大小判断与数轴上的左右位置，再说明二者是否一致。"
+        ],
+        "cautions": [
+          "数轴的正方向和单位长度要先固定。",
+          "题目要求检查正数及0，不必把全部负数比较问题一起解完。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-order-thinking",
+      "locationId": "ch1-q-order-thinking",
+      "title": "大小比较思考：归纳比较规则",
+      "preview": "分别观察不同类别之间的次序，以及同为负数时的次序。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "分别观察不同类别之间的次序，以及同为负数时的次序。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能分类提出大小比较方法，以数轴解释并用温度实例检查。",
+      "related": [
+        {
+          "locationId": "ch1-number-line",
+          "label": "数轴的三要素",
+          "purpose": "根据原点、正方向和统一单位长度读点或描点。"
+        },
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "绝对值与到原点的距离",
+          "purpose": "把绝对值条件转成距离条件，检查保留和缺少的信息。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "正数、0、负数在数轴上的位置",
+          "两个负数的绝对值与大小关系"
+        ],
+        "method": [
+          "先用原点两侧的位置研究三类数之间的关系。",
+          "再把注意力放在原点同一侧的两个负数，联系它们的距离与左右位置提出比较方法。",
+          "最后回到前面的最低气温排序，逐段检查是否与猜想相符。"
+        ],
+        "cautions": [
+          "关于两个负数的规律不能直接推广到正数或异号数。",
+          "温度实例可帮助检验，解释一般规律仍需说明位置关系。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-negative-order",
+      "locationId": "ch1-negative-order",
+      "title": "为什么两个负数“距离越大，数反而越小”？",
+      "preview": "两个点都在原点左边，离原点更远就更靠左。",
+      "paragraphs": [
+        "比较两个负数时，它们对应的点都在原点左边。绝对值越大，说明离原点越远；在左半轴上，越远就越靠左，而数轴上靠左的数更小。",
+        "“绝对值越大，数越小”以两个数都是负数为前提。正数在右半轴上，离原点越远反而越大；比较异号数时，也不能只比较距离。"
+      ],
+      "learningRole": "推导或证明",
+      "learningGap": "比较规则已给出，但绝对值大小如何转成数的大小、为何限制两个负数，需要连起距离与左右位置。",
+      "learningAction": "能用数轴解释负数比较规则，并判断何时能用该规则。",
+      "related": [
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "绝对值与距离",
+          "purpose": "把绝对值大小转成到原点的远近。"
+        },
+        {
+          "locationId": "ch1-number-line",
+          "label": "数轴上的位置",
+          "purpose": "回顾原点和正方向，区分距离大小与左右次序。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-example-5",
+      "locationId": "ch1-q-example-5",
+      "title": "例5",
+      "preview": "四小题分别检验符号判断、负数比较和化简后的规则选择。",
+      "paragraphs": [],
+      "learningRole": "示范方法",
+      "learningGap": "四小题分别检验符号判断、负数比较和化简后的规则选择。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能按四小题的结构说明规则选择和先化简的目的。",
+      "related": [
+        {
+          "locationId": "ch1-negative-order",
+          "label": "两个负数的大小比较",
+          "purpose": "检查大小比较规则的适用条件及数轴依据。"
+        },
+        {
+          "locationId": "ch1-opposite-sign",
+          "label": "负号表示取相反数",
+          "purpose": "分清取相反数这一操作与结果的正负。"
+        },
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "绝对值与到原点的距离",
+          "purpose": "把绝对值条件转成距离条件，检查保留和缺少的信息。"
+        },
+        {
+          "locationId": "ch1-comparison-simplify",
+          "label": "例5（4）为什么先化简",
+          "purpose": "理解化简怎样帮助确认比较规则的前提。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "有理数的大小比较",
+          "相反数和绝对值符号的化简"
+        ],
+        "method": [
+          "（1）检查符号本身是否已经足以决定大小。",
+          "（2）两数同为负数，关注绝对值比较怎样转换成原数比较。",
+          "（3）（4）先分清最外层符号作用，确认整个式子所表示的数，再选择比较规则。"
+        ],
+        "cautions": [
+          "不能看见式中出现负号，就认定正在比较两个负数。",
+          "把绝对值的不等关系还原为负数的不等关系时，需要重新检查方向。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-comparison-simplify",
+      "locationId": "ch1-comparison-simplify",
+      "title": "比较前，为什么先化简符号？",
+      "preview": "要按整个式子表示的数选规则，不能只看里面的负号。",
+      "paragraphs": [
+        "这两个写法里都出现了负号，但它们最外层的操作不同：一个是取相反数，一个是求绝对值。只有先弄清整个式子表示的数，才能判断应使用正数、负数还是异号数的比较方法。",
+        "这里化简的目的，是确认比较规则的条件。不能看见式子中有“−”就套用“两个负数，绝对值大的反而小”；那条规则要求比较的两个数本身都是负数。"
+      ],
+      "learningRole": "示范方法",
+      "learningGap": "例5（4）写出了“先化简”及数值，未说明先化简是为了确认整式的正负并选择比较规则。",
+      "learningAction": "能解释先化简的目的，并按化简后数的符号检查大小比较规则的条件。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-sign",
+          "label": "负号不等于结果为负",
+          "purpose": "理解取相反数以后结果可能为正。"
+        },
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "绝对值表示距离",
+          "purpose": "理解求绝对值后应如何判断结果范围。"
+        },
+        {
+          "locationId": "ch1-negative-order",
+          "label": "两个负数的比较条件",
+          "purpose": "核对何时才可以使用绝对值反向比较规则。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-order-practice-1",
+      "locationId": "ch1-q-order-practice-1",
+      "title": "1.2.5练习第1题",
+      "preview": "先看整式正负，再处理距离和分数比较。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "先看整式正负，再处理距离和分数比较。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能按符号、嵌套操作及分数表示选择比较方法，独立完成六组比较。",
+      "related": [
+        {
+          "locationId": "ch1-negative-order",
+          "label": "两个负数的大小比较",
+          "purpose": "检查大小比较规则的适用条件及数轴依据。"
+        },
+        {
+          "locationId": "ch1-opposite-sign",
+          "label": "负号表示取相反数",
+          "purpose": "分清取相反数这一操作与结果的正负。"
+        },
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "绝对值与到原点的距离",
+          "purpose": "把绝对值条件转成距离条件，检查保留和缺少的信息。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "异号与同号数的大小比较",
+          "绝对值及相反数的符号作用",
+          "分数大小比较"
+        ],
+        "method": [
+          "（1）（2）对照异号与同为负数时，需要依据哪些不同信息。",
+          "（3）（5）（6）先辨明括号或绝对值内外的操作，确定实际比较的对象。",
+          "（4）比较负分数时，可先选用已学的分数比较方法处理距离，再检查如何回到原数。"
+        ],
+        "cautions": [
+          "绝对值外的负号仍须保留其作用。",
+          "（6）涉及有限小数与分数，不能用随意截取的小数近似值代替精确比较。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-order-practice-2",
+      "locationId": "ch1-q-order-practice-2",
+      "title": "1.2.5练习第2题",
+      "preview": "先把不同符号的数分开，再处理每类内部的次序。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "先把不同符号的数分开，再处理每类内部的次序。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能对两组不同表示的有理数完整排序，并检查不等号方向和遗漏。",
+      "related": [
+        {
+          "locationId": "ch1-negative-order",
+          "label": "两个负数的大小比较",
+          "purpose": "检查大小比较规则的适用条件及数轴依据。"
+        },
+        {
+          "locationId": "ch1-number-line",
+          "label": "数轴的三要素",
+          "purpose": "根据原点、正方向和统一单位长度读点或描点。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "有理数的整体排序",
+          "负分数、负小数的比较"
+        ],
+        "method": [
+          "两组都包含不同符号的数和0；先识别类别，再判断各类内部的次序。",
+          "（1）重点核对负整数的位置；（2）还要选择分数与小数之间便于准确比较的表示方式。",
+          "最后检查每个相邻关系是否都满足题目要求，并确认所有原数各出现一次。"
+        ],
+        "cautions": [
+          "题目要求从小到大，并用“<”连接，不能只列出未排序的分类。",
+          "转换表示方式时数值不能变；负数内部的顺序不要沿用绝对值的顺序。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-order-practice-3",
+      "locationId": "ch1-q-order-practice-3",
+      "title": "1.2.5练习第3题",
+      "preview": "温度按从高到低排，城市名称要随数据一起移动。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "温度按从高到低排，城市名称要随数据一起移动。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能按温度从高到低排序，同时保持城市与温度对应。",
+      "related": [
+        {
+          "locationId": "ch1-negative-order",
+          "label": "两个负数的大小比较",
+          "purpose": "检查大小比较规则的适用条件及数轴依据。"
+        },
+        {
+          "locationId": "ch1-number-line",
+          "label": "数轴的三要素",
+          "purpose": "根据原点、正方向和统一单位长度读点或描点。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "实际温度与有理数大小",
+          "从大到小排序"
+        ],
+        "method": [
+          "先辨认五个温度的正负，再比较同类温度。",
+          "把每个城市与其温度作为一对记录排序，用温度计或数轴检查高低次序。"
+        ],
+        "cautions": [
+          "本题方向是从高到低，与上一题不同。",
+          "负温度不能仅按负号后的数字从大到小排。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-exercise12-1",
+      "locationId": "ch1-q-exercise12-1",
+      "title": "习题1.2第1题",
+      "preview": "三个集合按不同标准选数，可能有交集。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "三个集合按不同标准选数，可能有交集。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能分别按符号与整数属性归类，并检查交集、0和循环小数。",
+      "related": [
+        {
+          "locationId": "ch1-classification-overlap",
+          "label": "有理数分类的两种标准",
+          "purpose": "区分按正负与按整数、分数分类，检查重叠和遗漏。"
+        },
+        {
+          "locationId": "ch1-rational-form",
+          "label": "数值与数的类别",
+          "purpose": "按数的值判断类别，不只按外观分类。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "正有理数、负有理数和整数",
+          "小数与分数的数值和写法"
+        ],
+        "method": [
+          "对每个数分别判断符号与是否为整数，再检查它符合哪些集合的条件。",
+          "遇到带分数、有限小数和循环小数时，辨明写法所表示的值，再按各集合条件选取。"
+        ],
+        "cautions": [
+          "这三个集合不是互不相交的三个格子，一个数可能符合不止一个条件。",
+          "0的符号类别与整数属性要分开判断；循环小数上的循环标记不能漏看。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-exercise12-2",
+      "locationId": "ch1-q-exercise12-2",
+      "title": "习题1.2第2题",
+      "preview": "逐点读取位置，不把字母次序当作数的次序。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "逐点读取位置，不把字母次序当作数的次序。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能依据统一刻度逐点读取五个字母对应的数。",
+      "related": [
+        {
+          "locationId": "ch1-number-line",
+          "label": "数轴的三要素",
+          "purpose": "根据原点、正方向和统一单位长度读点或描点。"
+        },
+        {
+          "locationId": "ch1-number-line-fraction",
+          "label": "分数在数轴上的位置",
+          "purpose": "检查非整数的点在相邻整数刻度之间怎样定位。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "数轴的读数",
+          "原点、方向和单位长度"
+        ],
+        "method": [
+          "先找到0与正方向，并用已标整数确认单位长度。",
+          "分别读取A、B、C、D、E所在位置，位于整数刻度之间的点还要读出对应的小数部分。"
+        ],
+        "cautions": [
+          "按题目要求的字母顺序填写，而不是按图上从左到右的顺序抄写。",
+          "点在原点左侧时，距离与它表示的数不能混用。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-exercise12-3",
+      "locationId": "ch1-q-exercise12-3",
+      "title": "习题1.2第3题",
+      "preview": "三个空分别考查正求、反求和取相反数后不变。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "三个空分别考查正求、反求和取相反数后不变。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能区分正求、反求和自身不变三个条件，自主完成相反数填空。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-pair",
+          "label": "相反数的定义",
+          "purpose": "核对两个数怎样才构成一对相反数。"
+        },
+        {
+          "locationId": "ch1-opposite-geometry",
+          "label": "相反数在数轴上的位置",
+          "purpose": "用关于原点的位置关系辨认和检查相反数。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "相反数的互反关系",
+          "数相等时对应点重合"
+        ],
+        "method": [
+          "第一空从已知数寻找配对数；第二空先辨明已知的是原数还是相反数。",
+          "第三空把“是它本身”转成数轴上的位置要求，再检查什么位置能满足。"
+        ],
+        "cautions": [
+          "第二空的语序与第一空不同，不能只凭最近出现的数直接填入。",
+          "第三空要求找符合条件的数，不能只改写“a=−a”就结束。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-exercise12-4",
+      "locationId": "ch1-q-exercise12-4",
+      "title": "习题1.2第4题",
+      "preview": "先求六个距离，再回答谁的距离最大或最小。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "先求六个距离，再回答谁的距离最大或最小。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能逐项求绝对值并按距离比较极值，正确对应到原数。",
+      "related": [
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "绝对值与到原点的距离",
+          "purpose": "把绝对值条件转成距离条件，检查保留和缺少的信息。"
+        },
+        {
+          "locationId": "ch1-absolute-zero",
+          "label": "绝对值的0边界",
+          "purpose": "检查距离为0及非负结论的边界。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "绝对值的求法",
+          "非负数的大小比较"
+        ],
+        "method": [
+          "对六个数按符号求绝对值，并保留原数与绝对值的对应。",
+          "比较这些距离，确定最大和最小后，检查题目要求写的是原数还是它的绝对值。"
+        ],
+        "cautions": [
+          "不要先按原数的大小排，再把两端当作绝对值的极值。",
+          "0、很小的负小数和负整数都要用同一距离标准检查。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-exercise12-5",
+      "locationId": "ch1-q-exercise12-5",
+      "title": "习题1.2第5题",
+      "preview": "每一组先辨认比较结构，再选用合适的规则。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "每一组先辨认比较结构，再选用合适的规则。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能识别六组比较的条件差异，正确选择分数比较与符号化简方法。",
+      "related": [
+        {
+          "locationId": "ch1-negative-order",
+          "label": "两个负数的大小比较",
+          "purpose": "检查大小比较规则的适用条件及数轴依据。"
+        },
+        {
+          "locationId": "ch1-opposite-sign",
+          "label": "负号表示取相反数",
+          "purpose": "分清取相反数这一操作与结果的正负。"
+        },
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "绝对值与到原点的距离",
+          "purpose": "把绝对值条件转成距离条件，检查保留和缺少的信息。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "负数与0的比较",
+          "两个负数的比较",
+          "分数比较与符号化简"
+        ],
+        "method": [
+          "（1）看数与0的关系；（2）比较同为负整数的数。",
+          "（3）分母相同，可利用对应正分数的比较；（4）（5）先选择便于准确比较的分数表示。",
+          "（6）先分清括号及绝对值内外的负号，确认整式正负，再比较。"
+        ],
+        "cautions": [
+          "负数比较中的不等号不能照抄绝对值的比较结果。",
+          "整数化为分数或通分时要保持数值相等，不能只改分母。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-exercise12-6",
+      "locationId": "ch1-q-exercise12-6",
+      "title": "习题1.2第6题",
+      "preview": "选择能准确表示整数、分数和小数的统一尺度。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "本题需要在同一条数轴上表示整数、带分数和小数，并依据数的值核对点位。",
+      "learningAction": "能在统一尺度上表示八个数，并核对正负成对数的位置关系。",
+      "related": [
+        {
+          "locationId": "ch1-number-line",
+          "label": "数轴的三要素",
+          "purpose": "根据原点、正方向和统一单位长度读点或描点。"
+        },
+        {
+          "locationId": "ch1-number-line-fraction",
+          "label": "分数在数轴上的位置",
+          "purpose": "检查非整数的点在相邻整数刻度之间怎样定位。"
+        },
+        {
+          "locationId": "ch1-opposite-geometry",
+          "label": "相反数在数轴上的位置",
+          "purpose": "用关于原点的位置关系辨认和检查相反数。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "数轴上的描点",
+          "分数、小数与带分数的定位"
+        ],
+        "method": [
+          "先设定三要素，再检查八个数所需的左右范围。",
+          "整数可以帮助建立位置基准；非整数再按它距相邻整数的部分定位。",
+          "检查正负成对数的位置关系；分数或小数先辨明数值，再核对点位。"
+        ],
+        "cautions": [
+          "同一条数轴的单位长度必须一致，不能为了放下某个分数临时改一格的长度。",
+          "负带分数的负号作用于整个带分数。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-exercise12-7",
+      "locationId": "ch1-q-exercise12-7",
+      "title": "习题1.2第7题",
+      "preview": "先读懂带负号的记录，再按题设的程度条件筛选。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "先读懂带负号的记录，再按题设的程度条件筛选。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能按题设记录换读程度、检查严格边界并自主统计符合条件的人数。",
+      "related": [
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "绝对值与到原点的距离",
+          "purpose": "把绝对值条件转成距离条件，检查保留和缺少的信息。"
+        },
+        {
+          "locationId": "ch1-negative-order",
+          "label": "两个负数的大小比较",
+          "purpose": "检查大小比较规则的适用条件及数轴依据。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "负数记录的实际意义",
+          "绝对值与程度",
+          "严格大于的边界"
+        ],
+        "method": [
+          "从题干给出的对应实例确认D值与所述度数如何对应，不直接把负记录当作负的程度。",
+          "统一记录方式与比较条件的单位，逐条检查是否满足题目给定的“超过”要求，再统计人数。"
+        ],
+        "cautions": [
+          "数轴上更小的负数与更小的程度不是一回事。",
+          "“超过”不包括恰好等于边界；此处只依据题干条件完成数学筛选，不将其推广为个人配镜结论。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-opposite-distance-practice",
+      "locationId": "ch1-opposite-distance-practice",
+      "title": "习题1.2第8题",
+      "preview": "同时用好相反数的位置条件和两点间的距离。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "同时用好相反数的位置条件和两点间的距离。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能区分两点间距离与到原点距离，用相反数条件自主建立并解决位置关系。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-geometry",
+          "label": "相反数在数轴上的位置",
+          "purpose": "用关于原点的位置关系辨认和检查相反数。"
+        },
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "绝对值与到原点的距离",
+          "purpose": "把绝对值条件转成距离条件，检查保留和缺少的信息。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "相反数的数轴表示",
+          "两点间距离与到原点距离的区别"
+        ],
+        "method": [
+          "在草图上区分题目给出的两点间距离与每个点到原点的距离。",
+          "用“互为相反数”检查两个点相对原点的位置关系，再自主把两类距离联系起来。"
+        ],
+        "cautions": [
+          "不能把题目给出的5直接作为每个数的绝对值。",
+          "题目没有规定A、B哪一个在右侧；说明两个数时，不要无依据地固定字母对应。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-opposite-conditions-practice",
+      "locationId": "ch1-opposite-conditions-practice",
+      "title": "习题1.2第9题",
+      "preview": "找的是一类a的条件，代入个例只能帮助观察。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "找的是一类a的条件，代入个例只能帮助观察。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能按符号分类检验三个关系，提出完整条件并说明一般理由。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-sign",
+          "label": "负号表示取相反数",
+          "purpose": "分清取相反数这一操作与结果的正负。"
+        },
+        {
+          "locationId": "ch1-opposite-geometry",
+          "label": "相反数在数轴上的位置",
+          "purpose": "用关于原点的位置关系辨认和检查相反数。"
+        },
+        {
+          "locationId": "ch1-order-on-axis",
+          "label": "数轴上的大小顺序",
+          "purpose": "根据左右位置比较a与它的相反数，分别检查符号和0的情况。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "相反数的位置关系",
+          "相等与大小关系的条件",
+          "按符号分类讨论"
+        ],
+        "method": [
+          "分别考察a为正数、负数和0时，a与−a在数轴上怎样对应。",
+          "对（1）的相等关系与（2）（3）的不等关系分别检查，归纳各自成立的取值条件。",
+          "形成猜想后，用位置关系解释为什么这一类取值都符合，而不只列几个代入结果。"
+        ],
+        "cautions": [
+          "不要假定−a一定为负。",
+          "“满足什么条件”应说明完整范围；一个例子成立不等于已经找全条件。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-activity-1",
+      "locationId": "ch1-q-activity-1",
+      "title": "数学活动1：体重调查",
+      "preview": "同一张表中，方向、接近程度和整体情况需要不同信息。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "同一张表中，方向、接近程度和整体情况需要不同信息。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能区分偏差方向和程度，分析题设记录并按统一方式开展小组记录与讨论。",
+      "related": [
+        {
+          "locationId": "ch1-deviation",
+          "label": "标准量与偏差",
+          "purpose": "区分实际量与相对标准超出或不足的记录。"
+        },
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "绝对值与到原点的距离",
+          "purpose": "把绝对值条件转成距离条件，检查保留和缺少的信息。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "实际量与相对标准的偏差",
+          "正负号与绝对值各自的意义",
+          "调查记录与比较"
+        ],
+        "method": [
+          "（1）依据题设正负约定识别记录的意义，再用数据说明超过或少于标准的情况。",
+          "（2）先判断“最符合标准”应关注方向还是偏离程度；讨论整体情况时，同时查看各记录的符号和偏离大小。",
+          "后续调查按题设计算方式与统一单位填写记录，核对每人的实际量和所用基准；讨论运动方案时，按原页要求另行查阅资料或咨询体育老师。"
+        ],
+        "cautions": [
+          "表中记录是偏差，不是实际体重；年龄不同还可能对应不同基准。",
+          "这一活动使用题设的标准比较记录，不能只凭一条偏差概括个人健康状况。",
+          "汇总时保留编号、单位和计算依据，避免把不同对象的数据错配。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-deviation-distance-activity",
+      "locationId": "ch1-deviation-distance-activity",
+      "title": "“最符合标准”是在比较什么？",
+      "preview": "正负说明偏向哪边，接近程度还要看偏离多少。",
+      "paragraphs": [
+        "在这道活动的记录中，0表示恰好等于题目所用的标准。正负只能区分超过还是少于标准，不能单凭“正”或“负”判断哪条记录更接近标准。",
+        "可以把表中记录看作数轴上的点，想一想“最符合标准”应观察点与哪个位置的关系。比较时要同时区分偏离的方向和程度，再自己判断各条记录。"
+      ],
+      "learningRole": "探究",
+      "learningGap": "活动从是否超过标准转为最符合标准，需要识别符号和偏离程度回答不同问题。",
+      "learningAction": "能把“接近标准”与偏差到0的距离联系起来，自行比较表中记录。",
+      "related": [
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "用绝对值描述距离",
+          "purpose": "回顾如何描述相对于基准0偏离多少。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-activity-2",
+      "locationId": "ch1-q-activity-2",
+      "title": "数学活动2：猜数游戏",
+      "preview": "把“大了、小了、相等”转换成有效的候选范围。",
+      "paragraphs": [],
+      "learningRole": "探究",
+      "learningGap": "把“大了、小了、相等”转换成有效的候选范围。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能按每次反馈更新整数候选范围，并用可比较的记录检验猜数策略。",
+      "related": [
+        {
+          "locationId": "ch1-negative-order",
+          "label": "两个负数的大小比较",
+          "purpose": "检查大小比较规则的适用条件及数轴依据。"
+        },
+        {
+          "locationId": "ch1-number-line",
+          "label": "数轴的三要素",
+          "purpose": "根据原点、正方向和统一单位长度读点或描点。"
+        },
+        {
+          "locationId": "ch1-guess-range",
+          "label": "回答怎样缩小范围",
+          "purpose": "检查一次回答提供的大小约束。"
+        },
+        {
+          "locationId": "ch1-guess-strategy-check",
+          "label": "怎样检验策略",
+          "purpose": "回顾可比较的试验记录。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "整数范围与有理数大小",
+          "多个条件同时成立",
+          "用记录检验猜测策略"
+        ],
+        "method": [
+          "步骤（1）先确认秘密数属于给定范围内的整数；步骤（2）比较猜测与秘密数时要保持“大了”“小了”的指代一致。",
+          "步骤（3）记录每次回答排除哪些数，下一次猜测应符合此前全部信息；步骤（4）持续记录，直到得到相等的反馈。",
+          "检验策略时，记录每轮剩余候选数及所用次数，用同一组不同位置的秘密数比较自己的策略是否稳定有效。"
+        ],
+        "cautions": [
+          "已经排除的数不应又被列回候选范围。",
+          "一次碰巧猜中不足以说明策略更快；区间两端和中间的数都应参与检验。",
+          "只要求选择整数，不要在调整过程中把小数当作秘密数候选。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-guess-range",
+      "locationId": "ch1-guess-range",
+      "title": "一次回答怎样缩小下一次的范围？",
+      "preview": "记录还可能的数，也记录已经排除的数。",
+      "paragraphs": [
+        "没有猜中时，“大了”或“小了”提供了一个大小关系。它不只是让你换一个数试试，还能排除不符合这个关系的一整部分数；已经猜过且不相等的数也可以排除。",
+        "每次调整后，保留下来的数应同时符合此前的全部回答。可以在数轴上标出仍可能的范围，再决定下一次猜什么，避免重新猜已被排除的数。"
+      ],
+      "learningRole": "探究",
+      "learningGap": "步骤只说根据回答调整猜想，未展开回答约束候选范围以及多次约束需同时满足。",
+      "learningAction": "能依据每次回答更新可能范围，并检查新猜想是否符合此前全部条件。",
+      "related": [
+        {
+          "locationId": "ch1-order-on-axis",
+          "label": "数轴上的大小顺序",
+          "purpose": "把“大了”或“小了”转成数轴上的位置关系，检查还可能的范围。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-guess-strategy-check",
+      "locationId": "ch1-guess-strategy-check",
+      "title": "怎样判断一种猜数策略更快？",
+      "preview": "一次碰巧猜中，不足以判断策略的效果。",
+      "paragraphs": [
+        "一次游戏中猜得很快，可能因为秘密数恰好接近第一次的猜想。检验策略时，可以记录每轮猜测后还剩多少可能的数，以及最后用了几次，看看策略如何利用每次得到的信息。",
+        "比较不同策略时，尽量用同一组秘密数，也包含靠近两端和中间的数。这样可以减少题目不同带来的影响；不要只挑对自己策略有利的一次结果。"
+      ],
+      "learningRole": "探究",
+      "learningGap": "教材提出“多做几次检验”，但未说明怎样观察与公平比较策略以区别偶然猜中。",
+      "learningAction": "能设计可比较的试玩记录，用候选范围和猜测次数检查自己提出的策略。",
+      "related": []
+    },
+    {
+      "id": "ch1-number-extension-review",
+      "locationId": "ch1-number-extension-review",
+      "title": "数的范围扩大，原来的数还在吗？",
+      "preview": "引入负数是在原有数的范围上增加新的数。",
+      "paragraphs": [
+        "“扩大”表示原来的正整数、正分数和0仍然保留，再加入负整数、负分数。它不是把旧的数换掉，也不是说原来所有的计算和比较都要重新否定。",
+        "数轴使这个变化更直观：原点右边仍表示正数，左边提供了负数的位置。理解新的范围时，可以同时检查“新增了哪些数”和“原有数的含义是否保持”。"
+      ],
+      "learningRole": "回顾与整理",
+      "learningGap": "章小结说数的范围扩大，但未拆清新增对象与保留原有数之间的关系。",
+      "learningAction": "能说明有理数范围怎样包含原有的正整数、正分数和0，并指出新增的负数类别。",
+      "related": [
+        {
+          "locationId": "ch1-rational-denominator",
+          "label": "回顾有理数的定义",
+          "purpose": "用分数表示的条件检查哪些数包含在扩大后的范围中。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-number-line-review",
+      "locationId": "ch1-number-line-review",
+      "title": "同一条数轴，回答三个不同的问题",
+      "preview": "相反数看对应位置，绝对值看距离，大小比较看左右。",
+      "paragraphs": [
+        "求一个数的相反数，是找与它关于原点对称的位置；求绝对值，是读出它到原点的距离；比较两个数的大小，是看它们的左右次序。这三件事借助同一条数轴，却在回答不同问题。",
+        "特别要分清“更靠右”和“离原点更远”：前者决定数更大，后者决定绝对值更大。它们在负半轴上不会给出相同的排序。回顾时，可以用一对负数分别检验这两句话。"
+      ],
+      "learningRole": "回顾与整理",
+      "learningGap": "小结段说明数轴帮助研究相反数、绝对值和大小比较，但未并列区分这三种操作各读取什么信息，需要防止把数的大小和距离混用。",
+      "learningAction": "能按问题选择看对称位置、距离或左右次序，并说明差别。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-geometry",
+          "label": "相反数：看对称位置",
+          "purpose": "回看相反数在数轴上怎样配对。"
+        },
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "绝对值：看到原点的距离",
+          "purpose": "确认距离保留什么信息、没有表示什么信息。"
+        },
+        {
+          "locationId": "ch1-order-on-axis",
+          "label": "大小比较：看左右次序",
+          "purpose": "核对数轴左右次序与大小的约定，再和到原点的距离比较。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-recall-1",
+      "locationId": "ch1-q-recall-1",
+      "title": "回顾与思考第1题",
+      "preview": "用“原有范围—遇到的问题—新引入的数”整理扩充过程。",
+      "paragraphs": [],
+      "learningRole": "回顾与整理",
+      "learningGap": "用“原有范围—遇到的问题—新引入的数”整理扩充过程。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能整理数的范围扩充顺序，并为各次扩充说明原有范围遇到的表达需要。",
+      "related": [
+        {
+          "locationId": "ch1-number-extension-review",
+          "label": "扩大范围与保留原有数",
+          "purpose": "检查整理出的新旧数类关系。"
+        },
+        {
+          "locationId": "ch1-why-negative",
+          "label": "为什么引入负数",
+          "purpose": "回看正数记录未能表达的相反意义。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "数的范围扩充",
+          "实际问题与数概念的联系"
+        ],
+        "method": [
+          "先回忆已经学过哪些数，把原有数与新加入的数分开整理。",
+          "对每次扩充，找一个原有范围不够表达的实际问题，说明新数解决了什么需要，再确定自己的整理顺序与次数。"
+        ],
+        "cautions": [
+          "不同写法未必代表不同的新数类，不能把每一种小数写法都算作一次范围扩大。",
+          "扩大范围会包含原有数，不是把原有数替换掉。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-recall-2",
+      "locationId": "ch1-q-recall-2",
+      "title": "回顾与思考第2题",
+      "preview": "例子要同时说清同类量、相反意义和正负约定。",
+      "paragraphs": [],
+      "learningRole": "回顾与整理",
+      "learningGap": "例子要同时说清同类量、相反意义和正负约定。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能构造同类量的相反意义实例，说清符号约定和记录的作用。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-meanings",
+          "label": "具有相反意义的量",
+          "purpose": "检查例子是否描述同类量的相反意义。"
+        },
+        {
+          "locationId": "ch1-positive-negative",
+          "label": "正数和负数",
+          "purpose": "按给定的意义约定理解正负号。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "具有相反意义的量",
+          "正负数表示实际意义"
+        ],
+        "method": [
+          "从一个明确情境选出同类量的两种相反意义，说明以哪一种为正。",
+          "用自己的记录解释符号负责区分什么、数值大小负责表达什么。"
+        ],
+        "cautions": [
+          "仅仅给出一个正数和一个负数，还没有交代实际意义。",
+          "相反意义不要求两种数量大小相等，也不能把单位不同的量硬配成一对。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-recall-3",
+      "locationId": "ch1-q-recall-3",
+      "title": "回顾与思考第3题",
+      "preview": "画分类图前，先决定每一层采用什么标准。",
+      "paragraphs": [],
+      "learningRole": "回顾与整理",
+      "learningGap": "画分类图前，先决定每一层采用什么标准。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能按一致标准绘制有理数分类图，并用典型数检查完整性。",
+      "related": [
+        {
+          "locationId": "ch1-classification-overlap",
+          "label": "有理数分类的两种标准",
+          "purpose": "区分按正负与按整数、分数分类，检查重叠和遗漏。"
+        },
+        {
+          "locationId": "ch1-rational-form",
+          "label": "数值与数的类别",
+          "purpose": "按数的值判断类别，不只按外观分类。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "有理数的分类",
+          "分类的完整性与同层类别关系"
+        ],
+        "method": [
+          "先选择按正负还是按整数、分数分组，再决定下一层是否还需细分。",
+          "用正整数、负分数和0等不同类型的数逐一检查图，确认是否都能归入合适位置。"
+        ],
+        "cautions": [
+          "同一层不要混用不相容的标准，造成某些数无处可放或被误认为只能属于一类。",
+          "0需要单独核对，不能仅根据写法判断整数或分数。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-recall-4",
+      "locationId": "ch1-q-recall-4",
+      "title": "回顾与思考第4题",
+      "preview": "同一条数轴中，读数、找相反数和求绝对值各看不同信息。",
+      "paragraphs": [],
+      "learningRole": "回顾与整理",
+      "learningGap": "同一条数轴中，读数、找相反数和求绝对值各看不同信息。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能说明三要素和数点对应，并区分相反数与绝对值读取的图形信息。",
+      "related": [
+        {
+          "locationId": "ch1-number-line",
+          "label": "数轴的三要素",
+          "purpose": "根据原点、正方向和统一单位长度读点或描点。"
+        },
+        {
+          "locationId": "ch1-opposite-geometry",
+          "label": "相反数在数轴上的位置",
+          "purpose": "用关于原点的位置关系辨认和检查相反数。"
+        },
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "绝对值与到原点的距离",
+          "purpose": "把绝对值条件转成距离条件，检查保留和缺少的信息。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "数轴的三要素",
+          "数与点的对应",
+          "相反数与绝对值的几何意义"
+        ],
+        "method": [
+          "先检查普通直线还缺哪些规定，才能让点的位置有确定的数值。",
+          "解释表示有理数的方法时，分别说清方向和距离怎样确定点的位置。",
+          "解释相反数时关注配对位置；解释绝对值时关注到原点的距离，并说明二者的区别。"
+        ],
+        "cautions": [
+          "相反数是一个数，绝对值是距离的数值；不要把它们都说成“去掉符号”。",
+          "0也要满足所给的解释，不能只用正数和负数的例子。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-recall-5",
+      "locationId": "ch1-q-recall-5",
+      "title": "回顾与思考第5题",
+      "preview": "把比较规则的条件与数轴解释一一对应。",
+      "paragraphs": [],
+      "learningRole": "回顾与整理",
+      "learningGap": "把比较规则的条件与数轴解释一一对应。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能按比较对象的类别整理规则，并用数轴说明适用条件。",
+      "related": [
+        {
+          "locationId": "ch1-negative-order",
+          "label": "两个负数的大小比较",
+          "purpose": "检查大小比较规则的适用条件及数轴依据。"
+        },
+        {
+          "locationId": "ch1-number-line",
+          "label": "数轴的三要素",
+          "purpose": "根据原点、正方向和统一单位长度读点或描点。"
+        },
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "绝对值与到原点的距离",
+          "purpose": "把绝对值条件转成距离条件，检查保留和缺少的信息。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "有理数大小比较的分类",
+          "数轴上的次序与距离"
+        ],
+        "method": [
+          "先按正负及是否为0整理比较时可能遇到的情况，再为每类选择依据。",
+          "用数轴说明为什么符号可以先判断某些大小关系，以及为什么两个负数还需比较距离。"
+        ],
+        "cautions": [
+          "“距离更远”与“数更大”不总一致。",
+          "说明规则时必须附带使用条件，尤其要明确是否同为负数。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-recall-6",
+      "locationId": "ch1-q-recall-6",
+      "title": "回顾与思考第6题",
+      "preview": "对照小学研究数的方式，提出有理数的新问题。",
+      "paragraphs": [],
+      "learningRole": "回顾与整理",
+      "learningGap": "对照小学研究数的方式，提出有理数的新问题。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能对照小学研究数的内容与本章所学，提出条件明确的新研究问题。",
+      "related": [
+        {
+          "locationId": "ch1-number-line-review",
+          "label": "本章已经解决了哪些问题",
+          "purpose": "对照表示、相反数、绝对值和大小比较，辨认已学内容。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "对数的表示、比较与运算的研究",
+          "从已有知识提出问题"
+        ],
+        "method": [
+          "列出小学围绕数做过的活动，如表示实际量、比较、计算等，再对照本章已经研究的内容。",
+          "挑选引入负数后还没有解决的问题，说明为什么原来的经验需要重新检查。"
+        ],
+        "cautions": [
+          "题目要求提出值得继续研究的问题，不要求提前给出后续章节的完整结论。",
+          "提出问题时明确对象和条件，避免只写“继续学习有理数”这样宽泛的目标。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-review-1",
+      "locationId": "ch1-q-review-1",
+      "title": "复习题1第1题",
+      "preview": "从情境读写正负记录，不能只换符号不解释意义。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "从情境读写正负记录，不能只换符号不解释意义。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能按题设约定表示温度变化，并完整解释带符号的收支记录。",
+      "related": [
+        {
+          "locationId": "ch1-positive-negative",
+          "label": "正数和负数",
+          "purpose": "按给定的意义约定理解正负号。"
+        },
+        {
+          "locationId": "ch1-opposite-meanings",
+          "label": "具有相反意义的量",
+          "purpose": "检查例子是否描述同类量的相反意义。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "相反意义的量与符号约定",
+          "温度变化及收支记录"
+        ],
+        "method": [
+          "（1）先找题干约定的正方向，再判断所问变化与该方向的关系。",
+          "（2）把符号约定和具体数值分开读取，组织成包含实际意义与数量的表述。"
+        ],
+        "cautions": [
+          "（1）记录的是温度的变化，不是变化后的实际温度。",
+          "（2）数前的符号与单位都要纳入解释，不能只说“一个负数”。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-review-2",
+      "locationId": "ch1-q-review-2",
+      "title": "复习题1第2题",
+      "preview": "自己构造情境时，要先规定什么意义记为正。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "自己构造情境时，要先规定什么意义记为正。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能自拟几种相反意义情境，说明约定并用正负数记录。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-meanings",
+          "label": "具有相反意义的量",
+          "purpose": "检查例子是否描述同类量的相反意义。"
+        },
+        {
+          "locationId": "ch1-positive-negative",
+          "label": "正数和负数",
+          "purpose": "按给定的意义约定理解正负号。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "具有相反意义的同类量",
+          "正负数表示数量"
+        ],
+        "method": [
+          "选取几种不同情境，分别说清一对相反意义及统一的单位或基准。",
+          "在每个情境中先给正负约定，再用具体记录说明两类量。"
+        ],
+        "cautions": [
+          "不能把不相关的两种量只因一增一减就配成一对。",
+          "例子的数值可以不同；“相反意义”不等于“互为相反数”。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-review-3",
+      "locationId": "ch1-q-review-3",
+      "title": "复习题1第3题",
+      "preview": "先准确描点，再用位置检查完整排序。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "先准确描点，再用位置检查完整排序。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能准确描点、排序并以指定不等号连接，检查六个数无遗漏。",
+      "related": [
+        {
+          "locationId": "ch1-number-line",
+          "label": "数轴的三要素",
+          "purpose": "根据原点、正方向和统一单位长度读点或描点。"
+        },
+        {
+          "locationId": "ch1-negative-order",
+          "label": "两个负数的大小比较",
+          "purpose": "检查大小比较规则的适用条件及数轴依据。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "整数在数轴上的表示",
+          "从小到大的次序与不等号"
+        ],
+        "method": [
+          "画出三要素并统一尺度，逐个标出六个数。",
+          "按图上次序写出排列，用题目要求的符号连接，再核对每个原数是否恰好出现一次。"
+        ],
+        "cautions": [
+          "负数的绝对值大，不代表它应排在更大的位置。",
+          "原点处的数也要纳入排序，不能在只关注正负数时漏掉。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-review-4",
+      "locationId": "ch1-q-review-4",
+      "title": "复习题1第4题",
+      "preview": "同一个数，求相反数和求绝对值要使用不同定义。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "同一个数，求相反数和求绝对值要使用不同定义。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能分别求三个数的相反数和绝对值，并按两个定义检查区别。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-pair",
+          "label": "相反数的定义",
+          "purpose": "核对两个数怎样才构成一对相反数。"
+        },
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "绝对值与到原点的距离",
+          "purpose": "把绝对值条件转成距离条件，检查保留和缺少的信息。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "相反数与绝对值的区别",
+          "符号条件对结果的影响"
+        ],
+        "method": [
+          "对三个给定数分别记录两种结果，分别按配对位置和到原点距离检查。",
+          "比较同一个数的两种结果是否相同，并追问这与原数的符号有什么关系。"
+        ],
+        "cautions": [
+          "不能把求相反数和求绝对值都简化成统一的“改符号”。",
+          "题目同时要求两类结果，注意与每个原数对应，避免漏项。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-review-5",
+      "locationId": "ch1-q-review-5",
+      "title": "复习题1第5题",
+      "preview": "先理清外层操作，才能选择比较正负还是比较绝对值。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "先理清外层操作，才能选择比较正负还是比较绝对值。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能读清四组式子的符号范围，独立选择大小比较方法。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-sign",
+          "label": "负号表示取相反数",
+          "purpose": "分清取相反数这一操作与结果的正负。"
+        },
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "绝对值与到原点的距离",
+          "purpose": "把绝对值条件转成距离条件，检查保留和缺少的信息。"
+        },
+        {
+          "locationId": "ch1-negative-order",
+          "label": "两个负数的大小比较",
+          "purpose": "检查大小比较规则的适用条件及数轴依据。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "正负号与绝对值的作用范围",
+          "有理数大小比较",
+          "分数大小比较"
+        ],
+        "method": [
+          "（1）区分保留括号内数与取其相反数的操作。",
+          "（2）（3）分别检查绝对值竖线内外是否还有符号，确定整式表示什么数。",
+          "（4）完成符号辨认后，使用合适的分数比较方法，并核对负数比较的方向。"
+        ],
+        "cautions": [
+          "不要只数式子里有几个负号，而忽略括号和竖线限定的作用范围。",
+          "绝对值非负的性质只直接约束绝对值这一层，不一定约束整个式子。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-review-6",
+      "locationId": "ch1-q-review-6",
+      "title": "复习题1第6题",
+      "preview": "盈利记录中的负号要保留在高低比较中。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "盈利记录中的负号要保留在高低比较中。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能结合盈亏意义将四季记录从高到低排序，保留季度对应。",
+      "related": [
+        {
+          "locationId": "ch1-positive-negative",
+          "label": "正数和负数",
+          "purpose": "按给定的意义约定理解正负号。"
+        },
+        {
+          "locationId": "ch1-negative-order",
+          "label": "两个负数的大小比较",
+          "purpose": "检查大小比较规则的适用条件及数轴依据。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "盈亏的正负记录",
+          "有理数从大到小排序"
+        ],
+        "method": [
+          "按表头理解每个季度的记录，先辨别符号，再比较同类记录的大小。",
+          "排序时保持季度与数值对应，并用情境检查“更高”的含义是否一致。"
+        ],
+        "cautions": [
+          "不能把亏损金额的绝对值较大理解为盈利较高。",
+          "题目要求从高到低，不是按季度先后顺序。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-growth-rate-practice",
+      "locationId": "ch1-growth-rate-practice",
+      "title": "复习题1第7题",
+      "preview": "区分变化幅度的大小与资源总量的大小。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "区分变化幅度的大小与资源总量的大小。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能比较给定增幅并解释负号，区分增幅排序与资源总量排序。",
+      "related": [
+        {
+          "locationId": "ch1-growth-rate-base",
+          "label": "增长率与比较基准",
+          "purpose": "检查变化百分数是相对于哪个时期而言。"
+        },
+        {
+          "locationId": "ch1-negative-order",
+          "label": "两个负数的大小比较",
+          "purpose": "检查大小比较规则的适用条件及数轴依据。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "增长率的比较基准",
+          "有理数大小比较",
+          "负号在增幅中的意义"
+        ],
+        "method": [
+          "先把四个百分数看作题目要求比较的同一类记录，依据正负及同号比较规则寻找最小者。",
+          "解释负增幅时，回到“比上年”的基准，说明符号表示的变化意义。"
+        ],
+        "cautions": [
+          "每年的基准是各自的上一年，不能把增幅排序直接当成资源总量排序。",
+          "负增幅不表示资源总量为负，也不要只按百分号前的大小部分比较。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-review-8",
+      "locationId": "ch1-q-review-8",
+      "title": "复习题1第8题",
+      "preview": "整数条件和两个严格不等式必须同时满足。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "整数条件和两个严格不等式必须同时满足。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能同时使用整数限制与两个严格边界，在数轴上找全候选点。",
+      "related": [
+        {
+          "locationId": "ch1-number-line",
+          "label": "数轴的三要素",
+          "purpose": "根据原点、正方向和统一单位长度读点或描点。"
+        },
+        {
+          "locationId": "ch1-rational-form",
+          "label": "数值与数的类别",
+          "purpose": "按数的值判断类别，不只按外观分类。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "整数的范围",
+          "数轴上的严格大小限制"
+        ],
+        "method": [
+          "先在数轴上确定两个边界，再只检查其中属于整数的点。",
+          "逐个核对候选点是否同时满足左右两项限制，确认既没有遗漏，也没有多画。"
+        ],
+        "cautions": [
+          "边界写的是严格不等号，不能擅自把端点纳入。",
+          "区间里的非整数虽也能画在数轴上，却不符合本题对x的要求。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-order-without-scale",
+      "locationId": "ch1-order-without-scale",
+      "title": "复习题1第9题",
+      "preview": "没有刻度，也可以用图中的左右位置比较。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "没有刻度，也可以用图中的左右位置比较。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能使用跨页点位图推定相反数位置，独立核对四种排序选项。",
+      "related": [
+        {
+          "locationId": "ch1-opposite-geometry",
+          "label": "相反数在数轴上的位置",
+          "purpose": "用关于原点的位置关系辨认和检查相反数。"
+        },
+        {
+          "locationId": "ch1-number-line",
+          "label": "数轴的三要素",
+          "purpose": "根据原点、正方向和统一单位长度读点或描点。"
+        },
+        {
+          "locationId": "ch1-negative-order",
+          "label": "两个负数的大小比较",
+          "purpose": "检查大小比较规则的适用条件及数轴依据。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "相反数的数轴位置",
+          "按左右次序比较大小"
+        ],
+        "method": [
+          "先读已核对的次页图，辨认a、b相对原点的位置以及图中给出的远近关系。",
+          "借相反数的位置关系确定另外两个点，再检查四个选项的次序是否符合图。"
+        ],
+        "cautions": [
+          "不必猜a、b的具体数值；任意代入可能改变图中的位置条件。",
+          "题干与选项在本页，图在次页，核对时不要遗漏配图或仅凭符号猜选项。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-q-review-10",
+      "locationId": "ch1-q-review-10",
+      "title": "复习题1第10题",
+      "preview": "解释偏差与比较接近程度，是两个不同的任务。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "解释偏差与比较接近程度，是两个不同的任务。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能逐个解释质量偏差，选择表示接近程度的量并自主说明比较理由。",
+      "related": [
+        {
+          "locationId": "ch1-deviation",
+          "label": "标准量与偏差",
+          "purpose": "区分实际量与相对标准超出或不足的记录。"
+        },
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "绝对值与到原点的距离",
+          "purpose": "把绝对值条件转成距离条件，检查保留和缺少的信息。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "标准质量与偏差",
+          "绝对值表示偏离程度"
+        ],
+        "method": [
+          "（1）按题设约定逐一说明五个记录的正负意义和数量大小。",
+          "（2）先确定“最接近标准”应比较哪一个量，再用记录之间的比较说明理由。"
+        ],
+        "cautions": [
+          "记录是超过或不足标准的量，不能直接当成排球的实际质量。",
+          "不能只挑正记录，或把数值最大直接当成最接近标准。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-between-numbers-practice",
+      "locationId": "ch1-between-numbers-practice",
+      "title": "整数刻度之间，也能表示数吗？",
+      "preview": "图上只标整数，不代表只允许考虑整数。",
+      "paragraphs": [
+        "这一问说的是“负数”，没有把候选范围限制为负整数。数轴上相邻整数刻度之间也能表示分数和小数，因此不能只检查图上写了数字的刻度。",
+        "“区间里有数”与“区间里有负数”也不同。检查候选数时，还要看它在原点哪一侧，并遵守题目旁注所说的不包含两端。请据此自行举例或说明理由。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "第11（1）问要求判断区间中的负数，易由整数刻度推断没有数，或把有数误当成有负数。",
+      "learningAction": "能同时检查非整数候选、相对原点的位置和端点限制，自主举例或排除。",
+      "related": [
+        {
+          "locationId": "ch1-number-line-fraction",
+          "label": "回看分数怎样定位",
+          "purpose": "借助例2中的分数点，检查整数刻度之间还能表示哪些数。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-review-11",
+      "locationId": "ch1-q-review-11",
+      "title": "复习题1第11题",
+      "preview": "每小问都要重新看清数的类别和区间条件。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "每小问都要重新看清数的类别和区间条件。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能逐问更新数类与区间限制，独立举例、排除并检查所有边界。",
+      "related": [
+        {
+          "locationId": "ch1-number-line",
+          "label": "数轴的三要素",
+          "purpose": "根据原点、正方向和统一单位长度读点或描点。"
+        },
+        {
+          "locationId": "ch1-rational-form",
+          "label": "数值与数的类别",
+          "purpose": "按数的值判断类别，不只按外观分类。"
+        },
+        {
+          "locationId": "ch1-negative-order",
+          "label": "两个负数的大小比较",
+          "purpose": "检查大小比较规则的适用条件及数轴依据。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "负数、负整数与整数的区别",
+          "数轴区间与严格边界",
+          "多个条件同时成立"
+        ],
+        "method": [
+          "（1）候选范围没有限为整数，应检查刻度之间的数，并辨认区间相对原点的位置。",
+          "（2）按各句的整数类别要求筛选，检查“两数之间”的端点限制。",
+          "（3）重点核对“负整数”这一完整条件，而不是只考虑负数。",
+          "（4）把两个大小限制同时放到数轴上，找出共同允许的位置，再自行选择满足要求的三个数。"
+        ],
+        "cautions": [
+          "教材旁注已规定“之间”不包括两端。",
+          "（4）没有沿用前面小问的整数限制，不应擅自添加条件。",
+          "判断“没有”时需要说明排除依据；判断“有”时要给符合全部条件的例子。"
+        ]
+      }
+    },
+    {
+      "id": "ch1-number-scope-practice",
+      "locationId": "ch1-number-scope-practice",
+      "title": "范围和位置，两个条件都要满足",
+      "preview": "先看题目要哪一类数，再检查它是否在指定位置。",
+      "paragraphs": [
+        "这一问先说“负整数”，后说“整数”。它们限制的对象不同：找到落在区间里的数之后，还要检查这个数是否属于题目要求的类别，不能仅凭位置就选入。",
+        "教材旁注明确说“两数之间”不包含两端。可以把类别和位置作为两项检查：这个数属于所要求的数类吗？它严格位于两个端点之间吗？每个候选数都要同时通过这两项检查。"
+      ],
+      "learningRole": "练习",
+      "learningGap": "第11（2）问切换负整数与整数，还限制为不含端点的区间，需要把两种限制同时使用。",
+      "learningAction": "能分别检查数的类别与区间边界，自主选出或排除候选数。",
+      "related": [
+        {
+          "locationId": "ch1-rational-form",
+          "label": "按数的值检查类别",
+          "purpose": "检查一个候选数是否为整数，不能只凭写法。"
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-review-12",
+      "locationId": "ch1-q-review-12",
+      "title": "复习题1第12题",
+      "preview": "把三种代数条件分别译成位置或距离条件。",
+      "paragraphs": [],
+      "learningRole": "练习",
+      "learningGap": "把三种代数条件分别译成位置或距离条件。本题需要把这一识别重点用于全部题设条件与子任务。",
+      "learningAction": "能分别将三个式子转成距离或位置条件，自主判断其允许的取值。",
+      "related": [
+        {
+          "locationId": "ch1-absolute-definition",
+          "label": "绝对值与到原点的距离",
+          "purpose": "把绝对值条件转成距离条件，检查保留和缺少的信息。"
+        },
+        {
+          "locationId": "ch1-opposite-geometry",
+          "label": "相反数在数轴上的位置",
+          "purpose": "用关于原点的位置关系辨认和检查相反数。"
+        }
+      ],
+      "questionGuide": {
+        "knowledgePoints": [
+          "绝对值给出的距离信息",
+          "相反数与点重合的条件",
+          "一般断言与可能取值"
+        ],
+        "method": [
+          "第一句检查给定距离是否足以唯一确定原数，特别关注“一定”要求的含义。",
+          "第二句与第一句的距离条件不同，要重新检查允许的位置。",
+          "第三句用相反数的位置关系解释两数相等的要求，再自主确定取值。"
+        ],
+        "cautions": [
+          "不要把第一句的“距离”直接当成“原数”，也不要把同一套候选个数套在三句上。",
+          "各问需要根据自己的条件判断，不能仅因相邻出现就认为答案相同或互相排斥。"
+        ]
+      }
+    }
+  ],
+  "pageDecisions": [
+    {
+      "page": 8,
+      "decision": "逐题支持：本页起始题目共3项，按独立题号或完整提问设置入口；每项提供考查知识、思路方法、注意情况和关联回顾。已有概念及步骤解读继续保留。"
+    },
+    {
+      "page": 9,
+      "decision": "逐题支持：本页起始题目共0项，按独立题号或完整提问设置入口；每项提供考查知识、思路方法、注意情况和关联回顾。本页无独立作答题，保留正负数与0的概念解读。"
+    },
+    {
+      "page": 10,
+      "decision": "逐题支持：本页起始题目共5项，按独立题号或完整提问设置入口；每项提供考查知识、思路方法、注意情况和关联回顾。已有概念及步骤解读继续保留。"
+    },
+    {
+      "page": 11,
+      "decision": "逐题支持：本页起始题目共2项，按独立题号或完整提问设置入口；每项提供考查知识、思路方法、注意情况和关联回顾。已有概念及步骤解读继续保留。"
+    },
+    {
+      "page": 12,
+      "decision": "逐题支持：本页起始题目共10项，按独立题号或完整提问设置入口；每项提供考查知识、思路方法、注意情况和关联回顾。已有概念及步骤解读继续保留。"
+    },
+    {
+      "page": 13,
+      "decision": "逐题支持：本页起始题目共3项，按独立题号或完整提问设置入口；每项提供考查知识、思路方法、注意情况和关联回顾。已有概念及步骤解读继续保留。"
+    },
+    {
+      "page": 14,
+      "decision": "逐题支持：本页起始题目共2项，按独立题号或完整提问设置入口；每项提供考查知识、思路方法、注意情况和关联回顾。已有概念及步骤解读继续保留。"
+    },
+    {
+      "page": 15,
+      "decision": "逐题支持：本页起始题目共4项，按独立题号或完整提问设置入口；每项提供考查知识、思路方法、注意情况和关联回顾。已有概念及步骤解读继续保留。"
+    },
+    {
+      "page": 16,
+      "decision": "逐题支持：本页起始题目共2项，按独立题号或完整提问设置入口；每项提供考查知识、思路方法、注意情况和关联回顾。已有概念及步骤解读继续保留。"
+    },
+    {
+      "page": 17,
+      "decision": "逐题支持：本页起始题目共1项，按独立题号或完整提问设置入口；每项提供考查知识、思路方法、注意情况和关联回顾。已有概念及步骤解读继续保留。"
+    },
+    {
+      "page": 18,
+      "decision": "逐题支持：本页起始题目共5项，按独立题号或完整提问设置入口；每项提供考查知识、思路方法、注意情况和关联回顾。已有概念及步骤解读继续保留。"
+    },
+    {
+      "page": 19,
+      "decision": "本页起始题目逐题提供知识点、思路方法、注意情况与已核实的知识关联：相反数旁注思考：−a一定是负数吗；相反数旁注思考：说明−(−5)=+5；例3；1.2.3练习第1题；1.2.3练习第2题；1.2.3练习第3题；1.2.3练习第4题。原有概念及例题步骤解读保留；同题小问在同一入口全部覆盖。"
+    },
+    {
+      "page": 20,
+      "decision": "本页起始题目逐题提供知识点、思路方法、注意情况与已核实的知识关联：绝对值引入问题；绝对值探究；例4。原有概念及例题步骤解读保留；同题小问在同一入口全部覆盖。"
+    },
+    {
+      "page": 21,
+      "decision": "本页起始题目逐题提供知识点、思路方法、注意情况与已核实的知识关联：1.2.4练习第1题；1.2.4练习第2题；1.2.4练习第3题；1.2.4练习第4题；大小比较引入问题；大小比较思考：天气预报。原有概念及例题步骤解读保留；同题小问在同一入口全部覆盖。"
+    },
+    {
+      "page": 22,
+      "decision": "本页起始题目逐题提供知识点、思路方法、注意情况与已核实的知识关联：大小比较旁注思考；大小比较思考：归纳比较规则；例5。原有概念及例题步骤解读保留；同题小问在同一入口全部覆盖。"
+    },
+    {
+      "page": 23,
+      "decision": "本页起始题目逐题提供知识点、思路方法、注意情况与已核实的知识关联：1.2.5练习第1题；1.2.5练习第2题；1.2.5练习第3题；习题1.2第1题。原有概念及例题步骤解读保留；同题小问在同一入口全部覆盖。"
+    },
+    {
+      "page": 24,
+      "decision": "本页起始题目逐题提供知识点、思路方法、注意情况与已核实的知识关联：习题1.2第2题；习题1.2第3题；习题1.2第4题；习题1.2第5题；习题1.2第6题；习题1.2第7题；习题1.2第8题；习题1.2第9题。原有概念及例题步骤解读保留；同题小问在同一入口全部覆盖。"
+    },
+    {
+      "page": 25,
+      "decision": "原图复核：本页为负数数学史阅读，没有面向学生明确要求作答的题目。历史引语中的疑问为叙述内容，不另造练习入口。"
+    },
+    {
+      "page": 26,
+      "decision": "原图复核：本页为负数数学史阅读，没有面向学生明确要求作答的题目。历史引语中的疑问为叙述内容，不另造练习入口。"
+    },
+    {
+      "page": 27,
+      "decision": "本页起始题目逐题提供知识点、思路方法、注意情况与已核实的知识关联：数学活动1：体重调查；数学活动2：猜数游戏。原有概念及例题步骤解读保留；同题小问在同一入口全部覆盖。"
+    },
+    {
+      "page": 28,
+      "decision": "本页起始题目逐题提供知识点、思路方法、注意情况与已核实的知识关联：回顾与思考第1题；回顾与思考第2题；回顾与思考第3题；回顾与思考第4题。原有概念及例题步骤解读保留；同题小问在同一入口全部覆盖。"
+    },
+    {
+      "page": 29,
+      "decision": "本页起始题目逐题提供知识点、思路方法、注意情况与已核实的知识关联：回顾与思考第5题；回顾与思考第6题；复习题1第1题；复习题1第2题；复习题1第3题；复习题1第4题；复习题1第5题；复习题1第6题；复习题1第7题；复习题1第8题；复习题1第9题。原有概念及例题步骤解读保留；同题小问在同一入口全部覆盖。"
+    },
+    {
+      "page": 30,
+      "decision": "本页起始题目逐题提供知识点、思路方法、注意情况与已核实的知识关联：复习题1第10题；复习题1第11题；复习题1第12题。原有概念及例题步骤解读保留；同题小问在同一入口全部覆盖。"
+    }
+  ],
+  "questionCoverage": {
+    "status": "source-checked",
+    "basis": "逐页查看PDF8–30原图与跨页上下文，并用独立原图清单逐题复核88项及小问。例题、练习、习题、复习题和明确提问的思考/探究/活动均已覆盖；25–26页历史叙述未含学生作答题。",
+    "items": [
+      {
+        "label": "章引言（1）：零上与零下温度",
+        "page": 8,
+        "supplementId": "ch1-why-negative",
+        "parts": []
+      },
+      {
+        "label": "章引言（2）：盈利与亏损",
+        "page": 8,
+        "supplementId": "ch1-intro-profit-question",
+        "parts": []
+      },
+      {
+        "label": "章引言（3）：产量增长与减少",
+        "page": 8,
+        "supplementId": "ch1-intro-production-question",
+        "parts": []
+      },
+      {
+        "label": "1.1例1：质量偏差",
+        "page": 10,
+        "supplementId": "ch1-example-1-1-guide",
+        "parts": [
+          "（1）表示超过或不足标准的质量",
+          "（2）解释50 g与−27 g的意义"
+        ]
+      },
+      {
+        "label": "印刷第3页练习第1题",
+        "page": 10,
+        "supplementId": "ch1-practice-p3-1",
+        "parts": []
+      },
+      {
+        "label": "印刷第3页练习第2题",
+        "page": 10,
+        "supplementId": "ch1-practice-p3-2",
+        "parts": []
+      },
+      {
+        "label": "印刷第3页练习第3题",
+        "page": 10,
+        "supplementId": "ch1-practice-p3-3",
+        "parts": []
+      },
+      {
+        "label": "印刷第3页练习第4题",
+        "page": 10,
+        "supplementId": "ch1-practice-p3-4",
+        "parts": []
+      },
+      {
+        "label": "印刷第4页思考：地形图与收支账单",
+        "page": 11,
+        "supplementId": "ch1-think-map-bill",
+        "parts": [
+          "说明地形图中正负数的意义",
+          "说明收支账单中正负数的意义",
+          "另举具有相反意义的量的例子"
+        ]
+      },
+      {
+        "label": "1.1例2：增长值与增长率",
+        "page": 11,
+        "supplementId": "ch1-example-1-2-guide",
+        "parts": [
+          "（1）三人的体重增长值",
+          "（2）四种品牌手机销量的增长率"
+        ]
+      },
+      {
+        "label": "例2旁问：负增长率与零增长率",
+        "page": 12,
+        "supplementId": "ch1-growth-rate-question",
+        "parts": [
+          "增长−2%的意义",
+          "增长率为0的情况"
+        ]
+      },
+      {
+        "label": "印刷第5页练习第1题",
+        "page": 12,
+        "supplementId": "ch1-practice-p5-1",
+        "parts": [
+          "水位下降",
+          "水位不升不降"
+        ]
+      },
+      {
+        "label": "印刷第5页练习第2题",
+        "page": 12,
+        "supplementId": "ch1-practice-p5-2",
+        "parts": [
+          "−0.1 kg",
+          "0 kg",
+          "+0.5 kg"
+        ]
+      },
+      {
+        "label": "印刷第5页练习第3题",
+        "page": 12,
+        "supplementId": "ch1-practice-p5-3",
+        "parts": [
+          "甲商品",
+          "乙商品"
+        ]
+      },
+      {
+        "label": "习题1.1第1题",
+        "page": 12,
+        "supplementId": "ch1-exercise-1-1-1",
+        "parts": []
+      },
+      {
+        "label": "习题1.1第2题",
+        "page": 12,
+        "supplementId": "ch1-exercise-1-1-2",
+        "parts": []
+      },
+      {
+        "label": "习题1.1第3题",
+        "page": 12,
+        "supplementId": "ch1-exercise-1-1-3",
+        "parts": [
+          "判断不是正数的数一定是负数",
+          "判断不是负数的数一定是正数"
+        ]
+      },
+      {
+        "label": "习题1.1第4题",
+        "page": 12,
+        "supplementId": "ch1-exercise-1-1-4",
+        "parts": []
+      },
+      {
+        "label": "习题1.1第5题",
+        "page": 12,
+        "supplementId": "ch1-direction-exercise",
+        "parts": [
+          "解释第二次移动+5 m",
+          "求最终位置距两次移动前位置的距离"
+        ]
+      },
+      {
+        "label": "习题1.1第6题（续于印刷第6页）",
+        "page": 12,
+        "supplementId": "ch1-measurement-exercise",
+        "parts": [
+          "求七组测量值的平均值",
+          "用正负数记录七组数据相对平均值的偏差"
+        ]
+      },
+      {
+        "label": "习题1.1第7题",
+        "page": 13,
+        "supplementId": "ch1-exercise-1-1-7",
+        "parts": []
+      },
+      {
+        "label": "习题1.1第8题",
+        "page": 13,
+        "supplementId": "ch1-exercise-1-1-8",
+        "parts": [
+          "第一组密码转动后标记线所对的数",
+          "根据第二组密码说明转动方向和格数",
+          "第二组密码转动后标记线所对的数"
+        ]
+      },
+      {
+        "label": "阅读与思考：用正负数表示允许偏差",
+        "page": 13,
+        "supplementId": "ch1-tolerance-question",
+        "parts": [
+          "解释2.74 g±0.02 g的含义",
+          "另举允许偏差的例子"
+        ]
+      },
+      {
+        "label": "1.2.1思考：已经认识了哪些数",
+        "page": 14,
+        "supplementId": "ch1-rational-think",
+        "parts": []
+      },
+      {
+        "label": "1.2例1：正负有理数与正负整数",
+        "page": 14,
+        "supplementId": "ch1-example-1-2-1-guide",
+        "parts": [
+          "指出正有理数",
+          "指出负有理数",
+          "指出正整数",
+          "指出负整数"
+        ]
+      },
+      {
+        "label": "印刷第8页练习第1题",
+        "page": 15,
+        "supplementId": "ch1-practice-p8-1",
+        "parts": [
+          "正数集合",
+          "负数集合"
+        ]
+      },
+      {
+        "label": "印刷第8页练习第2题",
+        "page": 15,
+        "supplementId": "ch1-practice-p8-2",
+        "parts": [
+          "指出正有理数",
+          "指出负有理数",
+          "指出整数"
+        ]
+      },
+      {
+        "label": "印刷第8页练习第3题",
+        "page": 15,
+        "supplementId": "ch1-practice-p8-3",
+        "parts": [
+          "正有理数的个数",
+          "正整数的个数",
+          "负有理数的个数",
+          "负整数的个数"
+        ]
+      },
+      {
+        "label": "1.2.2问题：画图表示马路旁物体的位置",
+        "page": 15,
+        "supplementId": "ch1-road-question",
+        "parts": []
+      },
+      {
+        "label": "印刷第9页思考：用数表示相对位置",
+        "page": 16,
+        "supplementId": "ch1-road-think",
+        "parts": []
+      },
+      {
+        "label": "印刷第9页思考：温度计与数值直线的共同点",
+        "page": 16,
+        "supplementId": "ch1-thermometer-think",
+        "parts": []
+      },
+      {
+        "label": "1.2例2：在数轴上表示数",
+        "page": 17,
+        "supplementId": "ch1-example-1-2-2-guide",
+        "parts": []
+      },
+      {
+        "label": "印刷第11页练习第1题",
+        "page": 18,
+        "supplementId": "ch1-practice-p11-1",
+        "parts": []
+      },
+      {
+        "label": "印刷第11页练习第2题",
+        "page": 18,
+        "supplementId": "ch1-practice-p11-2",
+        "parts": []
+      },
+      {
+        "label": "印刷第11页练习第3题",
+        "page": 18,
+        "supplementId": "ch1-practice-p11-3",
+        "parts": [
+          "整数点的个数",
+          "写出这些点表示的整数",
+          "负整数的个数"
+        ]
+      },
+      {
+        "label": "印刷第11页练习第4题",
+        "page": 18,
+        "supplementId": "ch1-number-line-move",
+        "parts": []
+      },
+      {
+        "label": "1.2.3探究：与原点等距的点",
+        "page": 18,
+        "supplementId": "ch1-opposite-inquiry",
+        "parts": [
+          "与原点距离为3的点的个数、数值及关系",
+          "与原点距离为1/2的点的个数、数值及关系"
+        ]
+      },
+      {
+        "label": "相反数旁注思考：−a一定是负数吗",
+        "page": 19,
+        "supplementId": "ch1-q-opposite-sign",
+        "parts": []
+      },
+      {
+        "label": "相反数旁注思考：说明−(−5)=+5",
+        "page": 19,
+        "supplementId": "ch1-q-opposite-geometry",
+        "parts": []
+      },
+      {
+        "label": "例3",
+        "page": 19,
+        "supplementId": "ch1-q-example-3",
+        "parts": [
+          "（1）−7与4/3的相反数",
+          "（2）由a的相反数求a"
+        ]
+      },
+      {
+        "label": "1.2.3练习第1题",
+        "page": 19,
+        "supplementId": "ch1-q-opposite-practice-1",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）",
+          "（4）",
+          "（5）",
+          "（6）"
+        ]
+      },
+      {
+        "label": "1.2.3练习第2题",
+        "page": 19,
+        "supplementId": "ch1-q-opposite-practice-2",
+        "parts": [
+          "−9/4",
+          "6",
+          "−8",
+          "−3.5",
+          "5/2",
+          "10",
+          "−100",
+          "1/3"
+        ]
+      },
+      {
+        "label": "1.2.3练习第3题",
+        "page": 19,
+        "supplementId": "ch1-q-opposite-practice-3",
+        "parts": []
+      },
+      {
+        "label": "1.2.3练习第4题",
+        "page": 19,
+        "supplementId": "ch1-q-opposite-practice-4",
+        "parts": [
+          "−(−7)",
+          "−(+0.5)",
+          "−(−68)",
+          "−(+3.8)"
+        ]
+      },
+      {
+        "label": "绝对值引入问题",
+        "page": 20,
+        "supplementId": "ch1-q-absolute-intro",
+        "parts": []
+      },
+      {
+        "label": "绝对值探究",
+        "page": 20,
+        "supplementId": "ch1-q-absolute-inquiry",
+        "parts": []
+      },
+      {
+        "label": "例4",
+        "page": 20,
+        "supplementId": "ch1-q-example-4",
+        "parts": [
+          "（1）1、−0.5、−7/4的绝对值",
+          "（2）图1.2-8中绝对值最小的数"
+        ]
+      },
+      {
+        "label": "1.2.4练习第1题",
+        "page": 21,
+        "supplementId": "ch1-q-absolute-practice-1",
+        "parts": [
+          "8",
+          "−3.9",
+          "−2/11",
+          "100",
+          "7.5",
+          "0",
+          "−(−13)",
+          "−(+18)"
+        ]
+      },
+      {
+        "label": "1.2.4练习第2题",
+        "page": 21,
+        "supplementId": "ch1-q-absolute-practice-2",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）"
+        ]
+      },
+      {
+        "label": "1.2.4练习第3题",
+        "page": 21,
+        "supplementId": "ch1-absolute-inverse-practice",
+        "parts": [
+          "由|a|=|−2|求a",
+          "由m为负数且|m|=10求m"
+        ]
+      },
+      {
+        "label": "1.2.4练习第4题",
+        "page": 21,
+        "supplementId": "ch1-absolute-symbols-practice",
+        "parts": [
+          "+|−3.5|",
+          "−|+5/6|",
+          "−|−11|",
+          "|+(−15)|",
+          "|−(−7)|",
+          "|−(+9)|"
+        ]
+      },
+      {
+        "label": "大小比较引入问题",
+        "page": 21,
+        "supplementId": "ch1-q-order-intro",
+        "parts": []
+      },
+      {
+        "label": "大小比较思考：天气预报",
+        "page": 21,
+        "supplementId": "ch1-q-temperature-thinking",
+        "parts": [
+          "一周最低气温",
+          "一周最高气温",
+          "七天最低气温从低到高排序"
+        ]
+      },
+      {
+        "label": "大小比较旁注思考",
+        "page": 22,
+        "supplementId": "ch1-q-order-old-rule",
+        "parts": []
+      },
+      {
+        "label": "大小比较思考：归纳比较规则",
+        "page": 22,
+        "supplementId": "ch1-q-order-thinking",
+        "parts": [
+          "正数、0和负数三类之间的关系",
+          "两个负数如何比较",
+          "与最低气温排序核对"
+        ]
+      },
+      {
+        "label": "例5",
+        "page": 22,
+        "supplementId": "ch1-q-example-5",
+        "parts": [
+          "（1）5和−2",
+          "（2）−3和−7",
+          "（3）−(−1)和−(+2)",
+          "（4）−(−0.5)和|−1.5|"
+        ]
+      },
+      {
+        "label": "1.2.5练习第1题",
+        "page": 23,
+        "supplementId": "ch1-q-order-practice-1",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）",
+          "（4）",
+          "（5）",
+          "（6）"
+        ]
+      },
+      {
+        "label": "1.2.5练习第2题",
+        "page": 23,
+        "supplementId": "ch1-q-order-practice-2",
+        "parts": [
+          "（1）",
+          "（2）"
+        ]
+      },
+      {
+        "label": "1.2.5练习第3题",
+        "page": 23,
+        "supplementId": "ch1-q-order-practice-3",
+        "parts": []
+      },
+      {
+        "label": "习题1.2第1题",
+        "page": 23,
+        "supplementId": "ch1-q-exercise12-1",
+        "parts": [
+          "正有理数集合",
+          "负有理数集合",
+          "整数集合"
+        ]
+      },
+      {
+        "label": "习题1.2第2题",
+        "page": 24,
+        "supplementId": "ch1-q-exercise12-2",
+        "parts": [
+          "点A",
+          "点B",
+          "点C",
+          "点D",
+          "点E"
+        ]
+      },
+      {
+        "label": "习题1.2第3题",
+        "page": 24,
+        "supplementId": "ch1-q-exercise12-3",
+        "parts": [
+          "7的相反数",
+          "−1/4是谁的相反数",
+          "相反数是它本身的数"
+        ]
+      },
+      {
+        "label": "习题1.2第4题",
+        "page": 24,
+        "supplementId": "ch1-q-exercise12-4",
+        "parts": [
+          "六个数的绝对值",
+          "绝对值最大的数",
+          "绝对值最小的数"
+        ]
+      },
+      {
+        "label": "习题1.2第5题",
+        "page": 24,
+        "supplementId": "ch1-q-exercise12-5",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）",
+          "（4）",
+          "（5）",
+          "（6）"
+        ]
+      },
+      {
+        "label": "习题1.2第6题",
+        "page": 24,
+        "supplementId": "ch1-q-exercise12-6",
+        "parts": [
+          "2",
+          "2又4/5",
+          "−0.5",
+          "−2",
+          "0",
+          "−2又4/5",
+          "1/2",
+          "1.2"
+        ]
+      },
+      {
+        "label": "习题1.2第7题",
+        "page": 24,
+        "supplementId": "ch1-q-exercise12-7",
+        "parts": []
+      },
+      {
+        "label": "习题1.2第8题",
+        "page": 24,
+        "supplementId": "ch1-opposite-distance-practice",
+        "parts": []
+      },
+      {
+        "label": "习题1.2第9题",
+        "page": 24,
+        "supplementId": "ch1-opposite-conditions-practice",
+        "parts": [
+          "（1）a=−a",
+          "（2）−a>a",
+          "（3）−a<a"
+        ]
+      },
+      {
+        "label": "数学活动1：体重调查",
+        "page": 27,
+        "supplementId": "ch1-q-activity-1",
+        "parts": [
+          "（1）辨认超过标准与分析正负记录",
+          "（2）接近标准与整体情况",
+          "个人调查、小组记录与资料讨论"
+        ]
+      },
+      {
+        "label": "数学活动2：猜数游戏",
+        "page": 27,
+        "supplementId": "ch1-q-activity-2",
+        "parts": [
+          "（1）选择秘密整数",
+          "（2）猜测与比较",
+          "（3）调整猜想",
+          "（4）重复直到猜中",
+          "猜数策略及检验"
+        ]
+      },
+      {
+        "label": "回顾与思考第1题",
+        "page": 28,
+        "supplementId": "ch1-q-recall-1",
+        "parts": [
+          "数的范围扩大几次",
+          "每次引入新数的原因"
+        ]
+      },
+      {
+        "label": "回顾与思考第2题",
+        "page": 28,
+        "supplementId": "ch1-q-recall-2",
+        "parts": []
+      },
+      {
+        "label": "回顾与思考第3题",
+        "page": 28,
+        "supplementId": "ch1-q-recall-3",
+        "parts": []
+      },
+      {
+        "label": "回顾与思考第4题",
+        "page": 28,
+        "supplementId": "ch1-q-recall-4",
+        "parts": [
+          "数轴与普通直线的区别",
+          "在数轴上表示有理数",
+          "用数轴解释相反数",
+          "用数轴解释绝对值"
+        ]
+      },
+      {
+        "label": "回顾与思考第5题",
+        "page": 29,
+        "supplementId": "ch1-q-recall-5",
+        "parts": [
+          "有理数大小比较",
+          "数轴的作用"
+        ]
+      },
+      {
+        "label": "回顾与思考第6题",
+        "page": 29,
+        "supplementId": "ch1-q-recall-6",
+        "parts": []
+      },
+      {
+        "label": "复习题1第1题",
+        "page": 29,
+        "supplementId": "ch1-q-review-1",
+        "parts": [
+          "（1）温度下降的记录",
+          "（2）负支出记录的意义"
+        ]
+      },
+      {
+        "label": "复习题1第2题",
+        "page": 29,
+        "supplementId": "ch1-q-review-2",
+        "parts": []
+      },
+      {
+        "label": "复习题1第3题",
+        "page": 29,
+        "supplementId": "ch1-q-review-3",
+        "parts": [
+          "数轴表示",
+          "从小到大排列并用<连接"
+        ]
+      },
+      {
+        "label": "复习题1第4题",
+        "page": 29,
+        "supplementId": "ch1-q-review-4",
+        "parts": [
+          "−2的相反数和绝对值",
+          "−5的相反数和绝对值",
+          "7.5的相反数和绝对值"
+        ]
+      },
+      {
+        "label": "复习题1第5题",
+        "page": 29,
+        "supplementId": "ch1-q-review-5",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）",
+          "（4）"
+        ]
+      },
+      {
+        "label": "复习题1第6题",
+        "page": 29,
+        "supplementId": "ch1-q-review-6",
+        "parts": []
+      },
+      {
+        "label": "复习题1第7题",
+        "page": 29,
+        "supplementId": "ch1-growth-rate-practice",
+        "parts": [
+          "最小增幅",
+          "负增幅的意义"
+        ]
+      },
+      {
+        "label": "复习题1第8题",
+        "page": 29,
+        "supplementId": "ch1-q-review-8",
+        "parts": []
+      },
+      {
+        "label": "复习题1第9题",
+        "page": 29,
+        "supplementId": "ch1-order-without-scale",
+        "parts": []
+      },
+      {
+        "label": "复习题1第10题",
+        "page": 30,
+        "supplementId": "ch1-q-review-10",
+        "parts": [
+          "（1）五个偏差的意义",
+          "（2）最接近标准质量及理由"
+        ]
+      },
+      {
+        "label": "复习题1第11题",
+        "page": 30,
+        "supplementId": "ch1-q-review-11",
+        "parts": [
+          "（1）",
+          "（2）",
+          "（3）",
+          "（4）"
+        ]
+      },
+      {
+        "label": "复习题1第12题",
+        "page": 30,
+        "supplementId": "ch1-q-review-12",
+        "parts": [
+          "|x|=2时是否一定x=2",
+          "|x|=0时x的取值",
+          "x=−x时x的取值"
+        ]
+      }
+    ]
+  }
+}

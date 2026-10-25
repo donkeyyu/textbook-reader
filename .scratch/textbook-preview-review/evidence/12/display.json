@@ -1,0 +1,674 @@
+[
+  {
+    "id": "ch4-q-sec42-example1",
+    "sourcePage": 103,
+    "printedPage": "96",
+    "title": "4.2 例1：作答指南",
+    "links": [
+      {
+        "target": "ch4-like-terms",
+        "page": 103,
+        "printedPage": "96",
+        "label": "同类项的字母与指数条件课本第 96 页",
+        "before": {
+          "fraction": 0.8119141845448865,
+          "panelScroll": 364.5,
+          "title": "4.2 例1：作答指南",
+          "expanded": null,
+          "focus": "related-ch4-q-sec42-example1-ch4-like-terms",
+          "highlight": "location-ch4-q-sec42-example1",
+          "back": false,
+          "methods": [
+            "method-ch4-q-sec42-example1"
+          ]
+        },
+        "after": {
+          "fraction": 0.8119141845448865,
+          "panelScroll": 364.5,
+          "title": "4.2 例1：作答指南",
+          "expanded": null,
+          "focus": "related-ch4-q-sec42-example1-ch4-like-terms",
+          "highlight": "location-ch4-q-sec42-example1",
+          "back": false,
+          "methods": [
+            "method-ch4-q-sec42-example1"
+          ]
+        }
+      },
+      {
+        "target": "ch4-combine-rule",
+        "page": 103,
+        "printedPage": "96",
+        "label": "只合并系数的分配律依据课本第 96 页",
+        "before": {
+          "fraction": 0.8119141845448865,
+          "panelScroll": 364.5,
+          "title": "4.2 例1：作答指南",
+          "expanded": null,
+          "focus": "related-ch4-q-sec42-example1-ch4-combine-rule",
+          "highlight": "location-ch4-q-sec42-example1",
+          "back": false,
+          "methods": [
+            "method-ch4-q-sec42-example1"
+          ]
+        },
+        "after": {
+          "fraction": 0.8119141845448865,
+          "panelScroll": 364.5,
+          "title": "4.2 例1：作答指南",
+          "expanded": null,
+          "focus": "related-ch4-q-sec42-example1-ch4-combine-rule",
+          "highlight": "location-ch4-q-sec42-example1",
+          "back": false,
+          "methods": [
+            "method-ch4-q-sec42-example1"
+          ]
+        }
+      }
+    ],
+    "marker": {
+      "ids": "ch4-q-sec42-example1",
+      "label": "题目引导：4.2 例1：作答指南",
+      "rect": {
+        "x": 1254.5,
+        "y": 936.78125
+      }
+    },
+    "preview": "同类项的判断；带符号的系数相加；零系数项。",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "同类项的判断",
+        "带符号的系数相加",
+        "零系数项"
+      ],
+      "cautions": [
+        "（2）总次数相同不等于同类；各字母的指数须分别相同。",
+        "字母与指数在合并时保持不变。",
+        "某组系数相加为0不代表字母的取值必须为0。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact",
+    "sha256": {
+      "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+      "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+      "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315",
+      "scripts/check-related-return.mjs": "84515ed716877715ea64bc2d3ea314a98746ca4099809ddad76307d32238884b",
+      "content/grade-7-volume-1/chapter-4.json": "153cda8d0cdf455048d7807658f628aba99fadbc95b07e7c39cc1f42d5a331e3",
+      "content/grade-7-volume-1/chapter-4.locations.json": "a7ae99aacd2995f08c7eaa7bf750ee311620701221d60ce7104f2bf101a34886"
+    }
+  },
+  {
+    "id": "ch4-q-42-example2",
+    "sourcePage": 104,
+    "printedPage": "97",
+    "title": "例2：求值前先检查哪些项能合并",
+    "links": [
+      {
+        "target": "ch4-like-terms",
+        "page": 103,
+        "printedPage": "96",
+        "label": "同类项课本第 96 页",
+        "before": {
+          "fraction": 0.19388588915770752,
+          "panelScroll": 0,
+          "title": "例2：求值前先检查哪些项能合并",
+          "expanded": null,
+          "focus": "related-ch4-q-42-example2-ch4-like-terms",
+          "highlight": "location-ch4-q-42-example2",
+          "back": false,
+          "methods": [
+            "method-ch4-q-42-example2"
+          ]
+        },
+        "after": {
+          "fraction": 0.19388588915770752,
+          "panelScroll": 0,
+          "title": "例2：求值前先检查哪些项能合并",
+          "expanded": null,
+          "focus": "related-ch4-q-42-example2-ch4-like-terms",
+          "highlight": "location-ch4-q-42-example2",
+          "back": false,
+          "methods": [
+            "method-ch4-q-42-example2"
+          ]
+        }
+      },
+      {
+        "target": "ch4-combine-rule",
+        "page": 103,
+        "printedPage": "96",
+        "label": "合并同类项课本第 96 页",
+        "before": {
+          "fraction": 0.19388588915770752,
+          "panelScroll": 308,
+          "title": "例2：求值前先检查哪些项能合并",
+          "expanded": null,
+          "focus": "related-ch4-q-42-example2-ch4-combine-rule",
+          "highlight": "location-ch4-q-42-example2",
+          "back": false,
+          "methods": [
+            "method-ch4-q-42-example2"
+          ]
+        },
+        "after": {
+          "fraction": 0.19388588915770752,
+          "panelScroll": 308,
+          "title": "例2：求值前先检查哪些项能合并",
+          "expanded": null,
+          "focus": "related-ch4-q-42-example2-ch4-combine-rule",
+          "highlight": "location-ch4-q-42-example2",
+          "back": false,
+          "methods": [
+            "method-ch4-q-42-example2"
+          ]
+        }
+      }
+    ],
+    "version": "display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 1772,
+      "height": 909
+    },
+    "marker": {
+      "ids": "ch4-q-42-example2",
+      "label": "题目引导：例2：求值前先检查哪些项能合并",
+      "rect": {
+        "x": 1254.5,
+        "y": 340.15625
+      }
+    },
+    "preview": "先看结构，再决定需要代入哪些字母。",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "同类项的判断与合并",
+        "代数式求值与等值变形"
+      ],
+      "cautions": [
+        "（1）x²前省略的系数是1，负系数要带符号参加相加。",
+        "（2）a与c都是负数，代入时用括号保持负数的整体；abc表示三个数相乘。",
+        "先化简通常更省事，但直接代入也是有效方法；两种方法的结果应一致。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-p98-practice1",
+    "sourcePage": 105,
+    "printedPage": "98",
+    "title": "练习1：只合并字母部分相同的项",
+    "links": [
+      {
+        "target": "ch4-like-terms",
+        "page": 103,
+        "printedPage": "96",
+        "label": "同类项课本第 96 页",
+        "before": {
+          "fraction": 0.19060131703331037,
+          "panelScroll": 0,
+          "title": "练习1：只合并字母部分相同的项",
+          "expanded": null,
+          "focus": "related-ch4-q-p98-practice1-ch4-like-terms",
+          "highlight": "location-ch4-q-p98-practice1",
+          "back": false,
+          "methods": [
+            "method-ch4-q-p98-practice1"
+          ]
+        },
+        "after": {
+          "fraction": 0.19060131703331037,
+          "panelScroll": 0,
+          "title": "练习1：只合并字母部分相同的项",
+          "expanded": null,
+          "focus": "related-ch4-q-p98-practice1-ch4-like-terms",
+          "highlight": "location-ch4-q-p98-practice1",
+          "back": false,
+          "methods": [
+            "method-ch4-q-p98-practice1"
+          ]
+        }
+      },
+      {
+        "target": "ch4-combine-rule",
+        "page": 103,
+        "printedPage": "96",
+        "label": "合并同类项课本第 96 页",
+        "before": {
+          "fraction": 0.19060131703331037,
+          "panelScroll": 279,
+          "title": "练习1：只合并字母部分相同的项",
+          "expanded": null,
+          "focus": "related-ch4-q-p98-practice1-ch4-combine-rule",
+          "highlight": "location-ch4-q-p98-practice1",
+          "back": false,
+          "methods": [
+            "method-ch4-q-p98-practice1"
+          ]
+        },
+        "after": {
+          "fraction": 0.19060131703331037,
+          "panelScroll": 279,
+          "title": "练习1：只合并字母部分相同的项",
+          "expanded": null,
+          "focus": "related-ch4-q-p98-practice1-ch4-combine-rule",
+          "highlight": "location-ch4-q-p98-practice1",
+          "back": false,
+          "methods": [
+            "method-ch4-q-p98-practice1"
+          ]
+        }
+      }
+    ],
+    "version": "display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 1772,
+      "height": 909
+    },
+    "marker": {
+      "ids": "ch4-q-p98-practice1",
+      "label": "题目引导：练习1：只合并字母部分相同的项",
+      "rect": {
+        "x": 1254.5,
+        "y": 330.1171875
+      }
+    },
+    "preview": "从单组同类项过渡到多组同类项。",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "同类项的两个条件",
+        "分数、小数与负系数的合并"
+      ],
+      "cautions": [
+        "（2）的分数系数和整数系数要按有理数加减处理。",
+        "（3）（4）中的负号不能在找同类项时丢失。",
+        "（6）总次数相同不足以判定同类项，需逐个核对字母指数。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-p98-practice2",
+    "sourcePage": 105,
+    "printedPage": "98",
+    "title": "练习2：把化简和代入分成两次检查",
+    "links": [
+      {
+        "target": "ch4-simplify-value",
+        "page": 104,
+        "printedPage": "97",
+        "label": "先化简再求值课本第 97 页",
+        "before": {
+          "fraction": 0.32493230576963134,
+          "panelScroll": 0,
+          "title": "练习2：把化简和代入分成两次检查",
+          "expanded": null,
+          "focus": "related-ch4-q-p98-practice2-ch4-simplify-value",
+          "highlight": "location-ch4-q-p98-practice2",
+          "back": false,
+          "methods": [
+            "method-ch4-q-p98-practice2"
+          ]
+        },
+        "after": {
+          "fraction": 0.32493230576963134,
+          "panelScroll": 0,
+          "title": "练习2：把化简和代入分成两次检查",
+          "expanded": null,
+          "focus": "related-ch4-q-p98-practice2-ch4-simplify-value",
+          "highlight": "location-ch4-q-p98-practice2",
+          "back": false,
+          "methods": [
+            "method-ch4-q-p98-practice2"
+          ]
+        }
+      },
+      {
+        "target": "ch4-combine-rule",
+        "page": 103,
+        "printedPage": "96",
+        "label": "合并同类项课本第 96 页",
+        "before": {
+          "fraction": 0.32493230576963134,
+          "panelScroll": 291,
+          "title": "练习2：把化简和代入分成两次检查",
+          "expanded": null,
+          "focus": "related-ch4-q-p98-practice2-ch4-combine-rule",
+          "highlight": "location-ch4-q-p98-practice2",
+          "back": false,
+          "methods": [
+            "method-ch4-q-p98-practice2"
+          ]
+        },
+        "after": {
+          "fraction": 0.32493230576963134,
+          "panelScroll": 291,
+          "title": "练习2：把化简和代入分成两次检查",
+          "expanded": null,
+          "focus": "related-ch4-q-p98-practice2-ch4-combine-rule",
+          "highlight": "location-ch4-q-p98-practice2",
+          "back": false,
+          "methods": [
+            "method-ch4-q-p98-practice2"
+          ]
+        }
+      }
+    ],
+    "version": "display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 1772,
+      "height": 909
+    },
+    "marker": {
+      "ids": "ch4-q-p98-practice2",
+      "label": "题目引导：练习2：把化简和代入分成两次检查",
+      "rect": {
+        "x": 1254.5,
+        "y": 461.28125
+      }
+    },
+    "preview": "先检查项的合并，再检查数的代入。",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "合并同类项",
+        "负数代入与乘方"
+      ],
+      "cautions": [
+        "（1）a的给定值是负数，代入乘法时将它作为一个整体。",
+        "（2）负数的平方与带负号的平方项不是同一层运算；先算乘方，再与系数相乘。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-p98-bridge-simplify",
+    "sourcePage": 105,
+    "printedPage": "98",
+    "title": "提问：两式中的括号受哪个数作用？",
+    "links": [
+      {
+        "target": "ch4-distribute-every-term",
+        "page": 106,
+        "printedPage": "99",
+        "label": "去括号与分配律课本第 99 页",
+        "purpose": "括号外的数要作用于括号内每一项，支持本题展开后再分类合并。",
+        "verification": "actual pointer round trip; see bridge-return-recheck.json",
+        "before": {
+          "fraction": 0.7679169403810103,
+          "panelScroll": 27,
+          "title": "提问：两式中的括号受哪个数作用？",
+          "expanded": null,
+          "focus": "related-ch4-q-p98-bridge-simplify-ch4-distribute-every-term",
+          "highlight": "location-ch4-q-p98-bridge-simplify",
+          "back": false,
+          "methods": [
+            "method-ch4-q-p98-bridge-simplify"
+          ]
+        },
+        "after": {
+          "fraction": 0.7679169403810103,
+          "panelScroll": 27,
+          "title": "提问：两式中的括号受哪个数作用？",
+          "expanded": null,
+          "focus": "related-ch4-q-p98-bridge-simplify-ch4-distribute-every-term",
+          "highlight": "location-ch4-q-p98-bridge-simplify",
+          "back": false,
+          "methods": [
+            "method-ch4-q-p98-bridge-simplify"
+          ]
+        }
+      },
+      {
+        "target": "ch4-minus-bracket",
+        "page": 106,
+        "printedPage": "99",
+        "label": "括号前的负号课本第 99 页",
+        "purpose": "把减去一个整式看成乘以−1，核对括号内每一项的符号变化。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 1772,
+      "height": 909
+    },
+    "marker": {
+      "ids": "ch4-q-p98-bridge-simplify",
+      "label": "题目引导：提问：两式中的括号受哪个数作用？",
+      "rect": {
+        "x": 1254.5,
+        "y": 893.7890625
+      }
+    },
+    "preview": "比较加上与减去同一段路程时，括号外因数怎样变化。",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "分配律",
+        "去括号中的符号",
+        "合并同类项"
+      ],
+      "cautions": [
+        "括号中的b−0.15共同表示隧道通行时间，外面的数要乘每一项。",
+        "②的减号作用于整个72(b−0.15)，不能只影响含b的部分。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-p100-practice3",
+    "sourcePage": 107,
+    "printedPage": "100",
+    "title": "练习3：四种括号结构中的乘数与同类项",
+    "links": [
+      {
+        "target": "ch4-distribute-every-term",
+        "page": 106,
+        "printedPage": "99",
+        "label": "去括号与分配律课本第 99 页",
+        "purpose": "括号外的数要作用于括号内每一项，支持本题展开后再分类合并。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      },
+      {
+        "target": "ch4-combine-rule",
+        "page": 103,
+        "printedPage": "96",
+        "label": "合并同类项课本第 96 页",
+        "purpose": "用各同类项系数的和替换原来的系数，并保持字母及其指数不变。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 1772,
+      "height": 909
+    },
+    "marker": {
+      "ids": "ch4-q-p100-practice3",
+      "label": "题目引导：练习3：四种括号结构中的乘数与同类项",
+      "rect": {
+        "x": 1254.5,
+        "y": 386.578125
+      }
+    },
+    "preview": "每个括号的作用范围，以及项与项能否合并的条件。",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "分配律",
+        "分数与小数系数",
+        "合并同类项"
+      ],
+      "cautions": [
+        "（1）（2）不要只把括号外的数乘第一项。",
+        "（3）减去整组项时要逐项改变符号；（4）分数乘常数与分数乘含y项是两次独立检查。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-42-example8",
+    "sourcePage": 108,
+    "printedPage": "101",
+    "title": "例8：括号、分数与负数的求值",
+    "links": [
+      {
+        "target": "ch4-two-operations",
+        "page": 108,
+        "printedPage": "101",
+        "label": "整式加减法则课本第 101 页",
+        "purpose": "根据本题括号结构，连接去括号与合并同类项两个步骤。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      },
+      {
+        "target": "ch4-simplify-value",
+        "page": 104,
+        "printedPage": "97",
+        "label": "先化简再求值课本第 97 页",
+        "purpose": "回顾前例如何先合并再求值，将同样的选择用于本题含括号的整式。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 1772,
+      "height": 909
+    },
+    "marker": {
+      "ids": "ch4-q-42-example8",
+      "label": "题目引导：例8：括号、分数与负数的求值",
+      "rect": {
+        "x": 1254.5,
+        "y": 580.359375
+      }
+    },
+    "preview": "变形与代入时，怎样保留原来的运算对象？",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "整式加减与化简",
+        "负数、分数代入",
+        "乘方的运算顺序"
+      ],
+      "cautions": [
+        "负因数要乘括号内每一项。",
+        "y²表示整个分数的平方，不能只将分子平方。",
+        "保持各行相等是变形的要求；先化简只是为了让计算更方便。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-q-p101-practice1",
+    "sourcePage": 108,
+    "printedPage": "101",
+    "title": "练习1：三种括号结构分别怎样检查？",
+    "links": [
+      {
+        "target": "ch4-distribute-every-term",
+        "page": 106,
+        "printedPage": "99",
+        "label": "去括号与分配律课本第 99 页",
+        "purpose": "括号外的数要作用于括号内每一项，支持本题展开后再分类合并。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      },
+      {
+        "target": "ch4-like-terms",
+        "page": 103,
+        "printedPage": "96",
+        "label": "同类项课本第 96 页",
+        "purpose": "先核对字母和对应指数，才能决定本题哪些项可以合并。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 1772,
+      "height": 909
+    },
+    "marker": {
+      "ids": "ch4-q-p101-practice1",
+      "label": "题目引导：练习1：三种括号结构分别怎样检查？",
+      "rect": {
+        "x": 1254.5,
+        "y": 883.15625
+      }
+    },
+    "preview": "跨页的第（3）问仍属于同一道计算题。",
+    "default": {
+      "expanded": "false",
+      "methodVisible": false,
+      "knowledge": [
+        "整式加减",
+        "负号与负因数去括号",
+        "同类项与分数系数"
+      ],
+      "cautions": [
+        "（1）不能仅因次数相同就合并，还要核对每个字母及其指数。",
+        "（2）外面的−2作用于括号内全部三项，常数项也要处理。",
+        "（3）括号内负项与外面的负因数共同决定符号，分数系数不要漏乘。"
+      ],
+      "paragraphs": []
+    },
+    "method": "default collapsed; Enter opens; Space closes; Enter opens; source text exact"
+  },
+  {
+    "id": "ch4-combine-rule",
+    "sourcePage": 103,
+    "printedPage": "96",
+    "title": "合并时为什么只加系数？",
+    "links": [
+      {
+        "target": "ch4-like-terms",
+        "page": 103,
+        "printedPage": "96",
+        "label": "回顾哪些项能合并课本第 96 页",
+        "purpose": "先确保共同字母部分确实相同，再使用系数相加的规则。",
+        "verification": "button id/label/purpose match reviewed target; not clicked"
+      }
+    ],
+    "version": "display-version.json",
+    "runtime": "http://127.0.0.1:5204/",
+    "viewport": {
+      "width": 1772,
+      "height": 909
+    },
+    "marker": {
+      "ids": "ch4-combine-rule",
+      "label": "概念与性质：合并时为什么只加系数？",
+      "rect": {
+        "x": 1254.5,
+        "y": 893.8671875
+      }
+    },
+    "preview": "相加的是同一字母部分的若干倍，不是把字母部分相乘。",
+    "sourceHighlight": null,
+    "paragraphs": [
+      "把共同的字母部分暂记为一个整体U，pU+qU=(p+q)U来自分配律。无论U表示一个字母还是几个字母的积，合并都只改变有多少个U。",
+      "补充用例：2x²+3x²=5x²，而不是5x⁴。这里做的是两个乘积的加法，没有再把x²与x²相乘；因此字母及其指数保持不变。"
+    ]
+  }
+]

@@ -1,0 +1,658 @@
+{
+  "date": "2026-10-25T05:51:36.941Z",
+  "url": "http://127.0.0.1:5196/",
+  "space": 39,
+  "input": "public DOM controls and focus; no React state access; DOM assertions, not pixel review",
+  "versions": {
+    "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+    "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+    "content/grade-7-volume-1/chapter-6.json": "a800d8e822fdc13f1740403c0bb852debfd01b3c3068febebc07325d81c6b845"
+  },
+  "results": [
+    {
+      "id": "ch6-q-p192-recap6",
+      "page": 192,
+      "printedPage": "185",
+      "noteSha256": "0ddba520397bf0e1ee02eba08231d5374351ad5f4a84bba75728d9f7ba155a42",
+      "preview": {
+        "group": [
+          "ch6-q-p192-recap6"
+        ],
+        "aria": "题目引导：小结回顾与思考第6题：线段与角的类比",
+        "text": "线段与角可以类比哪些思路？哪些条件仍须分别核对？",
+        "highlights": [
+          "location-ch6-q-p192-recap6"
+        ],
+        "sourcePaper": "page-192",
+        "region": {
+          "x": 0.195,
+          "y": 0.484,
+          "width": 0.69,
+          "height": 0.023
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "小结回顾与思考第6题：线段与角的类比",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p192-recap6",
+        "sourcePage": 192,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-analogy-boundaries",
+            "id": "related-ch6-q-p192-recap6-ch6-analogy-boundaries",
+            "label": "类比与定义条件",
+            "purposeMatches": true,
+            "pageLabel": "课本第 185 页",
+            "targetFilePage": 192,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p192-review1",
+      "page": 192,
+      "printedPage": "185",
+      "noteSha256": "5f19c13127edbf97b1a62864651c79df724333be567d85b171b03ab7320d837e",
+      "preview": {
+        "group": [
+          "ch6-q-p192-review1"
+        ],
+        "aria": "题目引导：复习题6第1题：说出立体图形名称",
+        "text": "立体图形的名称，由哪些结构特征支持？",
+        "highlights": [
+          "location-ch6-q-p192-review1"
+        ],
+        "sourcePaper": "page-192",
+        "region": {
+          "x": 0.14,
+          "y": 0.647,
+          "width": 0.285,
+          "height": 0.023
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "复习题6第1题：说出立体图形名称",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p192-review1",
+        "sourcePage": 192,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-solid-not-coplanar",
+            "id": "related-ch6-q-p192-review1-ch6-solid-not-coplanar",
+            "label": "常见立体图形",
+            "purposeMatches": true,
+            "pageLabel": "课本第 151 页",
+            "targetFilePage": 158,
+            "clicked": false
+          },
+          {
+            "target": "ch6-hidden-edges",
+            "id": "related-ch6-q-p192-review1-ch6-hidden-edges",
+            "label": "立体图形中的虚线",
+            "purposeMatches": true,
+            "pageLabel": "课本第 151 页",
+            "targetFilePage": 158,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p193-review2",
+      "page": 193,
+      "printedPage": "186",
+      "noteSha256": "01298efacc9a788feaff12f3cedc7f94cf501ed99b893759e4830493b08babe3",
+      "preview": {
+        "group": [
+          "ch6-q-p193-review2"
+        ],
+        "aria": "题目引导：复习题6第2题：俯视图对应",
+        "text": "从上面看时，哪些轮廓显露，哪些部分重叠？",
+        "highlights": [
+          "location-ch6-q-p193-review2"
+        ],
+        "sourcePaper": "page-193",
+        "region": {
+          "x": 0.095,
+          "y": 0.079,
+          "width": 0.77,
+          "height": 0.046
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "复习题6第2题：俯视图对应",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p193-review2",
+        "sourcePage": 193,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-view-overlap",
+            "id": "related-ch6-q-p193-review2-ch6-view-overlap",
+            "label": "观察图中的遮挡与重叠",
+            "purposeMatches": true,
+            "pageLabel": "课本第 153 页",
+            "targetFilePage": 160,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p193-review3",
+      "page": 193,
+      "printedPage": "186",
+      "noteSha256": "af1a71245bc5014d4176b9f8dd1e0be6c1f84f6a77d4fd1774b77c04da23fbb7",
+      "preview": {
+        "group": [
+          "ch6-q-p193-review3"
+        ],
+        "aria": "题目引导：复习题6第3题：从三个方向观察",
+        "text": "同一个立体的三个方向，各自显示哪些信息？",
+        "highlights": [
+          "location-ch6-q-p193-review3"
+        ],
+        "sourcePaper": "page-193",
+        "region": {
+          "x": 0.095,
+          "y": 0.374,
+          "width": 0.773,
+          "height": 0.025
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "复习题6第3题：从三个方向观察",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p193-review3",
+        "sourcePage": 193,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-view-overlap",
+            "id": "related-ch6-q-p193-review3-ch6-view-overlap",
+            "label": "不同方向的观察图",
+            "purposeMatches": true,
+            "pageLabel": "课本第 153 页",
+            "targetFilePage": 160,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p193-review4",
+      "page": 193,
+      "printedPage": "186",
+      "noteSha256": "a326424850cce3cf7744f762347b5d74424e615cc81ab8588f0501e7a55bb2b0",
+      "preview": {
+        "group": [
+          "ch6-q-p193-review4"
+        ],
+        "aria": "题目引导：复习题6第4题：按语句画图",
+        "text": "名称、延长指令与长度条件，分别限定什么？",
+        "highlights": [
+          "location-ch6-q-p193-review4"
+        ],
+        "sourcePaper": "page-193",
+        "region": {
+          "x": 0.095,
+          "y": 0.535,
+          "width": 0.65,
+          "height": 0.024
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "复习题6第4题：按语句画图",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p193-review4",
+        "sourcePage": 193,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-ray-name-order",
+            "id": "related-ch6-q-p193-review4-ch6-ray-name-order",
+            "label": "射线与线段的表示",
+            "purposeMatches": true,
+            "pageLabel": "课本第 163 页",
+            "targetFilePage": 170,
+            "clicked": false
+          },
+          {
+            "target": "ch6-extension-order",
+            "id": "related-ch6-q-p193-review4-ch6-extension-order",
+            "label": "线段的延长方向",
+            "purposeMatches": true,
+            "pageLabel": "课本第 163 页",
+            "targetFilePage": 170,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p193-review5",
+      "page": 193,
+      "printedPage": "186",
+      "noteSha256": "7c83252921d465a4a3c31324213283ab517635ca1aab32d4defb9b9a87be2fe5",
+      "preview": {
+        "group": [
+          "ch6-q-p193-review5"
+        ],
+        "aria": "题目引导：复习题6第5题：零件图中的线段长度",
+        "text": "零件图的尺寸线，怎样对应整段和部分？",
+        "highlights": [
+          "location-ch6-q-p193-review5"
+        ],
+        "sourcePaper": "page-193",
+        "region": {
+          "x": 0.095,
+          "y": 0.7509999999999999,
+          "width": 0.77,
+          "height": 0.046
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "复习题6第5题：零件图中的线段长度",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p193-review5",
+        "sourcePage": 193,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-segment-sum-between",
+            "id": "related-ch6-q-p193-review5-ch6-segment-sum-between",
+            "label": "线段的和差",
+            "purposeMatches": true,
+            "pageLabel": "课本第 165 页",
+            "targetFilePage": 172,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p193-review6",
+      "page": 193,
+      "printedPage": "186",
+      "noteSha256": "9f66c29a725460ccfef110f550657a6eb4283c7aa314a12855004860b7c200ea",
+      "preview": {
+        "group": [
+          "ch6-q-p193-review6"
+        ],
+        "aria": "题目引导：复习题6第6题：角度填空",
+        "text": "钟面位置、角度运算和余补关系，各有什么条件要核对？",
+        "highlights": [
+          "location-ch6-q-p193-review6"
+        ],
+        "sourcePaper": "page-193",
+        "region": {
+          "x": 0.095,
+          "y": 0.804,
+          "width": 0.185,
+          "height": 0.023
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "复习题6第6题：角度填空",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p193-review6",
+        "sourcePage": 193,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-clock-continuous-motion",
+            "id": "related-ch6-q-p193-review6-ch6-clock-continuous-motion",
+            "label": "钟面角与时间单位",
+            "purposeMatches": true,
+            "pageLabel": "课本第 178 页",
+            "targetFilePage": 185,
+            "clicked": false
+          },
+          {
+            "target": "ch6-compound-angle-units",
+            "id": "related-ch6-q-p193-review6-ch6-compound-angle-units",
+            "label": "度与分",
+            "purposeMatches": true,
+            "pageLabel": "课本第 171 页",
+            "targetFilePage": 178,
+            "clicked": false
+          },
+          {
+            "target": "ch6-complementary-position-independent",
+            "id": "related-ch6-q-p193-review6-ch6-complementary-position-independent",
+            "label": "补角",
+            "purposeMatches": true,
+            "pageLabel": "课本第 176 页",
+            "targetFilePage": 183,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p194-review7",
+      "page": 194,
+      "printedPage": "187",
+      "noteSha256": "b42d81afb626ad966451bd9dd051d23d9a6ff747d13bcbd899bee8ed621afea4",
+      "preview": {
+        "group": [
+          "ch6-q-p194-review7"
+        ],
+        "aria": "题目引导：复习题6第7题：角度与余补关系判断",
+        "text": "角度的写法、范围与数量关系，分别能支持什么判断？",
+        "highlights": [
+          "location-ch6-q-p194-review7"
+        ],
+        "sourcePaper": "page-194",
+        "region": {
+          "x": 0.14,
+          "y": 0.08,
+          "width": 0.2,
+          "height": 0.023
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "复习题6第7题：角度与余补关系判断",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p194-review7",
+        "sourcePage": 194,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-compound-angle-units",
+            "id": "related-ch6-q-p194-review7-ch6-compound-angle-units",
+            "label": "度与分",
+            "purposeMatches": true,
+            "pageLabel": "课本第 171 页",
+            "targetFilePage": 178,
+            "clicked": true
+          },
+          {
+            "target": "ch6-complementary-position-independent",
+            "id": "related-ch6-q-p194-review7-ch6-complementary-position-independent",
+            "label": "补角",
+            "purposeMatches": true,
+            "pageLabel": "课本第 176 页",
+            "targetFilePage": 183,
+            "clicked": true
+          }
+        ],
+        "roundTrips": [
+          {
+            "target": "ch6-compound-angle-units",
+            "page": 178,
+            "regionMatches": true,
+            "returnFocus": "related-ch6-q-p194-review7-ch6-compound-angle-units",
+            "positionDelta": 0,
+            "panelDelta": 0,
+            "methodRestored": true
+          },
+          {
+            "target": "ch6-complementary-position-independent",
+            "page": 183,
+            "regionMatches": true,
+            "returnFocus": "related-ch6-q-p194-review7-ch6-complementary-position-independent",
+            "positionDelta": 0,
+            "panelDelta": 0,
+            "methodRestored": true
+          }
+        ]
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p194-review8",
+      "page": 194,
+      "printedPage": "187",
+      "noteSha256": "34b9f7043ecb02368186314ba0ac2910c0c26d015a08212ff7383385124e3fcc",
+      "preview": {
+        "group": [
+          "ch6-q-p194-review8"
+        ],
+        "aria": "题目引导：复习题6第8题：由三个观察图辨认立体图形",
+        "text": "候选立体是否同时满足三个方向的观察信息？",
+        "highlights": [
+          "location-ch6-q-p194-review8"
+        ],
+        "sourcePaper": "page-194",
+        "region": {
+          "x": 0.14,
+          "y": 0.24100000000000002,
+          "width": 0.49200000000000005,
+          "height": 0.07
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "复习题6第8题：由三个观察图辨认立体图形",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p194-review8",
+        "sourcePage": 194,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-view-overlap",
+            "id": "related-ch6-q-p194-review8-ch6-view-overlap",
+            "label": "不同方向的观察图",
+            "purposeMatches": true,
+            "pageLabel": "课本第 153 页",
+            "targetFilePage": 160,
+            "clicked": false
+          },
+          {
+            "target": "ch6-solid-not-coplanar",
+            "id": "related-ch6-q-p194-review8-ch6-solid-not-coplanar",
+            "label": "常见立体图形",
+            "purposeMatches": true,
+            "pageLabel": "课本第 151 页",
+            "targetFilePage": 158,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p194-review9",
+      "page": 194,
+      "printedPage": "187",
+      "noteSha256": "7fbb1f427baf40ad2f067ac77788f985690e2abf2412ab2558f25c72a1ca1466",
+      "preview": {
+        "group": [
+          "ch6-q-p194-review9",
+          "ch6-surface-route-correspondence"
+        ],
+        "aria": "选择此处的2条解读",
+        "highlights": [
+          "location-ch6-q-p194-review9",
+          "location-ch6-surface-route-correspondence"
+        ],
+        "sourcePaper": "page-194",
+        "region": {
+          "x": 0.14,
+          "y": 0.319,
+          "width": 0.486,
+          "height": 0.049
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        },
+        "singlePreview": "not shown by grouped-marker design"
+      },
+      "path": {
+        "title": "复习题6第9题：圆柱侧面的一圈最短路线",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p194-review9",
+        "sourcePage": 194,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-net-vs-view",
+            "id": "related-ch6-q-p194-review9-ch6-net-vs-view",
+            "label": "展开图",
+            "purposeMatches": true,
+            "pageLabel": "课本第 153 页",
+            "targetFilePage": 160,
+            "clicked": false
+          },
+          {
+            "target": "ch6-shortest-same-endpoints",
+            "id": "related-ch6-q-p194-review9-ch6-shortest-same-endpoints",
+            "label": "两点之间线段最短",
+            "purposeMatches": true,
+            "pageLabel": "课本第 165 页",
+            "targetFilePage": 172,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-q-p194-review10",
+      "page": 194,
+      "printedPage": "187",
+      "noteSha256": "b19b56cf9d94e028034a9dc21873be44b766dac1bcf866bb2179a7ebf95e5306",
+      "preview": {
+        "group": [
+          "ch6-q-p194-review10"
+        ],
+        "aria": "题目引导：复习题6第10题：图形运动形成立体",
+        "text": "运动方向与旋转轴，怎样影响形成的整体？",
+        "highlights": [
+          "location-ch6-q-p194-review10"
+        ],
+        "sourcePaper": "page-194",
+        "region": {
+          "x": 0.14,
+          "y": 0.557,
+          "width": 0.763,
+          "height": 0.05
+        },
+        "viewport": {
+          "width": 886,
+          "height": 455
+        }
+      },
+      "path": {
+        "title": "复习题6第10题：图形运动形成立体",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-q-p194-review10",
+        "sourcePage": 194,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-motion-needs-direction",
+            "id": "related-ch6-q-p194-review10-ch6-motion-needs-direction",
+            "label": "图形运动与方向",
+            "purposeMatches": true,
+            "pageLabel": "课本第 156 页",
+            "targetFilePage": 163,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    }
+  ]
+}

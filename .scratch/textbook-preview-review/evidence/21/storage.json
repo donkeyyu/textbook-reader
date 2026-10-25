@@ -1,0 +1,91 @@
+[
+  {
+    "name": "two real tabs refuse stale personal save and retain draft",
+    "result": "pass",
+    "viewport": [
+      1400,
+      1000
+    ]
+  },
+  {
+    "name": "tall viewport bottom saves, refreshes exactly, and continues saving",
+    "result": "pass",
+    "viewport": [
+      320,
+      1200
+    ],
+    "details": {
+      "before": {
+        "page": 202,
+        "fraction": -1.5127906976744185
+      },
+      "after": {
+        "page": 202,
+        "fraction": -1.5127906976744185
+      },
+      "subsequent": {
+        "page": 50,
+        "fraction": 0.3697674418604651
+      }
+    }
+  },
+  {
+    "name": "closed desktop tab reopens at same page region in narrow tab, then refreshes",
+    "result": "pass",
+    "viewport": [
+      390,
+      844
+    ],
+    "details": {
+      "after": {
+        "page": 50,
+        "fraction": 0.3695652173913043
+      },
+      "refreshed": {
+        "page": 50,
+        "fraction": 0.3695652173913043
+      },
+      "pageLabel": "文件页序 50/202课本第 43 页"
+    }
+  },
+  {
+    "name": "read failure remains non-blocking; personal notes unchanged",
+    "result": "pass",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "name": "write failure remains non-blocking; personal notes unchanged",
+    "result": "pass",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "name": "bad JSON opens cover and allows navigation",
+    "result": "pass",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "name": "foreign book opens cover and allows navigation",
+    "result": "pass",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "name": "invalid page opens cover and allows navigation",
+    "result": "pass",
+    "viewport": [
+      390,
+      844
+    ]
+  }
+]

@@ -1,0 +1,164 @@
+[
+  {
+    "id": "ch5-q-p133-practice2",
+    "sourcePage": 133,
+    "noteSha256": "27f9d86269ecf4457770d3bd542b9f24399704f6fefb015026e6e7a75123561d",
+    "preview": {
+      "mode": "group",
+      "tooltip": false,
+      "highlights": [
+        "location-ch5-q-p133-practice2",
+        "location-ch5-change-dimensions"
+      ]
+    },
+    "group": [
+      "ch5-q-p133-practice2",
+      "ch5-change-dimensions"
+    ],
+    "default": {
+      "title": "练习2：长宽改变，比较的是面积",
+      "collapsed": true,
+      "knowledgeMatches": true,
+      "cautionsMatches": true,
+      "methodMatches": true,
+      "sourceHighlight": "location-ch5-q-p133-practice2"
+    },
+    "methodMouseKeyboard": true,
+    "methodTogglesKeepPage": true,
+    "links": [
+      {
+        "target": "ch5-change-dimensions",
+        "targetPage": 133,
+        "button": {
+          "id": "related-ch5-q-p133-practice2-ch5-change-dimensions",
+          "text": "长宽变化与面积条件课本第 126 页",
+          "purpose": "本题需要区分边长增减和面积保持不变这两种信息。"
+        },
+        "visited": false
+      }
+    ],
+    "commonReturnEvidence": "../14/display-check.json; 未改变关联的条目只核对按钮，并非逐链点击",
+    "checkedAt": "2026-10-25T05:42:36.460Z"
+  },
+  {
+    "id": "ch5-q-p135-step-reasons",
+    "sourcePage": 135,
+    "noteSha256": "e84ae7a858ff3fb148f582e7541b915e32bfebb4e237db81f4c05b70fc88d420",
+    "preview": {
+      "mode": "individual",
+      "title": "框图思考：逐步说明变形依据",
+      "text": "区分等式两边共同运算与等号同侧的恒等改写。"
+    },
+    "group": [
+      "ch5-q-p135-step-reasons"
+    ],
+    "default": {
+      "title": "框图思考：逐步说明变形依据",
+      "collapsed": true,
+      "knowledgeMatches": true,
+      "cautionsMatches": true,
+      "methodMatches": true,
+      "sourceHighlight": "location-ch5-q-p135-step-reasons"
+    },
+    "methodMouseKeyboard": true,
+    "methodTogglesKeepPage": true,
+    "links": [
+      {
+        "target": "ch5-steps-choice",
+        "targetPage": 135,
+        "button": {
+          "id": "related-ch5-q-p135-step-reasons-ch5-steps-choice",
+          "text": "解一元一次方程的一般步骤课本第 128 页",
+          "purpose": "本题需要把五种步骤与实际变形依据对上，不能只背步骤名称。"
+        },
+        "visited": false
+      }
+    ],
+    "commonReturnEvidence": "../14/display-check.json; 未改变关联的条目只核对按钮，并非逐链点击",
+    "checkedAt": "2026-10-25T05:42:45.632Z"
+  },
+  {
+    "id": "ch5-q-p137-hw7",
+    "sourcePage": 137,
+    "noteSha256": "bd9d1be81157139b8b14344abbacb822e8e695d70c5b591cc5698203c5ef10d8",
+    "preview": {
+      "mode": "individual",
+      "title": "习题7：米数条件与金额条件各做什么",
+      "text": "总长度和总价分别限制哪些量？"
+    },
+    "group": [
+      "ch5-q-p137-hw7"
+    ],
+    "default": {
+      "title": "习题7：米数条件与金额条件各做什么",
+      "collapsed": true,
+      "knowledgeMatches": true,
+      "cautionsMatches": true,
+      "methodMatches": true,
+      "sourceHighlight": "location-ch5-q-p137-hw7"
+    },
+    "methodMouseKeyboard": true,
+    "methodTogglesKeepPage": true,
+    "links": [
+      {
+        "target": "ch5-model-choose-relation",
+        "targetPage": 120,
+        "button": {
+          "id": "related-ch5-q-p137-hw7-ch5-model-choose-relation",
+          "text": "选择相等关系课本第 113 页",
+          "purpose": "本题利用一个条件表示未知量，再以另一总量条件列方程。"
+        },
+        "visited": false
+      }
+    ],
+    "commonReturnEvidence": "../14/display-check.json; 未改变关联的条目只核对按钮，并非逐链点击",
+    "checkedAt": "2026-10-25T05:42:54.629Z"
+  },
+  {
+    "id": "ch5-q-ex52-15",
+    "sourcePage": 138,
+    "noteSha256": "33c7cf39b5b2aebc07ebffa3cdf633663c0b08cc87abf6a1e1e3b25b71817b77",
+    "preview": {
+      "mode": "individual",
+      "title": "习题5.2 第15题：思路与检查",
+      "text": "题目比较的是人均粉刷量，两组人数不同。"
+    },
+    "group": [
+      "ch5-q-ex52-15"
+    ],
+    "default": {
+      "title": "习题5.2 第15题：思路与检查",
+      "collapsed": true,
+      "knowledgeMatches": true,
+      "cautionsMatches": true,
+      "methodMatches": true,
+      "sourceHighlight": "location-ch5-q-ex52-15"
+    },
+    "methodMouseKeyboard": true,
+    "methodTogglesKeepPage": true,
+    "links": [
+      {
+        "target": "ch5-model-choose-relation",
+        "targetPage": 120,
+        "button": {
+          "id": "related-ch5-q-ex52-15-ch5-model-choose-relation",
+          "text": "数量关系与等量关系课本第 113 页",
+          "purpose": "先区分总量与人均量，再选择比较关系。"
+        },
+        "visited": false
+      },
+      {
+        "target": "ch5-two-checks",
+        "targetPage": 141,
+        "button": {
+          "id": "related-ch5-q-ex52-15-ch5-two-checks",
+          "text": "方程检验与情境检验课本第 134 页",
+          "purpose": "核查实际完成面积与余量条件是否一致。"
+        },
+        "visited": false
+      }
+    ],
+    "commonReturnEvidence": "../14/display-check.json; 未改变关联的条目只核对按钮，并非逐链点击",
+    "checkedAt": "2026-10-25T05:43:03.704Z"
+  }
+]

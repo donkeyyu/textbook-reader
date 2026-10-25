@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-25",
+  "ticket": 13,
+  "scope": {
+    "items": 30,
+    "modified": 24,
+    "retained": 6
+  },
+  "checks": {
+    "npmTest": {
+      "passed": 23,
+      "failed": 0,
+      "exitCode": 0
+    },
+    "referencesAndCoverage": "existing supplements.test.ts passed; all guide inventories, links, page-image hashes and locations verified",
+    "recordedChangesOnly": true,
+    "questionCoverageUnchanged": true,
+    "gitDiffCheck": "passed",
+    "buildAndTypecheck": "shared final build/typecheck remains parent responsibility; no repeated npm test for display-only records",
+    "isolatedViteBuild": "passed; output was /tmp/ch4-review-20261025/site; shared dist unchanged"
+  },
+  "sha256": {
+    "content/grade-7-volume-1/chapter-4.json": "b3c0c4ec87c4acb5083e636733493cc19f1d33fd1e6b2432be6dfdcf6d0a9f24",
+    "content/grade-7-volume-1/chapter-4.locations.json": "a7ae99aacd2995f08c7eaa7bf750ee311620701221d60ce7104f2bf101a34886",
+    "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+    "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+    "scripts/check-related-return.mjs": "c2bf07836d109d6154929d7acb61d95a8631e2895e0885d1e7b21882afc11413"
+  },
+  "display": {
+    "revisedGuidesChecked": 24,
+    "totalRevised": 24,
+    "pending": [],
+    "sample": null,
+    "linkButtonsChecked": 42,
+    "actualRoundTrips": 0,
+    "metadataOnlyLinks": 42,
+    "groupedMarkersWithoutIndividualPreview": [
+      "ch4-q-42-exercise4",
+      "ch4-q-review2",
+      "ch4-q-review3"
+    ],
+    "viewports": [
+      {
+        "width": 1772,
+        "height": 909
+      },
+      {
+        "width": 886,
+        "height": 455
+      }
+    ],
+    "sharedRoundTripEvidence": "../12/display.json: 9 actual round trips; unchanged common interaction",
+    "version": "../12/display-version.json"
+  },
+  "limitations": [
+    "Page.captureScreenshot timed out; no pixel or occlusion conclusion.",
+    "No real phone, student or parent observations.",
+    "Per-item checks and clicked round-trip samples are distinguished; unchanged links were not all clicked."
+  ],
+  "cleanup": {
+    "egoSpace37Finished": true,
+    "ownPort5204ServiceStopped": true,
+    "temporaryBuildAndOneOffScriptsRemoved": true,
+    "sharedServicesAndDistUntouched": true,
+    "stagedOrCommitted": false
+  }
+}

@@ -1,0 +1,606 @@
+[
+  {
+    "id": "ch2-q-review2-9",
+    "page": 69,
+    "printedPage": "62",
+    "label": "复习题2第9题：补出星期六的盈亏",
+    "parts": [],
+    "decision": "保留",
+    "reason": "458包含星期六的总量关系正确，求缺失记录与译回盈亏保留。",
+    "related": [
+      {
+        "locationId": "ch2-income-record-activity",
+        "label": "带符号的收支与金额",
+        "purpose": "把有符号的记录转换为具体状态和金额。",
+        "page": 65,
+        "printedPage": "58"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-review2-10",
+    "page": 69,
+    "printedPage": "62",
+    "label": "复习题2第10题：巡道员的位置与距离",
+    "parts": [
+      "此时在驻地的什么方向",
+      "与驻地相距多少千米"
+    ],
+    "decision": "保留",
+    "reason": "方向约定与距离/全程区分是理解增量，未给净位移。",
+    "related": [
+      {
+        "locationId": "ch2-road-two-questions",
+        "label": "方向、位置与路程",
+        "purpose": "区分终点位置、距离与累计路程。",
+        "page": 43,
+        "printedPage": "36"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-review2-11",
+    "page": 69,
+    "printedPage": "62",
+    "label": "复习题2第11题：金属丝随温度变化",
+    "parts": [
+      "金属丝长度变化过程",
+      "最终长度相对原长度的变化量"
+    ],
+    "decision": "保留",
+    "reason": "过程处于0～40℃且温差非温度；分段和最终净变需自行计算。",
+    "related": [
+      {
+        "locationId": "ch2-temperature-change-product",
+        "label": "单位变化与总变化",
+        "purpose": "用单位温差引起的变化来理解各段总变化。",
+        "page": 47,
+        "printedPage": "40"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-review2-12",
+    "page": 69,
+    "printedPage": "62",
+    "label": "复习题2第12题：天文单位的科学记数法",
+    "parts": [],
+    "decision": "保留",
+    "reason": "亿为数值倍率而非需删除的单位，未给指数；平均近似距离含义保留。",
+    "related": [
+      {
+        "locationId": "ch2-scientific-same-value",
+        "label": "科学记数法的等值改写",
+        "purpose": "保证改写前后表示同一个近似距离。",
+        "page": 61,
+        "printedPage": "54"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-review2-13",
+    "page": 69,
+    "printedPage": "62",
+    "label": "复习题2第13题：比较数与它的幂",
+    "parts": [
+      "（1）",
+      "（2）"
+    ],
+    "decision": "保留",
+    "reason": "0<a<1及−1<b<0范围完整，未代给幂的顺序关系。",
+    "related": [
+      {
+        "locationId": "ch2-power-size-explore",
+        "label": "有范围限制的幂比较",
+        "purpose": "将符号和绝对值两种观察分别用于两小问。",
+        "page": 69,
+        "printedPage": "62"
+      },
+      {
+        "locationId": "ch1-negative-order",
+        "label": "负数的大小比较",
+        "purpose": "在负数比较时转回正确的数值顺序。",
+        "page": 22,
+        "printedPage": "15"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-review2-14",
+    "page": 69,
+    "printedPage": "62",
+    "label": "复习题2第14题：说明理由或举反例",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）"
+    ],
+    "decision": "保留",
+    "reason": "量词、偶数条件和倒数非零需检验，各条真假与反例保留。",
+    "related": [
+      {
+        "locationId": "ch2-counterexample-review",
+        "label": "一般理由与反例",
+        "purpose": "判断每句话需要什么样的理由或反例。",
+        "page": 69,
+        "printedPage": "62"
+      },
+      {
+        "locationId": "ch2-reciprocal-condition",
+        "label": "倒数的定义与条件",
+        "purpose": "检查第（3）问的倒数条件。",
+        "page": 47,
+        "printedPage": "40"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-review2-15",
+    "page": 69,
+    "printedPage": "62",
+    "label": "复习题2第15题：全由1组成的数相乘",
+    "parts": [
+      "用计算器完成四个乘法填空",
+      "（1）发现规律",
+      "（2）不用计算器写出111 111 111×111 111 111的结果"
+    ],
+    "decision": "保留",
+    "reason": "四组算例与九位1推想均覆盖，未给排列结果；限制任意推广。",
+    "related": [
+      {
+        "locationId": "ch2-counterexample-review",
+        "label": "一般理由与反例",
+        "purpose": "区分有限例子的观察与未经检验的推广。",
+        "page": 69,
+        "printedPage": "62"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p70-addition-memory",
+    "page": 70,
+    "printedPage": "63",
+    "label": "实践引言：回忆最早学习加法的情景",
+    "parts": [],
+    "decision": "保留",
+    "reason": "个人回忆不伪造统一经历，联系计数单位而非默认数值答案。",
+    "related": [
+      {
+        "locationId": "ch2-base-unit-exchange",
+        "label": "进位制与数位单位",
+        "purpose": "从计数经验过渡到数位单位与进位规则。",
+        "page": 70,
+        "printedPage": "63"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p70-introduction",
+    "page": 70,
+    "printedPage": "63",
+    "label": "实践引言：围绕进位制提出的问题",
+    "parts": [
+      "十进制与二进制的意义",
+      "为何有不同进位制",
+      "不同进位制之间能否转换、如何转换",
+      "二进制数能否运算、如何运算",
+      "是否还有其他进位制"
+    ],
+    "decision": "保留",
+    "reason": "五类研究问题与证据类型对应，不在引言预给所有结论。",
+    "related": [
+      {
+        "locationId": "ch2-base-unit-exchange",
+        "label": "进位制与数位单位",
+        "purpose": "理解后续研究共同依赖的基数和数位单位。",
+        "page": 70,
+        "printedPage": "63"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p70-preparation",
+    "page": 70,
+    "printedPage": "63",
+    "label": "活动准备：二进制资料与ICME-14标识",
+    "parts": [
+      "查资料初步了解二进制",
+      "查找ICME-14标识及其介绍"
+    ],
+    "decision": "保留",
+    "reason": "资料二进制规则与ICME-14标识均覆盖，未伪造外部资料或将资料搜集说成完成。",
+    "related": [
+      {
+        "locationId": "ch2-trigram-reading-order",
+        "label": "符号编码与位序约定",
+        "purpose": "明确查阅标识资料时还需要核对位序约定。",
+        "page": 72,
+        "printedPage": "65"
+      },
+      {
+        "locationId": "ch2-base-unit-exchange",
+        "label": "进位制与数位单位",
+        "purpose": "用数位规则检查二进制资料是否解释了核心概念。",
+        "page": 70,
+        "printedPage": "63"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p71-activity1-task1",
+    "page": 71,
+    "printedPage": "64",
+    "label": "活动一任务1：将二进制1011转换为十进制",
+    "parts": [
+      "写成各数位数字与基数幂的乘积之和",
+      "转为十进制数"
+    ],
+    "decision": "保留",
+    "reason": "按位配对与0占位是已给任务的理解条件，未代写1011的展开与结果。",
+    "related": [
+      {
+        "locationId": "ch2-base-unit-exchange",
+        "label": "进位制与数位单位",
+        "purpose": "按二进制的相邻位关系理解每一位。",
+        "page": 70,
+        "printedPage": "63"
+      },
+      {
+        "locationId": "ch2-zero-power-place",
+        "label": "零次幂与个位单位",
+        "purpose": "解释个位在幂展开中的写法。",
+        "page": 71,
+        "printedPage": "64"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p71-activity1-task2",
+    "page": 71,
+    "printedPage": "64",
+    "label": "活动一任务2：将89转换为二进制和八进制",
+    "parts": [
+      "转为二进制数",
+      "转为八进制数"
+    ],
+    "decision": "保留",
+    "reason": "89两种进制可自行分拆，未给各位数字或完整字符串。",
+    "related": [
+      {
+        "locationId": "ch2-base-zero-placeholder",
+        "label": "进制转换与占位0",
+        "purpose": "检查两种转换结果的占位和反向还原。",
+        "page": 71,
+        "printedPage": "64"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p71-activity1-task3",
+    "page": 71,
+    "printedPage": "64",
+    "label": "活动一任务3：归纳转换发现并推广",
+    "parts": [
+      "二进制与十进制转换的发现",
+      "进一步尝试其他进位制转换"
+    ],
+    "decision": "保留",
+    "reason": "从任务1、2抽共性并新例检验，未代给转换算法或数值。",
+    "related": [
+      {
+        "locationId": "ch2-base-unit-exchange",
+        "label": "进位制与数位单位",
+        "purpose": "找出不同进制转换共同遵守的数量保持原则。",
+        "page": 70,
+        "printedPage": "63"
+      },
+      {
+        "locationId": "ch2-base-zero-placeholder",
+        "label": "进制转换与占位0",
+        "purpose": "用展开还原检验新的转换。",
+        "page": 71,
+        "printedPage": "64"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p71-activity2-task1",
+    "page": 71,
+    "printedPage": "64",
+    "label": "活动二任务1：计算机选择二进制的原因",
+    "parts": [
+      "查阅资料",
+      "从多个角度分析优越性"
+    ],
+    "decision": "保留",
+    "reason": "机器与人使用的场景分开，资料证据由学生搜集分析。",
+    "related": [
+      {
+        "locationId": "ch2-base-unit-exchange",
+        "label": "进位制与数位单位",
+        "purpose": "理解改变记数系统改变的是表示规则，而非所表示数量。",
+        "page": 70,
+        "printedPage": "63"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p71-activity2-task2",
+    "page": 71,
+    "printedPage": "64",
+    "label": "活动二任务2：二进制加法（续页为PDF第72页）",
+    "parts": [
+      "研究加法法则并填表1的4个和",
+      "（1）计算（10010）₂+（111）₂并交流方法",
+      "（2）①计算45+23",
+      "（2）②转二进制相加，再转回十进制",
+      "（2）③比较两种结果"
+    ],
+    "decision": "保留",
+    "reason": "71–72表1四格、（1）与（2）三步骤全部核；只给条件核验，不代填和与转换值。",
+    "related": [
+      {
+        "locationId": "ch2-binary-addition-explore",
+        "label": "二进制加法的数量与表示",
+        "purpose": "理解填表时必须同时满足数量和二进制表示条件。",
+        "page": 71,
+        "printedPage": "64"
+      },
+      {
+        "locationId": "ch2-base-addition-consistency",
+        "label": "转换与运算结果的核对",
+        "purpose": "核对第（2）问的两条计算路径。",
+        "page": 72,
+        "printedPage": "65"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p72-activity2-task3",
+    "page": 72,
+    "printedPage": "65",
+    "label": "活动二任务3：存储容量与文件大小",
+    "parts": [
+      "设备容量和文件大小通常用什么单位",
+      "单位之间的关系"
+    ],
+    "decision": "保留",
+    "reason": "位/字节、单位符号及倍率约定需查来源，未新增未核实的容量换算常数。",
+    "related": [
+      {
+        "locationId": "ch2-base-unit-exchange",
+        "label": "进位制与数位单位",
+        "purpose": "把单位倍率与二进制的数位规则联系，避免混淆数值和单位。",
+        "page": 70,
+        "printedPage": "63"
+      },
+      {
+        "locationId": "ch2-scientific-same-value",
+        "label": "科学记数法的等值改写",
+        "purpose": "保持所表示数量不变地检查不同写法。",
+        "page": 61,
+        "printedPage": "54"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p72-activity2-task4",
+    "page": 72,
+    "printedPage": "65",
+    "label": "活动二任务4：其他进位制的加法",
+    "parts": [
+      "任选七进制、十二进制或六十进制",
+      "讨论所选进位制的加法法则"
+    ],
+    "decision": "保留",
+    "reason": "固定基数与时间单位类比边界准确，选择及新进制法则保留。",
+    "related": [
+      {
+        "locationId": "ch2-time-base-boundary",
+        "label": "固定基数与时间单位换算",
+        "purpose": "辨明时间例子与固定基数记数法的边界。",
+        "page": 72,
+        "printedPage": "65"
+      },
+      {
+        "locationId": "ch2-binary-addition-explore",
+        "label": "二进制加法的数量与表示",
+        "purpose": "借鉴先检查允许数字再讨论进位的研究方法。",
+        "page": 71,
+        "printedPage": "64"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p72-activity3-theme1",
+    "page": 72,
+    "printedPage": "65",
+    "label": "活动三主题1：解读大会标识中的记数符号（续页为PDF第73页）",
+    "parts": [
+      "探究图2八卦符号表示的数",
+      "交流计算方法"
+    ],
+    "decision": "修订",
+    "reason": "72–73完整核；原方法仅复述教材全路线，改为三爻/一位八进制的对应理由及两层位序核验；各组和整体仍自行算。",
+    "related": [
+      {
+        "locationId": "ch2-trigram-reading-order",
+        "label": "符号编码与位序约定",
+        "purpose": "核对符号对应与位序的一致性。",
+        "page": 72,
+        "printedPage": "65"
+      },
+      {
+        "locationId": "ch2-base-zero-placeholder",
+        "label": "进制转换与占位0",
+        "purpose": "在分组及整体转换中保留必要的占位。",
+        "page": 71,
+        "printedPage": "64"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p73-activity3-theme2",
+    "page": 73,
+    "printedPage": "66",
+    "label": "活动三主题2：撰写进位制研究文章",
+    "parts": [
+      "意义及运算",
+      "特点与适用范围",
+      "相互转换"
+    ],
+    "decision": "保留",
+    "reason": "选题文章保留主题自主性，未预写文章或计算答案。",
+    "related": [
+      {
+        "locationId": "ch2-base-unit-exchange",
+        "label": "进位制与数位单位",
+        "purpose": "用共同的数位概念组织不同进制的比较。",
+        "page": 70,
+        "printedPage": "63"
+      },
+      {
+        "locationId": "ch2-base-addition-consistency",
+        "label": "转换与运算结果的核对",
+        "purpose": "用可复核的转换和计算支持文章中的运算说明。",
+        "page": 72,
+        "printedPage": "65"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p73-process1",
+    "page": 73,
+    "printedPage": "66",
+    "label": "活动过程1：组建合作团队",
+    "parts": [
+      "5～8人组成小组",
+      "确定一名负责人"
+    ],
+    "decision": "保留",
+    "reason": "组织任务5～8人与负责人对应原文；不把组织事项当数值题，不代造分组。",
+    "related": [
+      {
+        "locationId": "ch2-base-unit-exchange",
+        "label": "进位制与数位单位",
+        "purpose": "确定小组讨论进位制时需要共同说明的基数和数位概念。",
+        "page": 70,
+        "printedPage": "63"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p73-process2",
+    "page": 73,
+    "printedPage": "66",
+    "label": "活动过程2：方案构思",
+    "parts": [
+      "讨论交流",
+      "形成解决任务的方案"
+    ],
+    "decision": "保留",
+    "reason": "方案中资料算例与核验的关系有增量，具体计划由小组定。",
+    "related": [
+      {
+        "locationId": "ch2-base-addition-consistency",
+        "label": "转换与运算结果的核对",
+        "purpose": "把独立核对转换与运算的办法纳入研究方案。",
+        "page": 72,
+        "printedPage": "65"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p73-process3",
+    "page": 73,
+    "printedPage": "66",
+    "label": "活动过程3：方案实施",
+    "parts": [
+      "任务分工",
+      "按规划步骤研究",
+      "形成研究报告"
+    ],
+    "decision": "保留",
+    "reason": "按实际执行与修正记录，不将计划冒充成果，不代写研究。",
+    "related": [
+      {
+        "locationId": "ch2-base-addition-consistency",
+        "label": "转换与运算结果的核对",
+        "purpose": "检查报告中的转换和计算是否有一致的核对记录。",
+        "page": 72,
+        "printedPage": "65"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p73-process4",
+    "page": 73,
+    "printedPage": "66",
+    "label": "活动过程4：展示交流",
+    "parts": [
+      "制作演示文稿",
+      "展示研究成果",
+      "分享经验、困难及解决方法，反思不足"
+    ],
+    "decision": "保留",
+    "reason": "展示推理困难与不足均保留，自主选择材料而非只发结果。",
+    "related": [
+      {
+        "locationId": "ch2-counterexample-review",
+        "label": "一般理由与反例",
+        "purpose": "区分已观察的现象、已给出理由的结论及仍待验证的推广。",
+        "page": 69,
+        "printedPage": "62"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p73-evaluation",
+    "page": 73,
+    "printedPage": "66",
+    "label": "活动评价：自评、互评与教师评价",
+    "parts": [
+      "自我评价",
+      "同学评价",
+      "教师评价"
+    ],
+    "decision": "保留",
+    "reason": "自评/互评/教师评价三者覆盖，以记录和数学理由作依据。",
+    "related": [
+      {
+        "locationId": "ch2-counterexample-review",
+        "label": "一般理由与反例",
+        "purpose": "区分支持数学结论的理由与仅有少数例子的观察。",
+        "page": 69,
+        "printedPage": "62"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p74-report",
+    "page": 74,
+    "printedPage": "67",
+    "label": "研究报告参考表：填写与评价分工",
+    "parts": [
+      "1. 活动名称",
+      "2. 研究小组成员与分工",
+      "3. 选题的意义",
+      "4. 研究方案",
+      "5. 研究过程",
+      "6. 研究成果",
+      "7. 收获与体会",
+      "8. 对此研究报告的评价（由评价小组或教师填写）"
+    ],
+    "decision": "保留",
+    "reason": "参考表8项含他人填写分工均核对，不代写评价或伪造已实施记录。",
+    "related": [
+      {
+        "locationId": "ch2-base-addition-consistency",
+        "label": "转换与运算结果的核对",
+        "purpose": "选取可复查的转换与运算核对记录作为报告证据。",
+        "page": 72,
+        "printedPage": "65"
+      }
+    ]
+  }
+]

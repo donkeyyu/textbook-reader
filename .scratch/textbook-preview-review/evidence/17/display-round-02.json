@@ -1,0 +1,256 @@
+{
+  "date": "2026-10-25T05:41:20.065Z",
+  "url": "http://127.0.0.1:5196/",
+  "space": 39,
+  "input": "public DOM controls and focus; no React state access; DOM assertions, not pixel review",
+  "versions": {
+    "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+    "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+    "content/grade-7-volume-1/chapter-6.json": "a800d8e822fdc13f1740403c0bb852debfd01b3c3068febebc07325d81c6b845"
+  },
+  "results": [
+    {
+      "id": "ch6-p171-tools-question",
+      "page": 171,
+      "printedPage": "164",
+      "noteSha256": "638754482f70c20600a218d719c3059582eb30c37156eec4c146cba4580cce5c",
+      "preview": {
+        "group": [
+          "ch6-p171-tools-question"
+        ],
+        "aria": "题目引导：旁问：两种作图方法的工具分工",
+        "text": "不读出长度的数值，也能保证两条线段等长吗？",
+        "highlights": [
+          "location-ch6-p171-tools-question"
+        ],
+        "sourcePaper": "page-171",
+        "region": {
+          "x": 0.63,
+          "y": 0.309,
+          "width": 0.226,
+          "height": 0.07
+        },
+        "viewport": {
+          "width": 1772,
+          "height": 909
+        }
+      },
+      "path": {
+        "title": "旁问：两种作图方法的工具分工",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p171-tools-question",
+        "sourcePage": 171,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-compass-copy-length",
+            "id": "related-ch6-p171-tools-question-ch6-compass-copy-length",
+            "label": "圆规复制长度",
+            "purposeMatches": true,
+            "pageLabel": "课本第 164 页",
+            "targetFilePage": 171,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p171-comparison-explore",
+      "page": 171,
+      "printedPage": "164",
+      "noteSha256": "bfe5c43cfb0d9c02e95a0ae14396d39ab742b6aa2127684ed295d698921f1200",
+      "preview": {
+        "group": [
+          "ch6-p171-comparison-explore"
+        ],
+        "aria": "题目引导：探究：比较线段长短",
+        "text": "比身高与比线段长短，需要怎样的共同标准？",
+        "highlights": [
+          "location-ch6-p171-comparison-explore"
+        ],
+        "sourcePaper": "page-171",
+        "region": {
+          "x": 0.11,
+          "y": 0.47,
+          "width": 0.32,
+          "height": 0.133
+        },
+        "viewport": {
+          "width": 1772,
+          "height": 909
+        }
+      },
+      "path": {
+        "title": "探究：比较线段长短",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p171-comparison-explore",
+        "sourcePage": 171,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-segment-comparison-alignment",
+            "id": "related-ch6-p171-comparison-explore-ch6-segment-comparison-alignment",
+            "label": "线段叠合比较的条件",
+            "purposeMatches": true,
+            "pageLabel": "课本第 164 页",
+            "targetFilePage": 171,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p171-comparison-cases",
+      "page": 171,
+      "printedPage": "164",
+      "noteSha256": "d575e6e8d96c33aece21db4f5c2198310441c6e43b092115cf36d226f39f230f",
+      "preview": {
+        "group": [
+          "ch6-p171-comparison-cases"
+        ],
+        "aria": "题目引导：想一想：线段大于或等于的情况",
+        "text": "叠合后另一个端点的位置，怎样反映长短关系？",
+        "highlights": [
+          "location-ch6-p171-comparison-cases"
+        ],
+        "sourcePaper": "page-171",
+        "region": {
+          "x": 0.085,
+          "y": 0.873,
+          "width": 0.79,
+          "height": 0.046
+        },
+        "viewport": {
+          "width": 1772,
+          "height": 909
+        }
+      },
+      "path": {
+        "title": "想一想：线段大于或等于的情况",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p171-comparison-cases",
+        "sourcePage": 171,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-segment-comparison-alignment",
+            "id": "related-ch6-p171-comparison-cases-ch6-segment-comparison-alignment",
+            "label": "线段叠合比较的条件",
+            "purposeMatches": true,
+            "pageLabel": "课本第 164 页",
+            "targetFilePage": 171,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p172-shortest-application",
+      "page": 172,
+      "printedPage": "165",
+      "noteSha256": "ef86bf32e4dad84c33c13a3b23aac0baf57aceb75c6264b61872c053c7826613",
+      "preview": {
+        "group": [
+          "ch6-p172-shortest-application",
+          "ch6-distance-is-length"
+        ],
+        "aria": "选择此处的2条解读",
+        "highlights": [
+          "location-ch6-p172-shortest-application",
+          "location-ch6-distance-is-length"
+        ],
+        "sourcePaper": "page-172",
+        "region": {
+          "x": 0.175,
+          "y": 0.375,
+          "width": 0.46,
+          "height": 0.019
+        },
+        "viewport": {
+          "width": 1772,
+          "height": 909
+        },
+        "singlePreview": "not shown by grouped-marker design"
+      },
+      "path": {
+        "title": "提问：线段最短的生活应用",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-p172-shortest-application",
+        "sourcePage": 172,
+        "method": {
+          "defaultCollapsed": true,
+          "openTextMatches": true,
+          "closeAndReopen": true
+        },
+        "linkDisplays": [
+          {
+            "target": "ch6-shortest-same-endpoints",
+            "id": "related-ch6-p172-shortest-application-ch6-shortest-same-endpoints",
+            "label": "两点之间线段最短",
+            "purposeMatches": true,
+            "pageLabel": "课本第 165 页",
+            "targetFilePage": 172,
+            "clicked": false
+          }
+        ],
+        "roundTrips": []
+      },
+      "result": "pass"
+    },
+    {
+      "id": "ch6-solid-not-coplanar",
+      "page": 158,
+      "printedPage": "151",
+      "noteSha256": "ad87af84e011c44904d034dc41e8767b5525001c827b1c4d0a1589e812aaefa5",
+      "preview": {
+        "group": [
+          "ch6-solid-not-coplanar"
+        ],
+        "aria": "概念与性质：“不都在同一平面内”是什么意思？",
+        "text": "有些部分能在同一平面内，并不表示整个图形都在这个平面内。",
+        "highlights": [
+          "location-ch6-solid-not-coplanar"
+        ],
+        "sourcePaper": "page-158",
+        "region": {
+          "x": 0.13,
+          "y": 0.102,
+          "width": 0.785,
+          "height": 0.048
+        },
+        "viewport": {
+          "width": 1772,
+          "height": 909
+        }
+      },
+      "path": {
+        "title": "“不都在同一平面内”是什么意思？",
+        "defaultTextMatches": true,
+        "sourceLocation": "ch6-solid-not-coplanar",
+        "sourcePage": 158,
+        "method": null,
+        "linkDisplays": [],
+        "roundTrips": []
+      },
+      "result": "pass"
+    }
+  ]
+}

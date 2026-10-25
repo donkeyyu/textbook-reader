@@ -9,14 +9,18 @@
   "scripts": {
     "dev": "vite",
     "typecheck": "tsc --noEmit",
-    "test": "node --experimental-strip-types --test src/reader/session.test.ts src/textbook/catalog.test.ts src/textbook/supplements.test.ts",
+    "test": "node --experimental-strip-types --test src/reader/session.test.ts src/reader/personal.test.ts src/textbook/catalog.test.ts src/textbook/supplements.test.ts",
     "build": "npm run typecheck && vite build",
     "preview": "vite preview",
     "prepare:textbook": "node scripts/prepare-textbook.mjs"
   },
   "dependencies": {
+    "@codemirror/lang-markdown": "^6.5.2",
+    "@codemirror/view": "^6.43.15",
+    "codemirror": "^6.0.2",
     "react": "^19.3.1",
-    "react-dom": "^19.3.1"
+    "react-dom": "^19.3.1",
+    "react-markdown": "^10.1.0"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",

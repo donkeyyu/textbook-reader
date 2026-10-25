@@ -1,0 +1,60 @@
+
+> textbook-reader@0.0.0 test
+> node --experimental-strip-types --test src/reader/session.test.ts src/reader/personal.test.ts src/textbook/catalog.test.ts src/textbook/supplements.test.ts
+
+✔ personal content survives reload and failed reads or writes do not replace it (3.188905ms)
+✔ scrolling updates the page at the reading line in both directions (1.265991ms)
+✔ the last page is selected at the bottom even when shorter than the viewport (0.179687ms)
+✔ width changes preserve the page-relative reading position, including page margins (0.202655ms)
+✔ overlapping markers merge without losing questions and separate again at a larger scale (2.014659ms)
+✔ reading records keep page-relative positions separate from personal content and other textbooks (0.615076ms)
+✔ damaged, mismatched, and invalid reading records fall back to the cover (0.364323ms)
+✔ reading storage failures are reported without touching any other records (0.709032ms)
+✔ the full book includes all 202 pages in physical PDF order (2.49988ms)
+✔ invalid physical page numbers cannot resolve to another page (0.550111ms)
+✔ all printed labels come from the reviewed full-book index, including absent labels (8.076383ms)
+✔ page lookup distinguishes printed labels from file order and preserves non-numbered pages (3.703647ms)
+✔ every page and thumbnail has a generated image and source record (42.980788ms)
+✔ 第一章 有理数: coverage and locations match the verified textbook index (5.028897ms)
+✔ 第二章 有理数的运算: coverage and locations match the verified textbook index (5.124787ms)
+✔ 第三章 代数式: coverage and locations match the verified textbook index (2.231309ms)
+✔ 第四章 整式的加减: coverage and locations match the verified textbook index (2.48778ms)
+✔ 第五章 一元一次方程: coverage and locations match the verified textbook index (3.54678ms)
+✔ 第六章 几何图形初步: coverage and locations match the verified textbook index (2.6756ms)
+✔ every supplement and related link resolves to a source-bound location (42.899264ms)
+✔ each inventoried question has its own complete guide and useful knowledge links (2.808352ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 285.52694
+
+> textbook-reader@0.0.0 typecheck
+> tsc --noEmit
+
+
+> textbook-reader@0.0.0 build
+> npm run typecheck && vite build
+
+
+> textbook-reader@0.0.0 typecheck
+> tsc --noEmit
+
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 225 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                     0.50 kB │ gzip:   0.37 kB
+dist/assets/index-BGwr1o8h.css     16.97 kB │ gzip:   4.09 kB
+dist/assets/index-Ddj2Emx-.js   2,481.48 kB │ gzip: 697.16 kB
+
+✓ built in 1.89s
+[plugin builtin:vite-reporter]
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.

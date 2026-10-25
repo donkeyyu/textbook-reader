@@ -1,0 +1,291 @@
+{
+  "version": {
+    "spaceId": 36,
+    "url": "http://127.0.0.1:5198/",
+    "contentSha256": "7f9bef9b2288c42febd8d23285d769b67d2cba83121da303068bcfd32d510903",
+    "app": {
+      "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+      "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+      "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315"
+    }
+  },
+  "results": [
+    {
+      "id": "ch2-q-p46-example1",
+      "page": 46,
+      "marker": {
+        "ids": "ch2-q-p46-example1",
+        "label": "题目引导：2.2.1 例1：有理数乘法"
+      },
+      "preview": "乘法的符号判断与大小计算分别依据什么？分数的负号应随整个乘数保留。点击标记展开解读",
+      "state": {
+        "title": "2.2.1 例1：有理数乘法",
+        "knowledge": [
+          "（1）整数与−1相乘；（2）负分数与负整数相乘；（3）两个负分数相乘，均需同时确定符号和绝对值。"
+        ],
+        "cautions": [
+          "不能把负负相乘当成两负数相加；（3）的分母也属于整个乘数，不能漏乘。"
+        ],
+        "expanded": "false",
+        "hidden": true,
+        "method": [
+          "分别辨认两乘数的符号，再用整数或分数乘法计算大小；（2）（3）可检查是否能约分。"
+        ],
+        "highlight": "location-ch2-q-p46-example1"
+      },
+      "links": [
+        {
+          "target": "ch2-multiplication-sign-magnitude",
+          "targetPage": 46,
+          "returned": true,
+          "sourceRegionDelta": 0,
+          "focus": "related-ch2-q-p46-example1-ch2-multiplication-sign-magnitude",
+          "methodRestored": true
+        }
+      ]
+    },
+    {
+      "id": "ch2-q-p47-example2",
+      "page": 47,
+      "marker": {
+        "ids": "ch2-reciprocal-condition ch2-q-p47-example2",
+        "label": "选择此处的2条解读"
+      },
+      "preview": null,
+      "state": {
+        "title": "2.2.1 例2：登高后的气温变化",
+        "knowledge": [
+          "相同高度间隔的气温变化量相加，可用乘法表示；正负号描述温度变化方向。"
+        ],
+        "cautions": [
+          "题目求变化量，未给出起始气温，不能把变化量当作最后气温。"
+        ],
+        "expanded": "false",
+        "hidden": true,
+        "method": [
+          "先确认−6表示每1 km的变化量，再把它与登高的千米数联系起来；读结果时同时说明变化方向和多少摄氏度。"
+        ],
+        "highlight": "location-ch2-q-p47-example2"
+      },
+      "links": [
+        {
+          "target": "ch2-temperature-change-product",
+          "targetPage": 47,
+          "returned": true,
+          "sourceRegionDelta": 0,
+          "focus": "related-ch2-q-p47-example2-ch2-temperature-change-product",
+          "methodRestored": true
+        }
+      ],
+      "previewMode": "group-marker-highlights-locations-no-individual-tooltip"
+    },
+    {
+      "id": "ch2-q-p50-practice1",
+      "page": 50,
+      "marker": {
+        "ids": "ch2-q-p50-practice1",
+        "label": "题目引导：2.2.1 练习第1题：选择运算律"
+      },
+      "preview": "四式的乘法结构不同，选择运算律时要说明它改变了什么。点击标记展开解读",
+      "state": {
+        "title": "2.2.1 练习第1题：选择运算律",
+        "knowledge": [
+          "（1）（2）是连续乘法，分别含整数与带分数；（3）是一个差乘一个数；（4）是含相同乘数的两个积相加。"
+        ],
+        "cautions": [
+          "（4）的共同乘数须包含负号；运算律可以双向使用，但不能只因数字相似就把不相同的乘数合并。"
+        ],
+        "expanded": "false",
+        "hidden": true,
+        "method": [
+          "（1）（2）观察哪些乘数放在一起会更易算；（3）（4）分别辨认最外层是乘法还是加法。哪条已学运算律能保持原式的值，并减少本题的计算？自行选择后逐项检查负号。"
+        ],
+        "highlight": "location-ch2-q-p50-practice1"
+      },
+      "links": [
+        {
+          "target": "ch2-reorder-whole-factor",
+          "targetPage": 48,
+          "returned": true,
+          "sourceRegionDelta": 0,
+          "focus": "related-ch2-q-p50-practice1-ch2-reorder-whole-factor",
+          "methodRestored": true
+        },
+        {
+          "target": "ch2-distribution-every-addend",
+          "targetPage": 48,
+          "returned": true,
+          "sourceRegionDelta": 0,
+          "focus": "related-ch2-q-p50-practice1-ch2-distribution-every-addend",
+          "methodRestored": true
+        }
+      ]
+    },
+    {
+      "id": "ch2-q-p52-practice2",
+      "page": 52,
+      "marker": {
+        "ids": "ch2-q-p52-practice2",
+        "label": "题目引导：2.2.2 练习第2题：化简分数"
+      },
+      "preview": "分数线也表示除法；负号的位置与分母非零条件需要分开检查。点击标记展开解读",
+      "state": {
+        "title": "2.2.2 练习第2题：化简分数",
+        "knowledge": [
+          "（1）负分子与正分母；（2）双负；（3）分子为0；（4）正分子与负分母，均用分数线的除法意义判断。"
+        ],
+        "cautions": [
+          "判断负号时看整个分子和整个分母；分母非零是四问都应先检查的条件。"
+        ],
+        "expanded": "false",
+        "hidden": true,
+        "method": [
+          "先确定整个分数的符号，再检查分子、分母能否约分；（3）另按零作被除数的规则核对。"
+        ],
+        "highlight": "location-ch2-q-p52-practice2"
+      },
+      "links": [
+        {
+          "target": "ch2-fraction-negative-placement",
+          "targetPage": 51,
+          "returned": true,
+          "sourceRegionDelta": 0,
+          "focus": "related-ch2-q-p52-practice2-ch2-fraction-negative-placement",
+          "methodRestored": true
+        }
+      ]
+    },
+    {
+      "id": "ch2-q-p53-example7",
+      "displayChecked": true,
+      "verifiedContentSha256": "4be1f83939c5caaf5d76fc77230d2db18c83413b5c2138dc4f57bd5d018430ad",
+      "linkTargetsChecked": [
+        {
+          "locationId": "ch2-same-level-order",
+          "page": 60,
+          "printedPage": "53"
+        },
+        {
+          "locationId": "ch2-subtract-add-opposite",
+          "page": 38,
+          "printedPage": "31"
+        }
+      ],
+      "page": 53,
+      "marker": {
+        "ids": "ch2-q-p53-example7",
+        "label": "题目引导：2.2.2 例7：四则混合运算"
+      },
+      "preview": "混合运算中，某一步得到的负数仍是一个整体；它与外层减号各起什么作用？点击标记展开解读",
+      "previewMode": "single-note-preview",
+      "state": {
+        "title": "2.2.2 例7：四则混合运算",
+        "knowledge": [
+          "（1）加法与除法相混；（2）乘法、除法与减法相混；先乘除后加减。"
+        ],
+        "cautions": [
+          "不能从左边第一个数字开始一路计算而忽略运算级别；负商前的减号与商本身的负号作用不同。"
+        ],
+        "expanded": "false",
+        "hidden": true,
+        "method": [
+          "先辨认各项之间的加减关系，再处理各项内部的乘除；（2）对减去的整个商保留符号后，再完成项间运算。"
+        ],
+        "related": [
+          {
+            "id": "related-ch2-q-p53-example7-ch2-same-level-order",
+            "label": "混合运算顺序课本第 53 页",
+            "purpose": "明确两个小问中乘除与加减的先后。"
+          },
+          {
+            "id": "related-ch2-q-p53-example7-ch2-subtract-add-opposite",
+            "label": "减法转化为加法课本第 31 页",
+            "purpose": "理解（2）最后处理减去负数时的依据。"
+          }
+        ],
+        "highlight": "location-ch2-q-p53-example7"
+      },
+      "links": [
+        {
+          "target": "ch2-same-level-order",
+          "targetPage": 60,
+          "returned": true,
+          "sourceRegionDelta": 0,
+          "focus": "related-ch2-q-p53-example7-ch2-same-level-order",
+          "methodRestored": true
+        }
+      ]
+    },
+    {
+      "id": "ch2-q-p53-example8",
+      "displayChecked": true,
+      "verifiedContentSha256": "4be1f83939c5caaf5d76fc77230d2db18c83413b5c2138dc4f57bd5d018430ad",
+      "linkTargetsChecked": [
+        {
+          "locationId": "ch2-monthly-average-weight",
+          "page": 53,
+          "printedPage": "46"
+        }
+      ],
+      "page": 53,
+      "marker": {
+        "ids": "ch2-q-p53-example8",
+        "label": "题目引导：2.2.2 例8：全年盈亏合计"
+      },
+      "preview": "四段时间的平均月金额能直接相加吗？关键是每个平均数代表了多少个月。点击标记展开解读",
+      "previewMode": "single-note-preview",
+      "state": {
+        "title": "2.2.2 例8：全年盈亏合计",
+        "knowledge": [
+          "月平均额、时段总额与全年总额的区别；正负数记录盈利和亏损。"
+        ],
+        "cautions": [
+          "不能把四个平均月金额直接相加；月份范围包括首尾两个月；计算器输出的正负仍需按题设约定解释。"
+        ],
+        "expanded": "false",
+        "hidden": true,
+        "method": [
+          "先按题目月份范围检查四段是否覆盖完整一年，再把每段的平均额与其月数配对；最后将结果译回盈亏语言。"
+        ],
+        "related": [
+          {
+            "id": "related-ch2-q-p53-example8-ch2-monthly-average-weight",
+            "label": "平均额与时段总额课本第 46 页",
+            "purpose": "检查每个平均数应按多少个月还原为总额。"
+          }
+        ],
+        "highlight": "location-ch2-q-p53-example8"
+      },
+      "links": []
+    }
+  ],
+  "failure": null,
+  "recoveredFailures": [
+    "AssertionError [ERR_ASSERTION]: preview text\n    at file:////[eval2]:11:136",
+    "Error: page.waitForFunction timed out after 10000ms on page p1; last URL was \"http://127.0.0.1:5198/\"; last title was \"课本解读\".\n    at waitForFunctionTimeoutError (file:////[eval1]:19509:12)\n    at file:////[eval1]:18834:19\n    at async file:////[eval1]:16940:28"
+  ],
+  "resumeVersions": [
+    {
+      "spaceId": 36,
+      "url": "http://127.0.0.1:5198/",
+      "contentSha256": "7f9bef9b2288c42febd8d23285d769b67d2cba83121da303068bcfd32d510903",
+      "app": {
+        "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+        "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+        "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315"
+      }
+    },
+    {
+      "spaceId": 36,
+      "url": "http://127.0.0.1:5198/",
+      "contentSha256": "4be1f83939c5caaf5d76fc77230d2db18c83413b5c2138dc4f57bd5d018430ad",
+      "app": {
+        "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+        "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+        "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315"
+      }
+    }
+  ],
+  "finalContentSha256": "4be1f83939c5caaf5d76fc77230d2db18c83413b5c2138dc4f57bd5d018430ad",
+  "displayedFieldsMatchFinalContent": true
+}

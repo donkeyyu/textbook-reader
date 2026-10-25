@@ -1,0 +1,82 @@
+[
+  {
+    "name": "narrow",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "current": "文件页序 10/202课本第 3 页",
+    "error": "未找到此课本页码，请核对纸书或切换文件页序。",
+    "form": {
+      "left": 16,
+      "right": 256,
+      "top": 96,
+      "bottom": 252,
+      "width": 240,
+      "height": 156
+    },
+    "index": {
+      "left": 16,
+      "right": 144,
+      "top": 52,
+      "bottom": 96,
+      "width": 128,
+      "height": 44
+    },
+    "overflow": false,
+    "screenshotError": "Unable to capture screenshot"
+  },
+  {
+    "name": "desktop",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "current": "文件页序 10/202课本第 3 页",
+    "error": "未找到此课本页码，请核对纸书或切换文件页序。",
+    "form": {
+      "left": 1004,
+      "right": 1244,
+      "top": 57.5,
+      "bottom": 213.5,
+      "width": 240,
+      "height": 156
+    },
+    "index": {
+      "left": 1024,
+      "right": 1152,
+      "top": 13.5,
+      "bottom": 57.5,
+      "width": 128,
+      "height": 44
+    },
+    "overflow": false,
+    "screenshotError": "Unable to capture screenshot"
+  },
+  {
+    "name": "small",
+    "viewport": {
+      "width": 320,
+      "height": 740
+    },
+    "current": "文件页序 10/202课本第 3 页",
+    "error": "未找到此课本页码，请核对纸书或切换文件页序。",
+    "form": {
+      "left": 16,
+      "right": 256,
+      "top": 96,
+      "bottom": 252,
+      "width": 240,
+      "height": 156
+    },
+    "index": {
+      "left": 16,
+      "right": 144,
+      "top": 52,
+      "bottom": 96,
+      "width": 128,
+      "height": 44
+    },
+    "overflow": false
+  }
+]

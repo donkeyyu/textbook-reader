@@ -1,0 +1,1067 @@
+[
+  {
+    "id": "ch2-q-p31-intro-temperature",
+    "page": 31,
+    "printedPage": null,
+    "label": "章引言（1）：日温差",
+    "parts": [],
+    "decision": "保留",
+    "reason": "温度计或数轴只给间隔视角，温差计算保留。",
+    "related": [
+      {
+        "locationId": "ch2-subtraction-inverse",
+        "label": "减法与加法的逆运算关系",
+        "purpose": "用差加减数回到被减数的关系检验温差。",
+        "page": 38,
+        "printedPage": "31"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p31-intro-budget",
+    "page": 31,
+    "printedPage": null,
+    "label": "章引言（2）：收支表中的结余",
+    "parts": [
+      "结余12.0的由来",
+      "结余−3.2的由来"
+    ],
+    "decision": "保留",
+    "reason": "区分状态与变化，未列余额算式。",
+    "related": [
+      {
+        "locationId": "ch2-signed-change",
+        "label": "带方向的变化量",
+        "purpose": "用收入和支出的符号理解结余为何可用加法更新。",
+        "page": 31,
+        "printedPage": null
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p32-addition-intro",
+    "page": 32,
+    "printedPage": "25",
+    "label": "2.1.1引入：有理数范围内怎样加法",
+    "parts": [],
+    "decision": "保留",
+    "reason": "要求辨认新增数域，不替答范围扩充。",
+    "related": [
+      {
+        "locationId": "ch2-signed-change",
+        "label": "正负变化与加法",
+        "purpose": "从支出的负数记录识别原有加法需要扩大的范围。",
+        "page": 31,
+        "printedPage": null
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p32-addition-cases",
+    "page": 32,
+    "printedPage": "25",
+    "label": "思考：有理数加法有哪几种情况",
+    "parts": [],
+    "decision": "保留",
+    "reason": "给不漏类的观察方式，分类仍由学生完成。",
+    "related": [
+      {
+        "locationId": "ch1-zero-boundary",
+        "label": "正数、负数与0",
+        "purpose": "按符号分类时，0不属于正数或负数。",
+        "page": 9,
+        "printedPage": "2"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p32-right-motion",
+    "page": 32,
+    "printedPage": "25",
+    "label": "思考：向右运动5 m再向右运动3 m",
+    "parts": [
+      "运动的最后结果",
+      "用算式表示"
+    ],
+    "decision": "保留",
+    "reason": "首尾相接说明运动模型，不给终点与算式。",
+    "related": [
+      {
+        "locationId": "ch2-motion-result",
+        "label": "有向位置变化",
+        "purpose": "区分每次移动与终点相对最初起点的结果。",
+        "page": 32,
+        "printedPage": "25"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p33-left-motion",
+    "page": 33,
+    "printedPage": "26",
+    "label": "思考：向左运动5 m再向左运动3 m",
+    "parts": [
+      "运动的最后结果",
+      "用算式表示"
+    ],
+    "decision": "保留",
+    "reason": "延用正方向，终点与算式自行完成。",
+    "related": [
+      {
+        "locationId": "ch1-negative-order",
+        "label": "负数大小与数轴位置",
+        "purpose": "判断向左更远与数值更大是不同的说法。",
+        "page": 22,
+        "printedPage": "15"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p33-opposite-motion",
+    "page": 33,
+    "printedPage": "26",
+    "label": "探究：先左后右与先右后左（含数轴旁注）",
+    "parts": [
+      "（1）先左行3 m再右行5 m",
+      "（2）先右行3 m再左行5 m",
+      "旁注：用数轴表示算式③④"
+    ],
+    "decision": "保留",
+    "reason": "抵消只给观察方向，两问结果和③④数轴仍自行作。",
+    "related": [
+      {
+        "locationId": "ch2-opposite-add-cancel",
+        "label": "异号相加的抵消关系",
+        "purpose": "把图中的剩余长度和方向与运算结果联系起来。",
+        "page": 33,
+        "printedPage": "26"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p34-return-origin",
+    "page": 34,
+    "printedPage": "27",
+    "label": "探究：向右5 m再向左5 m",
+    "parts": [],
+    "decision": "保留",
+    "reason": "要求观察终点并辨数的关系，不写结果。",
+    "related": [
+      {
+        "locationId": "ch1-opposite-geometry",
+        "label": "相反数的数轴表示",
+        "purpose": "用等长反向这一结构辨认两个运动量的关系。",
+        "page": 18,
+        "printedPage": "11"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p34-infer-add-rule",
+    "page": 34,
+    "printedPage": "27",
+    "label": "归纳问题：从算式①～⑥归纳加法规律",
+    "parts": [],
+    "decision": "保留",
+    "reason": "指出符号与绝对值两维，法则仍需归纳。",
+    "related": [
+      {
+        "locationId": "ch2-opposite-add-zero",
+        "label": "异号加法的条件分支",
+        "purpose": "归纳法则时不能漏掉绝对值相等的情况。",
+        "page": 34,
+        "printedPage": "27"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p34-addition-consistency",
+    "page": 34,
+    "printedPage": "27",
+    "label": "思考：加法法则与小学运算一致吗",
+    "parts": [],
+    "decision": "保留",
+    "reason": "检验旧数域含0的范围，未代给一致性论证。",
+    "related": [
+      {
+        "locationId": "ch1-zero-boundary",
+        "label": "正数与0的分类",
+        "purpose": "核对小学范围时把0从正数中区分出来。",
+        "page": 9,
+        "printedPage": "2"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p34-example1",
+    "page": 34,
+    "printedPage": "27",
+    "label": "例1：五种有理数加法",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）",
+      "（5）"
+    ],
+    "decision": "修订",
+    "reason": "原预览逐问预分法则；仅缩短预览，例题方法用于解释教材步骤，未重抄计算。",
+    "related": [
+      {
+        "locationId": "ch2-sum-magnitude-step",
+        "label": "加法中的符号与绝对值",
+        "purpose": "理解例1的关键写法，而不只核对最终计算。",
+        "page": 34,
+        "printedPage": "27"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p35-addition-order-effect",
+    "page": 35,
+    "printedPage": "28",
+    "label": "思考：加正数或负数后与原数比较",
+    "parts": [
+      "加正数时的大小关系",
+      "加负数时的大小关系",
+      "先用数轴再用法则说明"
+    ],
+    "decision": "保留",
+    "reason": "遵循原题数轴再法则说明，未给大小结论。",
+    "related": [
+      {
+        "locationId": "ch1-number-line-direction",
+        "label": "数轴正方向与大小",
+        "purpose": "用移动方向建立比较思路，再补足法则依据。",
+        "page": 16,
+        "printedPage": "9"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p35-practice1",
+    "page": 35,
+    "printedPage": "28",
+    "label": "练习第1题：用算式表示温度与收支",
+    "parts": [
+      "（1）",
+      "（2）"
+    ],
+    "decision": "保留",
+    "reason": "提示量的角色，未替两问列式。",
+    "related": [
+      {
+        "locationId": "ch2-signed-change",
+        "label": "状态量与变化量",
+        "purpose": "两个情境都要分清原有量和本次变化。",
+        "page": 31,
+        "printedPage": null
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p35-practice2",
+    "page": 35,
+    "printedPage": "28",
+    "label": "练习第2题：九组加法口算",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）",
+      "（5）",
+      "（6）",
+      "（7）",
+      "（8）",
+      "（9）"
+    ],
+    "decision": "修订",
+    "reason": "原方法已分完九式；改为自行分类并查边界。",
+    "related": [
+      {
+        "locationId": "ch2-opposite-add-zero",
+        "label": "有理数加法的条件",
+        "purpose": "用符号和绝对值关系选择适用法则。",
+        "page": 34,
+        "printedPage": "27"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p35-practice3",
+    "page": 35,
+    "printedPage": "28",
+    "label": "练习第3题：整数、小数和分数相加",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）"
+    ],
+    "decision": "修订",
+    "reason": "原方法已判完同异号；改为自行判法则并比较分数。",
+    "related": [
+      {
+        "locationId": "ch2-sum-magnitude-step",
+        "label": "和的符号与绝对值",
+        "purpose": "将不同写法的数放在同一加法法则下判断。",
+        "page": 34,
+        "printedPage": "27"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p35-practice4",
+    "page": 35,
+    "printedPage": "28",
+    "label": "练习第4题：用生活实例解释两式",
+    "parts": [
+      "解释（−3）+2=−1",
+      "解释（−3）+（−2）=−5"
+    ],
+    "decision": "保留",
+    "reason": "生活情境、正向与量义仍须自行选择说明。",
+    "related": [
+      {
+        "locationId": "ch2-motion-result",
+        "label": "有向运动的加法模型",
+        "purpose": "可借运动模型检查自选生活情境是否与算式一致。",
+        "page": 32,
+        "printedPage": "25"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p35-add-laws-intro",
+    "page": 35,
+    "printedPage": "28",
+    "label": "引入问题：加法交换律、结合律还成立吗",
+    "parts": [],
+    "decision": "保留",
+    "reason": "区分换位与分组及例证限度，未代归纳。",
+    "related": [
+      {
+        "locationId": "ch2-associate-order",
+        "label": "加法交换律与结合律",
+        "purpose": "分清要考察的两种变化再作探究。",
+        "page": 36,
+        "printedPage": "29"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p35-commute-inquiry",
+    "page": 35,
+    "printedPage": "28",
+    "label": "探究：比较加数换位后的和",
+    "parts": [
+      "比较30+（−20）与（−20）+30",
+      "换几组加数再试",
+      "归纳结论"
+    ],
+    "decision": "保留",
+    "reason": "只改变位置的对照条件，无结论或数值。",
+    "related": [
+      {
+        "locationId": "ch2-commute-whole-number",
+        "label": "完整加数的交换",
+        "purpose": "确保所比较的两个算式只改变加数位置。",
+        "page": 35,
+        "printedPage": "28"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p36-associate-inquiry",
+    "page": 36,
+    "printedPage": "29",
+    "label": "探究：比较不同分组的三个数之和",
+    "parts": [
+      "比较[8+（−5）]+（−4）与8+[（−5）+（−4）]",
+      "换几组加数再试",
+      "归纳结论"
+    ],
+    "decision": "保留",
+    "reason": "只改变分组的对照条件，无结论或数值。",
+    "related": [
+      {
+        "locationId": "ch2-associate-order",
+        "label": "加法结合律的分组含义",
+        "purpose": "识别两式的共同点与唯一改变之处。",
+        "page": 36,
+        "printedPage": "29"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p36-example2",
+    "page": 36,
+    "printedPage": "29",
+    "label": "例2：运算律简化加法（含旁注）",
+    "parts": [
+      "（1）",
+      "（2）",
+      "旁注：怎样使计算简化，依据是什么"
+    ],
+    "decision": "保留",
+    "reason": "要求解释教材重排的依据目的，分组未预定。",
+    "related": [
+      {
+        "locationId": "ch2-zero-pair-choice",
+        "label": "运算律与凑零简算",
+        "purpose": "先用第（1）问理解简算的依据与目的，再比较第（2）问。",
+        "page": 36,
+        "printedPage": "29"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p36-example3",
+    "page": 36,
+    "printedPage": "29",
+    "label": "例3：小麦质量和总偏差（含续页两解法比较）",
+    "parts": [
+      "10袋小麦总质量",
+      "以每袋50 kg为标准时总计超出或不足多少",
+      "旁注：比较两种解法，解法2用了哪些运算律"
+    ],
+    "decision": "保留",
+    "reason": "36–37跨页两解均核对；区分两问和50kg标准，不复抄解法。",
+    "related": [
+      {
+        "locationId": "ch2-deviation-sum",
+        "label": "共同基准下的偏差相加",
+        "purpose": "解释解法2为何能先汇总记录的正负变化。",
+        "page": 37,
+        "printedPage": "30"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p37-practice1",
+    "page": 37,
+    "printedPage": "30",
+    "label": "练习第1题：四组多项加法",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）"
+    ],
+    "decision": "保留",
+    "reason": "分数和凑整只是选择线索，分组计算保留。",
+    "related": [
+      {
+        "locationId": "ch2-round-sum-choice",
+        "label": "按数的特点选择分组",
+        "purpose": "选择便于计算的组合，不把某种分组当作固定要求。",
+        "page": 36,
+        "printedPage": "29"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p37-practice2",
+    "page": 37,
+    "printedPage": "30",
+    "label": "练习第2题：储蓄卡余额",
+    "parts": [],
+    "decision": "保留",
+    "reason": "辨存取方向及所求量，未列余额式。",
+    "related": [
+      {
+        "locationId": "ch2-signed-change",
+        "label": "收支与余额变化",
+        "purpose": "将文字中的存入、取出转成统一的变化记录。",
+        "page": 31,
+        "printedPage": null
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p37-practice3",
+    "page": 37,
+    "printedPage": "30",
+    "label": "练习第3题：飞机下降再上升",
+    "parts": [],
+    "decision": "保留",
+    "reason": "辨起始高度与变化，未列计算式。",
+    "related": [
+      {
+        "locationId": "ch2-motion-result",
+        "label": "位置与位置变化",
+        "purpose": "将直线运动中起点、变化、终点的关系用于高度问题。",
+        "page": 32,
+        "printedPage": "25"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p37-temperature-think",
+    "page": 37,
+    "printedPage": "30",
+    "label": "减法引入思考：3 ℃比−3 ℃高多少",
+    "parts": [],
+    "decision": "保留",
+    "reason": "37–38跨页温度计核对；用逆关系辨所求，不给差。",
+    "related": [
+      {
+        "locationId": "ch2-subtraction-inverse",
+        "label": "减法与加法的关系",
+        "purpose": "用加法检验所求的温差是否对应两个温度。",
+        "page": 38,
+        "printedPage": "31"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p38-subtract-inquiry",
+    "page": 38,
+    "printedPage": "31",
+    "label": "探究：减去−3与加什么数相同",
+    "parts": [
+      "由③式判断减−3相当于加哪个数",
+      "将3换成0、−1、−5比较减−3与加+3",
+      "比较9−8与9+（−8）、15−7与15+（−7）并归纳",
+      "旁注：换几个数再试一试"
+    ],
+    "decision": "保留",
+    "reason": "三种被减数与两组正减数均覆盖，归纳由学生完成。",
+    "related": [
+      {
+        "locationId": "ch2-subtraction-inverse",
+        "label": "差加减数等于被减数",
+        "purpose": "用同一检验关系理解各组转化，而不是背孤立的符号变化。",
+        "page": 38,
+        "printedPage": "31"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p38-example4",
+    "page": 38,
+    "printedPage": "31",
+    "label": "例4：五种有理数减法",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）",
+      "（5）"
+    ],
+    "decision": "保留",
+    "reason": "38–39五问完整核对；解释负号作用而未重抄答案。",
+    "related": [
+      {
+        "locationId": "ch2-minus-two-roles",
+        "label": "减号与负号的不同作用",
+        "purpose": "把五问统一到明确的减法结构中。",
+        "page": 38,
+        "printedPage": "31"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p39-smaller-subtract-larger",
+    "page": 39,
+    "printedPage": "32",
+    "label": "思考：较小的数减较大的数",
+    "parts": [
+      "a<b时能否计算a−b，举例",
+      "一般地较小数减较大数的差是什么符号"
+    ],
+    "decision": "保留",
+    "reason": "适用a、b含负数，差的符号仍需论证。",
+    "related": [
+      {
+        "locationId": "ch1-negative-order",
+        "label": "负数的大小比较",
+        "purpose": "比较两个数后再判断差，不受表面负号干扰。",
+        "page": 22,
+        "printedPage": "15"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p39-practice1",
+    "page": 39,
+    "printedPage": "32",
+    "label": "练习第1题：九组有理数减法",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）",
+      "（5）",
+      "（6）",
+      "（7）",
+      "（8）",
+      "（9）"
+    ],
+    "decision": "修订",
+    "reason": "原逐问列减数符号并指定算法；改为自行辨减数和等值改写。",
+    "related": [
+      {
+        "locationId": "ch2-subtract-add-opposite",
+        "label": "有理数减法法则",
+        "purpose": "对各类减数采用同一取相反数的规则。",
+        "page": 38,
+        "printedPage": "31"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p39-practice2",
+    "page": 39,
+    "printedPage": "32",
+    "label": "练习第2题：比某温度低若干摄氏度",
+    "parts": [
+      "（1）",
+      "（2）"
+    ],
+    "decision": "保留",
+    "reason": "基准与低温方向保留，未替两问列式。",
+    "related": [
+      {
+        "locationId": "ch2-subtraction-inverse",
+        "label": "减法表示与基准的差",
+        "purpose": "根据温度比较的语言判断各量之间的关系。",
+        "page": 38,
+        "printedPage": "31"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p39-example5",
+    "page": 39,
+    "printedPage": "32",
+    "label": "例5：加减混合运算（含续页运算律旁注）",
+    "parts": [
+      "计算（−20）+（+3）−（−5）−（+7）",
+      "旁注：这里使用了哪些运算律"
+    ],
+    "decision": "保留",
+    "reason": "39–40跨页重排理由已核对，逐个找对应加数而不抄答案。",
+    "related": [
+      {
+        "locationId": "ch2-mixed-convert-before-reorder",
+        "label": "加减混合统一为加法",
+        "purpose": "解释为何能在后续步骤使用加法运算律。",
+        "page": 39,
+        "printedPage": "32"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p40-example6",
+    "page": 40,
+    "printedPage": "33",
+    "label": "例6：省略写法中的加减运算",
+    "parts": [],
+    "decision": "保留",
+    "reason": "要求从教材行间辨加数与换序，未计算。",
+    "related": [
+      {
+        "locationId": "ch2-signed-reorder-step",
+        "label": "简写式中移动完整加数",
+        "purpose": "理解例6从第一行到第二行的依据。",
+        "page": 40,
+        "printedPage": "33"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p40-distance-investigation",
+    "page": 40,
+    "printedPage": "33",
+    "label": "探究：数轴上A、B两点的距离",
+    "parts": [
+      "（1）由四组a、b的位置得出A、B间距离",
+      "（2）用含a、b的算式表示这些距离",
+      "一般地归纳距离与a、b的关系"
+    ],
+    "decision": "保留",
+    "reason": "四组点、两问及一般归纳完整；未给距离公式。",
+    "related": [
+      {
+        "locationId": "ch2-distance-inquiry",
+        "label": "距离猜想的检查条件",
+        "purpose": "用非负性和端点交换检验自己的归纳，不直接给公式。",
+        "page": 40,
+        "printedPage": "33"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p41-practice1",
+    "page": 41,
+    "printedPage": "34",
+    "label": "练习第1题：四组加减混合运算",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）"
+    ],
+    "decision": "保留",
+    "reason": "逐问指出表示差异，完整加数及运算安排仍自行确定。",
+    "related": [
+      {
+        "locationId": "ch2-sum-abbreviation",
+        "label": "加数与简写形式",
+        "purpose": "从不同写法恢复完整加数，再选择计算安排。",
+        "page": 40,
+        "printedPage": "33"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p41-practice2",
+    "page": 41,
+    "printedPage": "34",
+    "label": "练习第2题：先改写简式再计算",
+    "parts": [
+      "（1）",
+      "（2）"
+    ],
+    "decision": "保留",
+    "reason": "原题要求先改写，保留改写的检查方式，不给改写式。",
+    "related": [
+      {
+        "locationId": "ch2-rewrite-exercise",
+        "label": "简写前的符号检查",
+        "purpose": "按原式确认每一个加数，不代替完成两问计算。",
+        "page": 41,
+        "printedPage": "34"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p41-ex21-1",
+    "page": 41,
+    "printedPage": "34",
+    "label": "习题2.1第1题",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）",
+      "（5）",
+      "（6）",
+      "（7）",
+      "（8）",
+      "（9）"
+    ],
+    "decision": "修订",
+    "reason": "原逐问指定法则与处理顺序；改为自行选择并说明依据。",
+    "related": [
+      {
+        "locationId": "ch2-opposite-add-cancel",
+        "label": "异号加法的方向与大小",
+        "purpose": "将整数、小数、分数的加法统一到符号和绝对值的判断。",
+        "page": 33,
+        "printedPage": "26"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p41-ex21-2",
+    "page": 41,
+    "printedPage": "34",
+    "label": "习题2.1第2题",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）"
+    ],
+    "decision": "保留",
+    "reason": "只提示凑整可能性和保号约束，分组未给定。",
+    "related": [
+      {
+        "locationId": "ch2-zero-pair-choice",
+        "label": "加法运算律与凑零",
+        "purpose": "按每问数字特点选择简化方式。",
+        "page": 36,
+        "printedPage": "29"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p41-ex21-3",
+    "page": 41,
+    "printedPage": "34",
+    "label": "习题2.1第3题",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）",
+      "（5）",
+      "（6）",
+      "（7）",
+      "（8）",
+      "（9）"
+    ],
+    "decision": "保留",
+    "reason": "只对照运算角色，未给各式变换与结果。",
+    "related": [
+      {
+        "locationId": "ch2-subtract-add-opposite",
+        "label": "减去一个数与加相反数",
+        "purpose": "避免因题式相似而混用符号变化。",
+        "page": 38,
+        "printedPage": "31"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p42-ex21-4",
+    "page": 42,
+    "printedPage": "35",
+    "label": "习题2.1第4题",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）",
+      "（5）",
+      "（6）",
+      "（7）",
+      "（8）"
+    ],
+    "decision": "保留",
+    "reason": "带分数整体、连续减法是必要边界，计算保留。",
+    "related": [
+      {
+        "locationId": "ch2-subtract-mixed-number",
+        "label": "负带分数与减数的整体",
+        "purpose": "确认每个负号管住整个数，再进行分数计算。",
+        "page": 39,
+        "printedPage": "32"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p42-ex21-5",
+    "page": 42,
+    "printedPage": "35",
+    "label": "习题2.1第5题",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）",
+      "（5）",
+      "（6）"
+    ],
+    "decision": "修订",
+    "reason": "原（6）按步给绝对值算法；改为辨对象与层级。",
+    "related": [
+      {
+        "locationId": "ch1-absolute-definition",
+        "label": "绝对值的对象与非负性",
+        "purpose": "本题既有加减又有绝对值，必须先明确各符号的范围。",
+        "page": 20,
+        "printedPage": "13"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p42-ex21-6",
+    "page": 42,
+    "printedPage": "35",
+    "label": "习题2.1第6题：两处海拔之差",
+    "parts": [],
+    "decision": "保留",
+    "reason": "共同海平面和负高度含义，不替列高度差式。",
+    "related": [
+      {
+        "locationId": "ch2-height-difference-exercise",
+        "label": "共同基准下的高度差",
+        "purpose": "先确认所比较的是同一参考面下的高度。",
+        "page": 42,
+        "printedPage": "35"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p42-ex21-7",
+    "page": 42,
+    "printedPage": "35",
+    "label": "习题2.1第7题：半夜气温",
+    "parts": [],
+    "decision": "保留",
+    "reason": "按时序识别状态与变化，未给温度算式。",
+    "related": [
+      {
+        "locationId": "ch2-signed-change",
+        "label": "状态数与变化量",
+        "purpose": "用原值加变化的结构理解连续温度变化。",
+        "page": 31,
+        "printedPage": null
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p42-ex21-8",
+    "page": 42,
+    "printedPage": "35",
+    "label": "习题2.1第8题：一周总盈亏",
+    "parts": [],
+    "decision": "保留",
+    "reason": "正负盈亏汇总须由学生作，注意单位和0边界。",
+    "related": [
+      {
+        "locationId": "ch2-net-profit-exercise",
+        "label": "盈亏记录与整体结果",
+        "purpose": "把带符号的计算结果读回一周经营情境。",
+        "page": 42,
+        "printedPage": "35"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p43-ex21-9",
+    "page": 43,
+    "printedPage": "36",
+    "label": "习题2.1第9题：8筐白菜总质量",
+    "parts": [],
+    "decision": "保留",
+    "reason": "偏差非质量的检查增加理解，标准总量由学生建立。",
+    "related": [
+      {
+        "locationId": "ch2-restore-total",
+        "label": "偏差与实际总量的关系",
+        "purpose": "用已讲例题检查本题是否答到了总质量。",
+        "page": 37,
+        "printedPage": "30"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p43-ex21-10",
+    "page": 43,
+    "printedPage": "36",
+    "label": "习题2.1第10题：一周温差比较",
+    "parts": [
+      "哪天温差最大",
+      "哪天温差最小"
+    ],
+    "decision": "修订",
+    "reason": "原知识和预览直接列完整比较路线；改为辨温差关系并自行比较。",
+    "related": [
+      {
+        "locationId": "ch2-subtraction-inverse",
+        "label": "温差与减法",
+        "purpose": "用温差与两个温度的关系检查每天的计算。",
+        "page": 38,
+        "printedPage": "31"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p43-ex21-11",
+    "page": 43,
+    "printedPage": "36",
+    "label": "习题2.1第11题：加法填空",
+    "parts": [
+      "（1）",
+      "（2）",
+      "（3）",
+      "（4）",
+      "（5）",
+      "（6）"
+    ],
+    "decision": "保留",
+    "reason": "未知加数位置和回代检查，不给未知量。",
+    "related": [
+      {
+        "locationId": "ch2-subtraction-inverse",
+        "label": "减法求未知加数",
+        "purpose": "把未知加数与已知和、已知加数之间的关系说清。",
+        "page": 38,
+        "printedPage": "31"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p43-ex21-12",
+    "page": 43,
+    "printedPage": "36",
+    "label": "习题2.1第12题：重复相加与乘法猜想",
+    "parts": [
+      "−2相加2次、3次、4次、5次",
+      "写成−2乘正数的算式并猜结果",
+      "进一步猜负数乘正数的法则"
+    ],
+    "decision": "保留",
+    "reason": "相同加数与次数对应，猜想结论保留。",
+    "related": [
+      {
+        "locationId": "ch2-repeated-add-inquiry",
+        "label": "从重复相加组织观察",
+        "purpose": "用加数和次数两个维度检验猜想。",
+        "page": 43,
+        "printedPage": "36"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p43-ex21-13",
+    "page": 43,
+    "printedPage": "36",
+    "label": "习题2.1第13题：公路巡视与耗油",
+    "parts": [
+      "（1）",
+      "（2）"
+    ],
+    "decision": "保留",
+    "reason": "两小问按终点/路程辨量，不给绝对值合计或油耗式。",
+    "related": [
+      {
+        "locationId": "ch2-road-two-questions",
+        "label": "位置变化与累计路程",
+        "purpose": "区分同一组记录在两个问题中的用途。",
+        "page": 43,
+        "printedPage": "36"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p44-ancient-intro",
+    "page": 44,
+    "printedPage": "37",
+    "label": "阅读与思考：正负术的意思",
+    "parts": [],
+    "decision": "保留",
+    "reason": "古文与后文逐句对应，未替说出全部意义。",
+    "related": [
+      {
+        "locationId": "ch2-ancient-word-scope",
+        "label": "正负术与现代运算的对应",
+        "purpose": "明确术语所在的运算语境，再解释古文所表达的规律。",
+        "page": 44,
+        "printedPage": "37"
+      }
+    ]
+  },
+  {
+    "id": "ch2-q-p44-ancient-reading",
+    "page": 44,
+    "printedPage": "37",
+    "label": "阅读与思考：解释“同名相除”",
+    "parts": [],
+    "decision": "保留",
+    "reason": "古文“除”的语境与大小边界必要，举式解释保留。",
+    "related": [
+      {
+        "locationId": "ch2-ancient-word-scope",
+        "label": "正负术术语的读取范围",
+        "purpose": "在现代加减法的上下文中理解古文，保留自行举式说明。",
+        "page": 44,
+        "printedPage": "37"
+      }
+    ]
+  }
+]

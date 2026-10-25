@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-25",
+  "head": "ebe956a90b7b2b12f08f331c423fa76ec3a6d8e5",
+  "sourceFiles": {
+    "src/main.tsx": "3168fed3f5705ace9d15d22323bbaac4da9ed26361fc263293123edfc60a2c21",
+    "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315",
+    "src/textbook/catalog.test.ts": "4fcfaf457a91b509a5cdd137279fbd04d6f0b1bd2e04d8d308ceafdc5d8902ec",
+    "src/textbook/supplements.test.ts": "96c66c0ac2fc1cc1905a2131842b2782ad88f81100db6e5570d3dc05daec73f2",
+    "src/textbook/book.json": "77d74c7b49e1474cbf736d2455260f9537b03e24667289bbc376d557a4d8a30b",
+    "src/textbook/supplements.ts": "c912d30659fb048a2b9f285879860c712c1d397ae2f708980c8067d5f41f5392",
+    "src/textbook/catalog.ts": "751ffccfe183cb905b076c6d06663a378ca3c3e4758fc2efcf6baa2944381388",
+    "src/textbook/chapters.ts": "e49493660875ad10c25f4486ce1d5d37c3503baa33228168fd4884fe2efc5f3a",
+    "src/reader/MarkdownEditor.tsx": "f0354721b40eb2c50ee9405b3f060847a05fd9f67ad24746bb3c983964243428",
+    "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+    "src/reader/personal.test.ts": "4fcb2bdfe2716c85b693c718b724b18be8b342ccc4630634a1d3dc614e0a2c35",
+    "src/reader/personal.ts": "0128bef5d4dbfcbf5e35f1412ff690f3fd414e0fb1906db41db5a25dfffebb12",
+    "src/reader/RegionSelector.tsx": "a870f8d1a5c105c3e6fe875b3461d3dd613d5464da52e1a607beca014e9a9cf6",
+    "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+    "src/reader/PanelResize.tsx": "fbb99d2b055f1316a1a1c5d0b3bbc6022707cecfadc60f18401bf01b5cc87b73",
+    "src/reader/PersonalPanel.tsx": "b918004f035e2c339f1e89fc6430c87e9fadaa9de4e593c24e6e78d3991145e9",
+    "src/reader/reading-record.ts": "456806337b77426309de5cba1ed11233e67f0394edd3d87673dd8f6eb5dbef08",
+    "src/reader/session.ts": "90b47510bc2db2f5bca45880f17aa720d78be323b01a6cf71e76264072191091",
+    "src/reader/marker-groups.ts": "60c338f9be05eba3f5ba1d83fceccde8e31a65694da2bda89f0cacf0799a3766",
+    "src/reader/session.test.ts": "d48c9f167f59b5825d73d8f653a9773b2b6f8fc6182e6e170b95367e83d42e1f",
+    "src/reader/supplement-types.tsx": "78c753e2beef3ec6c013fe7e34ac540c2dae083cc3e571c63f6a93798ea96328",
+    "content/grade-7-volume-1/chapter-2.json": "dea5888e7a89af2add61fc65488259db331b150e6db85d769f644184058e238e",
+    "content/grade-7-volume-1/locations.json": "fd94dcb7987a51f6f556555352bb3e493f6a0c09ff7e3f6e9a866cc0f39864a4",
+    "content/grade-7-volume-1/chapter-3.json": "a721f155366d20a0cf15193ae33b0a66c3b705726852447f2250704f9fa52239",
+    "content/grade-7-volume-1/chapter-4.json": "153cda8d0cdf455048d7807658f628aba99fadbc95b07e7c39cc1f42d5a331e3",
+    "content/grade-7-volume-1/chapter-5.json": "028718671fc161c4208a36411dc45f48a0bddd657ec57db9db8531b09c001c0c",
+    "content/grade-7-volume-1/chapter-3.locations.json": "cae6ce6d93075554eb9c6bf492bd88b16598bfa22f7d58ae5664e2bce938891c",
+    "content/grade-7-volume-1/chapter-6.json": "951f72660d4869b36979430049a08b7ce6747af4ec09ee0ebc692d845f62d586",
+    "content/grade-7-volume-1/chapter-4.locations.json": "a7ae99aacd2995f08c7eaa7bf750ee311620701221d60ce7104f2bf101a34886",
+    "content/grade-7-volume-1/chapter-5.locations.json": "4450bf190a5f047d2ed3bc4479ee772c789e47ce676f9376d3b3768094b167f3",
+    "content/grade-7-volume-1/chapter-2.locations.json": "5215ad43cd7be721800691c4446cfe772020d0d5f8a58d9ab7b4072aecae03e8",
+    "content/grade-7-volume-1/chapter-6.locations.json": "06131428915d1ba23f95edfda7458b8e50e848a54c59231119a9556fff1fae91",
+    "content/grade-7-volume-1/chapter-1.json": "6ef5888d0d442895d49980644f875b82e3b18d89043f1086c33ab65f07380dd3",
+    "scripts/check-page-navigation.mjs": "897895e1e53f41bbdaf03f1d1d43dec857e66beb5af843279755913deec350be",
+    "scripts/prepare-textbook.mjs": "358ce073cf3658ff406f829bf8cd3891b2eda53f2c59bf5e4960738cd5abb634",
+    "scripts/check-related-return.mjs": "176355927db04dceabe09b208d52fa90cbb63cfa92977e2b7af492a0a27ac3a9"
+  },
+  "build": "/tmp/textbook-reader-21-20261025/final",
+  "origin": "http://127.0.0.1:5219",
+  "runtimeFiles": {
+    "assets/index-C6l-ck0a.js": "c05b5066d5f34c709fc6d58b434db5784b6d10edeb7fbc6b810e794013d6511e",
+    "assets/index-BGwr1o8h.css": "1be72ec4af779fa9dc5ca71207439778ca8159cfc8ae0f637c491cbc2208cbce"
+  },
+  "browserScripts": {
+    "scripts/check-related-return.mjs": "8305f96684c74ff533fc96b5a45e11134c39785a7af4b5943a3cd6985b6cefbe",
+    "scripts/check-page-navigation.mjs": "897895e1e53f41bbdaf03f1d1d43dec857e66beb5af843279755913deec350be"
+  },
+  "productSourceMatchesWorkspace": true,
+  "comparisonScope": [
+    "src/reader/* excluding *.test.ts",
+    "src/style.css",
+    "src/textbook/* runtime TS/JSON excluding *.test.ts"
+  ],
+  "runtimeProductSourceMatchesWorkspace": true,
+  "contentSnapshotMatchesWorkspace": false,
+  "integrationNote": "主会话另同步 public/textbooks/grade-7-volume-1/source.json 的页码映射元数据，并调整 src/textbook/catalog.test.ts 的资源一致性检查。这是测试/元数据集成变更；本票不重跑浏览器，运行产品源码的比较单列。sourceFiles 保留实际固定构建时的哈希，不冒充最终共享版本。"
+}

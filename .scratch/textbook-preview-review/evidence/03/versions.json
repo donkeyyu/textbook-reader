@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-25",
+  "baseCommit": "ebe956a90b7b2b12f08f331c423fa76ec3a6d8e5",
+  "workspace": "shared existing uncommitted workspace",
+  "buildAsset": "dist/assets/index-Bb3cbA1n.js",
+  "sha256": {
+    "src/reader/Reader.tsx": "4c0876f92937145a7b2d19c61a18aa64d7218cfc1af43b35b043c1cf3b19cedc",
+    "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+    "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315",
+    "scripts/check-related-return.mjs": "176355927db04dceabe09b208d52fa90cbb63cfa92977e2b7af492a0a27ac3a9",
+    "src/textbook/book.json": "77d74c7b49e1474cbf736d2455260f9537b03e24667289bbc376d557a4d8a30b",
+    "content/grade-7-volume-1/chapter-1.json": "6ef5888d0d442895d49980644f875b82e3b18d89043f1086c33ab65f07380dd3"
+  }
+}

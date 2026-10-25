@@ -1,0 +1,63 @@
+[ego-browser:notice] Ego Lite update is available (current 0.6.0.16). Finish the current browser task, then ask the user before running `ego-browser upgrade`; re-read the ego-browser Skill afterward.
+Observed scroll writes { elapsed: 9298.399999856949, writes: 4 }
+PASS first writes retain page 50; scrolling is throttled; pagehide/hidden flush pending position
+PASS read failure: one notice; reading and saved notes remain available
+PASS write failure: one notice; reading and saved notes remain available
+PASS damaged, foreign, and out-of-range records: cover opens; reading still works
+[p4 "课本解读" | space "教材续读 B1–B4 验证"(33): 1 managed, 1 untracked — p4* "课本解读"]
+root
+  container
+    container
+      button "收起页面导航" [ref=14, loc=css:button[aria-label="收起页面导航"]]
+        svg_root
+      heading
+        text "数学 · 七年级上册"
+    container
+      container "显示补充类型" [ref=15]
+        svg_root
+      button [ref=16]
+        text "添加补充"
+  container
+    container "页面导航"
+      container
+        button "文件页序 2/202，无印刷页码，点击跳转" [ref=17, loc=css:button[aria-label="文件页序 2/202，无印刷页码，点击跳转"]]
+          container
+            text "文件页序"
+            text "2"
+            text "/"
+            text "202"
+          text "无印刷页码"
+        container
+          button "上一页" [ref=18, loc=css:button[aria-label="上一页"]]
+            svg_root
+          button "下一页" [ref=19, loc=css:button[aria-label="下一页"]]
+            svg_root
+      container [ref=20]
+        button "跳转到文件第 1 页，无印刷页码" [ref=21, loc=css:button[aria-label="跳转到文件第 1 页，无印刷页码"]]
+          image
+          container
+            text "文件第"
+            text "1"
+            text "页"
+          text "无印刷页码"
+        button "跳转到文件第 2 页，无印刷页码" [ref=22, loc=css:button[aria-label="跳转到文件第 2 页，无印刷页码"]]
+          image
+          container
+            text "文件第"
+            text "2"
+            text "页"
+          text "无印刷页码"
+        button "跳转到文件第 3 页，无印刷页码" [ref=23, loc=css:button[aria-label="跳转到文件第 3 页，无印刷页码"]]
+          image
+          container
+            text "文件第"
+            text "3"
+            text "页"
+          text "无印刷页码"
+        button "跳转到文件第 4 页，无印刷页码" [ref=24, loc=css:button[aria-label="跳转到文件第 4 页，无印刷页码"]]
+          image
+    container "教材连续阅读" [ref=25]
+      container "教材文件第 1 页，无印刷页码" [ref=26]
+        image
+      container "教材文件第 2 页，无印刷页码" [ref=27]
+        image

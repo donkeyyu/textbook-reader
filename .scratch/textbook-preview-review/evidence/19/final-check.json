@@ -1,0 +1,225 @@
+{
+  "date": "2026-10-25",
+  "pdfSha256": "6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249",
+  "chapterSha256": "a800d8e822fdc13f1740403c0bb852debfd01b3c3068febebc07325d81c6b845",
+  "positioningSha256": "06131428915d1ba23f95edfda7458b8e50e848a54c59231119a9556fff1fae91",
+  "coverageCount": 33,
+  "changedCount": 31,
+  "unchangedCount": 2,
+  "changedNotesSha256": {
+    "ch6-q-p186-e10": "d1c0ea1164e3c1fb487f99c5468bc8050b9fbaeb7791c4105e122f82790b0acc",
+    "ch6-q-p186-e11": "67ab37a6691a1f3eeddb865046159febb288ba9454d832230c6324498e8ae8ed",
+    "ch6-q-p186-e12": "5a7197e1098292c9d65e89c889bf8d97320cdf212b215d135b7ad85708465b9a",
+    "ch6-q-p187-e15": "35157e3f4872e6aaa0b9ea3ddd942528f687d21247a81df3d67ded3d0a6397f7",
+    "ch6-q-p189-activity1": "409de1aa9ca8eda43e8f933020916ba9adc8f8a16ced3c87ec1ef19a8dd6628f",
+    "ch6-q-p190-activity2": "246fa1e8aa740b2996b87d0effcab5ca2113e1801998517ba64bf36282cd113a",
+    "ch6-q-p192-recap1": "84d1b49619163458809102b5ea85033f0e9783e1870eea5261d7eefb602dcbb9",
+    "ch6-q-p192-recap2": "abdf592f738ca26d3877df4ea885f75e468347d97213af7e4118f3d98d8c4337",
+    "ch6-q-p192-recap3": "453a8f763043f9e56191a8736d58880caf0d22866b2c8e9935844bf0340390a4",
+    "ch6-q-p192-recap4": "d5ba5bfa1a1b1079b851f62249b86767f3bb602a704258d38f08f7491d844631",
+    "ch6-q-p192-recap5": "b3f3b67e47fab003916df5bc0f20d8be595fa38b636237a0c1625bbdecd8173a",
+    "ch6-q-p192-recap6": "5c9b93f4b4e5a13934c2aaf0c7c90cc1169f0f3611edcbe62097ae6ed83a27a6",
+    "ch6-q-p192-review1": "6e2c535e2b30c9caa47e8995e9f65015290aec945d8dac099b11836891ac35b6",
+    "ch6-q-p193-review2": "bf39d41a0ce8d08f69a8670f4bb746fd2fa692cb3a6a37aec6572515e7fc1a71",
+    "ch6-q-p193-review3": "92a53a62d433c165ccffba00a24d60e5955a376f1b6a55782239154350561333",
+    "ch6-q-p193-review4": "806f61272cf49b4abcdc1d2b9b7326194aeda7dd153d28f6bf6a9bc04edc34a4",
+    "ch6-q-p193-review5": "c83c4de380520530cf2a889cd05964ad74932051aebd449d07790a8c7c156e67",
+    "ch6-q-p193-review6": "2ce56c085034766e2f4df89c3bf2d40ac708326eb0cd6d730da4593b666e6d12",
+    "ch6-q-p194-review7": "ab3cbdb207c1f487d8d534a21aefd4a19359c4e96cd4c4222ef772f3ce4954a1",
+    "ch6-q-p194-review8": "6ce549a6855fbd625ee14504e670a8b8fdc384a419ba9272a55d722802ed651b",
+    "ch6-q-p194-review9": "73aabf5e01668f8e9cb10ec4bccda551eb89c7b3f361e7cb047d7ece0ea846c0",
+    "ch6-q-p194-review10": "11a1c0624c48484c471753a817f735895368b679931f017adbfd80419c10e279",
+    "ch6-q-p195-review11": "cfd47713b2f5891748de5961a591789ff01b7035417638da2fd534fe84952401",
+    "ch6-q-p195-review12": "fe0b5e0b0db5b6e77235a267cb31fda882f8310978a3bea458cf0e089bd2c08b",
+    "ch6-q-p195-review13": "8cd513cb5afa77f92632313fda0c632348fb58918e510ed399c03bcfcac875bf",
+    "ch6-q-p195-review14": "067a583443822a28a295939a982e681f285025a9cc5e938417d8fcd7f79d366a",
+    "ch6-q-p197-field-activity1": "75c87aaeee3be31e9809a1ce9e1eebc70f0cc7aa98d4e513876bd8699c9b1aeb",
+    "ch6-q-p197-field-task1": "b793c6532946f8701a95e1be24031375497d1561552f7f6a21cef95c114508ca",
+    "ch6-q-p198-field-task2": "7da84c8d62f3c92d90d90d65e96d2a517a89aff87bcb13bce02475c4575e2f1e",
+    "ch6-q-p198-field-task3": "8f21558a5afac9c4ed439940bf3ac553461bf1d6a58881dd7d488640d6d04d5e",
+    "ch6-q-p198-field-activity3": "e62ebec22660b145e87ca689cd00971577798ecbe66f92214ce9e2249a13d799"
+  },
+  "checks": {
+    "npm test": "23 passed; includes coverage/source refs and all current reader data checks",
+    "scoped git diff --check": "passed",
+    "typecheck/build": "deferred to main session, not run here",
+    "scoped edit audit": "90 recorded items match actual HEAD diff; undoing each narrow revision restores original item; all metadata, inventory, positions and unrelated items unchanged",
+    "final display audit": "all modified IDs have accepted actual-reader records; note hashes/text and link targets match current content"
+  },
+  "displayStatus": {
+    "pass": 31,
+    "pending": 0,
+    "complete": true,
+    "completeRoundTripItems": 2,
+    "actualRoundTrips": 4,
+    "explicitButtonChecks": 63,
+    "pixelScreenshots": "Page.captureScreenshot timeout; not verified",
+    "realPhone": "not verified"
+  },
+  "learningEffect": "未经真实学生或家长使用验证；真机未验证",
+  "continuation": {
+    "status": "complete",
+    "browserSpace": 39,
+    "finished": true,
+    "devUrl": "http://127.0.0.1:5196/",
+    "devStopped": true,
+    "temporaryScriptsRemoved": true
+  },
+  "displayCases": [
+    {
+      "id": "ch6-q-p186-e10",
+      "evidence": "display-round-07.json",
+      "roundTrips": 2
+    },
+    {
+      "id": "ch6-q-p186-e11",
+      "evidence": "display-round-07.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p186-e12",
+      "evidence": "display-round-07.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p187-e15",
+      "evidence": "display-round-07.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p189-activity1",
+      "evidence": "display-round-07.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p190-activity2",
+      "evidence": "display-round-07.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p192-recap1",
+      "evidence": "display-round-07.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p192-recap2",
+      "evidence": "display-round-07.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p192-recap3",
+      "evidence": "display-round-07.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p192-recap4",
+      "evidence": "display-round-07.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p192-recap5",
+      "evidence": "display-round-07.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p192-recap6",
+      "evidence": "display-round-08.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p192-review1",
+      "evidence": "display-round-08.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p193-review2",
+      "evidence": "display-round-08.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p193-review3",
+      "evidence": "display-round-08.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p193-review4",
+      "evidence": "display-round-08.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p193-review5",
+      "evidence": "display-round-08.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p193-review6",
+      "evidence": "display-round-08.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p194-review7",
+      "evidence": "display-round-08.json",
+      "roundTrips": 2
+    },
+    {
+      "id": "ch6-q-p194-review8",
+      "evidence": "display-round-08.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p194-review9",
+      "evidence": "display-round-08.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p194-review10",
+      "evidence": "display-round-08.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p195-review11",
+      "evidence": "display-round-09.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p195-review12",
+      "evidence": "display-round-09.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p195-review13",
+      "evidence": "display-round-09.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p195-review14",
+      "evidence": "display-round-09.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p197-field-activity1",
+      "evidence": "display-round-09.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p197-field-task1",
+      "evidence": "display-round-09.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p198-field-task2",
+      "evidence": "display-round-09.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p198-field-task3",
+      "evidence": "display-round-09.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p198-field-activity3",
+      "evidence": "display-round-09.json",
+      "roundTrips": 0
+    }
+  ]
+}

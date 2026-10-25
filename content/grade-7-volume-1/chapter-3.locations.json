@@ -162,16 +162,16 @@
       "printedPage": "70",
       "indexAnchor": 2,
       "anchorLabel": "例1",
-      "locator": "页底“在例1第（1）（2）题中，0.9p既可以表示苹果的售价，又可以表示长方形的面积”所在句。",
+      "locator": "例1解答第（1）（2）行：苹果售价0.9p元/kg与长方形面积0.9p m²。",
       "region": {
-        "x": 0.086,
-        "y": 0.865,
-        "width": 0.79,
-        "height": 0.049
+        "x": 0.13,
+        "y": 0.668,
+        "width": 0.365,
+        "height": 0.053
       },
       "marker": {
         "x": 0.96,
-        "y": 0.8895
+        "y": 0.6945
       },
       "sourceImageSha256": "85d2a986f8249a2375d0e27495067d8de93b3d8065bed8aa5b39e4bc1f8a362b"
     },
@@ -979,16 +979,16 @@
       "printedPage": "77",
       "indexAnchor": 2,
       "anchorLabel": "拓广探索",
-      "locator": "习题3.1第10题（1）：设n表示任意一个整数，表示任意一个偶数及奇数。",
+      "locator": "习题3.1第10（1）题的条件“设n表示任意一个整数”。",
       "region": {
-        "x": 0.151,
+        "x": 0.234,
         "y": 0.734,
-        "width": 0.749,
-        "height": 0.045
+        "width": 0.228,
+        "height": 0.021
       },
       "marker": {
         "x": 0.96,
-        "y": 0.7565
+        "y": 0.7445
       },
       "sourceImageSha256": "63f66e46b03e7f06f02dc9e5de824f77a9c5e5c477f1aa0403f65ba264aae7b7"
     },
@@ -998,12 +998,12 @@
       "printedPage": "77",
       "indexAnchor": 2,
       "anchorLabel": "拓广探索",
-      "locator": "拓广探索第10题题号及第（1）问首行；第（2）问为同题数位表示。",
+      "locator": "习题3.1第10题题号“10.”；导读覆盖第（1）（2）小题。",
       "region": {
-        "x": 0.153,
-        "y": 0.735,
-        "width": 0.747,
-        "height": 0.019
+        "x": 0.151,
+        "y": 0.734,
+        "width": 0.031,
+        "height": 0.021
       },
       "marker": {
         "x": 0.96,

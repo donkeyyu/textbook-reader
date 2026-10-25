@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-25",
+  "baseCommit": "ebe956a90b7b2b12f08f331c423fa76ec3a6d8e5",
+  "url": "http://127.0.0.1:5204/",
+  "mode": "isolated frozen Vite build; no shared dist changes",
+  "sha256": {
+    "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+    "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+    "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315",
+    "scripts/check-related-return.mjs": "8305f96684c74ff533fc96b5a45e11134c39785a7af4b5943a3cd6985b6cefbe",
+    "content/grade-7-volume-1/chapter-4.json": "b3c0c4ec87c4acb5083e636733493cc19f1d33fd1e6b2432be6dfdcf6d0a9f24",
+    "content/grade-7-volume-1/chapter-4.locations.json": "a7ae99aacd2995f08c7eaa7bf750ee311620701221d60ce7104f2bf101a34886",
+    "src/textbook/book.json": "77d74c7b49e1474cbf736d2455260f9537b03e24667289bbc376d557a4d8a30b"
+  },
+  "assets": {
+    "index-BEphCIKj.js": "4ea76008c639370d6e168875c92238b642567b371f06c21cc829bec956e646c6",
+    "index-BGwr1o8h.css": "1be72ec4af779fa9dc5ca71207439778ca8159cfc8ae0f637c491cbc2208cbce"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "date": "2026-10-25T05:35:00.382Z",
+  "space": 39,
+  "versions": {
+    "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+    "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+    "content/grade-7-volume-1/chapter-6.json": "951f72660d4869b36979430049a08b7ce6747af4ec09ee0ebc692d845f62d586"
+  },
+  "results": [
+    {
+      "id": "ch6-p172-shortest-explore",
+      "page": 172,
+      "printedPage": "165",
+      "preview": {
+        "group": 1,
+        "aria": "题目引导：探究：两地之间的最短道路",
+        "text": "比较道路长短时，哪些条件必须相同？",
+        "highlights": [
+          "location-ch6-p172-shortest-explore"
+        ]
+      },
+      "default": {
+        "title": "探究：两地之间的最短道路",
+        "knowledge": [
+          "连接固定两点的路线",
+          "长度比较"
+        ],
+        "cautions": [
+          "路线必须连接原来的两个地点，不能通过换起终点使路线显得更短。"
+        ],
+        "paragraphs": [],
+        "methodExpanded": "false",
+        "methodHidden": true,
+        "highlight": "location-ch6-p172-shortest-explore"
+      },
+      "links": [
+        {
+          "target": "ch6-shortest-same-endpoints",
+          "targetPage": "page-172",
+          "returnFocus": "related-ch6-p172-shortest-explore-ch6-shortest-same-endpoints",
+          "positionDelta": 0,
+          "methodRestored": true
+        }
+      ],
+      "input": "hover native; controls via DOM click; first batch separately covered Enter/Space",
+      "result": "pass"
+    },
+    {
+      "id": "ch6-p172-example",
+      "page": 172,
+      "printedPage": "165",
+      "preview": {
+        "group": 1,
+        "aria": "题目引导：例：作线段等于2a−b",
+        "text": "教材构造中的每一段，怎样对应目标长度式？",
+        "highlights": [
+          "location-ch6-p172-example"
+        ]
+      },
+      "default": {
+        "title": "例：作线段等于2a−b",
+        "knowledge": [
+          "用圆规作等长线段",
+          "线段的和与差"
+        ],
+        "cautions": [
+          "减去长度时要检查待截取线段的位置与可行条件。",
+          "图画得长短近似不代替圆规转移长度的依据。"
+        ],
+        "paragraphs": [],
+        "methodExpanded": "false",
+        "methodHidden": true,
+        "highlight": "location-ch6-p172-example"
+      },
+      "links": [
+        {
+          "target": "ch6-compass-copy-length",
+          "targetPage": "page-171",
+          "returnFocus": "related-ch6-p172-example-ch6-compass-copy-length",
+          "positionDelta": 0,
+          "methodRestored": true
+        },
+        {
+          "target": "ch6-segment-difference-positive",
+          "targetPage": "page-172",
+          "returnFocus": "related-ch6-p172-example-ch6-segment-difference-positive",
+          "positionDelta": 0,
+          "methodRestored": true
+        }
+      ],
+      "input": "hover native; controls via DOM click; first batch separately covered Enter/Space",
+      "result": "pass"
+    }
+  ],
+  "priorFailures": [
+    {
+      "id": "ch6-p170-ray-line-question",
+      "reason": "Error: page.waitForFunction timed out after 30000ms on page p1; last URL was \"http://127.0.0.1:5173/\"; last title was \"课本解读\".",
+      "accepted": false,
+      "resolution": "see later accepted display records"
+    },
+    {
+      "id": "ch6-p170-exercise-1",
+      "reason": "Error: page.waitForFunction timed out after 30000ms on page p1; last URL was \"http://127.0.0.1:5173/\"; last title was \"课本解读\".",
+      "accepted": false,
+      "resolution": "see later accepted display records"
+    },
+    {
+      "id": "ch6-p170-exercise-2",
+      "reason": "Error: page.waitForFunction timed out after 30000ms on page p1; last URL was \"http://127.0.0.1:5173/\"; last title was \"课本解读\".",
+      "accepted": false,
+      "resolution": "see later accepted display records"
+    },
+    {
+      "id": "ch6-p170-exercise-3",
+      "reason": "Error: page.waitForFunction timed out after 30000ms on page p1; last URL was \"http://127.0.0.1:5173/\"; last title was \"课本解读\".",
+      "accepted": false,
+      "resolution": "see later accepted display records"
+    },
+    {
+      "id": "ch6-p171-tools-question",
+      "reason": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:",
+      "accepted": false,
+      "resolution": "see later accepted display records"
+    },
+    {
+      "id": "ch6-p171-comparison-explore",
+      "reason": "ElementResolutionError: page.hover timed out after 3000ms: page.hover failed: element is not stable",
+      "accepted": false,
+      "resolution": "see later accepted display records"
+    },
+    {
+      "id": "ch6-p171-comparison-cases",
+      "reason": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:",
+      "accepted": false,
+      "resolution": "see later accepted display records"
+    },
+    {
+      "id": "ch6-p172-shortest-application",
+      "reason": "ElementResolutionError: page.selectOption timed out after 3000ms: Element not found: select[aria-label=\"跳页方式\"]",
+      "accepted": false,
+      "resolution": "see later accepted display records"
+    },
+    {
+      "id": "ch6-p173-exercise-2",
+      "reason": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:",
+      "accepted": false,
+      "resolution": "see later accepted display records"
+    },
+    {
+      "id": "ch6-p173-exercises-1",
+      "reason": "ElementResolutionError: page.press timed out after 3000ms: Selector #page-input matched 0 elements",
+      "accepted": false,
+      "resolution": "see later accepted display records"
+    }
+  ],
+  "evidenceScope": "Only listed pass records are accepted. Prior failures are condensed and were retested; batch filename does not imply all items passed."
+}

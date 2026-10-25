@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-25",
+  "url": "http://127.0.0.1:5173/",
+  "taskSpace": 35,
+  "files": {
+    "content/grade-7-volume-1/chapter-3.json": "a721f155366d20a0cf15193ae33b0a66c3b705726852447f2250704f9fa52239",
+    "content/grade-7-volume-1/chapter-3.locations.json": "cae6ce6d93075554eb9c6bf492bd88b16598bfa22f7d58ae5664e2bce938891c",
+    "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+    "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+    "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315"
+  },
+  "viewport": {
+    "width": 886,
+    "height": 455
+  },
+  "checks": [
+    {
+      "id": "ch3-q-p73-exercise-4",
+      "links": [],
+      "pass": false,
+      "error": "Error: page.waitForFunction timed out after 30000ms on page p1; last URL was \"http://127.0.0.1:5173/\"; last title was \"课本解读\"."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "questions": 50,
+  "reviewRows": 50,
+  "revised": 7,
+  "fourPartsAndLinks": "pass",
+  "indexAndActualPngSha256": "pass",
+  "sourcePages": [
+    9,
+    16,
+    18,
+    20,
+    22,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44
+  ],
+  "contentSha256": "4be1f83939c5caaf5d76fc77230d2db18c83413b5c2138dc4f57bd5d018430ad",
+  "npmTest": {
+    "pass": 23,
+    "fail": 0
+  },
+  "buildTypecheck": "主会话统一执行",
+  "display": {
+    "passed": 7,
+    "actualRoundTrips": 7,
+    "otherUnchangedLinks": "按钮与已审目标对应；未点击者复用本章共同交互证据"
+  },
+  "finalLabelCorrection": "仅08的回顾第4题两条label及purpose收窄，目标与非零条件不变",
+  "finalDisplayedFieldsMatch": true,
+  "status": "本票规定验收完成；像素/真机/真人效果未验证",
+  "resources": "本组5198服务及Ego空间36已关闭，27个本轮临时文件已删除",
+  "sampleDisplay": {
+    "passed": true,
+    "actualRoundTrips": 1,
+    "pixelScreenshot": "Page.captureScreenshot超时，无像素通过证据"
+  }
+}

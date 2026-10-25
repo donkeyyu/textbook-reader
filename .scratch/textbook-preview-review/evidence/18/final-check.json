@@ -1,0 +1,296 @@
+{
+  "date": "2026-10-25",
+  "pdfSha256": "6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249",
+  "chapterSha256": "a800d8e822fdc13f1740403c0bb852debfd01b3c3068febebc07325d81c6b845",
+  "positioningSha256": "06131428915d1ba23f95edfda7458b8e50e848a54c59231119a9556fff1fae91",
+  "coverageCount": 48,
+  "changedCount": 43,
+  "unchangedCount": 5,
+  "changedNotesSha256": {
+    "ch6-p174-exercises-2": "c64da8b71496109e73ad0f6404453506ba31217c8e469401f4646dfb167903d4",
+    "ch6-p174-exercises-3": "e902b554f8e00554b7fd67fe1f25ac40e073dad41af1862d44f1ece628bae1ff",
+    "ch6-p174-exercises-4": "41499f987732bca6c58b6b47c8dc2c45f18be2a43f4262b695f114134223a190",
+    "ch6-p174-exercises-6": "c70e95c2820782524cecc346fa3ffa121ea8d49a43fa3f0e9e444c374568e970",
+    "ch6-p175-exercises-8": "e7920e8461ff557295af7cdfc62f54486198743dc0eada48174c359dfb15bce8",
+    "ch6-p175-exercises-9": "993a23596073999cd7f82c8079c35928d5174d740b596e8d9b086e2f3c9281aa",
+    "ch6-p176-reading-units": "87d62472bc0081c61e847fc9b01ab41ccb98a9b1adb48fea9846cf07e94f31e4",
+    "ch6-angle-single-letter": "797dceb2ffef524eed9e9bd233d05b129d70829534bcaf2f463e26960211bed2",
+    "ch6-p177-rotation-think": "6887dd257f471d1fc2e4fdb725082e225711e734a3cae12eeab9c959936e22f1",
+    "ch6-p178-unit-fill": "45b75df649e7719e370873b7ddcc295018913a7f14abb01c502d73c15951513a",
+    "ch6-p178-example-1": "db027089cd16c4bb57d8f051ebf9a0043364aa33cb80198338ec1bac98711cea",
+    "ch6-p179-exercise-2": "3fb89f00655bd6cbd227159a6d87d425864dc5dc051ddc487a454361df7a38bd",
+    "ch6-p179-exercise-3": "e2eacaaa101745ec00ea58619b8911c1289cb0908dd0a9201537ad9c3ba295e9",
+    "ch6-p179-exercise-4": "4ab3e49a895ecf707cca8d74d25f205982debda638cb440570458a3d4d61cfba",
+    "ch6-p180-comparison-question": "1a5952a9ad131233776277bb37276d9da89515a803f7cff16b868c470571c660",
+    "ch6-p180-angle-sum-think": "9575a54fac71d833782b516e7771d86a293b87ecc2c6180c021eb823b6723c65",
+    "ch6-p180-angle-difference-fill": "88dd59f50e6557e262d24dc21068e8e51f3fe469cc3dd15ec8760b61e12b31d6",
+    "ch6-p180-triangles-explore": "4aa06659d39f9871cd0252996111d2d83ef70cae7ce1edf49b03e0cced7b2322",
+    "ch6-p181-example-2": "a3115b3cc4957d1b978e4d0088f91f7c525974cf74f4f844a387b0d1bff782d2",
+    "ch6-p181-exercise-1": "c9c4a0d78628e1d3130213c34114c8d6c5253ede3ee54b6f809fbc4224821531",
+    "ch6-p181-exercise-2": "4204ee853fb8706715cc9d1c65d11545ee5fb88fbce24d2a412ee9c3a64c6165",
+    "ch6-p181-exercise-3": "72ecb7781033641903be0d65afcfcb9a833a795f9202f696a73d67168c37307b",
+    "ch6-p181-equal-angle-fill": "5a21a1b61823f06abd18e1d680afb8b9c99b8af74f1247d130530e61bc5e029d",
+    "ch6-p182-example-3": "f763f06c50e86b2d570a218091aab5b36a516e676662d7c7862e33041a76fa40",
+    "ch6-p182-exercise-1": "ce7a088479de055fb13dc1804d749c39a3235f18b4f0dc3f5a2d403072a3a6b1",
+    "ch6-p183-exercise-2": "fe33b85a145636ebff2099740f80f498451e55b7b516c69808a145e17b19a339",
+    "ch6-p183-exercise-3": "0a230feec1690400affacc4277a5683f15ae9cf8bc5f2f9aae320ad3c423b412",
+    "ch6-p183-complements-think": "98254492bf843a22862a6624b10ead3703bf201775a821f007ad1fe5b5d38022",
+    "ch6-p183-equal-supplements-why": "9211123b3985e28bae230a97cee2ae074c8de0bba9bc0caba34a4dc1c11747d2",
+    "ch6-q-p184-example4": "63f5d9271228996dbd375b6a35e8b4133e21ab15c8b86ff87c1432fce3992c17",
+    "ch6-q-p184-practice1": "1574ac880cb53f3c4390b874f4c389ed26dd9ac04cd945e5dc86358d1a0c1c3a",
+    "ch6-q-p184-practice2": "03fd81de8a5e96aed780a49b378846ce16b71ede889798f49952f01aa50cc90d",
+    "ch6-q-p184-practice3": "fbd8d426807b3ee4b33df25bccff492980c46a8c7292e5c097423ce9a1ec62ca",
+    "ch6-q-p184-practice4": "3d40c18537bfdeccc1367bacc9df0ea0784a1696b3b8fe199d379290f2e703b6",
+    "ch6-q-p185-e1": "237b75131c3fbd349aa93b7226de37959be51fc6c5bc414a65e9c1d7003912e2",
+    "ch6-q-p185-e2": "71ba717f4c8910090b676301a3589f8b00c7a5aff12fb9d1be27c110ab16f6ff",
+    "ch6-q-p185-e3": "194d0b1a066552c90ded4dea091bc99e14fc9102a28671beabf5802cbc17245d",
+    "ch6-q-p185-e4": "ade93ee5a993a8f65dccdf0080e3a5e5b24fe28a50bbf84225bb0f50a054f03c",
+    "ch6-q-p185-e5": "ae645edcc891783d727effc3f3a6a27c010bae78346bfbcb355ffd1df9ab4e1e",
+    "ch6-q-p185-e6": "c26dfdac9bedfb690795ccb4809016e1a33377900dacc27f441506ef62d8a0a8",
+    "ch6-q-p185-e7": "f329a8dbfb217b5d87654b11b1be6354438d0bb678872afda68d3205f0dba9a4",
+    "ch6-q-p185-e8": "5c51933f32cb457bc9f2af8559bc0e11b8a660b26081a25379684fe22cad5eff",
+    "ch6-q-p185-e9": "6ea12d5a50ca5c03cc85ab7cdb9e732715bd83be37dd79cd258eb130297af2b6"
+  },
+  "checks": {
+    "npm test": "23 passed; includes coverage/source refs and all current reader data checks",
+    "scoped git diff --check": "passed",
+    "typecheck/build": "deferred to main session, not run here",
+    "scoped edit audit": "90 recorded items match actual HEAD diff; undoing each narrow revision restores original item; all metadata, inventory, positions and unrelated items unchanged",
+    "final display audit": "all modified IDs have accepted actual-reader records; note hashes/text and link targets match current content"
+  },
+  "displayStatus": {
+    "pass": 43,
+    "pending": 0,
+    "complete": true,
+    "completeRoundTripItems": 2,
+    "actualRoundTrips": 2,
+    "pixelScreenshots": "Page.captureScreenshot timeout; not verified",
+    "realPhone": "not verified"
+  },
+  "learningEffect": "未经真实学生或家长使用验证；真机未验证",
+  "continuation": {
+    "status": "complete",
+    "browserSpace": 39,
+    "finished": true,
+    "devUrl": "http://127.0.0.1:5196/",
+    "devStopped": true,
+    "temporaryScriptsRemoved": true
+  },
+  "displayCases": [
+    {
+      "id": "ch6-p174-exercises-2",
+      "evidence": "display-round-03.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p174-exercises-3",
+      "evidence": "display-round-03.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p174-exercises-4",
+      "evidence": "display-round-03.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p174-exercises-6",
+      "evidence": "display-round-03.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p175-exercises-8",
+      "evidence": "display-round-03.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p175-exercises-9",
+      "evidence": "display-round-03.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p176-reading-units",
+      "evidence": "display-round-03.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-angle-single-letter",
+      "evidence": "display-round-03.json",
+      "roundTrips": 1
+    },
+    {
+      "id": "ch6-p177-rotation-think",
+      "evidence": "display-round-03.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p178-unit-fill",
+      "evidence": "display-round-03.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p178-example-1",
+      "evidence": "display-round-03.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p179-exercise-2",
+      "evidence": "display-round-04.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p179-exercise-3",
+      "evidence": "display-round-04.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p179-exercise-4",
+      "evidence": "display-round-04.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p180-comparison-question",
+      "evidence": "display-round-04.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p180-angle-sum-think",
+      "evidence": "display-round-04.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p180-angle-difference-fill",
+      "evidence": "display-round-04.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p180-triangles-explore",
+      "evidence": "display-round-04.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p181-example-2",
+      "evidence": "display-round-04.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p181-exercise-1",
+      "evidence": "display-round-04.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p181-exercise-2",
+      "evidence": "display-round-04.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p181-exercise-3",
+      "evidence": "display-round-04.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p181-equal-angle-fill",
+      "evidence": "display-round-05.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p182-example-3",
+      "evidence": "display-round-05.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p182-exercise-1",
+      "evidence": "display-round-05.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p183-exercise-2",
+      "evidence": "display-round-05.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p183-exercise-3",
+      "evidence": "display-round-05.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p183-complements-think",
+      "evidence": "display-round-05.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-p183-equal-supplements-why",
+      "evidence": "display-round-05.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p184-example4",
+      "evidence": "display-round-05.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p184-practice1",
+      "evidence": "display-round-05.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p184-practice2",
+      "evidence": "display-round-05.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p184-practice3",
+      "evidence": "display-round-05.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p184-practice4",
+      "evidence": "display-round-06.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p185-e1",
+      "evidence": "display-round-06.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p185-e2",
+      "evidence": "display-round-06.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p185-e3",
+      "evidence": "display-round-06.json",
+      "roundTrips": 1
+    },
+    {
+      "id": "ch6-q-p185-e4",
+      "evidence": "display-round-06.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p185-e5",
+      "evidence": "display-round-06.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p185-e6",
+      "evidence": "display-round-06.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p185-e7",
+      "evidence": "display-round-06.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p185-e8",
+      "evidence": "display-round-06.json",
+      "roundTrips": 0
+    },
+    {
+      "id": "ch6-q-p185-e9",
+      "evidence": "display-round-06.json",
+      "roundTrips": 0
+    }
+  ]
+}

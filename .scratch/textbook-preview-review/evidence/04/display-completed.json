@@ -1,0 +1,2473 @@
+{
+  "checkedAt": "2026-10-25",
+  "spaceId": 34,
+  "serviceRecovery": "共享5173服务停止后，改用独立5194端口；未重置浏览器或清存储。",
+  "attemptFailures": [
+    "共享5173服务停止时文件17加载失败；重试仍失败，保留来源后改独立服务恢复。",
+    "滚动清除预览；已实际观察后改滚动稳定后的键盘聚焦，重新通过。",
+    "一次hover因位置尚未稳定超时；没有计入通过。"
+  ],
+  "batches": [
+    {
+      "checkedAt": "2026-10-25T05:20:56.247Z",
+      "beforeVersion": {
+        "src/reader/Reader.tsx": "4c0876f92937145a7b2d19c61a18aa64d7218cfc1af43b35b043c1cf3b19cedc",
+        "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+        "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315",
+        "src/textbook/catalog.ts": "751ffccfe183cb905b076c6d06663a378ca3c3e4758fc2efcf6baa2944381388",
+        "src/textbook/book.json": "77d74c7b49e1474cbf736d2455260f9537b03e24667289bbc376d557a4d8a30b",
+        "content/grade-7-volume-1/chapter-1.json": "6ef5888d0d442895d49980644f875b82e3b18d89043f1086c33ab65f07380dd3",
+        "content/grade-7-volume-1/locations.json": "fd94dcb7987a51f6f556555352bb3e493f6a0c09ff7e3f6e9a866cc0f39864a4"
+      },
+      "afterVersion": {
+        "src/reader/Reader.tsx": "4c0876f92937145a7b2d19c61a18aa64d7218cfc1af43b35b043c1cf3b19cedc",
+        "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+        "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315",
+        "src/textbook/catalog.ts": "751ffccfe183cb905b076c6d06663a378ca3c3e4758fc2efcf6baa2944381388",
+        "src/textbook/book.json": "77d74c7b49e1474cbf736d2455260f9537b03e24667289bbc376d557a4d8a30b",
+        "content/grade-7-volume-1/chapter-1.json": "6ef5888d0d442895d49980644f875b82e3b18d89043f1086c33ab65f07380dd3",
+        "content/grade-7-volume-1/locations.json": "fd94dcb7987a51f6f556555352bb3e493f6a0c09ff7e3f6e9a866cc0f39864a4"
+      },
+      "finishedAt": "2026-10-25T05:21:17.967Z"
+    },
+    {
+      "checkedAt": "2026-10-25T05:21:39.770Z",
+      "beforeVersion": {
+        "src/reader/Reader.tsx": "4c0876f92937145a7b2d19c61a18aa64d7218cfc1af43b35b043c1cf3b19cedc",
+        "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+        "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315",
+        "src/textbook/catalog.ts": "751ffccfe183cb905b076c6d06663a378ca3c3e4758fc2efcf6baa2944381388",
+        "src/textbook/book.json": "77d74c7b49e1474cbf736d2455260f9537b03e24667289bbc376d557a4d8a30b",
+        "content/grade-7-volume-1/chapter-1.json": "6ef5888d0d442895d49980644f875b82e3b18d89043f1086c33ab65f07380dd3",
+        "content/grade-7-volume-1/locations.json": "fd94dcb7987a51f6f556555352bb3e493f6a0c09ff7e3f6e9a866cc0f39864a4"
+      },
+      "afterVersion": {
+        "src/reader/Reader.tsx": "4c0876f92937145a7b2d19c61a18aa64d7218cfc1af43b35b043c1cf3b19cedc",
+        "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+        "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315",
+        "src/textbook/catalog.ts": "751ffccfe183cb905b076c6d06663a378ca3c3e4758fc2efcf6baa2944381388",
+        "src/textbook/book.json": "77d74c7b49e1474cbf736d2455260f9537b03e24667289bbc376d557a4d8a30b",
+        "content/grade-7-volume-1/chapter-1.json": "6ef5888d0d442895d49980644f875b82e3b18d89043f1086c33ab65f07380dd3",
+        "content/grade-7-volume-1/locations.json": "fd94dcb7987a51f6f556555352bb3e493f6a0c09ff7e3f6e9a866cc0f39864a4"
+      },
+      "finishedAt": "2026-10-25T05:23:46.129Z"
+    },
+    {
+      "checkedAt": "2026-10-25T05:25:57.953Z",
+      "beforeVersion": {
+        "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+        "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+        "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315",
+        "src/textbook/catalog.ts": "751ffccfe183cb905b076c6d06663a378ca3c3e4758fc2efcf6baa2944381388",
+        "src/textbook/book.json": "77d74c7b49e1474cbf736d2455260f9537b03e24667289bbc376d557a4d8a30b",
+        "content/grade-7-volume-1/chapter-1.json": "6ef5888d0d442895d49980644f875b82e3b18d89043f1086c33ab65f07380dd3",
+        "content/grade-7-volume-1/locations.json": "fd94dcb7987a51f6f556555352bb3e493f6a0c09ff7e3f6e9a866cc0f39864a4"
+      },
+      "afterVersion": {
+        "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+        "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+        "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315",
+        "src/textbook/catalog.ts": "751ffccfe183cb905b076c6d06663a378ca3c3e4758fc2efcf6baa2944381388",
+        "src/textbook/book.json": "77d74c7b49e1474cbf736d2455260f9537b03e24667289bbc376d557a4d8a30b",
+        "content/grade-7-volume-1/chapter-1.json": "6ef5888d0d442895d49980644f875b82e3b18d89043f1086c33ab65f07380dd3",
+        "content/grade-7-volume-1/locations.json": "fd94dcb7987a51f6f556555352bb3e493f6a0c09ff7e3f6e9a866cc0f39864a4"
+      },
+      "finishedAt": "2026-10-25T05:26:47.603Z"
+    },
+    {
+      "checkedAt": "2026-10-25T05:28:06.987Z",
+      "beforeVersion": {
+        "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+        "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+        "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315",
+        "src/textbook/catalog.ts": "751ffccfe183cb905b076c6d06663a378ca3c3e4758fc2efcf6baa2944381388",
+        "src/textbook/book.json": "77d74c7b49e1474cbf736d2455260f9537b03e24667289bbc376d557a4d8a30b",
+        "content/grade-7-volume-1/chapter-1.json": "6ef5888d0d442895d49980644f875b82e3b18d89043f1086c33ab65f07380dd3",
+        "content/grade-7-volume-1/locations.json": "fd94dcb7987a51f6f556555352bb3e493f6a0c09ff7e3f6e9a866cc0f39864a4"
+      },
+      "afterVersion": {
+        "src/reader/Reader.tsx": "4b86476ff073ce587dcfddba8fbc573a315f044f22c93c9ae635d59315b1af53",
+        "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+        "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315",
+        "src/textbook/catalog.ts": "751ffccfe183cb905b076c6d06663a378ca3c3e4758fc2efcf6baa2944381388",
+        "src/textbook/book.json": "77d74c7b49e1474cbf736d2455260f9537b03e24667289bbc376d557a4d8a30b",
+        "content/grade-7-volume-1/chapter-1.json": "6ef5888d0d442895d49980644f875b82e3b18d89043f1086c33ab65f07380dd3",
+        "content/grade-7-volume-1/locations.json": "fd94dcb7987a51f6f556555352bb3e493f6a0c09ff7e3f6e9a866cc0f39864a4"
+      },
+      "finishedAt": "2026-10-25T05:34:58.334Z"
+    }
+  ],
+  "results": [
+    {
+      "id": "ch1-practice-p5-3",
+      "page": 12,
+      "preview": {
+        "markerPage": "page-12",
+        "marker": "题目引导：练习第3题",
+        "group": 1,
+        "tooltip": "百分数记录价格的变化程度，不是货币金额。点击标记展开解读",
+        "rect": {
+          "x": 1254.5,
+          "y": 442.8671875
+        },
+        "viewport": [
+          1772,
+          909
+        ]
+      },
+      "defaults": {
+        "title": "练习第3题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "涨价和降价的相反意义；价格变化率。"
+        ],
+        "cautions": [
+          "不要把百分数改写成货币金额；两件商品原价未给出，题目也未要求比较它们最后的价格。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-practice-p5-3-ch1-growth-rate-base",
+            "label": "变化率的比较基准课本第 5 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "分别把两件商品的变化方向与题目约定对照，再保留各自的变化百分数。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-growth-rate-base",
+          "target": {
+            "highlight": "location-ch1-growth-rate-base",
+            "page": "page-12",
+            "title": "增长率的百分数，是和谁比？"
+          },
+          "before": {
+            "fraction": 0.30482431544710237,
+            "panelScroll": 0,
+            "title": "练习第3题",
+            "expanded": null,
+            "focus": "related-ch1-practice-p5-3-ch1-growth-rate-base",
+            "highlight": "location-ch1-practice-p5-3",
+            "back": false,
+            "methods": [
+              "method-ch1-practice-p5-3"
+            ]
+          },
+          "after": {
+            "fraction": 0.30482431544710237,
+            "panelScroll": 0,
+            "title": "练习第3题",
+            "expanded": null,
+            "focus": "related-ch1-practice-p5-3-ch1-growth-rate-base",
+            "highlight": "location-ch1-practice-p5-3",
+            "back": false,
+            "methods": [
+              "method-ch1-practice-p5-3"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch1-practice-p3-1",
+      "page": 10,
+      "preview": {
+        "markerPage": "page-10",
+        "marker": "题目引导：练习第1题",
+        "group": 1,
+        "tooltip": "分数、小数也有正负，外形不决定分类。点击标记展开解读",
+        "rect": {
+          "x": 1254.5,
+          "y": 650.6640625
+        },
+        "viewport": [
+          1772,
+          909
+        ]
+      },
+      "defaults": {
+        "title": "练习第1题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "正数、负数与0的区分；正号可以省略。"
+        ],
+        "cautions": [
+          "不要把没有负号的数一律放入正数；分数线与小数点不改变符号判断。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-practice-p3-1-ch1-positive-negative",
+            "label": "正数与负数课本第 2 页"
+          },
+          {
+            "id": "related-ch1-practice-p3-1-ch1-zero-boundary",
+            "label": "0的分类位置课本第 2 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "逐个读出数的符号，并单独检查是否为0；再按题目要求整理正数和负数两类。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-positive-negative",
+          "target": {
+            "highlight": "location-ch1-positive-negative",
+            "page": "page-9",
+            "title": "这里的“−”在说明一个数"
+          },
+          "before": {
+            "fraction": 0.5190425071699806,
+            "panelScroll": 0,
+            "title": "练习第1题",
+            "expanded": null,
+            "focus": "related-ch1-practice-p3-1-ch1-positive-negative",
+            "highlight": "location-ch1-practice-p3-1",
+            "back": false,
+            "methods": [
+              "method-ch1-practice-p3-1"
+            ]
+          },
+          "after": {
+            "fraction": 0.5190425071699806,
+            "panelScroll": 0,
+            "title": "练习第1题",
+            "expanded": null,
+            "focus": "related-ch1-practice-p3-1-ch1-positive-negative",
+            "highlight": "location-ch1-practice-p3-1",
+            "back": false,
+            "methods": [
+              "method-ch1-practice-p3-1"
+            ]
+          }
+        },
+        {
+          "locationId": "ch1-zero-boundary",
+          "target": {
+            "highlight": "location-ch1-zero-boundary",
+            "page": "page-9",
+            "title": "为什么0要单独留下？"
+          },
+          "before": {
+            "fraction": 0.5190425071699806,
+            "panelScroll": 0,
+            "title": "练习第1题",
+            "expanded": null,
+            "focus": "related-ch1-practice-p3-1-ch1-zero-boundary",
+            "highlight": "location-ch1-practice-p3-1",
+            "back": false,
+            "methods": [
+              "method-ch1-practice-p3-1"
+            ]
+          },
+          "after": {
+            "fraction": 0.5190425071699806,
+            "panelScroll": 0,
+            "title": "练习第1题",
+            "expanded": null,
+            "focus": "related-ch1-practice-p3-1-ch1-zero-boundary",
+            "highlight": "location-ch1-practice-p3-1",
+            "back": false,
+            "methods": [
+              "method-ch1-practice-p3-1"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch1-practice-p3-3",
+      "page": 10,
+      "preview": {
+        "markerPage": "page-10",
+        "marker": "选择此处的2条解读",
+        "group": 2,
+        "tooltip": null,
+        "rect": {
+          "x": 1254.5,
+          "y": 724.296875
+        },
+        "viewport": [
+          1772,
+          909
+        ]
+      },
+      "defaults": {
+        "title": "练习第3题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "用正负数表示零上、零下温度；统一分界基准。"
+        ],
+        "cautions": [
+          "题目要求记录夜间温度，不是计算昼夜温差；不要把白天的数值带入夜间记录。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-practice-p3-3-ch1-zero-reference",
+            "label": "0 ℃作为基准课本第 4 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "比较白天和夜间的温度描述，判断它们分别处于分界点哪一侧，再沿用题目已示范的记录方式。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-zero-reference",
+          "target": {
+            "highlight": "location-ch1-zero-reference",
+            "page": "page-11",
+            "title": "0要和它记录的量一起读"
+          },
+          "before": {
+            "fraction": 0.623123387755756,
+            "panelScroll": 0,
+            "title": "此处解读",
+            "expanded": "choice-ch1-practice-p3-3",
+            "focus": "related-ch1-practice-p3-3-ch1-zero-reference",
+            "highlight": "location-ch1-practice-p3-3",
+            "back": false,
+            "methods": [
+              "method-ch1-practice-p3-3"
+            ]
+          },
+          "after": {
+            "fraction": 0.623123387755756,
+            "panelScroll": 0,
+            "title": "此处解读",
+            "expanded": "choice-ch1-practice-p3-3",
+            "focus": "related-ch1-practice-p3-3-ch1-zero-reference",
+            "highlight": "location-ch1-practice-p3-3",
+            "back": false,
+            "methods": [
+              "method-ch1-practice-p3-3"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch1-growth-rate-question",
+      "page": 12,
+      "preview": {
+        "markerPage": "page-12",
+        "marker": "题目引导：例2旁问：负增长率与零增长率",
+        "group": 1,
+        "tooltip": "增长率的符号与百分数分别说明什么？点击标记展开解读",
+        "rect": {
+          "x": 1254.5,
+          "y": 204.4296875
+        },
+        "viewport": [
+          1772,
+          909
+        ]
+      },
+      "defaults": {
+        "title": "例2旁问：负增长率与零增长率",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "增长率中的方向与比例；变化量相对原数量的比较。"
+        ],
+        "cautions": [
+          "不能把增长率的符号当作实际销量的符号；“增长”这个记录名称并不先行保证变化向上。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-growth-rate-question-ch1-growth-amount",
+            "label": "变化量的三种情况课本第 4 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "解释第一个问题时，要同时说出比较基准、变化方向和百分数所比较的量。",
+          "对第二个问题，可设想销量增加、减少或保持原状三种情况，检查各自变化量占原量的比例。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-growth-amount",
+          "target": {
+            "highlight": "location-ch1-growth-amount",
+            "page": "page-11",
+            "title": "“增长”为什么可以写负数？"
+          },
+          "before": {
+            "fraction": 0.03564962427699357,
+            "panelScroll": 0,
+            "title": "例2旁问：负增长率与零增长率",
+            "expanded": null,
+            "focus": "related-ch1-growth-rate-question-ch1-growth-amount",
+            "highlight": "location-ch1-growth-rate-question",
+            "back": false,
+            "methods": [
+              "method-ch1-growth-rate-question"
+            ]
+          },
+          "after": {
+            "fraction": 0.03564962427699357,
+            "panelScroll": 0,
+            "title": "例2旁问：负增长率与零增长率",
+            "expanded": null,
+            "focus": "related-ch1-growth-rate-question-ch1-growth-amount",
+            "highlight": "location-ch1-growth-rate-question",
+            "back": false,
+            "methods": [
+              "method-ch1-growth-rate-question"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch1-practice-p5-1",
+      "page": 12,
+      "preview": {
+        "markerPage": "page-12",
+        "marker": "题目引导：练习第1题",
+        "group": 1,
+        "tooltip": "水位变化与水位本身是两种记录。点击标记展开解读",
+        "rect": {
+          "x": 1254.5,
+          "y": 331.6953125
+        },
+        "viewport": [
+          1772,
+          909
+        ]
+      },
+      "defaults": {
+        "title": "练习第1题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "水位变化的符号约定；零变化与实际水位。"
+        ],
+        "cautions": [
+          "“不升不降”描述前后状态的关系，不等于水库没有水；填写的是变化，不是最后水位。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-practice-p5-1-ch1-growth-amount",
+            "label": "变化量与实际量课本第 4 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "沿用题目对升高的记法，分别判断下降与不升不降应怎样记录；可以用同一条水位基准线对照变化前后。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-growth-amount",
+          "target": {
+            "highlight": "location-ch1-growth-amount",
+            "page": "page-11",
+            "title": "“增长”为什么可以写负数？"
+          },
+          "before": {
+            "fraction": 0.1904891609119895,
+            "panelScroll": 0,
+            "title": "练习第1题",
+            "expanded": null,
+            "focus": "related-ch1-practice-p5-1-ch1-growth-amount",
+            "highlight": "location-ch1-practice-p5-1",
+            "back": false,
+            "methods": [
+              "method-ch1-practice-p5-1"
+            ]
+          },
+          "after": {
+            "fraction": 0.1904891609119895,
+            "panelScroll": 0,
+            "title": "练习第1题",
+            "expanded": null,
+            "focus": "related-ch1-practice-p5-1-ch1-growth-amount",
+            "highlight": "location-ch1-practice-p5-1",
+            "back": false,
+            "methods": [
+              "method-ch1-practice-p5-1"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch1-direction-exercise",
+      "page": 12,
+      "preview": {
+        "markerPage": "page-12",
+        "marker": "题目引导：习题1.1第5题",
+        "group": 1,
+        "tooltip": "一次移动、最终位置和路程各记录什么？点击标记展开解读",
+        "rect": {
+          "x": 1254.5,
+          "y": 897.796875
+        },
+        "viewport": [
+          1772,
+          909
+        ]
+      },
+      "defaults": {
+        "title": "习题1.1第5题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "方向的正负约定；连续移动；移动距离与相对起点的位置。"
+        ],
+        "cautions": [
+          "第二次移动从第一次的终点开始，不能再次从最初位置出发；题目最后问距离，不是两次走过的总路程。"
+        ],
+        "paragraphs": [
+          "“向前”不总是正，“向后”也不总是负。题目可以选定其中一个方向为正；读这道题时，要先找到它已经给出的约定，再判断与之相反的方向怎样记录。",
+          "移动量描述一次移动的方向和远近，最终位置描述移动结束后相对起点在哪里。两问所需的信息不同，不能把一次移动的记录直接当成最终位置或总路程。"
+        ],
+        "related": [
+          {
+            "id": "related-ch1-direction-exercise-ch1-opposite-meanings",
+            "label": "方向和数量的分工课本第 3 页"
+          },
+          {
+            "id": "related-ch1-direction-exercise-ch1-number-line-distance",
+            "label": "位置数与距离课本第 10 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "题中的−5 m确定了什么记录约定？+5 m的方向应由哪个约定判断？",
+          "图示可以帮助核对连续移动。若采用图示，两次移动的起点有什么关系？题目最后比较的是哪两个位置？"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-opposite-meanings",
+          "target": {
+            "highlight": "location-ch1-opposite-meanings",
+            "page": "page-10",
+            "title": "“相反意义”不要求数量相等"
+          },
+          "before": {
+            "fraction": 0.7713937801419576,
+            "panelScroll": 386,
+            "title": "习题1.1第5题",
+            "expanded": null,
+            "focus": "related-ch1-direction-exercise-ch1-opposite-meanings",
+            "highlight": "location-ch1-direction-exercise",
+            "back": false,
+            "methods": [
+              "method-ch1-direction-exercise"
+            ]
+          },
+          "after": {
+            "fraction": 0.7713937801419576,
+            "panelScroll": 386,
+            "title": "习题1.1第5题",
+            "expanded": null,
+            "focus": "related-ch1-direction-exercise-ch1-opposite-meanings",
+            "highlight": "location-ch1-direction-exercise",
+            "back": false,
+            "methods": [
+              "method-ch1-direction-exercise"
+            ]
+          }
+        },
+        {
+          "locationId": "ch1-number-line-distance",
+          "target": {
+            "highlight": "location-ch1-number-line-distance",
+            "page": "page-17",
+            "title": "表示−a的点，距离为什么仍是a？"
+          },
+          "before": {
+            "fraction": 0.7713937801419576,
+            "panelScroll": 386,
+            "title": "习题1.1第5题",
+            "expanded": null,
+            "focus": "related-ch1-direction-exercise-ch1-number-line-distance",
+            "highlight": "location-ch1-direction-exercise",
+            "back": false,
+            "methods": [
+              "method-ch1-direction-exercise"
+            ]
+          },
+          "after": {
+            "fraction": 0.7713937801419576,
+            "panelScroll": 386,
+            "title": "习题1.1第5题",
+            "expanded": null,
+            "focus": "related-ch1-direction-exercise-ch1-number-line-distance",
+            "highlight": "location-ch1-direction-exercise",
+            "back": false,
+            "methods": [
+              "method-ch1-direction-exercise"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch1-measurement-exercise",
+      "page": 12,
+      "preview": {
+        "markerPage": "page-12",
+        "marker": "题目引导：习题1.1第6题",
+        "group": 1,
+        "tooltip": "同一组数据，楼高记录与偏差记录有何区别？点击标记展开解读",
+        "rect": {
+          "x": 1254.5,
+          "y": 472.546875
+        },
+        "viewport": [
+          1772,
+          909
+        ]
+      },
+      "defaults": {
+        "title": "习题1.1第6题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "平均数；相对同一标准的偏差；正负数表示超出或不足。"
+        ],
+        "cautions": [
+          "楼高测量值与偏差是两种不同记录；不要用前一组数据替代平均值作下一组的标准，也不要漏掉可能等于标准的情形。"
+        ],
+        "paragraphs": [
+          "这道题中的原始数据记录楼高；接下来要记录的数表示“比同一个标准多或少多少”。它们记录的量不同，因此不能只看原始数据是否大于0，就决定偏差的符号。",
+          "题目指定平均值为标准。这个共同标准使七组偏差可以直接比较；不能为每组另换参照。"
+        ],
+        "related": [
+          {
+            "id": "related-ch1-measurement-exercise-ch1-deviation",
+            "label": "实际量与偏差课本第 3 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "求平均值时核对共有几组数据，并检查各组数据的单位一致。",
+          "记录偏差时，每组都与刚得到的同一个平均值比较，分别确定方向与差距；最后逐组对照原始数据。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-deviation",
+          "target": {
+            "highlight": "location-ch1-deviation",
+            "page": "page-10",
+            "title": "负的是偏差，不是质量"
+          },
+          "before": {
+            "fraction": 0.8216397224937112,
+            "panelScroll": 298,
+            "title": "习题1.1第6题",
+            "expanded": null,
+            "focus": "related-ch1-measurement-exercise-ch1-deviation",
+            "highlight": "location-ch1-measurement-exercise",
+            "back": false,
+            "methods": [
+              "method-ch1-measurement-exercise"
+            ]
+          },
+          "after": {
+            "fraction": 0.8216397224937112,
+            "panelScroll": 298,
+            "title": "习题1.1第6题",
+            "expanded": null,
+            "focus": "related-ch1-measurement-exercise-ch1-deviation",
+            "highlight": "location-ch1-measurement-exercise",
+            "back": false,
+            "methods": [
+              "method-ch1-measurement-exercise"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch1-exercise-1-1-8",
+      "page": 13,
+      "preview": {
+        "markerPage": "page-13",
+        "marker": "题目引导：习题1.1第8题",
+        "group": 1,
+        "tooltip": "密码记录每次怎样转，不是直接给出每次停在哪个刻度。点击标记展开解读",
+        "rect": {
+          "x": 1254.5,
+          "y": 344.0859375
+        },
+        "viewport": [
+          1772,
+          909
+        ]
+      },
+      "defaults": {
+        "title": "习题1.1第8题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "正负号记录相反旋转方向；每次转动量与当前刻度；连续移动。"
+        ],
+        "cautions": [
+          "只在开始开锁前对齐0，不是每次转动前都回到0；锁盘是环形，越过0时应沿原图刻度继续读，不能把负的转动记录直接当作锁盘上的刻度数。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-exercise-1-1-8-ch1-direction-exercise",
+            "label": "连续移动与最终位置课本第 5 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "两组密码都记录转动量。你会怎样保存每次转动后的状态，避免把下一次从0重新开始？可借助图示或纸盘核对。",
+          "第二组中，每个符号如何按题设解释？记录方向和格数时，还要分清转盘上的刻度与固定盘上的标记线。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-direction-exercise",
+          "target": {
+            "highlight": "location-ch1-direction-exercise",
+            "page": "page-12",
+            "title": "习题1.1第5题"
+          },
+          "before": {
+            "fraction": 0.2036114271065323,
+            "panelScroll": 0,
+            "title": "习题1.1第8题",
+            "expanded": null,
+            "focus": "related-ch1-exercise-1-1-8-ch1-direction-exercise",
+            "highlight": "location-ch1-exercise-1-1-8",
+            "back": false,
+            "methods": [
+              "method-ch1-exercise-1-1-8"
+            ]
+          },
+          "after": {
+            "fraction": 0.2036114271065323,
+            "panelScroll": 0,
+            "title": "习题1.1第8题",
+            "expanded": null,
+            "focus": "related-ch1-exercise-1-1-8-ch1-direction-exercise",
+            "highlight": "location-ch1-exercise-1-1-8",
+            "back": false,
+            "methods": [
+              "method-ch1-exercise-1-1-8"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch1-tolerance-question",
+      "page": 13,
+      "preview": {
+        "markerPage": "page-13",
+        "marker": "题目引导：阅读与思考：用正负数表示允许偏差",
+        "group": 1,
+        "tooltip": "允许偏差描述一个范围，标准值与偏差各起什么作用？点击标记展开解读",
+        "rect": {
+          "x": 1254.5,
+          "y": 472.6171875
+        },
+        "viewport": [
+          1772,
+          909
+        ]
+      },
+      "defaults": {
+        "title": "阅读与思考：用正负数表示允许偏差",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "标准值与实际值；正负允许偏差；允许区间。"
+        ],
+        "cautions": [
+          "±给出两侧限度，不是说物品同时有两个质量；不要只列两个端点而遗漏它们之间的允许值。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-tolerance-question-ch1-tolerance-range",
+            "label": "允许偏差的范围课本第 6 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "仿照直径说明，先识别质量规格中的标准和允许偏差，再用文字说明实际质量被允许落在什么范围。",
+          "另举例时，可选一个有明确规格的物品，写出标准、偏差和单位，并说明哪些实际值合格；自拟数据要明确标为举例。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-tolerance-range",
+          "target": {
+            "highlight": "location-ch1-tolerance-range",
+            "page": "page-13",
+            "title": "±记录允许的范围，不是一次测量值"
+          },
+          "before": {
+            "fraction": 0.8065627353275759,
+            "panelScroll": 0,
+            "title": "阅读与思考：用正负数表示允许偏差",
+            "expanded": null,
+            "focus": "related-ch1-tolerance-question-ch1-tolerance-range",
+            "highlight": "location-ch1-tolerance-question",
+            "back": false,
+            "methods": [
+              "method-ch1-tolerance-question"
+            ]
+          },
+          "after": {
+            "fraction": 0.8065627353275759,
+            "panelScroll": 0,
+            "title": "阅读与思考：用正负数表示允许偏差",
+            "expanded": null,
+            "focus": "related-ch1-tolerance-question-ch1-tolerance-range",
+            "highlight": "location-ch1-tolerance-question",
+            "back": false,
+            "methods": [
+              "method-ch1-tolerance-question"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch1-practice-p8-3",
+      "page": 15,
+      "preview": {
+        "markerPage": "page-15",
+        "marker": "题目引导：练习第3题",
+        "group": 1,
+        "tooltip": "四个空格的类别之间是什么关系？点击标记展开解读",
+        "rect": {
+          "x": 1254.5,
+          "y": 558.5234375
+        },
+        "viewport": [
+          1772,
+          909
+        ]
+      },
+      "defaults": {
+        "title": "练习第3题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "正负有理数及正负整数；百分数和循环小数的数值；分类计数。"
+        ],
+        "cautions": [
+          "百分号和循环点属于数的写法，不能看漏；不要把“正有理数个数”误读成“正分数个数”，也不要因一个数满足两项条件就漏记。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-practice-p8-3-ch1-classification-overlap",
+            "label": "先分类，再理解其中课本第 8 页"
+          },
+          {
+            "id": "related-ch1-practice-p8-3-ch1-decimal-rational",
+            "label": "循环小数课本第 7 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "给每个数分别标出符号与是否为整数，再据此统计四个空格要求的类别。",
+          "统计后检查“其中”的关系：每类整数是否都来自相应的有理数类别。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-classification-overlap",
+          "target": {
+            "highlight": "location-ch1-classification-overlap",
+            "page": "page-15",
+            "title": "“其中”说明两类数是什么关系？"
+          },
+          "before": {
+            "fraction": 0.4180218864659606,
+            "panelScroll": 0,
+            "title": "练习第3题",
+            "expanded": null,
+            "focus": "related-ch1-practice-p8-3-ch1-classification-overlap",
+            "highlight": "location-ch1-practice-p8-3",
+            "back": false,
+            "methods": [
+              "method-ch1-practice-p8-3"
+            ]
+          },
+          "after": {
+            "fraction": 0.4180218864659606,
+            "panelScroll": 0,
+            "title": "练习第3题",
+            "expanded": null,
+            "focus": "related-ch1-practice-p8-3-ch1-classification-overlap",
+            "highlight": "location-ch1-practice-p8-3",
+            "back": false,
+            "methods": [
+              "method-ch1-practice-p8-3"
+            ]
+          }
+        },
+        {
+          "locationId": "ch1-decimal-rational",
+          "target": {
+            "highlight": "location-ch1-decimal-rational",
+            "page": "page-14",
+            "title": "小数的写法，也可以表示有理数"
+          },
+          "before": {
+            "fraction": 0.4180218864659606,
+            "panelScroll": 0,
+            "title": "练习第3题",
+            "expanded": null,
+            "focus": "related-ch1-practice-p8-3-ch1-decimal-rational",
+            "highlight": "location-ch1-practice-p8-3",
+            "back": false,
+            "methods": [
+              "method-ch1-practice-p8-3"
+            ]
+          },
+          "after": {
+            "fraction": 0.4180218864659606,
+            "panelScroll": 0,
+            "title": "练习第3题",
+            "expanded": null,
+            "focus": "related-ch1-practice-p8-3-ch1-decimal-rational",
+            "highlight": "location-ch1-practice-p8-3",
+            "back": false,
+            "methods": [
+              "method-ch1-practice-p8-3"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch1-road-question",
+      "page": 15,
+      "preview": {
+        "markerPage": "page-15",
+        "marker": "题目引导：1.2.2问题：画图表示马路旁物体的位置",
+        "group": 1,
+        "tooltip": "道路简图需要保留哪些位置关系？点击标记展开解读",
+        "rect": {
+          "x": 1254.5,
+          "y": 784.28125
+        },
+        "viewport": [
+          1772,
+          909
+        ]
+      },
+      "defaults": {
+        "title": "1.2.2问题：画图表示马路旁物体的位置",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "一维位置模型；相对位置的方向与距离；统一比例。"
+        ],
+        "cautions": [
+          "不能把相邻物体间距与到汽车站的距离混读；图上不同位置必须使用同一比例，不必画出物体的外形。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-road-question-ch1-road-model",
+            "label": "道路图保留什么信息课本第 8 页"
+          },
+          {
+            "id": "related-ch1-road-question-ch1-number-line-unit",
+            "label": "统一单位长度课本第 10 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "图需要让别人辨认物体在参照点哪一侧、离它多远。你选择的图能同时表达这两条信息吗？",
+          "可对照题干核查同侧的两个物体：图中距离有没有使用同一尺度？"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-road-model",
+          "target": {
+            "highlight": "location-ch1-road-model",
+            "page": "page-15",
+            "title": "为什么一条直线就能表示这条路？"
+          },
+          "before": {
+            "fraction": 0.6548956146956564,
+            "panelScroll": 0,
+            "title": "1.2.2问题：画图表示马路旁物体的位置",
+            "expanded": null,
+            "focus": "related-ch1-road-question-ch1-road-model",
+            "highlight": "location-ch1-road-question",
+            "back": false,
+            "methods": [
+              "method-ch1-road-question"
+            ]
+          },
+          "after": {
+            "fraction": 0.6548956146956564,
+            "panelScroll": 0,
+            "title": "1.2.2问题：画图表示马路旁物体的位置",
+            "expanded": null,
+            "focus": "related-ch1-road-question-ch1-road-model",
+            "highlight": "location-ch1-road-question",
+            "back": false,
+            "methods": [
+              "method-ch1-road-question"
+            ]
+          }
+        },
+        {
+          "locationId": "ch1-number-line-unit",
+          "target": {
+            "highlight": "location-ch1-number-line-unit",
+            "page": "page-17",
+            "title": "单位长度能选，为什么不能一格长一格短？"
+          },
+          "before": {
+            "fraction": 0.6548956146956564,
+            "panelScroll": 0,
+            "title": "1.2.2问题：画图表示马路旁物体的位置",
+            "expanded": null,
+            "focus": "related-ch1-road-question-ch1-number-line-unit",
+            "highlight": "location-ch1-road-question",
+            "back": false,
+            "methods": [
+              "method-ch1-road-question"
+            ]
+          },
+          "after": {
+            "fraction": 0.6548956146956564,
+            "panelScroll": 0,
+            "title": "1.2.2问题：画图表示马路旁物体的位置",
+            "expanded": null,
+            "focus": "related-ch1-road-question-ch1-number-line-unit",
+            "highlight": "location-ch1-road-question",
+            "back": false,
+            "methods": [
+              "method-ch1-road-question"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch1-road-think",
+      "page": 16,
+      "preview": {
+        "markerPage": "page-16",
+        "marker": "题目引导：思考：用数表示相对位置",
+        "group": 1,
+        "tooltip": "每个位置要同时带上方向和距离信息，单独一个正距离还不够。点击标记展开解读",
+        "rect": {
+          "x": 1254.5,
+          "y": 358.8125
+        },
+        "viewport": [
+          1772,
+          909
+        ]
+      },
+      "defaults": {
+        "title": "思考：用数表示相对位置",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "位置的符号表示；基准点与距离尺度。"
+        ],
+        "cautions": [
+          "约定要对所有物体一致；不能把图中连接两点的距离数字直接当作某点的位置数。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-road-think-ch1-road-number",
+            "label": "位置数承载的信息课本第 9 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "如果只记到汽车站的距离，能区分两侧的物体吗？尝试用已有正负数表示法补足图中缺少的信息，并说明你的约定。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-road-number",
+          "target": {
+            "highlight": "location-ch1-road-number",
+            "page": "page-16",
+            "title": "一个位置数怎样同时带上方向和距离？"
+          },
+          "before": {
+            "fraction": 0.21888068190921764,
+            "panelScroll": 0,
+            "title": "思考：用数表示相对位置",
+            "expanded": null,
+            "focus": "related-ch1-road-think-ch1-road-number",
+            "highlight": "location-ch1-road-think",
+            "back": false,
+            "methods": [
+              "method-ch1-road-think"
+            ]
+          },
+          "after": {
+            "fraction": 0.21888068190921764,
+            "panelScroll": 0,
+            "title": "思考：用数表示相对位置",
+            "expanded": null,
+            "focus": "related-ch1-road-think-ch1-road-number",
+            "highlight": "location-ch1-road-think",
+            "back": false,
+            "methods": [
+              "method-ch1-road-think"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch1-thermometer-think",
+      "page": 16,
+      "preview": {
+        "markerPage": "page-16",
+        "marker": "题目引导：思考：温度计与数值直线的共同点",
+        "group": 1,
+        "tooltip": "比较两幅图时，看表示数的共同规则，不只看横着还是竖着。点击标记展开解读",
+        "rect": {
+          "x": 1254.5,
+          "y": 757.671875
+        },
+        "viewport": [
+          1772,
+          909
+        ]
+      },
+      "defaults": {
+        "title": "思考：温度计与数值直线的共同点",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "用直线上的点表示数；生活图示与数学表示之间的联系。"
+        ],
+        "cautions": [
+          "外形、摆放方向和生活用途不同，不妨碍它们采用相同的表示规则；不要把温度单位与道路长度单位说成相同。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-thermometer-think-ch1-number-line",
+            "label": "数轴的三个要素课本第 10 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "比较两图中某个数对应的位置：换一个数后，这种对应规则还成立吗？从图中找依据说明哪些表示规则相同。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-number-line",
+          "target": {
+            "highlight": "location-ch1-number-line",
+            "page": "page-17",
+            "title": "三个要素各管一件事"
+          },
+          "before": {
+            "fraction": 0.628026212487783,
+            "panelScroll": 0,
+            "title": "思考：温度计与数值直线的共同点",
+            "expanded": null,
+            "focus": "related-ch1-thermometer-think-ch1-number-line",
+            "highlight": "location-ch1-thermometer-think",
+            "back": false,
+            "methods": [
+              "method-ch1-thermometer-think"
+            ]
+          },
+          "after": {
+            "fraction": 0.628026212487783,
+            "panelScroll": 0,
+            "title": "思考：温度计与数值直线的共同点",
+            "expanded": null,
+            "focus": "related-ch1-thermometer-think-ch1-number-line",
+            "highlight": "location-ch1-thermometer-think",
+            "back": false,
+            "methods": [
+              "method-ch1-thermometer-think"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch1-example-1-2-2-guide",
+      "page": 17,
+      "preview": {
+        "markerPage": "page-17",
+        "marker": "题目引导：1.2例2：在数轴上表示数",
+        "group": 1,
+        "tooltip": "数轴上的位置需要哪些约定才能确定？点击标记展开解读",
+        "rect": {
+          "x": 1254.5,
+          "y": 769.0859375
+        },
+        "viewport": [
+          1772,
+          909
+        ]
+      },
+      "defaults": {
+        "title": "1.2例2：在数轴上表示数",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "数轴三要素；整数、分数与小数的点表示；0的位置。"
+        ],
+        "cautions": [
+          "不能把分数就近挪到整数刻度；同一条数轴只用一种尺度，点的标签要能与点一一对应。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-example-1-2-2-guide-ch1-number-line",
+            "label": "数轴三要素课本第 10 页"
+          },
+          {
+            "id": "related-ch1-example-1-2-2-guide-ch1-number-line-fraction",
+            "label": "分数点的位置课本第 10 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "例2中既有整数，也有非整数和0。哪些位置能直接利用整数刻度，哪些还需要把单位长度细分？",
+          "对照教材图，说明你如何核对一个点的位置与它所标的数一致；不凭点在纸上的大概位置判断。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-number-line",
+          "target": {
+            "highlight": "location-ch1-number-line",
+            "page": "page-17",
+            "title": "三个要素各管一件事"
+          },
+          "before": {
+            "fraction": 0.6385849101949914,
+            "panelScroll": 0,
+            "title": "1.2例2：在数轴上表示数",
+            "expanded": null,
+            "focus": "related-ch1-example-1-2-2-guide-ch1-number-line",
+            "highlight": "location-ch1-example-1-2-2-guide",
+            "back": false,
+            "methods": [
+              "method-ch1-example-1-2-2-guide"
+            ]
+          },
+          "after": {
+            "fraction": 0.6385849101949914,
+            "panelScroll": 0,
+            "title": "1.2例2：在数轴上表示数",
+            "expanded": null,
+            "focus": "related-ch1-example-1-2-2-guide-ch1-number-line",
+            "highlight": "location-ch1-example-1-2-2-guide",
+            "back": false,
+            "methods": [
+              "method-ch1-example-1-2-2-guide"
+            ]
+          }
+        },
+        {
+          "locationId": "ch1-number-line-fraction",
+          "target": {
+            "highlight": "location-ch1-number-line-fraction",
+            "page": "page-17",
+            "title": "分数对应的点，不必落在整数刻度上"
+          },
+          "before": {
+            "fraction": 0.6385849101949914,
+            "panelScroll": 0,
+            "title": "1.2例2：在数轴上表示数",
+            "expanded": null,
+            "focus": "related-ch1-example-1-2-2-guide-ch1-number-line-fraction",
+            "highlight": "location-ch1-example-1-2-2-guide",
+            "back": false,
+            "methods": [
+              "method-ch1-example-1-2-2-guide"
+            ]
+          },
+          "after": {
+            "fraction": 0.6385849101949914,
+            "panelScroll": 0,
+            "title": "1.2例2：在数轴上表示数",
+            "expanded": null,
+            "focus": "related-ch1-example-1-2-2-guide-ch1-number-line-fraction",
+            "highlight": "location-ch1-example-1-2-2-guide",
+            "back": false,
+            "methods": [
+              "method-ch1-example-1-2-2-guide"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch1-practice-p11-1",
+      "page": 18,
+      "preview": {
+        "markerPage": "page-18",
+        "marker": "题目引导：练习第1题",
+        "group": 1,
+        "tooltip": "字母是点的名称，不是数值。点击标记展开解读",
+        "rect": {
+          "x": 1254.5,
+          "y": 223.1796875
+        },
+        "viewport": [
+          1772,
+          909
+        ]
+      },
+      "defaults": {
+        "title": "练习第1题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "数轴读数；点的标签与所表示数的对应；非整数点。"
+        ],
+        "cautions": [
+          "题目列字母的顺序不等于图上从左到右的顺序；非整数刻度也有对应点，不能只读整数标签。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-practice-p11-1-ch1-number-line",
+            "label": "数轴的读数条件课本第 10 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "先核对原点、正方向和单位长度，再分别追踪每个字母所标的点，读取该点而非旁边点的刻度。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-number-line",
+          "target": {
+            "highlight": "location-ch1-number-line",
+            "page": "page-17",
+            "title": "三个要素各管一件事"
+          },
+          "before": {
+            "fraction": 0.07849326262156922,
+            "panelScroll": 0,
+            "title": "练习第1题",
+            "expanded": null,
+            "focus": "related-ch1-practice-p11-1-ch1-number-line",
+            "highlight": "location-ch1-practice-p11-1",
+            "back": false,
+            "methods": [
+              "method-ch1-practice-p11-1"
+            ]
+          },
+          "after": {
+            "fraction": 0.07849326262156922,
+            "panelScroll": 0,
+            "title": "练习第1题",
+            "expanded": null,
+            "focus": "related-ch1-practice-p11-1-ch1-number-line",
+            "highlight": "location-ch1-practice-p11-1",
+            "back": false,
+            "methods": [
+              "method-ch1-practice-p11-1"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch1-practice-p11-2",
+      "page": 18,
+      "preview": {
+        "markerPage": "page-18",
+        "marker": "题目引导：练习第2题",
+        "group": 1,
+        "tooltip": "整数、分数与小数要在同一条数轴上表示。点击标记展开解读",
+        "rect": {
+          "x": 1254.5,
+          "y": 325.5703125
+        },
+        "viewport": [
+          1772,
+          909
+        ]
+      },
+      "defaults": {
+        "title": "练习第2题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "数轴三要素；分数、小数与整数的点表示。"
+        ],
+        "cautions": [
+          "负分数的位置由负方向和正的距离共同确定；不要把所有分数都放到0与1之间，或每标一个数就另换尺度。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-practice-p11-2-ch1-number-line-unit",
+            "label": "单位长度的一致性课本第 10 页"
+          },
+          {
+            "id": "related-ch1-practice-p11-2-ch1-number-line-distance",
+            "label": "符号和距离课本第 10 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "所给分数和小数在整数刻度之间的哪一类位置？怎样选单位长度，能让这些位置清楚可辨？",
+          "画好后任选一个负分数，用它所在的方向和到原点的距离核对；其余点仍需按原列表自行检查。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-number-line-unit",
+          "target": {
+            "highlight": "location-ch1-number-line-unit",
+            "page": "page-17",
+            "title": "单位长度能选，为什么不能一格长一格短？"
+          },
+          "before": {
+            "fraction": 0.18359957060227838,
+            "panelScroll": 0,
+            "title": "练习第2题",
+            "expanded": null,
+            "focus": "related-ch1-practice-p11-2-ch1-number-line-unit",
+            "highlight": "location-ch1-practice-p11-2",
+            "back": false,
+            "methods": [
+              "method-ch1-practice-p11-2"
+            ]
+          },
+          "after": {
+            "fraction": 0.18359957060227838,
+            "panelScroll": 0,
+            "title": "练习第2题",
+            "expanded": null,
+            "focus": "related-ch1-practice-p11-2-ch1-number-line-unit",
+            "highlight": "location-ch1-practice-p11-2",
+            "back": false,
+            "methods": [
+              "method-ch1-practice-p11-2"
+            ]
+          }
+        },
+        {
+          "locationId": "ch1-number-line-distance",
+          "target": {
+            "highlight": "location-ch1-number-line-distance",
+            "page": "page-17",
+            "title": "表示−a的点，距离为什么仍是a？"
+          },
+          "before": {
+            "fraction": 0.18359957060227838,
+            "panelScroll": 0,
+            "title": "练习第2题",
+            "expanded": null,
+            "focus": "related-ch1-practice-p11-2-ch1-number-line-distance",
+            "highlight": "location-ch1-practice-p11-2",
+            "back": false,
+            "methods": [
+              "method-ch1-practice-p11-2"
+            ]
+          },
+          "after": {
+            "fraction": 0.18359957060227838,
+            "panelScroll": 0,
+            "title": "练习第2题",
+            "expanded": null,
+            "focus": "related-ch1-practice-p11-2-ch1-number-line-distance",
+            "highlight": "location-ch1-practice-p11-2",
+            "back": false,
+            "methods": [
+              "method-ch1-practice-p11-2"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch1-practice-p11-3",
+      "page": 18,
+      "preview": {
+        "markerPage": "page-18",
+        "marker": "题目引导：练习第3题",
+        "group": 1,
+        "tooltip": "“包括这两个点”限制了本题的计数范围。点击标记展开解读",
+        "rect": {
+          "x": 1254.5,
+          "y": 402.6171875
+        },
+        "viewport": [
+          1772,
+          909
+        ]
+      },
+      "defaults": {
+        "title": "练习第3题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "整数与负整数；数轴上的区间；包含端点的条件。"
+        ],
+        "cautions": [
+          "题目数的是点，不是单位长度小段；三个空格分别问总个数、具体整数及负整数个数，要区分。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-practice-p11-3-ch1-number-line",
+            "label": "数轴表示数课本第 10 页"
+          },
+          {
+            "id": "related-ch1-practice-p11-3-ch1-zero-boundary",
+            "label": "0的符号归属课本第 2 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "三个空格所数的对象分别是什么？可借助整数点列表或数轴检查，避免把点的个数当成单位长度段数。",
+          "你采用的记录怎样表明端点已计入、哪些点属于负整数？"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-number-line",
+          "target": {
+            "highlight": "location-ch1-number-line",
+            "page": "page-17",
+            "title": "三个要素各管一件事"
+          },
+          "before": {
+            "fraction": 0.26255748001217694,
+            "panelScroll": 0,
+            "title": "练习第3题",
+            "expanded": null,
+            "focus": "related-ch1-practice-p11-3-ch1-number-line",
+            "highlight": "location-ch1-practice-p11-3",
+            "back": false,
+            "methods": [
+              "method-ch1-practice-p11-3"
+            ]
+          },
+          "after": {
+            "fraction": 0.26255748001217694,
+            "panelScroll": 0,
+            "title": "练习第3题",
+            "expanded": null,
+            "focus": "related-ch1-practice-p11-3-ch1-number-line",
+            "highlight": "location-ch1-practice-p11-3",
+            "back": false,
+            "methods": [
+              "method-ch1-practice-p11-3"
+            ]
+          }
+        },
+        {
+          "locationId": "ch1-zero-boundary",
+          "target": {
+            "highlight": "location-ch1-zero-boundary",
+            "page": "page-9",
+            "title": "为什么0要单独留下？"
+          },
+          "before": {
+            "fraction": 0.26255748001217694,
+            "panelScroll": 0,
+            "title": "练习第3题",
+            "expanded": null,
+            "focus": "related-ch1-practice-p11-3-ch1-zero-boundary",
+            "highlight": "location-ch1-practice-p11-3",
+            "back": false,
+            "methods": [
+              "method-ch1-practice-p11-3"
+            ]
+          },
+          "after": {
+            "fraction": 0.26255748001217694,
+            "panelScroll": 0,
+            "title": "练习第3题",
+            "expanded": null,
+            "focus": "related-ch1-practice-p11-3-ch1-zero-boundary",
+            "highlight": "location-ch1-practice-p11-3",
+            "back": false,
+            "methods": [
+              "method-ch1-practice-p11-3"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch1-number-line-move",
+      "page": 18,
+      "preview": {
+        "markerPage": "page-18",
+        "marker": "题目引导：练习第4题",
+        "group": 1,
+        "tooltip": "给定距离能否唯一确定终点？点击标记展开解读",
+        "rect": {
+          "x": 1254.5,
+          "y": 457.2265625
+        },
+        "viewport": [
+          1772,
+          909
+        ]
+      },
+      "defaults": {
+        "title": "练习第4题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "数轴上的移动；起点数值与移动距离；方向未定时的分类。"
+        ],
+        "cautions": [
+          "正的距离值不等于已指定正方向；4个单位长度说的是从A出发走多远，不是终点必须表示4。"
+        ],
+        "paragraphs": [
+          "题目给了出发点和移动的单位数，但“向某一方向”没有指定向正方向还是负方向。距离只说明走多远，本身不会替你选定方向。",
+          "移动的单位数是在比较终点与出发点的距离，不是终点所表示的数。出发点不在原点时，这两个数尤其容易混淆。"
+        ],
+        "related": [
+          {
+            "id": "related-ch1-number-line-move-ch1-number-line-distance",
+            "label": "位置数与距离课本第 10 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "怎样说明你找到的终点都符合题意，且没有遗漏？可以借助数轴，用起点、方向和距离三个条件检查自己的判断。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-number-line-distance",
+          "target": {
+            "highlight": "location-ch1-number-line-distance",
+            "page": "page-17",
+            "title": "表示−a的点，距离为什么仍是a？"
+          },
+          "before": {
+            "fraction": 0.3184432730360662,
+            "panelScroll": 35.5,
+            "title": "练习第4题",
+            "expanded": null,
+            "focus": "related-ch1-number-line-move-ch1-number-line-distance",
+            "highlight": "location-ch1-number-line-move",
+            "back": false,
+            "methods": [
+              "method-ch1-number-line-move"
+            ]
+          },
+          "after": {
+            "fraction": 0.3184432730360662,
+            "panelScroll": 35.5,
+            "title": "练习第4题",
+            "expanded": null,
+            "focus": "related-ch1-number-line-move-ch1-number-line-distance",
+            "highlight": "location-ch1-number-line-move",
+            "back": false,
+            "methods": [
+              "method-ch1-number-line-move"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch1-opposite-inquiry",
+      "page": 18,
+      "preview": {
+        "markerPage": "page-18",
+        "marker": "题目引导：1.2.3探究：与原点等距的点",
+        "group": 1,
+        "tooltip": "相同的距离能确定哪些位置关系？点击标记展开解读",
+        "rect": {
+          "x": 1254.5,
+          "y": 624.46875
+        },
+        "viewport": [
+          1772,
+          909
+        ]
+      },
+      "defaults": {
+        "title": "1.2.3探究：与原点等距的点",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "数轴中的方向与距离；整数和分数位置；通过对照观察数的关系。"
+        ],
+        "cautions": [
+          "不能只在正半轴找点；两个数一正一负还不足以说明本探究中的关系，要核对它们到原点是否同样远。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-opposite-inquiry-ch1-number-line-distance",
+            "label": "方向与距离分别说明什么课本第 10 页"
+          },
+          {
+            "id": "related-ch1-opposite-inquiry-ch1-number-line-fraction",
+            "label": "半单位的定位课本第 10 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "数轴上满足一个距离条件的点是否找全，可以用什么特征检查？分别针对距离3和1/2作观察。",
+          "对照两次观察，用数的写法和图上位置说明你的发现；规律应由观察支持，不只凭一正一负猜测。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-number-line-distance",
+          "target": {
+            "highlight": "location-ch1-number-line-distance",
+            "page": "page-17",
+            "title": "表示−a的点，距离为什么仍是a？"
+          },
+          "before": {
+            "fraction": 0.49020236168746895,
+            "panelScroll": 0,
+            "title": "1.2.3探究：与原点等距的点",
+            "expanded": null,
+            "focus": "related-ch1-opposite-inquiry-ch1-number-line-distance",
+            "highlight": "location-ch1-opposite-inquiry",
+            "back": false,
+            "methods": [
+              "method-ch1-opposite-inquiry"
+            ]
+          },
+          "after": {
+            "fraction": 0.49020236168746895,
+            "panelScroll": 0,
+            "title": "1.2.3探究：与原点等距的点",
+            "expanded": null,
+            "focus": "related-ch1-opposite-inquiry-ch1-number-line-distance",
+            "highlight": "location-ch1-opposite-inquiry",
+            "back": false,
+            "methods": [
+              "method-ch1-opposite-inquiry"
+            ]
+          }
+        },
+        {
+          "locationId": "ch1-number-line-fraction",
+          "target": {
+            "highlight": "location-ch1-number-line-fraction",
+            "page": "page-17",
+            "title": "分数对应的点，不必落在整数刻度上"
+          },
+          "before": {
+            "fraction": 0.49020236168746895,
+            "panelScroll": 0,
+            "title": "1.2.3探究：与原点等距的点",
+            "expanded": null,
+            "focus": "related-ch1-opposite-inquiry-ch1-number-line-fraction",
+            "highlight": "location-ch1-opposite-inquiry",
+            "back": false,
+            "methods": [
+              "method-ch1-opposite-inquiry"
+            ]
+          },
+          "after": {
+            "fraction": 0.49020236168746895,
+            "panelScroll": 0,
+            "title": "1.2.3探究：与原点等距的点",
+            "expanded": null,
+            "focus": "related-ch1-opposite-inquiry-ch1-number-line-fraction",
+            "highlight": "location-ch1-opposite-inquiry",
+            "back": false,
+            "methods": [
+              "method-ch1-opposite-inquiry"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-opposite-sign",
+      "page": 19,
+      "preview": {
+        "markerPage": "page-19",
+        "marker": "题目引导：相反数旁注思考：−a一定是负数吗",
+        "group": 1,
+        "tooltip": "字母取值没有确定时，先检查负号表示什么。点击标记展开解读",
+        "rect": {
+          "x": 1264.84375,
+          "y": 349.640625
+        },
+        "viewport": [
+          1772,
+          909
+        ]
+      },
+      "defaults": {
+        "title": "相反数旁注思考：−a一定是负数吗",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "相反数的符号表示",
+          "正数、负数与0的分类"
+        ],
+        "cautions": [
+          "“一定”要求对所有允许的a成立，不能只取一个正数就下结论。",
+          "要区分取相反数这个操作与所得数的正负；判断它们分别需要哪些信息？"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-q-opposite-sign-ch1-opposite-sign",
+            "label": "负号表示取相反数课本第 12 页"
+          },
+          {
+            "id": "related-ch1-q-opposite-sign-ch1-opposite-geometry",
+            "label": "相反数在数轴上的位置课本第 11 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "把−a读作“a的相反数”，再分别考虑a位于原点右侧、左侧和原点时会发生什么。",
+          "可以先用不同类别的数试验，再用数轴位置解释自己的判断。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-opposite-sign",
+          "target": {
+            "highlight": "location-ch1-opposite-sign",
+            "page": "page-19",
+            "title": "−a 中的“−”表示什么？"
+          },
+          "before": {
+            "fraction": 0.19928540528415553,
+            "panelScroll": 0,
+            "title": "相反数旁注思考：−a一定是负数吗",
+            "expanded": null,
+            "focus": "related-ch1-q-opposite-sign-ch1-opposite-sign",
+            "highlight": "location-ch1-q-opposite-sign",
+            "back": false,
+            "methods": [
+              "method-ch1-q-opposite-sign"
+            ]
+          },
+          "after": {
+            "fraction": 0.19928540528415553,
+            "panelScroll": 0,
+            "title": "相反数旁注思考：−a一定是负数吗",
+            "expanded": null,
+            "focus": "related-ch1-q-opposite-sign-ch1-opposite-sign",
+            "highlight": "location-ch1-q-opposite-sign",
+            "back": false,
+            "methods": [
+              "method-ch1-q-opposite-sign"
+            ]
+          }
+        },
+        {
+          "locationId": "ch1-opposite-geometry",
+          "target": {
+            "highlight": "location-ch1-opposite-geometry",
+            "page": "page-18",
+            "title": "“距离相等的两个点”为什么要限定a为正数？"
+          },
+          "before": {
+            "fraction": 0.19928540528415553,
+            "panelScroll": 24,
+            "title": "相反数旁注思考：−a一定是负数吗",
+            "expanded": null,
+            "focus": "related-ch1-q-opposite-sign-ch1-opposite-geometry",
+            "highlight": "location-ch1-q-opposite-sign",
+            "back": false,
+            "methods": [
+              "method-ch1-q-opposite-sign"
+            ]
+          },
+          "after": {
+            "fraction": 0.19928540528415553,
+            "panelScroll": 24,
+            "title": "相反数旁注思考：−a一定是负数吗",
+            "expanded": null,
+            "focus": "related-ch1-q-opposite-sign-ch1-opposite-geometry",
+            "highlight": "location-ch1-q-opposite-sign",
+            "back": false,
+            "methods": [
+              "method-ch1-q-opposite-sign"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-opposite-practice-1",
+      "page": 19,
+      "preview": {
+        "markerPage": "page-19",
+        "marker": "题目引导：1.2.3练习第1题",
+        "group": 1,
+        "tooltip": "逐句检查是否说清对象、配对条件和取值范围。点击标记展开解读",
+        "rect": {
+          "x": 1264.84375,
+          "y": 730.9453125
+        },
+        "viewport": [
+          1772,
+          909
+        ]
+      },
+      "defaults": {
+        "title": "1.2.3练习第1题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "相反数是两个数之间的关系",
+          "相反数的符号与距离条件"
+        ],
+        "cautions": [
+          "判断含“任何”“正数和负数”等一般表述时，要检查全部允许的情况。",
+          "不成立的句子可用反例或缺少的条件说明，不能只凭读起来熟悉。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-q-opposite-practice-1-ch1-opposite-pair",
+            "label": "相反数的定义课本第 12 页"
+          },
+          {
+            "id": "related-ch1-q-opposite-practice-1-ch1-opposite-geometry",
+            "label": "相反数在数轴上的位置课本第 11 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "六句话分别是在说一个数的类别、两个数的关系，还是对所有数作断言？按句子的对象选择定义核对。",
+          "若认为某句话不成立，说明缺少的条件或给出反例；若认为成立，说明为什么允许的情况都符合定义。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-opposite-pair",
+          "target": {
+            "highlight": "location-ch1-opposite-pair",
+            "page": "page-19",
+            "title": "相反数说的是两个数的关系"
+          },
+          "before": {
+            "fraction": 0.6012529440981846,
+            "panelScroll": 0,
+            "title": "1.2.3练习第1题",
+            "expanded": null,
+            "focus": "related-ch1-q-opposite-practice-1-ch1-opposite-pair",
+            "highlight": "location-ch1-q-opposite-practice-1",
+            "back": false,
+            "methods": [
+              "method-ch1-q-opposite-practice-1"
+            ]
+          },
+          "after": {
+            "fraction": 0.6012529440981846,
+            "panelScroll": 0,
+            "title": "1.2.3练习第1题",
+            "expanded": null,
+            "focus": "related-ch1-q-opposite-practice-1-ch1-opposite-pair",
+            "highlight": "location-ch1-q-opposite-practice-1",
+            "back": false,
+            "methods": [
+              "method-ch1-q-opposite-practice-1"
+            ]
+          }
+        },
+        {
+          "locationId": "ch1-opposite-geometry",
+          "target": {
+            "highlight": "location-ch1-opposite-geometry",
+            "page": "page-18",
+            "title": "“距离相等的两个点”为什么要限定a为正数？"
+          },
+          "before": {
+            "fraction": 0.6012529440981846,
+            "panelScroll": 24,
+            "title": "1.2.3练习第1题",
+            "expanded": null,
+            "focus": "related-ch1-q-opposite-practice-1-ch1-opposite-geometry",
+            "highlight": "location-ch1-q-opposite-practice-1",
+            "back": false,
+            "methods": [
+              "method-ch1-q-opposite-practice-1"
+            ]
+          },
+          "after": {
+            "fraction": 0.6012529440981846,
+            "panelScroll": 24,
+            "title": "1.2.3练习第1题",
+            "expanded": null,
+            "focus": "related-ch1-q-opposite-practice-1-ch1-opposite-geometry",
+            "highlight": "location-ch1-q-opposite-practice-1",
+            "back": false,
+            "methods": [
+              "method-ch1-q-opposite-practice-1"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-opposite-practice-2",
+      "page": 19,
+      "preview": {
+        "markerPage": "page-19",
+        "marker": "题目引导：1.2.3练习第2题",
+        "group": 1,
+        "tooltip": "整数、分数、小数都可以按相反数定义检查。点击标记展开解读",
+        "rect": {
+          "x": 1264.84375,
+          "y": 842.609375
+        },
+        "viewport": [
+          1772,
+          909
+        ]
+      },
+      "defaults": {
+        "title": "1.2.3练习第2题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "相反数的定义",
+          "分数、小数与整数的符号"
+        ],
+        "cautions": [
+          "分母、数字大小和小数位不因求相反数而改变。",
+          "正数省略正号后仍是正数；不能因没有符号而漏掉处理。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-q-opposite-practice-2-ch1-opposite-pair",
+            "label": "相反数的定义课本第 12 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "相反数定义对一对数提出什么要求？对每个给定数，说明你写出的数满足了哪些条件。",
+          "可任选一对用数轴复核，再检查八个数是否均有对应记录。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-opposite-pair",
+          "target": {
+            "highlight": "location-ch1-opposite-pair",
+            "page": "page-19",
+            "title": "相反数说的是两个数的关系"
+          },
+          "before": {
+            "fraction": 0.7161008123307644,
+            "panelScroll": 0,
+            "title": "1.2.3练习第2题",
+            "expanded": null,
+            "focus": "related-ch1-q-opposite-practice-2-ch1-opposite-pair",
+            "highlight": "location-ch1-q-opposite-practice-2",
+            "back": false,
+            "methods": [
+              "method-ch1-q-opposite-practice-2"
+            ]
+          },
+          "after": {
+            "fraction": 0.7161008123307644,
+            "panelScroll": 0,
+            "title": "1.2.3练习第2题",
+            "expanded": null,
+            "focus": "related-ch1-q-opposite-practice-2-ch1-opposite-pair",
+            "highlight": "location-ch1-q-opposite-practice-2",
+            "back": false,
+            "methods": [
+              "method-ch1-q-opposite-practice-2"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-opposite-practice-3",
+      "page": 19,
+      "preview": {
+        "markerPage": "page-19",
+        "marker": "选择此处的2条解读",
+        "group": 2,
+        "tooltip": null,
+        "rect": {
+          "x": 1264.84375,
+          "y": 472.7109375
+        },
+        "viewport": [
+          1772,
+          909
+        ]
+      },
+      "defaults": {
+        "title": "1.2.3练习第3题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "数与数轴上的点的对应",
+          "相反数关于原点的位置关系"
+        ],
+        "cautions": [
+          "题目问的是点的位置，作答时需要说明它相对原点在哪里。",
+          "a尚未给定，不能先假定a是正数或负数。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-q-opposite-practice-3-ch1-opposite-geometry",
+            "label": "相反数在数轴上的位置课本第 11 页"
+          },
+          {
+            "id": "related-ch1-q-opposite-practice-3-ch1-number-line",
+            "label": "数轴的三要素课本第 10 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "分别想象a的点与−a的点应怎样对应，再检查a=−a要求这两个点具有什么关系。",
+          "用一个满足两种位置要求的草图说明判断，而不只尝试几个数。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-opposite-geometry",
+          "target": {
+            "highlight": "location-ch1-opposite-geometry",
+            "page": "page-18",
+            "title": "“距离相等的两个点”为什么要限定a为正数？"
+          },
+          "before": {
+            "fraction": 0.7919824395558618,
+            "panelScroll": 0,
+            "title": "此处解读",
+            "expanded": "choice-ch1-q-opposite-practice-3",
+            "focus": "related-ch1-q-opposite-practice-3-ch1-opposite-geometry",
+            "highlight": "location-ch1-q-opposite-practice-3",
+            "back": false,
+            "methods": [
+              "method-ch1-q-opposite-practice-3"
+            ]
+          },
+          "after": {
+            "fraction": 0.7919824395558618,
+            "panelScroll": 0,
+            "title": "此处解读",
+            "expanded": "choice-ch1-q-opposite-practice-3",
+            "focus": "related-ch1-q-opposite-practice-3-ch1-opposite-geometry",
+            "highlight": "location-ch1-q-opposite-practice-3",
+            "back": false,
+            "methods": [
+              "method-ch1-q-opposite-practice-3"
+            ]
+          }
+        },
+        {
+          "locationId": "ch1-number-line",
+          "target": {
+            "highlight": "location-ch1-number-line",
+            "page": "page-17",
+            "title": "三个要素各管一件事"
+          },
+          "before": {
+            "fraction": 0.7919824395558618,
+            "panelScroll": 350.5,
+            "title": "此处解读",
+            "expanded": "choice-ch1-q-opposite-practice-3",
+            "focus": "related-ch1-q-opposite-practice-3-ch1-number-line",
+            "highlight": "location-ch1-q-opposite-practice-3",
+            "back": false,
+            "methods": [
+              "method-ch1-q-opposite-practice-3"
+            ]
+          },
+          "after": {
+            "fraction": 0.7919824395558618,
+            "panelScroll": 350.5,
+            "title": "此处解读",
+            "expanded": "choice-ch1-q-opposite-practice-3",
+            "focus": "related-ch1-q-opposite-practice-3-ch1-number-line",
+            "highlight": "location-ch1-q-opposite-practice-3",
+            "back": false,
+            "methods": [
+              "method-ch1-q-opposite-practice-3"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-opposite-practice-4",
+      "page": 19,
+      "preview": {
+        "markerPage": "page-19",
+        "marker": "选择此处的2条解读",
+        "group": 2,
+        "tooltip": null,
+        "rect": {
+          "x": 1264.84375,
+          "y": 472.7109375
+        },
+        "viewport": [
+          1772,
+          909
+        ]
+      },
+      "defaults": {
+        "title": "1.2.3练习第4题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "负号表示取相反数",
+          "括号内外符号的作用范围"
+        ],
+        "cautions": [
+          "不要把最左边的负号直接当成结果的符号。",
+          "化简时保留原数的大小部分和小数精度。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-q-opposite-practice-4-ch1-opposite-sign",
+            "label": "负号表示取相反数课本第 12 页"
+          },
+          {
+            "id": "related-ch1-q-opposite-practice-4-ch1-opposite-pair",
+            "label": "相反数的定义课本第 12 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "对四个式子分别确认括号内完整的数，再说明最外层负号对它做什么。",
+          "按原数与结果是否互为相反数检查，不必把整数与小数分成两套规则。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-opposite-sign",
+          "target": {
+            "highlight": "location-ch1-opposite-sign",
+            "page": "page-19",
+            "title": "−a 中的“−”表示什么？"
+          },
+          "before": {
+            "fraction": 0.8222325477064073,
+            "panelScroll": 0,
+            "title": "此处解读",
+            "expanded": "choice-ch1-q-opposite-practice-4",
+            "focus": "related-ch1-q-opposite-practice-4-ch1-opposite-sign",
+            "highlight": "location-ch1-q-opposite-practice-4",
+            "back": false,
+            "methods": [
+              "method-ch1-q-opposite-practice-4"
+            ]
+          },
+          "after": {
+            "fraction": 0.8222325477064073,
+            "panelScroll": 0,
+            "title": "此处解读",
+            "expanded": "choice-ch1-q-opposite-practice-4",
+            "focus": "related-ch1-q-opposite-practice-4-ch1-opposite-sign",
+            "highlight": "location-ch1-q-opposite-practice-4",
+            "back": false,
+            "methods": [
+              "method-ch1-q-opposite-practice-4"
+            ]
+          }
+        },
+        {
+          "locationId": "ch1-opposite-pair",
+          "target": {
+            "highlight": "location-ch1-opposite-pair",
+            "page": "page-19",
+            "title": "相反数说的是两个数的关系"
+          },
+          "before": {
+            "fraction": 0.8222325477064073,
+            "panelScroll": 321.5,
+            "title": "此处解读",
+            "expanded": "choice-ch1-q-opposite-practice-4",
+            "focus": "related-ch1-q-opposite-practice-4-ch1-opposite-pair",
+            "highlight": "location-ch1-q-opposite-practice-4",
+            "back": false,
+            "methods": [
+              "method-ch1-q-opposite-practice-4"
+            ]
+          },
+          "after": {
+            "fraction": 0.8222325477064073,
+            "panelScroll": 321.5,
+            "title": "此处解读",
+            "expanded": "choice-ch1-q-opposite-practice-4",
+            "focus": "related-ch1-q-opposite-practice-4-ch1-opposite-pair",
+            "highlight": "location-ch1-q-opposite-practice-4",
+            "back": false,
+            "methods": [
+              "method-ch1-q-opposite-practice-4"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch1-q-absolute-intro",
+      "page": 20,
+      "preview": {
+        "markerPage": "page-20",
+        "marker": "题目引导：绝对值引入问题",
+        "group": 1,
+        "tooltip": "比较一对相反数在数轴上相同与不同的信息。点击标记展开解读",
+        "rect": {
+          "x": 1264.84375,
+          "y": 215.7578125
+        },
+        "viewport": [
+          1772,
+          909
+        ]
+      },
+      "defaults": {
+        "title": "绝对值引入问题",
+        "collapsed": "false",
+        "methodHidden": true,
+        "knowledge": [
+          "相反数的数值特征与数轴位置之间的联系。"
+        ],
+        "cautions": [
+          "原文已限定“除0以外”，观察时要保留这一条件。",
+          "解释时要把所选的图上特征与“相同部分”对应起来，不能只重复两个数互为相反数。"
+        ],
+        "paragraphs": [],
+        "related": [
+          {
+            "id": "related-ch1-q-absolute-intro-ch1-opposite-geometry",
+            "label": "相反数在数轴上的位置课本第 11 页"
+          }
+        ]
+      },
+      "method": {
+        "visible": true,
+        "text": [
+          "原文问的是“相同部分”在图中的意义。你选择的图上特征能解释这部分，而又区别于两数符号不同的信息吗？借助相反数的位置关系说明。"
+        ]
+      },
+      "links": [
+        {
+          "locationId": "ch1-opposite-geometry",
+          "target": {
+            "highlight": "location-ch1-opposite-geometry",
+            "page": "page-18",
+            "title": "“距离相等的两个点”为什么要限定a为正数？"
+          },
+          "before": {
+            "fraction": 0.060131703331036804,
+            "panelScroll": 0,
+            "title": "绝对值引入问题",
+            "expanded": null,
+            "focus": "related-ch1-q-absolute-intro-ch1-opposite-geometry",
+            "highlight": "location-ch1-q-absolute-intro",
+            "back": false,
+            "methods": [
+              "method-ch1-q-absolute-intro"
+            ]
+          },
+          "after": {
+            "fraction": 0.060131703331036804,
+            "panelScroll": 0,
+            "title": "绝对值引入问题",
+            "expanded": null,
+            "focus": "related-ch1-q-absolute-intro-ch1-opposite-geometry",
+            "highlight": "location-ch1-q-absolute-intro",
+            "back": false,
+            "methods": [
+              "method-ch1-q-absolute-intro"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "completedCount": 25,
+  "relatedReturnCount": 37,
+  "sourceValuesUnchanged": true
+}

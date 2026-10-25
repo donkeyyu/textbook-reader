@@ -1,0 +1,5 @@
+{
+  "scope": "运算理由样本当前桌面视口",
+  "status": "failed",
+  "error": "CDP request timed out: Page.captureScreenshot"
+}

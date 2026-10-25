@@ -1,0 +1,66 @@
+{
+  "checkedAt": "2026-10-25T04:49:44.793Z",
+  "beforeVersion": {
+    "src/reader/Reader.tsx": "b837fbdcbd73c52ce35225ee57646f7e41087575e2ebb2a63630ddfaf1e9fb2c",
+    "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+    "src/reader/session.ts": "90b47510bc2db2f5bca45880f17aa720d78be323b01a6cf71e76264072191091",
+    "src/reader/reading-record.ts": "a66bf4630718d1ddef4554b60cd63397791f02177a1746d706e52860a92f8d49",
+    "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315",
+    "src/textbook/catalog.ts": "751ffccfe183cb905b076c6d06663a378ca3c3e4758fc2efcf6baa2944381388",
+    "src/textbook/book.json": "77d74c7b49e1474cbf736d2455260f9537b03e24667289bbc376d557a4d8a30b",
+    "content/grade-7-volume-1/chapter-1.json": "f2e9697541ba7d5d2096cbbf76984a1a1b51e507661487c8118d71cde06953d0",
+    "content/grade-7-volume-1/locations.json": "fd94dcb7987a51f6f556555352bb3e493f6a0c09ff7e3f6e9a866cc0f39864a4",
+    "scripts/check-related-return.mjs": "28ed68145a5677cfea02595bab6123a39e2f9ca9f42055cd3f41827c26c41076"
+  },
+  "afterVersion": {
+    "src/reader/Reader.tsx": "b837fbdcbd73c52ce35225ee57646f7e41087575e2ebb2a63630ddfaf1e9fb2c",
+    "src/reader/Supplement.tsx": "8c416e03b61e8501df6044dcf660f68e8c4cc25ae29bdb84a442f2ae401a0d8a",
+    "src/reader/session.ts": "90b47510bc2db2f5bca45880f17aa720d78be323b01a6cf71e76264072191091",
+    "src/reader/reading-record.ts": "a66bf4630718d1ddef4554b60cd63397791f02177a1746d706e52860a92f8d49",
+    "src/style.css": "8e98772eb614ed40e9d6603d302ca5b514035f21a7777eed550ca35b22e73315",
+    "src/textbook/catalog.ts": "751ffccfe183cb905b076c6d06663a378ca3c3e4758fc2efcf6baa2944381388",
+    "src/textbook/book.json": "77d74c7b49e1474cbf736d2455260f9537b03e24667289bbc376d557a4d8a30b",
+    "content/grade-7-volume-1/chapter-1.json": "f2e9697541ba7d5d2096cbbf76984a1a1b51e507661487c8118d71cde06953d0",
+    "content/grade-7-volume-1/locations.json": "fd94dcb7987a51f6f556555352bb3e493f6a0c09ff7e3f6e9a866cc0f39864a4",
+    "scripts/check-related-return.mjs": "28ed68145a5677cfea02595bab6123a39e2f9ca9f42055cd3f41827c26c41076"
+  },
+  "results": [
+    {
+      "id": "ch1-practice-p3-1",
+      "page": 10,
+      "preview": {
+        "text": "分数、小数也有正负，外形不决定分类。\n\n点击标记展开解读",
+        "expectedPresent": true,
+        "onPage": "page-10",
+        "markerOnPage": true,
+        "highlight": true,
+        "highlightMatches": true
+      },
+      "defaults": {
+        "title": "练习第1题",
+        "titleMatches": true,
+        "collapsed": true,
+        "knowledge": true,
+        "cautions": true,
+        "paragraphs": true,
+        "methodHidden": true,
+        "related": true
+      },
+      "expanded": true,
+      "links": [
+        {
+          "locationId": "ch1-positive-negative",
+          "page": 9,
+          "printedPage": "2",
+          "returned": true
+        },
+        {
+          "locationId": "ch1-zero-boundary",
+          "page": 9,
+          "printedPage": "2",
+          "returned": true
+        }
+      ]
+    }
+  ]
+}

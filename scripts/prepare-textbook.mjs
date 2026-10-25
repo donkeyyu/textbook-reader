@@ -15,10 +15,29 @@ const digest = (data) => createHash("sha256").update(data).digest("hex");
 const json = (data) => JSON.stringify(data, null, 2) + "\n";
 const run = promisify(execFile);
 const manifest = JSON.parse(await readFile(join(indexDirectory, "manifest.json"), "utf8"));
+const pageMapSource = "materials/indexes/人教版-数学-七年级上册/index.jsonl";
+const indexText = await readFile(join(root, pageMapSource), "utf8");
+const verification = JSON.parse(await readFile(join(indexDirectory, "verification.json"), "utf8"));
+const pageMap = indexText.trim().split(/\r?\n/).map((line) => JSON.parse(line));
 if (digest(await readFile(join(root, source))) !== expectedSha256 ||
     manifest.document_sha256 !== expectedSha256 || manifest.page_count !== pageCount ||
-    manifest.pages.length !== pageCount) {
+    manifest.pages.length !== pageCount || pageMap.length !== pageCount ||
+    verification.document_sha256 !== expectedSha256 || !verification.all_pages_reviewed ||
+    digest(indexText) !== verification.checked_files_sha256["index.jsonl"]) {
   throw new Error("教材 PDF 或索引不匹配：需要已核对的 202 页七年级上册。");
+}
+const printedLabels = new Set();
+for (const [index, entry] of pageMap.entries()) {
+  if (entry.physical_page !== index + 1 || entry.document_sha256 !== expectedSha256 ||
+      entry.review_state !== "reviewed" || entry.page_image_sha256 !== manifest.pages[index].image_sha256 ||
+      !(entry.printed_page_state === "absent" && entry.printed_page === null ||
+        entry.printed_page_state === "verified" && typeof entry.printed_page === "string" && entry.printed_page.trim())) {
+    throw new Error(`印刷页码尚未核实或来源不符：文件第 ${index + 1} 页`);
+  }
+  if (entry.printed_page !== null) {
+    if (printedLabels.has(entry.printed_page)) throw new Error(`重复印刷页码：${entry.printed_page}`);
+    printedLabels.add(entry.printed_page);
+  }
 }
 
 // Verify every source before converting or replacing the current book.
@@ -37,7 +56,7 @@ for (const [index, entry] of manifest.pages.entries()) {
   const width = image.readUInt32BE(16);
   const height = image.readUInt32BE(20);
   if (!width || !height) throw new Error(`教材第 ${page} 页尺寸无效。`);
-  pages.push({ page, width, height });
+  pages.push({ page, width, height, printedPage: pageMap[index].printed_page });
 }
 
 const parent = join(root, "public/textbooks");
@@ -77,7 +96,7 @@ try {
   }));
   const failed = workers.find((worker) => worker.status === "rejected");
   if (failed) throw failed.reason;
-  const book = { title: bookTitle, documentSha256: expectedSha256, pageCount, pages };
+  const book = { title: bookTitle, documentSha256: expectedSha256, pageMapSource, pageCount, pages };
   await writeFile(join(temporary, "source.json"), json({
     ...book,
     source,

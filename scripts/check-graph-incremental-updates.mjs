@@ -117,7 +117,7 @@ export async function checkEquivalentGraphInputs(page) {
 }
 
 // Start with no selected node, a cold layout and the target inside the viewport.
-export async function checkGraphHoverDwell(page, { key }) {
+export async function checkGraphHoverDwell(page, { key, delay = 300 }) {
   const point = (await incrementalGraphState(page)).nodes.find((node) => node.key === key)?.screen;
   assert.ok(point);
   const move = (point) => page.cdp('Input.dispatchMouseEvent', { type: 'mouseMoved', ...point, buttons: 0 });
@@ -136,19 +136,21 @@ export async function checkGraphHoverDwell(page, { key }) {
   }, key);
   try {
     await move(point); await move(off);
-    await new Promise((resolve) => setTimeout(resolve, 160));
+    await new Promise((resolve) => setTimeout(resolve, delay + 60));
     const quick = await page.evaluate(() => { const p = window.qaIncremental.dwellCheck; return { events: p.events, frames: p.frames }; });
-    assert.ok(quick.events[1].time - quick.events[0].time < 100, 'The quick-pass input must actually take less than 100ms');
+    assert.ok(quick.events[1].time - quick.events[0].time < delay, 'The quick-pass input must finish before the dwell threshold');
     assert.ok(!quick.frames.some((frame) => frame.focused));
     await page.evaluate(() => { const p = window.qaIncremental.dwellCheck; p.events = []; p.frames = []; });
-    await move(point); await move({ x: point.x + 1, y: point.y + 1 });
-    await new Promise((resolve) => setTimeout(resolve, 150));
+    await move(point);
+    await new Promise((resolve) => setTimeout(resolve, delay / 2));
+    await move({ x: point.x + 1, y: point.y + 1 });
+    await new Promise((resolve) => setTimeout(resolve, delay));
     const dwell = await page.evaluate(() => {
       const p = window.qaIncremental.dwellCheck; return { events: p.events, frames: p.frames };
     });
     const focused = dwell.frames.find((frame) => frame.focused);
-    assert.ok(focused && focused.time - dwell.events[0].time >= 95);
-    assert.ok(dwell.events[1].time < focused.time && focused.time - dwell.events[1].time < 95, 'Small motion must not reset the timer');
+    assert.ok(focused && focused.time - dwell.events[0].time >= delay - 5);
+    assert.ok(dwell.events[1].time < focused.time && focused.time - dwell.events[1].time < delay - 20, 'Small motion must not reset the timer');
     return { quickPassMs: quick.events[1].time - quick.events[0].time,
       dwellMs: focused.time - dwell.events[0].time, sameNodeTimerPreserved: true, dwell };
   } finally {

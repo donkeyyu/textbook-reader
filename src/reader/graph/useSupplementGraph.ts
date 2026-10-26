@@ -341,7 +341,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
               return;
             }
             hovered = nextHover; paint(true);
-          }, 100);
+          }, 300);
         }
         return;
       }

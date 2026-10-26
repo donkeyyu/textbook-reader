@@ -126,6 +126,7 @@ export function Reader() {
   const thumbnailList = useRef<HTMLDivElement>(null);
   const metrics = useRef<PageMetric[]>([]);
   const anchor = useRef({ page: 1, fraction: 0 });
+  const measureReading = useRef<(restore?: boolean) => void>(() => {});
   const current = useRef(1);
   const requestId = useRef(0);
   const navigationPending = useRef(false);
@@ -220,7 +221,8 @@ export function Reader() {
     }
 
     function updatePosition() {
-      if (!element) return;
+      // Hidden layout changes are not reading; keep the last visible anchor.
+      if (!element || element.inert) return;
       const page = readingPage(metrics.current, element.scrollTop, element.clientHeight, element.scrollHeight);
       const metric = metrics.current[page - 1];
       current.current = page;
@@ -229,7 +231,7 @@ export function Reader() {
       if (initialized && !storageFailed && saveTimer === undefined) saveTimer = setTimeout(savePosition, 750);
     }
 
-    function measure() {
+    function measure(restore = false) {
       if (!element || !list) return;
       const saved = anchor.current;
       const resized = width > 0 && (width !== list.clientWidth || listTop !== list.offsetTop);
@@ -244,11 +246,12 @@ export function Reader() {
         const initialMetric = position && metrics.current[position.page - 1];
         if (position && initialMetric) element.scrollTop = restoredScroll(initialMetric, position.fraction);
         initialized = true;
-      } else if (resized && metric) element.scrollTop = restoredScroll(metric, saved.fraction);
+      } else if ((resized || restore) && metric) element.scrollTop = restoredScroll(metric, saved.fraction);
       updatePosition();
     }
 
     function scroll() {
+      if (element?.inert) return;
       if (navigationPending.current) {
         requestId.current += 1;
         navigationPending.current = false;
@@ -266,8 +269,9 @@ export function Reader() {
     }
     function visibilityChanged() { if (document.visibilityState === "hidden") flushPosition(); }
 
+    measureReading.current = measure;
     measure();
-    const observer = new ResizeObserver(measure);
+    const observer = new ResizeObserver(() => measure());
     observer.observe(list);
     observer.observe(element);
     element.addEventListener("scroll", scroll, { passive: true });
@@ -282,6 +286,10 @@ export function Reader() {
       window.removeEventListener("pagehide", flushPosition);
     };
   }, []);
+
+  useLayoutEffect(() => {
+    if (views.bookVisible) measureReading.current(true);
+  }, [views.bookVisible]);
 
   useEffect(() => {
     if (selectionPage !== null) document.querySelector<HTMLElement>('.region-selector')?.focus({ preventScroll: true });

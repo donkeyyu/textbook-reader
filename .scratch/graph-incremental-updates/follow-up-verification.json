@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-26",
+  "status": "accepted",
+  "scope": "DonQ 要求修复上一轮所有记录的问题并打开验证窗口。",
+  "resolved": [
+    {
+      "problem": "隐藏教材在首次开图时改写页码与续读记录",
+      "cause": "列宽过渡触发隐藏教材的尺寸/滚动回调；恢复显示时滚动范围可能已经收缩。",
+      "fix": "隐藏时不采集阅读位置或取消导航，重新显示时按保留的页码及比例恢复。",
+      "evidence": "第28页原版复现变为64；禁用列宽过渡的对照不再漂移；最终桌面/窄屏第28页、最后202页及关联返回通过。"
+    },
+    {
+      "problem": "Pixi Graphics.addChild 弃用警告",
+      "cause": "节点圆点 Graphics 被当作子图形容器。",
+      "fix": "用 Container 包含圆点与强调环，保留节点对象和递归销毁；同步三个回归探针。",
+      "evidence": "实际 Pixi 对象检查通过；浏览器970个容器各含两图形，Ctrl预览正常，warn/error/groupCollapsed记录为空。"
+    },
+    {
+      "problem": "生产主包超过500kB",
+      "fix": "按教材、Pixi、其他依赖分包，使用 strictExecutionOrder 保留初始化顺序。",
+      "before": {
+        "javascriptChunks": 9,
+        "totalJavaScriptBytes": 3527540,
+        "maxJavaScriptBytes": 3260402
+      },
+      "after": {
+        "javascriptChunks": 18,
+        "totalJavaScriptBytes": 3562905,
+        "maxJavaScriptBytes": 459405,
+        "files": {
+          "index-BRl4grjf.js": 113620,
+          "pixi-B5JHkzNb.js": 83294,
+          "pixi-BU6XLNqp.js": 16618,
+          "pixi-CM3RbrmR.js": 2484,
+          "pixi-CiVBtXhL.js": 2893,
+          "pixi-DCkpv90T.js": 2334,
+          "pixi-DDaCm2rb.js": 459405,
+          "pixi-DzCYNvzR.js": 1629,
+          "rolldown-runtime-CNOWq4Kh.js": 817,
+          "textbook-BHe_3Z0o.js": 302938,
+          "textbook-BXbQt832.js": 181481,
+          "textbook-CC4Q0ISF.js": 425816,
+          "textbook-D0Vm93Ef.js": 448549,
+          "textbook-DFD2h5Ay.js": 52327,
+          "textbook-JCsHS3NR.js": 349035,
+          "vendor-BsgAfT3m.js": 424533,
+          "vendor-C4-c3M7j.js": 330738,
+          "vendor-CN5jW8P2.js": 364394
+        }
+      },
+      "evidence": "构建无大分包和循环警告，生产教材、图谱、搜索、预览、定位与续读检查通过。"
+    }
+  ],
+  "checks": [
+    "37项测试通过",
+    "最终类型检查与生产构建通过",
+    "回归脚本语法与diff检查通过",
+    "桌面/390px窄屏原页恢复，最后页恢复和隐藏关联返回",
+    "分屏键盘调整、关闭/重开视图",
+    "生产页面无捕获到的异常、警告或资源失败，桌面与窄屏截图已核对"
+  ],
+  "regression": "scripts/check-graph-reading-position.mjs 导出 checkGraphReadingPosition(page, {testOrigin, filePage}) 和 checkHiddenGraphRelatedReturn(page)。使用独立 origin；后者接在前者之后。",
+  "evidenceDirectory": ".git/graph-recorded-fixes/",
+  "intermediateFailures": [
+    "首次回归明确复现28→64。",
+    "仅加隐藏guard后末页重开漂移，补充显示时恢复锚点后202保持。",
+    "自动分包初轮触发style-mod初始化顺序错误；strictExecutionOrder后生产加载通过。",
+    "一次按钮点击遇布局过渡遮挡；待布局结束后同一路径通过。"
+  ],
+  "limits": [
+    "未测实体设备、固定帧率或学生学习效果。",
+    "总JS体积略增，未宣称加载速度提升。",
+    "旧验收及原始失败证据保留为历史；本记录关闭其中三项产品/构建问题。"
+  ],
+  "verificationWindow": {
+    "url": "http://127.0.0.1:47936",
+    "kind": "production preview",
+    "egoSpace": 35,
+    "page": "p2",
+    "keptForUser": true
+  },
+  "sourceHashes": {
+    "src/reader/Reader.tsx": "247d290c5b5e5277ea792d532890c9034dd3fd6f34927dc7cf76393e81941949",
+    "src/reader/graph/useSupplementGraph.ts": "4214b07d1a10f7524a4c618c474343b3d70e3e46491a31e8bcaf198cf3cf32c1",
+    "vite.config.ts": "6f06b2357b04e1648d9b63babf9189050a029db21aba18d84d02ec41d9936524"
+  }
+}

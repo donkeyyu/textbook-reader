@@ -6,7 +6,7 @@ import type { GraphNode, GraphEdge } from './project-graph.ts';
 
 type LayoutNode = SimulationNodeDatum & GraphNode;
 type LayoutEdge = SimulationLinkDatum<LayoutNode> & Pick<GraphEdge, 'kind'>;
-type Sprite = { node: LayoutNode; dot: Graphics; ring: Graphics; label: Text };
+type Sprite = { node: LayoutNode; dot: Container; circle: Graphics; ring: Graphics; label: Text };
 type Point = { x: number; y: number };
 export type GraphPreviewAnchor = Point & { key: string; radius: number };
 const minZoom = .1;
@@ -74,9 +74,9 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
     container.addChild(lines, dots, labels);
     const next = sprites.current;
     let topology = '';
-    function colorSprite({ node, dot, ring }: Sprite) {
+    function colorSprite({ node, circle, ring }: Sprite) {
       const color = colors.get(node.type) || '#0066cc';
-      dot.clear().circle(0, 0, radius).fill(color);
+      circle.clear().circle(0, 0, radius).fill(color);
       ring.clear().circle(0, 0, radius + 4).stroke({ width: 1.5, color });
     }
     function update() {
@@ -128,13 +128,13 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       }
       for (const node of layout) {
         if (next.has(node.key)) continue;
-        const dot = new Graphics(), ring = new Graphics();
-        dot.addChild(ring);
+        const dot = new Container(), circle = new Graphics(), ring = new Graphics();
+        dot.addChild(circle, ring);
         const label = new Text({ text: node.title, style: { fontFamily: 'system-ui, sans-serif', fontSize: 12,
           lineHeight: 17, fill: 0x1d1d1f, wordWrap: true, wordWrapWidth: 210, breakWords: true },
           resolution: Math.max(2, window.devicePixelRatio || 1) });
         label.anchor.set(.5, 0);
-        const sprite = { node, dot, ring, label };
+        const sprite = { node, dot, circle, ring, label };
         colorSprite(sprite); dots.addChild(dot); labels.addChild(label); next.set(node.key, sprite);
       }
       // Retained nodes keep their velocity and drag pins. Clear links before

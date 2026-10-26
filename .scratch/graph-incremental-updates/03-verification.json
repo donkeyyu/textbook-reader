@@ -154,5 +154,10 @@
     "independentEvidence": "Private root-evidence/03-topology.json and 03-isolated-candidate.json; source review and final screenshots checked.",
     "result": "本次范围接受；既有隐藏教材页码漂移保留为未解决边界。",
     "cleanup": "Root Space33 and47932 also closed; isolated build directory removed."
+  },
+  "followUp": {
+    "status": "resolved",
+    "record": "follow-up-verification.json",
+    "note": "原边界与警告在后续授权中修复，原始验收保留。"
   }
 }

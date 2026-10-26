@@ -59,7 +59,7 @@ export async function captureGraphDrag(page, directory, label, { focus = true } 
   // Pixi probe gives its current screen point, including at low zoom.
   const nodePoint = await page.evaluate(() => {
     const world = window.qa03GraphProbe?.app?.stage.children[0];
-    const dot = world?.children[1].children.find((dot) => dot.children[0].visible);
+    const dot = world?.children[1].children.find((dot) => dot.children[1].visible);
     const rect = document.querySelector('.graph-viewport canvas').getBoundingClientRect();
     return dot ? { x: rect.x + world.x + dot.x * world.scale.x, y: rect.y + world.y + dot.y * world.scale.y } : null;
   });

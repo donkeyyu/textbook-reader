@@ -73,7 +73,7 @@ button:focus-visible, summary:focus-visible, [tabindex]:focus-visible { outline:
 
 .toolbar-actions { display: flex; align-items: center; justify-self: end; gap: 20px; }
 .return-button { gap: 2px; white-space: nowrap; }
-.reading-layout.supplement-open { grid-template-columns: minmax(0, 1fr) clamp(350px, 29vw, 420px); }
+.reading-layout.supplement-open { grid-template-columns: minmax(0, 1fr) var(--panel-width); }
 .supplement-marker { position: absolute; transform: translate(-50%, -50%); width: 36px; height: 36px; display: grid; place-items: center; padding: 0; border-radius: 6px; background: transparent; font-size: 22px; line-height: 1; }
 .supplement-marker:hover, .supplement-marker[aria-expanded="true"] { background: var(--type-tint, var(--accent-soft)); }
 .marker-count { position: absolute; right: 0; bottom: 0; min-width: 14px; padding: 0 2px; border-radius: 6px; background: var(--surface); color: inherit; font-size: 10px; line-height: 14px; font-variant-numeric: tabular-nums; }

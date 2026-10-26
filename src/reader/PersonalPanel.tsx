@@ -1,3 +1,4 @@
+import { LocateIcon } from './LocateIcon';
 import { useRef, useState, type ReactNode } from 'react';
 import { MarkdownContent, MarkdownEditor } from './MarkdownEditor';
 import type { PersonalSupplement } from './personal';
@@ -35,7 +36,7 @@ export function PersonalPanel({ item, isNew, chapters, sections, links, backlink
     <div className="supplement-heading">
       <h2 id="supplement-title" tabIndex={-1}>{isNew ? '添加补充' : item.title}</h2>
       <div className="heading-actions">
-        {item.page !== null && <button id="locate-personal" className="text-button locate-button" type="button" onClick={onLocate}>定位</button>}
+        {item.page !== null && <button id="locate-personal" className="icon-button locate-button" aria-label="定位教材原文" title="定位教材原文" type="button" onClick={onLocate}><LocateIcon /></button>}
         {!editing && <button className="text-button" onClick={onClose}>关闭</button>}
       </div>
     </div>

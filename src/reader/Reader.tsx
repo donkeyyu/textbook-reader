@@ -161,15 +161,15 @@ export function Reader() {
       sectionId: item.sectionId === undefined ? node?.sectionId ?? null : item.sectionId };
   }
 
-  function locateGraphNode(key: string | null, panelScroll = 0) {
+  function locateGraphNode(key: string | null, panelScroll = 0, preserveFocus = false) {
     const location = content.nodes.find((node) => node.key === key)?.location;
     if (!location) return;
     void navigate({ page: location.page, locationId: location.locationId ?? undefined,
       locate: { fraction: location.locationId ? undefined : location.region.y,
-        focusId: 'supplement-title', panelScroll } });
+        focusId: preserveFocus ? '' : 'supplement-title', panelScroll } });
   }
 
-  function selectGraphNode(key: string | null) {
+  function selectGraphNode(key: string | null, preserveFocus = false) {
     if (key === null) {
       if (!allowGraphSelection()) return false;
       closeSupplement(false); setPersonalItem(null); setSelectionPage(null);
@@ -180,8 +180,8 @@ export function Reader() {
     const node = content.nodes.find((item) => item.key === key);
     if (!node) return false;
     if (key === selectedGraphKey && !personalLibraryOpen) {
-      if (graphOpen && views.bookVisible) locateGraphNode(key, views.capturePanelScroll());
-      requestAnimationFrame(() => document.getElementById('supplement-title')?.focus({ preventScroll: true }));
+      if (graphOpen && views.bookVisible) locateGraphNode(key, views.capturePanelScroll(), preserveFocus);
+      if (!preserveFocus) requestAnimationFrame(() => document.getElementById('supplement-title')?.focus({ preventScroll: true }));
       return true;
     }
     if (!allowGraphSelection()) return false;
@@ -191,11 +191,11 @@ export function Reader() {
     setSupplementId(node.source === 'default' ? node.id : null);
     // A fresh selection must not share an old delete request's object identity.
     setPersonalItem(node.source === 'personal' ? personalSelection(node.personal) : null);
-    if (graphOpen && views.bookVisible) locateGraphNode(key);
+    if (graphOpen && views.bookVisible) locateGraphNode(key, 0, preserveFocus);
     requestAnimationFrame(() => {
       const panel = document.getElementById('supplement-panel');
       if (panel) panel.scrollTop = 0;
-      document.getElementById('supplement-title')?.focus({ preventScroll: true });
+      if (!preserveFocus) document.getElementById('supplement-title')?.focus({ preventScroll: true });
     });
     return true;
   }
@@ -864,7 +864,7 @@ export function Reader() {
           }
         }} />}
       {graphMounted && <SplitResize />}
-      {(personalItem || personalLibraryOpen || choiceIds || note) && <PanelResize />}
+      {(personalItem || personalLibraryOpen || choiceIds || note) && <PanelResize bottom={panelBelow} />}
       {personalLibraryOpen && <PersonalLibrary nodes={content.nodes.filter((node) => node.source === 'personal')} chapters={chapters} sections={sections}
         onOpen={openPersonal} onCreate={() => {
           setPersonalLibraryOpen(false);

@@ -26,9 +26,10 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
   const simulation = useRef<Simulation<LayoutNode, LayoutEdge> | null>(null);
   const current = useRef({ nodes, edges, selectedKey, visible, onSelect, searchKeys });
   current.current = { nodes, edges, selectedKey, visible, onSelect, searchKeys };
-  const actions = useRef({ focus: (_key: string) => {}, fit: () => {}, zoom: (_factor: number) => {},
+  const actions = useRef({ reveal: (_key: string) => {}, focus: (_key: string) => {}, fit: () => {}, zoom: (_factor: number) => {},
     pan: (_x: number, _y: number) => {}, paint: (_immediate = false) => {}, pause: () => {}, resume: () => {}, update: () => {} });
   const skipFocus = useRef<string | null>(null);
+  const revealTarget = useRef<string | null>(null);
   const initialized = useRef(false);
 
   useEffect(() => {
@@ -241,8 +242,48 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       setPreview((previous) => previous?.key === anchor?.key && previous?.x === anchor?.x &&
         previous?.y === anchor?.y && previous?.radius === anchor?.radius ? previous : anchor);
     }
+    let revealFrame = 0;
+    function cancelReveal() {
+      cancelAnimationFrame(revealFrame); revealFrame = 0; revealTarget.current = null;
+    }
+    function reveal(key: string) {
+      cancelReveal(); initialOverview = false; skipFocus.current = key; revealTarget.current = key;
+      let settledFrames = 0;
+      function step() {
+        if (revealTarget.current !== key) return;
+        const node = next.get(key)?.node;
+        if (!node) { cancelReveal(); return; }
+        const bounds = canvas.getBoundingClientRect();
+        const directory = element!.closest('.supplement-graph')?.querySelector('#graph-directory')?.getBoundingClientRect();
+        const padding = 20;
+        const right = Math.max(padding, renderer!.screen.width - padding);
+        const bottom = Math.max(padding, renderer!.screen.height - padding);
+        const x = node.x! * container!.scale.x + container!.x;
+        const y = node.y! * container!.scale.y + container!.y;
+        let target = { x: Math.max(padding, Math.min(right, x)), y: Math.max(padding, Math.min(bottom, y)) };
+        if (directory) {
+          const obstacle = { left: directory.left - bounds.left - padding, right: directory.right - bounds.left + padding,
+            top: directory.top - bounds.top - padding, bottom: directory.bottom - bounds.top + padding };
+          if (target.x > obstacle.left && target.x < obstacle.right && target.y > obstacle.top && target.y < obstacle.bottom) {
+            const candidates = [{ x: obstacle.left, y: target.y }, { x: obstacle.right, y: target.y },
+              { x: target.x, y: obstacle.top }, { x: target.x, y: obstacle.bottom }]
+              .filter((point) => point.x >= padding && point.x <= right && point.y >= padding && point.y <= bottom);
+            candidates.sort((a, b) => Math.hypot(a.x - x, a.y - y) - Math.hypot(b.x - x, b.y - y));
+            target = candidates[0] ?? target;
+          }
+        }
+        container!.x += target.x - x;
+        container!.y += target.y - y;
+        paint(true);
+        const animating = element!.closest('.reading-layout')?.getAnimations().some((animation) => animation.playState === 'running');
+        settledFrames = animating ? 0 : settledFrames + 1;
+        if (settledFrames < 3) revealFrame = requestAnimationFrame(step);
+        else { revealFrame = 0; revealTarget.current = null; }
+      }
+      revealFrame = requestAnimationFrame(step);
+    }
     function transform(zoom: number, point: Point = { x: renderer!.screen.width / 2, y: renderer!.screen.height / 2 }) {
-      initialOverview = false;
+      cancelReveal(); initialOverview = false;
       const nextZoom = Math.max(minZoom, Math.min(maxZoom, zoom));
       const local = container!.toLocal(point);
       container!.scale.set(nextZoom);
@@ -250,7 +291,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       setScale(nextZoom); paint();
     }
     function focus(key: string) {
-      initialOverview = false;
+      cancelReveal(); initialOverview = false;
       const node = next.get(key)?.node;
       if (!node) return;
       const zoom = Math.max(1.2, container!.scale.x);
@@ -259,7 +300,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       setScale(zoom); paint();
     }
     function fit(automatic = false) {
-      if (!automatic) initialOverview = false;
+      if (!automatic) { cancelReveal(); initialOverview = false; }
       if (!layout.length) return;
       const xs = layout.map((node) => node.x!), ys = layout.map((node) => node.y!);
       const left = Math.min(...xs) - 90, top = Math.min(...ys) - 90;
@@ -315,7 +356,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
     }
     function down(event: PointerEvent) {
       if (event.button !== 0 || gesture) return;
-      initialOverview = false;
+      cancelReveal(); initialOverview = false;
       const p = point(event), node = hit(p), local = container!.toLocal(p);
       gesture = { pointer: event.pointerId, start: p, last: p, node, moved: false,
         offset: { x: (node?.x ?? local.x) - local.x, y: (node?.y ?? local.y) - local.y } };
@@ -398,12 +439,12 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       canvas.style.cursor = 'grab';
     }
     function pause() {
-      initialOverview = false;
+      cancelReveal(); initialOverview = false;
       clearHover(); cancelGesture();
       force.stop(); cancelAnimationFrame(renderFrame); renderFrame = 0;
     }
-    actions.current = { focus, fit, zoom: (factor) => transform(container.scale.x * factor),
-      pan: (x, y) => { initialOverview = false; container.x += x; container.y += y; paint(); }, paint, pause, resume, update };
+    actions.current = { reveal, focus, fit, zoom: (factor) => transform(container.scale.x * factor),
+      pan: (x, y) => { cancelReveal(); initialOverview = false; container.x += x; container.y += y; paint(); }, paint, pause, resume, update };
     update();
     canvas.addEventListener('pointerdown', down); canvas.addEventListener('pointermove', move);
     canvas.addEventListener('pointerup', up); canvas.addEventListener('pointercancel', up);
@@ -443,8 +484,10 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
     const observer = new ResizeObserver(() => {
       const width = element.clientWidth, height = element.clientHeight;
       if (!width || !height) return;
-      container.x += (width - renderer.screen.width) / 2;
-      container.y += (height - renderer.screen.height) / 2;
+      if (!revealTarget.current) {
+        container.x += (width - renderer.screen.width) / 2;
+        container.y += (height - renderer.screen.height) / 2;
+      }
       // WebGL resize clears the drawing buffer. Redraw in this observer turn,
       // before presentation, rather than leaving a black frame until the next rAF.
       renderer.renderer.resize(width, height); actions.current.paint(true);
@@ -458,6 +501,6 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
     else actions.current.pause();
   }, [visible, ready]);
 
-  return { ready, error, scale, preview, focus: (key: string) => actions.current.focus(key), fit: () => actions.current.fit(),
+  return { ready, error, scale, preview, reveal: (key: string) => actions.current.reveal(key), focus: (key: string) => actions.current.focus(key), fit: () => actions.current.fit(),
     zoom: (factor: number) => actions.current.zoom(factor), pan: (x: number, y: number) => actions.current.pan(x, y) };
 }

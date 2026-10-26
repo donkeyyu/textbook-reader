@@ -6,7 +6,7 @@ import { supplementTypes, TypeMarker } from '../supplement-types.tsx';
 import { projectGraph } from './project-graph.ts';
 import { useSupplementGraph } from './useSupplementGraph.ts';
 import { GraphPreview } from './GraphPreview.tsx';
-import { GraphDirectory } from './GraphDirectory';
+import { GraphDirectory, DirectoryResize } from './GraphDirectory';
 import type { PersonalReferenceEdge } from '../links/project-references.ts';
 import './graph.css';
 
@@ -20,7 +20,7 @@ export function SupplementGraph({ nodes, personalEdges, selectedKey, visible, on
   nodes: ContentNode[]; selectedKey: string | null; visible: boolean;
   personalEdges: readonly PersonalReferenceEdge[];
   chapters: PublishedContent['chapters']; sections: PublishedContent['sections'];
-  onSelect: (key: string | null) => boolean; bookVisible: boolean; onToggleBook: () => void;
+  onSelect: (key: string | null, preserveFocus?: boolean) => boolean; bookVisible: boolean; onToggleBook: () => void;
 }) {
   const host = useRef<HTMLDivElement>(null);
   const search = useRef<HTMLInputElement>(null);
@@ -51,6 +51,9 @@ export function SupplementGraph({ nodes, personalEdges, selectedKey, visible, on
   const previewNode = visible && graph.preview ? nodes.find((node) => node.key === graph.preview!.key) : null;
   function choose(key: string) {
     if (onSelect(key)) { graph.focus(key); setQuery(''); setSearchOpen(false); setDirectoryOpen(false); }
+  }
+  function chooseDirectory(key: string) {
+    if (onSelect(key, true)) graph.reveal(key);
   }
   return <section id="supplement-graph" className="supplement-graph" aria-label="补充节点图" hidden={!visible}
     data-node-count={nodes.length} data-edge-count={data.edges.length}
@@ -90,7 +93,8 @@ export function SupplementGraph({ nodes, personalEdges, selectedKey, visible, on
       </button>
       {directoryOpen && <div id="graph-directory" className="graph-directory-panel" aria-label="节点目录">
         <h2>节点目录</h2>
-        <GraphDirectory nodes={nodes} chapters={chapters} sections={sections} selectedKey={selectedKey} onChoose={choose} />
+        <GraphDirectory nodes={nodes} chapters={chapters} sections={sections} selectedKey={selectedKey} onChoose={chooseDirectory} />
+        <DirectoryResize />
       </div>}
     </div>
     <div className="graph-corner-controls">

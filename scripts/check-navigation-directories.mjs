@@ -17,8 +17,8 @@ export async function checkNavigationDirectories(page) {
   const title = await page.evaluate(() => document.querySelector('.graph-directory-tree button span').childNodes[0].textContent);
   await page.click('.graph-directory-tree button >> nth=0');
   await page.waitForFunction((title) => document.getElementById('supplement-title')?.textContent === title, title);
-  assert.equal(await page.evaluate(() => document.getElementById('graph-directory-toggle').getAttribute('aria-expanded')), 'false');
-  await page.click('#graph-directory-toggle'); await page.press('.graph-directory-filter select', 'Escape');
+  assert.equal(await page.evaluate(() => document.getElementById('graph-directory-toggle').getAttribute('aria-expanded')), 'true');
+  await page.press('.graph-directory-filter select', 'Escape');
   assert.equal(await page.evaluate(() => document.activeElement.id), 'graph-directory-toggle');
   await page.click('#graph-book-toggle');
   await page.waitForFunction(() => document.querySelector('.location-highlight'));

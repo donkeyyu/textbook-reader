@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useLayoutEffect, useMemo, useRef, useState } from 'react';
 import type { ContentNode, PublishedContent } from '../../textbook/content';
 import { getPage, pageLabel } from '../../textbook/catalog';
 import { supplementTypes, TypeMarker } from '../supplement-types';
@@ -47,4 +47,46 @@ export function GraphDirectory({ nodes, chapters, sections, selectedKey, onChoos
       </details>)}
     </nav>
   </>;
+}
+
+
+/** Only this handle rerenders during a drag; the node tree keeps its scroll and focus. */
+export function DirectoryResize() {
+  const handle = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState(336);
+  const [maximum, setMaximum] = useState(600);
+  const minimum = Math.min(240, maximum);
+  useLayoutEffect(() => {
+    const dock = handle.current?.closest<HTMLElement>('.graph-directory-dock');
+    const graph = dock?.closest<HTMLElement>('.supplement-graph');
+    if (!dock || !graph) return;
+    const measure = () => {
+      setWidth(Math.round(dock.getBoundingClientRect().width));
+      setMaximum(Math.max(1, Math.min(600, graph.clientWidth - 96)));
+    };
+    const observer = new ResizeObserver(measure);
+    observer.observe(dock); observer.observe(graph); measure();
+    return () => observer.disconnect();
+  }, []);
+  function resize(value: number) {
+    const dock = handle.current?.closest<HTMLElement>('.graph-directory-dock');
+    dock?.style.setProperty('--graph-directory-width', `${Math.min(maximum, Math.max(minimum, value))}px`);
+  }
+  return <div ref={handle} className="graph-directory-resize" role="separator" tabIndex={0}
+    aria-label="调整节点目录宽度" aria-orientation="vertical" aria-controls="graph-directory"
+    aria-valuemin={minimum} aria-valuemax={maximum} aria-valuenow={width} aria-valuetext={`${width} 像素`}
+    onPointerDown={(event) => {
+      if (event.button !== 0) return;
+      event.preventDefault(); event.currentTarget.focus(); event.currentTarget.setPointerCapture(event.pointerId);
+    }} onPointerMove={(event) => {
+      if (!event.currentTarget.hasPointerCapture(event.pointerId)) return;
+      const dock = event.currentTarget.closest('.graph-directory-dock')!;
+      resize(event.clientX - dock.getBoundingClientRect().left);
+    }} onPointerUp={(event) => {
+      if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+    }} onKeyDown={(event) => {
+      const next = event.key === 'ArrowLeft' ? width - 24 : event.key === 'ArrowRight' ? width + 24
+        : event.key === 'Home' ? minimum : event.key === 'End' ? maximum : null;
+      if (next !== null) { event.preventDefault(); event.stopPropagation(); resize(next); }
+    }}><span aria-hidden="true" /></div>;
 }

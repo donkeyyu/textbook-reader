@@ -97,6 +97,7 @@ node --experimental-strip-types scripts/check-cloud-content.mjs
 
 | 修改范围 | 现有入口 |
 | --- | --- |
+| 目录选择与面板调宽 | [check-directory-selection.mjs](scripts/check-directory-selection.mjs)：`checkDirectorySelection(page)` 使用图谱 QA 启动服务；[check-panel-width.mjs](scripts/check-panel-width.mjs)：`checkPanelWidth(page)` 验证右栏调宽及图标 |
 | 教材目录与节点目录 | [check-navigation-directories.mjs](scripts/check-navigation-directories.mjs)：`checkNavigationDirectories(page)`，图谱打开且教材隐藏 |
 | 图节点自动定位原文 | [check-graph-auto-locate.mjs](scripts/check-graph-auto-locate.mjs)：`checkGraphAutoLocate(page)`，开发环境、图谱打开且教材隐藏 |
 | 页码位置、原位输入、侧栏开合 | [check-page-navigation.mjs](scripts/check-page-navigation.mjs)：`checkBookPageControls(page)`、`checkPageNavigation(page, expanded)` |

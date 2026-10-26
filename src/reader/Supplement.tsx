@@ -1,3 +1,4 @@
+import { LocateIcon } from './LocateIcon';
 import { useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import { getLocation, type Supplement } from "../textbook/supplements";
 import { supplementType } from './supplement-types';
@@ -54,7 +55,7 @@ export function SupplementPanel({ notes, expandedId, pending, onSelect, onClose,
       </button>}
       <h2 id="supplement-title" tabIndex={-1}>{grouped ? "此处解读" : notes[0]!.title}</h2>
       <div className="heading-actions">
-        <button id="locate-supplement" className="text-button locate-button" type="button" disabled={pending || (grouped && !expandedId)} onClick={onLocate}>定位</button>
+        <button id="locate-supplement" className="icon-button locate-button" aria-label="定位教材原文" title="定位教材原文" type="button" disabled={pending || (grouped && !expandedId)} onClick={onLocate}><LocateIcon /></button>
         <button className="icon-button" aria-label="关闭解读" onClick={onClose}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
         </button>

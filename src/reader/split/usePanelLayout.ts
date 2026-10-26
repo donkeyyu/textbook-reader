@@ -19,6 +19,8 @@ export function usePanelLayout(split: boolean) {
         const value = `${ownerWidth}px`;
         if (layout.style.getPropertyValue('--book-pane-width') !== value) layout.style.setProperty('--book-pane-width', value);
       }
+      const ownerSize = `${ownerWidth}px`;
+      if (layout.style.getPropertyValue('--panel-owner-width') !== ownerSize) layout.style.setProperty('--panel-owner-width', ownerSize);
       setBottomPanel(ownerWidth <= 1100);
     };
     measure();

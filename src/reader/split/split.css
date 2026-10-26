@@ -1,4 +1,5 @@
 .split-resize { display: none; }
+.reading-layout { --panel-width: clamp(350px, var(--supplement-width, clamp(350px, 29vw, 420px)), calc(var(--panel-owner-width, 100vw) - 400px)); }
 .reading-layout > .supplement-panel { overflow-anchor: none; }
 .reading-layout.book-hidden > .paper-scroller { visibility: hidden; pointer-events: none; }
 
@@ -15,7 +16,7 @@
 
 @media (min-width: 1001px) {
   .reading-layout.graph-open.views-split { --drawer-width: 0px; grid-template-columns: minmax(0, 1fr) 12px minmax(0, calc(var(--book-pane-width) - var(--drawer-width))) var(--drawer-width); grid-template-rows: minmax(0, 1fr) minmax(0, 0%); }
-  .reading-layout.graph-open.views-split.supplement-open:not(.panel-bottom) { --drawer-width: clamp(350px, 29vw, 420px); }
+  .reading-layout.graph-open.views-split.supplement-open:not(.panel-bottom) { --drawer-width: var(--panel-width); }
   .reading-layout.graph-open.views-split.panel-bottom.supplement-open { grid-template-rows: minmax(0, 1fr) minmax(0, var(--supplement-height, 45%)); }
   .reading-layout.views-split > .supplement-graph { grid-column: 1; grid-row: 1 / -1; }
   .reading-layout.views-split > .paper-scroller { grid-column: 3; grid-row: 1; visibility: visible; pointer-events: auto; padding: 20px 16px; }
@@ -51,3 +52,10 @@
 .book-toolbar .page-controls { grid-column: 2; }
 .book-toolbar .page-input-error { left: 50%; transform: translateX(-50%); max-width: calc(100vw - 32px); }
 @media (min-width: 1001px) { .reading-layout.views-split > .book-toolbar { grid-column: 3; } }
+
+/* The side handle shares the drawer track and stays fixed while its text scrolls. */
+.reading-layout:not(.panel-bottom) > .panel-resize { display: grid; place-items: center; grid-column: -2; grid-row: 1; align-self: center; justify-self: start; position: relative; z-index: 3; width: 28px; height: 72px; margin-left: -14px; border-radius: 8px; cursor: ew-resize; touch-action: none; user-select: none; }
+.reading-layout:not(.panel-bottom) > .panel-resize span { width: 4px; height: 36px; border-radius: 2px; background: var(--secondary); }
+.reading-layout:not(.panel-bottom) > .panel-resize:hover span, .reading-layout:not(.panel-bottom) > .panel-resize:focus-visible span { background: var(--accent); }
+
+.reading-layout.graph-open.panel-resizing:not(.views-split) { transition: none; }

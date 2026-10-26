@@ -38,7 +38,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
     let disposed = false;
     let initializedApp = false;
     const renderer = new Application();
-    void renderer.init({ background: 0xffffff, antialias: true, autoStart: false, resolution: window.devicePixelRatio || 1,
+    void renderer.init({ backgroundAlpha: 0, antialias: true, autoStart: false, resolution: window.devicePixelRatio || 1,
       autoDensity: true, width: Math.max(1, element.clientWidth), height: Math.max(1, element.clientHeight) }).then(() => {
       initializedApp = true;
       if (disposed) { renderer.destroy(true, { children: true }); return; }

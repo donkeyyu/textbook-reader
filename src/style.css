@@ -20,7 +20,7 @@ button:disabled { cursor: default; color: #9b9b9f; }
 button:focus-visible, summary:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 ::selection { background: #cce4ff; color: #1d1d1f; }
 .reader-app { height: 100dvh; display: flex; flex-direction: column; }
-.toolbar { flex: none; height: 72px; padding: 0 28px; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 20px; background: var(--surface); border-bottom: 1px solid var(--separator); }
+.toolbar { position: relative; z-index: 10; flex: none; height: 72px; padding: 0 28px; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 20px; background: var(--surface); border-bottom: 1px solid var(--separator); }
 .book-heading { min-width: 0; display: flex; align-items: center; gap: 16px; white-space: nowrap; }
 .book-heading h1 { overflow: hidden; text-overflow: ellipsis; margin: 0; font-size: 18px; font-weight: 600; letter-spacing: -.025em; }
 .icon-button { display: inline-grid; place-items: center; width: 40px; height: 40px; padding: 0; border-radius: 10px; background: transparent; color: var(--secondary); }
@@ -62,7 +62,7 @@ button:focus-visible, summary:focus-visible, [tabindex]:focus-visible { outline:
 }
 
 @media (max-width: 760px) {
-  .toolbar { height: 64px; padding: 0 12px; gap: 8px; z-index: 3; }
+  .toolbar { height: 64px; padding: 0 12px; gap: 8px; }
   .book-heading { gap: 4px; }
   .book-heading h1 { font-size: 16px; }
   .toolbar .page-input-error { left: 0; right: auto; }

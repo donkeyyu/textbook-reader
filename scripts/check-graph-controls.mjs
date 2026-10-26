@@ -7,8 +7,7 @@ export async function checkGraphControls(page, { narrow = false } = {}) {
   const bounds = () => page.evaluate(() => {
     const graph = document.getElementById('supplement-graph').getBoundingClientRect();
     const canvas = document.querySelector('.graph-viewport canvas').getBoundingClientRect();
-    const targets = ['.graph-settings', '#graph-book-toggle', '#graph-search-toggle',
-      '#graph-search-panel:not([hidden])', '#graph-search-results'];
+    const targets = ['.graph-settings', '#graph-book-toggle'];
     return { canvasFills: Math.abs(canvas.height - graph.height) < 2 && Math.abs(canvas.width - graph.width) < 2,
       graphInViewport: graph.bottom <= innerHeight + 1 && graph.right <= innerWidth + 1,
       overflow: targets.filter((selector) => {
@@ -36,7 +35,6 @@ export async function checkGraphControls(page, { narrow = false } = {}) {
   await page.click('[aria-label="缩小节点图"]');
   assert.notEqual(await page.evaluate(() => document.querySelector('.graph-zoom output').textContent), beforeZoom);
   await openGraphSearch(page);
-  assert.equal(await page.evaluate(() => document.querySelector('.graph-settings').open), false);
   assert.equal(await page.evaluate(() => document.activeElement === document.querySelector('.graph-search input')), true);
   await page.fill('.graph-search input', '练习');
   await page.waitForSelector('#graph-search-results button');

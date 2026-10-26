@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import type { ContentNode, PublishedContent } from '../../textbook/content.ts';
 import { getLocation } from '../../textbook/supplements.ts';
 import { getPage, pageLabel } from '../../textbook/catalog.ts';
-import { supplementTypes, TypeMarker } from '../supplement-types.tsx';
+import { supplementTypes } from '../supplement-types.tsx';
 import { projectGraph } from './project-graph.ts';
 import { useSupplementGraph } from './useSupplementGraph.ts';
 import { GraphPreview } from './GraphPreview.tsx';
@@ -10,48 +10,25 @@ import { GraphDirectory, DirectoryResize } from './GraphDirectory';
 import type { PersonalReferenceEdge } from '../links/project-references.ts';
 import './graph.css';
 
-function nodeContext(node: ContentNode, chapters: PublishedContent['chapters'], sections: PublishedContent['sections']) {
-  return [chapters.find((item) => item.id === node.chapterId)?.title ?? '未归属章节',
-    sections.find((item) => item.id === node.sectionId)?.title,
-    node.location ? pageLabel(getPage(node.location.page)) : node.summary.slice(0, 48)].filter(Boolean).join(' · ');
-}
-
-export function SupplementGraph({ nodes, personalEdges, selectedKey, visible, onSelect, bookVisible, onToggleBook, chapters, sections }: {
+export function SupplementGraph({ searchTarget, nodes, personalEdges, selectedKey, visible, onSelect, bookVisible, onToggleBook, chapters, sections }: {
+  searchTarget: { key: string } | null;
   nodes: ContentNode[]; selectedKey: string | null; visible: boolean;
   personalEdges: readonly PersonalReferenceEdge[];
   chapters: PublishedContent['chapters']; sections: PublishedContent['sections'];
   onSelect: (key: string | null, preserveFocus?: boolean) => boolean; bookVisible: boolean; onToggleBook: () => void;
 }) {
   const host = useRef<HTMLDivElement>(null);
-  const search = useRef<HTMLInputElement>(null);
-  const [query, setQuery] = useState('');
-  const [searchOpen, setSearchOpen] = useState(false);
   const [directoryOpen, setDirectoryOpen] = useState(false);
   const settings = useRef<HTMLDetailsElement>(null);
-  useEffect(() => { if (searchOpen) search.current?.focus(); }, [searchOpen]);
   function closeDirectory() {
     setDirectoryOpen(false);
     document.getElementById('graph-directory-toggle')?.focus({ preventScroll: true });
   }
-  function openSearch() {
-    setDirectoryOpen(false);
-    if (settings.current) settings.current.open = false;
-    setSearchOpen(true);
-    search.current?.focus();
-  }
-  function closeSearch() {
-    setSearchOpen(false); setQuery('');
-    document.getElementById('graph-search-toggle')?.focus({ preventScroll: true });
-  }
   const data = useMemo(() => projectGraph(nodes, personalEdges), [nodes, personalEdges]);
-  const matches = useMemo(() => query.trim() ? nodes.filter((node) =>
-    node.title.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase())) : [], [nodes, query]);
-  const searchKeys = useMemo(() => new Set(matches.map((node) => node.key)), [matches]);
+  const searchKeys = useMemo(() => new Set<string>(), []);
   const graph = useSupplementGraph(host, data.nodes, data.edges, selectedKey, visible, onSelect, searchKeys);
+  useEffect(() => { if (searchTarget) graph.focus(searchTarget.key); }, [searchTarget]);
   const previewNode = visible && graph.preview ? nodes.find((node) => node.key === graph.preview!.key) : null;
-  function choose(key: string) {
-    if (onSelect(key)) { graph.focus(key); setQuery(''); setSearchOpen(false); setDirectoryOpen(false); }
-  }
   function chooseDirectory(key: string) {
     if (onSelect(key, true)) graph.reveal(key);
   }
@@ -68,7 +45,7 @@ export function SupplementGraph({ nodes, personalEdges, selectedKey, visible, on
         } else if (event.key === '+' || event.key === '=') { event.preventDefault(); graph.zoom(1.25); }
         else if (event.key === '-') { event.preventDefault(); graph.zoom(.8); }
         else if (event.key === '0') { event.preventDefault(); graph.fit(); }
-        else if (event.key === '/') { event.preventDefault(); openSearch(); }
+        else if (event.key === '/') { event.preventDefault(); document.getElementById('graph-search-toggle')?.click(); }
       }}>
       {graph.error && <p className="graph-error" role="alert">{graph.error}</p>}
       {!graph.ready && !graph.error && <p className="graph-error" role="status">正在打开节点图…</p>}
@@ -84,7 +61,7 @@ export function SupplementGraph({ nodes, personalEdges, selectedKey, visible, on
           if (directoryOpen) closeDirectory();
           else {
             if (settings.current) settings.current.open = false;
-            setSearchOpen(false); setQuery(''); setDirectoryOpen(true);
+            setDirectoryOpen(true);
           }
         }}>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -99,7 +76,7 @@ export function SupplementGraph({ nodes, personalEdges, selectedKey, visible, on
     </div>
     <div className="graph-corner-controls">
       <details className="graph-settings" ref={settings} onToggle={(event) => {
-        if (event.currentTarget.open) { setDirectoryOpen(false); setSearchOpen(false); setQuery(''); }
+        if (event.currentTarget.open) { setDirectoryOpen(false); }
       }} onKeyDown={(event) => {
         if (event.key === 'Escape') {
           event.preventDefault(); event.stopPropagation(); event.currentTarget.open = false;
@@ -133,36 +110,6 @@ export function SupplementGraph({ nodes, personalEdges, selectedKey, visible, on
         aria-label={bookVisible ? "隐藏教材" : "显示教材"} title={bookVisible ? "隐藏教材" : "显示教材"}
         aria-controls="textbook-view" aria-pressed={bookVisible} onClick={onToggleBook}>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1Zm0 0v15" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" /></svg>
-      </button>
-    </div>
-    <div className="graph-search-dock" onKeyDown={(event) => {
-      if (event.key === 'Escape' && searchOpen) { event.preventDefault(); event.stopPropagation(); closeSearch(); }
-    }}>
-      <div id="graph-search-panel" className="graph-search-panel" hidden={!searchOpen}>
-        <label className="graph-search"><span className="sr-only">搜索节点</span>
-          <input ref={search} type="search" value={query} placeholder="输入解读或个人补充名称"
-            onChange={(event) => setQuery(event.target.value)} aria-controls="graph-search-results"
-            onKeyDown={(event) => {
-              if (event.key === 'ArrowDown') { event.preventDefault(); document.querySelector<HTMLButtonElement>('#graph-search-results button')?.focus(); }
-            }} />
-        </label>
-
-      {query.trim() && <div className="graph-results" id="graph-search-results" aria-label="节点搜索结果">
-        <p role="status">找到 {matches.length} 个节点</p>
-        <ul>{matches.map((node) => <li key={node.key}>
-          <button type="button" data-node-key={node.key} data-supplement-type={node.type}
-            aria-current={selectedKey === node.key ? 'true' : undefined} onClick={() => choose(node.key)}>
-            <TypeMarker type={node.type} /><span><strong>{node.title}</strong>
-              <small>{supplementTypes[node.type]} · {nodeContext(node, chapters, sections)}</small></span>
-          </button>
-        </li>)}</ul>
-      </div>}
-      </div>
-      <button id="graph-search-toggle" className="icon-button graph-floating-button" type="button" aria-label={searchOpen ? "关闭节点搜索" : "搜索节点"} title={searchOpen ? "关闭节点搜索" : "搜索节点（/）"}
-        aria-expanded={searchOpen} aria-controls="graph-search-panel" onClick={searchOpen ? closeSearch : openSearch}>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          {searchOpen ? <path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /> : <><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" strokeWidth="1.5" /><path d="m16 16 4.5 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></>}
-        </svg>
       </button>
     </div>
     <p id="graph-help" className="sr-only">点击空白取消选中并关闭解读，拖动空白平移，滚轮缩放，拖动节点调整位置。悬停突出直接关联，按住 Ctrl 悬停预览。画布聚焦时方向键平移，加减键缩放，0 查看全图，斜线键搜索。搜索后按向下键或 Tab 选择结果，Enter 打开解读。</p>

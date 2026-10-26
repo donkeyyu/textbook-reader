@@ -17,6 +17,7 @@ import { readingPage, restoredScroll, type PageMetric } from "./session";
 import { groupMarkers } from "./marker-groups";
 import { loadReadingPosition, saveReadingPosition } from "./reading-record";
 import { SupplementPanel, SupplementPreview, type PreviewAnchor } from "./Supplement";
+import { ContentSearch } from './ContentSearch';
 import { SupplementGraph, GraphRelated } from './graph/SupplementGraph';
 import type { LinkBinding } from './links/document';
 import type { LinkContext } from './links/LinkContent';
@@ -108,6 +109,7 @@ export function Reader() {
   const [pageError, setPageError] = useState("");
   const [editingPage, setEditingPage] = useState(false);
   const [navigationOpen, setNavigationOpen] = useState(false);
+  const [searchTarget, setSearchTarget] = useState<{ key: string } | null>(null);
   const [navigationMode, setNavigationMode] = useState<'contents' | 'pages'>('contents');
   const { layoutRef, bottomPanel: panelBelow } = usePanelLayout(views.split, navigationOpen && views.bookVisible);
   const [supplementId, setSupplementId] = useState<string | null>(null);
@@ -703,6 +705,13 @@ export function Reader() {
         <h1>{bookTitle}</h1>
       </div>
       <div className="toolbar-actions">
+        <ContentSearch nodes={content.nodes} chapters={chapters} sections={sections} selectedKey={selectedGraphKey}
+          onSelect={(key) => {
+            if (!selectGraphNode(key)) return false;
+            if (!graphOpen && views.bookVisible) locateGraphNode(key);
+            if (graphOpen) setSearchTarget({ key });
+            return true;
+          }} />
         <button id="open-supplement-graph" className="icon-button" aria-label="节点图" title="节点图" disabled={!content.published} aria-expanded={graphOpen}
           aria-controls="supplement-graph" onClick={graphOpen ? closeGraph : openGraph}>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m7 7 10 2M7 7l3 11m7-9-7 9" stroke="currentColor" strokeWidth="1.5" /><circle cx="7" cy="7" r="3" fill="var(--surface)" stroke="currentColor" strokeWidth="1.5" /><circle cx="17" cy="9" r="2.5" fill="var(--surface)" stroke="currentColor" strokeWidth="1.5" /><circle cx="10" cy="18" r="2.5" fill="var(--surface)" stroke="currentColor" strokeWidth="1.5" /></svg>
@@ -851,7 +860,7 @@ export function Reader() {
           </section>)}
         </div>
       </div>
-      {graphMounted && <SupplementGraph nodes={content.nodes} selectedKey={selectedGraphKey} visible={graphOpen}
+      {graphMounted && <SupplementGraph searchTarget={searchTarget} nodes={content.nodes} selectedKey={selectedGraphKey} visible={graphOpen}
         personalEdges={references.edges}
         chapters={chapters} sections={sections} onSelect={selectGraphNode} bookVisible={views.bookVisible} onToggleBook={() => {
           cancelJump(); keepPreview(); clearPreview();

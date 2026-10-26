@@ -213,7 +213,7 @@ DonQ 后续确认使用 Supabase 项目 `ttibfyiittkyteodrwgf`。默认补充公
 
 验收：筛选后剩余入口及密集合并正确；恢复可重新访问；笔记和个人补充保存后刷新仍能读取；Markdown 预览与保存一致，原始 HTML 不执行；存储失败保留编辑内容并提示；缩放后个人位置仍对应所选原页区域；原有关联与返回路径继续可用。
 
-### R12 补充节点图（首版范围已确认，待实现）
+### R12 补充节点图（首版范围已确认）
 
 2026-10-25，DonQ 确认：
 
@@ -239,7 +239,7 @@ DonQ 后续确认使用 Supabase 项目 `ttibfyiittkyteodrwgf`。默认补充公
 
 DonQ 倾向使用 Pixi.js，实现类似 Obsidian 的图视图，并参考 family-tree 项目。Supabase 存储与迁移由 [02 任务](../.scratch/supplement-graph/issues/02-local-content-migration.md) 承接，验证结论以该票记录为准。
 
-首版需求已确认，02 的存储迁移与开发测试账号密码登录已按本轮范围验收；图、自由节点、笔记链接和分屏仍按后续任务实施。默认内容编辑属于后续工作。本节不表示全部首版功能已经实现。
+首版实施进度和验证范围见[派发与交接](../.scratch/supplement-graph/dispatch-plan.md)。默认内容编辑属于后续工作。
 
 首版验收覆盖：
 

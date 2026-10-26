@@ -1,61 +1,60 @@
-.split-resize { display: none; }
-.reading-layout { --panel-width: clamp(350px, var(--supplement-width, clamp(350px, 29vw, 420px)), calc(var(--panel-owner-width, 100vw) - 400px)); }
-.reading-layout > .supplement-panel { overflow-anchor: none; }
+/* Stable tracks keep book, graph and editor instances mounted when views change. */
+.reading-layout {
+  --navigation-width: 0px;
+  --drawer-width: 0px;
+  --panel-width: clamp(350px, var(--supplement-width, clamp(350px, 29vw, 420px)), calc(var(--panel-owner-width, 100vw) - 400px));
+  grid-template-columns: [owner-start navigation-start] var(--navigation-width) [navigation-end content-start] minmax(0, 1fr) [content-end drawer-start] var(--drawer-width) [drawer-end owner-end];
+  grid-template-rows: minmax(0, 1fr) minmax(0, 0%);
+}
+.reading-layout.supplement-open:not(.panel-bottom) { --drawer-width: var(--panel-width); }
+.reading-layout.panel-bottom.supplement-open { grid-template-rows: minmax(0, 1fr) minmax(0, var(--supplement-height, 45%)); }
+.reading-layout > .paper-scroller { grid-column: content-start / content-end; grid-row: 1; margin-top: 64px; }
 .reading-layout.book-hidden > .paper-scroller { visibility: hidden; pointer-events: none; }
+.reading-layout > .supplement-graph { grid-column: content-start / content-end; grid-row: 1; }
+.reading-layout > .supplement-panel { grid-column: drawer-start / drawer-end; grid-row: 1; overflow-anchor: none; }
+.reading-layout.panel-bottom > .supplement-panel { grid-column: content-start / content-end; grid-row: 2; border-left: 0; border-top: 1px solid var(--type-color, var(--separator)); padding-bottom: 24px; }
+.reading-layout.graph-open > .supplement-panel { animation: none; overflow-x: hidden; }
+.reading-layout.graph-open:not(.views-split) { transition: grid-template-columns 240ms var(--ease-out), grid-template-rows 240ms var(--ease-out); }
+.reading-layout.graph-open.panel-resizing:not(.views-split) { transition: none; }
 
-/* The drawer belongs to the visible book, or to the graph when the book is hidden. */
-.reading-layout.panel-bottom.supplement-open { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, var(--supplement-height, 45%)); }
-.reading-layout.graph-open.panel-bottom.supplement-open:not(.views-split) { grid-template-columns: minmax(0, 1fr); }
-.reading-layout.panel-bottom > .page-sidebar { grid-column: 1; grid-row: 1 / -1; }
-.reading-layout.panel-bottom > .paper-scroller { grid-column: -2; grid-row: 1; }
-.reading-layout.panel-bottom > .supplement-panel { grid-column: -2; grid-row: 2; border-left: 0; border-top: 1px solid var(--type-color, var(--separator)); padding-bottom: 24px; }
-.reading-layout.graph-open.panel-bottom:not(.views-split) > .supplement-panel { grid-column: 1; grid-row: 2; }
-.reading-layout.panel-bottom > .panel-resize { display: grid; place-items: center; grid-column: -2; grid-row: 2; align-self: start; justify-self: center; position: relative; z-index: 2; width: 72px; height: 28px; margin-top: -14px; border-radius: 8px; cursor: ns-resize; touch-action: none; user-select: none; }
-.reading-layout.panel-bottom > .panel-resize span { width: 36px; height: 4px; border-radius: 2px; background: var(--secondary); }
-.reading-layout.panel-bottom > .panel-resize:hover span, .reading-layout.panel-bottom > .panel-resize:focus-visible span { background: var(--accent); }
-
+.split-resize { display: none; }
 @media (min-width: 1001px) {
-  .reading-layout.graph-open.views-split { --drawer-width: 0px; grid-template-columns: minmax(0, 1fr) 12px minmax(0, calc(var(--book-pane-width) - var(--drawer-width))) var(--drawer-width); grid-template-rows: minmax(0, 1fr) minmax(0, 0%); }
-  .reading-layout.graph-open.views-split.supplement-open:not(.panel-bottom) { --drawer-width: var(--panel-width); }
-  .reading-layout.graph-open.views-split.panel-bottom.supplement-open { grid-template-rows: minmax(0, 1fr) minmax(0, var(--supplement-height, 45%)); }
-  .reading-layout.views-split > .supplement-graph { grid-column: 1; grid-row: 1 / -1; }
-  .reading-layout.views-split > .paper-scroller { grid-column: 3; grid-row: 1; visibility: visible; pointer-events: auto; padding: 20px 16px; }
-  .reading-layout.views-split > .supplement-panel { --panel-padding: 28px; grid-column: 4; grid-row: 1; }
-  .reading-layout.views-split.panel-bottom > .supplement-panel { grid-column: 3; grid-row: 2; }
-  .reading-layout.views-split > .split-resize { display: grid; place-items: center; grid-column: 2; grid-row: 1 / -1; cursor: ew-resize; touch-action: none; user-select: none; background: var(--surface); }
-  .split-resize span { width: 3px; height: 36px; border-radius: 2px; background: var(--separator); }
+  .reading-layout.graph-open.views-split {
+    grid-template-columns: [graph-start] minmax(0, 1fr) [graph-end divider-start] 12px [divider-end owner-start navigation-start] var(--navigation-width) [navigation-end content-start] minmax(0, calc(var(--book-pane-width) - var(--navigation-width) - var(--drawer-width))) [content-end drawer-start] var(--drawer-width) [drawer-end owner-end];
+  }
+  .reading-layout.views-split > .supplement-graph { grid-column: graph-start / graph-end; grid-row: 1 / -1; }
+  .reading-layout.views-split > .paper-scroller { padding: 20px 16px; }
+  .reading-layout.views-split > .supplement-panel { --panel-padding: 28px; }
+  .reading-layout.views-split > .split-resize { display: grid; place-items: center; grid-column: divider-start / divider-end; grid-row: 1 / -1; cursor: ew-resize; touch-action: none; user-select: none; border-inline: 1px solid #c5c7cc; background: #f0f1f3; }
+  .split-resize span { width: 4px; height: 44px; border-radius: 3px; background: #92959d; }
   .split-resize:hover span, .split-resize:focus-visible span { background: var(--accent); }
   .split-resize:focus-visible { outline-offset: -2px; }
-  .reading-layout.views-split.panel-bottom > .panel-resize { grid-column: 3; }
 }
 
-
-/* Navigation overlays only its book track, so opening it preserves both reading panes. */
-.book-toolbar > .book-navigation-toggle { width: 44px; height: 44px; border: 1px solid var(--separator); background: var(--surface); }
-
-.reading-layout > .page-sidebar.book-navigation { position: relative; inset: auto; grid-column: 1; grid-row: 1; align-self: stretch; justify-self: start; z-index: 4; width: min(300px, 100%); max-height: calc(100% - 64px); margin-top: 64px; padding: 12px 0 0; overflow: hidden; border-right: 1px solid var(--separator); }
-.book-navigation-modes { display: flex; gap: 4px; width: 100%; padding: 0 16px 12px; border-bottom: 1px solid var(--separator); }
-.book-navigation-modes button { flex: 1; min-height: 40px; background: transparent; color: var(--secondary); border-radius: 6px; }
-.book-navigation-modes button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); }
-.book-contents { width: 100%; overflow: auto; padding: 12px 16px; scrollbar-width: thin; }
-.book-contents summary { padding: 12px 0; cursor: pointer; font-size: 14px; font-weight: 600; }
-.book-contents button { display: block; width: 100%; padding: 10px 12px; min-height: 40px; background: transparent; text-align: left; color: var(--secondary); font-size: 14px; border-radius: 6px; }
-.book-contents button:hover { background: var(--hover); color: #1d1d1f; }
-.book-navigation .page-thumbnails[hidden], .book-contents[hidden] { display: none; }
-@media (min-width: 1001px) {
-  .reading-layout.views-split > .page-sidebar.book-navigation, .reading-layout.views-split > .book-toolbar { grid-column: 3; grid-row: 1; }
-}
-
-.reading-layout > .book-toolbar { grid-column: 1; grid-row: 1; align-self: start; display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; align-items: center; height: 64px; padding: 8px 12px; z-index: 5; background: var(--surface); border-bottom: 1px solid var(--separator); }
+/* Navigation has its own narrow column and extends beside the bottom explanation. */
+.book-toolbar > .book-navigation-toggle { width: 44px; height: 44px; margin-left: 12px; border: 1px solid var(--separator); background: var(--surface); }
+.reading-layout > .book-toolbar { grid-column: owner-start / content-end; grid-row: 1; align-self: start; display: grid; grid-template-columns: 56px minmax(0, 1fr) 56px; align-items: center; height: 64px; padding: 8px 0; z-index: 5; background: var(--surface); border-bottom: 1px solid var(--separator); }
+.reading-layout.book-navigation-open > .book-toolbar { grid-template-columns: var(--navigation-width) minmax(0, 1fr); }
 .reading-layout > .book-toolbar[hidden] { display: none; }
-.reading-layout > .paper-scroller { margin-top: 64px; }
 .book-toolbar .page-controls { grid-column: 2; }
 .book-toolbar .page-input-error { left: 50%; transform: translateX(-50%); max-width: calc(100vw - 32px); }
-@media (min-width: 1001px) { .reading-layout.views-split > .book-toolbar { grid-column: 3; } }
+.reading-layout > .page-sidebar.book-navigation { position: relative; inset: auto; grid-column: navigation-start / navigation-end; grid-row: 1 / -1; align-self: stretch; justify-self: stretch; min-width: 0; width: auto; margin-top: 64px; padding: 12px 0 0; overflow: hidden; border-right: 1px solid var(--separator); box-shadow: none; }
+.book-navigation-modes { display: flex; flex: none; gap: 4px; width: 100%; padding: 0 8px 10px; border-bottom: 1px solid var(--separator); }
+.book-navigation-modes button { flex: 1; min-width: 0; min-height: 40px; padding-inline: 4px; background: transparent; color: var(--secondary); border-radius: 6px; }
+.book-navigation-modes button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); }
+.book-contents { min-height: 0; width: 100%; overflow: auto; padding: 8px; scrollbar-width: thin; }
+.book-contents summary { padding: 12px 4px; cursor: pointer; font-size: 14px; font-weight: 600; overflow-wrap: anywhere; }
+.book-contents button { display: block; width: 100%; padding: 10px 8px; min-height: 40px; background: transparent; text-align: left; color: var(--secondary); font-size: 14px; line-height: 1.5; white-space: normal; overflow-wrap: anywhere; border-radius: 6px; }
+.book-contents button:hover { background: var(--hover); color: #1d1d1f; }
+.book-navigation .page-thumbnails { padding: 8px; }
+.book-navigation .page-thumbnail img { max-width: 100%; height: auto; }
+.book-navigation .page-thumbnails[hidden], .book-contents[hidden] { display: none; }
 
-/* The side handle shares the drawer track and stays fixed while its text scrolls. */
-.reading-layout:not(.panel-bottom) > .panel-resize { display: grid; place-items: center; grid-column: -2; grid-row: 1; align-self: center; justify-self: start; position: relative; z-index: 3; width: 28px; height: 72px; margin-left: -14px; border-radius: 8px; cursor: ew-resize; touch-action: none; user-select: none; }
-.reading-layout:not(.panel-bottom) > .panel-resize span { width: 4px; height: 36px; border-radius: 2px; background: var(--secondary); }
-.reading-layout:not(.panel-bottom) > .panel-resize:hover span, .reading-layout:not(.panel-bottom) > .panel-resize:focus-visible span { background: var(--accent); }
-
-.reading-layout.graph-open.panel-resizing:not(.views-split) { transition: none; }
+/* Handles share the explanation track and stay fixed while its text scrolls. */
+.reading-layout > .panel-resize { display: grid; place-items: center; position: relative; z-index: 3; border-radius: 8px; touch-action: none; user-select: none; }
+.reading-layout.panel-bottom > .panel-resize { grid-column: content-start / content-end; grid-row: 2; align-self: start; justify-self: center; width: 72px; height: 28px; margin: -14px 0 0; cursor: ns-resize; }
+.reading-layout.panel-bottom > .panel-resize span { width: 36px; height: 4px; }
+.reading-layout:not(.panel-bottom) > .panel-resize { grid-column: drawer-start / drawer-end; grid-row: 1; align-self: center; justify-self: start; width: 28px; height: 72px; margin: 0 0 0 -14px; cursor: ew-resize; }
+.reading-layout:not(.panel-bottom) > .panel-resize span { width: 4px; height: 36px; }
+.reading-layout > .panel-resize span { border-radius: 2px; background: var(--secondary); }
+.reading-layout > .panel-resize:hover span, .reading-layout > .panel-resize:focus-visible span { background: var(--accent); }

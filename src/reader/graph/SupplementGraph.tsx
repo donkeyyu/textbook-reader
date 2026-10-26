@@ -132,7 +132,7 @@ export function SupplementGraph({ nodes, personalEdges, selectedKey, visible, on
       <button id="graph-book-toggle" className="icon-button graph-floating-button" type="button"
         aria-label={bookVisible ? "隐藏教材" : "显示教材"} title={bookVisible ? "隐藏教材" : "显示教材"}
         aria-controls="textbook-view" aria-pressed={bookVisible} onClick={onToggleBook}>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.5" /><path d="M15 4v16" stroke="currentColor" strokeWidth="1.5" />{bookVisible && <path d="M16 5h3a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-3Z" fill="currentColor" opacity=".25" />}</svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1Zm0 0v15" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" /></svg>
       </button>
     </div>
     <div className="graph-search-dock" onKeyDown={(event) => {

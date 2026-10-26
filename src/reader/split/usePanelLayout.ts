@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 
 /** Choose the drawer placement from its owning pane, before subtracting the drawer. */
-export function usePanelLayout(split: boolean) {
+export function usePanelLayout(split: boolean, navigationOpen: boolean) {
   const layoutRef = useRef<HTMLElement>(null);
   const [bottomPanel, setBottomPanel] = useState(() => window.innerWidth <= 1100);
 
@@ -19,6 +19,10 @@ export function usePanelLayout(split: boolean) {
         const value = `${ownerWidth}px`;
         if (layout.style.getPropertyValue('--book-pane-width') !== value) layout.style.setProperty('--book-pane-width', value);
       }
+      const navigationWidth = navigationOpen ? Math.min(width <= 600 ? 120 : 180, ownerWidth * .35) : 0;
+      const navigationSize = `${navigationWidth}px`;
+      if (layout.style.getPropertyValue('--navigation-width') !== navigationSize) layout.style.setProperty('--navigation-width', navigationSize);
+      ownerWidth -= navigationWidth;
       const ownerSize = `${ownerWidth}px`;
       if (layout.style.getPropertyValue('--panel-owner-width') !== ownerSize) layout.style.setProperty('--panel-owner-width', ownerSize);
       setBottomPanel(ownerWidth <= 1100);
@@ -29,7 +33,7 @@ export function usePanelLayout(split: boolean) {
     const changes = new MutationObserver(measure);
     changes.observe(layout, { attributes: true, attributeFilter: ['style'] });
     return () => { resize.disconnect(); changes.disconnect(); };
-  }, [split]);
+  }, [split, navigationOpen]);
 
   return { layoutRef, bottomPanel };
 }

@@ -28,20 +28,28 @@ export async function checkNavigationDirectories(page) {
     const book = document.getElementById('textbook-view').getBoundingClientRect();
     const nav = document.getElementById('page-sidebar').getBoundingClientRect();
     const graph = document.getElementById('supplement-graph').getBoundingClientRect();
-    return { book: book.toJSON(), nav: nav.toJSON(), graph: graph.toJSON(),
+    return { book: book.toJSON(), nav: nav.toJSON(), graph: graph.toJSON(), panel: document.getElementById("supplement-panel").getBoundingClientRect().toJSON(), layout: document.querySelector(".reading-layout").getBoundingClientRect().toJSON(),
       globalToggle: !!document.querySelector('.toolbar .navigation-toggle') };
   });
   assert.equal(bounds.globalToggle, false);
-  assert.ok(bounds.nav.left >= bounds.book.left && bounds.nav.right <= bounds.book.right + 1);
-  assert.ok(bounds.nav.top >= bounds.book.top && bounds.nav.bottom <= bounds.book.bottom + 1);
+  assert.ok(bounds.nav.right <= bounds.book.left + 1);
+  assert.ok(bounds.nav.width <= 181);
+  assert.ok(bounds.panel.left >= bounds.nav.right - 1);
+  assert.ok(Math.abs(bounds.nav.bottom - bounds.layout.bottom) <= 1);
   assert.equal(bounds.graph.width, before.width);
   await page.click('.book-navigation-modes button >> nth=0');
   if (!await page.evaluate(() => document.querySelector('.book-contents details').open)) await page.click('.book-contents summary >> nth=0');
+  const timeOrigin = await page.evaluate(() => performance.timeOrigin);
   await page.click('.book-contents details button >> nth=1');
-  await page.waitForFunction(() => document.getElementById('page-sidebar').hidden);
-  await page.click('#book-navigation-toggle');
+  await page.waitForFunction(() => document.activeElement?.id.startsWith('page-'));
+  assert.equal(await page.evaluate(() => document.getElementById('page-sidebar').hidden), false);
+  assert.equal(await page.evaluate(() => performance.timeOrigin), timeOrigin);
   await page.click('.book-navigation-modes button >> nth=1');
   assert.equal(await page.evaluate(() => document.querySelector('.page-thumbnails').hidden), false);
+  await page.click('#thumbnail-12');
+  await page.waitForFunction(() => document.getElementById('thumbnail-12').getAttribute('aria-current') === 'page');
+  assert.equal(await page.evaluate(() => document.getElementById('page-sidebar').hidden), false);
+  assert.equal(await page.evaluate(() => performance.timeOrigin), timeOrigin);
   await page.press('.book-navigation-modes button >> nth=1', 'Escape');
   assert.equal(await page.evaluate(() => document.activeElement.id), 'book-navigation-toggle');
   return { all, bounds, filterAndChoose: true, keyboardClose: true, bookContentsAndPages: true };

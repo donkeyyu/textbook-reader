@@ -1,18 +1,4 @@
-.reading-layout.graph-open { position: relative; }
-.reading-layout.graph-open { transition: grid-template-rows 240ms var(--ease-out); }
-/* The tracks remain present while the drawer opens and closes. */
-@media (min-width: 1101px) {
-  .reading-layout.graph-open:not(.views-split) { grid-template-columns: minmax(0, 1fr) 0px; transition: grid-template-columns 240ms var(--ease-out); }
-  .reading-layout.graph-open.supplement-open:not(.views-split) { grid-template-columns: minmax(0, 1fr) var(--panel-width); }
-  .graph-open:not(.views-split) > .supplement-panel { grid-column: 2; grid-row: 1; }
-}
-@media (max-width: 1100px) {
-  .reading-layout.graph-open { grid-template-rows: minmax(0, 1fr) minmax(0, 0%); }
-  .reading-layout.graph-open.supplement-open { grid-template-rows: minmax(0, 1fr) minmax(0, var(--supplement-height, 45%)); }
-}
-.reading-layout.graph-open > .supplement-panel { animation: none; overflow-x: hidden; }
-.graph-open > .paper-scroller { grid-column: 1; grid-row: 1; visibility: hidden; pointer-events: none; }
-.graph-open > .supplement-graph { grid-column: 1; grid-row: 1; z-index: 1; }
+.supplement-graph { grid-column: 1; grid-row: 1; z-index: 1; }
 .supplement-graph { position: relative; min-width: 0; min-height: 0; display: flex; flex-direction: column; background: var(--surface); }
 .supplement-graph[hidden] { display: none; }
 .graph-corner-controls { position: absolute; inset: 16px 16px 80px; display: flex; justify-content: flex-end; align-items: flex-start; gap: 8px; z-index: 2; pointer-events: none; }

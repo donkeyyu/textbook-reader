@@ -109,7 +109,7 @@ export function Reader() {
   const [editingPage, setEditingPage] = useState(false);
   const [navigationOpen, setNavigationOpen] = useState(false);
   const [navigationMode, setNavigationMode] = useState<'contents' | 'pages'>('contents');
-  const { layoutRef, bottomPanel: panelBelow } = usePanelLayout(views.split);
+  const { layoutRef, bottomPanel: panelBelow } = usePanelLayout(views.split, navigationOpen && views.bookVisible);
   const [supplementId, setSupplementId] = useState<string | null>(null);
   const [choiceIds, setChoiceIds] = useState<string[] | null>(null);
   const [methodOpenIds, setMethodOpenIds] = useState<string[]>([]);
@@ -583,7 +583,6 @@ export function Reader() {
       if (requestId.current !== id) return;
       // Only a loaded textbook target may change the visible reading views.
       views.show('book');
-      if (window.matchMedia('(max-width: 760px)').matches) setNavigationOpen(false);
       if (jump.locate) {
         if (jump.locationId) setSelectedLocation(jump.locationId);
         setCommit({ page: jump.page, locationId: jump.locationId, ...jump.locate });
@@ -756,14 +755,14 @@ export function Reader() {
     </div>}
     {ownsPersonal && <LegacyCopies copies={content.personal!.copies} current={personal} titleForNote={(id) => getSupplement(id)?.title ?? id} />}
     {readingError && <p className="storage-error" role="status">{readingError}</p>}
-    <main ref={layoutRef} className={`reading-layout${panelBelow ? " panel-bottom" : ""}${graphOpen ? " graph-open" : ""}${views.split ? " views-split" : ""}${!views.bookVisible ? " book-hidden" : ""}${note || choiceIds || personalItem || personalLibraryOpen ? " supplement-open" : ""}`}>
+    <main ref={layoutRef} className={`reading-layout${navigationOpen && views.bookVisible ? " book-navigation-open" : ""}${panelBelow ? " panel-bottom" : ""}${graphOpen ? " graph-open" : ""}${views.split ? " views-split" : ""}${!views.bookVisible ? " book-hidden" : ""}${note || choiceIds || personalItem || personalLibraryOpen ? " supplement-open" : ""}`}>
       <div className="book-toolbar" hidden={!views.bookVisible} aria-label="教材工具栏">
       <button ref={toggleButton} id="book-navigation-toggle" className="icon-button navigation-toggle book-navigation-toggle"
         hidden={!views.bookVisible} aria-label={navigationOpen ? "收起教材目录" : "展开教材目录"}
         title="教材目录" aria-expanded={navigationOpen} aria-controls="page-sidebar" onClick={() => {
           clearPreview(); setNavigationOpen(!navigationOpen);
         }}>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="2" stroke="currentColor" strokeWidth="1.5" /><path d="M9 4v16" stroke="currentColor" strokeWidth="1.5" /></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /><circle cx="4" cy="6" r="1" fill="currentColor" /><circle cx="4" cy="12" r="1" fill="currentColor" /><circle cx="4" cy="18" r="1" fill="currentColor" /></svg>
       </button>
       {pageControls}
       </div>
@@ -776,9 +775,9 @@ export function Reader() {
         <div className="book-contents" hidden={navigationMode !== 'contents'}>
           {chapters.map((chapter) => <details key={chapter.id}>
             <summary>{chapter.title}</summary>
-            <button type="button" onClick={() => { setNavigationOpen(false); void navigate({ page: chapter.start }); }}>章首页</button>
+            <button type="button" onClick={() => { void navigate({ page: chapter.start }); }}>章首页</button>
             {sections.filter((section) => section.chapterId === chapter.id).map((section) =>
-              <button type="button" key={section.id} onClick={() => { setNavigationOpen(false); void navigate({ page: section.start }); }}>{section.title}</button>)}
+              <button type="button" key={section.id} onClick={() => { void navigate({ page: section.start }); }}>{section.title}</button>)}
           </details>)}
         </div>
         <div className="page-thumbnails" ref={thumbnailList} hidden={navigationMode !== 'pages'}>
@@ -787,7 +786,7 @@ export function Reader() {
             onKeyDown={(event) => {
               const number = event.key === "ArrowDown" ? page.page + 1 : event.key === "ArrowUp" ? page.page - 1 : event.key === "Home" ? 1 : event.key === "End" ? pageCount : null;
               if (number !== null) { event.preventDefault(); document.getElementById(`thumbnail-${Math.max(1, Math.min(pageCount, number))}`)?.focus(); }
-            }} onClick={() => { setNavigationOpen(false); void navigate({ page: page.page }); }}>
+            }} onClick={() => { void navigate({ page: page.page }); }}>
             <img src={page.thumbnail} alt="" width="80" height="112" loading="lazy" /><span>文件第 {page.page} 页</span><span>{page.printedPage === null ? "无印刷页码" : pageLabel(page)}</span>
           </button>)}
         </div>

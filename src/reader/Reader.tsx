@@ -18,6 +18,8 @@ import { groupMarkers } from "./marker-groups";
 import { loadReadingPosition, saveReadingPosition } from "./reading-record";
 import { SupplementPanel, SupplementPreview, type PreviewAnchor } from "./Supplement";
 import { SupplementGraph, GraphRelated } from './graph/SupplementGraph';
+import type { LinkBinding } from './links/document';
+import type { LinkContext } from './links/LinkContent';
 
 type ReadingContext = {
   page: number;
@@ -83,12 +85,15 @@ export function Reader() {
   const [selectionPage, setSelectionPage] = useState<number | null>(null);
   const [hiddenTypes, setHiddenTypes] = useState<SupplementType[]>([]);
   const [hiddenIds, setHiddenIds] = useState<string[]>([]);
-  function saveNote(id: string, value: string) {
+  function saveNote(id: string, value: string, bindings: readonly LinkBinding[]) {
     return storePersonal((current) => {
       const notes = { ...current.notes };
+      const noteBindings = { ...current.noteBindings };
       if (value.trim()) notes[id] = value;
       else delete notes[id];
-      return { ...current, notes };
+      if (value.trim() && bindings.length) noteBindings[id] = bindings;
+      else delete noteBindings[id];
+      return { ...current, notes, ...(current.noteBindings || bindings.length ? { noteBindings } : {}) };
     });
   }
   const [currentPage, setCurrentPage] = useState(1);
@@ -124,6 +129,13 @@ export function Reader() {
   const selectedGraphKey = personalItem
     ? content.nodes.find((node) => node.source === 'personal' && node.id === personalItem.id)?.key ?? null
     : supplementId ? nodeKey({ bookId, source: 'default', id: supplementId }) : null;
+  const links: LinkContext = { bookId, nodes: content.nodes, chapters, sections,
+    chapterId: content.nodes.find((node) => node.key === selectedGraphKey)?.chapterId ?? null,
+    onNavigate: (target) => { selectGraphNode(nodeKey(target)); },
+    onCreate: async (item) => {
+      await storePersonal((current) => ({ ...current, supplements: [...current.supplements.filter((value) => value.id !== item.id), item] }));
+      return { bookId, source: 'personal', id: item.id };
+    } };
 
   function allowGraphSelection() {
     return !document.querySelector('[data-dirty="true"]') || window.confirm('有尚未保存的内容，放弃修改？');
@@ -606,7 +618,7 @@ export function Reader() {
     }
   }} onClickCapture={(event) => {
     const target = event.target as HTMLElement;
-    if (target.closest('.markdown-editor, .personal-title, .personal-metadata, .method-toggle, .locate-button, .account-control, .legacy-copies, .supplement-graph, .graph-related, #open-supplement-graph')) return;
+    if (target.closest('.markdown-editor, .create-linked-node, .personal-title, .personal-metadata, .method-toggle, .locate-button, .account-control, .legacy-copies, .supplement-graph, .graph-related, .node-link, #open-supplement-graph')) return;
     if (document.querySelector('[data-dirty="true"]') && target.closest('button, summary, input') && !window.confirm('有尚未保存的内容，放弃修改？')) {
       event.preventDefault(); event.stopPropagation();
     }
@@ -778,7 +790,7 @@ export function Reader() {
           setPersonalItem({ id: crypto.randomUUID(), title: '', markdown: '', page: null, region: null,
             chapterId: newChapterId === undefined ? chapters.find(({ start, end }) => currentPage >= start && currentPage <= end)?.id ?? null : newChapterId, sectionId: null });
         }} onClose={closePersonalLibrary} />}
-      {personalItem && <PersonalPanel chapters={chapters} sections={sections} onBack={openPersonalLibrary} onLocate={locateSupplement} onEdit={cancelJump} key={personalItem.id} item={personalItem} isNew={!personal.supplements.some((item) => item.id === personalItem.id)}
+      {personalItem && <PersonalPanel chapters={chapters} sections={sections} links={links} onBack={openPersonalLibrary} onLocate={locateSupplement} onEdit={cancelJump} key={personalItem.id} item={personalItem} isNew={!personal.supplements.some((item) => item.id === personalItem.id)}
         onClose={() => {
           setPersonalItem(null); closePersonalLibrary();
           if (graphOpen) requestAnimationFrame(() => document.querySelector<HTMLInputElement>('.graph-search input')?.focus({ preventScroll: true }));
@@ -804,7 +816,9 @@ export function Reader() {
           }} /> : undefined}
         onHide={(id) => { setHiddenIds([...hiddenIds, id]); closeSupplement(); }}
         renderPersonal={(item) => <section className="personal-note" aria-label="我的笔记">
-          {content.personal ? <MarkdownEditor onEdit={cancelJump} key={`${content.personal.userId}:${item.id}`} note value={content.personal.data.notes[item.id] ?? ''} label="笔记 Markdown" onSave={(value) => saveNote(item.id, value)} />
+          {content.personal ? <MarkdownEditor onEdit={cancelJump} key={`${content.personal.userId}:${item.id}`} note value={content.personal.data.notes[item.id] ?? ''}
+            bindings={content.personal.data.noteBindings?.[item.id]} links={{ ...links, chapterId: content.nodes.find((node) => node.source === 'default' && node.id === item.id)?.chapterId ?? null }}
+            label="笔记 Markdown" onSave={(value, bindings) => saveNote(item.id, value, bindings)} />
             : <p>{content.user ? '个人笔记尚未载入，请读取成功后再编辑。' : '登录后可保存个人笔记。'}</p>}
         </section>}
         activeLocationId={selectedLocation}

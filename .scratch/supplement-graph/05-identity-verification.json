@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-26",
+  "phase": "independent modules; not integrated; acceptance pending",
+  "baseContracts": {
+    "storage": "3388d3a",
+    "personalNodes": "be720ef"
+  },
+  "filesSha256": {
+    "src/reader/links/document.ts": "a4a1cfad4c45e650164d31ece64e2ec58d1e09121b22fbacc8c14b92c8455f88",
+    "src/reader/links/state.ts": "cd5721b0b83c4dfca46fe483ee8cb38a951d0eb8171b0405e97a7250b0b97cd9",
+    "src/reader/links/candidates.ts": "3caf993f41ecb5ee4a5f101fb9aac53341e01787dcd4ede7b6995d9f862e6ce2",
+    "src/reader/links/identity.test.ts": "f9a4d156e7c61be55ec106af36e49438807c1cd3a051b995e006bcd90233f296"
+  },
+  "checks": {
+    "identityCommand": "node --experimental-strip-types --test src/reader/links/identity.test.ts",
+    "passed": 7,
+    "failed": 0,
+    "typecheck": "passed",
+    "trackedDiffWhitespace": "passed",
+    "newModuleWhitespace": "passed"
+  },
+  "coverage": [
+    "same-section same-title distinct NodeRef per instance",
+    "insertion, local edit, deletion and real CodeMirror state undo/redo",
+    "same-text paste unbound; new plain-text copy unbound",
+    "binding-only same-text reselection and history",
+    "merged history and non-history position mapping",
+    "code, escape, HTML, unfinished input excluded",
+    "renamed, deleted, default-removed and other-book targets never matched by title",
+    "JSON reload, self-navigation resolution and same-section candidate context"
+  ],
+  "limits": [
+    "No browser EditorView execution yet",
+    "No editor or save integration yet",
+    "No cloud validation or failed-save/retry evidence yet",
+    "No acceptance checkbox completed",
+    "No backlinks or graph edges"
+  ],
+  "sharedFilesModified": [],
+  "dependencyInstallPerformed": false,
+  "remoteWritesPerformed": false
+}

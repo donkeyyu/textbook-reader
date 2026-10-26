@@ -2,13 +2,15 @@ import { useRef, useState } from 'react';
 import { MarkdownContent, MarkdownEditor } from './MarkdownEditor';
 import type { PersonalSupplement } from './personal';
 import type { ChapterRef, SectionRef } from '../textbook/sections';
+import type { LinkContext } from './links/LinkContent';
 import './personal-library.css';
 
-export function PersonalPanel({ item, isNew, chapters, sections, onSave, onClose, onBack, onDelete, onEdit, onLocate }: {
+export function PersonalPanel({ item, isNew, chapters, sections, links, onSave, onClose, onBack, onDelete, onEdit, onLocate }: {
   item: PersonalSupplement;
   isNew: boolean;
   chapters: ChapterRef[];
   sections: SectionRef[];
+  links?: LinkContext;
   onSave: (item: PersonalSupplement) => void | Promise<void>;
   onClose: () => void;
   onBack: () => void;
@@ -48,9 +50,10 @@ export function PersonalPanel({ item, isNew, chapters, sections, onSave, onClose
           <option value="">未归属节</option>{sections.filter((section) => section.chapterId === chapterId).map((section) => <option key={section.id} value={section.id}>{section.title}</option>)}
         </select></label>}
       </div>
-      <MarkdownEditor additionalDirty={title !== item.title || metadataDirty} onEdit={onEdit} value={item.markdown} label="补充内容（Markdown）" onSave={(markdown) => {
+      <MarkdownEditor additionalDirty={title !== item.title || metadataDirty} onEdit={onEdit} value={item.markdown} bindings={item.bindings}
+        links={links ? { ...links, chapterId } : undefined} label="补充内容（Markdown）" onSave={(markdown, bindings) => {
         if (!title.trim()) throw new Error('请填写标题。');
-        return onSave({ ...item, title: title.trim(), markdown, chapterId, sectionId });
+        return onSave({ ...item, title: title.trim(), markdown, bindings, chapterId, sectionId });
       }} onSaved={() => {
         if (latestTitle.current === title && latestMetadata.current.chapterId === chapterId && latestMetadata.current.sectionId === sectionId) setEditing(false);
       }} onCancel={() => {
@@ -60,7 +63,7 @@ export function PersonalPanel({ item, isNew, chapters, sections, onSave, onClose
     </> : <>
       <button className="text-button personal-panel-back" type="button" onClick={onBack}>全部补充</button>
       <p className="personal-context">{chapters.find(({ id }) => id === item.chapterId)?.title ?? '未归属章节'}{item.sectionId ? ` · ${sections.find(({ id }) => id === item.sectionId)?.title ?? item.sectionId}` : ''}</p>
-      <MarkdownContent>{item.markdown}</MarkdownContent>
+      <MarkdownContent bindings={item.bindings} links={links}>{item.markdown}</MarkdownContent>
       <div className="personal-actions">
         <button className="text-button" disabled={deleting} onClick={() => setEditing(true)}>编辑补充</button>
         <button className="text-button" disabled={deleting} onClick={() => setConfirmDelete(true)}>删除补充</button>

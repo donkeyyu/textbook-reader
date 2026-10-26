@@ -2,15 +2,23 @@ import { useEffect, useId, useRef, useState } from 'react';
 import { minimalSetup } from 'codemirror';
 import { EditorView, placeholder } from '@codemirror/view';
 import { markdown } from '@codemirror/lang-markdown';
-import ReactMarkdown from 'react-markdown';
+import { autocompletion, startCompletion } from '@codemirror/autocomplete';
+import { LinkContent, type LinkContext } from './links/LinkContent';
+import { CreateLinkedNode } from './links/CreateLinkedNode';
+import { nodeLinkCompletions, type LinkRequest } from './links/candidates';
+import { linkTokens, type LinkBinding, type LinkDocument } from './links/document';
+import { bindLink, linkDocument, linkExtensions, linkState } from './links/state';
+import './links/links.css';
 
-export function MarkdownContent({ children }: { children: string }) {
-  return <div className="markdown-content"><ReactMarkdown>{children}</ReactMarkdown></div>;
+export function MarkdownContent({ children, bindings, links }: { children: string; bindings?: readonly LinkBinding[]; links?: LinkContext }) {
+  return <LinkContent markdown={children} bindings={bindings} links={links} />;
 }
 
-export function MarkdownEditor({ value, onSave, onSaved, onCancel, label = 'Markdown 内容', note = false, additionalDirty = false, onEdit }: {
+export function MarkdownEditor({ value, bindings = [], links, onSave, onSaved, onCancel, label = 'Markdown 内容', note = false, additionalDirty = false, onEdit }: {
   value: string;
-  onSave: (value: string) => void | Promise<void>;
+  bindings?: readonly LinkBinding[];
+  links?: LinkContext;
+  onSave: (value: string, bindings: readonly LinkBinding[]) => void | Promise<void>;
   onSaved?: () => void;
   onCancel?: () => void;
   label?: string;
@@ -18,30 +26,34 @@ export function MarkdownEditor({ value, onSave, onSaved, onCancel, label = 'Mark
   additionalDirty?: boolean;
   onEdit?: () => void;
 }) {
-  const [draft, setDraft] = useState(value);
+  const [draft, setDraft] = useState<LinkDocument>(() => ({ markdown: value, bindings }));
   const [preview, setPreview] = useState(note && !!value.trim());
-  const [savedDraft, setSavedDraft] = useState(value);
+  const [savedDraft, setSavedDraft] = useState(() => JSON.stringify({ markdown: value, bindings }));
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
-  const dirty = saving || draft !== (note ? savedDraft : value) || additionalDirty || error !== null;
-  const canSave = !!draft.trim();
-  const callbacks = useRef({ onSave, onSaved, onEdit, note });
-  callbacks.current = { onSave, onSaved, onEdit, note };
-  const latestDraft = useRef(value);
+  const draftKey = JSON.stringify(draft);
+  const dirty = saving || draftKey !== (note ? savedDraft : JSON.stringify({ markdown: value, bindings })) || additionalDirty || error !== null;
+  const canSave = !!draft.markdown.trim();
+  const callbacks = useRef({ onSave, onSaved, onEdit, note, links });
+  callbacks.current = { onSave, onSaved, onEdit, note, links };
+  const latestDraft = useRef(draftKey);
+  const draftVersion = useRef(0);
   const latestRequest = useRef(0);
   const pendingSaves = useRef(0);
   const mounted = useRef(true);
-  async function save(next: string) {
+  async function save(next: LinkDocument) {
     const request = ++latestRequest.current;
+    const version = draftVersion.current;
+    const key = JSON.stringify(next);
     const { onSave, onSaved, note } = callbacks.current;
     pendingSaves.current++;
     setSaving(true);
     try {
-      await onSave(next);
+      await onSave(next.markdown, next.bindings);
       if (request === latestRequest.current) {
-        setSavedDraft(next);
-        setError(null);
-        if (mounted.current && latestDraft.current === next) onSaved?.();
+        setSavedDraft(key);
+        if (version === draftVersion.current) setError(null);
+        if (mounted.current && version === draftVersion.current && latestDraft.current === key) onSaved?.();
       }
     } catch (cause) {
       if (request === latestRequest.current) {
@@ -55,7 +67,10 @@ export function MarkdownEditor({ value, onSave, onSaved, onCancel, label = 'Mark
   }
   const id = useId();
   const editorHost = useRef<HTMLDivElement>(null);
+  const view = useRef<EditorView | null>(null);
+  const [creating, setCreating] = useState<(LinkRequest & { document: EditorView['state']['doc'] }) | null>(null);
   const initialValue = useRef(value);
+  const initialBindings = useRef(bindings);
   useEffect(() => {
     if (!editorHost.current) return;
     mounted.current = true;
@@ -65,20 +80,25 @@ export function MarkdownEditor({ value, onSave, onSaved, onCancel, label = 'Mark
       extensions: [
         minimalSetup,
         markdown(),
+        linkExtensions(initialBindings.current),
+        ...(callbacks.current.links ? [autocompletion({ icons: false, interactionDelay: 0, override: [nodeLinkCompletions(
+          () => callbacks.current.links!, (request) => setCreating({ ...request, document: request.view.state.doc }))] })] : []),
         EditorView.lineWrapping,
         placeholder('支持标题、列表、加粗和链接'),
         EditorView.contentAttributes.of({ 'aria-labelledby': id, 'aria-multiline': 'true', spellcheck: 'true' }),
         EditorView.updateListener.of((update) => {
-          if (!update.docChanged) return;
-          const next = update.state.doc.toString();
-          latestDraft.current = next;
+          if (!update.docChanged && update.startState.field(linkState) === update.state.field(linkState)) return;
+          const next = linkDocument(update.state);
+          draftVersion.current++;
+          latestDraft.current = JSON.stringify(next);
           setDraft(next);
           callbacks.current.onEdit?.();
           if (callbacks.current.note) void save(next);
         }),
       ],
     });
-    return () => { mounted.current = false; editor.destroy(); };
+    view.current = editor;
+    return () => { mounted.current = false; view.current = null; editor.destroy(); };
   }, [id]);
   useEffect(() => {
     if (!dirty) return;
@@ -95,7 +115,10 @@ export function MarkdownEditor({ value, onSave, onSaved, onCancel, label = 'Mark
     }}>取消</button>}
     <button type="submit" className="text-button" disabled={!canSave || saving}>{saving ? '保存中…' : '保存'}</button>
   </>;
-  return <form className="markdown-editor" data-dirty={dirty} data-saving={saving} onSubmit={(event) => {
+  const unbound = links ? linkTokens(draft.markdown).filter((token) => !draft.bindings.some((binding) => binding.from === token.from && binding.to === token.to)) : [];
+  return <><form className="markdown-editor" data-dirty={dirty} data-saving={saving} onKeyDown={(event) => {
+    if (event.defaultPrevented) event.stopPropagation();
+  }} onSubmit={(event) => {
     event.preventDefault();
     if (!note && canSave && !saving) void save(draft);
   }}>
@@ -104,7 +127,16 @@ export function MarkdownEditor({ value, onSave, onSaved, onCancel, label = 'Mark
       <button type="button" className="text-button note-mode-toggle" aria-pressed={preview} onClick={() => setPreview(!preview)}>{preview ? '源码' : '预览'}</button>
     </div>}
     <div ref={editorHost} className="markdown-source" hidden={preview} />
-    {preview && <div className="editor-preview" aria-label="Markdown 预览">{draft.trim() ? <MarkdownContent>{draft}</MarkdownContent> : <p>还没有内容</p>}</div>}
+    {preview && <div className="editor-preview" aria-label="Markdown 预览">{draft.markdown.trim() ? <MarkdownContent bindings={draft.bindings} links={links}>{draft.markdown}</MarkdownContent> : <p>还没有内容</p>}</div>}
+    {unbound.length > 0 && <div className="unbound-links"><span>链接尚未选择目标：</span>{unbound.map((token, index) =>
+      <button key={token.from} className="text-button" type="button" aria-label={`选择第 ${index + 1} 处链接“${token.label}”的目标`} onClick={() => {
+        setPreview(false);
+        requestAnimationFrame(() => {
+          const editor = view.current;
+          if (!editor) return;
+          editor.dispatch({ selection: { anchor: token.to - 2 } }); editor.focus(); startCompletion(editor);
+        });
+      }}>[[{token.label}]]</button>)}</div>}
     {error && <div className="editor-save-error"><p role="alert">{error}</p>
       {note && <button type="button" className="text-button note-retry" disabled={saving} onClick={() => { void save(draft); }}>重试</button>}
     </div>}
@@ -112,5 +144,14 @@ export function MarkdownEditor({ value, onSave, onSaved, onCancel, label = 'Mark
       <button type="button" className="text-button editor-preview-toggle" aria-pressed={preview} onClick={() => setPreview(!preview)}>{preview ? '继续编辑' : '预览'}</button>
       {saveActions}
     </div>}
-  </form>;
+  </form>{creating && links && <CreateLinkedNode title={creating.query} links={links} onDone={(target) => {
+    setCreating(null);
+    if (target) {
+      if (view.current !== creating.view || creating.view.state.doc !== creating.document) {
+        setError('补充已创建，来源文字已有变化，请重新选择链接目标。'); return;
+      }
+      creating.view.dispatch(bindLink(creating.view.state, creating, target.ref, target.title));
+    }
+    requestAnimationFrame(() => view.current?.focus());
+  }} />}</>;
 }

@@ -1,0 +1,370 @@
+{
+  "date": "2026-10-26",
+  "ticket": ".scratch/supplement-graph/issues/05-stable-note-links.md",
+  "status": "accepted after root final review and two P2 fixes; complete",
+  "baseCommit": "4f67997",
+  "sourceSha256": {
+    "src/reader/links/document.ts": "a4a1cfad4c45e650164d31ece64e2ec58d1e09121b22fbacc8c14b92c8455f88",
+    "src/reader/links/state.ts": "cd5721b0b83c4dfca46fe483ee8cb38a951d0eb8171b0405e97a7250b0b97cd9",
+    "src/reader/links/candidates.ts": "3caf993f41ecb5ee4a5f101fb9aac53341e01787dcd4ede7b6995d9f862e6ce2",
+    "src/reader/links/identity.test.ts": "f9a4d156e7c61be55ec106af36e49438807c1cd3a051b995e006bcd90233f296",
+    "src/reader/links/LinkContent.tsx": "87896882da798d40fd271a61eee4887a97ad691db3fdd4cd5d3de0cc6b690eaa",
+    "src/reader/links/CreateLinkedNode.tsx": "38be62a6c43caed2ec022168500d69d900566d0cada99e3c61fb2b2fc6f1c5e8",
+    "src/reader/links/links.css": "39a4397830035f0c9f0246ecfb60ce565d1fad58059418d650b8cd88244f189c",
+    "src/reader/MarkdownEditor.tsx": "90b6204043b95c6bed52ec8aa80d4b6dac671df0123ca8d6486bb97857b39b03",
+    "src/reader/PersonalPanel.tsx": "364831bd17721f2e2ca19687828e7cf84a8113e316bfaa818fe069fcec868481",
+    "src/reader/Reader.tsx": "0c6f99d47edd7365e13e2fd031106ff0bb55b6d79d715532a71db341d1d91f6f",
+    "src/reader/personal.ts": "ac621da8454f60d27bb6eda6a73dd417e1560a1642f2fae414dd1a587147cca2",
+    "scripts/check-stable-note-links.mjs": "e12420327b0928fd4ea6b645bfa4868810c5f6b0f8a1edf547d95c7c7611de76",
+    "supabase/migrations/20261026022101_reader_note_links.sql": "d9c493b81c21253226d43b80d6523914ac1e50fa9ccaf16f522d44e3f983df1d",
+    "supabase/tests/reader-note-links.sql": "4e109051bea0c10d50530280af425334204dae20d237f84ce4b628e405a0a74b",
+    "package.json": "1da17af51ff8336ce92b911e3ba5ec072242d739968cab607a1d4d73f3d39aa5",
+    "package-lock.json": "a0e69784f67f9b5ba72584ef148d08a22e163b7560c74ca27ee13a8a25e84b2b",
+    "README.md": "7027fe932c136bb99ad783d1e7c02e4d11092d6f46c7d3b0a91057e468868451",
+    "DESIGN.md": "263b65c719cbe012e99b1b7497ceba15b3856d67f94ba0828e7fc815ea7ce0f9",
+    "docs/ARCHITECTURE.md": "84737cde33355af71b7b6a2772d46c0fbe235df80968b9d1c26377e6ad5bf2e5",
+    ".scratch/supplement-graph/issues/05-stable-note-links.md": "2e3b63567c19d9ad39441b316f576dec1ffc331e1e173eebb3d5f718e40a6004",
+    ".scratch/supplement-graph/05-identity-verification.json": "3044d52426336ed49537f1242b5216e127e41c81f23c7bf122f3816ae5109895",
+    "supabase/migrations/20261026032413_reader_note_link_list_context.sql": "8d95e8e28fb4d3e126a8e7da3136b02bb0c8180279a07daefa35609a4c0f6de9",
+    "supabase/tests/reader-note-link-lists.sql": "abe47f0dc1738b90b590827e9a2ddba71831b527811c5012a714900433516d6b"
+  },
+  "evidenceSha256": {
+    ".git/supplement-graph-orchestration/05-start.json": "0d720f4960e48e1743a059403533b036183d1a8c2e77cfeef6612ce8cf866fe9",
+    ".git/supplement-graph-orchestration/05-default-initial.json": "376c3a28c7ac12d5a2f015e447cf09c2407f7f3956e469f9f97da79146bf1a4f",
+    ".git/supplement-graph-orchestration/05-default-history.json": "e5130049cfc37b9a17ee89ca0e49d00860aaf760694ca2ac1a72be95112fb405",
+    ".git/supplement-graph-orchestration/05-default-atomic.json": "105cc1fd8068f7c1a3c6782732fbeecb976fad8469b205cd75ebb45376edc983",
+    ".git/supplement-graph-orchestration/05-personal-history-atomic.json": "623f9159df8b5c9b7fa08ce13cbd4833b0a71f3c42aaff7f16f3ae9fd9438814",
+    ".git/supplement-graph-orchestration/05-creation.json": "cdec4c51cb0e7ee2f3081d7e6b3feaf883dc131ca919d313a11bf79b94fdf6b0",
+    ".git/supplement-graph-orchestration/05-safe-text.json": "d94fe5472bbd580eace32f5a9fffd0f3f376cce0703d203e8ce81695109036fc",
+    ".git/supplement-graph-orchestration/05-target-lifecycle.json": "9a06f7e05e3b6f686076745d388b01671817538040c62948d3a274167c89c665",
+    ".git/supplement-graph-orchestration/05-personal-lifecycle.json": "5a2a48b4b9fb0ed90907dedaafca1cb5a8322aae08a8464e42edd3f95e577dc5",
+    ".git/supplement-graph-orchestration/05-default-removal.json": "e7d4b6aa977c51f1f90e0cee468e5bf6f59610b914fd482087f29517771988db",
+    ".git/supplement-graph-orchestration/05-self-and-graph.json": "82064611a2570ec5897978923c7538430b15f435cccbfd666e947056d070b1ad",
+    ".git/supplement-graph-orchestration/05-reading-regression.json": "5ca0ef6974c0a98b47fa1ca85e1ff6184371becfc9f3dfb18138ca2603e9070a",
+    ".git/supplement-graph-orchestration/05-layout.json": "0321394594d5526d8d2832e7dd8a6b06258c0d5e44268c248f24097cc76cfeb3",
+    ".git/supplement-graph-orchestration/05-unexpected-network.json": "dcd848ef92f8c448a8928040eaf47a046e56c5da8a019af683c390705ae270e5",
+    ".git/supplement-graph-orchestration/05-network-recovery.json": "9cc041f4b108404e40a653e9a139b709f7f06046f5136e1724d8dcb6510128cc",
+    ".git/supplement-graph-orchestration/05-ui-cleanup.json": "8c9f8062f4423d77eecde50274fcdbdc1859f1a65cf54f918ff0863c89d86316",
+    ".git/supplement-graph-orchestration/05-sql-verification.json": "6b51dc714b3c36e54e3c7fb4692958174a819bcce72bd92d5503e7a10d6c3bca",
+    ".git/supplement-graph-orchestration/05-desktop-preview.png": "281f7ba720bd6f7671f2880a5d75fda296ea35f5a71cf4a7fa08ecf003b261a0",
+    ".git/supplement-graph-orchestration/05-desktop-candidates.png": "c882c386f1cc8cef7bee80d1388c0a5dca5a805b213cf9c6299d4a653a6bdb60",
+    ".git/supplement-graph-orchestration/05-mobile-candidates.png": "4241815fc2e880d77bc83b82cfc877d95ddef9ac99409aa07ee37fe8bd4d74bb",
+    ".git/supplement-graph-orchestration/05-mobile-create.png": "1ab19280a61edf1d8c81e53c934aab6acbfc389d47f1ed848469f562719c3d29",
+    ".git/supplement-graph-orchestration/05-mobile-preview.png": "022db3f5038e9707ddd5ac526eb10732f1ca9b95306a32a85dc1dc821455500f",
+    ".git/supplement-graph-orchestration/05-review-prior-verification.json": "444caa2504dd7883d25bbd6c467617aa7d9a3052342ea3686a6fc382eaa961cd",
+    ".git/supplement-graph-orchestration/05-review-prior-issue.md": "9dc7a86c91ee94762d08773fdc470e325a732be0f5d947c0c1221f652d818e6d",
+    ".git/supplement-graph-orchestration/05-review-unload-red.json": "9196a2301f4e9412edeb5eb0b53d1b1648b0f3b475ffb6fbde7c14229558e14e",
+    ".git/supplement-graph-orchestration/05-review-unload-green.json": "187e76adcd827bcab36ba5e79fa8a1743e081d89d64fa7d7a4107567356b0085",
+    ".git/supplement-graph-orchestration/05-review-native-unload-limit.json": "bc7de394e2de10125eb1f1ced25fcd3b2a75f6ef128a4ec4bf070250e6948374",
+    ".git/supplement-graph-orchestration/05-review-lists-round.mjs": "08a0e7f9aa0dfb718b6a62cc2ac7770cbb4cbb53dbe0fcac3d3c0cf423f4a7d2",
+    ".git/supplement-graph-orchestration/05-review-lists.json": "bc00ef1d4e9bb0e4c43c90b2b375ef5683ea51d43e92e6ce9ee08ab56bfd1b12",
+    ".git/supplement-graph-orchestration/05-review-sql.json": "2b6d5d56f5b14346db3d47067bf877d47fbf475bbec08a6d30de2bf783b335cd",
+    ".git/supplement-graph-orchestration/05-review-ui-cleanup.json": "eab1ad7152898877d3ee54180c869653499a2e5efc8a93be88d6f5b43545dfa7"
+  },
+  "contract": {
+    "binding": "{id,from,to,label,target:{bookId,source,id}}",
+    "rangeUnits": "UTF-16",
+    "notes": "notes remains Record<string,string>; optional noteBindings keyed by default supplement id",
+    "personalBody": "optional bindings on PersonalSupplement",
+    "save": "Existing updatePersonal -> single reader_save_personal snapshot and expected revision; binding-only edits also save",
+    "savedReferenceQueries": [
+      "personal.data.noteBindings with personal.data.notes",
+      "personal.data.supplements[].bindings with markdown"
+    ],
+    "targetResolution": "Exact NodeRef in current nodes; missing target retained as invalid",
+    "notification": "Existing onPersonalSaved after successful server save"
+  },
+  "acceptance": {
+    "sharedRulesAndNoExtraNoteNodes": true,
+    "independentSameTitleInstances": true,
+    "editingHistoryPasteAndRefresh": true,
+    "explicitCreateCancelAndUnboundSelection": true,
+    "safeTextAndSelfNavigation": true,
+    "renameDeleteRecreateAndRemovedDefault": true,
+    "atomicPairWithBrowserFailureRetry": true
+  },
+  "checks": {
+    "npmTest": {
+      "passed": 30,
+      "failed": 0
+    },
+    "typecheck": "passed",
+    "productionBuild": "passed; existing large chunk warning",
+    "scriptSyntax": "passed",
+    "trackedDiffCheck": "passed",
+    "ownedFileWhitespaceAndSecretPatternCheck": "passed",
+    "identityDataTests": 7
+  },
+  "browser": {
+    "spaceId": 22,
+    "testOrigin": "http://127.0.0.1:54935",
+    "freshSyntheticAccount": true,
+    "defaultNoteSource": "ch2-signed-change",
+    "chaptersObserved": [
+      "chapter-2",
+      "chapter-1"
+    ],
+    "desktop": {
+      "width": 1440,
+      "height": 1000
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844
+    },
+    "defaultNote": [
+      "keyboard candidates with chapter/section/summary",
+      "same-title A/B distinct target and instance IDs",
+      "front insertion and one-token edit",
+      "delete and native undo/redo",
+      "plain-text copy/paste and same-text replacement unbound",
+      "exact identities after refresh",
+      "binding-only delayed save and failure/retry",
+      "explicit creation/cancel with source EditorView retained",
+      "renamed/deleted/same-title replacement never adopted"
+    ],
+    "personalBody": [
+      "explicit-save-only behavior",
+      "same-title A/B and native editing history/paste",
+      "atomic failed body/binding save and retry",
+      "old completion preserves newer same-text binding draft",
+      "creation/cancel/failure/retry and retained EditorView/history",
+      "refresh preserves IDs",
+      "self navigation",
+      "rename B, delete B and both old occurrences invalid after refresh"
+    ],
+    "other": [
+      "unbound prompt requires explicit selection",
+      "inline/fenced code, escaped and unfinished text excluded",
+      "raw HTML not executed",
+      "graph remains open and textbook scroll unchanged on link navigation",
+      "methods start collapsed",
+      "one existing related-return case passed"
+    ],
+    "defaultRemoval": {
+      "boundary": "QA-page-only fetched publication projection",
+      "remoteDefaultDataChanged": false,
+      "missingTargetInvalid": true,
+      "identityRetained": true
+    },
+    "layout": {
+      "candidateWithinViewport": true,
+      "candidateContentFits": true,
+      "dialogWithinViewport": true,
+      "dialogInputBorder": "1px",
+      "emptyBodyCreateDisabled": true,
+      "noHorizontalOverflow": true,
+      "screenshotsInspected": [
+        "05-desktop-preview.png",
+        "05-desktop-candidates.png",
+        "05-mobile-candidates.png",
+        "05-mobile-create.png",
+        "05-mobile-preview.png"
+      ],
+      "lastNonLayoutChange": "Removed detail opacity after screenshot confirmation to preserve selection contrast; no further browser round"
+    },
+    "designDetector": {
+      "runs": 1,
+      "advisories": 1,
+      "resolution": "Replaced undocumented backdrop literal with existing palette; visual review also corrected missing-variable fallbacks and popup width"
+    }
+  },
+  "database": {
+    "project": "ttibfyiittkyteodrwgf",
+    "appliedMigration": "20261026022101",
+    "newTables": false,
+    "existingMigrationEdits": false,
+    "remoteFunctionsMatchLocal": 6,
+    "securityInvoker": true,
+    "emptySearchPath": true,
+    "validation": "Book-aware optional metadata, exact source/range/label validation; deleted targets allowed",
+    "rollbackTests": {
+      "rejectionCases": 22,
+      "utf16": true,
+      "atomicity": true,
+      "bindingOnlyRevision": true,
+      "retryAndConflict": true,
+      "identityBoundaries": true,
+      "legacyCompatibility": true,
+      "rls": true,
+      "regressions": [
+        "reader-content.sql",
+        "reader-free-personal-nodes.sql"
+      ],
+      "fixturesRolledBack": true
+    },
+    "sqlResultRecord": "Private retrospective transcription, explicitly not a raw MCP log; parent independently compared six live prosrc MD5 values",
+    "reviewMigration": "20261026032413"
+  },
+  "qaRecovery": {
+    "rawFailureRetained": true,
+    "publicAndPrivateReadsSucceeded": true,
+    "samePageAccountDraftRetrySucceededWithNativeFetch": true,
+    "qaForwardingChangedToExplicitWindowReceiver": true,
+    "reinstalledProbeNormalSavePassed": true,
+    "noProductStorageOrGlobalNetworkChange": true,
+    "lowerLevelCauseNotEstablished": true
+  },
+  "resources": {
+    "syntheticContentClearedFromUI": true,
+    "emptyAfterRefresh": true,
+    "signedOut": true,
+    "browserSpaceClosed": true,
+    "qaServerStopped": true,
+    "authAccountAndPrivateCredentials": "Both05 synthetic generations deleted after exact id/qa_ticket/content-empty checks; sessions=0, private rows=0, credential files removed. Retained02 account untouched.",
+    "mailFlowInvoked": false,
+    "originalAccountAndCredentials": "Original generation removed by orchestrator before review-fix QA; prior resource record preserved in originalVerification."
+  },
+  "untouched": [
+    "src/reader/cloud-personal.ts",
+    "src/reader/useBookContent.ts",
+    "src/textbook/content.ts",
+    "src/reader/Supplement.tsx",
+    "src/reader/graph/",
+    "src/reader/split/",
+    "src/style.css"
+  ],
+  "limits": [
+    "SQL Markdown guards are conservative and not fully equivalent to CommonMark; Lezer provides complete client eligibility checking",
+    "Some complex HTML/indentation contexts may be conservatively rejected by server validation",
+    "Default removal browser case alters only the QA fetched response, not the remote publication",
+    "No physical phone, browser process restart or student learning evidence",
+    "SMTP and real email login remain ticket02 pre-release work",
+    "No backlinks, personal graph edges or split-reading integration; later tickets retain full-journey responsibility",
+    "Review fix: native beforeunload event cancellation was confirmed, but the browser confirmation dialog and actual canceled navigation were not observed in Ego."
+  ],
+  "originalVerification": {
+    "path": ".git/supplement-graph-orchestration/05-review-prior-verification.json",
+    "sha256": "444caa2504dd7883d25bbd6c467617aa7d9a3052342ea3686a6fc382eaa961cd",
+    "note": "Frozen first implementation evidence; source changes for the two review fixes are listed separately below. The original source hashes and browser records remain recoverable here."
+  },
+  "reviewFixes": {
+    "scope": "Only the two P2 issues returned by orchestrator final review; original browser paths were not rerun.",
+    "status": "implemented and checked; frozen for orchestrator final review/commit",
+    "changedExistingPaths": [
+      "src/reader/links/CreateLinkedNode.tsx",
+      "scripts/check-stable-note-links.mjs",
+      ".scratch/supplement-graph/issues/05-stable-note-links.md",
+      ".scratch/supplement-graph/05-verification.json"
+    ],
+    "newPaths": [
+      "supabase/migrations/20261026032413_reader_note_link_list_context.sql",
+      "supabase/tests/reader-note-link-lists.sql"
+    ],
+    "creationDraft": {
+      "standardBeforeUnloadListener": true,
+      "sourceNoteAlreadyClean": true,
+      "formInputAndFailureDraftPreventCancelableEvent": true,
+      "cancelAndSuccessRemoveListener": true,
+      "sameSourceEditorView": true,
+      "nativeEditorUndoRedo": true,
+      "nativeBrowserDialogObserved": false,
+      "actualCancelNavigationVerified": false,
+      "nativeEventObservation": "Trusted beforeunload event had defaultPrevented=true and sticky user activation=true; Ego reload nevertheless navigated without observed dialog. Underlying cause not established."
+    },
+    "lists": {
+      "newRemoteMigration": "20261026032413",
+      "onlyFunctionChanged": "reader_link_text_allowed(text,integer)",
+      "exactRegression": "- 学习记录\n\n    - [[同名]]",
+      "exactOneBasedAt": 15,
+      "sqlCases": 40,
+      "sqlValidCases": 19,
+      "sqlCodeAndEscapeExclusions": 21,
+      "original22CaseSqlRegression": "passed after applying new migration; rollback",
+      "remoteFunctionBodyMd5": "9c33ed488ed2e12d6eb0630e5099c7d1",
+      "parentIndependentlyComparedLocalAndRemoteBody": true,
+      "otherFiveFunctionsUnchanged": true,
+      "oldMigrationAndTestBytesUnchanged": true,
+      "defaultAndPersonalEntrySaveRefresh": "Exact nested-list and ordered-list Markdown, instances and targets persisted in both entries",
+      "eightSpaceListCode": "Ctrl+Space opened no candidates; no bindings in either entry"
+    },
+    "checks": {
+      "typecheck": "passed via npm run build",
+      "productionBuild": "passed; existing large chunk warning",
+      "scriptSyntax": "passed",
+      "diffCheck": "passed",
+      "original30Tests": "reused frozen first verification; no link-state, identity or save-queue source changes in review fixes"
+    },
+    "browser": {
+      "spaceId": 23,
+      "origin": "http://127.0.0.1:54945",
+      "newSyntheticAccount": true,
+      "uiContentCleanup": "passed; empty after refresh",
+      "signedOut": true,
+      "spaceClosed": true,
+      "serverStopped": true,
+      "authAccountAndPrivateCredentialFile": "Deleted by root after guarded cleanup; sessions=0, private rows=0, private credential file removed.",
+      "mailFlowInvoked": false
+    },
+    "limits": [
+      "Native browser beforeunload dialog and actual cancel-navigation retention were not confirmed in the current Ego environment.",
+      "Ordinary space-indented lists are covered; full CommonMark equivalence, blockquote/container combinations and tab-dependent indentation are not claimed."
+    ]
+  },
+  "manifestFiles": [
+    "src/reader/links/document.ts",
+    "src/reader/links/state.ts",
+    "src/reader/links/candidates.ts",
+    "src/reader/links/identity.test.ts",
+    "src/reader/links/LinkContent.tsx",
+    "src/reader/links/CreateLinkedNode.tsx",
+    "src/reader/links/links.css",
+    "src/reader/MarkdownEditor.tsx",
+    "src/reader/PersonalPanel.tsx",
+    "src/reader/Reader.tsx",
+    "src/reader/personal.ts",
+    "scripts/check-stable-note-links.mjs",
+    "supabase/migrations/20261026022101_reader_note_links.sql",
+    "supabase/tests/reader-note-links.sql",
+    "package.json",
+    "package-lock.json",
+    "README.md",
+    "DESIGN.md",
+    "docs/ARCHITECTURE.md",
+    ".scratch/supplement-graph/issues/05-stable-note-links.md",
+    ".scratch/supplement-graph/05-identity-verification.json",
+    "supabase/migrations/20261026032413_reader_note_link_list_context.sql",
+    "supabase/tests/reader-note-link-lists.sql",
+    ".scratch/supplement-graph/05-verification.json"
+  ],
+  "rootReview": {
+    "base": "4f67997",
+    "standards": {
+      "initialFindings": 1,
+      "resolved": 1,
+      "reReview": "passed"
+    },
+    "spec": {
+      "initialFindings": 1,
+      "resolved": 1,
+      "reReview": "passed"
+    },
+    "isolatedCandidatePaths": 24,
+    "npmTest": {
+      "passed": 30,
+      "failed": 0
+    },
+    "typecheck": "passed",
+    "productionBuild": "passed; existing largechunk warning",
+    "helperSyntax": "passed",
+    "sourceAndEvidenceHashes": "23source and31privateevidence matched before root report/issue updates",
+    "remoteFunctionsMatchLocal": 6,
+    "securityInvoker": true,
+    "emptySearchPath": true,
+    "liveNestedListAllowed": true,
+    "liveNestedCodeAllowed": false,
+    "screenshotsInspected": [
+      "05-desktop-preview.png",
+      "05-mobile-candidates.png",
+      "05-mobile-create.png"
+    ],
+    "nativeBeforeUnloadDialog": "Not verified in current Ego environment; standard handler and listener lifecycle reviewed",
+    "fixtureCleanup": {
+      "generations": 2,
+      "remainingSessions": 0,
+      "remainingPrivateRows": 0,
+      "credentialsRemoved": true,
+      "retained02AccountUntouched": true
+    }
+  }
+}

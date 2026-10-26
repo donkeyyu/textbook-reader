@@ -49,6 +49,12 @@
 .graph-zoom output { min-width: 44px; text-align: center; }
 .graph-legend { flex: none; display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 0; padding: 4px 20px 12px; list-style: none; color: var(--secondary); font-size: 12px; }
 .graph-legend li { display: flex; align-items: center; gap: 4px; }
+/* Muted graph fills keep the existing type hues distinct. */
+.graph-legend [data-supplement-type="concept"] { --type-color: #6688aa; }
+.graph-legend [data-supplement-type="method"] { --type-color: #8a769f; }
+.graph-legend [data-supplement-type="question"] { --type-color: #a08560; }
+.graph-legend [data-supplement-type="review"] { --type-color: #5d918b; }
+.graph-legend [data-supplement-type="personal"] { --type-color: #ab788a; }
 .graph-legend svg { width: 16px; height: 16px; color: var(--type-color); }
 .graph-edge-legend { display: flex; flex-wrap: wrap; gap: 8px 16px; padding: 0 20px 12px; color: #57606a; font-size: 12px; }
 .graph-edge-legend span { display: flex; align-items: center; gap: 6px; }

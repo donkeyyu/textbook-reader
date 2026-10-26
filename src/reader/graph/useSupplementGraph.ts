@@ -15,7 +15,7 @@ const radius = 6;
 
 // Reference: family-tree/frontend/src/hooks/usePixiGraph.ts. No content is mutated.
 export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes: GraphNode[], edges: GraphEdge[],
-  selectedKey: string | null, visible: boolean, onSelect: (key: string) => boolean, searchKeys: ReadonlySet<string>) {
+  selectedKey: string | null, visible: boolean, onSelect: (key: string | null) => boolean, searchKeys: ReadonlySet<string>) {
   const [ready, setReady] = useState(false);
   const [error, setError] = useState('');
   const [scale, setScale] = useState(1);
@@ -269,11 +269,11 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
         (renderer!.screen.height - height * zoom) / 2 - top * zoom);
       setScale(zoom); paint();
     }
-    const linkForce = forceLink<LayoutNode, LayoutEdge>([]).id((node) => node.key).distance(120).strength(.45);
+    const linkForce = forceLink<LayoutNode, LayoutEdge>([]).id((node) => node.key).distance(160).strength(.45);
     const force = forceSimulation<LayoutNode>([])
       .force('link', linkForce)
-      .force('charge', forceManyBody<LayoutNode>().strength(-180).distanceMax(380))
-      .force('collision', forceCollide<LayoutNode>(24).strength(1).iterations(2))
+      .force('charge', forceManyBody<LayoutNode>().strength(-260).distanceMax(460))
+      .force('collision', forceCollide<LayoutNode>(32).strength(1).iterations(2))
       .force('x', forceX(0).strength(.004)).force('y', forceY(0).strength(.004))
       .alphaDecay(.04).velocityDecay(.45).on('tick', () => {
         if (initialFocus && (initialFocus !== current.current.selectedKey || !next.has(initialFocus))) initialFocus = null;
@@ -370,6 +370,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
           if (!current.current.onSelect(finished.node.key)) skipFocus.current = null;
         }
       }
+      if (!finished.node && !finished.moved && event.type === 'pointerup') current.current.onSelect(null);
       if (canvas.hasPointerCapture(event.pointerId)) canvas.releasePointerCapture(event.pointerId);
       canvas.style.cursor = 'grab'; paint();
     }

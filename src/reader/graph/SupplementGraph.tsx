@@ -19,7 +19,7 @@ export function SupplementGraph({ nodes, personalEdges, selectedKey, visible, on
   nodes: ContentNode[]; selectedKey: string | null; visible: boolean;
   personalEdges: readonly PersonalReferenceEdge[];
   chapters: PublishedContent['chapters']; sections: PublishedContent['sections'];
-  onSelect: (key: string) => boolean; onClose: () => void;
+  onSelect: (key: string | null) => boolean; onClose: () => void;
 }) {
   const host = useRef<HTMLDivElement>(null);
   const search = useRef<HTMLInputElement>(null);
@@ -90,7 +90,7 @@ export function SupplementGraph({ nodes, personalEdges, selectedKey, visible, on
       <span><svg width="28" height="14" viewBox="0 0 28 14" fill="none" aria-hidden="true"><path d="M1 7h24m-5-4 5 4-5 4" stroke="currentColor" strokeWidth="1.5" /></svg>默认关联</span>
       <span data-supplement-type="personal"><svg width="28" height="14" viewBox="0 0 28 14" fill="none" aria-hidden="true"><path d="M1 11Q14 0 27 11" stroke="currentColor" strokeWidth="1.5" /></svg>个人引用</span>
     </div>
-    <p id="graph-help" className="sr-only">拖动空白平移，滚轮缩放，拖动节点调整位置。悬停突出直接关联，按住 Ctrl 悬停预览。画布聚焦时方向键平移，加减键缩放，0 查看全图，斜线键搜索。搜索后按向下键或 Tab 选择结果，Enter 打开解读。</p>
+    <p id="graph-help" className="sr-only">点击空白取消选中并关闭解读，拖动空白平移，滚轮缩放，拖动节点调整位置。悬停突出直接关联，按住 Ctrl 悬停预览。画布聚焦时方向键平移，加减键缩放，0 查看全图，斜线键搜索。搜索后按向下键或 Tab 选择结果，Enter 打开解读。</p>
   </section>;
 }
 

@@ -158,7 +158,14 @@ export function Reader() {
       sectionId: item.sectionId === undefined ? node?.sectionId ?? null : item.sectionId };
   }
 
-  function selectGraphNode(key: string) {
+  function selectGraphNode(key: string | null) {
+    if (key === null) {
+      if (!allowGraphSelection()) return false;
+      closeSupplement(false); setPersonalItem(null); setSelectionPage(null);
+      keepPreview(); clearPreview();
+      requestAnimationFrame(() => document.querySelector<HTMLElement>('.graph-viewport')?.focus({ preventScroll: true }));
+      return true;
+    }
     const node = content.nodes.find((item) => item.key === key);
     if (!node) return false;
     if (key === selectedGraphKey && !personalLibraryOpen) {

@@ -3,6 +3,7 @@ import { openGraphSearch, openGraphSettings } from './check-supplement-graph.mjs
 
 // Run on an owned reader page with the graph open and controls collapsed.
 export async function checkGraphControls(page, { narrow = false } = {}) {
+  await page.waitForFunction(() => !document.querySelector('.reading-layout').getAnimations().some((a) => a.playState === 'running'));
   const bounds = () => page.evaluate(() => {
     const graph = document.getElementById('supplement-graph').getBoundingClientRect();
     const canvas = document.querySelector('.graph-viewport canvas').getBoundingClientRect();
@@ -21,7 +22,15 @@ export async function checkGraphControls(page, { narrow = false } = {}) {
   assert.equal(await page.evaluate(() => !!document.getElementById('open-personal-library')), false);
   assert.equal(await page.evaluate(() => document.querySelector('#open-supplement-graph').textContent.trim()), '');
   assert.equal(await page.evaluate(() => document.querySelector('#add-personal-supplement').getAttribute('aria-label')), '添加补充');
+  const settingsIcon = () => page.evaluate(() => {
+    const { x, y } = document.querySelector('.graph-settings summary svg').getBoundingClientRect();
+    return { x, y };
+  });
+  const closedIcon = await settingsIcon();
   await openGraphSettings(page);
+  const openIcon = await settingsIcon();
+  assert.ok(Math.abs(openIcon.x - closedIcon.x) < 1 && Math.abs(openIcon.y - closedIcon.y) < 1,
+    'Settings icon stays at the same position when expanded');
   assert.deepEqual((await bounds()).overflow, []);
   const beforeZoom = await page.evaluate(() => document.querySelector('.graph-zoom output').textContent);
   await page.click('[aria-label="缩小节点图"]');

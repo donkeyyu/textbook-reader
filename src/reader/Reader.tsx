@@ -160,6 +160,14 @@ export function Reader() {
       sectionId: item.sectionId === undefined ? node?.sectionId ?? null : item.sectionId };
   }
 
+  function locateGraphNode(key: string | null, panelScroll = 0) {
+    const location = content.nodes.find((node) => node.key === key)?.location;
+    if (!location) return;
+    void navigate({ page: location.page, locationId: location.locationId ?? undefined,
+      locate: { fraction: location.locationId ? undefined : location.region.y,
+        focusId: 'supplement-title', panelScroll } });
+  }
+
   function selectGraphNode(key: string | null) {
     if (key === null) {
       if (!allowGraphSelection()) return false;
@@ -171,6 +179,7 @@ export function Reader() {
     const node = content.nodes.find((item) => item.key === key);
     if (!node) return false;
     if (key === selectedGraphKey && !personalLibraryOpen) {
+      if (graphOpen && views.bookVisible) locateGraphNode(key, views.capturePanelScroll());
       requestAnimationFrame(() => document.getElementById('supplement-title')?.focus({ preventScroll: true }));
       return true;
     }
@@ -181,6 +190,7 @@ export function Reader() {
     setSupplementId(node.source === 'default' ? node.id : null);
     // A fresh selection must not share an old delete request's object identity.
     setPersonalItem(node.source === 'personal' ? personalSelection(node.personal) : null);
+    if (graphOpen && views.bookVisible) locateGraphNode(key);
     requestAnimationFrame(() => {
       const panel = document.getElementById('supplement-panel');
       if (panel) panel.scrollTop = 0;
@@ -219,6 +229,7 @@ export function Reader() {
     let width = 0;
     let listTop = 0;
     let initialized = false;
+    let layoutScrollTop: number | null = null;
     let storageFailed = !!resume.error;
     let saveTimer: ReturnType<typeof setTimeout> | undefined;
 
@@ -256,13 +267,18 @@ export function Reader() {
         const initialMetric = position && metrics.current[position.page - 1];
         if (position && initialMetric) element.scrollTop = restoredScroll(initialMetric, position.fraction);
         initialized = true;
-      } else if ((resized || restore) && metric) element.scrollTop = restoredScroll(metric, saved.fraction);
+      } else if ((resized || restore) && metric) {
+        element.scrollTop = restoredScroll(metric, saved.fraction);
+        layoutScrollTop = element.scrollTop;
+      }
       updatePosition();
     }
 
     function scroll() {
       if (element?.inert) return;
-      if (navigationPending.current) {
+      const layoutScroll = layoutScrollTop !== null && Math.abs(element!.scrollTop - layoutScrollTop) < 1;
+      layoutScrollTop = null;
+      if (navigationPending.current && !layoutScroll) {
         requestId.current += 1;
         navigationPending.current = false;
         setPending(false);
@@ -826,7 +842,10 @@ export function Reader() {
           cancelJump(); keepPreview(); clearPreview();
           if (views.narrow) setNavigationOpen(false);
           if (views.bookVisible) views.close('book');
-          else views.show('book');
+          else {
+            views.show('book');
+            locateGraphNode(selectedGraphKey, views.capturePanelScroll());
+          }
         }} />}
       {graphMounted && <SplitResize />}
       {(personalItem || personalLibraryOpen || choiceIds || note) && <PanelResize />}

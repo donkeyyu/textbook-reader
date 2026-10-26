@@ -51,7 +51,7 @@ npm run preview   # 预览构建结果
 
 ## Supabase 与个人内容
 
-工具栏“节点图”可查看当前教材的全部默认解读和已保存个人节点，支持搜索、平移、缩放和拖动。选择节点只切换解读，点击“定位”才返回教材；图视野在本次会话中保留。默认关联保留查看理由；目标只有教材原文时继续跳转原文。反向引用、个人图边与自动分屏由后续任务接入。
+工具栏“节点图”可查看当前教材的全部默认解读和已保存个人节点，支持搜索、平移、缩放和拖动。选择节点只切换解读，点击“定位”并加载成功后，桌面同时显示图与教材，窄屏切到教材。分隔条可拖动或用方向键、Home、End 调整；视图控件可关闭或重开教材和图，保留会话中的位置与草稿。默认关联保留查看理由；目标只有教材原文时继续跳转原文。反向引用与个人图边由后续任务接入。
 
 默认解读无需登录。点击工具栏“登录”，用邮箱接收登录链接；登录后，笔记和个人补充保存到该账号，在其他设备登录同一邮箱可读取。MCP 登录仅供开发工具使用，不会代替读者登录。当前项目地址和公开客户端密钥在 `src/reader/supabase.ts`；可用 `VITE_SUPABASE_URL`、`VITE_SUPABASE_PUBLISHABLE_KEY` 覆盖，浏览器不得使用 service-role 密钥。
 
@@ -83,6 +83,7 @@ node --experimental-strip-types scripts/check-cloud-content.mjs
 | 方法开合、续读与完整路径 | 同模块的 `checkOnDemandMethod`、`checkMethodReturnChain`、`checkReaderJourney` |
 | 滚走后定位并保留上下文 | 同模块的 `checkLocate`、`checkLocateGroup`、`checkLocateReturn` |
 | 图搜索、键盘选择及连续拖动截图 | [check-supplement-graph.mjs](scripts/check-supplement-graph.mjs)：`graphState`、`searchGraph`、`checkGraphSelection`、`captureGraphDrag`；先从工具栏打开节点图。`startGraphProbe`／`graphEmphasis`／`stopGraphProbe` 仅在专属测试浏览器检查 Pixi 明暗层级；`checkRepeatedGraphOriginal` 检查重复原文定位、失败重试和返回层级 |
+| 图与教材分屏、恢复与原文重试 | [check-split-reading.mjs](scripts/check-split-reading.mjs)：`splitReadingState`、`checkSplitKeyboardResize`、`checkReadingViewRecovery`；先完成一次图中定位。`checkSplitOriginalRetry` 检查重复原文、失败重试和两层返回；在独立测试 origin 使用已安装的图探针核对视野，分屏实现使用该入口替代旧的 `checkRepeatedGraphOriginal` |
 | 云端笔记与个人补充的异步保存 | [check-async-save.mjs](scripts/check-async-save.mjs)：`startAsyncSaveServer(port)`、`assertUnusedAsyncOrigin(page, { testOrigin })`，再运行 `checkAsyncNoteSave`、`checkAsyncPersonalSave` |
 | 逐实例笔记链接与原子保存 | [check-stable-note-links.mjs](scripts/check-stable-note-links.mjs)：`startStableLinksServer`、`startStableLinksCheck`，以及真实编辑历史、创建和保存检查；需新的合成账号与独立 origin，前置状态见函数定义 |
 | 首次导入、真实旧版页面后到保存与重开 | [check-content-migration.mjs](scripts/check-content-migration.mjs)：`startContentMigrationServer`、`checkContentMigration(task, { testOrigin, credentials })`；须提供修改存储前冻结的实际旧版构建 |

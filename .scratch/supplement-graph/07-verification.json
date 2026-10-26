@@ -1,0 +1,317 @@
+{
+  "date": "2026-10-26",
+  "ticket": ".scratch/supplement-graph/issues/07-split-reading.md",
+  "status": "accepted after root final review and focus P2 fix; complete for07 independent scope",
+  "baseCommit": "0a308b2",
+  "manifest": [
+    "src/reader/Reader.tsx",
+    "src/reader/split/ReadingViews.tsx",
+    "src/reader/split/split.css",
+    "scripts/check-split-reading.mjs",
+    "README.md",
+    "DESIGN.md",
+    "docs/ARCHITECTURE.md",
+    ".scratch/supplement-graph/issues/07-split-reading.md",
+    ".scratch/supplement-graph/07-verification.json"
+  ],
+  "sourceSha256": {
+    "src/reader/Reader.tsx": "3485118894e2ed6f70463f4bd9eb81b82e09c0e0272c04cc1987875bcf2585b6",
+    "src/reader/split/ReadingViews.tsx": "49b8c9f28916c8ade9384306224181328745eb8798362a1a62316e86ad3f90ba",
+    "src/reader/split/split.css": "30b796ffe1b3bf2a57119b59f07d54507416b5aca9b9ad66c429aeb7ac8bd193",
+    "scripts/check-split-reading.mjs": "4a9dd3289563254dbdab6d37217b2a119a11a6fc271786179e594db1b2022892",
+    "README.md": "be906f12695a18b7fa35ab3a2a4945ac5af46690436bd48e36dbba4bf6e80efb",
+    "DESIGN.md": "924a7896f14cb7f1032cfe9898a15c916f3261ee4403e12b22f5eb0b8481e078",
+    "docs/ARCHITECTURE.md": "5a3d98a6dd5e66bf6775dd8fbd99a09ed9a2844d30fa16d3d49d5eca7c19c4b2",
+    ".scratch/supplement-graph/issues/07-split-reading.md": "91b14c7cc7baaa38dbb538ee79705ade9dbf36b09a35939be716c00a9ed4ea6d"
+  },
+  "protectedUnchangedSha256": {
+    "src/reader/graph/SupplementGraph.tsx": "599dc7367214075ac8d0bb276e1c4ceea47e3fe5d9a9a02ba8000b16ff8a0e5f",
+    "src/reader/graph/useSupplementGraph.ts": "54ddfb2fa89bc6e30d391840372a0237f6c405dd6eb2b47d10186c0aa9a43024",
+    "src/reader/graph/project-graph.ts": "4fb8ca350bb9f7225943b6658bf1b1111bc02d6b8404b0493496934eb367ed3c",
+    "src/reader/graph/graph.css": "d13b7e07cb4ef4e4cc5a792b31ebacebe7e7173653924999d70f5505a1a08feb",
+    "src/reader/MarkdownEditor.tsx": "90b6204043b95c6bed52ec8aa80d4b6dac671df0123ca8d6486bb97857b39b03",
+    "src/reader/PersonalPanel.tsx": "364831bd17721f2e2ca19687828e7cf84a8113e316bfaa818fe069fcec868481",
+    "src/reader/links/document.ts": "a4a1cfad4c45e650164d31ece64e2ec58d1e09121b22fbacc8c14b92c8455f88",
+    "src/reader/links/state.ts": "cd5721b0b83c4dfca46fe483ee8cb38a951d0eb8171b0405e97a7250b0b97cd9",
+    "src/reader/links/candidates.ts": "3caf993f41ecb5ee4a5f101fb9aac53341e01787dcd4ede7b6995d9f862e6ce2",
+    "src/reader/personal.ts": "ac621da8454f60d27bb6eda6a73dd417e1560a1642f2fae414dd1a587147cca2",
+    "src/reader/useBookContent.ts": "69c1d2079e26dd515e7308d1fac0bca083d6f9cda7310732e9725614f2728801",
+    "src/reader/cloud-personal.ts": "7c97831f2995505135d87ab6cb95a75c470fe9ada571967c14984895ed97b330",
+    "src/reader/session.ts": "90b47510bc2db2f5bca45880f17aa720d78be323b01a6cf71e76264072191091",
+    "src/reader/PanelResize.tsx": "fbb99d2b055f1316a1a1c5d0b3bbc6022707cecfadc60f18401bf01b5cc87b73",
+    "src/style.css": "f7a4e30b2c64756141cc2d1aabc9f9fdcef84874d5e50751a5509f83ccd8f29f",
+    "package.json": "1da17af51ff8336ce92b911e3ba5ec072242d739968cab607a1d4d73f3d39aa5",
+    "package-lock.json": "a0e69784f67f9b5ba72584ef148d08a22e163b7560c74ca27ee13a8a25e84b2b"
+  },
+  "evidenceSha256": {
+    ".git/supplement-graph-orchestration/07-original-retry-return.json": "19408d81eb89a6675aad413603d6d6748cf0acfa1938840949eeaed6007c8e3e",
+    ".git/supplement-graph-orchestration/07-resize-recovery.json": "52f0e60f3fde85311e4cabd497568c082ee72fa64a91739f0cd6e528f2da48cc",
+    ".git/supplement-graph-orchestration/07-explicit-and-padding-green.json": "8ffddeebdf12500364b953862cdb551ef0911d6a53c1c74af71e9510f53eb074",
+    ".git/supplement-graph-orchestration/07-pointer-window.json": "6a4cb013c252a71681bd836b123692bc2014486cb89e10af21ccaf1cd0fb86c2",
+    ".git/supplement-graph-orchestration/07-draft-mobile.json": "52ec34207a578b2afa11982682fba615c96c8f16fa9c8067ac76bcd762b46c38",
+    ".git/supplement-graph-orchestration/07-personal.json": "53e6063f372ecf878b2bde09e6252a2fac10a0fa0b375223c24aaa4db14ab913",
+    ".git/supplement-graph-orchestration/07-link-journey.json": "d9d7475fb62e40e926bcc43e1327aecf8a1f2355c625cbcdd112af4b8a86e4f9",
+    ".git/supplement-graph-orchestration/07-linked-selection.json": "04d44f9d1fdb84915986c1155d4bff7fa6655ad56b4075775e812a2d5e28e552",
+    ".git/supplement-graph-orchestration/07-reading-regression.json": "f3a7f5c84bed800330f985bea35fbfba587125ef6aafc4622e508a07d66491d3",
+    ".git/supplement-graph-orchestration/07-mobile-original-return.json": "3bf46440647cbbdc9c54586d7846262294bb8d9c953f33b0fc1f34956d6dff49",
+    ".git/supplement-graph-orchestration/07-panel-clamp-red.json": "d4e049d790de9edf5360b81d6f3af3bc03e2b8d8d0b4f40f468fa268b192990e",
+    ".git/supplement-graph-orchestration/07-panel-clamp-green.json": "44c836c886a783efca2af21ec3492189957ad3159bd8f5d0fc8514686e50f77c",
+    ".git/supplement-graph-orchestration/07-final-source-qa.json": "f65dcbdd561d5549cf55b0cf4511f8f170f4fb192d1d8deb350db69971bc7280",
+    ".git/supplement-graph-orchestration/07-cleanup.json": "4a2aa0ed5397e9ff304d5fc86700246a01b3f9bb94fbe6fe29917a022e4f5720",
+    ".git/supplement-graph-orchestration/07-design-detect-final.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    ".git/supplement-graph-orchestration/07-final-build.log": "74f358724da9dadf2c979945598a533f02542705dd191cd61430602c8a760f7b",
+    ".git/supplement-graph-orchestration/07-desktop-final.png": "b17b4acfff20de86bdb36f60120073401b25dd4f015e03196a99fa3480ccb853",
+    ".git/supplement-graph-orchestration/07-mobile-graph.png": "8d16e7383f26a8dbb4c920305a62a2b4188757f5fc9697d75657ce1bb11fb17f",
+    ".git/supplement-graph-orchestration/07-linked-desktop.png": "8ab139c7bfa97b481478721b50cd5609887bb192568db08c23c075ed9c89ed3b",
+    ".git/supplement-graph-orchestration/07-mobile-reading-final.png": "aa6480f208e9960d936b494b54a649325a15330222dfe8a04aea022adf5c4e43",
+    ".git/supplement-graph-orchestration/07-mobile-graph-final-source.png": "f7d0b6517038c09059ea5a3d7dda71ebfaf5c85591999a7cef19123c4c9c214a",
+    ".git/supplement-graph-orchestration/07-focus-regression.json": "8ed3fea61d512644bc098d73ae6f197ecc50e4bc4ddd28c0100c76f4b9a22cb4",
+    ".git/supplement-graph-orchestration/07-focus-regression-final.json": "09380a390c42dffc6c3fae3119a1d2749d28b11fa17329361e2da0581cc3e2e1",
+    ".git/supplement-graph-orchestration/07-focus-pre-fix-ReadingViews.tsx": "f824783815b0ff3123acdd7a76c8aeacb4b7311de568f815f6fda0431bfedab8",
+    ".git/supplement-graph-orchestration/07-focus-fix-baseline.json": "11d3de8daea7969deb8780607d1871ccde15d3b73126906997ddd0800ea65409",
+    ".git/supplement-graph-orchestration/07-pre-focus-fix-verification.json": "2d76565a030b2df36624b6645c5abab3beea14ec997245dc8cadc5c80a231b6e",
+    ".git/supplement-graph-orchestration/07-focus-fix-verification.json": "a36cfe18452a2ca7173068f1f351b93e4bae69878f73133d6d4e55426175b5e3",
+    ".git/supplement-graph-orchestration/07-focus-fix-build.log": "65b6d96088ded69ed9d1f92be94d5b2dfa50dda65c237a7b0462c887cf681382",
+    ".git/supplement-graph-orchestration/07-focus-fix-reused-tests.json": "8f323eae9362e968ff1930bbbec0599fb51cc623d58ec784322d43e9c54329a2"
+  },
+  "contract": {
+    "views": "useReadingViews(): open{book,graph}, narrow, bookVisible, graphVisible, split, show(view,only=false), close(view), capturePanelScroll()",
+    "mounting": "Reader keeps book and graph mounted; graph visible follows actual viewport visibility and pauses through existing03 hook. Book hidden uses visibility/inert, retains measurable pages.",
+    "details": "Existing SupplementPanel/PersonalPanel and EditorView reused; desktop split details below both panes. No third permanent reading column.",
+    "navigation": "Jump.locate uses existing requestId/image.decode transaction; only success reveals book. Locate preserves selection instance/method/history/editor and desired panel scroll. Failures preserve source/graph and retry intent.",
+    "panelScroll": "Same DOM panel and grouped summary identity retain desired scroll through temporary native clamping; new detail instance does not inherit the previous bookmark.",
+    "geometry": "Existing book width observer also detects page-list offsetTop changes; no session schema or graph layout persistence added.",
+    "controls": "Persistent view recovery after first graph mount; keyboard separator/close/return and narrow switches; view-only actions keep drafts without discard prompts."
+  },
+  "checks": {
+    "npmTest": {
+      "passed": 30,
+      "failed": 0,
+      "scope": "30 previously accepted data tests reused for this UI-only focus fix; five test-file hashes and protected core modules remain unchanged."
+    },
+    "finalTypecheck": "passed after focus fix",
+    "finalProductionBuild": "passed after focus fix",
+    "browserHelperSyntax": "passed after focus helper update",
+    "diffCheck": "passed",
+    "impeccableFinalDetector": []
+  },
+  "acceptance": {
+    "crossChapterNodeSelectionDoesNotScrollBook": true,
+    "protectedExplicitLocateFailureRetry": true,
+    "personalLocateRetainsUnsavedTitleBodyAndEditorView": true,
+    "originalOnlyDesktopRepeatFailureRetryAndTwoReturns": true,
+    "narrowOriginalOnlyRepeatMethodAndKeyboardReturn": true,
+    "freeBookScrollKeepsCamera": true,
+    "pointerAndKeyboardSeparatorAndPanelHeight": true,
+    "windowResizeKeepsPageFractionAndCamera": true,
+    "twoViewsClosedRecoveryWithDraftAndFocus": true,
+    "sameEditorViewAfterHideAndNarrowSwitch": true,
+    "panelScrollAndClampedScrollRecovery": true,
+    "differentDetailDoesNotInheritPanelScroll": true,
+    "narrowTouchSwitchesWithoutNavigationOverlay": true,
+    "savedBodyBindingAndPersonalRefresh": true,
+    "textbookGraphBoundLinkSplitRefresh": true,
+    "oldMethodAndGroupedKeyboardPaths": true,
+    "hiddenGraphDrawCountUnchanged": true,
+    "responsiveFocusSourcesAndTab": true,
+    "visibleToolbarFocusNotStolen": true
+  },
+  "implementationChoices": {
+    "narrowMaxWidthCssPx": 1000,
+    "graphShareBoundsPercent": [
+      30,
+      70
+    ],
+    "note": "Implementation choices, not new product requirements."
+  },
+  "browser": {
+    "origin": "http://127.0.0.1:47907",
+    "taskSpaceId": 24,
+    "ownedPages": [
+      "p1 (closed during tool recovery)",
+      "p2 (closed by finish)"
+    ],
+    "runtime": {
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "desktop": {
+        "w": 1280,
+        "h": 950,
+        "dpr": 1
+      },
+      "nodes": 971,
+      "defaultEdges": 442
+    },
+    "testedCssViewports": [
+      {
+        "w": 1440,
+        "h": 1000,
+        "dpr": 1
+      },
+      {
+        "w": 1280,
+        "h": 950,
+        "dpr": 1
+      },
+      {
+        "w": 390,
+        "h": 844,
+        "dpr": 1
+      }
+    ],
+    "earlyDpr2": "Recorded separately in early desktop recovery captures; later checks used DPR1 to reduce tool rendering load.",
+    "realDevices": false,
+    "fpsClaim": null
+  },
+  "visualEvidence": {
+    "stableDesktop": {
+      "path": ".git/supplement-graph-orchestration/07-desktop-final.png",
+      "phase": "Before panel-scroll bookmark change; same split markup and visual styles except later nonvisual overflow-anchor rule."
+    },
+    "stableNarrowBook": {
+      "path": ".git/supplement-graph-orchestration/07-mobile-reading-final.png",
+      "phase": "Final runtime; page8 group/expanded method/keyboard return, navigation closed."
+    },
+    "stableNarrowGraph": {
+      "path": ".git/supplement-graph-orchestration/07-mobile-graph-final-source.png",
+      "phase": "Final UI source hashes recorded in07-final-source-qa.json."
+    },
+    "rejectedNotPass": [
+      {
+        "path": ".git/supplement-graph-orchestration/07-desktop-final-source.png",
+        "reason": "Captured before graph repaint; black canvas. Does not prove final desktop graph pixels."
+      },
+      {
+        "path": ".git/supplement-graph-orchestration/07-mobile-book-final-source.png",
+        "reason": "Captured before resize restoration settled; page113 transient frame. Numeric narrow page-position acceptance is in07-draft-mobile.json and07-mobile-original-return.json."
+      },
+      {
+        "path": ".git/supplement-graph-orchestration/07-mobile-book.png",
+        "reason": "Earlier navigation overlay, fixed and excluded from final visual acceptance."
+      }
+    ],
+    "rootAcceptedStageExplanation": true
+  },
+  "limits": [
+    "Root accepted the documented stage-specific visual evidence. Rejected unstable captures remain excluded; no new screenshot was requested for this focus-only fix.",
+    "Ego/CDP input/evaluation timeouts occurred; unconfirmed rounds were reloaded or recovered and never counted as passes.",
+    "No physical mobile, Safari/Firefox or frame-rate/large-scale performance claim. Chromium viewport and synthesized touch only.",
+    "06 backlinks/personal edges are not integrated. Last06/07 worker must verify the final complete journey and record it in both tickets.",
+    "Ego Lite update notice observed; no tool upgrade performed."
+  ],
+  "cleanup": {
+    "accountMatchedPrivateFixture": true,
+    "onlyOwnQaContentRemoved": true,
+    "refreshedCounts": {
+      "supplements": 0,
+      "notes": 0,
+      "bindings": 0
+    },
+    "signedOut": true,
+    "spaceId": 24,
+    "ownPages": [
+      "p2"
+    ],
+    "spaceFinished": true,
+    "credentialAndAuthAccountRetainedForRootReview": false,
+    "noEmailSent": true,
+    "ownDevServerStopRequested": true,
+    "stoppedPort": 47907,
+    "ownDevServerStopped": true,
+    "authAccountDeletedByRoot": true,
+    "remainingSessions": 0,
+    "remainingPrivateRows": 0,
+    "privateCredentialRemoved": true,
+    "retained02ResourcesUntouched": true
+  },
+  "rootActions": [
+    "Review and scoped commit only the nine manifest paths. No staging/commit/branch/stash/reset was performed by07.",
+    "Release shared integration to06 after acceptance; preserve01 and06 work.",
+    "Delete only07 Auth account and private fixture by exact root-owned id/marker after final acceptance."
+  ],
+  "focusReviewFix": {
+    "finding": "Native CSS/inert blur can clear activeElement before the post-visibility focus effect reads its source.",
+    "scope": [
+      "src/reader/split/ReadingViews.tsx",
+      "scripts/check-split-reading.mjs",
+      ".scratch/supplement-graph/issues/07-split-reading.md",
+      ".scratch/supplement-graph/07-verification.json"
+    ],
+    "implementation": "Component-lifetime focusin tracking retains only book/graph/splitter ownership, clears it for other focus, and uses it only after the browser falls back to body/documentElement. No generic focus system or persistence.",
+    "oldReadingViewsSha256": "f824783815b0ff3123acdd7a76c8aeacb4b7311de568f815f6fda0431bfedab8",
+    "newReadingViewsSha256": "49b8c9f28916c8ade9384306224181328745eb8798362a1a62316e86ad3f90ba",
+    "originalFourCaseEvidence": {
+      "path": ".git/supplement-graph-orchestration/07-focus-regression-final.json",
+      "sha256": "09380a390c42dffc6c3fae3119a1d2749d28b11fa17329361e2da0581cc3e2e1",
+      "passed": 2,
+      "failed": 2
+    },
+    "verification": {
+      "path": ".git/supplement-graph-orchestration/07-focus-fix-verification.json",
+      "sha256": "a36cfe18452a2ca7173068f1f351b93e4bae69878f73133d6d4e55426175b5e3",
+      "passed": 5,
+      "failed": 0,
+      "inconclusive": 0,
+      "threeActualFramesEach": true,
+      "noToolbarFocusTheft": true
+    },
+    "checks": {
+      "typecheck": "passed",
+      "build": "passed",
+      "helperSyntax": "passed",
+      "diffCheck": "passed",
+      "original30DataTests": "reused; five test files and protected core modules unchanged"
+    },
+    "frozenOtherManifestSha256": {
+      "src/reader/Reader.tsx": "3485118894e2ed6f70463f4bd9eb81b82e09c0e0272c04cc1987875bcf2585b6",
+      "src/reader/split/split.css": "30b796ffe1b3bf2a57119b59f07d54507416b5aca9b9ad66c429aeb7ac8bd193",
+      "README.md": "be906f12695a18b7fa35ab3a2a4945ac5af46690436bd48e36dbba4bf6e80efb",
+      "DESIGN.md": "924a7896f14cb7f1032cfe9898a15c916f3261ee4403e12b22f5eb0b8481e078",
+      "docs/ARCHITECTURE.md": "5a3d98a6dd5e66bf6775dd8fbd99a09ed9a2844d30fa16d3d49d5eca7c19c4b2"
+    },
+    "rootIndexUntouched": true,
+    "cleanup": {
+      "ownSpace26Finished": true,
+      "ownPort47909Stopped": true,
+      "publicDefaultNodesOnly": true,
+      "noLoginOrAuthFixtureUse": true,
+      "noPersonalDataWrites": true,
+      "account07RetainedForRoot": false
+    }
+  },
+  "rootReview": {
+    "base": "0a308b2",
+    "standards": {
+      "initialFindings": 1,
+      "resolved": 1,
+      "reReview": "passed"
+    },
+    "spec": {
+      "initialReview": "passed",
+      "focusDeltaReview": "passed"
+    },
+    "candidatePaths": 9,
+    "isolatedCandidateExcludes06": true,
+    "npmTest": {
+      "passed": 30,
+      "failed": 0,
+      "phase": "Initial9path isolatedcandidate; unchanged data tests/core reused afterfocusonlyfix"
+    },
+    "finalTypecheck": "passed",
+    "finalProductionBuild": "passed; existing largechunk warning",
+    "helperSyntax": "passed",
+    "sourceEvidenceProtectedHashes": "8/29/17 matched before rootissue/reportmetadata updates",
+    "focusRealBrowserCases": {
+      "passed": 5,
+      "failed": 0,
+      "inconclusive": 0
+    },
+    "visualEvidenceInspected": [
+      "07-desktop-final.png",
+      "07-mobile-reading-final.png",
+      "07-mobile-graph-final-source.png"
+    ],
+    "visualPhaseAcceptance": "Stable desktop uses samevisualstyles before nonvisualbookmarkfix; finalsource functionalnumeric and focus evidence accepted. Rejected transientframes excluded. No freshdesktopraster claimed.",
+    "fixtureCleanup": "Exact07 id/qa marker andemptycontent guard; authuserdeleted/sessions0/privateRows0/credentialremoved; retained02untouched",
+    "finalCombinedJourney": "06 lastworker must verify finalbacklinks/personaledges journey and recordboth06/07"
+  }
+}

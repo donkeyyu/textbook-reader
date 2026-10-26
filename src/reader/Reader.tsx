@@ -20,6 +20,7 @@ import { SupplementPanel, SupplementPreview, type PreviewAnchor } from "./Supple
 import { SupplementGraph, GraphRelated } from './graph/SupplementGraph';
 import type { LinkBinding } from './links/document';
 import type { LinkContext } from './links/LinkContent';
+import { ReadingViewControls, SplitResize, useReadingViews } from './split/ReadingViews';
 
 type ReadingContext = {
   page: number;
@@ -31,7 +32,8 @@ type ReadingContext = {
   panelScroll: number;
   methodOpenIds: string[];
 };
-type Jump = { page: number; locationId?: string; source?: ReadingContext; restore?: ReadingContext; keepHistory?: boolean };
+type Jump = { page: number; locationId?: string; source?: ReadingContext; restore?: ReadingContext; keepHistory?: boolean;
+  locate?: { fraction?: number; focusId: string; panelScroll: number } };
 type Commit = { page: number; fraction?: number; locationId?: string; focusId: string; panelScroll?: number };
 
 function measurePages(list: HTMLDivElement): PageMetric[] {
@@ -77,7 +79,8 @@ export function Reader() {
   const personalItemRef = useRef(personalItem);
   personalItemRef.current = personalItem;
   const [personalLibraryOpen, setPersonalLibraryOpen] = useState(false);
-  const [graphOpen, setGraphOpen] = useState(false);
+  const views = useReadingViews();
+  const graphOpen = views.graphVisible;
   const [graphMounted, setGraphMounted] = useState(false);
   const [newChapterId, setNewChapterId] = useState<string | null | undefined>(undefined);
   const chapters = content.published?.chapters ?? [];
@@ -171,12 +174,13 @@ export function Reader() {
 
   function openGraph() {
     cancelJump(); keepPreview(); clearPreview(); setSelectionPage(null);
-    setGraphMounted(true); setGraphOpen(true);
+    setGraphMounted(true); views.show('graph', true);
     requestAnimationFrame(() => document.querySelector<HTMLInputElement>('.graph-search input')?.focus({ preventScroll: true }));
   }
 
   function closeGraph() {
-    setGraphOpen(false);
+    cancelJump(); keepPreview(); clearPreview();
+    views.show('book', true);
     requestAnimationFrame(() => document.getElementById('open-supplement-graph')?.focus({ preventScroll: true }));
   }
 
@@ -195,6 +199,7 @@ export function Reader() {
     if (!element || !list) return;
     let frame = 0;
     let width = 0;
+    let listTop = 0;
     let initialized = false;
     let storageFailed = !!resume.error;
     let saveTimer: ReturnType<typeof setTimeout> | undefined;
@@ -220,8 +225,9 @@ export function Reader() {
     function measure() {
       if (!element || !list) return;
       const saved = anchor.current;
-      const resized = width > 0 && width !== list.clientWidth;
+      const resized = width > 0 && (width !== list.clientWidth || listTop !== list.offsetTop);
       width = list.clientWidth;
+      listTop = list.offsetTop;
       setPaperWidth(width);
       setMarkerSize(window.matchMedia("(max-width: 760px)").matches ? 32 : 36);
       metrics.current = measurePages(list);
@@ -473,15 +479,13 @@ export function Reader() {
   }
 
   function locateSupplement() {
-    setGraphOpen(false);
     cancelJump(); keepPreview(); clearPreview();
-    const panelScroll = document.getElementById("supplement-panel")?.scrollTop ?? 0;
+    const panelScroll = views.capturePanelScroll();
     if (personalItem?.page !== null && personalItem?.region) {
-      setCommit({ page: personalItem.page, fraction: personalItem.region.y, focusId: "locate-personal", panelScroll });
+      void navigate({ page: personalItem.page, locate: { fraction: personalItem.region.y, focusId: "locate-personal", panelScroll } });
     } else if (supplementId) {
       const location = getLocation(getSupplement(supplementId)!.locationId);
-      setSelectedLocation(location.id);
-      setCommit({ page: location.page, locationId: location.id, focusId: "locate-supplement", panelScroll });
+      void navigate({ page: location.page, locationId: location.id, locate: { focusId: "locate-supplement", panelScroll } });
     }
   }
 
@@ -500,14 +504,14 @@ export function Reader() {
       const marker = id ? document.querySelector(`[data-supplement-ids~="${id}"]`)?.getBoundingClientRect() : undefined;
       const viewport = scroller.current?.getBoundingClientRect();
       if (id && marker && viewport && marker.bottom > viewport.top && marker.top < viewport.bottom) focusMarker(id);
-      else document.getElementById(`page-${current.current}`)?.focus({ preventScroll: true });
+      else document.getElementById(views.bookVisible ? `page-${current.current}` : 'show-book-view')?.focus({ preventScroll: true });
     });
   }
 
   function relatedJump(locationId: string, focusId: string) {
     const location = getLocation(locationId);
     if (locationId === selectedLocation) {
-      if (graphOpen) void navigate({ page: location.page, locationId, keepHistory: true });
+      if (views.open.graph) void navigate({ page: location.page, locationId, keepHistory: true });
       return;
     }
     const element = scroller.current;
@@ -518,7 +522,7 @@ export function Reader() {
     void navigate({ page: location.page, locationId, source: {
       page, fraction: (element.scrollTop - metric.top) / metric.height,
       supplementId, choiceIds, methodOpenIds, locationId: selectedLocation, focusId,
-      panelScroll: document.getElementById("supplement-panel")?.scrollTop ?? 0,
+      panelScroll: views.capturePanelScroll(),
     } });
   }
 
@@ -535,7 +539,14 @@ export function Reader() {
       image.src = target.image;
       await image.decode();
       if (requestId.current !== id) return;
-      setGraphOpen(false);
+      // Only a loaded textbook target may change the visible reading views.
+      views.show('book');
+      if (window.matchMedia('(max-width: 760px)').matches) setNavigationOpen(false);
+      if (jump.locate) {
+        if (jump.locationId) setSelectedLocation(jump.locationId);
+        setCommit({ page: jump.page, locationId: jump.locationId, ...jump.locate });
+        return;
+      }
       setPersonalItem(null); setPersonalLibraryOpen(false); setSelectionPage(null);
       setChoiceIds(jump.restore?.choiceIds ?? null);
       if (jump.source) setHistory((previous) => [...previous, jump.source!]);
@@ -554,7 +565,6 @@ export function Reader() {
       }
       setCommit({ page: jump.page, fraction: jump.restore?.fraction, locationId: jump.locationId, panelScroll: jump.restore?.panelScroll,
         focusId: jump.restore?.focusId ?? (jump.locationId ? `location-${jump.locationId}` : `page-${jump.page}`) });
-      if (window.matchMedia("(max-width: 760px)").matches) setNavigationOpen(false);
     } catch {
       if (requestId.current === id) {
         setPageInput(String(current.current));
@@ -618,6 +628,10 @@ export function Reader() {
     }
   }} onClickCapture={(event) => {
     const target = event.target as HTMLElement;
+    if (target.closest('.reading-view-controls, .split-resize, .panel-resize')) {
+      if (views.narrow && target.closest('.reading-view-controls')) setNavigationOpen(false);
+      cancelJump(); keepPreview(); clearPreview(); return;
+    }
     if (target.closest('.markdown-editor, .create-linked-node, .personal-title, .personal-metadata, .method-toggle, .locate-button, .account-control, .legacy-copies, .supplement-graph, .graph-related, .node-link, #open-supplement-graph')) return;
     if (document.querySelector('[data-dirty="true"]') && target.closest('button, summary, input') && !window.confirm('有尚未保存的内容，放弃修改？')) {
       event.preventDefault(); event.stopPropagation();
@@ -646,10 +660,10 @@ export function Reader() {
   }}>
     <header className="toolbar">
       <div className="book-heading">
-        <button ref={toggleButton} className="icon-button navigation-toggle" aria-label={navigationOpen && !graphOpen ? "收起页面导航" : "展开页面导航"}
-          aria-expanded={navigationOpen && !graphOpen} aria-controls="page-sidebar" onClick={() => {
+        <button ref={toggleButton} className="icon-button navigation-toggle" aria-label={navigationOpen && views.bookVisible && !graphOpen ? "收起页面导航" : "展开页面导航"}
+          aria-expanded={navigationOpen && views.bookVisible && !graphOpen} aria-controls="page-sidebar" onClick={() => {
             clearPreview();
-            if (graphOpen) { setGraphOpen(false); setNavigationOpen(true); }
+            if (graphOpen || !views.bookVisible) { views.show('book', true); setNavigationOpen(true); }
             else setNavigationOpen(!navigationOpen);
           }}>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="2" stroke="currentColor" strokeWidth="1.5" /><path d="M9 4v16" stroke="currentColor" strokeWidth="1.5" /></svg>
@@ -689,7 +703,7 @@ export function Reader() {
         </details>
         <button id="open-personal-library" className="text-button" disabled={!ownsPersonal || content.loading} aria-expanded={personalLibraryOpen || !!personalItem} aria-controls="supplement-panel" onClick={openPersonalLibrary}>我的补充</button>
         <button className="text-button" disabled={!ownsPersonal || content.loading} onClick={() => {
-          setGraphOpen(false); closeSupplement(false); setPersonalItem(null); clearPreview(); setSelectionPage(currentPage);
+          views.show('book', true); closeSupplement(false); setPersonalItem(null); clearPreview(); setSelectionPage(currentPage);
         }}>添加补充</button>
         <AccountControl user={content.user} onSignIn={signIn} onPasswordSignIn={import.meta.env.DEV ? signInWithPassword : undefined} onSignOut={async () => {
           if (document.querySelector('[data-dirty="true"]') && !window.confirm('有尚未保存的内容，放弃修改并退出登录？')) throw new Error('已保留草稿，尚未退出登录。');
@@ -698,6 +712,7 @@ export function Reader() {
         }} />
       </div>
     </header>
+    {graphMounted && <ReadingViewControls views={views} />}
     {selectionPage !== null && <div className="selection-help" role="status">在第 {selectionPage} 页拖动框选段落；键盘可用方向键调整，Enter 确认。<button className="text-button" onClick={() => setSelectionPage(null)}>取消</button></div>}
     {content.loading && <p className="content-status" role="status">正在载入补充与个人内容…</p>}
     {(content.error || content.notice) && <div className={content.error ? 'storage-error' : 'content-status'} role={content.error ? 'alert' : 'status'}>
@@ -709,8 +724,8 @@ export function Reader() {
     </div>}
     {ownsPersonal && <LegacyCopies copies={content.personal!.copies} current={personal} titleForNote={(id) => getSupplement(id)?.title ?? id} />}
     {readingError && <p className="storage-error" role="status">{readingError}</p>}
-    <main className={`reading-layout${navigationOpen && !graphOpen ? " navigation-open" : ""}${graphOpen ? " graph-open" : ""}${note || choiceIds || personalItem || personalLibraryOpen ? " supplement-open" : ""}`}>
-      <nav id="page-sidebar" className="page-sidebar" hidden={!navigationOpen || graphOpen} aria-label="页面导航">
+    <main className={`reading-layout${navigationOpen && views.bookVisible && !graphOpen ? " navigation-open" : ""}${graphOpen ? " graph-open" : ""}${views.split ? " views-split" : ""}${!views.bookVisible ? " book-hidden" : ""}${!views.bookVisible && !graphOpen ? " views-empty" : ""}${note || choiceIds || personalItem || personalLibraryOpen ? " supplement-open" : ""}`}>
+      <nav id="page-sidebar" className="page-sidebar" hidden={!navigationOpen || !views.bookVisible || graphOpen} aria-label="页面导航">
         <div className="page-thumbnails" ref={thumbnailList}>
           {pages.map((page) => <button id={`thumbnail-${page.page}`} key={page.page} className="page-thumbnail"
             tabIndex={page.page === currentPage ? 0 : -1} aria-label={`跳转到文件第 ${page.page} 页，${page.printedPage === null ? "无印刷页码" : pageLabel(page)}`} aria-current={page.page === currentPage ? "page" : undefined}
@@ -722,7 +737,7 @@ export function Reader() {
           </button>)}
         </div>
       </nav>
-      <div className="paper-scroller" ref={scroller} tabIndex={0} aria-label="教材连续阅读" inert={graphOpen} aria-hidden={graphOpen}
+      <div id="textbook-view" className="paper-scroller" ref={scroller} tabIndex={0} aria-label="教材连续阅读" inert={!views.bookVisible} aria-hidden={!views.bookVisible}
         onClick={(event) => {
           const target = event.target as HTMLElement;
           if (!target.matches('.page-image') && target !== event.currentTarget) return;
@@ -783,6 +798,8 @@ export function Reader() {
       </div>
       {graphMounted && <SupplementGraph nodes={content.nodes} selectedKey={selectedGraphKey} visible={graphOpen}
         chapters={chapters} sections={sections} onSelect={selectGraphNode} onClose={closeGraph} />}
+      {graphMounted && <SplitResize />}
+      {!views.bookVisible && !graphOpen && <p className="views-empty-message">选择上方“教材”或“节点图”继续阅读。</p>}
       {(personalItem || personalLibraryOpen || choiceIds || note) && <PanelResize />}
       {personalLibraryOpen && <PersonalLibrary nodes={content.nodes.filter((node) => node.source === 'personal')} chapters={chapters} sections={sections}
         onOpen={openPersonal} onCreate={() => {
@@ -810,7 +827,7 @@ export function Reader() {
       {!personalItem && !personalLibraryOpen && (choiceIds || note) && <SupplementPanel key={choiceIds?.join(" ") ?? note?.id} notes={choiceIds ? choiceIds.map((id) => getSupplement(id)!) : [note!]}
         methodOpenIds={methodOpenIds} onMethodToggle={(id) => setMethodOpenIds((open) => open.includes(id) ? open.filter((value) => value !== id) : [...open, id])}
         expandedId={supplementId} onSelect={selectAccordion} pending={pending} onClose={() => closeSupplement()} onLocate={locateSupplement} onRelated={relatedJump}
-        renderRelated={graphOpen ? (item) => <GraphRelated nodeKey={nodeKey({ bookId, source: 'default', id: item.id })}
+        renderRelated={views.open.graph ? (item) => <GraphRelated nodeKey={nodeKey({ bookId, source: 'default', id: item.id })}
           nodes={content.nodes} onSelect={selectGraphNode} onLocate={(locationId, focusId) => {
             if (allowGraphSelection()) relatedJump(locationId, focusId);
           }} /> : undefined}
@@ -828,7 +845,7 @@ export function Reader() {
       onKeep={keepPreview} onLeave={leavePreview} />}
     {(pending || error) && <div className="reading-message" role={error ? "alert" : "status"}>
       <span>{error ?? "正在打开教材…"}</span>
-      {error && <button className="text-button" onClick={() => { void navigate(retryJump.current); }}>重试</button>}
+      {error && <button className={`text-button${retryJump.current.locate ? ' locate-button' : ''}`} onClick={() => { void navigate(retryJump.current); }}>重试</button>}
     </div>}
   </div>;
 }

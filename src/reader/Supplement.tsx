@@ -44,7 +44,7 @@ export function SupplementPanel({ notes, expandedId, pending, onSelect, onClose,
   activeLocationId: string | null;
 }) {
   const grouped = notes.length > 1;
-  const activeNote = notes.find((note) => note.id === expandedId);
+  const activeNote = grouped ? notes.find((note) => note.id === expandedId) : notes[0];
   const types = new Set(notes.map(supplementType));
   const type = activeNote ? supplementType(activeNote) : types.size === 1 ? supplementType(notes[0]!) : 'group';
   return <aside id="supplement-panel" className="supplement-panel" aria-label="补充解读" data-supplement-type={type}>
@@ -55,6 +55,13 @@ export function SupplementPanel({ notes, expandedId, pending, onSelect, onClose,
       </button>}
       <h2 id="supplement-title" tabIndex={-1}>{grouped ? "此处解读" : notes[0]!.title}</h2>
       <div className="heading-actions">
+        <button className="icon-button hide-supplement" type="button" disabled={pending || !activeNote}
+          aria-label={activeNote ? `隐藏解读：${activeNote.title}` : '隐藏当前解读'} title={activeNote ? `隐藏解读：${activeNote.title}` : '请先选择解读'}
+          onClick={() => { if (activeNote) onHide(activeNote.id); }}>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="m3 3 18 18M10.6 10.6a2 2 0 0 0 2.8 2.8M9.8 5.2A10.8 10.8 0 0 1 12 5c7 0 10 7 10 7a17.5 17.5 0 0 1-3 4M6.3 6.3A19.3 19.3 0 0 0 2 12s3 7 10 7a10.4 10.4 0 0 0 5.7-1.7" />
+          </svg>
+        </button>
         <button id="locate-supplement" className="icon-button locate-button" aria-label="定位教材原文" title="定位教材原文" type="button" disabled={pending || (grouped && !expandedId)} onClick={onLocate}><LocateIcon /></button>
         <button className="icon-button" aria-label="关闭解读" onClick={onClose}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
@@ -70,14 +77,13 @@ export function SupplementPanel({ notes, expandedId, pending, onSelect, onClose,
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </summary>
       <div id={`content-${note.id}`} className="supplement-accordion-content" role="region" aria-labelledby={`choice-${note.id}`}>
-        {expandedId === note.id && <SupplementContent note={note} pending={pending} onRelated={onRelated} activeLocationId={activeLocationId} personal={renderPersonal(note)} related={renderRelated?.(note)} onHide={onHide} methodOpen={methodOpenIds.includes(note.id)} onMethodToggle={() => onMethodToggle(note.id)} />}
+        {expandedId === note.id && <SupplementContent note={note} pending={pending} onRelated={onRelated} activeLocationId={activeLocationId} personal={renderPersonal(note)} related={renderRelated?.(note)} methodOpen={methodOpenIds.includes(note.id)} onMethodToggle={() => onMethodToggle(note.id)} />}
       </div>
-    </details> : <SupplementContent key={note.id} note={note} pending={pending} onRelated={onRelated} activeLocationId={activeLocationId} personal={renderPersonal(note)} related={renderRelated?.(note)} onHide={onHide} methodOpen={methodOpenIds.includes(note.id)} onMethodToggle={() => onMethodToggle(note.id)} />)}
+    </details> : <SupplementContent key={note.id} note={note} pending={pending} onRelated={onRelated} activeLocationId={activeLocationId} personal={renderPersonal(note)} related={renderRelated?.(note)} methodOpen={methodOpenIds.includes(note.id)} onMethodToggle={() => onMethodToggle(note.id)} />)}
   </aside>;
 }
 
-function SupplementContent({ note, pending, onRelated, activeLocationId, personal, related, onHide, methodOpen, onMethodToggle }: {
-  onHide: (id: string) => void;
+function SupplementContent({ note, pending, onRelated, activeLocationId, personal, related, methodOpen, onMethodToggle }: {
   personal: ReactNode;
   related?: ReactNode;
   methodOpen: boolean;
@@ -89,7 +95,6 @@ function SupplementContent({ note, pending, onRelated, activeLocationId, persona
 }) {
   const relatedLinks = note.related.filter(({ locationId }) => locationId !== activeLocationId);
   return <>
-    <button className="text-button hide-supplement" aria-label={`隐藏解读：${note.title}`} title={`隐藏解读：${note.title}`} onClick={() => onHide(note.id)}>隐藏此解读</button>
     <div className="supplement-body">
       {note.questionGuide && (note.questionGuide.continuous
         ? [...note.questionGuide.knowledgePoints, ...note.questionGuide.method, ...note.questionGuide.cautions].map((paragraph, index) => <p key={index}>{paragraph}</p>)

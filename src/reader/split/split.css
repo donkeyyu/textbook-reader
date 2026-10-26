@@ -7,7 +7,7 @@
   grid-template-rows: minmax(0, 1fr) minmax(0, 0%) auto;
 }
 .reading-layout.supplement-open:not(.panel-bottom) { --drawer-width: var(--panel-width); }
-.reading-layout.panel-bottom.supplement-open { grid-template-rows: minmax(0, 1fr) minmax(0, var(--supplement-height, 45%)) auto; }
+.reading-layout.panel-bottom.supplement-open { grid-template-rows: minmax(0, 1fr) minmax(0, var(--supplement-height, 35%)) auto; }
 .reading-layout > .paper-scroller { grid-column: content-start / content-end; grid-row: 1; margin-top: 44px; }
 .reading-layout.book-hidden > .paper-scroller { visibility: hidden; pointer-events: none; }
 .reading-layout > .supplement-graph { grid-column: content-start / content-end; grid-row: 1; }

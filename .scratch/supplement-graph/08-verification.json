@@ -1,0 +1,252 @@
+{
+  "ticket": "08",
+  "date": "2026-10-26",
+  "baseCommit": "4b9851a66c481be0ba31f75a6089d4bbe3a31669",
+  "branch": "codex/reader-preview-review",
+  "implementationComplete": true,
+  "rootFinalReviewAndCommitPending": false,
+  "requirements": [
+    "US38",
+    "US39",
+    "US40",
+    "T15",
+    "T16",
+    "T17"
+  ],
+  "files": [
+    "src/reader/graph/SupplementGraph.tsx",
+    "src/reader/graph/useSupplementGraph.ts",
+    "src/reader/graph/graph.css",
+    "src/reader/graph/GraphPreview.tsx",
+    "src/reader/split/split.css",
+    "scripts/check-graph-hover-preview.mjs",
+    ".scratch/supplement-graph/issues/08-graph-hover-preview-motion.md",
+    ".scratch/supplement-graph/08-verification.json"
+  ],
+  "sourceHashes": {
+    "src/reader/graph/SupplementGraph.tsx": "27575dc01c63b26aa42379aabafc88b6829d7c4fb17fca46fb09a5d197b2c27e",
+    "src/reader/graph/useSupplementGraph.ts": "536bdf94e5aa52c8cc5a8c116e0649469351fcb16b8871342c395f877702bb1c",
+    "src/reader/graph/graph.css": "e00c251c981fd14ad8b27132a8022ca3b6d34053c8a0cfadaf11e6f60347ee19",
+    "src/reader/graph/GraphPreview.tsx": "18e99af8d3e435b838c49a2c5a5f5d1ea55da0fe9b15d088e40924a1b551f932",
+    "src/reader/split/split.css": "c806452f2172f6f5d694adf6c02e6489ca7cc1fae7eae10580dc160420e3a9e2",
+    "scripts/check-graph-hover-preview.mjs": "2bc48d8ce69aff8f6871549552e94ac120ca1c9faf24fcf3c9ce55ec98644776",
+    ".scratch/supplement-graph/issues/08-graph-hover-preview-motion.md": "edda5f394c689a2bd12546ddb1522597443a38e5357b2f01fc9b91703381c271"
+  },
+  "rootCause": {
+    "reproducedBeforeEdits": true,
+    "trigger": "Opening the drawer resized the same WebGL canvas. Resize cleared its buffer to black; drawing was deferred to a later requestAnimationFrame.",
+    "sampleBeforeResize": [
+      239,
+      240,
+      242,
+      255
+    ],
+    "sampleAfterResize": [
+      0,
+      0,
+      0,
+      255
+    ],
+    "fix": "ResizeObserver redraws in the same turn, rebuilt/resumed collections use the same canvas, drawer grid tracks interpolate, and original per-node/group SupplementPanel keys preserve reading bookmark identity.",
+    "baseline": "/Users/chengqiyu/dev/课本解读/.git/supplement-graph-orchestration/08-evidence/baseline.json"
+  },
+  "checks": {
+    "existingDataTests": {
+      "passed": 37,
+      "failed": 0,
+      "log": "/Users/chengqiyu/dev/课本解读/.git/supplement-graph-orchestration/08-evidence/tests-final.log",
+      "reviewCorrection": "Unchanged data code and original 37-test evidence reused; no unrelated full-suite rerun."
+    },
+    "typecheck": "passed again via npm run build after restoring the key",
+    "productionBuild": "passed after key restoration; existing large-chunk warning retained",
+    "helperSyntax": "node --check passed",
+    "diffWhitespace": "git diff --check passed",
+    "impeccable": {
+      "errors": 0,
+      "advisories": 2,
+      "log": "/Users/chengqiyu/dev/课本解读/.git/supplement-graph-orchestration/08-evidence/impeccable-detect.json"
+    },
+    "reviewBuildLog": "/Users/chengqiyu/dev/课本解读/.git/supplement-graph-orchestration/08-review-bookmark-fix/typecheck-build.log"
+  },
+  "browser": {
+    "tool": "Ego Lite 0.6.0.20 + documented CDP input",
+    "origin": "http://127.0.0.1:47908",
+    "spaceId": 30,
+    "defaultNodes": 970,
+    "qaPersonalNodes": 2,
+    "defaultEdges": 442,
+    "qaPersonalEdges": 2,
+    "hoverAndControl": "/Users/chengqiyu/dev/课本解读/.git/supplement-graph-orchestration/08-evidence/interactions.json",
+    "draftLifecycleAndDrawer": "/Users/chengqiyu/dev/课本解读/.git/supplement-graph-orchestration/08-evidence/state-paths.json",
+    "splitReading": "/Users/chengqiyu/dev/课本解读/.git/supplement-graph-orchestration/08-evidence/split-paths.json",
+    "responsiveAndReducedMotion": "/Users/chengqiyu/dev/课本解读/.git/supplement-graph-orchestration/08-evidence/responsive.json",
+    "savedReferenceChanges": "/Users/chengqiyu/dev/课本解读/.git/supplement-graph-orchestration/08-evidence/reference-changes.json",
+    "visual": {
+      "completedBatchedInspections": 1,
+      "visualEditsAfterInspection": 0,
+      "desktop": {
+        "path": "/Users/chengqiyu/dev/课本解读/.git/supplement-graph-orchestration/08-evidence/final-desktop.png",
+        "cssViewport": [
+          1280,
+          889
+        ],
+        "deviceScaleFactor": 2,
+        "inspected": true
+      },
+      "narrow": {
+        "path": "/Users/chengqiyu/dev/课本解读/.git/supplement-graph-orchestration/08-evidence/narrow-layout.png",
+        "cssViewport": [
+          390,
+          844
+        ],
+        "deviceScaleFactor": 2,
+        "inspected": true
+      },
+      "usableSplitScreenshot": false,
+      "splitPointerAndDOMChecked": true,
+      "stage": "Captured before bookmark correction. Appearance sources are unchanged; screenshots are not panel-identity evidence. No new visual refinement requested or performed.",
+      "unchangedAppearanceSourceHashesVerified": true
+    },
+    "sameRendererCanvas": true,
+    "noPendingResizeFramesInRecordedRuns": true,
+    "noEmptyCollectionPresentedDuringReferenceChanges": true,
+    "mailAttempts": 0,
+    "evidenceStages": [
+      {
+        "path": "/Users/chengqiyu/dev/课本解读/.git/supplement-graph-orchestration/08-evidence/split-paths.json",
+        "stage": "before excluding columns transition from .views-split",
+        "finalSplitMotionAcceptance": false
+      },
+      {
+        "path": "/Users/chengqiyu/dev/课本解读/.git/supplement-graph-orchestration/08-evidence/state-paths.json",
+        "stage": "before restoring node/group panel keys",
+        "supersededAssertion": "weakenedNodeClickableAndPanelStable.samePanel=true is obsolete for cross-node selection",
+        "otherUnaffectedChecksReused": true
+      },
+      {
+        "path": "/Users/chengqiyu/dev/课本解读/.git/supplement-graph-orchestration/08-review-bookmark-fix/public-continuity.json",
+        "stage": "final key restoration and final scoped CSS",
+        "finalSplitTransitionProperty": "grid-template-rows",
+        "directWidthResizeHasColumnTransition": false
+      },
+      {
+        "path": "/Users/chengqiyu/dev/课本解读/.git/supplement-graph-orchestration/08-review-bookmark-fix/editor-state.json",
+        "stage": "final key restoration; same-node editor and draft protection"
+      }
+    ]
+  },
+  "cleanup": {
+    "onlyOwnNodesDeleted": true,
+    "uiRefreshEmpty": true,
+    "cloudSupplements": 0,
+    "cloudNotes": 0,
+    "cloudBindings": 0,
+    "emptyUI": "我的补充新建补充关闭查找补充共 0 条补充还没有个人补充。可以新建，也可以在教材上框选后添加。",
+    "signedOut": true,
+    "spaceId": 30,
+    "accountAndCredentialDeletionOwner": "root completed exact-id/qa-marker/empty-content guarded deletion",
+    "spaceFinished": true,
+    "serverPort": 47908,
+    "serverStopRequested": true,
+    "serverStopped": true,
+    "reviewCorrection": {
+      "spaceId": 31,
+      "spaceFinished": true,
+      "origin": "http://127.0.0.1:47918",
+      "onlyOwnReviewNoteCreatedAndRemoved": true,
+      "cloudNodesNotesBindingsEmpty": true,
+      "refreshedUIEmpty": true,
+      "signedOut": true,
+      "mailAttempts": 0,
+      "serverPort": 47918,
+      "serverStopRequested": true,
+      "accountAnd0600CredentialDeletionOwner": "root after final acceptance",
+      "serverStopped": true
+    },
+    "authAccountDeleted": true,
+    "remainingSessions": 0,
+    "remainingPrivateRows": 0,
+    "privateCredentialRemoved": true
+  },
+  "limits": [
+    "No physical-device, FPS, or student-learning claim.",
+    "Visual QA completed one desktop+narrow batch; the split view was checked through real pointer and DOM paths, without a usable split screenshot.",
+    "Initial high-level hover/input failures, incomplete screenshot attempts, CDP timeouts and serialization failures remain in private raw logs and the tool transcript; they are not counted as passes.",
+    "GL readPixels diagnostics can affect timing. Resize/draw ordering and same-canvas evidence do not establish a frame-rate claim.",
+    "The initial extra-hook edit caused a development Fast Refresh hook-order warning on the owned page; hard reload removed it. The user preview was not operated.",
+    "Root owns final two-axis review, commit, plan/design docs and exact deletion of the dedicated QA account/credential file.",
+    "Earlier cross-node stable-shell evidence is superseded by the review correction. The final split motion acceptance is the new public-continuity/final-split-resize record; old split-paths contains a prior CSS stage."
+  ],
+  "protectedSourceHashes": {
+    "src/reader/Reader.tsx": "18127b56d32d23fe4217e394cba80dbc44014ddc682f5156daae50eb9a596014"
+  },
+  "reviewCorrection": {
+    "finding": "P2: different default nodes shared a scroll bookmark through the same aside",
+    "fix": "Restore original SupplementPanel node/group key; Reader has no net diff",
+    "before": "/Users/chengqiyu/dev/课本解读/.git/supplement-graph-orchestration/08-review-bookmark-fix/before.json",
+    "after": "/Users/chengqiyu/dev/课本解读/.git/supplement-graph-orchestration/08-review-bookmark-fix/after.json",
+    "publicRegression": "checkGraphPanelBookmark(page, { testOrigin })",
+    "sameNodeClampAndHide": "/Users/chengqiyu/dev/课本解读/.git/supplement-graph-orchestration/08-review-bookmark-fix/public-continuity.json",
+    "editorProtection": "/Users/chengqiyu/dev/课本解读/.git/supplement-graph-orchestration/08-review-bookmark-fix/editor-state.json",
+    "newOrigin": "http://127.0.0.1:47918",
+    "newSpaceId": 31,
+    "cleanup": {
+      "spaceId": 31,
+      "spaceFinished": true,
+      "origin": "http://127.0.0.1:47918",
+      "onlyOwnReviewNoteCreatedAndRemoved": true,
+      "cloudNodesNotesBindingsEmpty": true,
+      "refreshedUIEmpty": true,
+      "signedOut": true,
+      "mailAttempts": 0,
+      "serverPort": 47918,
+      "serverStopRequested": true,
+      "accountAnd0600CredentialDeletionOwner": "root completed precise deletion",
+      "serverStopped": true
+    },
+    "unchangedSourceHashesVerified": {
+      "src/reader/graph/SupplementGraph.tsx": "27575dc01c63b26aa42379aabafc88b6829d7c4fb17fca46fb09a5d197b2c27e",
+      "src/reader/graph/useSupplementGraph.ts": "536bdf94e5aa52c8cc5a8c116e0649469351fcb16b8871342c395f877702bb1c",
+      "src/reader/graph/graph.css": "e00c251c981fd14ad8b27132a8022ca3b6d34053c8a0cfadaf11e6f60347ee19",
+      "src/reader/graph/GraphPreview.tsx": "18e99af8d3e435b838c49a2c5a5f5d1ea55da0fe9b15d088e40924a1b551f932",
+      "src/reader/split/split.css": "c806452f2172f6f5d694adf6c02e6489ca7cc1fae7eae10580dc160420e3a9e2"
+    },
+    "originalEvidenceFilesVerifiedUnchanged": 75,
+    "newScreenshots": 0
+  },
+  "status": "Accepted after root two-axis review and one P2 correction; complete",
+  "rootReview": {
+    "baseCommit": "4b9851a66c481be0ba31f75a6089d4bbe3a31669",
+    "standards": {
+      "findings": 1,
+      "resolved": 1,
+      "reReview": "passed"
+    },
+    "spec": {
+      "findings": 1,
+      "sameSharedFinding": true,
+      "resolved": 1,
+      "reReview": "passed"
+    },
+    "uniqueFindings": 1,
+    "isolatedCandidatePaths": 12,
+    "npmTest": {
+      "passed": 37,
+      "failed": 0
+    },
+    "typecheck": "passed",
+    "productionBuild": "passed; existing largechunkwarning",
+    "helperSyntax": "passed",
+    "hashAudit": "8delivery+108privateevidence+27protected matched before root-owned metadata/docs updates",
+    "visualEvidenceInspected": [
+      "final-desktop.png",
+      "narrow-layout.png"
+    ],
+    "splitVisualBoundary": "No usable split screenshot; final real-pointer/DOM/geometry and transition-property evidence accepted",
+    "evidencePhaseCorrection": "Old samePanel and columns-transition records explicitly superseded by P2 rework final-source paths",
+    "preexistingChangesExcluded": true,
+    "designStagedOnlyRootFeatureAddition": true,
+    "fixtureCleanup": "Exact08 id/qa marker/emptydata guard; authdeleted/sessions0/privateRows0/credentialremoved",
+    "userPreviewUntouched": "Space29/5173 not operated; dev FastRefresh hook edit may need manual reload"
+  }
+}

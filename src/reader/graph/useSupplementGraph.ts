@@ -8,6 +8,7 @@ type LayoutNode = SimulationNodeDatum & GraphNode;
 type LayoutEdge = SimulationLinkDatum<LayoutNode> & Pick<GraphEdge, 'kind'>;
 type Sprite = { node: LayoutNode; dot: Graphics; ring: Graphics; label: Text };
 type Point = { x: number; y: number };
+export type GraphPreviewAnchor = Point & { key: string; radius: number };
 const minZoom = .1;
 const maxZoom = 3;
 const radius = 6;
@@ -18,6 +19,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
   const [ready, setReady] = useState(false);
   const [error, setError] = useState('');
   const [scale, setScale] = useState(1);
+  const [preview, setPreview] = useState<GraphPreviewAnchor | null>(null);
   const app = useRef<Application | null>(null);
   const world = useRef<Container | null>(null);
   const sprites = useRef(new Map<string, Sprite>());
@@ -25,7 +27,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
   const current = useRef({ nodes, edges, selectedKey, visible, onSelect, searchKeys });
   current.current = { nodes, edges, selectedKey, visible, onSelect, searchKeys };
   const actions = useRef({ focus: (_key: string) => {}, fit: () => {}, zoom: (_factor: number) => {},
-    pan: (_x: number, _y: number) => {}, paint: () => {}, pause: () => {}, resume: () => {} });
+    pan: (_x: number, _y: number) => {}, paint: (_immediate = false) => {}, pause: () => {}, resume: () => {} });
   const skipFocus = useRef<string | null>(null);
   const initialized = useRef(false);
   const signature = JSON.stringify([nodes.map(({ key, title, type }) => [key, title, type]), edges]);
@@ -104,9 +106,16 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
     }
     sprites.current = next;
     let hovered: string | null = null;
+    let control = false;
     let renderFrame = 0;
-    function paint() {
-      if (!current.current.visible || renderFrame) return;
+    function paint(immediate = false) {
+      if (!current.current.visible) return;
+      if (immediate) {
+        cancelAnimationFrame(renderFrame); renderFrame = 0;
+        draw();
+        return;
+      }
+      if (renderFrame) return;
       renderFrame = requestAnimationFrame(() => {
         renderFrame = 0;
         if (current.current.visible) draw();
@@ -115,7 +124,9 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
     function draw() {
       const zoom = container!.scale.x;
       const selected = current.current.selectedKey;
-      const neighbors = selected ? adjacency.get(selected) : undefined;
+      const focused = hovered ?? selected;
+      const previewKey = control ? hovered : null;
+      const neighbors = focused ? adjacency.get(focused) : undefined;
       const matches = current.current.searchKeys;
       lines.clear();
       // Batch by source and emphasis; personal pairs have no arrowhead.
@@ -125,7 +136,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
           if (link.kind !== kind) continue;
           const source = link.source as LayoutNode;
           const target = link.target as LayoutNode;
-          if ((source.key === selected || target.key === selected) !== active) continue;
+          if ((source.key === focused || target.key === focused) !== active) continue;
           const dx = target.x! - source.x!, dy = target.y! - source.y!;
           const length = Math.hypot(dx, dy);
           if (length < radius * 2) continue;
@@ -145,15 +156,16 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
             .lineTo(endX, endY).lineTo(endX - Math.cos(angle + .45) * arrow, endY - Math.sin(angle + .45) * arrow);
         }
         lines.stroke({ width: (active ? 1.5 : 1) / zoom,
-          color: kind === 'personal' ? colors.get('personal') || '#b13d65' : active ? 0x57606a : 0xb8bec6, alpha: active ? .8 : .45 });
+          color: kind === 'personal' ? colors.get('personal') || '#b13d65' : active ? 0x57606a : 0xb8bec6,
+          alpha: active ? .8 : focused ? .12 : .45 });
       }
       const occupied: { x: number; y: number; width: number; height: number }[] = [];
-      const rank = (key: string) => key === selected ? 4 : key === hovered ? 3 : matches.has(key) ? 2 : neighbors?.has(key) ? 1 : 0;
+      const rank = (key: string) => key === hovered ? 5 : key === selected ? 4 : matches.has(key) ? 2 : neighbors?.has(key) ? 1 : 0;
       const ordered = [...next.values()].sort((a, b) => rank(b.node.key) - rank(a.node.key));
       for (const { node, dot, ring, label } of ordered) {
         const active = node.key === selected || node.key === hovered;
         const matched = matches.has(node.key);
-        const clear = !selected || node.key === selected || neighbors?.has(node.key) || node.key === hovered || matched;
+        const clear = !focused || node.key === focused || neighbors?.has(node.key) || matched;
         dot.alpha = label.alpha = clear ? 1 : .15;
         ring.visible = active;
         if (active) ring.scale.set((radius + 4 / zoom) / (radius + 4));
@@ -164,11 +176,15 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
         if (!label.visible) continue;
         label.text = active || matched ? node.title : node.title.length > 18 ? `${node.title.slice(0, 18)}…` : node.title;
         label.scale.set(1 / zoom);
-        label.position.set(node.x!, node.y! + radius + 5 / zoom);
-        const bounds = { x: x - label.width * zoom / 2, y, width: label.width * zoom, height: label.height * zoom };
+        const above = node.key === previewKey;
+        label.anchor.set(.5, above ? 1 : 0);
+        label.position.set(node.x!, node.y! + (above ? -1 : 1) * (radius + 5 / zoom));
+        const bounds = { x: x - label.width * zoom / 2,
+          y: above ? node.y! * zoom + container!.y - radius * zoom - 5 - label.height * zoom : y,
+          width: label.width * zoom, height: label.height * zoom };
         const overlaps = () => occupied.some((box) => bounds.x < box.x + box.width + 6 && bounds.x + bounds.width + 6 > box.x &&
           bounds.y < box.y + box.height + 6 && bounds.y + bounds.height + 6 > box.y);
-        if (node.key === hovered && node.key !== selected && overlaps()) {
+        if (!above && node.key === hovered && node.key !== selected && overlaps()) {
           const shift = Math.max(...occupied.map((box) => box.y + box.height)) + 6 - bounds.y;
           bounds.y += shift; label.y += shift / zoom;
         }
@@ -176,6 +192,12 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
         else occupied.push(bounds);
       }
       renderer!.render();
+      const node = previewKey ? next.get(previewKey)?.node : null;
+      const rect = node ? canvas.getBoundingClientRect() : null;
+      const anchor = node && rect ? { key: node.key, x: rect.left + node.x! * zoom + container!.x,
+        y: rect.top + node.y! * zoom + container!.y, radius: radius * zoom } : null;
+      setPreview((previous) => previous?.key === anchor?.key && previous?.x === anchor?.x &&
+        previous?.y === anchor?.y && previous?.radius === anchor?.radius ? previous : anchor);
     }
     function transform(zoom: number, point: Point = { x: renderer!.screen.width / 2, y: renderer!.screen.height / 2 }) {
       const nextZoom = Math.max(minZoom, Math.min(maxZoom, zoom));
@@ -217,7 +239,8 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
         if (current.current.selectedKey) focus(current.current.selectedKey!); else fit();
         initialized.current = true;
       } else if (force.alpha() >= force.alphaMin()) force.restart();
-      paint();
+      // Data replacement must reach the same canvas before the browser presents it.
+      paint(true);
     }
     const canvas = renderer.canvas;
     let gesture: { pointer: number; start: Point; last: Point; node?: LayoutNode; offset: Point; moved: boolean } | null = null;
@@ -239,6 +262,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       const p = point(event), node = hit(p), local = container!.toLocal(p);
       gesture = { pointer: event.pointerId, start: p, last: p, node, moved: false,
         offset: { x: (node?.x ?? local.x) - local.x, y: (node?.y ?? local.y) - local.y } };
+      clearHover();
       canvas.setPointerCapture(event.pointerId);
       canvas.style.cursor = 'grabbing';
     }
@@ -246,7 +270,10 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       const p = point(event);
       if (!gesture) {
         const nextHover = hit(p)?.key ?? null;
-        if (nextHover !== hovered) { hovered = nextHover; canvas.style.cursor = hovered ? 'pointer' : 'grab'; paint(); }
+        if (nextHover !== hovered || control !== event.ctrlKey) {
+          hovered = nextHover; control = event.ctrlKey;
+          canvas.style.cursor = hovered ? 'pointer' : 'grab'; paint();
+        }
         return;
       }
       if (gesture.pointer !== event.pointerId) return;
@@ -278,8 +305,16 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       canvas.style.cursor = 'grab'; paint();
     }
     function wheel(event: WheelEvent) { event.preventDefault(); transform(container!.scale.x * Math.exp(-event.deltaY * .0015), point(event)); }
-    function leave() { if (!gesture && hovered) { hovered = null; paint(); } }
+    function clearHover() {
+      hovered = null; control = false; setPreview(null); paint();
+    }
+    function leave() { if (!gesture) clearHover(); }
+    function modifier(event: KeyboardEvent) {
+      if (control !== event.ctrlKey) { control = event.ctrlKey; paint(true); }
+    }
+    function visibility() { if (document.hidden) clearHover(); }
     function pause() {
+      clearHover();
       const interrupted = gesture;
       gesture = null;
       if (interrupted?.node) { interrupted.node.fx = interrupted.node.fy = null; force.alphaTarget(0); }
@@ -294,12 +329,17 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
     canvas.addEventListener('pointerup', up); canvas.addEventListener('pointercancel', up);
     canvas.addEventListener('lostpointercapture', up); canvas.addEventListener('wheel', wheel, { passive: false });
     canvas.addEventListener('pointerleave', leave);
+    // Track the modifier even when the focused editor consumes key events.
+    window.addEventListener('keydown', modifier, true); window.addEventListener('keyup', modifier, true);
+    window.addEventListener('blur', clearHover); document.addEventListener('visibilitychange', visibility);
     return () => {
       pause();
       canvas.removeEventListener('pointerdown', down); canvas.removeEventListener('pointermove', move);
       canvas.removeEventListener('pointerup', up); canvas.removeEventListener('pointercancel', up);
       canvas.removeEventListener('lostpointercapture', up); canvas.removeEventListener('wheel', wheel);
       canvas.removeEventListener('pointerleave', leave);
+      window.removeEventListener('keydown', modifier, true); window.removeEventListener('keyup', modifier, true);
+      window.removeEventListener('blur', clearHover); document.removeEventListener('visibilitychange', visibility);
     };
   }, [ready, signature, host]);
 
@@ -321,7 +361,9 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       if (!width || !height) return;
       container.x += (width - renderer.screen.width) / 2;
       container.y += (height - renderer.screen.height) / 2;
-      renderer.renderer.resize(width, height); actions.current.paint();
+      // WebGL resize clears the drawing buffer. Redraw in this observer turn,
+      // before presentation, rather than leaving a black frame until the next rAF.
+      renderer.renderer.resize(width, height); actions.current.paint(true);
     });
     observer.observe(element);
     return () => observer.disconnect();
@@ -332,6 +374,6 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
     else actions.current.pause();
   }, [visible, ready]);
 
-  return { ready, error, scale, focus: (key: string) => actions.current.focus(key), fit: () => actions.current.fit(),
+  return { ready, error, scale, preview, focus: (key: string) => actions.current.focus(key), fit: () => actions.current.fit(),
     zoom: (factor: number) => actions.current.zoom(factor), pan: (x: number, y: number) => actions.current.pan(x, y) };
 }

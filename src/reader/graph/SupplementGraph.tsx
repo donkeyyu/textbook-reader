@@ -5,6 +5,7 @@ import { getPage, pageLabel } from '../../textbook/catalog.ts';
 import { supplementTypes, TypeMarker } from '../supplement-types.tsx';
 import { projectGraph } from './project-graph.ts';
 import { useSupplementGraph } from './useSupplementGraph.ts';
+import { GraphPreview } from './GraphPreview.tsx';
 import type { PersonalReferenceEdge } from '../links/project-references.ts';
 import './graph.css';
 
@@ -28,6 +29,7 @@ export function SupplementGraph({ nodes, personalEdges, selectedKey, visible, on
     node.title.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase())) : [], [nodes, query]);
   const searchKeys = useMemo(() => new Set(matches.map((node) => node.key)), [matches]);
   const graph = useSupplementGraph(host, data.nodes, data.edges, selectedKey, visible, onSelect, searchKeys);
+  const previewNode = visible && graph.preview ? nodes.find((node) => node.key === graph.preview!.key) : null;
   function choose(key: string) {
     if (onSelect(key)) { graph.focus(key); setQuery(''); }
   }
@@ -71,6 +73,7 @@ export function SupplementGraph({ nodes, personalEdges, selectedKey, visible, on
       {!graph.ready && !graph.error && <p className="graph-error" role="status">正在打开节点图…</p>}
       {graph.ready && nodes.length === 0 && <p className="graph-error">当前教材还没有补充节点。</p>}
     </div>
+    {previewNode && graph.preview && <GraphPreview node={previewNode} anchor={graph.preview} />}
     <div className="graph-footer">
       <span aria-live="polite">{nodes.length} 节点 · {data.defaultEdges.length} 默认关联 · {personalEdges.length} 个人连线</span>
       <div className="graph-zoom" aria-label="图缩放">
@@ -87,7 +90,7 @@ export function SupplementGraph({ nodes, personalEdges, selectedKey, visible, on
       <span><svg width="28" height="14" viewBox="0 0 28 14" fill="none" aria-hidden="true"><path d="M1 7h24m-5-4 5 4-5 4" stroke="currentColor" strokeWidth="1.5" /></svg>默认关联</span>
       <span data-supplement-type="personal"><svg width="28" height="14" viewBox="0 0 28 14" fill="none" aria-hidden="true"><path d="M1 11Q14 0 27 11" stroke="currentColor" strokeWidth="1.5" /></svg>个人引用</span>
     </div>
-    <p id="graph-help" className="sr-only">拖动空白平移，滚轮缩放，拖动节点调整位置。画布聚焦时方向键平移，加减键缩放，0 查看全图，斜线键搜索。搜索后按向下键或 Tab 选择结果，Enter 打开解读。</p>
+    <p id="graph-help" className="sr-only">拖动空白平移，滚轮缩放，拖动节点调整位置。悬停突出直接关联，按住 Ctrl 悬停预览。画布聚焦时方向键平移，加减键缩放，0 查看全图，斜线键搜索。搜索后按向下键或 Tab 选择结果，Enter 打开解读。</p>
   </section>;
 }
 

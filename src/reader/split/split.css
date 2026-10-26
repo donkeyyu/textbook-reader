@@ -10,7 +10,7 @@
 .views-empty-message { grid-column: 1; grid-row: 1; align-self: center; justify-self: center; margin: 20px; color: var(--secondary); font-size: 14px; }
 
 @media (min-width: 1001px) {
-  .reading-layout.graph-open.views-split { grid-template-columns: minmax(0, var(--graph-share, 45fr)) 12px minmax(0, var(--book-share, 55fr)); grid-template-rows: minmax(0, 1fr); }
+  .reading-layout.graph-open.views-split { grid-template-columns: minmax(0, var(--graph-share, 45fr)) 12px minmax(0, var(--book-share, 55fr)); grid-template-rows: minmax(0, 1fr) minmax(0, 0%); }
   .reading-layout.views-split.supplement-open { grid-template-rows: minmax(0, 1fr) minmax(0, var(--supplement-height, 45%)); }
   .reading-layout.views-split > .supplement-graph { grid-column: 1; grid-row: 1; }
   .reading-layout.views-split > .paper-scroller { grid-column: 3; grid-row: 1; visibility: visible; pointer-events: auto; padding: 20px 16px; }

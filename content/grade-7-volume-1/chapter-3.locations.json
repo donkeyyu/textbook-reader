@@ -10,12 +10,12 @@
       "printedPage": null,
       "indexAnchor": 1,
       "anchorLabel": "问题（1）—（3）",
-      "locator": "章引问题（1）的起始问句“该机器人10 s能识别多大范围的苹果？60 s呢？t s呢？”；导读覆盖本组（1）至（3），共用前文机器人效率背景，分析续于已核对的PDF第76页。",
+      "locator": "章引机器人采摘效率背景及完整第（1）至（3）问。",
       "region": {
-        "x": 0.13,
-        "y": 0.333,
-        "width": 0.63,
-        "height": 0.026
+        "x": 0.085,
+        "y": 0.25,
+        "width": 0.79,
+        "height": 0.19
       },
       "marker": {
         "x": 0.96,
@@ -86,7 +86,7 @@
       "printedPage": "69",
       "indexAnchor": 3,
       "anchorLabel": "（1）某工程队负责铺设一条长2 km的地下管道",
-      "locator": "印刷第69页页末问题（1）：铺设2 km地下管道的题干，问句续于已核对的PDF77页页首；仅对应铺管道，不含正方形问题。",
+      "locator": "铺设2 km地下管道问题的本页题干，续句单独定位于PDF第77页。",
       "region": {
         "x": 0.174,
         "y": 0.893,
@@ -97,7 +97,19 @@
         "x": 0.96,
         "y": 0.9085
       },
-      "sourceImageSha256": "cab0d41200a75bba8c6e31d71f5e878ded203f4ea7cc6e5f9106cee7ffce36e7"
+      "sourceImageSha256": "cab0d41200a75bba8c6e31d71f5e878ded203f4ea7cc6e5f9106cee7ffce36e7",
+      "additionalRegions": [
+        {
+          "page": 77,
+          "region": {
+            "x": 0.085,
+            "y": 0.07,
+            "width": 0.43,
+            "height": 0.02
+          },
+          "sourceImageSha256": "85d2a986f8249a2375d0e27495067d8de93b3d8065bed8aa5b39e4bc1f8a362b"
+        }
+      ]
     },
     {
       "id": "ch3-q-square-quantity-problem",
@@ -162,12 +174,12 @@
       "printedPage": "70",
       "indexAnchor": 2,
       "anchorLabel": "例1",
-      "locator": "蓝色“例1”题号；导读覆盖其后第（1）至（4）问，从苹果九折售价至水池中水的体积，原解答在题干下方。",
+      "locator": "例1完整题干及第（1）至（4）问，止于“解”之前。",
       "region": {
-        "x": 0.13,
+        "x": 0.085,
         "y": 0.465,
-        "width": 0.047,
-        "height": 0.023
+        "width": 0.79,
+        "height": 0.195
       },
       "marker": {
         "x": 0.96,
@@ -219,12 +231,12 @@
       "printedPage": "71",
       "indexAnchor": 0,
       "anchorLabel": "例2",
-      "locator": "页首蓝色“例2”题号及“说出下列代数式的意义”共用题干；导读覆盖下列第（1）至（4）项。",
+      "locator": "例2说出代数式意义的完整要求及第（1）至（4）式。",
       "region": {
         "x": 0.174,
         "y": 0.07,
-        "width": 0.314,
-        "height": 0.025
+        "width": 0.7,
+        "height": 0.065
       },
       "marker": {
         "x": 0.96,
@@ -295,12 +307,12 @@
       "printedPage": "71",
       "indexAnchor": 1,
       "anchorLabel": "练习",
-      "locator": "练习框内第1题题号及“填空题”共用题干；导读覆盖后面的第（1）至（4）小问。",
+      "locator": "练习第1题“填空题”及第（1）至（4）小问。",
       "region": {
-        "x": 0.151,
+        "x": 0.15,
         "y": 0.366,
-        "width": 0.11,
-        "height": 0.025
+        "width": 0.745,
+        "height": 0.135
       },
       "marker": {
         "x": 0.96,
@@ -314,12 +326,12 @@
       "printedPage": "71",
       "indexAnchor": 1,
       "anchorLabel": "练习",
-      "locator": "练习框内第2题题号及“说出下列代数式的意义”共用题干；导读覆盖第（1）至（4）项。",
+      "locator": "练习第2题完整要求及第（1）至（4）式。",
       "region": {
         "x": 0.151,
         "y": 0.507,
-        "width": 0.28,
-        "height": 0.025
+        "width": 0.64,
+        "height": 0.068
       },
       "marker": {
         "x": 0.96,
@@ -371,12 +383,12 @@
       "printedPage": "72",
       "indexAnchor": 1,
       "anchorLabel": "例3",
-      "locator": "蓝色“例3”题号及“用代数式表示”共用题干；导读覆盖其下购物、利息、售价第（1）至（3）问。",
+      "locator": "例3完整购物、利息、售价第（1）至（3）问，止于分析之前。",
       "region": {
-        "x": 0.13,
+        "x": 0.085,
         "y": 0.098,
-        "width": 0.215,
-        "height": 0.026
+        "width": 0.79,
+        "height": 0.165
       },
       "marker": {
         "x": 0.96,
@@ -409,12 +421,12 @@
       "printedPage": "72",
       "indexAnchor": 2,
       "anchorLabel": "例4",
-      "locator": "例4蓝色题号及共享题干“甲、乙两地之间公路全长240 km……行驶速度为v km/h”；导读覆盖下方第（1）（2）问。",
+      "locator": "例4甲乙两地行车背景及第（1）（2）问，止于分析之前。",
       "region": {
         "x": 0.085,
         "y": 0.466,
         "width": 0.792,
-        "height": 0.05
+        "height": 0.137
       },
       "marker": {
         "x": 0.96,
@@ -447,12 +459,12 @@
       "printedPage": "73",
       "indexAnchor": 0,
       "anchorLabel": "练习",
-      "locator": "页首练习第1题题号及“用代数式表示”共用题干；导读覆盖其下第（1）至（3）小问。",
+      "locator": "练习第1题用代数式表示的要求及第（1）至（3）问。",
       "region": {
         "x": 0.151,
         "y": 0.118,
-        "width": 0.18,
-        "height": 0.025
+        "width": 0.36,
+        "height": 0.105
       },
       "marker": {
         "x": 0.96,
@@ -561,12 +573,12 @@
       "printedPage": "73",
       "indexAnchor": 2,
       "anchorLabel": "问题",
-      "locator": "蓝色“问题”题号及造雪背景共用题干，止于“解答下列问题”；导读覆盖表3.1-1及第（1）（2）问，分析续于已核对的PDF第81页上半页，跨页按一题记录。",
+      "locator": "造雪问题完整背景、表3.1-1及第（1）（2）问，分析续于PDF第81页。",
       "region": {
         "x": 0.129,
         "y": 0.632,
         "width": 0.789,
-        "height": 0.06
+        "height": 0.255
       },
       "marker": {
         "x": 0.96,
@@ -618,12 +630,12 @@
       "printedPage": "74",
       "indexAnchor": 2,
       "anchorLabel": "例5",
-      "locator": "例5蓝色题号及左侧共享题干，止于“在这四个容器中注入300 cm³的水”；导读覆盖下方第（1）（2）问，图3.1-1在右侧。",
+      "locator": "例5四个圆柱容器背景、图3.1-1及第（1）（2）问，止于分析之前。",
       "region": {
         "x": 0.085,
-        "y": 0.542,
-        "width": 0.525,
-        "height": 0.074
+        "y": 0.538,
+        "width": 0.79,
+        "height": 0.194
       },
       "marker": {
         "x": 0.96,
@@ -694,12 +706,12 @@
       "printedPage": "75",
       "indexAnchor": 1,
       "anchorLabel": "练习",
-      "locator": "练习第2题总题干“判断下面各题中的两个量是否成反比例关系，并说明理由”。",
+      "locator": "练习第2题判断反比例要求及第（1）至（3）问。",
       "region": {
         "x": 0.151,
         "y": 0.305,
-        "width": 0.651,
-        "height": 0.02
+        "width": 0.745,
+        "height": 0.134
       },
       "marker": {
         "x": 0.96,
@@ -732,12 +744,12 @@
       "printedPage": "75",
       "indexAnchor": 1,
       "anchorLabel": "练习",
-      "locator": "练习第3题题干“某运输公司计划运输一批货物”及表格引入两行。",
+      "locator": "练习第3题运输背景、数据表与第（1）至（3）问。",
       "region": {
         "x": 0.152,
         "y": 0.446,
         "width": 0.741,
-        "height": 0.047
+        "height": 0.23
       },
       "marker": {
         "x": 0.96,
@@ -770,12 +782,12 @@
       "printedPage": "75",
       "indexAnchor": 2,
       "anchorLabel": "习题3.1",
-      "locator": "习题3.1复习巩固第1题总题干“用代数式表示”。",
+      "locator": "习题3.1第1题完整要求及第（1）至（4）式。",
       "region": {
         "x": 0.153,
         "y": 0.809,
-        "width": 0.274,
-        "height": 0.025
+        "width": 0.62,
+        "height": 0.094
       },
       "marker": {
         "x": 0.96,
@@ -789,12 +801,12 @@
       "printedPage": "76",
       "indexAnchor": 0,
       "anchorLabel": "习题3.1（续）",
-      "locator": "习题3.1第2题总题干“说出下列代数式的意义”。",
+      "locator": "习题3.1第2题完整要求及第（1）至（4）式。",
       "region": {
         "x": 0.108,
         "y": 0.078,
-        "width": 0.31,
-        "height": 0.023
+        "width": 0.66,
+        "height": 0.062
       },
       "marker": {
         "x": 0.96,
@@ -827,12 +839,12 @@
       "printedPage": "76",
       "indexAnchor": 0,
       "anchorLabel": "习题3.1（续）",
-      "locator": "习题3.1第3题总题干“用代数式表示”。",
+      "locator": "习题3.1第3题完整第（1）至（4）问及华罗庚纪念馆图片。",
       "region": {
         "x": 0.109,
         "y": 0.152,
-        "width": 0.272,
-        "height": 0.021
+        "width": 0.745,
+        "height": 0.434
       },
       "marker": {
         "x": 0.96,
@@ -865,12 +877,12 @@
       "printedPage": "76",
       "indexAnchor": 0,
       "anchorLabel": "习题3.1（续）",
-      "locator": "习题3.1第4题总题干“判断下面各题中的两个量是否成反比例关系，并说明理由”。",
+      "locator": "习题3.1第4题反比例判断要求及三个小问。",
       "region": {
         "x": 0.109,
         "y": 0.591,
-        "width": 0.694,
-        "height": 0.023
+        "width": 0.745,
+        "height": 0.124
       },
       "marker": {
         "x": 0.96,
@@ -884,18 +896,30 @@
       "printedPage": "76",
       "indexAnchor": 2,
       "anchorLabel": "第5题",
-      "locator": "习题3.1第5题糖果分装题干两行；第（3）问续于已核对的PDF第84页页首。",
+      "locator": "习题3.1第5题糖果分装题干、数据表及两问；第（3）问续于PDF第84页。",
       "region": {
         "x": 0.109,
         "y": 0.72,
         "width": 0.757,
-        "height": 0.046
+        "height": 0.177
       },
       "marker": {
         "x": 0.96,
         "y": 0.743
       },
-      "sourceImageSha256": "8683ca599b0dfc08b33205f70e7abe5c921775b288a868b92098321e62bcd123"
+      "sourceImageSha256": "8683ca599b0dfc08b33205f70e7abe5c921775b288a868b92098321e62bcd123",
+      "additionalRegions": [
+        {
+          "page": 84,
+          "region": {
+            "x": 0.176,
+            "y": 0.08,
+            "width": 0.72,
+            "height": 0.046
+          },
+          "sourceImageSha256": "63f66e46b03e7f06f02dc9e5de824f77a9c5e5c477f1aa0403f65ba264aae7b7"
+        }
+      ]
     },
     {
       "id": "ch3-q-exercise31-6",
@@ -903,12 +927,12 @@
       "printedPage": "77",
       "indexAnchor": 1,
       "anchorLabel": "综合运用",
-      "locator": "综合运用第6题题号和第（1）问首行；第（2）问及末尾举例要求在本页紧接其后。",
+      "locator": "习题3.1第6题第（1）（2）问、串珠图及末尾举例要求。",
       "region": {
-        "x": 0.152,
+        "x": 0.15,
         "y": 0.165,
-        "width": 0.596,
-        "height": 0.02
+        "width": 0.747,
+        "height": 0.175
       },
       "marker": {
         "x": 0.96,
@@ -922,12 +946,12 @@
       "printedPage": "77",
       "indexAnchor": 1,
       "anchorLabel": "综合运用",
-      "locator": "综合运用第7题比较意义并举例的总题干两行。",
+      "locator": "习题3.1第7题完整问题与两组代数式。",
       "region": {
         "x": 0.153,
         "y": 0.346,
         "width": 0.754,
-        "height": 0.045
+        "height": 0.087
       },
       "marker": {
         "x": 0.96,
@@ -941,12 +965,12 @@
       "printedPage": "77",
       "indexAnchor": 1,
       "anchorLabel": "综合运用",
-      "locator": "综合运用第8题“观察一组数：5，10，15，20，25，…”一行。",
+      "locator": "习题3.1第8题数列及完整第（1）（2）问。",
       "region": {
         "x": 0.153,
         "y": 0.445,
-        "width": 0.452,
-        "height": 0.02
+        "width": 0.745,
+        "height": 0.096
       },
       "marker": {
         "x": 0.96,
@@ -979,12 +1003,12 @@
       "printedPage": "77",
       "indexAnchor": 1,
       "anchorLabel": "综合运用",
-      "locator": "综合运用第9题“甲、乙、丙3名同学阅读同一本书，丙的阅读时间最长”一行。",
+      "locator": "习题3.1第9题阅读背景及完整第（1）（2）问。",
       "region": {
         "x": 0.153,
         "y": 0.548,
-        "width": 0.64,
-        "height": 0.02
+        "width": 0.745,
+        "height": 0.148
       },
       "marker": {
         "x": 0.96,
@@ -1017,12 +1041,12 @@
       "printedPage": "77",
       "indexAnchor": 2,
       "anchorLabel": "拓广探索",
-      "locator": "习题3.1第10题题号“10.”；导读覆盖第（1）（2）小题。",
+      "locator": "习题3.1第10题完整第（1）（2）小问。",
       "region": {
-        "x": 0.151,
+        "x": 0.15,
         "y": 0.734,
-        "width": 0.031,
-        "height": 0.021
+        "width": 0.747,
+        "height": 0.1
       },
       "marker": {
         "x": 0.96,
@@ -1150,12 +1174,12 @@
       "printedPage": "79",
       "indexAnchor": 3,
       "anchorLabel": "例1",
-      "locator": "例1题干首行“根据下列x，y的值”处。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "locator": "例1完整题干及两组x、y取值，止于解答之前。",
       "region": {
         "x": 0.175,
         "y": 0.542,
-        "width": 0.046,
-        "height": 0.025
+        "width": 0.57,
+        "height": 0.067
       },
       "marker": {
         "x": 0.96,
@@ -1188,12 +1212,12 @@
       "printedPage": "79",
       "indexAnchor": 4,
       "anchorLabel": "例2",
-      "locator": "例2题干首行“根据下列a，b的值”处；第（2）问解答续于已核对的PDF第87页。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "locator": "例2完整题干（含分式）及两组a、b取值，止于解答之前。",
       "region": {
         "x": 0.175,
-        "y": 0.777,
-        "width": 0.046,
-        "height": 0.025
+        "y": 0.773,
+        "width": 0.55,
+        "height": 0.07
       },
       "marker": {
         "x": 0.96,
@@ -1226,12 +1250,12 @@
       "printedPage": "80",
       "indexAnchor": 1,
       "anchorLabel": "练习",
-      "locator": "练习第1题题号及“填图”一行。",
+      "locator": "练习第1题“填图”及完整对应图。",
       "region": {
         "x": 0.107,
         "y": 0.2,
-        "width": 0.12,
-        "height": 0.025
+        "width": 0.5,
+        "height": 0.164
       },
       "marker": {
         "x": 0.96,
@@ -1245,12 +1269,12 @@
       "printedPage": "80",
       "indexAnchor": 1,
       "anchorLabel": "练习",
-      "locator": "练习第2题题干首行“根据下列x，y的值”处。",
+      "locator": "练习第2题完整题干及两组x、y取值。",
       "region": {
         "x": 0.107,
         "y": 0.367,
-        "width": 0.588,
-        "height": 0.025
+        "width": 0.59,
+        "height": 0.066
       },
       "marker": {
         "x": 0.96,
@@ -1264,12 +1288,12 @@
       "printedPage": "80",
       "indexAnchor": 1,
       "anchorLabel": "练习",
-      "locator": "练习第3题题号及“一辆汽车从甲地出发”所在题干首行。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "locator": "练习第3题完整两行题干及求值要求。",
       "region": {
         "x": 0.107,
         "y": 0.446,
-        "width": 0.025,
-        "height": 0.025
+        "width": 0.75,
+        "height": 0.049
       },
       "marker": {
         "x": 0.96,
@@ -1302,18 +1326,30 @@
       "printedPage": "80",
       "indexAnchor": 3,
       "anchorLabel": "例3",
-      "locator": "例3题干首行“如图3.2-1，某学校操场最内侧的跑道”处；分析和解答续于已核对的PDF第88页。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "locator": "例3完整题干与第（1）（2）问；右侧跑道图单独定位，解答续于PDF第88页。",
       "region": {
-        "x": 0.13,
-        "y": 0.71,
-        "width": 0.045,
-        "height": 0.025
+        "x": 0.085,
+        "y": 0.709,
+        "width": 0.565,
+        "height": 0.162
       },
       "marker": {
         "x": 0.96,
         "y": 0.7225
       },
-      "sourceImageSha256": "8d030b40ab38f1da3972355386459eb46779975f1a2a5650128833ab8fa20a22"
+      "sourceImageSha256": "8d030b40ab38f1da3972355386459eb46779975f1a2a5650128833ab8fa20a22",
+      "additionalRegions": [
+        {
+          "page": 87,
+          "region": {
+            "x": 0.676,
+            "y": 0.706,
+            "width": 0.195,
+            "height": 0.112
+          },
+          "sourceImageSha256": "8d030b40ab38f1da3972355386459eb46779975f1a2a5650128833ab8fa20a22"
+        }
+      ]
     },
     {
       "id": "ch3-track-rounded-value",
@@ -1340,18 +1376,30 @@
       "printedPage": "81",
       "indexAnchor": 1,
       "anchorLabel": "例4",
-      "locator": "例4题干首行“一个三角尺的形状和尺寸”处。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "locator": "例4完整两行题干，右侧图3.2-2单独定位，止于分析之前。",
       "region": {
-        "x": 0.175,
+        "x": 0.13,
         "y": 0.241,
-        "width": 0.046,
-        "height": 0.025
+        "width": 0.785,
+        "height": 0.049
       },
       "marker": {
         "x": 0.96,
         "y": 0.2535
       },
-      "sourceImageSha256": "2ab7c43dae727cb38631b4eb83ec9fd236134746f7b1ad2d748b634eedb01d72"
+      "sourceImageSha256": "2ab7c43dae727cb38631b4eb83ec9fd236134746f7b1ad2d748b634eedb01d72",
+      "additionalRegions": [
+        {
+          "page": 88,
+          "region": {
+            "x": 0.711,
+            "y": 0.297,
+            "width": 0.207,
+            "height": 0.125
+          },
+          "sourceImageSha256": "2ab7c43dae727cb38631b4eb83ec9fd236134746f7b1ad2d748b634eedb01d72"
+        }
+      ]
     },
     {
       "id": "ch3-triangle-base-height",
@@ -1397,12 +1445,12 @@
       "printedPage": "81",
       "indexAnchor": 2,
       "anchorLabel": "练习",
-      "locator": "练习第1题题号及“填空题”一行。",
+      "locator": "练习第1题及第（1）（2）小问的面积公式和代入条件。",
       "region": {
-        "x": 0.152,
+        "x": 0.15,
         "y": 0.613,
-        "width": 0.12,
-        "height": 0.025
+        "width": 0.75,
+        "height": 0.137
       },
       "marker": {
         "x": 0.96,
@@ -1416,12 +1464,12 @@
       "printedPage": "81",
       "indexAnchor": 2,
       "anchorLabel": "练习",
-      "locator": "练习第2题题号及“一个长方体纸箱的长是a”所在首行。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "locator": "练习第2题完整三行题干，止于第3题之前。",
       "region": {
-        "x": 0.152,
+        "x": 0.15,
         "y": 0.755,
-        "width": 0.025,
-        "height": 0.025
+        "width": 0.57,
+        "height": 0.078
       },
       "marker": {
         "x": 0.96,
@@ -1435,18 +1483,30 @@
       "printedPage": "81",
       "indexAnchor": 2,
       "anchorLabel": "练习",
-      "locator": "练习第3题题号及“用代数式表示圆环的面积”所在首行。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "locator": "练习第3题完整题干，右侧圆环图单独定位。",
       "region": {
-        "x": 0.152,
+        "x": 0.15,
         "y": 0.842,
-        "width": 0.025,
-        "height": 0.025
+        "width": 0.57,
+        "height": 0.05
       },
       "marker": {
         "x": 0.96,
         "y": 0.8545
       },
-      "sourceImageSha256": "2ab7c43dae727cb38631b4eb83ec9fd236134746f7b1ad2d748b634eedb01d72"
+      "sourceImageSha256": "2ab7c43dae727cb38631b4eb83ec9fd236134746f7b1ad2d748b634eedb01d72",
+      "additionalRegions": [
+        {
+          "page": 88,
+          "region": {
+            "x": 0.746,
+            "y": 0.757,
+            "width": 0.15,
+            "height": 0.134
+          },
+          "sourceImageSha256": "2ab7c43dae727cb38631b4eb83ec9fd236134746f7b1ad2d748b634eedb01d72"
+        }
+      ]
     },
     {
       "id": "ch3-q-p89-ex32-1",
@@ -1454,12 +1514,12 @@
       "printedPage": "82",
       "indexAnchor": 0,
       "anchorLabel": "复习巩固",
-      "locator": "习题3.2第1题题号及“填空题”一行。",
+      "locator": "习题3.2第1题及第（1）（2）小问。",
       "region": {
         "x": 0.107,
         "y": 0.161,
-        "width": 0.12,
-        "height": 0.025
+        "width": 0.47,
+        "height": 0.083
       },
       "marker": {
         "x": 0.96,
@@ -1473,12 +1533,12 @@
       "printedPage": "82",
       "indexAnchor": 0,
       "anchorLabel": "复习巩固",
-      "locator": "习题3.2第2题题号及“已知a=12，b=−18”所在题干。",
+      "locator": "习题3.2第2题完整题干和代数式求值表。",
       "region": {
         "x": 0.107,
         "y": 0.256,
-        "width": 0.45,
-        "height": 0.025
+        "width": 0.73,
+        "height": 0.084
       },
       "marker": {
         "x": 0.96,
@@ -1492,12 +1552,12 @@
       "printedPage": "82",
       "indexAnchor": 0,
       "anchorLabel": "复习巩固",
-      "locator": "习题3.2第3题题号及“根据下列a，b的值”所在首行。",
+      "locator": "习题3.2第3题完整题干及两组a、b取值。",
       "region": {
         "x": 0.107,
         "y": 0.345,
-        "width": 0.584,
-        "height": 0.025
+        "width": 0.585,
+        "height": 0.049
       },
       "marker": {
         "x": 0.96,
@@ -1511,12 +1571,12 @@
       "printedPage": "82",
       "indexAnchor": 0,
       "anchorLabel": "复习巩固",
-      "locator": "习题3.2第4题题号及“求下列代数式的值”一行。",
+      "locator": "习题3.2第4题完整两问及代入条件。",
       "region": {
         "x": 0.107,
         "y": 0.399,
-        "width": 0.23,
-        "height": 0.025
+        "width": 0.73,
+        "height": 0.06
       },
       "marker": {
         "x": 0.96,
@@ -1530,12 +1590,12 @@
       "printedPage": "82",
       "indexAnchor": 0,
       "anchorLabel": "复习巩固",
-      "locator": "习题3.2第5题题号及“已知圆锥的体积”所在首行。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "locator": "习题3.2第5题完整题干、圆锥体积公式及代入条件。",
       "region": {
         "x": 0.107,
-        "y": 0.477,
-        "width": 0.025,
-        "height": 0.025
+        "y": 0.473,
+        "width": 0.745,
+        "height": 0.063
       },
       "marker": {
         "x": 0.96,
@@ -1549,12 +1609,12 @@
       "printedPage": "82",
       "indexAnchor": 1,
       "anchorLabel": "综合运用",
-      "locator": "习题3.2第6题题号及“一段钢管的形状和尺寸如图所示”所在首行。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "locator": "习题3.2第6题完整四行题干及右侧钢管示意图。",
       "region": {
         "x": 0.107,
-        "y": 0.573,
-        "width": 0.025,
-        "height": 0.025
+        "y": 0.572,
+        "width": 0.745,
+        "height": 0.095
       },
       "marker": {
         "x": 0.96,
@@ -1568,12 +1628,12 @@
       "printedPage": "82",
       "indexAnchor": 1,
       "anchorLabel": "综合运用",
-      "locator": "习题3.2第7题题号及“A，B两地相距s km”所在首行。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "locator": "习题3.2第7题完整题干与第（1）（2）问。",
       "region": {
         "x": 0.107,
         "y": 0.676,
-        "width": 0.025,
-        "height": 0.025
+        "width": 0.745,
+        "height": 0.122
       },
       "marker": {
         "x": 0.96,
@@ -1606,12 +1666,12 @@
       "printedPage": "82",
       "indexAnchor": 2,
       "anchorLabel": "拓广探索",
-      "locator": "习题3.2第8题题号及“摄氏温标与华氏温标”所在首行。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "locator": "习题3.2第8题完整题干及两项温标换算要求。",
       "region": {
         "x": 0.107,
         "y": 0.839,
-        "width": 0.025,
-        "height": 0.025
+        "width": 0.745,
+        "height": 0.071
       },
       "marker": {
         "x": 0.96,
@@ -1625,12 +1685,12 @@
       "printedPage": "83",
       "indexAnchor": 0,
       "anchorLabel": "活动1 拼图小游戏",
-      "locator": "印刷第83页活动1第（1）项的图1：火柴棍拼成一排三角形及图号；不包含下方图2方格拼图。",
+      "locator": "拼图活动第（1）项完整题干及火柴棍三角形图1。",
       "region": {
-        "x": 0.258,
-        "y": 0.274,
-        "width": 0.53,
-        "height": 0.116
+        "x": 0.151,
+        "y": 0.181,
+        "width": 0.745,
+        "height": 0.209
       },
       "marker": {
         "x": 0.96,
@@ -1644,12 +1704,12 @@
       "printedPage": "83",
       "indexAnchor": 0,
       "anchorLabel": "活动1 拼图小游戏",
-      "locator": "印刷第83页活动1第（2）项的图2：单个小方格及第1、2、3个正方形序列和图号；不包含上方图1火柴棍。",
+      "locator": "拼图活动第（2）项完整题干及方格序列图2。",
       "region": {
-        "x": 0.205,
-        "y": 0.523,
-        "width": 0.635,
-        "height": 0.134
+        "x": 0.151,
+        "y": 0.402,
+        "width": 0.745,
+        "height": 0.255
       },
       "marker": {
         "x": 0.96,
@@ -1701,12 +1761,12 @@
       "printedPage": "84",
       "indexAnchor": 1,
       "anchorLabel": "请你研究以下问题",
-      "locator": "“请你研究以下问题”一行；上下文承已核对的PDF第90页活动2。",
+      "locator": "密码活动研究问题的完整第（1）（2）问，包括数字与字母映射规则。",
       "region": {
-        "x": 0.155,
+        "x": 0.108,
         "y": 0.197,
-        "width": 0.2,
-        "height": 0.025
+        "width": 0.745,
+        "height": 0.241
       },
       "marker": {
         "x": 0.96,
@@ -1853,12 +1913,12 @@
       "printedPage": "86",
       "indexAnchor": 0,
       "anchorLabel": "复习巩固",
-      "locator": "复习题3第1题题号及“用代数式表示”一行。",
+      "locator": "复习题3第1题完整第（1）至（4）问。",
       "region": {
         "x": 0.097,
         "y": 0.182,
-        "width": 0.17,
-        "height": 0.025
+        "width": 0.765,
+        "height": 0.174
       },
       "marker": {
         "x": 0.96,
@@ -1891,12 +1951,12 @@
       "printedPage": "86",
       "indexAnchor": 0,
       "anchorLabel": "复习巩固",
-      "locator": "复习题3第2题题号及“用代数式表示”一行。",
+      "locator": "复习题3第2题完整第（1）至（3）问。",
       "region": {
         "x": 0.097,
         "y": 0.365,
-        "width": 0.17,
-        "height": 0.025
+        "width": 0.765,
+        "height": 0.174
       },
       "marker": {
         "x": 0.96,
@@ -1910,12 +1970,12 @@
       "printedPage": "86",
       "indexAnchor": 0,
       "anchorLabel": "复习巩固",
-      "locator": "复习题3第3题题号及第（1）问“若一个长方形的长为p”所在首行。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "locator": "复习题3第3题完整第（1）（2）问。",
       "region": {
         "x": 0.097,
         "y": 0.548,
-        "width": 0.024,
-        "height": 0.025
+        "width": 0.76,
+        "height": 0.045
       },
       "marker": {
         "x": 0.96,
@@ -1929,12 +1989,12 @@
       "printedPage": "86",
       "indexAnchor": 0,
       "anchorLabel": "复习巩固",
-      "locator": "复习题3第4题题号及“用一根绳子围成一个长方形”所在首行。",
+      "locator": "复习题3第4题完整题干及第（1）至（3）问。",
       "region": {
         "x": 0.097,
         "y": 0.601,
-        "width": 0.616,
-        "height": 0.025
+        "width": 0.76,
+        "height": 0.12
       },
       "marker": {
         "x": 0.96,
@@ -1967,12 +2027,12 @@
       "printedPage": "86",
       "indexAnchor": 0,
       "anchorLabel": "复习巩固",
-      "locator": "复习题3第5题题号及“根据下列a，b的值”所在首行。",
+      "locator": "复习题3第5题完整求值要求及两组代入值。",
       "region": {
         "x": 0.097,
         "y": 0.729,
-        "width": 0.585,
-        "height": 0.025
+        "width": 0.65,
+        "height": 0.06
       },
       "marker": {
         "x": 0.96,
@@ -1986,12 +2046,12 @@
       "printedPage": "86",
       "indexAnchor": 1,
       "anchorLabel": "综合运用",
-      "locator": "复习题3第6题题号及“礼堂第1排有a个座位”所在首行。",
+      "locator": "复习题3第6题题干及第（1）（2）问。",
       "region": {
         "x": 0.097,
         "y": 0.832,
-        "width": 0.57,
-        "height": 0.025
+        "width": 0.76,
+        "height": 0.07
       },
       "marker": {
         "x": 0.96,
@@ -2005,12 +2065,12 @@
       "printedPage": "87",
       "indexAnchor": 0,
       "anchorLabel": "综合运用（续）",
-      "locator": "复习题3第7题题号及“正方形ABCD的边长为a”所在首行。",
+      "locator": "复习题3第7题完整题干、两问及正方形配图。",
       "region": {
         "x": 0.14,
         "y": 0.077,
-        "width": 0.33,
-        "height": 0.025
+        "width": 0.755,
+        "height": 0.175
       },
       "marker": {
         "x": 0.96,
@@ -2043,12 +2103,12 @@
       "printedPage": "87",
       "indexAnchor": 1,
       "anchorLabel": "拓广探索",
-      "locator": "复习题3第8题题号及“用棋子摆出一组形如正方形的图形”所在首行。",
+      "locator": "复习题3第8题完整题干与三组棋子图。",
       "region": {
         "x": 0.14,
         "y": 0.293,
         "width": 0.765,
-        "height": 0.046
+        "height": 0.18
       },
       "marker": {
         "x": 0.96,
@@ -2062,12 +2122,12 @@
       "printedPage": "87",
       "indexAnchor": 1,
       "anchorLabel": "拓广探索",
-      "locator": "复习题3第9题题号及“冰糖葫芦是我国传统小吃”所在首行。 定位框取原文题号或提示标签；导读覆盖清单所列整题及全部小问。",
+      "locator": "复习题3第9题完整题干、配图及第（1）至（3）问。",
       "region": {
         "x": 0.14,
         "y": 0.48,
-        "width": 0.024,
-        "height": 0.025
+        "width": 0.765,
+        "height": 0.335
       },
       "marker": {
         "x": 0.96,

@@ -11,6 +11,11 @@ export type TextbookLocation = {
   region: { x: number; y: number; width: number; height: number };
   marker: { x: number; y: number };
   sourceImageSha256: string;
+  additionalRegions?: {
+    page: number;
+    region: { x: number; y: number; width: number; height: number };
+    sourceImageSha256: string;
+  }[];
 };
 
 export type Supplement = {

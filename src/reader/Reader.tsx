@@ -628,7 +628,13 @@ export function Reader() {
     : previewNote ? [previewNote.locationId]
     : selectedLocation ? [selectedLocation]
     : choiceIds && !supplementId ? choiceIds.map((id) => getSupplement(id)!.locationId) : [];
-  const highlightedLocations = [...new Set(highlightedIds)].map(getLocation);
+  const highlightedLocations = [...new Set(highlightedIds)].flatMap((id) => {
+    const location = getLocation(id);
+    return [
+      { ...location, highlightId: location.id },
+      ...(location.additionalRegions ?? []).map((part, index) => ({ ...location, ...part, highlightId: `${location.id}-part-${index + 1}` })),
+    ];
+  });
   const previous = history.at(-1);
 
   function closePageInput() {
@@ -823,8 +829,8 @@ export function Reader() {
             aria-label={`教材文件第 ${page.page} 页，${page.printedPage === null ? "无印刷页码" : pageLabel(page)}`} style={{ aspectRatio: `${page.width} / ${page.height}` }}>
             <PageImage page={page} />
             {highlightedLocations.filter((location) => location.page === page.page).map((highlighted) => {
-              const highlightedNote = supplementsForPage(page.page).find((item) => item.locationId === highlighted.id);
-              return <div key={highlighted.id} id={`location-${highlighted.id}`} className={`location-highlight${previewNote || groupPreview ? " preview-highlight" : ""}`} tabIndex={-1}
+              const highlightedNote = supplementsForPage(getLocation(highlighted.id).page).find((item) => item.locationId === highlighted.id);
+              return <div key={highlighted.highlightId} id={`location-${highlighted.highlightId}`} className={`location-highlight${previewNote || groupPreview ? " preview-highlight" : ""}`} tabIndex={-1}
                 data-supplement-type={highlightedNote ? supplementType(highlightedNote) : 'review'}
                 aria-label={`教材位置：${highlighted.anchorLabel}`} style={{ left: `${highlighted.region.x * 100}%`, top: `${highlighted.region.y * 100}%`,
                   width: `${highlighted.region.width * 100}%`, height: `${highlighted.region.height * 100}%` }} />;

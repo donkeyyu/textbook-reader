@@ -200,12 +200,12 @@
       "printedPage": "113",
       "indexAnchor": 2,
       "anchorLabel": "练习 第1—3题",
-      "locator": "练习第1题题号及“甲种铅笔每支1.4元，乙种铅笔每支1.8元”的题干首行。",
+      "locator": "练习第1题完整题干，包含“甲种铅笔每支1.4元，乙种铅笔每支1.8元”等条件。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
         "x": 0.15,
         "y": 0.705,
         "width": 0.745,
-        "height": 0.03
+        "height": 0.053
       },
       "marker": {
         "x": 0.935,
@@ -219,12 +219,12 @@
       "printedPage": "113",
       "indexAnchor": 2,
       "anchorLabel": "练习 第1—3题",
-      "locator": "练习第2题题号及“有两条电线，第一条长90m，第二条长40m”的题干首行。",
+      "locator": "练习第2题完整题干，包含“有两条电线，第一条长90m，第二条长40m”等条件。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
         "x": 0.15,
-        "y": 0.76,
-        "width": 0.575,
-        "height": 0.03
+        "y": 0.765,
+        "width": 0.58,
+        "height": 0.077
       },
       "marker": {
         "x": 0.055,
@@ -238,18 +238,30 @@
       "printedPage": "113",
       "indexAnchor": 2,
       "anchorLabel": "练习 第1—3题",
-      "locator": "练习第3题题号及“某圆环形状的工件如图所示，它的面积是200cm²”的题干首行。",
+      "locator": "练习第3题完整题干，包含“某圆环形状的工件如图所示，它的面积是200cm²”等条件。 定位范围包括本题全部小问；不含相邻题。分离配图或跨页续题另列于 additionalRegions。",
       "region": {
         "x": 0.15,
-        "y": 0.844,
-        "width": 0.54,
-        "height": 0.03
+        "y": 0.85,
+        "width": 0.58,
+        "height": 0.05
       },
       "marker": {
         "x": 0.935,
         "y": 0.859
       },
-      "sourceImageSha256": "af5c0284a6e20ddb5f461bcef7d6332ffadf9eb4e8668c1d76adce697b94953c"
+      "sourceImageSha256": "af5c0284a6e20ddb5f461bcef7d6332ffadf9eb4e8668c1d76adce697b94953c",
+      "additionalRegions": [
+        {
+          "page": 120,
+          "region": {
+            "x": 0.742,
+            "y": 0.773,
+            "width": 0.152,
+            "height": 0.128
+          },
+          "sourceImageSha256": "af5c0284a6e20ddb5f461bcef7d6332ffadf9eb4e8668c1d76adce697b94953c"
+        }
+      ]
     },
     {
       "id": "ch5-solution",
@@ -276,12 +288,12 @@
       "printedPage": "114",
       "indexAnchor": 1,
       "anchorLabel": "例2",
-      "locator": "例2题号及（1）两个候选值与方程2x=3的题干首行；整题包括下一行（2）。",
+      "locator": "例2完整题干及（1）两个候选值与方程2x=3的完整题干；整题包括下一行（2）。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
         "x": 0.13,
         "y": 0.297,
         "width": 0.55,
-        "height": 0.043
+        "height": 0.068
       },
       "marker": {
         "x": 0.055,
@@ -333,12 +345,12 @@
       "printedPage": "114",
       "indexAnchor": 3,
       "anchorLabel": "思考",
-      "locator": "页底第二处思考中的“观察方程”短题干；本题包括其后三个方程和“它们有什么共同特征？”的要求。",
+      "locator": "页底第二处思考中的“观察方程”短题干；本题包括其后三个方程和“它们有什么共同特征？”的要求。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
-        "x": 0.15,
+        "x": 0.11,
         "y": 0.838,
-        "width": 0.19,
-        "height": 0.029
+        "width": 0.75,
+        "height": 0.079
       },
       "marker": {
         "x": 0.055,
@@ -428,12 +440,12 @@
       "printedPage": "115",
       "indexAnchor": 5,
       "anchorLabel": "思考",
-      "locator": "页末思考中“在小学，我们已经知道：等式两边同时加（或减）同一个数”题干首行；全题要求引入负数后用具体数试验。",
+      "locator": "页末思考中“在小学，我们已经知道：等式两边同时加（或减）同一个数”完整题干；全题要求引入负数后用具体数试验。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
         "x": 0.15,
-        "y": 0.825,
-        "width": 0.745,
-        "height": 0.03
+        "y": 0.83,
+        "width": 0.75,
+        "height": 0.082
       },
       "marker": {
         "x": 0.055,
@@ -713,12 +725,12 @@
       "printedPage": "118",
       "indexAnchor": 3,
       "anchorLabel": "综合运用 第5—6题",
-      "locator": "习题5.1第5题题号及“某校七年级（1）班共有学生48人”的题干首行。",
+      "locator": "习题5.1第5题完整题干，包含“某校七年级（1）班共有学生48人”等条件。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
         "x": 0.105,
         "y": 0.783,
         "width": 0.745,
-        "height": 0.032
+        "height": 0.064
       },
       "marker": {
         "x": 0.935,
@@ -732,12 +744,12 @@
       "printedPage": "118",
       "indexAnchor": 3,
       "anchorLabel": "综合运用 第5—6题",
-      "locator": "习题5.1第6题题号及“把10000元奖学金按照两种奖项奖给20名学生”的题干首行。",
+      "locator": "习题5.1第6题完整题干，包含“把10000元奖学金按照两种奖项奖给20名学生”等条件。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
         "x": 0.105,
         "y": 0.85,
         "width": 0.745,
-        "height": 0.025
+        "height": 0.05
       },
       "marker": {
         "x": 0.055,
@@ -751,12 +763,12 @@
       "printedPage": "119",
       "indexAnchor": 0,
       "anchorLabel": "习题5.1 第7—10题",
-      "locator": "习题5.1第7题题号及“去年某镇居民人均可支配收入为30438元”的题干首行。",
+      "locator": "习题5.1第7题完整题干，包含“去年某镇居民人均可支配收入为30438元”等条件。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
         "x": 0.15,
         "y": 0.077,
-        "width": 0.74,
-        "height": 0.03
+        "width": 0.75,
+        "height": 0.048
       },
       "marker": {
         "x": 0.935,
@@ -770,12 +782,12 @@
       "printedPage": "119",
       "indexAnchor": 0,
       "anchorLabel": "习题5.1 第7—10题",
-      "locator": "习题5.1第8题题号及“一辆汽车已行驶了12000km，计划每月再行驶800km”的题干首行。",
+      "locator": "习题5.1第8题完整题干，包含“一辆汽车已行驶了12000km，计划每月再行驶800km”等条件。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
         "x": 0.15,
         "y": 0.13,
         "width": 0.75,
-        "height": 0.03
+        "height": 0.047
       },
       "marker": {
         "x": 0.055,
@@ -789,12 +801,12 @@
       "printedPage": "119",
       "indexAnchor": 0,
       "anchorLabel": "习题5.1 第7—10题",
-      "locator": "习题5.1第9题题号及“一个圆柱形包装盒（厚度忽略不计）的高是12cm”的题干首行。",
+      "locator": "习题5.1第9题完整题干，包含“一个圆柱形包装盒（厚度忽略不计）的高是12cm”等条件。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
         "x": 0.15,
         "y": 0.181,
         "width": 0.75,
-        "height": 0.03
+        "height": 0.048
       },
       "marker": {
         "x": 0.935,
@@ -808,12 +820,12 @@
       "printedPage": "119",
       "indexAnchor": 0,
       "anchorLabel": "习题5.1 第7—10题",
-      "locator": "习题5.1第10题题号及“某校号召学生用零花钱为地震灾区捐款”的题干首行。",
+      "locator": "习题5.1第10题完整题干，包含“某校号召学生用零花钱为地震灾区捐款”等条件。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
         "x": 0.15,
         "y": 0.234,
         "width": 0.75,
-        "height": 0.03
+        "height": 0.073
       },
       "marker": {
         "x": 0.055,
@@ -846,12 +858,12 @@
       "printedPage": "119",
       "indexAnchor": 1,
       "anchorLabel": "拓广探索 第11题",
-      "locator": "习题5.1第11题题号及“一个两位数个位上的数字是1，十位上的数字是x”的题干首行。",
+      "locator": "习题5.1第11题完整题干，包含“一个两位数个位上的数字是1，十位上的数字是x”等条件。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
         "x": 0.15,
         "y": 0.34,
         "width": 0.75,
-        "height": 0.03
+        "height": 0.052
       },
       "marker": {
         "x": 0.055,
@@ -1017,12 +1029,12 @@
       "printedPage": "121",
       "indexAnchor": 2,
       "anchorLabel": "练习 第1—3题",
-      "locator": "印刷121页练习第1题（含（1）—（4））的题号及题干开头。",
+      "locator": "印刷121页练习第1题（含（1）—（4））的完整题干。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
-        "x": 0.151,
+        "x": 0.15,
         "y": 0.659,
-        "width": 0.166,
-        "height": 0.026
+        "width": 0.64,
+        "height": 0.093
       },
       "marker": {
         "x": 0.955,
@@ -1207,12 +1219,12 @@
       "printedPage": "123",
       "indexAnchor": 3,
       "anchorLabel": "例4",
-      "locator": "例4题号及题干首行；解答续于PDF131页。",
+      "locator": "例4完整题干；解答续于PDF131页。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
-        "x": 0.175,
+        "x": 0.13,
         "y": 0.532,
-        "width": 0.735,
-        "height": 0.026
+        "width": 0.785,
+        "height": 0.082
       },
       "marker": {
         "x": 0.955,
@@ -1245,12 +1257,12 @@
       "printedPage": "124",
       "indexAnchor": 2,
       "anchorLabel": "练习 第1—4题",
-      "locator": "印刷124页练习第1题（含（1）—（4））的题号及题干开头。",
+      "locator": "印刷124页练习第1题（含（1）—（4））的完整题干。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
         "x": 0.108,
         "y": 0.407,
-        "width": 0.158,
-        "height": 0.026
+        "width": 0.55,
+        "height": 0.093
       },
       "marker": {
         "x": 0.955,
@@ -1321,12 +1333,12 @@
       "printedPage": "124",
       "indexAnchor": 3,
       "anchorLabel": "问题3",
-      "locator": "问题3题号及题干首行；方程与求解续于PDF132页。",
+      "locator": "问题3完整题干；方程与求解续于PDF132页。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
-        "x": 0.13,
+        "x": 0.085,
         "y": 0.713,
-        "width": 0.74,
-        "height": 0.026
+        "width": 0.79,
+        "height": 0.081
       },
       "marker": {
         "x": 0.955,
@@ -1397,12 +1409,12 @@
       "printedPage": "125",
       "indexAnchor": 2,
       "anchorLabel": "例6",
-      "locator": "例6题号及题干首行；解答续于PDF133页。",
+      "locator": "例6完整题干；解答续于PDF133页。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
-        "x": 0.175,
+        "x": 0.13,
         "y": 0.697,
-        "width": 0.738,
-        "height": 0.026
+        "width": 0.785,
+        "height": 0.047
       },
       "marker": {
         "x": 0.955,
@@ -1435,12 +1447,12 @@
       "printedPage": "126",
       "indexAnchor": 1,
       "anchorLabel": "练习 第1—3题",
-      "locator": "印刷126页练习第1题（含（1）—（4））的题号及题干开头。",
+      "locator": "印刷126页练习第1题（含（1）—（4））的完整题干。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
         "x": 0.108,
         "y": 0.316,
-        "width": 0.158,
-        "height": 0.026
+        "width": 0.55,
+        "height": 0.155
       },
       "marker": {
         "x": 0.955,
@@ -1511,18 +1523,40 @@
       "printedPage": "126",
       "indexAnchor": 2,
       "anchorLabel": "问题4",
-      "locator": "问题4题号及题干首行；路线图在本页下部，时刻表和解答续于PDF134页。",
+      "locator": "问题4完整题干；路线图在本页下部，时刻表和解答续于PDF134页。 定位范围包括本题全部小问；不含相邻题。分离配图或跨页续题另列于 additionalRegions。",
       "region": {
-        "x": 0.13,
+        "x": 0.085,
         "y": 0.704,
-        "width": 0.74,
-        "height": 0.026
+        "width": 0.79,
+        "height": 0.078
       },
       "marker": {
         "x": 0.955,
         "y": 0.717
       },
-      "sourceImageSha256": "88cc5c5cfe08f6bc0ca6424d2b19ca657b2ff8a3f415a2afb4424c3a84856acc"
+      "sourceImageSha256": "88cc5c5cfe08f6bc0ca6424d2b19ca657b2ff8a3f415a2afb4424c3a84856acc",
+      "additionalRegions": [
+        {
+          "page": 133,
+          "region": {
+            "x": 0.16,
+            "y": 0.819,
+            "width": 0.63,
+            "height": 0.08
+          },
+          "sourceImageSha256": "88cc5c5cfe08f6bc0ca6424d2b19ca657b2ff8a3f415a2afb4424c3a84856acc"
+        },
+        {
+          "page": 134,
+          "region": {
+            "x": 0.3,
+            "y": 0.07,
+            "width": 0.445,
+            "height": 0.085
+          },
+          "sourceImageSha256": "b55a268a465002cfc3324457d900c24651cd97253812d8ebe65498335e95981a"
+        }
+      ]
     },
     {
       "id": "ch5-elapsed-time",
@@ -1663,12 +1697,12 @@
       "printedPage": "129",
       "indexAnchor": 1,
       "anchorLabel": "练习 第1—3题",
-      "locator": "印刷129页练习第1题（含（1）—（4））的题号及题干开头。",
+      "locator": "印刷129页练习第1题（含（1）—（4））的完整题干。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
-        "x": 0.151,
+        "x": 0.15,
         "y": 0.472,
-        "width": 0.166,
-        "height": 0.026
+        "width": 0.7,
+        "height": 0.115
       },
       "marker": {
         "x": 0.955,
@@ -1720,12 +1754,12 @@
       "printedPage": "130",
       "indexAnchor": 1,
       "anchorLabel": "复习巩固 第1—7题",
-      "locator": "习题5.2第1题（含（1）—（4））的题号及题干开头。",
+      "locator": "习题5.2第1题（含（1）—（4））的完整题干。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
         "x": 0.108,
         "y": 0.16,
-        "width": 0.151,
-        "height": 0.022
+        "width": 0.64,
+        "height": 0.07
       },
       "marker": {
         "x": 0.955,
@@ -1739,12 +1773,12 @@
       "printedPage": "130",
       "indexAnchor": 1,
       "anchorLabel": "复习巩固 第1—7题",
-      "locator": "习题5.2第2题（含（1）—（4））的题号及题干开头。",
+      "locator": "习题5.2第2题（含（1）—（4））的完整题干。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
         "x": 0.108,
         "y": 0.238,
-        "width": 0.151,
-        "height": 0.022
+        "width": 0.61,
+        "height": 0.07
       },
       "marker": {
         "x": 0.955,
@@ -1758,12 +1792,12 @@
       "printedPage": "130",
       "indexAnchor": 1,
       "anchorLabel": "复习巩固 第1—7题",
-      "locator": "习题5.2第3题（含（1）—（4））的题号及题干开头。",
+      "locator": "习题5.2第3题（含（1）—（4））的完整题干。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
         "x": 0.108,
         "y": 0.317,
-        "width": 0.151,
-        "height": 0.022
+        "width": 0.67,
+        "height": 0.099
       },
       "marker": {
         "x": 0.955,
@@ -1891,18 +1925,30 @@
       "printedPage": "130",
       "indexAnchor": 2,
       "anchorLabel": "综合运用 第8—9题",
-      "locator": "习题5.2第9题题号及题干首行；（1）（2）两问在PDF138页页首，已连读核对。",
+      "locator": "习题5.2第9题完整题干；（1）（2）两问在PDF138页页首，已连读核对。 定位范围包括本题全部小问；不含相邻题。分离配图或跨页续题另列于 additionalRegions。",
       "region": {
         "x": 0.108,
         "y": 0.798,
-        "width": 0.457,
-        "height": 0.022
+        "width": 0.46,
+        "height": 0.12
       },
       "marker": {
         "x": 0.955,
         "y": 0.809
       },
-      "sourceImageSha256": "8c8db65372261e0864d33d2cabdfaa14d05e37508c4f38d7a25ca004941c8668"
+      "sourceImageSha256": "8c8db65372261e0864d33d2cabdfaa14d05e37508c4f38d7a25ca004941c8668",
+      "additionalRegions": [
+        {
+          "page": 138,
+          "region": {
+            "x": 0.178,
+            "y": 0.088,
+            "width": 0.6,
+            "height": 0.043
+          },
+          "sourceImageSha256": "91af1b006e0ac876bc16126cd2155bf95f3ec33ef6edac42d5c2a6999baddb78"
+        }
+      ]
     },
     {
       "id": "ch5-q-ex52-10",
@@ -1948,12 +1994,12 @@
       "printedPage": "131",
       "indexAnchor": 1,
       "anchorLabel": "习题5.2 第10—14题",
-      "locator": "习题5.2第11题题号“11.”；导读覆盖整题。",
+      "locator": "习题5.2第11题完整题干；导读覆盖整题。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
-        "x": 0.152,
+        "x": 0.15,
         "y": 0.217,
-        "width": 0.029,
-        "height": 0.025
+        "width": 0.75,
+        "height": 0.096
       },
       "marker": {
         "x": 0.955,
@@ -2347,12 +2393,12 @@
       "printedPage": "136",
       "indexAnchor": 0,
       "anchorLabel": "练习 第1—2题",
-      "locator": "印刷136页练习第2题题号“2.”；导读覆盖整题。",
+      "locator": "印刷136页练习第2题完整题干；导读覆盖整题。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
-        "x": 0.109,
+        "x": 0.108,
         "y": 0.199,
-        "width": 0.02,
-        "height": 0.026
+        "width": 0.745,
+        "height": 0.052
       },
       "marker": {
         "x": 0.955,
@@ -2442,12 +2488,12 @@
       "printedPage": "137",
       "indexAnchor": 2,
       "anchorLabel": "练习 第1题",
-      "locator": "印刷137页练习第1题开头“在足球联赛中”。",
+      "locator": "印刷137页练习第1题完整题干“在足球联赛中……”及两小问。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
-        "x": 0.151,
+        "x": 0.15,
         "y": 0.679,
-        "width": 0.186,
-        "height": 0.026
+        "width": 0.745,
+        "height": 0.137
       },
       "marker": {
         "x": 0.955,
@@ -2461,18 +2507,30 @@
       "printedPage": "137",
       "indexAnchor": 3,
       "anchorLabel": "练习 第2题",
-      "locator": "印刷137页练习第2题题干首行，完整保留“课外兴趣小组的活动时间统计表”；续表见PDF145页。",
+      "locator": "印刷137页练习第2题完整题干，完整保留“课外兴趣小组的活动时间统计表”；续表见PDF145页。 定位范围包括本题全部小问；不含相邻题。分离配图或跨页续题另列于 additionalRegions。",
       "region": {
-        "x": 0.151,
+        "x": 0.15,
         "y": 0.821,
-        "width": 0.744,
-        "height": 0.026
+        "width": 0.745,
+        "height": 0.05
       },
       "marker": {
         "x": 0.955,
         "y": 0.834
       },
-      "sourceImageSha256": "d33d77598331a0821fc6e9ab503b625615653959d1d70c8e243d03be28675b30"
+      "sourceImageSha256": "d33d77598331a0821fc6e9ab503b625615653959d1d70c8e243d03be28675b30",
+      "additionalRegions": [
+        {
+          "page": 145,
+          "region": {
+            "x": 0.134,
+            "y": 0.082,
+            "width": 0.69,
+            "height": 0.168
+          },
+          "sourceImageSha256": "625022844fca7567298cd9a5ff619dc389b5b081112c7f078ee026511540965b"
+        }
+      ]
     },
     {
       "id": "ch5-q-inquiry3",
@@ -2670,12 +2728,12 @@
       "printedPage": "140",
       "indexAnchor": 1,
       "anchorLabel": "复习巩固 第1—5题",
-      "locator": "习题5.3第4题题号“4.”；导读覆盖整题。",
+      "locator": "习题5.3第4题完整题干；导读覆盖整题。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
-        "x": 0.109,
+        "x": 0.108,
         "y": 0.316,
-        "width": 0.019,
-        "height": 0.026
+        "width": 0.745,
+        "height": 0.045
       },
       "marker": {
         "x": 0.955,
@@ -2689,12 +2747,12 @@
       "printedPage": "140",
       "indexAnchor": 1,
       "anchorLabel": "复习巩固 第1—5题",
-      "locator": "习题5.3第5题开头“整理一批数据”。",
+      "locator": "习题5.3第5题完整题干“整理一批数据……”。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
-        "x": 0.109,
+        "x": 0.108,
         "y": 0.368,
-        "width": 0.165,
-        "height": 0.026
+        "width": 0.745,
+        "height": 0.057
       },
       "marker": {
         "x": 0.955,
@@ -2822,12 +2880,12 @@
       "printedPage": "141",
       "indexAnchor": 0,
       "anchorLabel": "习题5.3 第10—11题",
-      "locator": "习题5.3第10题题号“10.”；导读覆盖整题。",
+      "locator": "习题5.3第10题完整题干；导读覆盖整题。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
-        "x": 0.151,
+        "x": 0.15,
         "y": 0.077,
-        "width": 0.03,
-        "height": 0.026
+        "width": 0.745,
+        "height": 0.049
       },
       "marker": {
         "x": 0.955,
@@ -2841,12 +2899,12 @@
       "printedPage": "141",
       "indexAnchor": 0,
       "anchorLabel": "习题5.3 第10—11题",
-      "locator": "习题5.3第11题完整题干首行，从题号至行末“乙组”。",
+      "locator": "习题5.3第11题完整题干及其三个小问。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
-        "x": 0.151,
+        "x": 0.15,
         "y": 0.132,
-        "width": 0.744,
-        "height": 0.026
+        "width": 0.745,
+        "height": 0.173
       },
       "marker": {
         "x": 0.955,
@@ -3107,12 +3165,12 @@
       "printedPage": "146",
       "indexAnchor": 0,
       "anchorLabel": "回顾与思考（续）",
-      "locator": "回顾与思考第3题首行“回顾解一元一次方程的一般步骤，结合例子说明……”题干。",
+      "locator": "回顾与思考第3题完整题干“回顾解一元一次方程的一般步骤，结合例子说明……”题干。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
-        "x": 0.15,
+        "x": 0.108,
         "y": 0.197,
-        "width": 0.7,
-        "height": 0.024
+        "width": 0.745,
+        "height": 0.077
       },
       "marker": {
         "x": 0.055,
@@ -3449,12 +3507,12 @@
       "printedPage": "148",
       "indexAnchor": 0,
       "anchorLabel": "综合运用 第10—12题",
-      "locator": "复习题5第12题题号“12.”；导读覆盖两行年龄题干。",
+      "locator": "复习题5第12题完整题干；导读覆盖两行年龄题干。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
-        "x": 0.097,
+        "x": 0.095,
         "y": 0.237,
-        "width": 0.03,
-        "height": 0.024
+        "width": 0.765,
+        "height": 0.06
       },
       "marker": {
         "x": 0.055,

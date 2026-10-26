@@ -3,7 +3,7 @@ import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { chapterSources } from './chapters.ts';
 import book from './book.json' with { type: 'json' };
-import { getLocation, getSupplement, locationsForPage, supplementsForPage, type QuestionCoverage } from './supplements.ts';
+import { getLocation, getSupplement, locationsForPage, supplementsForPage, type QuestionCoverage, type TextbookLocation } from './supplements.ts';
 
 const index = (await readFile(new URL('../../materials/indexes/人教版-数学-七年级上册/index.jsonl', import.meta.url), 'utf8')).trim().split('\n').map((line) => JSON.parse(line));
 
@@ -26,6 +26,13 @@ for (const { chapter, positioning } of chapterSources) {
       }
       assert.ok(width > 0 && height > 0 && x + width <= 1 && y + height <= 1, location.id);
       assert.ok(location.marker.y >= y && location.marker.y <= y + height, location.id);
+      for (const part of (location as TextbookLocation).additionalRegions ?? []) {
+        assert.equal(part.sourceImageSha256, index[part.page - 1]?.page_image_sha256, location.id);
+        assert.ok(part.page >= start && part.page <= end, location.id);
+        const { x, y, width, height } = part.region;
+        assert.ok([x, y, width, height].every(Number.isFinite), location.id);
+        assert.ok(x >= 0 && y >= 0 && width > 0 && height > 0 && x + width <= 1 && y + height <= 1, location.id);
+      }
       assert.ok(locationsForPage(location.page).some(({ id }) => id === location.id));
     }
   });
@@ -82,4 +89,19 @@ test('each inventoried question has its own complete guide and useful knowledge 
       assert.ok(note.related.every(({ locationId }) => locationId !== note.locationId), `${item.label}: self link`);
     }
   }
+});
+
+test('multi-line and continuation questions keep their full source regions', () => {
+  const reservoir = getLocation('ch1-practice-p5-1').region;
+  // PDF 12: the second answer blank ends at y=516; question 2 starts at y=533.
+  assert.ok(reservoir.y * 1843 < 434);
+  assert.ok((reservoir.y + reservoir.height) * 1843 >= 516);
+  assert.ok((reservoir.y + reservoir.height) * 1843 < 533);
+  const continuation = getLocation('ch1-measurement-exercise').additionalRegions;
+  assert.equal(continuation?.length, 1);
+  assert.equal(continuation[0]?.page, 13);
+  assert.ok(continuation[0]!.region.y < 0.1);
+  const diagram = getLocation('ch1-order-without-scale').additionalRegions;
+  assert.equal(diagram?.[0]?.page, 30);
+  assert.ok(diagram[0]!.region.y + diagram[0]!.region.height < 0.137, 'exclude the next question');
 });

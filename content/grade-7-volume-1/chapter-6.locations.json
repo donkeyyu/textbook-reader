@@ -637,18 +637,40 @@
       "printedPage": "158",
       "indexAnchor": 1,
       "anchorLabel": "复习巩固 第5—6题",
-      "locator": "习题6.1第5题题干首行，给出边长5cm的正方形和旋转轴条件；后续三问属于同一题。",
+      "locator": "习题6.1第5题完整题干，给出边长5cm的正方形和旋转轴条件；后续三问属于同一题。 定位范围包括本题全部小问；不含相邻题。分离配图或跨页续题另列于 additionalRegions。",
       "region": {
-        "x": 0.11,
+        "x": 0.108,
         "y": 0.617,
-        "width": 0.739,
-        "height": 0.019
+        "width": 0.745,
+        "height": 0.022
       },
       "marker": {
         "x": 0.925,
         "y": 0.6265
       },
-      "sourceImageSha256": "8a229154867069e8d40e3e963b5fbb175066ed8518a9edb69528baa632346652"
+      "sourceImageSha256": "8a229154867069e8d40e3e963b5fbb175066ed8518a9edb69528baa632346652",
+      "additionalRegions": [
+        {
+          "page": 165,
+          "region": {
+            "x": 0.133,
+            "y": 0.642,
+            "width": 0.25,
+            "height": 0.097
+          },
+          "sourceImageSha256": "8a229154867069e8d40e3e963b5fbb175066ed8518a9edb69528baa632346652"
+        },
+        {
+          "page": 165,
+          "region": {
+            "x": 0.71,
+            "y": 0.453,
+            "width": 0.092,
+            "height": 0.15
+          },
+          "sourceImageSha256": "8a229154867069e8d40e3e963b5fbb175066ed8518a9edb69528baa632346652"
+        }
+      ]
     },
     {
       "id": "ch6-view-area-practice",
@@ -694,12 +716,12 @@
       "printedPage": "159",
       "indexAnchor": 1,
       "anchorLabel": "综合运用 第7—9题",
-      "locator": "习题6.1第7题题号及首行诗句“横看成岭侧成峰，远近高低各不同……”；问题续在下两行。",
+      "locator": "习题6.1第7题完整题干诗句“横看成岭侧成峰，远近高低各不同……”；问题续在下两行。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
-        "x": 0.152,
+        "x": 0.15,
         "y": 0.114,
-        "width": 0.741,
-        "height": 0.019
+        "width": 0.745,
+        "height": 0.068
       },
       "marker": {
         "x": 0.945,
@@ -960,12 +982,12 @@
       "printedPage": "163",
       "indexAnchor": 2,
       "anchorLabel": "练习 第1—3题",
-      "locator": "练习框第1题题号及“判断题”题干。",
+      "locator": "练习框第1题完整题干，包含“判断题”题干。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
-        "x": 0.153,
+        "x": 0.15,
         "y": 0.45,
-        "width": 0.11,
-        "height": 0.02
+        "width": 0.745,
+        "height": 0.163
       },
       "marker": {
         "x": 0.95,
@@ -1378,12 +1400,12 @@
       "printedPage": "167",
       "indexAnchor": 0,
       "anchorLabel": "复习巩固 第2—4题",
-      "locator": "习题6.2第3题首行“用一个钉子把一根细木条钉在木板上，用手拨木条，木条能转动”所在语句。",
+      "locator": "习题6.2第3题完整题干“用一个钉子把一根细木条钉在木板上，用手拨木条，木条能转动”所在语句。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
-        "x": 0.153,
+        "x": 0.15,
         "y": 0.21,
-        "width": 0.74,
-        "height": 0.021
+        "width": 0.745,
+        "height": 0.07
       },
       "marker": {
         "x": 0.045,
@@ -2024,12 +2046,12 @@
       "printedPage": "174",
       "indexAnchor": 2,
       "anchorLabel": "练习 第1—3题",
-      "locator": "练习第1题题号及“填空题”题干。",
+      "locator": "练习第1题完整题干，包含“填空题”题干。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
-        "x": 0.11,
+        "x": 0.108,
         "y": 0.497,
-        "width": 0.13,
-        "height": 0.02
+        "width": 0.54,
+        "height": 0.078
       },
       "marker": {
         "x": 0.925,
@@ -2043,18 +2065,30 @@
       "printedPage": "174",
       "indexAnchor": 2,
       "anchorLabel": "练习 第1—3题",
-      "locator": "练习第2题题号及“按图填空”题干。",
+      "locator": "练习第2题完整题干，包含“按图填空”题干。 定位范围包括本题全部小问；不含相邻题。分离配图或跨页续题另列于 additionalRegions。",
       "region": {
-        "x": 0.11,
+        "x": 0.108,
         "y": 0.584,
-        "width": 0.145,
-        "height": 0.02
+        "width": 0.355,
+        "height": 0.134
       },
       "marker": {
         "x": 0.045,
         "y": 0.595
       },
-      "sourceImageSha256": "321b29c20504587264ea3ad8a71baee8c0ee6714bd039404dfd3eac1c5cab496"
+      "sourceImageSha256": "321b29c20504587264ea3ad8a71baee8c0ee6714bd039404dfd3eac1c5cab496",
+      "additionalRegions": [
+        {
+          "page": 181,
+          "region": {
+            "x": 0.668,
+            "y": 0.592,
+            "width": 0.135,
+            "height": 0.14
+          },
+          "sourceImageSha256": "321b29c20504587264ea3ad8a71baee8c0ee6714bd039404dfd3eac1c5cab496"
+        }
+      ]
     },
     {
       "id": "ch6-p181-exercise-3",
@@ -2062,12 +2096,12 @@
       "printedPage": "174",
       "indexAnchor": 2,
       "anchorLabel": "练习 第1—3题",
-      "locator": "练习第3题题号及“计算”题干。",
+      "locator": "练习第3题完整题干，包含“计算”题干。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
-        "x": 0.11,
+        "x": 0.108,
         "y": 0.726,
-        "width": 0.095,
-        "height": 0.02
+        "width": 0.47,
+        "height": 0.047
       },
       "marker": {
         "x": 0.925,
@@ -2214,12 +2248,12 @@
       "printedPage": "176",
       "indexAnchor": 0,
       "anchorLabel": "练习 第2—3题",
-      "locator": "页首续页练习第3题题号及“计算”题干。",
+      "locator": "页首续页练习第3题完整题干，包含“计算”题干。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
-        "x": 0.11,
+        "x": 0.108,
         "y": 0.149,
-        "width": 0.095,
-        "height": 0.02
+        "width": 0.3,
+        "height": 0.075
       },
       "marker": {
         "x": 0.045,
@@ -2860,18 +2894,30 @@
       "printedPage": "178",
       "indexAnchor": 1,
       "anchorLabel": "复习巩固 第1—4题",
-      "locator": "习题6.3第2题：角概念与关系判断的题号及起始题干；指南覆盖本题所列全部小问。",
+      "locator": "习题6.3第2题：角概念与关系判断的完整题干和全部小问；指南覆盖本题所列全部小问。 定位范围包括本题全部小问；不含相邻题。分离配图或跨页续题另列于 additionalRegions。",
       "region": {
         "x": 0.108,
         "y": 0.185,
-        "width": 0.16,
-        "height": 0.023
+        "width": 0.44,
+        "height": 0.124
       },
       "marker": {
         "x": 0.95,
         "y": 0.1965
       },
-      "sourceImageSha256": "805d6c6db8a41bfdf53c6cac1568eb93aa0c5451457662a439d67369cd90b758"
+      "sourceImageSha256": "805d6c6db8a41bfdf53c6cac1568eb93aa0c5451457662a439d67369cd90b758",
+      "additionalRegions": [
+        {
+          "page": 185,
+          "region": {
+            "x": 0.133,
+            "y": 0.315,
+            "width": 0.61,
+            "height": 0.022
+          },
+          "sourceImageSha256": "805d6c6db8a41bfdf53c6cac1568eb93aa0c5451457662a439d67369cd90b758"
+        }
+      ]
     },
     {
       "id": "ch6-q-p185-e3",
@@ -2879,12 +2925,12 @@
       "printedPage": "178",
       "indexAnchor": 1,
       "anchorLabel": "复习巩固 第1—4题",
-      "locator": "习题6.3第3题：角度单位与运算填空的题号及起始题干；指南覆盖本题所列全部小问。",
+      "locator": "习题6.3第3题：角度单位与运算填空的完整题干和全部小问；指南覆盖本题所列全部小问。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
         "x": 0.108,
         "y": 0.344,
-        "width": 0.16,
-        "height": 0.024
+        "width": 0.71,
+        "height": 0.096
       },
       "marker": {
         "x": 0.045,
@@ -3373,12 +3419,12 @@
       "printedPage": "186",
       "indexAnchor": 1,
       "anchorLabel": "复习巩固 第4—6题",
-      "locator": "复习题6第6题：角度填空的题号及起始题干；指南覆盖本题所列全部小问。",
+      "locator": "复习题6第6题：角度填空的完整题干和全部小问；指南覆盖本题所列全部小问。 定位范围包括本题全部小问；不含相邻题。",
       "region": {
         "x": 0.095,
         "y": 0.804,
-        "width": 0.185,
-        "height": 0.023
+        "width": 0.74,
+        "height": 0.097
       },
       "marker": {
         "x": 0.045,

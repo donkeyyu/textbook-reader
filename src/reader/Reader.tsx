@@ -441,7 +441,7 @@ export function Reader() {
     setError(null);
   }
 
-  function openSupplement(id: string, highlight = !!getSupplement(id)?.questionGuide) {
+  function openSupplement(id: string) {
     setPersonalLibraryOpen(false);
     setPersonalItem(null);
     setSelectionPage(null);
@@ -450,10 +450,10 @@ export function Reader() {
     keepPreview();
     clearPreview();
     setChoiceIds(null);
-    setSelectedLocation(highlight ? getSupplement(id)!.locationId : null);
+    setSelectedLocation(getSupplement(id)!.locationId);
     setSupplementId(id);
     setHistory([]);
-    if (highlight) {
+    if (getSupplement(id)!.questionGuide) {
       const location = getLocation(getSupplement(id)!.locationId);
       setCommit({ page: location.page, locationId: location.id, focusId: "supplement-title", panelScroll: 0 });
     }

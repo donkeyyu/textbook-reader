@@ -29,6 +29,9 @@
 .graph-legend { flex: none; display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 0; padding: 4px 20px 12px; list-style: none; color: var(--secondary); font-size: 12px; }
 .graph-legend li { display: flex; align-items: center; gap: 4px; }
 .graph-legend svg { width: 16px; height: 16px; color: var(--type-color); }
+.graph-edge-legend { display: flex; flex-wrap: wrap; gap: 8px 16px; padding: 0 20px 12px; color: #57606a; font-size: 12px; }
+.graph-edge-legend span { display: flex; align-items: center; gap: 6px; }
+.graph-edge-legend svg { color: var(--type-color, currentColor); }
 .graph-related .text-button { display: flex; text-align: left; }
 .graph-related .graph-relation-label { font-size: 13px; color: var(--secondary); margin-bottom: 0; }
 @media (max-width: 760px) {

@@ -1,0 +1,6 @@
+.backlinks { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--separator); }
+.backlinks h3 { margin: 0 0 8px; font-size: 14px; }
+.backlinks ul { margin: 0; padding: 0; list-style: none; }
+.backlinks li + li { margin-top: 8px; }
+.backlinks .backlink { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; width: 100%; min-height: 44px; text-align: left; line-height: 1.6; overflow-wrap: anywhere; }
+.backlink-context { color: var(--text); font-size: 12px; font-weight: 400; }

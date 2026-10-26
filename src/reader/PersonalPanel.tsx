@@ -1,16 +1,17 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, type ReactNode } from 'react';
 import { MarkdownContent, MarkdownEditor } from './MarkdownEditor';
 import type { PersonalSupplement } from './personal';
 import type { ChapterRef, SectionRef } from '../textbook/sections';
 import type { LinkContext } from './links/LinkContent';
 import './personal-library.css';
 
-export function PersonalPanel({ item, isNew, chapters, sections, links, onSave, onClose, onBack, onDelete, onEdit, onLocate }: {
+export function PersonalPanel({ item, isNew, chapters, sections, links, backlinks, onSave, onClose, onBack, onDelete, onEdit, onLocate }: {
   item: PersonalSupplement;
   isNew: boolean;
   chapters: ChapterRef[];
   sections: SectionRef[];
   links?: LinkContext;
+  backlinks?: ReactNode;
   onSave: (item: PersonalSupplement) => void | Promise<void>;
   onClose: () => void;
   onBack: () => void;
@@ -81,5 +82,6 @@ export function PersonalPanel({ item, isNew, chapters, sections, links, onSave, 
         {error && <p role="alert">{error}</p>}
       </div>}
     </>}
+    {backlinks}
   </aside>;
 }

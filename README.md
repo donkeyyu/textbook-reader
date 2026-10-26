@@ -51,7 +51,7 @@ npm run preview   # 预览构建结果
 
 ## Supabase 与个人内容
 
-工具栏“节点图”可查看当前教材的全部默认解读和已保存个人节点，支持搜索、平移、缩放和拖动。选择节点只切换解读，点击“定位”并加载成功后，桌面同时显示图与教材，窄屏切到教材。分隔条可拖动或用方向键、Home、End 调整；视图控件可关闭或重开教材和图，保留会话中的位置与草稿。默认关联保留查看理由；目标只有教材原文时继续跳转原文。反向引用与个人图边由后续任务接入。
+工具栏“节点图”可查看当前教材的全部默认解读和已保存个人节点，支持搜索、平移、缩放和拖动。选择节点只切换解读，点击“定位”并加载成功后，桌面同时显示图与教材，窄屏切到教材。分隔条可拖动或用方向键、Home、End 调整；视图控件可关闭或重开教材和图，保留会话中的位置与草稿。默认关联保留查看理由；目标只有教材原文时继续跳转原文。保存后的引用以玫红色无箭头弧线显示，默认关联保留箭头。目标详情的“引用此处”可返回实际引用者；重复引用和双方互引共用一条个人连线，删除最后一处才撤销。
 
 默认解读无需登录。点击工具栏“登录”，用邮箱接收登录链接；登录后，笔记和个人补充保存到该账号，在其他设备登录同一邮箱可读取。MCP 登录仅供开发工具使用，不会代替读者登录。当前项目地址和公开客户端密钥在 `src/reader/supabase.ts`；可用 `VITE_SUPABASE_URL`、`VITE_SUPABASE_PUBLISHABLE_KEY` 覆盖，浏览器不得使用 service-role 密钥。
 
@@ -86,6 +86,7 @@ node --experimental-strip-types scripts/check-cloud-content.mjs
 | 图与教材分屏、恢复与原文重试 | [check-split-reading.mjs](scripts/check-split-reading.mjs)：`splitReadingState`、`checkSplitKeyboardResize`、`checkReadingViewRecovery`；先完成一次图中定位。`checkSplitOriginalRetry` 检查重复原文、失败重试和两层返回；在独立测试 origin 使用已安装的图探针核对视野，分屏实现使用该入口替代旧的 `checkRepeatedGraphOriginal` |
 | 云端笔记与个人补充的异步保存 | [check-async-save.mjs](scripts/check-async-save.mjs)：`startAsyncSaveServer(port)`、`assertUnusedAsyncOrigin(page, { testOrigin })`，再运行 `checkAsyncNoteSave`、`checkAsyncPersonalSave` |
 | 逐实例笔记链接与原子保存 | [check-stable-note-links.mjs](scripts/check-stable-note-links.mjs)：`startStableLinksServer`、`startStableLinksCheck`，以及真实编辑历史、创建和保存检查；需新的合成账号与独立 origin，前置状态见函数定义 |
+| 反向引用、个人连线与保存投影 | [check-bidirectional-links.mjs](scripts/check-bidirectional-links.mjs)：`startBidirectionalLinksServer`、`startBidirectionalLinksCheck`、`savedReferenceState`、`referenceView`、`checkIncomingNavigation`；使用新的 06 合成账号与独立 origin，比较保存快照、反向列表和图中两类边 |
 | 首次导入、真实旧版页面后到保存与重开 | [check-content-migration.mjs](scripts/check-content-migration.mjs)：`startContentMigrationServer`、`checkContentMigration(task, { testOrigin, credentials })`；须提供修改存储前冻结的实际旧版构建 |
 | 云端修订冲突、网络失败与浏览器存储故障 | [check-content-migration-extra.mjs](scripts/check-content-migration-extra.mjs)：`checkContentMigrationExtras(task, result)`，使用上项返回的 QA 结果 |
 | 账号隔离、旧账号延迟响应与失效登录链接 | [check-content-auth.mjs](scripts/check-content-auth.mjs)：`startContentAuthServer`、`checkContentAuth`、`checkExpiredEmailCallback`；另用独立空 origin，失效链接检查拦截发送请求，不发邮件 |

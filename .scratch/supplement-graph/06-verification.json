@@ -1,0 +1,263 @@
+{
+  "date": "2026-10-26",
+  "ticket": ".scratch/supplement-graph/issues/06-bidirectional-links.md",
+  "status": "Accepted after root two-axis final review; complete",
+  "baseCommit": "66e3d27",
+  "independentPhaseBase": "0a308b2",
+  "implementationComplete": true,
+  "rootReviewPending": false,
+  "manifestFiles": [
+    "src/reader/links/project-references.ts",
+    "src/reader/links/Backlinks.tsx",
+    "src/reader/links/backlinks.css",
+    "src/reader/links/references.test.ts",
+    "scripts/check-bidirectional-links.mjs",
+    "src/reader/Reader.tsx",
+    "src/reader/PersonalPanel.tsx",
+    "src/reader/graph/project-graph.ts",
+    "src/reader/graph/SupplementGraph.tsx",
+    "src/reader/graph/useSupplementGraph.ts",
+    "src/reader/graph/graph.css",
+    "package.json",
+    "README.md",
+    "DESIGN.md",
+    "docs/ARCHITECTURE.md",
+    ".scratch/supplement-graph/issues/06-bidirectional-links.md",
+    ".scratch/supplement-graph/issues/07-split-reading.md",
+    ".scratch/supplement-graph/06-verification.json"
+  ],
+  "sourceSha256": {
+    "src/reader/links/project-references.ts": "152df5ac5ee01f3951a5e9bbbfd349ed4572d47b1078c117248f2f22548919ac",
+    "src/reader/links/Backlinks.tsx": "651b76e511dd383f24bd4b07f752a38ac9176fd83061a9a175e75e6f6229a622",
+    "src/reader/links/backlinks.css": "cf56ee5af5f054a70fd59856e45d2a84a7356b444d5e0eadd385583206639556",
+    "src/reader/links/references.test.ts": "2c84b55091f05c426548583dde8b24162adff1090583061ac9f23c875200ebe0",
+    "scripts/check-bidirectional-links.mjs": "35c274ee9c234a54cde8a50ebde115ac5304c32ce9b643b23d9bb6c7598befc3",
+    "src/reader/Reader.tsx": "18127b56d32d23fe4217e394cba80dbc44014ddc682f5156daae50eb9a596014",
+    "src/reader/PersonalPanel.tsx": "db2f59e7ac3631f0f9e3d4e18ad90fabe593deb8726b281d2174db40010c8eb9",
+    "src/reader/graph/project-graph.ts": "5f71723f3f563d6e8ac36a3983338776725a1807983b4aa775fc220b00b97c11",
+    "src/reader/graph/SupplementGraph.tsx": "4dbd8bb59d2b511143ce8b335c6c42f6244213135bbd7717ada7bb82aa3db300",
+    "src/reader/graph/useSupplementGraph.ts": "1d2443121f5de52d519935f10343a7f00e9ef2184b4fb2014d17ef8e869254ea",
+    "src/reader/graph/graph.css": "8d0c61c6dee6505d5b3ad31c0b29d1a7f617f38d6758cc7d885f59af6a4a5e82",
+    "package.json": "16b795c3b71fcd090af815b5f13cb5d221b9364b8bad28dbb960831e4c46863f",
+    "README.md": "7d5323a4aab2852dd8495b2d8084b1a745be2431aa15437255b81969f5215cab",
+    "DESIGN.md": "2cf4a1702a02c166e32a8b17150401884dcbf2172a1c7dd909d69ec46f9ad8dd",
+    "docs/ARCHITECTURE.md": "b4424185d24f3391e9251d898459b3c672e45eb7acc76ee70e70460a387da829",
+    ".scratch/supplement-graph/issues/06-bidirectional-links.md": "1e3f5a27714353ca00d3e1aab4c5649f8737e8196d0624ce40ea9de36853a181",
+    ".scratch/supplement-graph/issues/07-split-reading.md": "28f615c195ff660737776286b56199f803c2c46e02e9f05f4b58e3a2b750b9fa"
+  },
+  "protectedUnchangedSha256": {
+    "src/reader/MarkdownEditor.tsx": "90b6204043b95c6bed52ec8aa80d4b6dac671df0123ca8d6486bb97857b39b03",
+    "src/reader/links/document.ts": "a4a1cfad4c45e650164d31ece64e2ec58d1e09121b22fbacc8c14b92c8455f88",
+    "src/reader/links/state.ts": "cd5721b0b83c4dfca46fe483ee8cb38a951d0eb8171b0405e97a7250b0b97cd9",
+    "src/reader/links/candidates.ts": "3caf993f41ecb5ee4a5f101fb9aac53341e01787dcd4ede7b6995d9f862e6ce2",
+    "src/reader/links/identity.test.ts": "f9a4d156e7c61be55ec106af36e49438807c1cd3a051b995e006bcd90233f296",
+    "src/reader/personal.ts": "ac621da8454f60d27bb6eda6a73dd417e1560a1642f2fae414dd1a587147cca2",
+    "src/reader/useBookContent.ts": "69c1d2079e26dd515e7308d1fac0bca083d6f9cda7310732e9725614f2728801",
+    "src/reader/cloud-personal.ts": "7c97831f2995505135d87ab6cb95a75c470fe9ada571967c14984895ed97b330",
+    "src/reader/split/ReadingViews.tsx": "49b8c9f28916c8ade9384306224181328745eb8798362a1a62316e86ad3f90ba",
+    "src/reader/split/split.css": "30b796ffe1b3bf2a57119b59f07d54507416b5aca9b9ad66c429aeb7ac8bd193",
+    "src/reader/PanelResize.tsx": "fbb99d2b055f1316a1a1c5d0b3bbc6022707cecfadc60f18401bf01b5cc87b73",
+    "src/reader/session.ts": "90b47510bc2db2f5bca45880f17aa720d78be323b01a6cf71e76264072191091",
+    "src/style.css": "f7a4e30b2c64756141cc2d1aabc9f9fdcef84874d5e50751a5509f83ccd8f29f",
+    "package-lock.json": "a0e69784f67f9b5ba72584ef148d08a22e163b7560c74ca27ee13a8a25e84b2b",
+    "src/reader/Supplement.tsx": "70cd53ec2b9c6360e80ae5a0bfdf653f311e59de4ecf5f9745bc2ad3553cd0dd",
+    "src/textbook/content.ts": "bb443a7c60886a0337326b56ed5e13a75691f4c67b88c265cc729211dbf794ee"
+  },
+  "evidenceSha256": {
+    ".git/supplement-graph-orchestration/06-start.json": "e25e087a16fd91a2c3d6a2cfc8a18bf01b4ae5c70aaaa460f7d8f877defe503e",
+    ".git/supplement-graph-orchestration/06-fixtures.json": "bf80e25681695f82f305824893a5a0bd7ea43a88fc59301694d05b4cec88c88a",
+    ".git/supplement-graph-orchestration/06-default-repeated.json": "d44db86a7ad24117588979b60bb2014ce3d09b66c2d8aab74bf524f901d51819",
+    ".git/supplement-graph-orchestration/06-default-save-order.json": "7a11d4888a74826a52764c7b5389ccfd75e76c34ec601e7ddbdc7bf190f4f239",
+    ".git/supplement-graph-orchestration/06-personal-repeated-mutual-self.json": "bc55723cae9748a199a30c9f55579eb7d88cd1b816f71bc7ee96d84a1224de06",
+    ".git/supplement-graph-orchestration/06-personal-save-order-reload.json": "e53770dc440f3e13fe275db46f3e9d099478e60e06f7d6bcbc61eff73ab31327",
+    ".git/supplement-graph-orchestration/06-full-identity.json": "9bdc6b55ae26a3e1c3ed153b27f2c706ff3774067373159d74b84486d305aa78",
+    ".git/supplement-graph-orchestration/06-default-removal.json": "7de315b9d7b8588ce1eab98cc60ccea2b916d20e868f4e45c2d95a203dfa57ff",
+    ".git/supplement-graph-orchestration/06-target-lifecycle.json": "6d0a63b0e42a14ccd144ac02338c17e64c042a14cc66ce7689f6bc23b280964a",
+    ".git/supplement-graph-orchestration/06-default-pair.json": "8ce299a80799b53a01c1b19f5fcf7821b4752d4f16549029fc2f8f075c5ffaab",
+    ".git/supplement-graph-orchestration/06-default-coexistence.json": "77d3c91dc54db487856294feb5631fb451ae16dca73633f66221a41f7cc3af51",
+    ".git/supplement-graph-orchestration/06-desktop-journey.json": "b9fbebc6dc1e7bafae04ac88d26f483e7b83b894941356c4c5d8f3d5a87977a9",
+    ".git/supplement-graph-orchestration/06-final-journey-mobile.json": "11a20dd4f6508dda6b4436d0dfa799e6e1cea8705ac3d4171660650e00ae1d59",
+    ".git/supplement-graph-orchestration/06-browser-environment.json": "7809d4d712805898c71e99d149c3804406daa50452d9267470d19e5384182dab",
+    ".git/supplement-graph-orchestration/06-reload-recovery.json": "12e1a1ca512f6c862033716dd434a48ff25b02b18037ef4773b9b8c0d416d677",
+    ".git/supplement-graph-orchestration/06-cleanup.json": "15f5db12507973357da666d233d9a2ba72936f49e8cb50e4fdadd085fa781f23",
+    ".git/supplement-graph-orchestration/06-final-tests.log": "972d6a793b96728894336d8a9c5d3392f61b38b4b4b78d421169dc1f765aaf64",
+    ".git/supplement-graph-orchestration/06-final-build.log": "35a58a856fad739f05f293c27009341aef2d4ead6dd2bb62a27682ab521b5aec",
+    ".git/supplement-graph-orchestration/06-design-detect.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    ".git/supplement-graph-orchestration/06-protected-hashes.json": "bc58d799434b1356771a2884b790140bf992f1312bb6816da622fc939b0edf69",
+    ".git/supplement-graph-orchestration/06-desktop.png": "222dd239f34f06dbef18a31c2b77cb5805907fa7a60f957bfcbc0f3ef4056e6e",
+    ".git/supplement-graph-orchestration/06-mobile.png": "8952c23ceeb35b9b6478394ae488bad843ee669a8f2d6c444545474f4d21e427",
+    ".git/supplement-graph-orchestration/06-desktop-confirm.png": "8ece7eab83ec8032765cf12a1f933aea3074e64c51a3e1aacbad9bd355d07e86",
+    ".git/supplement-graph-orchestration/06-mobile-confirm.png": "72535da0fe1c48bb4d01cf89ccd4b261b58a8ea2770b5036859955f56b950bfc",
+    ".git/supplement-graph-orchestration/06-drag-before.png": "9cb0ff6458ebe25ef47d80792c12aa9ec5d1d26f4455edc7fc6cb28464a8652b",
+    ".git/supplement-graph-orchestration/06-drag-during.png": "57b8e0dc8406556e8941c2e545031929f56efecae5c776543e280b5f85766026",
+    ".git/supplement-graph-orchestration/06-drag-released.png": "ea1d9eb537438978cbcdae4b7261f239f94f0493f2dd0006a07559bda0940767",
+    ".git/supplement-graph-orchestration/06-drag-settled.png": "c51bbb217c7eb7d10997a7406520e8cb6c54688b85df381005e5f673de331d94"
+  },
+  "contract": {
+    "identity": "Exact full bookId/source/id via existing nodeKey,matchingBindings,resolveLink,sameTarget; no title resolver/new parser",
+    "projection": "projectReferences(bookId,nodes,saved:PersonalData) -> incoming Map<target nodeKey,{source:ContentNode,count:number}[]> and aggregated kind:personal edges",
+    "sourceGate": "Current same-book nodes gate all sources and targets; personal body read from accepted saved.supplements; default notes from saved.notes/noteBindings",
+    "savedOnly": "Reader ownsPersonal guard plus existing success-only snapshot/serialized save queue/generation protections; no subscriptions to editor drafts",
+    "incoming": "Truthful directed source groups and occurrence counts; self-reference retains navigation",
+    "graph": "Sorted undirected pair aggregates duplicates and reciprocal references; no personal loops; default kind/direction/reasons remain separate; gray arrows vs rose curves and visible legend",
+    "ui": "Default incoming list before note editor, personal panel slot, canonical candidate context and full NodeRef navigation through existing draft guard",
+    "storage": "No new schema,migration,dependency,editable edge store or save-queue behavior"
+  },
+  "checks": {
+    "npmTest": {
+      "passed": 37,
+      "failed": 0,
+      "record": ".git/supplement-graph-orchestration/06-final-tests.log"
+    },
+    "newReferenceTests": 7,
+    "typecheck": "passed via final npm run build",
+    "productionBuild": "passed; existing >500kB chunk warning",
+    "browserHelperSyntax": "passed",
+    "trackedDiffCheck": "passed",
+    "ownedWhitespaceAndJwtPatternCheck": "passed",
+    "protectedSourceMatchesBase": 16,
+    "designDetector": {
+      "findings": 0,
+      "record": ".git/supplement-graph-orchestration/06-design-detect.json",
+      "timing": "Ran once on integrated UI; final slot-order refinement visually confirmed afterward"
+    }
+  },
+  "acceptance": {
+    "defaultNoteRepeatedSuccessiveDeletion": true,
+    "personalBodyRepeatedSuccessiveDeletion": true,
+    "reciprocalOnePairAndTruthfulDirection": true,
+    "selfNavigatesWithoutGraphLoop": true,
+    "targetTextNotModified": true,
+    "fullIdentityIncludingDefaultPersonalSameId": true,
+    "removedDefaultTargetAndSourceNoPhantom": true,
+    "renameDeleteSameTitleRebuildAndReload": true,
+    "defaultAndPersonalSamePairDistinguished": true,
+    "lastPersonalRemovalKeeps442Defaults": true,
+    "twoEntrancesSavedOnlyFailureOldCompletionRetry": true,
+    "personalOnlyNeighborEmphasisClear2Wrong0": true,
+    "dimNodePointerSelectable": true,
+    "keyboardSelectionAndCollapsedMethods": true,
+    "selectedLabelReadableAtLowZoom": true,
+    "dragAndSplitResizeRecovery": true,
+    "hiddenGraphPaused": true,
+    "finalFullJourney": true
+  },
+  "browser": {
+    "spaceId": 27,
+    "origin": "http://127.0.0.1:54946",
+    "syntheticAccount": "Fresh root-provided ticket06; authenticated id checked; no mail",
+    "publicationRemovalBoundary": "Only QA Page fetch response; remote publication unchanged",
+    "sameIdFixtureBoundary": "Own synthetic authenticated personal snapshot via existing savePersonal; no default or schema changes",
+    "fullJourney": "教材→图→笔记链接→真实反向返回→分屏定位→窄屏切换→刷新恢复",
+    "actualFinalMobile": {
+      "width": 390,
+      "height": 844,
+      "dpr": 2,
+      "overflow": false,
+      "backlinks": [
+        {
+          "width": 350,
+          "scrollWidth": 350
+        },
+        {
+          "width": 350,
+          "scrollWidth": 350
+        }
+      ],
+      "listBeforeNote": true
+    },
+    "actualFinalDesktop": {
+      "width": 1440,
+      "height": 1000,
+      "dpr": 2,
+      "overflow": false
+    },
+    "restoredPosition": {
+      "page": 10,
+      "fractionBefore": 0.4281663516068053,
+      "fractionAfter": 0.4281663516068053
+    },
+    "savedAfterReload": {
+      "personalEdges": 2,
+      "incomingSourceGroups": 2
+    },
+    "screenshotsInspected": [
+      "06-desktop.png",
+      "06-mobile.png",
+      "06-desktop-confirm.png",
+      "06-mobile-confirm.png"
+    ],
+    "recovery": "Original Page/Space/origin/account retained; final raw actual viewport and saved/UI comparisons completed; original failures preserved",
+    "earlierFullJourneyAssertions": "Explicitly retrospective summary of completed ordered assertions before final CDP timeout; desktop raw record and final raw reload/viewport state remain separate"
+  },
+  "resources": {
+    "cleanedOnlyOwnSyntheticContent": true,
+    "nodesDeleted": 4,
+    "notesCleared": 2,
+    "graph": {
+      "nodes": 970,
+      "personalEdges": 0,
+      "defaultEdges": 442
+    },
+    "emptyAfterReload": true,
+    "signedOut": true,
+    "mailFlowInvoked": false,
+    "spaceFinished": true,
+    "credentialFileRetainedForRoot": false,
+    "cleanupDriver": "Inspected after paragraph pointer interception and a focus-race timeout; finished remaining UI actions after settled state",
+    "qaServerStopped": true,
+    "qaPort": 54946,
+    "authAccountDeletedByRoot": true,
+    "remainingSessions": 0,
+    "remainingPrivateRows": 0,
+    "privateCredentialRemoved": true,
+    "retained02ResourcesUntouched": true
+  },
+  "untouched": [
+    "MarkdownEditor",
+    "link identity/parser/state/candidates",
+    "personal/cloud/useBookContent/account",
+    "split state/focus/geometry",
+    "PanelResize/session/globalstyle",
+    "package-lock",
+    "Supplement/textbook content",
+    "Supabase schemas and publication",
+    "retained02 resources",
+    "issue01 existing changes"
+  ],
+  "limits": [
+    "Ego CDP click/page-evaluation/reload receipt failures and emulation/host viewport reset occurred; lower-level cause not established. Same Page recovered and final actual390x844/DPR2 plus1440x1000/DPR2 states verified.",
+    "Existing graph helper canvas pixel-ratio wait did not hold after emulation/hostDPR changed; actual target focus, saved/incoming state and final screenshots checked separately. No new claim about DPR renderer adaptation.",
+    "Cleanup pointer interception/focus-race attempts required current-state inspection before remaining UI actions; final own content empty after reload and signed out.",
+    "Development server forwarded console.warn stack fragments near graph source; full warning text was not retained, and no product fault was established from those fragments. No claim of a warning-free browser console.",
+    "No physical phone,browser process restart,cross-device realtime or student learning evidence. SMTP/real-email login remains deferred ticket02 pre-release work.",
+    "Ego Lite reported an available update; no upgrade or global network/profile change was performed."
+  ],
+  "rootReview": {
+    "base": "66e3d27",
+    "standards": {
+      "findings": 0,
+      "result": "passed"
+    },
+    "spec": {
+      "findings": 0,
+      "result": "passed"
+    },
+    "isolatedCandidatePaths": 18,
+    "npmTest": {
+      "passed": 37,
+      "failed": 0
+    },
+    "typecheck": "passed",
+    "productionBuild": "passed; existing largechunkwarning",
+    "helperSyntax": "passed",
+    "sourceEvidenceProtectedHashCheck": "17/28/16 matched before rootissue/reportmetadata updates",
+    "visualEvidenceInspected": [
+      "06-desktop-confirm.png",
+      "06-mobile-confirm.png"
+    ],
+    "finalFullJourney": "Verified in saveddata/browser records and both06/07Comments; textbook→graph→note link→backlink→split locate→narrow switch→reload restore",
+    "fixtureCleanup": "Exact06 id/qa marker/emptycontent guard; deletedAuth/sessions0/privateRows0/credentialsremoved; retained02 untouched",
+    "limits": "Existingreport boundaries retained; no warningfree/device/FPS or studentclaim"
+  }
+}

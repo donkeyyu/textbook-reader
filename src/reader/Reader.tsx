@@ -20,6 +20,8 @@ import { SupplementPanel, SupplementPreview, type PreviewAnchor } from "./Supple
 import { SupplementGraph, GraphRelated } from './graph/SupplementGraph';
 import type { LinkBinding } from './links/document';
 import type { LinkContext } from './links/LinkContent';
+import { Backlinks } from './links/Backlinks';
+import { projectReferences } from './links/project-references';
 import { ReadingViewControls, SplitResize, useReadingViews } from './split/ReadingViews';
 
 type ReadingContext = {
@@ -71,6 +73,7 @@ export function Reader() {
   const content = useBookContent();
   const ownsPersonal = !!content.user && content.personal?.userId === content.user.id;
   const personal: PersonalData = ownsPersonal ? content.personal!.data : { supplements: [], notes: {} };
+  const references = useMemo(() => projectReferences(bookId, content.nodes, personal), [content.nodes, personal]);
   const { getSupplement, supplementsForPage } = useMemo(() => supplementQueries(content.published ?? {
     documentSha256: bookId, pageCount, chapters: [], sections: [], supplements: [],
   }), [content.published]);
@@ -139,6 +142,10 @@ export function Reader() {
       await storePersonal((current) => ({ ...current, supplements: [...current.supplements.filter((value) => value.id !== item.id), item] }));
       return { bookId, source: 'personal', id: item.id };
     } };
+
+  function backlinksFor(key: string) {
+    return <Backlinks references={references.incoming.get(key) ?? []} catalog={links} onNavigate={links.onNavigate} disabled={pending} />;
+  }
 
   function allowGraphSelection() {
     return !document.querySelector('[data-dirty="true"]') || window.confirm('有尚未保存的内容，放弃修改？');
@@ -632,7 +639,7 @@ export function Reader() {
       if (views.narrow && target.closest('.reading-view-controls')) setNavigationOpen(false);
       cancelJump(); keepPreview(); clearPreview(); return;
     }
-    if (target.closest('.markdown-editor, .create-linked-node, .personal-title, .personal-metadata, .method-toggle, .locate-button, .account-control, .legacy-copies, .supplement-graph, .graph-related, .node-link, #open-supplement-graph')) return;
+    if (target.closest('.markdown-editor, .create-linked-node, .personal-title, .personal-metadata, .method-toggle, .locate-button, .account-control, .legacy-copies, .supplement-graph, .graph-related, .node-link, .backlinks, #open-supplement-graph')) return;
     if (document.querySelector('[data-dirty="true"]') && target.closest('button, summary, input') && !window.confirm('有尚未保存的内容，放弃修改？')) {
       event.preventDefault(); event.stopPropagation();
     }
@@ -797,6 +804,7 @@ export function Reader() {
         </div>
       </div>
       {graphMounted && <SupplementGraph nodes={content.nodes} selectedKey={selectedGraphKey} visible={graphOpen}
+        personalEdges={references.edges}
         chapters={chapters} sections={sections} onSelect={selectGraphNode} onClose={closeGraph} />}
       {graphMounted && <SplitResize />}
       {!views.bookVisible && !graphOpen && <p className="views-empty-message">选择上方“教材”或“节点图”继续阅读。</p>}
@@ -808,6 +816,7 @@ export function Reader() {
             chapterId: newChapterId === undefined ? chapters.find(({ start, end }) => currentPage >= start && currentPage <= end)?.id ?? null : newChapterId, sectionId: null });
         }} onClose={closePersonalLibrary} />}
       {personalItem && <PersonalPanel chapters={chapters} sections={sections} links={links} onBack={openPersonalLibrary} onLocate={locateSupplement} onEdit={cancelJump} key={personalItem.id} item={personalItem} isNew={!personal.supplements.some((item) => item.id === personalItem.id)}
+        backlinks={backlinksFor(nodeKey({ bookId, source: 'personal', id: personalItem.id }))}
         onClose={() => {
           setPersonalItem(null); closePersonalLibrary();
           if (graphOpen) requestAnimationFrame(() => document.querySelector<HTMLInputElement>('.graph-search input')?.focus({ preventScroll: true }));
@@ -832,12 +841,12 @@ export function Reader() {
             if (allowGraphSelection()) relatedJump(locationId, focusId);
           }} /> : undefined}
         onHide={(id) => { setHiddenIds([...hiddenIds, id]); closeSupplement(); }}
-        renderPersonal={(item) => <section className="personal-note" aria-label="我的笔记">
+        renderPersonal={(item) => <>{backlinksFor(nodeKey({ bookId, source: 'default', id: item.id }))}<section className="personal-note" aria-label="我的笔记">
           {content.personal ? <MarkdownEditor onEdit={cancelJump} key={`${content.personal.userId}:${item.id}`} note value={content.personal.data.notes[item.id] ?? ''}
             bindings={content.personal.data.noteBindings?.[item.id]} links={{ ...links, chapterId: content.nodes.find((node) => node.source === 'default' && node.id === item.id)?.chapterId ?? null }}
             label="笔记 Markdown" onSave={(value, bindings) => saveNote(item.id, value, bindings)} />
             : <p>{content.user ? '个人笔记尚未载入，请读取成功后再编辑。' : '登录后可保存个人笔记。'}</p>}
-        </section>}
+        </section></>}
         activeLocationId={selectedLocation}
         onBack={previous ? () => { void navigate({ page: previous.page, restore: previous }); } : undefined} />}
     </main>

@@ -77,6 +77,8 @@ Markdown 预览通过现有渲染组件处理，原始 HTML 不执行；CodeMirr
 
 `notes` 继续保存字符串，可选 `noteBindings` 按默认补充 ID 保存引用实例；个人正文使用可选 `bindings`。每个实例保存自己的 ID、UTF-16 文本范围、显示名称与完整 `NodeRef`。CodeMirror 映射范围，并通过 `invertedEffects` 恢复绑定历史；不按标题或出现次序配回身份。正文与绑定通过现有快照和修订一次提交，只有成功保存的记录供后续引用投影使用。`onPersonalSaved` 延续原有提交通知。读取时可从 `personal.data.noteBindings` 与各 `supplement.bindings` 查询已保存引用；目标有效性按当前 `nodes` 中的完整身份判断，目标缺失仍保留旧绑定。
 
+`links/project-references.ts` 从当前账号、当前教材的已保存快照生成反向列表与个人无向边。只遍历当前节点，避免已移除默认来源的遗留笔记生成悬空关联。有效绑定使用完整身份解析，反向列表按真实方向和来源计数，重复及互引按同一身份对聚合，自引用只保留导航。`Backlinks` 通过现有节点选择入口保护草稿；图将两类边分别标记并绘制，个人编辑不改变默认关联。投影不订阅编辑器草稿，也不保存独立关系。
+
 客户端 Lezer 解析负责完整 Markdown 语法资格检查。数据库校验实例结构、教材身份、UTF-16 边界、源文字及基本代码／转义保护；其保护规则不等同完整 CommonMark，对复杂 HTML 或缩进上下文可能更保守。
 
 `useBookContent()` 是阅读器的内容入口。`nodes` 使用 `{ bookId, source, id }` 标识节点，`nodeKey()` 编码完整身份，默认与个人来源的同名 ID 不会碰撞。默认节点携带完整 `supplement`；个人节点携带 `personal`。章节和节可空，节点位置类型也允许为空；当前框选个人补充仍有原页位置，自由节点由后续任务扩展。

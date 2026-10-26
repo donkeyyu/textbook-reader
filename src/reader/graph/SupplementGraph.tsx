@@ -5,6 +5,7 @@ import { getPage, pageLabel } from '../../textbook/catalog.ts';
 import { supplementTypes, TypeMarker } from '../supplement-types.tsx';
 import { projectGraph } from './project-graph.ts';
 import { useSupplementGraph } from './useSupplementGraph.ts';
+import type { PersonalReferenceEdge } from '../links/project-references.ts';
 import './graph.css';
 
 function nodeContext(node: ContentNode, chapters: PublishedContent['chapters'], sections: PublishedContent['sections']) {
@@ -13,15 +14,16 @@ function nodeContext(node: ContentNode, chapters: PublishedContent['chapters'], 
     node.location ? pageLabel(getPage(node.location.page)) : node.summary.slice(0, 48)].filter(Boolean).join(' · ');
 }
 
-export function SupplementGraph({ nodes, selectedKey, visible, onSelect, onClose, chapters, sections }: {
+export function SupplementGraph({ nodes, personalEdges, selectedKey, visible, onSelect, onClose, chapters, sections }: {
   nodes: ContentNode[]; selectedKey: string | null; visible: boolean;
+  personalEdges: readonly PersonalReferenceEdge[];
   chapters: PublishedContent['chapters']; sections: PublishedContent['sections'];
   onSelect: (key: string) => boolean; onClose: () => void;
 }) {
   const host = useRef<HTMLDivElement>(null);
   const search = useRef<HTMLInputElement>(null);
   const [query, setQuery] = useState('');
-  const data = useMemo(() => projectGraph(nodes), [nodes]);
+  const data = useMemo(() => projectGraph(nodes, personalEdges), [nodes, personalEdges]);
   const matches = useMemo(() => query.trim() ? nodes.filter((node) =>
     node.title.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase())) : [], [nodes, query]);
   const searchKeys = useMemo(() => new Set(matches.map((node) => node.key)), [matches]);
@@ -30,7 +32,8 @@ export function SupplementGraph({ nodes, selectedKey, visible, onSelect, onClose
     if (onSelect(key)) { graph.focus(key); setQuery(''); }
   }
   return <section id="supplement-graph" className="supplement-graph" aria-label="补充节点图" hidden={!visible}
-    data-node-count={nodes.length} data-edge-count={data.edges.length}>
+    data-node-count={nodes.length} data-edge-count={data.edges.length}
+    data-default-edge-count={data.defaultEdges.length} data-personal-edge-count={personalEdges.length}>
     <div className="graph-toolbar">
       <label className="graph-search">搜索节点
         <input ref={search} type="search" value={query} placeholder="输入解读或个人补充名称"
@@ -69,7 +72,7 @@ export function SupplementGraph({ nodes, selectedKey, visible, onSelect, onClose
       {graph.ready && nodes.length === 0 && <p className="graph-error">当前教材还没有补充节点。</p>}
     </div>
     <div className="graph-footer">
-      <span aria-live="polite">{nodes.length} 节点 · {data.edges.length} 默认关联</span>
+      <span aria-live="polite">{nodes.length} 节点 · {data.defaultEdges.length} 默认关联 · {personalEdges.length} 个人连线</span>
       <div className="graph-zoom" aria-label="图缩放">
         <button type="button" aria-label="缩小节点图" onClick={() => graph.zoom(.8)}>−</button>
         <output aria-label="图缩放比例">{Math.round(graph.scale * 100)}%</output>
@@ -80,6 +83,10 @@ export function SupplementGraph({ nodes, selectedKey, visible, onSelect, onClose
     </div>
     <ul className="graph-legend" aria-label="节点类型">{Object.entries(supplementTypes).map(([type, label]) =>
       <li key={type} data-supplement-type={type}><TypeMarker type={type as ContentNode['type']} />{label}</li>)}</ul>
+    <div className="graph-edge-legend" aria-label="连线类型">
+      <span><svg width="28" height="14" viewBox="0 0 28 14" fill="none" aria-hidden="true"><path d="M1 7h24m-5-4 5 4-5 4" stroke="currentColor" strokeWidth="1.5" /></svg>默认关联</span>
+      <span data-supplement-type="personal"><svg width="28" height="14" viewBox="0 0 28 14" fill="none" aria-hidden="true"><path d="M1 11Q14 0 27 11" stroke="currentColor" strokeWidth="1.5" /></svg>个人引用</span>
+    </div>
     <p id="graph-help" className="sr-only">拖动空白平移，滚轮缩放，拖动节点调整位置。画布聚焦时方向键平移，加减键缩放，0 查看全图，斜线键搜索。搜索后按向下键或 Tab 选择结果，Enter 打开解读。</p>
   </section>;
 }

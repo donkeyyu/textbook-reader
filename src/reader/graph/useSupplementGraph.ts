@@ -5,7 +5,7 @@ import { forceCollide, forceLink, forceManyBody, forceSimulation, forceX, forceY
 import type { GraphNode, GraphEdge } from './project-graph.ts';
 
 type LayoutNode = SimulationNodeDatum & GraphNode;
-type LayoutEdge = SimulationLinkDatum<LayoutNode>;
+type LayoutEdge = SimulationLinkDatum<LayoutNode> & Pick<GraphEdge, 'kind'>;
 type Sprite = { node: LayoutNode; dot: Graphics; ring: Graphics; label: Text };
 type Point = { x: number; y: number };
 const minZoom = .1;
@@ -118,11 +118,11 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       const neighbors = selected ? adjacency.get(selected) : undefined;
       const matches = current.current.searchKeys;
       lines.clear();
-      // Two stroke batches retain every directed edge without rebuilding a
-      // graphics instruction for each individual segment on every layout tick.
-      for (const active of [false, true]) {
+      // Batch by source and emphasis; personal pairs have no arrowhead.
+      for (const kind of ['default', 'personal'] as const) for (const active of [false, true]) {
         lines.beginPath();
         for (const link of links) {
+          if (link.kind !== kind) continue;
           const source = link.source as LayoutNode;
           const target = link.target as LayoutNode;
           if ((source.key === selected || target.key === selected) !== active) continue;
@@ -131,13 +131,21 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
           if (length < radius * 2) continue;
           const endX = target.x! - dx / length * (radius + 2);
           const endY = target.y! - dy / length * (radius + 2);
-          lines.moveTo(source.x!, source.y!).lineTo(endX, endY);
+          lines.moveTo(source.x!, source.y!);
+          if (kind === 'personal') {
+            const bend = Math.min(18 / zoom, length / 5);
+            lines.quadraticCurveTo((source.x! + target.x!) / 2 - dy / length * bend,
+              (source.y! + target.y!) / 2 + dx / length * bend, endX, endY);
+            continue;
+          }
+          lines.lineTo(endX, endY);
           const arrow = 5 / zoom;
           const angle = Math.atan2(dy, dx);
           lines.moveTo(endX - Math.cos(angle - .45) * arrow, endY - Math.sin(angle - .45) * arrow)
             .lineTo(endX, endY).lineTo(endX - Math.cos(angle + .45) * arrow, endY - Math.sin(angle + .45) * arrow);
         }
-        lines.stroke({ width: (active ? 1.5 : 1) / zoom, color: active ? 0x57606a : 0xb8bec6, alpha: active ? .8 : .45 });
+        lines.stroke({ width: (active ? 1.5 : 1) / zoom,
+          color: kind === 'personal' ? colors.get('personal') || '#b13d65' : active ? 0x57606a : 0xb8bec6, alpha: active ? .8 : .45 });
       }
       const occupied: { x: number; y: number; width: number; height: number }[] = [];
       const rank = (key: string) => key === selected ? 4 : key === hovered ? 3 : matches.has(key) ? 2 : neighbors?.has(key) ? 1 : 0;

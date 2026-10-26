@@ -138,7 +138,7 @@ export async function hoverGraphNode(page, key, modifiers = 0) {
     return { x: rect.x + world.x + dot.x * world.scale.x, y: rect.y + world.y + dot.y * world.scale.y };
   }, key);
   await page.cdp('Input.dispatchMouseEvent', { type: 'mouseMoved', ...point, buttons: 0, modifiers });
-  await page.waitForFunction(() => window.qa08Graph.app.stage.children[0].children[1].children.some((dot) => dot.children[1].visible));
+  await page.waitForFunction(() => window.qa08Graph.app.stage.children[0].children[1].children.some((dot) => dot.alpha < 1));
   return point;
 }
 

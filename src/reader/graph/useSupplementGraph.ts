@@ -6,7 +6,7 @@ import type { GraphNode, GraphEdge } from './project-graph.ts';
 
 type LayoutNode = SimulationNodeDatum & GraphNode;
 type LayoutEdge = SimulationLinkDatum<LayoutNode> & Pick<GraphEdge, 'kind'>;
-type Sprite = { node: LayoutNode; dot: Container; circle: Graphics; ring: Graphics; label: Text };
+type Sprite = { node: LayoutNode; dot: Container; circle: Graphics; label: Text };
 type Point = { x: number; y: number };
 export type GraphPreviewAnchor = Point & { key: string; radius: number };
 const minZoom = .1;
@@ -75,10 +75,9 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
     const next = sprites.current;
     let topology = '';
     let initialFocus: string | null = null;
-    function colorSprite({ node, circle, ring }: Sprite) {
+    function colorSprite({ node, circle }: Sprite) {
       const color = colors.get(node.type) || '#0066cc';
       circle.clear().circle(0, 0, radius).fill(color);
-      ring.clear().circle(0, 0, radius + 4).stroke({ width: 1.5, color });
     }
     function update() {
       const state = current.current;
@@ -129,13 +128,13 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       }
       for (const node of layout) {
         if (next.has(node.key)) continue;
-        const dot = new Container(), circle = new Graphics(), ring = new Graphics();
-        dot.addChild(circle, ring);
+        const dot = new Container(), circle = new Graphics();
+        dot.addChild(circle);
         const label = new Text({ text: node.title, style: { fontFamily: 'system-ui, sans-serif', fontSize: 12,
           lineHeight: 17, fill: 0x1d1d1f, wordWrap: true, wordWrapWidth: 210, breakWords: true },
           resolution: Math.max(2, window.devicePixelRatio || 1) });
         label.anchor.set(.5, 0);
-        const sprite = { node, dot, circle, ring, label };
+        const sprite = { node, dot, circle, label };
         colorSprite(sprite); dots.addChild(dot); labels.addChild(label); next.set(node.key, sprite);
       }
       // Retained nodes keep their velocity and drag pins. Clear links before
@@ -205,19 +204,18 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       const occupied: { x: number; y: number; width: number; height: number }[] = [];
       const rank = (key: string) => key === hovered ? 5 : key === selected ? 4 : matches.has(key) ? 2 : neighbors?.has(key) ? 1 : 0;
       const ordered = [...next.values()].sort((a, b) => rank(b.node.key) - rank(a.node.key));
-      for (const { node, dot, ring, label } of ordered) {
+      for (const { node, dot, label } of ordered) {
         const active = node.key === selected || node.key === hovered;
+        const emphasized = active || !!neighbors?.has(node.key);
         const matched = matches.has(node.key);
         const clear = !focused || node.key === focused || neighbors?.has(node.key) || matched;
         dot.alpha = label.alpha = clear ? 1 : .15;
-        ring.visible = active;
-        if (active) ring.scale.set((radius + 4 / zoom) / (radius + 4));
         dot.position.set(node.x!, node.y!);
         const x = node.x! * zoom + container!.x, y = node.y! * zoom + container!.y + radius * zoom + 5;
         const within = x > -220 && x < renderer!.screen.width + 220 && y > -100 && y < renderer!.screen.height;
-        label.visible = within && (active || matched || zoom >= .8);
+        label.visible = within && (emphasized || matched || zoom >= .8);
         if (!label.visible) continue;
-        label.text = active || matched ? node.title : node.title.length > 18 ? `${node.title.slice(0, 18)}…` : node.title;
+        label.text = emphasized || matched ? node.title : node.title.length > 18 ? `${node.title.slice(0, 18)}…` : node.title;
         label.scale.set(1 / zoom);
         const above = node.key === previewKey;
         label.anchor.set(.5, above ? 1 : 0);
@@ -231,7 +229,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
           const shift = Math.max(...occupied.map((box) => box.y + box.height)) + 6 - bounds.y;
           bounds.y += shift; label.y += shift / zoom;
         }
-        if (!active && overlaps()) label.visible = false;
+        if (!emphasized && overlaps()) label.visible = false;
         else occupied.push(bounds);
       }
       renderer!.render();

@@ -56,9 +56,9 @@ export async function incrementalGraphState(page) {
       links: p.force.force('link').links().map(({ source, target, kind }) => ({ source: source.key, target: target.key, kind })),
       camera: { x: (app.screen.width / 2 - world.x) / world.scale.x,
         y: (app.screen.height / 2 - world.y) / world.scale.x, zoom: world.scale.x },
-      nodes: [...p.sprites].map(([key, { node, dot, circle, ring, label }]) => ({ key, title: node.title, type: node.type,
+      nodes: [...p.sprites].map(([key, { node, dot, circle, label }]) => ({ key, title: node.title, type: node.type,
         x: node.x, y: node.y, vx: node.vx, vy: node.vy, fx: node.fx ?? null, fy: node.fy ?? null,
-        nodeId: identity(node), dotId: identity(dot), ringId: identity(ring), labelId: identity(label),
+        nodeId: identity(node), dotId: identity(dot), circleId: identity(circle), labelId: identity(label),
         label: label.text, anchor: label.anchor.y, alpha: dot.alpha, labelVisible: label.visible,
         fill: circle.context.instructions.find((instruction) => instruction.action === 'fill')?.data.style.color,
         screen: { x: rect.x + world.x + node.x * world.scale.x, y: rect.y + world.y + node.y * world.scale.x } })),
@@ -77,7 +77,7 @@ export function assertRetainedGraph(before, after) {
   for (const node of after.nodes) {
     const old = previous.get(node.key);
     if (!old) continue;
-    for (const field of ['nodeId', 'dotId', 'ringId', 'labelId', 'fx', 'fy']) assert.equal(node[field], old[field], `${node.key}: ${field}`);
+    for (const field of ['nodeId', 'dotId', 'circleId', 'labelId', 'fx', 'fy']) assert.equal(node[field], old[field], `${node.key}: ${field}`);
   }
   assert.equal(after.objects.dots, after.nodes.length);
   assert.equal(after.objects.labels, after.nodes.length);
@@ -95,7 +95,7 @@ export function assertStableGraph(before, after, { moving = false } = {}) {
   const previous = new Map(before.nodes.map((node) => [node.key, node]));
   for (const node of after.nodes) {
     const old = previous.get(node.key); assert.ok(old);
-    for (const field of ['nodeId', 'dotId', 'ringId', 'labelId', 'fx', 'fy']) assert.equal(node[field], old[field], `${node.key}: ${field}`);
+    for (const field of ['nodeId', 'dotId', 'circleId', 'labelId', 'fx', 'fy']) assert.equal(node[field], old[field], `${node.key}: ${field}`);
     if (!moving) for (const field of ['x', 'y', 'vx', 'vy']) assert.equal(node[field], old[field], `${node.key}: ${field}`);
   }
   if (moving && before.target === 0) assert.ok(after.alpha <= before.alpha, 'An active layout continues cooling');
@@ -130,7 +130,7 @@ export async function checkGraphHoverDwell(page, { key }) {
     for (const type of ['pointermove', 'pointerleave']) app.canvas.addEventListener(type, trace.listener, true);
     app.render = function (...args) {
       const result = trace.original.apply(this, args);
-      trace.frames.push({ time: performance.now(), focused: p.sprites.get(key).ring.visible });
+      trace.frames.push({ time: performance.now(), focused: p.sprites.get(key).dot.alpha === 1 && [...p.sprites.values()].some((sprite) => sprite.dot.alpha < 1) });
       return result;
     };
   }, key);

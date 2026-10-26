@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-26",
+  "baselineCommit": "435f34a",
+  "scope": "加快进入节点图，保留节点语义、阅读位置、悬停和手势。",
+  "cause": "首次显示前在主线程同步执行120次force布局迭代，占约0.9–1.3秒。",
+  "change": "首帧前运行4次布局迭代，其余由已有模拟逐帧收敛。初次选中节点保持居中；用户操作、取消选择、隐藏或布局结束后停止初始跟随。",
+  "measurement": {
+    "environment": "同一Ego Chromium开发浏览器，970节点/442默认边，各3次，未限速",
+    "metric": "从创建Pixi Application到第一次renderer.render完成；不包含之前的页面网络加载，也不是整个图完全收敛时间",
+    "beforeMs": [
+      1429.1000003814697,
+      1988.1000003814697,
+      1920.6999998092651
+    ],
+    "afterMs": [
+      896.5,
+      763.9000000953674,
+      762
+    ],
+    "beforeMedianMs": 1920.6999998092651,
+    "afterMedianMs": 763.9000000953674,
+    "medianReductionPercent": 60.2,
+    "initialSynchronousLayoutBeforeMs": [
+      896.1999998092651,
+      1283.4000000953674,
+      1202.2999997138977
+    ],
+    "initialSynchronousLayoutAfterMs": [
+      119.5,
+      68.30000019073486,
+      81.19999980926514
+    ]
+  },
+  "verification": [
+    "37项测试、类型检查、生产构建通过，无过大分包警告",
+    "初次选中节点逐帧居中，手动平移后相机不再跟随",
+    "隐藏时tick/render不增长，重开继续收敛，冷却后停止活动",
+    "关闭解读后的旧节点跟随问题先复现，再修复并回归",
+    "生产版970节点、Ctrl预览、截图、资源加载及异常检查通过，未暴露QA探针"
+  ],
+  "regression": "scripts/check-graph-startup.mjs：独立服务器startGraphStartupServer、measureGraphStartup、checkStartupSelectionRelease",
+  "evidenceDirectory": ".git/graph-startup-performance/",
+  "limits": [
+    "改进的是可见首帧和初始主线程阻塞；总布局工作仍需完成。",
+    "测试机器/浏览器条件下的对照，不保证其他设备的具体耗时或帧率。"
+  ],
+  "sourceSha256": "f9adaa67ef3770b08718409394af3107dc7269b71e32558c4a38f8637f240a3a"
+}

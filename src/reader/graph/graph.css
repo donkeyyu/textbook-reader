@@ -1,0 +1,45 @@
+.reading-layout.graph-open { position: relative; }
+.graph-open > .paper-scroller { grid-column: 1; grid-row: 1; visibility: hidden; pointer-events: none; }
+.graph-open > .supplement-graph { grid-column: 1; grid-row: 1; z-index: 1; }
+.supplement-graph { position: relative; min-width: 0; min-height: 0; display: flex; flex-direction: column; background: var(--surface); }
+.supplement-graph[hidden] { display: none; }
+.graph-toolbar { flex: none; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 20px; border-bottom: 1px solid var(--separator); }
+.graph-search { display: flex; align-items: center; gap: 12px; min-width: 0; font-size: 14px; white-space: nowrap; }
+.graph-search input { width: min(30vw, 300px); min-width: 120px; padding: 9px 12px; border: 1px solid #d2d2d7; border-radius: 8px; font: inherit; background: var(--surface); color: #1d1d1f; caret-color: var(--accent); }
+.graph-search input::placeholder { color: var(--secondary); }
+.graph-search input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.graph-toolbar > button { white-space: nowrap; }
+.graph-viewport { position: relative; flex: 1; min-height: 120px; overflow: hidden; touch-action: none; }
+.graph-viewport:focus-visible { outline-offset: -3px; }
+.graph-viewport canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+.graph-error { position: absolute; inset: 30% 20px auto; text-align: center; font-size: 14px; }
+.graph-results { position: absolute; z-index: 2; top: 70px; left: 20px; right: 20px; max-height: min(45%, 360px); overflow: auto; padding: 4px 12px 12px; border: 1px solid var(--separator); border-radius: 10px; background: var(--surface); box-shadow: 0 8px 24px #00000018; scrollbar-width: thin; scrollbar-color: #c9c9ce transparent; }
+.graph-results > p { color: var(--secondary); font-size: 13px; }
+.graph-results ul { list-style: none; margin: 0; padding: 0; }
+.graph-results button { display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px 8px; border-radius: 6px; background: transparent; color: #1d1d1f; text-align: left; }
+.graph-results button:hover, .graph-results [aria-current="true"] { background: var(--hover); }
+.graph-results svg { color: var(--type-color); flex: none; }
+.graph-results strong { font-size: 14px; font-weight: 500; }
+.graph-results small { display: block; margin-top: 4px; font-size: 12px; color: var(--secondary); line-height: 1.5; }
+.graph-footer { flex: none; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 16px; border-top: 1px solid var(--separator); color: var(--secondary); font-size: 12px; font-variant-numeric: tabular-nums; }
+.graph-zoom { display: flex; align-items: center; gap: 4px; }
+.graph-zoom button { min-width: 40px; min-height: 40px; padding: 0 8px; border-radius: 6px; color: var(--accent); background: transparent; font-size: 14px; }
+.graph-zoom button:hover { background: var(--hover); }
+.graph-zoom output { min-width: 44px; text-align: center; }
+.graph-legend { flex: none; display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 0; padding: 4px 20px 12px; list-style: none; color: var(--secondary); font-size: 12px; }
+.graph-legend li { display: flex; align-items: center; gap: 4px; }
+.graph-legend svg { width: 16px; height: 16px; color: var(--type-color); }
+.graph-related .text-button { display: flex; text-align: left; }
+.graph-related .graph-relation-label { font-size: 13px; color: var(--secondary); margin-bottom: 0; }
+@media (max-width: 760px) {
+  .graph-toolbar { padding: 8px 12px; gap: 8px; }
+  .graph-search { gap: 6px; font-size: 12px; }
+  .graph-search input { width: 100%; min-width: 0; }
+  .graph-toolbar > button { font-size: 12px; }
+  .graph-results { top: 60px; left: 12px; right: 12px; }
+  .graph-legend { padding-inline: 12px; gap: 6px 12px; }
+}
+@media (max-width: 600px) {
+  .toolbar:has(#open-supplement-graph) .toolbar-actions { gap: 4px; }
+  .toolbar-actions:has(#open-supplement-graph) > .text-button { padding-inline: 4px; font-size: 12px; }
+}

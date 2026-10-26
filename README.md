@@ -49,6 +49,8 @@ npm run preview   # 预览构建结果
 
 ## Supabase 与个人内容
 
+工具栏“节点图”可查看当前教材的全部默认解读和已保存个人节点，支持搜索、平移、缩放和拖动。选择节点只切换解读，点击“定位”才返回教材；图视野在本次会话中保留。默认关联保留查看理由；目标只有教材原文时继续跳转原文。自动分屏与笔记链接由后续任务接入。
+
 默认解读无需登录。点击工具栏“登录”，用邮箱接收登录链接；登录后，笔记和个人补充保存到该账号，在其他设备登录同一邮箱可读取。MCP 登录仅供开发工具使用，不会代替读者登录。当前项目地址和公开客户端密钥在 `src/reader/supabase.ts`；可用 `VITE_SUPABASE_URL`、`VITE_SUPABASE_PUBLISHABLE_KEY` 覆盖，浏览器不得使用 service-role 密钥。
 
 本地开发模式另有“测试账号登录”：打开“登录”浮层后切换，输入专用测试账号的邮箱与密码。它使用同一 Supabase Auth 和个人数据权限，不依赖邮件发送；生产构建不显示该入口。测试账号由管理员单独提供，凭据不纳入 Git。02 本轮按 DonQ 的后续决定使用此入口验收，SMTP 与真实邮件送达留待正式开放前配置。
@@ -78,6 +80,7 @@ node --experimental-strip-types scripts/check-cloud-content.mjs
 | 多层返回、退出、失败和取消 | 同模块的 `checkReviewChain`、`checkReviewExit`、`checkReviewFailures`、`checkRelatedReturn` |
 | 方法开合、续读与完整路径 | 同模块的 `checkOnDemandMethod`、`checkMethodReturnChain`、`checkReaderJourney` |
 | 滚走后定位并保留上下文 | 同模块的 `checkLocate`、`checkLocateGroup`、`checkLocateReturn` |
+| 图搜索、键盘选择及连续拖动截图 | [check-supplement-graph.mjs](scripts/check-supplement-graph.mjs)：`graphState`、`searchGraph`、`checkGraphSelection`、`captureGraphDrag`；先从工具栏打开节点图。`startGraphProbe`／`graphEmphasis`／`stopGraphProbe` 仅在专属测试浏览器检查 Pixi 明暗层级；`checkRepeatedGraphOriginal` 检查重复原文定位、失败重试和返回层级 |
 | 云端笔记与个人补充的异步保存 | [check-async-save.mjs](scripts/check-async-save.mjs)：`startAsyncSaveServer(port)`、`assertUnusedAsyncOrigin(page, { testOrigin })`，再运行 `checkAsyncNoteSave`、`checkAsyncPersonalSave` |
 | 首次导入、真实旧版页面后到保存与重开 | [check-content-migration.mjs](scripts/check-content-migration.mjs)：`startContentMigrationServer`、`checkContentMigration(task, { testOrigin, credentials })`；须提供修改存储前冻结的实际旧版构建 |
 | 云端修订冲突、网络失败与浏览器存储故障 | [check-content-migration-extra.mjs](scripts/check-content-migration-extra.mjs)：`checkContentMigrationExtras(task, result)`，使用上项返回的 QA 结果 |

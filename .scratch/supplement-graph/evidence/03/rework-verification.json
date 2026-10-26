@@ -1,0 +1,529 @@
+{
+  "date": "2026-10-26",
+  "ticket": "03-graph-exploration",
+  "phase": "Root review rework and DonQ neighborhood emphasis requirement",
+  "scope": "Implementer verification; final review and commit belong to root",
+  "priorEvidence": {
+    "file": "verification.json",
+    "sha256": "bb1c6190f5c85ada42783ea0506f0fc0c7267c484769f57bb26e97d9633b4968",
+    "note": "Preserved as the earlier pass; current behavior and screenshots are recorded separately below."
+  },
+  "sourceSha256": {
+    "src/reader/Reader.tsx": "adbff382f2741d1715807058a27186bc2321de3533e260ff7a9e5d35ff4bfec8",
+    "src/reader/Supplement.tsx": "70cd53ec2b9c6360e80ae5a0bfdf653f311e59de4ecf5f9745bc2ad3553cd0dd",
+    "src/reader/graph/project-graph.ts": "4fb8ca350bb9f7225943b6658bf1b1111bc02d6b8404b0493496934eb367ed3c",
+    "src/reader/graph/SupplementGraph.tsx": "599dc7367214075ac8d0bb276e1c4ceea47e3fe5d9a9a02ba8000b16ff8a0e5f",
+    "src/reader/graph/useSupplementGraph.ts": "54ddfb2fa89bc6e30d391840372a0237f6c405dd6eb2b47d10186c0aa9a43024",
+    "src/reader/graph/graph.css": "d13b7e07cb4ef4e4cc5a792b31ebacebe7e7173653924999d70f5505a1a08feb",
+    "scripts/check-supplement-graph.mjs": "667572eb55add28daef14003e04b98558c024998f56ad19cafd29133daddad6c",
+    "package.json": "15090a0caa29197608523021091eb9d38bf7567f15562db9e8fa7ff594d37f92",
+    "package-lock.json": "c1363040e0831e4a840076b8ec15bcfab05dbf0e751d6f040c6c73372de40d9b",
+    "README.md": "f2da2c4dfd526db7d409fcfd3e2e40f9083d26aac6c3079e008c9d07c9d053ef",
+    "DESIGN.md": "e3f7d16d3cb9b782225f599e1bf5c1b481e02f529a420e9bf726ed9dcf8ef2c7",
+    ".scratch/supplement-graph/issues/03-graph-exploration.md": "3641a9a3c943d998b38ce867d7652decedeae7af79b06243f38f87272edd0052"
+  },
+  "reference": {
+    "hook": "/Users/chengqiyu/dev/family-tree/frontend/src/hooks/usePixiGraph.ts",
+    "hookSha256": "de01c91df45fea0422ce2cba3e88b93e8592e65ab71a2bceaffa616d2f789a7f",
+    "layout": "/Users/chengqiyu/dev/family-tree/frontend/src/utils/graphData.ts",
+    "layoutSha256": "cd9e5a885d44ea77eaf99a84d79406d6b0a83fc07de336ae6ed6e5c9b91675eb",
+    "referenceWorkingTreeWasDirty": true
+  },
+  "rootAuthoredRequirementSha256": {
+    "docs/SPEC.md": "a6c6e6041c03137ce074463a1c1252929ca942e08c5def619b865bb71a81346d",
+    ".scratch/supplement-graph/spec.md": "cec657f5a6688b6688edfda05a7562fc78185b2339a0ba4f5c13d5973d855d08"
+  },
+  "environment": {
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+    "viewport": {
+      "width": 1772,
+      "height": 909,
+      "devicePixelRatio": 2
+    },
+    "graphNodes": 970,
+    "temporaryProbePresent": false,
+    "cpu": "Intel Core i9-9880H @ 2.30GHz",
+    "screenshotPng": {
+      "width": 1772,
+      "height": 909,
+      "raw": true
+    },
+    "browserSpace": 19,
+    "page": "p1",
+    "origin": "http://127.0.0.1:4313"
+  },
+  "counts": {
+    "defaultNodes": 970,
+    "defaultEdges": 442,
+    "syntheticPersonalNodesDuringChecks": 2,
+    "totalDuringChecks": 972,
+    "totalAfterCleanup": 970
+  },
+  "redBaseline": {
+    "selection": {
+      "bookVisible": false,
+      "regionVisible": false,
+      "graphCoversBook": true
+    },
+    "legacyMapping": false,
+    "repeatedOriginalLocateLeftGraphVisible": true,
+    "directoryToggleLeftGraphVisible": true,
+    "hiddenRenders": 2,
+    "d3Hits": 0
+  },
+  "repairs": {
+    "legacyMetadata": {
+      "mapped": true,
+      "editorMapping": {
+        "chapter": "chapter-2",
+        "section": "2.1"
+      },
+      "persisted": {
+        "chapter": "chapter-2",
+        "section": "2.1",
+        "renamed": true
+      }
+    },
+    "repeatOriginal": {
+      "chain": {
+        "source": {
+          "id": "ch1-q-recall-1",
+          "title": "回顾与思考第1题",
+          "page": 28
+        },
+        "middle": {
+          "id": "ch1-why-negative",
+          "title": "章引言（1）：零上与零下温度",
+          "locationId": "ch1-why-negative"
+        },
+        "original": {
+          "id": "ch1-source-positive-negative",
+          "page": 9
+        }
+      },
+      "repeatRevealsOriginal": true,
+      "repositionsAfterScroll": true,
+      "failureRetry": true,
+      "preservesTwoReturnLevels": true,
+      "noDuplicateReturnLayer": true,
+      "validReturnFocus": true
+    },
+    "toolbar": {
+      "navigationDiscardDialog": true,
+      "navigationCanceledKeepsGraphAndDraft": true,
+      "addDiscardDialog": true,
+      "addCanceledKeepsGraphAndDraft": true,
+      "directory": {
+        "graphHidden": true,
+        "sidebarVisible": true,
+        "ariaExpanded": "true",
+        "paperUsable": true
+      },
+      "add": {
+        "graphHidden": true,
+        "paperUsable": true,
+        "regionFocused": true
+      }
+    },
+    "boxedSave": {
+      "page": 32,
+      "hasRegion": true,
+      "chapter": "chapter-2",
+      "section": "2.1",
+      "bookVisible": true,
+      "selectorWasFocused": true
+    },
+    "hiddenLifecycle": {
+      "alphaBefore": 0.16,
+      "hidden": {
+        "renders": 0,
+        "ticks": 0,
+        "alpha": 0.16
+      },
+      "reopened": {
+        "ticks": 1,
+        "alpha": 0.15360000000000001,
+        "world": {
+          "x": 2433.8861022180704,
+          "y": 409.76658049262204,
+          "scale": 1.2
+        }
+      },
+      "viewportRetained": true,
+      "observationMs": 2000,
+      "method": "Browser-only Pixi Application.render wrapper and a temporary d3 tick listener obtained from the mounted hook ref. Listener, prototype wrapper and refs removed after observation; no application test hook."
+    }
+  },
+  "emphasis": {
+    "dense": {
+      "nodes": 972,
+      "direct": 23,
+      "clear": 23,
+      "dim": 949,
+      "wrong": 0,
+      "visibleLabels": 122,
+      "search": {
+        "matched": 0,
+        "visibleLabels": 0
+      },
+      "selected": {
+        "visible": true,
+        "text": "检验要回答两个不同问题",
+        "point": {
+          "x": 676,
+          "y": 480.5
+        }
+      },
+      "unrelated": {
+        "key": "[\"6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249\",\"default\",\"ch1-positive-negative\"]",
+        "title": "这里的“−”在说明一个数",
+        "point": {
+          "x": 436.3678422002348,
+          "y": 267.7379688349796
+        }
+      },
+      "world": {
+        "x": 319.03907598580247,
+        "y": -7.642637962821027,
+        "scale": 1.2
+      }
+    },
+    "isolated": {
+      "nodes": 972,
+      "direct": 1,
+      "clear": 1,
+      "dim": 971,
+      "wrong": 0,
+      "visibleLabels": 1,
+      "search": {
+        "matched": 0,
+        "visibleLabels": 0
+      },
+      "selected": {
+        "visible": true,
+        "text": "章引言（2）：盈利与亏损",
+        "point": {
+          "x": 693.3268249760647,
+          "y": 499.5975157430922
+        }
+      },
+      "unrelated": {
+        "key": "[\"6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249\",\"default\",\"ch1-why-negative\"]",
+        "title": "章引言（1）：零上与零下温度",
+        "point": {
+          "x": 580.1812204368664,
+          "y": 411.91506673559024
+        }
+      },
+      "world": {
+        "x": 835.2581238949745,
+        "y": -82.61942437814861,
+        "scale": 0.7680000000000002
+      }
+    },
+    "dimmedNavigation": {
+      "targetTitle": "写成分数，不会改变数的类别",
+      "clickedDimmedNode": true,
+      "titleMatches": true,
+      "selected": {
+        "visible": true,
+        "text": "写成分数，不会改变数的类别",
+        "point": {
+          "x": 641.9763671796713,
+          "y": 537.243829191236
+        }
+      },
+      "wrong": 0
+    },
+    "labels": {
+      "hoverTitle": "章引言（1）：零上与零下温度",
+      "hoverReadable": true,
+      "search": {
+        "matched": 1,
+        "visibleLabels": 1
+      },
+      "selectedWithSearch": {
+        "visible": true,
+        "text": "章引言（2）：盈利与亏损",
+        "point": {
+          "x": 866.7471530081716,
+          "y": 636.2700425314199
+        }
+      },
+      "noSelection": {
+        "clear": 972,
+        "dim": 0,
+        "wrong": 0,
+        "visibleLabels": 0
+      },
+      "zoom": "77%"
+    },
+    "meaning": "direct includes the selected node. Dense: selected plus 22 incoming/outgoing neighbors clear; 949 others dim. Isolated: selected alone clear."
+  },
+  "drag": [
+    {
+      "label": "dense-120",
+      "start": {
+        "x": 676,
+        "y": 480.5
+      },
+      "end": {
+        "x": 766,
+        "y": 545.5
+      },
+      "paths": [
+        "rework-dense-120-before.png",
+        "rework-dense-120-during.png",
+        "rework-dense-120-released.png",
+        "rework-dense-120-settled.png"
+      ],
+      "settling": {
+        "frames": 15,
+        "deadline": true,
+        "elapsedMs": 5001.900000095367
+      },
+      "state": {
+        "visible": true,
+        "nodes": 972,
+        "edges": 442,
+        "title": "检验要回答两个不同问题",
+        "paperScroll": 27912,
+        "methods": [],
+        "zoom": "120%",
+        "canvas": {
+          "x": 0,
+          "y": 141,
+          "width": 1352,
+          "height": 679
+        }
+      }
+    },
+    {
+      "label": "dense-188",
+      "start": {
+        "x": 676,
+        "y": 480.5
+      },
+      "end": {
+        "x": 766,
+        "y": 545.5
+      },
+      "paths": [
+        "rework-dense-188-before.png",
+        "rework-dense-188-during.png",
+        "rework-dense-188-released.png",
+        "rework-dense-188-settled.png"
+      ],
+      "settling": {
+        "frames": 12,
+        "deadline": true,
+        "elapsedMs": 5108.400000095367
+      },
+      "state": {
+        "visible": true,
+        "nodes": 972,
+        "edges": 442,
+        "title": "检验要回答两个不同问题",
+        "paperScroll": 27912,
+        "methods": [],
+        "zoom": "188%",
+        "canvas": {
+          "x": 0,
+          "y": 141,
+          "width": 1352,
+          "height": 679
+        }
+      }
+    },
+    {
+      "label": "isolated-188",
+      "start": {
+        "x": 676,
+        "y": 480.5
+      },
+      "end": {
+        "x": 766,
+        "y": 545.5
+      },
+      "paths": [
+        "rework-isolated-188-before.png",
+        "rework-isolated-188-during.png",
+        "rework-isolated-188-released.png",
+        "rework-isolated-188-settled.png"
+      ],
+      "settling": {
+        "frames": 13,
+        "deadline": true,
+        "elapsedMs": 5294.900000095367
+      },
+      "state": {
+        "visible": true,
+        "nodes": 972,
+        "edges": 442,
+        "title": "章引言（2）：盈利与亏损",
+        "paperScroll": 27912,
+        "methods": [
+          "false"
+        ],
+        "zoom": "188%",
+        "canvas": {
+          "x": 0,
+          "y": 141,
+          "width": 1352,
+          "height": 679
+        }
+      }
+    },
+    {
+      "label": "isolated-77",
+      "start": {
+        "x": 784.5401696825841,
+        "y": 565.1000614197939
+      },
+      "end": {
+        "x": 874.5401696825841,
+        "y": 630.1000614197939
+      },
+      "paths": [
+        "rework-isolated-77-before.png",
+        "rework-isolated-77-during.png",
+        "rework-isolated-77-released.png",
+        "rework-isolated-77-settled.png"
+      ],
+      "settling": {
+        "frames": 9,
+        "deadline": true,
+        "elapsedMs": 5000.5
+      },
+      "state": {
+        "visible": true,
+        "nodes": 972,
+        "edges": 442,
+        "title": "章引言（2）：盈利与亏损",
+        "paperScroll": 27912,
+        "methods": [
+          "false"
+        ],
+        "zoom": "77%",
+        "canvas": {
+          "x": 0,
+          "y": 141,
+          "width": 1352,
+          "height": 679
+        }
+      }
+    }
+  ],
+  "screenshots": [
+    "rework-dense-120-before.png",
+    "rework-dense-120-during.png",
+    "rework-dense-120-released.png",
+    "rework-dense-120-settled.png",
+    "rework-dense-188-before.png",
+    "rework-dense-188-during.png",
+    "rework-dense-188-released.png",
+    "rework-dense-188-settled.png",
+    "rework-isolated-188-before.png",
+    "rework-isolated-188-during.png",
+    "rework-isolated-188-released.png",
+    "rework-isolated-188-settled.png",
+    "rework-isolated-77-before.png",
+    "rework-isolated-77-during.png",
+    "rework-isolated-77-released.png",
+    "rework-isolated-77-settled.png",
+    "rework-low-hover.png",
+    "rework-low-search.png",
+    "rework-no-selection.png",
+    "rework-region-final.png"
+  ],
+  "screenshotSha256": {
+    "rework-dense-120-before.png": "42d772b2b5254b78302a46ef61ea19ef13f4e7cc1aebe23d04ceb6f7fb6b1b49",
+    "rework-dense-120-during.png": "4a3c38fa8989257524bce813843b4a78aa463b5ef611379b989440cf26f4d439",
+    "rework-dense-120-released.png": "bcdb515652accd93ffd14300ee8d164023c27ad0972b7a5583e90dc3eb2462fd",
+    "rework-dense-120-settled.png": "02cafb17b9769fce79638e0bf05b1b7ba30f9a51bdf75d999dd3116591bea447",
+    "rework-dense-188-before.png": "e65541ed6300e1bb46cfc22c0c7c3cd9939126af23cf2f8ac4fc00693b8def16",
+    "rework-dense-188-during.png": "992b77db0ce46a2ec88229600271f5ece1ce8f250031bd8efa04211a1ddcb8dc",
+    "rework-dense-188-released.png": "ad03b0fba3355532def71394d8599747329a942d56644e6903cd518b36276c2f",
+    "rework-dense-188-settled.png": "4973be130912533aaa587bc44873aef6c52ac462a8fac7da557245fb3a38ad2e",
+    "rework-isolated-188-before.png": "548b66fd7860cd8f6f48655234a1c2be3334d4ca3d797e64f00edd8a7ced7e61",
+    "rework-isolated-188-during.png": "b7ac48da701469e6d99f6cd62ecedfd43269afadcebed260e099d3b242236a5c",
+    "rework-isolated-188-released.png": "4a5a46128fae6f922c3a9a6f770017c809ca8e27216fa25b08558cbaff2c9120",
+    "rework-isolated-188-settled.png": "d510987e97c9e5ab83490cd2b279ffa48e01b56a0354b3af5962513e92eb1f98",
+    "rework-isolated-77-before.png": "0d53929e96b0b9c9e3e06be63f28e77055d75df099c74ae37d59f08df9fb28e8",
+    "rework-isolated-77-during.png": "fbbe6521ee2541816f214064c1c675de1d862e0c21eba5104a6ff0bd441bc77e",
+    "rework-isolated-77-released.png": "774d19839899729dcb7fe7cd03fbc16e40ba9e8d18ecde89fb5243b810881ebd",
+    "rework-isolated-77-settled.png": "3cf95138cd411638060f878c8619f1c00cbbd7e7da17e0cfdc37036e157aa0a4",
+    "rework-low-hover.png": "ca75de9b769c6e3ef820405ecba053e3565e4bfc55cbfb3e5992e0d6b715c9ff",
+    "rework-low-search.png": "4dfe97b1f167d8c0df892ae92fe168eff5251567ee93a6f3eb9c372962f25db5",
+    "rework-no-selection.png": "910f7988ba11a4f741a72a9e61cd0edf395cc2b06be34719154654d311f329a7",
+    "rework-region-final.png": "b9d9cd977958c6ff36574d45e06cce75d54177cecfdbffd3e6ab4f90fa3735a3"
+  },
+  "visualInspection": [
+    "Dense 120% and 188%: selected label and direct neighborhood stay clear; unrelated nodes and labels are dim; node follows pointer, edges and nearby positions update, release does not reset camera.",
+    "Isolated 188% and 77%: selected label stays readable and node follows pointer; low-zoom drag uses actual selected-node coordinates, not assumed canvas center.",
+    "At 77%, ordinary labels are hidden; selected, hovered and a search-matched label are readable. Closing explanation restores ordinary emphasis for all nodes.",
+    "Toolbar Add returns to usable textbook with focused region selector; directory visibility agrees with its aria-expanded state."
+  ],
+  "verification": {
+    "tests": "npm test: 23 passed",
+    "typecheck": "npm run build -> tsc --noEmit: passed",
+    "build": "npm run build: passed",
+    "browserScriptSyntax": "node --check scripts/check-supplement-graph.mjs: passed",
+    "diffWhitespace": "git diff --check: passed",
+    "design": "Prior mechanical scan [] retained in prior evidence; current visual confirmation targets the requested rework."
+  },
+  "cleanup": {
+    "deletedViaUi": 2,
+    "remaining": {
+      "supplements": 0,
+      "notes": 0
+    },
+    "signedOut": true,
+    "graphNodes": 970,
+    "browserProbeRemoved": true,
+    "fixtureAccountDeletion": "root",
+    "rootAuthFixture": {
+      "deleted": true,
+      "remainingSessions": 0,
+      "remainingPrivateRows": 0,
+      "credentialFileRemoved": true
+    }
+  },
+  "limits": [
+    "Timed frame samples reach the 5-second deadline; they do not establish 60 FPS or performance on larger graphs.",
+    "Current screenshot pass uses a desktop viewport. Earlier mobile layout checks remain in prior evidence; no physical-device or learning-effect claim.",
+    "Large main bundle warning remains: 3207.88 kB, gzip 901.36 kB.",
+    "Root must revoke/delete the dedicated Auth fixture and private credential file."
+  ],
+  "toolingNotes": [
+    "Default screenshot DPR correction could alter the owned viewport after a protocol timeout. Final captures use raw:true at the recorded viewport. A stale black WebGL capture was discarded after triggering a fresh normal UI paint.",
+    "The first low-zoom capture hit blank canvas and panned. That sequence was excluded. The helper now reads the actual node point from the optional browser-only Pixi probe after the before screenshot; corrected low-zoom screenshots were inspected.",
+    "The baseline d3 CPU sample had zero hits but was inconclusive. Only the later direct tick/render observation supports the hidden-lifecycle result."
+  ],
+  "coordinatorReview": {
+    "date": "2026-10-26",
+    "standards": "Four review groups fixed; narrow re-review found no remaining actionable issue",
+    "spec": "Legacy mapped metadata, repeated original locate, toolbar transitions and visibility lifecycle passed re-review",
+    "screenshotsInspected": [
+      "rework-dense-120-before.png",
+      "rework-dense-120-during.png",
+      "rework-dense-120-settled.png",
+      "rework-low-hover.png",
+      "rework-low-search.png",
+      "rework-no-selection.png"
+    ],
+    "performanceLimit": "Screenshot/timed rAF samples do not establish interaction frame rate or 60FPS",
+    "validation": {
+      "isolatedCandidateExcludes05": true,
+      "npmTest": {
+        "passed": 23,
+        "failed": 0
+      },
+      "typecheck": "passed",
+      "build": "passed; existing large chunk warning",
+      "scriptSyntax": "passed",
+      "stagedDiffCheck": "passed"
+    },
+    "status": "accepted for commit"
+  }
+}

@@ -26,9 +26,10 @@ export function SupplementPreview({ note, anchor, onKeep, onLeave }: {
   </div>;
 }
 
-export function SupplementPanel({ notes, expandedId, pending, onSelect, onClose, onRelated, onBack, onLocate, activeLocationId, renderPersonal, onHide, methodOpenIds, onMethodToggle }: {
+export function SupplementPanel({ notes, expandedId, pending, onSelect, onClose, onRelated, onBack, onLocate, activeLocationId, renderPersonal, renderRelated, onHide, methodOpenIds, onMethodToggle }: {
   onHide: (id: string) => void;
   renderPersonal: (note: Supplement) => ReactNode;
+  renderRelated?: (note: Supplement) => ReactNode;
   methodOpenIds: string[];
   onMethodToggle: (id: string) => void;
   notes: Supplement[];
@@ -68,15 +69,16 @@ export function SupplementPanel({ notes, expandedId, pending, onSelect, onClose,
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </summary>
       <div id={`content-${note.id}`} className="supplement-accordion-content" role="region" aria-labelledby={`choice-${note.id}`}>
-        {expandedId === note.id && <SupplementContent note={note} pending={pending} onRelated={onRelated} activeLocationId={activeLocationId} personal={renderPersonal(note)} onHide={onHide} methodOpen={methodOpenIds.includes(note.id)} onMethodToggle={() => onMethodToggle(note.id)} />}
+        {expandedId === note.id && <SupplementContent note={note} pending={pending} onRelated={onRelated} activeLocationId={activeLocationId} personal={renderPersonal(note)} related={renderRelated?.(note)} onHide={onHide} methodOpen={methodOpenIds.includes(note.id)} onMethodToggle={() => onMethodToggle(note.id)} />}
       </div>
-    </details> : <SupplementContent key={note.id} note={note} pending={pending} onRelated={onRelated} activeLocationId={activeLocationId} personal={renderPersonal(note)} onHide={onHide} methodOpen={methodOpenIds.includes(note.id)} onMethodToggle={() => onMethodToggle(note.id)} />)}
+    </details> : <SupplementContent key={note.id} note={note} pending={pending} onRelated={onRelated} activeLocationId={activeLocationId} personal={renderPersonal(note)} related={renderRelated?.(note)} onHide={onHide} methodOpen={methodOpenIds.includes(note.id)} onMethodToggle={() => onMethodToggle(note.id)} />)}
   </aside>;
 }
 
-function SupplementContent({ note, pending, onRelated, activeLocationId, personal, onHide, methodOpen, onMethodToggle }: {
+function SupplementContent({ note, pending, onRelated, activeLocationId, personal, related, onHide, methodOpen, onMethodToggle }: {
   onHide: (id: string) => void;
   personal: ReactNode;
+  related?: ReactNode;
   methodOpen: boolean;
   onMethodToggle: () => void;
   note: Supplement;
@@ -112,7 +114,7 @@ function SupplementContent({ note, pending, onRelated, activeLocationId, persona
       </div>)}
       {note.paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
     </div>
-    {relatedLinks.length > 0 && <div className="supplement-related" aria-label="关联教材">
+    {related !== undefined ? related : relatedLinks.length > 0 && <div className="supplement-related" aria-label="关联教材">
       {note.questionGuide && <h3>相关知识</h3>}
       {relatedLinks.map((related) => {
         const location = getLocation(related.locationId);

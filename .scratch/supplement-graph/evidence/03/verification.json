@@ -1,0 +1,334 @@
+{
+  "date": "2026-10-26",
+  "ticket": "03-graph-exploration",
+  "baseCommit": "be720ef",
+  "scope": "Implementation/browser acceptance; final review and commit belong to root",
+  "sourceSha256": {
+    "src/reader/Reader.tsx": "a0cd3b042403499314e31bb144b31b3de5fdb582309061de4fef2e08172cc4df",
+    "src/reader/Supplement.tsx": "70cd53ec2b9c6360e80ae5a0bfdf653f311e59de4ecf5f9745bc2ad3553cd0dd",
+    "src/reader/graph/SupplementGraph.tsx": "ef97dd276df738e3e0725c7b8b948d10ce6f93ade9cae9465994b0e36cb22f08",
+    "src/reader/graph/project-graph.ts": "4fb8ca350bb9f7225943b6658bf1b1111bc02d6b8404b0493496934eb367ed3c",
+    "src/reader/graph/useSupplementGraph.ts": "4aeae3178df0ecdc107ff7f07fca0123580e18b290c9ec0176df4105232a5c4d",
+    "src/reader/graph/graph.css": "d13b7e07cb4ef4e4cc5a792b31ebacebe7e7173653924999d70f5505a1a08feb",
+    "scripts/check-supplement-graph.mjs": "4c162a4beaf7cc5ef15e3613e8b508344a503dcf5990281ee4f4a131e9a03e9b",
+    "package.json": "15090a0caa29197608523021091eb9d38bf7567f15562db9e8fa7ff594d37f92",
+    "package-lock.json": "c1363040e0831e4a840076b8ec15bcfab05dbf0e751d6f040c6c73372de40d9b",
+    "README.md": "1c3fd4e89bb5075e3e849a7c8d1140a5871cadfc7d9d42e63568ee3d8a78c4ad",
+    "DESIGN.md": "3ac83f4619a3e142dde491bd94d7b8ed5db36b4bae61d777348309c8b72649f1"
+  },
+  "reference": {
+    "hook": "/Users/chengqiyu/dev/family-tree/frontend/src/hooks/usePixiGraph.ts",
+    "hookSha256": "de01c91df45fea0422ce2cba3e88b93e8592e65ab71a2bceaffa616d2f789a7f",
+    "layout": "/Users/chengqiyu/dev/family-tree/frontend/src/utils/graphData.ts",
+    "layoutSha256": "cd9e5a885d44ea77eaf99a84d79406d6b0a83fc07de336ae6ed6e5c9b91675eb",
+    "referenceWorkingTreeWasDirty": true
+  },
+  "counts": {
+    "defaultNodes": 970,
+    "uniqueDefaultKeys": 970,
+    "defaultEdges": 442,
+    "defaultIsolated": 486,
+    "originalOnlyRelations": 933,
+    "syntheticPersonalNodes": 2,
+    "fullGraphDuringPrivateChecks": 972,
+    "duplicateTitleSearchResults": 33,
+    "distinctKeysForThoseResults": 33
+  },
+  "acceptance": {
+    "T1": [
+      "Tool bar overview without a selection",
+      "Open actual textbook supplement then graph; current node focused at readable scale",
+      "Real pointer drag, pan, wheel zoom, button zoom and keyboard pan"
+    ],
+    "T2": [
+      "Public content projection includes all 970 distinct keys",
+      "Two same-title synthetic private nodes retain IDs and chapters across reload",
+      "Hidden textbook marker absent while its graph node remains searchable; graph count unchanged"
+    ],
+    "T3": [
+      "Default edge selection changes explanation without moving textbook",
+      "Original-only jump highlights location-ch1-source-opposite-quantities on file page 10; failure retains graph/source, retry succeeds",
+      "Return restores source and an existing related-button focus ID",
+      "Browser-only response fixture adds one default supplement at ch5-two-checks target location; both same-location candidates remain selectable; extra target selected"
+    ],
+    "T13": [
+      "ArrowDown/Tab/Enter search selection focuses explanation heading",
+      "Escape closes default explanation and returns search focus; personal explanation closes through Tab/Enter",
+      "Methods reset closed after changing nodes",
+      "Literal HTML in synthetic personal Markdown neither creates an image nor executes handler",
+      "Failed autosave followed by canvas/search/related selection: dismissing real discard dialogs retains source and draft; pan/zoom and graph close/reopen retain the editor instance; retry persists draft"
+    ],
+    "T14": [
+      "Graph-origin private body edit persists without changing identity or canvas instance",
+      "Dense node at 120% and 188%, isolated node at 188% and 77%: sequential real pointer screenshots inspected",
+      "Pointer-follow and edges update; neighbors respond continuously; release converges without viewport reset; drag keeps selected explanation",
+      "Wheel and keyboard pan do not scroll textbook; close/reopen produces identical cropped canvas pixels"
+    ]
+  },
+  "readingPaths": {
+    "expanded": true,
+    "reset": true,
+    "failure": {
+      "visible": true,
+      "nodes": 972,
+      "edges": 442,
+      "title": "章引言（2）：盈利与亏损",
+      "paperScroll": 9360.5,
+      "methods": [
+        "false"
+      ],
+      "zoom": "120%",
+      "canvas": {
+        "x": 0,
+        "y": 141,
+        "width": 1352,
+        "height": 679
+      }
+    },
+    "jump": {
+      "page": "10/202",
+      "highlight": "location-ch1-source-opposite-quantities",
+      "title": "章引言（2）：盈利与亏损",
+      "graphHidden": true
+    },
+    "returned": {
+      "title": "章引言（2）：盈利与亏损",
+      "focus": "related-ch1-intro-profit-question-ch1-source-opposite-quantities"
+    }
+  },
+  "draft": {
+    "canvasKept": true,
+    "reopened": {
+      "sameEditor": true,
+      "dirty": true,
+      "draftKept": true
+    },
+    "retrySaved": true,
+    "noteCleaned": true,
+    "mailSent": 0
+  },
+  "privateCleanup": {
+    "keyboardClose": {
+      "panelClosed": true,
+      "focusSearch": true
+    },
+    "personalKeyboardClose": true,
+    "edit": {
+      "sameId": true,
+      "bodySaved": true,
+      "noFakeLocate": true,
+      "sameCanvas": true
+    },
+    "privateNodesRemoved": true,
+    "notesRemoved": true,
+    "signedOut": true,
+    "remainingGraphNodes": 970
+  },
+  "viewRetention": {
+    "wheelZoomChanged": true,
+    "paperScrollUnchanged": true,
+    "reopenSamePixels": true,
+    "beforeZoom": "120%",
+    "wheelZoom": "144%",
+    "afterPan": {
+      "visible": true,
+      "nodes": 970,
+      "edges": 442,
+      "title": "章引言（2）：盈利与亏损",
+      "paperScroll": 10072.5,
+      "methods": [
+        "false"
+      ],
+      "zoom": "144%",
+      "canvas": {
+        "x": 0,
+        "y": 141,
+        "width": 1352,
+        "height": 679
+      }
+    },
+    "reopened": {
+      "visible": true,
+      "nodes": 970,
+      "edges": 442,
+      "title": "章引言（2）：盈利与亏损",
+      "paperScroll": 10072.5,
+      "methods": [
+        "false"
+      ],
+      "zoom": "144%",
+      "canvas": {
+        "x": 0,
+        "y": 141,
+        "width": 1352,
+        "height": 679
+      }
+    }
+  },
+  "narrow": {
+    "viewport": [
+      390,
+      844
+    ],
+    "noOverflow": true,
+    "separateControls": true,
+    "titlePresent": true,
+    "graphHeight": 214
+  },
+  "multiTargetFixture": {
+    "transport": "Intercepted read-only reader_books response in an agent-owned page; no published data modified",
+    "additionalDefaultNodes": 1,
+    "graphNodesIncludingSyntheticPersonal": 973,
+    "edges": 462,
+    "selectedAdditionalTarget": true,
+    "candidateCountAcrossSourceRelations": 3
+  },
+  "layout": {
+    "linkDistance": 120,
+    "charge": -180,
+    "chargeMaxDistance": 380,
+    "collisionRadius": 24,
+    "collisionIterations": 2,
+    "velocityDecay": 0.45,
+    "alphaDecay": 0.04,
+    "dragAlphaTarget": 0.28,
+    "releaseAlphaTarget": 0,
+    "clickDragThresholdCssPx": 5,
+    "minZoom": 0.1,
+    "maxZoom": 3,
+    "focusMinZoom": 1.2,
+    "ordinaryLabelsMinZoom": 0.8,
+    "selectedAndHoveredLabelScreenSizePx": 12,
+    "initialLayoutTicks": 120,
+    "persistPositions": false
+  },
+  "device": {
+    "cpu": "Intel Core i9-9880H @ 2.30GHz",
+    "browser": "Ego Lite / Chromium 154.0.0.0 on macOS",
+    "browserHardwareConcurrency": 8,
+    "devicePixelRatio": 2,
+    "viewports": [
+      [
+        1772,
+        909
+      ],
+      [
+        1440,
+        900
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "phoneIsEmulation": true
+  },
+  "performance": {
+    "method": "Page Performance.getMetrics around two real drags and screenshot waits; not an isolated benchmark",
+    "strokeInstructionBatches": {
+      "previousPerFrame": 884,
+      "currentPerFrame": 2,
+      "edges": 442
+    },
+    "sampleElapsedMs": 18900.31804199994,
+    "scriptDurationSeconds": 4.297102,
+    "taskDurationSeconds": 4.83566,
+    "animationFrameSamples": [
+      {
+        "frames": 122,
+        "deadline": true,
+        "elapsedMs": 5001.900000095367
+      },
+      {
+        "frames": 123,
+        "deadline": true,
+        "elapsedMs": 5001.599999904633
+      },
+      {
+        "frames": 123,
+        "deadline": true,
+        "elapsedMs": 5002.300000190735
+      },
+      {
+        "frames": 121,
+        "deadline": true,
+        "elapsedMs": 5000.800000190735
+      }
+    ],
+    "interpretation": "About 24 callbacks/sec in this automation environment. Five-second capture deadline was reached before 140 callback target; no 60 FPS or larger-graph claim. Source hashes are frozen below. Earlier timed-out rAF sample is not a product result."
+  },
+  "screenshots": [
+    "final-dense-120-before.png",
+    "final-dense-120-during.png",
+    "final-dense-120-settled.png",
+    "final-dense-188-before.png",
+    "final-dense-188-during.png",
+    "final-dense-188-settled.png",
+    "final-isolated-188-before.png",
+    "final-isolated-188-during.png",
+    "final-isolated-188-settled.png",
+    "final-isolated-77-before.png",
+    "final-isolated-77-during.png",
+    "final-isolated-77-settled.png",
+    "final-mobile.png",
+    "final-desktop-1440.png",
+    "first-supplement-entry.png"
+  ],
+  "screenshotSha256": {
+    "final-dense-120-before.png": "5a48a0bdefa7d9584bd5b3f0fb92ffe9f130e26052d7fd5a041d893e8f67b482",
+    "final-dense-120-during.png": "d20bb0efd9ca807a4e404ffa37c7c2f7525d34ce9f98060abc1b95f1812c8640",
+    "final-dense-120-settled.png": "393a3315812f9fc84078c8ddfec04971b26c5a832d03f34f2ed83b11d0c9a115",
+    "final-dense-188-before.png": "32968047091a3d7c209a55caa7cedb7f3cd37f36f99f19d89b11ad0bbffad65f",
+    "final-dense-188-during.png": "bbbd821a2face0dba2907caf2c6495371694f21d4065b652bb2d07b08e6aaa12",
+    "final-dense-188-settled.png": "492adcbdc23f55818ddddedacb2baea9fde414ba6ac852e4f142fa1e1e724e10",
+    "final-isolated-188-before.png": "6570482fa0cc04bbfe79987a00e0f6e78f8684f2e6fdd292ba3a0c13e9411075",
+    "final-isolated-188-during.png": "ac403989f426edfa70d5a5efadef479b40839fc43a134e0d8a475f7152495352",
+    "final-isolated-188-settled.png": "f8cc07c64e27e234e248286b4823fc34304fee328c645c7a744bd90cb4fd45b0",
+    "final-isolated-77-before.png": "8a69d745e5dd418a3e5faa215f4ba406265e89642857800e54ce6e6332652679",
+    "final-isolated-77-during.png": "97e9744e939bdca354a2831445e90287f12bd8f601f640fe437d17a98e1cf921",
+    "final-isolated-77-settled.png": "0c4889aa0c2e2e3467d13071efd31e70a34c3fb47315814702875d3079dd9aaa",
+    "final-mobile.png": "29acb8d73495d38a8052396f65e63f4b314314a9f4a124a09fc070920ac1b47e",
+    "final-desktop-1440.png": "5ffc0e13a3fce55a5cf38b8e25efb98b149c4a2cf4778fca9aa0600591f58ae4",
+    "first-supplement-entry.png": "7a2eed0847a94e50cb8a8fc847f1a24f366b5e177f39a35446261dc4f841d114"
+  },
+  "captureScope": "Dense and isolated sequences use the final canvas hook. A later related-button ID correction affected original-text return focus only; that path was then rechecked. Final phone/desktop screenshots include that correction.",
+  "verification": {
+    "tests": "npm test: 23 passed",
+    "typecheck": "npm run build runs tsc --noEmit: passed",
+    "build": "npm run build: passed",
+    "browserScriptSyntax": "node --check scripts/check-supplement-graph.mjs: passed",
+    "diffWhitespace": "git diff --check: passed",
+    "designDetector": "impeccable detect --json on affected UI: []"
+  },
+  "limits": [
+    "Phone interaction is emulated; no physical-device or student-learning claim",
+    "Same-location multiple-target case used a browser response fixture; actual current default data has no such target",
+    "No stable wiki links, backlinks or automatic split reading implemented by 03",
+    "Existing large main bundle warning remains: 3206.72 kB raw, 900.96 kB gzip",
+    "QA Auth fixture is empty and signed out; root must revoke remaining fixture sessions and delete the dedicated account/credential file"
+  ],
+  "toolingNotes": [
+    "An early keyboard-close observation ran before scheduled heading focus. The helper now waits for the actual focused heading; default Escape and personal Tab/Enter close were rerun successfully.",
+    "Initial multi-target selector mismatch and direct RPC probe were corrected using observed targets and the existing public readPersonal helper; acceptance uses successful subsequent UI actions."
+  ],
+  "firstEntry": {
+    "firstGraphMountAfterReload": true,
+    "sourceTitle": "0要和它记录的量一起读",
+    "state": {
+      "visible": true,
+      "nodes": 970,
+      "edges": 442,
+      "title": "0要和它记录的量一起读",
+      "paperScroll": 10072,
+      "methods": [],
+      "zoom": "120%",
+      "canvas": {
+        "x": 0,
+        "y": 141,
+        "width": 1352,
+        "height": 679
+      }
+    },
+    "currentNodeCenterVisuallyVerified": true
+  }
+}

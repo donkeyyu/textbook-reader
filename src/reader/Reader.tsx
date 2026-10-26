@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { bookTitle, getPage, pageCount, pages, pageLabel, resolvePageInput } from "../textbook/catalog";
 import { getLocation } from "../textbook/supplements";
-import { bookId, supplementQueries } from '../textbook/content';
+import { bookId, nodeKey, supplementQueries } from '../textbook/content';
 import type { PersonalData, PersonalSupplement } from './personal';
 import { useBookContent } from './useBookContent';
 import { AccountControl } from './AccountControl';
@@ -17,6 +17,7 @@ import { readingPage, restoredScroll, type PageMetric } from "./session";
 import { groupMarkers } from "./marker-groups";
 import { loadReadingPosition, saveReadingPosition } from "./reading-record";
 import { SupplementPanel, SupplementPreview, type PreviewAnchor } from "./Supplement";
+import { SupplementGraph, GraphRelated } from './graph/SupplementGraph';
 
 type ReadingContext = {
   page: number;
@@ -28,7 +29,7 @@ type ReadingContext = {
   panelScroll: number;
   methodOpenIds: string[];
 };
-type Jump = { page: number; locationId?: string; source?: ReadingContext; restore?: ReadingContext };
+type Jump = { page: number; locationId?: string; source?: ReadingContext; restore?: ReadingContext; keepHistory?: boolean };
 type Commit = { page: number; fraction?: number; locationId?: string; focusId: string; panelScroll?: number };
 
 function measurePages(list: HTMLDivElement): PageMetric[] {
@@ -74,6 +75,8 @@ export function Reader() {
   const personalItemRef = useRef(personalItem);
   personalItemRef.current = personalItem;
   const [personalLibraryOpen, setPersonalLibraryOpen] = useState(false);
+  const [graphOpen, setGraphOpen] = useState(false);
+  const [graphMounted, setGraphMounted] = useState(false);
   const [newChapterId, setNewChapterId] = useState<string | null | undefined>(undefined);
   const chapters = content.published?.chapters ?? [];
   const sections = content.published?.sections ?? [];
@@ -118,6 +121,52 @@ export function Reader() {
   const retryJump = useRef<Jump>({ page: 1 });
   const toggleButton = useRef<HTMLButtonElement>(null);
   const previousAccount = useRef(content.user?.id);
+  const selectedGraphKey = personalItem
+    ? content.nodes.find((node) => node.source === 'personal' && node.id === personalItem.id)?.key ?? null
+    : supplementId ? nodeKey({ bookId, source: 'default', id: supplementId }) : null;
+
+  function allowGraphSelection() {
+    return !document.querySelector('[data-dirty="true"]') || window.confirm('有尚未保存的内容，放弃修改？');
+  }
+
+  function personalSelection(item: PersonalSupplement): PersonalSupplement {
+    const node = content.nodes.find((node) => node.source === 'personal' && node.id === item.id);
+    return { ...item, chapterId: item.chapterId === undefined ? node?.chapterId ?? null : item.chapterId,
+      sectionId: item.sectionId === undefined ? node?.sectionId ?? null : item.sectionId };
+  }
+
+  function selectGraphNode(key: string) {
+    const node = content.nodes.find((item) => item.key === key);
+    if (!node) return false;
+    if (key === selectedGraphKey && !personalLibraryOpen) {
+      requestAnimationFrame(() => document.getElementById('supplement-title')?.focus({ preventScroll: true }));
+      return true;
+    }
+    if (!allowGraphSelection()) return false;
+    cancelJump(); keepPreview(); clearPreview();
+    setPersonalLibraryOpen(false); setSelectionPage(null); setChoiceIds(null);
+    setMethodOpenIds([]); setSelectedLocation(null); setHistory([]);
+    setSupplementId(node.source === 'default' ? node.id : null);
+    // A fresh selection must not share an old delete request's object identity.
+    setPersonalItem(node.source === 'personal' ? personalSelection(node.personal) : null);
+    requestAnimationFrame(() => {
+      const panel = document.getElementById('supplement-panel');
+      if (panel) panel.scrollTop = 0;
+      document.getElementById('supplement-title')?.focus({ preventScroll: true });
+    });
+    return true;
+  }
+
+  function openGraph() {
+    cancelJump(); keepPreview(); clearPreview(); setSelectionPage(null);
+    setGraphMounted(true); setGraphOpen(true);
+    requestAnimationFrame(() => document.querySelector<HTMLInputElement>('.graph-search input')?.focus({ preventScroll: true }));
+  }
+
+  function closeGraph() {
+    setGraphOpen(false);
+    requestAnimationFrame(() => document.getElementById('open-supplement-graph')?.focus({ preventScroll: true }));
+  }
 
   useEffect(() => {
     if (previousAccount.current !== content.user?.id && !document.querySelector('[data-dirty="true"]')) {
@@ -386,10 +435,8 @@ export function Reader() {
   }
 
   function openPersonal(item: PersonalSupplement) {
-    const node = content.nodes.find((node) => node.source === 'personal' && node.id === item.id);
     closeSupplement(false); keepPreview(); clearPreview(); setSelectionPage(null);
-    setPersonalItem({ ...item, chapterId: item.chapterId === undefined ? node?.chapterId ?? null : item.chapterId,
-      sectionId: item.sectionId === undefined ? node?.sectionId ?? null : item.sectionId });
+    setPersonalItem(personalSelection(item));
     if (window.matchMedia('(max-width: 760px)').matches) setNavigationOpen(false);
     requestAnimationFrame(() => document.getElementById('supplement-title')?.focus({ preventScroll: true }));
   }
@@ -414,6 +461,7 @@ export function Reader() {
   }
 
   function locateSupplement() {
+    setGraphOpen(false);
     cancelJump(); keepPreview(); clearPreview();
     const panelScroll = document.getElementById("supplement-panel")?.scrollTop ?? 0;
     if (personalItem?.page !== null && personalItem?.region) {
@@ -436,6 +484,7 @@ export function Reader() {
     setHistory([]);
     if (!restoreFocus) return;
     requestAnimationFrame(() => {
+      if (graphOpen) { document.querySelector<HTMLInputElement>('.graph-search input')?.focus({ preventScroll: true }); return; }
       const marker = id ? document.querySelector(`[data-supplement-ids~="${id}"]`)?.getBoundingClientRect() : undefined;
       const viewport = scroller.current?.getBoundingClientRect();
       if (id && marker && viewport && marker.bottom > viewport.top && marker.top < viewport.bottom) focusMarker(id);
@@ -444,8 +493,11 @@ export function Reader() {
   }
 
   function relatedJump(locationId: string, focusId: string) {
-    if (locationId === selectedLocation) return;
     const location = getLocation(locationId);
+    if (locationId === selectedLocation) {
+      if (graphOpen) void navigate({ page: location.page, locationId, keepHistory: true });
+      return;
+    }
     const element = scroller.current;
     if (!element) return;
     const page = readingPage(metrics.current, element.scrollTop, element.clientHeight, element.scrollHeight);
@@ -471,10 +523,11 @@ export function Reader() {
       image.src = target.image;
       await image.decode();
       if (requestId.current !== id) return;
+      setGraphOpen(false);
       setPersonalItem(null); setPersonalLibraryOpen(false); setSelectionPage(null);
       setChoiceIds(jump.restore?.choiceIds ?? null);
       if (jump.source) setHistory((previous) => [...previous, jump.source!]);
-      else if (!jump.restore) setHistory([]);
+      else if (!jump.restore && !jump.keepHistory) setHistory([]);
       if (jump.restore) {
         setHistory((previous) => previous.slice(0, -1));
         setSupplementId(jump.restore.supplementId);
@@ -553,7 +606,7 @@ export function Reader() {
     }
   }} onClickCapture={(event) => {
     const target = event.target as HTMLElement;
-    if (target.closest('.markdown-editor, .personal-title, .personal-metadata, .method-toggle, .locate-button, .account-control, .legacy-copies')) return;
+    if (target.closest('.markdown-editor, .personal-title, .personal-metadata, .method-toggle, .locate-button, .account-control, .legacy-copies, .supplement-graph, .graph-related, #open-supplement-graph')) return;
     if (document.querySelector('[data-dirty="true"]') && target.closest('button, summary, input') && !window.confirm('有尚未保存的内容，放弃修改？')) {
       event.preventDefault(); event.stopPropagation();
     }
@@ -581,14 +634,20 @@ export function Reader() {
   }}>
     <header className="toolbar">
       <div className="book-heading">
-        <button ref={toggleButton} className="icon-button navigation-toggle" aria-label={navigationOpen ? "收起页面导航" : "展开页面导航"}
-          aria-expanded={navigationOpen} aria-controls="page-sidebar" onClick={() => { clearPreview(); setNavigationOpen(!navigationOpen); }}>
+        <button ref={toggleButton} className="icon-button navigation-toggle" aria-label={navigationOpen && !graphOpen ? "收起页面导航" : "展开页面导航"}
+          aria-expanded={navigationOpen && !graphOpen} aria-controls="page-sidebar" onClick={() => {
+            clearPreview();
+            if (graphOpen) { setGraphOpen(false); setNavigationOpen(true); }
+            else setNavigationOpen(!navigationOpen);
+          }}>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="2" stroke="currentColor" strokeWidth="1.5" /><path d="M9 4v16" stroke="currentColor" strokeWidth="1.5" /></svg>
         </button>
         <h1>{bookTitle}</h1>
       </div>
       {pageControls}
       <div className="toolbar-actions">
+        <button id="open-supplement-graph" className="text-button" disabled={!content.published} aria-expanded={graphOpen}
+          aria-controls="supplement-graph" onClick={graphOpen ? closeGraph : openGraph}>节点图</button>
         <details className="supplement-filters" onPointerLeave={(event) => {
           if (event.pointerType !== 'mouse') return;
           const filters = event.currentTarget;
@@ -617,7 +676,9 @@ export function Reader() {
           </div>
         </details>
         <button id="open-personal-library" className="text-button" disabled={!ownsPersonal || content.loading} aria-expanded={personalLibraryOpen || !!personalItem} aria-controls="supplement-panel" onClick={openPersonalLibrary}>我的补充</button>
-        <button className="text-button" disabled={!ownsPersonal || content.loading} onClick={() => { closeSupplement(); setPersonalItem(null); clearPreview(); setSelectionPage(currentPage); }}>添加补充</button>
+        <button className="text-button" disabled={!ownsPersonal || content.loading} onClick={() => {
+          setGraphOpen(false); closeSupplement(false); setPersonalItem(null); clearPreview(); setSelectionPage(currentPage);
+        }}>添加补充</button>
         <AccountControl user={content.user} onSignIn={signIn} onPasswordSignIn={import.meta.env.DEV ? signInWithPassword : undefined} onSignOut={async () => {
           if (document.querySelector('[data-dirty="true"]') && !window.confirm('有尚未保存的内容，放弃修改并退出登录？')) throw new Error('已保留草稿，尚未退出登录。');
           closeSupplement(); setPersonalItem(null); setSelectionPage(null);
@@ -636,8 +697,8 @@ export function Reader() {
     </div>}
     {ownsPersonal && <LegacyCopies copies={content.personal!.copies} current={personal} titleForNote={(id) => getSupplement(id)?.title ?? id} />}
     {readingError && <p className="storage-error" role="status">{readingError}</p>}
-    <main className={`reading-layout${navigationOpen ? " navigation-open" : ""}${note || choiceIds || personalItem || personalLibraryOpen ? " supplement-open" : ""}`}>
-      <nav id="page-sidebar" className="page-sidebar" hidden={!navigationOpen} aria-label="页面导航">
+    <main className={`reading-layout${navigationOpen && !graphOpen ? " navigation-open" : ""}${graphOpen ? " graph-open" : ""}${note || choiceIds || personalItem || personalLibraryOpen ? " supplement-open" : ""}`}>
+      <nav id="page-sidebar" className="page-sidebar" hidden={!navigationOpen || graphOpen} aria-label="页面导航">
         <div className="page-thumbnails" ref={thumbnailList}>
           {pages.map((page) => <button id={`thumbnail-${page.page}`} key={page.page} className="page-thumbnail"
             tabIndex={page.page === currentPage ? 0 : -1} aria-label={`跳转到文件第 ${page.page} 页，${page.printedPage === null ? "无印刷页码" : pageLabel(page)}`} aria-current={page.page === currentPage ? "page" : undefined}
@@ -649,7 +710,7 @@ export function Reader() {
           </button>)}
         </div>
       </nav>
-      <div className="paper-scroller" ref={scroller} tabIndex={0} aria-label="教材连续阅读"
+      <div className="paper-scroller" ref={scroller} tabIndex={0} aria-label="教材连续阅读" inert={graphOpen} aria-hidden={graphOpen}
         onClick={(event) => {
           const target = event.target as HTMLElement;
           if (!target.matches('.page-image') && target !== event.currentTarget) return;
@@ -708,6 +769,8 @@ export function Reader() {
           </section>)}
         </div>
       </div>
+      {graphMounted && <SupplementGraph nodes={content.nodes} selectedKey={selectedGraphKey} visible={graphOpen}
+        chapters={chapters} sections={sections} onSelect={selectGraphNode} onClose={closeGraph} />}
       {(personalItem || personalLibraryOpen || choiceIds || note) && <PanelResize />}
       {personalLibraryOpen && <PersonalLibrary nodes={content.nodes.filter((node) => node.source === 'personal')} chapters={chapters} sections={sections}
         onOpen={openPersonal} onCreate={() => {
@@ -716,7 +779,10 @@ export function Reader() {
             chapterId: newChapterId === undefined ? chapters.find(({ start, end }) => currentPage >= start && currentPage <= end)?.id ?? null : newChapterId, sectionId: null });
         }} onClose={closePersonalLibrary} />}
       {personalItem && <PersonalPanel chapters={chapters} sections={sections} onBack={openPersonalLibrary} onLocate={locateSupplement} onEdit={cancelJump} key={personalItem.id} item={personalItem} isNew={!personal.supplements.some((item) => item.id === personalItem.id)}
-        onClose={() => { setPersonalItem(null); closePersonalLibrary(); }} onSave={async (item) => {
+        onClose={() => {
+          setPersonalItem(null); closePersonalLibrary();
+          if (graphOpen) requestAnimationFrame(() => document.querySelector<HTMLInputElement>('.graph-search input')?.focus({ preventScroll: true }));
+        }} onSave={async (item) => {
           await storePersonal((current) => ({ ...current, supplements: [...current.supplements.filter((value) => value.id !== item.id), item] }));
           setHiddenTypes((types) => types.filter((type) => type !== 'personal'));
           setPersonalItem((current) => current?.id === item.id ? item : current);
@@ -731,7 +797,11 @@ export function Reader() {
         }} />}
       {!personalItem && !personalLibraryOpen && (choiceIds || note) && <SupplementPanel key={choiceIds?.join(" ") ?? note?.id} notes={choiceIds ? choiceIds.map((id) => getSupplement(id)!) : [note!]}
         methodOpenIds={methodOpenIds} onMethodToggle={(id) => setMethodOpenIds((open) => open.includes(id) ? open.filter((value) => value !== id) : [...open, id])}
-        expandedId={supplementId} onSelect={selectAccordion} pending={pending} onClose={closeSupplement} onLocate={locateSupplement} onRelated={relatedJump}
+        expandedId={supplementId} onSelect={selectAccordion} pending={pending} onClose={() => closeSupplement()} onLocate={locateSupplement} onRelated={relatedJump}
+        renderRelated={graphOpen ? (item) => <GraphRelated nodeKey={nodeKey({ bookId, source: 'default', id: item.id })}
+          nodes={content.nodes} onSelect={selectGraphNode} onLocate={(locationId, focusId) => {
+            if (allowGraphSelection()) relatedJump(locationId, focusId);
+          }} /> : undefined}
         onHide={(id) => { setHiddenIds([...hiddenIds, id]); closeSupplement(); }}
         renderPersonal={(item) => <section className="personal-note" aria-label="我的笔记">
           {content.personal ? <MarkdownEditor onEdit={cancelJump} key={`${content.personal.userId}:${item.id}`} note value={content.personal.data.notes[item.id] ?? ''} label="笔记 Markdown" onSave={(value) => saveNote(item.id, value)} />

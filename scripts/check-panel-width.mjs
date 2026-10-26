@@ -30,6 +30,6 @@ export async function checkPanelWidth(page) {
   assert.equal(await page.evaluate(() => document.querySelector('.account-summary').textContent.trim()), '');
   await page.click('.account-summary'); await page.waitForSelector('.account-options');
   await page.press('.account-summary', 'Escape');
-  assert.equal(await page.evaluate(() => document.querySelector('.account-control').open), false);
+  assert.equal(await page.evaluate(() => document.querySelector('.account-options').open), false);
   return { before, dragged, keyboard, bottomAndSidePreserved: true, iconsAccessible: true };
 }

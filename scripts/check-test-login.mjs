@@ -19,7 +19,7 @@ async function guardEmail(page) {
 }
 
 async function passwordForm(page) {
-  if (!await page.evaluate(() => document.querySelector('.account-control').open)) await page.click('.account-summary');
+  if (!await page.evaluate(() => document.querySelector('.account-options').open)) await page.click('.account-summary');
   if (!await page.evaluate(() => !!document.querySelector('.account-options input[name="password"]'))) {
     await page.click('.account-mode-toggle:text-is("测试账号登录")');
   }
@@ -33,7 +33,7 @@ async function login(page, credentials) {
   await page.waitForFunction((email) => document.querySelector('.account-email')?.textContent === email &&
     ![...document.querySelectorAll('.toolbar-actions > button')].find((button) => button.textContent === '添加补充')?.disabled, credentials.email);
   assert.equal((await readCloudPersonal(page)).userId, credentials.id);
-  assert.equal(await page.evaluate(() => document.querySelector('.account-control').open), false);
+  assert.equal(await page.evaluate(() => document.querySelector('.account-options').open), false);
 }
 
 // Use a newly provisioned dedicated QA account and an owned, marked test origin.

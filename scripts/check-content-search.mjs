@@ -39,11 +39,13 @@ export async function checkContentSearch(page) {
     await page.cdp('Emulation.setDeviceMetricsOverride', {width, height:944, deviceScaleFactor:1, mobile:false});
     const bounds = await page.evaluate(() => {
       const p = document.getElementById('graph-search-panel').getBoundingClientRect();
-      return {left:p.left,right:p.right,bottom:p.bottom,top:p.top,width:innerWidth,height:innerHeight,
+      const icon = document.getElementById('graph-search-toggle').getBoundingClientRect();
+      const results = document.getElementById('graph-search-results').getBoundingClientRect();
+      return {inline:Math.abs(p.top - icon.top) < 1 && p.right <= icon.left, resultsVisible:results.left >= 0 && results.right <= innerWidth && results.bottom <= innerHeight, left:p.left,right:p.right,bottom:p.bottom,top:p.top,width:innerWidth,height:innerHeight,
         global:!!document.querySelector('.toolbar #graph-search-toggle'),
         onTop:document.elementFromPoint(p.left + 20, p.top + 20)?.closest('#graph-search-panel') !== null};
     });
-    assert.ok(bounds.onTop && bounds.global && bounds.left >= 0 && bounds.right <= bounds.width && bounds.top >= 0 && bounds.bottom <= bounds.height);
+    assert.ok(bounds.inline && bounds.resultsVisible && bounds.onTop && bounds.global && bounds.left >= 0 && bounds.right <= bounds.width && bounds.top >= 0 && bounds.bottom <= bounds.height);
   }
   await page.press('.graph-search input', 'Escape');
   assert.equal(await page.evaluate(() => document.activeElement.id), 'graph-search-toggle');

@@ -1,4 +1,4 @@
-import { useId, useRef, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import './AccountControl.css';
 
 export function AccountControl({ user, onSignIn, onPasswordSignIn, onSignOut }: {
@@ -7,7 +7,22 @@ export function AccountControl({ user, onSignIn, onPasswordSignIn, onSignOut }: 
   onPasswordSignIn?: (email: string, password: string) => Promise<void>;
   onSignOut: () => Promise<void>;
 }) {
-  const details = useRef<HTMLDetailsElement>(null);
+  const dialog = useRef<HTMLDialogElement>(null);
+  const trigger = useRef<HTMLButtonElement>(null);
+  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    const element = dialog.current;
+    if (!element) return;
+    const blockBackdropScroll = (event: Event) => {
+      if (event.target === element) event.preventDefault();
+    };
+    element.addEventListener('wheel', blockBackdropScroll, { passive: false });
+    element.addEventListener('touchmove', blockBackdropScroll, { passive: false });
+    return () => {
+      element.removeEventListener('wheel', blockBackdropScroll);
+      element.removeEventListener('touchmove', blockBackdropScroll);
+    };
+  }, []);
   const inFlight = useRef(false);
   const emailId = useId();
   const errorId = useId();
@@ -23,9 +38,9 @@ export function AccountControl({ user, onSignIn, onPasswordSignIn, onSignOut }: 
   function close() {
     setPassword('');
     setPasswordLogin(false);
-    if (!details.current) return;
-    details.current.open = false;
-    details.current.querySelector('summary')?.focus();
+    dialog.current?.close();
+    setOpen(false);
+    trigger.current?.focus({ preventScroll: true });
   }
 
   async function submit(action: 'sign-in' | 'sign-out') {
@@ -56,28 +71,24 @@ export function AccountControl({ user, onSignIn, onPasswordSignIn, onSignOut }: 
     }
   }
 
-  return <details ref={details} className="account-control" onToggle={(event) => {
-    if (!event.currentTarget.open) {
-      setPassword('');
-      setPasswordLogin(false);
-    }
-  }} onKeyDown={(event) => {
-    if (event.key === 'Escape' && details.current?.open) {
-      event.preventDefault();
-      event.stopPropagation();
-      close();
-    }
-  }}>
-    <summary className="account-summary" aria-label={user ? '账号' : '登录'} title={user ? '账号' : '登录'}>
+  return <div className="account-control">
+    <button ref={trigger} type="button" className="account-summary" aria-label={user ? '账号' : '登录'} title={user ? '账号' : '登录'}
+      aria-haspopup="dialog" aria-expanded={open} onClick={() => { dialog.current?.showModal(); setOpen(true); }}>
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <circle cx="12" cy="8" r="3.5" stroke="currentColor" strokeWidth="1.5" />
         <path d="M5 21v-2a7 7 0 0 1 14 0v2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
-    </summary>
-    <section className="account-options" aria-label={heading} aria-busy={pending !== null}>
+    </button>
+    <dialog ref={dialog} className="account-options" aria-label={heading} aria-busy={pending !== null}
+      onKeyDown={(event) => { if (event.key === 'Escape') event.stopPropagation(); }}
+      onCancel={(event) => { event.preventDefault(); event.stopPropagation(); close(); }}
+      onClose={() => { setOpen(false); setPassword(''); setPasswordLogin(false); trigger.current?.focus({ preventScroll: true }); }}>
+
       <div className="account-heading">
         <h2>{heading}</h2>
-        <button type="button" className="text-button" onClick={close}>关闭</button>
+        <button type="button" className="icon-button" aria-label="关闭登录窗口" title="关闭" onClick={close}>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
+        </button>
       </div>
       {user ? <>
         <p className="account-email">{user.email || '已登录'}</p>
@@ -110,6 +121,6 @@ export function AccountControl({ user, onSignIn, onPasswordSignIn, onSignOut }: 
       </form>}
       {error && <p id={errorId} className="account-error" role="alert">{error}</p>}
       {message && !user && <p className="account-message" role="status">{message}</p>}
-    </section>
-  </details>;
+    </dialog>
+  </div>;
 }

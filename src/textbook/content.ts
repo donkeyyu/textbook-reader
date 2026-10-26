@@ -39,8 +39,8 @@ export function supplementKind(note: Supplement): Exclude<NodeType, 'personal'> 
 }
 
 export function contentNodes(content: PublishedContent, personal: PersonalData): ContentNode[] {
-  const chapterAt = (page: number) => content.chapters.find(({ start, end }) => page >= start && page <= end);
-  const sectionAt = (page: number) => content.sections.find(({ start, end }) => page >= start && page <= end);
+  const chapterAt = (page: number | null) => page === null ? undefined : content.chapters.find(({ start, end }) => page >= start && page <= end);
+  const sectionAt = (page: number | null) => page === null ? undefined : content.sections.find(({ start, end }) => page >= start && page <= end);
   const defaults = content.supplements.map((supplement): ContentNode => {
     const location = getLocation(supplement.locationId);
     const ref = { bookId, source: 'default' as const, id: supplement.id };
@@ -54,7 +54,7 @@ export function contentNodes(content: PublishedContent, personal: PersonalData):
     return { ...ref, key: nodeKey(ref), title: item.title, type: 'personal', summary: item.markdown.slice(0, 160),
       chapterId: item.chapterId === undefined ? chapterAt(item.page)?.id ?? null : item.chapterId,
       sectionId: item.sectionId === undefined ? sectionAt(item.page)?.id ?? null : item.sectionId,
-      location: { page: item.page, region: item.region, locationId: null }, personal: item };
+      location: item.page === null || item.region === null ? null : { page: item.page, region: item.region, locationId: null }, personal: item };
   })];
 }
 

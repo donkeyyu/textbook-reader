@@ -4,8 +4,8 @@ export type PersonalSupplement = {
   id: string;
   title: string;
   markdown: string;
-  page: number;
-  region: { x: number; y: number; width: number; height: number };
+  page: number | null;
+  region: { x: number; y: number; width: number; height: number } | null;
   chapterId?: string | null;
   sectionId?: string | null;
 };
@@ -19,9 +19,10 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 
 function validSupplement(value: unknown): value is PersonalSupplement {
   if (!isRecord(value) || typeof value.id !== 'string' || !/^[\w-]+$/.test(value.id) ||
-    typeof value.title !== 'string' || !value.title.trim() || typeof value.markdown !== 'string' || !value.markdown.trim() ||
-    typeof value.page !== 'number' || !Number.isInteger(value.page) || value.page < 1 || value.page > book.pageCount || !isRecord(value.region)) return false;
-  if (['chapterId', 'sectionId'].some((key) => key in value && value[key] !== null && typeof value[key] !== 'string')) return false;
+    typeof value.title !== 'string' || !value.title.trim() || typeof value.markdown !== 'string' || !value.markdown.trim()) return false;
+  if (['chapterId', 'sectionId'].some((key) => key in value && value[key] !== null && (typeof value[key] !== 'string' || !value[key].trim()))) return false;
+  if (value.page === null && value.region === null) return true;
+  if (typeof value.page !== 'number' || !Number.isInteger(value.page) || value.page < 1 || value.page > book.pageCount || !isRecord(value.region)) return false;
   const { x, y, width, height } = value.region;
   return typeof x === 'number' && typeof y === 'number' && typeof width === 'number' && typeof height === 'number' &&
     [x, y, width, height].every(Number.isFinite) && x >= 0 && y >= 0 && width > 0 && height > 0 &&

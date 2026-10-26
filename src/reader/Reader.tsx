@@ -10,6 +10,7 @@ import { signIn, signInWithPassword, signOut } from './supabase';
 import { MarkdownEditor } from './MarkdownEditor';
 import { PanelResize } from './PanelResize';
 import { PersonalPanel } from './PersonalPanel';
+import { PersonalLibrary } from './PersonalLibrary';
 import { RegionSelector } from './RegionSelector';
 import { supplementTypes, supplementType, TypeMarker, type SupplementType } from './supplement-types';
 import { readingPage, restoredScroll, type PageMetric } from "./session";
@@ -70,6 +71,12 @@ export function Reader() {
   }), [content.published]);
   const storePersonal = content.updatePersonal;
   const [personalItem, setPersonalItem] = useState<PersonalSupplement | null>(null);
+  const personalItemRef = useRef(personalItem);
+  personalItemRef.current = personalItem;
+  const [personalLibraryOpen, setPersonalLibraryOpen] = useState(false);
+  const [newChapterId, setNewChapterId] = useState<string | null | undefined>(undefined);
+  const chapters = content.published?.chapters ?? [];
+  const sections = content.published?.sections ?? [];
   const [selectionPage, setSelectionPage] = useState<number | null>(null);
   const [hiddenTypes, setHiddenTypes] = useState<SupplementType[]>([]);
   const [hiddenIds, setHiddenIds] = useState<string[]>([]);
@@ -115,6 +122,7 @@ export function Reader() {
   useEffect(() => {
     if (previousAccount.current !== content.user?.id && !document.querySelector('[data-dirty="true"]')) {
       setPersonalItem(null);
+      setPersonalLibraryOpen(false);
       setSelectionPage(null);
     }
     previousAccount.current = content.user?.id;
@@ -264,7 +272,7 @@ export function Reader() {
     observer.observe(heading);
     measure();
     return () => observer.disconnect();
-  }, [supplementId, choiceIds, personalItem]);
+  }, [supplementId, choiceIds, personalItem, personalLibraryOpen]);
 
   useEffect(() => {
     const closePreview = () => clearPreview();
@@ -323,6 +331,7 @@ export function Reader() {
   }
 
   function openSupplement(id: string, highlight = !!getSupplement(id)?.questionGuide) {
+    setPersonalLibraryOpen(false);
     setPersonalItem(null);
     setSelectionPage(null);
     cancelJump();
@@ -346,6 +355,7 @@ export function Reader() {
   }
 
   function openChoices(ids: string[]) {
+    setPersonalLibraryOpen(false);
     setPersonalItem(null);
     setSelectionPage(null);
     cancelJump();
@@ -364,7 +374,33 @@ export function Reader() {
     });
   }
 
+  function openPersonalLibrary() {
+    const selected = personalItem
+      ? content.nodes.find((node) => node.source === 'personal' && node.id === personalItem.id)
+      : content.nodes.find((node) => node.source === 'default' && node.id === supplementId);
+    setNewChapterId(selected?.chapterId);
+    closeSupplement(false); setPersonalItem(null); setSelectionPage(null); keepPreview(); clearPreview();
+    setPersonalLibraryOpen(true);
+    if (window.matchMedia('(max-width: 760px)').matches) setNavigationOpen(false);
+    requestAnimationFrame(() => document.querySelector<HTMLInputElement>('.personal-search input')?.focus({ preventScroll: true }));
+  }
+
+  function openPersonal(item: PersonalSupplement) {
+    const node = content.nodes.find((node) => node.source === 'personal' && node.id === item.id);
+    closeSupplement(false); keepPreview(); clearPreview(); setSelectionPage(null);
+    setPersonalItem({ ...item, chapterId: item.chapterId === undefined ? node?.chapterId ?? null : item.chapterId,
+      sectionId: item.sectionId === undefined ? node?.sectionId ?? null : item.sectionId });
+    if (window.matchMedia('(max-width: 760px)').matches) setNavigationOpen(false);
+    requestAnimationFrame(() => document.getElementById('supplement-title')?.focus({ preventScroll: true }));
+  }
+
+  function closePersonalLibrary() {
+    setPersonalLibraryOpen(false);
+    requestAnimationFrame(() => document.getElementById('open-personal-library')?.focus({ preventScroll: true }));
+  }
+
   function selectAccordion(id: string | null) {
+    setPersonalLibraryOpen(false);
     setPersonalItem(null);
     setSelectionPage(null);
     cancelJump();
@@ -380,7 +416,7 @@ export function Reader() {
   function locateSupplement() {
     cancelJump(); keepPreview(); clearPreview();
     const panelScroll = document.getElementById("supplement-panel")?.scrollTop ?? 0;
-    if (personalItem) {
+    if (personalItem?.page !== null && personalItem?.region) {
       setCommit({ page: personalItem.page, fraction: personalItem.region.y, focusId: "locate-personal", panelScroll });
     } else if (supplementId) {
       const location = getLocation(getSupplement(supplementId)!.locationId);
@@ -389,7 +425,8 @@ export function Reader() {
     }
   }
 
-  function closeSupplement() {
+  function closeSupplement(restoreFocus = true) {
+    setPersonalLibraryOpen(false);
     cancelJump();
     setMethodOpenIds([]);
     const id = supplementId ?? choiceIds?.[0];
@@ -397,6 +434,7 @@ export function Reader() {
     setSupplementId(null);
     setSelectedLocation(null);
     setHistory([]);
+    if (!restoreFocus) return;
     requestAnimationFrame(() => {
       const marker = id ? document.querySelector(`[data-supplement-ids~="${id}"]`)?.getBoundingClientRect() : undefined;
       const viewport = scroller.current?.getBoundingClientRect();
@@ -433,7 +471,7 @@ export function Reader() {
       image.src = target.image;
       await image.decode();
       if (requestId.current !== id) return;
-      setPersonalItem(null); setSelectionPage(null);
+      setPersonalItem(null); setPersonalLibraryOpen(false); setSelectionPage(null);
       setChoiceIds(jump.restore?.choiceIds ?? null);
       if (jump.source) setHistory((previous) => [...previous, jump.source!]);
       else if (!jump.restore) setHistory([]);
@@ -515,7 +553,7 @@ export function Reader() {
     }
   }} onClickCapture={(event) => {
     const target = event.target as HTMLElement;
-    if (target.closest('.markdown-editor, .personal-title, .method-toggle, .locate-button, .account-control, .legacy-copies')) return;
+    if (target.closest('.markdown-editor, .personal-title, .personal-metadata, .method-toggle, .locate-button, .account-control, .legacy-copies')) return;
     if (document.querySelector('[data-dirty="true"]') && target.closest('button, summary, input') && !window.confirm('有尚未保存的内容，放弃修改？')) {
       event.preventDefault(); event.stopPropagation();
     }
@@ -529,6 +567,7 @@ export function Reader() {
     }
     if (selectionPage) { setSelectionPage(null); return; }
     if (personalItem) return;
+    if (personalLibraryOpen) { event.preventDefault(); closePersonalLibrary(); return; }
     if (event.currentTarget.querySelector('.markdown-editor[data-dirty="true"]')) return;
     if (preview || groupPreview) {
       const id = preview?.id ?? groupPreview![0]!;
@@ -577,6 +616,7 @@ export function Reader() {
             {hiddenIds.length > 0 && <button className="text-button" onClick={() => setHiddenIds([])}>恢复隐藏的 {hiddenIds.length} 条补充</button>}
           </div>
         </details>
+        <button id="open-personal-library" className="text-button" disabled={!ownsPersonal || content.loading} aria-expanded={personalLibraryOpen || !!personalItem} aria-controls="supplement-panel" onClick={openPersonalLibrary}>我的补充</button>
         <button className="text-button" disabled={!ownsPersonal || content.loading} onClick={() => { closeSupplement(); setPersonalItem(null); clearPreview(); setSelectionPage(currentPage); }}>添加补充</button>
         <AccountControl user={content.user} onSignIn={signIn} onPasswordSignIn={import.meta.env.DEV ? signInWithPassword : undefined} onSignOut={async () => {
           if (document.querySelector('[data-dirty="true"]') && !window.confirm('有尚未保存的内容，放弃修改并退出登录？')) throw new Error('已保留草稿，尚未退出登录。');
@@ -596,7 +636,7 @@ export function Reader() {
     </div>}
     {ownsPersonal && <LegacyCopies copies={content.personal!.copies} current={personal} titleForNote={(id) => getSupplement(id)?.title ?? id} />}
     {readingError && <p className="storage-error" role="status">{readingError}</p>}
-    <main className={`reading-layout${navigationOpen ? " navigation-open" : ""}${note || choiceIds || personalItem ? " supplement-open" : ""}`}>
+    <main className={`reading-layout${navigationOpen ? " navigation-open" : ""}${note || choiceIds || personalItem || personalLibraryOpen ? " supplement-open" : ""}`}>
       <nav id="page-sidebar" className="page-sidebar" hidden={!navigationOpen} aria-label="页面导航">
         <div className="page-thumbnails" ref={thumbnailList}>
           {pages.map((page) => <button id={`thumbnail-${page.page}`} key={page.page} className="page-thumbnail"
@@ -613,7 +653,7 @@ export function Reader() {
         onClick={(event) => {
           const target = event.target as HTMLElement;
           if (!target.matches('.page-image') && target !== event.currentTarget) return;
-          const bottomPanel = window.matchMedia('(max-width: 1100px)').matches && (note || choiceIds || personalItem);
+          const bottomPanel = window.matchMedia('(max-width: 1100px)').matches && (note || choiceIds || personalItem || personalLibraryOpen);
           if (!bottomPanel && !preview?.anchor.docked) return;
           if (document.querySelector('[data-dirty="true"]') && !window.confirm('有尚未保存的内容，放弃修改？')) return;
           keepPreview(); clearPreview();
@@ -655,28 +695,41 @@ export function Reader() {
                 {grouped && <span className="marker-count" aria-hidden="true">{group.length}</span>}
               </button>;
             })}
-            {!hiddenTypes.includes('personal') && personal.supplements.filter((item) => item.page === page.page && !hiddenIds.includes(item.id)).map((item) => <button key={item.id} className="supplement-marker personal-marker" data-supplement-type="personal" aria-label={`我的补充：${item.title}`}
-              style={{ left: `${Math.min(.97, item.region.x + item.region.width) * 100}%`, top: `${item.region.y * 100}%` }}
-              onClick={() => { closeSupplement(); clearPreview(); setPersonalItem(item); setSelectionPage(null); }}><TypeMarker type="personal" /></button>)}
-            {personalItem?.page === page.page && <div className="location-highlight" data-supplement-type="personal" style={{ left: `${personalItem.region.x * 100}%`, top: `${personalItem.region.y * 100}%`, width: `${personalItem.region.width * 100}%`, height: `${personalItem.region.height * 100}%` }} />}
+            {!hiddenTypes.includes('personal') && personal.supplements.filter((item) => item.page === page.page && item.region !== null && !hiddenIds.includes(item.id)).map((item) => <button key={item.id} className="supplement-marker personal-marker" data-supplement-type="personal" aria-label={`我的补充：${item.title}`}
+              style={{ left: `${Math.min(.97, item.region!.x + item.region!.width) * 100}%`, top: `${item.region!.y * 100}%` }}
+              onClick={() => openPersonal(item)}><TypeMarker type="personal" /></button>)}
+            {personalItem?.region && personalItem.page === page.page && <div className="location-highlight" data-supplement-type="personal" style={{ left: `${personalItem.region.x * 100}%`, top: `${personalItem.region.y * 100}%`, width: `${personalItem.region.width * 100}%`, height: `${personalItem.region.height * 100}%` }} />}
             {selectionPage === page.page && <RegionSelector onSelect={(region) => {
-              setPersonalItem({ id: crypto.randomUUID(), title: '', markdown: '', page: page.page, region });
+              setPersonalItem({ id: crypto.randomUUID(), title: '', markdown: '', page: page.page, region,
+                chapterId: chapters.find(({ start, end }) => page.page >= start && page.page <= end)?.id ?? null,
+                sectionId: sections.find(({ start, end }) => page.page >= start && page.page <= end)?.id ?? null });
               setSelectionPage(null);
             }} />}
           </section>)}
         </div>
       </div>
-      {(personalItem || choiceIds || note) && <PanelResize />}
-      {personalItem && <PersonalPanel onLocate={locateSupplement} onEdit={cancelJump} key={personalItem.id} item={personalItem} isNew={!personal.supplements.some((item) => item.id === personalItem.id)}
-        onClose={() => setPersonalItem(null)} onSave={async (item) => {
+      {(personalItem || personalLibraryOpen || choiceIds || note) && <PanelResize />}
+      {personalLibraryOpen && <PersonalLibrary nodes={content.nodes.filter((node) => node.source === 'personal')} chapters={chapters} sections={sections}
+        onOpen={openPersonal} onCreate={() => {
+          setPersonalLibraryOpen(false);
+          setPersonalItem({ id: crypto.randomUUID(), title: '', markdown: '', page: null, region: null,
+            chapterId: newChapterId === undefined ? chapters.find(({ start, end }) => currentPage >= start && currentPage <= end)?.id ?? null : newChapterId, sectionId: null });
+        }} onClose={closePersonalLibrary} />}
+      {personalItem && <PersonalPanel chapters={chapters} sections={sections} onBack={openPersonalLibrary} onLocate={locateSupplement} onEdit={cancelJump} key={personalItem.id} item={personalItem} isNew={!personal.supplements.some((item) => item.id === personalItem.id)}
+        onClose={() => { setPersonalItem(null); closePersonalLibrary(); }} onSave={async (item) => {
           await storePersonal((current) => ({ ...current, supplements: [...current.supplements.filter((value) => value.id !== item.id), item] }));
           setHiddenTypes((types) => types.filter((type) => type !== 'personal'));
           setPersonalItem((current) => current?.id === item.id ? item : current);
         }} onDelete={async () => {
           await storePersonal((current) => ({ ...current, supplements: current.supplements.filter((item) => item.id !== personalItem.id) }));
-          setPersonalItem((current) => current?.id === personalItem.id ? null : current);
+          // Reopening the same ID creates a new selection that this delete must preserve.
+          if (personalItemRef.current === personalItem) {
+            setPersonalItem(null);
+            setPersonalLibraryOpen(true);
+            requestAnimationFrame(() => document.querySelector<HTMLInputElement>('.personal-search input')?.focus({ preventScroll: true }));
+          }
         }} />}
-      {!personalItem && (choiceIds || note) && <SupplementPanel key={choiceIds?.join(" ") ?? note?.id} notes={choiceIds ? choiceIds.map((id) => getSupplement(id)!) : [note!]}
+      {!personalItem && !personalLibraryOpen && (choiceIds || note) && <SupplementPanel key={choiceIds?.join(" ") ?? note?.id} notes={choiceIds ? choiceIds.map((id) => getSupplement(id)!) : [note!]}
         methodOpenIds={methodOpenIds} onMethodToggle={(id) => setMethodOpenIds((open) => open.includes(id) ? open.filter((value) => value !== id) : [...open, id])}
         expandedId={supplementId} onSelect={selectAccordion} pending={pending} onClose={closeSupplement} onLocate={locateSupplement} onRelated={relatedJump}
         onHide={(id) => { setHiddenIds([...hiddenIds, id]); closeSupplement(); }}

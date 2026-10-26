@@ -1,0 +1,268 @@
+{
+  "ticket": "04-personal-nodes",
+  "date": "2026-10-26",
+  "baseCommit": "3388d3a",
+  "reviewStatus": "accepted by orchestrator after targeted fixes and isolated commit validation",
+  "sourceSha256": {
+    "src/reader/PersonalLibrary.tsx": "745410c7e9b1fa2d787b05d62b24c1e63a78fbe20e898590b7ab3d1d9fdcc8c2",
+    "src/reader/personal-library.css": "960c915f99f372610869d5c93bf08d289d3c672f76d62b3f19737a9e509f4491",
+    "src/reader/PersonalPanel.tsx": "d755fb72f9c2ee06cbe85e422c4cd754ea4446c097ff3b7d2752e206c7b8aab7",
+    "src/reader/Reader.tsx": "762602148faf2f26f5d0d1676b420e48251c2786c1ef4608d5e4865a46cd4280",
+    "src/reader/RegionSelector.tsx": "f424aef874c596abafccf0350c42b24a65c1a5dd6289a4cbef7a4594b68981eb",
+    "src/reader/personal.ts": "212be26a810ba2c99c18edbac029d87eb6a26b5184a7cd2eba1685d12879e35b",
+    "src/textbook/content.ts": "bb443a7c60886a0337326b56ed5e13a75691f4c67b88c265cc729211dbf794ee",
+    "supabase/migrations/20261025235753_reader_free_personal_nodes.sql": "0cbfba7d133988ae3a586f7f67ec3bcbe61635f85fdd235b661aba3e1333d90f",
+    "supabase/tests/reader-free-personal-nodes.sql": "c16b64fa6649a7d1b2b720c0666306fa8f0f2b657ec78b537b1da1fe84fe39f7",
+    "scripts/check-personal-nodes.mjs": "dce51c0bffb96e90ad1ff29415743b9c0a785305c0b46358f19202bca08c2e8a",
+    ".scratch/supplement-graph/issues/04-personal-nodes.md": "b8b9584a06c6935588bba50d501b808ee17fe7823baa592e51523881018e8f19"
+  },
+  "browser": {
+    "tool": "ego-browser 0.6.0.20",
+    "taskSpace": 20,
+    "origin": "http://127.0.0.1:54914",
+    "viewports": {
+      "desktop": [
+        1772,
+        909
+      ],
+      "narrow": [
+        390,
+        844
+      ]
+    },
+    "stages": {
+      "start": {
+        "syntheticAccount": true,
+        "isolatedOrigin": true,
+        "initialEmpty": true,
+        "noMailSent": true
+      },
+      "creation": {
+        "defaultChapter": true,
+        "noGuessedSection": true,
+        "cancelLeavesNoNode": true,
+        "adjustableChapterAndSection": true,
+        "sameNameDistinctIdsAndContexts": true,
+        "sameChapterSummaryDisambiguation": true,
+        "refreshRevisit": true,
+        "noFakeLocate": true
+      },
+      "maintenance": {
+        "renameKeepsId": true,
+        "editRefresh": true,
+        "unassignedSaved": true,
+        "coverDefaultsUnassigned": true,
+        "keyboardFindOpenReturnClose": true
+      },
+      "failure": {
+        "failedSaveKeepsTitleAndBody": true,
+        "failedSaveKeepsCloudSnapshot": true,
+        "navigationDraftGuard": true,
+        "retryAndRefresh": true
+      },
+      "boxed": {
+        "keyboardRegionSelection": true,
+        "boxedSaveRefreshRevisit": true,
+        "realLocate": true
+      },
+      "mobile-delete": {
+        "narrow390NoOverflow": true,
+        "bottomPanel": true,
+        "narrowReadEdit": true,
+        "keepDeletion": true,
+        "deleteRefresh": true,
+        "fixturesRemoved": true
+      },
+      "selected-chapter": {
+        "explicitSelectedNodeChapterWinsOverCover": true,
+        "cancelStillEmpty": true
+      }
+    },
+    "screenshots": {
+      "desktop": {
+        "path": "/Users/chengqiyu/dev/课本解读/.git/supplement-graph-orchestration/04-desktop.png",
+        "sha256": "71e77f5f03fd16047820e8fd29b41c9206b38a70759ed60be08c7ed2c8d085ee",
+        "visuallyInspected": true
+      },
+      "mobile": {
+        "path": "/Users/chengqiyu/dev/课本解读/.git/supplement-graph-orchestration/04-mobile.png",
+        "sha256": "1e0b5f62fab138fae5166d60f63a9327897bcafe477306a700166f69f3781cc2",
+        "visuallyInspected": true
+      }
+    },
+    "cleanup": {
+      "uiNodesDeletedAndRefreshEmpty": true,
+      "signedOut": true,
+      "syntheticAccountDeleted": true,
+      "credentialFileRemoved": true,
+      "taskFinished": true
+    },
+    "isolation": "Existing legacy storage on first candidate origin caused refusal before login or personal writes; moved to dedicated 54914 origin.",
+    "evidenceScope": "Original 04 acceptance before root review fixes. Original results and screenshots are retained; targeted current-source regressions are recorded separately in rootReviewFixes."
+  },
+  "checks": {
+    "typecheck": "passed",
+    "npmTest": {
+      "passed": 23,
+      "failed": 0
+    },
+    "build": "passed; existing large-chunk warning remains",
+    "gitDiffCheck": "passed",
+    "browserScriptSyntax": "passed",
+    "impeccableDetector": [],
+    "realDatabaseSqlTests": [
+      "supabase/tests/reader-free-personal-nodes.sql",
+      "supabase/tests/reader-content.sql"
+    ],
+    "sqlTestsPassedAndRolledBack": true,
+    "invalidExistingSnapshotsAfterValidatorChange": 0,
+    "appliedMigration": "20261025235753_reader_free_personal_nodes",
+    "appliedValidatorBodyMd5": "bf752ab653dcf22601b0c80d9f81b6a2",
+    "validatorSecurityDefiner": false
+  },
+  "limits": [
+    "No physical-device, browser-process-restart or student-learning evidence.",
+    "SMTP/real email acceptance remains deferred per 02.",
+    "Graph integration and bound-link rename/delete behavior belong to later tickets.",
+    "Existing Supabase leaked-password-protection advisor warning remains."
+  ],
+  "sharedDocsRequested": [
+    {
+      "file": "DESIGN.md",
+      "section": "筛选与个人内容",
+      "append": "工具栏“我的补充”在现有解读区域提供搜索列表与新建入口。自由节点可选择章节与节，未归属时明确标示；没有原文位置时不显示定位。列表按章、节、真实位置或正文摘要区分同名条目，并沿用“我的补充”类型色。"
+    },
+    {
+      "file": "README.md",
+      "section": "当前阅读与内容",
+      "append": "“我的补充”可搜索并回访当前教材的个人内容，也可新建不绑定原文的补充；章节可调整或未归属，保存、改名与删除后刷新保持一致。原框选添加仍可用。"
+    }
+  ],
+  "lockRelease": "All 04 files frozen again after targeted root-finding fixes. Reader/PersonalPanel/storage window returned only to root for review/commit; no direct release to 03 or 05.",
+  "preRootReviewSourceSha256": {
+    "src/reader/PersonalLibrary.tsx": "312709369110d8501151249e0730267c05e65e71204750ff385cc3cc25af544b",
+    "src/reader/personal-library.css": "960c915f99f372610869d5c93bf08d289d3c672f76d62b3f19737a9e509f4491",
+    "src/reader/PersonalPanel.tsx": "0312646c5ba42df4642f0d2a6bac4e1e7ebb57b8ef1522e8c97e07f46ef0a7c0",
+    "src/reader/Reader.tsx": "6cd10400ef9b7b80508ff93ce6eaeb16fa6dcb58440dcb2cc61fbcb2b868defc",
+    "src/reader/RegionSelector.tsx": "f424aef874c596abafccf0350c42b24a65c1a5dd6289a4cbef7a4594b68981eb",
+    "src/reader/personal.ts": "212be26a810ba2c99c18edbac029d87eb6a26b5184a7cd2eba1685d12879e35b",
+    "src/textbook/content.ts": "bb443a7c60886a0337326b56ed5e13a75691f4c67b88c265cc729211dbf794ee",
+    "supabase/migrations/20261025235753_reader_free_personal_nodes.sql": "0cbfba7d133988ae3a586f7f67ec3bcbe61635f85fdd235b661aba3e1333d90f",
+    "supabase/tests/reader-free-personal-nodes.sql": "c16b64fa6649a7d1b2b720c0666306fa8f0f2b657ec78b537b1da1fe84fe39f7",
+    "scripts/check-personal-nodes.mjs": "8a95aaa0fdd2a302fc7e85ecb6e11835656080949f494b48e7945cdf71552484",
+    ".scratch/supplement-graph/issues/04-personal-nodes.md": "91e4f3a38755f95b14f0a9623e6bf38df2feacd46b7351d91090da5ccbd8fbe5"
+  },
+  "rootReviewFixes": {
+    "date": "2026-10-26",
+    "changedPathsSincePreviousFreeze": [
+      "src/reader/Reader.tsx",
+      "src/reader/PersonalPanel.tsx",
+      "src/reader/PersonalLibrary.tsx",
+      "scripts/check-personal-nodes.mjs",
+      ".scratch/supplement-graph/issues/04-personal-nodes.md",
+      ".scratch/supplement-graph/04-verification.json"
+    ],
+    "fixes": {
+      "liveChapterFallback": "undefined retains live page fallback until creation; null/string retain an explicitly selected node chapter",
+      "fullTextSearch": "Search node.personal.markdown; use node.summary only for display",
+      "pendingDelete": "Disable edit/repeated-delete on the deleting panel; completion closes only the identical original PersonalSupplement selection object, so reopening the same ID is protected"
+    },
+    "browser": {
+      "taskSpace": 21,
+      "origin": "http://127.0.0.1:54924",
+      "syntheticAccount": true,
+      "stages": {
+        "start": {
+          "syntheticAccount": true,
+          "isolatedOrigin": true,
+          "initialEmpty": true,
+          "noMailSent": true
+        },
+        "chapter-search": {
+          "livePageFallbackToCover": true,
+          "livePageFallbackToOtherChapter": true,
+          "explicitChapterPreserved": true,
+          "explicitUnassignedPreserved": true,
+          "cancelNoEmptyNodes": true,
+          "fullBodySearchAfter160": true,
+          "displaySummaryStillTruncated": true
+        },
+        "delete": {
+          "editDisabledDuringDelete": true,
+          "sameIdReopenDraftPreserved": true,
+          "originalDeletePersisted": true,
+          "otherNodeDraftAndSavedBodyPreserved": true,
+          "failedDeleteKeepsExactSnapshot": true,
+          "failureReenablesEdit": true,
+          "deleteRetryAndRefresh": true,
+          "fixturesRemoved": true
+        }
+      },
+      "functions": [
+        "startPersonalNodesCheck",
+        "checkLiveChapterAndFullText",
+        "checkDelayedPersonalDelete"
+      ],
+      "screenshot": {
+        "path": "/Users/chengqiyu/dev/课本解读/.git/supplement-graph-orchestration/04-review-delayed-delete.png",
+        "sha256": "8d556b09c65a63d1f0ca1553129ae6238bb78586063aa1c360efe41b1b99f364",
+        "visuallyInspected": true
+      },
+      "cleanup": {
+        "fixturesRemovedAndRefreshed": true,
+        "signedOut": true,
+        "authFixtureDeleted": true,
+        "credentialFileRemoved": true,
+        "taskFinished": true,
+        "ownQaServersStopped": 1
+      }
+    },
+    "checks": {
+      "npmRunTypecheck": "passed",
+      "npmTest": {
+        "passed": 23,
+        "failed": 0
+      },
+      "npmRunBuild": "passed; existing large-chunk warning remains",
+      "browserScriptSyntax": "passed",
+      "gitDiffCheck": "passed",
+      "sqlMigrationAndTestBodiesUnchanged": true,
+      "sqlReplayed": false,
+      "fullOldBrowserAcceptanceReplayed": false
+    },
+    "remainingLimits": "Prior device/process-restart/SMTP/student-evidence and later-ticket limits remain. Await root final review and commit."
+  },
+  "coordinatorReview": {
+    "date": "2026-10-26",
+    "baseCommit": "3388d3a",
+    "standards": "Full-body search gap fixed; no remaining confirmed finding",
+    "spec": "Live chapter fallback corrected; explicit chapter/null context preserved",
+    "additionalDraftProtection": "Delayed delete preserves new selection instance; pending delete disables edit, repeated delete and keep controls",
+    "lastControlChange": {
+      "path": "src/reader/PersonalPanel.tsx",
+      "previousSha256": "c059dda62d3f02a35e0015d177e12973c8caa28b199ebb49c43e589cc20e9f89",
+      "currentSha256": "d755fb72f9c2ee06cbe85e422c4cd754ea4446c097ff3b7d2752e206c7b8aab7",
+      "scope": "Disable Keep while confirmed delete is pending; no further browser replay of this single disabled prop"
+    },
+    "screenshotsInspected": [
+      "04-desktop.png",
+      "04-mobile.png",
+      "04-review-delayed-delete.png"
+    ],
+    "sharedDocsUpdated": [
+      "DESIGN.md",
+      "README.md"
+    ],
+    "validation": {
+      "isolatedCommitExcludesGraph03AndPackageChanges": true,
+      "npmTest": {
+        "passed": 23,
+        "failed": 0
+      },
+      "typecheck": "passed",
+      "productionBuild": "passed; existing chunk warning",
+      "browserScriptSyntax": "passed",
+      "stagedDiffCheck": "passed"
+    }
+  }
+}

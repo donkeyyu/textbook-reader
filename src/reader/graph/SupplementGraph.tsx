@@ -6,6 +6,7 @@ import { supplementTypes, TypeMarker } from '../supplement-types.tsx';
 import { projectGraph } from './project-graph.ts';
 import { useSupplementGraph } from './useSupplementGraph.ts';
 import { GraphPreview } from './GraphPreview.tsx';
+import { GraphDirectory } from './GraphDirectory';
 import type { PersonalReferenceEdge } from '../links/project-references.ts';
 import './graph.css';
 
@@ -25,9 +26,15 @@ export function SupplementGraph({ nodes, personalEdges, selectedKey, visible, on
   const search = useRef<HTMLInputElement>(null);
   const [query, setQuery] = useState('');
   const [searchOpen, setSearchOpen] = useState(false);
+  const [directoryOpen, setDirectoryOpen] = useState(false);
   const settings = useRef<HTMLDetailsElement>(null);
   useEffect(() => { if (searchOpen) search.current?.focus(); }, [searchOpen]);
+  function closeDirectory() {
+    setDirectoryOpen(false);
+    document.getElementById('graph-directory-toggle')?.focus({ preventScroll: true });
+  }
   function openSearch() {
+    setDirectoryOpen(false);
     if (settings.current) settings.current.open = false;
     setSearchOpen(true);
     search.current?.focus();
@@ -43,7 +50,7 @@ export function SupplementGraph({ nodes, personalEdges, selectedKey, visible, on
   const graph = useSupplementGraph(host, data.nodes, data.edges, selectedKey, visible, onSelect, searchKeys);
   const previewNode = visible && graph.preview ? nodes.find((node) => node.key === graph.preview!.key) : null;
   function choose(key: string) {
-    if (onSelect(key)) { graph.focus(key); setQuery(''); setSearchOpen(false); }
+    if (onSelect(key)) { graph.focus(key); setQuery(''); setSearchOpen(false); setDirectoryOpen(false); }
   }
   return <section id="supplement-graph" className="supplement-graph" aria-label="补充节点图" hidden={!visible}
     data-node-count={nodes.length} data-edge-count={data.edges.length}
@@ -65,9 +72,30 @@ export function SupplementGraph({ nodes, personalEdges, selectedKey, visible, on
       {graph.ready && nodes.length === 0 && <p className="graph-error">当前教材还没有补充节点。</p>}
     </div>
     {previewNode && graph.preview && <GraphPreview node={previewNode} anchor={graph.preview} />}
+    <div className="graph-directory-dock" onKeyDown={(event) => {
+      if (event.key === 'Escape' && directoryOpen) { event.preventDefault(); event.stopPropagation(); closeDirectory(); }
+    }}>
+      <button id="graph-directory-toggle" type="button" className="icon-button graph-floating-button"
+        aria-label={directoryOpen ? '收起节点目录' : '展开节点目录'} title="节点目录"
+        aria-expanded={directoryOpen} aria-controls="graph-directory" onClick={() => {
+          if (directoryOpen) closeDirectory();
+          else {
+            if (settings.current) settings.current.open = false;
+            setSearchOpen(false); setQuery(''); setDirectoryOpen(true);
+          }
+        }}>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 5h14M5 12h3m4 0h7M5 19h3m4 0h7M5 5v14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
+      {directoryOpen && <div id="graph-directory" className="graph-directory-panel" aria-label="节点目录">
+        <h2>节点目录</h2>
+        <GraphDirectory nodes={nodes} chapters={chapters} sections={sections} selectedKey={selectedKey} onChoose={choose} />
+      </div>}
+    </div>
     <div className="graph-corner-controls">
       <details className="graph-settings" ref={settings} onToggle={(event) => {
-        if (event.currentTarget.open) { setSearchOpen(false); setQuery(''); }
+        if (event.currentTarget.open) { setDirectoryOpen(false); setSearchOpen(false); setQuery(''); }
       }} onKeyDown={(event) => {
         if (event.key === 'Escape') {
           event.preventDefault(); event.stopPropagation(); event.currentTarget.open = false;
@@ -90,7 +118,7 @@ export function SupplementGraph({ nodes, personalEdges, selectedKey, visible, on
             </div>
           </div>
           <ul className="graph-legend" aria-label="节点类型">{Object.entries(supplementTypes).map(([type, label]) =>
-            <li key={type} data-supplement-type={type}><TypeMarker type={type as ContentNode['type']} />{label}</li>)}</ul>
+            <li key={type} data-supplement-type={type}><span className="graph-legend-dot" aria-hidden="true" />{label}</li>)}</ul>
           <div className="graph-edge-legend" aria-label="连线类型">
             <span><svg width="28" height="14" viewBox="0 0 28 14" fill="none" aria-hidden="true"><path d="M1 7h24m-5-4 5 4-5 4" stroke="currentColor" strokeWidth="1.5" /></svg>默认关联</span>
             <span data-supplement-type="personal"><svg width="28" height="14" viewBox="0 0 28 14" fill="none" aria-hidden="true"><path d="M1 11Q14 0 27 11" stroke="currentColor" strokeWidth="1.5" /></svg>个人引用</span>

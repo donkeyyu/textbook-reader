@@ -61,3 +61,36 @@ export async function checkStartupSelectionRelease(page) {
     'Closing selection must stop initial camera tracking');
   return result;
 }
+
+// Run immediately after measureGraphStartup. The overview follows the settling
+// layout, but keyboard panning must take ownership of the camera immediately.
+export async function checkStartupOverview(page) {
+  const coverage = await page.evaluate(async () => {
+    const q = window.qaStartup, world = q.app.stage.children[0];
+    let minimum = 1;
+    for (let frame = 0; frame < 8; frame++) {
+      await new Promise(requestAnimationFrame);
+      const nodes = [...q.sprites.values()];
+      const visible = nodes.filter(({ node }) => {
+        const x = node.x * world.scale.x + world.x, y = node.y * world.scale.y + world.y;
+        return x >= 0 && x <= q.app.screen.width && y >= 0 && y <= q.app.screen.height;
+      }).length;
+      minimum = Math.min(minimum, visible / nodes.length);
+    }
+    return minimum;
+  });
+  assert.ok(coverage >= .95, 'First overview retains at least 95% of the settling nodes');
+  await page.focus('.graph-viewport');
+  await page.press('.graph-viewport', 'ArrowRight');
+  const camera = await page.evaluate(async () => {
+    const q = window.qaStartup, world = q.app.stage.children[0];
+    const sample = () => ({ x: world.x, y: world.y, zoom: world.scale.x, ticks: q.liveTicks });
+    const before = sample();
+    for (let frame = 0; frame < 8; frame++) await new Promise(requestAnimationFrame);
+    return { before, after: sample() };
+  });
+  assert.ok(camera.after.ticks > camera.before.ticks, 'Check pan ownership while forces are still moving');
+  assert.equal(camera.after.x, camera.before.x); assert.equal(camera.after.y, camera.before.y);
+  assert.equal(camera.after.zoom, camera.before.zoom);
+  return { minimumCoverage: coverage, ...camera };
+}

@@ -97,8 +97,9 @@ node --experimental-strip-types scripts/check-cloud-content.mjs
 
 | 修改范围 | 现有入口 |
 | --- | --- |
+| 教材目录与节点目录 | [check-navigation-directories.mjs](scripts/check-navigation-directories.mjs)：`checkNavigationDirectories(page)`，图谱打开且教材隐藏 |
 | 图节点自动定位原文 | [check-graph-auto-locate.mjs](scripts/check-graph-auto-locate.mjs)：`checkGraphAutoLocate(page)`，开发环境、图谱打开且教材隐藏 |
-| 页码位置、原位输入、侧栏开合 | [check-page-navigation.mjs](scripts/check-page-navigation.mjs)：`checkToolbarPageControls(page)`、`checkPageNavigation(page, expanded)` |
+| 页码位置、原位输入、侧栏开合 | [check-page-navigation.mjs](scripts/check-page-navigation.mjs)：`checkBookPageControls(page)`、`checkPageNavigation(page, expanded)` |
 | 页底预览与入口点击 | [check-related-return.mjs](scripts/check-related-return.mjs)：`checkPreviewEntry(page, 文件页序, 条目ID)`，可传各章真实标记 |
 | 单条与分组入口、关联返回 | [check-related-return.mjs](scripts/check-related-return.mjs)：`checkReviewCase(page, index)`、`checkAccordion(page, id)`；`reviewCases` 是第一章关联清单，不代表全书全集 |
 | 多层返回、退出、失败和取消 | 同模块的 `checkReviewChain`、`checkReviewExit`、`checkReviewFailures`、`checkRelatedReturn` |

@@ -1,9 +1,9 @@
 import assert from 'node:assert/strict';
 
 // Run at the desired viewport width with an ego-browser Page on the reader.
-export async function checkToolbarPageControls(page) {
+export async function checkBookPageControls(page) {
   const layout = await page.evaluate(() => {
-    const toolbar = document.querySelector('.toolbar');
+    const toolbar = document.querySelector('.book-toolbar');
     const controls = toolbar.querySelector('.page-controls');
     const index = controls?.querySelector('.page-index, .page-jump');
     const buttons = controls ? [...controls.querySelectorAll(':scope > button.icon-button')] : [];
@@ -17,25 +17,30 @@ export async function checkToolbarPageControls(page) {
       toolbar: rect(toolbar),
       index: index ? rect(index) : null,
       steps: buttons.map((button) => ({ ...rect(button), visible: button.checkVisibility() })),
-      title: rect(document.querySelector('.book-heading h1')),
-      narrow: matchMedia('(max-width: 600px)').matches,
+      globalControls: !!document.querySelector('.toolbar .page-controls'),
+      book: rect(document.getElementById('textbook-view')),
+      navigation: rect(toolbar.querySelector('.navigation-toggle')),
+      toolbarVisible: toolbar.checkVisibility(),
       width: innerWidth,
       documentWidth: document.documentElement.scrollWidth,
     };
   });
   assert.equal(layout.count, 1, 'The reader has exactly one page control');
-  assert.equal(layout.sidebarControls, false, 'Page controls stay in the toolbar when navigation opens');
+  assert.equal(layout.sidebarControls, false, 'Page controls stay outside the navigation sidebar');
+  assert.equal(layout.globalControls, false, 'Global toolbar has no page controls');
+  assert.equal(layout.toolbarVisible, true, 'Visible book has a visible page toolbar');
+  assert.ok(Math.abs(layout.toolbar.left - layout.book.left) <= 1 && Math.abs(layout.toolbar.right - layout.book.right) <= 1, 'Page toolbar belongs to the book pane');
   assert.ok(layout.index, 'Page display or editor is present in the toolbar');
   assert.equal(layout.steps.length, 2, 'Previous and next are direct siblings of the page display');
   const [previous, next] = layout.steps;
   assert.ok(previous.visible && next.visible, 'Both page buttons remain visible at this width');
   assert.ok(previous.right <= layout.index.left + 1 && next.left >= layout.index.right - 1, 'Previous, page display, next appear in that order');
   assert.ok(layout.index.left - previous.right <= 20 && next.left - layout.index.right <= 20, 'Page buttons sit next to the page display');
-  assert.ok(Math.abs(layout.index.center - layout.toolbar.center) <= 2, 'The page display is centered in the toolbar');
+  assert.ok(Math.abs(layout.index.center - layout.toolbar.center) <= 2, 'The page display is centered in the book toolbar');
   assert.ok(Math.abs(previous.middle - layout.index.middle) <= 2 && Math.abs(next.middle - layout.index.middle) <= 2, 'Page buttons align on the same row as the page display');
-  assert.ok(previous.left >= 0 && next.right <= layout.width && layout.index.bottom <= layout.toolbar.bottom + 1, 'All page controls stay inside the header and viewport');
-  assert.equal(layout.documentWidth, layout.width, 'The header causes no horizontal page overflow');
-  if (layout.narrow) assert.ok(layout.index.top >= layout.title.bottom, 'Narrow screens place page controls on the second row');
+  assert.ok(previous.left >= layout.toolbar.left && next.right <= layout.toolbar.right && layout.index.top >= layout.toolbar.top - 1 && layout.index.bottom <= layout.toolbar.bottom + 1, 'All page controls stay inside the book toolbar');
+  assert.ok(layout.navigation.right <= previous.left + 1, 'Book navigation toggle does not overlap page controls');
+  assert.equal(layout.documentWidth, layout.width, 'Book controls cause no horizontal page overflow');
   return layout;
 }
 
@@ -74,7 +79,7 @@ export async function checkPageNavigation(page, expanded) {
     // A viewport override or a just-closed panel may still have a pending resize.
     const before = await stableReadingLayout();
     if (before.sidebarOpen !== open) {
-      const centered = await checkToolbarPageControls(page);
+      const centered = await checkBookPageControls(page);
       await page.click('.navigation-toggle');
       try {
         await page.waitForFunction(({ current, fraction }) => {
@@ -87,16 +92,16 @@ export async function checkPageNavigation(page, expanded) {
         const after = await state();
         throw new Error(`Sidebar ${open ? 'open' : 'close'} changed reading position: before=${JSON.stringify(before)}, after=${JSON.stringify(after)}`, { cause });
       }
-      const after = await checkToolbarPageControls(page);
+      const after = await checkBookPageControls(page);
       assert.ok(Math.abs(after.index.center - centered.index.center) <= 1, 'Sidebar toggles do not move the page controls');
     }
   }
   await setSidebar(expanded);
-  await checkToolbarPageControls(page);
+  await checkBookPageControls(page);
   const count = await page.evaluate(() => document.querySelectorAll('.page-thumbnail').length);
   async function edit() {
     if (!await page.evaluate(() => !!document.querySelector('#page-input'))) await page.press('.page-index', 'Enter');
-    await checkToolbarPageControls(page);
+    await checkBookPageControls(page);
     assert.ok(await page.evaluate(() => {
       const r = document.querySelector('#page-jump').getBoundingClientRect();
       return r.left >= 0 && r.right <= innerWidth && r.bottom <= innerHeight;
@@ -108,7 +113,7 @@ export async function checkPageNavigation(page, expanded) {
     await page.press('#page-input', 'Enter');
     await page.waitForFunction((number) => document.querySelector('.page-thumbnail[aria-current="page"]')?.id === `thumbnail-${number}` && !document.querySelector('.reading-message'), target);
     assert.equal(await page.evaluate(() => !!document.querySelector('#page-input')), false);
-    await checkToolbarPageControls(page);
+    await checkBookPageControls(page);
   }
   await edit();
   assert.equal(await page.evaluate(() => !!document.querySelector('#page-jump select, #page-jump button')), false);
@@ -131,5 +136,5 @@ export async function checkPageNavigation(page, expanded) {
   await page.waitForFunction(() => document.querySelector('.page-thumbnail[aria-current="page"]')?.id === 'thumbnail-10' && !document.querySelector('.reading-message'));
   await setSidebar(!expanded);
   await setSidebar(expanded);
-  console.log(`PASS page navigation: ${expanded ? 'expanded' : 'collapsed'}; centered header, adjacent buttons, sidebar position, file order, first/middle/last, errors and keyboard recovery`);
+  console.log(`PASS page navigation: ${expanded ? 'expanded' : 'collapsed'}; centered book toolbar, adjacent buttons, sidebar position, file order, first/middle/last, errors and keyboard recovery`);
 }

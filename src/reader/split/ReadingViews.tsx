@@ -13,7 +13,7 @@ export function useReadingViews() {
   useEffect(() => {
     const remember = (event: FocusEvent) => {
       const target = event.target;
-      focusOwner.current = target instanceof Element && target.closest('.paper-scroller, .supplement-graph, .split-resize') ? target : null;
+      focusOwner.current = target instanceof Element && target.closest('.paper-scroller, .book-navigation, .book-navigation-toggle, .book-toolbar, .supplement-graph, .split-resize') ? target : null;
     };
     document.addEventListener('focusin', remember);
     return () => document.removeEventListener('focusin', remember);
@@ -67,7 +67,7 @@ export function useReadingViews() {
     // Native hidden/inert handling can blur the source before this effect runs.
     const current = document.activeElement;
     const focused = current === document.body || current === document.documentElement ? focusOwner.current : current;
-    if ((!bookVisible && focused?.closest('.paper-scroller')) || (!graphVisible && focused?.closest('.supplement-graph')) ||
+    if ((!bookVisible && focused?.closest('.paper-scroller, .book-navigation, .book-navigation-toggle, .book-toolbar')) || (!graphVisible && focused?.closest('.supplement-graph')) ||
       (narrow && focused?.classList.contains('split-resize'))) {
       document.getElementById('open-supplement-graph')?.focus({ preventScroll: true });
     }

@@ -107,8 +107,9 @@ export function Reader() {
   const [pageInput, setPageInput] = useState("");
   const [pageError, setPageError] = useState("");
   const [editingPage, setEditingPage] = useState(false);
-  const [navigationOpen, setNavigationOpen] = useState(() => window.matchMedia("(min-width: 761px)").matches);
-  const { layoutRef, bottomPanel: panelBelow } = usePanelLayout(views.split, navigationOpen && views.bookVisible && !graphOpen);
+  const [navigationOpen, setNavigationOpen] = useState(false);
+  const [navigationMode, setNavigationMode] = useState<'contents' | 'pages'>('contents');
+  const { layoutRef, bottomPanel: panelBelow } = usePanelLayout(views.split);
   const [supplementId, setSupplementId] = useState<string | null>(null);
   const [choiceIds, setChoiceIds] = useState<string[] | null>(null);
   const [methodOpenIds, setMethodOpenIds] = useState<string[]>([]);
@@ -328,13 +329,13 @@ export function Reader() {
     }
     const list = thumbnailList.current;
     const selected = document.getElementById(`thumbnail-${currentPage}`);
-    if (list && selected) {
+    if (list && !list.hidden && selected) {
       if (selected.offsetTop < list.scrollTop) list.scrollTop = selected.offsetTop;
       else if (selected.offsetTop + selected.offsetHeight > list.scrollTop + list.clientHeight) {
         list.scrollTop = selected.offsetTop + selected.offsetHeight - list.clientHeight;
       }
     }
-  }, [currentPage, navigationOpen, editingPage]);
+  }, [currentPage, navigationOpen, navigationMode, editingPage]);
 
   useLayoutEffect(() => {
     if (!commit || !scroller.current || !pageList.current) return;
@@ -700,17 +701,8 @@ export function Reader() {
   }}>
     <header className="toolbar">
       <div className="book-heading">
-        <button ref={toggleButton} className="icon-button navigation-toggle" aria-label={navigationOpen && views.bookVisible && !graphOpen ? "收起页面导航" : "展开页面导航"}
-          aria-expanded={navigationOpen && views.bookVisible && !graphOpen} aria-controls="page-sidebar" onClick={() => {
-            clearPreview();
-            if (graphOpen || !views.bookVisible) { views.show('book', true); setNavigationOpen(true); }
-            else setNavigationOpen(!navigationOpen);
-          }}>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="2" stroke="currentColor" strokeWidth="1.5" /><path d="M9 4v16" stroke="currentColor" strokeWidth="1.5" /></svg>
-        </button>
         <h1>{bookTitle}</h1>
       </div>
-      {pageControls}
       <div className="toolbar-actions">
         <button id="open-supplement-graph" className="icon-button" aria-label="节点图" title="节点图" disabled={!content.published} aria-expanded={graphOpen}
           aria-controls="supplement-graph" onClick={graphOpen ? closeGraph : openGraph}>
@@ -764,15 +756,38 @@ export function Reader() {
     </div>}
     {ownsPersonal && <LegacyCopies copies={content.personal!.copies} current={personal} titleForNote={(id) => getSupplement(id)?.title ?? id} />}
     {readingError && <p className="storage-error" role="status">{readingError}</p>}
-    <main ref={layoutRef} className={`reading-layout${panelBelow ? " panel-bottom" : ""}${navigationOpen && views.bookVisible && !graphOpen ? " navigation-open" : ""}${graphOpen ? " graph-open" : ""}${views.split ? " views-split" : ""}${!views.bookVisible ? " book-hidden" : ""}${note || choiceIds || personalItem || personalLibraryOpen ? " supplement-open" : ""}`}>
-      <nav id="page-sidebar" className="page-sidebar" hidden={!navigationOpen || !views.bookVisible || graphOpen} aria-label="页面导航">
-        <div className="page-thumbnails" ref={thumbnailList}>
+    <main ref={layoutRef} className={`reading-layout${panelBelow ? " panel-bottom" : ""}${graphOpen ? " graph-open" : ""}${views.split ? " views-split" : ""}${!views.bookVisible ? " book-hidden" : ""}${note || choiceIds || personalItem || personalLibraryOpen ? " supplement-open" : ""}`}>
+      <div className="book-toolbar" hidden={!views.bookVisible} aria-label="教材工具栏">
+      <button ref={toggleButton} id="book-navigation-toggle" className="icon-button navigation-toggle book-navigation-toggle"
+        hidden={!views.bookVisible} aria-label={navigationOpen ? "收起教材目录" : "展开教材目录"}
+        title="教材目录" aria-expanded={navigationOpen} aria-controls="page-sidebar" onClick={() => {
+          clearPreview(); setNavigationOpen(!navigationOpen);
+        }}>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="2" stroke="currentColor" strokeWidth="1.5" /><path d="M9 4v16" stroke="currentColor" strokeWidth="1.5" /></svg>
+      </button>
+      {pageControls}
+      </div>
+      <nav id="page-sidebar" className="page-sidebar book-navigation" hidden={!navigationOpen || !views.bookVisible} aria-label="教材目录"
+        onKeyDown={(event) => { if (event.key === 'Escape') { event.preventDefault(); event.stopPropagation(); setNavigationOpen(false); toggleButton.current?.focus(); } }}>
+        <div className="book-navigation-modes" role="group" aria-label="教材导航方式">
+          <button type="button" aria-pressed={navigationMode === 'contents'} onClick={() => setNavigationMode('contents')}>目录</button>
+          <button type="button" aria-pressed={navigationMode === 'pages'} onClick={() => setNavigationMode('pages')}>页面</button>
+        </div>
+        <div className="book-contents" hidden={navigationMode !== 'contents'}>
+          {chapters.map((chapter) => <details key={chapter.id}>
+            <summary>{chapter.title}</summary>
+            <button type="button" onClick={() => { setNavigationOpen(false); void navigate({ page: chapter.start }); }}>章首页</button>
+            {sections.filter((section) => section.chapterId === chapter.id).map((section) =>
+              <button type="button" key={section.id} onClick={() => { setNavigationOpen(false); void navigate({ page: section.start }); }}>{section.title}</button>)}
+          </details>)}
+        </div>
+        <div className="page-thumbnails" ref={thumbnailList} hidden={navigationMode !== 'pages'}>
           {pages.map((page) => <button id={`thumbnail-${page.page}`} key={page.page} className="page-thumbnail"
             tabIndex={page.page === currentPage ? 0 : -1} aria-label={`跳转到文件第 ${page.page} 页，${page.printedPage === null ? "无印刷页码" : pageLabel(page)}`} aria-current={page.page === currentPage ? "page" : undefined}
             onKeyDown={(event) => {
               const number = event.key === "ArrowDown" ? page.page + 1 : event.key === "ArrowUp" ? page.page - 1 : event.key === "Home" ? 1 : event.key === "End" ? pageCount : null;
               if (number !== null) { event.preventDefault(); document.getElementById(`thumbnail-${Math.max(1, Math.min(pageCount, number))}`)?.focus(); }
-            }} onClick={() => { void navigate({ page: page.page }); }}>
+            }} onClick={() => { setNavigationOpen(false); void navigate({ page: page.page }); }}>
             <img src={page.thumbnail} alt="" width="80" height="112" loading="lazy" /><span>文件第 {page.page} 页</span><span>{page.printedPage === null ? "无印刷页码" : pageLabel(page)}</span>
           </button>)}
         </div>
@@ -781,6 +796,7 @@ export function Reader() {
         onClick={(event) => {
           const target = event.target as HTMLElement;
           if (!target.matches('.page-image') && target !== event.currentTarget) return;
+          if (navigationOpen) { setNavigationOpen(false); return; }
           const bottomPanel = panelBelow && (note || choiceIds || personalItem || personalLibraryOpen);
           if (!bottomPanel && !preview?.anchor.docked) return;
           if (document.querySelector('[data-dirty="true"]') && !window.confirm('有尚未保存的内容，放弃修改？')) return;

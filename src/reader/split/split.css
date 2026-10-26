@@ -5,7 +5,6 @@
 /* The drawer belongs to the visible book, or to the graph when the book is hidden. */
 .reading-layout.panel-bottom.supplement-open { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, var(--supplement-height, 45%)); }
 .reading-layout.graph-open.panel-bottom.supplement-open:not(.views-split) { grid-template-columns: minmax(0, 1fr); }
-.reading-layout.navigation-open.panel-bottom.supplement-open { grid-template-columns: 152px minmax(0, 1fr); }
 .reading-layout.panel-bottom > .page-sidebar { grid-column: 1; grid-row: 1 / -1; }
 .reading-layout.panel-bottom > .paper-scroller { grid-column: -2; grid-row: 1; }
 .reading-layout.panel-bottom > .supplement-panel { grid-column: -2; grid-row: 2; border-left: 0; border-top: 1px solid var(--type-color, var(--separator)); padding-bottom: 24px; }
@@ -29,6 +28,26 @@
   .reading-layout.views-split.panel-bottom > .panel-resize { grid-column: 3; }
 }
 
-@media (max-width: 760px) {
-  .reading-layout.navigation-open.panel-bottom.supplement-open { grid-template-columns: minmax(0, 1fr); }
+
+/* Navigation overlays only its book track, so opening it preserves both reading panes. */
+.book-toolbar > .book-navigation-toggle { width: 44px; height: 44px; border: 1px solid var(--separator); background: var(--surface); }
+
+.reading-layout > .page-sidebar.book-navigation { position: relative; inset: auto; grid-column: 1; grid-row: 1; align-self: stretch; justify-self: start; z-index: 4; width: min(300px, 100%); max-height: calc(100% - 64px); margin-top: 64px; padding: 12px 0 0; overflow: hidden; border-right: 1px solid var(--separator); }
+.book-navigation-modes { display: flex; gap: 4px; width: 100%; padding: 0 16px 12px; border-bottom: 1px solid var(--separator); }
+.book-navigation-modes button { flex: 1; min-height: 40px; background: transparent; color: var(--secondary); border-radius: 6px; }
+.book-navigation-modes button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); }
+.book-contents { width: 100%; overflow: auto; padding: 12px 16px; scrollbar-width: thin; }
+.book-contents summary { padding: 12px 0; cursor: pointer; font-size: 14px; font-weight: 600; }
+.book-contents button { display: block; width: 100%; padding: 10px 12px; min-height: 40px; background: transparent; text-align: left; color: var(--secondary); font-size: 14px; border-radius: 6px; }
+.book-contents button:hover { background: var(--hover); color: #1d1d1f; }
+.book-navigation .page-thumbnails[hidden], .book-contents[hidden] { display: none; }
+@media (min-width: 1001px) {
+  .reading-layout.views-split > .page-sidebar.book-navigation, .reading-layout.views-split > .book-toolbar { grid-column: 3; grid-row: 1; }
 }
+
+.reading-layout > .book-toolbar { grid-column: 1; grid-row: 1; align-self: start; display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; align-items: center; height: 64px; padding: 8px 12px; z-index: 5; background: var(--surface); border-bottom: 1px solid var(--separator); }
+.reading-layout > .book-toolbar[hidden] { display: none; }
+.reading-layout > .paper-scroller { margin-top: 64px; }
+.book-toolbar .page-controls { grid-column: 2; }
+.book-toolbar .page-input-error { left: 50%; transform: translateX(-50%); max-width: calc(100vw - 32px); }
+@media (min-width: 1001px) { .reading-layout.views-split > .book-toolbar { grid-column: 3; } }

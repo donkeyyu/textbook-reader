@@ -74,7 +74,8 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
     container.addChild(lines, dots, labels);
     const next = sprites.current;
     let topology = '';
-    let initialFocus: string | null = null;
+    let initialOverview = false;
+    let initialSelection: string | null = null;
     function colorSprite({ node, circle }: Sprite) {
       const color = colors.get(node.type) || '#0066cc';
       circle.clear().circle(0, 0, radius).fill(color);
@@ -241,7 +242,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
         previous?.y === anchor?.y && previous?.radius === anchor?.radius ? previous : anchor);
     }
     function transform(zoom: number, point: Point = { x: renderer!.screen.width / 2, y: renderer!.screen.height / 2 }) {
-      initialFocus = null;
+      initialOverview = false;
       const nextZoom = Math.max(minZoom, Math.min(maxZoom, zoom));
       const local = container!.toLocal(point);
       container!.scale.set(nextZoom);
@@ -249,7 +250,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       setScale(nextZoom); paint();
     }
     function focus(key: string) {
-      initialFocus = null;
+      initialOverview = false;
       const node = next.get(key)?.node;
       if (!node) return;
       const zoom = Math.max(1.2, container!.scale.x);
@@ -257,8 +258,8 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       container!.position.set(renderer!.screen.width / 2 - node.x! * zoom, renderer!.screen.height / 2 - node.y! * zoom);
       setScale(zoom); paint();
     }
-    function fit() {
-      initialFocus = null;
+    function fit(automatic = false) {
+      if (!automatic) initialOverview = false;
       if (!layout.length) return;
       const xs = layout.map((node) => node.x!), ys = layout.map((node) => node.y!);
       const left = Math.min(...xs) - 90, top = Math.min(...ys) - 90;
@@ -276,12 +277,10 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       .force('collision', forceCollide<LayoutNode>(32).strength(1).iterations(2))
       .force('x', forceX(0).strength(.004)).force('y', forceY(0).strength(.004))
       .alphaDecay(.04).velocityDecay(.45).on('tick', () => {
-        if (initialFocus && (initialFocus !== current.current.selectedKey || !next.has(initialFocus))) initialFocus = null;
-        const node = initialFocus ? next.get(initialFocus)?.node : null;
-        if (node) container.position.set(renderer.screen.width / 2 - node.x! * container.scale.x,
-          renderer.screen.height / 2 - node.y! * container.scale.y);
+        if (initialOverview && initialSelection !== current.current.selectedKey) initialOverview = false;
+        if (initialOverview) fit(true);
         paint();
-      }).on('end', () => { initialFocus = null; }).stop();
+      }).on('end', () => { initialOverview = false; }).stop();
     simulation.current = force;
     function resume() {
       if (!current.current.visible) return;
@@ -289,13 +288,9 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       if (!initialized.current) {
         // Show the graph after a short warm-up; finish settling between frames.
         force.tick(4);
-        if (current.current.selectedKey) focus(current.current.selectedKey!);
-        else {
-          container!.scale.set(1);
-          container!.position.set(renderer!.screen.width / 2, renderer!.screen.height / 2);
-          setScale(1);
-        }
-        initialFocus = current.current.selectedKey;
+        initialSelection = current.current.selectedKey;
+        initialOverview = true;
+        fit(true);
         skipFocus.current = current.current.selectedKey;
         initialized.current = true;
       }
@@ -320,7 +315,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
     }
     function down(event: PointerEvent) {
       if (event.button !== 0 || gesture) return;
-      initialFocus = null;
+      initialOverview = false;
       const p = point(event), node = hit(p), local = container!.toLocal(p);
       gesture = { pointer: event.pointerId, start: p, last: p, node, moved: false,
         offset: { x: (node?.x ?? local.x) - local.x, y: (node?.y ?? local.y) - local.y } };
@@ -403,12 +398,12 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       canvas.style.cursor = 'grab';
     }
     function pause() {
-      initialFocus = null;
+      initialOverview = false;
       clearHover(); cancelGesture();
       force.stop(); cancelAnimationFrame(renderFrame); renderFrame = 0;
     }
     actions.current = { focus, fit, zoom: (factor) => transform(container.scale.x * factor),
-      pan: (x, y) => { initialFocus = null; container.x += x; container.y += y; paint(); }, paint, pause, resume, update };
+      pan: (x, y) => { initialOverview = false; container.x += x; container.y += y; paint(); }, paint, pause, resume, update };
     update();
     canvas.addEventListener('pointerdown', down); canvas.addEventListener('pointermove', move);
     canvas.addEventListener('pointerup', up); canvas.addEventListener('pointercancel', up);

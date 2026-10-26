@@ -49,7 +49,7 @@
 }
 
 .graph-legend-dot { width: 8px; height: 8px; margin-inline: 4px; border-radius: 50%; background: var(--type-color); }
-.graph-directory-dock { position: absolute; top: 16px; left: 16px; bottom: 80px; width: min(var(--graph-directory-width, 336px), calc(100% - 96px)); display: flex; flex-direction: column; align-items: flex-start; gap: 8px; z-index: 3; pointer-events: none; }
+.graph-directory-dock { position: absolute; top: 16px; left: 16px; bottom: 80px; width: min(var(--graph-directory-width, 240px), calc(100% - 96px)); display: flex; flex-direction: column; align-items: flex-start; gap: 8px; z-index: 3; pointer-events: none; }
 .graph-directory-panel { position: relative; padding-right: 8px; display: flex; flex-direction: column; min-height: 0; width: 100%; border: 1px solid var(--separator); border-radius: 10px; background: var(--surface); pointer-events: auto; overflow: hidden; }
 .graph-directory-panel h2 { flex: none; font-size: 15px; margin: 16px 16px 12px; }
 .graph-directory-filter { display: flex; flex: none; align-items: center; gap: 12px; padding: 0 16px 12px; font-size: 13px; color: var(--secondary); }

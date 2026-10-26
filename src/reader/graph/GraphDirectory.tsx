@@ -53,7 +53,7 @@ export function GraphDirectory({ nodes, chapters, sections, selectedKey, onChoos
 /** Only this handle rerenders during a drag; the node tree keeps its scroll and focus. */
 export function DirectoryResize() {
   const handle = useRef<HTMLDivElement>(null);
-  const [width, setWidth] = useState(336);
+  const [width, setWidth] = useState(240);
   const [maximum, setMaximum] = useState(600);
   const minimum = Math.min(240, maximum);
   useLayoutEffect(() => {

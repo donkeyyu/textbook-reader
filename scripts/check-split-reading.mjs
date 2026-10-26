@@ -81,14 +81,18 @@ export async function checkSplitKeyboardResize(page) {
 
 export async function checkReadingViewRecovery(page) {
   const before = await splitReadingState(page);
-  await page.click('[aria-label="关闭教材视图"]');
-  await page.click('[aria-label="关闭节点图视图"]');
-  await page.waitForFunction(() => document.activeElement?.id === 'show-graph-view');
+  assert.ok(before.split);
+  await page.click('#graph-book-toggle');
+  await page.waitForFunction(() => document.activeElement?.id === 'graph-book-toggle');
   const closed = await splitReadingState(page);
   assert.equal(closed.bookVisible, false);
-  assert.equal(closed.graphVisible, false);
-  await page.click('#show-book-view');
-  await page.click('#show-graph-view');
+  assert.equal(closed.graphVisible, true);
+  await page.click('#open-supplement-graph');
+  const bookOnly = await splitReadingState(page);
+  assert.equal(bookOnly.bookVisible, true);
+  assert.equal(bookOnly.graphVisible, false);
+  await page.click('#open-supplement-graph');
+  await page.click('#graph-book-toggle');
   await waitForReadingPosition(page, before);
   await page.waitForFunction((scroll) => !document.getElementById('supplement-panel') || Math.abs(document.getElementById('supplement-panel').scrollTop - scroll) < 1, before.panelScroll ?? 0);
   const after = await splitReadingState(page);
@@ -150,7 +154,7 @@ export async function checkSplitOriginalRetry(page, { testOrigin }) {
     return Math.abs((s.scrollTop - l.offsetTop - p.offsetTop) / p.offsetHeight - fraction) > .1;
   }, first.fraction);
   assertSameCamera(camera, await splitGraphCamera(page));
-  await page.click('[aria-label="关闭教材视图"]');
+  await page.click('#graph-book-toggle');
   const source = await splitReadingState(page);
   await page.evaluate((number) => {
     window.qa07Decode = HTMLImageElement.prototype.decode;
@@ -208,15 +212,16 @@ export async function checkSplitResponsiveFocus(page) {
   }));
   const cases = [];
   for (const [name, active, selector, expected] of [
-    ['graph search toggle', 'book', '#graph-search-toggle', 'show-book-view'],
-    ['graph canvas', 'book', '.graph-viewport', 'show-book-view'],
-    ['splitter', 'book', '.split-resize', 'show-book-view'],
-    ['book scroller', 'graph', '#textbook-view', 'show-graph-view'],
+    ['graph search toggle', 'book', '#graph-search-toggle', 'open-supplement-graph'],
+    ['graph canvas', 'book', '.graph-viewport', 'open-supplement-graph'],
+    ['splitter', 'book', '.split-resize', 'open-supplement-graph'],
     ['visible toolbar', 'book', '.page-index', null],
   ]) {
     await page.cdp('Emulation.setDeviceMetricsOverride', { width: 1280, height: 950, deviceScaleFactor: 1, mobile: false });
     await page.waitForFunction(() => !!document.querySelector('.views-split'));
-    await page.click(`#show-${active}-view`);
+    // Showing the book makes it the active view retained below the split breakpoint.
+    await page.click('#graph-book-toggle');
+    await page.click('#graph-book-toggle');
     await settle();
     await page.focus(selector);
     const before = await state();
@@ -234,4 +239,54 @@ export async function checkSplitResponsiveFocus(page) {
       passed: settled.frames >= 3 && !settled.timedOut && afterResize.valid && correctTarget && afterTab.valid });
   }
   return { cases, passed: cases.every((item) => item.passed), viewport: { wide: [1280, 950], narrow: [980, 950], dpr: 1 } };
+}
+
+// Start with a selected explanation in split view at 1760px (or wider).
+export async function checkSplitPanelPlacement(page) {
+  const original = Number(await page.evaluate(() => document.querySelector('.split-resize').getAttribute('aria-valuenow')));
+  const geometry = () => page.evaluate(() => {
+    const rect = (selector) => document.querySelector(selector).getBoundingClientRect().toJSON();
+    return { layout: rect('.reading-layout'), graph: rect('#supplement-graph'), book: rect('#textbook-view'),
+      panel: rect('#supplement-panel'), separator: rect('.split-resize'),
+      share: Number(document.querySelector('.split-resize').getAttribute('aria-valuenow')) };
+  });
+  const checks = [];
+  try {
+    for (const [key, share, bottom] of [['Home', 30, false], ['End', 70, true]]) {
+      await page.focus('.split-resize');
+      await page.press('.split-resize', key);
+      await page.waitForFunction(({ share, bottom }) => {
+        const layout = document.querySelector('.reading-layout');
+        return Number(document.querySelector('.split-resize').getAttribute('aria-valuenow')) === share &&
+          layout.classList.contains('panel-bottom') === bottom &&
+          !layout.getAnimations().some((animation) => animation.playState === 'running');
+      }, { share, bottom });
+      const state = await geometry();
+      assert.ok(Math.abs(state.graph.width - (state.layout.width - state.separator.width) * share / 100) < 2,
+        'The drawer must not change the chosen graph share');
+      assert.ok(state.book.left >= state.graph.right && state.panel.left >= state.graph.right,
+        'Book and explanation must not overlap the graph');
+      assert.ok(Math.abs(state.graph.height - state.layout.height) < 2, 'Graph retains full height');
+      if (bottom) {
+        assert.ok(state.panel.top >= state.book.bottom - 1, 'Narrow book pane stacks its explanation');
+        assert.ok(Math.abs(state.panel.left - state.book.left) < 2 && Math.abs(state.panel.right - state.book.right) < 2);
+      } else {
+        assert.ok(state.panel.left >= state.book.right - 1, 'Wide book pane places explanation on its right');
+        assert.ok(Math.abs(state.panel.top - state.book.top) < 2 && Math.abs(state.panel.bottom - state.book.bottom) < 2);
+      }
+      assert.ok(state.panel.right <= state.layout.right + 1 && state.panel.bottom <= state.layout.bottom + 1);
+      checks.push({ key, bottom, ...state });
+    }
+  } finally {
+    let current = Number(await page.evaluate(() => document.querySelector('.split-resize').getAttribute('aria-valuenow')));
+    while (current !== original) {
+      await page.press('.split-resize', current > original ? 'ArrowLeft' : 'ArrowRight');
+      const next = Number(await page.evaluate(() => document.querySelector('.split-resize').getAttribute('aria-valuenow')));
+      if (next === current || Math.abs(next - original) >= Math.abs(current - original)) break;
+      current = next;
+    }
+  }
+  const restored = Number(await page.evaluate(() => document.querySelector('.split-resize').getAttribute('aria-valuenow')));
+  assert.equal(restored, original, 'Restore the starting split share');
+  return { checks, shareRestored: true };
 }

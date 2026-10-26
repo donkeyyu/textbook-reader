@@ -52,7 +52,7 @@ export function useReadingViews() {
     capturePanelScroll();
     setOpen((current) => ({ ...current, [view]: false }));
     setActive(view === 'book' ? 'graph' : 'book');
-    requestAnimationFrame(() => document.getElementById(`show-${view}-view`)?.focus({ preventScroll: true }));
+    requestAnimationFrame(() => document.getElementById('graph-book-toggle')?.focus({ preventScroll: true }));
   }
 
   const bookVisible = open.book && (!narrow || active === 'book');
@@ -69,30 +69,10 @@ export function useReadingViews() {
     const focused = current === document.body || current === document.documentElement ? focusOwner.current : current;
     if ((!bookVisible && focused?.closest('.paper-scroller')) || (!graphVisible && focused?.closest('.supplement-graph')) ||
       (narrow && focused?.classList.contains('split-resize'))) {
-      document.getElementById(graphVisible ? 'show-graph-view' : 'show-book-view')?.focus({ preventScroll: true });
+      document.getElementById('open-supplement-graph')?.focus({ preventScroll: true });
     }
   }, [bookVisible, graphVisible, narrow]);
   return { open, narrow, bookVisible, graphVisible, split: bookVisible && graphVisible, show, close, capturePanelScroll };
-}
-
-export function ReadingViewControls({ views }: { views: ReturnType<typeof useReadingViews> }) {
-  return <div className="reading-view-controls" role="group" aria-label="阅读视图">
-    {(['book', 'graph'] as const).map((view) => {
-      const label = view === 'book' ? '教材' : '节点图';
-      const visible = view === 'book' ? views.bookVisible : views.graphVisible;
-      return <div className="reading-view-control" key={view}>
-        <button id={`show-${view}-view`} type="button" className="text-button" aria-pressed={visible}
-          aria-controls={view === 'book' ? 'textbook-view' : 'supplement-graph'}
-          onClick={() => views.show(view)}>{label}</button>
-        {views.open[view] && <button type="button" className="icon-button" aria-label={`关闭${label}视图`}
-          onClick={() => views.close(view)}>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-          </svg>
-        </button>}
-      </div>;
-    })}
-  </div>;
 }
 
 /** Keep the width on the layout element so dragging does not rerender the book. */

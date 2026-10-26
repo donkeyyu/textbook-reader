@@ -32,7 +32,7 @@ export async function checkGraphReadingPosition(page, { testOrigin, filePage = 2
   }, readingStorageKey);
   assert.ok(samples.every((sample) => sample.page === filePage && sample.saved?.page === filePage),
     `Opening graph changed page: ${[...new Set(samples.map((sample) => `${sample.page}/${sample.saved?.page}`))].join(', ')}`);
-  await page.click('#show-book-view');
+  await page.click('#graph-book-toggle');
   await waitForReadingPosition(page, before);
   const after = await splitReadingState(page);
   assert.equal(after.page, before.page);
@@ -45,7 +45,7 @@ export async function checkGraphReadingPosition(page, { testOrigin, filePage = 2
 export async function checkHiddenGraphRelatedReturn(page) {
   const before = await splitReadingState(page);
   assert.equal(before.bookVisible, true);
-  await page.click('[aria-label="关闭教材视图"]');
+  await page.click('#graph-book-toggle');
   await openGraphSearch(page);
   await page.fill('.graph-search input', '零上与零下温度');
   await page.click('#graph-search-results button');

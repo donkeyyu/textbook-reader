@@ -22,7 +22,8 @@ import type { LinkBinding } from './links/document';
 import type { LinkContext } from './links/LinkContent';
 import { Backlinks } from './links/Backlinks';
 import { projectReferences } from './links/project-references';
-import { ReadingViewControls, SplitResize, useReadingViews } from './split/ReadingViews';
+import { SplitResize, useReadingViews } from './split/ReadingViews';
+import { usePanelLayout } from './split/usePanelLayout';
 
 type ReadingContext = {
   page: number;
@@ -107,6 +108,7 @@ export function Reader() {
   const [pageError, setPageError] = useState("");
   const [editingPage, setEditingPage] = useState(false);
   const [navigationOpen, setNavigationOpen] = useState(() => window.matchMedia("(min-width: 761px)").matches);
+  const { layoutRef, bottomPanel: panelBelow } = usePanelLayout(views.split, navigationOpen && views.bookVisible && !graphOpen);
   const [supplementId, setSupplementId] = useState<string | null>(null);
   const [choiceIds, setChoiceIds] = useState<string[] | null>(null);
   const [methodOpenIds, setMethodOpenIds] = useState<string[]>([]);
@@ -195,6 +197,7 @@ export function Reader() {
 
   function closeGraph() {
     cancelJump(); keepPreview(); clearPreview();
+    if (views.narrow) setNavigationOpen(false);
     views.show('book', true);
     requestAnimationFrame(() => document.getElementById('open-supplement-graph')?.focus({ preventScroll: true }));
   }
@@ -526,7 +529,7 @@ export function Reader() {
       const marker = id ? document.querySelector(`[data-supplement-ids~="${id}"]`)?.getBoundingClientRect() : undefined;
       const viewport = scroller.current?.getBoundingClientRect();
       if (id && marker && viewport && marker.bottom > viewport.top && marker.top < viewport.bottom) focusMarker(id);
-      else document.getElementById(views.bookVisible ? `page-${current.current}` : 'show-book-view')?.focus({ preventScroll: true });
+      else document.getElementById(views.bookVisible ? `page-${current.current}` : 'open-supplement-graph')?.focus({ preventScroll: true });
     });
   }
 
@@ -650,8 +653,7 @@ export function Reader() {
     }
   }} onClickCapture={(event) => {
     const target = event.target as HTMLElement;
-    if (target.closest('.reading-view-controls, .split-resize, .panel-resize')) {
-      if (views.narrow && target.closest('.reading-view-controls')) setNavigationOpen(false);
+    if (target.closest('.split-resize, .panel-resize')) {
       cancelJump(); keepPreview(); clearPreview(); return;
     }
     if (target.closest('.markdown-editor, .create-linked-node, .personal-title, .personal-metadata, .method-toggle, .locate-button, .account-control, .legacy-copies, .supplement-graph, .graph-related, .node-link, .backlinks, #open-supplement-graph')) return;
@@ -735,7 +737,6 @@ export function Reader() {
         }} />
       </div>
     </header>
-    {graphMounted && <ReadingViewControls views={views} />}
     {selectionPage !== null && <div className="selection-help" role="status">在第 {selectionPage} 页拖动框选段落；键盘可用方向键调整，Enter 确认。<button className="text-button" onClick={() => setSelectionPage(null)}>取消</button></div>}
     {content.loading && <p className="content-status" role="status">正在载入补充与个人内容…</p>}
     {(content.error || content.notice) && <div className={content.error ? 'storage-error' : 'content-status'} role={content.error ? 'alert' : 'status'}>
@@ -747,7 +748,7 @@ export function Reader() {
     </div>}
     {ownsPersonal && <LegacyCopies copies={content.personal!.copies} current={personal} titleForNote={(id) => getSupplement(id)?.title ?? id} />}
     {readingError && <p className="storage-error" role="status">{readingError}</p>}
-    <main className={`reading-layout${navigationOpen && views.bookVisible && !graphOpen ? " navigation-open" : ""}${graphOpen ? " graph-open" : ""}${views.split ? " views-split" : ""}${!views.bookVisible ? " book-hidden" : ""}${!views.bookVisible && !graphOpen ? " views-empty" : ""}${note || choiceIds || personalItem || personalLibraryOpen ? " supplement-open" : ""}`}>
+    <main ref={layoutRef} className={`reading-layout${panelBelow ? " panel-bottom" : ""}${navigationOpen && views.bookVisible && !graphOpen ? " navigation-open" : ""}${graphOpen ? " graph-open" : ""}${views.split ? " views-split" : ""}${!views.bookVisible ? " book-hidden" : ""}${note || choiceIds || personalItem || personalLibraryOpen ? " supplement-open" : ""}`}>
       <nav id="page-sidebar" className="page-sidebar" hidden={!navigationOpen || !views.bookVisible || graphOpen} aria-label="页面导航">
         <div className="page-thumbnails" ref={thumbnailList}>
           {pages.map((page) => <button id={`thumbnail-${page.page}`} key={page.page} className="page-thumbnail"
@@ -764,7 +765,7 @@ export function Reader() {
         onClick={(event) => {
           const target = event.target as HTMLElement;
           if (!target.matches('.page-image') && target !== event.currentTarget) return;
-          const bottomPanel = window.matchMedia('(max-width: 1100px)').matches && (note || choiceIds || personalItem || personalLibraryOpen);
+          const bottomPanel = panelBelow && (note || choiceIds || personalItem || personalLibraryOpen);
           if (!bottomPanel && !preview?.anchor.docked) return;
           if (document.querySelector('[data-dirty="true"]') && !window.confirm('有尚未保存的内容，放弃修改？')) return;
           keepPreview(); clearPreview();
@@ -821,12 +822,13 @@ export function Reader() {
       </div>
       {graphMounted && <SupplementGraph nodes={content.nodes} selectedKey={selectedGraphKey} visible={graphOpen}
         personalEdges={references.edges}
-        chapters={chapters} sections={sections} onSelect={selectGraphNode} onShowBook={() => {
-          cancelJump(); keepPreview(); clearPreview(); views.show('book');
-          requestAnimationFrame(() => document.getElementById('show-book-view')?.focus({ preventScroll: true }));
+        chapters={chapters} sections={sections} onSelect={selectGraphNode} bookVisible={views.bookVisible} onToggleBook={() => {
+          cancelJump(); keepPreview(); clearPreview();
+          if (views.narrow) setNavigationOpen(false);
+          if (views.bookVisible) views.close('book');
+          else views.show('book');
         }} />}
       {graphMounted && <SplitResize />}
-      {!views.bookVisible && !graphOpen && <p className="views-empty-message">选择上方“教材”或“节点图”继续阅读。</p>}
       {(personalItem || personalLibraryOpen || choiceIds || note) && <PanelResize />}
       {personalLibraryOpen && <PersonalLibrary nodes={content.nodes.filter((node) => node.source === 'personal')} chapters={chapters} sections={sections}
         onOpen={openPersonal} onCreate={() => {

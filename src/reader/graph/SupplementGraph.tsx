@@ -15,11 +15,11 @@ function nodeContext(node: ContentNode, chapters: PublishedContent['chapters'], 
     node.location ? pageLabel(getPage(node.location.page)) : node.summary.slice(0, 48)].filter(Boolean).join(' · ');
 }
 
-export function SupplementGraph({ nodes, personalEdges, selectedKey, visible, onSelect, onShowBook, chapters, sections }: {
+export function SupplementGraph({ nodes, personalEdges, selectedKey, visible, onSelect, bookVisible, onToggleBook, chapters, sections }: {
   nodes: ContentNode[]; selectedKey: string | null; visible: boolean;
   personalEdges: readonly PersonalReferenceEdge[];
   chapters: PublishedContent['chapters']; sections: PublishedContent['sections'];
-  onSelect: (key: string | null) => boolean; onShowBook: () => void;
+  onSelect: (key: string | null) => boolean; bookVisible: boolean; onToggleBook: () => void;
 }) {
   const host = useRef<HTMLDivElement>(null);
   const search = useRef<HTMLInputElement>(null);
@@ -97,9 +97,10 @@ export function SupplementGraph({ nodes, personalEdges, selectedKey, visible, on
           </div>
         </div>
       </details>
-      <button className="icon-button graph-floating-button" type="button" aria-label="在右侧展开教材" title="展开教材"
-        aria-controls="textbook-view" onClick={onShowBook}>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+      <button id="graph-book-toggle" className="icon-button graph-floating-button" type="button"
+        aria-label={bookVisible ? "隐藏教材" : "显示教材"} title={bookVisible ? "隐藏教材" : "显示教材"}
+        aria-controls="textbook-view" aria-pressed={bookVisible} onClick={onToggleBook}>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.5" /><path d="M15 4v16" stroke="currentColor" strokeWidth="1.5" />{bookVisible && <path d="M16 5h3a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-3Z" fill="currentColor" opacity=".25" />}</svg>
       </button>
     </div>
     <div className="graph-search-dock" onKeyDown={(event) => {

@@ -6,7 +6,7 @@ export async function checkGraphControls(page, { narrow = false } = {}) {
   const bounds = () => page.evaluate(() => {
     const graph = document.getElementById('supplement-graph').getBoundingClientRect();
     const canvas = document.querySelector('.graph-viewport canvas').getBoundingClientRect();
-    const targets = ['.graph-settings', '[aria-label="在右侧展开教材"]', '#graph-search-toggle',
+    const targets = ['.graph-settings', '#graph-book-toggle', '#graph-search-toggle',
       '#graph-search-panel:not([hidden])', '#graph-search-results'];
     return { canvasFills: Math.abs(canvas.height - graph.height) < 2 && Math.abs(canvas.width - graph.width) < 2,
       graphInViewport: graph.bottom <= innerHeight + 1 && graph.right <= innerWidth + 1,
@@ -17,6 +17,7 @@ export async function checkGraphControls(page, { narrow = false } = {}) {
   });
   const initial = await bounds();
   assert.equal(initial.canvasFills, true); assert.equal(initial.graphInViewport, true); assert.deepEqual(initial.overflow, []);
+  assert.equal(await page.evaluate(() => !!document.querySelector('.reading-view-controls')), false);
   assert.equal(await page.evaluate(() => !!document.getElementById('open-personal-library')), false);
   assert.equal(await page.evaluate(() => document.querySelector('#open-supplement-graph').textContent.trim()), '');
   assert.equal(await page.evaluate(() => document.querySelector('#add-personal-supplement').getAttribute('aria-label')), '添加补充');
@@ -45,13 +46,41 @@ export async function checkGraphControls(page, { narrow = false } = {}) {
   await openGraphSettings(page); assert.deepEqual((await bounds()).overflow, []);
   await page.press('.graph-settings > summary', 'Escape');
   assert.equal(await page.evaluate(() => document.querySelector('.graph-settings').open), false);
-  await page.click('[aria-label="在右侧展开教材"]');
+  await page.click('#graph-book-toggle');
   await page.waitForFunction((narrow) => narrow ? document.getElementById('supplement-graph').hidden : document.querySelector('.reading-layout').classList.contains('views-split'), narrow);
-  const split = await page.evaluate(() => {
+  const ownerBounds = () => page.evaluate(() => {
     const graph = document.getElementById('supplement-graph').getBoundingClientRect();
     const book = document.getElementById('textbook-view').getBoundingClientRect();
-    return { bookVisible: getComputedStyle(document.getElementById('textbook-view')).visibility === 'visible', rightOfGraph: book.left >= graph.right };
+    const panel = document.getElementById('supplement-panel').getBoundingClientRect();
+    const layout = document.querySelector('.reading-layout').getBoundingClientRect();
+    return { graph: graph.toJSON(), book: book.toJSON(), panel: panel.toJSON(), layout: layout.toJSON(),
+      bookVisible: getComputedStyle(document.getElementById('textbook-view')).visibility === 'visible',
+      pressed: document.getElementById('graph-book-toggle').getAttribute('aria-pressed') };
   });
-  assert.equal(split.bookVisible, true); if (!narrow) assert.equal(split.rightOfGraph, true);
-  return { initial, settingsAndSearchWithinGraph: true, keyboardSearch: true, iconToolbar: true, rightBookOrNarrowSwitch: true };
+  const split = await ownerBounds();
+  assert.equal(split.bookVisible, true);
+  if (narrow) assert.equal(await page.evaluate(() => document.getElementById('page-sidebar').hidden), true, 'Showing the book must not open its navigation');
+  if (!narrow) {
+    assert.equal(split.pressed, 'true');
+    assert.ok(split.book.left >= split.graph.right);
+    assert.ok(split.panel.left >= split.graph.right, 'Explanation belongs entirely to the book pane');
+    if (split.layout.right - split.book.left <= 1100) {
+      assert.ok(split.panel.top >= split.book.bottom - 1, 'Narrow book pane stacks its explanation below');
+      assert.ok(Math.abs(split.graph.height - split.layout.height) < 2, 'Explanation does not shorten the graph');
+    } else {
+      assert.ok(split.panel.left >= split.book.right - 1, 'Wide book pane places explanation beside the book');
+    }
+    await page.click('#graph-book-toggle');
+    await page.waitForFunction(() => document.getElementById('graph-book-toggle').getAttribute('aria-pressed') === 'false');
+  } else {
+    await page.click('#open-supplement-graph');
+  }
+  await page.waitForFunction(() => !document.querySelector('.reading-layout').getAnimations().some((a) => a.playState === 'running'));
+  const graphOnly = await ownerBounds();
+  assert.equal(graphOnly.bookVisible, false);
+  if (graphOnly.layout.width > 1100) assert.ok(graphOnly.panel.left >= graphOnly.graph.right - 1);
+  else assert.ok(graphOnly.panel.top >= graphOnly.graph.bottom - 1);
+  assert.ok(graphOnly.panel.bottom <= graphOnly.layout.bottom + 1);
+  return { initial, split, graphOnly, settingsAndSearchWithinGraph: true, keyboardSearch: true,
+    iconToolbar: true, bookToggleAndPanelOwnership: true };
 }

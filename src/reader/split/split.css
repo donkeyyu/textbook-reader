@@ -1,31 +1,34 @@
-.reading-view-controls { display: flex; align-items: center; gap: 20px; flex: none; padding: 0 20px; border-bottom: 1px solid var(--separator); background: var(--surface); }
-.reading-view-control { display: flex; align-items: center; gap: 4px; }
-.reading-view-control > .text-button { min-width: 44px; justify-content: center; }
-.reading-view-control [aria-pressed="true"] { color: #1d1d1f; font-weight: 600; }
-.reading-view-control .icon-button { width: 36px; height: 40px; }
 .split-resize { display: none; }
 .reading-layout > .supplement-panel { overflow-anchor: none; }
 .reading-layout.book-hidden > .paper-scroller { visibility: hidden; pointer-events: none; }
-.reading-layout.views-empty > .paper-scroller { grid-column: 1; grid-row: 1; }
-.views-empty-message { grid-column: 1; grid-row: 1; align-self: center; justify-self: center; margin: 20px; color: var(--secondary); font-size: 14px; }
+
+/* The drawer belongs to the visible book, or to the graph when the book is hidden. */
+.reading-layout.panel-bottom.supplement-open { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, var(--supplement-height, 45%)); }
+.reading-layout.graph-open.panel-bottom.supplement-open:not(.views-split) { grid-template-columns: minmax(0, 1fr); }
+.reading-layout.navigation-open.panel-bottom.supplement-open { grid-template-columns: 152px minmax(0, 1fr); }
+.reading-layout.panel-bottom > .page-sidebar { grid-column: 1; grid-row: 1 / -1; }
+.reading-layout.panel-bottom > .paper-scroller { grid-column: -2; grid-row: 1; }
+.reading-layout.panel-bottom > .supplement-panel { grid-column: -2; grid-row: 2; border-left: 0; border-top: 1px solid var(--type-color, var(--separator)); padding-bottom: 24px; }
+.reading-layout.graph-open.panel-bottom:not(.views-split) > .supplement-panel { grid-column: 1; grid-row: 2; }
+.reading-layout.panel-bottom > .panel-resize { display: grid; place-items: center; grid-column: -2; grid-row: 2; align-self: start; justify-self: center; position: relative; z-index: 2; width: 72px; height: 28px; margin-top: -14px; border-radius: 8px; cursor: ns-resize; touch-action: none; user-select: none; }
+.reading-layout.panel-bottom > .panel-resize span { width: 36px; height: 4px; border-radius: 2px; background: var(--secondary); }
+.reading-layout.panel-bottom > .panel-resize:hover span, .reading-layout.panel-bottom > .panel-resize:focus-visible span { background: var(--accent); }
 
 @media (min-width: 1001px) {
-  .reading-layout.graph-open.views-split { grid-template-columns: minmax(0, var(--graph-share, 45fr)) 12px minmax(0, var(--book-share, 55fr)); grid-template-rows: minmax(0, 1fr) minmax(0, 0%); }
-  .reading-layout.views-split.supplement-open { grid-template-rows: minmax(0, 1fr) minmax(0, var(--supplement-height, 45%)); }
-  .reading-layout.views-split > .supplement-graph { grid-column: 1; grid-row: 1; }
+  .reading-layout.graph-open.views-split { --drawer-width: 0px; grid-template-columns: minmax(0, 1fr) 12px minmax(0, calc(var(--book-pane-width) - var(--drawer-width))) var(--drawer-width); grid-template-rows: minmax(0, 1fr) minmax(0, 0%); }
+  .reading-layout.graph-open.views-split.supplement-open:not(.panel-bottom) { --drawer-width: clamp(350px, 29vw, 420px); }
+  .reading-layout.graph-open.views-split.panel-bottom.supplement-open { grid-template-rows: minmax(0, 1fr) minmax(0, var(--supplement-height, 45%)); }
+  .reading-layout.views-split > .supplement-graph { grid-column: 1; grid-row: 1 / -1; }
   .reading-layout.views-split > .paper-scroller { grid-column: 3; grid-row: 1; visibility: visible; pointer-events: auto; padding: 20px 16px; }
-  .reading-layout.views-split > .supplement-panel { --panel-padding: 28px; grid-column: 1 / -1; grid-row: 2; border-left: 0; border-top: 1px solid var(--type-color, var(--separator)); padding-bottom: 24px; }
-  .reading-layout.views-split > .split-resize { display: grid; place-items: center; grid-column: 2; grid-row: 1; cursor: ew-resize; touch-action: none; user-select: none; background: var(--surface); }
+  .reading-layout.views-split > .supplement-panel { --panel-padding: 28px; grid-column: 4; grid-row: 1; }
+  .reading-layout.views-split.panel-bottom > .supplement-panel { grid-column: 3; grid-row: 2; }
+  .reading-layout.views-split > .split-resize { display: grid; place-items: center; grid-column: 2; grid-row: 1 / -1; cursor: ew-resize; touch-action: none; user-select: none; background: var(--surface); }
   .split-resize span { width: 3px; height: 36px; border-radius: 2px; background: var(--separator); }
   .split-resize:hover span, .split-resize:focus-visible span { background: var(--accent); }
   .split-resize:focus-visible { outline-offset: -2px; }
-  .reading-layout.views-split > .panel-resize { display: grid; place-items: center; grid-column: 1 / -1; grid-row: 2; align-self: start; justify-self: center; position: relative; z-index: 2; width: 72px; height: 28px; margin-top: -14px; border-radius: 8px; cursor: ns-resize; touch-action: none; user-select: none; }
-  .reading-layout.views-split > .panel-resize span { width: 36px; height: 4px; border-radius: 2px; background: var(--secondary); }
-  .reading-layout.views-split > .panel-resize:hover span, .reading-layout.views-split > .panel-resize:focus-visible span { background: var(--accent); }
+  .reading-layout.views-split.panel-bottom > .panel-resize { grid-column: 3; }
 }
 
-@media (max-width: 1000px) {
-  .reading-view-controls { padding-inline: 12px; }
-  .reading-view-control > .text-button { min-height: 44px; }
-  .reading-view-control .icon-button { width: 44px; height: 44px; }
+@media (max-width: 760px) {
+  .reading-layout.navigation-open.panel-bottom.supplement-open { grid-template-columns: minmax(0, 1fr); }
 }

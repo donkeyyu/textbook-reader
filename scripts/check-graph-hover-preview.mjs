@@ -211,8 +211,8 @@ export async function checkGraphPanelBookmark(page, { testOrigin }) {
   assert.equal(new URL(await page.url()).origin, testOrigin);
   assert.equal(await page.evaluate(() => !!document.querySelector('[data-dirty="true"]')), false);
   await page.cdp('Emulation.setDeviceMetricsOverride', { width: 1280, height: 800, deviceScaleFactor: 1, mobile: false });
-  if (await page.evaluate(() => !!document.querySelector('button[aria-label="关闭教材视图"]'))) await page.click('button[aria-label="关闭教材视图"]');
-  await page.click('#show-graph-view');
+  if (await page.evaluate(() => !document.querySelector('.supplement-graph:not([hidden])'))) await page.click('#open-supplement-graph');
+  if (await page.evaluate(() => document.getElementById('graph-book-toggle').getAttribute('aria-pressed') === 'true')) await page.click('#graph-book-toggle');
   const fixtures = await page.evaluate(async () => {
     const { contentNodes } = await import('/src/textbook/content.ts');
     const { readPublishedContent } = await import('/src/textbook/content-store.ts');
@@ -232,14 +232,13 @@ export async function checkGraphPanelBookmark(page, { testOrigin }) {
     window.qa08BookmarkA = element; element.scrollTop = element.scrollHeight;
   });
   const a = await panel(); assert.ok(a.scroll > 100);
-  await page.click('#show-graph-view');
   await searchGraph(page, fixtures[1].title, fixtures[1].key, { keyboard: true });
   const bFits = await panel(); assert.equal(bFits.max, 0); assert.equal(bFits.scroll, 0);
-  await page.click('#show-book-view');
+  await page.click('#graph-book-toggle');
   await page.waitForFunction(() => document.querySelector('.reading-layout.views-split'));
   const bSplit = await panel(); assert.ok(bSplit.max > 0); assert.equal(bSplit.scroll, 0);
   await page.cdp('Emulation.setDeviceMetricsOverride', { width: 390, height: 700, deviceScaleFactor: 1, mobile: true });
-  await page.click('#show-graph-view');
+  await page.click('#open-supplement-graph');
   const bNarrow = await panel(); assert.ok(bNarrow.max > 0); assert.equal(bNarrow.scroll, 0);
   assert.equal(bNarrow.sameShell, false);
   await page.evaluate(() => { delete window.qa08BookmarkA; });

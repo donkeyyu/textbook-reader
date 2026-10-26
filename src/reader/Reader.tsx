@@ -778,8 +778,12 @@ export function Reader() {
       <nav id="page-sidebar" className="page-sidebar book-navigation" hidden={!navigationOpen || !views.bookVisible} aria-label="教材目录"
         onKeyDown={(event) => { if (event.key === 'Escape') { event.preventDefault(); event.stopPropagation(); setNavigationOpen(false); toggleButton.current?.focus(); } }}>
         <div className="book-navigation-modes" role="group" aria-label="教材导航方式">
-          <button type="button" aria-pressed={navigationMode === 'contents'} onClick={() => setNavigationMode('contents')}>目录</button>
-          <button type="button" aria-pressed={navigationMode === 'pages'} onClick={() => setNavigationMode('pages')}>页面</button>
+          <button type="button" aria-label="目录" title="目录" aria-pressed={navigationMode === 'contents'} onClick={() => setNavigationMode('contents')}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /><path d="M4 6h.01M4 12h.01M4 18h.01" stroke="currentColor" strokeWidth="3" strokeLinecap="round" /></svg>
+          </button>
+          <button type="button" aria-label="页面" title="页面" aria-pressed={navigationMode === 'pages'} onClick={() => setNavigationMode('pages')}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="3" width="6" height="8" rx="1" stroke="currentColor" strokeWidth="1.5" /><rect x="14" y="3" width="6" height="8" rx="1" stroke="currentColor" strokeWidth="1.5" /><rect x="4" y="15" width="6" height="6" rx="1" stroke="currentColor" strokeWidth="1.5" /><rect x="14" y="15" width="6" height="6" rx="1" stroke="currentColor" strokeWidth="1.5" /></svg>
+          </button>
         </div>
         <div className="book-contents" hidden={navigationMode !== 'contents'}>
           {chapters.map((chapter) => <details key={chapter.id}>

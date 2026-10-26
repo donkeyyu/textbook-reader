@@ -38,10 +38,11 @@
 .reading-layout > .book-toolbar[hidden] { display: none; }
 .book-toolbar .page-controls { grid-column: 2; }
 .book-toolbar .page-input-error { left: 50%; transform: translateX(-50%); max-width: calc(100vw - 32px); }
-.reading-layout > .page-sidebar.book-navigation { position: relative; inset: auto; grid-column: navigation-start / navigation-end; grid-row: 1 / -1; align-self: stretch; justify-self: stretch; min-width: 0; width: auto; margin-top: 44px; padding: 12px 0 0; overflow: hidden; border-right: 1px solid var(--separator); box-shadow: none; }
-.book-navigation-modes { display: flex; flex: none; gap: 4px; width: 100%; padding: 0 8px 10px; border-bottom: 1px solid var(--separator); }
-.book-navigation-modes button { flex: 1; min-width: 0; min-height: 40px; padding-inline: 4px; background: transparent; color: var(--secondary); border-radius: 6px; }
-.book-navigation-modes button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); }
+.reading-layout > .page-sidebar.book-navigation { position: relative; inset: auto; grid-column: navigation-start / navigation-end; grid-row: 1 / -1; align-self: stretch; justify-self: stretch; min-width: 0; width: auto; margin-top: 44px; padding: 0; overflow: hidden; border-right: 1px solid var(--separator); box-shadow: none; }
+.book-navigation-modes { display: flex; flex: none; gap: 4px; width: 100%; padding: 2px 8px; border-bottom: 1px solid var(--separator); }
+.book-navigation-modes button { flex: 1; display: grid; place-items: center; min-width: 0; height: 32px; padding: 0; border: 0; background: transparent; color: var(--secondary); border-radius: 0; }
+.book-navigation-modes button[aria-pressed="true"] { color: var(--accent); }
+.book-navigation-modes button:hover { color: var(--accent); }
 .book-contents { min-height: 0; width: 100%; overflow: auto; padding: 8px; scrollbar-width: thin; }
 .book-contents summary { padding: 12px 4px; cursor: pointer; font-size: 14px; font-weight: 600; overflow-wrap: anywhere; }
 .book-contents button { display: block; width: 100%; padding: 10px 8px; min-height: 40px; background: transparent; text-align: left; color: var(--secondary); font-size: 14px; line-height: 1.5; white-space: normal; overflow-wrap: anywhere; border-radius: 6px; }

@@ -1,0 +1,766 @@
+{
+  "note": "Agent-authored compact index. Original REA records are in rea-obsidian-evidence.zip. File offsets are 0-based, half-open, in unmodified extracted bytes.",
+  "date": "2026-10-26",
+  "rea_version": "6.7.0",
+  "app_package_version": "1.14.4",
+  "installer_registry_version": "1.13.7",
+  "artifact": {
+    "name": "obsidian-1.14.4.asar",
+    "digest": {
+      "sha256": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f"
+    },
+    "local_path": "C:\\Users\\donq\\AppData\\Roaming\\obsidian\\obsidian-1.14.4.asar",
+    "format": "asar",
+    "architecture": null
+  },
+  "files": [
+    {
+      "file": "package.json",
+      "bytes": 260,
+      "sha256": "c8e13b2b7067519b90eae036f3ec3c078a4f192fa2d1e25ee3f77d65956b2c00"
+    },
+    {
+      "file": "app.js",
+      "bytes": 3942126,
+      "sha256": "958ce57fe22f87fdf121546e46dfccd9c8ee971ce3fd8f801d60d4ece39a2df9"
+    },
+    {
+      "file": "sim.js",
+      "bytes": 17693,
+      "sha256": "549be2f69710af360d521c92b80c83718f673594d3dc2255a65e251199eee25d"
+    },
+    {
+      "file": "index.html",
+      "bytes": 1445,
+      "sha256": "48b72d620f92677a3dbbc3e91786fc939bbe54d572162eedd3ee938a4f40024f"
+    },
+    {
+      "file": "lib/pixi.min.js",
+      "bytes": 487134,
+      "sha256": "842814b22c348dcdab381ffb79da3763ff0672271f60f09dababa52656fd31b8"
+    },
+    {
+      "file": "app.css",
+      "bytes": 668223,
+      "sha256": "866e50ac84dd8ad2775e0047ebd3ec5bd03e5af722aff259e6c4ea3cec42d7ba"
+    }
+  ],
+  "rea": {
+    "evidence_id": "ev_8a49fb2610921e48d06283cae404b312d4a975899fb22b467b8a34b97b71cef8",
+    "operation": "analyze_javascript_application",
+    "parameters": {
+      "format": "auto",
+      "integrity_policy": "fail",
+      "source_paths": [
+        "package.json",
+        "app.js",
+        "sim.js",
+        "index.html"
+      ],
+      "max_heap_mb": 2048,
+      "analysis_timeout_ms": 180000
+    },
+    "statistics": {
+      "relevant_files": 38,
+      "nested_asar_containers": 0,
+      "text_bytes_read": 3961524,
+      "invalid_utf8_files": 0,
+      "parsed_javascript_files": 2,
+      "skipped_javascript_files": 0,
+      "visited_ast_nodes": 1129493,
+      "findings": 416,
+      "modules": 195,
+      "parse_failures": 0
+    },
+    "source_selection": {
+      "requested_paths": [
+        "package.json",
+        "app.js",
+        "sim.js",
+        "index.html"
+      ],
+      "unselected_files": 34
+    },
+    "coverage": {
+      "status": "partial",
+      "truncated": false,
+      "omitted_count": null,
+      "limits": []
+    },
+    "semantic_coverage": {
+      "status": "partial",
+      "truncated": true,
+      "omitted_unknown_occurrences": [
+        {
+          "family": "call-flow",
+          "reason": "dynamic-call",
+          "occurrences": 59471
+        },
+        {
+          "family": "object-flow",
+          "reason": "ambiguous-target",
+          "occurrences": 102352
+        },
+        {
+          "family": "object-flow",
+          "reason": "dynamic-property",
+          "occurrences": 5540
+        },
+        {
+          "family": "timer",
+          "reason": "ambiguous-target",
+          "occurrences": 42
+        }
+      ],
+      "omitted_nodes": null,
+      "omitted_relations": null,
+      "limits": [
+        {
+          "name": "semantic_graph_file_node_ceiling",
+          "value": 20000,
+          "unit": "items"
+        },
+        {
+          "name": "semantic_graph_file_unknown_ceiling",
+          "value": 20000,
+          "unit": "items"
+        },
+        {
+          "name": "semantic_graph_node_ceiling",
+          "value": 100000,
+          "unit": "items"
+        },
+        {
+          "name": "semantic_graph_unknown_ceiling",
+          "value": 100000,
+          "unit": "items"
+        }
+      ],
+      "families": [
+        {
+          "family": "boundary",
+          "status": "partial",
+          "retained_relations": 0,
+          "omitted_relations": null,
+          "unknown_count": 30
+        },
+        {
+          "family": "call-flow",
+          "status": "partial",
+          "retained_relations": 266,
+          "omitted_relations": null,
+          "unknown_count": 185
+        },
+        {
+          "family": "child-process",
+          "status": "partial",
+          "retained_relations": 0,
+          "omitted_relations": null,
+          "unknown_count": 30
+        },
+        {
+          "family": "closure",
+          "status": "partial",
+          "retained_relations": 388,
+          "omitted_relations": null,
+          "unknown_count": 30
+        },
+        {
+          "family": "configuration",
+          "status": "partial",
+          "retained_relations": 0,
+          "omitted_relations": null,
+          "unknown_count": 30
+        },
+        {
+          "family": "data-flow",
+          "status": "partial",
+          "retained_relations": 3513,
+          "omitted_relations": null,
+          "unknown_count": 444
+        },
+        {
+          "family": "event",
+          "status": "partial",
+          "retained_relations": 0,
+          "omitted_relations": null,
+          "unknown_count": 30
+        },
+        {
+          "family": "object-flow",
+          "status": "partial",
+          "retained_relations": 387,
+          "omitted_relations": null,
+          "unknown_count": 20781
+        },
+        {
+          "family": "promise-ownership",
+          "status": "partial",
+          "retained_relations": 0,
+          "omitted_relations": null,
+          "unknown_count": 30
+        },
+        {
+          "family": "request",
+          "status": "partial",
+          "retained_relations": 0,
+          "omitted_relations": null,
+          "unknown_count": 30
+        },
+        {
+          "family": "resource-lifecycle",
+          "status": "partial",
+          "retained_relations": 0,
+          "omitted_relations": null,
+          "unknown_count": 30
+        },
+        {
+          "family": "timer",
+          "status": "partial",
+          "retained_relations": 1,
+          "omitted_relations": null,
+          "unknown_count": 30
+        }
+      ]
+    },
+    "limitations": [
+      "Caller-selected source analysis leaves 34 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+      "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+      "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+      "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+      "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+      "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+      "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+    ],
+    "semantic_limitations": [
+      "Boundary extraction covers unshadowed JSON/global coercions plus parse and validation method candidates.",
+      "Child-process extraction covers asynchronous node:child_process creation, literal argv/env/stdio options, exit/error listeners, and kill signals.",
+      "Configuration extraction covers process.env, process.argv, node:fs reads, and direct logical defaults.",
+      "Event extraction covers EventEmitter-style literal registrations, removals, and dispatch candidates; dynamic names remain unknown.",
+      "Function fingerprints are static candidates; equal digests can remain ambiguous and do not prove behavioral equivalence.",
+      "Local data flow does not claim control-flow-sensitive reaching definitions or arbitrary dynamic property resolution.",
+      "Promise ownership covers explicit unshadowed Promise construction, static factories, aggregation, chaining, and await syntax only.",
+      "Request extraction covers fetch, WebSocket, node:http/node:https construction, direct option fields, and exact local response consumers.",
+      "Resource extraction covers built-in filesystem/network acquisition and exact local close/destroy/end handles.",
+      "Semantic unknown retention reached an effective capacity. Omission coverage counts examined emission occurrences by family and reason, including repeats; it does not count unexamined source frontiers or distinct discarded identities.",
+      "The semantic graph contains static syntax observations and conservative relationship candidates; it does not claim runtime execution.",
+      "Timer extraction covers global or node:timers scheduling and exact local-handle cancellation."
+    ]
+  },
+  "trace": {
+    "evidence_id": "ev_59a09e8274f8c2730f91e4691f9957daf0ab47de4e3e822edc95c501380ea1b4",
+    "source_evidence_id": "ev_8a49fb2610921e48d06283cae404b312d4a975899fb22b467b8a34b97b71cef8",
+    "seed": {
+      "kind": "node-id",
+      "value": "jag_node_8c9d0118b5edb4942a36f825b7244e05e2805079e176432350cef6a57bf5d077",
+      "match": null,
+      "case_sensitive": false
+    },
+    "summary": {
+      "matched_seeds": 1,
+      "traced_nodes": 1,
+      "traced_edges": 0,
+      "terminal_paths": 0,
+      "native_handoffs": 0,
+      "observed_facts": 0,
+      "inferred_facts": 1,
+      "unknown_facts": 0,
+      "unavailable_facts": 0
+    },
+    "coverage": {
+      "status": "partial",
+      "source_graph_status": "partial",
+      "total_seed_matches": 1
+    },
+    "limitations": [
+      "Artifact identity is unavailable for this observation.",
+      "A trace reports graph relationships, not proof that code executed or that a feature is reachable in every state.",
+      "Native handoffs never open a binary or invoke a provider automatically; snapshot reuse remains provider/profile/target exact.",
+      "Static, native, passive-runtime, inferred, and unknown facts retain their original authority in the returned graph.",
+      "The source application graph is incomplete; unmatched seeds and frontiers remain unknown."
+    ]
+  },
+  "source_ranges": [
+    {
+      "id": "data-builder",
+      "file": "app.js",
+      "minified_member": "e.prototype.render",
+      "utf16_start": 2733103,
+      "utf16_end": 2735355,
+      "utf8_byte_start": 2737929,
+      "utf8_byte_end": 2740181,
+      "span_sha256": "039bd5c294fa89fedbcc56f7f31e794e4931db06524ec3bdcb9d83e9356998c8"
+    },
+    {
+      "id": "global-graph-load",
+      "file": "app.js",
+      "minified_member": "t.prototype.onload",
+      "utf16_start": 2724954,
+      "utf16_end": 2725239,
+      "utf8_byte_start": 2729780,
+      "utf8_byte_end": 2730065,
+      "span_sha256": "63e35503734d1231ebb7011e04d04ee8bac5f6e236eb18cdb715c8b6969dbad0"
+    },
+    {
+      "id": "data-events",
+      "file": "app.js",
+      "minified_member": "e.prototype.load",
+      "utf16_start": 2730800,
+      "utf16_end": 2731846,
+      "utf8_byte_start": 2735626,
+      "utf8_byte_end": 2736672,
+      "span_sha256": "7fad0aa9159648ab8afdc89835e5ed2a6c051682090ce106b1f56857644db1d0"
+    },
+    {
+      "id": "incremental-render-data",
+      "file": "app.js",
+      "minified_member": "e.prototype.setData",
+      "utf16_start": 2397403,
+      "utf16_end": 2399430,
+      "utf8_byte_start": 2402215,
+      "utf8_byte_end": 2404242,
+      "span_sha256": "c20472decb3e2b9b0e1d524f36ba3b4984d91ef1c85407504a3e88b1d1256bda"
+    },
+    {
+      "id": "graphics-and-frame-loop",
+      "file": "app.js",
+      "minified_member": "e.prototype.initGraphics",
+      "utf16_start": 2390239,
+      "utf16_end": 2396124,
+      "utf8_byte_start": 2395051,
+      "utf8_byte_end": 2400936,
+      "span_sha256": "325c3ce1d6ff91ec9ed7330569343d5bce382fb50f7f978fef6c2c8b33f596ed"
+    },
+    {
+      "id": "node-size",
+      "file": "app.js",
+      "minified_member": "e.prototype.getSize",
+      "utf16_start": 2384227,
+      "utf16_end": 2384345,
+      "utf8_byte_start": 2389039,
+      "utf8_byte_end": 2389157,
+      "span_sha256": "830cc9012ccba4243fb7b93a530247554615f4d09d0b1091580fba30db10d48f"
+    },
+    {
+      "id": "node-neighbors",
+      "file": "app.js",
+      "minified_member": "e.prototype.getRelated",
+      "utf16_start": 2384404,
+      "utf16_end": 2384505,
+      "utf8_byte_start": 2389216,
+      "utf8_byte_end": 2389317,
+      "span_sha256": "cad8a713f3bd71d5b11d3babc26c6d65e1865166a665905f35c40b155706705c"
+    },
+    {
+      "id": "node-render",
+      "file": "app.js",
+      "minified_member": "e.prototype.render",
+      "utf16_start": 2382672,
+      "utf16_end": 2383843,
+      "utf8_byte_start": 2387484,
+      "utf8_byte_end": 2388655,
+      "span_sha256": "a37c151eda11652ddd344f80c3d6188e8ed84f541fa7b8ad648f87ecec82a9ae"
+    },
+    {
+      "id": "link-render",
+      "file": "app.js",
+      "minified_member": "e.prototype.render",
+      "utf16_start": 2385487,
+      "utf16_end": 2386620,
+      "utf8_byte_start": 2390299,
+      "utf8_byte_end": 2391432,
+      "span_sha256": "e98fc6d1f0539f011243f37de1e740ae530e1ac469784e6b3708b84c65b8d5e3"
+    },
+    {
+      "id": "worker-force-update",
+      "file": "app.js",
+      "minified_member": "e.prototype.setForces",
+      "utf16_start": 2399738,
+      "utf16_end": 2399824,
+      "utf8_byte_start": 2404550,
+      "utf8_byte_end": 2404636,
+      "span_sha256": "c3573bb2612b953b815eaaf266edbda40dfcb16489d542fa683eda6ab141d811"
+    },
+    {
+      "id": "theme-color-sampling",
+      "file": "app.js",
+      "minified_member": "e.prototype.testCSS",
+      "utf16_start": 2400839,
+      "utf16_end": 2401276,
+      "utf8_byte_start": 2405651,
+      "utf8_byte_end": 2406088,
+      "span_sha256": "8a9546111c3709d21e20353e1b92e24ad16b195bf1c7ebceb44d31826e8876a2"
+    },
+    {
+      "id": "wheel-zoom",
+      "file": "app.js",
+      "minified_member": "e.prototype.onWheel",
+      "utf16_start": 2389751,
+      "utf16_end": 2390106,
+      "utf8_byte_start": 2394563,
+      "utf8_byte_end": 2394918,
+      "span_sha256": "ce52b06e7fbfb22071884c6e4bc33c47bd482971357877a4c100e394101d4061"
+    },
+    {
+      "id": "graph-plugin-entry",
+      "file": "app.js",
+      "utf16_start": 2722166,
+      "utf16_end": 2724683,
+      "utf8_byte_start": 2726992,
+      "utf8_byte_end": 2729509,
+      "span_sha256": "b47047fa5e243d4d96e99db7da1c7679cac06e778e6caaa9e68cb1f27a34d020"
+    },
+    {
+      "id": "local-graph",
+      "file": "app.js",
+      "utf16_start": 2401838,
+      "utf16_end": 2402634,
+      "utf8_byte_start": 2406650,
+      "utf8_byte_end": 2407446,
+      "span_sha256": "b21a4c9045fae6da2fd922ccc7aaa8092979af2950634278e09635227d3fa7a5"
+    },
+    {
+      "id": "force-slider-transform",
+      "file": "app.js",
+      "utf16_start": 2728638,
+      "utf16_end": 2728745,
+      "utf8_byte_start": 2733464,
+      "utf8_byte_end": 2733571,
+      "span_sha256": "b3be88b92617f410814f5a78cd9a2d1dfc427d01d1347b28b3947975952371ec"
+    },
+    {
+      "id": "force-controls",
+      "file": "app.js",
+      "utf16_start": 2747925,
+      "utf16_end": 2749369,
+      "utf8_byte_start": 2752751,
+      "utf8_byte_end": 2754195,
+      "span_sha256": "6fe55fd6b153b666ae7c679c966c941e7730868568603d3e9b8005bc5ab4bd67"
+    }
+  ],
+  "worker_observation": {
+    "node_id": "jag_node_8c9d0118b5edb4942a36f825b7244e05e2805079e176432350cef6a57bf5d077",
+    "kind": "worker",
+    "identity": {
+      "strategy": "artifact-local-key",
+      "stability": "artifact-version",
+      "artifact_sha256": "958ce57fe22f87fdf121546e46dfccd9c8ee971ce3fd8f801d60d4ece39a2df9",
+      "namespace": "worker",
+      "key": "new Worker(\"/sim.js\",{name:\"Graph Worker\"})"
+    },
+    "observations": [
+      {
+        "label": null,
+        "source_map_reference": null,
+        "properties": {
+          "declared_specifier": null,
+          "expression": "new Worker(\"/sim.js\",{name:\"Graph Worker\"})",
+          "resolved_path": null,
+          "resolution_status": null
+        },
+        "evidence": {
+          "authority": "static-relationship-inference",
+          "state": "inferred",
+          "confidence": "high",
+          "artifact": {
+            "available": true,
+            "artifact_id": "art_958ce57fe22f87fdf121546e46dfccd9c8ee971ce3fd8f801d60d4ece39a2df9",
+            "sha256": "958ce57fe22f87fdf121546e46dfccd9c8ee971ce3fd8f801d60d4ece39a2df9"
+          },
+          "location": {
+            "available": true,
+            "value": {
+              "kind": "source-range",
+              "source": "app.js",
+              "start": {
+                "line": 1,
+                "column": 2388922
+              },
+              "end": {
+                "line": 1,
+                "column": 2388965
+              }
+            }
+          },
+          "extractor": {
+            "name": "rea-javascript-artifact-reconstruction",
+            "version": "1",
+            "operation": "discover-worker",
+            "executable_sha256": null
+          },
+          "coverage": {
+            "status": "partial",
+            "truncated": false,
+            "omitted_count": null,
+            "limits": []
+          },
+          "limitations": [
+            "Static syntax does not prove that this relationship executes at runtime."
+          ],
+          "evidence_ids": []
+        },
+        "observation_id": "jag_observation_1edb6f713f65efdbe020c12f02fbb46104994823b8f78327fa0534bb01a31633",
+        "identifier_strategy": {
+          "strategy": "semantic-content-sha256",
+          "stability": "observation-exact"
+        }
+      }
+    ]
+  },
+  "full_ui_runtime_observed": false,
+  "worker_source_anchors": [
+    {
+      "needle": "var Q=1",
+      "charOffset": 5240,
+      "utf8ByteOffset": 5240
+    },
+    {
+      "needle": "self.onmessage",
+      "charOffset": 5329,
+      "utf8ByteOffset": 5329
+    },
+    {
+      "needle": "var f=t.forceNode",
+      "charOffset": 5802,
+      "utf8ByteOffset": 5802
+    },
+    {
+      "needle": "var C=t.forces",
+      "charOffset": 5858,
+      "utf8ByteOffset": 5858
+    },
+    {
+      "needle": "void 0!==t.alpha",
+      "charOffset": 6070,
+      "utf8ByteOffset": 6070
+    },
+    {
+      "needle": "K=function",
+      "charOffset": 6200,
+      "utf8ByteOffset": 6200
+    },
+    {
+      "needle": "var A=13*M.length",
+      "charOffset": 11006,
+      "utf8ByteOffset": 11006
+    },
+    {
+      "needle": "new Int32Array",
+      "charOffset": 11166,
+      "utf8ByteOffset": 11166
+    },
+    {
+      "needle": "n.init(0,M.length,G.length)",
+      "charOffset": 11391,
+      "utf8ByteOffset": 11391
+    },
+    {
+      "needle": "n.simulate",
+      "charOffset": 11419,
+      "utf8ByteOffset": 11419
+    },
+    {
+      "needle": "n.complete",
+      "charOffset": 11467,
+      "utf8ByteOffset": 11467
+    },
+    {
+      "needle": "q=function",
+      "charOffset": 12799,
+      "utf8ByteOffset": 12799
+    },
+    {
+      "needle": "R=function",
+      "charOffset": 14239,
+      "utf8ByteOffset": 14239
+    },
+    {
+      "needle": "k=function",
+      "charOffset": 15539,
+      "utf8ByteOffset": 15539
+    },
+    {
+      "needle": "w&&",
+      "charOffset": 16738,
+      "utf8ByteOffset": 16738
+    },
+    {
+      "needle": "Using fallback d3 simulator",
+      "charOffset": 16601,
+      "utf8ByteOffset": 16601
+    },
+    {
+      "needle": "if(self.SharedArrayBuffer)",
+      "charOffset": 17167,
+      "utf8ByteOffset": 17167
+    },
+    {
+      "needle": "var Z=null",
+      "charOffset": 17283,
+      "utf8ByteOffset": 17283
+    },
+    {
+      "needle": "function W()",
+      "charOffset": 17574,
+      "utf8ByteOffset": 17574
+    },
+    {
+      "needle": "function P()",
+      "charOffset": 17652,
+      "utf8ByteOffset": 17652
+    }
+  ],
+  "isolated_verification": {
+    "app": {
+      "scope": "Shipped app.js functions in isolated Node vm; synthetic metadata; UI, search parser and tag parser excluded",
+      "source_sha256": "958ce57fe22f87fdf121546e46dfccd9c8ee971ce3fd8f801d60d4ece39a2df9",
+      "checks": [
+        "link-count-deduplication",
+        "unresolved-toggle",
+        "orphan-filter",
+        "tag-node-case",
+        "local-depth-and-weights",
+        "local-interlinks",
+        "reciprocal-degree",
+        "incremental-node-reuse",
+        "unchanged-topology-idle",
+        "node-removal",
+        "radius-formula"
+      ],
+      "passed": true,
+      "localDepth1": {
+        "nodes": {
+          "A.md": {
+            "type": "",
+            "links": {
+              "B.md": true,
+              "Missing": true
+            }
+          },
+          "B.md": {
+            "type": "",
+            "links": {
+              "A.md": true
+            }
+          },
+          "Missing": {
+            "type": "unresolved",
+            "links": {}
+          }
+        },
+        "weights": {
+          "A.md": 30,
+          "B.md": 0,
+          "Missing": 0
+        }
+      },
+      "workerUpdateAfterRemoval": {
+        "nodes": {
+          "A.md": false
+        },
+        "links": [],
+        "alpha": 0.3,
+        "run": true
+      }
+    },
+    "worker": {
+      "wasm_protocol": {
+        "ids": [
+          "A",
+          "D"
+        ],
+        "firstPinned": [
+          50,
+          -75
+        ]
+      },
+      "fallback_protocol": {
+        "ids": [
+          "A",
+          "D"
+        ],
+        "firstPinned": [
+          50,
+          -75
+        ]
+      },
+      "force_settings": {
+        "fallbackIgnored": true,
+        "wasmApplied": true,
+        "fallbackDefaultFrame1": [
+          -116.87661743164062,
+          20.661449432373047,
+          134.30255126953125,
+          -26.04746437072754,
+          57.16767883300781,
+          180.8932647705078
+        ],
+        "wasmDefaultFrame1": [
+          -116.87661743164062,
+          20.661449432373047,
+          134.30255126953125,
+          -26.04746437072754,
+          57.16767883300781,
+          180.89328002929688
+        ],
+        "wasmChangedFrame1": [
+          -70.84786224365234,
+          7.0552215576171875,
+          73.52074432373047,
+          -22.87303352355957,
+          25.40712547302246,
+          100.77191162109375
+        ]
+      },
+      "wasm_cooling": {
+        "callbacksToStop": 301,
+        "framesToStop": 300
+      },
+      "fallback_cooling": {
+        "callbacksToStop": 301,
+        "framesToStop": 300
+      },
+      "empty": {
+        "boundedCallbacks": 10,
+        "noFrames": true,
+        "timerStillPending": true
+      },
+      "shared": {
+        "initialProbeBytes": 1,
+        "frameBytes": 28,
+        "versions": [
+          0,
+          1
+        ],
+        "tailVersionsAtSend": [
+          1,
+          2
+        ],
+        "reusesBuffer": true
+      },
+      "wasm_memory": {
+        "wasmBytes": 3322,
+        "exports": [
+          "memory",
+          "memset",
+          "init",
+          "complete",
+          "visitCharge",
+          "visitCollide",
+          "manyBody",
+          "simulate"
+        ],
+        "degreeByNode": [
+          2,
+          1,
+          1
+        ],
+        "edgeBias": [
+          0.6666666865348816,
+          0.6666666865348816
+        ],
+        "initialMemoryBytes": 65536
+      }
+    }
+  }
+}

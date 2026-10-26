@@ -34,7 +34,7 @@ colors:
 
 行为要求由 [SPEC.md](docs/SPEC.md) 维护；本文件记录当前视觉层级和组件设计。修改交互时更新对应章节，过程与旧方案留在会话或任务记录，不在末尾累加另一套规则。字体、间距、组件尺寸和背景等样式值以 [style.css](src/style.css) 为准，不在文档中维护参数副本，控件行为以 [Reader.tsx](src/reader/Reader.tsx) 及其组件为准。
 
-[页面入口](.impeccable/surfaces/src-main-tsx.md)只负责导航。`.impeccable/design.json` 是旧生成快照，不作为当前实现或行为依据；设计工具需要它时应从维护源重新生成，而不是手改生成副本。验收入口见 [README](README.md#浏览器回归)。
+[页面入口](.impeccable/surfaces/src-main-tsx.md)只负责导航。[旧生成快照](docs/archive/impeccable/design.json)已归档，不作为当前实现或行为依据；设计工具需要它时应从维护源重新生成，而不是手改生成副本。验收入口见 [README](README.md#浏览器回归)。
 
 ## 阅读层级
 

@@ -22,3 +22,6 @@ materials/indexes/*/.work/
 public/textbooks/*
 !public/textbooks/grade-7-volume-1/
 .impeccable/review/
+
+# Supabase CLI local cache.
+supabase/.temp/

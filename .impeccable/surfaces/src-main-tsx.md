@@ -16,4 +16,4 @@ Mode: Read. 本页从真实教材原页进入解读、关联查阅和返回。�
 - 交互状态：[ARCHITECTURE.md](../../docs/ARCHITECTURE.md#阅读状态与跳转)。
 - 验证：[README 的浏览器回归](../../README.md#浏览器回归)；只将实际完成的检查记为通过。
 
-本文件只维护阅读入口。旧 `.impeccable/design.json` 是生成快照，不能用来恢复旧页码布局、配色或内容范围。
+本文件只维护阅读入口。[旧生成快照](../../docs/archive/impeccable/design.json)已归档，不能用来恢复旧页码布局、配色或内容范围。

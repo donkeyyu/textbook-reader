@@ -2,6 +2,27 @@
 
 初中数学教材解读项目。当前可上下连续阅读人教版七年级上册全部 202 个 PDF 页面。左侧导航可收起，支持缩略图、页码输入和上下页跳转。六章均已接入按教材位置展开的补充解读与关联回顾。
 
+## 目录导航
+
+| 位置 | 用途 |
+| --- | --- |
+| `src/` | 阅读器源码及单元测试。 |
+| `content/` | 六章补充正文与教材位置，作为内容发布源。 |
+| `public/textbooks/` | 网页运行所需页图、缩略图及来源记录。 |
+| `materials/` | 教材 PDF、来源记录、内容索引；本地 PNG 与提取文本用于核对和重新生成。 |
+| `scripts/` | 资源准备、内容发布检查及浏览器回归入口。 |
+| `supabase/` | 数据库迁移及权限、数据行为检查。 |
+| `docs/` | 需求、背景、架构、ADR、内容审核记录和项目工作约定。 |
+| [外部参考](docs/references/Obsidian-Graph-View-逆向报告/Obsidian-Graph-View-逆向报告.md) | `docs/references/` 保存研究报告及其证据包。 |
+| [历史归档](docs/archive/README.md) | `docs/archive/` 保存过期设计快照和历史评审。 |
+| `.scratch/` | 任务、交接及验收证据，纳入 Git；包含尚未完成的人工验证。 |
+| `.agents/skills/` | 随仓库维护的项目技能。 |
+| `.impeccable/surfaces/` | 设计工具使用的页面入口。 |
+
+根目录保留运行配置、README、AGENTS，以及工具约定的 `PRODUCT.md`、`DESIGN.md` 和领域约定的 `GLOSSARY.md`。`node_modules/`、`dist/`、`supabase/.temp/` 是本地依赖、构建输出或工具缓存，已由 Git 忽略。
+
+任务入口：[教材预习与复习](.scratch/textbook-preview-review/README.md)、[补充节点图交接](.scratch/supplement-graph/dispatch-plan.md)。
+
 ## 本地开发
 
 使用 Node.js 22.12+（22.x）或 24+，以及 npm。

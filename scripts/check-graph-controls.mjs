@@ -1,0 +1,57 @@
+import assert from 'node:assert/strict';
+import { openGraphSearch, openGraphSettings } from './check-supplement-graph.mjs';
+
+// Run on an owned reader page with the graph open and controls collapsed.
+export async function checkGraphControls(page, { narrow = false } = {}) {
+  const bounds = () => page.evaluate(() => {
+    const graph = document.getElementById('supplement-graph').getBoundingClientRect();
+    const canvas = document.querySelector('.graph-viewport canvas').getBoundingClientRect();
+    const targets = ['.graph-settings', '[aria-label="在右侧展开教材"]', '#graph-search-toggle',
+      '#graph-search-panel:not([hidden])', '#graph-search-results'];
+    return { canvasFills: Math.abs(canvas.height - graph.height) < 2 && Math.abs(canvas.width - graph.width) < 2,
+      graphInViewport: graph.bottom <= innerHeight + 1 && graph.right <= innerWidth + 1,
+      overflow: targets.filter((selector) => {
+        const rect = document.querySelector(selector)?.getBoundingClientRect();
+        return rect && (rect.top < graph.top - 1 || rect.left < graph.left - 1 || rect.bottom > graph.bottom + 1 || rect.right > graph.right + 1);
+      }) };
+  });
+  const initial = await bounds();
+  assert.equal(initial.canvasFills, true); assert.equal(initial.graphInViewport, true); assert.deepEqual(initial.overflow, []);
+  assert.equal(await page.evaluate(() => !!document.getElementById('open-personal-library')), false);
+  assert.equal(await page.evaluate(() => document.querySelector('#open-supplement-graph').textContent.trim()), '');
+  assert.equal(await page.evaluate(() => document.querySelector('#add-personal-supplement').getAttribute('aria-label')), '添加补充');
+  await openGraphSettings(page);
+  assert.deepEqual((await bounds()).overflow, []);
+  const beforeZoom = await page.evaluate(() => document.querySelector('.graph-zoom output').textContent);
+  await page.click('[aria-label="缩小节点图"]');
+  assert.notEqual(await page.evaluate(() => document.querySelector('.graph-zoom output').textContent), beforeZoom);
+  await openGraphSearch(page);
+  assert.equal(await page.evaluate(() => document.querySelector('.graph-settings').open), false);
+  assert.equal(await page.evaluate(() => document.activeElement === document.querySelector('.graph-search input')), true);
+  await page.fill('.graph-search input', '练习');
+  await page.waitForSelector('#graph-search-results button');
+  assert.deepEqual((await bounds()).overflow, []);
+  await page.press('.graph-search input', 'Escape');
+  assert.equal(await page.evaluate(() => document.getElementById('graph-search-toggle').getAttribute('aria-expanded')), 'false');
+  assert.equal(await page.evaluate(() => document.activeElement?.id), 'graph-search-toggle');
+  await page.focus('.graph-viewport'); await page.press('.graph-viewport', '/');
+  await page.waitForFunction(() => document.activeElement === document.querySelector('.graph-search input'));
+  await page.fill('.graph-search input', '0要和它记录的量一起读');
+  await page.waitForSelector('#graph-search-results button');
+  await page.press('.graph-search input', 'ArrowDown'); await page.keyboard.press('Enter');
+  await page.waitForFunction(() => document.getElementById('supplement-title')?.textContent === '0要和它记录的量一起读');
+  assert.equal(await page.evaluate(() => document.getElementById('graph-search-toggle').getAttribute('aria-expanded')), 'false');
+  await page.waitForFunction(() => !document.querySelector('.reading-layout').getAnimations().some((a) => a.playState === 'running'));
+  await openGraphSettings(page); assert.deepEqual((await bounds()).overflow, []);
+  await page.press('.graph-settings > summary', 'Escape');
+  assert.equal(await page.evaluate(() => document.querySelector('.graph-settings').open), false);
+  await page.click('[aria-label="在右侧展开教材"]');
+  await page.waitForFunction((narrow) => narrow ? document.getElementById('supplement-graph').hidden : document.querySelector('.reading-layout').classList.contains('views-split'), narrow);
+  const split = await page.evaluate(() => {
+    const graph = document.getElementById('supplement-graph').getBoundingClientRect();
+    const book = document.getElementById('textbook-view').getBoundingClientRect();
+    return { bookVisible: getComputedStyle(document.getElementById('textbook-view')).visibility === 'visible', rightOfGraph: book.left >= graph.right };
+  });
+  assert.equal(split.bookVisible, true); if (!narrow) assert.equal(split.rightOfGraph, true);
+  return { initial, settingsAndSearchWithinGraph: true, keyboardSearch: true, iconToolbar: true, rightBookOrNarrowSwitch: true };
+}

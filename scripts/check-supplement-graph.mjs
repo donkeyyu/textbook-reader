@@ -15,7 +15,22 @@ export async function graphState(page) {
   });
 }
 
+export async function openGraphSearch(page) {
+  if (await page.evaluate(() => document.getElementById('graph-search-toggle')?.getAttribute('aria-expanded') !== 'true')) {
+    await page.click('#graph-search-toggle');
+  }
+  await page.waitForSelector('.graph-search input', { state: 'visible' });
+}
+
+export async function openGraphSettings(page) {
+  if (await page.evaluate(() => !document.querySelector('.graph-settings')?.open)) {
+    await page.click('.graph-settings > summary');
+  }
+  await page.waitForFunction(() => document.querySelector('.graph-settings')?.open);
+}
+
 export async function searchGraph(page, query, key, { keyboard = false } = {}) {
+  await openGraphSearch(page);
   await page.fill('.graph-search input', query);
   await page.waitForFunction((key) => [...document.querySelectorAll('#graph-search-results button')]
     .some((button) => button.getAttribute('data-node-key') === key), key);
@@ -50,7 +65,11 @@ export async function checkGraphSelection(page, query, key, options) {
 // Call after selecting the target. The real pointer, screenshots and surrounding
 // nodes show following, edge updates and settling; coordinates are not fixtures.
 export async function captureGraphDrag(page, directory, label, { focus = true } = {}) {
-  if (focus) await page.click('.graph-zoom button:text-is("当前节点")');
+  if (focus) {
+    await openGraphSettings(page);
+    await page.click('.graph-zoom button:text-is("当前节点")');
+    await page.click('.graph-settings > summary');
+  }
   const { canvas } = await graphState(page);
   assert.ok(canvas?.width > 0);
   const paths = ['before', 'during', 'released', 'settled'].map((phase) => `${directory}/${label}-${phase}.png`);
@@ -103,7 +122,9 @@ export async function startGraphProbe(page, { testOrigin }) {
       return original.apply(this, args);
     };
   });
+  await openGraphSettings(page);
   await page.click('.graph-zoom button:text-is("当前节点")');
+  await page.click('.graph-settings > summary');
   await page.waitForFunction(() => !!window.qa03GraphProbe?.app);
 }
 
@@ -179,7 +200,7 @@ export async function checkRepeatedGraphOriginal(page, { testOrigin }) {
       middle: { id: middle.id, title: middle.title, locationId: middle.locationId },
       original: { id: original.locationId, page: getLocation(original.locationId).page } };
   });
-  if (await page.evaluate(() => !document.getElementById('supplement-graph').hidden)) await page.click('.graph-toolbar > button');
+  if (await page.evaluate(() => !document.getElementById('supplement-graph').hidden)) await page.click('#open-supplement-graph');
   await jumpToFilePage(page, chain.source.page);
   await page.click(`[data-supplement-ids~="${chain.source.id}"]`);
   if (await page.evaluate((id) => !!document.getElementById(`choice-${id}`), chain.source.id)) await page.click(`#choice-${chain.source.id}`);

@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
+import { openGraphSearch } from './check-supplement-graph.mjs';
 import { jumpToFilePage } from './check-related-return.mjs';
 import { splitReadingState, waitForReadingPosition } from './check-split-reading.mjs';
 
@@ -45,6 +46,7 @@ export async function checkHiddenGraphRelatedReturn(page) {
   const before = await splitReadingState(page);
   assert.equal(before.bookVisible, true);
   await page.click('[aria-label="关闭教材视图"]');
+  await openGraphSearch(page);
   await page.fill('.graph-search input', '零上与零下温度');
   await page.click('#graph-search-results button');
   await page.waitForFunction(() => document.activeElement?.id === 'supplement-title');

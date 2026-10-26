@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { openGraphSettings } from './check-supplement-graph.mjs';
 
 // Fresh, unselected graph on startGraphStartupServer's owned origin.
 export async function checkGraphZoom(page) {
@@ -28,10 +29,12 @@ export async function checkGraphZoom(page) {
   assert.ok(pinch.zoom > 1.48 && pinch.zoom < 1.51);
   assert.equal((await wheel(-1000, true)).zoom, 3);
   assert.equal((await wheel(1000, true)).zoom, .1);
+  await openGraphSettings(page);
   await page.click('[aria-label="放大节点图"]');
   const beforeHide = await state();
   await page.click('#open-supplement-graph'); await page.click('#open-supplement-graph');
   assert.equal((await state()).zoom, beforeHide.zoom, 'Reopening preserves the chosen zoom');
+  await openGraphSettings(page);
   await page.click('.graph-zoom button:text-is("全图")');
   assert.ok((await state()).zoom < initial.zoom);
   return { defaultZoom: initial.zoom, wheelZoom: normal.zoom, pinchZoom: pinch.zoom,

@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-26",
+  "references": [
+    "https://obsidian.md/help/Plugins/Graph%2Bview",
+    "https://js.cytoscape.org/demos/colajs-graph/"
+  ],
+  "checks": {
+    "unitTests": 37,
+    "build": "passed",
+    "browser": "Ego Chromium; dedicated dev and production origins",
+    "desktopAnd390px": "canvas fills graph; settings/search bounded; keyboard search; Escape restores focus; desktop book opens right; narrow switches book",
+    "production": "same controls check passed; no QA probe exposed"
+  },
+  "limitations": [
+    "No physical mobile device or trackpad test",
+    "Cloud save and authenticated personal-library regressions adapted; syntax checked, not rerun"
+  ],
+  "evidenceDirectory": ".git/graph-controls",
+  "sha256": {
+    "src/reader/Reader.tsx": "51aa9e22c9fc1c548f3acf03704b91bcdbcf54467c2215eb07191421479a7ab0",
+    "src/reader/graph/SupplementGraph.tsx": "d1b19ddca11732e799034fdd197db4b73e877a8ca512e3d3e53d47814e2f0896",
+    "src/reader/graph/graph.css": "bd164ce8548143560254af102eb26d44af4353a922e767bf943d166a145402c6",
+    "src/reader/split/split.css": "5c8cad365f0b0d3dd39f0df74a11d2c6528fb22c10d3271cb18b9ff3709df7e5"
+  }
+}

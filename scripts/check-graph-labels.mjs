@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { openGraphSettings } from './check-supplement-graph.mjs';
 
 // Use startGraphStartupServer on an owned origin. Select a connected node,
 // settle the layout and zoom below 80% before calling this check.
@@ -36,6 +37,7 @@ export async function checkGraphLabels(page, key) {
   checkFocused(await inspect());
   await page.mouse.move(10, 30);
   await page.waitForFunction(() => [...window.qaStartup.sprites.values()].every((s) => !s.label.visible));
+  await openGraphSettings(page);
   while ((await inspect()).zoom < .8) await page.click('[aria-label="放大节点图"]');
   assert.ok((await inspect()).entries.some((s) => s.inside && s.visible && !s.direct));
   return { selectedAndNeighborNames: true, hoverAndNeighborNames: true, zoomThreshold: true, noRings: true };

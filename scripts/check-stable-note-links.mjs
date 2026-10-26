@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { openPersonalLibrary } from './check-personal-library.mjs';
 import { readCloudPersonal } from './check-content-migration.mjs';
 import { jumpToFilePage } from './check-related-return.mjs';
 
@@ -24,7 +25,7 @@ export async function startStableLinksCheck(page, { testOrigin, credentials }) {
   await page.fill('.account-options input[name="email"]', credentials.email);
   await page.fill('.account-options input[name="password"]', credentials.password);
   await page.click('.account-options button[type="submit"]');
-  await page.waitForFunction(() => !document.getElementById('open-personal-library')?.disabled);
+  await page.waitForFunction(() => document.getElementById('add-personal-supplement')?.disabled === false);
   const initial = await readCloudPersonal(page);
   assert.equal(initial.userId, credentials.id);
   assert.deepEqual(initial.data, { supplements: [], notes: {} });
@@ -82,7 +83,7 @@ export async function openDefaultNote(page, id = 'ch2-signed-change') {
 }
 
 export async function openPersonalNode(page, id) {
-  await page.click('#open-personal-library');
+  await openPersonalLibrary(page);
   await page.click(`[data-personal-id="${id}"]`);
   await page.waitForSelector('.personal-actions');
 }
@@ -96,7 +97,7 @@ export async function createIdentityFixtures(page) {
   const before = await readCloudPersonal(page);
   assert.equal(before.data.supplements.length, 0);
   for (const [title, body] of [['QA05 同名', '目标 A 的摘要'], ['QA05 同名', '目标 B 的摘要'], ['QA05 来源', '个人来源正文']]) {
-    if (!await page.evaluate(() => !!document.querySelector('.personal-library'))) await page.click('#open-personal-library');
+    await openPersonalLibrary(page);
     await page.click('.personal-library button:text-is("新建补充")');
     await page.fill('.personal-title input', title);
     await page.selectOption('select[aria-label="章节"]', 'chapter-2');
@@ -266,7 +267,7 @@ export async function checkTargetLifecycle(page, fixtures) {
   await openDefaultNote(page);
   assert.equal(await page.evaluate((id) => !!document.querySelector(`.node-link-invalid[data-link-id="${id}"]`), link.id), true);
   assert.deepEqual((await editorDocument(page)).bindings, original.bindings);
-  await page.reload(); await page.waitForFunction(() => !document.getElementById('open-personal-library')?.disabled);
+  await page.reload(); await page.waitForFunction(() => document.getElementById('add-personal-supplement')?.disabled === false);
   await installSaveProbe(page); await openDefaultNote(page);
   assert.equal(await page.evaluate((id) => !!document.querySelector(`.node-link-invalid[data-link-id="${id}"]`), link.id), true);
   assert.equal((await editorDocument(page)).bindings.find(({ id }) => id === link.id).target.id, fixtures.a);

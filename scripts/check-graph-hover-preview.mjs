@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readCloudPersonal } from './check-content-migration.mjs';
 import { installSaveProbe } from './check-stable-note-links.mjs';
-import { searchGraph } from './check-supplement-graph.mjs';
+import { searchGraph, openGraphSettings } from './check-supplement-graph.mjs';
 
 // Run on ticket08's owned origin/page only. Probes stay in this test page.
 export async function startGraphInteractionCheck(page, { testOrigin }) {
@@ -20,7 +20,9 @@ export async function startGraphInteractionCheck(page, { testOrigin }) {
       return result;
     };
   });
+  await openGraphSettings(page);
   await page.click('button[aria-label="放大节点图"]');
+  await page.click('.graph-settings > summary');
   await page.waitForFunction(() => !!window.qa08Graph.app);
   await page.evaluate(() => {
     const probe = window.qa08Graph, renderer = probe.app.renderer;

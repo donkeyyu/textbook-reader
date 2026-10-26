@@ -1,10 +1,11 @@
 import assert from 'node:assert/strict';
+import { openPersonalLibrary } from './check-personal-library.mjs';
 import { jumpToFilePage } from './check-related-return.mjs';
 import { readCloudPersonal } from './check-content-migration.mjs';
 
 const title = 'QA04 同名补充';
 async function library(page) {
-  await page.click('#open-personal-library');
+  await openPersonalLibrary(page);
   await page.waitForSelector('.personal-search input');
 }
 async function create(page) {
@@ -27,7 +28,7 @@ async function open(page, id) {
 }
 async function reload(page) {
   await page.reload();
-  await page.waitForFunction(() => !document.getElementById('open-personal-library')?.disabled);
+  await page.waitForFunction(() => document.getElementById('add-personal-supplement')?.disabled === false);
 }
 
 // Dedicated marked origin and a NEW synthetic account only. No email is sent.
@@ -53,7 +54,7 @@ export async function startPersonalNodesCheck(page, { testOrigin, credentials })
   await page.fill('.account-options input[name="email"]', credentials.email);
   await page.fill('.account-options input[name="password"]', credentials.password);
   await page.click('.account-options button[type="submit"]');
-  await page.waitForFunction(() => !document.getElementById('open-personal-library')?.disabled);
+  await page.waitForFunction(() => document.getElementById('add-personal-supplement')?.disabled === false);
   const initial = await readCloudPersonal(page);
   assert.equal(initial.userId, credentials.id);
   assert.deepEqual(initial.data, { supplements: [], notes: {} });
@@ -137,8 +138,8 @@ export async function checkPersonalNodeMaintenance(page) {
   await page.focus('.personal-panel-back'); await page.keyboard.press('Enter');
   await page.waitForSelector('.personal-search input');
   await page.keyboard.press('Escape');
-  await page.waitForFunction(() => document.activeElement.id === 'open-personal-library');
-  assert.equal(await page.evaluate(() => document.activeElement.id), 'open-personal-library');
+  await page.waitForFunction(() => document.activeElement.id === 'add-personal-supplement');
+  assert.equal(await page.evaluate(() => document.activeElement.id), 'add-personal-supplement');
   await jumpToFilePage(page, 1);
   await library(page); await create(page);
   assert.equal(await page.evaluate(() => document.querySelector('select[aria-label="章节"]').value), '');
@@ -171,7 +172,7 @@ export async function checkPersonalNodeFailure(page) {
     assert.equal(await page.evaluate(() => document.querySelector('.cm-content').textContent), '网络失败仍保留这份草稿');
     assert.deepEqual((await readCloudPersonal(page)).data.supplements.find((node) => node.id === first.id), first);
     // Reject leaving the failed draft; it must remain editable.
-    const receipt = await page.click('#open-personal-library');
+    const receipt = await page.click('#add-personal-supplement');
     assert.ok(receipt.dialog); await page.dismissDialog();
     assert.equal(await page.evaluate(() => !!document.querySelector('.personal-title input')), true);
     await save(page);
@@ -187,7 +188,7 @@ export async function checkPersonalNodeFailure(page) {
 
 export async function checkBoxedPersonalNode(page) {
   await jumpToFilePage(page, 32);
-  await page.click('.toolbar-actions > button:text-is("添加补充")');
+  await page.click('#add-personal-supplement');
   await page.waitForSelector('.region-selector');
   await page.press('.region-selector', 'ArrowRight');
   await page.press('.region-selector', 'Shift+ArrowDown');

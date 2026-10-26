@@ -40,8 +40,7 @@ async function prepareCloudCheck(page, testOrigin) {
   assert.equal(new URL(await page.url()).origin, new URL(testOrigin).origin);
   await assertAsyncServer(testOrigin);
   assert.equal(await page.evaluate(() => !!document.querySelector('[data-dirty="true"]')), false);
-  await page.waitForFunction(() => [...document.querySelectorAll('.toolbar-actions button')]
-    .some((button) => button.textContent === '添加补充' && !button.disabled));
+  await page.waitForFunction(() => document.getElementById('add-personal-supplement')?.disabled === false);
   return readCloud(page);
 }
 
@@ -294,7 +293,7 @@ export async function checkAsyncPersonalSave(page, { testOrigin } = {}) {
   const createdIds = [];
   await rememberConfirm(page);
   try {
-    await page.click('button:text-is("添加补充")');
+    await page.click('#add-personal-supplement');
     await page.press('.region-selector', 'Enter');
     await page.fill('.personal-title input', 'QA async title');
     await page.focus('.markdown-source .cm-content');

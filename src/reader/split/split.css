@@ -22,9 +22,6 @@
   .reading-layout.views-split > .panel-resize { display: grid; place-items: center; grid-column: 1 / -1; grid-row: 2; align-self: start; justify-self: center; position: relative; z-index: 2; width: 72px; height: 28px; margin-top: -14px; border-radius: 8px; cursor: ns-resize; touch-action: none; user-select: none; }
   .reading-layout.views-split > .panel-resize span { width: 36px; height: 4px; border-radius: 2px; background: var(--secondary); }
   .reading-layout.views-split > .panel-resize:hover span, .reading-layout.views-split > .panel-resize:focus-visible span { background: var(--accent); }
-  .views-split .graph-toolbar { gap: 8px; padding: 10px 12px; }
-  .views-split .graph-search { flex: 1; gap: 8px; }
-  .views-split .graph-search input { min-width: 0; width: 100%; }
 }
 
 @media (max-width: 1000px) {

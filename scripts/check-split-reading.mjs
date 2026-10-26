@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { openGraphSearch } from './check-supplement-graph.mjs';
 import { jumpToFilePage } from './check-related-return.mjs';
 
 export async function splitReadingState(page) {
@@ -24,6 +25,7 @@ export async function splitReadingState(page) {
 }
 
 export async function selectSplitNode(page, query, key) {
+  await openGraphSearch(page);
   await page.fill('.graph-search input', query);
   await page.waitForFunction((key) => [...document.querySelectorAll('#graph-search-results button')]
     .some((button) => button.dataset.nodeKey === key), key);
@@ -121,7 +123,7 @@ export async function checkSplitOriginalRetry(page, { testOrigin }) {
       original: { id: original.locationId, page: getLocation(original.locationId).page } };
   });
   console.log('QA07 original fixture', chain);
-  await page.click('.graph-toolbar > button');
+  await page.click('#open-supplement-graph');
   await jumpToFilePage(page, chain.source.page);
   await page.click(`[data-supplement-ids~="${chain.source.id}"]`);
   if (await page.evaluate((id) => !!document.getElementById(`choice-${id}`), chain.source.id)) await page.click(`#choice-${chain.source.id}`);
@@ -129,7 +131,7 @@ export async function checkSplitOriginalRetry(page, { testOrigin }) {
   await page.waitForFunction((title) => document.getElementById('supplement-title')?.textContent === title, chain.middle.title);
   console.log('QA07 source-to-middle ready');
   await page.click('#open-supplement-graph');
-  await page.waitForFunction(() => document.activeElement === document.querySelector('.graph-search input'));
+  await page.waitForFunction(() => document.activeElement?.id === 'graph-search-toggle');
   const relation = `#related-${chain.middle.id}-${chain.original.id}`;
   const camera = await splitGraphCamera(page);
   await page.focus(relation);
@@ -206,7 +208,7 @@ export async function checkSplitResponsiveFocus(page) {
   }));
   const cases = [];
   for (const [name, active, selector, expected] of [
-    ['graph search', 'book', '.graph-search input', 'show-book-view'],
+    ['graph search toggle', 'book', '#graph-search-toggle', 'show-book-view'],
     ['graph canvas', 'book', '.graph-viewport', 'show-book-view'],
     ['splitter', 'book', '.split-resize', 'show-book-view'],
     ['book scroller', 'graph', '#textbook-view', 'show-graph-view'],

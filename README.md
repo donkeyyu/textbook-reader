@@ -64,7 +64,7 @@ npm run preview   # 预览构建结果
 
 类型标记指向原页区域，密集入口合并后按题号选择；必要解释直接可读，可选方法由读者主动展开。解读提供定位、关联查阅与返回。默认补充的个人笔记实时保存，自选段落的个人补充另有显式保存流程；两者均支持 Markdown。定位、返回及续读的状态区别见 [架构说明](docs/ARCHITECTURE.md#阅读状态与跳转)。
 
-“我的补充”可搜索、回访个人内容，也可新建不绑定原文的补充；章、节可调整或未归属，保存、改名与删除后可刷新读取。原框选添加入口继续可用。
+工具栏用图标打开节点图，用“+”框选添加补充。个人内容可从图谱搜索进入，其详情的“全部补充”提供列表与新建入口；章、节可调整或未归属，保存、改名与删除后可刷新读取。
 
 笔记和个人正文输入 `[[` 可搜索补充，候选显示章、节及位置或摘要。选择后绑定具体条目，同名链接可以指向不同目标；没有匹配时可主动创建，取消不留空条目。预览中的链接打开对应内容，目标删除后显示失效。改写链接文字或粘贴纯文本后需重新选择目标。
 
@@ -103,6 +103,7 @@ node --experimental-strip-types scripts/check-cloud-content.mjs
 | 多层返回、退出、失败和取消 | 同模块的 `checkReviewChain`、`checkReviewExit`、`checkReviewFailures`、`checkRelatedReturn` |
 | 方法开合、续读与完整路径 | 同模块的 `checkOnDemandMethod`、`checkMethodReturnChain`、`checkReaderJourney` |
 | 滚走后定位并保留上下文 | 同模块的 `checkLocate`、`checkLocateGroup`、`checkLocateReturn` |
+| 图谱折叠控件、右下角搜索与教材展开 | [check-graph-controls.mjs](scripts/check-graph-controls.mjs)：`checkGraphControls(page, { narrow })`，检查视口边界、键盘搜索、设置折叠与桌面分屏／窄屏切换 |
 | 图搜索、键盘选择及连续拖动截图 | [check-supplement-graph.mjs](scripts/check-supplement-graph.mjs)：`graphState`、`searchGraph`、`checkGraphSelection`、`captureGraphDrag`；先从工具栏打开节点图。`startGraphProbe`／`graphEmphasis`／`stopGraphProbe` 仅在专属测试浏览器检查 Pixi 明暗层级；`checkRepeatedGraphOriginal` 检查重复原文定位、失败重试和返回层级 |
 | 图与教材分屏、恢复与原文重试 | [check-split-reading.mjs](scripts/check-split-reading.mjs)：`splitReadingState`、`checkSplitKeyboardResize`、`checkReadingViewRecovery`；先完成一次图中定位。`checkSplitOriginalRetry` 检查重复原文、失败重试和两层返回；在独立测试 origin 使用已安装的图探针核对视野，分屏实现使用该入口替代旧的 `checkRepeatedGraphOriginal` |
 | 云端笔记与个人补充的异步保存 | [check-async-save.mjs](scripts/check-async-save.mjs)：`startAsyncSaveServer(port)`、`assertUnusedAsyncOrigin(page, { testOrigin })`，再运行 `checkAsyncNoteSave`、`checkAsyncPersonalSave` |

@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { openPersonalLibrary } from './check-personal-library.mjs';
 import { readCloudPersonal } from './check-content-migration.mjs';
 import { editorDocument, installSaveProbe, replaceEditor, savePersonalEditor, selectEditorRange } from './check-stable-note-links.mjs';
 
@@ -27,7 +28,7 @@ export async function startBidirectionalLinksCheck(page, { testOrigin, credentia
   await page.fill('.account-options input[name="email"]', credentials.email);
   await page.fill('.account-options input[name="password"]', credentials.password);
   await page.click('.account-options button[type="submit"]');
-  await page.waitForFunction(() => !document.getElementById('open-personal-library')?.disabled);
+  await page.waitForFunction(() => document.getElementById('add-personal-supplement')?.disabled === false);
   const initial = await readCloudPersonal(page);
   assert.equal(initial.userId, credentials.id);
   assert.deepEqual(initial.data, { supplements: [], notes: {} });
@@ -55,7 +56,7 @@ export async function savedReferenceState(page) {
 export async function createReferenceFixtures(page) {
   assert.equal((await readCloudPersonal(page)).data.supplements.length, 0);
   for (const [title, markdown] of [['QA06 同名', '06目标A摘要'], ['QA06 同名', '06目标B摘要'], ['QA06 来源', '06个人来源摘要']]) {
-    if (!await page.evaluate(() => !!document.querySelector('.personal-library'))) await page.click('#open-personal-library');
+    await openPersonalLibrary(page);
     await page.click('.personal-library button:text-is("新建补充")');
     await page.fill('.personal-title input', title);
     await page.selectOption('select[aria-label="章节"]', 'chapter-2');

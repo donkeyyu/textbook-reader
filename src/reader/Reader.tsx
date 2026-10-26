@@ -190,7 +190,7 @@ export function Reader() {
   function openGraph() {
     cancelJump(); keepPreview(); clearPreview(); setSelectionPage(null);
     setGraphMounted(true); views.show('graph', true);
-    requestAnimationFrame(() => document.querySelector<HTMLInputElement>('.graph-search input')?.focus({ preventScroll: true }));
+    requestAnimationFrame(() => document.getElementById('graph-search-toggle')?.focus({ preventScroll: true }));
   }
 
   function closeGraph() {
@@ -483,7 +483,7 @@ export function Reader() {
 
   function closePersonalLibrary() {
     setPersonalLibraryOpen(false);
-    requestAnimationFrame(() => document.getElementById('open-personal-library')?.focus({ preventScroll: true }));
+    requestAnimationFrame(() => document.getElementById('add-personal-supplement')?.focus({ preventScroll: true }));
   }
 
   function selectAccordion(id: string | null) {
@@ -522,7 +522,7 @@ export function Reader() {
     setHistory([]);
     if (!restoreFocus) return;
     requestAnimationFrame(() => {
-      if (graphOpen) { document.querySelector<HTMLInputElement>('.graph-search input')?.focus({ preventScroll: true }); return; }
+      if (graphOpen) { document.getElementById('graph-search-toggle')?.focus({ preventScroll: true }); return; }
       const marker = id ? document.querySelector(`[data-supplement-ids~="${id}"]`)?.getBoundingClientRect() : undefined;
       const viewport = scroller.current?.getBoundingClientRect();
       if (id && marker && viewport && marker.bottom > viewport.top && marker.top < viewport.bottom) focusMarker(id);
@@ -694,8 +694,10 @@ export function Reader() {
       </div>
       {pageControls}
       <div className="toolbar-actions">
-        <button id="open-supplement-graph" className="text-button" disabled={!content.published} aria-expanded={graphOpen}
-          aria-controls="supplement-graph" onClick={graphOpen ? closeGraph : openGraph}>节点图</button>
+        <button id="open-supplement-graph" className="icon-button" aria-label="节点图" title="节点图" disabled={!content.published} aria-expanded={graphOpen}
+          aria-controls="supplement-graph" onClick={graphOpen ? closeGraph : openGraph}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m7 7 10 2M7 7l3 11m7-9-7 9" stroke="currentColor" strokeWidth="1.5" /><circle cx="7" cy="7" r="3" fill="var(--surface)" stroke="currentColor" strokeWidth="1.5" /><circle cx="17" cy="9" r="2.5" fill="var(--surface)" stroke="currentColor" strokeWidth="1.5" /><circle cx="10" cy="18" r="2.5" fill="var(--surface)" stroke="currentColor" strokeWidth="1.5" /></svg>
+        </button>
         <details className="supplement-filters" onPointerLeave={(event) => {
           if (event.pointerType !== 'mouse') return;
           const filters = event.currentTarget;
@@ -723,10 +725,9 @@ export function Reader() {
             {hiddenIds.length > 0 && <button className="text-button" onClick={() => setHiddenIds([])}>恢复隐藏的 {hiddenIds.length} 条补充</button>}
           </div>
         </details>
-        <button id="open-personal-library" className="text-button" disabled={!ownsPersonal || content.loading} aria-expanded={personalLibraryOpen || !!personalItem} aria-controls="supplement-panel" onClick={openPersonalLibrary}>我的补充</button>
-        <button className="text-button" disabled={!ownsPersonal || content.loading} onClick={() => {
+        <button id="add-personal-supplement" className="icon-button" aria-label="添加补充" title="添加补充" disabled={!ownsPersonal || content.loading} onClick={() => {
           views.show('book', true); closeSupplement(false); setPersonalItem(null); clearPreview(); setSelectionPage(currentPage);
-        }}>添加补充</button>
+        }}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg></button>
         <AccountControl user={content.user} onSignIn={signIn} onPasswordSignIn={import.meta.env.DEV ? signInWithPassword : undefined} onSignOut={async () => {
           if (document.querySelector('[data-dirty="true"]') && !window.confirm('有尚未保存的内容，放弃修改并退出登录？')) throw new Error('已保留草稿，尚未退出登录。');
           closeSupplement(); setPersonalItem(null); setSelectionPage(null);
@@ -820,7 +821,10 @@ export function Reader() {
       </div>
       {graphMounted && <SupplementGraph nodes={content.nodes} selectedKey={selectedGraphKey} visible={graphOpen}
         personalEdges={references.edges}
-        chapters={chapters} sections={sections} onSelect={selectGraphNode} onClose={closeGraph} />}
+        chapters={chapters} sections={sections} onSelect={selectGraphNode} onShowBook={() => {
+          cancelJump(); keepPreview(); clearPreview(); views.show('book');
+          requestAnimationFrame(() => document.getElementById('show-book-view')?.focus({ preventScroll: true }));
+        }} />}
       {graphMounted && <SplitResize />}
       {!views.bookVisible && !graphOpen && <p className="views-empty-message">选择上方“教材”或“节点图”继续阅读。</p>}
       {(personalItem || personalLibraryOpen || choiceIds || note) && <PanelResize />}
@@ -834,7 +838,7 @@ export function Reader() {
         backlinks={backlinksFor(nodeKey({ bookId, source: 'personal', id: personalItem.id }))}
         onClose={() => {
           setPersonalItem(null); closePersonalLibrary();
-          if (graphOpen) requestAnimationFrame(() => document.querySelector<HTMLInputElement>('.graph-search input')?.focus({ preventScroll: true }));
+          if (graphOpen) requestAnimationFrame(() => document.getElementById('graph-search-toggle')?.focus({ preventScroll: true }));
         }} onSave={async (item) => {
           await storePersonal((current) => ({ ...current, supplements: [...current.supplements.filter((value) => value.id !== item.id), item] }));
           setHiddenTypes((types) => types.filter((type) => type !== 'personal'));

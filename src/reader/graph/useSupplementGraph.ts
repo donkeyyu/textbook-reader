@@ -289,7 +289,12 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       if (!initialized.current) {
         // Show the graph after a short warm-up; finish settling between frames.
         force.tick(4);
-        if (current.current.selectedKey) focus(current.current.selectedKey!); else fit();
+        if (current.current.selectedKey) focus(current.current.selectedKey!);
+        else {
+          container!.scale.set(1);
+          container!.position.set(renderer!.screen.width / 2, renderer!.screen.height / 2);
+          setScale(1);
+        }
         initialFocus = current.current.selectedKey;
         skipFocus.current = current.current.selectedKey;
         initialized.current = true;
@@ -374,7 +379,12 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       if (canvas.hasPointerCapture(event.pointerId)) canvas.releasePointerCapture(event.pointerId);
       canvas.style.cursor = 'grab'; paint();
     }
-    function wheel(event: WheelEvent) { event.preventDefault(); transform(container!.scale.x * Math.exp(-event.deltaY * .0015), point(event)); }
+    function wheel(event: WheelEvent) {
+      event.preventDefault(); clearHover();
+      const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? renderer!.screen.height : 1;
+      const speed = event.ctrlKey ? .01 : .0025;
+      transform(container!.scale.x * Math.exp(-event.deltaY * unit * speed), point(event));
+    }
     function clearHover() {
       clearTimeout(hoverTimer); hoverTimer = 0; hoverCandidate = null; hoverPoint = null;
       if (!gesture) canvas.style.cursor = 'grab';

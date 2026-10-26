@@ -1,0 +1,229 @@
+{
+  "date": "2026-10-26",
+  "ticket": "issues/02-stable-content-updates.md",
+  "status": "accepted-by-orchestrator",
+  "baseline": {
+    "head": "15ce5b5624be010e0a1356afc23e29e0048732e8",
+    "hookSha256": "536bdf94e5aa52c8cc5a8c116e0649469351fcb16b8871342c395f877702bb1c",
+    "nodes": 970,
+    "defaultEdges": 442,
+    "personalEdges": 0,
+    "observation": "仅改标题重建全部970组节点图形，并重新启动冷却布局。"
+  },
+  "final": {
+    "hookSha256": "dfedf1167dd2a30f78609c72f528cb375dc09bbe67db35a36e63aea7169f3b64",
+    "helperSha256": "55223f674c39a2366df743849dafb3e8751c27091e038968288efb8e720b5d37",
+    "testOrigin": "http://127.0.0.1:47922",
+    "egoSpace": 32,
+    "nodes": 972,
+    "defaultEdges": 442,
+    "personalEdgesDuringCountCheck": 1
+  },
+  "scope": {
+    "implemented": [
+      "持久模拟、图层、手势和事件生命周期",
+      "属性与拓扑比较分开；按稳定身份更新名称及类型色",
+      "等值对象、输入顺序和个人边反向表示不加热",
+      "同节点100ms停留聚焦及取消清理；不延迟点击或键盘选择"
+    ],
+    "deferredTo03": [
+      "真实拓扑变化仍重建布局节点与节点图形",
+      "增删节点和边的完整增量复用、删除中的交互收尾及完整阅读路径回归"
+    ],
+    "untouched": [
+      "Reader原节点/分组key",
+      "图投影与引用投影",
+      "账号、保存协议及存储结构",
+      "预览组件与样式"
+    ]
+  },
+  "sourcePhases": {
+    "baseline": {
+      "head": "15ce5b5624be010e0a1356afc23e29e0048732e8",
+      "sha256": "536bdf94e5aa52c8cc5a8c116e0649469351fcb16b8871342c395f877702bb1c",
+      "archive": "baseline-useSupplementGraph.ts",
+      "capture": "copied before implementation"
+    },
+    "initialAttributes": {
+      "sha256": "faaff7f0e8fc893e57ba407e62a64b9778a053b2baa9f116e91b0306a6c5c743",
+      "archive": "initial-attributes-reconstructed-useSupplementGraph.ts",
+      "capture": "reconstructed from final source by reverting only the later hover change; not a contemporaneous archive"
+    },
+    "firstHover": {
+      "sha256": "bb0e3fa615c1dcc61179f7409b79ce5b8f2eee08e54746af647868c2a8f71a88",
+      "archive": "first-hover-reconstructed-useSupplementGraph.ts",
+      "capture": "reconstructed from final source by reverting only the later candidate guard; drag/motion checks used this version"
+    },
+    "final": {
+      "sha256": "dfedf1167dd2a30f78609c72f528cb375dc09bbe67db35a36e63aea7169f3b64",
+      "checks": "valid dwell, pending cleanup, reference count, draft/resize, narrow, unmount"
+    },
+    "note": "早期阶段源码按明确补丁逆算归档，标明reconstructed；没有冒充同期冻结副本。原版副本为实施前实际复制。最终候选由当前源文件与协调者独立快照双向核对。"
+  },
+  "verification": {
+    "actualUi": [
+      "同名节点键盘搜索与区分",
+      "改名、正文保存后名称/搜索/预览更新",
+      "重复个人引用2→1，连线不变且布局不启动",
+      "真实拖动期间释放已挂起的保存：位置固定状态、指针捕获与后续跟随保留",
+      "隐藏时保存，零tick/零render；重开仍冷却且相机保留",
+      "草稿拒绝切换保留文本与原编辑器元素，方法展开状态不变",
+      "定位后分屏、键盘调宽、窗口resize、390px键盘搜索选择"
+    ],
+    "isolatedInputs": [
+      "标题、类型、Markdown正文同步到图/搜索/Ctrl预览",
+      "等值重建及节点/边排序、个人无向边反转",
+      "运动中属性更新继续冷却且不重置速度",
+      "100ms候选跨节点、离开、属性更新、拖动、隐藏、blur及独立fixture卸载"
+    ],
+    "objects": "布局节点、圆点、ring、label按稳定key对比；未按catalog下标匹配。",
+    "hover": {
+      "quickRealPassMs": 17.40000009536743,
+      "realDwellMs": 104.90000009536743,
+      "afterTinyMoveMs": 69.90000009536743,
+      "isolatedCrossDelayMs": 106.5,
+      "isolatedCrossGapMs": 37.10000038146973,
+      "pendingAttributeDelayMs": 108.30000019073486,
+      "stationaryCtrlAndConfirmedAttributes": true,
+      "delayNote": "输入与回调有浏览器/控制工具调度误差；记录下限与取消，不承诺每次准确100ms。真实短划过与细微移动来自CDP，跨节点精确竞态采用隔离DOM PointerEvent。"
+    },
+    "hidden": {
+      "noTicks": true,
+      "noDraws": true,
+      "coldReopen": true
+    },
+    "duplicateReferences": {
+      "savedCounts": [
+        2,
+        1
+      ],
+      "personalEdges": 1,
+      "stable": true
+    },
+    "draft": {
+      "sameEditor": true,
+      "sameText": true,
+      "selectionCancelPreserved": true,
+      "methodOpenPreserved": true,
+      "ownTestNoteCleared": true,
+      "note": "原编辑器DOM保留；本轮未另测撤销历史。"
+    },
+    "resize": {
+      "locateBlankFrames": 0,
+      "keyboardBlankFrames": 0,
+      "windowBlankFrames": 0,
+      "allObservedResizesDrawSameTurn": true,
+      "cameraPreserved": true
+    },
+    "narrow": {
+      "width": 390,
+      "height": 760,
+      "keyboardSlashSearchSelect": true,
+      "overflow": false,
+      "reducedMotion": true,
+      "reducedTransition": "0s"
+    },
+    "lifecycle": {
+      "unmountPendingCancelled": true,
+      "unmountErrors": 0,
+      "canvasRemoved": true,
+      "noLateTicks": true,
+      "repeatedAttributeUpdatesNoAddedListeners": true
+    },
+    "visual": {
+      "reviewed": [
+        "final-desktop-preview.png (1280×889)",
+        "final-narrow.png (390×760)"
+      ],
+      "result": "名称/预览层级、类型色与窄屏阅读布局可用；未新增视觉修改。"
+    },
+    "checks": {
+      "worker": [
+        "37项原有测试通过（属性版本）",
+        "类型检查与生产构建通过（属性版本）；100ms实现后类型检查通过",
+        "最终helper语法与diff检查通过",
+        "最终hook Impeccable检测[]"
+      ],
+      "coordinatorIndependent": {
+        "candidate": ".git/graph-incremental-orchestration/root-evidence/02-isolated-candidate.json",
+        "hashesMatchFinal": true,
+        "reportedPassed": [
+          "37 tests",
+          "typecheck",
+          "build",
+          "helper syntax"
+        ]
+      },
+      "notes": [
+        "保留原有大chunk提示",
+        "不声称控制台无警告"
+      ]
+    }
+  },
+  "evidence": {
+    "privateDirectory": ".git/graph-incremental-orchestration/02-evidence/",
+    "valid": [
+      "baseline.json",
+      "saved-attributes.json",
+      "preview-hidden.json（类型/预览/监听部分，隐藏采样失败后另验）",
+      "hidden-rechecked.json",
+      "drag-motion.json",
+      "hover-dwell-valid.json",
+      "pending-cleanup-valid.json",
+      "reference-count.json",
+      "reading-paths.json（草稿/分屏/resize部分，窄屏另验）",
+      "narrow-accepted.json",
+      "unmount.json",
+      "source-phases.json",
+      "cleanup-data.json",
+      "cleanup-account.json",
+      "browser-finished.json"
+    ],
+    "manifest": ".git/graph-incremental-orchestration/02-manifest.json",
+    "failedAttemptsRetained": true
+  },
+  "cleanup": {
+    "privateFixturesRemoved": true,
+    "notesAndBindingsEmptyBeforeLogout": true,
+    "appSignedOut": true,
+    "ownAuthUserRemovedInDashboard": true,
+    "credentialsRemoved": true,
+    "egoSpace32Finished": true,
+    "origin47922ServerStopped": true,
+    "probesDestroyedWithOwnedPages": true,
+    "user5173AndSpace29Untouched": true,
+    "originalMigration02ResourcesUntouched": true
+  },
+  "limitations": [
+    "未测实体设备、FPS或学生学习效果。",
+    "没有重新跑完整关联返回长链；03须按其拓扑影响完成完整回归。",
+    "最初数据970节点，真实保存验证加入两条自有合成节点；没有把不同规模的耗时当成性能收益。",
+    "早期探针下标等待条件、原生timer接收者、模块默认导出、定时采样、视口重置与过早读取导致的失败均保留；只有注明的有效后继证据用于验收。",
+    "保存期间真实拖动/运动检查对应firstHover归档；后续只增加候选失效guard，最终候选已复验相关计时与清理路径。"
+  ],
+  "handoff03": [
+    "延续update()中的真实拓扑分支，复用现有force、lines、dots、labels及稳定map，替换全量节点/图形重建。",
+    "保留属性分支与canonical比较：默认方向及多重边权重不合并，个人边按无向对比较。",
+    "保留有效gesture.node、速度、fx/fy、相机与hover状态；仅清理已失效对象。",
+    "新增hoverCandidate/hoverTimer/hoverPoint；删除候选节点须取消pending，删除hover须清预览，仍存在的候选不得因属性变化重计时。",
+    "clearHover/pause负责停机与timer清理；恢复和ResizeObserver保留paint(true)同轮绘制。",
+    "复用本票稳定身份探针；旧08/03下标探针不能直接用于重排后的sprite映射。"
+  ],
+  "orchestratorReview": {
+    "sourceAndEvidenceHashesVerified": true,
+    "independentSourceReview": "No unresolved findings; interfaces, default edge direction/multiplicity, personal unordered pairs, lifecycle and original Reader identity boundary preserved.",
+    "independentBrowser": [
+      "970-node reorder stability",
+      "stationary Control preview with title/type/summary update",
+      "hidden attribute update and cold reopen",
+      "100ms same-node timer retention, fast-pass cancellation and no early firing"
+    ],
+    "independentVisual": [
+      "02-preview.png",
+      "worker final-desktop-preview.png",
+      "worker final-narrow.png"
+    ],
+    "checks": "37 tests, typecheck, production build and helper syntax passed in isolated candidate matching final hashes",
+    "limitations": "Root fixed-delay timing attempt was invalid due scheduler delay; retained and replaced by timer event instrumentation. No FPS or device claims."
+  }
+}

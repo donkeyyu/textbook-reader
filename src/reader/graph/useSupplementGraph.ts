@@ -27,10 +27,9 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
   const current = useRef({ nodes, edges, selectedKey, visible, onSelect, searchKeys });
   current.current = { nodes, edges, selectedKey, visible, onSelect, searchKeys };
   const actions = useRef({ focus: (_key: string) => {}, fit: () => {}, zoom: (_factor: number) => {},
-    pan: (_x: number, _y: number) => {}, paint: (_immediate = false) => {}, pause: () => {}, resume: () => {} });
+    pan: (_x: number, _y: number) => {}, paint: (_immediate = false) => {}, pause: () => {}, resume: () => {}, update: () => {} });
   const skipFocus = useRef<string | null>(null);
   const initialized = useRef(false);
-  const signature = JSON.stringify([nodes.map(({ key, title, type }) => [key, title, type]), edges]);
 
   useEffect(() => {
     const element = host.current;
@@ -62,27 +61,9 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
     const container = world.current;
     const element = host.current;
     if (!ready || !renderer || !container || !element) return;
-    const previous = sprites.current;
-    simulation.current?.stop();
-    for (const child of container.removeChildren()) child.destroy({ children: true });
-    const state = current.current;
-    const layout: LayoutNode[] = state.nodes.map((node, index) => {
-      const old = previous.get(node.key)?.node;
-      const angle = index * Math.PI * (3 - Math.sqrt(5));
-      const distance = 48 * Math.sqrt(index + 1);
-      return { key: node.key, title: node.title, type: node.type,
-        x: old?.x ?? Math.cos(angle) * distance, y: old?.y ?? Math.sin(angle) * distance };
-    });
-    const byKey = new Map(layout.map((node) => [node.key, node]));
+    let layout: LayoutNode[] = [];
+    let links: LayoutEdge[] = [];
     const adjacency = new Map<string, Set<string>>();
-    for (const { source, target } of state.edges) {
-      if (!byKey.has(source) || !byKey.has(target)) continue;
-      if (!adjacency.has(source)) adjacency.set(source, new Set());
-      if (!adjacency.has(target)) adjacency.set(target, new Set());
-      adjacency.get(source)!.add(target); adjacency.get(target)!.add(source);
-    }
-    const links: LayoutEdge[] = state.edges.filter((edge) => byKey.has(edge.source) && byKey.has(edge.target))
-      .map((edge) => ({ ...edge }));
     const colors = new Map<string, string>();
     element.closest('.supplement-graph')?.querySelectorAll<HTMLElement>('.graph-legend [data-supplement-type]').forEach((item) => {
       colors.set(item.dataset.supplementType!, getComputedStyle(item).getPropertyValue('--type-color').trim());
@@ -91,21 +72,71 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
     const dots = new Container();
     const labels = new Container();
     container.addChild(lines, dots, labels);
-    const next = new Map<string, Sprite>();
-    for (const node of layout) {
+    const next = sprites.current;
+    let topology = '';
+    function colorSprite({ node, dot, ring }: Sprite) {
       const color = colors.get(node.type) || '#0066cc';
-      const dot = new Graphics().circle(0, 0, radius).fill(color);
-      const ring = new Graphics().circle(0, 0, radius + 4).stroke({ width: 1.5, color });
-      dot.addChild(ring);
-      const label = new Text({ text: node.title, style: { fontFamily: 'system-ui, sans-serif', fontSize: 12,
-        lineHeight: 17, fill: 0x1d1d1f, wordWrap: true, wordWrapWidth: 210, breakWords: true },
-        resolution: Math.max(2, window.devicePixelRatio || 1) });
-      label.anchor.set(.5, 0);
-      dots.addChild(dot); labels.addChild(label);
-      next.set(node.key, { node, dot, ring, label });
+      dot.clear().circle(0, 0, radius).fill(color);
+      ring.clear().circle(0, 0, radius + 4).stroke({ width: 1.5, color });
     }
-    sprites.current = next;
+    function update() {
+      const state = current.current;
+      // Keep default direction/multiplicity and personal unordered pairs. Input
+      // order and display properties do not change the forces acting on nodes.
+      const signature = JSON.stringify([state.nodes.map((node) => node.key).sort(), state.edges.map(({ source, target, kind }) =>
+        JSON.stringify(kind === 'personal' ? [kind, ...[source, target].sort()] : [kind, source, target])).sort()]);
+      if (signature === topology) {
+        let changed = false;
+        for (const node of state.nodes) {
+          const sprite = next.get(node.key)!;
+          if (sprite.node.title !== node.title) { sprite.node.title = node.title; changed = true; }
+          if (sprite.node.type !== node.type) { sprite.node.type = node.type; colorSprite(sprite); changed = true; }
+        }
+        if (changed) paint(true);
+        return;
+      }
+      // Ticket 03 replaces this topology rebuild with per-identity additions
+      // and removals. Content-only updates keep the live nodes and gesture.
+      pause();
+      const previous = new Map(next);
+      for (const child of dots.removeChildren()) child.destroy({ children: true });
+      for (const child of labels.removeChildren()) child.destroy();
+      next.clear(); adjacency.clear();
+      layout = state.nodes.map((node, index) => {
+        const old = previous.get(node.key)?.node;
+        const angle = index * Math.PI * (3 - Math.sqrt(5));
+        const distance = 48 * Math.sqrt(index + 1);
+        return { key: node.key, title: node.title, type: node.type,
+          x: old?.x ?? Math.cos(angle) * distance, y: old?.y ?? Math.sin(angle) * distance };
+      });
+      const byKey = new Map(layout.map((node) => [node.key, node]));
+      links = state.edges.filter((edge) => byKey.has(edge.source) && byKey.has(edge.target)).map((edge) => ({ ...edge }));
+      for (const { source, target } of state.edges) {
+        if (!byKey.has(source) || !byKey.has(target)) continue;
+        if (!adjacency.has(source)) adjacency.set(source, new Set());
+        if (!adjacency.has(target)) adjacency.set(target, new Set());
+        adjacency.get(source)!.add(target); adjacency.get(target)!.add(source);
+      }
+      for (const node of layout) {
+        const dot = new Graphics(), ring = new Graphics();
+        dot.addChild(ring);
+        const label = new Text({ text: node.title, style: { fontFamily: 'system-ui, sans-serif', fontSize: 12,
+          lineHeight: 17, fill: 0x1d1d1f, wordWrap: true, wordWrapWidth: 210, breakWords: true },
+          resolution: Math.max(2, window.devicePixelRatio || 1) });
+        label.anchor.set(.5, 0);
+        const sprite = { node, dot, ring, label };
+        colorSprite(sprite); dots.addChild(dot); labels.addChild(label); next.set(node.key, sprite);
+      }
+      // Remove old links before d3 initializes the replacement node array.
+      linkForce.links([]); force.nodes(layout); linkForce.links(links);
+      force.alpha(initialized.current ? .16 : 1);
+      topology = signature;
+      resume();
+    }
     let hovered: string | null = null;
+    let hoverCandidate: string | null = null;
+    let hoverTimer = 0;
+    let hoverPoint: Point | null = null;
     let control = false;
     let renderFrame = 0;
     function paint(immediate = false) {
@@ -225,12 +256,13 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
         (renderer!.screen.height - height * zoom) / 2 - top * zoom);
       setScale(zoom); paint();
     }
-    const force = forceSimulation<LayoutNode>(layout)
-      .force('link', forceLink<LayoutNode, LayoutEdge>(links).id((node) => node.key).distance(120).strength(.45))
+    const linkForce = forceLink<LayoutNode, LayoutEdge>([]).id((node) => node.key).distance(120).strength(.45);
+    const force = forceSimulation<LayoutNode>([])
+      .force('link', linkForce)
       .force('charge', forceManyBody<LayoutNode>().strength(-180).distanceMax(380))
       .force('collision', forceCollide<LayoutNode>(24).strength(1).iterations(2))
       .force('x', forceX(0).strength(.004)).force('y', forceY(0).strength(.004))
-      .alpha(initialized.current ? .16 : 1).alphaDecay(.04).velocityDecay(.45).on('tick', paint).stop();
+      .alphaDecay(.04).velocityDecay(.45).on('tick', paint).stop();
     simulation.current = force;
     function resume() {
       if (!current.current.visible) return;
@@ -270,9 +302,21 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       const p = point(event);
       if (!gesture) {
         const nextHover = hit(p)?.key ?? null;
-        if (nextHover !== hovered || control !== event.ctrlKey) {
-          hovered = nextHover; control = event.ctrlKey;
-          canvas.style.cursor = hovered ? 'pointer' : 'grab'; paint();
+        hoverPoint = p;
+        if (control !== event.ctrlKey) { control = event.ctrlKey; paint(); }
+        if (nextHover !== hoverCandidate) {
+          clearTimeout(hoverTimer); hoverTimer = 0;
+          hoverCandidate = nextHover; hovered = null;
+          canvas.style.cursor = nextHover ? 'pointer' : 'grab'; paint();
+          if (nextHover) hoverTimer = window.setTimeout(() => {
+            if (hoverCandidate !== nextHover) return;
+            hoverTimer = 0;
+            if (!current.current.visible || gesture || !hoverPoint || hit(hoverPoint)?.key !== nextHover) {
+              hoverCandidate = null;
+              return;
+            }
+            hovered = nextHover; paint(true);
+          }, 100);
         }
         return;
       }
@@ -306,6 +350,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
     }
     function wheel(event: WheelEvent) { event.preventDefault(); transform(container!.scale.x * Math.exp(-event.deltaY * .0015), point(event)); }
     function clearHover() {
+      clearTimeout(hoverTimer); hoverTimer = 0; hoverCandidate = null; hoverPoint = null;
       hovered = null; control = false; setPreview(null); paint();
     }
     function leave() { if (!gesture) clearHover(); }
@@ -323,8 +368,8 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       force.stop(); cancelAnimationFrame(renderFrame); renderFrame = 0;
     }
     actions.current = { focus, fit, zoom: (factor) => transform(container.scale.x * factor),
-      pan: (x, y) => { container.x += x; container.y += y; paint(); }, paint, pause, resume };
-    resume();
+      pan: (x, y) => { container.x += x; container.y += y; paint(); }, paint, pause, resume, update };
+    update();
     canvas.addEventListener('pointerdown', down); canvas.addEventListener('pointermove', move);
     canvas.addEventListener('pointerup', up); canvas.addEventListener('pointercancel', up);
     canvas.addEventListener('lostpointercapture', up); canvas.addEventListener('wheel', wheel, { passive: false });
@@ -334,6 +379,8 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
     window.addEventListener('blur', clearHover); document.addEventListener('visibilitychange', visibility);
     return () => {
       pause();
+      for (const child of container.removeChildren()) child.destroy({ children: true });
+      next.clear(); simulation.current = null;
       canvas.removeEventListener('pointerdown', down); canvas.removeEventListener('pointermove', move);
       canvas.removeEventListener('pointerup', up); canvas.removeEventListener('pointercancel', up);
       canvas.removeEventListener('lostpointercapture', up); canvas.removeEventListener('wheel', wheel);
@@ -341,7 +388,9 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       window.removeEventListener('keydown', modifier, true); window.removeEventListener('keyup', modifier, true);
       window.removeEventListener('blur', clearHover); document.removeEventListener('visibilitychange', visibility);
     };
-  }, [ready, signature, host]);
+  }, [ready, host]);
+
+  useEffect(() => { actions.current.update(); }, [nodes, edges, ready]);
 
   useEffect(() => {
     if (selectedKey && skipFocus.current !== selectedKey && ready) actions.current.focus(selectedKey);

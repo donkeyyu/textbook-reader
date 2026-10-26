@@ -95,19 +95,28 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
         if (changed) paint(true);
         return;
       }
-      // Ticket 03 replaces this topology rebuild with per-identity additions
-      // and removals. Content-only updates keep the live nodes and gesture.
-      pause();
-      const previous = new Map(next);
-      for (const child of dots.removeChildren()) child.destroy({ children: true });
-      for (const child of labels.removeChildren()) child.destroy();
-      next.clear(); adjacency.clear();
+      const keys = new Set(state.nodes.map((node) => node.key));
+      if (gesture?.node && !keys.has(gesture.node.key)) cancelGesture();
+      if (hoverCandidate && !keys.has(hoverCandidate)) clearHover();
+      for (const [key, sprite] of next) {
+        if (keys.has(key)) continue;
+        dots.removeChild(sprite.dot).destroy({ children: true });
+        labels.removeChild(sprite.label).destroy();
+        next.delete(key);
+      }
+      adjacency.clear();
+      const center = initialized.current ? container!.toLocal({ x: renderer!.screen.width / 2, y: renderer!.screen.height / 2 }) : { x: 0, y: 0 };
       layout = state.nodes.map((node, index) => {
-        const old = previous.get(node.key)?.node;
+        const sprite = next.get(node.key);
+        if (sprite) {
+          sprite.node.title = node.title;
+          if (sprite.node.type !== node.type) { sprite.node.type = node.type; colorSprite(sprite); }
+          return sprite.node;
+        }
         const angle = index * Math.PI * (3 - Math.sqrt(5));
-        const distance = 48 * Math.sqrt(index + 1);
+        const distance = initialized.current ? 48 : 48 * Math.sqrt(index + 1);
         return { key: node.key, title: node.title, type: node.type,
-          x: old?.x ?? Math.cos(angle) * distance, y: old?.y ?? Math.sin(angle) * distance };
+          x: center.x + Math.cos(angle) * distance, y: center.y + Math.sin(angle) * distance };
       });
       const byKey = new Map(layout.map((node) => [node.key, node]));
       links = state.edges.filter((edge) => byKey.has(edge.source) && byKey.has(edge.target)).map((edge) => ({ ...edge }));
@@ -118,6 +127,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
         adjacency.get(source)!.add(target); adjacency.get(target)!.add(source);
       }
       for (const node of layout) {
+        if (next.has(node.key)) continue;
         const dot = new Graphics(), ring = new Graphics();
         dot.addChild(ring);
         const label = new Text({ text: node.title, style: { fontFamily: 'system-ui, sans-serif', fontSize: 12,
@@ -127,9 +137,10 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
         const sprite = { node, dot, ring, label };
         colorSprite(sprite); dots.addChild(dot); labels.addChild(label); next.set(node.key, sprite);
       }
-      // Remove old links before d3 initializes the replacement node array.
+      // Retained nodes keep their velocity and drag pins. Clear links before
+      // d3 initializes the latest node set so removed endpoints cannot linger.
       linkForce.links([]); force.nodes(layout); linkForce.links(links);
-      force.alpha(initialized.current ? .16 : 1);
+      force.alpha(Math.max(force.alpha(), initialized.current ? .16 : 1));
       topology = signature;
       resume();
     }
@@ -154,7 +165,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
     }
     function draw() {
       const zoom = container!.scale.x;
-      const selected = current.current.selectedKey;
+      const selected = next.has(current.current.selectedKey ?? '') ? current.current.selectedKey : null;
       const focused = hovered ?? selected;
       const previewKey = control ? hovered : null;
       const neighbors = focused ? adjacency.get(focused) : undefined;
@@ -266,6 +277,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
     simulation.current = force;
     function resume() {
       if (!current.current.visible) return;
+      if (!layout.length) { force.stop().alphaTarget(0).alpha(0); paint(true); return; }
       if (!initialized.current) {
         force.tick(120); force.alpha(0);
         if (current.current.selectedKey) focus(current.current.selectedKey!); else fit();
@@ -312,7 +324,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
             if (hoverCandidate !== nextHover) return;
             hoverTimer = 0;
             if (!current.current.visible || gesture || !hoverPoint || hit(hoverPoint)?.key !== nextHover) {
-              hoverCandidate = null;
+              clearHover();
               return;
             }
             hovered = nextHover; paint(true);
@@ -351,6 +363,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
     function wheel(event: WheelEvent) { event.preventDefault(); transform(container!.scale.x * Math.exp(-event.deltaY * .0015), point(event)); }
     function clearHover() {
       clearTimeout(hoverTimer); hoverTimer = 0; hoverCandidate = null; hoverPoint = null;
+      if (!gesture) canvas.style.cursor = 'grab';
       hovered = null; control = false; setPreview(null); paint();
     }
     function leave() { if (!gesture) clearHover(); }
@@ -358,13 +371,15 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       if (control !== event.ctrlKey) { control = event.ctrlKey; paint(true); }
     }
     function visibility() { if (document.hidden) clearHover(); }
-    function pause() {
-      clearHover();
+    function cancelGesture() {
       const interrupted = gesture;
       gesture = null;
       if (interrupted?.node) { interrupted.node.fx = interrupted.node.fy = null; force.alphaTarget(0); }
       if (interrupted && canvas.hasPointerCapture(interrupted.pointer)) canvas.releasePointerCapture(interrupted.pointer);
       canvas.style.cursor = 'grab';
+    }
+    function pause() {
+      clearHover(); cancelGesture();
       force.stop(); cancelAnimationFrame(renderFrame); renderFrame = 0;
     }
     actions.current = { focus, fit, zoom: (factor) => transform(container.scale.x * factor),

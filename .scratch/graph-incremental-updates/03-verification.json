@@ -1,0 +1,158 @@
+{
+  "date": "2026-10-26",
+  "ticket": "issues/03-incremental-topology-updates.md",
+  "status": "accepted-by-orchestrator",
+  "baseline": {
+    "head": "1d22eae9fb10f82c670f51c7823b029c8689fd32",
+    "hookSha256": "dfedf1167dd2a30f78609c72f528cb375dc09bbe67db35a36e63aea7169f3b64",
+    "nodes": 970,
+    "defaultEdges": 442,
+    "observation": "同一数据新增一个节点时，旧拓扑分支重建全部970个已有布局节点和圆点；新分支保留全部970组对象。仅比较对象连续性，不作耗时或帧率结论。"
+  },
+  "final": {
+    "hookSha256": "78b717c4cb98acbe31e45b266c56c70e605067c5de659445d4511aa43d289e9b",
+    "helperSha256": "effba10266c1d79c5ebbd366d52c6dd1f09483ee7238a1a0b6eb92968cefe740",
+    "testOrigin": "http://127.0.0.1:47923",
+    "baselineReaderOrigin": "http://127.0.0.1:47924",
+    "egoSpace": 34,
+    "maxActualUiNodes": 973,
+    "defaultEdges": 442
+  },
+  "implementation": [
+    "按稳定key复用布局节点、圆点、强调环和标签，仅创建新增对象并释放删除对象。",
+    "更新同一force的数据；保留已有速度、有效fx/fy、相机和有效手势，从当前alpha继续或按需恢复布局。首次非空图初始化只运行一次。",
+    "默认边方向和重复权重、个人无向pair独立；属性、等值、重排和引用计数未改连线时继续不加热。",
+    "保留有效100ms候选与hover；删除目标取消计时和预览。删除拖动节点释放捕获和固定状态，不触发点击。",
+    "clearHover在无活动手势时复位grab；命中失效的计时器也走同一清理入口，活动拖动保留grabbing。",
+    "隐藏不tick或render，重开使用最新拓扑；空图停止，最后删除及再次添加保留会话相机。"
+  ],
+  "untouched": [
+    "Reader原SupplementPanel节点/分组key",
+    "SupplementGraph、GraphPreview和图样式",
+    "图及引用投影、正文绑定、账号、保存快照和存储协议",
+    "依赖、README、DESIGN、SPEC、总票及计划"
+  ],
+  "verification": {
+    "actualUi": [
+      "创建三条自由个人节点，原有970/971/972组对象分别保留。",
+      "保存新增个人引用期间进行真实CDP节点拖动，fx/fy、对象、相机及捕获保留；继续移动仍跟随，松开后收敛。",
+      "同一真实拖动中以隔离输入增删另一节点，手势连续。",
+      "重复引用2→1、双方互引、删一向保留、最后一处删除；未改pair时不启动布局，442条默认边独立保留。",
+      "挂起真实删除保存后拖动当前待删除节点；删除到达后释放capture/pins、alphaTarget归零，后续松手不误选。",
+      "隐藏图后真实保存新增引用，零tick/render；重开使用最新边并保留相机与对象。",
+      "个人链接进入默认解读，引用此处反查返回来源，再次进入；草稿取消切换保留文本、编辑器与方法状态，测试笔记随后清空。",
+      "教材定位、分屏键盘调宽、原文加载失败/重试、重复定位和两层关联返回；受检resize同轮draw、零未绘制空帧。",
+      "390×760图/教材切换、斜线搜索、方向键/Enter选择；减少动态效果可用。",
+      "刷新读取自己的两条保存节点和绑定；常规可见教材刷新保留第28页及页内比例。"
+    ],
+    "isolatedInputs": [
+      "970→971→970，稳定身份复用，删除dot/ring/label全部destroyed。",
+      "两条同向默认边、一条反向默认边和一条个人边共存；只删个人边后保留三条默认边。",
+      "空图、孤立节点、最后删除、再次添加；位置有限，相机不重置。",
+      "新增其他节点保留同一100ms计时；邻接立即更新；删除hover/preview及pending目标，卸载取消迟到任务与监听。",
+      "16轮增删后仍为970 sprites/dots/labels，删除对象全部释放；冷却后300ms采样无tick/render。",
+      "最终定点验证删除hover后grab、移出并重入空白仍grab、命中失效guard恢复grab；真实拖动grabbing和捕获不受清理影响。"
+    ],
+    "independentCoordinator": [
+      "在自有Space33/origin47932复验隐藏新增节点与个人边、保留970组对象及位置/速度，重开视野、删除释放、空图和再次添加。",
+      "独立源码检查与两次隔离候选检查；最终光标修复已接受。",
+      "已接受刷新首次开图漂移为既有Reader边界，不扩大本票修复。"
+    ],
+    "visual": {
+      "reviewed": [
+        "final-desktop-preview.png (1280×889)",
+        "final-narrow.png (390×760)"
+      ],
+      "phase": "拓扑实现完成、两个光标收尾修复之前；最后修复仅改变光标清理和失效计时器清理。",
+      "result": "类型层级、预览上下位置、个人线/默认线、抽屉和窄屏内容可读，无需样式修改。"
+    },
+    "checks": {
+      "workerIncrementalPhase": [
+        "37项原有测试通过",
+        "类型检查、生产构建、helper语法、diff检查通过",
+        "Impeccable hook检测[]"
+      ],
+      "workerFinalCursorPhase": [
+        "类型检查、helper语法及diff检查通过",
+        "最终光标定点浏览器检查通过"
+      ],
+      "coordinator": [
+        "增量阶段独立37项测试/类型检查/构建/helper语法通过",
+        "最终光标阶段独立类型检查/构建/helper语法通过"
+      ],
+      "warnings": [
+        "保留已有大chunk提示。",
+        "Vite输出有浏览器console.warn堆栈片段，不声称控制台无警告。"
+      ]
+    }
+  },
+  "existingReadingBoundary": {
+    "status": "confirmed-on-pre03-and-final-hook-not-fixed-in03",
+    "reproduction": "可见教材第28页保存并刷新后，首次打开节点图。",
+    "baseline": "02交接hook也出现28→65/64；隐藏教材listWidth在过渡中690→72→690，阅读记录被中间布局改写。",
+    "final": "03最终hook出现28→66/63，同一隐藏教材宽度变化。",
+    "scope": "Reader及ReadingViews未改。独立窄屏切换对照两版均保持28；常规可见教材刷新也保持页码和比例。此边界没有计为通过，不扩写Reader。",
+    "evidence": [
+      "reading-boundary-comparison.json",
+      "refresh-open-boundary.json",
+      "refresh-cleanup-data.json"
+    ]
+  },
+  "evidence": {
+    "privateDirectory": ".git/graph-incremental-orchestration/03-evidence/",
+    "manifest": ".git/graph-incremental-orchestration/03-manifest.json",
+    "sourcePhases": "source-phases.json",
+    "principal": [
+      "baseline.json",
+      "final-addition.json",
+      "topology-inputs-valid.json",
+      "actual-fixtures.json",
+      "references-drag.json",
+      "hover-deletion-fixture.json",
+      "cursor-final.json",
+      "reading-journey-complete.json",
+      "narrow-refresh.json",
+      "reading-boundary-comparison.json",
+      "refresh-open-boundary.json",
+      "cleanup-data.json",
+      "cleanup-account.json",
+      "browser-finished.json",
+      "server-stopped.json"
+    ],
+    "failedAttemptsRetained": true,
+    "notes": "旧selector、JSON参数、焦点读取时机、页面初始化/加载超时等失败脚本和JSON保留；tool-failures.txt复制了对应原始工具错误片段。旧hover-deletion-fixture的cursor:pointer已由cursor-final取代。"
+  },
+  "cleanup": {
+    "ownFixturesDeletedViaUi": true,
+    "refreshedNodesNotesBindingsEmpty": true,
+    "appSignedOut": true,
+    "ownAuthUserRemovedInDashboard": true,
+    "credentialsRemoved": true,
+    "egoSpace34Finished": true,
+    "origins47923And47924Stopped": true,
+    "baselinePrivateViteCacheRemoved": true,
+    "probesDestroyedWithOwnedPages": true,
+    "user5173AndSpace29Untouched": true,
+    "rootSpace33And47932Untouched": true,
+    "originalMigration02ResourcesUntouched": true
+  },
+  "limitations": [
+    "未测实体设备、FPS、大规模性能收益或学生学习效果。",
+    "并发计时竞态用隔离DOM PointerEvent/透明timer记录；真实保存、节点拖动和捕获使用真实CDP输入。",
+    "最早混合视口恢复后的刷新差异保留为失败，并由两版首次开图对照定位为既有边界；不称全部阅读路径无缺陷。",
+    "截图和多数拓扑行为证据对应8c867088阶段，最终78b717c4阶段仅含两个光标收尾修复，定点复验及独立构建覆盖最终源。",
+    "工具超时及初次探针失败保留；不将工具调度时间作为精确100ms端到端保证。",
+    "Ego Lite提示可更新，本轮未升级。"
+  ],
+  "orchestratorReview": {
+    "date": "2026-10-26",
+    "frozenManifestVerified": {
+      "deliverables": 4,
+      "protected": 8,
+      "evidence": 59
+    },
+    "independentEvidence": "Private root-evidence/03-topology.json and 03-isolated-candidate.json; source review and final screenshots checked.",
+    "result": "本次范围接受；既有隐藏教材页码漂移保留为未解决边界。",
+    "cleanup": "Root Space33 and47932 also closed; isolated build directory removed."
+  }
+}

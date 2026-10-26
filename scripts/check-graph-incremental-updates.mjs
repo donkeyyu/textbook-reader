@@ -52,6 +52,8 @@ export async function incrementalGraphState(page) {
     const rect = app.canvas.getBoundingClientRect();
     return { generations: p.generations, ticks: p.ticks, restarts: p.restarts, heats: p.heats,
       alpha: p.force.alpha(), target: p.force.alphaTarget(), renders: window.qa08Graph.renders,
+      objects: { dots: world.children[1].children.length, labels: world.children[2].children.length },
+      links: p.force.force('link').links().map(({ source, target, kind }) => ({ source: source.key, target: target.key, kind })),
       camera: { x: (app.screen.width / 2 - world.x) / world.scale.x,
         y: (app.screen.height / 2 - world.y) / world.scale.x, zoom: world.scale.x },
       nodes: [...p.sprites].map(([key, { node, dot, ring, label }]) => ({ key, title: node.title, type: node.type,
@@ -65,6 +67,22 @@ export async function incrementalGraphState(page) {
       paperScroll: document.querySelector('.paper-scroller').scrollTop,
       resizeEvents: window.qa08Graph.events };
   });
+}
+
+// Topology may move retained nodes. Their objects, valid pins and camera survive.
+export function assertRetainedGraph(before, after) {
+  assert.equal(after.generations, before.generations);
+  assert.deepEqual(after.camera, before.camera);
+  const previous = new Map(before.nodes.map((node) => [node.key, node]));
+  for (const node of after.nodes) {
+    const old = previous.get(node.key);
+    if (!old) continue;
+    for (const field of ['nodeId', 'dotId', 'ringId', 'labelId', 'fx', 'fy']) assert.equal(node[field], old[field], `${node.key}: ${field}`);
+  }
+  assert.equal(after.objects.dots, after.nodes.length);
+  assert.equal(after.objects.labels, after.nodes.length);
+  const keys = new Set(after.nodes.map((node) => node.key));
+  assert.ok(after.links.every(({ source, target }) => keys.has(source) && keys.has(target)));
 }
 
 export function assertStableGraph(before, after, { moving = false } = {}) {

@@ -913,9 +913,9 @@ export function Reader() {
         </section></>}
         activeLocationId={selectedLocation}
         onBack={previous ? () => { void navigate({ page: previous.page, restore: previous }); } : undefined} />}
-    </main>
     {preview && previewNote && <SupplementPreview key={preview.id} note={previewNote} anchor={preview.anchor}
       onKeep={keepPreview} onLeave={leavePreview} />}
+    </main>
     {(pending || error) && <div className="reading-message" role={error ? "alert" : "status"}>
       <span>{error ?? "正在打开教材…"}</span>
       {error && <button className={`text-button${retryJump.current.locate ? ' locate-button' : ''}`} onClick={() => { void navigate(retryJump.current); }}>重试</button>}

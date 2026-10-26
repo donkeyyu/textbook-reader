@@ -20,7 +20,7 @@ export function SupplementPreview({ note, anchor, onKeep, onLeave }: {
     setTop(Math.max(76, Math.min(anchor.top, window.innerHeight - height - 12)));
   }, [anchor, note]);
   return <div ref={element} id="supplement-preview" className={`supplement-preview${anchor.docked ? " preview-docked" : ""}`} role="tooltip" aria-label={note.title} data-supplement-type={supplementType(note)}
-    style={anchor.docked ? { marginLeft: anchor.left, width: anchor.width, maxHeight: anchor.maxHeight } : { left: anchor.left, top, width: anchor.width }} onPointerEnter={onKeep} onPointerLeave={onLeave} onFocus={onKeep}
+    style={anchor.docked ? { maxHeight: anchor.maxHeight } : { left: anchor.left, top, width: anchor.width }} onPointerEnter={onKeep} onPointerLeave={onLeave} onFocus={onKeep}
     onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) onLeave(); }}>
     <p>{note.preview}</p>
     <p className="preview-hint">点击标记展开解读</p>

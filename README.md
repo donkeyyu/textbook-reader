@@ -107,7 +107,7 @@ node --experimental-strip-types scripts/check-cloud-content.mjs
 | 多层返回、退出、失败和取消 | 同模块的 `checkReviewChain`、`checkReviewExit`、`checkReviewFailures`、`checkRelatedReturn` |
 | 方法开合、续读与完整路径 | 同模块的 `checkOnDemandMethod`、`checkMethodReturnChain`、`checkReaderJourney` |
 | 滚走后定位并保留上下文 | 同模块的 `checkLocate`、`checkLocateGroup`、`checkLocateReturn` |
-| 图谱折叠控件、右下角搜索与教材展开 | [check-graph-controls.mjs](scripts/check-graph-controls.mjs)：`checkGraphControls(page, { narrow })`，检查视口边界、键盘搜索、设置折叠与桌面分屏／窄屏切换 |
+| 图谱折叠控件、顶部共用搜索与教材展开 | [check-graph-controls.mjs](scripts/check-graph-controls.mjs)：`checkGraphControls(page, { narrow })`，检查视口边界、键盘搜索、设置折叠与桌面分屏／窄屏切换 |
 | 图搜索、键盘选择及连续拖动截图 | [check-supplement-graph.mjs](scripts/check-supplement-graph.mjs)：`graphState`、`searchGraph`、`checkGraphSelection`、`captureGraphDrag`；先从工具栏打开节点图。`startGraphProbe`／`graphEmphasis`／`stopGraphProbe` 仅在专属测试浏览器检查 Pixi 明暗层级；`checkRepeatedGraphOriginal` 检查重复原文定位、失败重试和返回层级 |
 | 图与教材分屏、恢复与原文重试 | [check-split-reading.mjs](scripts/check-split-reading.mjs)：`splitReadingState`、`checkSplitKeyboardResize`、`checkReadingViewRecovery`；先完成一次图中定位。`checkSplitOriginalRetry` 检查重复原文、失败重试和两层返回；在独立测试 origin 使用已安装的图探针核对视野，分屏实现使用该入口替代旧的 `checkRepeatedGraphOriginal` |
 | 云端笔记与个人补充的异步保存 | [check-async-save.mjs](scripts/check-async-save.mjs)：`startAsyncSaveServer(port)`、`assertUnusedAsyncOrigin(page, { testOrigin })`，再运行 `checkAsyncNoteSave`、`checkAsyncPersonalSave` |

@@ -1,0 +1,4 @@
+{
+  "errorKind": "Error",
+  "message": "JavaScript evaluation failed at line 0, column 0: Error: The disposable QA reader is not signed in\n    at <anonymous>:7:30\n    at async __egoPageEvaluate (<anonymous>:2:16); expression: async () => {\\n    const { supabase } = await import('/src/reader/supabase.ts');\\n    const { readPersonal } = await import('/src/reader/cloud-personal.ts');..."
+}

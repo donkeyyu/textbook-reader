@@ -1,0 +1,5 @@
+{
+  "phase": "async personal supplement",
+  "errorKind": "PageEvaluationTimeoutError",
+  "message": "page.waitForFunction timed out after 10000ms and the Page is still unresponsive. Execution could not be confirmed stopped; reload or close the Page before continuing."
+}

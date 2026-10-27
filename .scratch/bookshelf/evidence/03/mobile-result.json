@@ -1,0 +1,16 @@
+{
+  "keyboardMenu": true,
+  "realVersionInformation": true,
+  "infoModalAndFocus": true,
+  "removeLastBook": true,
+  "undoSameVersionOnce": true,
+  "removedAfterRefresh": true,
+  "reAddResumesPosition": true,
+  "failedRemovalPreservesMembership": true,
+  "failedUndoRemainsRetryable": true,
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "touch": 1
+  }
+}

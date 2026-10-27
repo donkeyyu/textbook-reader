@@ -16,9 +16,9 @@
 .graph-results strong { font-size: 14px; font-weight: 500; }
 .graph-results small { display: block; margin-top: 4px; font-size: 12px; color: var(--secondary); line-height: 1.5; }
 @media (max-width: 760px) {
-  .toolbar:has(.content-search > button[aria-expanded="true"]) .book-heading,
-  .toolbar:has(.content-search > button[aria-expanded="true"]) .toolbar-actions > :not(.content-search) { display: none; }
-  .toolbar:has(.content-search > button[aria-expanded="true"]) .toolbar-actions { grid-column: 2; }
+  .reader-toolbar:has(.content-search > button[aria-expanded="true"]) .reader-tools-supplement,
+  .reader-toolbar:has(.content-search > button[aria-expanded="true"]) #open-supplement-graph { display: none; }
+  .reader-toolbar:has(.content-search > button[aria-expanded="true"]) .reader-tools-browse { grid-column: 1 / -1; justify-content: flex-end; }
   .content-search .graph-search-panel { width: calc(100vw - 80px); }
-  .graph-results { width: calc(100vw - 32px); }
+  .graph-results { width: calc(100vw - 32px); max-height: calc(100dvh - 124px); }
 }

@@ -1,0 +1,5 @@
+{
+  "startupWriteFailureNotice": true,
+  "readFailureShelfAndReaderRemainUsable": true,
+  "unrelatedRecordsPreserved": true
+}

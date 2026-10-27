@@ -1,0 +1,29 @@
+{
+  "origin": "http://127.0.0.1:5297",
+  "createdPages": [
+    "p2",
+    "p3"
+  ],
+  "closedPages": [
+    "p2",
+    "p3"
+  ],
+  "baselineRevisions": {
+    "a": 11,
+    "b": 0
+  },
+  "heldAfterRealAResponse": true,
+  "authenticatedSubjectMatchedOwner": true,
+  "staleACompletionKeptDraft": true,
+  "bDataRevisionAndHistoryUnchanged": true,
+  "bViewExcludedANodesAndNotes": true,
+  "crossAccountReadDenied": true,
+  "actualDiscardPrompt": true,
+  "originalOwnerIdentified": true,
+  "confirmedReturnResolvedDraftBlock": true,
+  "canceledReturnKeptEditorAndDestination": true,
+  "returnARecoveredAndSaved": true,
+  "existingLegacyAndSourcePreserved": true,
+  "aOwnedFixturesRemoved": true,
+  "dedicatedAccountsDistinct": true
+}

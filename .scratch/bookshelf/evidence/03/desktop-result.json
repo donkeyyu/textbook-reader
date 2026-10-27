@@ -1,0 +1,33 @@
+{
+  "keyboardMenu": true,
+  "realVersionInformation": true,
+  "infoModalAndFocus": true,
+  "removeLastBook": true,
+  "undoSameVersionOnce": true,
+  "removedAfterRefresh": true,
+  "reAddResumesPosition": true,
+  "failedRemovalPreservesMembership": true,
+  "failedUndoRemainsRetryable": true,
+  "screenshotDimensions": {
+    "info.png": [
+      1760,
+      897
+    ],
+    "undo-failed.png": [
+      1760,
+      897
+    ],
+    "menu.png": [
+      1760,
+      897
+    ],
+    "removed.png": [
+      1760,
+      897
+    ],
+    "remove-failed.png": [
+      1760,
+      897
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "desktopReader": {
+    "centered": true,
+    "backgroundBlocked": true,
+    "focusContained": true,
+    "escapeRestoresFocus": true
+  },
+  "desktopShelf": {
+    "centered": true,
+    "backgroundBlocked": true,
+    "focusContained": true,
+    "escapeRestoresFocus": true
+  },
+  "mobileShelf": {
+    "centered": true,
+    "backgroundBlocked": true,
+    "focusContained": true,
+    "escapeRestoresFocus": true
+  },
+  "mobileReader": {
+    "centered": true,
+    "backgroundBlocked": true,
+    "focusContained": true,
+    "escapeRestoresFocus": true
+  }
+}

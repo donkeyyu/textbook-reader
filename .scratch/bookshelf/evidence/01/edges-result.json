@@ -1,0 +1,18 @@
+{
+  "deniedShelfReadReported": true,
+  "directReadingAfterDeniedRead": true,
+  "directReadingReturnFocus": true,
+  "nativeTabState": {
+    "activeTag": "BODY",
+    "activeIsBody": true,
+    "dialogOpen": true
+  },
+  "nativeTabContainmentAssertion": "failed when focus was outside dialog; no product classification made",
+  "layout": {
+    "label": "上次读到文件第 1 页",
+    "wraps": true,
+    "insideColumn": true,
+    "noPageOverflow": true
+  },
+  "isolatedOriginRestoredEmpty": true
+}

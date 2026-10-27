@@ -31,10 +31,20 @@ export async function checkContentSearch(page) {
   await page.waitForFunction((scale) => document.querySelector('.graph-zoom output').textContent === scale, focusedScale);
   await page.click('#graph-book-toggle');
   await choose(first);
-  await page.waitForFunction(() => document.querySelector('.page-index').textContent.startsWith('9/'));
+  await page.waitForFunction(() => {
+    const target = document.getElementById('location-ch1-zero-boundary');
+    const viewport = document.getElementById('textbook-view');
+    if (!target || !viewport || viewport.inert || target.closest('.paper')?.id !== 'page-9') return false;
+    const region = target.getBoundingClientRect();
+    const bounds = viewport.getBoundingClientRect();
+    return region.width > 0 && region.height > 0 && region.top >= bounds.top - 1 && region.bottom <= bounds.bottom + 1 &&
+      region.left >= bounds.left - 1 && region.right <= bounds.right + 1;
+  });
   await page.click('#graph-search-toggle');
   await page.fill('.graph-search input', '不存在的内容xyz');
   assert.equal(await page.evaluate(() => document.querySelectorAll('#graph-search-results button').length), 0);
+  await page.fill('.graph-search input', '题');
+  await page.waitForFunction(() => document.querySelectorAll('#graph-search-results button').length > 20);
   for (const width of [1736, 390]) {
     await page.cdp('Emulation.setDeviceMetricsOverride', {width, height:944, deviceScaleFactor:1, mobile:false});
     const bounds = await page.evaluate(() => {

@@ -5,6 +5,7 @@ import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { startContentMigrationServer, readCloudPersonal, replaceMigrationNote, waitForCloudNote } from './check-content-migration.mjs';
 import { openNote, jumpToFilePage } from './check-related-return.mjs';
+import { openShelfReader } from './check-bookshelf.mjs';
 
 const book = JSON.parse(await readFile(new URL('../src/textbook/book.json', import.meta.url), 'utf8'));
 const personalKey = `textbook-personal-v1:${book.documentSha256}`;
@@ -70,7 +71,7 @@ async function disposeIsolatedPage(page, origin) {
   await page.goto(`${origin}/__content_migration_check`);
   await page.evaluate(({ personalKey, sourceKey, readingKey }) => {
     for (const key of Object.keys(localStorage)) {
-      if ([personalKey, sourceKey, readingKey].includes(key) || /^sb-[A-Za-z0-9_-]+-auth-token(?:$|-)/.test(key)) localStorage.removeItem(key);
+      if ([personalKey, sourceKey, readingKey, 'textbook-shelf-v1', 'textbook-startup-v1'].includes(key) || /^sb-[A-Za-z0-9_-]+-auth-token(?:$|-)/.test(key)) localStorage.removeItem(key);
     }
   }, { personalKey, sourceKey, readingKey });
   await page.close();
@@ -163,12 +164,12 @@ async function releaseAResponse(page, restore = false) {
 
 // The isolated server must already be running. A's session is borrowed through
 // a newly owned neutral page; no existing page is read, clicked or navigated.
-export async function checkContentAuth(task, result, credentialsB, { testOrigin = defaultOrigin } = {}) {
+export async function checkContentAuth(task, result, credentialsB, { testOrigin = defaultOrigin, returnToShelf = false } = {}) {
   assert.ok(credentialsB?.email && credentialsB?.password, 'Supply disposable QA B credentials');
   const origin = await checkOrigin(testOrigin);
   const sourceOrigin = await checkOrigin(result.origin);
   assert.notEqual(origin, sourceOrigin, 'Auth changes need an isolated origin to protect the existing pages');
-  const protectedPages = new Set(['p1', 'p2', 'p4', 'p6', result.currentPage, result.legacyPage]);
+  const protectedPages = new Set((await task.pages()).map((page) => page.label));
   const created = [];
   let source;
   let page;
@@ -192,7 +193,7 @@ export async function checkContentAuth(task, result, credentialsB, { testOrigin 
       const { data, error } = await supabase.auth.getSession();
       if (error || !data.session) throw new Error('The main QA A session is unavailable');
       await supabase.auth.stopAutoRefresh();
-      return { userId: data.session.user.id,
+      return { userId: data.session.user.id, email: data.session.user.email,
         session: { access_token: data.session.access_token, refresh_token: data.session.refresh_token },
         legacy: localStorage.getItem(personalKey), source: localStorage.getItem(sourceKey) };
     }, { personalKey, sourceKey });
@@ -222,7 +223,7 @@ export async function checkContentAuth(task, result, credentialsB, { testOrigin 
     });
     await setSession(page, borrowed.session, result.userId);
     await page.goto(origin);
-    await page.waitForSelector('.page-index');
+    await openShelfReader(page);
     await jumpToFilePage(page, ownNode.page);
     await page.waitForSelector(markerFor(ownNode));
     await openNote(page, result.fixture.noteId);
@@ -241,6 +242,7 @@ export async function checkContentAuth(task, result, credentialsB, { testOrigin 
     assert.equal(held.draft, delayed, 'The old A draft must survive the stale completion');
     assert.equal(held.dirty, 'true');
     assert.ok(held.error?.trim(), 'An old A completion must not be confirmed as a B save');
+    assert.equal(held.error?.includes(borrowed.email), true, 'The held draft identifies its original account');
     assert.equal(await page.evaluate((selector) => !!document.querySelector(selector), markerFor(ownNode)), false);
     const underB = await readCloudPersonal(page);
     assert.equal(underB.userId, ownerB);
@@ -257,10 +259,24 @@ export async function checkContentAuth(task, result, credentialsB, { testOrigin 
     await page.waitForFunction(() => !document.querySelector('[data-saving="true"]'));
     assert.equal(await page.evaluate(() => document.querySelector('.personal-note .cm-content')?.textContent), delayed);
     assert.deepEqual((await readCloudPersonal(page)).data, baselineB.data);
-    const discarded = await discardEditor(page);
-    assert.equal(discarded, true);
-    await page.click('.storage-error button:text-is("重新读取")');
-    await page.waitForFunction(() => document.querySelector('.toolbar-actions > button.text-button')?.disabled === false);
+    if (returnToShelf) {
+      const startup = await page.evaluate(() => localStorage.getItem('textbook-startup-v1'));
+      await page.click('.return-to-shelf');
+      await page.dismissDialog();
+      assert.equal(await page.evaluate(() => document.querySelector('.personal-note .cm-content')?.textContent), delayed);
+      assert.equal(await page.evaluate(() => localStorage.getItem('textbook-startup-v1')), startup);
+      await page.click('.return-to-shelf');
+      await page.acceptDialog();
+      await page.waitForSelector('.shelf-toolbar');
+      await page.waitForFunction(() => !document.querySelector('.loading-toast') &&
+        !document.querySelector('.storage-error')?.textContent.includes('草稿已保留'));
+      await openShelfReader(page);
+    } else {
+      const discarded = await discardEditor(page);
+      assert.equal(discarded, true);
+      await page.click('.storage-error button:text-is("重新读取")');
+    }
+    await page.waitForFunction(() => document.getElementById('add-personal-supplement')?.disabled === false);
     const bMarkers = await page.evaluate(() => [...document.querySelectorAll('.personal-marker')].map((item) => item.getAttribute('aria-label')).sort());
     assert.deepEqual(bMarkers, baselineB.data.supplements.map((item) => `我的补充：${item.title}`).sort());
     assert.equal(await page.evaluate((text) => document.body.textContent.includes(text), token), false, 'B view must not receive A fixture text');
@@ -292,6 +308,8 @@ export async function checkContentAuth(task, result, credentialsB, { testOrigin 
       baselineRevisions: { a: baselineA.revision, b: baselineB.revision }, heldAfterRealAResponse: true,
       authenticatedSubjectMatchedOwner: true, staleACompletionKeptDraft: true, bDataRevisionAndHistoryUnchanged: true,
       bViewExcludedANodesAndNotes: true, crossAccountReadDenied: true, actualDiscardPrompt: true,
+      originalOwnerIdentified: true, confirmedReturnResolvedDraftBlock: returnToShelf,
+      canceledReturnKeptEditorAndDestination: returnToShelf,
       returnARecoveredAndSaved: true, existingLegacyAndSourcePreserved: true };
     return evidence;
   } finally {
@@ -338,7 +356,7 @@ export async function checkExpiredEmailCallback(task, { testOrigin = defaultOrig
   assert.ok(email && (placement === 'hash' || placement === 'query'));
   const origin = await checkOrigin(testOrigin);
   const created = [];
-  const page = await emptyOriginPage(task, origin, created, new Set(['p1', 'p2', 'p4', 'p6']));
+  const page = await emptyOriginPage(task, origin, created, new Set((await task.pages()).map((page) => page.label)));
   const params = new URLSearchParams({ error: 'access_denied', error_code: 'otp_expired', error_description: 'Email link is invalid or has expired' });
   try {
     await page.goto(`${origin}/${placement === 'hash' ? '#' : '?'}${params}`);

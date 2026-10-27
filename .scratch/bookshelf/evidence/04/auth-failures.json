@@ -1,0 +1,13 @@
+{
+  "signOutWaitingAndFailureRetry": true,
+  "failedRemoteLogoutClearedLocalPrivateContent": true,
+  "signOutRecoveryThroughPasswordLogin": true,
+  "emailWaitingFailureAndRetryFeedback": true,
+  "emailRequestsIntercepted": 2,
+  "realEmailsSent": 0,
+  "personalLoadingDisablesEditing": true,
+  "defaultExplanationReadableWhilePersonalFails": true,
+  "personalReadFailureRetry": true,
+  "localShelfAndDestinationPreserved": true,
+  "ownCloudContentUnchanged": true
+}

@@ -4,14 +4,15 @@ import { forceCollide, forceLink, forceManyBody, forceSimulation, forceX, forceY
   type Simulation, type SimulationLinkDatum, type SimulationNodeDatum } from 'd3-force';
 import type { GraphNode, GraphEdge } from './project-graph.ts';
 
-type LayoutNode = SimulationNodeDatum & GraphNode;
+type LayoutNode = SimulationNodeDatum & GraphNode & { radius: number };
 type LayoutEdge = SimulationLinkDatum<LayoutNode> & Pick<GraphEdge, 'kind'>;
 type Sprite = { node: LayoutNode; dot: Container; circle: Graphics; label: Text };
 type Point = { x: number; y: number };
 export type GraphPreviewAnchor = Point & { key: string; radius: number };
 const minZoom = .1;
 const maxZoom = 3;
-const radius = 6;
+const minRadius = 4;
+const maxRadius = 10;
 
 // Reference: family-tree/frontend/src/hooks/usePixiGraph.ts. No content is mutated.
 export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes: GraphNode[], edges: GraphEdge[],
@@ -79,7 +80,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
     let initialSelection: string | null = null;
     function colorSprite({ node, circle }: Sprite) {
       const color = colors.get(node.type) || '#0066cc';
-      circle.clear().circle(0, 0, radius).fill(color);
+      circle.clear().circle(0, 0, node.radius).fill(color);
     }
     function update() {
       const state = current.current;
@@ -112,28 +113,30 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
         const sprite = next.get(node.key);
         if (sprite) {
           sprite.node.title = node.title;
-          if (sprite.node.type !== node.type) { sprite.node.type = node.type; colorSprite(sprite); }
+          sprite.node.type = node.type;
           return sprite.node;
         }
         const angle = index * Math.PI * (3 - Math.sqrt(5));
         const distance = initialized.current ? 48 : 48 * Math.sqrt(index + 1);
-        return { key: node.key, title: node.title, type: node.type,
+        return { key: node.key, title: node.title, type: node.type, radius: minRadius,
           x: center.x + Math.cos(angle) * distance, y: center.y + Math.sin(angle) * distance };
       });
       const byKey = new Map(layout.map((node) => [node.key, node]));
       links = state.edges.filter((edge) => byKey.has(edge.source) && byKey.has(edge.target)).map((edge) => ({ ...edge }));
       for (const { source, target } of state.edges) {
-        if (!byKey.has(source) || !byKey.has(target)) continue;
+        if (source === target || !byKey.has(source) || !byKey.has(target)) continue;
         if (!adjacency.has(source)) adjacency.set(source, new Set());
         if (!adjacency.has(target)) adjacency.set(target, new Set());
         adjacency.get(source)!.add(target); adjacency.get(target)!.add(source);
       }
       for (const node of layout) {
-        if (next.has(node.key)) continue;
+        node.radius = minRadius + Math.min(maxRadius - minRadius, 1.2 * Math.sqrt(adjacency.get(node.key)?.size ?? 0));
+        const retained = next.get(node.key);
+        if (retained) { colorSprite(retained); continue; }
         const dot = new Container(), circle = new Graphics();
         dot.addChild(circle);
         const label = new Text({ text: node.title, style: { fontFamily: 'system-ui, sans-serif', fontSize: 12,
-          lineHeight: 17, fill: 0x1d1d1f, wordWrap: true, wordWrapWidth: 210, breakWords: true },
+          fontWeight: '300', lineHeight: 17, fill: 0xffffff, wordWrap: false, wordWrapWidth: 140, breakWords: true },
           resolution: Math.max(2, window.devicePixelRatio || 1) });
         label.anchor.set(.5, 0);
         const sprite = { node, dot, circle, label };
@@ -183,10 +186,12 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
           if ((source.key === focused || target.key === focused) !== active) continue;
           const dx = target.x! - source.x!, dy = target.y! - source.y!;
           const length = Math.hypot(dx, dy);
-          if (length < radius * 2) continue;
-          const endX = target.x! - dx / length * (radius + 2);
-          const endY = target.y! - dy / length * (radius + 2);
-          lines.moveTo(source.x!, source.y!);
+          if (length < source.radius + target.radius + 4) continue;
+          const startX = source.x! + dx / length * (source.radius + 2);
+          const startY = source.y! + dy / length * (source.radius + 2);
+          const endX = target.x! - dx / length * (target.radius + 2);
+          const endY = target.y! - dy / length * (target.radius + 2);
+          lines.moveTo(startX, startY);
           if (kind === 'personal') {
             const bend = Math.min(18 / zoom, length / 5);
             lines.quadraticCurveTo((source.x! + target.x!) / 2 - dy / length * bend,
@@ -212,21 +217,35 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
         const matched = matches.has(node.key);
         const clear = !focused || node.key === focused || neighbors?.has(node.key) || matched;
         dot.alpha = label.alpha = clear ? 1 : .15;
+        label.tint = node.key === focused || matched ? 0x1d1d1f : 0x6e6e73;
         dot.position.set(node.x!, node.y!);
-        const x = node.x! * zoom + container!.x, y = node.y! * zoom + container!.y + radius * zoom + 5;
+        const x = node.x! * zoom + container!.x, y = node.y! * zoom + container!.y + node.radius * zoom + 5;
         const within = x > -220 && x < renderer!.screen.width + 220 && y > -100 && y < renderer!.screen.height;
         label.visible = within && (emphasized || matched || zoom >= .8);
         if (!label.visible) continue;
-        label.text = emphasized || matched ? node.title : node.title.length > 18 ? `${node.title.slice(0, 18)}…` : node.title;
+        const fullTitle = active || matched;
+        const limit = 10;
+        label.text = fullTitle || node.title.length <= limit ? node.title : `${node.title.slice(0, limit)}…`;
+        label.style.wordWrap = fullTitle;
+        label.style.wordWrapWidth = fullTitle ? 160 : 140;
         label.scale.set(1 / zoom);
         const above = node.key === previewKey;
         label.anchor.set(.5, above ? 1 : 0);
-        label.position.set(node.x!, node.y! + (above ? -1 : 1) * (radius + 5 / zoom));
+        label.position.set(node.x!, node.y! + (above ? -1 : 1) * (node.radius + 5 / zoom));
         const bounds = { x: x - label.width * zoom / 2,
-          y: above ? node.y! * zoom + container!.y - radius * zoom - 5 - label.height * zoom : y,
+          y: above ? node.y! * zoom + container!.y - node.radius * zoom - 5 - label.height * zoom : y,
           width: label.width * zoom, height: label.height * zoom };
         const overlaps = () => occupied.some((box) => bounds.x < box.x + box.width + 6 && bounds.x + bounds.width + 6 > box.x &&
           bounds.y < box.y + box.height + 6 && bounds.y + bounds.height + 6 > box.y);
+        if (emphasized && node.key !== focused && overlaps()) {
+          const belowY = bounds.y;
+          bounds.y = node.y! * zoom + container!.y - node.radius * zoom - 5 - bounds.height;
+          if (overlaps()) bounds.y = belowY;
+          else {
+            label.anchor.y = 1;
+            label.y = node.y! - node.radius - 5 / zoom;
+          }
+        }
         if (!above && node.key === hovered && node.key !== selected && overlaps()) {
           const shift = Math.max(...occupied.map((box) => box.y + box.height)) + 6 - bounds.y;
           bounds.y += shift; label.y += shift / zoom;
@@ -238,7 +257,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       const node = previewKey ? next.get(previewKey)?.node : null;
       const rect = node ? canvas.getBoundingClientRect() : null;
       const anchor = node && rect ? { key: node.key, x: rect.left + node.x! * zoom + container!.x,
-        y: rect.top + node.y! * zoom + container!.y, radius: radius * zoom } : null;
+        y: rect.top + node.y! * zoom + container!.y, radius: node.radius * zoom } : null;
       setPreview((previous) => previous?.key === anchor?.key && previous?.x === anchor?.x &&
         previous?.y === anchor?.y && previous?.radius === anchor?.radius ? previous : anchor);
     }
@@ -347,10 +366,10 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
     }
     function hit(p: Point) {
       let nearest: LayoutNode | undefined;
-      let distance = Math.max(12, radius * container!.scale.x + 3);
+      let distance = Infinity;
       for (const { node } of next.values()) {
         const gap = Math.hypot(node.x! * container!.scale.x + container!.x - p.x, node.y! * container!.scale.y + container!.y - p.y);
-        if (gap < distance) { distance = gap; nearest = node; }
+        if (gap < Math.max(12, node.radius * container!.scale.x + 3) && gap < distance) { distance = gap; nearest = node; }
       }
       return nearest;
     }

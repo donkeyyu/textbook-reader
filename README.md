@@ -47,7 +47,13 @@ npm run preview   # 预览构建结果
 
 ## 当前阅读与内容
 
-首次打开从封面开始，有有效记录时恢复上次原页阅读位置。全部页面按 PDF 文件顺序连续排列；居中的页码控件可原位输入，关联目标另显示已核对的教材页码。布局与组件说明见 [DESIGN.md](DESIGN.md)，行为要求见 [SPEC.md](docs/SPEC.md)。
+首次进入应用先显示书架，从教材库添加教材后留在书架。当前库中只有人教版七年级上册（2024 年审定）。点击封面或阅读按钮打开教材；首次读这本书从封面开始，有有效记录时继续上次原页位置，阅读页可返回书架。书架成员及阅读记录保存在当前浏览器，未登录也可阅读。
+
+教材的更多菜单可查看版本信息或移出书架。移出后可撤销，也可从教材库重新添加同一版本；这些操作保留原阅读位置、笔记和个人补充。保存失败会显示错误，并保留重试入口。
+
+刷新或重开时恢复最后停留页面：书架仍回书架，书中则恢复同一教材版本及页内相对位置。旧版只有阅读记录而没有启动记录时先进入书架，添加并打开原教材后仍能续读。上次教材不可用或已不在书架时回书架并提示；本地记录异常或读写失败时仍能阅读，原记录及其他个人内容保持独立。
+
+全部页面按 PDF 文件顺序连续排列；居中的页码控件可原位输入，关联目标另显示已核对的教材页码。布局与组件说明见 [DESIGN.md](DESIGN.md)，行为要求见 [SPEC.md](docs/SPEC.md)。
 
 六章共接入 970 条补充和 1087 个经原图核对的位置，覆盖 PDF 第 8–199 页的逐页取舍记录。入口对应段落、关键语句、例题步骤或题目；117 个位置仅作为关联回顾目标。数量描述当前交付，不是各章的固定配额。
 
@@ -74,11 +80,13 @@ npm run preview   # 预览构建结果
 
 工具栏“节点图”可查看当前教材的全部默认解读和已保存个人节点，支持搜索、平移、缩放和拖动。选择节点只切换解读，点击“定位”并加载成功后，桌面同时显示图与教材，窄屏切到教材。分隔条可拖动或用方向键、Home、End 调整；视图控件可关闭或重开教材和图，保留会话中的位置与草稿。默认关联保留查看理由；目标只有教材原文时继续跳转原文。保存后的引用以玫红色无箭头弧线显示，默认关联保留箭头。目标详情的“引用此处”可返回实际引用者；重复引用和双方互引共用一条个人连线，删除最后一处才撤销。
 
-默认解读无需登录。点击工具栏“登录”，用邮箱接收登录链接；登录后，笔记和个人补充保存到该账号，在其他设备登录同一邮箱可读取。MCP 登录仅供开发工具使用，不会代替读者登录。当前项目地址和公开客户端密钥在 `src/reader/supabase.ts`；可用 `VITE_SUPABASE_URL`、`VITE_SUPABASE_PUBLISHABLE_KEY` 覆盖，浏览器不得使用 service-role 密钥。
+默认解读无需登录。书架和阅读页的账号图标共用邮箱登录窗口与会话；登录后留在原页面，阅读位置不变，笔记和个人补充保存到该账号，在其他设备登录同一邮箱可读取。书架成员、启动目的地和阅读记录仍只在本浏览器保存，不随登录或空云端内容重置。账号内容加载失败时可重新读取，默认内容仍可阅读。MCP 登录仅供开发工具使用，不会代替读者登录。当前项目地址和公开客户端密钥在 `src/reader/supabase.ts`；可用 `VITE_SUPABASE_URL`、`VITE_SUPABASE_PUBLISHABLE_KEY` 覆盖，浏览器不得使用 service-role 密钥。
 
 本地开发模式另有“测试账号登录”：打开“登录”浮层后切换，输入专用测试账号的邮箱与密码。它使用同一 Supabase Auth 和个人数据权限，不依赖邮件发送；生产构建不显示该入口。测试账号由管理员单独提供，凭据不纳入 Git。02 本轮按 DonQ 的后续决定使用此入口验收，SMTP 与真实邮件送达留待正式开放前配置。
 
 首次登录会把本浏览器的旧个人内容导入该账号，并绑定旧内容的来源。原 localStorage 内容保留；后续换账号不会再次导入给另一人。仍打开的旧版页面继续保存时，新版会保留原始副本并提示，在“查看升级前副本”中比较、复制；旧副本不会覆盖云端较新的记录。保存失败或其他页面已更新时，编辑器保留草稿，待复制或处理后再刷新。续读位置仍保存在本浏览器。
+
+返回书架、退出和重新读取会保护未保存编辑；取消后继续原页面与草稿，普通开合账号窗口不要求放弃。外部账号变化时，旧草稿显示原账号归属，旧请求与重试不能保存到新账号。确认放弃并返回书架后，才解除旧草稿阻塞并载入当前账号。
 
 数据库结构及权限见 `supabase/migrations/`；真实数据库回滚检查见 `supabase/tests/reader-content.sql`。发布默认内容时，先应用迁移，再生成 SQL 并通过管理员连接执行：
 
@@ -102,12 +110,16 @@ node --experimental-strip-types scripts/check-cloud-content.mjs
 | 教材目录与节点目录 | [check-navigation-directories.mjs](scripts/check-navigation-directories.mjs)：`checkNavigationDirectories(page)`，图谱打开且教材隐藏 |
 | 图节点自动定位原文 | [check-graph-auto-locate.mjs](scripts/check-graph-auto-locate.mjs)：`checkGraphAutoLocate(page)`，开发环境、图谱打开且教材隐藏 |
 | 页码位置、原位输入、侧栏开合 | [check-page-navigation.mjs](scripts/check-page-navigation.mjs)：`checkBookPageControls(page)`、`checkPageNavigation(page, expanded)` |
+| 书架添加、取消、阅读与返回 | [check-bookshelf.mjs](scripts/check-bookshelf.mjs)：`checkBookshelf(page, { testOrigin, evidenceDir })`；独立空的本地 origin 与自己的页面，复用原页跳转和关联返回检查；包括旧阅读记录、损坏书架、写入失败及草稿拦截探针，探针不代表真实云端编辑器保存验收 |
+| 教材信息、移出、撤销与个人内容保留 | [check-manage-books.mjs](scripts/check-manage-books.mjs)：`checkManageBooks(page, { testOrigin, evidenceDir })`；使用 `startAsyncSaveServer(port)` 的独立空 origin，检查键盘、刷新、重新添加续读及存储失败。`checkManagedPersonalContent(page, { testOrigin, credentials, evidenceDir })` 另用空 origin 和专用 QA 账号，经阅读页登录保存笔记与个人补充，比较管理前后的内容、修订及副本，结束仅恢复本次测试内容 |
+| 启动目的地与续读 | [check-startup-resume.mjs](scripts/check-startup-resume.mjs)：`checkStartupResume(page, { testOrigin, evidenceDir })`；独立空的本地 origin，检查重新打开、屏宽变化、书架目的地、旧记录、缺失教材、损坏记录及存储失败，复用完整阅读路径；取消返回使用草稿边界探针，真实账号编辑由账号检查覆盖 |
 | 页底预览与入口点击 | [check-related-return.mjs](scripts/check-related-return.mjs)：`checkPreviewEntry(page, 文件页序, 条目ID)`，可传各章真实标记 |
 | 单条与分组入口、关联返回 | [check-related-return.mjs](scripts/check-related-return.mjs)：`checkReviewCase(page, index)`、`checkAccordion(page, id)`；`reviewCases` 是第一章关联清单，不代表全书全集 |
 | 多层返回、退出、失败和取消 | 同模块的 `checkReviewChain`、`checkReviewExit`、`checkReviewFailures`、`checkRelatedReturn` |
 | 方法开合、续读与完整路径 | 同模块的 `checkOnDemandMethod`、`checkMethodReturnChain`、`checkReaderJourney` |
 | 滚走后定位并保留上下文 | 同模块的 `checkLocate`、`checkLocateGroup`、`checkLocateReturn` |
 | 图谱折叠控件、顶部共用搜索与教材展开 | [check-graph-controls.mjs](scripts/check-graph-controls.mjs)：`checkGraphControls(page, { narrow })`，检查视口边界、键盘搜索、设置折叠与桌面分屏／窄屏切换 |
+| 共用内容搜索与工具栏窄屏分组 | [check-content-search.mjs](scripts/check-content-search.mjs)：`checkContentSearch(page)`；从仅显示教材开始，检查搜索选择、隐藏教材位置、分屏定位、输入框与图标同行、结果边界及 Escape 焦点 |
 | 图搜索、键盘选择及连续拖动截图 | [check-supplement-graph.mjs](scripts/check-supplement-graph.mjs)：`graphState`、`searchGraph`、`checkGraphSelection`、`captureGraphDrag`；先从工具栏打开节点图。`startGraphProbe`／`graphEmphasis`／`stopGraphProbe` 仅在专属测试浏览器检查 Pixi 明暗层级；`checkRepeatedGraphOriginal` 检查重复原文定位、失败重试和返回层级 |
 | 图与教材分屏、恢复与原文重试 | [check-split-reading.mjs](scripts/check-split-reading.mjs)：`splitReadingState`、`checkSplitKeyboardResize`、`checkReadingViewRecovery`；先完成一次图中定位。`checkSplitOriginalRetry` 检查重复原文、失败重试和两层返回；在独立测试 origin 使用已安装的图探针核对视野，分屏实现使用该入口替代旧的 `checkRepeatedGraphOriginal` |
 | 云端笔记与个人补充的异步保存 | [check-async-save.mjs](scripts/check-async-save.mjs)：`startAsyncSaveServer(port)`、`assertUnusedAsyncOrigin(page, { testOrigin })`，再运行 `checkAsyncNoteSave`、`checkAsyncPersonalSave` |
@@ -115,8 +127,10 @@ node --experimental-strip-types scripts/check-cloud-content.mjs
 | 反向引用、个人连线与保存投影 | [check-bidirectional-links.mjs](scripts/check-bidirectional-links.mjs)：`startBidirectionalLinksServer`、`startBidirectionalLinksCheck`、`savedReferenceState`、`referenceView`、`checkIncomingNavigation`；使用新的 06 合成账号与独立 origin，比较保存快照、反向列表和图中两类边 |
 | 首次导入、真实旧版页面后到保存与重开 | [check-content-migration.mjs](scripts/check-content-migration.mjs)：`startContentMigrationServer`、`checkContentMigration(task, { testOrigin, credentials })`；须提供修改存储前冻结的实际旧版构建 |
 | 云端修订冲突、网络失败与浏览器存储故障 | [check-content-migration-extra.mjs](scripts/check-content-migration-extra.mjs)：`checkContentMigrationExtras(task, result)`，使用上项返回的 QA 结果 |
-| 账号隔离、旧账号延迟响应与失效登录链接 | [check-content-auth.mjs](scripts/check-content-auth.mjs)：`startContentAuthServer`、`checkContentAuth`、`checkExpiredEmailCallback`；另用独立空 origin，失效链接检查拦截发送请求，不发邮件 |
-| 开发模式测试密码登录 | [check-test-login.mjs](scripts/check-test-login.mjs)：`checkTestPasswordLogin(page, { testOrigin, credentials })`，专用账号验证错误密码重试、保存、刷新、退出与重新登录；`checkProductionPasswordLoginHidden(page)` 核对生产构建隐藏测试入口；不发邮件 |
+| 账号隔离、旧账号延迟响应与失效登录链接 | [check-content-auth.mjs](scripts/check-content-auth.mjs)：`startContentAuthServer`、`checkContentAuth`、`checkExpiredEmailCallback`；独立空 origin。`returnToShelf: true` 覆盖旧账号真实响应后保留归属、取消返回保留草稿及目的地、确认返回解除阻塞；失效链接拦截发送请求，不发邮件 |
+| 两页共用账号与开发模式密码登录 | [check-test-login.mjs](scripts/check-test-login.mjs)：`checkTestPasswordLogin(page, { testOrigin, credentials })`，专用账号验证错误密码重试、原页登录、保存、切页、书架刷新、退出与重新登录；`checkProductionPasswordLoginHidden(page)` 核对生产构建隐藏测试入口；不发邮件。两页窗口使用 [check-account-modal.mjs](scripts/check-account-modal.mjs) 的 `checkAccountModal(page)` |
+| 旧保存闭包与同轮编辑换号 | [check-auth-draft-ownership.mjs](scripts/check-auth-draft-ownership.mjs)：`startAuthDraftOwnershipServer`、`checkAuthDraftOwnership`；独立空 origin 与内存模拟账号，检查回调代次、草稿归属、延迟响应和原生编辑提交前换号，不代替真实云端验收 |
+| 账号等待、失败与重试 | [check-shared-account-failures.mjs](scripts/check-shared-account-failures.mjs)：`checkSharedAccountFailures(page, { testOrigin, credentials })`；使用内容认证检查服务的独立 origin、已登录的专用 QA 账号及干净编辑现场。拦截邮件请求，检查退出失败重试、个人加载期间限制编辑、失败时仍能阅读默认解读及重新读取，保留账号内容与本地书架／目的地。`checkActiveAccountDraftGuard` 另用失败保存的真实编辑器核对开合账号窗口、取消退出与取消返回时的草稿保护 |
 
 `check-related-return.mjs` 的题目、关联样本和位置查找绑定第一章；依赖这些数据的检查不能直接传入其他章 ID。其他章节须使用该章真实入口与位置，沿相同阅读路径单独核验，不以第一章用例代替。`checkPreviewEntry` 只使用传入的文件页序与标记 ID，可跨章检查。
 

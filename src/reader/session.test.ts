@@ -4,6 +4,7 @@ import book from '../textbook/book.json' with { type: 'json' };
 import { readingPage, restoredScroll } from './session.ts';
 import { groupMarkers } from './marker-groups.ts';
 import { loadReadingPosition, readingStorageKey, saveReadingPosition } from './reading-record.ts';
+import { loadStartupDestination, resolveStartupDestination, saveStartupDestination, startupStorageKey } from '../app/startup.ts';
 
 const pages = [{ top: 32, height: 900 }, { top: 956, height: 900 }, { top: 1880, height: 500 }];
 
@@ -61,8 +62,49 @@ test('damaged, mismatched, and invalid reading records fall back to the cover', 
       .map((change) => JSON.stringify({ ...valid, ...change })),
   ]) {
     raw = invalid;
-    assert.equal(loadReadingPosition(storage), null, invalid);
+    assert.throws(() => loadReadingPosition(storage), /上次阅读位置无法识别/, invalid);
+    assert.equal(raw, invalid, 'Invalid records remain intact until the reader can safely save');
   }
+});
+
+test('startup destinations are independent of legacy positions and require an available shelf member', () => {
+  const values = new Map([[readingStorageKey, 'legacy position'], ['textbook-personal-v1:existing', 'saved notes']]);
+  const storage = { getItem: (key: string) => values.get(key) ?? null, setItem: (key: string, value: string) => { values.set(key, value); } };
+  const second = 'second-version';
+  const available = [book.documentSha256, second];
+  assert.equal(loadStartupDestination(storage), null);
+  assert.deepEqual(resolveStartupDestination(null, available, available), { bookId: null, notice: '' });
+  saveStartupDestination({ page: 'reader', bookId: second }, storage);
+  assert.equal(resolveStartupDestination(loadStartupDestination(storage), available, available).bookId, second);
+  assert.match(resolveStartupDestination(loadStartupDestination(storage), [book.documentSha256], available).notice, /不在书架/);
+  assert.match(resolveStartupDestination(loadStartupDestination(storage), available, [book.documentSha256]).notice, /暂不可用/);
+  saveStartupDestination({ page: 'shelf' }, storage);
+  assert.deepEqual(resolveStartupDestination(loadStartupDestination(storage), available, available), { bookId: null, notice: '' });
+  assert.equal(values.get(readingStorageKey), 'legacy position');
+  assert.equal(values.get('textbook-personal-v1:existing'), 'saved notes');
+  for (const raw of ['{broken', 'null', '[]', 'true', '{"version":2,"page":"shelf"}', '{"version":1,"page":"reader","bookId":3}']) {
+    values.set(startupStorageKey, raw);
+    assert.throws(() => loadStartupDestination(storage), /记录无法识别/);
+    assert.equal(values.get(startupStorageKey), raw);
+  }
+  const denied = { getItem: () => { throw new Error('denied'); }, setItem: () => { throw new Error('quota'); } };
+  assert.throws(() => loadStartupDestination(denied), /无法读取上次停留页面/);
+  assert.throws(() => saveStartupDestination({ page: 'shelf' }, denied), /无法保存当前停留页面/);
+});
+
+test('two textbook versions keep separate positions and validate against their own page counts', () => {
+  const second = { documentSha256: 'second-version-with-the-same-title', pageCount: 3 };
+  const values = new Map<string, string>();
+  const storage = { getItem: (key: string) => values.get(key) ?? null, setItem: (key: string, value: string) => { values.set(key, value); } };
+  saveReadingPosition({ page: 28, fraction: .37 }, storage);
+  saveReadingPosition({ page: 3, fraction: -.2 }, storage, second);
+  assert.deepEqual(loadReadingPosition(storage), { page: 28, fraction: .37 });
+  assert.deepEqual(loadReadingPosition(storage, second), { page: 3, fraction: -.2 });
+  assert.throws(() => saveReadingPosition({ page: 4, fraction: 0 }, storage, second), /阅读位置无效/);
+  const current = values.get(readingStorageKey)!;
+  values.set(`textbook-reading-v1:${second.documentSha256}`, current);
+  assert.throws(() => loadReadingPosition(storage, second), /上次阅读位置无法识别/);
+  assert.equal(values.get(readingStorageKey), current);
 });
 
 test('reading storage failures are reported without touching any other records', () => {

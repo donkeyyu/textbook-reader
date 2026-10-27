@@ -20,6 +20,9 @@ button:disabled { cursor: default; color: #9b9b9f; }
 button:focus-visible, summary:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 ::selection { background: #cce4ff; color: #1d1d1f; }
 .reader-app { height: 100dvh; display: flex; flex-direction: column; }
+.loading-toast { position: fixed; z-index: 30; top: max(16px, env(safe-area-inset-top)); left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; max-width: calc(100vw - 32px); padding: 12px 16px; border-radius: 12px; background: var(--surface); box-shadow: 0 4px 20px #1d1d1f24; font-size: 14px; line-height: 20px; white-space: nowrap; pointer-events: none; }
+.loading-toast-icon { flex: none; color: var(--accent); animation: loading-toast-spin 800ms linear infinite; }
+@keyframes loading-toast-spin { to { transform: rotate(360deg); } }
 .toolbar { position: relative; z-index: 10; flex: none; height: 72px; padding: 0 28px; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 20px; background: var(--surface); border-bottom: 1px solid var(--separator); }
 .book-heading { min-width: 0; display: flex; align-items: center; gap: 16px; white-space: nowrap; }
 .book-heading h1 { overflow: hidden; text-overflow: ellipsis; margin: 0; font-size: 18px; font-weight: 600; letter-spacing: -.025em; }
@@ -72,6 +75,11 @@ button:focus-visible, summary:focus-visible, [tabindex]:focus-visible { outline:
 }
 
 .toolbar-actions { display: flex; align-items: center; justify-self: end; gap: 20px; }
+.reader-toolbar .toolbar-actions { gap: 16px; }
+.reader-toolbar-group { display: flex; align-items: center; gap: 4px; }
+.reader-toolbar-group + .reader-toolbar-group { padding-left: 16px; border-left: 1px solid var(--separator); }
+.reader-toolbar .icon-button, .reader-toolbar .account-summary, .reader-toolbar .supplement-filters > summary { width: 44px; height: 44px; flex: none; }
+.reader-toolbar .graph-search input { height: 44px; }
 .return-button { gap: 2px; white-space: nowrap; }
 .supplement-marker { position: absolute; transform: translate(-50%, -50%); width: 36px; height: 36px; display: grid; place-items: center; padding: 0; border-radius: 6px; background: transparent; font-size: 22px; line-height: 1; }
 .supplement-marker:hover, .supplement-marker[aria-expanded="true"] { background: var(--type-tint, var(--accent-soft)); }
@@ -115,6 +123,14 @@ button:focus-visible, summary:focus-visible, [tabindex]:focus-visible { outline:
 .related-page { font-size: 12px; white-space: nowrap; }
 
 @media (max-width: 760px) {
+  .reader-app .reader-toolbar { height: 112px; padding: 8px 16px; grid-template-rows: 44px 44px; gap: 8px 16px; }
+  .reader-toolbar .book-heading { grid-column: 1; grid-row: 1; }
+  .reader-toolbar .toolbar-actions { display: contents; }
+  .reader-toolbar-group + .reader-toolbar-group { padding-left: 0; border-left: 0; }
+  .reader-tools-library { grid-column: 2; grid-row: 1; }
+  .reader-tools-browse { grid-column: 1; grid-row: 2; }
+  .reader-tools-supplement { grid-column: 2; grid-row: 2; }
+  .reader-toolbar .filter-options { position: fixed; top: 112px; right: 16px; max-width: calc(100vw - 32px); }
   .book-heading { min-width: 0; }
   .book-heading h1 { overflow: hidden; text-overflow: ellipsis; }
   .book-heading .icon-button { flex: none; }

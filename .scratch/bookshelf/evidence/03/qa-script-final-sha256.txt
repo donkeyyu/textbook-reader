@@ -1,0 +1,1 @@
+16b22268e82c00be353f29179fe402bbe8417f99f93434c2a7b795543ecad028  scripts/check-manage-books.mjs

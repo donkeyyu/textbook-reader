@@ -1,0 +1,8 @@
+{
+  "failedDeleteKeptDurableRecord": true,
+  "retryDeletedDurableRecord": true,
+  "returnedToLibrary": true,
+  "deletedEntryAbsent": true,
+  "ownCloudFixtureRemoved": true,
+  "originalDataAndCopiesRestored": true
+}

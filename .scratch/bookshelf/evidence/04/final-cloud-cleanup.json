@@ -1,0 +1,20 @@
+{
+  "accounts": [
+    {
+      "role": "a",
+      "cloudDataEmpty": true,
+      "twoFinalSnapshotsIdentical": true,
+      "revision": 50
+    },
+    {
+      "role": "b",
+      "cloudDataEmpty": true,
+      "twoFinalSnapshotsIdentical": true,
+      "revision": 0
+    }
+  ],
+  "allOwnedPageContextsClosed": true,
+  "heldBrowserCallbacksCannotResume": true,
+  "knownAsyncFixtureRemoved": true,
+  "finalQaSessionsRevoked": true
+}

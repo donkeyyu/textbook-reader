@@ -1,0 +1,12 @@
+{
+  "testOnlyCatalog": true,
+  "sameTitleDistinctInformationAndMembership": true,
+  "otherVersionRemainsAfterRefresh": true,
+  "bothVersionsReadingAndPersonalRecordsPreserved": true,
+  "undoAndReAddNoDuplicate": true,
+  "longTitleWithinViewport": true,
+  "viewport": {
+    "width": 390,
+    "height": 844
+  }
+}

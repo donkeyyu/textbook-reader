@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-27",
+  "viewport": { "width": 390, "height": 844 },
+  "navigationWaitUntil": "domcontentloaded",
+  "extraScreenshots": false,
+  "checkBookshelf": {
+    "firstEntry": true,
+    "actualCatalog": true,
+    "cancelAndKeyboardFocus": true,
+    "addedOnceAndRetainedOnRefresh": true,
+    "anonymousCoverReading": true,
+    "returnFlushAndResume": true,
+    "existingRelatedReturn": true,
+    "draftGuardProbe": true,
+    "returnSaveFailureVisible": true,
+    "legacyReadingPreserved": true,
+    "corruptShelfPreservedAndReadable": true,
+    "saveFailureReportedAndReadable": true
+  },
+  "checkManagedVersions": {
+    "testOnlyCatalog": true,
+    "sameTitleDistinctInformationAndMembership": true,
+    "otherVersionRemainsAfterRefresh": true,
+    "bothVersionsReadingAndPersonalRecordsPreserved": true,
+    "undoAndReAddNoDuplicate": true,
+    "longTitleWithinViewport": true
+  }
+}

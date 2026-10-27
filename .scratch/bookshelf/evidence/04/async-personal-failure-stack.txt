@@ -1,0 +1,4 @@
+Error: page.waitForFunction timed out after 10000ms on page p4; last URL was "http://127.0.0.1:5298/"; last title was "课本解读".
+    at waitForFunctionTimeoutError (file:////[eval1]:19509:12)
+    at file:////[eval1]:18834:19
+    at async file:////[eval1]:16940:28

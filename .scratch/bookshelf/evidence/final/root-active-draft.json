@@ -1,0 +1,13 @@
+{
+  "actualFailedNoteDraft": true,
+  "ordinaryAccountOpenClosePreservedDraft": true,
+  "canceledSignOutKeptSessionAndDraft": true,
+  "canceledReturnKeptDraftAndDestination": true,
+  "explicitDiscardThenReadRecovered": true,
+  "ownCloudContentUnchanged": true,
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "touch": 1
+  }
+}

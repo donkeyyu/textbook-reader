@@ -1,0 +1,24 @@
+{
+  "productionShelf": {
+    "testPasswordEntryAbsent": true,
+    "emailLoginUnchanged": true
+  },
+  "productionReader": {
+    "testPasswordEntryAbsent": true,
+    "emailLoginUnchanged": true
+  },
+  "realEmailNotSent": true,
+  "explanationMethodRelatedReturnAndRefresh": true,
+  "actualOverflowShelfModal": {
+    "centered": true,
+    "backgroundBlocked": true,
+    "focusContained": true,
+    "escapeRestoresFocus": true
+  },
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "touch": 1
+  },
+  "ownOriginsCleaned": true
+}

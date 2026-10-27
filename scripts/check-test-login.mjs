@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { randomUUID } from 'node:crypto';
 import { openNote } from './check-related-return.mjs';
 import { readCloudPersonal, replaceMigrationNote, waitForCloudNote } from './check-content-migration.mjs';
+import { openShelfReader } from './check-bookshelf.mjs';
 
 async function guardEmail(page) {
   await page.evaluate(() => {
@@ -31,7 +32,7 @@ async function login(page, credentials) {
   await page.fill('.account-options input[name="password"]', credentials.password);
   await page.click('.account-options button[type="submit"]');
   await page.waitForFunction((email) => document.querySelector('.account-email')?.textContent === email &&
-    ![...document.querySelectorAll('.toolbar-actions > button')].find((button) => button.textContent === '添加补充')?.disabled, credentials.email);
+    !document.querySelector('.loading-toast'), credentials.email);
   assert.equal((await readCloudPersonal(page)).userId, credentials.id);
   assert.equal(await page.evaluate(() => document.querySelector('.account-options').open), false);
 }
@@ -51,6 +52,9 @@ export async function checkTestPasswordLogin(page, { testOrigin, credentials }) 
   assert.deepEqual(initial, { legacy: false, signedIn: false, dirty: false });
   const noteId = 'ch1-measurement-exercise';
   const note = `QA password login ${randomUUID()}`;
+  const startedOnShelf = await page.evaluate(() => !!document.querySelector('.shelf-toolbar'));
+  const localBeforeLogin = await page.evaluate(() => Object.fromEntries(Object.keys(localStorage)
+    .filter((key) => /^(textbook-shelf|textbook-startup|textbook-reading)-/.test(key)).map((key) => [key, localStorage.getItem(key)])));
   await guardEmail(page);
   try {
     await passwordForm(page);
@@ -60,16 +64,25 @@ export async function checkTestPasswordLogin(page, { testOrigin, credentials }) 
     await page.waitForSelector('.account-error[role="alert"]');
     assert.equal(await page.evaluate(() => document.querySelector('.account-options input[name="email"]').value), credentials.email);
     await login(page, credentials);
+    assert.equal(await page.evaluate(() => !!document.querySelector('.shelf-toolbar')), startedOnShelf, 'Login stays on its source page');
+    assert.deepEqual(await page.evaluate(() => Object.fromEntries(Object.keys(localStorage)
+      .filter((key) => /^(textbook-shelf|textbook-startup|textbook-reading)-/.test(key)).map((key) => [key, localStorage.getItem(key)]))), localBeforeLogin);
+    await openShelfReader(page);
     const before = await readCloudPersonal(page);
     assert.equal(before.data.notes[noteId], undefined, 'The dedicated QA note must be unused');
     await openNote(page, noteId);
     await replaceMigrationNote(page, note);
     await waitForCloudNote(page, noteId, note);
     assert.equal(await page.evaluate(() => window.testLoginEmailGuard.attempts), 0);
+    await page.click('.return-to-shelf');
+    await page.waitForSelector('.shelf-toolbar');
+    assert.equal(await page.evaluate(() => !!document.querySelector('button[aria-label="账号"]')), true);
     await page.reload();
     await page.waitForFunction(() => !!document.querySelector('.account-email'));
     await guardEmail(page);
     assert.equal((await readCloudPersonal(page)).data.notes[noteId], note);
+    assert.equal(await page.evaluate(() => !!document.querySelector('.shelf-toolbar')), true);
+    await openShelfReader(page);
     await page.click('.account-summary');
     await page.click('.account-options button:text-is("退出登录")');
     await page.waitForFunction(() => !document.querySelector('.account-email'));
@@ -89,7 +102,8 @@ export async function checkTestPasswordLogin(page, { testOrigin, credentials }) 
     assert.equal(await page.evaluate(() => window.testLoginEmailGuard.attempts), 0);
     return { wrongPasswordRejected: true, emailRetainedForRetry: true, passwordLoginSucceeded: true,
       cloudSaveAndRefresh: true, signOutRemovedPrivateAccess: true, signInAgainPreservedData: true,
-      passwordCleared: true, noEmailSent: true, ownNoteRemoved: true };
+      passwordCleared: true, noEmailSent: true, ownNoteRemoved: true, loginStayedOnSourcePage: true,
+      loginPreservedLocalShelfAndReading: true, shelfReaderSessionShared: true, shelfReloadStayedOnShelf: true };
   } finally {
     await page.evaluate(() => {
       if (window.testLoginEmailGuard) window.fetch = window.testLoginEmailGuard.original;

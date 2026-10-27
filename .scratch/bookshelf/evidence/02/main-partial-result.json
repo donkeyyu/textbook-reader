@@ -1,0 +1,22 @@
+{
+  "result": "main behavior assertions passed before screenshot timeout",
+  "origin": "http://127.0.0.1:5293",
+  "completed": [
+    "legacy record retained without startup",
+    "saved members visible without startup",
+    "opening restores before saving",
+    "existing checkReaderJourney passed",
+    "leave origin and reopen restores reader",
+    "390x844 refresh preserves page 28 fraction 0.37",
+    "refresh clears explanation and return history",
+    "cancel dirty-context guard preserves reader and destination",
+    "reopen after successful return stays on shelf"
+  ],
+  "screenshots": [
+    "reopened-reader.png",
+    "narrow-resume.png",
+    "reopened-shelf.png"
+  ],
+  "interruption": "CDP Page.captureScreenshot timed out on unavailable-version screenshot; later assertions not claimed by this run",
+  "note": "The dirty input is a synthetic guard probe. No account editor or cloud write was tested."
+}

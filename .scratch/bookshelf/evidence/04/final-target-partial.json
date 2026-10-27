@@ -1,0 +1,5 @@
+{
+  "phase": "owned origin cleanup",
+  "errorKind": "PageNavigationTimeoutError",
+  "message": "page.goto timed out after 15000ms waiting for load; navigation committed. Continue on this Page; call page.waitForLoadState(\"load\") if that lifecycle state is still required."
+}

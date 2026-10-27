@@ -41,6 +41,7 @@ export function MarkdownEditor({ value, bindings = [], links, onSave, onSaved, o
   const latestRequest = useRef(0);
   const pendingSaves = useRef(0);
   const mounted = useRef(true);
+  const form = useRef<HTMLFormElement>(null);
   async function save(next: LinkDocument) {
     const request = ++latestRequest.current;
     const version = draftVersion.current;
@@ -91,6 +92,9 @@ export function MarkdownEditor({ value, bindings = [], links, onSave, onSaved, o
           const next = linkDocument(update.state);
           draftVersion.current++;
           latestDraft.current = JSON.stringify(next);
+          // Auth events can arrive before React commits this native editor edit.
+          // Keep the shared draft guard accurate during that same event turn.
+          if (form.current) form.current.dataset.dirty = 'true';
           setDraft(next);
           callbacks.current.onEdit?.();
           if (callbacks.current.note) void save(next);
@@ -116,7 +120,7 @@ export function MarkdownEditor({ value, bindings = [], links, onSave, onSaved, o
     <button type="submit" className="text-button" disabled={!canSave || saving}>{saving ? '保存中…' : '保存'}</button>
   </>;
   const unbound = links ? linkTokens(draft.markdown).filter((token) => !draft.bindings.some((binding) => binding.from === token.from && binding.to === token.to)) : [];
-  return <><form className="markdown-editor" data-dirty={dirty} data-saving={saving} onKeyDown={(event) => {
+  return <><form ref={form} className="markdown-editor" data-dirty={dirty} data-saving={saving} onKeyDown={(event) => {
     if (event.defaultPrevented) event.stopPropagation();
   }} onSubmit={(event) => {
     event.preventDefault();

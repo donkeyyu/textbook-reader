@@ -1,0 +1,16 @@
+{
+  "a": {
+    "emptyPersonalContent": true,
+    "copyCount": 6,
+    "consecutiveSnapshotsStable": true,
+    "qaSessionsRevoked": true,
+    "originalCopiesPreserved": true,
+    "expectedEmptyOriginInitialCopies": 1
+  },
+  "b": {
+    "emptyPersonalContent": true,
+    "copyCount": 0,
+    "consecutiveSnapshotsStable": true,
+    "qaSessionsRevoked": true
+  }
+}

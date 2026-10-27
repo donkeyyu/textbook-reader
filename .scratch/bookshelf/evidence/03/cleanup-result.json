@@ -1,0 +1,11 @@
+{
+  "taskSpaceId": 64,
+  "closed": true,
+  "origins": {
+    "http://127.0.0.1:5363": 0,
+    "http://127.0.0.1:5365": 0
+  },
+  "qaAContentRestoredAndLocalSessionReleased": true,
+  "qaBUnused": true,
+  "browserReleasedTo04": true
+}

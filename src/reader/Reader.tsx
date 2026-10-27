@@ -3,8 +3,9 @@ import { bookTitle, getPage, pageCount, pages, pageLabel, resolvePageInput } fro
 import { getLocation } from "../textbook/supplements";
 import { bookId, nodeKey, supplementQueries } from '../textbook/content';
 import type { PersonalData, PersonalSupplement } from './personal';
-import { useBookContent } from './useBookContent';
+import type { BookContent } from './useBookContent';
 import { AccountControl } from './AccountControl';
+import { LoadingToast } from './LoadingToast';
 import { LegacyCopies } from './LegacyCopies';
 import { signIn, signInWithPassword, signOut } from './supabase';
 import { MarkdownEditor } from './MarkdownEditor';
@@ -66,14 +67,13 @@ function PageImage({ page }: { page: (typeof pages)[number] }) {
   </>;
 }
 
-export function Reader() {
+export function Reader({ content, onReturnToShelf, navigationNotice = '' }: { content: BookContent; onReturnToShelf: (notice: string) => void; navigationNotice?: string }) {
   const [resume] = useState(() => {
     try { return { position: loadReadingPosition(), error: '' }; }
     catch (cause) { return { position: null, error: (cause as Error).message }; }
   });
   const [readingError, setReadingError] = useState(resume.error);
-  const content = useBookContent();
-  const ownsPersonal = !!content.user && content.personal?.userId === content.user.id;
+  const ownsPersonal = !!content.user && content.personal?.userId === content.user.id && !content.draftOwner;
   const personal: PersonalData = ownsPersonal ? content.personal!.data : { supplements: [], notes: {} };
   const references = useMemo(() => projectReferences(bookId, content.nodes, personal), [content.nodes, personal]);
   const { getSupplement, supplementsForPage } = useMemo(() => supplementQueries(content.published ?? {
@@ -132,6 +132,7 @@ export function Reader() {
   const metrics = useRef<PageMetric[]>([]);
   const anchor = useRef({ page: 1, fraction: 0 });
   const measureReading = useRef<(restore?: boolean) => void>(() => {});
+  const flushReadingPosition = useRef<() => string>(() => '');
   const current = useRef(1);
   const requestId = useRef(0);
   const navigationPending = useRef(false);
@@ -233,15 +234,16 @@ export function Reader() {
     let listTop = 0;
     let initialized = false;
     let layoutScrollTop: number | null = null;
-    let storageFailed = !!resume.error;
+    let storageError = resume.error;
     let saveTimer: ReturnType<typeof setTimeout> | undefined;
 
     function savePosition() {
       clearTimeout(saveTimer);
       saveTimer = undefined;
-      if (!initialized || storageFailed) return;
+      if (!initialized || storageError) return storageError;
       try { saveReadingPosition(anchor.current); }
-      catch (cause) { storageFailed = true; setReadingError((cause as Error).message); }
+      catch (cause) { storageError = (cause as Error).message; setReadingError(storageError); }
+      return storageError;
     }
 
     function updatePosition() {
@@ -252,7 +254,7 @@ export function Reader() {
       current.current = page;
       setCurrentPage(page);
       if (metric) anchor.current = { page, fraction: (element.scrollTop - metric.top) / metric.height };
-      if (initialized && !storageFailed && saveTimer === undefined) saveTimer = setTimeout(savePosition, 750);
+      if (initialized && !storageError && saveTimer === undefined) saveTimer = setTimeout(savePosition, 750);
     }
 
     function measure(restore = false) {
@@ -294,11 +296,12 @@ export function Reader() {
     function flushPosition() {
       cancelAnimationFrame(frame);
       updatePosition();
-      savePosition();
+      return savePosition();
     }
     function visibilityChanged() { if (document.visibilityState === "hidden") flushPosition(); }
 
     measureReading.current = measure;
+    flushReadingPosition.current = flushPosition;
     measure();
     const observer = new ResizeObserver(() => measure());
     observer.observe(list);
@@ -706,11 +709,12 @@ export function Reader() {
       toggleButton.current?.focus();
     }
   }}>
-    <header className="toolbar">
+    <header className="toolbar reader-toolbar">
       <div className="book-heading">
         <h1>{bookTitle}</h1>
       </div>
       <div className="toolbar-actions">
+        <div className="reader-toolbar-group reader-tools-browse" role="group" aria-label="查阅内容">
         <ContentSearch nodes={content.nodes} chapters={chapters} sections={sections} selectedKey={selectedGraphKey}
           onSelect={(key) => {
             if (!selectGraphNode(key)) return false;
@@ -722,6 +726,8 @@ export function Reader() {
           aria-controls="supplement-graph" onClick={graphOpen ? closeGraph : openGraph}>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m7 7 10 2M7 7l3 11m7-9-7 9" stroke="currentColor" strokeWidth="1.5" /><circle cx="7" cy="7" r="3" fill="var(--surface)" stroke="currentColor" strokeWidth="1.5" /><circle cx="17" cy="9" r="2.5" fill="var(--surface)" stroke="currentColor" strokeWidth="1.5" /><circle cx="10" cy="18" r="2.5" fill="var(--surface)" stroke="currentColor" strokeWidth="1.5" /></svg>
         </button>
+        </div>
+        <div className="reader-toolbar-group reader-tools-supplement" role="group" aria-label="补充工具">
         <details className="supplement-filters" onPointerLeave={(event) => {
           if (event.pointerType !== 'mouse') return;
           const filters = event.currentTarget;
@@ -752,15 +758,21 @@ export function Reader() {
         <button id="add-personal-supplement" className="icon-button" aria-label="添加补充" title="添加补充" disabled={!ownsPersonal || content.loading} onClick={() => {
           views.show('book', true); closeSupplement(false); setPersonalItem(null); clearPreview(); setSelectionPage(currentPage);
         }}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg></button>
+        </div>
+        <div className="reader-toolbar-group reader-tools-library" role="group" aria-label="书架与账号">
+        <button type="button" className="icon-button return-to-shelf" aria-label="返回书架" title="返回书架" onClick={() => {
+          onReturnToShelf(flushReadingPosition.current());
+        }}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h4v14H4zM10 5h4v14h-4zM16 6l3-1 3 13-3 1zM3 21h20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg></button>
         <AccountControl user={content.user} onSignIn={signIn} onPasswordSignIn={import.meta.env.DEV ? signInWithPassword : undefined} onSignOut={async () => {
           if (document.querySelector('[data-dirty="true"]') && !window.confirm('有尚未保存的内容，放弃修改并退出登录？')) throw new Error('已保留草稿，尚未退出登录。');
           closeSupplement(); setPersonalItem(null); setSelectionPage(null);
           await signOut();
         }} />
+        </div>
       </div>
     </header>
     {selectionPage !== null && <div className="selection-help" role="status">在第 {selectionPage} 页拖动框选段落；键盘可用方向键调整，Enter 确认。<button className="text-button" onClick={() => setSelectionPage(null)}>取消</button></div>}
-    {content.loading && <p className="content-status" role="status">正在载入补充与个人内容…</p>}
+    {content.loading && <LoadingToast />}
     {(content.error || content.notice) && <div className={content.error ? 'storage-error' : 'content-status'} role={content.error ? 'alert' : 'status'}>
       <span>{content.error || content.notice}</span>{' '}
       <button className="text-button" onClick={() => {
@@ -769,7 +781,7 @@ export function Reader() {
       }}>重新读取</button>
     </div>}
     {ownsPersonal && <LegacyCopies copies={content.personal!.copies} current={personal} titleForNote={(id) => getSupplement(id)?.title ?? id} />}
-    {readingError && <p className="storage-error" role="status">{readingError}</p>}
+    {(navigationNotice || readingError) && <p className="storage-error" role="status">{[navigationNotice, readingError].filter(Boolean).join(' ')}</p>}
     <main ref={layoutRef} className={`reading-layout${navigationOpen && views.bookVisible ? " book-navigation-open" : ""}${panelBelow ? " panel-bottom" : ""}${graphOpen ? " graph-open" : ""}${views.split ? " views-split" : ""}${!views.bookVisible ? " book-hidden" : ""}${note || choiceIds || personalItem || personalLibraryOpen ? " supplement-open" : ""}`}>
       <div className="book-toolbar" hidden={!views.bookVisible} aria-label="教材工具栏">
       <button ref={toggleButton} id="book-navigation-toggle" className="icon-button navigation-toggle book-navigation-toggle"
@@ -916,7 +928,7 @@ export function Reader() {
           }} /> : undefined}
         onHide={(id) => { setHiddenIds([...hiddenIds, id]); closeSupplement(); }}
         renderPersonal={(item) => <>{backlinksFor(nodeKey({ bookId, source: 'default', id: item.id }))}<section className="personal-note" aria-label="我的笔记">
-          {content.personal ? <MarkdownEditor onEdit={cancelJump} key={`${content.personal.userId}:${item.id}`} note value={content.personal.data.notes[item.id] ?? ''}
+          {content.personal && (content.draftOwner || ownsPersonal && !content.loading) ? <MarkdownEditor onEdit={cancelJump} key={`${content.personal.userId}:${item.id}`} note value={content.personal.data.notes[item.id] ?? ''}
             bindings={content.personal.data.noteBindings?.[item.id]} links={{ ...links, chapterId: content.nodes.find((node) => node.source === 'default' && node.id === item.id)?.chapterId ?? null }}
             label="笔记 Markdown" onSave={(value, bindings) => saveNote(item.id, value, bindings)} />
             : <p>{content.user ? '个人笔记尚未载入，请读取成功后再编辑。' : '登录后可保存个人笔记。'}</p>}

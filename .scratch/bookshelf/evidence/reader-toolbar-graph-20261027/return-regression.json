@@ -1,0 +1,17 @@
+{
+  "width": 390,
+  "bookshelf": {
+    "firstEntry": true,
+    "actualCatalog": true,
+    "cancelAndKeyboardFocus": true,
+    "addedOnceAndRetainedOnRefresh": true,
+    "anonymousCoverReading": true,
+    "returnFlushAndResume": true,
+    "existingRelatedReturn": true,
+    "draftGuardProbe": true,
+    "returnSaveFailureVisible": true,
+    "legacyReadingPreserved": true,
+    "corruptShelfPreservedAndReadable": true,
+    "saveFailureReportedAndReadable": true
+  }
+}

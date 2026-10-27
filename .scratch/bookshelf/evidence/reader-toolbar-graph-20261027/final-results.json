@@ -1,0 +1,43 @@
+{
+  "selected": {
+    "neighbors": 22,
+    "visibleRelated": 23,
+    "overlaps": [],
+    "labelsAbove": 2,
+    "wrongGray": 0,
+    "maxVisibleWidth": 124.927734375,
+    "mainTitle": "检验要回答两个不同问题"
+  },
+  "normal": {
+    "nodes": 970,
+    "minRadius": 4,
+    "maxRadius": 9.628498911788116,
+    "outOfRange": 0,
+    "nonMonotonic": 0,
+    "wrongWeight": 0,
+    "wrongGray": 0,
+    "multiline": 0,
+    "maxVisibleWidth": 129.369140625,
+    "visible": 194
+  },
+  "searchBounds": [
+    {
+      "width": 390,
+      "height": 944,
+      "results": 583,
+      "left": 16,
+      "right": 374,
+      "top": 108,
+      "bottom": 928
+    },
+    {
+      "width": 320,
+      "height": 944,
+      "results": 583,
+      "left": 16,
+      "right": 304,
+      "top": 108,
+      "bottom": 928
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "spaceClosed": 65,
+  "unresponsivePageAlreadyClosed": "p4",
+  "activePageDirtySavingOrProbe": false,
+  "qaSessionsRevoked": true,
+  "origins": [
+    {
+      "origin": "http://127.0.0.1:5296",
+      "storageEmpty": true
+    },
+    {
+      "origin": "http://127.0.0.1:5298",
+      "storageEmpty": true
+    }
+  ]
+}

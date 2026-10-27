@@ -1,0 +1,6 @@
+{
+  "phase": "anonymous journey",
+  "evidence": {},
+  "errorKind": "Error",
+  "message": "page.waitForSelector timed out after 10000ms: .page-index"
+}

@@ -291,6 +291,7 @@ export async function checkAsyncPersonalSave(page, { testOrigin } = {}) {
   const before = await prepareCloudCheck(page, testOrigin);
   assert.ok(!before.data.supplements.some((item) => ['QA async title', 'Newer title', 'Final title'].includes(item.title)), 'QA titles must not already exist');
   const createdIds = [];
+  let phase = 'create and hold first save';
   await rememberConfirm(page);
   try {
     await page.click('#add-personal-supplement');
@@ -309,6 +310,7 @@ export async function checkAsyncPersonalSave(page, { testOrigin } = {}) {
     await page.press('.markdown-source .cm-content', 'ControlOrMeta+a');
     await page.keyboard.insertText('Newer body');
     await release(page, 0);
+    phase = 'first success keeps newer edit';
     await page.waitForFunction(() => !document.querySelector('.editor-actions button[type="submit"]').disabled);
     assert.deepEqual(await page.evaluate(() => ({
       title: document.querySelector('.personal-title input')?.value,
@@ -316,11 +318,13 @@ export async function checkAsyncPersonalSave(page, { testOrigin } = {}) {
       dirty: document.querySelector('.markdown-editor')?.dataset.dirty,
     })), { title: 'Newer title', body: 'Newer body', dirty: 'true' }, 'Old success retains newer title/body');
     await page.click('.editor-actions button[type="submit"]');
+    phase = 'second request failure';
     await requestCount(page, 2);
     await release(page, 1, true);
     await page.waitForSelector('.markdown-editor [role="alert"]');
     assert.equal(await page.evaluate(() => document.querySelector('.cm-content').textContent), 'Newer body');
     await page.click('.editor-actions button[type="submit"]');
+    phase = 'retry keeps title-only edit';
     await requestCount(page, 3);
     // A title-only change must also prevent old completion from closing editing.
     await page.fill('.personal-title input', 'Final title');
@@ -328,6 +332,7 @@ export async function checkAsyncPersonalSave(page, { testOrigin } = {}) {
     await page.waitForFunction(() => !document.querySelector('.editor-actions button[type="submit"]').disabled);
     assert.equal(await page.evaluate(() => document.querySelector('.personal-title input')?.value), 'Final title');
     await page.click('.editor-actions button[type="submit"]');
+    phase = 'save final title';
     await requestCount(page, 4);
     await release(page, 3);
     await page.waitForSelector('.personal-actions');
@@ -335,9 +340,11 @@ export async function checkAsyncPersonalSave(page, { testOrigin } = {}) {
     await page.click('#supplement-panel .heading-actions button:text-is("关闭")');
     assert.equal(await page.evaluate(() => !!document.querySelector('#supplement-panel')), false);
     await reloadReader(page, true);
+    phase = 'reload saved supplement';
     await page.click('[aria-label="我的补充：Final title"]');
     assert.equal(await page.evaluate(() => document.querySelector('#supplement-panel .markdown-content').textContent), 'Newer body');
     await page.click('.personal-actions button:first-child');
+    phase = 'cancel title edit and save again';
     await page.fill('.personal-title input', 'Canceled title');
     await page.evaluate(() => {
       window.asyncSaveConfirm = window.confirm;
@@ -355,6 +362,7 @@ export async function checkAsyncPersonalSave(page, { testOrigin } = {}) {
     await page.waitForSelector('.personal-actions');
     assert.equal(await page.evaluate(() => document.querySelector('#supplement-title').textContent), 'Final title', 'Canceling a title edit does not prevent a later un-deferred save from closing editing');
     await page.evaluate(() => { window.asyncSaveTest = { requests: [] }; });
+    phase = 'close and reopen with old request pending';
     await page.click('.personal-actions button:first-child');
     await page.press('.cm-content', 'ControlOrMeta+a');
     await page.keyboard.insertText('Older pending body');
@@ -375,6 +383,7 @@ export async function checkAsyncPersonalSave(page, { testOrigin } = {}) {
     await page.press('.cm-content', 'ControlOrMeta+a');
     await page.keyboard.insertText('New editing session');
     await release(page, 0);
+    phase = 'old editor completion keeps new editing session';
     const stored = await readCloud(page, before.userId);
     assert.equal(stored.data.supplements.find((item) => item.id === createdId)?.markdown, 'Older pending body', 'Released saves must reach the real cloud record');
     assert.equal(await page.evaluate(() => document.querySelector('.cm-content')?.textContent), 'New editing session', 'An unmounted editor cannot close a newer editing session');
@@ -383,6 +392,7 @@ export async function checkAsyncPersonalSave(page, { testOrigin } = {}) {
     await release(page, 1);
     await page.waitForSelector('.personal-actions');
     await page.evaluate(() => { window.asyncSaveTest = { requests: [] }; });
+    phase = 'delete failure and retry';
     await page.click('.personal-actions button:nth-child(2)');
     await page.click('button:text-is("确认删除")');
     await requestCount(page, 1);
@@ -392,9 +402,45 @@ export async function checkAsyncPersonalSave(page, { testOrigin } = {}) {
     await page.click('button:text-is("确认删除")');
     await requestCount(page, 2);
     await release(page, 1);
-    await page.waitForFunction(() => !document.querySelector('#supplement-panel'));
+    await page.waitForFunction((id) => !!document.querySelector('.personal-library') &&
+      !document.querySelector(`[data-personal-id="${id}"]`), createdId);
+    assert.equal((await readCloud(page, before.userId)).data.supplements.some((item) => item.id === createdId), false, 'Successful retry deletes the durable record before returning to the list');
     console.log('PASS async personal supplement: explicit save, newer title/body, failure/retry, title-only edit, durable cloud refresh, cancel/reopen/save, stale editor completion, delayed delete/retry');
+  } catch (cause) {
+    const state = await page.evaluate(() => ({ requests: window.asyncSaveTest?.requests.map((request) => ({ released: request.released, settled: request.settled })),
+      editing: !!document.querySelector('.personal-title input'), dirty: !!document.querySelector('[data-dirty="true"]'), saving: !!document.querySelector('[data-saving="true"]') }));
+    throw new Error(`Async personal check at ${phase}: ${JSON.stringify(state)}`, { cause });
   } finally {
     await finishCloudCheck(page, before, [], createdIds);
   }
+}
+
+// Focused durable delete/retry branch, without replaying the save/edit journey.
+export async function checkAsyncPersonalDelete(page, { testOrigin } = {}) {
+  const before = await prepareCloudCheck(page, testOrigin);
+  const title = 'QA async delete retry';
+  assert.equal(before.data.supplements.some((item) => item.title === title), false);
+  const createdIds = [];
+  await rememberConfirm(page);
+  try {
+    await page.click('#add-personal-supplement');
+    await page.press('.region-selector', 'Enter');
+    await page.fill('.personal-title input', title);
+    await page.focus('.cm-content'); await page.keyboard.insertText('QA durable delete body');
+    await page.click('.editor-actions button[type="submit"]');
+    await page.waitForSelector('.personal-actions');
+    const item = (await readCloud(page, before.userId)).data.supplements.find((item) => item.title === title);
+    assert.ok(item); createdIds.push(item.id);
+    await page.evaluate(() => { window.asyncSaveTest = { requests: [] }; });
+    await page.click('.personal-actions button:nth-child(2)');
+    await page.click('button:text-is("确认删除")');
+    await requestCount(page, 1); await release(page, 0, true);
+    await page.waitForSelector('.delete-confirmation [role="alert"]');
+    assert.equal((await readCloud(page, before.userId)).data.supplements.some((value) => value.id === item.id), true);
+    await page.click('button:text-is("确认删除")');
+    await requestCount(page, 2); await release(page, 1);
+    await page.waitForFunction((id) => !!document.querySelector('.personal-library') && !document.querySelector(`[data-personal-id="${id}"]`), item.id);
+    assert.equal((await readCloud(page, before.userId)).data.supplements.some((value) => value.id === item.id), false);
+    return { failedDeleteRetainedDurableRecord: true, retryRemovedDurableRecord: true, returnedToUsableLibrary: true, deletedEntryAbsent: true };
+  } finally { await finishCloudCheck(page, before, [], createdIds); }
 }

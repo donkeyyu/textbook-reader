@@ -11,7 +11,7 @@ export async function checkGraphBlankSelection(page) {
     }
     throw new Error('No empty canvas point found');
   });
-  const selected = () => page.evaluate(() => !!document.querySelector('.graph-zoom button:last-child')?.textContent.includes('当前节点'));
+  const selected = () => page.evaluate(() => !!document.querySelector('.graph-zoom button[aria-label="定位当前节点"]'));
   assert.equal(await selected(), true);
   const start = await blank();
   await page.mouse.move(start.x, start.y); await page.mouse.down();

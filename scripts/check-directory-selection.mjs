@@ -29,12 +29,26 @@ export async function checkDirectorySelection(page) {
       const buttons = [...panel.querySelectorAll('button[data-node-key]')];
       const index = buttons.findIndex((button) => button.dataset.nodeKey === node.key);
       const button = buttons[index];
+      const summaries = [...panel.querySelectorAll('.graph-directory-tree summary')];
+      const ancestors = [];
       for (let parent = button.parentElement; parent && parent !== panel; parent = parent.parentElement) {
-        if (parent.tagName === 'DETAILS') parent.open = true;
+        if (parent.tagName === 'DETAILS' && !parent.open) {
+          ancestors.unshift(summaries.indexOf(parent.querySelector(':scope > summary')));
+        }
       }
       window.qaDirectoryTree = panel.querySelector('.graph-directory-tree');
-      return { key: node.key, title: node.title, index };
+      return { key: node.key, title: node.title, index, ancestors };
     }, offscreen);
+    for (const index of fixture.ancestors) {
+      await page.click(`.graph-directory-tree summary >> nth=${index}`);
+    }
+    await page.evaluate(async (index) => {
+      const tree = document.querySelector('.graph-directory-tree');
+      const row = tree.querySelectorAll('button[data-node-key]')[index].getBoundingClientRect();
+      const bounds = tree.getBoundingClientRect();
+      tree.scrollTop += row.top + row.height / 2 - bounds.top - bounds.height / 2;
+      await new Promise(requestAnimationFrame);
+    }, fixture.index);
     await page.click(`#graph-directory button[data-node-key] >> nth=${fixture.index}`);
     await page.waitForFunction(({ title }) => document.getElementById('supplement-title')?.textContent === title &&
       !document.querySelector('.reading-layout').getAnimations().some((a) => a.playState === 'running'), fixture);

@@ -51,6 +51,8 @@ npm run preview   # 预览构建结果
 
 教材的更多菜单可查看版本信息或移出书架。移出后可撤销，也可从教材库重新添加同一版本；这些操作保留原阅读位置、笔记和个人补充。保存失败会显示错误，并保留重试入口。
 
+书架右上角“设置”中的“风格”可选择“简洁”“温暖书桌”或“轻活泼少年”，同时应用到书架和阅读页。默认保留简洁外观，选择保存在本浏览器；保存失败时可继续使用本次外观，并在设置中重试。
+
 刷新或重开时恢复最后停留页面：书架仍回书架，书中则恢复同一教材版本及页内相对位置。旧版只有阅读记录而没有启动记录时先进入书架，添加并打开原教材后仍能续读。上次教材不可用或已不在书架时回书架并提示；本地记录异常或读写失败时仍能阅读，原记录及其他个人内容保持独立。
 
 全部页面按 PDF 文件顺序连续排列；居中的页码控件可原位输入，关联目标另显示已核对的教材页码。布局与组件说明见 [DESIGN.md](DESIGN.md)，行为要求见 [SPEC.md](docs/SPEC.md)。
@@ -105,11 +107,16 @@ node --experimental-strip-types scripts/check-cloud-content.mjs
 
 | 修改范围 | 现有入口 |
 | --- | --- |
+| 界面风格、书架设置与选择保存 | [check-ui-style.mjs](scripts/check-ui-style.mjs)：`checkUiStyles(page, { testOrigin, evidenceDir })` 使用独立空 origin，检查默认小岛书桌、键盘选择、保存失败重试、刷新及阅读启动、四种风格的原文与关联返回；`checkUiStylesNarrow(page, { evidenceDir })` 在窄屏检查设置、工具栏边界及阅读路径 |
+| 内页风格、目录与图谱菜单 | [check-reader-appearance.mjs](scripts/check-reader-appearance.mjs)：`checkReaderAppearance(page, { narrow, evidenceDir })` 从教材单视图、无展开解读和菜单开始，检查目录位置、选中图标、类型菜单、筛选、搜索、焦点及边界，结束于图谱单视图；主题与屏宽由调用方选择，画布配色另用现有 Pixi 探针和截图核对 |
 | 完整题目及跨页原文框 | [check-complete-location.mjs](scripts/check-complete-location.mjs)：`checkCompleteLocation(page)` 检查两行题干、跨页续题及关闭后的清除；教材可见且内容已载入 |
 | 目录选择与面板调宽 | [check-directory-selection.mjs](scripts/check-directory-selection.mjs)：`checkDirectorySelection(page)` 使用图谱 QA 启动服务；[check-panel-width.mjs](scripts/check-panel-width.mjs)：`checkPanelWidth(page)` 验证右栏调宽及图标 |
 | 教材目录与节点目录 | [check-navigation-directories.mjs](scripts/check-navigation-directories.mjs)：`checkNavigationDirectories(page)`，图谱打开且教材隐藏 |
+| 节点目录浏览现场与当前位置 | [check-navigation-directories.mjs](scripts/check-navigation-directories.mjs)：`checkGraphDirectoryUsability(page)` 从图谱打开、教材隐藏、目录关闭、无解读开始，检查开合和设置互斥后的现场、筛选恢复、显式目录定位、过滤提示与 Escape；使用图谱 QA 启动服务时同时检查画布位置不变 |
+| 节点目录类型菜单 | 同模块的 `chooseDirectoryType(page, value)` 选择类型；`checkDirectoryTypeMenu(page)` 从目录已开、菜单闭合开始，检查选中态、键盘、分层 Escape、回焦、外部点击及图谱边界 |
 | 图节点自动定位原文 | [check-graph-auto-locate.mjs](scripts/check-graph-auto-locate.mjs)：`checkGraphAutoLocate(page)`，开发环境、图谱打开且教材隐藏 |
 | 页码位置、原位输入、侧栏开合 | [check-page-navigation.mjs](scripts/check-page-navigation.mjs)：`checkBookPageControls(page)`、`checkPageNavigation(page, expanded)` |
+| 紧凑缩略图与当前页信息 | [check-page-navigation.mjs](scripts/check-page-navigation.mjs)：`checkCompactThumbnails(page)` 从教材单视图、无解读、导航关闭开始，检查纯图缩略图、元信息、焦点与提交选择、无印刷页回退及 Escape |
 | 书架添加、取消、阅读与返回 | [check-bookshelf.mjs](scripts/check-bookshelf.mjs)：`checkBookshelf(page, { testOrigin, evidenceDir })`；独立空的本地 origin 与自己的页面，复用原页跳转和关联返回检查；包括旧阅读记录、损坏书架、写入失败及草稿拦截探针，探针不代表真实云端编辑器保存验收 |
 | 教材信息、移出、撤销与个人内容保留 | [check-manage-books.mjs](scripts/check-manage-books.mjs)：`checkManageBooks(page, { testOrigin, evidenceDir })`；使用 `startAsyncSaveServer(port)` 的独立空 origin，检查键盘、刷新、重新添加续读及存储失败。`checkManagedPersonalContent(page, { testOrigin, credentials, evidenceDir })` 另用空 origin 和专用 QA 账号，经阅读页登录保存笔记与个人补充，比较管理前后的内容、修订及副本，结束仅恢复本次测试内容 |
 | 启动目的地与续读 | [check-startup-resume.mjs](scripts/check-startup-resume.mjs)：`checkStartupResume(page, { testOrigin, evidenceDir })`；独立空的本地 origin，检查重新打开、屏宽变化、书架目的地、旧记录、缺失教材、损坏记录及存储失败，复用完整阅读路径；取消返回使用草稿边界探针，真实账号编辑由账号检查覆盖 |
@@ -118,6 +125,7 @@ node --experimental-strip-types scripts/check-cloud-content.mjs
 | 多层返回、退出、失败和取消 | 同模块的 `checkReviewChain`、`checkReviewExit`、`checkReviewFailures`、`checkRelatedReturn` |
 | 方法开合、续读与完整路径 | 同模块的 `checkOnDemandMethod`、`checkMethodReturnChain`、`checkReaderJourney` |
 | 滚走后定位并保留上下文 | 同模块的 `checkLocate`、`checkLocateGroup`、`checkLocateReturn` |
+| 图谱与教材顶部控件对齐 | [check-graph-controls.mjs](scripts/check-graph-controls.mjs)：`checkPaneControlAlignment(page)` 支持单视图和桌面分屏，检查局部垂直中心、图标尺寸、边距、重叠及设置开合位置；页码编辑与导航须先关闭 |
 | 图谱折叠控件、顶部共用搜索与教材展开 | [check-graph-controls.mjs](scripts/check-graph-controls.mjs)：`checkGraphControls(page, { narrow })`，检查视口边界、键盘搜索、设置折叠与桌面分屏／窄屏切换 |
 | 共用内容搜索与工具栏窄屏分组 | [check-content-search.mjs](scripts/check-content-search.mjs)：`checkContentSearch(page)`；从仅显示教材开始，检查搜索选择、隐藏教材位置、分屏定位、输入框与图标同行、结果边界及 Escape 焦点 |
 | 图搜索、键盘选择及连续拖动截图 | [check-supplement-graph.mjs](scripts/check-supplement-graph.mjs)：`graphState`、`searchGraph`、`checkGraphSelection`、`captureGraphDrag`；先从工具栏打开节点图。`startGraphProbe`／`graphEmphasis`／`stopGraphProbe` 仅在专属测试浏览器检查 Pixi 明暗层级；`checkRepeatedGraphOriginal` 检查重复原文定位、失败重试和返回层级 |

@@ -44,7 +44,7 @@ export async function checkGraphZoom(page) {
   await page.click('#open-supplement-graph'); await page.click('#open-supplement-graph');
   assert.equal((await state()).zoom, beforeHide.zoom, 'Reopening preserves the chosen zoom');
   await openGraphSettings(page);
-  await page.click('.graph-zoom button:text-is("全图")');
+  await page.click('.graph-zoom button[aria-label="显示全图"]');
   assert.ok(Math.abs((await state()).zoom - initial.zoom) < .001);
   return { defaultZoom: initial.zoom, overviewCoverage: coverage, wheelZoom: normal.zoom, pinchZoom: pinch.zoom,
     pointerAnchored: true, limits: true, reopenPreservesZoom: true, overviewAvailable: true };

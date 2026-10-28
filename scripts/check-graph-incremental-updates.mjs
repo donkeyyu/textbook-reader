@@ -117,7 +117,7 @@ export async function checkEquivalentGraphInputs(page) {
 }
 
 // Start with no selected node, a cold layout and the target inside the viewport.
-export async function checkGraphHoverDwell(page, { key, delay = 300 }) {
+export async function checkGraphHoverDwell(page, { key, delay = 800 }) {
   const point = (await incrementalGraphState(page)).nodes.find((node) => node.key === key)?.screen;
   assert.ok(point);
   const move = (point) => page.cdp('Input.dispatchMouseEvent', { type: 'mouseMoved', ...point, buttons: 0 });
@@ -150,9 +150,9 @@ export async function checkGraphHoverDwell(page, { key, delay = 300 }) {
     });
     const focused = dwell.frames.find((frame) => frame.focused);
     assert.ok(focused && focused.time - dwell.events[0].time >= delay - 5);
-    assert.ok(dwell.events[1].time < focused.time && focused.time - dwell.events[1].time < delay - 20, 'Small motion must not reset the timer');
+    assert.ok(dwell.events[1].time < focused.time && focused.time - dwell.events[1].time >= delay - 5, 'Motion within the same node must restart the timer');
     return { quickPassMs: quick.events[1].time - quick.events[0].time,
-      dwellMs: focused.time - dwell.events[0].time, sameNodeTimerPreserved: true, dwell };
+      dwellMs: focused.time - dwell.events[0].time, sameNodeTimerRestarted: true, dwell };
   } finally {
     await page.evaluate(() => {
       const p = window.qaIncremental.dwellCheck, app = window.qa08Graph.app;

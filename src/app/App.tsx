@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Reader } from '../reader/Reader';
 import { AccountControl } from '../reader/AccountControl';
 import { LoadingToast } from '../reader/LoadingToast';
@@ -8,10 +8,23 @@ import { getTextbook, textbooks } from '../textbook/library';
 import { Shelf } from './Shelf';
 import { loadShelf, removeShelfBook, saveShelf } from './shelf-store';
 import { loadStartupDestination, resolveStartupDestination, saveStartupDestination } from './startup';
+import { ShelfSettings } from './ShelfSettings';
+import { loadUiStyle, saveUiStyle, type UiStyle } from './ui-style';
 import './shelf.css';
+import './appearance-fonts.css';
+import './appearance.css';
+import '../reader/reader-appearance.css';
+import './study-decorations.css';
 
 export function App() {
   const content = useBookContent();
+  const [initialStyle] = useState(() => {
+    try { return { style: loadUiStyle(), error: '' }; }
+    catch (cause) { return { style: 'island' as const, error: (cause as Error).message }; }
+  });
+  const [uiStyle, setUiStyle] = useState<UiStyle>(initialStyle.style);
+  const [styleError, setStyleError] = useState(initialStyle.error);
+  useLayoutEffect(() => { document.documentElement.dataset.uiStyle = uiStyle; }, [uiStyle]);
   const [initialShelf] = useState(() => {
     try { return { members: loadShelf(), error: '' }; }
     catch (cause) { return { members: [], error: (cause as Error).message }; }
@@ -46,6 +59,12 @@ export function App() {
     } catch (cause) { setError((cause as Error).message); return false; }
   }
 
+  function changeStyle(style: UiStyle) {
+    setUiStyle(style);
+    try { saveUiStyle(style); setStyleError(''); }
+    catch (cause) { setStyleError((cause as Error).message); }
+  }
+
   if (readingBookId) return <Reader content={content} navigationNotice={readingNotice} onReturnToShelf={(notice) => {
     setReadingNotice([startup.readable ? '' : startup.notice, notice].filter(Boolean).join(' '));
     setReturnBookId(readingBookId);
@@ -55,6 +74,7 @@ export function App() {
   }} />;
 
   return <Shelf members={members} error={error} notice={readingNotice} returnBookId={returnBookId} onAdd={addBook}
+    settings={<ShelfSettings style={uiStyle} error={styleError} onChange={changeStyle} />}
     account={<AccountControl user={content.user} onSignIn={signIn} onPasswordSignIn={import.meta.env.DEV ? signInWithPassword : undefined} onSignOut={signOut} />}
     contentStatus={<>
       {content.loading && <LoadingToast />}

@@ -3,6 +3,7 @@ import type { ContentNode, PublishedContent } from '../../textbook/content.ts';
 import { getLocation } from '../../textbook/supplements.ts';
 import { getPage, pageLabel } from '../../textbook/catalog.ts';
 import { supplementTypes } from '../supplement-types.tsx';
+import { LocateIcon } from '../LocateIcon';
 import { projectGraph } from './project-graph.ts';
 import { useSupplementGraph } from './useSupplementGraph.ts';
 import { GraphPreview } from './GraphPreview.tsx';
@@ -68,11 +69,10 @@ export function SupplementGraph({ searchTarget, nodes, personalEdges, selectedKe
           <path d="M5 5h14M5 12h3m4 0h7M5 19h3m4 0h7M5 5v14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </button>
-      {directoryOpen && <div id="graph-directory" className="graph-directory-panel" aria-label="节点目录">
-        <h2>节点目录</h2>
-        <GraphDirectory nodes={nodes} chapters={chapters} sections={sections} selectedKey={selectedKey} onChoose={chooseDirectory} />
+      <div id="graph-directory" className="graph-directory-panel" aria-label="节点目录" hidden={!directoryOpen}>
+        <GraphDirectory active={directoryOpen && visible} nodes={nodes} chapters={chapters} sections={sections} selectedKey={selectedKey} onChoose={chooseDirectory} />
         <DirectoryResize />
-      </div>}
+      </div>
     </div>
     <div className="graph-corner-controls">
       <details className="graph-settings" ref={settings} onToggle={(event) => {
@@ -91,11 +91,17 @@ export function SupplementGraph({ searchTarget, nodes, personalEdges, selectedKe
           <div className="graph-footer">
             <span aria-live="polite">{nodes.length} 节点 · {data.defaultEdges.length} 默认关联 · {personalEdges.length} 个人连线</span>
             <div className="graph-zoom" aria-label="图缩放">
-              <button type="button" aria-label="缩小节点图" onClick={() => graph.zoom(.8)}>−</button>
+              <button type="button" aria-label="缩小节点图" title="缩小节点图" onClick={() => graph.zoom(.8)}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
+              </button>
               <output aria-label="图缩放比例">{Math.round(graph.scale * 100)}%</output>
-              <button type="button" aria-label="放大节点图" onClick={() => graph.zoom(1.25)}>+</button>
-              <button type="button" onClick={graph.fit}>全图</button>
-              {selectedKey && <button type="button" onClick={() => graph.focus(selectedKey)}>当前节点</button>}
+              <button type="button" aria-label="放大节点图" title="放大节点图" onClick={() => graph.zoom(1.25)}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M12 5v14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
+              </button>
+              <button type="button" aria-label="显示全图" title="全图" onClick={graph.fit}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5M4 15v5h5m11-5v5h-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              </button>
+              {selectedKey && <button type="button" aria-label="定位当前节点" title="当前节点" onClick={() => graph.focus(selectedKey)}><LocateIcon /></button>}
             </div>
           </div>
           <ul className="graph-legend" aria-label="节点类型">{Object.entries(supplementTypes).map(([type, label]) =>
@@ -126,17 +132,19 @@ export function GraphRelated({ nodeKey, nodes, onSelect, onLocate }: {
   if (!related.length) return null;
   return <div className="supplement-related graph-related" aria-label="默认教材关联">
     <h3>相关知识</h3>
-    {related.map((relation, index) => <div key={`${relation.locationId}-${index}`}>
+    {related.map((relation, index) => <div className="related-entry" key={`${relation.locationId}-${index}`}>
       <p>{relation.purpose}</p>
       {relation.targets.length ? <>
         <p className="graph-relation-label">{relation.label}{relation.targets.length > 1 ? '（选择解读）' : ''}</p>
-        {relation.targets.map((target) => <button key={target.key} type="button" className="text-button"
+        {relation.targets.map((target) => <button key={target.key} type="button" className="text-button related-target"
           data-graph-target={target.key} onClick={() => onSelect(target.key)}>
-          {target.title}<span className="related-page">{pageLabel(getPage(getLocation(relation.locationId).page))}</span>
+          <span className="related-title">{target.title}</span><span className="related-page">{pageLabel(getPage(getLocation(relation.locationId).page))}</span>
+          <svg className="graph-related-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" /></svg>
         </button>)}
-      </> : <button type="button" id={`related-${sourceId}-${relation.locationId}`} className="text-button"
+      </> : <button type="button" id={`related-${sourceId}-${relation.locationId}`} className="text-button related-target"
         onClick={() => onLocate(relation.locationId, `related-${sourceId}-${relation.locationId}`)}>
-        {relation.label}<span className="related-page">{pageLabel(getPage(getLocation(relation.locationId).page))}</span>
+        <span className="related-title">{relation.label}</span><span className="related-page">{pageLabel(getPage(getLocation(relation.locationId).page))}</span>
+        <svg className="graph-related-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </button>}
     </div>)}
   </div>;

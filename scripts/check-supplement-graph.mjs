@@ -67,7 +67,7 @@ export async function checkGraphSelection(page, query, key, options) {
 export async function captureGraphDrag(page, directory, label, { focus = true } = {}) {
   if (focus) {
     await openGraphSettings(page);
-    await page.click('.graph-zoom button:text-is("当前节点")');
+    await page.click('.graph-zoom button[aria-label="定位当前节点"]');
     await page.click('.graph-settings > summary');
   }
   const { canvas } = await graphState(page);
@@ -123,7 +123,7 @@ export async function startGraphProbe(page, { testOrigin }) {
     };
   });
   await openGraphSettings(page);
-  await page.click('.graph-zoom button:text-is("当前节点")');
+  await page.click('.graph-zoom button[aria-label="定位当前节点"]');
   await page.click('.graph-settings > summary');
   await page.waitForFunction(() => !!window.qa03GraphProbe?.app);
 }

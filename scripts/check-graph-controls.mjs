@@ -91,3 +91,87 @@ export async function checkGraphControls(page, { narrow = false } = {}) {
   return { initial, split, graphOnly, settingsAndSearchWithinGraph: true, keyboardSearch: true,
     iconToolbar: true, bookToggleAndPanelOwnership: true };
 }
+
+// Owned reader Page, page editor and navigation closed; settings start/end closed.
+// Checks either visible pane locally; desktop split also compares their top rows.
+export async function checkPaneControlAlignment(page) {
+  await page.waitForFunction(() => document.querySelector('.reading-layout').getAnimations({ subtree: true })
+    .every((animation) => animation.playState !== 'running'));
+  const panes = await page.evaluate(() => {
+    const visible = (selector) => document.querySelector(selector)?.checkVisibility();
+    const measure = (owner, selectors) => {
+      const pane = document.querySelector(owner).getBoundingClientRect();
+      const controls = selectors.map((selector) => {
+        const element = document.querySelector(selector), rect = element.getBoundingClientRect();
+        const icon = element.querySelector('svg')?.getBoundingClientRect();
+        return { selector, visible: element.checkVisibility(), left: rect.left - pane.left,
+          right: pane.right - rect.right, width: rect.width, height: rect.height,
+          centerY: rect.top + rect.height / 2 - pane.top,
+          icon: icon ? { width: icon.width, height: icon.height, x: icon.x, y: icon.y,
+            centerY: icon.top + icon.height / 2 - pane.top } : null };
+      });
+      const layoutStyle = getComputedStyle(document.querySelector('.reading-layout'));
+      return { width: pane.width, height: pane.height, controls, controlSize: parseFloat(layoutStyle.getPropertyValue('--view-control-size')), toolbarHeight: parseFloat(layoutStyle.getPropertyValue('--view-toolbar-height')), island: document.documentElement.dataset.uiStyle === 'island' };
+    };
+    return {
+      graph: visible('#supplement-graph') ? measure('#supplement-graph',
+        ['#graph-directory-toggle', '.graph-settings', '#graph-book-toggle']) : null,
+      book: visible('.book-toolbar') ? measure('.book-toolbar', ['#book-navigation-toggle',
+        '.page-controls > button.icon-button:first-child', '.page-index', '.page-controls > button.icon-button:last-child']) : null,
+    };
+  });
+  assert.ok(panes.graph || panes.book, 'At least one reading pane is visible');
+  const centers = [];
+  for (const [name, pane] of Object.entries(panes)) {
+    if (!pane) continue;
+    for (const control of pane.controls) {
+      assert.equal(control.visible, true);
+      assert.ok(Math.abs(control.height - pane.controlSize) <= 1, `${control.selector} keeps the themed control height`);
+      assert.ok(control.left >= 0 && control.right >= 0, `${control.selector} fits its pane`);
+      assert.ok(Math.abs(control.centerY - pane.toolbarHeight / 2) <= 1, `${control.selector} sits centered in its top row`);
+      centers.push(control.centerY);
+      if (control.selector !== '.page-index') assert.ok(control.icon, `${control.selector} retains its icon`);
+      if (control.icon) {
+        assert.ok(Math.abs(control.icon.width - (name === 'graph' && pane.island ? 20 : 16)) <= 1 && Math.abs(control.icon.height - (name === 'graph' && pane.island ? 20 : 16)) <= 1,
+          `${control.selector} uses its intended icon size`);
+        assert.ok(Math.abs(control.icon.centerY - control.centerY) <= 1, 'Icon aligns with its control');
+      }
+    }
+    const ordered = [...pane.controls].sort((a, b) => a.left - b.left);
+    for (let index = 1; index < ordered.length; index++) {
+      assert.ok(ordered[index - 1].left + ordered[index - 1].width <= ordered[index].left + 1,
+        `${name} top controls must not overlap`);
+    }
+    assert.ok(Math.abs(pane.controls[0].left - 12) <= 1, `${name} navigation uses the shared left inset`);
+  }
+  assert.ok(Math.max(...centers) - Math.min(...centers) <= 1, 'Visible pane controls share their relative vertical center');
+  if (panes.book) {
+    assert.ok(Math.abs(panes.book.height - 44) <= 1);
+    const pager = panes.book.controls[2];
+    assert.ok(Math.abs(pager.left - pager.right) <= 2, 'Page display remains centered in the book pane');
+  }
+  if (panes.graph) {
+    assert.ok(Math.abs(panes.graph.controls.at(-1).right - 12) <= 1, 'Graph right controls use the shared inset');
+    const icon = panes.graph.controls[1].icon;
+    try {
+      await openGraphSettings(page);
+      const expanded = await page.evaluate(() => {
+        const rect = document.querySelector('.graph-settings summary svg').getBoundingClientRect();
+        return { x: rect.x, y: rect.y };
+      });
+      assert.ok(Math.abs(expanded.x - icon.x) <= 1 && Math.abs(expanded.y - icon.y) <= 1,
+        'Opening settings leaves its icon in place');
+    } finally {
+      if (await page.evaluate(() => document.querySelector('.graph-settings').open)) {
+        await page.press('.graph-settings > summary', 'Escape');
+      }
+    }
+    const closed = await page.evaluate(() => {
+      const rect = document.querySelector('.graph-settings summary svg').getBoundingClientRect();
+      return { x: rect.x, y: rect.y };
+    });
+    assert.ok(Math.abs(closed.x - icon.x) <= 1 && Math.abs(closed.y - icon.y) <= 1,
+      'Closing settings leaves its icon in place');
+  }
+  return panes;
+}

@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { loadReadingPosition, type ReadingPosition } from '../reader/reading-record';
 import { pageLabel } from '../textbook/catalog';
+import bookMetadata from '../textbook/book.json';
+import { chapterAt, sectionAt } from '../textbook/sections';
 import { getTextbook, textbooks } from '../textbook/library';
 
-export function Shelf({ members, error, notice, returnBookId, onAdd, onOpen, onRemove, account, contentStatus }: {
+export function Shelf({ members, error, notice, returnBookId, onAdd, onOpen, onRemove, account, settings, contentStatus }: {
   members: readonly string[];
   error: string;
   notice: string;
@@ -12,6 +14,7 @@ export function Shelf({ members, error, notice, returnBookId, onAdd, onOpen, onR
   onOpen: (id: string) => void;
   onRemove: (id: string) => boolean;
   account: ReactNode;
+  settings: ReactNode;
   contentStatus: ReactNode;
 }) {
   const dialog = useRef<HTMLDialogElement>(null);
@@ -72,16 +75,16 @@ export function Shelf({ members, error, notice, returnBookId, onAdd, onOpen, onR
     dialog.current?.showModal();
   }
 
-  const addButton = (className: string, primary = false) => <button ref={primary ? addTrigger : undefined} type="button" className={className}
+  const addButton = (className: string, primary = false) => <button ref={primary ? addTrigger : undefined} type="button" className={className} aria-label="添加教材"
     onClick={(event) => openLibrary(event.currentTarget)}><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg>添加教材</button>;
 
   return <div className="shelf-app">
     <header className="toolbar shelf-toolbar">
       <div className="shelf-brand"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M14 7.5C10.7 5.2 6.9 5.1 3.5 6.2v16c3.4-1.1 7.2-1 10.5 1.3 3.3-2.3 7.1-2.4 10.5-1.3v-16C21.1 5.1 17.3 5.2 14 7.5Zm0 0v16" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /><path d="M7.5 10.5c.9-.1 1.9.1 2.8.4M7.5 14.5c.9-.1 1.9.1 2.8.4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" /></svg><span>课本解读</span></div>
-      <div className="toolbar-actions">{addButton('shelf-primary', true)}{account}</div>
+      <div className="toolbar-actions">{addButton('shelf-primary', true)}{settings}{account}</div>
     </header>
     <main className="shelf-main">
-      <div className="shelf-intro"><h1>书架</h1><p>读懂知识，也读懂每一步的理由。</p></div>
+      <div className="shelf-intro"><h1>书架</h1><p>读懂知识，也读懂每一步的理由。</p><div className="shelf-math-art" aria-hidden="true"/></div>
       {contentStatus}
       {error && <p className="shelf-error" role="alert">{error}</p>}
       {(notice || readingErrors) && <p className="shelf-error" role="status">{[...new Set([notice, readingErrors].filter(Boolean))].join(' ')}</p>}
@@ -105,12 +108,16 @@ export function Shelf({ members, error, notice, returnBookId, onAdd, onOpen, onR
           <div className="shelf-grid" aria-label="我的教材">
             {books.map((book) => {
               const reading = readings[book.id]!;
+              const readingContext = reading.position && book.id === bookMetadata.documentSha256
+                ? sectionAt(reading.position.page) ?? chapterAt(reading.position.page) : undefined;
               return <article className="shelf-book" key={book.id}>
               <button id={`shelf-cover-${book.id}`} ref={book.id === returnBookId ? returnedCover : undefined} className="shelf-cover" type="button"
                 aria-label={`打开《${book.title}》，${book.edition}`} onClick={() => onOpen(book.id)}>
                 <img src={book.cover} alt={`${book.title}封面`} width="1304" height="1843" />
               </button>
-              <h2>{book.title}</h2><p className="shelf-edition">{book.edition}</p>
+              <div className="shelf-book-copy"><h2>{book.title}</h2><p className="shelf-edition">{book.edition}</p>
+              <div className="shelf-resume">
+              {readingContext && <p className="shelf-reading-context">{readingContext.title}</p>}
               <p className="shelf-position">{reading.position ? `上次读到${pageLabel(book.pages[reading.position.page - 1]!)}` : reading.error ? '阅读位置暂不可用' : '尚未开始阅读'}</p>
               <div className="shelf-book-actions">
                 <button className="shelf-read" type="button" onClick={() => onOpen(book.id)}>{reading.position ? '继续阅读' : '开始阅读'}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg></button>
@@ -146,6 +153,8 @@ export function Shelf({ members, error, notice, returnBookId, onAdd, onOpen, onR
                   </div>}
                 </div>
               </div>
+              </div>
+              </div>
             </article>; })}
           </div>
         </>}
@@ -153,7 +162,9 @@ export function Shelf({ members, error, notice, returnBookId, onAdd, onOpen, onR
     <dialog ref={dialog} className="shelf-picker" aria-labelledby="textbook-picker-title"
       onClose={() => trigger.current?.focus({ preventScroll: true })}>
       <div className="shelf-picker-heading"><h2 id="textbook-picker-title">添加教材</h2>
-        <button type="button" className="text-button" aria-label="关闭教材选择" onClick={() => dialog.current?.close()}>关闭</button>
+        <button type="button" className="icon-button" aria-label="关闭教材选择" title="关闭教材选择" onClick={() => dialog.current?.close()}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
+        </button>
       </div>
       {error && <p className="shelf-error" role="alert">{error}</p>}
       <p className="shelf-message" role="status">{message || '从教材库选择教材，添加后留在书架。'}</p>
@@ -174,7 +185,9 @@ export function Shelf({ members, error, notice, returnBookId, onAdd, onOpen, onR
     <dialog ref={infoDialog} className="shelf-picker shelf-info" aria-labelledby="textbook-info-title"
       onClose={() => { setInfoBookId(null); infoTrigger.current?.focus({ preventScroll: true }); }}>
       <div className="shelf-picker-heading"><h2 id="textbook-info-title">教材信息</h2>
-        <button type="button" className="text-button" aria-label="关闭教材信息" onClick={() => infoDialog.current?.close()}>关闭</button>
+        <button type="button" className="icon-button" aria-label="关闭教材信息" title="关闭教材信息" onClick={() => infoDialog.current?.close()}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
+        </button>
       </div>
       {infoBook && <>
         <h3>{infoBook.title}</h3>

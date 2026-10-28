@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 
 // Run at the desired viewport width with an ego-browser Page on the reader.
 export async function checkBookPageControls(page) {
@@ -136,4 +137,71 @@ export async function checkPageNavigation(page, expanded) {
   await setSidebar(!expanded);
   await setSidebar(expanded);
   console.log(`PASS page navigation: ${expanded ? 'expanded' : 'collapsed'}; centered book toolbar, adjacent buttons, sidebar position, file order, first/middle/last, errors and keyboard recovery`);
+}
+
+// Book only, no explanation, navigation closed. Ends on file page 1 with
+// navigation closed and focus on its toggle. No theme or account changes.
+export async function checkCompactThumbnails(page) {
+  const book = JSON.parse(await readFile(new URL('../src/textbook/book.json', import.meta.url), 'utf8'));
+  const state = () => page.evaluate(() => ({
+    current: Number(document.querySelector('.page-thumbnail[aria-current="page"]').id.replace('thumbnail-', '')),
+    info: [...document.querySelectorAll('.book-navigation-position > span')].map((span) => span.textContent),
+    focused: document.activeElement?.id,
+  }));
+  const checkCurrent = async (number) => {
+    await page.waitForFunction((number) => document.getElementById(`thumbnail-${number}`).getAttribute('aria-current') === 'page', number);
+    const current = await state();
+    const metadata = book.pages.find((item) => item.page === number);
+    assert.equal(current.current, number);
+    assert.deepEqual(current.info[0].match(/\d+/g), [String(number)], 'Position information tracks the selected file page');
+    if (metadata.printedPage !== null) {
+      assert.deepEqual(current.info[1].match(/\d+/g), String(metadata.printedPage).match(/\d+/g), 'Printed page matches the catalog');
+    } else {
+      assert.ok(current.info[1].trim());
+      assert.equal(current.info[1].match(/\d+/g), null, 'Unnumbered pages do not invent a printed page');
+      const label = await page.evaluate((number) => document.getElementById(`thumbnail-${number}`).getAttribute('aria-label'), number);
+      assert.ok(label.endsWith(current.info[1]), 'Visible fallback and accessible fallback agree');
+    }
+    return current;
+  };
+  assert.equal(await page.evaluate(() => document.getElementById('page-sidebar').hidden), true);
+  await page.click('#book-navigation-toggle');
+  await page.click('.book-navigation-modes button[aria-label="页面"]');
+  assert.equal(await page.evaluate(() => [...document.querySelectorAll('.book-navigation-position')]
+    .filter((element) => element.checkVisibility()).length), 1);
+  const thumbnails = await page.evaluate(() => [...document.querySelectorAll('.page-thumbnail')].map((button) => ({
+    text: button.textContent.trim(), label: button.getAttribute('aria-label'), title: button.title,
+    imageOnly: button.children.length === 1 && button.firstElementChild.tagName === 'IMG',
+  })));
+  assert.equal(thumbnails.length, book.pages.length);
+  for (const [index, thumbnail] of thumbnails.entries()) {
+    assert.equal(thumbnail.text, '', 'Thumbnail rows have no repeated visible page labels');
+    assert.equal(thumbnail.imageOnly, true);
+    assert.ok(thumbnail.title && thumbnail.label, 'Image-only rows retain tooltips and accessible names');
+    const metadata = book.pages[index];
+    const printed = metadata.printedPage === null ? [] : String(metadata.printedPage).match(/\d+/g) ?? [];
+    assert.deepEqual(thumbnail.label.match(/\d+/g), [String(metadata.page), ...printed]);
+    assert.ok(thumbnail.title.startsWith(book.title));
+    assert.deepEqual(thumbnail.title.slice(book.title.length).match(/\d+/g),
+      [String(metadata.page), String(book.pageCount), ...printed]);
+  }
+  await checkCurrent((await state()).current);
+  await page.click('#thumbnail-9');
+  const ninth = await checkCurrent(9);
+  await page.press('#thumbnail-9', 'ArrowDown');
+  const focused = await state();
+  assert.equal(focused.focused, 'thumbnail-10');
+  assert.equal(focused.current, 9, 'Arrow navigation changes focus only');
+  assert.deepEqual(focused.info, ninth.info, 'Focus alone must not change current-page information');
+  await page.keyboard.press('Enter');
+  await checkCurrent(10);
+  await page.click('#thumbnail-1');
+  await checkCurrent(1);
+  await page.click('.book-navigation-modes button[aria-label="目录"]');
+  assert.equal(await page.evaluate(() => document.querySelector('.book-navigation-position').checkVisibility()), false);
+  await page.press('.book-navigation-modes button[aria-label="目录"]', 'Escape');
+  assert.equal(await page.evaluate(() => document.getElementById('page-sidebar').hidden), true);
+  assert.equal(await page.evaluate(() => document.activeElement?.id), 'book-navigation-toggle');
+  return { compactRows: true, metadataRetained: true, currentPageInformation: true,
+    keyboardFocusBeforeSelection: true, unnumberedFallback: true, escape: true };
 }

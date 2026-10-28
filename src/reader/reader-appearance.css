@@ -1,0 +1,148 @@
+/* These layers leave the original 简洁 style and the textbook images intact. */
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) .reader-app {
+  color: var(--app-text);
+  background: var(--app-canvas);
+  font-family: var(--app-font-ui);
+}
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) :is(.paper-scroller, .supplement-graph) {
+  background: var(--app-canvas);
+}
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) .paper {
+  background: #fff;
+  box-shadow: var(--app-shadow);
+}
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) :is(.supplement-preview, .graph-preview) {
+  color: var(--app-text);
+  background: color-mix(in srgb, var(--surface) 96%, var(--type-color, var(--accent)));
+  box-shadow: var(--app-shadow);
+}
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) .supplement-preview.preview-docked {
+  box-shadow: none;
+}
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) :is(.graph-results, .filter-options, .account-options, .reading-message, .loading-toast) {
+  color: var(--app-text);
+  box-shadow: var(--app-shadow);
+}
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) :is(.graph-results button, .graph-directory-tree button, .account-options, .account-options input, .page-jump input) {
+  color: var(--app-text);
+}
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) :is(.icon-button:hover:not(:disabled), .account-summary:hover, .account-summary[aria-expanded="true"], .page-index:hover, .book-contents button:hover, .supplement-filters[open] > summary) {
+  color: var(--app-text);
+}
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) :is(.paper-scroller, .page-thumbnails, .book-contents, .supplement-panel, .graph-directory-tree, .markdown-source .cm-scroller) {
+  scrollbar-color: var(--scrollbar) transparent;
+}
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) :is(.book-contents summary:hover, .graph-directory-tree summary:hover, .book-navigation-modes button:hover, .graph-settings summary:hover, .graph-floating-button:hover, .book-navigation-toggle:hover) {
+  color: var(--accent);
+  background: var(--hover);
+}
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) :is(.book-contents details[open] > summary, .book-contents details[data-current="true"] > summary, .graph-directory-tree details[open] > summary) {
+  color: var(--accent);
+}
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) :is(.book-navigation-modes button[aria-pressed="true"], .book-navigation-toggle[aria-expanded="true"], #open-supplement-graph[aria-expanded="true"], #graph-directory-toggle[aria-expanded="true"], #graph-book-toggle[aria-pressed="true"], .graph-settings[open] > summary) {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) :is(.book-contents button[aria-current="location"], .graph-directory-tree button[aria-current="true"], .graph-results button[aria-current="true"]) {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) :is(.book-contents summary, .book-contents button, .book-navigation-modes button, .book-navigation-toggle, .graph-directory-tree summary, .graph-directory-tree button, .graph-results button, .filter-options label, .graph-settings summary) {
+  border-radius: var(--reader-control-radius);
+}
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) :is(.book-contents, .book-navigation-modes, .graph-directory-tree, .graph-results, .graph-settings) :is(button, summary):focus-visible {
+  outline-offset: -2px;
+}
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) :is(.book-navigation-modes, .book-navigation-position, .graph-directory-heading) {
+  background: var(--app-canvas);
+}
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) .graph-directory-tree details[data-current="true"] > summary .graph-directory-label {
+  font-weight: 600;
+}
+
+:root[data-ui-style="warm"] .graph-directory-heading h2 {
+  font-family: var(--app-font-display);
+  font-size: 16px;
+}
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) .selection-help {
+  background: var(--accent-soft);
+}
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) :is(.page-jump input:not([aria-invalid="true"]), .personal-title input, .markdown-source .cm-editor, .personal-search input, .personal-metadata select, .create-linked-node input, .create-linked-node textarea, .create-linked-node select, .account-options input) {
+  border-color: var(--separator);
+}
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) .account-options input:disabled {
+  color: var(--secondary);
+  background: var(--app-canvas);
+}
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) .markdown-source .cm-focused .cm-selectionBackground {
+  background: var(--accent-soft);
+}
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) .graph-edge-legend {
+  color: var(--secondary);
+}
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) .graph-edge-legend svg {
+  color: var(--type-color, var(--graph-edge-focus-color));
+}
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) .reading-layout > .split-resize {
+  border-color: var(--separator);
+  background: var(--app-canvas);
+}
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) .split-resize span {
+  background: var(--secondary);
+}
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) :is(.split-resize:hover span, .split-resize:focus-visible span) {
+  background: var(--accent);
+}
+
+:root[data-ui-style="warm"] .book-heading h1 {
+  font-family: var(--app-font-display);
+  font-weight: 600;
+}
+
+:root[data-ui-style="warm"] { --reader-control-radius: 8px; }
+:root[data-ui-style="youth"] { --reader-control-radius: 12px; }
+
+:root[data-ui-style="warm"] :is(.reader-toolbar .icon-button, .reader-toolbar .account-summary, .supplement-filters > summary) {
+  border-radius: 8px;
+}
+
+:root[data-ui-style="youth"] .book-heading h1 {
+  font-weight: 700;
+}
+
+:root[data-ui-style="youth"] :is(.reader-toolbar .icon-button, .reader-toolbar .account-summary, .supplement-filters > summary, .graph-results, .graph-directory-panel, .graph-floating-button, .graph-settings, .account-options, .create-linked-node) {
+  border-radius: 12px;
+}
+
+:root[data-ui-style="youth"] :is(.supplement-preview, .graph-preview, .filter-options) {
+  border-radius: 14px;
+}
+
+:root[data-ui-style="youth"] .supplement-preview.preview-docked {
+  border-radius: 0;
+}

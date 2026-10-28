@@ -58,7 +58,7 @@
 .shelf-picker[open] { animation: shelf-dialog-enter 240ms var(--ease-out); }
 .shelf-picker-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
 .shelf-picker-heading h2 { margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -.025em; line-height: 1.4; }
-.shelf-picker-heading button { min-height: 44px; padding-inline: 10px; }
+.shelf-picker-heading .icon-button { width: 44px; height: 44px; flex: none; padding: 0; }
 .shelf-picker .shelf-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); column-gap: 32px; }
 .shelf-picker .shelf-book { grid-row: span 4; margin-bottom: 24px; }
 .shelf-picker .shelf-book:has(.shelf-direct-read) { grid-row: span 5; }

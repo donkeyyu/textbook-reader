@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState, type RefObject } from 'react';
-import { Application, Container, Graphics, Text } from 'pixi.js';
+import { Application, Color, Container, Graphics, Text, Sprite as PixiSprite, Texture } from 'pixi.js';
 import { forceCollide, forceLink, forceManyBody, forceSimulation, forceX, forceY,
   type Simulation, type SimulationLinkDatum, type SimulationNodeDatum } from 'd3-force';
+import { typeMarkerPaths } from '../supplement-types';
 import type { GraphNode, GraphEdge } from './project-graph.ts';
 
 type LayoutNode = SimulationNodeDatum & GraphNode & { radius: number };
 type LayoutEdge = SimulationLinkDatum<LayoutNode> & Pick<GraphEdge, 'kind'>;
-type Sprite = { node: LayoutNode; dot: Container; circle: Graphics; label: Text };
+type Sprite = { node: LayoutNode; dot: Container; circle: Graphics; icon: PixiSprite; label: Text };
 type Point = { x: number; y: number };
 export type GraphPreviewAnchor = Point & { key: string; radius: number };
 const minZoom = .1;
@@ -67,9 +68,36 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
     let links: LayoutEdge[] = [];
     const adjacency = new Map<string, Set<string>>();
     const colors = new Map<string, string>();
+    const style = getComputedStyle(element);
+    function themeColor(name: string, fallback: number) {
+      try { return new Color(style.getPropertyValue(name).trim() || fallback).toNumber(); }
+      catch { return fallback; }
+    }
+    const labelColor = themeColor('--graph-label-color', 0x6e6e73);
+    const labelFocusColor = themeColor('--graph-label-focus-color', 0x1d1d1f);
+    const edgeColor = themeColor('--graph-edge-color', 0xb8bec6);
+    const edgeFocusColor = themeColor('--graph-edge-focus-color', 0x57606a);
     element.closest('.supplement-graph')?.querySelectorAll<HTMLElement>('.graph-legend [data-supplement-type]').forEach((item) => {
       colors.set(item.dataset.supplementType!, getComputedStyle(item).getPropertyValue('--type-color').trim());
     });
+    // Five shared textures, created once per renderer lifetime. Panning and zooming
+    // only update sprites; no DOM icons or SVG rasterization in the frame loop.
+    const iconTextures = new Map<string, Texture>();
+    for (const [type, path] of Object.entries(typeMarkerPaths)) {
+      if (type === 'group') continue;
+      const canvas = document.createElement('canvas');
+      canvas.width = canvas.height = 64;
+      const context = canvas.getContext('2d')!;
+      context.scale(64 / 32, 64 / 32);
+      context.fillStyle = '#fffdf3';
+      context.beginPath(); context.arc(16, 16, 15, 0, Math.PI * 2); context.fill();
+      context.strokeStyle = colors.get(type) || '#0066cc';
+      context.lineWidth = 1.5; context.stroke();
+      context.translate(4, 4);
+      context.lineWidth = 1.8; context.lineCap = 'round'; context.lineJoin = 'round';
+      context.stroke(new Path2D(path));
+      iconTextures.set(type, Texture.from(canvas));
+    }
     const lines = new Graphics();
     const dots = new Container();
     const labels = new Container();
@@ -78,9 +106,10 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
     let topology = '';
     let initialOverview = false;
     let initialSelection: string | null = null;
-    function colorSprite({ node, circle }: Sprite) {
+    function colorSprite({ node, circle, icon }: Sprite) {
       const color = colors.get(node.type) || '#0066cc';
       circle.clear().circle(0, 0, node.radius).fill(color);
+      icon.texture = iconTextures.get(node.type)!;
     }
     function update() {
       const state = current.current;
@@ -134,12 +163,14 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
         const retained = next.get(node.key);
         if (retained) { colorSprite(retained); continue; }
         const dot = new Container(), circle = new Graphics();
-        dot.addChild(circle);
+        const icon = new PixiSprite(iconTextures.get(node.type)!);
+        icon.anchor.set(.5);
+        dot.addChild(circle, icon);
         const label = new Text({ text: node.title, style: { fontFamily: 'system-ui, sans-serif', fontSize: 12,
           fontWeight: '300', lineHeight: 17, fill: 0xffffff, wordWrap: false, wordWrapWidth: 140, breakWords: true },
           resolution: Math.max(2, window.devicePixelRatio || 1) });
         label.anchor.set(.5, 0);
-        const sprite = { node, dot, circle, label };
+        const sprite = { node, dot, circle, icon, label };
         colorSprite(sprite); dots.addChild(dot); labels.addChild(label); next.set(node.key, sprite);
       }
       // Retained nodes keep their velocity and drag pins. Clear links before
@@ -175,6 +206,9 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       const previewKey = control ? hovered : null;
       const neighbors = focused ? adjacency.get(focused) : undefined;
       const matches = current.current.searchKeys;
+      const showsIcon = (node: LayoutNode) => node.key === selected || node.key === hovered ||
+        matches.has(node.key) || node.radius * zoom * 2 >= 16;
+      const displayRadius = (node: LayoutNode) => showsIcon(node) ? Math.max(node.radius, 10 / zoom) : node.radius;
       lines.clear();
       // Batch by source and emphasis; personal pairs have no arrowhead.
       for (const kind of ['default', 'personal'] as const) for (const active of [false, true]) {
@@ -186,11 +220,12 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
           if ((source.key === focused || target.key === focused) !== active) continue;
           const dx = target.x! - source.x!, dy = target.y! - source.y!;
           const length = Math.hypot(dx, dy);
-          if (length < source.radius + target.radius + 4) continue;
-          const startX = source.x! + dx / length * (source.radius + 2);
-          const startY = source.y! + dy / length * (source.radius + 2);
-          const endX = target.x! - dx / length * (target.radius + 2);
-          const endY = target.y! - dy / length * (target.radius + 2);
+          const sourceRadius = displayRadius(source), targetRadius = displayRadius(target);
+          if (length < sourceRadius + targetRadius + 4) continue;
+          const startX = source.x! + dx / length * (sourceRadius + 2);
+          const startY = source.y! + dy / length * (sourceRadius + 2);
+          const endX = target.x! - dx / length * (targetRadius + 2);
+          const endY = target.y! - dy / length * (targetRadius + 2);
           lines.moveTo(startX, startY);
           if (kind === 'personal') {
             const bend = Math.min(18 / zoom, length / 5);
@@ -205,21 +240,31 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
             .lineTo(endX, endY).lineTo(endX - Math.cos(angle + .45) * arrow, endY - Math.sin(angle + .45) * arrow);
         }
         lines.stroke({ width: (active ? 1.5 : 1) / zoom,
-          color: kind === 'personal' ? colors.get('personal') || '#b13d65' : active ? 0x57606a : 0xb8bec6,
+          color: kind === 'personal' ? colors.get('personal') || '#b13d65' : active ? edgeFocusColor : edgeColor,
           alpha: active ? .8 : focused ? .12 : .45 });
       }
       const occupied: { x: number; y: number; width: number; height: number }[] = [];
       const rank = (key: string) => key === hovered ? 5 : key === selected ? 4 : matches.has(key) ? 2 : neighbors?.has(key) ? 1 : 0;
       const ordered = [...next.values()].sort((a, b) => rank(b.node.key) - rank(a.node.key));
-      for (const { node, dot, label } of ordered) {
+      for (const { node, dot, circle, icon, label } of ordered) {
         const active = node.key === selected || node.key === hovered;
         const emphasized = active || !!neighbors?.has(node.key);
         const matched = matches.has(node.key);
         const clear = !focused || node.key === focused || neighbors?.has(node.key) || matched;
         dot.alpha = label.alpha = clear ? 1 : .15;
-        label.tint = node.key === focused || matched ? 0x1d1d1f : 0x6e6e73;
+        label.tint = node.key === focused || matched ? labelFocusColor : labelColor;
         dot.position.set(node.x!, node.y!);
-        const x = node.x! * zoom + container!.x, y = node.y! * zoom + container!.y + node.radius * zoom + 5;
+        const showIcon = showsIcon(node);
+        const visualRadius = displayRadius(node);
+        circle.visible = !showIcon;
+        icon.visible = showIcon;
+        // Fixed-size textures need only a transform, not width/height bookkeeping.
+        if (showIcon) icon.scale.set(visualRadius / 32);
+        const x = node.x! * zoom + container!.x, y = node.y! * zoom + container!.y + visualRadius * zoom + 5;
+        const screenRadius = visualRadius * zoom;
+        const centerY = node.y! * zoom + container!.y;
+        dot.visible = x + screenRadius >= 0 && x - screenRadius <= renderer!.screen.width &&
+          centerY + screenRadius >= 0 && centerY - screenRadius <= renderer!.screen.height;
         const within = x > -220 && x < renderer!.screen.width + 220 && y > -100 && y < renderer!.screen.height;
         label.visible = within && (emphasized || matched || zoom >= .8);
         if (!label.visible) continue;
@@ -231,19 +276,19 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
         label.scale.set(1 / zoom);
         const above = node.key === previewKey;
         label.anchor.set(.5, above ? 1 : 0);
-        label.position.set(node.x!, node.y! + (above ? -1 : 1) * (node.radius + 5 / zoom));
+        label.position.set(node.x!, node.y! + (above ? -1 : 1) * (visualRadius + 5 / zoom));
         const bounds = { x: x - label.width * zoom / 2,
-          y: above ? node.y! * zoom + container!.y - node.radius * zoom - 5 - label.height * zoom : y,
+          y: above ? node.y! * zoom + container!.y - visualRadius * zoom - 5 - label.height * zoom : y,
           width: label.width * zoom, height: label.height * zoom };
         const overlaps = () => occupied.some((box) => bounds.x < box.x + box.width + 6 && bounds.x + bounds.width + 6 > box.x &&
           bounds.y < box.y + box.height + 6 && bounds.y + bounds.height + 6 > box.y);
         if (emphasized && node.key !== focused && overlaps()) {
           const belowY = bounds.y;
-          bounds.y = node.y! * zoom + container!.y - node.radius * zoom - 5 - bounds.height;
+          bounds.y = node.y! * zoom + container!.y - visualRadius * zoom - 5 - bounds.height;
           if (overlaps()) bounds.y = belowY;
           else {
             label.anchor.y = 1;
-            label.y = node.y! - node.radius - 5 / zoom;
+            label.y = node.y! - visualRadius - 5 / zoom;
           }
         }
         if (!above && node.key === hovered && node.key !== selected && overlaps()) {
@@ -257,7 +302,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       const node = previewKey ? next.get(previewKey)?.node : null;
       const rect = node ? canvas.getBoundingClientRect() : null;
       const anchor = node && rect ? { key: node.key, x: rect.left + node.x! * zoom + container!.x,
-        y: rect.top + node.y! * zoom + container!.y, radius: node.radius * zoom } : null;
+        y: rect.top + node.y! * zoom + container!.y, radius: Math.max(node.radius * zoom, 10) } : null;
       setPreview((previous) => previous?.key === anchor?.key && previous?.x === anchor?.x &&
         previous?.y === anchor?.y && previous?.radius === anchor?.radius ? previous : anchor);
     }
@@ -387,9 +432,10 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       const p = point(event);
       if (!gesture) {
         const nextHover = hit(p)?.key ?? null;
+        const pointerMoved = !hoverPoint || p.x !== hoverPoint.x || p.y !== hoverPoint.y;
         hoverPoint = p;
         if (control !== event.ctrlKey) { control = event.ctrlKey; paint(); }
-        if (nextHover !== hoverCandidate) {
+        if (nextHover !== hoverCandidate || (pointerMoved && !hovered && nextHover)) {
           clearTimeout(hoverTimer); hoverTimer = 0;
           hoverCandidate = nextHover; hovered = null;
           canvas.style.cursor = nextHover ? 'pointer' : 'grab'; paint();
@@ -401,7 +447,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
               return;
             }
             hovered = nextHover; paint(true);
-          }, 300);
+          }, 800);
         }
         return;
       }
@@ -476,6 +522,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       pause();
       for (const child of container.removeChildren()) child.destroy({ children: true });
       next.clear(); simulation.current = null;
+      for (const texture of iconTextures.values()) texture.destroy(true);
       canvas.removeEventListener('pointerdown', down); canvas.removeEventListener('pointermove', move);
       canvas.removeEventListener('pointerup', up); canvas.removeEventListener('pointercancel', up);
       canvas.removeEventListener('lostpointercapture', up); canvas.removeEventListener('wheel', wheel);

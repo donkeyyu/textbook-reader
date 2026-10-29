@@ -81,15 +81,50 @@ test('each inventoried question has its own complete guide and useful knowledge 
     for (const item of coverage.items) {
       const note = getSupplement(item.supplementId)!;
       assert.ok(note?.questionGuide, item.supplementId);
+      const guide = note.questionGuide!;
       assert.ok(item.label.trim());
       assert.ok(Array.isArray(item.parts) && item.parts.every((part) => part.trim()));
       assert.equal(new Set(item.parts).size, item.parts.length, item.label);
       assert.equal(getLocation(note.locationId).page, item.page, item.label);
-      for (const values of [note.questionGuide.knowledgePoints, note.questionGuide.method, note.questionGuide.cautions]) {
-        assert.ok(Array.isArray(values) && values.length > 0 && values.every((value) => value.trim()), item.label);
-      }
       assert.ok(note.related.length > 0, `${item.label}: missing knowledge link`);
       assert.ok(note.related.every(({ locationId }) => locationId !== note.locationId), `${item.label}: self link`);
+      assert.ok(Array.isArray(guide.method) && guide.method.length > 0 && guide.method.every((value) => value.trim()), item.label);
+      for (const values of [guide.knowledgePoints, guide.cautions]) {
+        if (values !== undefined) assert.ok(Array.isArray(values) && values.length > 0 && values.every((value) => value.trim()), item.label);
+      }
+      // 正文已承接知识与注意事项时不再分栏，但每条仍须有学生可读的内容。
+      assert.ok(note.paragraphs.length > 0 || (guide.knowledgePoints?.length ?? 0) > 0, `${item.label}: missing readable body`);
+    }
+  }
+});
+
+// 第 88 页的八条按五槽位结构重写，作为逐页重写的样板；新增样板时追加 id。
+const page88Samples = [
+  'ch3-track-rounded-value', 'ch3-q-p88-example4', 'ch3-triangle-base-height', 'ch3-area-value-unit',
+  'ch3-q-p88-example4-exact', 'ch3-q-p88-practice1', 'ch3-q-p88-practice2', 'ch3-q-p88-practice3',
+];
+
+test('rewritten samples state a conclusion and carry readable body text', () => {
+  for (const id of page88Samples) {
+    const note = getSupplement(id)!;
+    assert.doesNotMatch(note.title, /[？?]/, `${id}: title should state a conclusion`);
+    assert.ok(note.paragraphs.length > 0 && note.paragraphs.length <= 3, `${id}: body paragraphs`);
+    // 气泡允许写公式；按去掉公式标记后的可见字数判断是不是一句话。
+    assert.ok(note.preview.replace(/\$[^$]*\$/g, '■').length <= 40, `${id}: preview should be one sentence`);
+    assert.ok(note.related.length <= 2, `${id}: at most two related targets`);
+  }
+});
+
+// 正文用 $…$ 写公式，漏一个定界符就会把后半句当成公式：按字段检查成对。
+test('formula delimiters are balanced in every readable field', () => {
+  for (const { chapter } of chapterSources) {
+    for (const note of chapter.supplements) {
+      const guide = note.questionGuide;
+      const fields = [note.preview, ...note.paragraphs, ...(guide?.knowledgePoints ?? []), ...(guide?.method ?? []), ...(guide?.cautions ?? [])];
+      for (const field of fields) {
+        assert.equal(field.split('$').length % 2, 1, `${note.id}: unbalanced $ in ${field}`);
+        assert.equal(field.match(/\\\[/g)?.length ?? 0, field.match(/\\\]/g)?.length ?? 0, `${note.id}: unbalanced \\[ in ${field}`);
+      }
     }
   }
 });

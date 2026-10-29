@@ -3,6 +3,7 @@ import { Application, Color, Container, Graphics, Text, Sprite as PixiSprite, Te
 import { forceCollide, forceLink, forceManyBody, forceSimulation, forceX, forceY,
   type Simulation, type SimulationLinkDatum, type SimulationNodeDatum } from 'd3-force';
 import { typeMarkerPaths } from '../supplement-types';
+import { spacedText } from '../text-spacing';
 import type { GraphNode, GraphEdge } from './project-graph.ts';
 
 type LayoutNode = SimulationNodeDatum & GraphNode & { radius: number };
@@ -166,7 +167,7 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
         const icon = new PixiSprite(iconTextures.get(node.type)!);
         icon.anchor.set(.5);
         dot.addChild(circle, icon);
-        const label = new Text({ text: node.title, style: { fontFamily: 'system-ui, sans-serif', fontSize: 12,
+        const label = new Text({ text: spacedText(node.title), style: { fontFamily: 'system-ui, sans-serif', fontSize: 12,
           fontWeight: '300', lineHeight: 17, fill: 0xffffff, wordWrap: false, wordWrapWidth: 140, breakWords: true },
           resolution: Math.max(2, window.devicePixelRatio || 1) });
         label.anchor.set(.5, 0);

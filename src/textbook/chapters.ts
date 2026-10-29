@@ -11,7 +11,25 @@ import locations5 from '../../content/grade-7-volume-1/chapter-5.locations.json'
 import chapter6 from '../../content/grade-7-volume-1/chapter-6.json' with { type: 'json' };
 import locations6 from '../../content/grade-7-volume-1/chapter-6.locations.json' with { type: 'json' };
 
-export const chapterSources = [
+import type { Supplement, TextbookLocation } from './supplements.ts';
+
+// JSON imports narrow to their literal shapes; annotating keeps the per-chapter unions from
+// widening to unknown[] as chapter content is rewritten entry by entry.
+export type ChapterSource = {
+  chapter: {
+    documentSha256: string;
+    chapter: string;
+    pageRange: number[];
+    contentOrigin: string;
+    review: { status: string; basis: string; reviewer: string; learningEffect: string };
+    supplements: Supplement[];
+    pageDecisions: { page: number }[];
+    questionCoverage?: unknown;
+  };
+  positioning: { documentSha256: string; locations: TextbookLocation[] };
+};
+
+export const chapterSources: ChapterSource[] = [
   { chapter: chapter1, positioning: locations1 },
   { chapter: chapter2, positioning: locations2 },
   { chapter: chapter3, positioning: locations3 },

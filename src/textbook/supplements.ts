@@ -27,11 +27,12 @@ export type Supplement = {
   learningRole: string;
   learningGap: string;
   learningAction: string;
+  // 知识、方法与注意事项是覆盖项，不要求分栏呈现；正文已absorbed时只保留可折叠的方法提示。
   questionGuide?: {
     continuous?: boolean;
-    knowledgePoints: string[];
+    knowledgePoints?: string[];
     method: string[];
-    cautions: string[];
+    cautions?: string[];
   };
   related: { locationId: string; label: string; purpose: string }[];
 };

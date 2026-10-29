@@ -2,6 +2,7 @@ import { LocateIcon } from './LocateIcon';
 import { useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import { getLocation, type Supplement } from "../textbook/supplements";
 import { supplementType, TypeMarker } from './supplement-types';
+import { MathText } from './MathText';
 import './supplement-appearance.css';
 import { getPage, pageLabel } from "../textbook/catalog";
 
@@ -23,7 +24,7 @@ export function SupplementPreview({ note, anchor, onKeep, onLeave }: {
   return <div ref={element} id="supplement-preview" className={`supplement-preview${anchor.docked ? " preview-docked" : ""}`} role="tooltip" aria-label={note.title} data-supplement-type={supplementType(note)}
     style={anchor.docked ? { maxHeight: anchor.maxHeight } : { left: anchor.left, top, width: anchor.width }} onPointerEnter={onKeep} onPointerLeave={onLeave} onFocus={onKeep}
     onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) onLeave(); }}>
-    <p>{note.preview}</p>
+    <p><MathText text={note.preview} /></p>
     <p className="preview-hint">点击标记展开解读</p>
   </div>;
 }
@@ -95,16 +96,20 @@ function SupplementContent({ note, pending, onRelated, activeLocationId, persona
   activeLocationId: string | null;
 }) {
   const relatedLinks = note.related.filter(({ locationId }) => locationId !== activeLocationId);
+  // 正文是主内容；知识、方法、注意事项只在没有正文的旧条目中分栏呈现。
+  const guide = note.questionGuide;
+  const guideParts = guide && !guide.continuous ? ([
+    ['knowledge', '考查知识点', guide.knowledgePoints ?? []],
+    ['method', '思路与方法', guide.method],
+    ['cautions', '注意事项', guide.cautions ?? []],
+  ] as const).filter(([, , items]) => items.length > 0) : [];
   return <>
     <div className="supplement-body">
-      {note.questionGuide && (note.questionGuide.continuous
-        ? [...note.questionGuide.knowledgePoints, ...note.questionGuide.method, ...note.questionGuide.cautions].map((paragraph, index) => <p key={index}>{paragraph}</p>)
+      {note.paragraphs.map((paragraph, index) => <p key={index}><MathText text={paragraph} /></p>)}
+      {guide && (guide.continuous
+        ? [...(guide.knowledgePoints ?? []), ...guide.method, ...(guide.cautions ?? [])].map((paragraph, index) => <p key={index}><MathText text={paragraph} /></p>)
         : <div className="question-guide">
-        {([
-          ['knowledge', '考查知识点', note.questionGuide.knowledgePoints],
-          ['method', '思路与方法', note.questionGuide.method],
-          ['cautions', '注意事项', note.questionGuide.cautions],
-        ] as const).map(([part, label, items]) => <section key={label} aria-label={label} data-guide-part={part}>
+        {guideParts.map(([part, label, items]) => <section key={label} aria-label={label} data-guide-part={part}>
           {label === '思路与方法' ? <>
             <h3><button id={`method-${note.id}`} type="button" className="text-button method-toggle"
               aria-expanded={methodOpen} aria-controls={`method-content-${note.id}`} onClick={onMethodToggle}>
@@ -112,15 +117,14 @@ function SupplementContent({ note, pending, onRelated, activeLocationId, persona
               <svg className="method-toggle-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </button></h3>
             <div id={`method-content-${note.id}`} hidden={!methodOpen}>
-              {items.map((item, index) => <p key={index}>{item}</p>)}
+              {items.map((item, index) => <p key={index}><MathText text={item} /></p>)}
             </div>
           </> : <>
             <h3>{label}</h3>
-            {items.map((item, index) => <p key={index}>{item}</p>)}
+            {items.map((item, index) => <p key={index}><MathText text={item} /></p>)}
           </>}
         </section>)}
       </div>)}
-      {note.paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
     </div>
     {related !== undefined ? related : relatedLinks.length > 0 && <div className="supplement-related" aria-label="关联教材">
       {note.questionGuide && <h3>相关知识</h3>}

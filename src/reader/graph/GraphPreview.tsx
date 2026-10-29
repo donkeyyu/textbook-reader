@@ -2,6 +2,7 @@ import { createPortal } from 'react-dom';
 import ReactMarkdown from 'react-markdown';
 import type { ContentNode } from '../../textbook/content.ts';
 import { supplementTypes, TypeMarker } from '../supplement-types.tsx';
+import { MathText } from '../MathText';
 import type { GraphPreviewAnchor } from './useSupplementGraph.ts';
 
 export function GraphPreview({ node, anchor }: { node: ContentNode; anchor: GraphPreviewAnchor }) {
@@ -18,7 +19,7 @@ export function GraphPreview({ node, anchor }: { node: ContentNode; anchor: Grap
         ? <ReactMarkdown skipHtml components={{ a: ({ children }) => <span>{children}</span>, img: () => null }}>
           {node.personal.markdown}
         </ReactMarkdown>
-        : <p>{node.summary}</p>}
+        : <p><MathText text={node.summary} /></p>}
     </div>
     <p className="graph-preview-hint">点击节点阅读完整内容</p>
   </div>, document.body);

@@ -1426,6 +1426,25 @@
       "printedPage": "81",
       "indexAnchor": 1,
       "anchorLabel": "例4",
+      "locator": "例4面积式“三角尺的面积 S=½ab−πr²”（接排行，左起与“解”对齐）",
+      "region": {
+        "x": 0.13,
+        "y": 0.4045,
+        "width": 0.292,
+        "height": 0.034
+      },
+      "marker": {
+        "x": 0.96,
+        "y": 0.423
+      },
+      "sourceImageSha256": "2ab7c43dae727cb38631b4eb83ec9fd236134746f7b1ad2d748b634eedb01d72"
+    },
+    {
+      "id": "ch3-q-p88-example4-exact",
+      "page": 88,
+      "printedPage": "81",
+      "indexAnchor": 1,
+      "anchorLabel": "例4",
       "locator": "例4结论句“因此，这个三角尺的面积是73.94 cm²”。",
       "region": {
         "x": 0.178,

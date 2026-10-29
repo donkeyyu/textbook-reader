@@ -152,12 +152,20 @@ function worthConverting(candidate) {
   if (!/[0-9A-Za-zπθαβ°℃%]/.test(text)) return false;
   if (/[=×÷·∶<>\-−+±≈/^]$/.test(text)) return false;
   if (/^[=×÷·∶<>≤≥/]/.test(text)) return false;
+  // 括号在汉字处被截断（2×(长+宽) 里的 2×( ）说明这个算式还没读完，整段留给正文。
+  let depth = 0;
+  for (const char of text) {
+    if (char === '(') depth++;
+    if (char === ')') depth--;
+    if (depth < 0) return false;
+  }
+  if (depth !== 0) return false;
   return true;
 }
 
 /**
- * 汉字算式（长×宽、=2×(长+宽)、×10+）里，运算符两侧的另一半在汉字里，一段算式只能切在这些
- * 汉字旁边：汉字留在正文，运算符和数字进公式，一段里两侧都是汉字的运算符也一并转换。
+ * 只转换成段的符号算式和量。汉字写出的关系（长×宽、平均数=总量÷份数）整段保持文字：
+ * 汉字不进公式，运算符也不从这些句子里拆出来单独排版。
  */
 function convertText(text) {
   let out = '';
@@ -167,18 +175,15 @@ function convertText(text) {
     let end = index;
     while (end < text.length && isMathChar(text[end])) end++;
     const candidate = text.slice(index, end).trim();
-    // 全角括号包着汉字算式，括号外侧的运算符（…）×2 也算关系式的一部分。
+    // 候选两侧是否紧贴汉字（含全角括号），用来判断单独符号该不该留作正文。
     const cjkPrev = /[\u4e00-\u9fff（）]/.test(text[index - 1] ?? '');
     const cjkNext = /[\u4e00-\u9fff（）]/.test(text[end] ?? '');
     // 引号里单独讨论的符号（如“−”“÷2”）也写成公式。
     const lone = /^[±+\-−×÷·≈≠≤≥∶°′″∠]$/.test(candidate);
     const quoted = text[index - 1] === '“' && text[end] === '”';
-    // 正文里直接引用的纯符号，如“±不是说……”：±≈ 这类不会被误读成文字。
-    // 括号也是一样：汉字算式拆开时，半个括号跟剩下的算式不在同一段里，要跟着进公式才能配成一对。
-    const dangling = /^[±≈≠≤≥∠()]$/.test(candidate) && (cjkPrev || cjkNext);
-    // 汉字写出的关系式（平均数=总量÷份数、底×高÷2）：汉字留在正文，运算符进数学模式。
-    const relation = /[=×÷·−+±≠≤≥∶≈]/.test(candidate) && (cjkPrev || cjkNext);
-    const convert = worthConverting(candidate) || (quoted && (lone || /[=×÷·−+±≠≤≥∶≈]/.test(candidate))) || dangling || relation;
+    // 正文里单独提到的比较号、角号（不相等时用≠表示、记作∠A）没有自己的算式上下文，仍当符号排版。
+    const dangling = /^[±≈≠≤≥∠]$/.test(candidate) && (cjkPrev || cjkNext);
+    const convert = worthConverting(candidate) || (quoted && (lone || /[=×÷·−+±≠≤≥∶≈]/.test(candidate))) || dangling;
     out += convert ? `$${joinTokens(tokenize(foldFractions(candidate))).trim()}$` : candidate;
     index = end;
   }

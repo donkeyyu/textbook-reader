@@ -7,6 +7,11 @@ const list = args.includes('--list');
 const only = args.find((value) => value.startsWith('--chapter='))?.split('=')[1];
 
 const visible = (text) => text.replace(/\$[^$]*\$/g, '■');
+// 正文仍是纯文本公式：π、平方号、度数、单位之类没进 $…$（汉字写出的关系连同其中的运算符按约定保持文字）。
+const flaggedBare = /[πθαβ°′″∠℃≈²³¹⁰⁴⁵‰ⁿᵃ∶]|cm2|cm3|m2|m3/;
+// 汉字关系被拆成一个个运算符公式：长$×$宽。引号里单独讨论的符号（“$-$”）不在此列。
+const splitRelation = /\$[=×÷·−+±≈≠≤≥∶]\$/;
+const withoutQuotes = (field) => field.replace(/“[^”]*”/g, '“”');
 const rules = {
   'title-question': (note) => /[？?]/.test(note.title),
   'preview-long': (note) => visible(note.preview).length > 40,
@@ -16,10 +21,10 @@ const rules = {
   'body-long': (note) => note.paragraphs.length > 3,
   'related-many': (note) => note.related.length > 2,
   // 正文仍是纯文本公式：π、×、÷、平方号、度数、单位之类没进 $…$（汉字写出的算式按约定保持文字）。
-  'plain-math': (note) => [note.preview, ...note.paragraphs].some((field) => {
-    const bare = visible(field);
-    return /[πθαβ×÷·²³¹⁰⁴⁵‰ⁿᵃ≈±∶°′″∠℃≠≤≥−]|cm2|cm3|m2|m3/.test(bare);
-  }),
+  'plain-math': (note) => [note.preview, ...note.paragraphs].some((field) => flaggedBare.test(visible(field))),
+  'relation-split': (note) => [note.preview, ...note.paragraphs, ...(note.questionGuide?.knowledgePoints ?? []),
+    ...(note.questionGuide?.method ?? []), ...(note.questionGuide?.cautions ?? [])]
+    .some((field) => splitRelation.test(withoutQuotes(field))),
   'math-unbalanced': (note) => [note.preview, ...note.paragraphs, ...(note.questionGuide?.method ?? [])].some((field) => field.split('$').length % 2 === 0),
 };
 

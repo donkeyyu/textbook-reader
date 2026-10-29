@@ -41,7 +41,7 @@ npm run preview   # 预览构建结果
 
 当前使用 Vite、React 和 TypeScript。
 
-仓库包含七年级上册 PDF，以及全部 202 页的 WebP、缩略图和来源记录。另一台电脑克隆或拉取后，直接执行上述命令即可；日常运行不需要 Python、`cwebp` 或 `prepare:textbook`。浏览器打开终端显示的本地地址（默认端口 5173，已占用时会使用其他端口）。
+仓库包含七年级上册 PDF，以及全部 202 页的 WebP、缩略图和来源记录。另一台电脑克隆或拉取后，直接执行上述命令即可；日常运行不需要 Python、`cwebp` 或 `prepare:textbook`。开发服务器固定监听 `0.0.0.0:5191`，本机访问 `http://localhost:5191/`。远程电脑可将 TCP 端口映射到运行服务器的电脑的 `5191` 端口，再访问映射地址。端口被占用时启动失败，不自动换端口。
 
 仅在重新生成页图时运行 `npm run prepare:textbook`。该命令需要 `cwebp`，以及本地 `materials/indexes/人教版-数学-七年级上册/images/` 中已核对的 PNG 页图（不纳入 Git）；它校验 PDF 与全部 PNG 的哈希，再生成 WebP、缩略图、来源记录及 `src/textbook/book.json`。来源见 [项目背景](docs/CONTEXT.md)。换教材时须重新核对内容与定位，不能仅替换文件名。
 

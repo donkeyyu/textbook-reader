@@ -18,6 +18,8 @@ const OPERATOR = { '×': '\\times', '÷': '\\div', '·': '\\cdot', '−': '-', '
 // 多字母单位按字面认；单字母单位 m、s、g、h、t、L 也可能是变量，看后面那段规则怎么判。
 const UNIT_WORDS = new Set(['mm', 'cm', 'dm', 'km', 'kg', 'mg', 'min', 'mL', 'kW', 'kWh', 'hm']);
 const UNIT_LETTERS = new Set(['m', 's', 'g', 'h', 't', 'L']);
+// 关系符号与运算符：整段成不了算式时按它们切开，左右两边的符号段各自判断。
+const RELATION = /^[=×÷·−+∶≈≠≤≥<>]$/;
 // 不是算式的固定写法：图号、页码、课程标识、钟点、单元格地址。
 const FIGURE = /^\d+(?:\.\d+)+-\d+$/;
 const LABEL = /^[A-Za-z]{2,}-\d+$/;
@@ -164,8 +166,23 @@ function worthConverting(candidate) {
 }
 
 /**
+ * 整段成不了算式（汉字关系带出前导运算符、括号被汉字截断）时，按关系符号和运算符切开，
+ * 只把其中真正的符号段排成公式：π× → $\pi$×，=360°÷n → =360°÷$n$。运算符留在正文。
+ */
+function wrapSegments(candidate) {
+  return candidate
+    .split(/([=×÷·−+∶≈≠≤≥<>])/)
+    .map((part) => (part.length === 1 && RELATION.test(part)
+      ? part
+      : worthConverting(part) ? `$${joinTokens(tokenize(foldFractions(part))).trim()}$` : part))
+    .join('');
+}
+
+/**
  * 只转换成段的符号算式和量。汉字写出的关系（长×宽、平均数=总量÷份数）整段保持文字：
- * 汉字不进公式，运算符也不从这些句子里拆出来单独排版。
+ * 汉字不进公式，关系符号和运算符也不从这些句子里拆出来单独排版。
+ * 但关系里出现的符号本身还是公式字符：圆面积=π×半径 里的 π、每份角度=360°÷n 里的 360° 和 n
+ * 照样写成公式，不让希腊字母、度数、上下标留在正文的字体里。
  */
 function convertText(text) {
   let out = '';
@@ -184,7 +201,7 @@ function convertText(text) {
     // 正文里单独提到的比较号、角号（不相等时用≠表示、记作∠A）没有自己的算式上下文，仍当符号排版。
     const dangling = /^[±≈≠≤≥∠]$/.test(candidate) && (cjkPrev || cjkNext);
     const convert = worthConverting(candidate) || (quoted && (lone || /[=×÷·−+±≠≤≥∶≈]/.test(candidate))) || dangling;
-    out += convert ? `$${joinTokens(tokenize(foldFractions(candidate))).trim()}$` : candidate;
+    out += convert ? `$${joinTokens(tokenize(foldFractions(candidate))).trim()}$` : wrapSegments(candidate);
     index = end;
   }
   return out;

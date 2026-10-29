@@ -7,11 +7,16 @@ const list = args.includes('--list');
 const only = args.find((value) => value.startsWith('--chapter='))?.split('=')[1];
 
 const visible = (text) => text.replace(/\$[^$]*\$/g, '■');
-// 正文仍是纯文本公式：π、平方号、度数、单位之类没进 $…$（汉字写出的关系连同其中的运算符按约定保持文字）。
+// 正文里还留着没进 $…$ 的公式字符：π、度数、上下标、单位之类。汉字关系里的 =、×、÷ 按约定仍作正文，不算在内。
 const flaggedBare = /[πθαβ°′″∠℃≈²³¹⁰⁴⁵‰ⁿᵃ∶]|cm2|cm3|m2|m3/;
 // 汉字关系被拆成一个个运算符公式：长$×$宽。引号里单独讨论的符号（“$-$”）不在此列。
-const splitRelation = /\$[=×÷·−+±≈≠≤≥∶]\$/;
+// 只看真正的公式段，避免把 $360^\circ$÷$n$ 里夹在中间的那个运算符当成公式。
+const spansOf = (field) => field.split(/(\$[^$]*\$)/).filter((_, order) => order % 2 === 1);
+const operatorSpan = /^\$[=×÷·−+±≈≠≤≥∶]\$$/;
 const withoutQuotes = (field) => field.replace(/“[^”]*”/g, '“”');
+// 实际交给 MathJax 渲染的字段：气泡、正文、逐题清单。关系说明与标题是纯文本，不算在内。
+const rendered = (note) => [note.preview, ...note.paragraphs, ...(note.questionGuide?.knowledgePoints ?? []),
+  ...(note.questionGuide?.method ?? []), ...(note.questionGuide?.cautions ?? [])];
 const rules = {
   'title-question': (note) => /[？?]/.test(note.title),
   'preview-long': (note) => visible(note.preview).length > 40,
@@ -20,12 +25,9 @@ const rules = {
   'body-missing': (note) => note.paragraphs.length === 0,
   'body-long': (note) => note.paragraphs.length > 3,
   'related-many': (note) => note.related.length > 2,
-  // 正文仍是纯文本公式：π、×、÷、平方号、度数、单位之类没进 $…$（汉字写出的算式按约定保持文字）。
-  'plain-math': (note) => [note.preview, ...note.paragraphs].some((field) => flaggedBare.test(visible(field))),
-  'relation-split': (note) => [note.preview, ...note.paragraphs, ...(note.questionGuide?.knowledgePoints ?? []),
-    ...(note.questionGuide?.method ?? []), ...(note.questionGuide?.cautions ?? [])]
-    .some((field) => splitRelation.test(withoutQuotes(field))),
-  'math-unbalanced': (note) => [note.preview, ...note.paragraphs, ...(note.questionGuide?.method ?? [])].some((field) => field.split('$').length % 2 === 0),
+  'plain-math': (note) => rendered(note).some((field) => flaggedBare.test(visible(field))),
+  'relation-split': (note) => rendered(note).some((field) => spansOf(withoutQuotes(field)).some((span) => operatorSpan.test(span))),
+  'math-unbalanced': (note) => rendered(note).some((field) => field.split('$').length % 2 === 0),
 };
 
 const rows = [];

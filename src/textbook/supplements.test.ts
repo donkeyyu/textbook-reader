@@ -3,7 +3,10 @@ import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { chapterSources } from './chapters.ts';
 import book from './book.json' with { type: 'json' };
-import { getLocation, getSupplement, locationsForPage, supplementsForPage, type QuestionCoverage, type TextbookLocation } from './supplements.ts';
+import { getLocation, type QuestionCoverage, type TextbookLocation } from './supplements.ts';
+import { publishedContent, supplementQueries } from './content.ts';
+
+const { getSupplement, supplementsForPage } = supplementQueries(publishedContent());
 
 const index = (await readFile(new URL('../../materials/indexes/人教版-数学-七年级上册/index.jsonl', import.meta.url), 'utf8')).trim().split('\n').map((line) => JSON.parse(line));
 
@@ -33,7 +36,7 @@ for (const { chapter, positioning } of chapterSources) {
         assert.ok([x, y, width, height].every(Number.isFinite), location.id);
         assert.ok(x >= 0 && y >= 0 && width > 0 && height > 0 && x + width <= 1 && y + height <= 1, location.id);
       }
-      assert.ok(locationsForPage(location.page).some(({ id }) => id === location.id));
+      assert.equal(getLocation(location.id), location);
     }
   });
 }

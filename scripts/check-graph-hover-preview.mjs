@@ -71,7 +71,6 @@ export async function graphInteractionState(page, focusedKey = null) {
       if (edge.source === focusedKey) direct.add(edge.target);
       if (edge.target === focusedKey) direct.add(edge.source);
     }
-    const matches = new Set([...document.querySelectorAll('#graph-search-results button')].map((item) => item.dataset.nodeKey));
     const nodes = p.nodes.map((node, i) => {
       const dot = dots[i], label = labels[i];
       if (!dot) throw new Error('Refresh the catalog after a saved node change');
@@ -80,7 +79,7 @@ export async function graphInteractionState(page, focusedKey = null) {
         labelY: canvas.y + world.y + label.y * world.scale.x, labelHeight: label.height * world.scale.x,
         x: canvas.x + world.x + dot.x * world.scale.x, y: canvas.y + world.y + dot.y * world.scale.x };
     });
-    const wrong = nodes.filter((node) => (!focusedKey || direct.has(node.key) || matches.has(node.key))
+    const wrong = nodes.filter((node) => (!focusedKey || direct.has(node.key))
       ? node.alpha !== 1 || node.labelAlpha !== 1 : node.alpha !== .15 || node.labelAlpha !== .15).length;
     const popup = document.querySelector('.graph-preview'), panel = document.getElementById('supplement-panel');
     return { wrong, direct: direct.size, clear: nodes.filter((node) => node.alpha === 1).length,

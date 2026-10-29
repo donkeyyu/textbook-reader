@@ -26,8 +26,7 @@ export function SupplementGraph({ searchTarget, nodes, personalEdges, selectedKe
     document.getElementById('graph-directory-toggle')?.focus({ preventScroll: true });
   }
   const data = useMemo(() => projectGraph(nodes, personalEdges), [nodes, personalEdges]);
-  const searchKeys = useMemo(() => new Set<string>(), []);
-  const graph = useSupplementGraph(host, data.nodes, data.edges, selectedKey, visible, onSelect, searchKeys);
+  const graph = useSupplementGraph(host, data.nodes, data.edges, selectedKey, visible, onSelect);
   useEffect(() => { if (searchTarget) graph.focus(searchTarget.key); }, [searchTarget]);
   const previewNode = visible && graph.preview ? nodes.find((node) => node.key === graph.preview!.key) : null;
   function chooseDirectory(key: string) {

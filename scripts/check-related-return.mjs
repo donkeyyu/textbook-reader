@@ -830,9 +830,8 @@ export async function checkLocateGroup(page, id, options) {
   });
 }
 
-// options remains accepted for callers shared with the writing checks. This
-// history-only case does not edit notes or write the personal-content key.
-export async function checkLocateReturn(page, options) {
+// This history-only case does not edit notes or write the personal-content key.
+export async function checkLocateReturn(page) {
   assert.equal(await page.evaluate(() => !!document.querySelector('[data-dirty="true"]')), false);
   await openNote(page, 'ch1-exercise-1-1-8');
   const sources = [];

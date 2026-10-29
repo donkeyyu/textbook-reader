@@ -83,6 +83,5 @@ export function supplementQueries(content: PublishedContent) {
   return {
     getSupplement: (id: string) => byId.get(id),
     supplementsForPage: (page: number) => content.supplements.filter((item) => getLocation(item.locationId).page === page),
-    supplementsForLocation: (locationId: string) => content.supplements.filter((item) => item.locationId === locationId),
   };
 }

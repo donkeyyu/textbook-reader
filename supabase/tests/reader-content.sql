@@ -20,14 +20,26 @@ begin
   perform set_config('request.jwt.claims', jsonb_build_object('sub', a, 'role', 'authenticated')::text, true);
   set local role authenticated;
 
+  result := public.reader_personal_snapshot(book, a);
+  assert result->'content' = '{"supplements":[],"notes":{}}'::jsonb
+    and (result->>'revision')::integer = 0 and result->'copies' = '[]'::jsonb,
+    'a read before migration must return the empty snapshot';
   first := public.reader_migrate_legacy(book, a, source, legacy::text);
   assert first->'content' = legacy and (first->>'revision')::integer = 1, 'first migration must preserve exact content';
+  assert jsonb_array_length(first->'copies') = 1
+    and first->'copies'->0->>'source_id' = source::text
+    and first->'copies'->0->>'raw' = legacy::text
+    and first->'copies'->0->>'kind' = 'initial'
+    and first->'copies'->0->'has_conflict' = 'false'::jsonb,
+    'migration must immediately return the inserted recovery copy after a prior read';
   assert exists (select 1 from public.reader_legacy where source_id = source and kind = 'initial' and not has_conflict and raw = legacy::text), 'clean initial source must persist a false conflict flag and exact raw text';
   result := public.reader_migrate_legacy(book, a, source, legacy::text);
   assert result = first, 'repeated migration must be idempotent';
   current_doc := jsonb_set(jsonb_set(legacy, '{notes,default}', '"新库笔记"'), '{supplements,0,markdown}', '"新库正文"');
   second := public.reader_save_personal(book, a, 1, current_doc);
   assert second->'content' = current_doc and (second->>'revision')::integer = 2, 'save must commit exact revision';
+  assert second->'copies' = first->'copies' and public.reader_personal_snapshot(book, a) = second,
+    'save must immediately return the new document with its existing recovery copies';
   result := public.reader_save_personal(book, a, 1, current_doc);
   assert result = second, 'lost-response retry must not rewrite the document';
 

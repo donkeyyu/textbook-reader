@@ -1,5 +1,4 @@
 import assert from 'node:assert/strict';
-import { jumpToFilePage } from './check-related-return.mjs';
 
 export async function graphState(page) {
   return page.evaluate(() => {
@@ -147,17 +146,15 @@ export async function graphEmphasis(page, selectedKey) {
       if (edge.source === selectedKey) direct.add(edge.target);
       if (edge.target === selectedKey) direct.add(edge.source);
     }
-    const matches = new Set([...document.querySelectorAll('#graph-search-results button')].map((item) => item.dataset.nodeKey));
-    let clear = 0, dim = 0, wrong = 0, visibleLabels = 0, searchLabels = 0;
+    let clear = 0, dim = 0, wrong = 0, visibleLabels = 0;
     let unrelated = null, selected = null;
     const canvas = document.querySelector('.graph-viewport canvas').getBoundingClientRect();
     nodes.forEach((node, index) => {
       const dot = dots[index], label = labels[index];
-      const emphasized = !selectedKey || direct.has(node.key) || matches.has(node.key);
+      const emphasized = !selectedKey || direct.has(node.key);
       if (emphasized) { clear++; if (dot.alpha !== 1 || label.alpha !== 1) wrong++; }
       else { dim++; if (!(dot.alpha > 0 && dot.alpha < 1 && label.alpha > 0 && label.alpha < 1)) wrong++; }
       if (label.visible) visibleLabels++;
-      if (matches.has(node.key) && label.visible) searchLabels++;
       const point = { x: canvas.x + world.x + dot.x * world.scale.x, y: canvas.y + world.y + dot.y * world.scale.y };
       if (node.key === selectedKey) selected = { visible: label.visible, text: label.text, point };
       if (!emphasized && node.source === 'default' && !unrelated && point.x > canvas.x + 120 && point.x < canvas.right - 120 && point.y > canvas.y + 100 && point.y < canvas.bottom - 100) {
@@ -165,7 +162,7 @@ export async function graphEmphasis(page, selectedKey) {
       }
     });
     return { nodes: nodes.length, direct: selectedKey ? direct.size : 0, clear, dim, wrong, visibleLabels,
-      search: { matched: matches.size, visibleLabels: searchLabels }, selected, unrelated,
+      selected, unrelated,
       world: { x: world.x, y: world.y, scale: world.scale.x } };
   }, selectedKey);
 }
@@ -177,70 +174,4 @@ export async function stopGraphProbe(page) {
     probe.Application.prototype.render = probe.original;
     delete window.qa03GraphProbe;
   });
-}
-
-export async function checkRepeatedGraphOriginal(page, { testOrigin }) {
-  assert.equal(new URL(await page.url()).origin, testOrigin);
-  assert.equal(await page.evaluate(() => !!document.querySelector('[data-dirty="true"]')), false);
-  const chain = await page.evaluate(async () => {
-    const { readPublishedContent } = await import('/src/textbook/content-store.ts');
-    const { getLocation } = await import('/src/textbook/supplements.ts');
-    const content = await readPublishedContent();
-    const at = new Map(content.supplements.map((node) => [node.locationId, node]));
-    const incoming = new Map();
-    for (const source of content.supplements) for (const related of source.related) {
-      const target = at.get(related.locationId);
-      if (target && target.id !== source.id) incoming.set(target.id, source);
-    }
-    const middle = content.supplements.find((node) => incoming.has(node.id) && node.related.some((related) => !at.has(related.locationId)));
-    if (!middle) throw new Error('No current two-level return fixture');
-    const source = incoming.get(middle.id);
-    const original = middle.related.find((related) => !at.has(related.locationId));
-    return { source: { id: source.id, title: source.title, page: getLocation(source.locationId).page },
-      middle: { id: middle.id, title: middle.title, locationId: middle.locationId },
-      original: { id: original.locationId, page: getLocation(original.locationId).page } };
-  });
-  if (await page.evaluate(() => !document.getElementById('supplement-graph').hidden)) await page.click('#open-supplement-graph');
-  await jumpToFilePage(page, chain.source.page);
-  await page.click(`[data-supplement-ids~="${chain.source.id}"]`);
-  if (await page.evaluate((id) => !!document.getElementById(`choice-${id}`), chain.source.id)) await page.click(`#choice-${chain.source.id}`);
-  await page.click(`#related-${chain.source.id}-${chain.middle.locationId}`);
-  await page.waitForFunction((title) => document.getElementById('supplement-title')?.textContent === title, chain.middle.title);
-  await page.click('#open-supplement-graph');
-  const relation = `#related-${chain.middle.id}-${chain.original.id}`;
-  await page.click(relation);
-  await page.waitForFunction(() => document.getElementById('supplement-graph').hidden);
-  const first = await page.evaluate(() => document.querySelector('.paper-scroller').scrollTop);
-  const paper = await page.evaluate(() => { const r = document.querySelector('.paper-scroller').getBoundingClientRect(); return { x: r.x + 100, y: r.y + 100 }; });
-  await page.mouse.move(paper.x, paper.y);
-  await page.mouse.wheel(0, 500, { label: '离开原文位置后再定位' });
-  await page.waitForFunction((first) => Math.abs(document.querySelector('.paper-scroller').scrollTop - first) > 10, first);
-  await page.click('#open-supplement-graph');
-  await page.evaluate((pageNumber) => {
-    window.qa03Decode = HTMLImageElement.prototype.decode;
-    HTMLImageElement.prototype.decode = function () {
-      return this.src.includes(`/page-${pageNumber}.webp`) ? Promise.reject(new Error('QA03 repeat locate failure')) : window.qa03Decode.call(this);
-    };
-  }, chain.original.page);
-  try {
-    await page.click(relation);
-    await page.waitForSelector('.reading-message[role="alert"]');
-    assert.equal((await graphState(page)).visible, true);
-  } finally {
-    await page.evaluate(() => { HTMLImageElement.prototype.decode = window.qa03Decode; delete window.qa03Decode; });
-  }
-  await page.click('.reading-message button');
-  await page.waitForFunction(() => document.getElementById('supplement-graph').hidden && !document.querySelector('.reading-message'));
-  const retry = await page.evaluate(() => document.querySelector('.paper-scroller').scrollTop);
-  assert.ok(Math.abs(first - retry) < 1, 'Repeat locate must reposition the original');
-  await page.click('#open-supplement-graph'); await page.click(relation);
-  await page.waitForFunction(() => document.getElementById('supplement-graph').hidden && !document.querySelector('.reading-message'));
-  await page.click('.return-button');
-  await page.waitForFunction((title) => document.getElementById('supplement-title')?.textContent === title && !!document.querySelector('.return-button'), chain.middle.title);
-  const firstFocus = await page.evaluate(() => document.activeElement.id);
-  assert.equal(firstFocus, `related-${chain.middle.id}-${chain.original.id}`);
-  await page.click('.return-button');
-  await page.waitForFunction((title) => document.getElementById('supplement-title')?.textContent === title && !document.querySelector('.return-button'), chain.source.title);
-  return { chain, repeatRevealsOriginal: true, repositionsAfterScroll: true, failureRetry: true,
-    preservesTwoReturnLevels: true, noDuplicateReturnLayer: true, validReturnFocus: true };
 }

@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "checkJs": true
+  },
+  "include": [
+    "scripts/prepare-textbook.mjs",
+    "scripts/prepare-cloud-content.mjs",
+    "scripts/check-cloud-content.mjs"
+  ]
+}

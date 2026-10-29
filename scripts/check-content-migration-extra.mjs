@@ -27,7 +27,7 @@ async function context(task, result) {
   return { control, baseline, item, origin: url.origin };
 }
 
-async function ownPage(task, origin) {
+async function ownPage(task) {
   const page = await task.newPage();
   assert.notEqual(page.label, 'p1');
   return page;
@@ -127,7 +127,7 @@ async function privateCleanup(page, ownerId, original, edited, deleteId) {
 
 export async function checkMigratedPersonalMaintenance(task, result) {
   const ctx = await context(task, result);
-  const page = await ownPage(task, ctx.origin);
+  const page = await ownPage(task);
   const token = randomUUID();
   const edited = { title: `QA 编辑 ${token}`, markdown: `# QA 已编辑\n\n保存 **${token}** 后刷新。` };
   const deletion = { ...ctx.item, id: `qa-delete-${token}`, title: `QA 删除 ${token}` };
@@ -199,7 +199,7 @@ export async function checkMigratedPersonalMaintenance(task, result) {
 export async function checkStaleCloudNote(task, result) {
   const ctx = await context(task, result);
   const writer = ctx.control;
-  const stale = await ownPage(task, ctx.origin);
+  const stale = await ownPage(task);
   const original = ctx.baseline.data.notes[result.fixture.noteId];
   assert.equal(typeof original, 'string');
   const latest = `QA newest cloud ${randomUUID()}`;
@@ -264,7 +264,7 @@ export async function checkConflictHttp(task, result) {
 
 export async function checkCloudSaveFailure(task, result) {
   const ctx = await context(task, result);
-  const page = await ownPage(task, ctx.origin);
+  const page = await ownPage(task);
   const original = ctx.baseline.data.notes[result.fixture.noteId];
   assert.equal(typeof original, 'string');
   const draft = `QA newest failed fetch draft ${randomUUID()}`;
@@ -351,7 +351,7 @@ export async function checkStartupStorageFailure(task, result, { kind = 'read' }
   const ctx = await context(task, result);
   const owned = await ctx.control.evaluate(({ personalKey, sourceKey }) => ({ raw: localStorage.getItem(personalKey), source: localStorage.getItem(sourceKey) }), { personalKey, sourceKey });
   assert.equal(JSON.parse(owned.source).ownerId, result.userId, 'Only the owned QA source identity may be removed temporarily');
-  const page = await ownPage(task, ctx.origin);
+  const page = await ownPage(task);
   let identifier;
   let attempts = 0;
   try {

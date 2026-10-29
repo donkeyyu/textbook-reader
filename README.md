@@ -17,6 +17,7 @@
 | [历史归档](docs/archive/README.md) | `docs/archive/` 保存过期设计快照和历史评审。 |
 | `.scratch/` | 任务、交接及验收证据，纳入 Git；包含尚未完成的人工验证。 |
 | `.agents/skills/` | 随仓库维护的项目技能。 |
+| `.codex/config.toml` | 随仓库维护的 Supabase MCP 连接配置；每台设备独立授权。 |
 | `.impeccable/surfaces/` | 设计工具使用的页面入口。 |
 
 根目录保留运行配置、README、AGENTS，以及工具约定的 `PRODUCT.md`、`DESIGN.md` 和领域约定的 `GLOSSARY.md`。`node_modules/`、`dist/`、`supabase/.temp/` 是本地依赖、构建输出或工具缓存，已由 Git 忽略。
@@ -33,7 +34,8 @@ npm run dev
 ```
 
 ```sh
-npm run typecheck # 类型检查
+npm run lint      # 前端与 Node 脚本 lint
+npm run typecheck # 前端与发布脚本类型检查
 npm test          # 页目录、滚动定位与内容引用检查
 npm run build     # 类型检查并构建到 dist/
 npm run preview   # 预览构建结果
@@ -41,9 +43,28 @@ npm run preview   # 预览构建结果
 
 当前使用 Vite、React 和 TypeScript。
 
+`lint:frontend` 检查 `src/` 与 Vite 配置，`lint:backend` 检查全部 `scripts/`。`typecheck:frontend` 检查应用，`typecheck:backend` 检查教材资源准备、云端内容发布和发布核对脚本及其共享模块。浏览器回归脚本参与 lint，运行行为按下方入口检查。后端数据库为 Supabase SQL/PLpgSQL；可通过已授权的云端 Supabase MCP 执行原生函数校验及 `supabase/tests/` 的整文件回滚测试，无需 Docker。原生函数校验不等同完整静态 lint；专用静态 lint 使用 `plpgsql_check` 扩展，CLI 入口为 `supabase db lint`，不包含在 TypeScript 检查中。
+
 仓库包含七年级上册 PDF，以及全部 202 页的 WebP、缩略图和来源记录。另一台电脑克隆或拉取后，直接执行上述命令即可；日常运行不需要 Python、`cwebp` 或 `prepare:textbook`。开发服务器固定监听 `0.0.0.0:5191`，本机访问 `http://localhost:5191/`。远程电脑可将 TCP 端口映射到运行服务器的电脑的 `5191` 端口，再访问映射地址。端口被占用时启动失败，不自动换端口。
 
 仅在重新生成页图时运行 `npm run prepare:textbook`。该命令需要 `cwebp`，以及本地 `materials/indexes/人教版-数学-七年级上册/images/` 中已核对的 PNG 页图（不纳入 Git）；它校验 PDF 与全部 PNG 的哈希，再生成 WebP、缩略图、来源记录及 `src/textbook/book.json`。来源见 [项目背景](docs/CONTEXT.md)。换教材时须重新核对内容与定位，不能仅替换文件名。
+
+### 新设备的 Supabase 开发连接
+
+[`.codex/config.toml`](.codex/config.toml) 固定当前 Supabase 项目的连接地址和数据库读写权限。该文件随源码提交、推送后，新设备拉取即可取得相同配置；OAuth 凭据保存在各设备本地。
+
+1. 在新设备的 Codex 中打开并信任本项目。项目配置仅在受信任的项目中加载，见 [Codex 配置说明](https://learn.chatgpt.com/docs/config-file/config-basic)。
+2. 在仓库根目录运行以下命令，确认列表包含已启用的 `supabase`，再用有项目权限的 Supabase 账号完成浏览器授权：
+
+   ```sh
+   codex mcp list
+   codex mcp login supabase
+   ```
+
+   登录按项目配置请求 `database:read` 和 `database:write` 权限，见 [Codex MCP 说明](https://learn.chatgpt.com/docs/extend/mcp)。
+3. 授权后打开新的项目聊天，让 Codex 通过 Supabase MCP 执行 `SELECT 1 AS connection_ok;`。返回 `connection_ok = 1` 表示开发连接自检通过。
+
+凭据过期或授权撤销后，重新执行登录命令。这些步骤不需要 Docker；应用中的读者登录仍由阅读器单独处理。
 
 ## 当前阅读与内容
 
@@ -128,8 +149,8 @@ node --experimental-strip-types scripts/check-cloud-content.mjs
 | 图谱与教材顶部控件对齐 | [check-graph-controls.mjs](scripts/check-graph-controls.mjs)：`checkPaneControlAlignment(page)` 支持单视图和桌面分屏，检查局部垂直中心、图标尺寸、边距、重叠及设置开合位置；页码编辑与导航须先关闭 |
 | 图谱折叠控件、顶部共用搜索与教材展开 | [check-graph-controls.mjs](scripts/check-graph-controls.mjs)：`checkGraphControls(page, { narrow })`，检查视口边界、键盘搜索、设置折叠与桌面分屏／窄屏切换 |
 | 共用内容搜索与工具栏窄屏分组 | [check-content-search.mjs](scripts/check-content-search.mjs)：`checkContentSearch(page)`；从仅显示教材开始，检查搜索选择、隐藏教材位置、分屏定位、输入框与图标同行、结果边界及 Escape 焦点 |
-| 图搜索、键盘选择及连续拖动截图 | [check-supplement-graph.mjs](scripts/check-supplement-graph.mjs)：`graphState`、`searchGraph`、`checkGraphSelection`、`captureGraphDrag`；先从工具栏打开节点图。`startGraphProbe`／`graphEmphasis`／`stopGraphProbe` 仅在专属测试浏览器检查 Pixi 明暗层级；`checkRepeatedGraphOriginal` 检查重复原文定位、失败重试和返回层级 |
-| 图与教材分屏、恢复与原文重试 | [check-split-reading.mjs](scripts/check-split-reading.mjs)：`splitReadingState`、`checkSplitKeyboardResize`、`checkReadingViewRecovery`；先完成一次图中定位。`checkSplitOriginalRetry` 检查重复原文、失败重试和两层返回；在独立测试 origin 使用已安装的图探针核对视野，分屏实现使用该入口替代旧的 `checkRepeatedGraphOriginal` |
+| 图搜索、键盘选择及连续拖动截图 | [check-supplement-graph.mjs](scripts/check-supplement-graph.mjs)：`graphState`、`searchGraph`、`checkGraphSelection`、`captureGraphDrag`；先从工具栏打开节点图。`startGraphProbe`／`graphEmphasis`／`stopGraphProbe` 仅在专属测试浏览器检查 Pixi 明暗层级 |
+| 图与教材分屏、恢复与原文重试 | [check-split-reading.mjs](scripts/check-split-reading.mjs)：`splitReadingState`、`checkSplitKeyboardResize`、`checkReadingViewRecovery`；先完成一次图中定位。`checkSplitOriginalRetry` 检查重复原文、失败重试和两层返回；在独立测试 origin 使用已安装的图探针核对视野 |
 | 云端笔记与个人补充的异步保存 | [check-async-save.mjs](scripts/check-async-save.mjs)：`startAsyncSaveServer(port)`、`assertUnusedAsyncOrigin(page, { testOrigin })`，再运行 `checkAsyncNoteSave`、`checkAsyncPersonalSave` |
 | 逐实例笔记链接与原子保存 | [check-stable-note-links.mjs](scripts/check-stable-note-links.mjs)：`startStableLinksServer`、`startStableLinksCheck`，以及真实编辑历史、创建和保存检查；需新的合成账号与独立 origin，前置状态见函数定义 |
 | 反向引用、个人连线与保存投影 | [check-bidirectional-links.mjs](scripts/check-bidirectional-links.mjs)：`startBidirectionalLinksServer`、`startBidirectionalLinksCheck`、`savedReferenceState`、`referenceView`、`checkIncomingNavigation`；使用新的 06 合成账号与独立 origin，比较保存快照、反向列表和图中两类边 |

@@ -17,7 +17,7 @@ const maxRadius = 10;
 
 // Reference: family-tree/frontend/src/hooks/usePixiGraph.ts. No content is mutated.
 export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes: GraphNode[], edges: GraphEdge[],
-  selectedKey: string | null, visible: boolean, onSelect: (key: string | null) => boolean, searchKeys: ReadonlySet<string>) {
+  selectedKey: string | null, visible: boolean, onSelect: (key: string | null) => boolean) {
   const [ready, setReady] = useState(false);
   const [error, setError] = useState('');
   const [scale, setScale] = useState(1);
@@ -26,8 +26,8 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
   const world = useRef<Container | null>(null);
   const sprites = useRef(new Map<string, Sprite>());
   const simulation = useRef<Simulation<LayoutNode, LayoutEdge> | null>(null);
-  const current = useRef({ nodes, edges, selectedKey, visible, onSelect, searchKeys });
-  current.current = { nodes, edges, selectedKey, visible, onSelect, searchKeys };
+  const current = useRef({ nodes, edges, selectedKey, visible, onSelect });
+  current.current = { nodes, edges, selectedKey, visible, onSelect };
   const actions = useRef({ reveal: (_key: string) => {}, focus: (_key: string) => {}, fit: () => {}, zoom: (_factor: number) => {},
     pan: (_x: number, _y: number) => {}, paint: (_immediate = false) => {}, pause: () => {}, resume: () => {}, update: () => {} });
   const skipFocus = useRef<string | null>(null);
@@ -205,9 +205,8 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       const focused = hovered ?? selected;
       const previewKey = control ? hovered : null;
       const neighbors = focused ? adjacency.get(focused) : undefined;
-      const matches = current.current.searchKeys;
       const showsIcon = (node: LayoutNode) => node.key === selected || node.key === hovered ||
-        matches.has(node.key) || node.radius * zoom * 2 >= 16;
+        node.radius * zoom * 2 >= 16;
       const displayRadius = (node: LayoutNode) => showsIcon(node) ? Math.max(node.radius, 10 / zoom) : node.radius;
       lines.clear();
       // Batch by source and emphasis; personal pairs have no arrowhead.
@@ -244,15 +243,14 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
           alpha: active ? .8 : focused ? .12 : .45 });
       }
       const occupied: { x: number; y: number; width: number; height: number }[] = [];
-      const rank = (key: string) => key === hovered ? 5 : key === selected ? 4 : matches.has(key) ? 2 : neighbors?.has(key) ? 1 : 0;
+      const rank = (key: string) => key === hovered ? 5 : key === selected ? 4 : neighbors?.has(key) ? 1 : 0;
       const ordered = [...next.values()].sort((a, b) => rank(b.node.key) - rank(a.node.key));
       for (const { node, dot, circle, icon, label } of ordered) {
         const active = node.key === selected || node.key === hovered;
         const emphasized = active || !!neighbors?.has(node.key);
-        const matched = matches.has(node.key);
-        const clear = !focused || node.key === focused || neighbors?.has(node.key) || matched;
+        const clear = !focused || node.key === focused || neighbors?.has(node.key);
         dot.alpha = label.alpha = clear ? 1 : .15;
-        label.tint = node.key === focused || matched ? labelFocusColor : labelColor;
+        label.tint = node.key === focused ? labelFocusColor : labelColor;
         dot.position.set(node.x!, node.y!);
         const showIcon = showsIcon(node);
         const visualRadius = displayRadius(node);
@@ -266,9 +264,9 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
         dot.visible = x + screenRadius >= 0 && x - screenRadius <= renderer!.screen.width &&
           centerY + screenRadius >= 0 && centerY - screenRadius <= renderer!.screen.height;
         const within = x > -220 && x < renderer!.screen.width + 220 && y > -100 && y < renderer!.screen.height;
-        label.visible = within && (emphasized || matched || zoom >= .8);
+        label.visible = within && (emphasized || zoom >= .8);
         if (!label.visible) continue;
-        const fullTitle = active || matched;
+        const fullTitle = active;
         const limit = 10;
         label.text = fullTitle || node.title.length <= limit ? node.title : `${node.title.slice(0, limit)}…`;
         label.style.wordWrap = fullTitle;
@@ -539,8 +537,6 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
     skipFocus.current = null;
     actions.current.paint();
   }, [selectedKey, ready]);
-
-  useEffect(() => { actions.current.paint(); }, [searchKeys]);
 
   useEffect(() => {
     const element = host.current;

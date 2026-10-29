@@ -7,6 +7,7 @@ assert.ifError(error);
 assert.deepEqual(parsePublishedContent(data.content), publishedContent());
 const nodes = contentNodes(data.content, { supplements: [], notes: {} });
 assert.equal(new Set(nodes.map((node) => node.key)).size, nodes.length);
+assert.ok(nodes[0], 'Published content must contain a node');
 const ref = { bookId, id: nodes[0].id };
 assert.notEqual(nodeKey({ ...ref, source: 'default' }), nodeKey({ ...ref, source: 'personal' }));
 const privateRead = await supabase.from('reader_personal').select('*');

@@ -1,0 +1,5 @@
+# Share connection settings; each device signs in separately.
+[mcp_servers.supabase]
+url = "https://mcp.supabase.com/mcp?project_ref=ttibfyiittkyteodrwgf&features=docs%2Caccount%2Cdatabase%2Cdebugging%2Cdevelopment%2Cfunctions%2Cbranching"
+enabled = true
+scopes = ["database:read", "database:write"]

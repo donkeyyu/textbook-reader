@@ -9,7 +9,7 @@ DonQ 已批准 Animal Island UI 风格原型用于正式界面。产品名称仍
 
 ## 使用依据
 
-- 改动前查看 [DESIGN.md](../../../DESIGN.md) 的对应组件；颜色、字体、尺寸与状态值从 [island.css](../../../src/app/island.css) 读取并复用。视觉实现限定于 `data-ui-style="island"`，兼容读者保存的其他风格。
+- 改动前查看 [DESIGN.md](../../../DESIGN.md) 的对应组件；颜色、字体、尺寸与状态值从 [island.css](../../../src/appearance/island.css) 读取并复用。视觉实现限定于 `data-ui-style="island"`，兼容读者保存的其他风格。
 - 涉及阅读空间或操作取舍时，使用 [reader-ui-design](../reader-ui-design/SKILL.md)。行为与验收归 [SPEC.md](../../../docs/SPEC.md)，风格不能改变原文定位、关联返回、草稿与续读语义。
 - [原型](../../../public/prototypes/animal-island/index.html)用于追溯外观选择；正式源码是当前实现依据。[上游库](https://github.com/guokaigdg/animal-island-ui)提供设计来源，不要求安装整库。复用上游代码或资产时保留其许可证。
 

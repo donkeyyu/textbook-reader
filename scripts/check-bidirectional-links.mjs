@@ -40,8 +40,8 @@ export async function savedReferenceState(page) {
   return page.evaluate(async () => {
     const { bookId, contentNodes, nodeKey } = await import('/src/textbook/content.ts');
     const { readPublishedContent } = await import('/src/textbook/content-store.ts');
-    const { readPersonal } = await import('/src/reader/cloud-personal.ts');
-    const { supabase } = await import('/src/reader/supabase.ts');
+    const { readPersonal } = await import('/src/content/cloud-personal.ts');
+    const { supabase } = await import('/src/account/supabase.ts');
     const { projectReferences } = await import('/src/reader/links/project-references.ts');
     const session = (await supabase.auth.getSession()).data.session;
     if (!session) throw new Error('Ticket06 synthetic login required');
@@ -100,8 +100,8 @@ export async function referenceGraphEmphasis(page, selectedKey) {
   return page.evaluate(async (selectedKey) => {
     const { bookId, contentNodes } = await import('/src/textbook/content.ts');
     const { readPublishedContent } = await import('/src/textbook/content-store.ts');
-    const { readPersonal } = await import('/src/reader/cloud-personal.ts');
-    const { supabase } = await import('/src/reader/supabase.ts');
+    const { readPersonal } = await import('/src/content/cloud-personal.ts');
+    const { supabase } = await import('/src/account/supabase.ts');
     const { projectGraph } = await import('/src/reader/graph/project-graph.ts');
     const { projectReferences } = await import('/src/reader/links/project-references.ts');
     const user = (await supabase.auth.getSession()).data.session.user;

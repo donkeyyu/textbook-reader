@@ -1,4 +1,4 @@
-import { supabase } from './supabase.ts';
+import { supabase } from '../account/supabase.ts';
 import { personalStorageKey, validPersonalData, type PersonalData } from './personal.ts';
 import { bookId } from '../textbook/content.ts';
 

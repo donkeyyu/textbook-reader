@@ -1,10 +1,10 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import book from '../textbook/book.json' with { type: 'json' };
+import book from '../../textbook/book.json' with { type: 'json' };
 import { readingPage, restoredScroll } from './session.ts';
 import { groupMarkers } from './marker-groups.ts';
 import { loadReadingPosition, readingStorageKey, saveReadingPosition } from './reading-record.ts';
-import { loadStartupDestination, resolveStartupDestination, saveStartupDestination, startupStorageKey } from '../app/startup.ts';
+import { loadStartupDestination, resolveStartupDestination, saveStartupDestination, startupStorageKey } from '../../app/startup.ts';
 
 const pages = [{ top: 32, height: 900 }, { top: 956, height: 900 }, { top: 1880, height: 500 }];
 

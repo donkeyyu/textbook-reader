@@ -1,4 +1,4 @@
-import book from '../textbook/book.json' with { type: 'json' };
+import book from '../../textbook/book.json' with { type: 'json' };
 
 export type ReadingPosition = { page: number; fraction: number };
 type ReadingBook = { documentSha256: string; pageCount: number };

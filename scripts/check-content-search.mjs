@@ -10,24 +10,31 @@ export async function checkContentSearch(page) {
     await page.keyboard.press('Enter');
     await page.waitForFunction((title) => document.getElementById('supplement-title')?.textContent === title, title);
   };
-  const first = '为什么0要单独留下？';
+  const { boundary, reference } = await page.evaluate(async () => {
+    const { readPublishedContent } = await import('/src/textbook/content-store.ts');
+    const { supplements } = await readPublishedContent();
+    return { boundary: supplements.find((note) => note.id === 'ch1-zero-boundary'),
+      reference: supplements.find((note) => note.id === 'ch1-zero-reference') };
+  });
+  assert.ok(boundary && reference, 'The reviewed zero locations must have published explanations');
+  const first = boundary.title;
   await choose(first);
   await page.waitForSelector('.location-highlight');
   assert.equal(await page.evaluate(() => !!document.querySelector('#supplement-graph:not([hidden])')), false);
   await page.click('#graph-search-toggle');
-  await page.fill('.graph-search input', '两边共同的分界点');
+  await page.fill('.graph-search input', boundary.paragraphs[0] ?? boundary.preview);
   await page.waitForSelector('#graph-search-results button');
-  assert.ok(await page.evaluate(() => document.getElementById('graph-search-results').textContent.includes('为什么0要单独留下？')));
+  assert.ok(await page.evaluate((title) => document.getElementById('graph-search-results').textContent.includes(title), first));
   await page.press('.graph-search input', 'Escape');
   const bookPage = await page.evaluate(() => document.querySelector('.page-index').textContent);
   await page.click('#open-supplement-graph');
   await page.waitForSelector('.graph-viewport canvas');
-  await choose('0要和它记录的量一起读');
+  await choose(reference.title);
   assert.equal(await page.evaluate(() => document.querySelector('.page-index').textContent), bookPage, 'Hidden book must not jump');
   const focusedScale = await page.evaluate(() => document.querySelector('.graph-zoom output').textContent);
   await page.focus('.graph-viewport');
   await page.press('.graph-viewport', '-');
-  await choose('0要和它记录的量一起读');
+  await choose(reference.title);
   await page.waitForFunction((scale) => document.querySelector('.graph-zoom output').textContent === scale, focusedScale);
   await page.click('#graph-book-toggle');
   await choose(first);

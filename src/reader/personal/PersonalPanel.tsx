@@ -1,9 +1,10 @@
-import { LocateIcon } from './LocateIcon';
+import { LinkContent } from '../links/LinkContent';
+import { LocateIcon } from '../../ui/LocateIcon';
 import { useRef, useState, type ReactNode } from 'react';
-import { MarkdownContent, MarkdownEditor } from './MarkdownEditor';
-import type { PersonalSupplement } from './personal';
-import type { ChapterRef, SectionRef } from '../textbook/sections';
-import type { LinkContext } from './links/LinkContent';
+import { MarkdownEditor } from '../links/MarkdownEditor';
+import type { PersonalSupplement } from '../../content/personal';
+import type { ChapterRef, SectionRef } from '../../textbook/sections';
+import type { LinkContext } from '../links/LinkContent';
 import './personal-library.css';
 
 export function PersonalPanel({ item, isNew, chapters, sections, links, backlinks, onSave, onClose, onBack, onDelete, onEdit, onLocate }: {
@@ -65,7 +66,7 @@ export function PersonalPanel({ item, isNew, chapters, sections, links, backlink
     </> : <>
       <button className="text-button personal-panel-back" type="button" onClick={onBack}>全部补充</button>
       <p className="personal-context">{chapters.find(({ id }) => id === item.chapterId)?.title ?? '未归属章节'}{item.sectionId ? ` · ${sections.find(({ id }) => id === item.sectionId)?.title ?? item.sectionId}` : ''}</p>
-      <MarkdownContent bindings={item.bindings} links={links}>{item.markdown}</MarkdownContent>
+      <LinkContent bindings={item.bindings} links={links} markdown={item.markdown} />
       <div className="personal-actions">
         <button className="text-button" disabled={deleting} onClick={() => setEditing(true)}>编辑补充</button>
         <button className="text-button" disabled={deleting} onClick={() => setConfirmDelete(true)}>删除补充</button>

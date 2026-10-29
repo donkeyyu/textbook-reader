@@ -2,7 +2,7 @@ import book from './book.json' with { type: 'json' };
 import { chapterSources } from './chapters.ts';
 import { chapters, sections } from './sections.ts';
 import { getLocation, type Supplement, type TextbookLocation } from './supplements.ts';
-import type { PersonalData, PersonalSupplement } from '../reader/personal.ts';
+import type { PersonalData, PersonalSupplement } from '../content/personal.ts';
 
 export const bookId = book.documentSha256;
 export type NodeType = 'concept' | 'method' | 'question' | 'review' | 'personal';

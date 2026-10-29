@@ -1,20 +1,20 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Reader } from '../reader/Reader';
-import { AccountControl } from '../reader/AccountControl';
-import { LoadingToast } from '../reader/LoadingToast';
-import { useBookContent } from '../reader/useBookContent';
-import { signIn, signInWithPassword, signOut } from '../reader/supabase';
+import { AccountControl } from '../account/AccountControl';
+import { LoadingToast } from '../ui/LoadingToast';
+import { useBookContent } from '../content/useBookContent';
+import { signIn, signInWithPassword, signOut } from '../account/supabase';
 import { getTextbook, textbooks } from '../textbook/library';
-import { Shelf } from './Shelf';
-import { loadShelf, removeShelfBook, saveShelf } from './shelf-store';
+import { Shelf } from './shelf/Shelf';
+import { loadShelf, removeShelfBook, saveShelf } from './shelf/shelf-store';
 import { loadStartupDestination, resolveStartupDestination, saveStartupDestination } from './startup';
-import { ShelfSettings } from './ShelfSettings';
-import { loadUiStyle, saveUiStyle, type UiStyle } from './ui-style';
-import './shelf.css';
-import './appearance-fonts.css';
-import './appearance.css';
+import { ShelfSettings } from './shelf/ShelfSettings';
+import { loadUiStyle, saveUiStyle, type UiStyle } from '../appearance/ui-style';
+import './shelf/shelf.css';
+import '../appearance/appearance-fonts.css';
+import '../appearance/appearance.css';
 import '../reader/reader-appearance.css';
-import './study-decorations.css';
+import '../appearance/study-decorations.css';
 
 export function App() {
   const content = useBookContent();

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { User } from '@supabase/supabase-js';
-import { supabase } from './supabase.ts';
+import { supabase } from '../account/supabase.ts';
 import { migratePersonal, onPersonalSaved, savePersonal, type PersonalSnapshot } from './cloud-personal.ts';
 import { personalStorageKey, type PersonalData } from './personal.ts';
 import { contentNodes, type PublishedContent } from '../textbook/content.ts';

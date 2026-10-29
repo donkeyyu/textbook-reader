@@ -3,16 +3,12 @@ import { minimalSetup } from 'codemirror';
 import { EditorView, placeholder } from '@codemirror/view';
 import { markdown } from '@codemirror/lang-markdown';
 import { autocompletion, startCompletion } from '@codemirror/autocomplete';
-import { LinkContent, type LinkContext } from './links/LinkContent';
-import { CreateLinkedNode } from './links/CreateLinkedNode';
-import { nodeLinkCompletions, type LinkRequest } from './links/candidates';
-import { linkTokens, type LinkBinding, type LinkDocument } from './links/document';
-import { bindLink, linkDocument, linkExtensions, linkState } from './links/state';
-import './links/links.css';
-
-export function MarkdownContent({ children, bindings, links }: { children: string; bindings?: readonly LinkBinding[]; links?: LinkContext }) {
-  return <LinkContent markdown={children} bindings={bindings} links={links} />;
-}
+import { LinkContent, type LinkContext } from './LinkContent';
+import { CreateLinkedNode } from './CreateLinkedNode';
+import { nodeLinkCompletions, type LinkRequest } from './candidates';
+import { linkTokens, type LinkBinding, type LinkDocument } from './document';
+import { bindLink, linkDocument, linkExtensions, linkState } from './state';
+import './links.css';
 
 export function MarkdownEditor({ value, bindings = [], links, onSave, onSaved, onCancel, label = 'Markdown 内容', note = false, additionalDirty = false, onEdit }: {
   value: string;
@@ -131,7 +127,7 @@ export function MarkdownEditor({ value, bindings = [], links, onSave, onSaved, o
       <button type="button" className="text-button note-mode-toggle" aria-pressed={preview} onClick={() => setPreview(!preview)}>{preview ? '源码' : '预览'}</button>
     </div>}
     <div ref={editorHost} className="markdown-source" hidden={preview} />
-    {preview && <div className="editor-preview" aria-label="Markdown 预览">{draft.markdown.trim() ? <MarkdownContent bindings={draft.bindings} links={links}>{draft.markdown}</MarkdownContent> : <p>还没有内容</p>}</div>}
+    {preview && <div className="editor-preview" aria-label="Markdown 预览">{draft.markdown.trim() ? <LinkContent bindings={draft.bindings} links={links} markdown={draft.markdown} /> : <p>还没有内容</p>}</div>}
     {unbound.length > 0 && <div className="unbound-links"><span>链接尚未选择目标：</span>{unbound.map((token, index) =>
       <button key={token.from} className="text-button" type="button" aria-label={`选择第 ${index + 1} 处链接“${token.label}”的目标`} onClick={() => {
         setPreview(false);

@@ -35,7 +35,7 @@ colors:
 
 ## 依据与维护
 
-行为要求由 [SPEC.md](docs/SPEC.md) 维护；本文件记录当前视觉层级和组件设计。修改交互时更新对应章节，过程与旧方案留在会话或任务记录，不在末尾累加另一套规则。基础样式以 [style.css](src/style.css) 为准；小岛书桌的主题值与组件样式见 [island.css](src/app/island.css)，设计规则见 [island-reader-style](.agents/skills/island-reader-style/SKILL.md)；风格变量、书架与设置见 [appearance.css](src/app/appearance.css)，阅读风格见 [reader-appearance.css](src/reader/reader-appearance.css)。不在文档中维护参数副本，控件行为以 [Reader.tsx](src/reader/Reader.tsx) 及其组件为准。
+行为要求由 [SPEC.md](docs/SPEC.md) 维护；本文件记录当前视觉层级和组件设计。修改交互时更新对应章节，过程与旧方案留在会话或任务记录，不在末尾累加另一套规则。基础样式由 [style.css](src/style.css) 按顺序导入，规则按功能放在相邻目录，跨功能覆盖见 [reader.css](src/reader/reader.css)；小岛书桌的主题值与组件样式见 [island.css](src/appearance/island.css)，设计规则见 [island-reader-style](.agents/skills/island-reader-style/SKILL.md)；风格变量、书架与设置见 [appearance.css](src/appearance/appearance.css)，阅读风格见 [reader-appearance.css](src/reader/reader-appearance.css)。不在文档中维护参数副本，控件行为以 [Reader.tsx](src/reader/Reader.tsx) 及其组件为准。
 
 [页面入口](.impeccable/surfaces/src-main-tsx.md)只负责导航。[旧生成快照](docs/archive/impeccable/design.json)已归档，不作为当前实现或行为依据；设计工具需要它时应从维护源重新生成，而不是手改生成副本。验收入口见 [README](README.md#浏览器回归)。
 
@@ -85,7 +85,7 @@ colors:
 
 ## 类型与原文标记
 
-类型配色与图标由 [supplement-types.tsx](src/reader/supplement-types.tsx) 和样式源码维护：概念与性质为蓝色、方法与推理为紫色、题目引导为赭色、回顾与探究为青绿色、个人补充为玫红色。图标与名称提供非颜色识别。
+类型配色与图标由 [supplement-types.tsx](src/reader/supplements/supplement-types.tsx) 和样式源码维护：概念与性质为蓝色、方法与推理为紫色、题目引导为赭色、回顾与探究为青绿色、个人补充为玫红色。图标与名称提供非颜色识别。
 
 标记、圆角细框、半透明填充、预览和解读面板共用对应类型色。混合类型入口使用中性组合标记，各条原文框保留自身类型色。点击标记打开解读后保留对应原文框，切换解读时更新，关闭解读时撤销。高亮层不拦截教材操作。
 

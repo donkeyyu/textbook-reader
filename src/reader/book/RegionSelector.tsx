@@ -1,5 +1,5 @@
 import { useRef, useState, type PointerEvent } from 'react';
-import type { PersonalSupplement } from './personal';
+import type { PersonalSupplement } from '../../content/personal';
 
 type Region = NonNullable<PersonalSupplement['region']>;
 const initial: Region = { x: .15, y: .4, width: .65, height: .1 };

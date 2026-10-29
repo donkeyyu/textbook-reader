@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { nodeKey, type ContentNode, type NodeRef } from '../../textbook/content.ts';
-import type { PersonalData, PersonalSupplement } from '../personal.ts';
+import type { PersonalData, PersonalSupplement } from '../../content/personal.ts';
 import { linkText, linkTokens, type LinkBinding } from './document.ts';
 import { projectReferences } from './project-references.ts';
 import { projectGraph } from '../graph/project-graph.ts';

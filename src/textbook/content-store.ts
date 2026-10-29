@@ -1,4 +1,4 @@
-import { supabase } from '../reader/supabase.ts';
+import { supabase } from '../account/supabase.ts';
 import { bookId, parsePublishedContent, type PublishedContent } from './content.ts';
 
 export async function readPublishedContent(): Promise<PublishedContent> {

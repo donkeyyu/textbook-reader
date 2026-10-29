@@ -1,8 +1,8 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import type { ContentNode, PublishedContent } from '../../textbook/content';
 import { getPage, pageLabel } from '../../textbook/catalog';
-import { supplementTypes, TypeMarker } from '../supplement-types';
-import { LocateIcon } from '../LocateIcon';
+import { supplementTypes, TypeMarker } from '../supplements/supplement-types';
+import { LocateIcon } from '../../ui/LocateIcon';
 
 export function GraphDirectory({ nodes, chapters, sections, selectedKey, onChoose, active }: {
   nodes: ContentNode[]; chapters: PublishedContent['chapters']; sections: PublishedContent['sections'];

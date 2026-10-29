@@ -7,7 +7,7 @@ import { matchingBindings, type LinkBinding } from './document.ts';
 export type LinkContext = LinkCatalog & {
   chapterId: string | null;
   onNavigate: (target: NodeRef) => void;
-  onCreate: (item: import('../personal.ts').PersonalSupplement) => Promise<NodeRef>;
+  onCreate: (item: import('../../content/personal.ts').PersonalSupplement) => Promise<NodeRef>;
 };
 
 export function LinkContent({ markdown, bindings = [], links }: {

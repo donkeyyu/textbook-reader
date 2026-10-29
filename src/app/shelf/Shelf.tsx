@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import { loadReadingPosition, type ReadingPosition } from '../reader/reading-record';
-import { pageLabel } from '../textbook/catalog';
-import bookMetadata from '../textbook/book.json';
-import { chapterAt, sectionAt } from '../textbook/sections';
-import { getTextbook, textbooks } from '../textbook/library';
+import { loadReadingPosition, type ReadingPosition } from '../../reader/book/reading-record';
+import { pageLabel } from '../../textbook/catalog';
+import bookMetadata from '../../textbook/book.json';
+import { chapterAt, sectionAt } from '../../textbook/sections';
+import { getTextbook, textbooks } from '../../textbook/library';
 
 export function Shelf({ members, error, notice, returnBookId, onAdd, onOpen, onRemove, account, settings, contentStatus }: {
   members: readonly string[];

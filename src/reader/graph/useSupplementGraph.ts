@@ -2,8 +2,8 @@ import { useEffect, useRef, useState, type RefObject } from 'react';
 import { Application, Color, Container, Graphics, Text, Sprite as PixiSprite, Texture } from 'pixi.js';
 import { forceCollide, forceLink, forceManyBody, forceSimulation, forceX, forceY,
   type Simulation, type SimulationLinkDatum, type SimulationNodeDatum } from 'd3-force';
-import { typeMarkerPaths } from '../supplement-types';
-import { spacedText } from '../text-spacing';
+import { typeMarkerPaths } from '../supplements/supplement-types';
+import { spacedText } from '../text/text-spacing';
 import type { GraphNode, GraphEdge } from './project-graph.ts';
 
 type LayoutNode = SimulationNodeDatum & GraphNode & { radius: number };

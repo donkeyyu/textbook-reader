@@ -87,7 +87,7 @@ export async function checkTestPasswordLogin(page, { testOrigin, credentials }) 
     await page.click('.account-options button:text-is("退出登录")');
     await page.waitForFunction(() => !document.querySelector('.account-email'));
     const denied = await page.evaluate(async () => {
-      const { supabase } = await import('/src/reader/supabase.ts');
+      const { supabase } = await import('/src/account/supabase.ts');
       return (await supabase.from('reader_personal').select('*')).error?.code;
     });
     assert.equal(denied, '42501');

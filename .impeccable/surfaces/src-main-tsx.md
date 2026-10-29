@@ -2,7 +2,7 @@
 version: 1
 slug: "src-main-tsx"
 primary_target: "src/main.tsx"
-related_targets: ["src/style.css","src/reader/Reader.tsx","src/reader/Supplement.tsx"]
+related_targets: ["src/style.css","src/reader/Reader.tsx","src/reader/supplements/SupplementPanel.tsx"]
 ---
 
 # 教材阅读页

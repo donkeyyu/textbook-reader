@@ -1,6 +1,6 @@
 import { useRef } from 'react';
-import { uiStyles, type UiStyle } from './ui-style';
-import { textbooks } from '../textbook/library';
+import { uiStyles, type UiStyle } from '../../appearance/ui-style';
+import { textbooks } from '../../textbook/library';
 
 export function ShelfSettings({ style, error, onChange }: {
   style: UiStyle;

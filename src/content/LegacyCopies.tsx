@@ -1,5 +1,5 @@
 import { useId, useState } from 'react';
-import { MarkdownContent } from './MarkdownEditor';
+import { LinkContent } from '../reader/links/LinkContent';
 import { validPersonalData, type PersonalData } from './personal';
 import type { LegacyCopy } from './cloud-personal';
 import './LegacyCopies.css';
@@ -36,16 +36,16 @@ export function LegacyCopies({ copies, current, titleForNote }: {
       </select>
       {old && <div className="legacy-comparison">
         <section aria-label="旧页面版本"><h2>旧页面版本</h2>
-          {old.supplements.map((item) => <section key={item.id}><h3>{item.title}</h3><MarkdownContent>{item.markdown}</MarkdownContent></section>)}
-          {Object.entries(old.notes).map(([nodeId, markdown]) => <section key={nodeId}><h3>{titleForNote(nodeId)} · 我的笔记</h3><MarkdownContent>{markdown}</MarkdownContent></section>)}
+          {old.supplements.map((item) => <section key={item.id}><h3>{item.title}</h3><LinkContent markdown={item.markdown} /></section>)}
+          {Object.entries(old.notes).map(([nodeId, markdown]) => <section key={nodeId}><h3>{titleForNote(nodeId)} · 我的笔记</h3><LinkContent markdown={markdown} /></section>)}
           {!old.supplements.length && !Object.keys(old.notes).length && <p>旧页面保存的是空内容。</p>}
         </section>
         <section aria-label="本页版本"><h2>本页版本</h2>
           {old.supplements.map((item) => {
             const latest = current.supplements.find((value) => value.id === item.id);
-            return <section key={item.id}><h3>{latest?.title ?? item.title}</h3>{latest ? <MarkdownContent>{latest.markdown}</MarkdownContent> : <p>当前版本中没有这条个人补充。</p>}</section>;
+            return <section key={item.id}><h3>{latest?.title ?? item.title}</h3>{latest ? <LinkContent markdown={latest.markdown} /> : <p>当前版本中没有这条个人补充。</p>}</section>;
           })}
-          {Object.keys(old.notes).map((nodeId) => <section key={nodeId}><h3>{titleForNote(nodeId)} · 我的笔记</h3>{current.notes[nodeId] ? <MarkdownContent>{current.notes[nodeId]!}</MarkdownContent> : <p>当前版本中没有这条笔记。</p>}</section>)}
+          {Object.keys(old.notes).map((nodeId) => <section key={nodeId}><h3>{titleForNote(nodeId)} · 我的笔记</h3>{current.notes[nodeId] ? <LinkContent markdown={current.notes[nodeId]!} /> : <p>当前版本中没有这条笔记。</p>}</section>)}
         </section>
       </div>}
       <label htmlFor={`${id}-raw`}>完整旧版数据（可选择复制）</label>

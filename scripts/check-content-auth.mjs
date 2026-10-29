@@ -63,7 +63,7 @@ async function disposeIsolatedPage(page, origin) {
   assert.equal(new URL(await page.url()).origin, origin);
   await discardEditor(page);
   await page.evaluate(async () => {
-    const { supabase } = await import('/src/reader/supabase.ts');
+    const { supabase } = await import('/src/account/supabase.ts');
     await supabase.auth.stopAutoRefresh();
   });
   // Dispose the app before removing only keys created on this empty test origin.
@@ -79,7 +79,7 @@ async function disposeIsolatedPage(page, origin) {
 
 async function setSession(page, session, expectedId) {
   const userId = await page.evaluate(async (session) => {
-    const { supabase } = await import('/src/reader/supabase.ts');
+    const { supabase } = await import('/src/account/supabase.ts');
     const { data, error } = await supabase.auth.setSession(session);
     if (error || !data.user) throw new Error('Could not restore the disposable QA session');
     return data.user.id;
@@ -89,7 +89,7 @@ async function setSession(page, session, expectedId) {
 
 async function signInB(page, credentials) {
   return page.evaluate(async (credentials) => {
-    const { supabase } = await import('/src/reader/supabase.ts');
+    const { supabase } = await import('/src/account/supabase.ts');
     const { data, error } = await supabase.auth.signInWithPassword(credentials);
     if (error || !data.user) throw new Error('The disposable QA B password login failed');
     return data.user.id;
@@ -98,7 +98,7 @@ async function signInB(page, credentials) {
 
 async function waitAccount(page, userId) {
   await page.waitForFunction(async (expected) => {
-    const { supabase } = await import('/src/reader/supabase.ts');
+    const { supabase } = await import('/src/account/supabase.ts');
     const { data } = await supabase.auth.getSession();
     return data.session?.user.id === expected && document.querySelector('.account-email')?.textContent === data.session.user.email;
   }, userId, { timeout: 30_000 });
@@ -189,7 +189,7 @@ export async function checkContentAuth(task, result, credentialsB, { testOrigin 
     source = await ownPage(task, created, protectedPages);
     await source.goto(`${sourceOrigin}/__content_migration_check`);
     borrowed = await source.evaluate(async ({ personalKey, sourceKey }) => {
-      const { supabase } = await import('/src/reader/supabase.ts');
+      const { supabase } = await import('/src/account/supabase.ts');
       const { data, error } = await supabase.auth.getSession();
       if (error || !data.session) throw new Error('The main QA A session is unavailable');
       await supabase.auth.stopAutoRefresh();
@@ -207,7 +207,7 @@ export async function checkContentAuth(task, result, credentialsB, { testOrigin 
     await setSession(page, borrowed.session, result.userId);
     baselineA = await readCloudPersonal(page);
     await page.evaluate(async ({ ownerId, ownNode, ownNoteId, ownNote }) => {
-      const { readPersonal, savePersonal } = await import('/src/reader/cloud-personal.ts');
+      const { readPersonal, savePersonal } = await import('/src/content/cloud-personal.ts');
       const before = await readPersonal(ownerId);
       if (before.data.supplements.some((item) => item.id === ownNode.id) || ownNoteId in before.data.notes) throw new Error('QA fixture identity collision');
       await savePersonal({ ...before.data, supplements: [...before.data.supplements, ownNode], notes: { ...before.data.notes, [ownNoteId]: ownNote } }, before);
@@ -217,7 +217,7 @@ export async function checkContentAuth(task, result, credentialsB, { testOrigin 
     assert.notEqual(ownerB, result.userId);
     baselineB = await readCloudPersonal(page);
     await page.evaluate(async () => {
-      const { supabase } = await import('/src/reader/supabase.ts');
+      const { supabase } = await import('/src/account/supabase.ts');
       const { error } = await supabase.auth.signOut({ scope: 'local' });
       if (error) throw new Error('Could not revoke the temporary QA B baseline session');
     });
@@ -250,7 +250,7 @@ export async function checkContentAuth(task, result, credentialsB, { testOrigin 
     assert.equal(underB.revision, baselineB.revision);
     assert.deepEqual(underB.copies, baselineB.copies);
     const forbidden = await page.evaluate(async ({ bookId, ownerId }) => {
-      const { supabase } = await import('/src/reader/supabase.ts');
+      const { supabase } = await import('/src/account/supabase.ts');
       const { data, error } = await supabase.rpc('reader_personal_snapshot', { p_book_id: bookId, p_owner_id: ownerId });
       return { denied: data === null && !!error, code: error?.code };
     }, { bookId: book.documentSha256, ownerId: result.userId });
@@ -285,7 +285,7 @@ export async function checkContentAuth(task, result, credentialsB, { testOrigin 
     assert.equal(loadedB.revision, baselineB.revision);
     assert.deepEqual(loadedB.copies, baselineB.copies);
     await page.evaluate(async () => {
-      const { supabase } = await import('/src/reader/supabase.ts');
+      const { supabase } = await import('/src/account/supabase.ts');
       const { error } = await supabase.auth.signOut({ scope: 'local' });
       if (error) throw new Error('Could not revoke the temporary QA B switch session');
     });
@@ -319,17 +319,17 @@ export async function checkContentAuth(task, result, credentialsB, { testOrigin 
         await discardEditor(page);
         if (prepared && borrowed) {
           const active = await page.evaluate(async () => {
-            const { supabase } = await import('/src/reader/supabase.ts');
+            const { supabase } = await import('/src/account/supabase.ts');
             const { data } = await supabase.auth.getSession();
             return data.session?.user.id ?? null;
           });
           if (active === ownerB) await page.evaluate(async () => {
-            const { supabase } = await import('/src/reader/supabase.ts');
+            const { supabase } = await import('/src/account/supabase.ts');
             await supabase.auth.signOut({ scope: 'local' });
           });
           if (active !== result.userId) await setSession(page, borrowed.session, result.userId);
           await page.evaluate(async ({ ownerId, ownNodeId, ownNoteId, noteId, original, existed, delayed, recovered }) => {
-            const { readPersonal, savePersonal } = await import('/src/reader/cloud-personal.ts');
+            const { readPersonal, savePersonal } = await import('/src/content/cloud-personal.ts');
             const current = await readPersonal(ownerId);
             const notes = { ...current.data.notes };
             delete notes[ownNoteId];

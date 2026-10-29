@@ -109,7 +109,7 @@ async function editPersonal(page, title, markdown) {
 async function privateCleanup(page, ownerId, original, edited, deleteId) {
   await discardEditor(page);
   return page.evaluate(async ({ ownerId, original, edited, deleteId }) => {
-    const { readPersonal, savePersonal } = await import('/src/reader/cloud-personal.ts');
+    const { readPersonal, savePersonal } = await import('/src/content/cloud-personal.ts');
     const current = await readPersonal(ownerId);
     let changed = false;
     const supplements = current.data.supplements.filter((item) => {
@@ -163,8 +163,8 @@ export async function checkMigratedPersonalMaintenance(task, result) {
     // Create a separately owned fixture through the real storage operation so
     // the delete check never removes the original migrated node.
     await page.evaluate(async (item) => {
-      const { supabase } = await import('/src/reader/supabase.ts');
-      const { readPersonal, savePersonal } = await import('/src/reader/cloud-personal.ts');
+      const { supabase } = await import('/src/account/supabase.ts');
+      const { readPersonal, savePersonal } = await import('/src/content/cloud-personal.ts');
       const { data } = await supabase.auth.getSession();
       const before = await readPersonal(data.session.user.id);
       await savePersonal({ ...before.data, supplements: [...before.data.supplements, item] }, before);
@@ -243,8 +243,8 @@ export async function checkStaleCloudNote(task, result) {
 export async function checkConflictHttp(task, result) {
   const ctx = await context(task, result);
   const response = await ctx.control.evaluate(async ({ ownerId, bookId }) => {
-    const { supabase } = await import('/src/reader/supabase.ts');
-    const { readPersonal } = await import('/src/reader/cloud-personal.ts');
+    const { supabase } = await import('/src/account/supabase.ts');
+    const { readPersonal } = await import('/src/content/cloud-personal.ts');
     const before = await readPersonal(ownerId);
     const content = structuredClone(before.data);
     content.notes['qa-rejected-conflict-probe'] = 'This stale write must be rejected';
@@ -299,7 +299,7 @@ export async function checkCloudSaveFailure(task, result) {
         await discardEditor(page);
         // A failed assertion can still leave a successful QA draft in the cloud.
         await page.evaluate(async ({ ownerId, noteId, original, draft }) => {
-          const { readPersonal, savePersonal } = await import('/src/reader/cloud-personal.ts');
+          const { readPersonal, savePersonal } = await import('/src/content/cloud-personal.ts');
           const current = await readPersonal(ownerId);
           if (current.data.notes[noteId] === draft) await savePersonal({ ...current.data, notes: { ...current.data.notes, [noteId]: original } }, current);
         }, { ownerId: result.userId, noteId: result.fixture.noteId, original, draft });

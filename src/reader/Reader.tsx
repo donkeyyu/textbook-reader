@@ -1,31 +1,36 @@
+import { BookNavigation } from "./book/BookNavigation";
+import { PageControls } from "./book/PageControls";
+import { PageImage } from "./book/PageImage";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
-import { bookTitle, getPage, pageCount, pages, pageLabel, resolvePageInput } from "../textbook/catalog";
+import { bookTitle, getPage, pageCount, pages, pageLabel } from "../textbook/catalog";
 import { getLocation } from "../textbook/supplements";
 import { bookId, nodeKey, supplementQueries } from '../textbook/content';
-import type { PersonalData, PersonalSupplement } from './personal';
-import type { BookContent } from './useBookContent';
-import { AccountControl } from './AccountControl';
-import { LoadingToast } from './LoadingToast';
-import { LegacyCopies } from './LegacyCopies';
-import { signIn, signInWithPassword, signOut } from './supabase';
-import { MarkdownEditor } from './MarkdownEditor';
-import { PanelResize } from './PanelResize';
-import { PersonalPanel } from './PersonalPanel';
-import { PersonalLibrary } from './PersonalLibrary';
-import { RegionSelector } from './RegionSelector';
-import { supplementTypes, supplementType, TypeMarker, type SupplementType } from './supplement-types';
-import { readingPage, restoredScroll, type PageMetric } from "./session";
-import { groupMarkers } from "./marker-groups";
-import { loadReadingPosition, saveReadingPosition } from "./reading-record";
-import { SupplementPanel, SupplementPreview, type PreviewAnchor } from "./Supplement";
-import { ContentSearch } from './ContentSearch';
+import type { PersonalData, PersonalSupplement } from '../content/personal';
+import type { BookContent } from '../content/useBookContent';
+import { AccountControl } from '../account/AccountControl';
+import { LoadingToast } from '../ui/LoadingToast';
+import { LegacyCopies } from '../content/LegacyCopies';
+import { signIn, signInWithPassword, signOut } from '../account/supabase';
+import { MarkdownEditor } from './links/MarkdownEditor';
+import { PanelResize } from './layout/PanelResize';
+import { PersonalPanel } from './personal/PersonalPanel';
+import { PersonalLibrary } from './personal/PersonalLibrary';
+import { RegionSelector } from './book/RegionSelector';
+import { supplementTypes, supplementType, TypeMarker, type SupplementType } from './supplements/supplement-types';
+import { readingPage, restoredScroll, type PageMetric } from "./book/session";
+import { groupMarkers } from "./book/marker-groups";
+import { loadReadingPosition, saveReadingPosition } from "./book/reading-record";
+import { SupplementPanel } from "./supplements/SupplementPanel";
+import { SupplementPreview, type PreviewAnchor } from "./supplements/SupplementPreview";
+import { ContentSearch } from './search/ContentSearch';
 import { SupplementGraph, GraphRelated } from './graph/SupplementGraph';
 import type { LinkBinding } from './links/document';
 import type { LinkContext } from './links/LinkContent';
 import { Backlinks } from './links/Backlinks';
 import { projectReferences } from './links/project-references';
-import { SplitResize, useReadingViews } from './split/ReadingViews';
-import { usePanelLayout } from './split/usePanelLayout';
+import { SplitResize } from './layout/SplitResize';
+import { useReadingViews } from './layout/useReadingViews';
+import { usePanelLayout } from './layout/usePanelLayout';
 
 type ReadingContext = {
   page: number;
@@ -46,25 +51,6 @@ function measurePages(list: HTMLDivElement): PageMetric[] {
     const page = child as HTMLElement;
     return { top: list.offsetTop + page.offsetTop, height: page.offsetHeight };
   });
-}
-
-function Chevron({ direction }: { direction: "left" | "right" }) {
-  return <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d={direction === "left" ? "m14 6-6 6 6 6" : "m10 6 6 6-6 6"} stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>;
-}
-
-function PageImage({ page }: { page: (typeof pages)[number] }) {
-  const [failed, setFailed] = useState(false);
-  const [attempt, setAttempt] = useState(0);
-  return <>
-    <img className="page-image" src={`${page.image}${attempt ? `?retry=${attempt}` : ""}`} alt={page.alt}
-      width={page.width} height={page.height} loading={page.page === 1 ? "eager" : "lazy"} decoding="async"
-      style={{ visibility: failed ? "hidden" : undefined }} onError={() => setFailed(true)} onLoad={() => setFailed(false)} />
-    {failed && <div className="page-error" role="alert"><span>第 {page.page} 页暂时无法加载</span>
-      <button className="text-button" onClick={() => { setFailed(false); setAttempt(attempt + 1); }}>重试</button>
-    </div>}
-  </>;
 }
 
 export function Reader({ content, onReturnToShelf, navigationNotice = '' }: { content: BookContent; onReturnToShelf: (notice: string) => void; navigationNotice?: string }) {
@@ -105,12 +91,8 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '' }: { co
     });
   }
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageInput, setPageInput] = useState("");
-  const [pageError, setPageError] = useState("");
-  const [editingPage, setEditingPage] = useState(false);
   const [navigationOpen, setNavigationOpen] = useState(false);
   const [searchTarget, setSearchTarget] = useState<{ key: string } | null>(null);
-  const [navigationMode, setNavigationMode] = useState<'contents' | 'pages'>('contents');
   const { layoutRef, bottomPanel: panelBelow } = usePanelLayout(views.split, navigationOpen && views.bookVisible);
   const [supplementId, setSupplementId] = useState<string | null>(null);
   const [choiceIds, setChoiceIds] = useState<string[] | null>(null);
@@ -128,7 +110,6 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '' }: { co
   const [error, setError] = useState<string | null>(null);
   const scroller = useRef<HTMLDivElement>(null);
   const pageList = useRef<HTMLDivElement>(null);
-  const thumbnailList = useRef<HTMLDivElement>(null);
   const metrics = useRef<PageMetric[]>([]);
   const anchor = useRef({ page: 1, fraction: 0 });
   const measureReading = useRef<(restore?: boolean) => void>(() => {});
@@ -327,21 +308,6 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '' }: { co
     if (selectionPage !== null) document.querySelector<HTMLElement>('.region-selector')?.focus({ preventScroll: true });
   }, [selectionPage]);
 
-  useEffect(() => {
-    if (!editingPage) {
-      setPageInput(String(currentPage));
-      setPageError("");
-    }
-    const list = thumbnailList.current;
-    const selected = document.getElementById(`thumbnail-${currentPage}`);
-    if (list && !list.hidden && selected) {
-      if (selected.offsetTop < list.scrollTop) list.scrollTop = selected.offsetTop;
-      else if (selected.offsetTop + selected.offsetHeight > list.scrollTop + list.clientHeight) {
-        list.scrollTop = selected.offsetTop + selected.offsetHeight - list.clientHeight;
-      }
-    }
-  }, [currentPage, navigationOpen, navigationMode, editingPage]);
-
   useLayoutEffect(() => {
     if (!commit || !scroller.current || !pageList.current) return;
     const element = scroller.current;
@@ -356,8 +322,6 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '' }: { co
     anchor.current = { page: commit.page, fraction: (element.scrollTop - metric.top) / metric.height };
     current.current = commit.page;
     setCurrentPage(commit.page);
-    setPageInput(String(commit.page));
-    setPageError("");
     const panel = document.getElementById("supplement-panel");
     const focused = document.getElementById(commit.focusId);
     focused?.focus({ preventScroll: true });
@@ -613,7 +577,6 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '' }: { co
         focusId: jump.restore?.focusId ?? (jump.locationId ? `location-${jump.locationId}` : `page-${jump.page}`) });
     } catch {
       if (requestId.current === id) {
-        setPageInput(String(current.current));
         setError(`文件第 ${jump.page} 页暂时无法加载，当前阅读位置已保留。`);
       }
     } finally {
@@ -639,40 +602,6 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '' }: { co
     ];
   });
   const previous = history.at(-1);
-
-  function closePageInput() {
-    setEditingPage(false);
-    setPageError("");
-    requestAnimationFrame(() => document.querySelector<HTMLButtonElement>('.page-index')?.focus());
-  }
-
-  const pageControls = <div className="page-controls">
-    <button className="icon-button" aria-label="上一页" disabled={currentPage === 1 || pending} onClick={() => { void navigate({ page: currentPage - 1 }); }}><Chevron direction="left" /></button>
-    {editingPage ? <form id="page-jump" className="page-jump" aria-label="跳转页面" onBlur={() => {
-      setEditingPage(false); setPageError("");
-    }} onKeyDown={(event) => {
-      if (event.key === 'Escape') { event.preventDefault(); event.stopPropagation(); closePageInput(); }
-    }} onSubmit={(event) => {
-      event.preventDefault();
-      const result = resolvePageInput(pageInput);
-      if (result.error !== undefined) { setPageError(result.error); return; }
-      setEditingPage(false); setPageError("");
-      void navigate({ page: result.page });
-    }}>
-      <input id="page-input" aria-label="页码" aria-invalid={!!pageError}
-        aria-describedby={pageError ? "page-input-error" : undefined} placeholder={`1–${pageCount}`}
-        autoFocus inputMode="numeric" enterKeyHint="go" value={pageInput} onChange={(event) => { setPageInput(event.target.value); setPageError(""); }}
-        onFocus={(event) => event.currentTarget.select()} />
-      <span>/{pageCount}</span>
-      {pageError && <p id="page-input-error" className="page-input-error" role="alert">{pageError}</p>}
-    </form> : <button className="page-index" type="button" aria-label={`第 ${currentPage} 页，共 ${pageCount} 页，点击输入页码`}
-      title="输入页码，按 Enter 跳转" onClick={() => {
-        setPageInput(String(currentPage)); setPageError(""); setEditingPage(true);
-      }}>
-      <span>{currentPage}/{pageCount}</span>
-    </button>}
-    <button className="icon-button" aria-label="下一页" disabled={currentPage === pageCount || pending} onClick={() => { void navigate({ page: currentPage + 1 }); }}><Chevron direction="right" /></button>
-  </div>;
 
   return <div className="reader-app" onSubmitCapture={(event) => {
     if ((event.target as HTMLElement).matches('.page-jump') && document.querySelector('[data-dirty="true"]') && !window.confirm('有尚未保存的内容，放弃修改？')) {
@@ -791,42 +720,10 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '' }: { co
         }}>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /><circle cx="4" cy="6" r="1" fill="currentColor" /><circle cx="4" cy="12" r="1" fill="currentColor" /><circle cx="4" cy="18" r="1" fill="currentColor" /></svg>
       </button>
-      {pageControls}
+      <PageControls currentPage={currentPage} pending={pending} onNavigate={(page) => { void navigate({ page }); }} />
       </div>
-      <nav id="page-sidebar" className="page-sidebar book-navigation" hidden={!navigationOpen || !views.bookVisible} aria-label="教材目录"
-        onKeyDown={(event) => { if (event.key === 'Escape') { event.preventDefault(); event.stopPropagation(); setNavigationOpen(false); toggleButton.current?.focus(); } }}>
-        <div className="book-navigation-modes" role="group" aria-label="教材导航方式">
-          <button type="button" aria-label="目录" title="目录" aria-pressed={navigationMode === 'contents'} onClick={() => setNavigationMode('contents')}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /><path d="M4 6h.01M4 12h.01M4 18h.01" stroke="currentColor" strokeWidth="3" strokeLinecap="round" /></svg>
-          </button>
-          <button type="button" aria-label="页面" title="页面" aria-pressed={navigationMode === 'pages'} onClick={() => setNavigationMode('pages')}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="3" width="6" height="8" rx="1" stroke="currentColor" strokeWidth="1.5" /><rect x="14" y="3" width="6" height="8" rx="1" stroke="currentColor" strokeWidth="1.5" /><rect x="4" y="15" width="6" height="6" rx="1" stroke="currentColor" strokeWidth="1.5" /><rect x="14" y="15" width="6" height="6" rx="1" stroke="currentColor" strokeWidth="1.5" /></svg>
-          </button>
-        </div>
-        <div className="book-navigation-position" hidden={navigationMode !== 'pages'}>
-          <span>文件第 {currentPage} 页</span>
-          <span>{getPage(currentPage).printedPage === null ? '无印刷页码' : pageLabel(getPage(currentPage))}</span>
-        </div>
-        <div className="book-contents" hidden={navigationMode !== 'contents'}>
-          {chapters.map((chapter) => <details key={chapter.id} data-current={currentPage >= chapter.start && currentPage <= chapter.end ? 'true' : undefined}>
-            <summary>{chapter.title}</summary>
-            <button type="button" onClick={() => { void navigate({ page: chapter.start }); }}>章首页</button>
-            {sections.filter((section) => section.chapterId === chapter.id).map((section) =>
-              <button type="button" key={section.id} aria-current={currentPage >= section.start && currentPage <= section.end ? 'location' : undefined}
-                onClick={() => { void navigate({ page: section.start }); }}>{section.title}</button>)}
-          </details>)}
-        </div>
-        <div className="page-thumbnails" ref={thumbnailList} hidden={navigationMode !== 'pages'}>
-          {pages.map((page) => <button id={`thumbnail-${page.page}`} key={page.page} className="page-thumbnail" title={page.alt}
-            tabIndex={page.page === currentPage ? 0 : -1} aria-label={`跳转到文件第 ${page.page} 页，${page.printedPage === null ? "无印刷页码" : pageLabel(page)}`} aria-current={page.page === currentPage ? "page" : undefined}
-            onKeyDown={(event) => {
-              const number = event.key === "ArrowDown" ? page.page + 1 : event.key === "ArrowUp" ? page.page - 1 : event.key === "Home" ? 1 : event.key === "End" ? pageCount : null;
-              if (number !== null) { event.preventDefault(); document.getElementById(`thumbnail-${Math.max(1, Math.min(pageCount, number))}`)?.focus(); }
-            }} onClick={() => { void navigate({ page: page.page }); }}>
-            <img src={page.thumbnail} alt="" width="80" height="112" loading="lazy" />
-          </button>)}
-        </div>
-      </nav>
+      <BookNavigation open={navigationOpen && views.bookVisible} currentPage={currentPage} chapters={chapters} sections={sections}
+        onNavigate={(page) => { void navigate({ page }); }} onClose={() => { setNavigationOpen(false); toggleButton.current?.focus(); }} />
       <div id="textbook-view" className="paper-scroller" ref={scroller} tabIndex={0} aria-label="教材连续阅读" inert={!views.bookVisible} aria-hidden={!views.bookVisible}
         onClick={(event) => {
           const target = event.target as HTMLElement;

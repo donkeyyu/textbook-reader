@@ -131,8 +131,8 @@ export async function graphEmphasis(page, selectedKey) {
   return page.evaluate(async (selectedKey) => {
     const { readPublishedContent } = await import('/src/textbook/content-store.ts');
     const { contentNodes } = await import('/src/textbook/content.ts');
-    const { supabase } = await import('/src/reader/supabase.ts');
-    const { readPersonal } = await import('/src/reader/cloud-personal.ts');
+    const { supabase } = await import('/src/account/supabase.ts');
+    const { readPersonal } = await import('/src/content/cloud-personal.ts');
     const { projectGraph } = await import('/src/reader/graph/project-graph.ts');
     const session = (await supabase.auth.getSession()).data.session;
     const personal = session ? (await readPersonal(session.user.id)).data : { supplements: [], notes: {} };

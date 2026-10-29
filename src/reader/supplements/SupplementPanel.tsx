@@ -1,33 +1,10 @@
-import { LocateIcon } from './LocateIcon';
-import { useLayoutEffect, useRef, useState, type ReactNode } from "react";
-import { getLocation, type Supplement } from "../textbook/supplements";
+import { LocateIcon } from '../../ui/LocateIcon';
+import type { ReactNode } from "react";
+import { getLocation, type Supplement } from "../../textbook/supplements";
 import { supplementType, TypeMarker } from './supplement-types';
-import { MathText } from './MathText';
+import { MathText } from '../text/MathText';
 import './supplement-appearance.css';
-import { getPage, pageLabel } from "../textbook/catalog";
-
-export type PreviewAnchor = { left: number; top: number; width: number; docked: boolean; maxHeight?: number };
-
-export function SupplementPreview({ note, anchor, onKeep, onLeave }: {
-  note: Supplement;
-  anchor: PreviewAnchor;
-  onKeep: () => void;
-  onLeave: () => void;
-}) {
-  const element = useRef<HTMLDivElement>(null);
-  const [top, setTop] = useState(76);
-  useLayoutEffect(() => {
-    if (!element.current || anchor.docked) return;
-    const { height } = element.current.getBoundingClientRect();
-    setTop(Math.max(76, Math.min(anchor.top, window.innerHeight - height - 12)));
-  }, [anchor, note]);
-  return <div ref={element} id="supplement-preview" className={`supplement-preview${anchor.docked ? " preview-docked" : ""}`} role="tooltip" aria-label={note.title} data-supplement-type={supplementType(note)}
-    style={anchor.docked ? { maxHeight: anchor.maxHeight } : { left: anchor.left, top, width: anchor.width }} onPointerEnter={onKeep} onPointerLeave={onLeave} onFocus={onKeep}
-    onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) onLeave(); }}>
-    <p><MathText text={note.preview} /></p>
-    <p className="preview-hint">点击标记展开解读</p>
-  </div>;
-}
+import { getPage, pageLabel } from "../../textbook/catalog";
 
 export function SupplementPanel({ notes, expandedId, pending, onSelect, onClose, onRelated, onBack, onLocate, activeLocationId, renderPersonal, renderRelated, onHide, methodOpenIds, onMethodToggle }: {
   onHide: (id: string) => void;

@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
+const root = resolve(fileURLToPath(new URL('..', import.meta.url))).replaceAll('\\', '/');
 const fixtureId = 'virtual:bookshelf-auth-drafts';
 
 // Synthetic accounts and in-memory snapshots only. No real auth request, email,
@@ -42,8 +42,8 @@ export async function readPublishedContent() { return { documentSha256: 'qa', pa
 const entry = `
 import { useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { useBookContent } from '/src/reader/useBookContent.ts';
-import { MarkdownEditor } from '/src/reader/MarkdownEditor.tsx';
+import { useBookContent } from '/src/content/useBookContent.ts';
+import { MarkdownEditor } from '/src/reader/links/MarkdownEditor.tsx';
 import { control } from '${fixtureId}';
 function Check() {
   const content = useBookContent();
@@ -86,8 +86,8 @@ export async function startAuthDraftOwnershipServer({ port = 5294 } = {}) {
       transform(source, id) {
         const path = id.split('?')[0];
         if (path === `${root}/src/main.tsx`) return entry;
-        if (path === `${root}/src/reader/useBookContent.ts`) {
-          for (const original of ['./supabase.ts', './cloud-personal.ts', '../textbook/content-store.ts']) {
+        if (path === `${root}/src/content/useBookContent.ts`) {
+          for (const original of ['../account/supabase.ts', './cloud-personal.ts', '../textbook/content-store.ts']) {
             source = source.replace(`from '${original}'`, `from '${fixtureId}'`);
           }
           return source;

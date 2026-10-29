@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { supabase } from '../src/reader/supabase.ts';
+import { supabase } from '../src/account/supabase.ts';
 import { bookId, publishedContent, parsePublishedContent, contentNodes, nodeKey } from '../src/textbook/content.ts';
 
 const { data, error } = await supabase.from('reader_books').select('revision,content').eq('book_id', bookId).single();

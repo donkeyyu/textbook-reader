@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { getPage, pageLabel } from '../textbook/catalog';
-import type { ContentNode } from '../textbook/content';
-import type { ChapterRef, SectionRef } from '../textbook/sections';
-import type { PersonalSupplement } from './personal';
-import { TypeMarker } from './supplement-types';
+import { getPage, pageLabel } from '../../textbook/catalog';
+import type { ContentNode } from '../../textbook/content';
+import type { ChapterRef, SectionRef } from '../../textbook/sections';
+import type { PersonalSupplement } from '../../content/personal';
+import { TypeMarker } from '../supplements/supplement-types';
 import './personal-library.css';
 
 export function PersonalLibrary({ nodes, chapters, sections, onOpen, onCreate, onClose }: {

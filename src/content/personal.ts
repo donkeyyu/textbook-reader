@@ -1,5 +1,5 @@
 import book from '../textbook/book.json' with { type: 'json' };
-import { validBindings, type LinkBinding } from './links/document.ts';
+import { validBindings, type LinkBinding } from '../reader/links/document.ts';
 
 export type PersonalSupplement = {
   id: string;

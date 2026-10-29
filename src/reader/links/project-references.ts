@@ -1,5 +1,5 @@
 import { nodeKey, type ContentNode } from '../../textbook/content.ts';
-import type { PersonalData } from '../personal.ts';
+import type { PersonalData } from '../../content/personal.ts';
 import { resolveLink } from './candidates.ts';
 import { matchingBindings, sameTarget } from './document.ts';
 

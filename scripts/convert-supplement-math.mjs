@@ -4,7 +4,7 @@
 // 用法：node --experimental-strip-types scripts/convert-supplement-math.mjs [--chapter=第一章] [--spans] [--write]
 import { readFile, writeFile } from 'node:fs/promises';
 import { chapterSources } from '../src/textbook/chapters.ts';
-import { loadMath, renderMath } from '../src/reader/math.ts';
+import { loadMath, renderMath } from '../src/reader/text/math.ts';
 
 const args = process.argv.slice(2);
 const write = args.includes('--write');

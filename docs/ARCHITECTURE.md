@@ -4,28 +4,35 @@
 
 ## 当前模块
 
-| 文件 | 当前责任 |
+源码按功能归位；同一功能的 TS、TSX、CSS 与测试放在相邻目录。跨书架与阅读页共享的账号、内容会话、外观和通用控件放在 `reader/` 外。
+
+| 目录或文件 | 当前责任 |
 | --- | --- |
-| `src/app/App.tsx`、`Shelf.tsx`、`shelf-store.ts`、`startup.ts` | 书架与阅读页切换、教材选择、书架成员与启动目的地分别持久化；返回入口沿用阅读器的草稿保护 |
+| `src/app/App.tsx`、`startup.ts` | 书架与阅读页切换、启动目的地持久化；App 持有唯一的内容会话 |
+| `src/app/shelf/` | 书架、教材管理、设置入口与书架成员持久化 |
+| `src/account/` | 共享 Supabase 客户端、邮箱登录、开发模式测试密码登录与账号窗口 |
+| `src/content/` | 个人内容类型与校验、云端读取、旧内容导入及副本比较、乐观修订保存、账号切换与异步结果保护 |
+| `src/appearance/` | 四种阅读风格、字体、书桌装饰与风格偏好持久化 |
+| `src/ui/` | 共用加载提示与定位图标 |
+| `src/style.css`、`src/styles/base.css` | 有序样式入口、全局基础规则与共用控件；功能基础样式放在所属目录，跨功能覆盖规则在 `reader/reader.css` 最后加载 |
 | `src/textbook/library.ts` | 只注册已有阅读资源支持的教材版本及封面、书名和已核对版本标签 |
 | `scripts/prepare-textbook.mjs` | 核对源 PDF、索引和 PNG 哈希，生成运行页图、缩略图与目录数据 |
 | `src/textbook/book.json`、`catalog.ts` | 教材身份、文件页序、印刷页码映射、图像尺寸与页面查询；映射服务来源核对和关联标签，当前跳页界面按 SPEC R7 |
 | `content/grade-7-volume-1/chapter-N.json`、`chapter-N.locations.json` | 分章补充、逐页取舍、逐题清单及来源区域；第一章定位沿用 `locations.json` |
 | `src/textbook/chapters.ts`、`supplements.ts` | 注册六章发布源，检查教材身份，查询已核对的教材位置 |
-| `src/textbook/content.ts`、`content-store.ts`、`sections.ts` | 从 Supabase 读取完整默认正文，提供统一节点身份、章／节和位置投影，以及运行时补充查询 |
-| `src/reader/session.ts` | 阅读页判断和尺寸变化后的滚动几何计算；不是完整会话状态机 |
-| `src/reader/reading-record.ts` | 按教材身份读写页序及页内比例，校验记录并报告存储失败 |
-| `src/reader/Reader.tsx` | 原页、入口、预览、分组选择、筛选与隐藏状态、导航事务、返回栈、滚动与焦点协调 |
-| `src/reader/Supplement.tsx` | 预览、解读、分组折叠、方法开合及关联入口 |
-| `src/reader/marker-groups.ts`、`supplement-types.tsx` | 按显示像素合并碰撞入口；提供类型、图标和名称 |
-| `src/reader/personal.ts` | 个人内容类型与校验、旧 localStorage 格式及兼容读写 |
-| `src/reader/cloud-personal.ts`、`useBookContent.ts` | 云端读取、旧内容导入、乐观修订保存、更新通知、账号切换及异步结果保护 |
-| `src/reader/supabase.ts`、`AccountControl.tsx`、`LegacyCopies.tsx` | 邮箱登录、开发模式测试密码登录、账号操作及旧版原始副本的只读比较与复制 |
+| `src/textbook/content.ts`、`content-store.ts`、`sections.ts` | 读取完整默认正文，提供统一节点身份、章／节和位置投影，以及运行时补充查询 |
+| `src/reader/Reader.tsx` | 阅读协调入口：导航事务、返回上下文、选择、筛选、预览、草稿保护、滚动与焦点协调 |
+| `src/reader/book/` | 页图加载与重试、页码编辑、教材目录与缩略图、原页框选、入口碰撞分组、滚动几何与续读记录 |
+| `src/reader/supplements/` | 解读面板、气泡预览、分组折叠、方法开合、关联入口及类型图标 |
+| `src/reader/personal/` | 个人补充列表、编辑面板、保存与删除操作 |
+| `src/reader/links/` | Markdown 编辑、双括号语法、逐实例绑定、CodeMirror 事务与历史、候选、创建表单、只读渲染与反向引用 |
+| `src/reader/text/` | MathJax 按需加载与公式渲染、公式分段及文本间距 |
+| `src/reader/search/` | 书页与图谱共用的内容搜索 |
+| `src/reader/layout/` | 图／教材的会话可见状态、窄屏切换、恢复入口、分屏宽度与解读面板尺寸调整 |
+| `src/reader/graph/` | 补充节点图、目录、预览、关联投影及画布交互 |
 | `supabase/migrations/` | 默认内容与个人数据表、RLS、事务保存及迁移 RPC |
-| `src/reader/PersonalPanel.tsx`、`MarkdownEditor.tsx` | 个人补充编辑、笔记自动保存、Markdown 预览与草稿保护 |
-| `src/reader/links/` | 双括号语法、逐实例绑定、CodeMirror 事务与历史、候选、创建表单和预览导航 |
-| `src/reader/split/` | 图／教材的会话可见状态、窄屏切换、恢复入口和键盘／指针分隔条 |
-| `src/reader/RegionSelector.tsx`、`PanelResize.tsx` | 原页框选和下方面板高度调整 |
+
+`PageControls` 内聚输入、校验和取消；`BookNavigation` 内聚导航模式、缩略图键盘移动和当前页滚动。两者只提交目标文件页序，由 Reader 统一处理加载、草稿保护与失败恢复。只读 Markdown 直接使用 `LinkContent`，不经过编辑器的转发函数。
 
 ## 教材位置与素材链路
 

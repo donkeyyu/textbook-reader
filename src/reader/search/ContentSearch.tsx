@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import type { ContentNode, PublishedContent } from '../textbook/content.ts';
-import { getPage, pageLabel } from '../textbook/catalog.ts';
-import { supplementTypes, TypeMarker } from './supplement-types.tsx';
+import type { ContentNode, PublishedContent } from '../../textbook/content.ts';
+import { getPage, pageLabel } from '../../textbook/catalog.ts';
+import { supplementTypes, TypeMarker } from '../supplements/supplement-types.tsx';
 import './content-search.css';
 
 function nodeContext(node: ContentNode, chapters: PublishedContent['chapters'], sections: PublishedContent['sections']) {

@@ -1,8 +1,8 @@
 import { createPortal } from 'react-dom';
 import ReactMarkdown from 'react-markdown';
 import type { ContentNode } from '../../textbook/content.ts';
-import { supplementTypes, TypeMarker } from '../supplement-types.tsx';
-import { MathText } from '../MathText';
+import { supplementTypes, TypeMarker } from '../supplements/supplement-types.tsx';
+import { MathText } from '../text/MathText';
 import type { GraphPreviewAnchor } from './useSupplementGraph.ts';
 
 export function GraphPreview({ node, anchor }: { node: ContentNode; anchor: GraphPreviewAnchor }) {

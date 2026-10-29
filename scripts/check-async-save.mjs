@@ -23,7 +23,7 @@ export async function assertUnusedAsyncOrigin(page, { testOrigin } = {}) {
 async function readCloud(page, expectedUserId) {
   const snapshot = await page.evaluate(async () => {
     const [{ supabase }, { readPersonal }] = await Promise.all([
-      import('/src/reader/supabase.ts'), import('/src/reader/cloud-personal.ts'),
+      import('/src/account/supabase.ts'), import('/src/content/cloud-personal.ts'),
     ]);
     const { data, error } = await supabase.auth.getSession();
     if (error) throw error;
@@ -95,7 +95,7 @@ async function finishCloudCheck(page, before, noteIds = [], supplementIds = []) 
       // Disable deferral only after pending test writes and their editors settle.
       delete window.asyncSaveTest;
       const [{ supabase }, { readPersonal, savePersonal }] = await Promise.all([
-        import('/src/reader/supabase.ts'), import('/src/reader/cloud-personal.ts'),
+        import('/src/account/supabase.ts'), import('/src/content/cloud-personal.ts'),
       ]);
       for (let attempt = 0; attempt < 3; attempt++) {
         const { data, error } = await supabase.auth.getSession();
@@ -173,7 +173,7 @@ export async function startAsyncSaveServer(port = 5181) {
         });
       },
       transform(source, id) {
-        if (!id.endsWith('/src/reader/cloud-personal.ts')) return;
+        if (!id.endsWith('/src/content/cloud-personal.ts')) return;
         assert.ok(source.includes('export async function savePersonal('));
         return source.replace('export async function savePersonal(', 'async function savePersonalReal(') + `
 export function savePersonal(...args: Parameters<typeof savePersonalReal>): ReturnType<typeof savePersonalReal> {

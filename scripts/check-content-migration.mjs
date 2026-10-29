@@ -81,8 +81,8 @@ export async function startContentMigrationServer({ port = 5192, legacyDir = fro
 
 export async function readCloudPersonal(page) {
   return page.evaluate(async () => {
-    const { supabase } = await import('/src/reader/supabase.ts');
-    const { readPersonal } = await import('/src/reader/cloud-personal.ts');
+    const { supabase } = await import('/src/account/supabase.ts');
+    const { readPersonal } = await import('/src/content/cloud-personal.ts');
     const { data, error } = await supabase.auth.getSession();
     if (error) throw new Error(error.message);
     if (!data.session) throw new Error('The disposable QA reader is not signed in');
@@ -106,8 +106,8 @@ export async function waitForCloudNote(page, id, expected) {
     if (document.querySelector('.personal-note [data-saving="true"]')) return false;
     if (document.querySelector('.personal-note [role="alert"]')) return true;
     if (document.querySelector('.personal-note [data-dirty="true"]')) return false;
-    const { supabase } = await import('/src/reader/supabase.ts');
-    const { readPersonal } = await import('/src/reader/cloud-personal.ts');
+    const { supabase } = await import('/src/account/supabase.ts');
+    const { readPersonal } = await import('/src/content/cloud-personal.ts');
     const { data, error } = await supabase.auth.getSession();
     if (error) throw new Error(error.message);
     if (!data.session) return false;
@@ -217,7 +217,7 @@ export async function checkContentMigration(task, { testOrigin, credentials } = 
 
     const newerPage = await ownedPage('/');
     const auth = await newerPage.evaluate(async (credentials) => {
-      const { supabase } = await import('/src/reader/supabase.ts');
+      const { supabase } = await import('/src/account/supabase.ts');
       const { data, error } = await supabase.auth.signInWithPassword(credentials);
       if (error) throw new Error(error.message);
       return { userId: data.user.id, email: data.user.email };

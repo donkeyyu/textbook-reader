@@ -1,5 +1,5 @@
-import type { Supplement } from '../textbook/supplements';
-import { supplementKind } from '../textbook/content';
+import type { Supplement } from '../../textbook/supplements';
+import { supplementKind } from '../../textbook/content';
 
 export const supplementTypes = {
   concept: '概念与性质', method: '方法与推理', question: '题目引导', review: '回顾与探究', personal: '我的补充',

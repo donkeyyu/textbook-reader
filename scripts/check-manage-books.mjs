@@ -295,8 +295,8 @@ export async function checkManagedPersonalContent(page, { testOrigin, credential
     if (before) {
       await page.waitForFunction(() => !document.querySelector('[data-saving="true"]'));
       const restored = await page.evaluate(async ({ ownerId, noteId, note, createdId, title, originalNote }) => {
-        const { supabase } = await import('/src/reader/supabase.ts');
-        const { readPersonal, savePersonal } = await import('/src/reader/cloud-personal.ts');
+        const { supabase } = await import('/src/account/supabase.ts');
+        const { readPersonal, savePersonal } = await import('/src/content/cloud-personal.ts');
         const session = await supabase.auth.getSession();
         if (session.data.session?.user.id !== ownerId) throw new Error('QA owner changed; refuse cleanup');
         const current = await readPersonal(ownerId);
@@ -312,7 +312,7 @@ export async function checkManagedPersonalContent(page, { testOrigin, credential
       assert.deepEqual(restored.copies, before.copies, 'Management and cleanup must preserve existing copies');
     }
     await page.evaluate(async () => {
-      const { supabase } = await import('/src/reader/supabase.ts');
+      const { supabase } = await import('/src/account/supabase.ts');
       const { error } = await supabase.auth.signOut({ scope: 'local' });
       if (error) throw error;
       if (window.managedContentNetwork) window.fetch = window.managedContentNetwork.original;

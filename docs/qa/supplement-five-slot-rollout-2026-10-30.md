@@ -32,7 +32,7 @@
 
 - 第三章第88页 7 条按示例重写；粗算一条说明「接近不能保证每一步都对」。
 - 第一章：`ch1-why-negative` 改为「与 0 ℃ 各差 3 ℃」，`ch1-growth-rate-question` 把零增长的判断交回学生，`ch1-exercise-1-1-4` 不再写成「两种电荷可以抵消」，章引盈亏与产量、练习水面与面粉质量、增长率的手机销量说明删除教材未给定的前提。
-- 同类代答（章引盈亏、作物变化、水位练习、面粉质量练习、习题1.1第2题）改为只给符号约定与回读方法。
+- 同类代答（章引盈亏、作物变化、水位练习、面粉质量练习、习题1.1第2题）改为只给符号约定与回读方法；作物、水位、面粉三处的遗留见下节「复审修正」。
 
 ## 已运行检查
 
@@ -47,6 +47,30 @@
 - 写入方式：云端已有的「知识／注意事项」按本轮规则在库内合成正文（627 条经 md5 与本地结果逐一核对一致），只另行传入本轮真正新写的 449 条字段（标题 299、气泡 88、正文 16、方法 5、关联 98）。
 - `node --experimental-strip-types scripts/check-cloud-content.mjs`：`fullSourceEquality: true`，`anonymousPersonalRead: denied`。
 - 临时用于写入的 3 个 `tmp_five_*` 函数已删除，库内无残留。
+
+## 复审修正
+
+`docs/qa/supplement-rereview-2026-10-30.md` 的 8 项意见已逐条修改，另按同一类句式粘连补修 2 处：
+
+| 意见 | 处理 |
+| --- | --- |
+| 1 乘0后果写反 | `ch5-nonzero` 标题改为「两边乘0会抹掉原方程的限制」，正文保留可逆性解释。 |
+| 2 练习给出不适用顺序 | `ch5-q-p131-practice1` 标题改为「练习1：移项集中同类项，再合并求解」，并删去正文重复的符号说明。 |
+| 3 标题漏必要对象与条件 | `ch1-number-line-distance`、`ch1-absolute-zero`、`ch1-absolute-negative`、`ch2-product-negative-parity` 按建议补回条件或对象。 |
+| 4 探究入口提前给结论 | `ch2-q-p38-subtract-inquiry` 标题改为「探究：用加法检验减法改写」；`ch2-q-p39-smaller-subtract-larger` 气泡改为「用数轴位置或加法检验，判断差的符号。」 |
+| 5 同类代答未清完 | 章引作物题正文改为只给基准与符号约定，不再写出最终正负记录；`ch1-practice-p5-1` 气泡改为「先沿用题目给出的约定」；`ch1-practice-p5-2` 气泡与正文不再逐一给出三个记录的含义。 |
+| 6 列表合并丢句界 | `ch6-q-p184-example4`、`ch6-q-p185-e2` 补齐句号；同句式扫描另补 `ch6-p183-complements-think`、`ch6-q-p185-e7`。 |
+| 7 旁问依据留在折叠方法里 | `ch4-q-42-negative-product-question` 把结合律分组与系数来源写入正文，方法槽改为自行取 $y$ 值核对；不保留 `continuous`。 |
+| 8 空格数量写错 | `ch1-practice-p5-1` 正文改为「所填的数表示水位变化了多少」。 |
+
+复审列为后续精简项的 `ch3-same-letter-substitution` 两段重复表述也一并合并。
+
+### 修正后的检查与发布
+
+- `node --experimental-strip-types scripts/check-supplement-rules.mjs`：971 条，10 项报警仍为 0。
+- `npm test` 52 项通过；`npm run typecheck`、`npm run lint` 无警告与错误。
+- 只把这 17 条的差异字段写入 `reader_books`，修订号更新为 `79ac7d1b…`。
+- `node --experimental-strip-types scripts/check-cloud-content.mjs`：`fullSourceEquality: true`，`anonymousPersonalRead: denied`。
 
 ## 未验证与遗留
 

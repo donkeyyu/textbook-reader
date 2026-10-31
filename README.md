@@ -49,6 +49,10 @@ npm run preview   # 预览构建结果
 
 仅在重新生成页图时运行 `npm run prepare:textbook`。该命令需要 `cwebp`，以及本地 `materials/indexes/人教版-数学-七年级上册/images/` 中已核对的 PNG 页图（不纳入 Git）；它校验 PDF 与全部 PNG 的哈希，再生成 WebP、缩略图、来源记录及 `src/textbook/book.json`。来源见 [项目背景](docs/CONTEXT.md)。换教材时须重新核对内容与定位，不能仅替换文件名。
 
+### 本地内容预览
+
+开发服务器使用 `/?content=local` 可预览仓库中的补充正文，例如 `http://localhost:5198/?content=local`（端口以实际启动命令为准）。阅读页显示“本地内容预览 · 尚未发布”；不带参数仍读取云端发布版本。该开关仅在 Vite 开发模式生效，正式构建始终读取已发布内容。修改 JSON 后刷新预览；此模式不会发布内容，也不改变个人内容的保存方式。
+
 ### 新设备的 Supabase 开发连接
 
 [`.codex/config.toml`](.codex/config.toml) 固定当前 Supabase 项目的连接地址和数据库读写权限。该文件随源码提交、推送后，新设备拉取即可取得相同配置；OAuth 凭据保存在各设备本地。
@@ -132,6 +136,7 @@ node --experimental-strip-types scripts/check-cloud-content.mjs
 | --- | --- |
 | 界面风格、书架设置与选择保存 | [check-ui-style.mjs](scripts/check-ui-style.mjs)：`checkUiStyles(page, { testOrigin, evidenceDir })` 使用独立空 origin，检查默认小岛书桌、键盘选择、保存失败重试、刷新及阅读启动、四种风格的原文与关联返回；`checkUiStylesNarrow(page, { evidenceDir })` 在窄屏检查设置、工具栏边界及阅读路径 |
 | 内页风格、目录与图谱菜单 | [check-reader-appearance.mjs](scripts/check-reader-appearance.mjs)：`checkReaderAppearance(page, { narrow, evidenceDir })` 从教材单视图、无展开解读和菜单开始，检查目录位置、选中图标、类型菜单、筛选、搜索、焦点及边界，结束于图谱单视图；主题与屏宽由调用方选择，画布配色另用现有 Pixi 探针和截图核对 |
+| 第88页三条图解 | [check-page88-content.mjs](scripts/check-page88-content.mjs)：`checkPage88Content(page, { evidenceDir })` 从第88页教材视图开始，检查1440/390/320宽度下的三幅图、公式和标签边界，以及关联返回、方法状态与定位 |
 | 完整题目及跨页原文框 | [check-complete-location.mjs](scripts/check-complete-location.mjs)：`checkCompleteLocation(page)` 检查两行题干、跨页续题及关闭后的清除；教材可见且内容已载入 |
 | 窗口尺寸变化与阅读位置 | [check-reading-resize.mjs](scripts/check-reading-resize.mjs)：`checkReadingResize(page)` 从教材可见、解读展开开始，在同一浏览器回合切换390/1440宽度，核对页码、页内位置与解读，并确认主动滚动仍更新位置 |
 | 目录选择与面板调宽 | [check-directory-selection.mjs](scripts/check-directory-selection.mjs)：`checkDirectorySelection(page)` 使用图谱 QA 启动服务；[check-panel-width.mjs](scripts/check-panel-width.mjs)：`checkPanelWidth(page)` 验证右栏调宽及图标 |

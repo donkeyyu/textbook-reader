@@ -87,3 +87,5 @@
 .supplement-panel .text-button { color: var(--type-color, var(--accent)); }
 
 .reader-action-label { display: none; }
+
+.content-preview-notice { flex: none; padding: 5px 12px; background: var(--surface); color: var(--secondary); border-bottom: 1px solid var(--separator); font-size: 12px; text-align: center; }

@@ -1,0 +1,96 @@
+{
+  "bounds": [
+    {
+      "width": 1440,
+      "diagram": "triangle-area",
+      "panel": true,
+      "figure": true,
+      "formulas": true,
+      "labels": true,
+      "label": "面积拆分：两条直角边为a、b的三角形，减去半径为r的圆孔，得到三角尺。示意图不按比例绘制。"
+    },
+    {
+      "width": 1440,
+      "diagram": "triangle-height",
+      "panel": true,
+      "figure": true,
+      "formulas": true,
+      "labels": true,
+      "label": "两个全等直角三角形沿斜边拼成长方形，长为b、宽为a。斜线两侧各占面积的一半。"
+    },
+    {
+      "width": 1440,
+      "diagram": "area-unit",
+      "panel": true,
+      "figure": true,
+      "formulas": true,
+      "labels": true,
+      "label": "边长1厘米的正方形，每条边分为10个1毫米，共有10行、每行10个小方格。每格1平方毫米，共100平方毫米。"
+    },
+    {
+      "width": 390,
+      "diagram": "triangle-area",
+      "panel": true,
+      "figure": true,
+      "formulas": true,
+      "labels": true,
+      "label": "面积拆分：两条直角边为a、b的三角形，减去半径为r的圆孔，得到三角尺。示意图不按比例绘制。"
+    },
+    {
+      "width": 390,
+      "diagram": "triangle-height",
+      "panel": true,
+      "figure": true,
+      "formulas": true,
+      "labels": true,
+      "label": "两个全等直角三角形沿斜边拼成长方形，长为b、宽为a。斜线两侧各占面积的一半。"
+    },
+    {
+      "width": 390,
+      "diagram": "area-unit",
+      "panel": true,
+      "figure": true,
+      "formulas": true,
+      "labels": true,
+      "label": "边长1厘米的正方形，每条边分为10个1毫米，共有10行、每行10个小方格。每格1平方毫米，共100平方毫米。"
+    },
+    {
+      "width": 320,
+      "diagram": "triangle-area",
+      "panel": true,
+      "figure": true,
+      "formulas": true,
+      "labels": true,
+      "label": "面积拆分：两条直角边为a、b的三角形，减去半径为r的圆孔，得到三角尺。示意图不按比例绘制。"
+    },
+    {
+      "width": 320,
+      "diagram": "triangle-height",
+      "panel": true,
+      "figure": true,
+      "formulas": true,
+      "labels": true,
+      "label": "两个全等直角三角形沿斜边拼成长方形，长为b、宽为a。斜线两侧各占面积的一半。"
+    },
+    {
+      "width": 320,
+      "diagram": "area-unit",
+      "panel": true,
+      "figure": true,
+      "formulas": true,
+      "labels": true,
+      "label": "边长1厘米的正方形，每条边分为10个1毫米，共有10行、每行10个小方格。每格1平方毫米，共100平方毫米。"
+    }
+  ],
+  "relatedReturn": true,
+  "methodRestored": true,
+  "locate": true,
+  "graphAllThreeDiagrams": true,
+  "narrowSplitFits": true,
+  "normalUrlUsesPublishedMode": true,
+  "productionPreviewBannerAbsent": true,
+  "unitTestsPassed": 52,
+  "lint": "PASS",
+  "build": "PASS",
+  "cloudPublished": false
+}

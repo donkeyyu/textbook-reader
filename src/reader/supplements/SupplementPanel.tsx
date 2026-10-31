@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { getLocation, type Supplement } from "../../textbook/supplements";
 import { supplementType, supplementTypes, TypeMarker } from './supplement-types';
 import { MathText } from '../text/MathText';
-import { TriangleAreaDiagram } from './TriangleAreaDiagram';
+import { SupplementDiagram } from './AreaDiagrams';
 import './supplement-appearance.css';
 import { getPage, pageLabel } from "../../textbook/catalog";
 
@@ -34,7 +34,7 @@ export function SupplementPanel({ notes, expandedId, pending, onSelect, onClose,
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m14 6-6 6 6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
         返回
       </button>}
-      <h2 id="supplement-title" tabIndex={-1}><span className="supplement-title-mark" aria-hidden="true"><TypeMarker type={type} /></span>{grouped ? "此处解读" : notes[0]!.title}</h2>
+      <h2 id="supplement-title" tabIndex={-1}><span className="supplement-title-mark" aria-hidden="true"><TypeMarker type={type} /></span>{activeNote?.title ?? "此处解读"}</h2>
       <div className="heading-actions">
         <button className="icon-button hide-supplement" type="button" disabled={pending || !activeNote}
           aria-label={activeNote ? `隐藏解读：${activeNote.title}` : '隐藏当前解读'} title={activeNote ? `隐藏解读：${activeNote.title}` : '请先选择解读'}
@@ -84,8 +84,10 @@ function SupplementContent({ note, pending, onRelated, activeLocationId, persona
   ] as const).filter(([, , items]) => items.length > 0) : [];
   return <>
     <div className="supplement-body">
-      {note.id === 'ch3-q-p88-example4' && <TriangleAreaDiagram />}
-      {note.paragraphs.map((paragraph, index) => <p key={index}><MathText text={paragraph} /></p>)}
+      {note.paragraphs.map((paragraph, index) => <div key={index}>
+        <p><MathText text={paragraph} /></p>
+        {index === 0 && <SupplementDiagram supplementId={note.id} />}
+      </div>)}
       {guide && (guide.continuous
         ? [...(guide.knowledgePoints ?? []), ...guide.method, ...(guide.cautions ?? [])].map((paragraph, index) => <p key={index}><MathText text={paragraph} /></p>)
         : <div className="question-guide">

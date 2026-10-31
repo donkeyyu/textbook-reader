@@ -5,6 +5,7 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { bookTitle, getPage, pageCount, pages, pageLabel } from "../textbook/catalog";
 import { getLocation } from "../textbook/supplements";
 import { bookId, nodeKey, supplementQueries } from '../textbook/content';
+import { localContentPreview } from '../textbook/content-store';
 import type { PersonalData, PersonalSupplement } from '../content/personal';
 import type { BookContent } from '../content/useBookContent';
 import { AccountControl } from '../account/AccountControl';
@@ -714,6 +715,7 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '' }: { co
         </div>
       </div>
     </header>
+    {localContentPreview && <div className="content-preview-notice" role="status">本地内容预览 · 尚未发布</div>}
     {selectionPage !== null && <div className="selection-help" role="status">在第 {selectionPage} 页拖动框选段落；键盘可用方向键调整，Enter 确认。<button className="text-button" onClick={() => setSelectionPage(null)}>取消</button></div>}
     {content.loading && <LoadingToast />}
     {(content.error || content.notice) && <div className={content.error ? 'storage-error' : 'content-status'} role={content.error ? 'alert' : 'status'}>

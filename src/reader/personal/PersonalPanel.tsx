@@ -37,7 +37,7 @@ export function PersonalPanel({ item, isNew, chapters, sections, links, backlink
     <div className="supplement-heading">
       <h2 id="supplement-title" tabIndex={-1}>{isNew ? '添加补充' : item.title}</h2>
       <div className="heading-actions">
-        {item.page !== null && <button id="locate-personal" className="icon-button locate-button" aria-label="定位教材原文" title="定位教材原文" type="button" onClick={onLocate}><LocateIcon /></button>}
+        {item.page !== null && <button id="locate-personal" className="icon-button locate-button" aria-label="定位教材原文" title="定位教材原文" type="button" onClick={onLocate}><LocateIcon /><span className="locate-label">定位原文</span></button>}
         {!editing && <button className="text-button" onClick={onClose}>关闭</button>}
       </div>
     </div>

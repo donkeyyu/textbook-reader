@@ -133,6 +133,7 @@ node --experimental-strip-types scripts/check-cloud-content.mjs
 | 界面风格、书架设置与选择保存 | [check-ui-style.mjs](scripts/check-ui-style.mjs)：`checkUiStyles(page, { testOrigin, evidenceDir })` 使用独立空 origin，检查默认小岛书桌、键盘选择、保存失败重试、刷新及阅读启动、四种风格的原文与关联返回；`checkUiStylesNarrow(page, { evidenceDir })` 在窄屏检查设置、工具栏边界及阅读路径 |
 | 内页风格、目录与图谱菜单 | [check-reader-appearance.mjs](scripts/check-reader-appearance.mjs)：`checkReaderAppearance(page, { narrow, evidenceDir })` 从教材单视图、无展开解读和菜单开始，检查目录位置、选中图标、类型菜单、筛选、搜索、焦点及边界，结束于图谱单视图；主题与屏宽由调用方选择，画布配色另用现有 Pixi 探针和截图核对 |
 | 完整题目及跨页原文框 | [check-complete-location.mjs](scripts/check-complete-location.mjs)：`checkCompleteLocation(page)` 检查两行题干、跨页续题及关闭后的清除；教材可见且内容已载入 |
+| 窗口尺寸变化与阅读位置 | [check-reading-resize.mjs](scripts/check-reading-resize.mjs)：`checkReadingResize(page)` 从教材可见、解读展开开始，在同一浏览器回合切换390/1440宽度，核对页码、页内位置与解读，并确认主动滚动仍更新位置 |
 | 目录选择与面板调宽 | [check-directory-selection.mjs](scripts/check-directory-selection.mjs)：`checkDirectorySelection(page)` 使用图谱 QA 启动服务；[check-panel-width.mjs](scripts/check-panel-width.mjs)：`checkPanelWidth(page)` 验证右栏调宽及图标 |
 | 教材目录与节点目录 | [check-navigation-directories.mjs](scripts/check-navigation-directories.mjs)：`checkNavigationDirectories(page)`，图谱打开且教材隐藏 |
 | 节点目录浏览现场与当前位置 | [check-navigation-directories.mjs](scripts/check-navigation-directories.mjs)：`checkGraphDirectoryUsability(page)` 从图谱打开、教材隐藏、目录关闭、无解读开始，检查开合和设置互斥后的现场、筛选恢复、显式目录定位、过滤提示与 Escape；使用图谱 QA 启动服务时同时检查画布位置不变 |

@@ -130,19 +130,22 @@ export function GraphRelated({ nodeKey, nodes, onSelect, onLocate }: {
   const sourceId = nodes.find((node) => node.key === nodeKey)?.id;
   if (!related.length) return null;
   return <div className="supplement-related graph-related" aria-label="默认教材关联">
-    <h3>相关知识</h3>
+    <h3>关联回顾</h3>
     {related.map((relation, index) => <div className="related-entry" key={`${relation.locationId}-${index}`}>
-      <p>{relation.purpose}</p>
       {relation.targets.length ? <>
-        <p className="graph-relation-label">{relation.label}{relation.targets.length > 1 ? '（选择解读）' : ''}</p>
+        {relation.targets.length > 1 && <p className="graph-relation-label">{relation.label}（选择解读）</p>}
         {relation.targets.map((target) => <button key={target.key} type="button" className="text-button related-target"
           data-graph-target={target.key} onClick={() => onSelect(target.key)}>
-          <span className="related-title">{target.title}</span><span className="related-page">{pageLabel(getPage(getLocation(relation.locationId).page))}</span>
+          <span className="related-title">{target.title}</span>
+          <span className="related-purpose">{relation.purpose}</span>
+          <span className="related-page">{pageLabel(getPage(getLocation(relation.locationId).page))}</span>
           <svg className="graph-related-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" /></svg>
         </button>)}
       </> : <button type="button" id={`related-${sourceId}-${relation.locationId}`} className="text-button related-target"
         onClick={() => onLocate(relation.locationId, `related-${sourceId}-${relation.locationId}`)}>
-        <span className="related-title">{relation.label}</span><span className="related-page">{pageLabel(getPage(getLocation(relation.locationId).page))}</span>
+        <span className="related-title">{relation.label}</span>
+        <span className="related-purpose">{relation.purpose}</span>
+        <span className="related-page">{pageLabel(getPage(getLocation(relation.locationId).page))}</span>
         <svg className="graph-related-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </button>}
     </div>)}

@@ -51,11 +51,12 @@ export function ContentSearch({ nodes, chapters, sections, selectedKey, onSelect
     <div className="content-search" ref={root} onKeyDown={(event) => {
       if (event.key === 'Escape' && searchOpen) { event.preventDefault(); event.stopPropagation(); closeSearch(); }
     }}>
-      <button id="graph-search-toggle" className="icon-button" type="button" aria-label={searchOpen ? "关闭内容搜索" : "搜索内容"} title={searchOpen ? "关闭内容搜索" : "搜索内容（/）"}
+      <button id="graph-search-toggle" className="icon-button reader-labeled-action" type="button" aria-label={searchOpen ? "关闭内容搜索" : "搜索内容"} title={searchOpen ? "关闭内容搜索" : "搜索内容（/）"}
         aria-expanded={searchOpen} aria-controls="graph-search-panel" onClick={searchOpen ? closeSearch : openSearch}>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           {searchOpen ? <path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /> : <><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" strokeWidth="1.5" /><path d="m16 16 4.5 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></>}
         </svg>
+        <span className="reader-action-label">{searchOpen ? '收起' : '搜索'}</span>
       </button>
       <div id="graph-search-panel" className="graph-search-panel" hidden={!searchOpen}>
         <label className="graph-search"><span className="sr-only">搜索内容</span>

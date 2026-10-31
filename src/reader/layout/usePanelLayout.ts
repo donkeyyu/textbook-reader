@@ -1,4 +1,5 @@
 import { useLayoutEffect, useRef, useState } from 'react';
+import { flushSync } from 'react-dom';
 
 /** Choose the drawer placement from its owning pane, before subtracting the drawer. */
 export function usePanelLayout(split: boolean, navigationOpen: boolean) {
@@ -28,7 +29,9 @@ export function usePanelLayout(split: boolean, navigationOpen: boolean) {
       setBottomPanel(ownerWidth <= 1100);
     };
     measure();
-    const resize = new ResizeObserver(measure);
+    // Commit the drawer placement before another observer reads page metrics.
+    // Otherwise a narrow viewport briefly keeps the wide drawer's grid track.
+    const resize = new ResizeObserver(() => flushSync(measure));
     resize.observe(layout);
     const changes = new MutationObserver(measure);
     changes.observe(layout, { attributes: true, attributeFilter: ['style'] });

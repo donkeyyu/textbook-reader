@@ -1,7 +1,7 @@
 .supplement-graph { grid-column: 1; grid-row: 1; z-index: 1; }
 .supplement-graph { position: relative; min-width: 0; min-height: 0; display: flex; flex-direction: column; background: #f3f4f6; }
 .supplement-graph[hidden] { display: none; }
-.graph-corner-controls { position: absolute; inset: var(--view-control-offset) var(--view-control-inset) 80px; display: flex; justify-content: flex-end; align-items: flex-start; gap: 8px; z-index: 2; pointer-events: none; }
+.graph-corner-controls { position: absolute; inset: var(--view-control-offset) var(--view-control-inset) var(--view-control-inset); display: flex; justify-content: flex-end; align-items: flex-start; gap: 8px; z-index: 2; pointer-events: none; }
 .supplement-graph .graph-floating-button, .graph-settings { pointer-events: auto; background: var(--surface); border: 1px solid var(--separator); border-radius: 8px; }
 .supplement-graph .graph-floating-button { flex: none; width: var(--view-control-size); height: var(--view-control-size); }
 .graph-settings { max-height: 100%; overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--scrollbar, #c9c9ce) transparent; }
@@ -28,7 +28,7 @@
 .graph-preview .graph-preview-hint { flex: none; margin: 0; font-size: 12px; color: var(--type-color); }
 .graph-footer { display: flex; flex-direction: column; gap: 12px; color: var(--secondary); font-size: 12px; font-variant-numeric: tabular-nums; }
 .graph-zoom { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
-.graph-zoom button { display: grid; place-items: center; min-width: 40px; min-height: 40px; padding: 0 8px; border-radius: 6px; color: var(--accent); background: transparent; font-size: 14px; }
+.graph-zoom button { display: grid; place-items: center; min-width: 44px; min-height: 44px; padding: 0 8px; border-radius: 6px; color: var(--accent); background: transparent; font-size: 14px; }
 .graph-zoom button:hover { background: var(--hover); }
 .graph-zoom output { min-width: 44px; text-align: center; }
 .graph-legend { flex: none; display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 12px 0; padding: 12px 0; border-block: 1px solid var(--separator); list-style: none; color: var(--secondary); font-size: 12px; }
@@ -44,12 +44,9 @@
 .graph-edge-legend svg { color: var(--type-color, currentColor); }
 .graph-related .text-button { display: flex; text-align: left; }
 .graph-related .graph-relation-label { font-size: 13px; color: var(--secondary); margin-bottom: 0; }
-@media (max-width: 760px) {
-  .graph-corner-controls { bottom: 72px; }
-}
 
 .graph-legend-dot { width: 8px; height: 8px; margin-inline: 4px; border-radius: 50%; background: var(--type-color); }
-.graph-directory-dock { position: absolute; top: var(--view-control-offset); left: var(--view-control-inset); bottom: min(80px, 10%); width: min(var(--graph-directory-width, 320px), calc(100% - 96px)); display: flex; flex-direction: column; align-items: flex-start; gap: 8px; z-index: 3; pointer-events: none; }
+.graph-directory-dock { position: absolute; top: var(--view-control-offset); left: var(--view-control-inset); bottom: var(--view-control-inset); width: min(var(--graph-directory-width, 320px), calc(100% - 96px)); display: flex; flex-direction: column; align-items: flex-start; gap: 8px; z-index: 3; pointer-events: none; }
 .graph-directory-panel { position: relative; padding-right: 8px; display: flex; flex-direction: column; min-height: 0; width: 100%; border: 1px solid var(--separator); border-radius: 10px; background: var(--surface); pointer-events: auto; overflow: hidden; }
 .graph-directory-panel[hidden] { display: none; }
 .graph-directory-heading { display: grid; flex: none; grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 6px; padding: 6px 2px 8px 10px; }
@@ -91,9 +88,6 @@
 .graph-directory-node-title small { display: block; margin-top: 3px; color: var(--secondary); font-size: 12px; font-weight: 400; }
 .graph-directory-tree :is(summary, button):focus-visible { outline-offset: -2px; }
 .graph-directory-empty { padding: 12px 8px; font-size: 14px; color: var(--secondary); }
-@media (max-width: 760px) {
-  .graph-directory-dock { bottom: min(72px, 10%); }
-}
 
 .graph-directory-resize { position: absolute; top: 0; right: 0; bottom: 0; width: 8px; display: grid; place-items: center; cursor: ew-resize; touch-action: none; user-select: none; }
 .graph-directory-resize span { width: 3px; height: 36px; border-radius: 2px; background: var(--separator); }

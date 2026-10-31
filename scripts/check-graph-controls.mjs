@@ -1,5 +1,9 @@
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import { openGraphSearch, openGraphSettings } from './check-supplement-graph.mjs';
+
+const chapter = JSON.parse(await readFile(new URL('../content/grade-7-volume-1/chapter-1.json', import.meta.url), 'utf8'));
+const referenceTitle = chapter.supplements.find((note) => note.id === 'ch1-zero-reference').title;
 
 // Run on an owned reader page with the graph open and controls collapsed.
 export async function checkGraphControls(page, { narrow = false } = {}) {
@@ -19,7 +23,7 @@ export async function checkGraphControls(page, { narrow = false } = {}) {
   assert.equal(initial.canvasFills, true); assert.equal(initial.graphInViewport, true); assert.deepEqual(initial.overflow, []);
   assert.equal(await page.evaluate(() => !!document.querySelector('.reading-view-controls')), false);
   assert.equal(await page.evaluate(() => !!document.getElementById('open-personal-library')), false);
-  assert.equal(await page.evaluate(() => document.querySelector('#open-supplement-graph').textContent.trim()), '');
+  assert.equal(await page.evaluate(() => document.querySelector('#open-supplement-graph').getAttribute('aria-label')), '节点图');
   assert.equal(await page.evaluate(() => document.querySelector('#add-personal-supplement').getAttribute('aria-label')), '添加补充');
   const settingsIcon = () => page.evaluate(() => {
     const { x, y } = document.querySelector('.graph-settings summary svg').getBoundingClientRect();
@@ -44,10 +48,10 @@ export async function checkGraphControls(page, { narrow = false } = {}) {
   assert.equal(await page.evaluate(() => document.activeElement?.id), 'graph-search-toggle');
   await page.focus('.graph-viewport'); await page.press('.graph-viewport', '/');
   await page.waitForFunction(() => document.activeElement === document.querySelector('.graph-search input'));
-  await page.fill('.graph-search input', '0要和它记录的量一起读');
+  await page.fill('.graph-search input', referenceTitle);
   await page.waitForSelector('#graph-search-results button');
   await page.press('.graph-search input', 'ArrowDown'); await page.keyboard.press('Enter');
-  await page.waitForFunction(() => document.getElementById('supplement-title')?.textContent === '0要和它记录的量一起读');
+  await page.waitForFunction((title) => document.getElementById('supplement-title')?.textContent === title, referenceTitle);
   assert.equal(await page.evaluate(() => document.getElementById('graph-search-toggle').getAttribute('aria-expanded')), 'false');
   await page.waitForFunction(() => !document.querySelector('.reading-layout').getAnimations().some((a) => a.playState === 'running'));
   await openGraphSettings(page); assert.deepEqual((await bounds()).overflow, []);
@@ -146,7 +150,7 @@ export async function checkPaneControlAlignment(page) {
   }
   assert.ok(Math.max(...centers) - Math.min(...centers) <= 1, 'Visible pane controls share their relative vertical center');
   if (panes.book) {
-    assert.ok(Math.abs(panes.book.height - 44) <= 1);
+    assert.ok(Math.abs(panes.book.height - panes.book.toolbarHeight) <= 1);
     const pager = panes.book.controls[2];
     assert.ok(Math.abs(pager.left - pager.right) <= 2, 'Page display remains centered in the book pane');
   }

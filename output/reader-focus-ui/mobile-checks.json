@@ -1,0 +1,109 @@
+{
+  "style": "island",
+  "narrow": true,
+  "catalog": true,
+  "filterMenu": true,
+  "contentSearch": true,
+  "directoryTypeSelection": true,
+  "selectedIcons": true,
+  "controls": {
+    "initial": {
+      "canvasFills": true,
+      "graphInViewport": true,
+      "overflow": []
+    },
+    "split": {
+      "graph": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "book": {
+        "x": 0,
+        "y": 152,
+        "width": 390,
+        "height": 431.6015625,
+        "top": 152,
+        "right": 390,
+        "bottom": 583.6015625,
+        "left": 0
+      },
+      "panel": {
+        "x": 0,
+        "y": 589.6015625,
+        "width": 390,
+        "height": 260.3984375,
+        "top": 589.6015625,
+        "right": 390,
+        "bottom": 850,
+        "left": 0
+      },
+      "layout": {
+        "x": 0,
+        "y": 100,
+        "width": 390,
+        "height": 744,
+        "top": 100,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "bookVisible": true,
+      "pressed": "true"
+    },
+    "graphOnly": {
+      "graph": {
+        "x": 0,
+        "y": 100,
+        "width": 390,
+        "height": 483.6015625,
+        "top": 100,
+        "right": 390,
+        "bottom": 583.6015625,
+        "left": 0
+      },
+      "book": {
+        "x": 0,
+        "y": 152,
+        "width": 390,
+        "height": 431.6015625,
+        "top": 152,
+        "right": 390,
+        "bottom": 583.6015625,
+        "left": 0
+      },
+      "panel": {
+        "x": 0,
+        "y": 583.6015625,
+        "width": 390,
+        "height": 260.3984375,
+        "top": 583.6015625,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "layout": {
+        "x": 0,
+        "y": 100,
+        "width": 390,
+        "height": 744,
+        "top": 100,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "bookVisible": false,
+      "pressed": "false"
+    },
+    "settingsAndSearchWithinGraph": true,
+    "keyboardSearch": true,
+    "iconToolbar": true,
+    "bookToggleAndPanelOwnership": true
+  },
+  "canvasColors": "Use the existing Pixi probe or inspect screenshots separately"
+}

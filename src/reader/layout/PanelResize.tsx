@@ -3,7 +3,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 /** Resize the reader panel without rerendering the textbook pages. */
 export function PanelResize({ bottom }: { bottom: boolean }) {
   const handle = useRef<HTMLDivElement>(null);
-  const [height, setHeight] = useState(35);
+  const [height, setHeight] = useState(45);
   const [width, setWidth] = useState(420);
   const [maxWidth, setMaxWidth] = useState(700);
 

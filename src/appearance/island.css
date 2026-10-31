@@ -97,9 +97,19 @@
 :root[data-ui-style="island"] .markdown-source .cm-focused .cm-selectionBackground { background: #bce9db; }
 :root[data-ui-style="island"] .account-options input:disabled { background: #eae4d5; color: var(--secondary); }
 
+/* Supplement colors carry type semantics across the page, drawer and graph. */
+:root[data-ui-style="island"] [data-supplement-type="concept"] { --type-color: #286f8b; --type-tint: #eaf3f5; --type-surface: #f5f9fa; --type-border: #bfd7df; }
+:root[data-ui-style="island"] [data-supplement-type="method"] { --type-color: #765a90; --type-tint: #f1edf6; --type-surface: #faf8fc; --type-border: #d4c7e2; }
+:root[data-ui-style="island"] [data-supplement-type="question"] { --type-color: #8d6228; --type-tint: #faf1de; --type-surface: #fdfaf3; --type-border: #e6d4b0; }
+:root[data-ui-style="island"] [data-supplement-type="review"] { --type-color: #32776c; --type-tint: #e9f4ef; --type-surface: #f5faf7; --type-border: #c0dcd3; }
+:root[data-ui-style="island"] [data-supplement-type="personal"] { --type-color: #975b73; --type-tint: #f8edf2; --type-surface: #fcf8fa; --type-border: #e4cad6; }
+:root[data-ui-style="island"] [data-supplement-type="group"] { --type-color: #68707a; --type-tint: #edf0f2; --type-surface: #f7f8fa; --type-border: #d2d8dd; }
+
 /* Reading surfaces retain the existing tracks, positions and resize handles. */
+:root[data-ui-style="island"] .reading-layout { --panel-width: clamp(350px, var(--supplement-width, clamp(350px, 34vw, 500px)), calc(var(--panel-owner-width, 100vw) - 400px)); }
 :root[data-ui-style="island"] .toolbar { background: var(--surface); border-color: var(--separator); }
-:root[data-ui-style="island"] .paper-scroller { background: #eee9d9; }
+:root[data-ui-style="island"] .paper-scroller { background: #f5f1e5; padding: 24px 24px 40px; }
+:root[data-ui-style="island"] .paper-list { width: min(100%, 780px); }
 :root[data-ui-style="island"] .paper { background: #fff; box-shadow: 0 6px 18px rgb(61 52 40 / 8%); }
 :root[data-ui-style="island"] .page-sidebar.book-navigation { background: var(--island-content); border-color: var(--separator); }
 :root[data-ui-style="island"] :is(.book-navigation-modes, .book-navigation-position, .graph-directory-heading) { background: var(--island-content); }
@@ -110,39 +120,39 @@
 :root[data-ui-style="island"] .book-contents :is(summary, button) { margin-block: 3px; }
 :root[data-ui-style="island"] .page-thumbnail { border-radius: 12px; }
 :root[data-ui-style="island"] .page-thumbnail[aria-current="page"] { background: var(--island-nav); color: #51482e; }
-:root[data-ui-style="island"] .supplement-graph { background: #f7f3df; background-image: radial-gradient(#d0c5a7 .8px, transparent .8px); background-size: 20px 20px; }
+:root[data-ui-style="island"] .supplement-graph { background: #f7f3df; }
 :root[data-ui-style="island"] :is(.graph-floating-button, .graph-settings, .graph-directory-panel, .graph-directory-type-menu, .graph-results, .filter-options, .create-linked-node) { color: var(--app-text); background-color: var(--surface); border-radius: 18px; border-color: var(--separator); }
 :root[data-ui-style="island"] .graph-settings summary { border-radius: 14px; }
 :root[data-ui-style="island"] :is(.graph-results, .graph-directory-type-menu, .filter-options) { box-shadow: var(--app-shadow); }
-:root[data-ui-style="island"] :is(.graph-preview, .supplement-preview) { color: var(--app-text); background: color-mix(in srgb, var(--surface) 94%, var(--type-color, var(--accent))); border-radius: 18px; box-shadow: var(--app-shadow); }
+:root[data-ui-style="island"] :is(.graph-preview, .supplement-preview) { color: var(--app-text); background: var(--type-surface, var(--surface)); border: 1px solid var(--type-border, var(--separator)); border-radius: 14px; box-shadow: var(--app-shadow); }
 :root[data-ui-style="island"] .supplement-preview.preview-docked { border-radius: 18px 18px 0 0; box-shadow: none; }
 :root[data-ui-style="island"] .reading-layout > .split-resize { background: #eee9d9; border-color: var(--separator); }
 :root[data-ui-style="island"] .split-resize span { background: var(--secondary); }
 :root[data-ui-style="island"] .selection-help { background: var(--accent-soft); color: var(--app-text); }
 
 /* Supplements: type color marks the relationship; paper carries the reading. */
-:root[data-ui-style="island"] .supplement-panel { --panel-surface: #fffdf3; color: var(--app-text); background: var(--panel-surface); border-radius: 24px 0 0 0; border-color: var(--separator); }
-:root[data-ui-style="island"] .supplement-heading { padding-block: 16px; margin-bottom: 20px; border-bottom: 1px dashed var(--separator); }
+:root[data-ui-style="island"] .supplement-panel { --panel-padding: 24px; --panel-surface: #fffdf8; color: var(--app-text); background: var(--panel-surface); border-radius: 16px 0 0 0; border-color: var(--separator); }
+:root[data-ui-style="island"] .supplement-heading { padding-block: 12px 16px; margin-bottom: 16px; border-bottom: 1px solid var(--separator); }
 :root[data-ui-style="island"] .supplement-heading h2 { font-size: 22px; line-height: 1.5; overflow-wrap: anywhere; }
 :root[data-ui-style="island"] .supplement-heading .icon-button { width: 44px; height: 44px; margin-right: 0; }
 :root[data-ui-style="island"] :is(.supplement-body, .markdown-content) { font-size: 16px; line-height: 1.8; }
 :root[data-ui-style="island"] .supplement-body p { margin-bottom: 20px; }
 :root[data-ui-style="island"] :is(.question-guide h3, .supplement-related h3) { color: var(--island-heading); font-size: 16px; }
-:root[data-ui-style="island"] .method-toggle { gap: 12px; padding: 10px 14px; border: 1px solid var(--separator); border-radius: 14px; background: var(--island-content); color: var(--app-text); }
-:root[data-ui-style="island"] .method-toggle:hover { background: #f0e8d8; }
+:root[data-ui-style="island"] .supplement-panel .method-toggle { gap: 12px; padding: 12px 14px; min-height: 48px; border: 1px solid var(--type-border); border-radius: 12px; background: var(--panel-surface); color: var(--app-text); box-shadow: none; }
+:root[data-ui-style="island"] .supplement-panel .method-toggle:is(:hover, [aria-expanded="true"]) { background: var(--type-tint); box-shadow: none; }
 :root[data-ui-style="island"] .method-toggle-label { display: none; }
 :root[data-ui-style="island"] .method-toggle-chevron { display: block; flex: none; }
 :root[data-ui-style="island"] .method-toggle[aria-expanded="true"] .method-toggle-chevron { transform: rotate(90deg); }
-:root[data-ui-style="island"] .question-guide [data-guide-part="cautions"] { padding: 16px; border: 1px solid #d9be70; border-radius: 18px; background: #fff5d8; }
+:root[data-ui-style="island"] .question-guide [data-guide-part="cautions"] { padding: 16px; border: 1px solid var(--type-border); border-radius: 12px; background: var(--type-tint); }
 :root[data-ui-style="island"] .supplement-choice-title { display: flex; align-items: start; gap: 10px; }
 :root[data-ui-style="island"] .supplement-choice-mark { display: inline-flex; flex: none; margin-top: 2px; color: var(--type-color); }
 :root[data-ui-style="island"] .supplement-choice-mark svg { width: 20px; height: 20px; transform: none; }
 :root[data-ui-style="island"] :is(.supplement-related, .personal-note, .supplement-accordion) { border-color: var(--separator); }
-:root[data-ui-style="island"] .supplement-related .related-target { display: grid; grid-template-columns: minmax(0, 1fr) 18px; gap: 4px 12px; width: 100%; min-height: 56px; padding: 12px 16px; border: 1px solid var(--separator); border-radius: 18px; background: var(--accent-soft); color: var(--app-text); text-decoration: none; overflow-wrap: anywhere; }
+:root[data-ui-style="island"] .supplement-related .related-target { display: grid; grid-template-columns: minmax(0, 1fr) 18px; gap: 4px 12px; width: 100%; min-height: 56px; padding: 12px 16px; border: 1px solid var(--separator); border-radius: 12px; background: var(--panel-surface); color: var(--app-text); text-decoration: none; overflow-wrap: anywhere; }
 :root[data-ui-style="island"] .related-target + .related-target { margin-top: 8px; }
-:root[data-ui-style="island"] .related-target:hover:not(:disabled) { background: #d4eee5; }
+:root[data-ui-style="island"] .related-target:hover:not(:disabled) { background: var(--type-tint); border-color: var(--type-border); }
 :root[data-ui-style="island"] .related-target .related-page { grid-column: 1; color: var(--secondary); font-size: 12px; }
-:root[data-ui-style="island"] .related-target svg { display: block; grid-column: 2; grid-row: 1 / 3; align-self: center; }
+:root[data-ui-style="island"] .related-target svg { display: block; grid-column: 2; grid-row: 1 / 4; align-self: center; }
 :root[data-ui-style="island"] .supplement-panel .text-button { color: var(--type-color, var(--accent)); }
 :root[data-ui-style="island"] :is(.loading-toast, .reading-message, .shelf-removal) { color: var(--app-text); background: var(--island-content); border-radius: 18px; box-shadow: var(--app-shadow); }
 :root[data-ui-style="island"] :is(.page-input-error, .account-error, .style-save-error p, .editor-save-error p) { color: #a33232; }
@@ -176,13 +186,10 @@
   :root[data-ui-style="island"] :is(.shelf-primary, .shelf-main .shelf-read):is(:hover, :active) { transform: none; }
 }
 
-:root[data-ui-style="island"] .supplement-title-mark { display: inline-flex; color: var(--type-color); margin-inline-end: 8px; vertical-align: middle; }
-:root[data-ui-style="island"] .supplement-title-mark svg { width: 18px; height: 18px; }
-
 /* Action chrome is shared across every surface, including compact icon actions.
    Navigation rows stay flat so a chapter tree does not become a stack of pills. */
 :root[data-ui-style="island"] :is(
-  .icon-button, .account-summary, .page-index, .text-button,
+  .icon-button, .account-summary, .page-index, .text-button:not(.related-target, .method-toggle),
   .book-navigation-modes button, .book-toolbar > .book-navigation-toggle,
   .graph-floating-button, .graph-zoom button,
   .supplement-filters > summary, .graph-settings > summary
@@ -196,7 +203,7 @@
 }
 :root[data-ui-style="island"] .text-button { padding-inline: 12px; }
 :root[data-ui-style="island"] :is(
-  .icon-button, .account-summary, .page-index, .text-button,
+  .icon-button, .account-summary, .page-index, .text-button:not(.related-target, .method-toggle),
   .book-navigation-modes button, .book-toolbar > .book-navigation-toggle,
   .graph-floating-button, .graph-zoom button,
   .supplement-filters > summary, .graph-settings > summary
@@ -207,7 +214,7 @@
   text-decoration: none;
 }
 :root[data-ui-style="island"] :is(
-  .icon-button, .account-summary, .page-index, .text-button,
+  .icon-button, .account-summary, .page-index, .text-button:not(.related-target, .method-toggle),
   .book-navigation-modes button, .book-toolbar > .book-navigation-toggle,
   .graph-floating-button, .graph-zoom button,
   .supplement-filters > summary, .graph-settings > summary
@@ -237,17 +244,9 @@
 :root[data-ui-style="island"] .graph-settings[open] { box-shadow: inset 0 0 0 1px var(--separator); }
 :root[data-ui-style="island"] .graph-settings > summary { min-height: var(--view-control-size); }
 :root[data-ui-style="island"] .supplement-panel .text-button { color: var(--type-color, var(--accent)); }
-:root[data-ui-style="island"] .method-toggle {
-  border: 0;
-  border-radius: 18px;
-  background: #fffbe7;
-  box-shadow: inset 0 0 0 1.5px #c4b89e, 0 2px 4px rgb(61 52 40 / 7%);
-}
-:root[data-ui-style="island"] .method-toggle:hover { background: #f0e8d8; }
-:root[data-ui-style="island"] .method-toggle[aria-expanded="true"] { background: #f7edcc; box-shadow: inset 0 0 0 1.5px #b89c57; }
-:root[data-ui-style="island"] .supplement-related .related-target { box-shadow: 0 2px 4px rgb(61 52 40 / 7%); }
-:root[data-ui-style="island"] .supplement-marker { border-radius: 50px; background: var(--surface); box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--type-color) 55%, var(--surface)), 0 2px 4px rgb(61 52 40 / 7%); }
-:root[data-ui-style="island"] .supplement-marker:is(:hover, [aria-expanded="true"]) { background: color-mix(in srgb, var(--type-color) 16%, var(--surface)); }
+:root[data-ui-style="island"] .supplement-related .related-target { box-shadow: none; }
+:root[data-ui-style="island"] .supplement-marker { border: 1px solid var(--type-border); border-radius: 50%; background: var(--surface); box-shadow: none; }
+:root[data-ui-style="island"] .supplement-marker:is(:hover, [aria-expanded="true"]) { background: var(--type-tint); border-color: var(--type-color); }
 
 /* Graph-level controls lead the smaller actions inside the directory. */
 :root[data-ui-style="island"] .reading-layout { --view-control-size: 40px; --view-toolbar-height: 48px; }
@@ -261,56 +260,62 @@
   :root[data-ui-style="island"] .graph-directory-actions .icon-button { width: 44px; height: 44px; }
 }
 
-/* The topic badge leads; nearby actions remain compact and easy to reach. */
-:root[data-ui-style="island"] .supplement-title-mark {
-  display: inline-grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  margin-inline-end: 9px;
-  border-radius: 12px 14px 11px 14px;
-  background: color-mix(in srgb, var(--type-color) 12%, #fffbe7);
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--type-color) 35%, #fffbe7);
-  vertical-align: -6px;
-}
-:root[data-ui-style="island"] .supplement-title-mark svg { width: 24px; height: 24px; }
-:root[data-ui-style="island"] .supplement-heading .heading-actions { gap: 4px; }
-:root[data-ui-style="island"] .supplement-heading .icon-button { width: 36px; height: 36px; min-width: 36px; min-height: 36px; flex: none; }
-:root[data-ui-style="island"] .supplement-heading .icon-button svg { width: 16px; height: 16px; }
-
-/* A reserved footer margin keeps the little companion out of text and controls. */
-:root[data-ui-style="island"] .supplement-panel::after {
-  content: '';
-  display: block;
-  height: 76px;
-  margin-top: 28px;
-  border-top: 1px dashed var(--separator);
-  background:
-    url('/decorations/study-companion.webp') right 4px top 8px / 62px auto no-repeat,
-    linear-gradient(90deg, var(--panel-surface) 35%, transparent),
-    url('/decorations/chalk-arc.svg') right 76px center / 90px 50px no-repeat;
-  pointer-events: none;
-}
-@media (pointer: coarse) {
-  :root[data-ui-style="island"] .supplement-heading .icon-button { width: 44px; height: 44px; min-width: 44px; min-height: 44px; }
+/* The selected topic and its actions share a quiet header in either view. */
+:root[data-ui-style="island"] .supplement-heading { align-items: center; row-gap: 8px; }
+:root[data-ui-style="island"] .supplement-heading h2 { grid-column: 1 / -1; grid-row: 2; display: block; font-size: 24px; line-height: 1.5; text-wrap: pretty; }
+:root[data-ui-style="island"] .supplement-title-mark { display: none; }
+:root[data-ui-style="island"] .supplement-kind { display: inline-flex; align-items: center; gap: 6px; padding: 6px 9px; border-radius: 8px; background: var(--type-tint); grid-column: 1; grid-row: 1; justify-self: start; color: var(--type-color); font-size: 12px; font-weight: 600; }
+:root[data-ui-style="island"] .supplement-kind svg { width: 20px; height: 20px; flex: none; }
+:root[data-ui-style="island"] .supplement-heading.has-return .supplement-kind { display: none; }
+:root[data-ui-style="island"] .supplement-heading .heading-actions { gap: 2px; }
+:root[data-ui-style="island"] .supplement-heading .icon-button { width: 44px; height: 44px; min-width: 44px; min-height: 44px; flex: none; }
+:root[data-ui-style="island"] .supplement-heading .icon-button svg { width: 18px; height: 18px; flex: none; }
+:root[data-ui-style="island"] .supplement-heading .locate-button { display: inline-flex; align-items: center; width: auto; gap: 5px; padding-inline: 10px; color: var(--accent); }
+:root[data-ui-style="island"] .locate-label { display: inline; font-size: 13px; }
+:root[data-ui-style="island"] .supplement-panel { container-type: inline-size; }
+:root[data-ui-style="island"] .reading-layout.panel-bottom .supplement-panel { --panel-padding: 20px; border-radius: 20px 20px 0 0; padding-bottom: max(24px, env(safe-area-inset-bottom)); }
+:root[data-ui-style="island"] .reading-layout.panel-bottom .supplement-heading { padding-top: 16px; }
+@container (max-width: 330px) {
+  :root[data-ui-style="island"] .supplement-heading h2 { font-size: 19px; }
+  :root[data-ui-style="island"] .supplement-kind { font-size: 11px; gap: 4px; padding: 5px; }
+  :root[data-ui-style="island"] .supplement-heading .heading-actions { gap: 0; }
+  :root[data-ui-style="island"] .supplement-heading .locate-button { padding-inline: 4px; }
 }
 
-:root[data-ui-style="island"] .supplement-panel { background-image: linear-gradient(rgb(255 253 243 / 95%), rgb(255 253 243 / 95%)), url('/decorations/study-companion.webp'); background-repeat: no-repeat; background-position: right bottom; background-size: auto, 160px auto; }
+/* A light wash identifies the source without obscuring textbook ink. */
+:root[data-ui-style="island"] .location-highlight { outline: 1.5px solid var(--type-color); outline-offset: 2px; border-radius: 6px; background: color-mix(in srgb, var(--type-color) 5%, transparent); }
+:root[data-ui-style="island"] .location-highlight.preview-highlight { outline: 1px solid var(--type-border); background: color-mix(in srgb, var(--type-color) 3%, transparent); }
+:root[data-ui-style="island"] .location-highlight:focus-visible { outline-color: var(--type-color); }
 
-/* Hand-drawn outlines stay outside the original location geometry. */
-:root[data-ui-style="island"] .location-highlight { outline: none; }
-:root[data-ui-style="island"] .location-highlight::after,
-:root[data-ui-style="island"] .method-toggle::before {
-  content: ''; position: absolute; inset: -5px; pointer-events: none;
-  background: var(--type-color, var(--accent));
-  mask: url('/decorations/chalk-frame.svg') center / 100% 100% no-repeat;
+:root[data-ui-style="island"] .reader-app { --app-text: #594a37; --text: #594a37; }
+
+/* Embedded reader controls recede; floating graph controls retain their boundary. */
+:root[data-ui-style="island"] .reader-toolbar { height: 60px; padding-inline: 24px; }
+:root[data-ui-style="island"] .reader-toolbar .toolbar-actions { gap: 12px; }
+:root[data-ui-style="island"] .reader-toolbar-group + .reader-toolbar-group { padding-left: 12px; }
+:root[data-ui-style="island"] .reader-app :is(.reader-toolbar .icon-button, .account-summary, .supplement-filters > summary, .book-toolbar .icon-button, .page-index, .book-navigation-modes button, .heading-actions .icon-button, .supplement-heading .return-button) {
+  background: transparent; box-shadow: none; border-radius: 12px;
 }
-:root[data-ui-style="island"] .location-highlight.preview-highlight::after { opacity: .65; }
-:root[data-ui-style="island"] .method-toggle { position: relative; border-radius: 12px; }
-:root[data-ui-style="island"] .method-toggle,
-:root[data-ui-style="island"] .method-toggle:hover,
-:root[data-ui-style="island"] .method-toggle[aria-expanded="true"] { border: 0; box-shadow: none; }
-:root[data-ui-style="island"] .method-toggle::before { inset: -3px; background: var(--type-color, var(--island-heading)); opacity: .65; }
-:root[data-ui-style="island"] .supplement-heading { align-items: center; }
-:root[data-ui-style="island"] .supplement-heading h2 { display: flex; align-items: center; gap: 9px; }
-:root[data-ui-style="island"] .supplement-title-mark { flex: none; margin: 0; vertical-align: initial; }
+:root[data-ui-style="island"] .reader-app :is(.reader-toolbar .icon-button, .account-summary, .supplement-filters > summary, .book-toolbar .icon-button, .page-index, .book-navigation-modes button, .heading-actions .icon-button, .supplement-heading .return-button):hover:not(:disabled) { background: var(--hover); box-shadow: none; }
+:root[data-ui-style="island"] .reader-app :is(.icon-button[aria-expanded="true"], .account-summary[aria-expanded="true"], .book-navigation-modes button[aria-pressed="true"], .supplement-filters[open] > summary) { background: var(--accent-soft); color: var(--accent); box-shadow: none; }
+:root[data-ui-style="island"] .reader-app .icon-button:disabled { color: var(--secondary); background: transparent; box-shadow: none; opacity: .5; }
+:root[data-ui-style="island"] .supplement-related { margin-top: 24px; padding-top: 20px; }
+:root[data-ui-style="island"] .related-entry > p { margin-bottom: 8px; font-size: 14px; }
+:root[data-ui-style="island"] .related-title { font-size: 16px; font-weight: 700; color: var(--app-text); }
+:root[data-ui-style="island"] .related-purpose { grid-column: 1; font-size: 14px; line-height: 1.6; }
+:root[data-ui-style="island"] .related-entry + .related-entry { margin-top: 10px; }
+:root[data-ui-style="island"] .area-diagram { padding: 16px 12px 12px; background: var(--type-surface); border: 1px solid var(--type-border); border-radius: 14px; }
+:root[data-ui-style="island"] .area-diagram figcaption { background: var(--type-tint); color: var(--app-text); }
+@media (max-width: 760px) {
+  :root[data-ui-style="island"] .reader-app .reader-toolbar { height: 100px; padding: 4px 12px; gap: 4px 8px; }
+  :root[data-ui-style="island"] .reader-toolbar-group + .reader-toolbar-group { padding-left: 0; }
+  :root[data-ui-style="island"] .reader-toolbar .filter-options { top: 100px; }
+  :root[data-ui-style="island"] .paper-scroller { padding: 12px 8px 24px; }
+}
+
+@media (min-width: 1001px) {
+  :root[data-ui-style="island"] .reader-toolbar .reader-labeled-action { display: inline-flex; align-items: center; justify-content: center; width: auto; gap: 8px; padding-inline: 12px; }
+  :root[data-ui-style="island"] .reader-action-label { display: inline; font-size: 14px; }
+  :root[data-ui-style="island"] .content-search .graph-search-panel { right: calc(100% + 8px); }
+  :root[data-ui-style="island"] .content-search .graph-results { right: 0; }
+}

@@ -1,0 +1,115 @@
+{
+  "checks": [
+    {
+      "key": "Home",
+      "bottom": false,
+      "layout": {
+        "x": 0,
+        "y": 60,
+        "width": 1772,
+        "height": 849,
+        "top": 60,
+        "right": 1772,
+        "bottom": 909,
+        "left": 0
+      },
+      "graph": {
+        "x": 0,
+        "y": 60,
+        "width": 528,
+        "height": 849,
+        "top": 60,
+        "right": 528,
+        "bottom": 909,
+        "left": 0
+      },
+      "book": {
+        "x": 540,
+        "y": 108,
+        "width": 732,
+        "height": 801,
+        "top": 108,
+        "right": 1272,
+        "bottom": 909,
+        "left": 540
+      },
+      "panel": {
+        "x": 1272,
+        "y": 60,
+        "width": 500,
+        "height": 849,
+        "top": 60,
+        "right": 1772,
+        "bottom": 909,
+        "left": 1272
+      },
+      "separator": {
+        "x": 528,
+        "y": 60,
+        "width": 12,
+        "height": 849,
+        "top": 60,
+        "right": 540,
+        "bottom": 909,
+        "left": 528
+      },
+      "share": 30
+    },
+    {
+      "key": "End",
+      "bottom": true,
+      "layout": {
+        "x": 0,
+        "y": 60,
+        "width": 1772,
+        "height": 849,
+        "top": 60,
+        "right": 1772,
+        "bottom": 909,
+        "left": 0
+      },
+      "graph": {
+        "x": 0,
+        "y": 60,
+        "width": 1232,
+        "height": 849,
+        "top": 60,
+        "right": 1232,
+        "bottom": 909,
+        "left": 0
+      },
+      "book": {
+        "x": 1244,
+        "y": 108,
+        "width": 528,
+        "height": 461.40625,
+        "top": 108,
+        "right": 1772,
+        "bottom": 569.40625,
+        "left": 1244
+      },
+      "panel": {
+        "x": 1244,
+        "y": 569.40625,
+        "width": 528,
+        "height": 339.59375,
+        "top": 569.40625,
+        "right": 1772,
+        "bottom": 909,
+        "left": 1244
+      },
+      "separator": {
+        "x": 1232,
+        "y": 60,
+        "width": 12,
+        "height": 849,
+        "top": 60,
+        "right": 1244,
+        "bottom": 909,
+        "left": 1232
+      },
+      "share": 70
+    }
+  ],
+  "shareRestored": true
+}

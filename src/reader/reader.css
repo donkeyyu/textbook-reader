@@ -85,3 +85,5 @@
 
 
 .supplement-panel .text-button { color: var(--type-color, var(--accent)); }
+
+.reader-action-label { display: none; }

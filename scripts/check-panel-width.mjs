@@ -21,15 +21,19 @@ export async function checkPanelWidth(page) {
   const keyboard = await state();
   await page.cdp('Emulation.setDeviceMetricsOverride', { width: 700, height: 900, deviceScaleFactor: 1, mobile: false });
   await page.waitForFunction(() => document.querySelector('.panel-resize').getAttribute('aria-orientation') === 'horizontal');
+  const height = Number(await page.evaluate(() => document.querySelector('.panel-resize').getAttribute('aria-valuenow')));
   await page.press('.panel-resize', 'ArrowUp');
-  assert.equal(await page.evaluate(() => document.querySelector('.panel-resize').getAttribute('aria-valuenow')), '50');
+  assert.equal(Number(await page.evaluate(() => document.querySelector('.panel-resize').getAttribute('aria-valuenow'))), height + 5);
   await page.cdp('Emulation.setDeviceMetricsOverride', { width: 1760, height: 944, deviceScaleFactor: 1, mobile: false });
   await page.waitForFunction((width) => document.querySelector('.panel-resize').getAttribute('aria-orientation') === 'vertical' && Math.abs(document.getElementById('supplement-panel').getBoundingClientRect().width - width) < 2, keyboard.width);
-  assert.equal(await page.evaluate(() => document.getElementById('locate-supplement').textContent.trim()), '');
+  assert.equal(await page.evaluate(() => {
+    const button = document.getElementById('locate-supplement');
+    return button.scrollWidth <= button.clientWidth && button.scrollHeight <= button.clientHeight;
+  }), true, 'Locate icon and label fit their control');
   assert.equal(await page.evaluate(() => document.getElementById('locate-supplement').getAttribute('aria-label')), '定位教材原文');
   assert.equal(await page.evaluate(() => document.querySelector('.account-summary').textContent.trim()), '');
   await page.click('.account-summary'); await page.waitForSelector('.account-options');
-  await page.press('.account-summary', 'Escape');
+  await page.keyboard.press('Escape');
   assert.equal(await page.evaluate(() => document.querySelector('.account-options').open), false);
   return { before, dragged, keyboard, bottomAndSidePreserved: true, iconsAccessible: true };
 }

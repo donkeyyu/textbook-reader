@@ -20,6 +20,8 @@ export async function checkReaderAppearance(page, { narrow = false, evidenceDir 
   const position = () => page.evaluate(() => document.querySelector('.page-index').textContent);
   const paint = async (selector) => {
     await page.mouse.move(0, 0);
+    await page.waitForFunction((selector) => document.querySelector(selector).getAnimations()
+      .every((animation) => animation.playState !== 'running'), selector);
     return page.evaluate((selector) => {
       const css = getComputedStyle(document.querySelector(selector));
       return [css.color, css.backgroundColor, css.borderColor];
@@ -107,8 +109,12 @@ export async function checkReaderAppearance(page, { narrow = false, evidenceDir 
     const buttons = [...document.querySelectorAll('.graph-directory-tree button')];
     return buttons.length > 0 && buttons.every((button) => button.dataset.supplementType === 'concept');
   }), true, 'Type menu selection filters the directory');
-  await page.click('.graph-directory-chapter > summary >> nth=0');
-  await page.click('.graph-directory-section > summary >> nth=0');
+  if (!await page.evaluate(() => document.querySelector('.graph-directory-chapter').open)) {
+    await page.click('.graph-directory-chapter > summary >> nth=0');
+  }
+  if (!await page.evaluate(() => document.querySelector('.graph-directory-section').open)) {
+    await page.click('.graph-directory-section > summary >> nth=0');
+  }
   await fits(['#graph-directory', '#graph-directory-type-toggle']);
   await textColor('.graph-directory-tree button');
   await capture('graph-directory');

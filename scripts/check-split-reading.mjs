@@ -272,7 +272,7 @@ export async function checkSplitPanelPlacement(page) {
         assert.ok(Math.abs(state.panel.left - state.book.left) < 2 && Math.abs(state.panel.right - state.book.right) < 2);
       } else {
         assert.ok(state.panel.left >= state.book.right - 1, 'Wide book pane places explanation on its right');
-        assert.ok(Math.abs(state.panel.top - state.book.top) < 2 && Math.abs(state.panel.bottom - state.book.bottom) < 2);
+        assert.ok(Math.abs(state.panel.top - state.layout.top) < 2 && Math.abs(state.panel.bottom - state.book.bottom) < 2);
       }
       assert.ok(state.panel.right <= state.layout.right + 1 && state.panel.bottom <= state.layout.bottom + 1);
       checks.push({ key, bottom, ...state });

@@ -1,8 +1,9 @@
 import { LocateIcon } from '../../ui/LocateIcon';
 import type { ReactNode } from "react";
 import { getLocation, type Supplement } from "../../textbook/supplements";
-import { supplementType, TypeMarker } from './supplement-types';
+import { supplementType, supplementTypes, TypeMarker } from './supplement-types';
 import { MathText } from '../text/MathText';
+import { TriangleAreaDiagram } from './TriangleAreaDiagram';
 import './supplement-appearance.css';
 import { getPage, pageLabel } from "../../textbook/catalog";
 
@@ -28,6 +29,7 @@ export function SupplementPanel({ notes, expandedId, pending, onSelect, onClose,
   const type = activeNote ? supplementType(activeNote) : types.size === 1 ? supplementType(notes[0]!) : 'group';
   return <aside id="supplement-panel" className="supplement-panel" aria-label="补充解读" data-supplement-type={type}>
     <div className={`supplement-heading${onBack ? " has-return" : ""}`}>
+      <span className="supplement-kind"><TypeMarker type={type} />{type === 'group' ? '此处解读' : supplementTypes[type]}</span>
       {onBack && <button className="text-button return-button" disabled={pending} onClick={onBack}>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m14 6-6 6 6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
         返回
@@ -41,7 +43,7 @@ export function SupplementPanel({ notes, expandedId, pending, onSelect, onClose,
             <path d="m3 3 18 18M10.6 10.6a2 2 0 0 0 2.8 2.8M9.8 5.2A10.8 10.8 0 0 1 12 5c7 0 10 7 10 7a17.5 17.5 0 0 1-3 4M6.3 6.3A19.3 19.3 0 0 0 2 12s3 7 10 7a10.4 10.4 0 0 0 5.7-1.7" />
           </svg>
         </button>
-        <button id="locate-supplement" className="icon-button locate-button" aria-label="定位教材原文" title="定位教材原文" type="button" disabled={pending || (grouped && !expandedId)} onClick={onLocate}><LocateIcon /></button>
+        <button id="locate-supplement" className="icon-button locate-button" aria-label="定位教材原文" title="定位教材原文" type="button" disabled={pending || (grouped && !expandedId)} onClick={onLocate}><LocateIcon /><span className="locate-label">定位原文</span></button>
         <button className="icon-button" aria-label="关闭解读" onClick={onClose}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
         </button>
@@ -82,6 +84,7 @@ function SupplementContent({ note, pending, onRelated, activeLocationId, persona
   ] as const).filter(([, , items]) => items.length > 0) : [];
   return <>
     <div className="supplement-body">
+      {note.id === 'ch3-q-p88-example4' && <TriangleAreaDiagram />}
       {note.paragraphs.map((paragraph, index) => <p key={index}><MathText text={paragraph} /></p>)}
       {guide && (guide.continuous
         ? [...(guide.knowledgePoints ?? []), ...guide.method, ...(guide.cautions ?? [])].map((paragraph, index) => <p key={index}><MathText text={paragraph} /></p>)
@@ -104,15 +107,14 @@ function SupplementContent({ note, pending, onRelated, activeLocationId, persona
       </div>)}
     </div>
     {related !== undefined ? related : relatedLinks.length > 0 && <div className="supplement-related" aria-label="关联教材">
-      {note.questionGuide && <h3>相关知识</h3>}
+      <h3>关联回顾</h3>
       {relatedLinks.map((related) => {
         const location = getLocation(related.locationId);
         const focusId = `related-${note.id}-${related.locationId}`;
         return <div className="related-entry" key={related.locationId}>
-          <p>{related.purpose}</p>
           <button id={focusId} className="text-button related-target" disabled={pending}
             onClick={() => onRelated(related.locationId, focusId)}>
-            <span className="related-title">{related.label}</span><span className="related-page">{pageLabel(getPage(location.page))}</span>
+            <span className="related-title">{related.label}</span><span className="related-purpose">{related.purpose}</span><span className="related-page">{pageLabel(getPage(location.page))}</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </button>
         </div>;

@@ -7,7 +7,7 @@
   grid-template-rows: minmax(0, 1fr) minmax(0, 0%) auto;
 }
 .reading-layout.supplement-open:not(.panel-bottom) { --drawer-width: var(--panel-width); }
-.reading-layout.panel-bottom.supplement-open { grid-template-rows: minmax(0, 1fr) minmax(0, var(--supplement-height, 35%)) auto; }
+.reading-layout.panel-bottom.supplement-open { grid-template-rows: minmax(0, 1fr) minmax(0, var(--supplement-height, 45%)) auto; }
 .reading-layout > .paper-scroller { grid-column: content-start / content-end; grid-row: 1; margin-top: var(--view-toolbar-height); }
 .reading-layout.book-hidden > .paper-scroller { visibility: hidden; pointer-events: none; }
 .reading-layout > .supplement-graph { grid-column: content-start / content-end; grid-row: 1; }
@@ -68,3 +68,16 @@
 .book-toolbar .page-controls > .icon-button { height: var(--view-control-size); }
 .book-toolbar .page-controls > .icon-button svg { width: 16px; height: 16px; }
 .reading-layout > .preview-docked { grid-column: content-start / content-end; grid-row: 3; min-height: 0; }
+
+/* A viewport narrower than the side-panel threshold must never lay out the old
+   side track while the container observer updates React's placement state. */
+@media (max-width: 1100px) {
+  .reading-layout.supplement-open:not(.panel-bottom) {
+    --drawer-width: 0px;
+    grid-template-rows: minmax(0, 1fr) minmax(0, var(--supplement-height, 45%)) auto;
+  }
+  .reading-layout:not(.panel-bottom) > .supplement-panel {
+    grid-column: content-start / content-end;
+    grid-row: 2;
+  }
+}

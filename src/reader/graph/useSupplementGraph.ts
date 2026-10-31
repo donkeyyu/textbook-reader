@@ -90,11 +90,12 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
       canvas.width = canvas.height = 64;
       const context = canvas.getContext('2d')!;
       context.scale(64 / 32, 64 / 32);
-      context.fillStyle = '#fffdf3';
+      context.fillStyle = `#${themeColor('--surface', 0xffffff).toString(16).padStart(6, '0')}`;
       context.beginPath(); context.arc(16, 16, 15, 0, Math.PI * 2); context.fill();
       context.strokeStyle = colors.get(type) || '#0066cc';
       context.lineWidth = 1.5; context.stroke();
       context.translate(4, 4);
+      context.strokeStyle = `#${labelFocusColor.toString(16).padStart(6, '0')}`;
       context.lineWidth = 1.8; context.lineCap = 'round'; context.lineJoin = 'round';
       context.stroke(new Path2D(path));
       iconTextures.set(type, Texture.from(canvas));

@@ -1,0 +1,290 @@
+{
+  "desktop": {
+    "status": "PASS",
+    "result": {
+      "style": "island",
+      "narrow": false,
+      "catalog": true,
+      "filterMenu": true,
+      "contentSearch": true,
+      "directoryTypeSelection": true,
+      "selectedIcons": true,
+      "controls": {
+        "initial": {
+          "canvasFills": true,
+          "graphInViewport": true,
+          "overflow": []
+        },
+        "split": {
+          "graph": {
+            "x": 0,
+            "y": 60,
+            "width": 786.6015625,
+            "height": 900,
+            "top": 60,
+            "right": 786.6015625,
+            "bottom": 960,
+            "left": 0
+          },
+          "book": {
+            "x": 798.6015625,
+            "y": 108,
+            "width": 961.3984375,
+            "height": 447,
+            "top": 108,
+            "right": 1760,
+            "bottom": 555,
+            "left": 798.6015625
+          },
+          "panel": {
+            "x": 798.6015625,
+            "y": 555,
+            "width": 961.3984375,
+            "height": 405,
+            "top": 555,
+            "right": 1760,
+            "bottom": 960,
+            "left": 798.6015625
+          },
+          "layout": {
+            "x": 0,
+            "y": 60,
+            "width": 1760,
+            "height": 900,
+            "top": 60,
+            "right": 1760,
+            "bottom": 960,
+            "left": 0
+          },
+          "bookVisible": true,
+          "pressed": "true"
+        },
+        "graphOnly": {
+          "graph": {
+            "x": 0,
+            "y": 60,
+            "width": 1260,
+            "height": 900,
+            "top": 60,
+            "right": 1260,
+            "bottom": 960,
+            "left": 0
+          },
+          "book": {
+            "x": 0,
+            "y": 108,
+            "width": 1260,
+            "height": 852,
+            "top": 108,
+            "right": 1260,
+            "bottom": 960,
+            "left": 0
+          },
+          "panel": {
+            "x": 1260,
+            "y": 60,
+            "width": 500,
+            "height": 900,
+            "top": 60,
+            "right": 1760,
+            "bottom": 960,
+            "left": 1260
+          },
+          "layout": {
+            "x": 0,
+            "y": 60,
+            "width": 1760,
+            "height": 900,
+            "top": 60,
+            "right": 1760,
+            "bottom": 960,
+            "left": 0
+          },
+          "bookVisible": false,
+          "pressed": "false"
+        },
+        "settingsAndSearchWithinGraph": true,
+        "keyboardSearch": true,
+        "iconToolbar": true,
+        "bookToggleAndPanelOwnership": true
+      },
+      "canvasColors": "Use the existing Pixi probe or inspect screenshots separately"
+    }
+  },
+  "mobile": {
+    "status": "PASS",
+    "result": {
+      "style": "island",
+      "narrow": true,
+      "catalog": true,
+      "filterMenu": true,
+      "contentSearch": true,
+      "directoryTypeSelection": true,
+      "selectedIcons": true,
+      "controls": {
+        "initial": {
+          "canvasFills": true,
+          "graphInViewport": true,
+          "overflow": []
+        },
+        "split": {
+          "graph": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "book": {
+            "x": 0,
+            "y": 152,
+            "width": 390,
+            "height": 357.203125,
+            "top": 152,
+            "right": 390,
+            "bottom": 509.203125,
+            "left": 0
+          },
+          "panel": {
+            "x": 0,
+            "y": 515.203125,
+            "width": 390,
+            "height": 334.796875,
+            "top": 515.203125,
+            "right": 390,
+            "bottom": 850,
+            "left": 0
+          },
+          "layout": {
+            "x": 0,
+            "y": 100,
+            "width": 390,
+            "height": 744,
+            "top": 100,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          },
+          "bookVisible": true,
+          "pressed": "true"
+        },
+        "graphOnly": {
+          "graph": {
+            "x": 0,
+            "y": 100,
+            "width": 390,
+            "height": 409.203125,
+            "top": 100,
+            "right": 390,
+            "bottom": 509.203125,
+            "left": 0
+          },
+          "book": {
+            "x": 0,
+            "y": 152,
+            "width": 390,
+            "height": 357.203125,
+            "top": 152,
+            "right": 390,
+            "bottom": 509.203125,
+            "left": 0
+          },
+          "panel": {
+            "x": 0,
+            "y": 509.203125,
+            "width": 390,
+            "height": 334.796875,
+            "top": 509.203125,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          },
+          "layout": {
+            "x": 0,
+            "y": 100,
+            "width": 390,
+            "height": 744,
+            "top": 100,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          },
+          "bookVisible": false,
+          "pressed": "false"
+        },
+        "settingsAndSearchWithinGraph": true,
+        "keyboardSearch": true,
+        "iconToolbar": true,
+        "bookToggleAndPanelOwnership": true
+      },
+      "canvasColors": "Use the existing Pixi probe or inspect screenshots separately"
+    }
+  },
+  "readingResize": {
+    "status": "PASS",
+    "stressCycles": 6,
+    "stressChanges": 36,
+    "result": {
+      "before": {
+        "split": false,
+        "bookVisible": true,
+        "graphVisible": false,
+        "page": 88,
+        "fraction": 0.2191470054446461,
+        "separator": null,
+        "focus": "supplement-title",
+        "title": "例4 先算三角形，再扣掉圆孔",
+        "panelScroll": 0,
+        "dirty": false,
+        "methodOpen": [
+          "false"
+        ]
+      },
+      "rapidResize": true,
+      "resizes": [
+        {
+          "width": 390,
+          "page": 88,
+          "fraction": 0.21928166351606806
+        },
+        {
+          "width": 1440,
+          "page": 88,
+          "fraction": 0.2191470054446461
+        },
+        {
+          "width": 390,
+          "page": 88,
+          "fraction": 0.21928166351606806
+        },
+        {
+          "width": 1440,
+          "page": 88,
+          "fraction": 0.2191470054446461
+        }
+      ],
+      "ordinaryScroll": {
+        "split": false,
+        "bookVisible": true,
+        "graphVisible": false,
+        "page": 88,
+        "fraction": 0.3280399274047187,
+        "separator": null,
+        "focus": "supplement-title",
+        "title": "例4 先算三角形，再扣掉圆孔",
+        "panelScroll": 0,
+        "dirty": false,
+        "methodOpen": [
+          "false"
+        ]
+      }
+    }
+  },
+  "relatedReturn": {
+    "status": "PASS",
+    "case": 0
+  }
+}

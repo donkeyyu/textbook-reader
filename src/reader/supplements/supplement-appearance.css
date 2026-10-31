@@ -1,5 +1,5 @@
 /* New details stay out of the original 简洁 style. */
-.supplement-title-mark, .supplement-choice-mark, .method-toggle-chevron, .graph-related-arrow { display: none; }
+.supplement-kind, .locate-label, .supplement-title-mark, .supplement-choice-mark, .method-toggle-chevron, .graph-related-arrow { display: none; }
 
 :root:is([data-ui-style="warm"], [data-ui-style="youth"]) .supplement-panel {
   --panel-surface: var(--app-panel);
@@ -196,3 +196,6 @@
   :root:is([data-ui-style="warm"], [data-ui-style="youth"]) .supplement-heading h2 { font-size: 20px; }
   :root:is([data-ui-style="warm"], [data-ui-style="youth"]) .supplement-title-mark { inset-inline-start: -19px; width: 16px; }
 }
+
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) .related-purpose { grid-column: 1; }
+:root:is([data-ui-style="warm"], [data-ui-style="youth"]) .related-target svg { grid-row: 1 / 4; }

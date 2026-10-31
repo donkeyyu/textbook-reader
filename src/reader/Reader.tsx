@@ -112,7 +112,7 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '' }: { co
   const pageList = useRef<HTMLDivElement>(null);
   const metrics = useRef<PageMetric[]>([]);
   const anchor = useRef({ page: 1, fraction: 0 });
-  const measureReading = useRef<(restore?: boolean) => void>(() => {});
+  const measureReading = useRef<() => void>(() => {});
   const flushReadingPosition = useRef<() => string>(() => '');
   const current = useRef(1);
   const requestId = useRef(0);
@@ -213,6 +213,9 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '' }: { co
     let frame = 0;
     let width = 0;
     let listTop = 0;
+    let listHeight = 0;
+    let viewportWidth = 0;
+    let viewportHeight = 0;
     let initialized = false;
     let layoutScrollTop: number | null = null;
     let storageError = resume.error;
@@ -229,7 +232,11 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '' }: { co
 
     function updatePosition() {
       // Hidden layout changes are not reading; keep the last visible anchor.
-      if (!element || element.inert) return;
+      if (!element || !list || element.inert) return;
+      // Scroll RAFs can run before ResizeObserver after a resize. Restore the
+      // last reading anchor before interpreting scrollTop with new geometry.
+      if (width !== list.clientWidth || listTop !== list.offsetTop || listHeight !== list.offsetHeight || viewportWidth !== window.innerWidth || viewportHeight !== window.innerHeight) { measure(); return; }
+      if (layoutScrollTop !== null && Math.abs(element.scrollTop - layoutScrollTop) < 1) return;
       const page = readingPage(metrics.current, element.scrollTop, element.clientHeight, element.scrollHeight);
       const metric = metrics.current[page - 1];
       current.current = page;
@@ -238,12 +245,15 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '' }: { co
       if (initialized && !storageError && saveTimer === undefined) saveTimer = setTimeout(savePosition, 750);
     }
 
-    function measure(restore = false) {
+    function measure() {
       if (!element || !list) return;
+      cancelAnimationFrame(frame);
       const saved = anchor.current;
-      const resized = width > 0 && (width !== list.clientWidth || listTop !== list.offsetTop);
       width = list.clientWidth;
       listTop = list.offsetTop;
+      listHeight = list.offsetHeight;
+      viewportWidth = window.innerWidth;
+      viewportHeight = window.innerHeight;
       setPaperWidth(width);
       setMarkerSize(window.matchMedia("(max-width: 760px)").matches ? 32 : 36);
       metrics.current = measurePages(list);
@@ -253,18 +263,22 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '' }: { co
         const initialMetric = position && metrics.current[position.page - 1];
         if (position && initialMetric) element.scrollTop = restoredScroll(initialMetric, position.fraction);
         initialized = true;
-      } else if ((resized || restore) && metric) {
+        updatePosition();
+      } else if (metric) {
+        // Keep the reading anchor through intermediate responsive layouts.
+        // Reclassifying a temporarily narrow page can select a later page.
         element.scrollTop = restoredScroll(metric, saved.fraction);
         layoutScrollTop = element.scrollTop;
       }
-      updatePosition();
     }
 
     function scroll() {
       if (element?.inert) return;
+      if (list && (width !== list.clientWidth || listTop !== list.offsetTop || listHeight !== list.offsetHeight || viewportWidth !== window.innerWidth || viewportHeight !== window.innerHeight)) measure();
       const layoutScroll = layoutScrollTop !== null && Math.abs(element!.scrollTop - layoutScrollTop) < 1;
+      if (layoutScroll) return;
       layoutScrollTop = null;
-      if (navigationPending.current && !layoutScroll) {
+      if (navigationPending.current) {
         requestId.current += 1;
         navigationPending.current = false;
         setPending(false);
@@ -301,7 +315,7 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '' }: { co
   }, []);
 
   useLayoutEffect(() => {
-    if (views.bookVisible) measureReading.current(true);
+    if (views.bookVisible) measureReading.current();
   }, [views.bookVisible]);
 
   useEffect(() => {
@@ -651,9 +665,9 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '' }: { co
             if (graphOpen) setSearchTarget({ key });
             return true;
           }} />
-        <button id="open-supplement-graph" className="icon-button" aria-label="节点图" title="节点图" disabled={!content.published} aria-expanded={graphOpen}
+        <button id="open-supplement-graph" className="icon-button reader-labeled-action" aria-label="节点图" title="节点图" disabled={!content.published} aria-expanded={graphOpen}
           aria-controls="supplement-graph" onClick={graphOpen ? closeGraph : openGraph}>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m7 7 10 2M7 7l3 11m7-9-7 9" stroke="currentColor" strokeWidth="1.5" /><circle cx="7" cy="7" r="3" fill="var(--surface)" stroke="currentColor" strokeWidth="1.5" /><circle cx="17" cy="9" r="2.5" fill="var(--surface)" stroke="currentColor" strokeWidth="1.5" /><circle cx="10" cy="18" r="2.5" fill="var(--surface)" stroke="currentColor" strokeWidth="1.5" /></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m7 7 10 2M7 7l3 11m7-9-7 9" stroke="currentColor" strokeWidth="1.5" /><circle cx="7" cy="7" r="3" fill="var(--surface)" stroke="currentColor" strokeWidth="1.5" /><circle cx="17" cy="9" r="2.5" fill="var(--surface)" stroke="currentColor" strokeWidth="1.5" /><circle cx="10" cy="18" r="2.5" fill="var(--surface)" stroke="currentColor" strokeWidth="1.5" /></svg><span className="reader-action-label">知识图</span>
         </button>
         </div>
         <div className="reader-toolbar-group reader-tools-supplement" role="group" aria-label="补充工具">

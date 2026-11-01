@@ -19,10 +19,11 @@
 | [09 笔记改名和移动后维护引用](issues/09-rename-links.md) | 02、08 |
 | [10 将默认知识关联接入统一笔记](issues/10-default-relations.md) | 04、06、08 |
 | [11 搜索与知识图统一指向本地笔记](issues/11-search-graph.md) | 04、08 |
-| [12 双平台首版交付与完整离线路径验收](issues/12-desktop-release-verification.md) | 07、09、10、11、13、15 |
+| [12 双平台首版交付与完整离线路径验收](issues/12-desktop-release-verification.md) | 07、09、10、11、13、15、16 |
 | [13 Windows 实机验收](issues/13-windows-runtime-verification.md) | 01、09；另需 Windows 环境 |
 | [14 离线教材资源清单与校验准备](issues/14-offline-resource-manifest.md) | 无 |
-| [15 macOS 原生对话框与安装启动验收](issues/15-macos-native-dialog-verification.md) | 01；另需解锁 Mac |
+| [15 macOS 原生对话框与安装启动验收](issues/15-macos-native-dialog-verification.md) | 01 |
+| [16 生产教材下载源与发布核验](issues/16-production-download-source.md) | 03、14；另需生产来源 |
 
 按依赖已完成的前沿领取，不要求机械地按编号串行。当前无前置的实施票为 01、14；技术选择在对应票内落实。旧领域词汇中的附属笔记与逐实例绑定描述的是旧系统，新桌面目标以 R15 为准；现有 proposed ADR 不自动升级为已批准决定。
 
@@ -55,3 +56,5 @@ worker 只领取已具备前置条件的票，在隔离的工作树实施，保�
 2026-11-01：01 的原生选库、关闭确认及 DMG 安装启动验收遇到 Mac 锁屏，单列 15。01 实现与自动检查通过协调者审查后可放行 02、03；01 中未执行的原生操作仍注明转交 15，12 必须等待真实操作证据。
 
 2026-11-01：01 最终代码审查通过，修正只读命令保护、无关损坏文件阻塞保存及 BOM 位置问题后，以 `a7e59c2` 集成。协调者在干净工作树执行 lint、typecheck 和 61 项测试全部通过，并核对安装应用交互记录与截图。01 未执行的原生操作仍转交 15，Windows 实机仍转交 13。
+
+2026-11-01：DonQ 确认先完成本地实现，生产教材下载源拆为 16。03 通过真实本机 HTTP 与安装产物验证下载器及离线流程后可放行依赖实现；16 与 13、15 仍是 12 的交付门槛，不把本地测试当作生产发布。

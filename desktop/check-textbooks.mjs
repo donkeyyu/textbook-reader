@@ -127,6 +127,10 @@ try {
   await page.getByPlaceholder('搜索解读标题或内容').fill('相反数');
   await page.locator('.graph-results button').first().click();
   await page.locator('#supplement-panel .math-inline svg, #supplement-panel .math-display svg').first().waitFor({ timeout: 30_000 });
+  await page.waitForFunction(() => [...document.querySelectorAll('.location-highlight')].some((highlight) => {
+    const image = highlight.closest('.paper')?.querySelector('.page-image');
+    return image instanceof HTMLImageElement && image.complete && image.naturalWidth > 0 && getComputedStyle(image).opacity === '1';
+  }));
   await page.screenshot({ path: path.join(evidence, 'offline-formula.png') });
   const location = await page.locator('.location-highlight').count(); assert.ok(location > 0);
   await page.getByRole('button', { name: '返回书架', exact: true }).click();

@@ -160,6 +160,97 @@ test('duplicate IDs, simultaneous external changes and uncertain old links never
   assert.equal(await readFile(path.join(library, '引用.md'), 'utf8'), refs);
 });
 
+for (const timing of ['same scan', 'after notice']) test(`external move with occupied old path reports a persistent identity conflict: ${timing}`, async (t) => {
+  const { library, vault, moves, put } = await setup(t);
+  const original = await put('旧路径.md'); const refs = await put('占用引用.md', '[[旧路径|保持原别名]]');
+  await vault.scan();
+  await rename(path.join(library, '旧路径.md'), path.join(library, '复习/原件.md'));
+  let noticeId: string | undefined;
+  let previewId: string | undefined;
+  if (timing === 'after notice') {
+    const notice = (await moves.status()).notices[0]!;
+    noticeId = notice.id; assert.equal(notice.problem, undefined);
+    previewId = (await moves.planRepair(notice.id)).id;
+  }
+  const replacement = await put('旧路径.md', '不同 ID 的替代文件');
+  assert.notEqual(parse(original).data._textbook.id, parse(replacement).data._textbook.id);
+  const status = await moves.status();
+  const notice = status.notices.find((item) => item.from === '旧路径.md');
+  assert.ok(notice, 'old path occupancy must not hide historical identity evidence');
+  assert.equal(notice.to, '复习/原件.md'); assert.match(notice.problem!, /原路径.*占用.*身份冲突/);
+  if (noticeId) assert.equal(notice.id, noticeId, 'an existing move notice becomes a conflict notice');
+  await assert.rejects(moves.planRepair(notice.id), /身份冲突/);
+  assert.equal((await moves.status()).notices.find((item) => item.id === notice.id)?.problem, notice.problem);
+  if (previewId) {
+    const blocked = await moves.apply(previewId);
+    assert.match(blocked.error!, /原路径已重新出现/);
+    assert.ok(blocked.edits.every((edit) => !edit.done));
+    assert.equal((await moves.status()).operations.find((operation) => operation.id === previewId)?.error, blocked.error);
+  }
+  assert.equal(await readFile(path.join(library, '占用引用.md'), 'utf8'), refs);
+  assert.equal(await readFile(path.join(library, '旧路径.md'), 'utf8'), replacement);
+  assert.equal(await readFile(path.join(library, '复习/原件.md'), 'utf8'), original);
+});
+
+test('application copy and duplicate-ID repair do not become external move notices', async (t) => {
+  const { library, vault, moves, put } = await setup(t);
+  const original = await put('正常原件.md'); await vault.scan();
+  const note = await vault.read('正常原件.md');
+  const copy = await vault.copy(note.path, note.source, note.revision, false);
+  assert.notEqual(copy.id, note.id); assert.deepEqual((await moves.status()).notices, []);
+  await writeFile(path.join(library, '待修复副本.md'), original); await vault.scan();
+  const duplicate = await vault.read('待修复副本.md');
+  const repaired = await vault.copy(duplicate.path, duplicate.source, duplicate.revision, true);
+  assert.notEqual(repaired.id, note.id); assert.equal(repaired.path, duplicate.path);
+  assert.deepEqual((await moves.status()).notices, []);
+});
+
+for (const approach of ['application move', 'external repair']) test(`a completed ${approach} does not suppress later external moves from its old path`, async (t) => {
+  const { library, vault, moves, put } = await setup(t);
+  await put('A.md'); await put('往返引用.md', '[[A|保持别名]]'); await vault.scan();
+  const note = await vault.read('A.md');
+  if (approach === 'external repair') await rename(path.join(library, 'A.md'), path.join(library, 'B.md'));
+  const plan = approach === 'application move' ? await moves.plan(note.path, 'B.md', note.revision) : await moves.planRepair((await moves.status()).notices[0]!.id);
+  const applied = await moves.apply(plan.id); assert.equal(applied.moved, true);
+  assert.ok(applied.edits.every((edit) => edit.done)); assert.deepEqual((await moves.status()).notices, []);
+  const savedReferences = await readFile(path.join(library, '往返引用.md'), 'utf8');
+  await rename(path.join(library, 'B.md'), path.join(library, 'A.md'));
+  assert.ok((await moves.status()).notices.some((notice) => notice.from === 'B.md' && notice.to === 'A.md'));
+  await rename(path.join(library, 'A.md'), path.join(library, 'C.md'));
+  const notice = (await moves.status()).notices.find((notice) => notice.from === 'A.md' && notice.to === 'C.md');
+  assert.ok(notice, 'completed A→B journal must not hide a later external A→C move');
+  assert.equal(notice.problem, undefined);
+  assert.equal((await vault.read('C.md')).id, note.id);
+  assert.equal(await readFile(path.join(library, '往返引用.md'), 'utf8'), savedReferences);
+});
+
+test('an external notice follows repeated moves only with unique unchanged identity and a free old path', async (t) => {
+  for (const scenario of ['valid', 'duplicate', 'changed', 'occupied']) {
+    const { library, vault, moves, put } = await setup(t);
+    const original = await put('A.md'); const refs = await put('历史引用.md', '[[A|最初别名]]'); await vault.scan();
+    await rename(path.join(library, 'A.md'), path.join(library, 'B.md'));
+    const first = (await moves.status()).notices[0]!;
+    await rename(path.join(library, 'B.md'), path.join(library, 'C.md'));
+    if (scenario === 'duplicate') await writeFile(path.join(library, '副本.md'), original);
+    if (scenario === 'changed') await writeFile(path.join(library, 'C.md'), `${original}\n外部修改`);
+    if (scenario === 'occupied') await put('A.md', '不同 ID 的占用文件');
+    const current = (await moves.status()).notices.find((notice) => notice.id === first.id)!;
+    assert.equal(await readFile(path.join(library, '历史引用.md'), 'utf8'), refs);
+    if (scenario === 'valid') {
+      assert.equal(current.to, 'C.md'); assert.equal(current.problem, undefined);
+      const plan = await moves.planRepair(first.id);
+      assert.equal(plan.edits[0]?.count, 1, 'the original A-path history must still resolve the reference');
+      assert.ok((await moves.apply(plan.id)).edits.every((edit) => edit.done));
+      assert.ok((await readFile(path.join(library, '历史引用.md'), 'utf8')).includes('[[C.md|最初别名]]'));
+      assert.equal(await readFile(path.join(library, 'C.md'), 'utf8'), original);
+    } else {
+      assert.equal(current.to, 'B.md', scenario);
+      assert.match(current.problem!, scenario === 'duplicate' ? /ID 冲突/ : scenario === 'changed' ? /内容同时改变/ : /占用.*身份冲突/);
+      await assert.rejects(moves.planRepair(first.id));
+    }
+  }
+});
+
 test('real process exit at capture/link/write checkpoints resumes from journal without duplicate writes', async (t) => {
   const { root, library, recovery, put } = await setup(t);
   for (const stage of ['captured', 'linked', 'written', 'reference-displaced']) {

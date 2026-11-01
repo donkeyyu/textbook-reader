@@ -39,6 +39,7 @@ export class NoteMoves {
   private history: Identity[] = [];
   private notices: Notice[] = [];
   private operations = new Map<string, Operation>();
+  private moving?: Operation;
   private directory: string;
   private vault: Vault;
   // Test seam, never exposed over IPC. A thrown checkpoint simulates a stopped process.
@@ -64,7 +65,6 @@ export class NoteMoves {
     if (!change.changed.length && this.history.length) return;
     const old = this.history;
     const names = new Set(change.notes), changed = new Set(change.changed);
-    const normalized = new Set(change.notes.map((name) => name.normalize('NFC')));
     const next = new Map(old.filter((item) => names.has(item.path)).map((item) => [item.path, item]));
     // Reuse the scan's captured notes. Observation has no disk writes, second
     // content reads, parsing or recursive scan calls on the successful save path.
@@ -72,22 +72,38 @@ export class NoteMoves {
       const note = scanned.get(name);
       next.set(name, { path: name, id: note?.id, revision: note?.revision ?? '' });
     }
+    const byPath = new Map([...next.values()].map((item) => [item.path.normalize('NFC'), item]));
+    const occupiedProblem = '原路径已被其他文件占用，存在身份冲突；请手动核对引用。';
+    for (const notice of this.notices) {
+      const occupant = byPath.get(notice.from.normalize('NFC'));
+      const matches = [...next.values()].filter((item) => item.id === notice.targetId);
+      if (occupant) notice.problem = occupant.id !== notice.targetId ? occupiedProblem : '原路径已重新出现，不能确认外部移动。';
+      else if (notice.history.filter((item) => item.id === notice.targetId).length !== 1 || matches.length > 1) notice.problem = 'ID 冲突，不能确认外部移动目标。';
+      else if (!matches.length) notice.problem = '外移原件暂不可确认，未自动修复引用。';
+      else if (matches[0]!.revision !== notice.revision) notice.problem = '路径与内容同时改变，不能确认同一原件。';
+      else { notice.to = matches[0]!.path; notice.problem = undefined; }
+    }
     for (const previous of old) {
-      if (!previous.id || normalized.has(previous.path.normalize('NFC'))) continue;
-      if ([...this.operations.values()].some((operation) => operation.from === previous.path && operation.started)) continue;
+      if (!previous.id) continue;
+      const occupant = byPath.get(previous.path.normalize('NFC'));
+      if (occupant?.id === previous.id) continue;
+      if (this.moving?.from === previous.path && this.moving.targetId === previous.id) continue;
       const matches = [...next.values()].filter((item) => item.id === previous.id);
       if (!matches.length || this.notices.some((notice) => notice.from === previous.path && notice.targetId === previous.id)) continue;
       const candidate = matches[0]!;
       const duplicate = old.filter((item) => item.id === previous.id).length !== 1 || matches.length !== 1;
+      // An explicit duplicate-ID repair leaves the old ID on its other copy.
+      // An occupied path only proves a move conflict with unique old/new identity evidence.
+      if (occupant && (duplicate || samePath(candidate.path, previous.path))) continue;
       this.notices.push({ id: randomUUID(), from: previous.path, to: candidate.path, targetId: previous.id, revision: previous.revision, history: old,
-        problem: duplicate ? 'ID 冲突，不能确认外部移动目标。' : candidate.revision !== previous.revision ? '路径与内容同时改变，不能确认同一原件。' : undefined });
+        problem: occupant ? occupiedProblem : duplicate ? 'ID 冲突，不能确认外部移动目标。' : candidate.revision !== previous.revision ? '路径与内容同时改变，不能确认同一原件。' : undefined });
     }
     this.history = [...next.values()];
   }
 
   async status(): Promise<MoveStatus> {
     await this.vault.scan();
-    return { operations: [...this.operations.values()].filter((operation) => operation.started).map(view), notices: this.notices.filter((notice) => ![...this.operations.values()].some((operation) => operation.started && operation.external && operation.from === notice.from)).map(({ history: _history, targetId: _id, revision: _revision, ...notice }) => notice) };
+    return { operations: [...this.operations.values()].filter((operation) => operation.started).map(view), notices: this.notices.map(({ history: _history, targetId: _id, revision: _revision, ...notice }) => notice) };
   }
 
   recoveries(): Recovery[] {
@@ -157,8 +173,12 @@ export class NoteMoves {
     if (!uuid(id)) throw new Error('操作 ID 无效。');
     const operation = this.operations.get(id);
     if (!operation) throw new Error('操作记录不存在，请重新预览。');
+    const starting = !operation.started;
+    await this.persist({ ...operation, started: true, error: undefined });
     operation.started = true; operation.error = undefined;
-    await this.persist(operation);
+    // The durable operation now owns this repair. Retire only its current hint;
+    // future external moves may create fresh notices for the same old path/ID.
+    if (starting && operation.external) this.notices = this.notices.filter((notice) => notice.from !== operation.from || notice.targetId !== operation.targetId || notice.to !== operation.to);
     await this.checkpoint?.('journaled', id);
     if (!operation.moved) {
       try {
@@ -171,7 +191,13 @@ export class NoteMoves {
           // A captured file is absent from the visible index during crash recovery.
           const source = await this.vault.read(operation.from).catch(() => null);
           if (source) { await this.uniqueTarget(source); if (source.id !== operation.targetId) throw new Error('原笔记身份已改变。'); }
-          await this.vault.moveFile(operation.from, operation.to, digest(operation.original), operation.id);
+          this.moving = operation;
+          try { await this.vault.moveFile(operation.from, operation.to, digest(operation.original), operation.id); }
+          finally {
+            // Consume only this transfer's own observation before clearing its
+            // scope. Completed/reloaded journals never suppress external moves.
+            try { await this.vault.scan(); } finally { this.moving = undefined; }
+          }
         }
         operation.moved = true;
         await this.persist(operation);

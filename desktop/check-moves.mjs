@@ -115,6 +115,34 @@ try {
   assert.ok((await disk('外部引用.md')).includes('[[复习/外部改名.md|旧名]]'));
   await dialog().getByRole('button', { name: '关闭', exact: true }).click();
 
+  for (const [name, sameScan] of [['同轮占用', true], ['后续占用', false]]) {
+    const moved = source('仍是原 ID 的外移原件。'), replacement = source('不同 ID 的替代文件。');
+    const references = source(`[[${name}|原有别名]]`);
+    await writeFile(path.join(root, `${name}.md`), moved); await writeFile(path.join(root, `${name}引用.md`), references);
+    await page.getByRole('button', { name, exact: true }).click();
+    await page.getByRole('heading', { name, exact: true }).waitFor();
+    if (sameScan) {
+      // One main-thread turn gives the watcher the complete external change set.
+      await instance.evaluate(({ app }, { from, to, replacement }) => {
+        const require = process.getBuiltinModule('node:module').createRequire(`${app.getAppPath()}/package.json`);
+        const fs = require('node:fs'); fs.renameSync(from, to); fs.writeFileSync(from, replacement);
+      }, { from: path.join(root, `${name}.md`), to: path.join(root, `复习/${name}.md`), replacement });
+    } else {
+      await rename(path.join(root, `${name}.md`), path.join(root, `复习/${name}.md`));
+      await page.getByRole('button', { name: '预览引用修复', exact: true }).waitFor();
+      await writeFile(path.join(root, `${name}.md`), replacement);
+    }
+    const notice = page.locator('.note-move-actions details > div').filter({ hasText: `发现外部路径变化：${name}.md →` });
+    await notice.getByText('原路径已被其他文件占用，存在身份冲突；请手动核对引用。', { exact: false }).waitFor();
+    assert.equal(await notice.getByRole('button', { name: '预览引用修复', exact: true }).count(), 0);
+    await page.getByRole('button', { name: `${name}引用`, exact: true }).click();
+    await page.getByRole('heading', { name: `${name}引用`, exact: true }).waitFor();
+    assert.equal(await notice.isVisible(), true);
+    assert.equal(await disk(`${name}引用.md`), references);
+    assert.equal(await disk(`${name}.md`), replacement); assert.equal(await disk(`复习/${name}.md`), moved);
+    await screenshot(sameScan ? '06b-same-scan-occupied.png' : '06c-late-occupied.png');
+  }
+
   const duplicate = source('重复 ID 测试。'), duplicateRef = source('[[旧重复]]');
   await writeFile(path.join(root, '旧重复.md'), duplicate); await writeFile(path.join(root, '重复引用.md'), duplicateRef);
   await page.getByRole('button', { name: '旧重复', exact: true }).click();
@@ -172,7 +200,7 @@ try {
   await page.getByRole('button', { name: '查看未处理项', exact: true }).waitFor();
   await screenshot('10-manual-reference-stays-visible.png');
   assert.deepEqual(errors, []);
-  console.log(JSON.stringify({ ok: true, evidence, checks: ['collision', 'Chinese move', 'aliases and unknown YAML', 'partial failure and retry', 'original recovery to a new identity', 'link navigation and return', 'external repair', 'duplicate ID', 'real Electron process exit and retry', 'no-history missing link', 'pre-existing readonly reference remains visible after closing'], pageErrors: errors }, null, 2));
+  console.log(JSON.stringify({ ok: true, evidence, checks: ['collision', 'Chinese move', 'aliases and unknown YAML', 'partial failure and retry', 'original recovery to a new identity', 'link navigation and return', 'external repair', 'same-scan old path identity conflict', 'occupied path updates an existing notice', 'duplicate ID', 'real Electron process exit and retry', 'no-history missing link', 'pre-existing readonly reference remains visible after closing'], pageErrors: errors }, null, 2));
 } catch (error) {
   console.error('Evidence:', evidence); if (page && !page.isClosed()) await screenshot('failure.png'); throw error;
 } finally { if (instance && instance.process().exitCode === null) await instance.close(); }

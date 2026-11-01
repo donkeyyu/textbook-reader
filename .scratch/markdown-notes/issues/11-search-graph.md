@@ -46,3 +46,5 @@ Category: enhancement
 - 最终证据目录：`/private/var/folders/w5/kpp0bgcj4tb377ck3_y5_z3m0000gn/T/textbook-search-graph-check-eDqJb7`，`result.json` 记录复用夹具和计时；日志 `/tmp/markdown-notes-11-electron-final.log`。已视觉核对 `same-name-search.png`、`manual-duplicate-graph.png`、`971-content-graph.png`、`narrow-offline-search.png`、`narrow-offline-editor.png`。971 篇 UI 单次样本：已有资源重新添加 8929 ms、一次保存及位置记账 7561 ms、教材入口打开检索并显示结果 810 ms、教材入口打开并绘制图 1557 ms；与纯投影基准分开记录，不作为冷盘或响应时间保证。
 - 精确重跑：`npm run desktop:build` 后，执行 `node desktop/check-search-graph.mjs <已验证971篇QA库> <对应app-data>`。脚本仅复制输入，不修改来源；原生选库受控，未重复 15 的原生窗口验证。早期脚本修正包括全文搜索包含来源中的链接文字（命中 3 篇）、按真实包标题识别画布标签，以及重启后使用新页面的定位器；最终结果不使用这些失败运行的截图作为通过证据。新增边界经独立只读审查，发现的同目标教材往返与空态返回入口已修复并加入真实回归。
 - 本票职责已实现并验证，勾选不表示默认关联转换、跨票集成或双平台发布已通过；上述联合门槛继续保留，待协调者最终审查与合并。没有改动中央调度表、其他票或用户主工作区。
+
+- 2026-11-01，协调者最终审查与集成：`e00b4f6` 合入 09 后保留文件名主标题、完整路径上下文和移动维护，保留保存记账结束后执行导航的修复。集成 56 项桌面测试、全量 lint/typecheck/桌面构建、真实 Electron 专项 6 组通过；包括 971 篇真实库副本、统一教材入口、实际画布节点点击及离线重启。证据 `/private/var/folders/w5/kpp0bgcj4tb377ck3_y5_z3m0000gn/T/textbook-search-graph-check-jXhgVJ`；日志 `/tmp/markdown-notes-integration-11-{tests,lint,build,electron}.log`。06、10 后续接入仍由 17 做跨票联合复核。

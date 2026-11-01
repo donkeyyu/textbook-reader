@@ -661,7 +661,7 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '', local 
         <h1>{bookTitle}</h1>
       </div>
       <div className="toolbar-actions">
-        <div className="reader-toolbar-group reader-tools-browse" role="group" aria-label="查阅内容">
+        {!onOpenLocalNote && <div className="reader-toolbar-group reader-tools-browse" role="group" aria-label="查阅内容">
         <ContentSearch nodes={content.nodes} chapters={chapters} sections={sections} selectedKey={selectedGraphKey}
           onSelect={(key) => {
             if (!selectGraphNode(key)) return false;
@@ -673,7 +673,7 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '', local 
           aria-controls="supplement-graph" onClick={graphOpen ? closeGraph : openGraph}>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m7 7 10 2M7 7l3 11m7-9-7 9" stroke="currentColor" strokeWidth="1.5" /><circle cx="7" cy="7" r="3" fill="var(--surface)" stroke="currentColor" strokeWidth="1.5" /><circle cx="17" cy="9" r="2.5" fill="var(--surface)" stroke="currentColor" strokeWidth="1.5" /><circle cx="10" cy="18" r="2.5" fill="var(--surface)" stroke="currentColor" strokeWidth="1.5" /></svg><span className="reader-action-label">知识图</span>
         </button>
-        </div>
+        </div>}
         <div className="reader-toolbar-group reader-tools-supplement" role="group" aria-label="补充工具">
         <details className="supplement-filters" onPointerLeave={(event) => {
           if (event.pointerType !== 'mouse') return;

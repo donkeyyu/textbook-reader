@@ -5,7 +5,7 @@ import { notePath } from './note-path.ts';
 
 export type WikiLink = { from: number; to: number; raw: string; target: string; alias?: string };
 export type NoteReference = WikiLink & { property?: (string | number)[] };
-export type LinkEntry = { path: string; references: NoteReference[]; summary: string; anchors: unknown[]; problem?: string };
+export type LinkEntry = { path: string; references: NoteReference[]; summary: string; anchors: unknown[]; tags: string[]; searchText: string; id?: string; problem?: string };
 export type LinkIndex = { entries: LinkEntry[]; problems: string[] };
 export type LinkResolution = { kind: 'resolved' | 'ambiguous' | 'missing' | 'invalid'; candidates: LinkEntry[] };
 const escaped = (text: string, at: number) => {
@@ -114,19 +114,50 @@ export function noteReferences(source: string): NoteReference[] {
 }
 
 export function linkEntry(path: string, source: string): LinkEntry {
-  let body = source, anchors: unknown[] = [], problem: string | undefined;
-  try { const data = parse(source); body = data.body; anchors = Array.isArray(data.data._textbook?.anchors) ? data.data._textbook.anchors : []; }
+  let body = source, anchors: unknown[] = [], tags: string[] = [], id: string | undefined, problem: string | undefined;
+  try {
+    const data = parse(source); body = data.body;
+    anchors = Array.isArray(data.data._textbook?.anchors) ? data.data._textbook.anchors : [];
+    id = typeof data.data._textbook?.id === 'string' && data.data._textbook.id.trim() ? data.data._textbook.id : undefined;
+    const tag = data.data.tags;
+    tags = (Array.isArray(tag) ? tag : [tag]).filter((item): item is string => typeof item === 'string' && !!item.trim());
+  }
   catch (cause) { problem = (cause as Error).message; }
-  return { path, references: noteReferences(source), anchors, summary: body.replace(/[`#>*_[\]]/g, '').replace(/\s+/g, ' ').trim().slice(0, 180), problem };
+  // A broken header stays visible as an error, but is not searchable metadata.
+  if (problem && /^(?:\uFEFF)?---\r?\n/.test(source)) {
+    const end = /^(?:---|\.\.\.)\r?$(?:\n)?/m.exec(source.slice(source.indexOf('\n') + 1));
+    body = end ? source.slice(source.indexOf('\n') + 1 + end.index + end[0].length) : '';
+  }
+  return { path, references: noteReferences(source), anchors, tags, id,
+    searchText: [path.slice(0, -3), body, ...tags].join('\n').normalize('NFC').toLocaleLowerCase(),
+    summary: body.replace(/[`#>*_[\]]/g, '').replace(/\s+/g, ' ').trim().slice(0, 180), problem };
 }
 
-export function resolveLink(target: string, entries: LinkEntry[]): LinkResolution {
+function resolveCandidates(target: string, find: (path: string, explicit: boolean) => LinkEntry[]): LinkResolution {
   let path: string;
   try { path = linkPath(target).normalize('NFC'); }
   catch { return { kind: 'invalid', candidates: [] }; }
   const explicit = target.includes('/') || target.endsWith('.md');
-  const candidates = entries.filter((entry) => (explicit ? entry.path : entry.path.split('/').at(-1)!).normalize('NFC') === path);
+  const candidates = find(path, explicit);
   return { kind: candidates.length === 1 ? 'resolved' : candidates.length ? 'ambiguous' : 'missing', candidates };
+}
+
+export function resolveLink(target: string, entries: LinkEntry[]): LinkResolution {
+  return resolveCandidates(target, (path, explicit) => entries.filter((entry) => (explicit ? entry.path : entry.path.split('/').at(-1)!).normalize('NFC') === path));
+}
+
+// Batch graph/backlink queries use the same resolution rules with O(N + R)
+// lookups, instead of normalizing all N paths again for every reference.
+export function linkResolver(entries: LinkEntry[]) {
+  const paths = new Map<string, LinkEntry[]>(), names = new Map<string, LinkEntry[]>();
+  for (const entry of entries) {
+    for (const [index, key] of [[paths, entry.path], [names, entry.path.split('/').at(-1)!]] as const) {
+      const normalized = key.normalize('NFC');
+      const matches = index.get(normalized);
+      if (matches) matches.push(entry); else index.set(normalized, [entry]);
+    }
+  }
+  return (target: string) => resolveCandidates(target, (path, explicit) => (explicit ? paths : names).get(path) ?? []);
 }
 
 export function pathLink(path: string, alias?: string) {
@@ -152,9 +183,10 @@ export function replaceReference(source: string, reference: NoteReference, repla
 }
 
 export function backlinks(path: string, entries: LinkEntry[]) {
+  const resolve = linkResolver(entries);
   return entries.flatMap((entry) => {
     const references = entry.references.filter((reference) => {
-      const result = resolveLink(reference.target, entries);
+      const result = resolve(reference.target);
       return result.kind === 'resolved' && result.candidates[0]!.path === path;
     });
     return references.length ? [{ entry, references }] : [];

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { noteName } from './NoteMoves';
 import { backlinks, linkPath, noteReferences, pathLink, resolveLink, type LinkEntry, type LinkIndex, type NoteReference } from '../../desktop/links';
 
-function Candidate({ entry }: { entry: LinkEntry }) {
+export function Candidate({ entry }: { entry: LinkEntry }) {
   return <><strong>{noteName(entry.path)}</strong><small title={entry.path}>{entry.path}</small>
     {entry.anchors.map((anchor, index) => {
       if (!anchor || typeof anchor !== 'object' || Array.isArray(anchor)) return null;

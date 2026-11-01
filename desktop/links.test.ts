@@ -4,7 +4,7 @@ import { mkdtemp, mkdir, readFile, writeFile, rm, symlink, utimes } from 'node:f
 import path from 'node:path';
 import os from 'node:os';
 import { Vault } from './vault.ts';
-import { backlinks, linkEntry, linkPath, noteReferences, pathLink, replaceReference, resolveLink, wikiLinks } from './links.ts';
+import { backlinks, linkEntry, linkPath, linkResolver, noteReferences, pathLink, replaceReference, resolveLink, wikiLinks } from './links.ts';
 
 const entries = ['七年级/相反数.md', '八年级/相反数.md', '中文 空格.md', 'Case.md', 'case.md', '根.md', '目录/根.md'].map((path) => linkEntry(path, `${path} 的摘要`));
 test('exact case, optional lowercase extension, explicit root path, NFC collision and safe path grammar', () => {
@@ -22,6 +22,10 @@ test('exact case, optional lowercase extension, explicit root path, NFC collisio
     assert.throws(() => linkPath(target));
   }
   assert.equal(linkPath('百分%20号'), '百分%20号.md');
+  const resolve = linkResolver([...entries, ...collision]);
+  for (const target of ['相反数', '七年级/相反数', '中文 空格.md', 'Case', 'CASE', '根', '根.md', 'café', '../外部', '/绝对', 'a.MD', '百分%20号']) {
+    assert.deepEqual(resolve(target), resolveLink(target, [...entries, ...collision]), target);
+  }
 });
 
 test('syntax exclusions and escapes are shared by index and rendering', () => {

@@ -18,7 +18,7 @@ const maxRadius = 10;
 
 // Reference: family-tree/frontend/src/hooks/usePixiGraph.ts. No content is mutated.
 export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes: GraphNode[], edges: GraphEdge[],
-  selectedKey: string | null, visible: boolean, onSelect: (key: string | null) => boolean) {
+  selectedKey: string | null, visible: boolean, onSelect: (key: string | null) => boolean, focusSelection = true) {
   const [ready, setReady] = useState(false);
   const [error, setError] = useState('');
   const [scale, setScale] = useState(1);
@@ -535,10 +535,10 @@ export function useSupplementGraph(host: RefObject<HTMLDivElement | null>, nodes
   useEffect(() => { actions.current.update(); }, [nodes, edges, ready]);
 
   useEffect(() => {
-    if (selectedKey && skipFocus.current !== selectedKey && ready) actions.current.focus(selectedKey);
+    if (focusSelection && selectedKey && skipFocus.current !== selectedKey && ready) actions.current.focus(selectedKey);
     skipFocus.current = null;
     actions.current.paint();
-  }, [selectedKey, ready]);
+  }, [selectedKey, ready, focusSelection]);
 
   useEffect(() => {
     const element = host.current;

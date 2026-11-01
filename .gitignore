@@ -29,3 +29,7 @@ supabase/.temp/
 # Desktop build and installation artifacts.
 build-desktop/
 release/
+
+# Rebuilt for each desktop installer.
+resources/offline/installer.json
+resources/offline/installer.json.sha256

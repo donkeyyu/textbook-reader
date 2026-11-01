@@ -1,7 +1,8 @@
 import { app, BrowserWindow, dialog, ipcMain, net, protocol, screen } from 'electron';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { Vault } from './vault.ts';
+import { TextbookStore, textbookId } from './textbooks.ts';
+import { digest, Vault } from './vault.ts';
 import { LocalState, cleanState } from './state.ts';
 import type { Result, VaultState, VaultView } from './contracts.ts';
 
@@ -18,6 +19,7 @@ let state: VaultState = { positions: {} };
 let dirty = false;
 let closing = false;
 let queue: Promise<unknown> = Promise.resolve();
+let textbooks: TextbookStore;
 
 export function trustedSender(event: Electron.IpcMainEvent | Electron.IpcMainInvokeEvent) {
   return event.sender === window?.webContents && event.senderFrame === window.webContents.mainFrame && event.senderFrame.url === appUrl;
@@ -89,12 +91,41 @@ ipcMain.on('vault:dirty', (event, value: unknown) => {
   event.returnValue = null;
 });
 
+// Downloads run separately from the note queue so note saves and progress reads remain available.
+function textbookHandle(channel: string, operation: (...args: unknown[]) => Promise<unknown>) {
+  ipcMain.handle(channel, async (event, ...args): Promise<Result<unknown>> => {
+    if (!trustedSender(event)) return { ok: false, error: '调用来源无效。' };
+    try { return { ok: true, value: await operation(...args) }; }
+    catch (error) { return { ok: false, error: (error as Error).message }; }
+  });
+}
+textbookHandle('textbooks:context', async () => { await queue; return vault ? { vaultToken: vault.token, vaultKey: digest(vault.root), name: path.basename(vault.root) } : null; });
+textbookHandle('textbooks:status', async () => textbooks.snapshot());
+textbookHandle('textbooks:add', async (token, id) => {
+  const selected = current(token);
+  if (id !== textbookId) throw new Error('教材版本不可用。');
+  await textbooks.download();
+  // Catalog commit and vault selection share the note queue; network transfer does not.
+  const result = queue.then(() => textbooks.addToVault(selected.root, id, () => { current(token); }));
+  queue = result.catch(() => {});
+  return result;
+});
+textbookHandle('textbooks:catalog', async (token) => { const selected = current(token); const catalog = await textbooks.catalog(selected.root); current(token); return catalog; });
+
 void app.whenReady().then(async () => {
+textbooks = new TextbookStore(path.resolve(here, '..'), local.directory, process.env.TEXTBOOK_DOWNLOAD_BASE_URL || null, app.commandLine.hasSwitch('textbook-local-http'));
+await textbooks.initialize();
 protocol.handle('textbook', async (request) => {
   const url = new URL(request.url);
   const relative = decodeURIComponent(url.pathname === '/' ? '/index.html' : url.pathname);
   const full = path.resolve(resources, `.${relative}`);
   if (url.host !== 'app' || !full.startsWith(`${resources}${path.sep}`) || request.method !== 'GET') return new Response('', { status: 403 });
+  if (relative.startsWith('/textbooks/')) {
+    try {
+      const bytes = await textbooks.read(relative.slice(1));
+      return new Response(new Uint8Array(bytes), { headers: { 'Content-Type': relative.endsWith('.json') ? 'application/json' : 'image/webp', 'Cache-Control': 'no-store' } });
+    } catch { return new Response('教材资源不可用，请重试下载。', { status: 404 }); }
+  }
   const response = await net.fetch(pathToFileURL(full).href);
   const headers = new Headers(response.headers);
   headers.set('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'");

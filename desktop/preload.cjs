@@ -10,3 +10,10 @@ contextBridge.exposeInMainWorld('textbookDesktop', Object.freeze({
   // Make the native close guard see a CodeMirror edit during that same event turn.
   setDirty: (dirty) => { ipcRenderer.sendSync('vault:dirty', dirty); },
 }));
+
+contextBridge.exposeInMainWorld('textbookResources', Object.freeze({
+  context: () => ipcRenderer.invoke('textbooks:context'),
+  status: () => ipcRenderer.invoke('textbooks:status'),
+  add: (token, id) => ipcRenderer.invoke('textbooks:add', token, id),
+  catalog: (token) => ipcRenderer.invoke('textbooks:catalog', token),
+}));

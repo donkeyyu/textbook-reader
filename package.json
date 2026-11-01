@@ -22,7 +22,7 @@
     "typecheck:desktop": "tsc --project tsconfig.desktop.json --noEmit",
     "test:desktop": "node --experimental-strip-types --test desktop/*.test.ts",
     "desktop:compile": "tsc --project tsconfig.desktop.json",
-    "desktop:build": "npm run build && npm run desktop:compile",
+    "desktop:build": "npm run build && npm run desktop:compile && node desktop/prepare-installer.mjs",
     "desktop": "npm run desktop:build && electron .",
     "desktop:pack:mac": "npm run desktop:build && electron-builder --mac dmg --x64 --publish never",
     "desktop:pack:win": "npm run desktop:build && electron-builder --win nsis --x64 --publish never",
@@ -69,7 +69,13 @@
       "dist/**",
       "build-desktop/**",
       "desktop/preload.cjs",
-      "package.json"
+      "package.json",
+      "!dist/textbooks/**",
+      "scripts/offline-resources.mjs",
+      "resources/offline/grade-7-volume-1/manifest.json",
+      "resources/offline/grade-7-volume-1/manifest.sha256",
+      "resources/offline/installer.json",
+      "resources/offline/installer.json.sha256"
     ],
     "asar": true,
     "mac": {

@@ -54,9 +54,9 @@ function measurePages(list: HTMLDivElement): PageMetric[] {
   });
 }
 
-export function Reader({ content, onReturnToShelf, navigationNotice = '' }: { content: BookContent; onReturnToShelf: (notice: string) => void; navigationNotice?: string }) {
+export function Reader({ content, onReturnToShelf, navigationNotice = '', local = false, readingStorage }: { readingStorage?: Pick<Storage, 'getItem' | 'setItem'>; local?: boolean; content: BookContent; onReturnToShelf: (notice: string) => void; navigationNotice?: string }) {
   const [resume] = useState(() => {
-    try { return { position: loadReadingPosition(), error: '' }; }
+    try { return { position: loadReadingPosition(readingStorage), error: '' }; }
     catch (cause) { return { position: null, error: (cause as Error).message }; }
   });
   const [readingError, setReadingError] = useState(resume.error);
@@ -226,7 +226,7 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '' }: { co
       clearTimeout(saveTimer);
       saveTimer = undefined;
       if (!initialized || storageError) return storageError;
-      try { saveReadingPosition(anchor.current); }
+      try { saveReadingPosition(anchor.current, readingStorage); }
       catch (cause) { storageError = (cause as Error).message; setReadingError(storageError); }
       return storageError;
     }
@@ -707,11 +707,11 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '' }: { co
         <button type="button" className="icon-button return-to-shelf" aria-label="返回书架" title="返回书架" onClick={() => {
           onReturnToShelf(flushReadingPosition.current());
         }}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h4v14H4zM10 5h4v14h-4zM16 6l3-1 3 13-3 1zM3 21h20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg></button>
-        <AccountControl user={content.user} onSignIn={signIn} onPasswordSignIn={import.meta.env.DEV ? signInWithPassword : undefined} onSignOut={async () => {
+        {!local && <AccountControl user={content.user} onSignIn={signIn} onPasswordSignIn={import.meta.env.DEV ? signInWithPassword : undefined} onSignOut={async () => {
           if (document.querySelector('[data-dirty="true"]') && !window.confirm('有尚未保存的内容，放弃修改并退出登录？')) throw new Error('已保留草稿，尚未退出登录。');
           closeSupplement(); setPersonalItem(null); setSelectionPage(null);
           await signOut();
-        }} />
+        }} />}
         </div>
       </div>
     </header>
@@ -849,7 +849,7 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '' }: { co
           {content.personal && (content.draftOwner || ownsPersonal && !content.loading) ? <MarkdownEditor onEdit={cancelJump} key={`${content.personal.userId}:${item.id}`} note value={content.personal.data.notes[item.id] ?? ''}
             bindings={content.personal.data.noteBindings?.[item.id]} links={{ ...links, chapterId: content.nodes.find((node) => node.source === 'default' && node.id === item.id)?.chapterId ?? null }}
             label="笔记 Markdown" onSave={(value, bindings) => saveNote(item.id, value, bindings)} />
-            : <p>{content.user ? '个人笔记尚未载入，请读取成功后再编辑。' : '登录后可保存个人笔记。'}</p>}
+            : <p>{content.user ? '个人笔记尚未载入，请读取成功后再编辑。' : local ? '请在本地笔记库中编辑笔记。' : '登录后可保存个人笔记。'}</p>}
         </section></>}
         activeLocationId={selectedLocation}
         onBack={previous ? () => { void navigate({ page: previous.page, restore: previous }); } : undefined} />}

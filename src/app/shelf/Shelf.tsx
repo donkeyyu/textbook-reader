@@ -5,12 +5,15 @@ import bookMetadata from '../../textbook/book.json';
 import { chapterAt, sectionAt } from '../../textbook/sections';
 import { getTextbook, textbooks } from '../../textbook/library';
 
-export function Shelf({ members, error, notice, returnBookId, onAdd, onOpen, onRemove, account, settings, contentStatus }: {
+export function Shelf({ members, error, notice, returnBookId, onAdd, onOpen, onRemove, account, settings, contentStatus, adding = false, resourcesAvailable = true, readingStorage }: {
   members: readonly string[];
   error: string;
   notice: string;
   returnBookId: string | null;
-  onAdd: (id: string) => boolean;
+  onAdd: (id: string) => boolean | Promise<boolean>;
+  readingStorage?: Pick<Storage, 'getItem' | 'setItem'>;
+  adding?: boolean;
+  resourcesAvailable?: boolean;
   onOpen: (id: string) => void;
   onRemove: (id: string) => boolean;
   account: ReactNode;
@@ -31,7 +34,7 @@ export function Shelf({ members, error, notice, returnBookId, onAdd, onOpen, onR
   const [removedBook, setRemovedBook] = useState<(typeof textbooks)[number] | null>(null);
   const [message, setMessage] = useState('');
   const [readings] = useState(() => Object.fromEntries(textbooks.map((book): [string, { position: ReadingPosition | null; error: string }] => {
-    try { return [book.id, { position: loadReadingPosition(undefined, { documentSha256: book.id, pageCount: book.pages.length }), error: '' }]; }
+    try { return [book.id, { position: loadReadingPosition(readingStorage, { documentSha256: book.id, pageCount: book.pages.length }), error: '' }]; }
     catch (cause) { return [book.id, { position: null, error: (cause as Error).message }]; }
   })));
   const readingErrors = [...new Set(Object.values(readings).map(({ error }) => error).filter(Boolean))].join(' ');
@@ -90,8 +93,8 @@ export function Shelf({ members, error, notice, returnBookId, onAdd, onOpen, onR
       {(notice || readingErrors) && <p className="shelf-error" role="status">{[...new Set([notice, readingErrors].filter(Boolean))].join(' ')}</p>}
       {removedBook && <div className="shelf-removal">
         <p role="status">已将《{removedBook.title}》移出书架。阅读记录、笔记和个人补充仍保留。</p>
-        <button className="text-button" type="button" onClick={() => {
-          if (!onAdd(removedBook.id)) return;
+        <button className="text-button" type="button" onClick={async () => {
+          if (!await onAdd(removedBook.id)) return;
           restoredBook.current = removedBook.id;
           setRemovedBook(null);
         }}>撤销移出</button>
@@ -113,7 +116,7 @@ export function Shelf({ members, error, notice, returnBookId, onAdd, onOpen, onR
               return <article className="shelf-book" key={book.id}>
               <button id={`shelf-cover-${book.id}`} ref={book.id === returnBookId ? returnedCover : undefined} className="shelf-cover" type="button"
                 aria-label={`打开《${book.title}》，${book.edition}`} onClick={() => onOpen(book.id)}>
-                <img src={book.cover} alt={`${book.title}封面`} width="1304" height="1843" />
+                {resourcesAvailable ? <img src={book.cover} alt={`${book.title}封面`} width="1304" height="1843" /> : <span className="desktop-book-placeholder">{book.title}</span>}
               </button>
               <div className="shelf-book-copy"><h2>{book.title}</h2><p className="shelf-edition">{book.edition}</p>
               <div className="shelf-resume">
@@ -167,18 +170,19 @@ export function Shelf({ members, error, notice, returnBookId, onAdd, onOpen, onR
         </button>
       </div>
       {error && <p className="shelf-error" role="alert">{error}</p>}
+      {adding && contentStatus}
       <p className="shelf-message" role="status">{message || '从教材库选择教材，添加后留在书架。'}</p>
       <div className="shelf-grid" aria-label="教材库">
         {textbooks.map((book) => <article className="shelf-book" key={book.id}>
-          <div className="shelf-library-art"><img className="shelf-library-cover" src={book.cover} alt={`${book.title}封面`} width="1304" height="1843" /></div>
+          <div className="shelf-library-art">{resourcesAvailable ? <img className="shelf-library-cover" src={book.cover} alt={`${book.title}封面`} width="1304" height="1843" /> : <span className="desktop-book-placeholder">{book.title}</span>}</div>
           <h3>{book.title}</h3><p className="shelf-edition">{book.edition}</p>
-          <button className="shelf-read" type="button" disabled={members.includes(book.id)} onClick={() => {
-            if (onAdd(book.id)) {
+          <button className="shelf-read" type="button" disabled={adding || members.includes(book.id)} onClick={async () => {
+            if (await onAdd(book.id)) {
               setMessage(`已将《${book.title}》添加到书架。`);
               if (removedBook?.id === book.id) setRemovedBook(null);
             }
-          }}>{members.includes(book.id) ? '已添加' : '添加到书架'}</button>
-          {error && <button className="text-button shelf-direct-read" type="button" onClick={() => onOpen(book.id)}>直接阅读</button>}
+          }}>{members.includes(book.id) ? '已添加' : adding ? '下载中…' : '添加到书架'}</button>
+          {error && resourcesAvailable && <button className="text-button shelf-direct-read" type="button" onClick={() => onOpen(book.id)}>直接阅读</button>}
         </article>)}
       </div>
     </dialog>

@@ -25,3 +25,7 @@ public/textbooks/*
 
 # Supabase CLI local cache.
 supabase/.temp/
+
+# Desktop build and installation artifacts.
+build-desktop/
+release/

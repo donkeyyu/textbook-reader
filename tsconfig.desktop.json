@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "noEmit": false,
+    "rewriteRelativeImportExtensions": true,
+    "outDir": "build-desktop",
+    "rootDir": "desktop",
+    "types": ["node"],
+    "lib": ["ES2022", "DOM"]
+  },
+  "include": ["desktop/**/*.ts"],
+  "exclude": ["desktop/**/*.test.ts"]
+}

@@ -8,16 +8,25 @@
   },
   "scripts": {
     "dev": "vite",
-    "lint": "npm run lint:frontend && npm run lint:backend",
+    "lint": "npm run lint:frontend && npm run lint:backend && npm run lint:desktop",
     "lint:frontend": "oxlint --deny-warnings src vite.config.ts",
     "lint:backend": "oxlint --deny-warnings scripts",
-    "typecheck": "npm run typecheck:frontend && npm run typecheck:backend",
+    "typecheck": "npm run typecheck:frontend && npm run typecheck:backend && npm run typecheck:desktop",
     "typecheck:frontend": "tsc --noEmit",
     "typecheck:backend": "tsc --project tsconfig.scripts.json",
-    "test": "node --experimental-strip-types --test src/app/shelf/shelf-store.test.ts src/appearance/ui-style.test.ts src/reader/book/session.test.ts src/content/personal.test.ts src/reader/text/math.test.ts src/reader/text/text-spacing.test.ts src/reader/links/identity.test.ts src/reader/links/references.test.ts src/textbook/catalog.test.ts src/textbook/supplements.test.ts",
+    "test": "node --experimental-strip-types --test src/app/shelf/shelf-store.test.ts src/appearance/ui-style.test.ts src/reader/book/session.test.ts src/content/personal.test.ts src/reader/text/math.test.ts src/reader/text/text-spacing.test.ts src/reader/links/identity.test.ts src/reader/links/references.test.ts src/textbook/catalog.test.ts src/textbook/supplements.test.ts desktop/*.test.ts",
     "build": "npm run typecheck && vite build",
     "preview": "vite preview",
-    "prepare:textbook": "node scripts/prepare-textbook.mjs"
+    "prepare:textbook": "node scripts/prepare-textbook.mjs",
+    "lint:desktop": "oxlint --deny-warnings desktop src/desktop",
+    "typecheck:desktop": "tsc --project tsconfig.desktop.json --noEmit",
+    "test:desktop": "node --experimental-strip-types --test desktop/*.test.ts",
+    "desktop:compile": "tsc --project tsconfig.desktop.json",
+    "desktop:build": "npm run build && npm run desktop:compile",
+    "desktop": "npm run desktop:build && electron .",
+    "desktop:pack:mac": "npm run desktop:build && electron-builder --mac dmg --x64 --publish never",
+    "desktop:pack:win": "npm run desktop:build && electron-builder --win nsis --x64 --publish never",
+    "desktop:check": "node desktop/check-app.mjs"
   },
   "dependencies": {
     "@codemirror/autocomplete": "6.20.4",
@@ -33,7 +42,8 @@
     "pixi.js": "8.22.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
-    "react-markdown": "^10.1.0"
+    "react-markdown": "^10.1.0",
+    "yaml": "2.9.1"
   },
   "devDependencies": {
     "@types/d3-force": "3.0.10",
@@ -41,8 +51,38 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.2",
+    "electron": "45.2.1",
+    "electron-builder": "26.18.0",
     "oxlint": "1.90.0",
+    "playwright-core": "1.64.1",
     "typescript": "^7.0.2",
     "vite": "^8.3.5"
+  },
+  "main": "build-desktop/main.js",
+  "build": {
+    "appId": "com.textbook.reader",
+    "productName": "课本解读",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**",
+      "build-desktop/**",
+      "desktop/preload.cjs",
+      "package.json"
+    ],
+    "asar": true,
+    "mac": {
+      "category": "public.app-category.education",
+      "identity": null
+    },
+    "win": {
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "artifactName": "textbook-reader-${version}-${os}-${arch}.${ext}"
   }
 }

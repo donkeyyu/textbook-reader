@@ -6,6 +6,7 @@ import { InitialNotes, loadInitialPackage } from './initial-notes.ts';
 import { digest, Vault } from './vault.ts';
 import { LocalState, cleanState } from './state.ts';
 import { VaultSettingsStore } from './settings.ts';
+import { NoteMoves } from './moves.ts';
 import type { Result, VaultState, VaultView } from './contracts.ts';
 
 const appUrl = 'textbook://app/';
@@ -18,6 +19,7 @@ const local = new LocalState(app.getPath('userData'));
 let window: BrowserWindow;
 let vault: Vault | null = null;
 let settings: VaultSettingsStore;
+let moves: NoteMoves;
 let state: VaultState = { positions: {} };
 let dirty = false;
 let closing = false;
@@ -77,6 +79,7 @@ function restoreBounds(value: unknown) {
 }
 async function select(root: string): Promise<VaultView> {
   const next = await Vault.open(root, path.join(local.directory, 'save-recovery'));
+  const nextMoves = await NoteMoves.open(next);
   const { notes } = await next.scan();
   let saved: Awaited<ReturnType<LocalState['load']>> = { state: { positions: {} }, bounds: undefined };
   let notice = '';
@@ -84,7 +87,7 @@ async function select(root: string): Promise<VaultView> {
   await persist();
   // Remembering a choice is required before reporting a successful transition.
   await local.remember(next.root);
-  vault = next; settings = new VaultSettingsStore(next.root); state = saved.state;
+  vault = next; moves = nextMoves; settings = new VaultSettingsStore(next.root); state = saved.state;
   watchVault(next);
   restoreBounds(saved.bounds);
   return { token: next.token, name: path.basename(next.root), notes, state, notice };
@@ -101,6 +104,24 @@ handle('vault:choose', async () => {
 });
 handle('vault:list', async (token) => { const change = await current(token).scan(); window.webContents.send('vault:change', change); return change.notes; });
 handle('vault:links', async (token) => current(token).links());
+handle('vault:moves', async (token) => { current(token); return moves.status(); });
+handle('vault:move:plan', async (token, from, to, revision) => {
+  current(token);
+  if (typeof from !== 'string' || typeof to !== 'string' || typeof revision !== 'string') throw new Error('改名参数无效。');
+  return moves.plan(from, to, revision);
+});
+handle('vault:move:repair', async (token, notice) => {
+  current(token);
+  if (typeof notice !== 'string') throw new Error('修复提示无效。');
+  return moves.planRepair(notice);
+});
+handle('vault:move:apply', async (token, operation) => {
+  const active = current(token);
+  if (typeof operation !== 'string') throw new Error('改名操作无效。');
+  const result = await moves.apply(operation);
+  await active.scan();
+  return result;
+});
 handle('vault:read', async (token, relative) => {
   if (typeof relative !== 'string') throw new Error('笔记路径无效。');
   return current(token).read(relative);
@@ -121,7 +142,7 @@ handle('vault:protect-draft', async (token, relative, source) => {
   if (typeof relative !== 'string' || typeof source !== 'string') throw new Error('草稿参数无效。');
   return current(token).protectDraft(relative, source);
 });
-handle('vault:recoveries', async (token) => current(token).recoveries());
+handle('vault:recoveries', async (token) => [...await current(token).recoveries(), ...moves.recoveries()]);
 handle('vault:state', async (token, input) => {
   current(token); state = cleanState(input); await persist(); return null;
 });

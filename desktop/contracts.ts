@@ -1,4 +1,5 @@
 import type { LinkIndex } from './links.ts';
+import type { MovePlan, MoveStatus } from './moves.ts';
 export type Position = { cursor: number; scroll: number };
 export type VaultState = { activePath?: string; positions: Record<string, Position>; sidebarWidth?: number };
 export type Note = { path: string; source: string; revision: string; readOnly: boolean; problems: string[]; id?: string; fileMtime?: number; duplicatePaths?: string[] };
@@ -17,6 +18,10 @@ export type DesktopApi = {
   restore: () => Promise<Result<VaultView | null>>;
   chooseVault: () => Promise<Result<VaultView | null>>;
   links: (token: string) => Promise<Result<LinkIndex>>;
+  moveStatus: (token: string) => Promise<Result<MoveStatus>>;
+  planMove: (token: string, from: string, to: string, revision: string) => Promise<Result<MovePlan>>;
+  planRepair: (token: string, notice: string) => Promise<Result<MovePlan>>;
+  applyMove: (token: string, operation: string) => Promise<Result<MovePlan>>;
   list: (token: string) => Promise<Result<string[]>>;
   read: (token: string, path: string) => Promise<Result<Note>>;
   save: (token: string, path: string, source: string, revision: string | null) => Promise<Result<Note>>;

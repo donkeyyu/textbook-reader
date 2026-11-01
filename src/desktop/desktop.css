@@ -89,4 +89,18 @@
 .note-image-placeholder { color: var(--secondary); }
 .vault-paper [hidden] { display: none !important; }
 .vault-source-live .cm-line { font: 16px/1.85 var(--app-font-ui, system-ui); }
+.vault-note-title { flex: 1; min-width: 100px; overflow-wrap: anywhere; }
+.vault-note-title small, .vault-sidebar small.vault-note-directory { color: var(--secondary); font-size: 12px; }
+.note-moves { flex-shrink: 0; max-height: 28%; overflow: auto; padding: 10px 28px 0; font-size: 13px; }
+.note-move-actions > details { margin-top: 8px; padding: 10px; border-radius: 12px; background: var(--island-input); }
+.note-move-actions p { overflow-wrap: anywhere; margin: 8px 0; }
+.note-move-dialog { width: min(620px, 90vw); max-height: 85vh; overflow: auto; }
+.note-move-dialog label { display: grid; gap: 8px; margin: 12px 0; }
+.note-move-dialog input { width: 100%; padding: 10px 14px; color: inherit; background: var(--island-input); border: 1px solid var(--input-border); border-radius: 18px; }
+.note-move-path, .note-move-results { overflow-wrap: anywhere; }
+.note-move-results { padding-left: 20px; }
+.note-move-results li { margin: 12px 0; }
+.note-move-results small { display: block; color: var(--secondary); }
+.note-move-dialog [role="alert"] { color: #8a3525; }
+@media (max-width: 800px) { .note-moves { padding-inline: 16px; } }
 .note-rendered-block:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }

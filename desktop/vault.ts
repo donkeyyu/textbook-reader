@@ -2,7 +2,7 @@ import { constants, watch, type FSWatcher } from 'node:fs';
 import { access, lstat, open, readdir, realpath, rename, rm, mkdir, readFile, link } from 'node:fs/promises';
 import path from 'node:path';
 import { createHash, randomUUID } from 'node:crypto';
-import { freshIdentity, inspect, prepareSave } from './format.ts';
+import { freshIdentity, inspect, prepareSave, saveProblem } from './format.ts';
 import { notePath } from './note-path.ts';
 import { linkEntry, type LinkIndex, type LinkEntry } from './links.ts';
 export { notePath } from './note-path.ts';
@@ -35,6 +35,8 @@ export class Vault {
   private scanObserver?: (change: VaultChange) => void;
   // Fault-injection seam, never exposed over IPC.
   writeCheckpoint?: (stage: 'prepared' | 'checked' | 'displaced' | 'installed') => Promise<void>;
+  onScan?: (change: VaultChange, notes: ReadonlyMap<string, Note | undefined>) => void;
+  moveCheckpoint?: (stage: 'captured' | 'linked' | 'moved') => Promise<void>;
   private constructor(root: string, recoveryDir: string) { this.root = root; this.recoveryDir = recoveryDir; }
   static async open(root: string, recoveryDir: string) {
     const canonical = await realpath(root);
@@ -130,6 +132,7 @@ export class Vault {
     const duplicates = this.duplicates();
     if (oldDuplicates !== JSON.stringify(duplicates)) for (const name of names) changed.add(name);
     const change = { token: this.token, notes: [...next.keys()], changed: [...changed], duplicates };
+    this.onScan?.(change, new Map([...next].map(([name, entry]) => [name, entry.note])));
     if (change.changed.length) this.scanObserver?.(change);
     return change;
   }
@@ -242,6 +245,81 @@ export class Vault {
     return operation;
   }
 
+  // Only the move journal supplies a prepared, frozen candidate. It reuses all
+  // ordinary revision, identity, permissions and displaced-file protections.
+  savePrepared(relative: string, source: string, revision: string | null) {
+    const operation = this.writes.then(() => this.write(relative, source, revision, true));
+    this.writes = operation.catch(() => undefined);
+    return operation;
+  }
+
+  // Resume only a proven interrupted 02 write. A missing note alone is not
+  // permission to recreate it. The matching journal and captured original must
+  // both still exist; exclusive creation protects a newly claimed path.
+  async resumePrepared(relative: string, original: string, candidate: string) {
+    const full = await this.resolve(relative, true);
+    const directory = path.dirname(this.recoveryPath(randomUUID()));
+    const names = await readdir(directory).catch((error: NodeJS.ErrnoException) => { if (error.code === 'ENOENT') return []; throw error; });
+    for (const name of names.filter((name) => /^[a-f0-9-]{36}\.json$/.test(name))) {
+      const record = await readJson(path.join(directory, name)) as Recovery & { vault: string; displaced?: string };
+      if (record?.vault !== this.root || record.path !== relative || record.original !== original || record.candidate !== candidate || typeof record.displaced !== 'string' || !/^\.textbook-save-[a-f0-9-]{36}\.tmp\.previous$/.test(record.displaced)) continue;
+      const captured = await readCaptured(path.join(path.dirname(full), record.displaced)).catch(() => undefined);
+      if (captured === original) return this.savePrepared(relative, candidate, null);
+    }
+    return null;
+  }
+
+  moveFile(from: string, to: string, revision: string, operationId: string) {
+    const operation = this.writes.then(async () => {
+      if (!/^[a-f0-9-]{36}$/.test(operationId)) throw new Error('移动记录无效。');
+      notePath(from); notePath(to);
+      const source = path.join(this.root, from);
+      const target = path.join(this.root, to);
+      await this.resolve(`${to.slice(0, to.lastIndexOf('/') + 1)}move-${operationId}.md`, true);
+      const captured = path.join(path.dirname(source), `.textbook-move-${operationId}.tmp`);
+      // Resolving a missing sibling validates every source directory on retry.
+      await this.resolve(`${from.slice(0, from.lastIndexOf('/') + 1)}move-probe.md`, true);
+      let capturedExists = await lstat(captured).then(() => true, (error: NodeJS.ErrnoException) => { if (error.code === 'ENOENT') return false; throw error; });
+      if (!capturedExists) {
+        const original = await this.read(from);
+        if (original.revision !== revision) throw new Error('原笔记已外改，未移动。');
+        const collision = (await this.list()).find((name) => name.normalize('NFC').toLowerCase() === to.normalize('NFC').toLowerCase());
+        if (collision) throw new Error(`目标已存在：${collision}；未覆盖。`);
+        await rename(await this.resolve(from), captured);
+        capturedExists = true;
+        await this.moveCheckpoint?.('captured');
+      }
+      try {
+        await this.resolve(`${to.slice(0, to.lastIndexOf('/') + 1)}move-${operationId}.md`, true);
+        if (digest(await readCaptured(captured, target)) !== revision) throw new Error('移动原件已外改，未认领目标。原件仍保留。');
+        const targetInfo = await lstat(target).catch((error: NodeJS.ErrnoException) => { if (error.code === 'ENOENT') return null; throw error; });
+        const capturedInfo = await lstat(captured);
+        if (targetInfo) {
+          if (!targetInfo.isFile() || targetInfo.isSymbolicLink() || targetInfo.dev !== capturedInfo.dev || targetInfo.ino !== capturedInfo.ino) throw new Error('目标已存在，未覆盖；可移走该目标后重试。');
+        } else await link(captured, target);
+        await this.moveCheckpoint?.('linked');
+        if (digest(await readCaptured(captured, target)) !== revision) throw new Error('移动期间原件已外改；操作记录保留双方内容。');
+        await rm(captured);
+        await this.moveCheckpoint?.('moved');
+        const moved = await this.read(to);
+        if (moved.revision !== revision) throw new Error('移动后文件已外改，请核对。');
+        return moved;
+      } catch (error) {
+        // Restore only a free original path. Never replace a concurrent file.
+        const installed = await lstat(target).catch(() => null);
+        const retained = await lstat(captured).catch(() => null);
+        const linked = installed?.isFile() && retained?.isFile() && !installed.isSymbolicLink() && !retained.isSymbolicLink() && installed.dev === retained.dev && installed.ino === retained.ino;
+        // As with ordinary saves, a hidden path is not evidence of ownership.
+        // Never restore a replaced symlink, outside hardlink or unsupported inode.
+        const recoverable = !linked && capturedExists && await readCaptured(captured).catch(() => undefined);
+        if (typeof recoverable === 'string' && await link(captured, source).then(() => true, () => false)) await rm(captured);
+        throw error;
+      }
+    });
+    this.writes = operation.catch(() => undefined);
+    return operation;
+  }
+
   async copy(relative: string, source: string, revision: string, replaceIdentity: boolean) {
     const operation = this.writes.then(async () => {
       await this.scan();
@@ -255,14 +333,18 @@ export class Vault {
     return operation;
   }
 
-  private async write(relative: string, source: string, revision: string | null) {
+  private async write(relative: string, source: string, revision: string | null, prepared = false) {
     if (typeof source !== 'string' || Buffer.byteLength(source, 'utf8') > 10 * 1024 * 1024) throw new Error('笔记内容超过 10 MB。');
     if (revision !== null && (typeof revision !== 'string' || !/^[a-f0-9]{64}$/.test(revision))) throw new Error('读取版本无效，请重新打开笔记。');
-    const target = revision === null ? await this.availableName(relative) : relative;
+    const target = revision === null && !prepared ? await this.availableName(relative) : relative;
     const full = await this.resolve(target, revision === null);
     const original = revision === null ? null : await this.read(target);
     if (original && original.revision !== revision) throw new Error('磁盘文件已改变，未覆盖。草稿仍在，请保留后重新打开。');
-    const next = prepareSave(original?.source ?? null, source);
+    if (prepared) {
+      const problem = saveProblem(source);
+      if (problem || !inspect(source).id || original?.readOnly || original?.id && inspect(source).id !== original.id) throw new Error(problem || '引用修复不能修改笔记身份或较新格式。');
+    }
+    const next = prepared ? source : prepareSave(original?.source ?? null, source);
     if (original && ((await lstat(full)).mode & 0o222) === 0) throw new Error('文件为只读，未保存；可恢复权限后重试或另存草稿。');
     if (original) await access(full, constants.W_OK);
     const id = inspect(next).id;

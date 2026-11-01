@@ -5,6 +5,8 @@ import { SourceEditor, headerEnd, type EditorScene } from './SourceEditor';
 import { NoteProperties } from './NoteProperties';
 import { NoteMarkdown } from './note-markdown';
 import { NoteLinks } from './NoteLinks';
+import { NoteMoves, noteDirectory, noteName } from './NoteMoves';
+import type { MovePlan } from '../../desktop/moves';
 import { noteReferences, pathLink, replaceReference, resolveLink, type LinkIndex, type NoteReference } from '../../desktop/links';
 import './desktop.css';
 import './links.css';
@@ -229,7 +231,7 @@ export function DesktopApp({ openRequest }: { openRequest?: { path: string; seri
         if (!live || live.key !== item.key) return false;
         const rebase = { sent: item.source, saved: note.source };
         const merged = live.source === item.source ? note.source : rebaseSaved(item.source, live.source, note.source);
-        update({ ...live, note, source: merged ?? live.source, isNew: false, freshOnSave: false, createdFrom: undefined, rebase: merged === undefined ? rebase : undefined });
+        update({ ...live, note, source: merged ?? live.source, isNew: false, paused: false, freshOnSave: false, createdFrom: undefined, rebase: merged === undefined ? rebase : undefined });
         if (item.isNew && item.createdFrom && note.path !== item.note.path) {
           const origin = history.current.find((entry) => entry.draft.key === item.createdFrom!.key);
           if (origin && origin.draft.source === item.createdFrom.source) {
@@ -334,6 +336,19 @@ export function DesktopApp({ openRequest }: { openRequest?: { path: string; seri
     update({ note: { path: name, source: '', revision: '', readOnly: false, problems: [] }, source, isNew: true, key: ++key.current, paused: true, freshOnSave: true });
     setStatus('恢复草稿 · 请核对后保存'); setRecords(null); setError('');
   }
+  async function appliedMove(plan: MovePlan) {
+    const current = latest.current.vault!, item = latest.current.draft;
+    if (plan.moved) {
+      if (localState.current.positions[plan.from]) { localState.current.positions[plan.to] = localState.current.positions[plan.from]!; delete localState.current.positions[plan.from]; }
+      for (const entry of history.current) if (entry.draft.note.path === plan.from) entry.draft.note = { ...entry.draft.note, path: plan.to };
+    }
+    if (item && !item.isNew && item.source === item.note.source && !item.conflict) {
+      const targetPath = item.note.path === plan.from && plan.moved ? plan.to : item.note.path;
+      const result = await api.read(current.token, targetPath);
+      if (result.ok) { update({ ...item, note: result.value, source: result.value.source }); localState.current.activePath = targetPath; }
+    }
+    await remember(); value(await api.list(current.token)); await refreshLinks(current);
+  }
   async function navigate(path: string) {
     await run(async () => {
       if (inFlight.current) await inFlight.current;
@@ -400,7 +415,7 @@ export function DesktopApp({ openRequest }: { openRequest?: { path: string; seri
       })(); }}>{vault ? '切换笔记库' : '选择笔记库'}</button>
     </header>
     {error && <div className="vault-error" role="alert">{error}</div>}
-    {records && <section className="vault-recoveries" aria-label="恢复记录"><div><h2>恢复记录</h2><button onClick={() => setRecords(null)}>收起恢复记录</button></div><p>这些是未完成写入或采用磁盘版本前保留的内容。打开后核对，再另存为新笔记。</p>
+    {records && <section className="vault-recoveries" aria-label="恢复记录"><div><h2>恢复记录</h2><button onClick={() => setRecords(null)}>收起恢复记录</button></div><p>这些是未完成写入、改名或采用磁盘版本前保留的内容。打开后核对，再另存为新笔记。</p>
       {!records.length && <p>没有待恢复的内容。</p>}{records.map((record) => <article key={record.id}><strong>{record.path}</strong><span>{record.created}</span>
         <button disabled={busy || saving} onClick={() => { void recover(record, record.candidate); }}>打开草稿</button>
         {record.original !== null && <button disabled={busy || saving} onClick={() => { void recover(record, record.original!); }}>打开写入前版本</button>}
@@ -422,11 +437,16 @@ export function DesktopApp({ openRequest }: { openRequest?: { path: string; seri
             if (latest.current.draft?.note.path === path && !latest.current.draft.isNew) return;
             if (!await protect()) return;
             await run(async () => { await remember(); await openNote(vault, path); });
-          })(); }}>{path.slice(0, -3)}{duplicates[path] && <small> ID 冲突</small>}</button>)}</nav>
+          })(); }} title={path} aria-label={path.includes('/') ? `${noteName(path)} · ${noteDirectory(path)}` : noteName(path)}><span>{noteName(path)}</span>{path.includes('/') && <small className="vault-note-directory">{noteDirectory(path)}</small>}{duplicates[path] && <small> ID 冲突</small>}</button>)}</nav>
           {!vault.notes.length && <p>此库还没有笔记。</p>}
         </aside>
-        <section className="vault-paper" aria-label="笔记编辑器">{draft ? <>
-          <div className="vault-note-heading">{returnCount > 0 && <button disabled={busy || saving} onClick={() => { void returnToSource(); }}>返回来源</button>}<h1>{draft.note.path.slice(0, -3)}</h1><span role="status">{status}</span>
+        <section className="vault-paper" aria-label="笔记编辑器">
+          <NoteMoves key={vault.token} api={api} token={vault.token} note={draft && !draft.isNew ? draft.note : undefined} disabled={busy || saving || !!draft?.conflict} refresh={linkIndex} before={async () => {
+            const live = latest.current.draft;
+            return !live || !live.isNew && live.source === live.note.source && !!live.note.id ? true : save();
+          }} run={run} onApplied={appliedMove} />
+          {draft ? <>
+          <div className="vault-note-heading">{returnCount > 0 && <button disabled={busy || saving} onClick={() => { void returnToSource(); }}>返回来源</button>}<div className="vault-note-title" title={draft.note.path}><h1>{noteName(draft.note.path)}</h1>{draft.note.path.includes('/') && <small>{noteDirectory(draft.note.path)}</small>}</div><span role="status">{status}</span>
             <button hidden={bodyMode === 'preview' || draft.note.readOnly} disabled={busy || saving || draft.note.readOnly || !!draft.conflict} onClick={() => { void save(); }}>保存</button>
             {!draft.isNew && bodyMode !== 'preview' && !draft.note.readOnly && <button disabled={busy || saving || draft.note.readOnly || !!draft.conflict} onClick={() => { void run(() => copy(false)); }}>复制笔记</button>}
           </div>

@@ -14,7 +14,7 @@
     "typecheck": "npm run typecheck:frontend && npm run typecheck:backend && npm run typecheck:desktop",
     "typecheck:frontend": "tsc --noEmit",
     "typecheck:backend": "tsc --project tsconfig.scripts.json",
-    "test": "node --experimental-strip-types --test src/app/shelf/shelf-store.test.ts src/appearance/ui-style.test.ts src/reader/book/session.test.ts src/content/personal.test.ts src/reader/text/math.test.ts src/reader/text/text-spacing.test.ts src/reader/links/identity.test.ts src/reader/links/references.test.ts src/textbook/catalog.test.ts src/textbook/supplements.test.ts desktop/*.test.ts",
+    "test": "node --experimental-strip-types --test src/app/shelf/shelf-store.test.ts src/appearance/ui-style.test.ts src/reader/book/session.test.ts src/content/personal.test.ts src/reader/text/math.test.ts src/reader/text/text-spacing.test.ts src/reader/links/identity.test.ts src/reader/links/references.test.ts src/textbook/catalog.test.ts src/textbook/supplements.test.ts desktop/*.test.ts scripts/offline-resources.test.mjs",
     "build": "npm run typecheck && vite build",
     "preview": "vite preview",
     "prepare:textbook": "node scripts/prepare-textbook.mjs",

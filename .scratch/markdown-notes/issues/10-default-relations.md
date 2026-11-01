@@ -52,3 +52,5 @@ Category: enhancement
 - 持续回归命令：`RELATIONS_FIXTURE=<上述14组HTTP证据目录> node --experimental-strip-types desktop/check-relation-context.mjs`（先 `npm run desktop:build`）。六组通过，日志 `/tmp/markdown-notes-10-resume-regression.log`；证据 `/var/folders/w5/kpp0bgcj4tb377ck3_y5_z3m0000gn/T/textbook-relation-context-xu8vNI` 含 `result.json`、两种模式跳转前/返回后截图及 `code-clears-highlight.png`，均已视觉核对。真实点击原文第 9 页后返回：预览 1916→1916px、实时预览 3694→3694px；教材实际第 88 页及 scrollTop 84928 恢复到 2px 内；60 段正文、无效 YAML 草稿与磁盘原文保持。删除、普通文字、行内代码、代码块四种源编辑均清除原文边界和返回条；渲染进程错误与 HTTP 请求均为 0。
 - 新检查首次因完整笔记库首次索引超过操作超时而未通过；已缩小为仅复制教材级资料与缓存的单篇长文夹具，按真实 UI 添加书架并开始阅读后通过。此夹具只用于精确验证上下文恢复，不替代全量导入证据。
 - 网页入口未接入本地协议，Reader 的 capture/request 扩展仅在传入本地工具时生效；本次 build、类型检查与既有网页全量测试证据通过，未另跑网页全部浏览器矩阵。macOS 最终安装包整体验收留 17；Windows 环境缺失留 13；首版发布门槛留 12。本票不宣称发布完成或学生学习效果已验证。
+
+- 2026-11-01 协调者功能审查集成：`d97993b` 合入为 `c77853f`，保留 07 目录刷新与管理接口。集成 139 项测试、lint、类型检查及 desktop:build 通过；6 组原文上下文回归和 4 组目录竞态回归通过。日志 `/tmp/markdown-notes-integration-10-{tests,lint,build,context,catalog-race}.log`，长文证据 `textbook-relation-context-jz1G3J`。这仅确认功能与数据保护；DonQ 指出页面拥挤及内容/控件溢出应用窗口，整体验收尚未通过，17 须先修复并核对窗口边界。

@@ -1,4 +1,3 @@
-import { randomUUID } from 'node:crypto';
 import { isMap, LineCounter, parseDocument, YAMLMap } from 'yaml';
 
 function split(source: string) {
@@ -61,6 +60,52 @@ export function inspect(source: string) {
   }
 }
 
+// Validate without preparing a save: no identity or time is generated in the renderer.
+export function saveProblem(source: string) {
+  try {
+    const { meta } = parse(source);
+    const version = meta?.get('schema_version');
+    const id = meta?.get('id');
+    if (version !== undefined && version !== 1) return '格式版本不可保存，请检查源码。';
+    if (id !== undefined && (typeof id !== 'string' || !id.trim())) return 'ID 异常，请在源码中修复。';
+    return '';
+  } catch (cause) { return (cause as Error).message; }
+}
+
+export function freshIdentity(source: string, now = new Date().toISOString()) {
+  const problem = saveProblem(source);
+  if (problem) throw new Error(problem);
+  const parsed = parse(source);
+  const meta = parsed.meta ?? new YAMLMap();
+  parsed.doc.set('_textbook', meta);
+  meta.set('schema_version', 1);
+  meta.set('id', crypto.randomUUID());
+  for (const name of ['create_time', 'update_time']) {
+    const scalar = parsed.doc.createNode(now); scalar.type = 'QUOTE_DOUBLE'; meta.set(name, scalar);
+  }
+  return `${parsed.prefix}---${parsed.newline}${parsed.doc.toString({ lineWidth: 0 }).replace(/\n/g, parsed.newline)}---${parsed.newline}${parsed.body}`;
+}
+
+// Carry generated metadata across edits typed while a save was in flight. Only
+// fields unchanged by the user are rebased; invalid YAML waits for a repair.
+export function rebaseSaved(submitted: string, edited: string, saved: string): string | undefined {
+  try {
+    const before = parse(submitted), current = parse(edited), after = parse(saved);
+    let meta = current.meta;
+    let changed = false;
+    for (const name of ['schema_version', 'id', 'create_time', 'update_time']) {
+      if (JSON.stringify(current.meta?.get(name)) !== JSON.stringify(before.meta?.get(name))) continue;
+      const node = after.meta?.get(name, true);
+      if (node === undefined) continue;
+      if (!meta) { meta = new YAMLMap(); current.doc.set('_textbook', meta); }
+      meta.set(name, node.clone());
+      changed = true;
+    }
+    if (!changed) return edited;
+    return `${current.prefix}---${current.newline}${current.doc.toString({ lineWidth: 0 }).replace(/\n/g, current.newline)}---${current.newline}${current.body}`;
+  } catch { return undefined; }
+}
+
 function content(source: string) {
   const { data, body } = parse(source);
   const { _textbook, ...properties } = data;
@@ -81,7 +126,7 @@ export function prepareSave(original: string | null, source: string, now = new D
   if (!meta) { meta = new YAMLMap(); doc.set('_textbook', meta); }
   if (version === undefined) meta.set('schema_version', 1);
   const previousId = original === null ? undefined : inspect(original).id;
-  if (id === undefined) meta.set('id', previousId ?? randomUUID());
+  if (id === undefined) meta.set('id', previousId ?? crypto.randomUUID());
   let changed = original === null;
   if (original !== null) {
     try { changed = content(original) !== content(source); }

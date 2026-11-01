@@ -20,6 +20,25 @@ let dirty = false;
 let closing = false;
 let queue: Promise<unknown> = Promise.resolve();
 let textbooks: TextbookStore;
+let stopWatching: (() => void) | undefined;
+let refreshQueued = false;
+
+function watchVault(next: Vault) {
+  stopWatching?.();
+  stopWatching = next.watch(() => {
+    if (refreshQueued || vault !== next) return;
+    refreshQueued = true;
+    queue = queue.then(async () => {
+      if (vault !== next || window.isDestroyed()) return;
+      try {
+        const change = await next.scan();
+        if (change.changed.length) window.webContents.send('vault:change', change);
+      } catch (cause) {
+        window.webContents.send('vault:change', { token: next.token, error: (cause as Error).message, notes: [], changed: [], duplicates: {} });
+      }
+    }).finally(() => { refreshQueued = false; });
+  });
+}
 
 export function trustedSender(event: Electron.IpcMainEvent | Electron.IpcMainInvokeEvent) {
   return event.sender === window?.webContents && event.senderFrame === window.webContents.mainFrame && event.senderFrame.url === appUrl;
@@ -34,7 +53,7 @@ function handle(channel: string, operation: (...args: unknown[]) => Promise<unkn
     if (!trustedSender(event)) return Promise.resolve({ ok: false, error: '调用来源无效。' });
     const result = queue.then(async () => {
       try { return { ok: true as const, value: await operation(...args) }; }
-      catch (cause) { return { ok: false as const, error: (cause as Error).message }; }
+      catch (cause) { return { ok: false as const, error: (cause as Error).message, code: (cause as NodeJS.ErrnoException).code }; }
     });
     queue = result;
     return result;
@@ -53,7 +72,7 @@ function restoreBounds(value: unknown) {
 }
 async function select(root: string): Promise<VaultView> {
   const next = await Vault.open(root, path.join(local.directory, 'save-recovery'));
-  const notes = await next.list();
+  const { notes } = await next.scan();
   let saved: Awaited<ReturnType<LocalState['load']>> = { state: { positions: {} }, bounds: undefined };
   let notice = '';
   try { saved = await local.load(next.root); } catch (error) { notice = (error as Error).message; }
@@ -61,6 +80,7 @@ async function select(root: string): Promise<VaultView> {
   // Remembering a choice is required before reporting a successful transition.
   await local.remember(next.root);
   vault = next; state = saved.state;
+  watchVault(next);
   restoreBounds(saved.bounds);
   return { token: next.token, name: path.basename(next.root), notes, state, notice };
 }
@@ -74,15 +94,30 @@ handle('vault:choose', async () => {
   const choice = await dialog.showOpenDialog(window, { title: '选择笔记库', properties: ['openDirectory', 'createDirectory'] });
   return choice.canceled || !choice.filePaths[0] ? null : select(choice.filePaths[0]);
 });
-handle('vault:list', async (token) => current(token).list());
+handle('vault:list', async (token) => { const change = await current(token).scan(); window.webContents.send('vault:change', change); return change.notes; });
 handle('vault:read', async (token, relative) => {
   if (typeof relative !== 'string') throw new Error('笔记路径无效。');
   return current(token).read(relative);
 });
 handle('vault:save', async (token, relative, source, revision) => {
   if (typeof relative !== 'string' || typeof source !== 'string' || (revision !== null && typeof revision !== 'string')) throw new Error('保存参数无效。');
-  return current(token).save(relative, source, revision);
+  const active = current(token);
+  const note = await active.save(relative, source, revision);
+  window.webContents.send('vault:change', { ...await active.scan(), changed: [note.path] });
+  return note;
 });
+handle('vault:copy', async (token, relative, source, revision, replaceIdentity) => {
+  if (typeof relative !== 'string' || typeof source !== 'string' || typeof revision !== 'string' || typeof replaceIdentity !== 'boolean') throw new Error('复制参数无效。');
+  const active = current(token);
+  const note = await active.copy(relative, source, revision, replaceIdentity);
+  window.webContents.send('vault:change', { ...await active.scan(), changed: [note.path] });
+  return note;
+});
+handle('vault:protect-draft', async (token, relative, source) => {
+  if (typeof relative !== 'string' || typeof source !== 'string') throw new Error('草稿参数无效。');
+  return current(token).protectDraft(relative, source);
+});
+handle('vault:recoveries', async (token) => current(token).recoveries());
 handle('vault:state', async (token, input) => {
   current(token); state = cleanState(input); await persist(); return null;
 });
@@ -150,5 +185,5 @@ window.on('close', (event) => {
   });
 });
 await window.loadURL(appUrl);
-app.on('window-all-closed', () => app.quit());
+app.on('window-all-closed', () => { stopWatching?.(); app.quit(); });
 }).catch((error: Error) => { dialog.showErrorBox('桌面应用无法启动', error.message); app.quit(); });

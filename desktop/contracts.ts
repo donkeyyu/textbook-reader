@@ -1,14 +1,20 @@
 export type Position = { cursor: number; scroll: number };
 export type VaultState = { activePath?: string; positions: Record<string, Position>; sidebarWidth?: number };
-export type Note = { path: string; source: string; revision: string; readOnly: boolean; problems: string[] };
+export type Note = { path: string; source: string; revision: string; readOnly: boolean; problems: string[]; id?: string; fileMtime?: number; duplicatePaths?: string[] };
+export type VaultChange = { token: string; notes: string[]; changed: string[]; duplicates: Record<string, string[]>; error?: string };
+export type Recovery = { id: string; path: string; created: string; original: string | null; candidate: string; observed?: string };
 export type VaultView = { token: string; name: string; notes: string[]; state: VaultState; notice?: string };
-export type Result<T> = { ok: true; value: T } | { ok: false; error: string };
+export type Result<T> = { ok: true; value: T } | { ok: false; error: string; code?: string };
 export type DesktopApi = {
   restore: () => Promise<Result<VaultView | null>>;
   chooseVault: () => Promise<Result<VaultView | null>>;
   list: (token: string) => Promise<Result<string[]>>;
   read: (token: string, path: string) => Promise<Result<Note>>;
   save: (token: string, path: string, source: string, revision: string | null) => Promise<Result<Note>>;
+  copy: (token: string, path: string, source: string, revision: string, replaceIdentity: boolean) => Promise<Result<Note>>;
+  protectDraft: (token: string, path: string, source: string) => Promise<Result<string>>;
+  recoveries: (token: string) => Promise<Result<Recovery[]>>;
+  onChange: (callback: (change: VaultChange) => void) => () => void;
   saveState: (token: string, state: VaultState) => Promise<Result<null>>;
   setDirty: (dirty: boolean) => void;
 };

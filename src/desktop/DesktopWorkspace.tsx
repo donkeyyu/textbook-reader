@@ -24,6 +24,8 @@ export function DesktopWorkspace() {
   const [session, setSession] = useState<AnchorSession>(emptySession);
   const bridge: AnchorBridge = useRef(null);
   const [catalog, setCatalog] = useState<Catalog | null>(null);
+  const catalogRequest = useRef(0);
+  const catalogRefreshing = useRef({ token: '', count: 0 });
   const [selection, setSelection] = useState<Selection>();
   const [candidates, setCandidates] = useState<LinkEntry[]>();
   const dialog = useRef<HTMLDialogElement>(null);
@@ -33,13 +35,37 @@ export function DesktopWorkspace() {
   const token = useRef(''); token.current = session.vaultToken;
   useEffect(() => { try { localStorage.setItem('desktop-workspace-view', view); } catch { /* Navigation remains available. */ } }, [view]);
   useEffect(() => {
+    catalogRequest.current++;
     setCatalog(null); setSelection(undefined); setLocate(undefined); setCandidates(undefined); dialog.current?.close();
     if (!session.vaultToken) return;
-    let active = true;
-    void window.textbookResources!.catalog(session.vaultToken).then((result) => { if (active && result.ok) setCatalog(result.value as Catalog); });
-    return () => { active = false; };
+    let active = true, polling = false;
+    const read = async () => {
+      if (polling || catalogRefreshing.current.token === session.vaultToken && catalogRefreshing.current.count) return;
+      polling = true; const serial = ++catalogRequest.current;
+      try {
+        const result = await window.textbookResources!.catalog(session.vaultToken);
+        if (active && serial === catalogRequest.current) setCatalog((previous) => result.ok ? JSON.stringify(previous) === JSON.stringify(result.value) ? previous : result.value as Catalog : null);
+      } finally { polling = false; }
+    };
+    void read(); const timer = setInterval(() => { void read(); }, 1200);
+    return () => { active = false; clearInterval(timer); };
   }, [session.vaultToken]);
-  const onCatalog = useCallback((next: Catalog, vaultToken: string) => { if (token.current === vaultToken) setCatalog(next); }, []);
+  const refreshCatalog = useCallback(async () => {
+    const vaultToken = token.current;
+    if (!vaultToken) return;
+    const serial = ++catalogRequest.current;
+    if (catalogRefreshing.current.token !== vaultToken) catalogRefreshing.current = { token: vaultToken, count: 0 };
+    catalogRefreshing.current.count++;
+    try {
+      const result = await window.textbookResources!.catalog(vaultToken);
+      if (token.current !== vaultToken || serial !== catalogRequest.current) return;
+      if (!result.ok) { setCatalog(null); throw new Error(result.error); }
+      setCatalog(result.value as Catalog);
+    } finally { if (catalogRefreshing.current.token === vaultToken) catalogRefreshing.current.count--; }
+  }, []);
+  const onCatalog = useCallback((_next: Catalog, vaultToken: string) => {
+    if (token.current === vaultToken) void refreshCatalog().catch(() => { if (token.current === vaultToken) setCatalog(null); });
+  }, [refreshCatalog]);
   const located = useCallback((target: AnchorTarget) => {
     setLocate({ ...target, serial: ++locateSerial.current, vaultToken: token.current });
     setTextbooksMounted(true); setSplit(true); setView('notes');
@@ -132,7 +158,7 @@ export function DesktopWorkspace() {
       {selection.error && <p role="alert">{selection.error}</p>}
     </section>}
     <div ref={body} className={`desktop-workspace-body${split ? ' split' : ''}`}>
-      <div className="desktop-workspace-view" hidden={!split && view !== 'notes'}><DesktopApp active={split || view === 'notes'} browseRequest={browseRequest} chooseRequest={chooseRequest} openRequest={openRequest} catalog={catalog} onAnchorSession={setSession} anchorBridge={bridge} onLocate={located} onSelect={begin} /></div>
+      <div className="desktop-workspace-view" hidden={!split && view !== 'notes'}><DesktopApp active={split || view === 'notes'} browseRequest={browseRequest} chooseRequest={chooseRequest} openRequest={openRequest} catalog={catalog} onRefreshCatalog={refreshCatalog} onAnchorSession={setSession} anchorBridge={bridge} onLocate={located} onSelect={begin} /></div>
       {split && <div className="desktop-workspace-resize" role="separator" tabIndex={0} aria-label="调整笔记与教材面板" aria-orientation="vertical" aria-valuemin={30} aria-valuemax={70} aria-valuenow={share.current} onPointerDown={(event) => { event.preventDefault(); event.currentTarget.setPointerCapture(event.pointerId); }} onPointerMove={(event) => {
         if (!event.currentTarget.hasPointerCapture(event.pointerId) || !body.current) return;
         const bounds = body.current.getBoundingClientRect(); resize(window.innerWidth <= 800 ? 100 - (event.clientY - bounds.top) / bounds.height * 100 : (event.clientX - bounds.left) / bounds.width * 100);

@@ -6,6 +6,8 @@ import { InitialNotes, loadInitialPackage } from './initial-notes.ts';
 import { digest, Vault } from './vault.ts';
 import { LocalState, cleanState } from './state.ts';
 import { VaultSettingsStore } from './settings.ts';
+import { CustomCatalog, withCustom } from './custom-catalog.ts';
+import type { CustomEdit } from './custom-catalog.ts';
 import { NoteMoves } from './moves.ts';
 import type { Result, VaultState, VaultView } from './contracts.ts';
 
@@ -20,6 +22,7 @@ let window: BrowserWindow;
 let vault: Vault | null = null;
 let settings: VaultSettingsStore;
 let moves: NoteMoves;
+let customCatalog: CustomCatalog;
 let state: VaultState = { positions: {} };
 let dirty = false;
 let closing = false;
@@ -80,6 +83,7 @@ function restoreBounds(value: unknown) {
 async function select(root: string): Promise<VaultView> {
   const next = await Vault.open(root, path.join(local.directory, 'save-recovery'));
   const nextMoves = await NoteMoves.open(next);
+  const nextCustom = await CustomCatalog.open(next, textbookId);
   const { notes } = await next.scan();
   let saved: Awaited<ReturnType<LocalState['load']>> = { state: { positions: {} }, bounds: undefined };
   let notice = '';
@@ -87,7 +91,7 @@ async function select(root: string): Promise<VaultView> {
   await persist();
   // Remembering a choice is required before reporting a successful transition.
   await local.remember(next.root);
-  vault = next; moves = nextMoves; settings = new VaultSettingsStore(next.root); state = saved.state;
+  vault = next; moves = nextMoves; customCatalog = nextCustom; settings = new VaultSettingsStore(next.root); state = saved.state;
   watchVault(next);
   restoreBounds(saved.bounds);
   return { token: next.token, name: path.basename(next.root), notes, state, notice };
@@ -121,6 +125,24 @@ handle('vault:move:apply', async (token, operation) => {
   const result = await moves.apply(operation);
   await active.scan();
   return result;
+});
+handle('vault:custom:read', async (token) => customCatalog.read(await textbooks.catalog(current(token).root)));
+handle('vault:custom:save', async (token, revision, edit) => {
+  const active = current(token);
+  if (revision !== null && typeof revision !== 'string') throw new Error('目录版本无效。');
+  return customCatalog.save(await textbooks.catalog(active.root), revision, edit as CustomEdit);
+});
+handle('vault:custom:deletions', async (token) => { current(token); return customCatalog.status(); });
+handle('vault:custom:plan', async (token, revision, kind, id, replacement) => {
+  const active = current(token);
+  if (revision !== null && typeof revision !== 'string' || !['chapter', 'section'].includes(String(kind)) || typeof id !== 'string' || replacement !== null && typeof replacement !== 'string') throw new Error('删除目录参数无效。');
+  return customCatalog.plan(await textbooks.catalog(active.root), revision as string | null, kind as 'chapter' | 'section', id, replacement as string | null);
+});
+handle('vault:custom:apply', async (token, id) => {
+  const active = current(token);
+  if (typeof id !== 'string') throw new Error('删除操作无效。');
+  const result = await customCatalog.apply(await textbooks.catalog(active.root), id);
+  await active.scan(); return result;
 });
 handle('vault:read', async (token, relative) => {
   if (typeof relative !== 'string') throw new Error('笔记路径无效。');
@@ -179,7 +201,7 @@ textbookHandle('textbooks:add', async (token, id) => {
 });
 handle('textbooks:notes', async (token) => initialNotes.index(current(token)));
 handle('textbooks:note', async (token, sourceId) => initialNotes.note(current(token), sourceId));
-textbookHandle('textbooks:catalog', async (token) => { const selected = current(token); const catalog = await textbooks.catalog(selected.root); current(token); return catalog; });
+textbookHandle('textbooks:catalog', async (token) => { const selected = current(token); const catalog = await textbooks.catalog(selected.root); const custom = await customCatalog.read(catalog); current(token); return withCustom(catalog, custom); });
 
 void app.whenReady().then(async () => {
 textbooks = new TextbookStore(path.resolve(here, '..'), local.directory, process.env.TEXTBOOK_DOWNLOAD_BASE_URL || null, app.commandLine.hasSwitch('textbook-local-http'));

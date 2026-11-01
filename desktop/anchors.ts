@@ -2,7 +2,8 @@ import { YAMLMap, isMap, isSeq, isNode, isAlias } from 'yaml';
 import { parse, saveProblem } from './format.ts';
 
 export type Rect = [number, number, number, number];
-export type Catalog = { textbookId: string; title: string; pageCount: number; pages: { page: number; width: number; height: number; printedPage: string | null }[]; chapters: { id: string; title: string; start: number; end: number }[]; sections: { id: string; title: string; chapterId: string; start: number; end: number }[] };
+type CatalogRange = { source?: undefined; start: number; end: number } | { source: 'custom'; start?: never; end?: never };
+export type Catalog = { textbookId: string; title: string; pageCount: number; pages: { page: number; width: number; height: number; printedPage: string | null }[]; chapters: ({ id: string; title: string } & CatalogRange)[]; sections: ({ id: string; title: string; chapterId: string } & CatalogRange)[] };
 export type AnchorTarget = { textbook: string; page: number; rects: Rect[] };
 export const anchorKey = (anchors: unknown) => JSON.stringify({ anchors });
 export function readAnchors(source: string): unknown {
@@ -27,7 +28,7 @@ export function resolveAnchor(value: unknown, catalog: Catalog | null) {
   if (item.section !== undefined && !section) problems.push('节标识无效或不属于所选章，原值已保留。');
   const page = bookValid && Number.isSafeInteger(item.pdf_page) && Number(item.pdf_page) > 0 ? catalog.pages.find((page) => page.page === item.pdf_page) : undefined;
   if (item.pdf_page !== undefined && !page) problems.push('文件页序无效，须为目录内从 1 开始的整数。');
-  const conflict = page && ((chapter && (page.page < chapter.start || page.page > chapter.end)) || (section && (page.page < section.start || page.page > section.end)));
+  const conflict = page && ((chapter && chapter.source !== 'custom' && (page.page < chapter.start || page.page > chapter.end)) || (section && section.source !== 'custom' && (page.page < section.start || page.page > section.end)));
   if (conflict) problems.push('章节与页面范围冲突，已暂停此条跳转；请明确修改。');
   const rectsValid = item.rects === undefined || Array.isArray(item.rects) && item.rects.length > 0 && item.rects.every(validRect);
   if (!rectsValid) problems.push('区域须为非空的 [x, y, width, height] 列表，坐标不得越出 0–1；原值已保留。');

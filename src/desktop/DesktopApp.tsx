@@ -10,6 +10,7 @@ import type { MovePlan } from '../../desktop/moves';
 import { NoteSearch } from './NoteSearch';
 import { NoteGraph } from './NoteGraph';
 import { noteReferences, pathLink, replaceReference, resolveLink, type LinkIndex, type NoteReference } from '../../desktop/links';
+import { CustomCatalogManager } from './CustomCatalog';
 import { NoteAnchors } from './NoteAnchors';
 import { anchorKey, changeAnchors, readAnchors, type AnchorTarget, type Catalog } from '../../desktop/anchors';
 import type { AnchorSession, AnchorBridge } from './anchor-session';
@@ -38,9 +39,10 @@ function Difference({ source, other }: { source: string; other: string }) {
 const NoteList = memo(function NoteList({ notes, active, busy, duplicates, onOpen }: { notes: string[]; active?: string; busy: boolean; duplicates: Record<string, string[]>; onOpen: (path: string) => void }) {
   return <nav>{notes.map((path) => <button key={path} disabled={busy} aria-current={active === path ? 'page' : undefined} onClick={() => onOpen(path)} title={path} aria-label={path.includes('/') ? `${noteName(path)} · ${noteDirectory(path)}` : noteName(path)}><span>{noteName(path)}</span>{path.includes('/') && <small className="vault-note-directory">{noteDirectory(path)}</small>}{duplicates[path] && <small> ID 冲突</small>}</button>)}</nav>;
 });
-export function DesktopApp({ openRequest, catalog = null, onAnchorSession, anchorBridge, onLocate, onSelect, chooseRequest, browseRequest, active = true }: {
+export function DesktopApp({ openRequest, catalog = null, onRefreshCatalog, onAnchorSession, anchorBridge, onLocate, onSelect, chooseRequest, browseRequest, active = true }: {
   chooseRequest?: number; browseRequest?: { view: 'search' | 'graph'; serial: number }; active?: boolean;
   openRequest?: { path: string; serial: number; vaultToken: string; expectedId?: string }; catalog?: Catalog | null;
+  onRefreshCatalog?: () => Promise<void>;
   onAnchorSession?: (session: AnchorSession) => void; anchorBridge?: AnchorBridge; onLocate?: (target: AnchorTarget) => void; onSelect?: (index?: number) => void;
 }) {
   const api = window.textbookDesktop!;
@@ -577,7 +579,17 @@ export function DesktopApp({ openRequest, catalog = null, onAnchorSession, ancho
             try { edit(replaceReference(latest.current.draft!.source, reference, replacement, expectedSource)); return true; } catch (cause) { setError((cause as Error).message); return false; }
           }} onCreate={createLinked} />
           <div className="note-document">
-            <div><NoteAnchors source={draft.source} readOnly={!anchorWritable} catalog={catalog} onChange={edit} onLocate={onLocate ?? (() => {})} onSelect={onSelect ?? (() => {})} /><NoteProperties key={draft.key} showProperties={bodyMode === 'preview' || draft.note.readOnly || frontmatterMode === 'properties'} source={draft.source} readOnly={busy || draft.note.readOnly || bodyMode === 'preview'} propertyTypes={preferences.settings.propertyTypes} unsupportedPropertyTypes={preferences.unsupportedPropertyTypes} onChange={edit} onTypeChange={(name, type) => configure({ propertyTypes: { [name]: type } })} /></div>
+            <div><NoteAnchors catalogTools={<CustomCatalogManager key={vault.token} api={api} token={vault.token} catalog={catalog} disabled={busy || saving || !!draft.conflict || draft.note.readOnly || bodyMode === 'preview'} before={async () => {
+              const live = latest.current.draft;
+              return !live || !live.isNew && live.source === live.note.source ? true : save();
+            }} run={run} onRefresh={onRefreshCatalog ?? (async () => {})} onApplied={async () => {
+              const current = latest.current.vault!, item = latest.current.draft;
+              if (item && !item.isNew && item.source === item.note.source && !item.conflict) {
+                const disk = value(await api.read(current.token, item.note.path));
+                update({ ...item, note: disk, source: disk.source });
+              }
+              value(await api.list(current.token)); await refreshLinks(current);
+            }} />} source={draft.source} readOnly={!anchorWritable} catalog={catalog} onChange={edit} onLocate={onLocate ?? (() => {})} onSelect={onSelect ?? (() => {})} /><NoteProperties key={draft.key} showProperties={bodyMode === 'preview' || draft.note.readOnly || frontmatterMode === 'properties'} source={draft.source} readOnly={busy || draft.note.readOnly || bodyMode === 'preview'} propertyTypes={preferences.settings.propertyTypes} unsupportedPropertyTypes={preferences.unsupportedPropertyTypes} onChange={edit} onTypeChange={(name, type) => configure({ propertyTypes: { [name]: type } })} /></div>
             <SourceEditor key={draft.key} scene={scene} entries={linkIndex.entries} onLink={openLink} source={draft.source} bodyMode={draft.note.readOnly ? 'preview' : bodyMode} frontmatterMode={frontmatterMode} readOnly={busy || draft.note.readOnly} position={localState.current.positions[draft.note.path]} onChange={edit} onPosition={position} onSave={() => { if (bodyMode !== 'preview') void save(); }} />
             {(bodyMode === 'preview' || draft.note.readOnly) && <div className="note-preview" aria-label="笔记只读预览"><NoteMarkdown onLink={openLink} offset={headerEnd(draft.source)} source={draft.source.slice(headerEnd(draft.source))} /></div>}
           </div>

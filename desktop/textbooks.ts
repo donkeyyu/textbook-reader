@@ -2,6 +2,7 @@ import { constants } from 'node:fs';
 import { link, lstat, mkdir, open, readFile, realpath, rename, rm } from 'node:fs/promises';
 import path from 'node:path';
 import { randomUUID } from 'node:crypto';
+import type { Catalog } from './anchors.ts';
 import type { TextbookStatus } from './textbook-contracts.ts';
 
 export const textbookId = '6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249';
@@ -153,12 +154,32 @@ export class TextbookStore {
       const file = await open(path.join(vaultRoot, relative), constants.O_RDONLY | constants.O_NOFOLLOW);
       try {
         const stat = await file.stat();
-        if (!stat.isFile() || stat.nlink !== 1) throw new Error('教材目录不是独立的普通文件。');
+        if (!stat.isFile() || stat.nlink !== 1 || stat.size > 1024 * 1024) throw new Error('教材目录不是不超过 1 MB 的独立普通文件。');
         bytes = await file.readFile();
-        this.tools.verifyBytes(this.manifest.download.find((entry) => entry.path === catalogPath)!, bytes);
+        const current = await lstat(path.join(vaultRoot, relative));
+        if (current.dev !== stat.dev || current.ino !== stat.ino || current.isSymbolicLink()) throw new Error('教材目录已外改，请重新读取。');
         await persistentDirectory(vaultRoot, path.posix.dirname(relative), false);
       } finally { await file.close(); }
     }
-    return JSON.parse(bytes.toString('utf8')) as unknown;
+    return validateCatalog(JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes)));
   }
+}
+
+// Persistent catalogs may be updated independently of the downloaded page cache.
+// Trust explicit stable IDs, never derive replacements from order or labels.
+export function validateCatalog(value: unknown): Catalog {
+  const data = value as Catalog & { schemaVersion: number };
+  if (!data || data.schemaVersion !== 1 || data.textbookId !== textbookId || typeof data.title !== 'string' || !Number.isSafeInteger(data.pageCount) || data.pageCount < 1 || !Array.isArray(data.pages) || !Array.isArray(data.chapters) || !Array.isArray(data.sections)) throw new Error('教材目录格式无效或使用较新版本，原文件已保留。');
+  const ids = new Set<string>(), pages = new Set<number>();
+  for (const page of data.pages) {
+    if (!page || !Number.isSafeInteger(page.page) || page.page < 1 || page.page > data.pageCount || pages.has(page.page) || !Number.isFinite(page.width) || page.width <= 0 || !Number.isFinite(page.height) || page.height <= 0 || !(page.printedPage === null || typeof page.printedPage === 'string')) throw new Error('教材目录页面无效。');
+    pages.add(page.page);
+  }
+  if (pages.size !== data.pageCount) throw new Error('教材目录页面不完整。');
+  for (const entry of [...data.chapters, ...data.sections]) {
+    if (!entry || typeof entry.id !== 'string' || !entry.id || ids.has(entry.id) || typeof entry.title !== 'string' || !entry.title.trim() || entry.source !== undefined || !Number.isSafeInteger(entry.start) || !Number.isSafeInteger(entry.end) || entry.start < 1 || entry.end < entry.start || entry.end > data.pageCount) throw new Error('教材目录条目标识或页界无效。');
+    ids.add(entry.id);
+  }
+  for (const entry of data.sections) if (!data.chapters.some((chapter) => chapter.id === entry.chapterId)) throw new Error('教材目录节的父章无效。');
+  return data;
 }

@@ -1,3 +1,4 @@
+import type { CustomView, CustomEdit, CustomEntry, CustomDeletion } from './custom-catalog.ts';
 import type { LinkIndex } from './links.ts';
 import type { MovePlan, MoveStatus } from './moves.ts';
 export type Position = { cursor: number; scroll: number };
@@ -17,6 +18,11 @@ export type SettingsPatch = { editor?: Partial<EditorPreferences>; propertyTypes
 export type DesktopApi = {
   restore: () => Promise<Result<VaultView | null>>;
   chooseVault: () => Promise<Result<VaultView | null>>;
+  customCatalog: (token: string) => Promise<Result<CustomView>>;
+  saveCustomCatalog: (token: string, revision: string | null, edit: CustomEdit) => Promise<Result<{ view: CustomView; entry: CustomEntry; reused: boolean }>>;
+  customDeletions: (token: string) => Promise<Result<CustomDeletion[]>>;
+  planCustomDeletion: (token: string, revision: string | null, kind: 'chapter' | 'section', id: string, replacement: string | null) => Promise<Result<CustomDeletion>>;
+  applyCustomDeletion: (token: string, id: string) => Promise<Result<CustomDeletion>>;
   links: (token: string) => Promise<Result<LinkIndex>>;
   moveStatus: (token: string) => Promise<Result<MoveStatus>>;
   planMove: (token: string, from: string, to: string, revision: string) => Promise<Result<MovePlan>>;

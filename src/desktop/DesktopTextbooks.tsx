@@ -67,7 +67,7 @@ function TextbookShelf({ context, onOpenNote, tools, onCatalog }: { tools?: Loca
       const importedResult = await api.notes(context.vaultToken);
       if (!importedResult.ok) setNeedsImport(true);
       const imported = value(importedResult);
-      const published = { ...publishedContent(), supplements: publishedContent().supplements.filter((item) => imported.notes.some((note) => note.sourceId === item.id && note.path)), chapters: catalog.chapters, sections: catalog.sections };
+      const published = { ...publishedContent(), supplements: publishedContent().supplements.filter((item) => imported.notes.some((note) => note.sourceId === item.id && note.path)), chapters: catalog.chapters.filter((entry) => entry.source !== 'custom'), sections: catalog.sections.filter((entry) => entry.source !== 'custom') };
       setContent({ user: null, published, personal: null, nodes: contentNodes(published, { supplements: [], notes: {} }), loading: false,
         error: '', notice: '', draftOwner: null, refresh: async () => {}, updatePersonal: async () => { throw new Error('请在本地笔记库中编辑笔记。'); } });
       setReading(true); setError('');

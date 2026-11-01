@@ -1,16 +1,16 @@
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { anchorKey, anchorObject, changeAnchors, readAnchors, resolveAnchor, type AnchorTarget, type Catalog } from '../../desktop/anchors';
 import { AnchorPreview } from './AnchorPreview';
 
-export function NoteAnchors({ source, readOnly, catalog, onChange, onLocate, onSelect }: { source: string; readOnly: boolean; catalog: Catalog | null; onChange: (source: string) => void; onLocate: (target: AnchorTarget) => void; onSelect: (index?: number) => void }) {
+export function NoteAnchors({ source, readOnly, catalog, onChange, onLocate, onSelect, catalogTools }: { catalogTools?: ReactNode; source: string; readOnly: boolean; catalog: Catalog | null; onChange: (source: string) => void; onLocate: (target: AnchorTarget) => void; onSelect: (index?: number) => void }) {
   const [error, setError] = useState('');
   let anchors: unknown, problem = '';
   try { anchors = readAnchors(source); } catch (cause) { problem = (cause as Error).message; }
   function mutate(operation: Parameters<typeof changeAnchors>[2]) {
     try { onChange(changeAnchors(source, anchorKey(anchors), operation)); setError(''); } catch (cause) { setError((cause as Error).message); }
   }
-  const options = (value: unknown, choices: { id: string; title: string }[]) => <><option value="">未设置</option>{value !== undefined && !choices.some((item) => item.id === value) && <option value={String(value)}>{String(value)}（未匹配）</option>}{choices.map((entry) => <option key={entry.id} value={entry.id}>{entry.title}</option>)}</>;
-  return <section className="note-anchors" aria-label="笔记位置"><strong>笔记位置</strong>
+  const options = (value: unknown, choices: { id: string; title: string }[], grouped = false) => <><option value="">未设置</option>{value !== undefined && !choices.some((item) => item.id === value) && <option value={String(value)}>{String(value)}（未匹配）</option>}{grouped ? ['教材索引', '自定义目录'].map((label) => <optgroup label={label} key={label}>{choices.filter((entry) => ('source' in entry && entry.source === 'custom') === (label === '自定义目录')).map((entry) => <option key={entry.id} value={entry.id}>{entry.title}</option>)}</optgroup>) : choices.map((entry) => <option key={entry.id} value={entry.id}>{entry.title}</option>)}</>;
+  return <section className="note-anchors" aria-label="笔记位置"><strong>笔记位置</strong>{catalogTools}
     {!catalog && <p role="note">当前教材目录不可用。原值已保留，请先添加教材。</p>}
     {problem ? <p role="note">{problem} 位置写入已暂停。</p> : <>
       {anchors !== undefined && !Array.isArray(anchors) && <p role="note">anchors 不是列表，原值已保留；请在源码中修复。</p>}
@@ -24,8 +24,8 @@ export function NoteAnchors({ source, readOnly, catalog, onChange, onLocate, onS
           {item && resolved.problems.length > 0 && <pre>{JSON.stringify(item, null, 2)}</pre>}
           {!item ? <pre>{JSON.stringify(anchor)}</pre> : readOnly ? null : <div className="anchor-fields">
             <label>教材<select aria-label={`位置 ${index + 1} 教材`} value={String(item.textbook ?? '')} onChange={(event) => mutate({ index, patch: { textbook: event.target.value || undefined } })}>{options(item.textbook, catalog ? [{ id: catalog.textbookId, title: catalog.title }] : [])}</select></label>
-            <label>章<select aria-label={`位置 ${index + 1} 章`} disabled={!bookMatched} value={String(item.chapter ?? '')} onChange={(event) => mutate({ index, patch: { chapter: event.target.value || undefined } })}>{options(item.chapter, bookMatched ? catalog!.chapters : [])}</select></label>
-            <label>节<select aria-label={`位置 ${index + 1} 节`} disabled={!resolved.chapter} value={String(item.section ?? '')} onChange={(event) => mutate({ index, patch: { section: event.target.value || undefined } })}>{options(item.section, resolved.chapter ? catalog!.sections.filter((entry) => entry.chapterId === resolved.chapter!.id) : [])}</select></label>
+            <label>章<select aria-label={`位置 ${index + 1} 章`} disabled={!bookMatched} value={String(item.chapter ?? '')} onChange={(event) => mutate({ index, patch: { chapter: event.target.value || undefined } })}>{options(item.chapter, bookMatched ? catalog!.chapters : [], true)}</select></label>
+            <label>节<select aria-label={`位置 ${index + 1} 节`} disabled={!resolved.chapter} value={String(item.section ?? '')} onChange={(event) => mutate({ index, patch: { section: event.target.value || undefined } })}>{options(item.section, resolved.chapter ? catalog!.sections.filter((entry) => entry.chapterId === resolved.chapter!.id) : [], true)}</select></label>
             <label>文件页<select aria-label={`位置 ${index + 1} 文件页`} disabled={!bookMatched} value={String(item.pdf_page ?? '')} onChange={(event) => mutate({ index, patch: { pdf_page: event.target.value ? Number(event.target.value) : undefined } })}>{options(item.pdf_page === undefined ? undefined : String(item.pdf_page), bookMatched ? catalog!.pages.map((page) => ({ id: String(page.page), title: `文件 ${page.page}${page.printedPage === null ? '' : ` · 印刷 ${page.printedPage}`}` })) : [])}</select></label>
             {resolved.target && <button type="button" onClick={() => onSelect(index)}>编辑位置 {index + 1} 区域</button>}
             {item.rects !== undefined && <button type="button" onClick={() => mutate({ index, patch: { rects: undefined } })}>移除位置 {index + 1} 区域</button>}

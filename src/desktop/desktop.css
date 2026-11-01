@@ -63,3 +63,30 @@
 }
 .vault-diff pre span { display: block; min-height: 1.5em; }
 .vault-diff-changed { background: var(--accent-soft); border-left: 3px solid var(--accent); padding-left: 6px; }
+.note-modes { display: flex; flex-wrap: wrap; gap: 16px; padding: 8px 28px; border-bottom: 1px solid var(--separator); font-size: 13px; }
+.note-modes label { display: flex; align-items: center; gap: 8px; }
+.note-modes select { border: 1px solid var(--input-border); border-radius: 18px; padding: 6px 12px; color: inherit; background: var(--surface); }
+.note-document { display: flex; flex-direction: column; overflow: hidden; flex: 1; min-height: 0; padding: 8px 16px 24px; }
+.note-document > div:first-child { max-height: 46%; overflow: auto; flex-shrink: 0; }
+.note-document .vault-source { flex: 1; min-height: 0; padding: 0; }
+.note-document .cm-editor { min-height: 0; height: 100%; }
+.note-document .cm-scroller { overflow: auto; }
+.note-document .cm-content { min-height: 220px; }
+.note-preview, .note-rendered-block { font: 16px/1.85 var(--app-font-ui, system-ui); overflow-wrap: anywhere; }
+.note-preview { flex: 1; overflow: auto; min-height: 0; padding: 8px 12px; }
+.note-rendered-block { cursor: text; padding: 2px 0; }
+.note-preview :is(h1,h2,h3), .note-rendered-block :is(h1,h2,h3) { line-height: 1.5; margin: .65em 0 .35em; }
+.note-preview p, .note-rendered-block p { margin: .4em 0; }
+.note-preview pre, .note-rendered-block pre { white-space: pre-wrap; padding: 12px; background: var(--island-input); border-radius: 10px; }
+.note-preview a, .note-rendered-block a { color: var(--accent); text-decoration: underline; }
+.note-callout { --callout-color: #547d87; margin: 12px 0; padding: 10px 16px; border-left: 3px solid var(--callout-color); background: color-mix(in srgb, var(--callout-color) 7%, var(--surface)); border-radius: 4px 12px 12px 4px; }
+.note-callout-hint { --callout-color: #8878a4; }
+.note-callout-warning { --callout-color: #a47b38; }
+.note-callout-personal { --callout-color: #a27689; }
+.note-callout :is(header,summary) { font-weight: 600; }
+.note-callout summary { cursor: pointer; }
+.note-callout small { margin-left: 12px; font-size: 12px; font-weight: 400; color: var(--secondary); }
+.note-image-placeholder { color: var(--secondary); }
+.vault-paper [hidden] { display: none !important; }
+.vault-source-live .cm-line { font: 16px/1.85 var(--app-font-ui, system-ui); }
+.note-rendered-block:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }

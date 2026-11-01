@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
-import type { DesktopApi, Note, Position, Recovery, Result, VaultChange, VaultState, VaultView } from '../../desktop/contracts';
+import type { DesktopApi, Note, Position, Recovery, Result, VaultChange, VaultState, VaultView, SettingsView, SettingsPatch } from '../../desktop/contracts';
 import { freshIdentity as freshCopy, rebaseSaved, saveProblem } from '../../desktop/format';
-import { SourceEditor } from './SourceEditor';
+import { SourceEditor, headerEnd } from './SourceEditor';
+import { NoteProperties } from './NoteProperties';
+import { NoteMarkdown } from './note-markdown';
 import './desktop.css';
 
 declare global { interface Window { textbookDesktop?: DesktopApi } }
@@ -22,6 +24,11 @@ function Difference({ source, other }: { source: string; other: string }) {
 }
 export function DesktopApp() {
   const api = window.textbookDesktop!;
+  const [preferences, setPreferences] = useState<SettingsView>({ revision: null, settings: { editor: { bodyMode: 'live', frontmatterMode: 'properties' }, propertyTypes: {} } });
+  const [settingsError, setSettingsError] = useState('');
+  const settingsRef = useRef<SettingsView | null>(null);
+  const settingsQueue = useRef<Promise<void>>(Promise.resolve());
+  const { bodyMode, frontmatterMode } = preferences.settings.editor;
   const [vault, setVault] = useState<VaultView | null>(null);
   const [draft, setDraft] = useState<Draft | null>(null);
   const [busy, setBusy] = useState(true);
@@ -54,7 +61,7 @@ export function DesktopApp() {
     const previous = latest.current.draft;
     if (!previous) return;
     update({ ...previous, source, paused: false });
-    setStatus(previous.conflict ? '磁盘冲突 · 自动保存已暂停' : '未保存');
+    setStatus(previous.conflict ? '磁盘冲突 · 自动保存已暂停' : !previous.isNew && source === previous.note.source ? '已保存' : '未保存');
     setError('');
   }
   async function remember() {
@@ -82,12 +89,33 @@ export function DesktopApp() {
     loaded(note);
     await remember();
   }
+  async function readPreferences(current: VaultView) {
+    settingsRef.current = null; setSettingsError('');
+    const result = await api.readSettings(current.token);
+    if (latest.current.vault?.token !== current.token) return;
+    if (result.ok) { settingsRef.current = result.value; setPreferences(result.value); }
+    else setSettingsError(result.error);
+  }
+  function configure(patch: SettingsPatch) {
+    const current = latest.current.vault;
+    if (!current) return;
+    setPreferences((previous) => ({ ...previous, settings: { editor: { ...previous.settings.editor, ...patch.editor }, propertyTypes: { ...previous.settings.propertyTypes, ...patch.propertyTypes } } }));
+    settingsQueue.current = settingsQueue.current.then(async () => {
+      if (latest.current.vault?.token !== current.token) return;
+      if (!settingsRef.current) { setSettingsError((previous) => previous || '配置未读取，当前选择尚未保存。请重新读取配置。'); return; }
+      const result = await api.saveSettings(current.token, settingsRef.current.revision, patch);
+      if (latest.current.vault?.token !== current.token) return;
+      if (result.ok) { settingsRef.current = result.value; setPreferences((previous) => ({ ...previous, unsupportedPropertyTypes: result.value.unsupportedPropertyTypes })); setSettingsError(''); }
+      else { settingsRef.current = null; setSettingsError(result.error); }
+    });
+  }
   async function showVault(current: VaultView) {
     if (stateTimer.current) clearTimeout(stateTimer.current);
     localState.current = current.state;
     latest.current.vault = current;
-    setVault(current); update(null); setCreating(false); setRecords(null); setDuplicates({}); setStatus('');
+    setVault(current); setPreferences({ revision: null, settings: { editor: { bodyMode: 'live', frontmatterMode: 'properties' }, propertyTypes: {} } }); update(null); setCreating(false); setRecords(null); setDuplicates({}); setStatus('');
     setError(current.notice ?? '');
+    await readPreferences(current);
     if (current.state.activePath && current.notes.includes(current.state.activePath)) await openNote(current, current.state.activePath);
     value(await api.list(current.token));
     const recoveries = value(await api.recoveries(current.token));
@@ -300,19 +328,27 @@ export function DesktopApp() {
         </aside>
         <section className="vault-paper" aria-label="笔记编辑器">{draft ? <>
           <div className="vault-note-heading"><h1>{draft.note.path.slice(0, -3)}</h1><span role="status">{status}</span>
-            <button disabled={busy || saving || draft.note.readOnly || !!draft.conflict} onClick={() => { void save(); }}>保存</button>
-            {!draft.isNew && <button disabled={busy || saving || draft.note.readOnly || !!draft.conflict} onClick={() => { void run(() => copy(false)); }}>复制笔记</button>}
+            <button hidden={bodyMode === 'preview' || draft.note.readOnly} disabled={busy || saving || draft.note.readOnly || !!draft.conflict} onClick={() => { void save(); }}>保存</button>
+            {!draft.isNew && bodyMode !== 'preview' && !draft.note.readOnly && <button disabled={busy || saving || draft.note.readOnly || !!draft.conflict} onClick={() => { void run(() => copy(false)); }}>复制笔记</button>}
           </div>
           {draft.note.fileMtime && <details className="vault-file-info"><summary>文件信息</summary><p>文件修改时间：{new Date(draft.note.fileMtime).toLocaleString()}（独立于 YAML 中的笔记更新时间）</p></details>}
           {(problem || draft.note.problems.length > 0) && <div className="vault-problems" role="note">{[...new Set([problem, ...draft.note.problems].filter(Boolean))].map((message) => <p key={message}>{message}</p>)}</div>}
-          {!!draft.note.duplicatePaths?.length && <div className="vault-problems"><p>ID 重复：{draft.note.duplicatePaths.join('、')}。不会按 ID 任意选取目标。</p><button disabled={busy || saving || draft.note.readOnly || !!draft.conflict} onClick={() => { void run(() => copy(true)); }}>将此副本设为新笔记</button></div>}
+          {!!draft.note.duplicatePaths?.length && <div className="vault-problems"><p>ID 重复：{draft.note.duplicatePaths.join('、')}。不会按 ID 任意选取目标。</p><button hidden={bodyMode === 'preview' || draft.note.readOnly} disabled={busy || saving || draft.note.readOnly || !!draft.conflict} onClick={() => { void run(() => copy(true)); }}>将此副本设为新笔记</button></div>}
           {draft.conflict && <section className="vault-conflict" role="alert"><p>磁盘文件已改变，自动保存已暂停。草稿和磁盘版本均保留。{draft.conflict.error || (!draft.conflict.disk && '文件已删除或暂不可用。')}</p><div>
             <button onClick={() => setDiff(!diff)}>{diff ? '收起差异' : '查看差异'}</button>
-            <button disabled={busy || saving || !!problem} onClick={() => { void run(async () => { await saveAs(); }); }}>另存草稿为新笔记</button>
-            <button disabled={busy || saving} onClick={() => { void adoptDisk(); }}>采用磁盘版本</button>
+            <button hidden={bodyMode === 'preview' || draft.note.readOnly} disabled={busy || saving || !!problem} onClick={() => { void run(async () => { await saveAs(); }); }}>另存草稿为新笔记</button>
+            <button hidden={bodyMode === 'preview' || draft.note.readOnly} disabled={busy || saving} onClick={() => { void adoptDisk(); }}>采用磁盘版本</button>
           </div>{diff && <div className="vault-diff"><section><h2>编辑草稿</h2><Difference source={draft.source} other={draft.conflict.disk?.source ?? ''} /></section><section><h2>磁盘版本</h2><Difference source={draft.conflict.disk?.source ?? draft.conflict.error ?? '文件已删除或暂不可用。'} other={draft.source} /></section></div>}</section>}
-          {!draft.conflict && draft.paused && <div className="vault-problems"><p>草稿已保留，可重试保存或另存。</p><button disabled={busy || saving || !!problem} onClick={() => { void run(async () => { await saveAs(); }); }}>另存草稿为新笔记</button></div>}
-          <SourceEditor key={draft.key} source={draft.source} readOnly={busy || draft.note.readOnly} position={localState.current.positions[draft.note.path]} onChange={edit} onPosition={position} onSave={() => { void save(); }} />
+          {!draft.conflict && draft.paused && <div className="vault-problems"><p>草稿已保留，可重试保存或另存。</p><button hidden={bodyMode === 'preview' || draft.note.readOnly} disabled={busy || saving || !!problem} onClick={() => { void run(async () => { await saveAs(); }); }}>另存草稿为新笔记</button></div>}
+          <div className="note-modes"><label>正文<select aria-label="正文模式" value={bodyMode} onChange={(event) => configure({ editor: { bodyMode: event.target.value as typeof bodyMode } })}><option value="edit">编辑</option><option value="preview">预览</option><option value="live">实时预览</option></select></label>
+            {bodyMode !== 'preview' && !draft.note.readOnly && <label>文件头<select aria-label="文件头模式" value={frontmatterMode} onChange={(event) => configure({ editor: { frontmatterMode: event.target.value as typeof frontmatterMode } })}><option value="properties">属性预览</option><option value="source">源码</option></select></label>}
+          </div>
+          {settingsError && <div className="vault-problems" role="alert">配置未保存：{settingsError}<button onClick={() => { void readPreferences(vault); }}>重新读取配置</button></div>}
+          <div className="note-document">
+            <div><NoteProperties key={draft.key} showProperties={bodyMode === 'preview' || draft.note.readOnly || frontmatterMode === 'properties'} source={draft.source} readOnly={busy || draft.note.readOnly || bodyMode === 'preview'} propertyTypes={preferences.settings.propertyTypes} unsupportedPropertyTypes={preferences.unsupportedPropertyTypes} onChange={edit} onTypeChange={(name, type) => configure({ propertyTypes: { [name]: type } })} /></div>
+            <SourceEditor key={draft.key} source={draft.source} bodyMode={draft.note.readOnly ? 'preview' : bodyMode} frontmatterMode={frontmatterMode} readOnly={busy || draft.note.readOnly} position={localState.current.positions[draft.note.path]} onChange={edit} onPosition={position} onSave={() => { if (bodyMode !== 'preview') void save(); }} />
+            {(bodyMode === 'preview' || draft.note.readOnly) && <div className="note-preview" aria-label="笔记只读预览"><NoteMarkdown source={draft.source.slice(headerEnd(draft.source))} /></div>}
+          </div>
         </> : <div className="vault-empty"><h1>选一篇笔记，继续写</h1><p>手动创建的 .md 文件也会出现在左侧。</p></div>}</section>
       </div>}
     <dialog ref={guardDialog} className="vault-guard" onCancel={(event) => { event.preventDefault(); answer('cancel'); }}><h2>{guard === 'disk' ? '采用磁盘版本前保留草稿' : '还有未保存的草稿'}</h2><p>{guard === 'disk' ? '草稿将先写入恢复记录。也可以先另存为新笔记。取消会保留当前编辑现场。' : '保存后继续，或保留当前编辑现场。'}</p><div>

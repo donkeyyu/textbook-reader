@@ -5,6 +5,13 @@ export type VaultChange = { token: string; notes: string[]; changed: string[]; d
 export type Recovery = { id: string; path: string; created: string; original: string | null; candidate: string; observed?: string };
 export type VaultView = { token: string; name: string; notes: string[]; state: VaultState; notice?: string };
 export type Result<T> = { ok: true; value: T } | { ok: false; error: string; code?: string };
+export type BodyMode = 'edit' | 'preview' | 'live';
+export type FrontmatterMode = 'source' | 'properties';
+export type PropertyType = 'text' | 'number' | 'boolean' | 'list' | 'date' | 'object';
+export type EditorPreferences = { bodyMode: BodyMode; frontmatterMode: FrontmatterMode };
+export type VaultSettings = { editor: EditorPreferences; propertyTypes: Record<string, PropertyType> };
+export type SettingsView = { revision: string | null; settings: VaultSettings; unsupportedPropertyTypes?: string[] };
+export type SettingsPatch = { editor?: Partial<EditorPreferences>; propertyTypes?: Record<string, PropertyType> };
 export type DesktopApi = {
   restore: () => Promise<Result<VaultView | null>>;
   chooseVault: () => Promise<Result<VaultView | null>>;
@@ -16,5 +23,7 @@ export type DesktopApi = {
   recoveries: (token: string) => Promise<Result<Recovery[]>>;
   onChange: (callback: (change: VaultChange) => void) => () => void;
   saveState: (token: string, state: VaultState) => Promise<Result<null>>;
+  readSettings: (token: string) => Promise<Result<SettingsView>>;
+  saveSettings: (token: string, revision: string | null, patch: SettingsPatch) => Promise<Result<SettingsView>>;
   setDirty: (dirty: boolean) => void;
 };

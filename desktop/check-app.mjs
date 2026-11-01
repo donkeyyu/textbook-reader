@@ -47,6 +47,8 @@ try {
   await page.getByRole('button', { name: '选择笔记库', exact: true }).click();
   await page.getByRole('button', { name: '手动', exact: true }).click();
   const editor = () => page.getByRole('textbox', { name: '笔记 Markdown 源码', exact: true });
+  await page.getByRole('combobox', { name: '正文模式', exact: true }).selectOption('edit');
+  await page.getByRole('combobox', { name: '文件头模式', exact: true }).selectOption('source');
   await editor().waitFor();
   assert.equal(await readFile(path.join(root, '手动.md'), 'utf8'), original);
   assert.equal(await page.evaluate(() => window.untrustedHtml), undefined);
@@ -57,7 +59,7 @@ try {
     return { keys: Object.keys(api), node: typeof window.require, process: typeof window.process, traversal: result.ok };
   });
   assert.equal(boundaries.node, 'undefined'); assert.equal(boundaries.process, 'undefined'); assert.equal(boundaries.traversal, false);
-  assert.deepEqual(boundaries.keys.sort(), ['chooseVault', 'copy', 'list', 'onChange', 'protectDraft', 'read', 'recoveries', 'restore', 'save', 'saveState', 'setDirty']);
+  assert.deepEqual(boundaries.keys.sort(), ['chooseVault', 'copy', 'list', 'onChange', 'protectDraft', 'read', 'recoveries', 'restore', 'save', 'saveState', 'readSettings', 'saveSettings', 'setDirty'].sort());
   const preferences = await instance.evaluate(({ BrowserWindow }) => {
     const web = BrowserWindow.getAllWindows()[0].webContents;
     const settings = web.getLastWebPreferences();
@@ -109,10 +111,11 @@ try {
   await page.getByRole('button', { name: '较新', exact: true }).click();
   await page.getByRole('button', { name: '放弃草稿并继续', exact: true }).click();
   await page.getByRole('status').filter({ hasText: '只读' }).waitFor();
-  const future = await editor().innerText();
-  await editor().click(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); await page.keyboard.press('ControlOrMeta+z'); await page.keyboard.insertText('不能写入');
-  assert.equal(await editor().innerText(), future);
-  assert.equal(await page.getByRole('button', { name: '保存', exact: true }).isDisabled(), true);
+  const future = await readFile(path.join(root, '较新.md'), 'utf8');
+  await page.getByLabel('笔记只读预览', { exact: true }).click(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); await page.keyboard.press('ControlOrMeta+z'); await page.keyboard.insertText('不能写入');
+  assert.equal(await readFile(path.join(root, '较新.md'), 'utf8'), future);
+  assert.equal(await page.getByRole('button', { name: '保存', exact: true }).count(), 0);
+  assert.equal(await page.locator('.cm-content[contenteditable="true"]:visible').count(), 0);
   // Invalid YAML stays in the editor and can be repaired without losing unknown fields.
   await page.getByRole('button', { name: '新建笔记', exact: true }).click();
   await page.getByRole('textbox', { name: '新笔记名称', exact: true }).fill('修复文件头');

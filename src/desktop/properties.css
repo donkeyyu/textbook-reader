@@ -1,0 +1,36 @@
+.note-properties { flex-shrink: 0; max-height: 38vh; overflow: auto; padding: 8px 28px 14px; font-size: 14px; border-bottom: 1px solid var(--separator); }
+.note-position { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px; margin-bottom: 8px; }
+.note-position > span { color: var(--secondary); }
+.note-position ul { margin: 0; padding-left: 20px; }
+.note-position li > span { display: inline-block; margin-right: 10px; overflow-wrap: anywhere; }
+.note-position pre, .note-property pre { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; }
+.note-information { margin-bottom: 8px; color: var(--secondary); }
+.note-information dl { margin: 8px 0; }
+.note-information dl > div { display: flex; gap: 12px; }
+.note-information dt { min-width: 95px; }
+.note-information dd { margin: 0; overflow-wrap: anywhere; }
+.note-property { display: grid; grid-template-columns: minmax(75px, 1fr) 80px minmax(80px, 2fr) auto; gap: 8px; align-items: start; margin-block: 7px; }
+.note-property > strong { padding-block: 8px; overflow-wrap: anywhere; }
+.note-properties input:not([type=checkbox]), .note-properties select { min-width: 0; width: 100%; padding: 7px 9px; color: inherit; background: var(--island-input, var(--surface)); border: 1px solid var(--input-border); border-radius: 10px; font: inherit; }
+.note-properties input[type=checkbox] { width: 20px; height: 20px; margin: 8px 0; accent-color: var(--accent); }
+.note-properties button { min-height: 34px; padding: 5px 10px; font-size: 13px; }
+.note-property > pre { grid-column: 3 / -1; padding-block: 8px; }
+.note-property-type { color: var(--secondary); padding-block: 8px; }
+.note-property-list { display: grid; gap: 5px; }
+.note-property-list > div { display: flex; align-items: start; gap: 5px; }
+.note-property-list > button { justify-self: start; }
+.note-property-number { flex: 1; min-width: 0; }
+.note-property-nested { flex: 1; min-width: 0; padding-block: 7px; }
+.note-property-nested small { color: var(--secondary); }
+.note-property-mismatch { grid-column: 2 / -1; margin: 0; color: #8a3525; }
+.note-property-error { color: #8a3525; margin-block: 8px; }
+.note-property-add { display: flex; align-items: center; gap: 8px; max-width: 540px; margin-top: 12px; }
+.note-property-add > select { width: 90px; }
+.note-property-add > button { flex-shrink: 0; }
+@media (max-width: 900px) {
+  .note-properties { padding-inline: 16px; }
+  .note-property { grid-template-columns: minmax(70px, 1fr) 80px auto; }
+  .note-property > input, .note-property > .note-property-number, .note-property > .note-property-list, .note-property > .note-property-nested, .note-property > pre { grid-column: 1 / -1; grid-row: 2; }
+  .note-property > button { grid-column: 3; grid-row: 1; }
+  .note-property-mismatch { grid-column: 1 / -1; }
+}

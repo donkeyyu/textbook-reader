@@ -15,6 +15,8 @@ contextBridge.exposeInMainWorld('textbookDesktop', Object.freeze({
     return () => ipcRenderer.removeListener('vault:change', listener);
   },
   saveState: (token, state) => ipcRenderer.invoke('vault:state', token, state),
+  readSettings: (token) => ipcRenderer.invoke('vault:settings:read', token),
+  saveSettings: (token, revision, patch) => ipcRenderer.invoke('vault:settings:save', token, revision, patch),
   // Make the native close guard see a CodeMirror edit during that same event turn.
   setDirty: (dirty) => { ipcRenderer.sendSync('vault:dirty', dirty); },
 }));

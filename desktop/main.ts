@@ -4,6 +4,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import { TextbookStore, textbookId } from './textbooks.ts';
 import { digest, Vault } from './vault.ts';
 import { LocalState, cleanState } from './state.ts';
+import { VaultSettingsStore } from './settings.ts';
 import type { Result, VaultState, VaultView } from './contracts.ts';
 
 const appUrl = 'textbook://app/';
@@ -15,6 +16,7 @@ if (dataOverride && path.isAbsolute(dataOverride)) app.setPath('userData', dataO
 const local = new LocalState(app.getPath('userData'));
 let window: BrowserWindow;
 let vault: Vault | null = null;
+let settings: VaultSettingsStore;
 let state: VaultState = { positions: {} };
 let dirty = false;
 let closing = false;
@@ -79,7 +81,7 @@ async function select(root: string): Promise<VaultView> {
   await persist();
   // Remembering a choice is required before reporting a successful transition.
   await local.remember(next.root);
-  vault = next; state = saved.state;
+  vault = next; settings = new VaultSettingsStore(next.root); state = saved.state;
   watchVault(next);
   restoreBounds(saved.bounds);
   return { token: next.token, name: path.basename(next.root), notes, state, notice };
@@ -121,6 +123,8 @@ handle('vault:recoveries', async (token) => current(token).recoveries());
 handle('vault:state', async (token, input) => {
   current(token); state = cleanState(input); await persist(); return null;
 });
+handle('vault:settings:read', async (token) => { current(token); return settings.read(); });
+handle('vault:settings:save', async (token, revision, patch) => { current(token); return settings.save(revision, patch); });
 ipcMain.on('vault:dirty', (event, value: unknown) => {
   if (trustedSender(event) && typeof value === 'boolean') dirty = value;
   event.returnValue = null;

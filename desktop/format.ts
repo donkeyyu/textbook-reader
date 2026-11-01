@@ -1,6 +1,6 @@
 import { isMap, LineCounter, parseDocument, YAMLMap } from 'yaml';
 
-function split(source: string) {
+export function split(source: string) {
   const start = /^(\uFEFF?)---\r?\n/.exec(source);
   if (!start) return { prefix: source.startsWith('\uFEFF') ? '\uFEFF' : '', header: '', body: source.replace(/^\uFEFF/, ''), newline: '\n' };
   const end = /^(?:---|\.\.\.)\r?$/m.exec(source.slice(start[0].length));
@@ -10,7 +10,7 @@ function split(source: string) {
     body: source.slice(offset).replace(/^\r?\n/, ''), newline: start[0].endsWith('\r\n') ? '\r\n' : '\n' };
 }
 
-function parse(source: string) {
+export function parse(source: string) {
   const parts = split(source);
   const lineCounter = new LineCounter();
   const doc = parseDocument(parts.header, { lineCounter, uniqueKeys: true, version: '1.2' });

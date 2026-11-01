@@ -35,12 +35,13 @@ function watchVault(next: Vault) {
     queue = queue.then(async () => {
       if (vault !== next || window.isDestroyed()) return;
       try {
-        const change = await next.scan();
-        if (change.changed.length) window.webContents.send('vault:change', change);
+        await next.scan();
       } catch (cause) {
         window.webContents.send('vault:change', { token: next.token, error: (cause as Error).message, notes: [], changed: [], duplicates: {} });
       }
     }).finally(() => { refreshQueued = false; });
+  }, (change) => {
+    if (vault === next && !window.isDestroyed()) window.webContents.send('vault:change', change);
   });
 }
 
@@ -108,14 +109,12 @@ handle('vault:save', async (token, relative, source, revision) => {
   if (typeof relative !== 'string' || typeof source !== 'string' || (revision !== null && typeof revision !== 'string')) throw new Error('保存参数无效。');
   const active = current(token);
   const note = await active.save(relative, source, revision);
-  window.webContents.send('vault:change', { ...await active.scan(), changed: [note.path] });
   return note;
 });
 handle('vault:copy', async (token, relative, source, revision, replaceIdentity) => {
   if (typeof relative !== 'string' || typeof source !== 'string' || typeof revision !== 'string' || typeof replaceIdentity !== 'boolean') throw new Error('复制参数无效。');
   const active = current(token);
   const note = await active.copy(relative, source, revision, replaceIdentity);
-  window.webContents.send('vault:change', { ...await active.scan(), changed: [note.path] });
   return note;
 });
 handle('vault:protect-draft', async (token, relative, source) => {
@@ -152,7 +151,6 @@ textbookHandle('textbooks:add', async (token, id) => {
     const assertCurrent = () => { current(token); };
     const added = await textbooks.addToVault(selected.root, id, assertCurrent);
     const imported = await initialNotes.import(selected, assertCurrent);
-    window.webContents.send('vault:change', await selected.scan());
     return { ...added, initialNotes: imported };
   });
   queue = result.catch(() => {});

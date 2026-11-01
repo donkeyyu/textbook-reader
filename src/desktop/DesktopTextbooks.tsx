@@ -13,7 +13,7 @@ import type { ChapterRef, SectionRef } from '../textbook/sections';
 declare global { interface Window { textbookResources?: TextbookApi } }
 function value<T>(result: Result<T>): T { if (!result.ok) throw new Error(result.error); return result.value; }
 
-export function DesktopTextbooks({ active, onOpenNote }: { active: boolean; onOpenNote: (path: string, vaultToken: string) => void }) {
+export function DesktopTextbooks({ active, onOpenNote }: { active: boolean; onOpenNote: (path: string, vaultToken: string, id: string) => void }) {
   const [context, setContext] = useState<TextbookContext | null>(null);
   const [error, setError] = useState('');
   const [loaded, setLoaded] = useState(false);
@@ -27,7 +27,7 @@ export function DesktopTextbooks({ active, onOpenNote }: { active: boolean; onOp
   if (!context) return <main className="vault-welcome"><h1>教材书架</h1><p role={error ? 'alert' : 'status'}>{error || (loaded ? '请先在“笔记库”中选择本机文件夹，再添加教材。' : '正在读取笔记库…')}</p></main>;
   return <TextbookShelf key={context.vaultToken} context={context} onOpenNote={onOpenNote} />;
 }
-function TextbookShelf({ context, onOpenNote }: { context: TextbookContext; onOpenNote: (path: string, vaultToken: string) => void }) {
+function TextbookShelf({ context, onOpenNote }: { context: TextbookContext; onOpenNote: (path: string, vaultToken: string, id: string) => void }) {
   const storage = useMemo(() => textbookStorage(context.vaultKey), [context.vaultKey]);
   const api = window.textbookResources!;
   const [initial] = useState(() => {
@@ -85,7 +85,7 @@ function TextbookShelf({ context, onOpenNote }: { context: TextbookContext; onOp
     finally { setBusy(false); }
   }
   async function openLocalNote(sourceId: string) {
-    try { const note = value(await api.note(context.vaultToken, sourceId)); onOpenNote(note.path, context.vaultToken); setError(''); }
+    try { const note = value(await api.note(context.vaultToken, sourceId)); onOpenNote(note.path, context.vaultToken, note.id); setError(''); }
     catch (cause) { setError((cause as Error).message); }
   }
   if (reading && content) return <><Reader content={content} local onOpenLocalNote={(sourceId) => { void openLocalNote(sourceId); }} readingStorage={storage} onReturnToShelf={(message) => {

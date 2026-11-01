@@ -44,28 +44,28 @@ export class InitialNotes {
   // Fault injection after exclusive installation, before the per-source receipt.
   checkpoint?: (count: number) => Promise<void>;
   constructor(pack: InitialPackage) { this.pack = checkPackage(pack); }
-  async index(vault: Vault): Promise<InitialNoteIndex> {
-    let plan: ImportPlan;
-    try { plan = await readPlan(vault, this.pack); }
+  private async requiredPlan(vault: Vault) {
+    try { return await readPlan(vault, this.pack); }
     catch (error) {
       if ((error as NodeJS.ErrnoException).code === 'ENOENT') throw new Error('本教材尚未导入初始笔记，请在书架重新添加教材。');
       throw error;
     }
-    const byId = new Map<string, string[]>();
-    for (const relative of await vault.list()) {
-      try { const note = await vault.read(relative); if (note.id) byId.set(note.id, [...byId.get(note.id) ?? [], relative]); }
-      catch { /* Unreadable files are never adopted as a source. */ }
-    }
+  }
+  async index(vault: Vault): Promise<InitialNoteIndex> {
+    const plan = await this.requiredPlan(vault);
+    const byId = await vault.identities();
     return { textbook: plan.textbook, version: plan.version, archive: 'unpublished', notes: plan.notes.map((note) => {
       const paths = byId.get(note.id) ?? [];
       return { sourceId: note.sourceId, id: note.id, path: paths.length === 1 ? paths[0]! : null, ...(paths.length === 1 ? {} : { problem: paths.length ? '本地 ID 重复，请先修复副本身份。' : '本地笔记缺失或身份已改变；未重新生成。' }) };
     }) };
   }
   async note(vault: Vault, sourceId: unknown) {
-    const index = await this.index(vault);
-    const note = index.notes.find((note) => note.sourceId === sourceId);
-    if (!note?.path) throw new Error(note?.problem ?? '没有对应本地笔记，请先明确添加教材。');
-    return { path: note.path, id: note.id };
+    const plan = await this.requiredPlan(vault);
+    const entry = plan.notes.find((note) => note.sourceId === sourceId);
+    if (!entry) throw new Error('没有对应本地笔记，请先明确添加教材。');
+    const note = await vault.readById(entry.id);
+    if (!note) throw new Error('本地笔记缺失或身份已改变；未重新生成。');
+    return { path: note.path, id: entry.id };
   }
   async import(vault: Vault, assertCurrent = () => {}) {
     const pack = this.pack;
@@ -98,11 +98,7 @@ export class InitialNotes {
       await atomicFile(vault.root, `${base}/plan.json`, Buffer.from(JSON.stringify(plan)), true, assertCurrent);
     }
     await atomicFile(vault.root, `${base}/source.json`, Buffer.from(JSON.stringify(pack)), true, assertCurrent);
-    const byId = new Map<string, string[]>();
-    for (const relative of await vault.list()) {
-      try { const note = await vault.read(relative); if (note.id) byId.set(note.id, [...byId.get(note.id) ?? [], relative]); }
-      catch { /* Preserve invalid or unreadable user files. */ }
-    }
+    const byId = await vault.identities();
     let created = 0;
     for (let index = 0; index < plan.notes.length; index++) {
       assertCurrent();

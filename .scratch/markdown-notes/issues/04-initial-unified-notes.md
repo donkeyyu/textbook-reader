@@ -68,3 +68,20 @@ Category: enhancement
 - 云端归档部署与真实核验交 [18](18-initial-archive-publication.md)；Windows 13、生产教材下载源 16、macOS 完整安装集成 17、发布门槛 12 均未代验。这里只提交 04，不改 Status，不修改中央调度表，不自行合入。
 
 - 可重建部署 SQL、真实远端原始响应/比较结果及本轮日志保留在 `/tmp/markdown-notes-04-delivery-lzy7qn8e/`（不入库）。重跑生成脚本仍输出到 `output/initial-notes/`。
+
+### 2026-11-01 审查后性能修复计划
+
+- 协调者指出 971 篇下标记打开实测 5,846ms；继续本票，暂不放行依赖。应用 complexity-optimizer：同一份真实笔记库复制为 `/tmp/markdown-notes-04-performance/vault`，移除原测试中额外的同名占位文件，保留全部 971 篇来源笔记。基线 `InitialNotes.note()` 每次公共 read 971 次，三轮 2,773.09 / 2,751.65 / 2,772.95ms；冷扫描 3,187.55ms、无变化扫描 880.22ms。基线数据与脚本位于 `/tmp/markdown-notes-04-performance/`。
+- 最小改动拟增加 Vault `identities(onChange?)` 与 `readById(id,onChange?)`：先复用现有 scan 的文件戳/正文缓存，按 ID 分组，明确拒绝重复；最终只从磁盘核对所选文件的真实 ID。目标在扫描后改名/移走时最多重试一次新扫描，不按陈旧路径任意打开。扫描无变化不重读整库正文；不新增泛化缓存/监听框架。
+- `InitialNotes.index/note/import` 复用身份索引；来源计划仍每次从持久文件读取校验。新增 API 的 onChange 与 08 links 的现有回调风格相同，避免一次查询消费外部变化后不通知编辑器。08 的链接索引代码不在本树修改。保存路径先量测；若同样受逐篇读取影响，则保存前继续新扫描，仅用该索引检查重复 ID，不削弱外改/不可读文件保护。
+
+### 性能修复最终实现与回归
+
+- `Vault.identities()` 使用现有 scan 的文件戳与已解析 Note.id，构成 ID→路径组；不再逐篇调用 read/inspect。`readById(id)` 新扫描后拒绝重复 ID，并从磁盘核对最终目标的实际 ID；扫描到读取之间移动/换身份时最多重扫一次。`InitialNotes.note()` 只查本篇计划与该 ID，不再先构建整包 index；index 与重复导入也复用身份索引。
+- 保存实测同样有瓶颈，旧 `Vault.write` 重复检查每次调用公共 read 973 次（4,012.11 / 4,119.60 / 4,270.26ms）。现改为保存前新扫描与索引查重，保持原来的磁盘版本、写入前后检查、恢复记录和不可读文件处理；只在原保护检查点读取目标。
+- 采用 `watch(refresh,onChange?)` 的单一扫描观察入口：任意 scan 发现变化便立即完整发布，包含 write/copy/import 内部扫描、操作成功或失败。main 的 save/copy/add 不再额外整库扫描并伪装 changed:[目标]。watcher 轮询只负责触发 scan；显式 list 仍发送当前完整快照以初始化重复 ID 提示。已删除本票 identities/readById/InitialNotes 的逐层 onChange 透传。协调者合并 08 时也应移除 main 的 links 旧重复转发，保留一个统一发送源。
+- 教材打开请求将已解析 ID 传到 DesktopApp 的最终 read；若 IPC 往返中原路径换成另一身份，拒绝载入，避免把索引选定的笔记与同路径替换文件混同。这是共享 DesktopApp/DesktopWorkspace/DesktopTextbooks 的最小 expectedId 接入，不改变 08 的路径链接契约。
+- 最终 96/96 测试、lint、typecheck、desktop:build 通过。新测试覆盖：971 篇热查只读最终一篇；立即外部改名/移动、旧路径替换、新重复 ID、删除、读取间移动/换身份；保存只读目标 3 次、外部新重复 ID 拒写、无效 UTF-8 无关文件不阻塞；保存成功/失败、复制失败、重复导入成功/失败均发布其他文件 B 的变化，且不依赖后续 watcher 扫描。日志 `/tmp/markdown-notes-04-performance/{tests-final,lint-final,build-final}.log`。
+- 可重现后端测量脚本 `desktop/check-initial-notes-performance.mjs` 始终复制输入库，不改原库。固定 971 篇同一输入分别运行旧提交 1a2ff64 的已编译快照与最终实现，三轮中位数：查找 2,810.35ms→1,083.37ms，公共 read 971→1；保存 4,454.25ms→2,263.32ms，公共 read 973→3。实际精确汇总以 `/tmp/markdown-notes-04-performance/comparison.json` 为准；前/后原始结果目录分别为 `/private/var/folders/w5/kpp0bgcj4tb377ck3_y5_z3m0000gn/T/textbook-identity-performance-fTiZ2K/` 与 `/private/var/folders/w5/kpp0bgcj4tb377ck3_y5_z3m0000gn/T/textbook-identity-performance-HHncd6/`。测试同样实际验证改名、重复 ID 查询/保存拒绝及删除结果。
+- 仍保留每次查询的 O(N) 文件名/文件戳检查，以立即发现新增外部重复 ID；未把它藏成无失效规则的长期缓存。O(N) 未变化正文读取/解析已消除。不改首次导入的写入/收据协议，不宣称已优化首导。
+- 当前 Mac 再次核对仍锁屏，未启动新的窗口输入。上述为同规模后端/API 耗时，不能替代旧的 5,846ms 标记窗口数据。已准备真实 Electron 前后对比 `desktop/check-initial-notes-runtime-performance.mjs`，同一个克隆库、三次标记打开、三次实际键盘编辑保存、重加和截图。待解锁执行：`INITIAL_NOTES_BEFORE_APP=/tmp/markdown-notes-04-performance/before-app node desktop/check-initial-notes-runtime-performance.mjs /tmp/markdown-notes-04-performance/vault /private/var/folders/w5/kpp0bgcj4tb377ck3_y5_z3m0000gn/T/textbook-initial-notes-RsAjiR/app-data`。旧应用编译快照已在 before-app 保留；新构建在本工作树。窗口性能对比及新的 expectedId 客户端路径尚未执行，不据后端数字放行依赖。

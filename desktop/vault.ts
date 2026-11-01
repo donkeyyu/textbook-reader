@@ -32,6 +32,7 @@ export class Vault {
   readonly recoveryDir: string;
   private index = new Map<string, IndexedNote>();
   private writes: Promise<unknown> = Promise.resolve();
+  private scanObserver?: (change: VaultChange) => void;
   // Fault-injection seam, never exposed over IPC.
   writeCheckpoint?: (stage: 'prepared' | 'checked' | 'displaced' | 'installed') => Promise<void>;
   private constructor(root: string, recoveryDir: string) { this.root = root; this.recoveryDir = recoveryDir; }
@@ -128,7 +129,34 @@ export class Vault {
     this.index = next;
     const duplicates = this.duplicates();
     if (oldDuplicates !== JSON.stringify(duplicates)) for (const name of names) changed.add(name);
-    return { token: this.token, notes: [...next.keys()], changed: [...changed], duplicates };
+    const change = { token: this.token, notes: [...next.keys()], changed: [...changed], duplicates };
+    if (change.changed.length) this.scanObserver?.(change);
+    return change;
+  }
+
+  // Refresh file stamps first; unchanged contents remain in the existing scan index.
+  async identities() {
+    await this.scan();
+    const ids = new Map<string, string[]>();
+    for (const [relative, entry] of this.index) {
+      if (entry.note?.id) ids.set(entry.note.id, [...ids.get(entry.note.id) ?? [], relative]);
+    }
+    return ids;
+  }
+
+  async readById(id: string): Promise<Note | null> {
+    for (let attempt = 0; attempt < 2; attempt++) {
+      const paths = (await this.identities()).get(id) ?? [];
+      if (paths.length > 1) throw new Error('本地 ID 重复，请先修复副本身份。');
+      if (!paths.length) return null;
+      try {
+        const note = await this.read(paths[0]!);
+        if (note.id === id) return note;
+      } catch (error) { if (attempt) throw error; }
+      // The target moved or changed identity after scanning. Refresh once, never
+      // open a different identity just because it now occupies the old path.
+    }
+    return null;
   }
 
   // Rebuildable, disk-only index. scan reuses unchanged file contents.
@@ -148,7 +176,9 @@ export class Vault {
     return { ...note, duplicatePaths: this.duplicates()[relative] };
   }
 
-  watch(refresh: () => void) {
+  watch(refresh: () => void, onChange?: (change: VaultChange) => void) {
+    // Every scan publishes discoveries, including scans inside failed writes/imports.
+    this.scanObserver = onChange;
     let timer: ReturnType<typeof setTimeout> | undefined;
     const signal = () => { clearTimeout(timer); timer = setTimeout(refresh, 80); };
     let watcher: FSWatcher | undefined;
@@ -156,7 +186,7 @@ export class Vault {
     catch { /* Polling also covers missed events and platforms without recursive watch. */ }
     // ponytail: scan names periodically; only changed file stamps trigger content reads.
     const poll = setInterval(refresh, 1200);
-    return () => { clearTimeout(timer); clearInterval(poll); watcher?.close(); };
+    return () => { clearTimeout(timer); clearInterval(poll); watcher?.close(); if (this.scanObserver === onChange) this.scanObserver = undefined; };
   }
 
   async protectDraft(relative: string, source: string) {
@@ -237,13 +267,9 @@ export class Vault {
     if (original && ((await lstat(full)).mode & 0o222) === 0) throw new Error('文件为只读，未保存；可恢复权限后重试或另存草稿。');
     if (original) await access(full, constants.W_OK);
     const id = inspect(next).id;
-    for (const other of await this.list()) {
-      if (other === target) continue;
-      let otherId;
-      try { otherId = inspect((await this.read(other)).source).id; }
-      catch { continue; } // Unreadable, oversized or invalid UTF-8 files have no usable identity.
-      if (otherId === id) throw new Error('笔记 ID 重复，未保存；请明确修复副本身份。');
-    }
+    const identities = await this.identities();
+    // A fresh scan retries unreadable files; only readable, valid IDs can conflict.
+    if (identities.get(id ?? '')?.some((relative) => relative !== target)) throw new Error('笔记 ID 重复，未保存；请明确修复副本身份。');
     const temporary = path.join(path.dirname(full), `.textbook-save-${randomUUID()}.tmp`);
     const displaced = `${temporary}.previous`;
     const record: Recovery & { vault: string; displaced: string } = {

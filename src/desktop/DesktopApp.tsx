@@ -25,7 +25,7 @@ function Difference({ source, other }: { source: string; other: string }) {
   while (end < Math.min(lines.length, compared.length) - start && lines[lines.length - end - 1] === compared[compared.length - end - 1]) end++;
   return <pre>{lines.map((line, index) => <span className={index >= start && index < lines.length - end ? 'vault-diff-changed' : undefined} key={index}>{line}{'\n'}</span>)}</pre>;
 }
-export function DesktopApp({ openRequest }: { openRequest?: { path: string; serial: number; vaultToken: string } }) {
+export function DesktopApp({ openRequest }: { openRequest?: { path: string; serial: number; vaultToken: string; expectedId?: string } }) {
   const api = window.textbookDesktop!;
   const [preferences, setPreferences] = useState<SettingsView>({ revision: null, settings: { editor: { bodyMode: 'live', frontmatterMode: 'properties' }, propertyTypes: {} } });
   const [settingsError, setSettingsError] = useState('');
@@ -94,8 +94,9 @@ export function DesktopApp({ openRequest }: { openRequest?: { path: string; seri
     update({ note, source: note.source, isNew: false, key: ++key.current });
     setDiff(false); setStatus(note.readOnly ? '只读' : '已从磁盘读取');
   }
-  async function openNote(current: VaultView, path: string) {
+  async function openNote(current: VaultView, path: string, expectedId?: string) {
     const note = value(await api.read(current.token, path));
+    if (expectedId && note.id !== expectedId) throw new Error('目标笔记身份已改变，请重新从教材打开。');
     localState.current.activePath = path;
     loaded(note);
     await remember();
@@ -191,9 +192,9 @@ export function DesktopApp({ openRequest }: { openRequest?: { path: string; seri
     if (!openRequest) return;
     void (async () => {
       const current = latest.current.vault;
-      if (!current || current.token !== openRequest.vaultToken || latest.current.draft?.note.path === openRequest.path && !latest.current.draft.isNew) return;
+      if (!current || current.token !== openRequest.vaultToken || latest.current.draft?.note.path === openRequest.path && !latest.current.draft.isNew && (!openRequest.expectedId || latest.current.draft.note.id === openRequest.expectedId)) return;
       if (!await protect()) return;
-      await run(async () => { await remember(); await openNote(current, openRequest.path); });
+      await run(async () => { await remember(); await openNote(current, openRequest.path, openRequest.expectedId); });
     })();
   }, [openRequest]);
   useEffect(() => { api.setDirty(dirty || parkedDirty || saving); }, [dirty, parkedDirty, saving, api]);

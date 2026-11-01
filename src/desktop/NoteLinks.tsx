@@ -1,26 +1,22 @@
+import { anchorObject, resolveAnchor, type Catalog } from '../../desktop/anchors';
+import { AnchorPreview } from './AnchorPreview';
 import { getTextbook } from '../textbook/library';
-import { chapters, sections } from '../textbook/sections';
 import { useEffect, useRef, useState } from 'react';
 import { noteName } from './NoteMoves';
 import { backlinks, linkPath, noteReferences, pathLink, resolveLink, type LinkEntry, type LinkIndex, type NoteReference } from '../../desktop/links';
 
-export function Candidate({ entry }: { entry: LinkEntry }) {
-  return <><strong>{noteName(entry.path)}</strong><small title={entry.path}>{entry.path}</small>
-    {entry.anchors.map((anchor, index) => {
-      if (!anchor || typeof anchor !== 'object' || Array.isArray(anchor)) return null;
-      const item = anchor as Record<string, unknown>;
-      if (typeof item.textbook !== 'string' || !item.textbook) return null;
-      const textbook = getTextbook(item.textbook);
-      if (!textbook) return <small key={index}>未核对的教材标识：{item.textbook} · 请按正文摘要区分</small>;
-      const chapter = chapters.find((chapter) => chapter.id === item.chapter);
-      const section = chapter && sections.find((section) => section.id === item.section && section.chapterId === chapter.id);
-      const page = Number.isSafeInteger(item.pdf_page) && Number(item.pdf_page) > 0 ? textbook.pages[Number(item.pdf_page) - 1] : null;
-      return <small key={index}>{textbook.title} · {textbook.edition}{chapter ? ` · ${chapter.title}` : ''}{section ? ` · ${section.title}` : ''}{page ? ` · 文件第 ${page.page} 页${page.printedPage === null ? '' : `（印刷第 ${page.printedPage} 页）`}` : ''}</small>;
-    })}<small>{entry.summary || '无正文摘要'}</small>{entry.problem && <small>文件头有问题，属性关联尚未建立</small>}</>;
+export function Candidate({ entry, catalog }: { entry: LinkEntry; catalog: Catalog | null }) {
+  return <><strong>{noteName(entry.path)}</strong><small title={entry.path}>{entry.path}</small>{entry.anchors.map((anchor, index) => {
+    const result = resolveAnchor(anchor, catalog), item = anchorObject(anchor);
+    const textbook = typeof item?.textbook === 'string' ? getTextbook(item.textbook) : undefined;
+    const label = catalog && item?.textbook === catalog.textbookId ? catalog.title : textbook?.title ?? '未匹配教材';
+    const rawPage = Number.isSafeInteger(item?.pdf_page) && Number(item?.pdf_page) > 0 ? Number(item!.pdf_page) : null;
+    return <span key={index}><small>{label}{textbook ? ` · ${textbook.edition}` : ''}{result.chapter ? ` · ${result.chapter.title}` : ''}{result.section ? ` · ${result.section.title}` : ''}{result.target ? ` · 文件第 ${result.target.page} 页${result.page?.printedPage === null ? '' : `（印刷第 ${result.page?.printedPage} 页）`}` : rawPage ? ` · 原值：文件第 ${rawPage} 页（未核对，不用于跳转）` : ' · 无有效原文跳转'}</small><AnchorPreview anchor={anchor} catalog={catalog} />{result.problems.map((problem) => <small key={problem}>{problem}</small>)}</span>;
+  })}<small>{entry.summary || '无正文摘要'}</small>{entry.problem && <small>文件头有问题，属性关联尚未建立</small>}</>;
 }
 
-export function NoteLinks({ index, source, path, readOnly, request, onNavigate, onRepair, onCreate }: {
-  index: LinkIndex; source: string; path: string; readOnly: boolean; request?: { reference: NoteReference; source: string; key: number };
+export function NoteLinks({ catalog, index, source, path, readOnly, request, onNavigate, onRepair, onCreate }: {
+  catalog: Catalog | null; index: LinkIndex; source: string; path: string; readOnly: boolean; request?: { reference: NoteReference; source: string; key: number };
   onNavigate: (path: string) => void; onRepair: (reference: NoteReference, replacement: string, expectedSource: string) => boolean; onCreate: (target: string, reference: NoteReference, replacement: string) => void;
 }) {
   const references = noteReferences(source);
@@ -56,7 +52,7 @@ export function NoteLinks({ index, source, path, readOnly, request, onNavigate, 
             {!readOnly && <button aria-label={`修复链接 ${number + 1}`} onClick={() => choose(reference)}>修复</button>}</div>;
         })}
       </section><section aria-label="已保存的反向引用"><h2>已保存的反向引用</h2><p>由磁盘内容重建，草稿不计入。</p>
-        {incoming.map(({ entry, references }) => <button className="note-link-candidate" key={entry.path} onClick={() => onNavigate(entry.path)}><Candidate entry={entry} /><small>{references.length} 处引用</small></button>)}
+        {incoming.map(({ entry, references }) => <button className="note-link-candidate" key={entry.path} onClick={() => onNavigate(entry.path)}><Candidate entry={entry} catalog={catalog} /><small>{references.length} 处引用</small></button>)}
         {!incoming.length && <p>尚无已保存的引用。</p>}
       </section></div>
       {index.problems.map((problem) => <p role="note" key={problem}>{problem}</p>)}
@@ -70,7 +66,7 @@ export function NoteLinks({ index, source, path, readOnly, request, onNavigate, 
           if (readOnly) { onNavigate(entry.path); close(); }
           else if (onRepair(selected, pathLink(entry.path, alias || undefined), selectedSource)) close();
           else setRepairError('内容已改变，请取消后重新选择链接。');
-        }}><Candidate entry={entry} /></button>)}{!candidates.length && result?.kind !== 'ambiguous' && <p>没有匹配笔记。可修改搜索文字以修复目标。</p>}</div>
+        }}><Candidate entry={entry} catalog={catalog} /></button>)}{!candidates.length && result?.kind !== 'ambiguous' && <p>没有匹配笔记。可修改搜索文字以修复目标。</p>}</div>
         {repairError && <p role="alert">{repairError}</p>}
         <div><button onClick={close}>取消</button>{!readOnly && createPath && resolveLink(query, index.entries).kind === 'missing' && <button onClick={() => { if (onRepair(selected, pathLink(createPath, alias || undefined), selectedSource)) { onCreate(createPath, selected, pathLink(createPath, alias || undefined)); close(); } else setRepairError('内容已改变，请取消后重新选择链接。'); }}>创建“{createPath}”草稿</button>}</div>
       </>}

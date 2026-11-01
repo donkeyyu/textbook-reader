@@ -169,9 +169,9 @@ try {
   await page.locator('.page-index').click(); await page.getByRole('textbox', { name: '页码', exact: true }).fill('88'); await page.getByRole('textbox', { name: '页码', exact: true }).press('Enter');
   await page.waitForFunction(() => { const image = document.querySelector('#page-88 .page-image'); return image?.complete && image.naturalWidth > 0; });
   const sourceId = 'ch3-q-p88-example4', entry = pack.entries.find((item) => item.sourceId === sourceId);
-  await page.locator(`button[data-supplement-ids~="${sourceId}"]`).click();
-  const choices = page.getByRole('complementary', { name: '选择本地笔记', exact: true });
-  if (await choices.count()) await choices.getByRole('button', { name: entry.title, exact: true }).click();
+  await page.getByRole('button', { name: /打开文件第 88 页的/ }).click();
+  const choices = page.getByRole('dialog', { name: '选择教材笔记', exact: true });
+  if (await choices.count()) await choices.getByRole('button').filter({ has: page.locator('strong').filter({ hasText: entry.title }) }).click();
   await page.locator('.vault-note-heading h1').filter({ hasText: entry.title }).waitFor(); await ready();
   const plan = JSON.parse(await readFile(path.join(root, `.textbook/textbooks/${pack.textbook}/initial-notes/plan.json`), 'utf8'));
   const target = plan.notes.find((item) => item.sourceId === sourceId);
@@ -191,8 +191,8 @@ try {
   await delay(200); await clickNode(entry.title); await page.locator('.vault-note-heading h1').filter({ hasText: entry.title }).waitFor();
   assert.ok((await editor.innerText()).includes('本地保存独有检索词'));
   await graph(); await page.getByRole('button', { name: '教材书架', exact: true }).click();
-  await page.locator(`button[data-supplement-ids~="${sourceId}"]`).click();
-  if (await choices.count()) await choices.getByRole('button', { name: entry.title, exact: true }).click();
+  await page.getByRole('button', { name: /打开文件第 88 页的/ }).click();
+  if (await choices.count()) await choices.getByRole('button').filter({ has: page.locator('strong').filter({ hasText: entry.title }) }).click();
   await page.locator('.vault-note-heading h1').filter({ hasText: entry.title }).waitFor();
   assert.equal(await page.getByLabel('本地笔记知识图', { exact: true }).isVisible(), false);
   record('copied verified 971-note library/resources; textbook marker, search and actual scale-canvas node open the same edited local file; graph labels use basenames');

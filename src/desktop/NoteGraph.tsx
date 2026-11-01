@@ -1,3 +1,4 @@
+import type { Catalog } from '../../desktop/anchors';
 import { useMemo, useRef } from 'react';
 import type { LinkIndex } from '../../desktop/links';
 import { projectNotes } from '../../desktop/note-projection';
@@ -5,8 +6,8 @@ import { useSupplementGraph } from '../reader/graph/useSupplementGraph';
 import { Candidate } from './NoteLinks';
 import '../reader/graph/graph.css';
 
-export function NoteGraph({ index, selected, visible, onSelect, onSearch }: {
-  index: LinkIndex; selected: string | null; visible: boolean;
+export function NoteGraph({ catalog, index, selected, visible, onSelect, onSearch }: {
+  catalog: Catalog | null; index: LinkIndex; selected: string | null; visible: boolean;
   onSelect: (path: string | null) => boolean; onSearch: () => void;
 }) {
   const host = useRef<HTMLDivElement>(null);
@@ -29,7 +30,7 @@ export function NoteGraph({ index, selected, visible, onSelect, onSearch }: {
     </div>
     <details className="note-graph-settings"><summary>图谱设置</summary><div>
       <p>{data.nodes.length} 篇笔记 · {data.edges.length} 条已解析链接</p>
-      {selectedEntry && <div className="note-graph-current"><Candidate entry={selectedEntry} /></div>}
+      {selectedEntry && <div className="note-graph-current"><Candidate catalog={catalog} entry={selectedEntry} /></div>}
       <div className="note-graph-zoom"><button aria-label="缩小本地笔记图" onClick={() => graph.zoom(.8)}>−</button><output aria-label="本地笔记图缩放比例">{Math.round(graph.scale * 100)}%</output><button aria-label="放大本地笔记图" onClick={() => graph.zoom(1.25)}>+</button><button onClick={graph.fit}>显示全图</button>{selected && <button onClick={() => graph.focus(selected)}>定位当前笔记</button>}</div>
       <p>箭头表示已保存的笔记链接。使用搜索或左侧列表，可用键盘打开每篇笔记。</p>
     </div></details>

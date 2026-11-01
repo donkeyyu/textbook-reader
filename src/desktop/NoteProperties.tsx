@@ -44,21 +44,11 @@ function PropertyValue({ value, name, onChange }: { value: unknown; name: string
   </div>)}<button type="button" onClick={() => onChange([...value, ''])} aria-label={`添加属性 ${name} 列表项`}>添加列表项</button></div>;
 }
 
-function Position({ anchor }: { anchor: unknown }) {
-  if (!anchor || typeof anchor !== 'object' || Array.isArray(anchor)) return <li>无法识别的位置：{display(anchor)}</li>;
-  const item = anchor as Record<string, unknown>;
-  return <li>{['textbook', 'chapter', 'section'].filter((key) => typeof item[key] === 'string' && item[key]).map((key) => <span key={key}>{String(item[key])}</span>)}
-    {item.pdf_page !== undefined && <span>文件第 {display(item.pdf_page)} 页</span>}
-    {item.rects !== undefined && <details><summary>框选区域</summary><pre>{display(item.rects)}</pre></details>}
-    {!item.textbook && <span>缺少教材，暂不用于定位</span>}
-  </li>;
-}
-
 export function NoteProperties({ source, readOnly, propertyTypes, onChange, onTypeChange, showProperties = true, unsupportedPropertyTypes = [] }: {
   source: string; readOnly: boolean; showProperties?: boolean; unsupportedPropertyTypes?: string[]; propertyTypes: Record<string, PropertyType>;
   onChange: (source: string) => void; onTypeChange: (name: string, type: PropertyType) => void;
 }) {
-  const { properties, metadata, anchors, problem } = inspectProperties(source);
+  const { properties, metadata, problem } = inspectProperties(source);
   const [name, setName] = useState('');
   const [newType, setNewType] = useState<PropertyType>('text');
   const [error, setError] = useState('');
@@ -75,10 +65,6 @@ export function NoteProperties({ source, readOnly, propertyTypes, onChange, onTy
     catch (cause) { setError((cause as Error).message); return false; }
   }
   return <section className="note-properties" aria-label="笔记属性">
-    <section className="note-position" aria-label="笔记位置"><strong>笔记位置</strong>
-      {Array.isArray(anchors) && anchors.length ? <ul>{anchors.map((anchor: unknown, index: number) => <Position key={index} anchor={anchor} />)}</ul>
-        : <span>{anchors === undefined ? '未设置' : '位置格式无法识别，请查看源码'}</span>}
-    </section>
     <details className="note-information"><summary>笔记信息</summary><dl>{['id', 'create_time', 'update_time'].map((key) => <div key={key}><dt>{key}</dt><dd>{metadata[key] === undefined ? '未知' : display(metadata[key])}</dd></div>)}</dl></details>
     {metadata.ai_source !== undefined && <details className="note-information"><summary>AI 初始来源</summary><pre>{display(metadata.ai_source)}</pre><p>初始内容来自固定版本包。云端归档尚待发布核验。</p></details>}
     <div hidden={!showProperties}>{problem ? <p className="note-property-error" role="note">{problem} 属性写入已暂停，请切换文件头源码修复。</p> : <>

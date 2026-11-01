@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { memo, useCallback, useEffect, useRef, useState } from 'react';
 import type { DesktopApi, Note, Position, Recovery, Result, VaultChange, VaultState, VaultView, SettingsView, SettingsPatch } from '../../desktop/contracts';
 import { freshIdentity as freshCopy, rebaseSaved, saveProblem } from '../../desktop/format';
 import { SourceEditor, headerEnd, type EditorScene } from './SourceEditor';
@@ -10,6 +10,11 @@ import type { MovePlan } from '../../desktop/moves';
 import { NoteSearch } from './NoteSearch';
 import { NoteGraph } from './NoteGraph';
 import { noteReferences, pathLink, replaceReference, resolveLink, type LinkIndex, type NoteReference } from '../../desktop/links';
+import { NoteAnchors } from './NoteAnchors';
+import { anchorKey, changeAnchors, readAnchors, type AnchorTarget, type Catalog } from '../../desktop/anchors';
+import type { AnchorSession, AnchorBridge } from './anchor-session';
+import { notePath } from '../../desktop/note-path';
+import './anchors.css';
 import './desktop.css';
 import './links.css';
 import './projection.css';
@@ -30,7 +35,14 @@ function Difference({ source, other }: { source: string; other: string }) {
   while (end < Math.min(lines.length, compared.length) - start && lines[lines.length - end - 1] === compared[compared.length - end - 1]) end++;
   return <pre>{lines.map((line, index) => <span className={index >= start && index < lines.length - end ? 'vault-diff-changed' : undefined} key={index}>{line}{'\n'}</span>)}</pre>;
 }
-export function DesktopApp({ openRequest, browseRequest, active = true }: { openRequest?: { path: string; serial: number; vaultToken: string; expectedId?: string }; browseRequest?: { view: 'search' | 'graph'; serial: number }; active?: boolean }) {
+const NoteList = memo(function NoteList({ notes, active, busy, duplicates, onOpen }: { notes: string[]; active?: string; busy: boolean; duplicates: Record<string, string[]>; onOpen: (path: string) => void }) {
+  return <nav>{notes.map((path) => <button key={path} disabled={busy} aria-current={active === path ? 'page' : undefined} onClick={() => onOpen(path)} title={path} aria-label={path.includes('/') ? `${noteName(path)} · ${noteDirectory(path)}` : noteName(path)}><span>{noteName(path)}</span>{path.includes('/') && <small className="vault-note-directory">{noteDirectory(path)}</small>}{duplicates[path] && <small> ID 冲突</small>}</button>)}</nav>;
+});
+export function DesktopApp({ openRequest, catalog = null, onAnchorSession, anchorBridge, onLocate, onSelect, chooseRequest, browseRequest, active = true }: {
+  chooseRequest?: number; browseRequest?: { view: 'search' | 'graph'; serial: number }; active?: boolean;
+  openRequest?: { path: string; serial: number; vaultToken: string; expectedId?: string }; catalog?: Catalog | null;
+  onAnchorSession?: (session: AnchorSession) => void; anchorBridge?: AnchorBridge; onLocate?: (target: AnchorTarget) => void; onSelect?: (index?: number) => void;
+}) {
   const api = window.textbookDesktop!;
   const [preferences, setPreferences] = useState<SettingsView>({ revision: null, settings: { editor: { bodyMode: 'live', frontmatterMode: 'properties' }, propertyTypes: {} } });
   const [settingsError, setSettingsError] = useState('');
@@ -61,8 +73,8 @@ export function DesktopApp({ openRequest, browseRequest, active = true }: { open
   const guardResolve = useRef<((choice: Choice) => void) | null>(null);
   const guardDialog = useRef<HTMLDialogElement>(null);
   const localState = useRef<VaultState>({ positions: {} });
-  const latest = useRef({ vault, draft, busy, saving });
-  latest.current = { vault, draft, busy, saving };
+  const latest = useRef({ vault, draft, busy, saving, editor: preferences.settings.editor });
+  latest.current = { vault, draft, busy, saving, editor: preferences.settings.editor };
   const inFlight = useRef<Promise<boolean> | null>(null);
   const deferredChange = useRef<VaultChange | null>(null);
   const stateTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -101,6 +113,10 @@ export function DesktopApp({ openRequest, browseRequest, active = true }: { open
     setLinkRequest(undefined);
     update({ note, source: note.source, isNew: false, key: ++key.current });
     setDiff(false); setStatus(note.readOnly ? '只读' : '已从磁盘读取');
+  }
+  async function chooseVault() {
+    if (!await protect()) return;
+    await run(async () => { await remember(); const current = value(await api.chooseVault()); if (current) await showVault(current); });
   }
   async function openNote(current: VaultView, path: string, expectedId?: string) {
     const note = value(await api.read(current.token, path));
@@ -205,14 +221,14 @@ export function DesktopApp({ openRequest, browseRequest, active = true }: { open
     });
     return () => { active = false; unsubscribe(); if (stateTimer.current) clearTimeout(stateTimer.current); };
   }, []);
+  useEffect(() => { if (chooseRequest) void chooseVault(); }, [chooseRequest]);
   useEffect(() => {
     if (!openRequest) return;
     void (async () => {
       const current = latest.current.vault;
       if (!current || current.token !== openRequest.vaultToken) return;
       if (latest.current.draft?.note.path === openRequest.path && !latest.current.draft.isNew && (!openRequest.expectedId || latest.current.draft.note.id === openRequest.expectedId)) { setGraphOpen(false); return; }
-      if (!await protect()) return;
-      await run(async () => { await remember(); await openNote(current, openRequest.path, openRequest.expectedId); });
+      await navigate(openRequest.path, openRequest.expectedId);
       if (latest.current.draft?.note.path === openRequest.path) setGraphOpen(false);
     })();
   }, [openRequest]);
@@ -379,13 +395,14 @@ export function DesktopApp({ openRequest, browseRequest, active = true }: { open
     }
     await remember(); value(await api.list(current.token)); await refreshLinks(current);
   }
-  async function navigate(path: string) {
+  async function navigate(path: string, expectedId?: string) {
     await run(async () => {
       if (inFlight.current) await inFlight.current;
       const current = latest.current.vault!, item = latest.current.draft;
-      if (item?.note.path === path && !item.isNew) return;
+      if (item?.note.path === path && !item.isNew && (!expectedId || item.note.id === expectedId)) return;
       // Read first: a missing target must leave the current editor intact.
       const target = value(await api.read(current.token, path));
+      if (expectedId && target.id !== expectedId) throw new Error('目标笔记身份已改变，请重新从教材打开。');
       if (item) {
         if (item.isNew || item.source !== item.note.source) value(await api.protectDraft(current.token, item.note.path, item.source));
         history.current.push({ draft: item, editor: { bodyMode, frontmatterMode }, status });
@@ -445,18 +462,63 @@ export function DesktopApp({ openRequest, browseRequest, active = true }: { open
       setStatus('新笔记草稿 · 保存后创建文件'); setLinkRequest(undefined);
     });
   }
+  let anchorSignature: string | undefined;
+  try { anchorSignature = anchorKey(readAnchors(draft?.source ?? '')); } catch { /* Invalid YAML stays in the editor. */ }
+  const anchorWritable = !!draft && !busy && !draft.note.readOnly && bodyMode !== 'preview' && !problem && !draft.conflict;
+  useEffect(() => {
+    if (onAnchorSession) onAnchorSession({ vaultToken: vault?.token ?? '', key: draft?.key, path: draft?.note.path, anchors: anchorSignature === undefined ? undefined : JSON.parse(anchorSignature).anchors, writable: anchorWritable, index: linkIndex });
+  }, [vault?.token, draft?.key, draft?.note.path, anchorSignature, anchorWritable, linkIndex, onAnchorSession]);
+  if (anchorBridge) anchorBridge.current = async (command) => {
+    let succeeded = false;
+    // Validate the candidate before parking any source or changing history.
+    let candidate: { path: string; source: string } | undefined;
+    try {
+      if (command.create) {
+        const name = command.create.name.trim();
+        if (!name) throw new Error('请输入笔记名称。');
+        const path = name.endsWith('.md') ? name : `${name}.md`;
+        notePath(path);
+        candidate = { path, source: changeAnchors('', undefined, { append: command.create.anchors }) };
+      }
+    } catch (cause) { setError((cause as Error).message); return false; }
+    await run(async () => {
+      const current = latest.current.vault, item = latest.current.draft;
+      if (!current || command.session.vaultToken !== current.token || item?.key !== command.session.key) throw new Error('笔记或笔记库已改变，请重新框选。');
+      if (candidate) {
+        if (item && (item.isNew || item.source !== item.note.source)) value(await api.protectDraft(current.token, item.note.path, item.source));
+        const live = latest.current.draft;
+        if (latest.current.vault?.token !== current.token || live?.key !== item?.key || live?.source !== item?.source || live?.note.revision !== item?.note.revision) throw new Error('来源笔记已改变，草稿已保留；请重新确认。');
+        if (item && !item.isNew) {
+          const disk = value(await api.read(current.token, item.note.path));
+          if (disk.revision !== item.note.revision) throw new Error('来源磁盘笔记已改变，草稿已保留；请先处理冲突。');
+          if (latest.current.vault?.token !== current.token || latest.current.draft?.key !== item.key || latest.current.draft?.source !== item.source) throw new Error('来源笔记已改变，请重新确认。');
+        }
+        if (item) { history.current.push({ draft: item, editor: latest.current.editor, status: item.conflict ? '磁盘冲突 · 自动保存已暂停' : item.isNew || item.source !== item.note.source ? '未保存' : '已保存' }); setReturnCount(history.current.length); }
+        update({ note: { path: candidate.path, source: '', revision: '', readOnly: false, problems: [] }, source: candidate.source, isNew: true, key: ++key.current });
+        setStatus('未保存'); setError(''); setGraphOpen(false); succeeded = true; return;
+      }
+      if (!item || item.note.readOnly || latest.current.editor.bodyMode === 'preview' || saveProblem(item.source) || item.conflict) throw new Error('当前笔记不可修改，选择草稿已保留。');
+      edit(changeAnchors(item.source, anchorKey(command.session.anchors), command.index === undefined ? { append: command.append } : { index: command.index, patch: { rects: command.rects } }));
+      succeeded = true;
+    });
+    return succeeded;
+  };
+  const openListed = useCallback((path: string) => { void (async () => {
+    const current = latest.current.vault;
+    if (!current) return;
+    if (latest.current.draft?.note.path === path && !latest.current.draft.isNew) { setGraphOpen(false); return; }
+    if (!await protect()) return;
+    await run(async () => { await remember(); await openNote(current, path); setGraphOpen(false); });
+  })(); }, []);
   const scene = draft ? scenes.current.get(draft.key) ?? {} : undefined;
   if (draft && scene) scenes.current.set(draft.key, scene);
   const retainedKeys = new Set([draft?.key, ...history.current.map((entry) => entry.draft.key)]);
   for (const key of scenes.current.keys()) if (!retainedKeys.has(key)) scenes.current.delete(key);
   return <main className="vault-app">
     <header className="vault-toolbar"><strong>课本解读</strong><span className="vault-name">{vault?.name ?? '本地笔记'}</span>
-      {vault && <><div ref={searchHost}><NoteSearch entries={linkIndex.entries} disabled={busy || saving} onOpen={openProjected} /></div><button disabled={busy || saving} aria-pressed={graphOpen} onClick={() => { void toggleGraph(); }}>{graphOpen ? '返回笔记' : '知识图'}</button></>}
+      {vault && <><div ref={searchHost}><NoteSearch catalog={catalog} entries={linkIndex.entries} disabled={busy || saving} onOpen={openProjected} /></div><button disabled={busy || saving} aria-pressed={graphOpen} onClick={() => { void toggleGraph(); }}>{graphOpen ? '返回笔记' : '知识图'}</button></>}
       {vault && <button disabled={busy || saving} onClick={() => { void run(async () => setRecords(value(await api.recoveries(vault.token)))); }}>恢复记录</button>}
-      <button disabled={busy || saving} onClick={() => { void (async () => {
-        if (!await protect()) return;
-        await run(async () => { await remember(); const current = value(await api.chooseVault()); if (current) await showVault(current); });
-      })(); }}>{vault ? '切换笔记库' : '选择笔记库'}</button>
+      <button disabled={busy || saving} onClick={() => { void chooseVault(); }}>{vault ? '切换笔记库' : '选择笔记库'}</button>
     </header>
     {error && <div className="vault-error" role="alert">{error}</div>}
     {records && <section className="vault-recoveries" aria-label="恢复记录"><div><h2>恢复记录</h2><button onClick={() => setRecords(null)}>收起恢复记录</button></div><p>这些是未完成写入、改名或采用磁盘版本前保留的内容。打开后核对，再另存为新笔记。</p>
@@ -478,15 +540,11 @@ export function DesktopApp({ openRequest, browseRequest, active = true }: { open
             setCreating(false); setNewName(''); setStatus('未保存'); setError(''); setDiff(false);
             setGraphOpen(false);
           })(); }}><label>名称或库内路径<input autoFocus aria-label="新笔记名称" value={newName} onChange={(event) => setNewName(event.target.value)} placeholder="如：七年级/相反数" /></label><button type="submit" disabled={busy || saving || !newName.trim()}>创建草稿</button></form>}
-          <nav>{vault.notes.map((path) => <button key={path} disabled={busy || saving} aria-current={draft?.note.path === path ? 'page' : undefined} onClick={() => { void (async () => {
-            if (latest.current.draft?.note.path === path && !latest.current.draft.isNew) { setGraphOpen(false); return; }
-            if (!await protect()) return;
-            await run(async () => { await remember(); await openNote(vault, path); setGraphOpen(false); });
-          })(); }} title={path} aria-label={path.includes('/') ? `${noteName(path)} · ${noteDirectory(path)}` : noteName(path)}><span>{noteName(path)}</span>{path.includes('/') && <small className="vault-note-directory">{noteDirectory(path)}</small>}{duplicates[path] && <small> ID 冲突</small>}</button>)}</nav>
+          <NoteList notes={vault.notes} active={draft?.note.path} busy={busy || saving} duplicates={duplicates} onOpen={openListed} />
           {!vault.notes.length && <p>此库还没有笔记。</p>}
         </aside>
         <div className="vault-content">
-        {graphMounted && <NoteGraph index={linkIndex} selected={draft && !draft.isNew && linkIndex.entries.some((entry) => entry.path === draft.note.path) ? draft.note.path : null} visible={active && graphOpen} onSearch={() => searchHost.current?.querySelector<HTMLButtonElement>('button')?.click()} onSelect={(path) => {
+        {graphMounted && <NoteGraph catalog={catalog} index={linkIndex} selected={draft && !draft.isNew && linkIndex.entries.some((entry) => entry.path === draft.note.path) ? draft.note.path : null} visible={active && graphOpen} onSearch={() => searchHost.current?.querySelector<HTMLButtonElement>('button')?.click()} onSelect={(path) => {
           if (latest.current.busy || latest.current.saving) return false;
           if (path) void openProjected(path);
           else void (async () => { if (await protect()) await run(async () => { update(null); delete localState.current.activePath; await remember(); }); })();
@@ -515,11 +573,11 @@ export function DesktopApp({ openRequest, browseRequest, active = true }: { open
             {bodyMode !== 'preview' && !draft.note.readOnly && <label>文件头<select disabled={busy} aria-label="文件头模式" value={frontmatterMode} onChange={(event) => configure({ editor: { frontmatterMode: event.target.value as typeof frontmatterMode } })}><option value="properties">属性预览</option><option value="source">源码</option></select></label>}
           </div>
           {settingsError && <div className="vault-problems" role="alert">配置未保存：{settingsError}<button onClick={() => { void readPreferences(vault); }}>重新读取配置</button></div>}
-          <NoteLinks key={draft.key} index={linkIndex} source={draft.source} path={draft.isNew ? '' : draft.note.path} readOnly={busy || draft.note.readOnly || bodyMode === 'preview'} request={linkRequest} onNavigate={(path) => { void navigate(path); }} onRepair={(reference, replacement, expectedSource) => {
+          <NoteLinks catalog={catalog} key={draft.key} index={linkIndex} source={draft.source} path={draft.isNew ? '' : draft.note.path} readOnly={busy || draft.note.readOnly || bodyMode === 'preview'} request={linkRequest} onNavigate={(path) => { void navigate(path); }} onRepair={(reference, replacement, expectedSource) => {
             try { edit(replaceReference(latest.current.draft!.source, reference, replacement, expectedSource)); return true; } catch (cause) { setError((cause as Error).message); return false; }
           }} onCreate={createLinked} />
           <div className="note-document">
-            <div><NoteProperties key={draft.key} showProperties={bodyMode === 'preview' || draft.note.readOnly || frontmatterMode === 'properties'} source={draft.source} readOnly={busy || draft.note.readOnly || bodyMode === 'preview'} propertyTypes={preferences.settings.propertyTypes} unsupportedPropertyTypes={preferences.unsupportedPropertyTypes} onChange={edit} onTypeChange={(name, type) => configure({ propertyTypes: { [name]: type } })} /></div>
+            <div><NoteAnchors source={draft.source} readOnly={!anchorWritable} catalog={catalog} onChange={edit} onLocate={onLocate ?? (() => {})} onSelect={onSelect ?? (() => {})} /><NoteProperties key={draft.key} showProperties={bodyMode === 'preview' || draft.note.readOnly || frontmatterMode === 'properties'} source={draft.source} readOnly={busy || draft.note.readOnly || bodyMode === 'preview'} propertyTypes={preferences.settings.propertyTypes} unsupportedPropertyTypes={preferences.unsupportedPropertyTypes} onChange={edit} onTypeChange={(name, type) => configure({ propertyTypes: { [name]: type } })} /></div>
             <SourceEditor key={draft.key} scene={scene} entries={linkIndex.entries} onLink={openLink} source={draft.source} bodyMode={draft.note.readOnly ? 'preview' : bodyMode} frontmatterMode={frontmatterMode} readOnly={busy || draft.note.readOnly} position={localState.current.positions[draft.note.path]} onChange={edit} onPosition={position} onSave={() => { if (bodyMode !== 'preview') void save(); }} />
             {(bodyMode === 'preview' || draft.note.readOnly) && <div className="note-preview" aria-label="笔记只读预览"><NoteMarkdown onLink={openLink} offset={headerEnd(draft.source)} source={draft.source.slice(headerEnd(draft.source))} /></div>}
           </div>

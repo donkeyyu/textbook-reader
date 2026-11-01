@@ -1,7 +1,7 @@
 import { BookNavigation } from "./book/BookNavigation";
 import { PageControls } from "./book/PageControls";
 import { PageImage } from "./book/PageImage";
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { bookTitle, getPage, pageCount, pages, pageLabel } from "../textbook/catalog";
 import { getLocation } from "../textbook/supplements";
 import { bookId, nodeKey, supplementQueries } from '../textbook/content';
@@ -54,7 +54,9 @@ function measurePages(list: HTMLDivElement): PageMetric[] {
   });
 }
 
-export function Reader({ content, onReturnToShelf, navigationNotice = '', local = false, readingStorage, onOpenLocalNote }: { onOpenLocalNote?: (sourceId: string) => void; readingStorage?: Pick<Storage, 'getItem' | 'setItem'>; local?: boolean; content: BookContent; onReturnToShelf: (notice: string) => void; navigationNotice?: string }) {
+export type LocalReaderTools = { request?: { page: number; rects: [number, number, number, number][]; serial: number }; toolbar: (page: number) => ReactNode; page: (page: number) => ReactNode };
+
+export function Reader({ content, onReturnToShelf, navigationNotice = '', local = false, readingStorage, onOpenLocalNote, localTools }: { localTools?: LocalReaderTools; onOpenLocalNote?: (sourceId: string) => void; readingStorage?: Pick<Storage, 'getItem' | 'setItem'>; local?: boolean; content: BookContent; onReturnToShelf: (notice: string) => void; navigationNotice?: string }) {
   const [resume] = useState(() => {
     try { return { position: loadReadingPosition(readingStorage), error: '' }; }
     catch (cause) { return { position: null, error: (cause as Error).message }; }
@@ -236,7 +238,7 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '', local 
 
     function updatePosition() {
       // Hidden layout changes are not reading; keep the last visible anchor.
-      if (!element || !list || element.inert) return;
+      if (!element || !list || element.inert || !element.clientHeight || !list.clientWidth) return;
       // Scroll RAFs can run before ResizeObserver after a resize. Restore the
       // last reading anchor before interpreting scrollTop with new geometry.
       if (width !== list.clientWidth || listTop !== list.offsetTop || listHeight !== list.offsetHeight || viewportWidth !== window.innerWidth || viewportHeight !== window.innerHeight) { measure(); return; }
@@ -245,12 +247,12 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '', local 
       const metric = metrics.current[page - 1];
       current.current = page;
       setCurrentPage(page);
-      if (metric) anchor.current = { page, fraction: (element.scrollTop - metric.top) / metric.height };
+      if (metric && metric.height > 0) anchor.current = { page, fraction: (element.scrollTop - metric.top) / metric.height };
       if (initialized && !storageError && saveTimer === undefined) saveTimer = setTimeout(savePosition, 750);
     }
 
     function measure() {
-      if (!element || !list) return;
+      if (!element || !list || !element.clientHeight || !list.clientWidth) return;
       cancelAnimationFrame(frame);
       const saved = anchor.current;
       width = list.clientWidth;
@@ -331,7 +333,7 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '', local 
     const element = scroller.current;
     metrics.current = measurePages(pageList.current);
     const metric = metrics.current[commit.page - 1];
-    if (!metric) return;
+    if (!metric || metric.height <= 0) return;
     const padding = parseFloat(getComputedStyle(element).paddingTop);
     const location = commit.locationId ? getLocation(commit.locationId) : undefined;
     element.scrollTop = commit.fraction !== undefined
@@ -605,6 +607,11 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '', local 
     }
   }
 
+  useEffect(() => {
+    const target = localTools?.request;
+    if (target) void navigate({ page: target.page, locate: { fraction: target.rects[0]?.[1] ?? 0, focusId: `page-${target.page}`, panelScroll: 0 } });
+  }, [localTools?.request?.serial]);
+
   const note = supplementId ? getSupplement(supplementId) : undefined;
   const previewNote = preview ? getSupplement(preview.id) : undefined;
   const highlightedIds = groupPreview
@@ -675,7 +682,7 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '', local 
         </button>
         </div>}
         <div className="reader-toolbar-group reader-tools-supplement" role="group" aria-label="补充工具">
-        <details className="supplement-filters" onPointerLeave={(event) => {
+        {!localTools && <details className="supplement-filters" onPointerLeave={(event) => {
           if (event.pointerType !== 'mouse') return;
           const filters = event.currentTarget;
           if (filters.contains(document.activeElement)) filters.querySelector('summary')?.focus();
@@ -701,10 +708,11 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '', local 
             </label>)}
             {hiddenIds.length > 0 && <button className="text-button" onClick={() => setHiddenIds([])}>恢复隐藏的 {hiddenIds.length} 条补充</button>}
           </div>
-        </details>
-        <button id="add-personal-supplement" className="icon-button" aria-label="添加补充" title="添加补充" disabled={!ownsPersonal || content.loading} onClick={() => {
+        </details>}
+        {localTools?.toolbar(currentPage)}
+        {!localTools && <button id="add-personal-supplement" className="icon-button" aria-label="添加补充" title="添加补充" disabled={!ownsPersonal || content.loading} onClick={() => {
           views.show('book', true); closeSupplement(false); setPersonalItem(null); clearPreview(); setSelectionPage(currentPage);
-        }}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg></button>
+        }}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg></button>}
         </div>
         <div className="reader-toolbar-group reader-tools-library" role="group" aria-label="书架与账号">
         <button type="button" className="icon-button return-to-shelf" aria-label="返回书架" title="返回书架" onClick={() => {
@@ -761,6 +769,7 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '', local 
           {pages.map((page) => <section id={`page-${page.page}`} key={page.page} className="paper" tabIndex={-1}
             aria-label={`教材文件第 ${page.page} 页，${page.printedPage === null ? "无印刷页码" : pageLabel(page)}`} style={{ aspectRatio: `${page.width} / ${page.height}` }}>
             <PageImage page={page} />
+            {localTools?.page(page.page)}
             {highlightedLocations.filter((location) => location.page === page.page).map((highlighted) => {
               const highlightedNote = supplementsForPage(getLocation(highlighted.id).page).find((item) => item.locationId === highlighted.id);
               return <div key={highlighted.highlightId} id={`location-${highlighted.highlightId}`} className={`location-highlight${previewNote || groupPreview ? " preview-highlight" : ""}`} tabIndex={-1}
@@ -768,7 +777,7 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '', local 
                 aria-label={`教材位置：${highlighted.anchorLabel}`} style={{ left: `${highlighted.region.x * 100}%`, top: `${highlighted.region.y * 100}%`,
                   width: `${highlighted.region.width * 100}%`, height: `${highlighted.region.height * 100}%` }} />;
             })}
-            {groupMarkers(supplementsForPage(page.page).filter((item) => !hiddenIds.includes(item.id) && !hiddenTypes.includes(supplementType(item))).map((item) => {
+            {!localTools && groupMarkers(supplementsForPage(page.page).filter((item) => !hiddenIds.includes(item.id) && !hiddenTypes.includes(supplementType(item))).map((item) => {
               const { marker } = getLocation(item.locationId);
               return { id: item.id, x: marker.x * paperWidth, y: marker.y * paperWidth * page.height / page.width };
             }), markerSize).map((group) => {

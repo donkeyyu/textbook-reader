@@ -43,10 +43,11 @@ async function jump(number) {
   await page.waitForFunction((number) => { const image = document.querySelector(`#page-${number} .page-image`); return image?.complete && image.naturalWidth > 0; }, number);
 }
 async function openFromMarker(sourceId) {
-  const mark = page.locator(`button[data-supplement-ids~="${sourceId}"]`);
-  await mark.scrollIntoViewIfNeeded(); const start = performance.now(); await mark.click();
   const entry = pack.entries.find((entry) => entry.sourceId === sourceId);
-  if (await page.getByRole('complementary', { name: '选择本地笔记', exact: true }).count()) await page.getByRole('complementary', { name: '选择本地笔记', exact: true }).getByRole('button', { name: entry.title, exact: true }).click();
+  const mark = page.getByRole('button', { name: new RegExp(`打开文件第 ${entry.anchors[0].pdf_page} 页的`) });
+  await mark.scrollIntoViewIfNeeded(); const start = performance.now(); await mark.click();
+  const choices = page.getByRole('dialog', { name: '选择教材笔记', exact: true });
+  if (await choices.count() && await choices.isVisible()) await choices.getByRole('button').filter({ has: page.locator('strong').filter({ hasText: entry.title }) }).click();
   await page.locator('.vault-note-heading h1').filter({ hasText: entry.title }).waitFor({ timeout: 30_000 });
   timings.markerOpenMs = Math.round(performance.now() - start);
   return entry;

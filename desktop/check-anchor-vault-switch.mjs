@@ -1,0 +1,56 @@
+// Reuse only check-anchors' disposable library; never attach to a user instance.
+import assert from 'node:assert/strict';
+import path from 'node:path';
+import { mkdir, readFile, writeFile, cp, realpath } from 'node:fs/promises';
+import { _electron } from 'playwright-core';
+import { digest } from './vault.ts';
+const project = path.resolve(import.meta.dirname, '..');
+const evidence = process.env.ANCHORS_REUSE;
+if (!evidence) throw new Error('Set ANCHORS_REUSE to check-anchors disposable evidence folder.');
+const rootA = path.join(evidence, '笔记库'), rootB = path.join(evidence, '新笔记库'), data = path.join(evidence, 'app-data');
+const pack = JSON.parse(await readFile(path.join(project, 'resources/initial-notes/grade-7-volume-1.json'), 'utf8'));
+await mkdir(rootB, { recursive: true }); await cp(path.join(rootA, '.textbook'), path.join(rootB, '.textbook'), { recursive: true });
+for (const folder of new Set(pack.entries.map((entry) => entry.path.split('/')[0]))) await cp(path.join(rootA, folder), path.join(rootB, folder), { recursive: true });
+const bSource = `---\n_textbook:\n  anchors: [{textbook: ${pack.textbook}, pdf_page: 21, rects: [[0.2,0.2,0.4,0.1]]}]\n---\n新库专用正文。\n`;
+await writeFile(path.join(rootB, '新库专用.md'), bSource);
+await mkdir(path.join(data, 'vaults'), { recursive: true }); await writeFile(path.join(data, 'vaults', `${digest(await realpath(rootB))}.json`), JSON.stringify({ state: { activePath: '新库专用.md', positions: {} } }));
+const aSource = await readFile(path.join(rootA, '往返.md'), 'utf8');
+let app, page; const errors = [];
+try {
+  app = await _electron.launch({ executablePath: path.join(project, 'node_modules/electron/dist/Electron.app/Contents/MacOS/Electron'), args: [project, `--user-data-dir=${data}`], timeout: 30000 });
+  app.process().stderr.on('data', (bytes) => { if (/Error|无法|failed/i.test(bytes.toString())) console.error(bytes.toString()); });
+  await app.evaluate(({ dialog }) => { dialog.showErrorBox = (title, message) => console.error(title, message); });
+  page = await app.firstWindow({ timeout: 60000 }); page.setDefaultTimeout(30000); page.on('pageerror', (error) => errors.push(error.message));
+  await app.evaluate(({ session }) => session.defaultSession.enableNetworkEmulation({ offline: true }));
+  await page.setViewportSize({ width: 760, height: 900 }); await page.getByRole('button', { name: '笔记库', exact: true }).click();
+  await page.getByRole('heading', { name: '往返', exact: true }).waitFor();
+  let detail = page.locator('.note-anchor').first(); if (!await detail.evaluate((element) => element.open)) await detail.locator('summary').click();
+  await page.getByRole('button', { name: '定位位置 1', exact: true }).click(); await page.getByRole('button', { name: '第 20 页，共 202 页，点击输入页码', exact: true }).waitFor();
+  await page.getByLabel('已定位区域 1', { exact: true }).waitFor();
+  await page.getByLabel('正文模式', { exact: true }).selectOption('edit');
+  await page.locator('.cm-scroller').scrollIntoViewIfNeeded();
+  const scroller = await page.locator('.cm-scroller').boundingBox(); assert.ok(scroller.height > 40, 'recovery panel consumed the note');
+  await page.screenshot({ path: path.join(evidence, 'narrow-recovery.png') });
+  if (await page.getByRole('button', { name: '收起恢复记录', exact: true }).isVisible()) await page.getByRole('button', { name: '收起恢复记录', exact: true }).click();
+  await page.screenshot({ path: path.join(evidence, 'narrow-split.png') });
+  await page.getByRole('button', { name: '编辑位置 1 区域', exact: true }).click(); await page.getByLabel('教材框选草稿', { exact: true }).waitFor();
+  const oldContext = await page.evaluate(async () => (await window.textbookResources.context()).value);
+  await app.evaluate(({ dialog }, root) => { dialog.showOpenDialog = async () => ({ canceled: false, filePaths: [root] }); }, rootB);
+  await page.getByRole('navigation', { name: '本地工作区', exact: true }).getByRole('button', { name: '切换笔记库', exact: true }).click();
+  await page.getByRole('heading', { name: '新库专用', exact: true }).waitFor();
+  assert.equal(await page.getByRole('button', { name: '展开教材分屏', exact: true }).getAttribute('aria-pressed'), 'true');
+  assert.equal(await page.getByLabel('教材框选草稿', { exact: true }).count(), 0); assert.equal(await page.getByLabel('已定位区域 1', { exact: true }).count(), 0);
+  const nextContext = await page.evaluate(async () => (await window.textbookResources.context()).value);
+  assert.notEqual(nextContext.vaultToken, oldContext.vaultToken); assert.equal(nextContext.name, '新笔记库');
+  detail = page.locator('.note-anchor').first(); if (!await detail.evaluate((element) => element.open)) await detail.locator('summary').click();
+  await page.getByRole('button', { name: '定位位置 1', exact: true }).click(); await page.getByRole('button', { name: '第 21 页，共 202 页，点击输入页码', exact: true }).waitFor();
+  await page.getByRole('button', { name: /打开文件第 21 页的/ }).click(); const chooser = page.getByRole('dialog', { name: '选择教材笔记', exact: true }); await chooser.waitFor();
+  await chooser.getByText('新库专用', { exact: true }).waitFor(); assert.equal(await chooser.getByText('甲/相反数.md', { exact: true }).count(), 0); assert.equal(await chooser.getByText('乙/相反数.md', { exact: true }).count(), 0);
+  await chooser.getByRole('button').filter({ hasText: /^新库专用/ }).click();
+  await page.getByLabel('正文模式', { exact: true }).selectOption('edit'); await page.getByLabel('文件头模式', { exact: true }).selectOption('properties');
+  const editor = page.getByRole('textbox', { name: '笔记 Markdown 源码', exact: true }); await editor.click(); await editor.press('ControlOrMeta+End'); await page.keyboard.insertText('新库分屏保存。'); await editor.press('ControlOrMeta+s'); await page.getByRole('status').filter({ hasText: /^已保存$/ }).waitFor();
+  assert.ok((await readFile(path.join(rootB, '新库专用.md'), 'utf8')).includes('新库分屏保存。')); assert.equal(await readFile(path.join(rootA, '往返.md'), 'utf8'), aSource);
+  assert.deepEqual(errors, []); await page.screenshot({ path: path.join(evidence, 'split-vault-switched.png') });
+  await writeFile(path.join(evidence, 'vault-switch-result.json'), JSON.stringify({ result: 'passed', rootA, rootB, oldToken: oldContext.vaultToken, newToken: nextContext.vaultToken, splitRetained: true, staleSelectionCleared: true, oldNoteUnchanged: true, newNoteSaved: true, errors }, null, 2)); console.log(JSON.stringify({ result: 'passed', evidence }));
+} catch (error) { if (page) await page.screenshot({ path: path.join(evidence, 'vault-switch-failure.png') }).catch(() => {}); console.error(error); throw error; }
+finally { if (app) { await app.evaluate(({ dialog }) => { dialog.showMessageBoxSync = () => 1; }).catch(() => {}); await app.close(); } }

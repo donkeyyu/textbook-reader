@@ -54,3 +54,5 @@ Category: enhancement
 
 - 基准日志 `/tmp/markdown-notes-08-benchmark-before.log`、`/tmp/markdown-notes-08-benchmark-after.log`；完整 JSON 和隔离样本分别保存在 `/var/folders/w5/kpp0bgcj4tb377ck3_y5_z3m0000gn/T/textbook-link-benchmark-Uifvx3` 与 `/var/folders/w5/kpp0bgcj4tb377ck3_y5_z3m0000gn/T/textbook-link-benchmark-daw9Xo`。在集成 04 后可用 `node --experimental-strip-types desktop/benchmark-links.mjs resources/initial-notes/grade-7-volume-1.json` 重跑；本票测量参数为 04 工作树中该包的绝对路径。
 - 缓存修正后再次通过 36 项受影响的桌面测试、lint、typecheck、桌面构建及上述完整 Electron 9 组回归。新增缓存断言覆盖无变化及仅文件戳变化复用、单篇修改不重解析其他条目、同名候选增删后重新解析关系、删除重建与不可读取文件清除旧关系。完整测试的 93 项结果保留于前述日志。本票范围已实现并验证，仍等待协调者代码审查和共享文件合并；未自行放行依赖或集成。
+
+- 2026-11-01 协调者最终审查：以 `ac17aff` 集成，保留 04 教材打开入口、初始 SVG 图与 08 草稿历史/链接渲染。协调者独立执行全量 98 项测试、lint、typecheck、桌面构建及真实 Electron 9 组完整操作，全部通过；日志 `/tmp/markdown-notes-integration-08-build.log`、`/tmp/markdown-notes-integration-08-electron.log`，证据 `/var/folders/w5/kpp0bgcj4tb377ck3_y5_z3m0000gn/T/textbook-links-check-92oqqb`。已核对候选截图与代码；R15 的候选区域预览明确交 06 接入，不能用摘要回退替代有效区域的预览。08 其余职责通过，允许 09 在此基础实施；04 性能修正仍独立进行。

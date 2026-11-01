@@ -1,6 +1,6 @@
 # 15: macOS 原生对话框与安装启动验收
 
-Status: needs-info
+Status: ready-for-agent
 Category: enhancement
 
 **What to build:** 承接 01 中受 Mac 锁屏阻塞的原生选库、关闭确认与安装启动操作验证。自动检查可以模拟系统对话框返回值，但不能替代本票的实际操作。
@@ -17,3 +17,4 @@ Category: enhancement
 ## Comments
 
 - 2026-11-01：协调者依据实际锁屏阻塞从 01 拆出，已请求 DonQ 解锁。其余实现及自动验证继续，本票未通过时不能宣称首版交付完成。
+- 2026-11-01：DonQ 回复“已解锁”，已派发专用原生验收会话；尚未以回复替代实际验收结果。

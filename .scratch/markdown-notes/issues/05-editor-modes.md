@@ -54,3 +54,5 @@ Category: enhancement
 
 - `node desktop/check-modes.mjs`：最终构建真实 Electron 13 组检查全部通过、零 pageerror。证据目录 `/var/folders/w5/kpp0bgcj4tb377ck3_y5_z3m0000gn/T/textbook-modes-check-PTXGMW`；截图 `preview-callouts-offline.png`、`preview-formulas-offline.png`、`live-properties-narrow.png`，已视觉核对。覆盖三正文模式×两种文件头、只读全域、默认/显式共享类型、未来类型保留、属性与列表增删改、同名内置隔离、负小数中间态、无效/重复 YAML 暂停与修复、普通及带引号/注释的 AST 折叠、已知/未知/`__proto__` callout 折叠、离线公式/代码/转义美元/引用式链接、HTML 与远程图片不执行、live 原位编辑、未保存模式/教材书架往返、光标续写/撤销、元数据保存后撤销身份保留、隐藏文件头的 Home/退格/全选保护、设置外改、双库偏好/类型/重开、760px 无横向溢出。
 - 实施与本票验证完成，等待协调者最终审查与集成；分流 Status 保持 `ready-for-agent`，没有自行合并或 cherry-pick。
+
+- 2026-11-01 协调者最终审查通过：以 `66be7f5` 集成，复核设置恢复边界、YAML AST 折叠、数值中间态、元数据回写与撤销、代码/公式隔离、引用式链接上下文和隐藏文件头保护。查看最终离线公式与窄屏实时预览截图，核对真实 Electron 证据；集成工作树独立运行 88 项测试、lint、typecheck 全部通过。复用该代码提交的构建及两组 Electron 通过证据，不重复无变化检查；放行 04、08。

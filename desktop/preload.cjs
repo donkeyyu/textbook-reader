@@ -26,4 +26,6 @@ contextBridge.exposeInMainWorld('textbookResources', Object.freeze({
   status: () => ipcRenderer.invoke('textbooks:status'),
   add: (token, id) => ipcRenderer.invoke('textbooks:add', token, id),
   catalog: (token) => ipcRenderer.invoke('textbooks:catalog', token),
+  notes: (token) => ipcRenderer.invoke('textbooks:notes', token),
+  note: (token, sourceId) => ipcRenderer.invoke('textbooks:note', token, sourceId),
 }));

@@ -80,6 +80,7 @@ export function NoteProperties({ source, readOnly, propertyTypes, onChange, onTy
         : <span>{anchors === undefined ? '未设置' : '位置格式无法识别，请查看源码'}</span>}
     </section>
     <details className="note-information"><summary>笔记信息</summary><dl>{['id', 'create_time', 'update_time'].map((key) => <div key={key}><dt>{key}</dt><dd>{metadata[key] === undefined ? '未知' : display(metadata[key])}</dd></div>)}</dl></details>
+    {metadata.ai_source !== undefined && <details className="note-information"><summary>AI 初始来源</summary><pre>{display(metadata.ai_source)}</pre><p>初始内容来自固定版本包。云端归档尚待发布核验。</p></details>}
     <div hidden={!showProperties}>{problem ? <p className="note-property-error" role="note">{problem} 属性写入已暂停，请切换文件头源码修复。</p> : <>
       <div className="note-property-rows">{properties.map(({ name: propertyName, value, editable }) => {
         const actualType = inferPropertyType(value);

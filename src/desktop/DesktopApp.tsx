@@ -22,7 +22,7 @@ function Difference({ source, other }: { source: string; other: string }) {
   while (end < Math.min(lines.length, compared.length) - start && lines[lines.length - end - 1] === compared[compared.length - end - 1]) end++;
   return <pre>{lines.map((line, index) => <span className={index >= start && index < lines.length - end ? 'vault-diff-changed' : undefined} key={index}>{line}{'\n'}</span>)}</pre>;
 }
-export function DesktopApp() {
+export function DesktopApp({ openRequest }: { openRequest?: { path: string; serial: number; vaultToken: string } }) {
   const api = window.textbookDesktop!;
   const [preferences, setPreferences] = useState<SettingsView>({ revision: null, settings: { editor: { bodyMode: 'live', frontmatterMode: 'properties' }, propertyTypes: {} } });
   const [settingsError, setSettingsError] = useState('');
@@ -166,6 +166,15 @@ export function DesktopApp() {
     });
     return () => { active = false; unsubscribe(); if (stateTimer.current) clearTimeout(stateTimer.current); };
   }, []);
+  useEffect(() => {
+    if (!openRequest) return;
+    void (async () => {
+      const current = latest.current.vault;
+      if (!current || current.token !== openRequest.vaultToken || latest.current.draft?.note.path === openRequest.path && !latest.current.draft.isNew) return;
+      if (!await protect()) return;
+      await run(async () => { await remember(); await openNote(current, openRequest.path); });
+    })();
+  }, [openRequest]);
   useEffect(() => { api.setDirty(dirty || saving); }, [dirty, saving, api]);
   useEffect(() => {
     if (!dirty && !saving) return;

@@ -6,6 +6,8 @@
   "include": [
     "scripts/prepare-textbook.mjs",
     "scripts/prepare-cloud-content.mjs",
-    "scripts/check-cloud-content.mjs"
+    "scripts/check-cloud-content.mjs",
+    "scripts/prepare-initial-notes.mjs",
+    "scripts/check-initial-archive.mjs"
   ]
 }

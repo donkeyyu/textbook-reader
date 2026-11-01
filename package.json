@@ -76,7 +76,8 @@
       "resources/offline/grade-7-volume-1/manifest.json",
       "resources/offline/grade-7-volume-1/manifest.sha256",
       "resources/offline/installer.json",
-      "resources/offline/installer.json.sha256"
+      "resources/offline/installer.json.sha256",
+      "resources/initial-notes/**"
     ],
     "asar": true,
     "mac": {

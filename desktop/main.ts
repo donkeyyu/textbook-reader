@@ -2,6 +2,7 @@ import { app, BrowserWindow, dialog, ipcMain, net, protocol, screen } from 'elec
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { TextbookStore, textbookId } from './textbooks.ts';
+import { InitialNotes, loadInitialPackage } from './initial-notes.ts';
 import { digest, Vault } from './vault.ts';
 import { LocalState, cleanState } from './state.ts';
 import { VaultSettingsStore } from './settings.ts';
@@ -22,6 +23,7 @@ let dirty = false;
 let closing = false;
 let queue: Promise<unknown> = Promise.resolve();
 let textbooks: TextbookStore;
+let initialNotes: InitialNotes;
 let stopWatching: (() => void) | undefined;
 let refreshQueued = false;
 
@@ -145,15 +147,24 @@ textbookHandle('textbooks:add', async (token, id) => {
   if (id !== textbookId) throw new Error('教材版本不可用。');
   await textbooks.download();
   // Catalog commit and vault selection share the note queue; network transfer does not.
-  const result = queue.then(() => textbooks.addToVault(selected.root, id, () => { current(token); }));
+  const result = queue.then(async () => {
+    const assertCurrent = () => { current(token); };
+    const added = await textbooks.addToVault(selected.root, id, assertCurrent);
+    const imported = await initialNotes.import(selected, assertCurrent);
+    window.webContents.send('vault:change', await selected.scan());
+    return { ...added, initialNotes: imported };
+  });
   queue = result.catch(() => {});
   return result;
 });
+handle('textbooks:notes', async (token) => initialNotes.index(current(token)));
+handle('textbooks:note', async (token, sourceId) => initialNotes.note(current(token), sourceId));
 textbookHandle('textbooks:catalog', async (token) => { const selected = current(token); const catalog = await textbooks.catalog(selected.root); current(token); return catalog; });
 
 void app.whenReady().then(async () => {
 textbooks = new TextbookStore(path.resolve(here, '..'), local.directory, process.env.TEXTBOOK_DOWNLOAD_BASE_URL || null, app.commandLine.hasSwitch('textbook-local-http'));
 await textbooks.initialize();
+initialNotes = new InitialNotes(await loadInitialPackage(path.resolve(here, '..')));
 protocol.handle('textbook', async (request) => {
   const url = new URL(request.url);
   const relative = decodeURIComponent(url.pathname === '/' ? '/index.html' : url.pathname);

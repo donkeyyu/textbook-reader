@@ -54,7 +54,7 @@ function measurePages(list: HTMLDivElement): PageMetric[] {
   });
 }
 
-export function Reader({ content, onReturnToShelf, navigationNotice = '', local = false, readingStorage }: { readingStorage?: Pick<Storage, 'getItem' | 'setItem'>; local?: boolean; content: BookContent; onReturnToShelf: (notice: string) => void; navigationNotice?: string }) {
+export function Reader({ content, onReturnToShelf, navigationNotice = '', local = false, readingStorage, onOpenLocalNote }: { onOpenLocalNote?: (sourceId: string) => void; readingStorage?: Pick<Storage, 'getItem' | 'setItem'>; local?: boolean; content: BookContent; onReturnToShelf: (notice: string) => void; navigationNotice?: string }) {
   const [resume] = useState(() => {
     try { return { position: loadReadingPosition(readingStorage), error: '' }; }
     catch (cause) { return { position: null, error: (cause as Error).message }; }
@@ -96,6 +96,9 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '', local 
   const [searchTarget, setSearchTarget] = useState<{ key: string } | null>(null);
   const { layoutRef, bottomPanel: panelBelow } = usePanelLayout(views.split, navigationOpen && views.bookVisible);
   const [supplementId, setSupplementId] = useState<string | null>(null);
+  useEffect(() => {
+    if (supplementId && onOpenLocalNote) { onOpenLocalNote(supplementId); setSupplementId(null); }
+  }, [supplementId, onOpenLocalNote]);
   const [choiceIds, setChoiceIds] = useState<string[] | null>(null);
   const [methodOpenIds, setMethodOpenIds] = useState<string[]>([]);
   const [paperWidth, setPaperWidth] = useState(690);
@@ -837,7 +840,7 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '', local 
             requestAnimationFrame(() => document.querySelector<HTMLInputElement>('.personal-search input')?.focus({ preventScroll: true }));
           }
         }} />}
-      {!personalItem && !personalLibraryOpen && (choiceIds || note) && <SupplementPanel key={choiceIds?.join(" ") ?? note?.id} notes={choiceIds ? choiceIds.map((id) => getSupplement(id)!) : [note!]}
+      {!onOpenLocalNote && !personalItem && !personalLibraryOpen && (choiceIds || note) && <SupplementPanel key={choiceIds?.join(" ") ?? note?.id} notes={choiceIds ? choiceIds.map((id) => getSupplement(id)!) : [note!]}
         methodOpenIds={methodOpenIds} onMethodToggle={(id) => setMethodOpenIds((open) => open.includes(id) ? open.filter((value) => value !== id) : [...open, id])}
         expandedId={supplementId} onSelect={selectAccordion} pending={pending} onClose={() => closeSupplement()} onLocate={locateSupplement} onRelated={relatedJump}
         renderRelated={views.open.graph ? (item) => <GraphRelated nodeKey={nodeKey({ bookId, source: 'default', id: item.id })}
@@ -853,7 +856,8 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '', local 
         </section></>}
         activeLocationId={selectedLocation}
         onBack={previous ? () => { void navigate({ page: previous.page, restore: previous }); } : undefined} />}
-    {preview && previewNote && <SupplementPreview key={preview.id} note={previewNote} anchor={preview.anchor}
+    {onOpenLocalNote && choiceIds && <aside id="supplement-panel" className="supplement-panel desktop-note-choices" aria-label="选择本地笔记"><h2>选择笔记</h2><button onClick={() => closeSupplement()}>关闭笔记选择</button>{choiceIds.map((id) => <button key={id} id={`choice-${id}`} onClick={() => { setChoiceIds(null); onOpenLocalNote(id); }}>{getSupplement(id)!.title}</button>)}</aside>}
+    {!onOpenLocalNote && preview && previewNote && <SupplementPreview key={preview.id} note={previewNote} anchor={preview.anchor}
       onKeep={keepPreview} onLeave={leavePreview} />}
     </main>
     {(pending || error) && <div className="reading-message" role={error ? "alert" : "status"}>

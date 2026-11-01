@@ -1,4 +1,8 @@
 import { Fragment } from 'react';
+import triangleArea from './initial-diagrams/ch3-q-p88-example4.svg';
+import triangleHeight from './initial-diagrams/ch3-triangle-base-height.svg';
+import areaUnit from './initial-diagrams/ch3-area-value-unit.svg';
+const initialDiagrams: Record<string, string> = { '/initial-diagrams/ch3-q-p88-example4.svg': triangleArea, '/initial-diagrams/ch3-triangle-base-height.svg': triangleHeight, '/initial-diagrams/ch3-area-value-unit.svg': areaUnit };
 import ReactMarkdown from 'react-markdown';
 import { MathText } from '../reader/text/MathText';
 import { markdownBlocks, callout, protectMath, referenceDefinitions } from './markdown-source';
@@ -14,7 +18,9 @@ function Markdown({ source }: { source: string }) {
       return formula ? <MathText text={`${formula.display ? '$$' : '$'}${formula.value}${formula.display ? '$$' : '$'}`} /> : <code className={className}>{children}</code>;
     },
     a({ children, href }) { return <a role="link" aria-disabled="true" title={href}>{children}</a>; },
-    img({ alt }) { return <span className="note-image-placeholder">{alt || '图片'}</span>; },
+    img({ alt, src }) {
+      if (src && Object.hasOwn(initialDiagrams, src)) return <img className="note-initial-diagram" src={initialDiagrams[src]} alt={alt ?? ''} />;
+      return <span className="note-image-placeholder">{alt || '图片'}</span>; },
   }}>{protectedSource}</ReactMarkdown>;
 }
 

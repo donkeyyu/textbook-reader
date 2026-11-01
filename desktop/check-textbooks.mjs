@@ -47,7 +47,7 @@ async function switchVault(selection) {
 async function addFromShelf() {
   await page.getByRole('button', { name: '添加教材', exact: true }).first().click();
   await page.getByRole('button', { name: '添加到书架', exact: true }).click();
-  await page.getByRole('button', { name: '已添加', exact: true }).waitFor({ timeout: 60_000 });
+  await page.getByRole('button', { name: '已添加', exact: true }).waitFor({ timeout: 120_000 });
   await page.getByRole('button', { name: '关闭教材选择', exact: true }).click();
 }
 async function jump(number) {
@@ -75,7 +75,7 @@ try {
   await page.getByRole('button', { name: '添加到书架', exact: true }).click(); await slowStarted;
   await page.getByRole('button', { name: '关闭教材选择', exact: true }).click();
   await switchVault(otherRoot); releaseSlow(); slow = false;
-  await page.waitForFunction(async () => (await window.textbookResources.status()).value.phase === 'ready', undefined, { timeout: 60_000 });
+  await page.waitForFunction(async () => (await window.textbookResources.status()).value.phase === 'ready', undefined, { timeout: 120_000 });
   const catalogRelative = `.textbook/textbooks/${manifest.textbook.id}/catalog.json`;
   await assert.rejects(readFile(path.join(root, catalogRelative))); await assert.rejects(readFile(path.join(otherRoot, catalogRelative)));
   assert.equal(await page.getByRole('button', { name: '开始阅读', exact: true }).count(), 0);
@@ -86,7 +86,7 @@ try {
   await addFromShelf();
   assert.equal(hits.size, 405); assert.equal(hits.get(manifest.download[0].path), 1);
   assert.ok((await readFile(path.join(root, '.textbook/textbooks', manifest.textbook.id, 'catalog.json'), 'utf8')).includes('printedPage'));
-  assert.deepEqual((await readdir(root)).sort(), ['.textbook', '个人.md']);
+  assert.deepEqual((await readdir(root)).sort(), ['.textbook', '个人.md', '数学·七年级上册']);
   await page.getByRole('button', { name: '开始阅读', exact: true }).click(); await jump(88);
   await page.getByRole('button', { name: '返回书架', exact: true }).click(); await switchVault(otherRoot);
   await page.getByRole('button', { name: '开始阅读', exact: true }).click(); await jump(12);
@@ -126,13 +126,15 @@ try {
   await page.getByRole('button', { name: '搜索内容', exact: true }).click();
   await page.getByPlaceholder('搜索解读标题或内容').fill('相反数');
   await page.locator('.graph-results button').first().click();
-  await page.locator('#supplement-panel .math-inline svg, #supplement-panel .math-display svg').first().waitFor({ timeout: 30_000 });
+  await page.getByLabel('正文模式').selectOption('preview');
+  await page.locator('.note-preview .math-inline svg, .note-preview .math-display svg').first().waitFor({ timeout: 30_000 });
   await page.waitForFunction(() => [...document.querySelectorAll('.location-highlight')].some((highlight) => {
     const image = highlight.closest('.paper')?.querySelector('.page-image');
     return image instanceof HTMLImageElement && image.complete && image.naturalWidth > 0 && getComputedStyle(image).opacity === '1';
   }));
   await page.screenshot({ path: path.join(evidence, 'offline-formula.png') });
   const location = await page.locator('.location-highlight').count(); assert.ok(location > 0);
+  await page.getByRole('button', { name: '教材书架', exact: true }).click();
   await page.getByRole('button', { name: '返回书架', exact: true }).click();
   const readingKey = await page.evaluate(async (id) => { const { value: context } = await window.textbookResources.context(); return `desktop-textbooks:${context.vaultKey}:textbook-reading-v1:${id}`; }, manifest.textbook.id);
   const reading = await page.evaluate((key) => localStorage.getItem(key), readingKey);

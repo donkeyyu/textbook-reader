@@ -19,7 +19,7 @@ type ResourceTools = {
 };
 
 // Each write checks the persistent boundary; resource repair never enters note folders.
-async function directory(root: string, relative = '', create = true) {
+export async function persistentDirectory(root: string, relative = '', create = true) {
   if (await realpath(root) !== root || !(await lstat(root)).isDirectory()) throw new Error('持久资料目录已改变。');
   let full = root;
   for (const part of relative.split('/').filter(Boolean)) {
@@ -30,8 +30,8 @@ async function directory(root: string, relative = '', create = true) {
   }
   return full;
 }
-async function atomicFile(root: string, relative: string, bytes: Buffer, keepExisting = false, assertCurrent = () => {}) {
-  const parent = await directory(root, path.posix.dirname(relative));
+export async function atomicFile(root: string, relative: string, bytes: Buffer, keepExisting = false, assertCurrent = () => {}) {
+  const parent = await persistentDirectory(root, path.posix.dirname(relative));
   const full = path.join(root, relative);
   try {
     const stat = await lstat(full);
@@ -45,7 +45,7 @@ async function atomicFile(root: string, relative: string, bytes: Buffer, keepExi
   const handle = await open(temporary, constants.O_CREAT | constants.O_EXCL | constants.O_WRONLY, 0o600);
   try {
     await handle.writeFile(bytes); await handle.sync(); await handle.close();
-    await directory(root, path.posix.dirname(relative));
+    await persistentDirectory(root, path.posix.dirname(relative));
     // Recheck before rename. Existing personal catalogs are never replaced.
     assertCurrent();
     if (keepExisting) {
@@ -78,7 +78,7 @@ export class TextbookStore {
     await mkdir(dataRoot, { recursive: true });
     const canonical = await realpath(dataRoot);
     this.root = path.join(canonical, 'textbook-resources', textbookId);
-    await directory(canonical, `textbook-resources/${textbookId}`);
+    await persistentDirectory(canonical, `textbook-resources/${textbookId}`);
     try {
       const installerFile = path.join(this.appRoot, 'resources/offline/installer.json');
       await this.tools.verifyInstaller(path.join(this.appRoot, 'dist'), await readFile(installerFile), (await readFile(`${installerFile}.sha256`, 'utf8')).trim());
@@ -90,7 +90,7 @@ export class TextbookStore {
   }
   snapshot(): TextbookStatus { return { ...this.status }; }
   private async verify() {
-    await directory(path.dirname(path.dirname(this.root)), `textbook-resources/${textbookId}`);
+    await persistentDirectory(path.dirname(path.dirname(this.root)), `textbook-resources/${textbookId}`);
     await this.tools.verifyDirectory(this.root, this.manifest.download);
     await atomicFile(this.root, 'complete.json', Buffer.from(JSON.stringify({ schemaVersion: 1, textbookId, manifestSha256: manifestHash })));
     this.status = { ...this.status, phase: 'ready', completed: this.manifest.download.length, error: '' };
@@ -138,7 +138,7 @@ export class TextbookStore {
     const entry = this.manifest.download.find((item) => item.path === relative);
     if (!entry) throw new Error('教材资源路径无效。');
     try {
-      await directory(path.dirname(path.dirname(this.root)), `textbook-resources/${textbookId}`);
+      await persistentDirectory(path.dirname(path.dirname(this.root)), `textbook-resources/${textbookId}`);
       return this.tools.verifyBytes(entry, await this.tools.readResource(this.root, relative));
     } catch (error) {
       this.status = { ...this.status, phase: 'error', error: '本地教材资源缺失或损坏，请重试下载。' };
@@ -149,14 +149,14 @@ export class TextbookStore {
     let bytes = await this.read(catalogPath);
     if (vaultRoot) {
       const relative = `.textbook/textbooks/${textbookId}/catalog.json`;
-      await directory(vaultRoot, path.posix.dirname(relative), false);
+      await persistentDirectory(vaultRoot, path.posix.dirname(relative), false);
       const file = await open(path.join(vaultRoot, relative), constants.O_RDONLY | constants.O_NOFOLLOW);
       try {
         const stat = await file.stat();
         if (!stat.isFile() || stat.nlink !== 1) throw new Error('教材目录不是独立的普通文件。');
         bytes = await file.readFile();
         this.tools.verifyBytes(this.manifest.download.find((entry) => entry.path === catalogPath)!, bytes);
-        await directory(vaultRoot, path.posix.dirname(relative), false);
+        await persistentDirectory(vaultRoot, path.posix.dirname(relative), false);
       } finally { await file.close(); }
     }
     return JSON.parse(bytes.toString('utf8')) as unknown;

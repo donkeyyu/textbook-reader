@@ -1,10 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import type { DesktopApi, Note, Position, Recovery, Result, VaultChange, VaultState, VaultView, SettingsView, SettingsPatch } from '../../desktop/contracts';
 import { freshIdentity as freshCopy, rebaseSaved, saveProblem } from '../../desktop/format';
-import { SourceEditor, headerEnd } from './SourceEditor';
+import { SourceEditor, headerEnd, type EditorScene } from './SourceEditor';
 import { NoteProperties } from './NoteProperties';
 import { NoteMarkdown } from './note-markdown';
+import { NoteLinks } from './NoteLinks';
+import { noteReferences, pathLink, replaceReference, resolveLink, type LinkIndex, type NoteReference } from '../../desktop/links';
 import './desktop.css';
+import './links.css';
 
 declare global { interface Window { textbookDesktop?: DesktopApi } }
 
@@ -13,7 +16,7 @@ function value<T>(result: Result<T>): T {
   return result.value;
 }
 type Conflict = { disk: Note | null; error?: string };
-type Draft = { note: Note; source: string; isNew: boolean; key: number; conflict?: Conflict; paused?: boolean; freshOnSave?: boolean; rebase?: { sent: string; saved: string } };
+type Draft = { note: Note; source: string; isNew: boolean; key: number; conflict?: Conflict; paused?: boolean; freshOnSave?: boolean; createdFrom?: { key: number; reference: NoteReference; source: string }; rebase?: { sent: string; saved: string } };
 type Choice = 'save' | 'discard' | 'cancel';
 function Difference({ source, other }: { source: string; other: string }) {
   const lines = source.split('\n'), compared = other.split('\n');
@@ -29,6 +32,12 @@ export function DesktopApp({ openRequest }: { openRequest?: { path: string; seri
   const settingsRef = useRef<SettingsView | null>(null);
   const settingsQueue = useRef<Promise<void>>(Promise.resolve());
   const { bodyMode, frontmatterMode } = preferences.settings.editor;
+  const [linkIndex, setLinkIndex] = useState<LinkIndex>({ entries: [], problems: [] });
+  const [linkRequest, setLinkRequest] = useState<{ reference: NoteReference; source: string; key: number }>();
+  const [returnCount, setReturnCount] = useState(0);
+  const history = useRef<{ draft: Draft; editor: SettingsView['settings']['editor']; status: string }[]>([]);
+  const scenes = useRef(new Map<number, EditorScene>());
+  const indexRequest = useRef(0);
   const [vault, setVault] = useState<VaultView | null>(null);
   const [draft, setDraft] = useState<Draft | null>(null);
   const [busy, setBusy] = useState(true);
@@ -50,12 +59,13 @@ export function DesktopApp({ openRequest }: { openRequest?: { path: string; seri
   const deferredChange = useRef<VaultChange | null>(null);
   const stateTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const key = useRef(0);
+  const parkedDirty = history.current.some(({ draft }) => draft.isNew || draft.source !== draft.note.source);
   const dirty = !!draft && (draft.isNew || draft.source !== draft.note.source);
   const problem = draft && !draft.note.readOnly ? saveProblem(draft.source) : '';
 
   function update(next: Draft | null) {
     latest.current.draft = next; setDraft(next);
-    api.setDirty(latest.current.saving || !!next && (next.isNew || next.source !== next.note.source));
+    api.setDirty(parkedDirty || latest.current.saving || !!next && (next.isNew || next.source !== next.note.source));
   }
   function edit(source: string) {
     const previous = latest.current.draft;
@@ -80,6 +90,7 @@ export function DesktopApp({ openRequest }: { openRequest?: { path: string; seri
     stateTimer.current = setTimeout(() => { void remember().catch((cause: Error) => setError(cause.message)); }, 180);
   }
   function loaded(note: Note) {
+    setLinkRequest(undefined);
     update({ note, source: note.source, isNew: false, key: ++key.current });
     setDiff(false); setStatus(note.readOnly ? '只读' : '已从磁盘读取');
   }
@@ -109,13 +120,22 @@ export function DesktopApp({ openRequest }: { openRequest?: { path: string; seri
       else { settingsRef.current = null; setSettingsError(result.error); }
     });
   }
+  async function refreshLinks(current: VaultView) {
+    const request = ++indexRequest.current;
+    const result = await api.links(current.token);
+    if (latest.current.vault?.token !== current.token || request !== indexRequest.current) return;
+    if (result.ok) setLinkIndex(result.value);
+    else setLinkIndex((previous) => ({ ...previous, problems: [result.error] }));
+  }
   async function showVault(current: VaultView) {
     if (stateTimer.current) clearTimeout(stateTimer.current);
+    history.current = []; scenes.current.clear(); setReturnCount(0); setLinkRequest(undefined);
     localState.current = current.state;
     latest.current.vault = current;
     setVault(current); setPreferences({ revision: null, settings: { editor: { bodyMode: 'live', frontmatterMode: 'properties' }, propertyTypes: {} } }); update(null); setCreating(false); setRecords(null); setDuplicates({}); setStatus('');
     setError(current.notice ?? '');
     await readPreferences(current);
+    await refreshLinks(current);
     if (current.state.activePath && current.notes.includes(current.state.activePath)) await openNote(current, current.state.activePath);
     value(await api.list(current.token));
     const recoveries = value(await api.recoveries(current.token));
@@ -128,6 +148,7 @@ export function DesktopApp({ openRequest }: { openRequest?: { path: string; seri
     setVault((previous) => previous?.token === change.token ? { ...previous, notes: change.notes } : previous);
     setDuplicates(change.duplicates);
     if (latest.current.saving || latest.current.busy) { deferredChange.current = change; return; }
+    void refreshLinks(current);
     const item = latest.current.draft;
     if (!item || item.isNew) return;
     let disk: Note | null = null;
@@ -175,13 +196,13 @@ export function DesktopApp({ openRequest }: { openRequest?: { path: string; seri
       await run(async () => { await remember(); await openNote(current, openRequest.path); });
     })();
   }, [openRequest]);
-  useEffect(() => { api.setDirty(dirty || saving); }, [dirty, saving, api]);
+  useEffect(() => { api.setDirty(dirty || parkedDirty || saving); }, [dirty, parkedDirty, saving, api]);
   useEffect(() => {
-    if (!dirty && !saving) return;
+    if (!dirty && !parkedDirty && !saving) return;
     const prevent = (event: BeforeUnloadEvent) => { event.preventDefault(); event.returnValue = ''; };
     window.addEventListener('beforeunload', prevent);
     return () => window.removeEventListener('beforeunload', prevent);
-  }, [dirty, saving]);
+  }, [dirty, parkedDirty, saving]);
   useEffect(() => { if (guard) guardDialog.current?.showModal(); }, [guard]);
   useEffect(() => {
     if (!dirty || busy || saving || guard || problem || draft?.conflict || draft?.paused || draft?.note.readOnly) return;
@@ -207,7 +228,14 @@ export function DesktopApp({ openRequest }: { openRequest?: { path: string; seri
         if (!live || live.key !== item.key) return false;
         const rebase = { sent: item.source, saved: note.source };
         const merged = live.source === item.source ? note.source : rebaseSaved(item.source, live.source, note.source);
-        update({ ...live, note, source: merged ?? live.source, isNew: false, freshOnSave: false, rebase: merged === undefined ? rebase : undefined });
+        update({ ...live, note, source: merged ?? live.source, isNew: false, freshOnSave: false, createdFrom: undefined, rebase: merged === undefined ? rebase : undefined });
+        if (item.isNew && item.createdFrom && note.path !== item.note.path) {
+          const origin = history.current.find((entry) => entry.draft.key === item.createdFrom!.key);
+          if (origin && origin.draft.source === item.createdFrom.source) {
+            origin.draft = { ...origin.draft, source: replaceReference(origin.draft.source, item.createdFrom.reference, pathLink(note.path, item.createdFrom.reference.alias), item.createdFrom.source) };
+            origin.status = '未保存';
+          } else setError(`新笔记已保存到 ${note.path}；来源内容已改变，请重新选择来源链接。`);
+        }
         localState.current.activePath = note.path;
         setVault((previous) => previous ? { ...previous, notes: [...new Set([...previous.notes, note.path])].sort() } : null);
         setStatus(merged === note.source ? '已保存' : '未保存');
@@ -301,6 +329,63 @@ export function DesktopApp({ openRequest }: { openRequest?: { path: string; seri
     update({ note: { path: name, source: '', revision: '', readOnly: false, problems: [] }, source, isNew: true, key: ++key.current, paused: true, freshOnSave: true });
     setStatus('恢复草稿 · 请核对后保存'); setRecords(null); setError('');
   }
+  async function navigate(path: string) {
+    await run(async () => {
+      if (inFlight.current) await inFlight.current;
+      const current = latest.current.vault!, item = latest.current.draft;
+      if (!item || item.note.path === path && !item.isNew) return;
+      // Read first: a missing target must leave the current editor intact.
+      const target = value(await api.read(current.token, path));
+      if (item.isNew || item.source !== item.note.source) value(await api.protectDraft(current.token, item.note.path, item.source));
+      history.current.push({ draft: item, editor: { bodyMode, frontmatterMode }, status });
+      setReturnCount(history.current.length); setLinkRequest(undefined);
+      loaded(target); localState.current.activePath = target.path; await remember();
+    });
+  }
+  async function returnToSource() {
+    await run(async () => {
+      if (inFlight.current) await inFlight.current;
+      const current = latest.current.vault!, item = latest.current.draft;
+      if (item && (item.isNew || item.source !== item.note.source)) value(await api.protectDraft(current.token, item.note.path, item.source));
+      const previous = history.current.at(-1);
+      if (!previous) return;
+      let restored = previous.draft;
+      if (!restored.isNew) {
+        const disk = await api.read(current.token, restored.note.path);
+        if (!disk.ok || disk.value.revision !== restored.note.revision) {
+          if (restored.source !== restored.note.source || restored.conflict || !disk.ok) restored = { ...restored, conflict: { disk: disk.ok ? disk.value : null, error: disk.ok || disk.code === 'ENOENT' ? undefined : disk.error }, paused: true };
+          else restored = { ...restored, note: disk.value, source: disk.value.source };
+        } else restored = { ...restored, note: disk.value };
+      }
+      history.current.pop(); setReturnCount(history.current.length); setLinkRequest(undefined);
+      update(restored); configure({ editor: previous.editor });
+      setStatus(restored.conflict ? '磁盘冲突 · 自动保存已暂停' : previous.status);
+      localState.current.activePath = restored.note.path; await remember();
+    });
+  }
+  function openLink(clicked: NoteReference) {
+    const reference = noteReferences(latest.current.draft?.source ?? '').find((item) => item.from === clicked.from && item.to === clicked.to && item.raw === clicked.raw && JSON.stringify(item.property) === JSON.stringify(clicked.property));
+    if (!reference) { setError('内容已改变，请重新打开链接。'); return; }
+    const result = resolveLink(reference.target, linkIndex.entries);
+    if (result.kind === 'resolved') void navigate(result.candidates[0]!.path);
+    else setLinkRequest({ reference, source: latest.current.draft!.source, key: Date.now() });
+  }
+  function createLinked(path: string, reference: NoteReference, replacement: string) {
+    void run(async () => {
+      const current = latest.current.vault!, item = latest.current.draft;
+      if (!item) return;
+      const inserted = noteReferences(item.source).find((candidate) => candidate.raw === replacement && candidate.from === reference.from && JSON.stringify(candidate.property) === JSON.stringify(reference.property));
+      if (!inserted) throw new Error('来源链接已改变，请重新选择。');
+      if (item.isNew || item.source !== item.note.source) value(await api.protectDraft(current.token, item.note.path, item.source));
+      history.current.push({ draft: item, editor: { bodyMode, frontmatterMode }, status: item.source !== item.note.source || item.isNew ? '未保存' : status }); setReturnCount(history.current.length);
+      update({ note: { path, source: '', revision: '', readOnly: false, problems: [] }, source: '', isNew: true, key: ++key.current, paused: true, createdFrom: { key: item.key, reference: inserted, source: item.source } });
+      setStatus('新笔记草稿 · 保存后创建文件'); setLinkRequest(undefined);
+    });
+  }
+  const scene = draft ? scenes.current.get(draft.key) ?? {} : undefined;
+  if (draft && scene) scenes.current.set(draft.key, scene);
+  const retainedKeys = new Set([draft?.key, ...history.current.map((entry) => entry.draft.key)]);
+  for (const key of scenes.current.keys()) if (!retainedKeys.has(key)) scenes.current.delete(key);
   return <main className="vault-app">
     <header className="vault-toolbar"><strong>课本解读</strong><span className="vault-name">{vault?.name ?? '本地笔记'}</span>
       {vault && <button disabled={busy || saving} onClick={() => { void run(async () => setRecords(value(await api.recoveries(vault.token)))); }}>恢复记录</button>}
@@ -336,7 +421,7 @@ export function DesktopApp({ openRequest }: { openRequest?: { path: string; seri
           {!vault.notes.length && <p>此库还没有笔记。</p>}
         </aside>
         <section className="vault-paper" aria-label="笔记编辑器">{draft ? <>
-          <div className="vault-note-heading"><h1>{draft.note.path.slice(0, -3)}</h1><span role="status">{status}</span>
+          <div className="vault-note-heading">{returnCount > 0 && <button disabled={busy || saving} onClick={() => { void returnToSource(); }}>返回来源</button>}<h1>{draft.note.path.slice(0, -3)}</h1><span role="status">{status}</span>
             <button hidden={bodyMode === 'preview' || draft.note.readOnly} disabled={busy || saving || draft.note.readOnly || !!draft.conflict} onClick={() => { void save(); }}>保存</button>
             {!draft.isNew && bodyMode !== 'preview' && !draft.note.readOnly && <button disabled={busy || saving || draft.note.readOnly || !!draft.conflict} onClick={() => { void run(() => copy(false)); }}>复制笔记</button>}
           </div>
@@ -349,14 +434,17 @@ export function DesktopApp({ openRequest }: { openRequest?: { path: string; seri
             <button hidden={bodyMode === 'preview' || draft.note.readOnly} disabled={busy || saving} onClick={() => { void adoptDisk(); }}>采用磁盘版本</button>
           </div>{diff && <div className="vault-diff"><section><h2>编辑草稿</h2><Difference source={draft.source} other={draft.conflict.disk?.source ?? ''} /></section><section><h2>磁盘版本</h2><Difference source={draft.conflict.disk?.source ?? draft.conflict.error ?? '文件已删除或暂不可用。'} other={draft.source} /></section></div>}</section>}
           {!draft.conflict && draft.paused && <div className="vault-problems"><p>草稿已保留，可重试保存或另存。</p><button hidden={bodyMode === 'preview' || draft.note.readOnly} disabled={busy || saving || !!problem} onClick={() => { void run(async () => { await saveAs(); }); }}>另存草稿为新笔记</button></div>}
-          <div className="note-modes"><label>正文<select aria-label="正文模式" value={bodyMode} onChange={(event) => configure({ editor: { bodyMode: event.target.value as typeof bodyMode } })}><option value="edit">编辑</option><option value="preview">预览</option><option value="live">实时预览</option></select></label>
-            {bodyMode !== 'preview' && !draft.note.readOnly && <label>文件头<select aria-label="文件头模式" value={frontmatterMode} onChange={(event) => configure({ editor: { frontmatterMode: event.target.value as typeof frontmatterMode } })}><option value="properties">属性预览</option><option value="source">源码</option></select></label>}
+          <div className="note-modes"><label>正文<select disabled={busy} aria-label="正文模式" value={bodyMode} onChange={(event) => configure({ editor: { bodyMode: event.target.value as typeof bodyMode } })}><option value="edit">编辑</option><option value="preview">预览</option><option value="live">实时预览</option></select></label>
+            {bodyMode !== 'preview' && !draft.note.readOnly && <label>文件头<select disabled={busy} aria-label="文件头模式" value={frontmatterMode} onChange={(event) => configure({ editor: { frontmatterMode: event.target.value as typeof frontmatterMode } })}><option value="properties">属性预览</option><option value="source">源码</option></select></label>}
           </div>
           {settingsError && <div className="vault-problems" role="alert">配置未保存：{settingsError}<button onClick={() => { void readPreferences(vault); }}>重新读取配置</button></div>}
+          <NoteLinks key={draft.key} index={linkIndex} source={draft.source} path={draft.isNew ? '' : draft.note.path} readOnly={busy || draft.note.readOnly || bodyMode === 'preview'} request={linkRequest} onNavigate={(path) => { void navigate(path); }} onRepair={(reference, replacement, expectedSource) => {
+            try { edit(replaceReference(latest.current.draft!.source, reference, replacement, expectedSource)); return true; } catch (cause) { setError((cause as Error).message); return false; }
+          }} onCreate={createLinked} />
           <div className="note-document">
             <div><NoteProperties key={draft.key} showProperties={bodyMode === 'preview' || draft.note.readOnly || frontmatterMode === 'properties'} source={draft.source} readOnly={busy || draft.note.readOnly || bodyMode === 'preview'} propertyTypes={preferences.settings.propertyTypes} unsupportedPropertyTypes={preferences.unsupportedPropertyTypes} onChange={edit} onTypeChange={(name, type) => configure({ propertyTypes: { [name]: type } })} /></div>
-            <SourceEditor key={draft.key} source={draft.source} bodyMode={draft.note.readOnly ? 'preview' : bodyMode} frontmatterMode={frontmatterMode} readOnly={busy || draft.note.readOnly} position={localState.current.positions[draft.note.path]} onChange={edit} onPosition={position} onSave={() => { if (bodyMode !== 'preview') void save(); }} />
-            {(bodyMode === 'preview' || draft.note.readOnly) && <div className="note-preview" aria-label="笔记只读预览"><NoteMarkdown source={draft.source.slice(headerEnd(draft.source))} /></div>}
+            <SourceEditor key={draft.key} scene={scene} entries={linkIndex.entries} onLink={openLink} source={draft.source} bodyMode={draft.note.readOnly ? 'preview' : bodyMode} frontmatterMode={frontmatterMode} readOnly={busy || draft.note.readOnly} position={localState.current.positions[draft.note.path]} onChange={edit} onPosition={position} onSave={() => { if (bodyMode !== 'preview') void save(); }} />
+            {(bodyMode === 'preview' || draft.note.readOnly) && <div className="note-preview" aria-label="笔记只读预览"><NoteMarkdown onLink={openLink} offset={headerEnd(draft.source)} source={draft.source.slice(headerEnd(draft.source))} /></div>}
           </div>
         </> : <div className="vault-empty"><h1>选一篇笔记，继续写</h1><p>手动创建的 .md 文件也会出现在左侧。</p></div>}</section>
       </div>}

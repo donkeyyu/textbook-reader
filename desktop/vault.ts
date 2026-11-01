@@ -3,10 +3,14 @@ import { access, lstat, open, readdir, realpath, rename, rm, mkdir, readFile, li
 import path from 'node:path';
 import { createHash, randomUUID } from 'node:crypto';
 import { freshIdentity, inspect, prepareSave } from './format.ts';
+import { notePath } from './note-path.ts';
+import { linkEntry, type LinkIndex, type LinkEntry } from './links.ts';
+export { notePath } from './note-path.ts';
 import type { Note, Recovery, VaultChange } from './contracts.ts';
 
 export const digest = (source: string) => createHash('sha256').update(source).digest('hex');
 const utf8 = new TextDecoder('utf-8', { fatal: true, ignoreBOM: true });
+type IndexedNote = { stamp: string; note?: Note; links?: LinkEntry };
 
 async function readCaptured(file: string, restoredTarget?: string) {
   const handle = await open(file, constants.O_RDONLY | constants.O_NOFOLLOW);
@@ -22,18 +26,11 @@ async function readCaptured(file: string, restoredTarget?: string) {
   } finally { await handle.close(); }
 }
 
-export function notePath(input: unknown): asserts input is string {
-  if (typeof input !== 'string' || input.length > 1000 || !input.endsWith('.md') ||
-    input.split('/').some((part) => !part || part.startsWith('.') || [...part].some((character) => character.charCodeAt(0) < 32) || /[\\:<>"|?*]/.test(part) || /[. ]$/.test(part) || /^(CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(?:\.|$)/i.test(part))) {
-    throw new Error('请使用笔记库内的 Markdown 路径；不支持隐藏文件、特殊路径或系统保留名。');
-  }
-}
-
 export class Vault {
   readonly token = randomUUID();
   readonly root: string;
   readonly recoveryDir: string;
-  private index = new Map<string, { stamp: string; note?: Note }>();
+  private index = new Map<string, IndexedNote>();
   private writes: Promise<unknown> = Promise.resolve();
   // Fault-injection seam, never exposed over IPC.
   writeCheckpoint?: (stage: 'prepared' | 'checked' | 'displaced' | 'installed') => Promise<void>;
@@ -112,13 +109,17 @@ export class Vault {
   async scan(): Promise<VaultChange> {
     const names = await this.list();
     const changed = new Set([...this.index.keys()].filter((name) => !names.includes(name)));
-    const next = new Map<string, { stamp: string; note?: Note }>();
+    const next = new Map<string, IndexedNote>();
     for (const name of names) {
       try {
         const info = await lstat(await this.resolve(name));
         const stamp = [info.dev, info.ino, info.size, info.mtimeMs, info.ctimeMs, info.mode].join(':');
         const previous = this.index.get(name);
-        const entry = previous?.stamp === stamp && previous.note ? previous : { stamp, note: await this.readFile(name).catch(() => undefined) };
+        const entry: IndexedNote = previous?.stamp === stamp && previous.note ? previous : { stamp, note: await this.readFile(name).catch(() => undefined) };
+        // Derived links depend only on this path and its persisted content. A
+        // stamp-only change keeps them; changed/unreadable content drops them.
+        // Deleted paths leave the map entirely; reopening a vault starts empty.
+        if (entry !== previous && entry.note && entry.note.revision === previous?.note?.revision) entry.links = previous.links;
         next.set(name, entry);
         if (previous?.stamp !== stamp || previous?.note?.revision !== entry.note?.revision) changed.add(name);
       } catch { changed.add(name); }
@@ -128,6 +129,18 @@ export class Vault {
     const duplicates = this.duplicates();
     if (oldDuplicates !== JSON.stringify(duplicates)) for (const name of names) changed.add(name);
     return { token: this.token, notes: [...next.keys()], changed: [...changed], duplicates };
+  }
+
+  // Rebuildable, disk-only index. scan reuses unchanged file contents.
+  async links(onChange?: (change: VaultChange) => void): Promise<LinkIndex> {
+    const change = await this.scan();
+    if (change.changed.length) onChange?.(change);
+    const entries = [], problems = [];
+    for (const [path, entry] of this.index) {
+      if (entry.note) entries.push(entry.links ??= linkEntry(path, entry.note.source));
+      else problems.push(`${path}：文件暂不可读取，未建立链接索引。`);
+    }
+    return { entries, problems };
   }
 
   async read(relative: string): Promise<Note> {

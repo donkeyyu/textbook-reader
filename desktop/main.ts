@@ -99,6 +99,7 @@ handle('vault:choose', async () => {
   return choice.canceled || !choice.filePaths[0] ? null : select(choice.filePaths[0]);
 });
 handle('vault:list', async (token) => { const change = await current(token).scan(); window.webContents.send('vault:change', change); return change.notes; });
+handle('vault:links', async (token) => current(token).links((change) => window.webContents.send('vault:change', change)));
 handle('vault:read', async (token, relative) => {
   if (typeof relative !== 'string') throw new Error('笔记路径无效。');
   return current(token).read(relative);

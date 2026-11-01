@@ -1,3 +1,4 @@
+import type { LinkIndex } from './links.ts';
 export type Position = { cursor: number; scroll: number };
 export type VaultState = { activePath?: string; positions: Record<string, Position>; sidebarWidth?: number };
 export type Note = { path: string; source: string; revision: string; readOnly: boolean; problems: string[]; id?: string; fileMtime?: number; duplicatePaths?: string[] };
@@ -15,6 +16,7 @@ export type SettingsPatch = { editor?: Partial<EditorPreferences>; propertyTypes
 export type DesktopApi = {
   restore: () => Promise<Result<VaultView | null>>;
   chooseVault: () => Promise<Result<VaultView | null>>;
+  links: (token: string) => Promise<Result<LinkIndex>>;
   list: (token: string) => Promise<Result<string[]>>;
   read: (token: string, path: string) => Promise<Result<Note>>;
   save: (token: string, path: string, source: string, revision: string | null) => Promise<Result<Note>>;

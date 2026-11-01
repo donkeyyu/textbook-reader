@@ -4,6 +4,7 @@ contextBridge.exposeInMainWorld('textbookDesktop', Object.freeze({
   restore: () => ipcRenderer.invoke('vault:restore'),
   chooseVault: () => ipcRenderer.invoke('vault:choose'),
   list: (token) => ipcRenderer.invoke('vault:list', token),
+  links: (token) => ipcRenderer.invoke('vault:links', token),
   read: (token, path) => ipcRenderer.invoke('vault:read', token, path),
   save: (token, path, source, revision) => ipcRenderer.invoke('vault:save', token, path, source, revision),
   copy: (token, path, source, revision, replaceIdentity) => ipcRenderer.invoke('vault:copy', token, path, source, revision, replaceIdentity),

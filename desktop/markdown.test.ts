@@ -1,6 +1,7 @@
+import { noteReferences, wikiLinks } from './links.ts';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { callout, markdownBlocks, protectMath, referenceDefinitions } from '../src/desktop/markdown-source.ts';
+import { callout, calloutPosition, markdownBlocks, protectMath, referenceDefinitions } from '../src/desktop/markdown-source.ts';
 
 test('desktop formulas stay outside code and escaped dollars; TeX punctuation survives Markdown', () => {
   const source = '`price $` 后面 $x$，`$code$`，\\$5 与 $y$。\n\n```tex\n$literal$\n```\n\n$$\\frac{1}{2} + \\sqrt{4}$$\n\\(z\\) 与 \\[w\\]';
@@ -35,4 +36,21 @@ test('desktop reference definitions remain available across block rendering boun
   const definitions = referenceDefinitions(source);
   assert.equal(definitions, '[ref]: https://example.com "说明"');
   assert.equal(markdownBlocks(source).at(-1)?.type, 'LinkReference');
+});
+
+
+test('rendered callout links map each duplicate to its exact original body offset', () => {
+  for (const newline of ['\n', '\r\n']) {
+    const source = ['---', '属性: "[[同名]]"', '---', '[[同名]]', '', '> [!hint] 提示', '>第一行 [[同名]]', '> 第二行 [[同名]]'].join(newline);
+    const offset = source.indexOf('[[同名]]', source.indexOf('---', 4) + 3);
+    const block = markdownBlocks(source.slice(offset), offset).find((block) => block.type === 'Blockquote')!;
+    const body = callout(block.source)!.body;
+    const rendered = wikiLinks(body).map((reference) => ({
+      ...reference, from: block.from + calloutPosition(block.source, reference.from), to: block.from + calloutPosition(block.source, reference.to),
+    }));
+    const expected = noteReferences(source).filter((reference) => !reference.property && reference.from >= block.from);
+    assert.deepEqual(rendered, expected);
+    assert.equal(rendered.length, 2);
+    for (const reference of rendered) assert.equal(source.slice(reference.from, reference.to), reference.raw);
+  }
 });

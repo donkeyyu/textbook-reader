@@ -11,6 +11,12 @@ import { isMap, isScalar } from 'yaml';
 import { NoteMarkdown } from './note-markdown';
 import { markdownBlocks, referenceDefinitions } from './markdown-source';
 import { loadMath, subscribeMath } from '../reader/text/math';
+import { autocompletion } from '@codemirror/autocomplete';
+import { historyField } from '@codemirror/commands';
+import { noteReferences, pathLink, type LinkEntry, type NoteReference } from '../../desktop/links';
+
+export type EditorScene = { json?: ReturnType<EditorState['toJSON']>; scroll?: number };
+const openLink = Facet.define<(reference: NoteReference) => void, (reference: NoteReference) => void>({ combine: (values) => values[0]! });
 
 type Display = { bodyMode: BodyMode; frontmatterMode: FrontmatterMode };
 const display = Facet.define<Display, Display>({ combine: (values) => values[0]! });
@@ -22,6 +28,13 @@ export function headerEnd(source: string) {
   const end = /^(?:---|\.\.\.)\r?$(?:\n)?/m.exec(source.slice(start[0].length));
   return end ? start[0].length + end.index + end[0].length : source.length;
 }
+function sourceChange(old: string, source: string) {
+  let from = 0, suffix = 0;
+  while (from < Math.min(old.length, source.length) && old[from] === source[from]) from++;
+  while (suffix < Math.min(old.length, source.length) - from && old[old.length - suffix - 1] === source[source.length - suffix - 1]) suffix++;
+  return { from, to: old.length - suffix, insert: source.slice(from, source.length - suffix) };
+}
+
 function reservedRange(state: EditorState) {
   const source = state.doc.toString();
   try {
@@ -42,7 +55,7 @@ class RenderedBlock extends WidgetType {
   toDOM(view: EditorView) {
     const dom = document.createElement('div');
     dom.className = 'note-rendered-block';
-    dom.innerHTML = renderToStaticMarkup(<NoteMarkdown source={this.source} references={this.references} />);
+    dom.innerHTML = renderToStaticMarkup(<NoteMarkdown source={this.source} offset={this.from} references={this.references} />);
     dom.tabIndex = 0;
     dom.setAttribute('role', 'button');
     dom.setAttribute('aria-label', `编辑：${this.source.replace(/\s+/g, ' ').slice(0, 60)}`);
@@ -52,8 +65,12 @@ class RenderedBlock extends WidgetType {
       view.focus();
     };
     dom.addEventListener('mousedown', (event) => {
-      if ((event.target as Element).closest('summary')) return;
+      if ((event.target as Element).closest('summary, [data-note-link]')) return;
       event.preventDefault(); edit();
+    });
+    dom.addEventListener('click', (event) => {
+      const link = (event.target as Element).closest<HTMLElement>('[data-note-link]');
+      if (link?.dataset.noteLink) { event.preventDefault(); view.state.facet(openLink)(JSON.parse(link.dataset.noteLink) as NoteReference); }
     });
     dom.addEventListener('keydown', (event) => {
       if (event.target !== dom || !['Enter', ' '].includes(event.key)) return;
@@ -87,23 +104,43 @@ function build(state: EditorState, hasFocus: boolean) {
   return { decorations: Decoration.set(ranges, true), focused: hasFocus };
 }
 
-export function SourceEditor({ source, readOnly, position, bodyMode, frontmatterMode, onChange, onPosition, onSave }: {
+export function SourceEditor({ source, readOnly, position, bodyMode, frontmatterMode, onChange, onPosition, onSave, onLink, entries = [], scene }: {
   source: string; readOnly: boolean; position?: Position; bodyMode: BodyMode; frontmatterMode: FrontmatterMode;
   onChange: (source: string) => void; onPosition: (value: Position) => void; onSave: () => void;
+  onLink?: (reference: NoteReference) => void; entries?: LinkEntry[]; scene?: EditorScene;
 }) {
   const host = useRef<HTMLDivElement>(null);
   const view = useRef<EditorView | null>(null);
-  const callbacks = useRef({ onChange, onPosition, onSave });
-  callbacks.current = { onChange, onPosition, onSave };
+  const callbacks = useRef({ onChange, onPosition, onSave, onLink, entries });
+  callbacks.current = { onChange, onPosition, onSave, onLink, entries };
   const initial = useRef({ source, position, readOnly, bodyMode, frontmatterMode });
+  const appliedDisplay = useRef({ readOnly, bodyMode, frontmatterMode });
   const editable = useRef(new Compartment()), presentation = useRef(new Compartment());
   const updating = useRef(false), folded = useRef(false);
   useEffect(() => {
     const first = initial.current;
     const cursor = Math.min(first.position?.cursor ?? headerEnd(first.source), first.source.length);
-    const editor = new EditorView({ parent: host.current!, state: EditorState.create({
+    const config = {
       doc: first.source, selection: { anchor: cursor },
       extensions: [minimalSetup, markdown(), EditorView.lineWrapping, codeFolding(),
+        openLink.of((raw) => callbacks.current.onLink?.(raw)),
+        autocompletion({ override: [(context) => {
+          const match = context.matchBefore(/\[\[(?:\\.|[^\]\\\n])*/);
+          if (!match) return null;
+          const doc = context.state.doc.toString();
+          // Validate using the same parser as the disk index, including code and escapes.
+          const probe = doc.slice(0, match.from) + '[[textbook-link-probe]]' + doc.slice(context.pos);
+          if (!noteReferences(probe).some((link) => !link.property && link.from === match.from)) return null;
+          const query = match.text.slice(2).replace(/\\(.)/g, '$1').toLocaleLowerCase();
+          return { from: match.from, filter: false, options: callbacks.current.entries.filter((entry) => entry.path.toLocaleLowerCase().includes(query)).map((entry) => ({
+            label: entry.path.slice(0, -3), detail: entry.summary, type: 'text',
+            apply: (view: EditorView, _completion: unknown, from: number, to: number) => {
+              const suffix = view.state.doc.sliceString(to, to + 2) === ']]' ? 2 : 0;
+              const insert = pathLink(entry.path, entry.path.split('/').at(-1)!.slice(0, -3));
+              view.dispatch({ changes: { from, to: to + suffix, insert }, selection: { anchor: from + insert.length } });
+            },
+          })) };
+        }] }),
         foldService.of((state, from) => { const range = reservedRange(state); return range && state.doc.lineAt(range.from).from === from ? range : null; }),
         presentation.current.of(display.of(first)), rendering,
         EditorState.transactionFilter.of((transaction) => {
@@ -121,7 +158,7 @@ export function SourceEditor({ source, readOnly, position, bodyMode, frontmatter
           editor.dispatch({ selection: { anchor: headerEnd(editor.state.doc.toString()), head: editor.state.doc.length } });
           return true;
         } }])),
-        editable.current.of([EditorView.editable.of(!first.readOnly), EditorState.readOnly.of(first.readOnly)]),
+        editable.current.of([EditorView.editable.of(!first.readOnly && first.bodyMode !== 'preview'), EditorState.readOnly.of(first.readOnly || first.bodyMode === 'preview')]),
         EditorView.contentAttributes.of({ 'aria-label': '笔记 Markdown 源码', 'aria-multiline': 'true', spellcheck: 'false' }),
         keymap.of([{ key: 'Mod-s', run: () => { callbacks.current.onSave(); return true; } }]),
         EditorView.updateListener.of((update) => {
@@ -135,12 +172,18 @@ export function SourceEditor({ source, readOnly, position, bodyMode, frontmatter
           scroll: (_event, editor) => { callbacks.current.onPosition({ cursor: editor.state.selection.main.head, scroll: editor.scrollDOM.scrollTop }); },
         }),
       ],
-    }) });
+    };
+    let state = scene?.json ? EditorState.fromJSON(scene.json, config, { history: historyField }) : EditorState.create(config);
+    if (state.doc.toString() !== first.source) state = state.update({ changes: sourceChange(state.doc.toString(), first.source), annotations: [Transaction.addToHistory.of(false), Transaction.remote.of(true)] }).state;
+    const editor = new EditorView({ parent: host.current!, state });
     view.current = editor;
     const unsubscribe = subscribeMath(() => { if (view.current) editor.dispatch({ effects: redraw.of() }); });
     void loadMath().catch(() => {});
-    requestAnimationFrame(() => { editor.scrollDOM.scrollTop = first.position?.scroll ?? 0; });
-    return () => { unsubscribe(); view.current = null; editor.destroy(); };
+    requestAnimationFrame(() => { editor.scrollDOM.scrollTop = scene?.scroll ?? first.position?.scroll ?? 0; });
+    return () => {
+      if (scene) { scene.json = editor.state.toJSON({ history: historyField }); scene.scroll = editor.scrollDOM.scrollTop; }
+      unsubscribe(); view.current = null; editor.destroy();
+    };
   }, []);
   useEffect(() => {
     const editor = view.current;
@@ -150,13 +193,14 @@ export function SourceEditor({ source, readOnly, position, bodyMode, frontmatter
     if (old !== source) {
       // Preserve history ranges by applying only the changed text. A full-document
       // replacement maps prior body edits away even when addToHistory is false.
-      let from = 0, suffix = 0;
-      while (from < Math.min(old.length, source.length) && old[from] === source[from]) from++;
-      while (suffix < Math.min(old.length, source.length) - from && old[old.length - suffix - 1] === source[source.length - suffix - 1]) suffix++;
-      editor.dispatch({ changes: { from, to: old.length - suffix, insert: source.slice(from, source.length - suffix) }, annotations: [Transaction.addToHistory.of(false), Transaction.remote.of(true)] });
+      editor.dispatch({ changes: sourceChange(old, source), annotations: [Transaction.addToHistory.of(false), Transaction.remote.of(true)] });
     }
     const locked = readOnly || bodyMode === 'preview';
-    editor.dispatch({ effects: [editable.current.reconfigure([EditorView.editable.of(!locked), EditorState.readOnly.of(locked)]), presentation.current.reconfigure(display.of({ bodyMode, frontmatterMode }))] });
+    const previous = appliedDisplay.current;
+    if (previous.readOnly !== readOnly || previous.bodyMode !== bodyMode || previous.frontmatterMode !== frontmatterMode) {
+      editor.dispatch({ effects: [editable.current.reconfigure([EditorView.editable.of(!locked), EditorState.readOnly.of(locked)]), presentation.current.reconfigure(display.of({ bodyMode, frontmatterMode }))] });
+      appliedDisplay.current = { readOnly, bodyMode, frontmatterMode };
+    }
     if (!folded.current && frontmatterMode === 'source') {
       const range = reservedRange(editor.state);
       if (range) { editor.dispatch({ effects: foldEffect.of(range) }); folded.current = true; }

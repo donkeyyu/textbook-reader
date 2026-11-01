@@ -53,3 +53,16 @@ export function protectMath(source: string) {
   }
   return { source: rendered + protect(source.slice(end)), formulas };
 }
+
+// Map stripped callout quote prefixes back to the original source. Wiki links
+// cannot span lines, so each endpoint belongs to the same retained line.
+export function calloutPosition(source: string, at: number) {
+  let original = source.indexOf('\n') + 1, rendered = 0;
+  for (const line of source.slice(original).split('\n')) {
+    const prefix = /^> ?/.exec(line)?.[0].length ?? 0;
+    const length = line.length - prefix;
+    if (at <= rendered + length) return original + prefix + at - rendered;
+    original += line.length + 1; rendered += length + 1;
+  }
+  return source.length;
+}

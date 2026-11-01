@@ -1,0 +1,18 @@
+.note-links { padding: 8px 28px; border-bottom: 1px solid var(--separator); font-size: 13px; max-height: 32%; overflow: auto; flex-shrink: 0; }
+.note-links summary { cursor: pointer; padding: 6px 0; }
+.note-link-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.note-link-columns section { min-width: 0; }
+.note-link-columns h2 { font-size: 14px; margin: 10px 0; }
+.note-link-row { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; }
+.note-link-row > button:first-child { flex: 1; text-align: left; min-width: 0; overflow-wrap: anywhere; }
+.note-links small { display: block; color: var(--secondary); font-size: 12px; font-weight: normal; }
+.vault-app .note-link-candidate { display: block; width: 100%; text-align: left; border-radius: 12px; margin-block: 6px; overflow-wrap: anywhere; }
+.vault-app .note-wikilink { display: inline; min-height: 0; padding: 0 2px; border: 0; border-radius: 3px; box-shadow: none; color: var(--accent); background: transparent; text-decoration: underline; font: inherit; cursor: pointer; }
+.note-link-dialog { width: min(620px, 88vw); max-height: 85vh; overflow: auto; }
+.note-link-dialog label { display: grid; gap: 6px; margin-block: 10px; }
+.note-link-dialog input { width: 100%; border: 1px solid var(--input-border); border-radius: 12px; padding: 10px; background: var(--island-input); color: inherit; }
+.note-link-dialog .note-link-candidates { display: block; max-height: 35vh; overflow: auto; margin-top: 10px; }
+.note-link-dialog > div:last-child { display: flex; flex-wrap: wrap; gap: 8px; }
+.vault-source .cm-tooltip-autocomplete { max-width: min(560px, 70vw); background: var(--surface); border: 1px solid var(--separator); }
+.vault-source .cm-completionDetail { display: block; margin: 0; font-size: 12px; white-space: normal; }
+@media (max-width: 800px) { .note-links { padding-inline: 16px; } .note-link-columns { grid-template-columns: 1fr; } }

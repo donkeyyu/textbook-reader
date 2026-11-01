@@ -1,0 +1,2135 @@
+{
+  "schemaVersion": 1,
+  "textbook": {
+    "id": "6f2a471b07f44a4985756affed9c3c58da7232d205317b1f643b1a865e4e7249",
+    "title": "数学 · 七年级上册",
+    "pageCount": 202
+  },
+  "source": {
+    "status": "unpublished",
+    "baseUrl": null,
+    "record": "materials/textbooks/人教版-数学-七年级上册.source.json",
+    "originalPdfUrl": "https://r1-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/540ac93d-67fc-4353-9e49-1ef20d02b5a4.pkg/9787107382468_义务教育教科书•数学_七年级_上册_人民教育出版社_1787020812508.pdf",
+    "pageUrl": "https://basic.smartedu.cn/tchMaterial/detail?contentType=assets_document&contentId=540ac93d-67fc-4353-9e49-1ef20d02b5a4&catalogType=tchMaterial&subCatalog=tchMaterial",
+    "note": "Original PDF provenance only. Prepared WebP/catalog files have no published download base URL."
+  },
+  "download": [
+    {
+      "path": "textbooks/grade-7-volume-1/page-1.webp",
+      "bytes": 199038,
+      "sha256": "0a1517c66bcc545543be5ad1b50cda01681f2a5bc80e8ec944384516b6d86aef"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-1.webp",
+      "bytes": 4906,
+      "sha256": "cd2af9d983dc6f1f781c0ba2a28cb80a003f5190e03eb71399f6d364fb73851d"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-2.webp",
+      "bytes": 66096,
+      "sha256": "d320dfb01d6c90bf8e865ebd70e99b24565c2d68587ce4cc725c6d994180c79b"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-2.webp",
+      "bytes": 2018,
+      "sha256": "f4f220868c337f5cde75489aac0f7914f927018b88009b3ad65d9b8f70967650"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-3.webp",
+      "bytes": 61056,
+      "sha256": "d2bc22bee9e7cf5a3e84f5eeae0ffb9f8e5dea924acf841576e6c03d3b03edb8"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-3.webp",
+      "bytes": 1472,
+      "sha256": "88c1fcf32f1881737d89a186a7f098cd745e655f61ce262a77330ed535931f8e"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-4.webp",
+      "bytes": 293896,
+      "sha256": "d64c8d1722905e397e71de4754b87d13f83b2424e5b67bdbc0afab98603b17aa"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-4.webp",
+      "bytes": 5992,
+      "sha256": "5a2035fbe5fc4af9d185440e378705a71f9bdb8e9ce0fb26532c6195c3c2a757"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-5.webp",
+      "bytes": 91460,
+      "sha256": "aba69221b4a3818e572ba57d4dd5f731528f9b72f9070f4d67b6ba251129a662"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-5.webp",
+      "bytes": 2388,
+      "sha256": "34eeb22ec60f5e96cbb95ac3357933bc86bf8e66ef03f005f3ada9dfb3e837d1"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-6.webp",
+      "bytes": 114672,
+      "sha256": "d423ed953bde70b32f4460084bf143a609a5d6bff1741e2c36136eff3a3c60b3"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-6.webp",
+      "bytes": 3092,
+      "sha256": "bcee7db8a2c5cacbb038adc6a06786edee812dfd541bf5dc02fa6c5da81e1f66"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-7.webp",
+      "bytes": 58508,
+      "sha256": "7d71d9d999a500ad735147084c75ebc30feefd6683f429e8c16c062e9e29e861"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-7.webp",
+      "bytes": 1696,
+      "sha256": "e29ebf2e80019eb837dfe6ea8adf7d0c97dd45f2e3f240d35f947add820e0352"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-8.webp",
+      "bytes": 236196,
+      "sha256": "5d56ea629c1e5fd3534a5e7ac90d680d7887f5658fb19b1214289ddffa07a873"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-8.webp",
+      "bytes": 4820,
+      "sha256": "8f6032c789f9486f1a1ef57e4b879edcc18c583d57848af3c838a521f26aa4a6"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-9.webp",
+      "bytes": 232268,
+      "sha256": "a9d4c11a8c56d1090e3a9457ad7cf9fd6c08988be679b0226841d8e42508ef28"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-9.webp",
+      "bytes": 5716,
+      "sha256": "83572a7c1004065034547055060dac7fafd07236120fa1c7905da0f49631ea3d"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-10.webp",
+      "bytes": 255094,
+      "sha256": "d03f593e56ac25d92bbc32c77aa32b87ea4a95f708ac8602e11268ab019f8ae4"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-10.webp",
+      "bytes": 5560,
+      "sha256": "932bba55f7a25cbea021a5c2fb7bcd4c30f83e247436397e0bb3a3aca3567dc5"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-11.webp",
+      "bytes": 187388,
+      "sha256": "27680d3c19a71fa4a86d9bca3cd8c08c794ab3bbdb72ad818e9e3ce9bd322585"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-11.webp",
+      "bytes": 4794,
+      "sha256": "37a1185898210fb0b5a012f5924214257a301f4649de69e772c507e48237674d"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-12.webp",
+      "bytes": 224980,
+      "sha256": "0fc5db83c375590f5eb01a6fbe9a32fb9f656df029e3234726e1c5b78ffe17c3"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-12.webp",
+      "bytes": 4966,
+      "sha256": "c1259b00c27c85fb1d5e312f2c0d6344bebd385a5afa70d02629a652a723d29e"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-13.webp",
+      "bytes": 247404,
+      "sha256": "4f34c3587e096ff7e82522f0b3caf1d896e1d2edeec08d4efb64029561bb2486"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-13.webp",
+      "bytes": 5554,
+      "sha256": "fbfec0ac60f1a9609538eb1f216e2885ae2a17b4a453e0f4acb1322c3a85524e"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-14.webp",
+      "bytes": 173650,
+      "sha256": "09b2c05a01ff79554a745bb6efaa77ecfe375116456541ea490c46e4ad5dcfa7"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-14.webp",
+      "bytes": 4610,
+      "sha256": "34965f6b1a5f9fc8a40b3ad88c88146328ed96cea0d715ea3304c5d55eabce2b"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-15.webp",
+      "bytes": 193832,
+      "sha256": "07db7ff4b929b1be3bdd00e78078608070fa62888e9bd0e5d08805370d600af2"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-15.webp",
+      "bytes": 5128,
+      "sha256": "33c9a2117d2ff6173c4bfff30dc5e7240bef6026340087c450c8b8e52244199a"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-16.webp",
+      "bytes": 167966,
+      "sha256": "1d2c065770aee0e8ee60c7637a1c1b8e8d8b167469ea6d6220607b2ea7988a9b"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-16.webp",
+      "bytes": 4704,
+      "sha256": "3e27f83fec2313662ba26dd3cf363f75c6c60e28c8a155ce057b2fc4daebe7ea"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-17.webp",
+      "bytes": 162016,
+      "sha256": "d13d22fc126839bf655e2a7f2650e69ed3fdf808d989edbbe44c0ce42d50438d"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-17.webp",
+      "bytes": 4186,
+      "sha256": "197f2e1d927efac0359b4f454b507fbd9e875c4b1e8f55de2452fbb3e1633bac"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-18.webp",
+      "bytes": 145002,
+      "sha256": "0b8f04b2256bc396bd720a6e50eaef6cd133672fc6028b7125ba21ebecd7f355"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-18.webp",
+      "bytes": 3820,
+      "sha256": "b10b6903568af26fa002fcc041622a4c866413fb02e0c11a89a4b49b72e792e5"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-19.webp",
+      "bytes": 164756,
+      "sha256": "19279d71863ebaa29eb419ae3c87fd5482e67a07ebdd9a4af7d9218551fc7ed0"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-19.webp",
+      "bytes": 4268,
+      "sha256": "57ef6d9783e681e1895a1baef7bf36ec04d80a56cad62c3658928e851f8b1e30"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-20.webp",
+      "bytes": 171994,
+      "sha256": "34da6b2d66e142180cf83486d27e16df8f20d8b92b21f00a11935898169b390b"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-20.webp",
+      "bytes": 4442,
+      "sha256": "5bc4f840bae86f3383b87bfe57c5e53f1030718ca9654297602ac27c59c609e1"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-21.webp",
+      "bytes": 163386,
+      "sha256": "50e1bd7c43e4fc29c47aa5287251b068415da1402382bf837f217814afe446c6"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-21.webp",
+      "bytes": 4510,
+      "sha256": "6a9ad00cd3359707fd958c82195c43d65f5a3119dc82407189ce114f1815bf0e"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-22.webp",
+      "bytes": 163238,
+      "sha256": "67cdc32f4866b8efc6fead397b19f5cd954cfc6e95188c8d2e59d0eee2916577"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-22.webp",
+      "bytes": 4126,
+      "sha256": "456763b1043ce59936c3b2c5a77bc704f1e642e79e4621af1b3a78cd2b2a3333"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-23.webp",
+      "bytes": 110118,
+      "sha256": "3decd42b9982beb4f01f62421f60b3b85126592eb491e2b64841f7f789b0b19a"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-23.webp",
+      "bytes": 2972,
+      "sha256": "c14bf6bd117a3d8ffa661a0fc302be97db8f14c24e834c203ff0dfb44ff142a9"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-24.webp",
+      "bytes": 168954,
+      "sha256": "83742bcc873958deda63d79a1ee3155e16da38cee058bc0101d93774bd2b1916"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-24.webp",
+      "bytes": 3694,
+      "sha256": "1112b6037abc9a14c0cfbfa5e9d5990d7e86c1c3922e6209a185fdff64791195"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-25.webp",
+      "bytes": 203124,
+      "sha256": "96589882c47123b5ba8fc3b531627c3802eb1f2e06c553f315a6f893518ebc3f"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-25.webp",
+      "bytes": 4910,
+      "sha256": "d82d8a7a7b8d2aa2e4873ed2738d24de326e6b70e427ba65146715619aab086b"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-26.webp",
+      "bytes": 161292,
+      "sha256": "5c9e10d2ffbb1a0229e20599f9032118b936858e15f155713885514370fe7ee3"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-26.webp",
+      "bytes": 4254,
+      "sha256": "45b797f8c3405c366663e9c2c93fb3945281423f1aeb832ced7d4dfa424c0a4d"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-27.webp",
+      "bytes": 229180,
+      "sha256": "c7228e059c55b14153cf49d9d09d204a8a7a033f1954dba6ff59cbaf84e8164c"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-27.webp",
+      "bytes": 5844,
+      "sha256": "1645dcda758916e8a160f5d8c74495351742d96804814e8d80156ac38789dc68"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-28.webp",
+      "bytes": 170806,
+      "sha256": "5fbc845032207a05f9aaa4807973fbf163e07c0f83f7f2b55ecb6daabb95aa52"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-28.webp",
+      "bytes": 4138,
+      "sha256": "3b6d14086ccf88b13e6697599a2163495629e0147856563cc78772621e6de0ab"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-29.webp",
+      "bytes": 174780,
+      "sha256": "38408f8766d9f4dbe75d1acf804d613b269dfa79128093f274aab51972222cb3"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-29.webp",
+      "bytes": 4248,
+      "sha256": "88c659713ca11a5264f7f9ad4a00406bc6e0d18e944787b342491822bc15dee3"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-30.webp",
+      "bytes": 98800,
+      "sha256": "41accbfda1718e36c53f5af644219bdc53e50780060d96692cce3483f1282656"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-30.webp",
+      "bytes": 2676,
+      "sha256": "1f4548f9878bcabef09a58b8bd91f4ea1d13776b5d0db4750199909331a7d3a7"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-31.webp",
+      "bytes": 251976,
+      "sha256": "4eb59e20d6816ed19596a705d045f078a1a2d6f8b128f0bb0b98248c9796baeb"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-31.webp",
+      "bytes": 4982,
+      "sha256": "025c819dc90a321fd25180409a5205a9c01d3d027e6b8802374a34aaeb010bcb"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-32.webp",
+      "bytes": 189328,
+      "sha256": "392380d245a87814b8f947040a73b8affaa13d33f40330479cbf4de2637fb3b2"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-32.webp",
+      "bytes": 4636,
+      "sha256": "8a5db943125f2945b29a568b239a4f66d221c040f41a66658afc54a2e094c44b"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-33.webp",
+      "bytes": 161320,
+      "sha256": "ca9b98fc4f52679d574aa0b5588f03ff258210b3be9bb68ca2a16f0ebadc0efa"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-33.webp",
+      "bytes": 4226,
+      "sha256": "85312dda204d50ffb649625f2a91ebea7795e39d6dd05a23e49a113f50f3f0c8"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-34.webp",
+      "bytes": 202358,
+      "sha256": "401f878a909f9489ba5d8b790876274c96730b05b32301ea2b15cd2c2035a468"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-34.webp",
+      "bytes": 4608,
+      "sha256": "aa55a9c0e7e2de6e126d141d5cdecaef3e942a172f0f9d920d62dee56c6453db"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-35.webp",
+      "bytes": 136192,
+      "sha256": "3a388b7e0c94eefbebaf08c6dfde3dbe76e0b86c4322b5a559729269487b40ae"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-35.webp",
+      "bytes": 3746,
+      "sha256": "213f4bb02b4b3b596d41765d48108530d614fc7db5268af39e33b16f44740567"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-36.webp",
+      "bytes": 160754,
+      "sha256": "4671ebe1c53988b6b8641764b6af718b3ebc89a17adbfbe5a55af92612eb9ecb"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-36.webp",
+      "bytes": 4158,
+      "sha256": "0324cdb84b87f4b79e9e3c437548dd96e8933386d7325d80e358a02ea4404df5"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-37.webp",
+      "bytes": 173770,
+      "sha256": "0a65a9b81eabac1cb27284573e60b32a2feb073e32e32c0474c841a3bd2cd8f5"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-37.webp",
+      "bytes": 4800,
+      "sha256": "ed81ab114509048b0b04b53c74c2a66d053d95590fcdeecaffb4178c9309390b"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-38.webp",
+      "bytes": 143076,
+      "sha256": "45bdeefb9ee13446e722ea6d1ac2091bbea5580ba6b7db5cf6829f03dd6f7a94"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-38.webp",
+      "bytes": 3982,
+      "sha256": "49d72cde822abc96fdebb86a71835f712e7c37e869c0df2789c8fd6a480a2c17"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-39.webp",
+      "bytes": 142370,
+      "sha256": "1425bee00117516f94655f87cd03dc7b40b554fb7b20b6cd52a168dcdd3370bf"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-39.webp",
+      "bytes": 3818,
+      "sha256": "9f04caa1fe52209d33c0df0405dee1885f02f67eb538be6c4eebc4bd897f7958"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-40.webp",
+      "bytes": 124564,
+      "sha256": "44295fdc5657b1e9c379bfb0294350889ebbd3a41e6fcf8de892f5deb88dcc77"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-40.webp",
+      "bytes": 3324,
+      "sha256": "daed5e922b9581ce6e85d5007d4018751774c7def54f60bb92bfbeaf7176b088"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-41.webp",
+      "bytes": 105022,
+      "sha256": "5e1ab0ac7278f36c5d5446906ee939f896189832085b6940b7026e7b46a91b79"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-41.webp",
+      "bytes": 3090,
+      "sha256": "719f66b4d49a49a7ea79cc90c8413f57575f48174de69bfad45846cb2a5fb89a"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-42.webp",
+      "bytes": 131840,
+      "sha256": "d3a02aa432acea83cedbe376b86764c5fb7792838c6fe2d3e80471a9e50b0f0a"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-42.webp",
+      "bytes": 3188,
+      "sha256": "1b1eb75931320012e304ad71b150f693304762338bace1bf9eee429fd735e6a6"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-43.webp",
+      "bytes": 147628,
+      "sha256": "851a21ccdc420b4d9b1ab0f41735e7001383cab13fad9ba7fffc03a25426fc11"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-43.webp",
+      "bytes": 3602,
+      "sha256": "29808b2256908b9cac9e33316a416129478e65aaeb280457e25fb2d3f291f1dd"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-44.webp",
+      "bytes": 184494,
+      "sha256": "0ad09d6c65a2a8610dc1129e827bed9cdbd69db6642ad7e7f4ee92c9781a14d0"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-44.webp",
+      "bytes": 4256,
+      "sha256": "567d1d26eafe05479a2e202aab2d1f640b0a883ed4adecd86c1f0a4774ea03cd"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-45.webp",
+      "bytes": 168994,
+      "sha256": "58441041b6110e3889dce2fc6fa88eced1e933c480728712c4398a7db51af622"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-45.webp",
+      "bytes": 4052,
+      "sha256": "4d6a6c093d60763a8be91dc75f82cf62d8e8585024fe0b66ed9dd9ff70d76c0e"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-46.webp",
+      "bytes": 171524,
+      "sha256": "55d52279d4e0c1f736f82520e45eeb78b4cf9af8294e52fa06cc825966586de3"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-46.webp",
+      "bytes": 4064,
+      "sha256": "91eb2074699a19795010bd0d2b42fc83ce21c8c10608d173bfb853390716aaab"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-47.webp",
+      "bytes": 147058,
+      "sha256": "5a1fbcc205fd374556cbb338c63bd5af155425bd443bcce1dfba761bd315d78b"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-47.webp",
+      "bytes": 3872,
+      "sha256": "99363675bb4e161891de593992e4e5c3e78c13ee31acc8594439c248b54292d9"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-48.webp",
+      "bytes": 155546,
+      "sha256": "f9c55cf8b46af8a9b2efb4b5a92ff417bc6dcef88dbc3a621c1b20392a033e56"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-48.webp",
+      "bytes": 3738,
+      "sha256": "fdbb198bdea0aa899b2003c1ffcf2010bdfd594568241fee901e4b4ae37a8040"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-49.webp",
+      "bytes": 136960,
+      "sha256": "26e8a535727805aeae73d20b3e58ef218a62b60acb772d840a6b9248f1a7d536"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-49.webp",
+      "bytes": 3398,
+      "sha256": "96e998c70f072994629e3a62d3768f9d449f3d960f3bfd9183f70dd59c6a79b6"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-50.webp",
+      "bytes": 105030,
+      "sha256": "dd63dc7552c41daba10e916d98788b255a362a545943d87f520e72974c003779"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-50.webp",
+      "bytes": 2738,
+      "sha256": "1f636c1d96ada1220461f7f7f4cce3b707e5aa0b177356d3ec5bfbcf9bcaaac6"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-51.webp",
+      "bytes": 152144,
+      "sha256": "700c1f07cb68ea1242436b557bf57b12aede9c1b781e453286cb78dc8031712f"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-51.webp",
+      "bytes": 3710,
+      "sha256": "a826aefe46d42a421ada2939342cad759d0a69ab3ab58de79ed9738f1012a04a"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-52.webp",
+      "bytes": 128476,
+      "sha256": "b9ca02af3390b2fbc05cec9ee1d7ffcb9f3a69bf6dec24dd19b36c7ef5528350"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-52.webp",
+      "bytes": 3382,
+      "sha256": "26b493a1082b3558e1de302243125449ffdd4689bbb7c9feaa16887391ed92d6"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-53.webp",
+      "bytes": 164168,
+      "sha256": "3de8a851b9699d42d2667f79fb0407ac258c2723ab8012ab026ab2bcad85cb43"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-53.webp",
+      "bytes": 4114,
+      "sha256": "c680853b31ed06fdf2f0f55613c6940a884a04a538e80e67a49050ee0d239a76"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-54.webp",
+      "bytes": 108590,
+      "sha256": "ba09be198650c03e24304709199deeed7ad6573ac5232e8d978eb497e2e320a3"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-54.webp",
+      "bytes": 3018,
+      "sha256": "5dfdd94b9a845f9d92b8f390f53b4ed6365bc993378956b6bda08027fb61d346"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-55.webp",
+      "bytes": 99322,
+      "sha256": "edeed8f74082e95161c90fad8bfb9c954eec5c11e76c20704da434002004ee87"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-55.webp",
+      "bytes": 2856,
+      "sha256": "f165c6f8ae1b4507f4001bec56bb1898e84ab4b85c905f0c6920eb40526a192d"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-56.webp",
+      "bytes": 145550,
+      "sha256": "9f453c5524f785f9f198a7c03f2d3c5991b4d68d1ddb38ab25a1baf10f367794"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-56.webp",
+      "bytes": 3298,
+      "sha256": "1f4aac50cae85f71144c84a403a37f9976be8b83fba10092252605d2b684c655"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-57.webp",
+      "bytes": 170662,
+      "sha256": "c9ff70bd1ad93a130c8f528ec68c083e282e0c26c8b86a670124e164fa2e1bae"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-57.webp",
+      "bytes": 4194,
+      "sha256": "2bdddb776505a9b3eedbd93dee1e89c2673454139f18e99e0d04a15210da0425"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-58.webp",
+      "bytes": 173698,
+      "sha256": "3eec750ada67d2b1bfd9b7cdbe2db3b439039e6248200dee8bd1e910bd666395"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-58.webp",
+      "bytes": 4556,
+      "sha256": "a715c9958b9e515645d9174ff3a2d0f6c3e6e81bdc8b6836a1c87b4958438d15"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-59.webp",
+      "bytes": 133986,
+      "sha256": "b35e01feb78c4e363f43463423b13d852d44502a042624ac414984866d4f05f8"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-59.webp",
+      "bytes": 3442,
+      "sha256": "65cd7244bca736e95df8feec5f002b7479efdb11a5ef1482de7d3e9f913f2d00"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-60.webp",
+      "bytes": 166948,
+      "sha256": "2cddd491a7c872a00155b62f4be0b9c2b6d22e4f7ce4cd8cf743eddb8768b1b8"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-60.webp",
+      "bytes": 3992,
+      "sha256": "65be4fb5c1dabbf65fefa0e4cf969872ca0cacadae3d1dbfad26a9b1264974f4"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-61.webp",
+      "bytes": 123928,
+      "sha256": "15ed22ec124dd0a0cf1e7e3215881daff72178d90ffa67f98e048e3bea3e519e"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-61.webp",
+      "bytes": 3498,
+      "sha256": "e2da6db4cf956f6e8d0841c9ab0f62d92c69448b9824d290b4158112f31d45ed"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-62.webp",
+      "bytes": 212360,
+      "sha256": "d84b593ec4866d0905bf0aa8fe08b7d571c491d9ccaeaadbf843e64df42ea873"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-62.webp",
+      "bytes": 4988,
+      "sha256": "74428c6c7363d396d9318b564c0e45e654065f3a0b4379592b7a0abae99d9097"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-63.webp",
+      "bytes": 154800,
+      "sha256": "dd440bc5cd8ef508d9bb2a85bfa81207277fb5d306e5d0d796ce7167dca35a14"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-63.webp",
+      "bytes": 3916,
+      "sha256": "baff631db7e215218cf26347ab3a83bb1035e3687ffc2fb7b341a04a52181d21"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-64.webp",
+      "bytes": 211276,
+      "sha256": "33f465183967c769ae40dc076211fc4b630dc4f6d780daf608a5eaf2a2570a2e"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-64.webp",
+      "bytes": 4376,
+      "sha256": "afa755dba378aa2aee64c5c8fb1c124da63ba56c26db4b54ee7a106f2c25eee3"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-65.webp",
+      "bytes": 161636,
+      "sha256": "ee68944fe05f830ca9cda735a0c9928958ece35ad5ad57309b6d3636051ba23d"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-65.webp",
+      "bytes": 4376,
+      "sha256": "0b93b4b895ede3dca185a535ef9b7deff0b45ac778284d98df5317105ceb2226"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-66.webp",
+      "bytes": 158510,
+      "sha256": "0c6753466b53f71293466fabc2d5a5fe81b0835181196b285e18589a10a1adca"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-66.webp",
+      "bytes": 3978,
+      "sha256": "fa5943ccfb7c353fbff6e2b977c80b6534c4af5577dcef5cd30d132e8d0bdc8b"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-67.webp",
+      "bytes": 198074,
+      "sha256": "8c748847be06221c2106a36ee2bce97478995ab76a37a13eaae7acf614ae6ad7"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-67.webp",
+      "bytes": 4492,
+      "sha256": "e726a1f802d7ca0b7224186385515a414741150dcd0c50290253e571dd17f210"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-68.webp",
+      "bytes": 140874,
+      "sha256": "3ea5fa93166cf569ff1c1e69be5afaaf9e9b5f3b2533a3678f9a09e28af399cd"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-68.webp",
+      "bytes": 3692,
+      "sha256": "f155025fee154ce3d15a8a8d229fa30873f70128fc1fbf22ade6c7d579a46bda"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-69.webp",
+      "bytes": 217276,
+      "sha256": "a2d45356f5e0cd3fe4bb12beddb19bd5675cad75d3c08e99b6bcc43c09633a0d"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-69.webp",
+      "bytes": 5112,
+      "sha256": "730483a56e73d5f4bfec256ac9cf89200d914c58eae834745ff5af76a9b26bd0"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-70.webp",
+      "bytes": 238286,
+      "sha256": "9e7c39ea4ff633748b1ba951fd3d8cffa132167d6029e5f17b8978ca8af843e4"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-70.webp",
+      "bytes": 5642,
+      "sha256": "425cf751b3ba572b7d7d73c6a6df2fca346504ff3c4ffe451293c1f1bca32110"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-71.webp",
+      "bytes": 224020,
+      "sha256": "9bc6b67f6625106b2379c119dc702d9e5e5b9d58bdb84d808c7a77b6cb61d5b3"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-71.webp",
+      "bytes": 5414,
+      "sha256": "ff4da8740f63f3a763669998dec41e33cc8b07caf2dbf18a221cc60c3c4555da"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-72.webp",
+      "bytes": 234384,
+      "sha256": "b47da6ee1a68be51232551792da3d53f6123d9f8aea3d6bf9e9c19ba2e476f81"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-72.webp",
+      "bytes": 5698,
+      "sha256": "6ad72e90681e3ec3b2a8b01f759d728aeddf612b036a8db1fa384062fea5df0d"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-73.webp",
+      "bytes": 191038,
+      "sha256": "c8fe23ac244e496851528874ac32a80e8a426dc00b9de4621bc01d78e4cd84b5"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-73.webp",
+      "bytes": 4192,
+      "sha256": "12eea8a9dc9bae7f78181a751b8484872d07a678ac8ddf4042766bd5ee8a134d"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-74.webp",
+      "bytes": 63222,
+      "sha256": "b135482dffb21c3151efcd4d9c14f47c5ab645045a4fb0e68905bb290dfe8b29"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-74.webp",
+      "bytes": 1642,
+      "sha256": "b420540d99acbaeb7d574dddaf91408550f7f2c3290bdfd6c69fcf0358d844d9"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-75.webp",
+      "bytes": 256930,
+      "sha256": "cf09a2c0c83c53bf14f5a296ab265cae0cebbe8b063623ed80d7fb49fef29720"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-75.webp",
+      "bytes": 6586,
+      "sha256": "31e4dfa8774c5dae1b50bc0ef97d143d92763b88878974ce8edd5736499f44ae"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-76.webp",
+      "bytes": 180530,
+      "sha256": "617018fc1caf4e59c0dbe7c09becd2748ead7103f30e6ef9a6dab84fbb6a6536"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-76.webp",
+      "bytes": 4332,
+      "sha256": "e766e5c1a136a4f16a6cd0867cd85b826276b75e800ecc5933a9f33ec4c8d5d0"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-77.webp",
+      "bytes": 215294,
+      "sha256": "e5018524831dbca5ce09349e27d458d6654959f9ddbad9b544fff7a325ce5b29"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-77.webp",
+      "bytes": 5386,
+      "sha256": "89de309530578e7c20ecfc1e47b51ded9f59ee68591a779030dc1eb21e4abbdd"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-78.webp",
+      "bytes": 162414,
+      "sha256": "734c9f0a8af1c1b03624159286ff3600bce601481e30783e75eb3a82c341e381"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-78.webp",
+      "bytes": 4220,
+      "sha256": "ec1aacf9234fff4d93f8caee9eb9cc37b21bbe5a2018b2345b191bf8f3c54552"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-79.webp",
+      "bytes": 200114,
+      "sha256": "b119da3089f1df2ae0ff0f5798347aa3ce3e1cf5a063298fd03981a7efbe4348"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-79.webp",
+      "bytes": 4868,
+      "sha256": "75a3bee5b95bd82684534e7f51e6ec1e6752b564d5372771345343dc73be78e9"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-80.webp",
+      "bytes": 192406,
+      "sha256": "a35fa8daefc6aec09bf07510128c29e2b04a766e0342150054ed91f77d31697e"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-80.webp",
+      "bytes": 4800,
+      "sha256": "e61935b7d5638d6e36b413f7a16f83bf1034dd6ef251b623d89f21ede1a902e6"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-81.webp",
+      "bytes": 202118,
+      "sha256": "174825d848ff5963f75a06a31e3519bb215834da3f0229d8efa5bd1bf68d581d"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-81.webp",
+      "bytes": 5232,
+      "sha256": "b5aff6d1a8d8652c58cae761fd548a012f3b24473c8e2d15371122db26130b31"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-82.webp",
+      "bytes": 165848,
+      "sha256": "89b0426617f96690f316166e1e5001631e8cbe0c85965986ebe25fddf14e1e12"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-82.webp",
+      "bytes": 4150,
+      "sha256": "558e0067de510dfbfeba2f8b64041be994165600381c898b82a7e9125ca766d1"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-83.webp",
+      "bytes": 217370,
+      "sha256": "bbd4ec3a80da92fb6857c4f073cd79c805a4391fd615d64db6e7241b245b46f0"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-83.webp",
+      "bytes": 4688,
+      "sha256": "e3f7f301c090a667d42c6d9dd524afb848bcd2b56f3cf32a3f507f49031fcd0f"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-84.webp",
+      "bytes": 226068,
+      "sha256": "2b1dd6cdc07711057dafb63dac92cdaeb739546492571abc55421dafe37b4242"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-84.webp",
+      "bytes": 4838,
+      "sha256": "2165fcaff31d95e7a551db4b53bd907d8d2a17aa0883b8af5e5d589d203eba7c"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-85.webp",
+      "bytes": 235698,
+      "sha256": "114ddfb809277fdf68fcbd911cbccafaf8f462782c54e2fbd896929b8b5a5dfd"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-85.webp",
+      "bytes": 5344,
+      "sha256": "9b4725d5a4de01fc21c197d3181a260fdb0114119d377d1a947397450ed04b24"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-86.webp",
+      "bytes": 143504,
+      "sha256": "8fa7e14e0855794f766e869b95c1f49b69e33918fc982902f7c82e1afcabe45d"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-86.webp",
+      "bytes": 3572,
+      "sha256": "d88a725647e053b01e00ea7bc78a3bc86dd06bfe9213e09e13418122b88e43b9"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-87.webp",
+      "bytes": 174790,
+      "sha256": "24d81a017feec5ec463deede99188c098fd16410c1dc2616d45ca0b271fe37de"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-87.webp",
+      "bytes": 4360,
+      "sha256": "6394a25b9dc93937ac1ca9bf56be4cb012d345245591e271025bbd06185705b3"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-88.webp",
+      "bytes": 172964,
+      "sha256": "f95379d4d52634d0db422ff005bf2d2c53c9fafe956d43940b4da37f3a18e165"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-88.webp",
+      "bytes": 4736,
+      "sha256": "7a830993ed696c178581a65ce9755123270f9f0e575f834c432e40bd7f732447"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-89.webp",
+      "bytes": 187064,
+      "sha256": "3404db4aae67c438f72bde6d41c3b3ead0537215aac3cd2dfb9d26dc8ccec60a"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-89.webp",
+      "bytes": 4430,
+      "sha256": "488a54a99ecb1c38ec8ec2a9592fcabaa1c11177aa83e45166e3acb7e0d85897"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-90.webp",
+      "bytes": 170374,
+      "sha256": "bebf293c493dda5847973f04e5a41bebb25e3796181531a6aea5764dbe47a7ad"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-90.webp",
+      "bytes": 4664,
+      "sha256": "f071c61681668664b5561d3df480c81cc81bd274f387d187df8b7d0b9cebfcd7"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-91.webp",
+      "bytes": 100262,
+      "sha256": "8e418cabcfcdba66f2cd2989f5b03f897f8ce39344258339f21182880955de69"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-91.webp",
+      "bytes": 2450,
+      "sha256": "59f6c72344cea578d682871c05a3e7d229ca3aed5bce0e160223f09b2c3c9106"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-92.webp",
+      "bytes": 171330,
+      "sha256": "1e0f97e83dfc4dd7ddcfa818430121933d9d066272bf3abad5900c1f8f1daab7"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-92.webp",
+      "bytes": 4368,
+      "sha256": "57302c6e123d7df8debb128d1c2177d178054e5d78faee81f1dd546cdd812fa9"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-93.webp",
+      "bytes": 201386,
+      "sha256": "f6f29a92645101853412e1bb5eb23df926fd63bbf465314f5b590a6027f6cf32"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-93.webp",
+      "bytes": 4648,
+      "sha256": "8acea9b43601bcb981951f459752918a3b8e0e1cf102d813d85dcdbee7db99ac"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-94.webp",
+      "bytes": 183622,
+      "sha256": "3ca809ca7ebeaa0026c1b4ed94b4732291ffaec837e2e78071e18b609f6863cc"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-94.webp",
+      "bytes": 4484,
+      "sha256": "24986f622a7a01687974d3612f9942e5c98b9cc5a53e882d00425d9f36f7f8b4"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-95.webp",
+      "bytes": 278202,
+      "sha256": "bb818d01dc8953de59f6a788a1ba443a4c731a257bfa2ad64d8a90e63c6e0596"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-95.webp",
+      "bytes": 5272,
+      "sha256": "c935622f5b6b45919535f674360b8a32abeaf623cda2700315fef3593b3e21c2"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-96.webp",
+      "bytes": 170268,
+      "sha256": "659dfc1a49e5b806c322c5ba6323a53bccedac938495e1370c17bdb09f82f4da"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-96.webp",
+      "bytes": 4402,
+      "sha256": "9c215bc7d8162b3935ade8bccbdb4ad919884f6290f301d71ab8b16c769f8019"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-97.webp",
+      "bytes": 220152,
+      "sha256": "c6bc2e1c54fe2d80554fd8dc3cbe0f05b0fb53c58a4a5a6c6c06cef8c577f302"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-97.webp",
+      "bytes": 5162,
+      "sha256": "b61f501c3b6c7ee2c53732f7ab264e288772adcd15625c624e16d442dbedb738"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-98.webp",
+      "bytes": 183378,
+      "sha256": "177146d7757c64f4d027ac918320ffb4f60224c0c16b4cd10665fc1e2fdedad3"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-98.webp",
+      "bytes": 4552,
+      "sha256": "01f796f4e78702891619c81f2f21e7482dfda27a5b9de42cde18372e7d50d73c"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-99.webp",
+      "bytes": 208666,
+      "sha256": "b1d28d1c1163256dca5d94a6037aa7595cfb86fa2e3c1bc0781a575fd0edeb1c"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-99.webp",
+      "bytes": 5284,
+      "sha256": "f9ebd7c364a2808e66197d12ebbad61e0b9592a06cf199307355addc31594e5e"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-100.webp",
+      "bytes": 112652,
+      "sha256": "484d28538afc0f8325a814d366835bc480fa05983019f6db6423e36e694c555c"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-100.webp",
+      "bytes": 3162,
+      "sha256": "3087a1006c1152676cbddbf93338220de03fe70dde21087c7a071308f1a830d3"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-101.webp",
+      "bytes": 235666,
+      "sha256": "3c453d79bc7d122ff8855032b697ebe3cb97ae54434d24d537e1f681f7d9a440"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-101.webp",
+      "bytes": 5270,
+      "sha256": "8adfc1c4b6c185bf477fc4c9379354bc1da700079e36e380cd7d526ac7932473"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-102.webp",
+      "bytes": 150960,
+      "sha256": "7eb982f847666d24556732220760cde588d38a16f23dd6352d1ede590b429246"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-102.webp",
+      "bytes": 3890,
+      "sha256": "73c1f2f5c9b3fec12cf1d44b254cdef65592bb41330610cf8b9077c545d73f27"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-103.webp",
+      "bytes": 187760,
+      "sha256": "560770fbffcb9907696718bda9843f675abd171ecdd680e2990d1735b56e6922"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-103.webp",
+      "bytes": 4754,
+      "sha256": "36fdeb2aff993f4340736395d4b5b1422634096a8b51e3c894088e2701f8c505"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-104.webp",
+      "bytes": 154778,
+      "sha256": "e0d3c3ea8794f79eb73b134a8e14ea83a162b46bb2bb690b218d5f61900de662"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-104.webp",
+      "bytes": 4148,
+      "sha256": "673b72432bce829a81f305cf5e0f74461b0ba2d84839452b7d81103d2872133a"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-105.webp",
+      "bytes": 180858,
+      "sha256": "487dc30ed2a57676744d097884ff591ce967f815990565ed6e039f6cf4b18e5c"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-105.webp",
+      "bytes": 4548,
+      "sha256": "696f6966ea65800c089be57fa15c028696c3832f93a43c34252d7c48158ac960"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-106.webp",
+      "bytes": 142986,
+      "sha256": "3bced73ecd62b8a03d655a75b34542950dd62d1a6e7b19466598a6baf22b1091"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-106.webp",
+      "bytes": 3742,
+      "sha256": "c5eca049d5a68b0545ffcb4fa265b010a701688d66b021e6a3b6bb7a62a1acd9"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-107.webp",
+      "bytes": 140366,
+      "sha256": "efb03e654d7046a6811f7ddef351a535c2560003e299b0d4d4c9384b3610f1d3"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-107.webp",
+      "bytes": 3884,
+      "sha256": "a8b4cccd94d61cde8e5edfe2da461f83780994316e90199a21d50dd379c1dd51"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-108.webp",
+      "bytes": 128596,
+      "sha256": "1dfdbc7776300fe9132b9fcf412fc914bb18e5a9787c65c987970a8522c47a35"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-108.webp",
+      "bytes": 3286,
+      "sha256": "ec3e547234acf32caeb801b2db4f23e1509f23bcd151f177ee8c98b63f9ae44e"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-109.webp",
+      "bytes": 138786,
+      "sha256": "d8006a6d76c99e67dd439df405ecc2bca40d1d4e6f76fe3fe22e89de853266bf"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-109.webp",
+      "bytes": 3638,
+      "sha256": "02ca54078f1663965baef0a296613b68e1529b1af0d823268f975287a3df4d7f"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-110.webp",
+      "bytes": 174206,
+      "sha256": "1fed6bd1d8a06762d564a546eec4350251e3d0f6aae4fe3ea8fe2304ca44b2f1"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-110.webp",
+      "bytes": 4146,
+      "sha256": "bf72562257bf11750c6165a39d79c841608ab03f000de5eacfa4b2934c028662"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-111.webp",
+      "bytes": 169026,
+      "sha256": "d5d29f34071ca805395977390d473f0c84e1a4fcf04a53ac38790eb69b9f4d04"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-111.webp",
+      "bytes": 4238,
+      "sha256": "78a173a27a14990a5d17160f1ffa1c72131296e600a050e6f472716b3cb4eec4"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-112.webp",
+      "bytes": 181216,
+      "sha256": "fc5769d1f102411493934ea8d759d758c4cb2b8d69a65a229dd8b5b5919cc2cb"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-112.webp",
+      "bytes": 4994,
+      "sha256": "316878f69884e49f4e43cac91b5efcf5d0e98701cbec8078a843f7087136dbad"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-113.webp",
+      "bytes": 111430,
+      "sha256": "9bdc861f2ceee6f6a06cc0be6b54e5c2d36c8e31e54c741281f3492b86e0aa56"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-113.webp",
+      "bytes": 2650,
+      "sha256": "c70a888773b15de921e82953f152abc12567c97d8c004fdd05229c41c3613b2f"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-114.webp",
+      "bytes": 175148,
+      "sha256": "be35a68df273849f37ab06b20787da36bfdaa563c9b44e902ec48575d0b567c4"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-114.webp",
+      "bytes": 4410,
+      "sha256": "42e0c1c8b2bf96030dcbb98e2f7ac2e5fbf400674bd7bd157d6e99ca663eb0c9"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-115.webp",
+      "bytes": 124236,
+      "sha256": "21846ea4999b280dc10b8c946a4f6b40a445f2a3c7abb9331181c5d8d48f8532"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-115.webp",
+      "bytes": 3548,
+      "sha256": "86e81765617dfb60260335adf7f1cc6829cdbda2a3d616e146a1a3f4c755b610"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-116.webp",
+      "bytes": 123948,
+      "sha256": "69cd622a7a6c0f34a94bcbf630e7ab3509c14724d0f4253556fbdf1d0486a77e"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-116.webp",
+      "bytes": 2938,
+      "sha256": "58632e92c0613115d53c810a3cfa27a56824b8f305b5830f145d1f0b75223cc4"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-117.webp",
+      "bytes": 301620,
+      "sha256": "1ea150377875afa4df440ca80f0dc79b0ea2dbb3803cd029814dd03dd0be249d"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-117.webp",
+      "bytes": 5544,
+      "sha256": "ad6137bd523f49bfccfda803fcd9d26ebbaa9255f87ec421b776fcaeab36f0c9"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-118.webp",
+      "bytes": 193560,
+      "sha256": "eb13b5ac8549f6217d1465f89427302e5bb1828289df1089ab8492a550ac98d0"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-118.webp",
+      "bytes": 4830,
+      "sha256": "285f4acb0252780e0ddb955ccc09d8f4ec7341cc865826ce4c8debd2d2bb60be"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-119.webp",
+      "bytes": 233592,
+      "sha256": "72549050d268dee9f76b0bab229bca8f16f76758aef63817de054d7f3d632bd8"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-119.webp",
+      "bytes": 5430,
+      "sha256": "73281434c97bac8159f398b5578593c304fbdfdad608b62e60662ea89f4ab2a9"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-120.webp",
+      "bytes": 198226,
+      "sha256": "4747fd0c29f3bc32dc05df3ec9c238bce9482df51ca1fef6169cf5ad15212c62"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-120.webp",
+      "bytes": 5042,
+      "sha256": "377b13255481d60420bc9fb36c311ba4f4c07281e81f6ca7bc91371089ce4231"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-121.webp",
+      "bytes": 173154,
+      "sha256": "86c38f261a281a58dd9ad861e0818cd07742c28be16ef9852e9652c6c2db6410"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-121.webp",
+      "bytes": 4476,
+      "sha256": "c3429e4929ce032ab9ffabb6f356d3ea4a714834adf54b466db5d8ddca9a511b"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-122.webp",
+      "bytes": 212434,
+      "sha256": "85e432cc0d1072467de0f6b37f4e46d85d0524beb54d44e3aa663022088b5a75"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-122.webp",
+      "bytes": 4964,
+      "sha256": "d2f22314051530be72478a215a9547101f0a9ef6ea3327a37953f42459d554f0"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-123.webp",
+      "bytes": 160080,
+      "sha256": "ea3f4b6284ac330b8bbb4b92bbbc45b0171d6d3071065c2c4f85b2a006b85ab8"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-123.webp",
+      "bytes": 3990,
+      "sha256": "4aada95f6bbbdc3f63d34e58f6d589352f8ca6cf84b31b4a115cc8927ca59da3"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-124.webp",
+      "bytes": 113252,
+      "sha256": "74bbee9a18948923f95c4e00c38c6d332ef861fb1f61d20145fda64320e6b4a7"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-124.webp",
+      "bytes": 3008,
+      "sha256": "4c6c2ff0aab037ae3f11e4f19e074395c1b0fd04a0c1cce7d7301d93f58a6fdf"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-125.webp",
+      "bytes": 146252,
+      "sha256": "67be5e81aff6febec98606ac632ce423c73c65492a83b614cad92953d684248a"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-125.webp",
+      "bytes": 3480,
+      "sha256": "bb8e8ea659748d52034b4dc3c996c74446a36ccfb985005e7c805d5452130a55"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-126.webp",
+      "bytes": 113108,
+      "sha256": "a8c3e316a47c1d27359dd45a51ff180f3a9cb63e037365516cff5a6716be24b4"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-126.webp",
+      "bytes": 2440,
+      "sha256": "94cbba5577ed910fd7004a569417e07310481b0ae47ce9e98f055c3ecd4adb3c"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-127.webp",
+      "bytes": 157024,
+      "sha256": "6de3027d18821a4dd3612e9700b8710032ed99bc69c29581823ad328f5a68ff4"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-127.webp",
+      "bytes": 4064,
+      "sha256": "149c351186484f387ddbeb73b2f5047b5ef4c06d3e4b74f07d39c4dacdafe35d"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-128.webp",
+      "bytes": 140370,
+      "sha256": "0eb025364dc10f472417d624c26fb619113146c1f8aad2ae196f74971ed0b765"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-128.webp",
+      "bytes": 3688,
+      "sha256": "1ad3f2dce75ff7d332d5b5f733d083c3148e22527a9051d11e661e0845211425"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-129.webp",
+      "bytes": 178744,
+      "sha256": "98c7f99f0712773a51b0a4a7b656e950bf17e950d81dff9f2c8f628df2fb6c94"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-129.webp",
+      "bytes": 4570,
+      "sha256": "fe81eac0bc6cf7f9528662a14176b534c381098c360b5a6729c3a07d5b6bdd2f"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-130.webp",
+      "bytes": 136976,
+      "sha256": "013b4f165c4c1767cae0e0246119e9dd3ef1e808fe884b2d376cbef422ed20b7"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-130.webp",
+      "bytes": 3594,
+      "sha256": "243b9ca8c00176f84ef9c0bfa95f06413b0206b28d62a9dad5d990edaba188c4"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-131.webp",
+      "bytes": 181136,
+      "sha256": "2fac885eedc508c7dcccfd9c09d28f1c619ab5ac2e284dc4ff2796ff7c93876d"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-131.webp",
+      "bytes": 4488,
+      "sha256": "2591d831b8ff3466f90422a81fae94f4744a336d1b1df3d76c9674e69933084c"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-132.webp",
+      "bytes": 154500,
+      "sha256": "3d338b33a822a3ae2b096a6bc0668353ed6aa1def3b9ee3d3e80759c9332f135"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-132.webp",
+      "bytes": 3944,
+      "sha256": "2a4641503506c746a6a23ab9e3e6d0de4dc7ca0d8beb9fcb30d45cb251cfb598"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-133.webp",
+      "bytes": 131714,
+      "sha256": "361cc3dc63d14f8ba4b6052b1569786dc7547c9ba3079abd9efde5f2bf2acf56"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-133.webp",
+      "bytes": 3556,
+      "sha256": "5a5c77d8f6712ff6863bb20954dbb5d15dbc05b81a827b5eb573dfa308fa2971"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-134.webp",
+      "bytes": 134828,
+      "sha256": "01509376ae74e955143475b7be4ddc33e874f9b37d5ba961ab65d35fe3c9aa84"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-134.webp",
+      "bytes": 3534,
+      "sha256": "a471a6ab5e783ff7b01a6e397070cbc9bba5b660aeca8bec99a0a916b63f4c35"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-135.webp",
+      "bytes": 108516,
+      "sha256": "74a61ea4ba35206bad32cf0ea6b28bc9e49cbdeb9d0cc27a21de4ee1eec148fb"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-135.webp",
+      "bytes": 3268,
+      "sha256": "bfaa17d990e24834d3f5355d4f5c4ca99b64f0db39e7298cbdd77f2b879676a9"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-136.webp",
+      "bytes": 172274,
+      "sha256": "e9bc2a5893f550c8bc1dc07d1de51913b54ae32e8000ac766db251a6e8896153"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-136.webp",
+      "bytes": 3806,
+      "sha256": "9fe76dc4d505f1d0197849c0cf9d1478c5890e7c6cf21c094353131a61de6d84"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-137.webp",
+      "bytes": 207096,
+      "sha256": "a85ed453514fb59c88c186959458e55e0f25b8f5868d9b2e1535e0fc6feeb9a4"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-137.webp",
+      "bytes": 4544,
+      "sha256": "9067983d75072c5e27e87a583ab1d8f08cc8ffe23dd740cb0a585843f5d57d82"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-138.webp",
+      "bytes": 264912,
+      "sha256": "362ff00d8dcdd3d624338d79ec05d9349d161b591d63c018064222ddaa70b65e"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-138.webp",
+      "bytes": 5512,
+      "sha256": "8f9c8e27318eaf0e354c50ed85b089542d6c0c573180c14de2f1b4a093d136e3"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-139.webp",
+      "bytes": 143212,
+      "sha256": "c3cfc9a48d8c6f368e17d17b3feec22830fab5a6bd307339fd64e27ed21742bf"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-139.webp",
+      "bytes": 3560,
+      "sha256": "729af9136b0fd7e2cb7212896890a4436eb7c07aa81936fd194f1c1b4abf422c"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-140.webp",
+      "bytes": 186574,
+      "sha256": "d5cd7b6100e57b7b43c7e2d2c2e2c40be42a840b7a074964f38d823c077d1983"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-140.webp",
+      "bytes": 4728,
+      "sha256": "7aa867b0df9276b442f2ca6f50b4d76bc204ed6ff40f411d0b58d89f8f65f46e"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-141.webp",
+      "bytes": 174690,
+      "sha256": "1dbe1f3a7000b50be176a66e5709cf35012e07625fdd197ea1e4ec9f807fdf45"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-141.webp",
+      "bytes": 4560,
+      "sha256": "5b8370452a98db01c920e0e429084a548564c0bdfea31c0bd06ca24cf42c5da1"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-142.webp",
+      "bytes": 198728,
+      "sha256": "f2bc26f518c2c545c5f995b419f55ca22a6778640780c259eb22c7c48c330a47"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-142.webp",
+      "bytes": 4912,
+      "sha256": "7738ac4aef2dca9814fafa6c1c31d1dec9e2134db7e68e2e5462fa3372b53388"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-143.webp",
+      "bytes": 164008,
+      "sha256": "52f7358c961eaed872bceb9a13deeea46641eda6cdb516ea01582ad9ab555708"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-143.webp",
+      "bytes": 4422,
+      "sha256": "08cd11153299705aa26149669d946657031fa6f3a68f75afd3d60585806960ec"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-144.webp",
+      "bytes": 171844,
+      "sha256": "0cc3891b0e79e2a15fc177876e28cbc76380311b9c8be41b354ca6c4200f75a1"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-144.webp",
+      "bytes": 4214,
+      "sha256": "ab261ff42ab2d3676343a2c6b3047c4ceb8497a6a8c4d4f52802ad71f32d78f4"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-145.webp",
+      "bytes": 140292,
+      "sha256": "945706397e64220ddb80ad321aa59c639e908091483c8a6a7dbb7cc1fa823457"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-145.webp",
+      "bytes": 3676,
+      "sha256": "b634719178323826eb6359e0d29a22e33b5451d98d234bae8b1916cfe9a29d34"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-146.webp",
+      "bytes": 190938,
+      "sha256": "7fb6cd402a6504671f8193b1353600e0fed04a8807bd42b223343259c65bafcf"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-146.webp",
+      "bytes": 4576,
+      "sha256": "880344e770aa10aec01de886e645598fcdf16370982314799198c0dfac35a2d1"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-147.webp",
+      "bytes": 261432,
+      "sha256": "08fa56d340fe6c21f5a2ea543ebe80e2696b16b1f472b3463e2402638f047cba"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-147.webp",
+      "bytes": 5398,
+      "sha256": "92c0da1107d86330167432c7a4ce301673fdfe31ccfaf1a8cfd848ab874216e8"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-148.webp",
+      "bytes": 226758,
+      "sha256": "ea8af7cb90820d05c58400b9160e80105501f46bef438fbd969acd575a42fe60"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-148.webp",
+      "bytes": 4684,
+      "sha256": "4bb464a143d131353e08a3b694eda331f512f6da0a7be88eb3df3e9292edafcc"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-149.webp",
+      "bytes": 233376,
+      "sha256": "f64eeaab51409bceae95447061d8083a6653643787532849cc4cd03930241ef4"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-149.webp",
+      "bytes": 4974,
+      "sha256": "a5920ae4388ddb70975fb1919f3d2102d94674fd24f2c327f216f8aa0633427f"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-150.webp",
+      "bytes": 217030,
+      "sha256": "abe5bd8703a8778d5d0a397338327cc3e5418414c9ab61d5b4d077590d8a2c43"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-150.webp",
+      "bytes": 5514,
+      "sha256": "20b74647fbdd41c0a9e14ccde2608a0739e9ef433ba49da0705050326aed0211"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-151.webp",
+      "bytes": 67556,
+      "sha256": "dc41d8e5f4431491b2b499918ee434b9fd3a3208f6375c2486e18f2880706da3"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-151.webp",
+      "bytes": 1734,
+      "sha256": "56e04ac2cad918e677cca5c08fbd7135fd6033536a6d2917b915b6a0e3119be0"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-152.webp",
+      "bytes": 186204,
+      "sha256": "5d0e06eb355d2380804074cf39929a10741a5d133f82c141a0b876284c41e348"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-152.webp",
+      "bytes": 4660,
+      "sha256": "6c788ca669248bb26ab3089586794e24bceaf600850da5eea3e4b4de629ebf67"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-153.webp",
+      "bytes": 195296,
+      "sha256": "1e82dc16701a42e5fc908f04da89520d0b896af8898618ddfc0498583543e51d"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-153.webp",
+      "bytes": 4628,
+      "sha256": "a2203e59bce7ed1e8678edd44490c95106bdd833bc8bc4926bc371eeb46e2613"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-154.webp",
+      "bytes": 167584,
+      "sha256": "2e85689dd391d8bcfa3b6126fba8ae1fd431df9dd92317b41269f1dca202d510"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-154.webp",
+      "bytes": 4160,
+      "sha256": "9abbcb0f546bfb95acf294063976f36ec724b1d604d3d4741bfce6128d0d7a20"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-155.webp",
+      "bytes": 211712,
+      "sha256": "642bea28aad2fff4040aaf01100b99bfddddad2c6ff9f2c858ba18ba692c2018"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-155.webp",
+      "bytes": 4988,
+      "sha256": "f9ff16f738316e0b68461d24d0819d5159b5c6c9e37fa37b31407de5ec1367ad"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-156.webp",
+      "bytes": 235726,
+      "sha256": "5cbfe4639ca4425ab4457c6a4eeb75be7806eddd6f341454614da205b6dce3a7"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-156.webp",
+      "bytes": 4828,
+      "sha256": "1845b19b37ffaee44174e29d052c8a3eba3167e0d1b695d2824b85705f079daa"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-157.webp",
+      "bytes": 239576,
+      "sha256": "fe349efe6ddecd8c5887ce9b501137575c5792ed9f9de6d69fd82c9a591cc008"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-157.webp",
+      "bytes": 5536,
+      "sha256": "4a358d367471173a42fa3b2e10522b964cf305e018fa489c6a59f6bf0bff2d9c"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-158.webp",
+      "bytes": 161220,
+      "sha256": "6d640b2aa9ab8b447d969b9bce022a40396bda2ba8e562b307a2acf3a14068b0"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-158.webp",
+      "bytes": 4294,
+      "sha256": "7577576bcd3b67e3c97ae8156010828d3e94c11d3150036f674fc80aa24b9d44"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-159.webp",
+      "bytes": 200654,
+      "sha256": "7edc89893540c5e102f157c80bb067a9b7cb0d41b1f986e1ce82ee31fa130d00"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-159.webp",
+      "bytes": 4962,
+      "sha256": "6ec392e24d4128ee18c0b4331a0c43529c7c155783c4820c805e2b08fc650b5c"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-160.webp",
+      "bytes": 116176,
+      "sha256": "784ac448460412b8cfa6febe0d2c30c8de264d45a8e8e2bdbe16fa40963954d8"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-160.webp",
+      "bytes": 3654,
+      "sha256": "4e15ce6831dbf12a014968c85e8315d1683389dd2f006e6c9176696a5fbc712f"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-161.webp",
+      "bytes": 111558,
+      "sha256": "1c955e77bbbccb419ad033c7dd0c06aff1782f2af9039a89702ba469f5e7d8ad"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-161.webp",
+      "bytes": 3226,
+      "sha256": "9b1d3240866e47e34fe93a222e40e4ed002ab5bb0d54449fe8a834ec27f21094"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-162.webp",
+      "bytes": 189642,
+      "sha256": "6f9a4a1d2ed7c3740d07646666b1cab26476de9898919e90a583726e4b528862"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-162.webp",
+      "bytes": 4814,
+      "sha256": "326c184620ce113ae9052652bd2a0ddc103a7e1f478b3343cbfa944cc050a848"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-163.webp",
+      "bytes": 199258,
+      "sha256": "48035f82854b01555a9cf96fd05f4539b04d73845552278a6fd87d4d39c7a8aa"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-163.webp",
+      "bytes": 4768,
+      "sha256": "68f0338e720b7b1263cc980751101da011c23b3e2eacf8ee462c21b426a32d85"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-164.webp",
+      "bytes": 115414,
+      "sha256": "df53ccc00824327a0b22c14638b8d86523d6c8723b3bd652c2e74cbbc97d5804"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-164.webp",
+      "bytes": 2980,
+      "sha256": "8f0e28f15b33affaa810d82a23b677730bd1ef2622cd8f23da8e03e24206100c"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-165.webp",
+      "bytes": 121852,
+      "sha256": "307314c1319a7628657b589338b17c29de9228e246268972c0e537bf2aa9852c"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-165.webp",
+      "bytes": 3606,
+      "sha256": "985ace144dcf30fbbc0c4eb4cc77daad5bef308771915d398ab21d97bca8d7ce"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-166.webp",
+      "bytes": 152058,
+      "sha256": "db59acce89376b2215d993f2b5923c87b77491e96079e6f00da6aa5bf8188e0f"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-166.webp",
+      "bytes": 3932,
+      "sha256": "17cc94f1e6f55e1237989679b3a5875d9c2846846f8521275117e90f82b793bd"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-167.webp",
+      "bytes": 220508,
+      "sha256": "791d4855c5182432cc5bc5ae90eabb8750c40fd428723474e669b0999218e6f1"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-167.webp",
+      "bytes": 5386,
+      "sha256": "e07eeb17387df2f70cdac2555f087ffc793a3d42bee05221efacd88e6dc1fa4f"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-168.webp",
+      "bytes": 174828,
+      "sha256": "9c44b5726952935cfcd0e5837425c8cb46108e9e8ebbd1bd7b47aaade587bb3f"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-168.webp",
+      "bytes": 4656,
+      "sha256": "0f6d5e349bac9761bbca1ee682e3ee44219bf62367167436a7a9a3e650621d6a"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-169.webp",
+      "bytes": 195046,
+      "sha256": "37068e930693fff30982244e87ace8b0b34be5d74661ae7827e6056b85715dc6"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-169.webp",
+      "bytes": 4836,
+      "sha256": "f74c1680b07c45b94e8fdf478125b1783ac5e8fcf9388d6478eecdf1be7c3391"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-170.webp",
+      "bytes": 163462,
+      "sha256": "9d254e8ffa7179bda2a71aa12e8b60d14538d307928996e07e8c141b3ae1b424"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-170.webp",
+      "bytes": 3980,
+      "sha256": "195f11faf011d0daa584e5be130c55418470d6560c630429b67ffd4b0a26a846"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-171.webp",
+      "bytes": 208110,
+      "sha256": "98dc5ad3cb44985ed3fe21ef44a6be3f69183de5cf3917031c44b1921a6f07b8"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-171.webp",
+      "bytes": 5182,
+      "sha256": "755d71149e3aadcd25dc68dc0f1b7e95be9e31755f14b62ff56bf35480d634df"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-172.webp",
+      "bytes": 172820,
+      "sha256": "198ed3dd87dd8585d15fd361be667880736958123c727a5f36e73a2c937c3703"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-172.webp",
+      "bytes": 4176,
+      "sha256": "3eb282a66be8e089b07e5ef5f6ac9571f9e087cec48451259be4614f3d25b24a"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-173.webp",
+      "bytes": 143666,
+      "sha256": "9a0c0f8910177ede11b1c937a78fb61ba3276da24bcccce4e231668184cbe638"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-173.webp",
+      "bytes": 3936,
+      "sha256": "5717a06568f206e363f624b9630ef116b1209c7026257e87ff4c9feb15cdfc45"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-174.webp",
+      "bytes": 178960,
+      "sha256": "c7e95286976b200514aef561f0abd1778d9f35575a810550dc45d7aef78f8565"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-174.webp",
+      "bytes": 4186,
+      "sha256": "e6c6c4e1b4ee2325e88e3642d259e264fb563967a65489e34c196c9eb8c521c1"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-175.webp",
+      "bytes": 161562,
+      "sha256": "0197db4e159a09ca9952c2d436914bb17ffb1fce8c6490495a432d203eef32a0"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-175.webp",
+      "bytes": 3886,
+      "sha256": "528a5bb06eb98d662cf5605e0e22e500a3ba12279421bb6062da633c4dbcaa10"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-176.webp",
+      "bytes": 200082,
+      "sha256": "e936f32010eb96233928ea7d8671402f9f79caa3c46f554962fda1b09d71061a"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-176.webp",
+      "bytes": 4652,
+      "sha256": "018be1e8ba3f25323d63abdbfd96e037e588c678dcbf4f1bce6eb2cfb8eedafc"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-177.webp",
+      "bytes": 166038,
+      "sha256": "0eb0e9cb6ea528a17588ed5daa034d40a22e5b4d23130893129f2f40b85ef63d"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-177.webp",
+      "bytes": 4262,
+      "sha256": "2e9468067eabf43a9785a4268102cf5905925966b1bb326727627ebe5b502623"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-178.webp",
+      "bytes": 211860,
+      "sha256": "6701e7a9e307d5a1c4b53a022577ef6c23258db652c7ed59586c4e2944d4d7aa"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-178.webp",
+      "bytes": 4594,
+      "sha256": "16caf0af6a7c7864c92e0d39b88f71359a621933fbc6b7a2ed23f4a3c151af72"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-179.webp",
+      "bytes": 198126,
+      "sha256": "7f97d389e425bf63c511c9d4bb4903cc6adce2a35273528fe2aeb17f5b58c1df"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-179.webp",
+      "bytes": 4794,
+      "sha256": "29a3c98cca7a6db151059c947897eeaffe37df99b02f57345dc4804c2f0141ce"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-180.webp",
+      "bytes": 148516,
+      "sha256": "ec98292091e86b11919dc968b7d47c282e565f1a9ab4d2baa7a8e695d7108e6b"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-180.webp",
+      "bytes": 4004,
+      "sha256": "012fe6121bc074132f134cc38bc70aad940bcf65b69d3e7167c50c59efbc6b13"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-181.webp",
+      "bytes": 141340,
+      "sha256": "50094a118de0cbfc9562c5c68834ed2304b2b3478468b13d8bd0af0625a24598"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-181.webp",
+      "bytes": 3850,
+      "sha256": "e693b8b541a4b04f16b0f891727f5f6d443d08ec97839b6020325cac08ee885f"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-182.webp",
+      "bytes": 141758,
+      "sha256": "ff3b4fb93c17a0870f05e00b9af6aeb593b703c090b68a5e2abce3c15fef0f00"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-182.webp",
+      "bytes": 3528,
+      "sha256": "34342163403c6d68c5d3e2ffe228cd8041d872cf8f982ebfd69fd0301311429b"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-183.webp",
+      "bytes": 158872,
+      "sha256": "edbe985cc457560d7c728c2195d8810a7e78596f7256dd006a4dcb6770d1256e"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-183.webp",
+      "bytes": 4174,
+      "sha256": "b72b68206d0ddc623568be24f447c672edc73e34301b6ca9a459b62b3f39772e"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-184.webp",
+      "bytes": 157896,
+      "sha256": "11f6421d62611b80f512f8f1e590aa00f7f2b77a951a588e0bbdd3112a52eb8f"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-184.webp",
+      "bytes": 3846,
+      "sha256": "b1404f7dd1dab73d0c77bd7a4d9d8b7c53bf97b04554f25fab0a1d57ec7f20dc"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-185.webp",
+      "bytes": 166354,
+      "sha256": "1c58509eb0c0e6a663de0fbeb0707071587d9bf2b61f26ff6bd7db3027741745"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-185.webp",
+      "bytes": 3816,
+      "sha256": "7067142f2b3cd44fba55bb756e378e6eb96cb05ba5adb654a4512060042a150d"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-186.webp",
+      "bytes": 165314,
+      "sha256": "b420125d231cdea00cb2f51d400e7920fc261e7ed46e9f6766a31ee6fc28eb5f"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-186.webp",
+      "bytes": 3942,
+      "sha256": "6452900e91bbf9450a619b3125f580ae269c23da2b20938aacbc609c878d7d02"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-187.webp",
+      "bytes": 180782,
+      "sha256": "ec625231b2f5f831af53a53853b10f2ca58b8f3cd308643a573bd1ee33e8ba6e"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-187.webp",
+      "bytes": 4196,
+      "sha256": "bde1b296c292d0433ca07c3ea5a7719f15f5c626dd3157f39e82c7c058cca89e"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-188.webp",
+      "bytes": 82134,
+      "sha256": "cdca327278ed16cb075de4c7d72b9f98047e16791a85b6aa5f4636fc825ca165"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-188.webp",
+      "bytes": 2068,
+      "sha256": "7ee826fe10ac0fc52e7046b61ae8c2ab956cf27cb22b731971e2d4b04d18a821"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-189.webp",
+      "bytes": 153444,
+      "sha256": "7b0911d32f12ea8192a8aa7b710e968fad0ce8302e8893da5f44bbfbc85b31d8"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-189.webp",
+      "bytes": 4626,
+      "sha256": "c8746c4c99ee4ca7e278330e226d16e33a667bbba615071cccb3ae2f1f0a5fa4"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-190.webp",
+      "bytes": 158894,
+      "sha256": "d13951aabdd96eb1c748ba96e5223c609a182cc89d7010e5521df74483f7a643"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-190.webp",
+      "bytes": 3902,
+      "sha256": "d6e670324e39f837f5df49c3378f2c036b737df9e7e8e6279d4deac1f4ac05db"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-191.webp",
+      "bytes": 175642,
+      "sha256": "9fd1f16daa301e94c623f0fd91ab74ec2bb07b145366a3d6bb183da4bd5e9665"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-191.webp",
+      "bytes": 4606,
+      "sha256": "19d835cb6073b8a8fdec4632bcd79f80f7bb55cd71dd6d1ca7cd4f6b8550690a"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-192.webp",
+      "bytes": 169110,
+      "sha256": "75b1a9255d9645c7c4df20e8b32aa1cf243538ed55dafe5e186395f06b9d63e1"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-192.webp",
+      "bytes": 4122,
+      "sha256": "82a1ea622f10dc6726575caf8dbb5457521f7ab333eebd3d6ca56465a4e0c1bb"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-193.webp",
+      "bytes": 120852,
+      "sha256": "66c19c6d95f00b0a092b89f1e869132948f4279fdf6a87dfb19d83e67902a0c6"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-193.webp",
+      "bytes": 3790,
+      "sha256": "0c3501935cdafa2c94efa58d6831c7386f36ba95d0d221378b73bb5ecd864ee7"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-194.webp",
+      "bytes": 132006,
+      "sha256": "6a1ba1b3ba548ca2cdb672d002cfa025a7579ba47235507f705cbf389dd5bc6f"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-194.webp",
+      "bytes": 3478,
+      "sha256": "2c2e68dcaa6dd2fad87335369781ede83a4d6b9c89f6eb637ee2c1d3b3a7c0ab"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-195.webp",
+      "bytes": 157314,
+      "sha256": "62518f79ffe5a98dccfcc628e26f8bcb47090aa509bc9e9526206e843297cbf9"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-195.webp",
+      "bytes": 4178,
+      "sha256": "0f356434c461cc2a2dc8bdfcc188fee6c20c943ccb35818e7f5c275ab36380f9"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-196.webp",
+      "bytes": 232864,
+      "sha256": "050918faf534ea5d4a7fcf4dadb1c4624ecba0d96ab008344954368b3ba6cd64"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-196.webp",
+      "bytes": 5356,
+      "sha256": "6a167fd4d2d22a38e7d389ea8a5ed0ce2852a4913ff93c37890b46951cb62215"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-197.webp",
+      "bytes": 253884,
+      "sha256": "64339fef87381b21fd6178efe36df153051f01ccc7d30a9e9d66ec3a412707a3"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-197.webp",
+      "bytes": 5426,
+      "sha256": "f100bee6eea16af4a05a35f9259e4cdb43abfd23f6f8ead9e9af1d1d7b965f5f"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-198.webp",
+      "bytes": 229396,
+      "sha256": "51661ced2e0eb0fda5af19b9e43d13cb1003f9deb3467691771c5250e71c7d72"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-198.webp",
+      "bytes": 5156,
+      "sha256": "dc0a379f25c91afe8fddc391ce178a1b1404c74ac88e8c05ff93ed78e01adaf5"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-199.webp",
+      "bytes": 137654,
+      "sha256": "718470fb220254327049825855f02ee11b1ca17272dfa86616c324955a320dcf"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-199.webp",
+      "bytes": 2956,
+      "sha256": "046ff4a3c338d723a121f4ffaf9f1f6d3f0c381310aaffe8bccc7c823d30d12c"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-200.webp",
+      "bytes": 183664,
+      "sha256": "73ae2f953a4f28dc4bdf87511642a89d20809acffd6cdae13cc2303890b00410"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-200.webp",
+      "bytes": 3810,
+      "sha256": "9bd1ab1fb6e34929aaa7e2aaa952ac8a5ae0f0b039865ad3a4d5bbdc41ffc122"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-201.webp",
+      "bytes": 15904,
+      "sha256": "39d75d497af92dd97d2cf62912e4d34c3bb533b37ba181e3df14d78dd15136e4"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-201.webp",
+      "bytes": 410,
+      "sha256": "80a7b1e1f0e734a56118e531fc80829a9db0162929e75b6bd1e408e68130f68d"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/page-202.webp",
+      "bytes": 82174,
+      "sha256": "53d95dfbcb655affbc4d677be6a5c1c3b876993c7d9552e904bef4a2e7655c62"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/thumb-202.webp",
+      "bytes": 1758,
+      "sha256": "e010c8e0bf501c74faa5ae93932b7d0ec7038c31ae07925eda8061821c3595a5"
+    },
+    {
+      "path": "textbooks/grade-7-volume-1/catalog.json",
+      "bytes": 28676,
+      "sha256": "ef63c5992ee9ea32268c8e3b227edad351a2f81fdf6bff157f5aac42caf93b1b"
+    }
+  ],
+  "installerPublic": [
+    {
+      "path": "decorations/chalk-arc.svg",
+      "bytes": 727,
+      "sha256": "95bb818b609b12d3805517ba847be77f64ae343de2571176c0e8582774449353"
+    },
+    {
+      "path": "decorations/chalk-frame.svg",
+      "bytes": 669,
+      "sha256": "0a2221a1e7e27568bdc9c31e98c271dc81fb45988bab9a5588c84ad5df5dcaab"
+    },
+    {
+      "path": "decorations/chalk-line.svg",
+      "bytes": 608,
+      "sha256": "4345edbba10e352d52a71da3bf85e1a49d0768c3f9ead7eb80eafb0422416fd0"
+    },
+    {
+      "path": "decorations/study-companion.prompt.txt",
+      "bytes": 1528,
+      "sha256": "6cfb029d8764bc22d6698d9a904e000e1ea92616efb5c8846c13792e71451e78"
+    },
+    {
+      "path": "decorations/study-companion.webp",
+      "bytes": 315188,
+      "sha256": "ca7f7cff4f20c3467fa67debeb81cf54dfa96e3e65eaca402a2d08d24f6331f8"
+    },
+    {
+      "path": "fonts/noto-serif-sc-OFL.txt",
+      "bytes": 4350,
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6"
+    },
+    {
+      "path": "fonts/noto-serif-sc-display.source.json",
+      "bytes": 7091,
+      "sha256": "52fd836f71a39900e75e0016066d2e1e2c56a23f94e0b01975743eee35b72ddb"
+    },
+    {
+      "path": "fonts/noto-serif-sc-display.woff2",
+      "bytes": 307012,
+      "sha256": "05ba36ec198e6c53df907477c8eae4bbef8c6249a7969e5863d4ca2f94e43c72"
+    },
+    {
+      "path": "fonts/nunito-OFL.txt",
+      "bytes": 4491,
+      "sha256": "40991bfa02ac620aae16dc527f3c47765a25e43f270d4c301ee6ab663a8d9015"
+    },
+    {
+      "path": "fonts/nunito-latin-400-normal.woff2",
+      "bytes": 16316,
+      "sha256": "a5906e15ceb68f73d3b2c2076b4057c3f6ed401186d56283b45ce12944ca0735"
+    },
+    {
+      "path": "fonts/nunito-latin-500-normal.woff2",
+      "bytes": 16428,
+      "sha256": "23ae3083dbdaeabf3b9969a3947ddf5d5614683516e28ffa110ca4eb6192a9ff"
+    },
+    {
+      "path": "fonts/nunito-latin-600-normal.woff2",
+      "bytes": 16556,
+      "sha256": "45f437de32ff5973eb5616b43c1308bf9fe897442f3d78a603c4cd0a06d66573"
+    },
+    {
+      "path": "fonts/nunito-latin-700-normal.woff2",
+      "bytes": 16228,
+      "sha256": "fa89300b9bbb3bd0f60d6991aa055965d98e2ccca27bf8688fe0c39cdc796846"
+    },
+    {
+      "path": "fonts/nunito-latin-800-normal.woff2",
+      "bytes": 16520,
+      "sha256": "2363d3ed037283ebb961e8c4b4917e40a8bc8853cf9965cf1ea7b4daa1df630a"
+    },
+    {
+      "path": "fonts/nunito.source.json",
+      "bytes": 139,
+      "sha256": "d13add4dc6c9a665d89c630346a2299935e71473f681ee08d4f23c3ff0b9233f"
+    },
+    {
+      "path": "prototypes/animal-island/STYLESET.md",
+      "bytes": 10905,
+      "sha256": "75676e73c28aa4e844b262f385c3781699b5c3d960d17f5b717c8160e52a868e"
+    },
+    {
+      "path": "prototypes/animal-island/THIRD-PARTY-LICENSE.txt",
+      "bytes": 1065,
+      "sha256": "488be025948fe293d599c5a922df4c25177c9d814f158fda27f03a6ec91d5217"
+    },
+    {
+      "path": "prototypes/animal-island/index.html",
+      "bytes": 258884,
+      "sha256": "549c5c6f6a7a55e3d1f0259bbeb5e0980e53e9e52b1b07c1d4fe81434565ce91"
+    }
+  ]
+}

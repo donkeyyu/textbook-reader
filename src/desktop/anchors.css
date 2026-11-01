@@ -5,7 +5,7 @@
 .note-anchor p, .note-anchors > p { color: #8a3525; margin: 6px 0; }
 .anchor-fields, .anchor-actions { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0; align-items: end; }
 .anchor-fields label { display: grid; gap: 4px; max-width: 100%; }
-.anchor-fields select { max-width: 240px; color: inherit; border: 1px solid var(--input-border); border-radius: 12px; padding: 6px; background: var(--surface); }
+.anchor-fields select { min-width: 0; width: 100%; max-width: 240px; color: inherit; border: 1px solid var(--input-border); border-radius: 12px; padding: 6px; background: var(--surface); }
 .anchor-previews { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
 .anchor-preview { position: relative; overflow: hidden; display: block; width: min(100%, 260px); max-height: 200px; background: white; border: 1px solid var(--separator); }
 .anchor-preview img { position: absolute; height: auto; }
@@ -15,12 +15,12 @@
 .desktop-workspace-body.split .vault-layout { display: flex; }
 .desktop-workspace-body.split .vault-content { flex: 1; }
 .desktop-workspace-body.split .vault-paper { flex: 1; margin: 8px; overflow: auto; }
-.desktop-workspace-body.split .note-document { flex: 1 0 240px; }
 .desktop-workspace-body.split .vault-toolbar { padding: 8px; gap: 8px; }
 .desktop-workspace-body.split .vault-toolbar strong { display: none; }
-.desktop-workspace-body.split .vault-note-heading { padding: 12px; }
+.desktop-workspace-body.split .vault-note-heading { padding: 8px 12px; }
 .desktop-workspace-body.split .note-modes { padding: 8px 12px; }
 .desktop-workspace-resize { flex: 0 0 10px; cursor: col-resize; background: var(--separator); touch-action: none; }
+.desktop-workspace-resize[aria-disabled="true"] { cursor: default; }
 .desktop-selection { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; max-height: 30vh; overflow: auto; padding: 8px 18px; background: var(--surface); border-bottom: 1px solid var(--separator); }
 .desktop-selection button, .desktop-workspace-tabs button, .desktop-selection input { color: var(--app-text); background: var(--surface); border: 1px solid var(--input-border); border-radius: 18px; padding: 6px 12px; min-height: 36px; }
 .desktop-selection p { margin: 0; }
@@ -32,9 +32,6 @@
 .desktop-region[aria-pressed="true"] { outline: 2px solid var(--surface); }
 .desktop-region-handle { position: absolute; right: -7px; bottom: -7px; width: 16px; height: 16px; border: 2px solid var(--accent); background: var(--surface); cursor: nwse-resize; touch-action: none; }
 @media (max-width: 800px) {
-  .desktop-workspace-body.split { flex-direction: column-reverse; }
-  .desktop-workspace-body.split .desktop-workspace-view { width: 100%; height: 0; }
-  .desktop-workspace-resize { cursor: row-resize; }
   .desktop-workspace-tabs { flex-wrap: wrap; padding: 6px; gap: 4px; }
   .desktop-workspace-tabs button { padding: 6px 10px; }
 }
@@ -50,6 +47,14 @@
 }
 .desktop-region-layer.drawing .desktop-region { pointer-events: none; }
 .desktop-workspace-body.split .vault-recoveries { max-height: 25%; overflow: auto; flex-shrink: 0; padding: 8px 12px; }
+.desktop-workspace-body.split .vault-paper { container-type: inline-size; }
+@container (max-width: 540px) {
+  .note-property { grid-template-columns: minmax(70px, 1fr) 80px auto; }
+  .note-property > input, .note-property > .note-property-number, .note-property > .note-property-list, .note-property > .note-property-nested, .note-property > pre { grid-column: 1 / -1; grid-row: 2; }
+  .note-property > button { grid-column: 3; grid-row: 1; }
+  .note-property-mismatch { grid-column: 1 / -1; }
+  .note-link-columns { grid-template-columns: 1fr; }
+}
 .custom-catalog { display: inline; }
 .custom-catalog > p { overflow-wrap: anywhere; }
 .custom-catalog-dialog { width: min(640px, 92vw); max-height: 85vh; overflow: auto; }

@@ -1,18 +1,18 @@
-.vault-app { height: 100dvh; display: flex; flex-direction: column; color: var(--app-text); background: var(--app-canvas); }
-.vault-toolbar { display: flex; align-items: center; gap: 24px; padding: 18px 28px; border-bottom: 1px solid var(--separator); }
+.vault-app { height: 100dvh; min-width: 0; min-height: 0; display: flex; flex-direction: column; container-type: inline-size; color: var(--app-text); background: var(--app-canvas); }
+.vault-toolbar { display: flex; flex-shrink: 0; align-items: center; gap: 12px; padding: 10px 20px; border-bottom: 1px solid var(--separator); }
 .vault-toolbar strong { font-size: 20px; color: var(--island-heading); }
 .vault-name { flex: 1; overflow-wrap: anywhere; }
 .vault-app button { min-height: 40px; padding: 8px 16px; border: 1px solid var(--input-border); border-radius: 24px; color: inherit; background: var(--surface); box-shadow: 0 2px 0 #bdaea04d; }
 .vault-app button:hover:enabled { background: var(--hover); }
 .vault-app button:disabled { opacity: .65; }
-.vault-layout { display: grid; min-height: 0; flex: 1; }
+.vault-layout { display: grid; position: relative; min-height: 0; flex: 1; }
 .vault-sidebar { padding: 20px 14px; overflow: auto; border-right: 1px solid var(--separator); }
 .vault-list-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
 .vault-sidebar nav { display: grid; gap: 4px; }
 .vault-sidebar nav button { text-align: left; overflow-wrap: anywhere; border: 0; border-radius: 12px; box-shadow: none; background: transparent; }
 .vault-sidebar nav button[aria-current] { background: var(--island-nav); color: #443b36; }
-.vault-paper { display: flex; flex-direction: column; min-height: 0; min-width: 0; margin: 22px; border-radius: 20px; background: var(--surface); overflow: hidden; }
-.vault-note-heading { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding: 20px 28px 12px; }
+.vault-paper { display: flex; flex-direction: column; min-height: 0; min-width: 0; margin: 12px; border-radius: 20px; background: var(--surface); overflow: auto; }
+.vault-note-heading { display: flex; flex-shrink: 0; flex-wrap: wrap; align-items: center; gap: 8px; padding: 8px 16px; }
 .vault-note-heading h1 { margin: 0; font-size: 22px; flex: 1; overflow-wrap: anywhere; }
 .vault-note-heading [role="status"] { font-size: 13px; color: var(--secondary); }
 .vault-note-heading button { background: var(--island-primary); color: var(--app-accent-contrast); }
@@ -25,7 +25,7 @@
 .vault-source .cm-gutters { display: none; }
 .vault-error, .vault-problems { padding: 12px 28px; color: #8a3525; background: #fff1db; overflow-wrap: anywhere; }
 .vault-error { max-height: 25vh; overflow: auto; }
-.vault-problems { font-size: 14px; max-height: 22vh; overflow: auto; }
+.vault-problems { flex-shrink: 0; font-size: 14px; max-height: 22vh; overflow: auto; padding: 8px 16px; }
 .vault-problems p { margin: 4px 0; }
 .vault-welcome, .vault-empty { padding: 60px 40px; line-height: 1.8; }
 .vault-welcome { max-width: 720px; margin: auto; }
@@ -33,16 +33,15 @@
 .vault-new { display: grid; gap: 10px; margin-bottom: 20px; }
 .vault-new label { display: grid; gap: 8px; font-size: 13px; }
 .vault-new input { width: 100%; padding: 10px; border: 1px solid var(--input-border); border-radius: 12px; color: inherit; background: var(--island-input); }
-.vault-guard { border: 1px solid var(--separator); border-radius: 20px; padding: 28px; max-width: min(560px, 90vw); color: var(--app-text); background: var(--surface); box-shadow: var(--app-shadow); }
+.vault-guard { border: 1px solid var(--separator); border-radius: 20px; padding: 24px; max-width: min(560px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); overflow: auto; color: var(--app-text); background: var(--surface); box-shadow: var(--app-shadow); }
 .vault-guard::backdrop { background: #30291f66; }
 .vault-guard > div { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-end; margin-top: 24px; }
 @media (max-width: 800px) {
-  .vault-layout { grid-template-columns: 190px minmax(0, 1fr) !important; }
   .vault-paper { margin: 12px; }
-  .vault-note-heading { padding: 16px; }
-  .vault-toolbar { padding: 14px 20px; gap: 14px; }
+  .vault-note-heading { padding: 8px 16px; }
+  .vault-toolbar { padding: 10px 20px; gap: 12px; }
 }
-.vault-file-info { padding: 0 28px 8px; font-size: 13px; }
+.vault-file-info { font-size: 13px; overflow-wrap: anywhere; }
 .vault-conflict, .vault-recoveries { padding: 12px 28px; background: var(--island-input); border-block: 1px solid var(--separator); overflow: auto; }
 .vault-conflict { max-height: 48vh; flex-shrink: 0; }
 .vault-conflict > div:first-of-type, .vault-recoveries > div, .vault-recoveries article { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
@@ -63,10 +62,10 @@
 }
 .vault-diff pre span { display: block; min-height: 1.5em; }
 .vault-diff-changed { background: var(--accent-soft); border-left: 3px solid var(--accent); padding-left: 6px; }
-.note-modes { display: flex; flex-wrap: wrap; gap: 16px; padding: 8px 28px; border-bottom: 1px solid var(--separator); font-size: 13px; }
+.note-modes { display: flex; flex-shrink: 0; flex-wrap: wrap; gap: 12px; padding: 4px 16px; border-bottom: 1px solid var(--separator); font-size: 13px; }
 .note-modes label { display: flex; align-items: center; gap: 8px; }
 .note-modes select { border: 1px solid var(--input-border); border-radius: 18px; padding: 6px 12px; color: inherit; background: var(--surface); }
-.note-document { display: flex; flex-direction: column; overflow: hidden; flex: 1; min-height: 0; padding: 8px 16px 24px; }
+.note-document { display: flex; flex-direction: column; overflow: hidden; flex: 1; min-width: 0; min-height: 0; padding: 4px 16px 8px; }
 .note-document > div:first-child { max-height: 46%; overflow: auto; flex-shrink: 0; }
 .note-document .vault-source { flex: 1; min-height: 0; padding: 0; }
 .note-document .cm-editor { min-height: 0; height: 100%; }
@@ -91,8 +90,11 @@
 .vault-source-live .cm-line { font: 16px/1.85 var(--app-font-ui, system-ui); }
 .vault-note-title { flex: 1; min-width: 100px; overflow-wrap: anywhere; }
 .vault-note-title small, .vault-sidebar small.vault-note-directory { color: var(--secondary); font-size: 12px; }
-.note-moves { flex-shrink: 0; max-height: 28%; overflow: auto; padding: 10px 28px 0; font-size: 13px; }
-.note-move-actions > details { margin-top: 8px; padding: 10px; border-radius: 12px; background: var(--island-input); }
+.note-moves { min-width: 0; font-size: 13px; }
+.note-move-actions > summary { cursor: pointer; padding: 10px 4px; }
+.note-move-actions > div { display: flex; flex-wrap: wrap; align-items: start; gap: 8px; padding-block: 8px; }
+.note-move-actions > div > details { width: 100%; }
+.note-moves:has(.note-move-actions[open]) { flex-basis: 100%; }
 .note-move-actions p { overflow-wrap: anywhere; margin: 8px 0; }
 .note-move-dialog { width: min(620px, 90vw); max-height: 85vh; overflow: auto; }
 .note-move-dialog label { display: grid; gap: 8px; margin: 12px 0; }
@@ -102,5 +104,15 @@
 .note-move-results li { margin: 12px 0; }
 .note-move-results small { display: block; color: var(--secondary); }
 .note-move-dialog [role="alert"] { color: #8a3525; }
-@media (max-width: 800px) { .note-moves { padding-inline: 16px; } }
 .note-rendered-block:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.note-metadata > summary { cursor: pointer; padding: 8px 12px; font-size: 14px; }
+.vault-problems summary { cursor: pointer; padding-block: 4px; }
+.note-document > div:first-child:has(.note-metadata:not([open])) { flex-shrink: 0; }
+.vault-app .vault-list-toggle { display: none; }
+@container (max-width: 800px) {
+  .vault-app .vault-list-toggle { display: block; text-align: left; }
+  .vault-name-label { display: none; }
+  .vault-layout { grid-template-columns: minmax(0, 1fr) !important; }
+  .vault-sidebar { position: absolute; z-index: 8; inset: 0 auto 0 0; width: min(320px, 100%); background: var(--app-canvas); }
+  .vault-layout[data-list-open="false"] .vault-sidebar { display: none; }
+}

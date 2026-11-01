@@ -1,4 +1,4 @@
-.note-links { padding: 8px 28px; border-bottom: 1px solid var(--separator); font-size: 13px; max-height: 32%; overflow: auto; flex-shrink: 0; }
+.note-links { padding: 2px 16px; border-bottom: 1px solid var(--separator); font-size: 13px; max-height: 32%; overflow: auto; flex-shrink: 0; }
 .note-links summary { cursor: pointer; padding: 6px 0; }
 .note-link-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .note-link-columns section { min-width: 0; }

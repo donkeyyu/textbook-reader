@@ -1,3 +1,4 @@
+import { showNoteList } from './check-window.mjs';
 // Isolated Electron + filesystem. Reuse an explicitly supplied 971-note QA
 // vault and verified textbook resources; no first-download claim is made here.
 import assert from 'node:assert/strict';
@@ -42,11 +43,12 @@ async function eventually(read, predicate, message) {
   for (let count = 0; count < 240; count++) { const value = await read().catch(() => undefined); if (value !== undefined && predicate(value)) return value; await delay(50); }
   assert.fail(message);
 }
-async function ready() { await page.getByRole('button', { name: '新建笔记', exact: true }).waitFor(); await eventually(() => page.getByRole('button', { name: '新建笔记', exact: true }).isEnabled(), Boolean, 'editor stayed busy'); }
+async function ready() { await eventually(() => page.locator('.vault-list-actions button').first().isEnabled(), Boolean, 'editor stayed busy'); }
 async function search(query) { if (!await page.getByLabel('搜索本地笔记', { exact: true }).isVisible()) await page.getByRole('button', { name: '搜索笔记', exact: true }).click(); await page.getByLabel('搜索本地笔记', { exact: true }).fill(query); }
 const results = () => page.getByLabel('本地搜索结果', { exact: true });
 async function closeSearch() { if (await page.getByRole('button', { name: '收起搜索', exact: true }).isVisible()) await page.getByRole('button', { name: '收起搜索', exact: true }).click(); }
-async function open(name) { await closeSearch(); await page.locator('.vault-sidebar nav').getByRole('button', { name, exact: true }).click(); await page.getByRole('heading', { name, exact: true }).waitFor(); await ready(); }
+async function open(name) {
+  await showNoteList(page); await closeSearch(); await page.locator('.vault-sidebar nav').getByRole('button', { name, exact: true }).click(); await page.getByRole('heading', { name, exact: true }).waitFor(); await ready(); }
 async function setSource(text) { await page.getByLabel('正文模式', { exact: true }).selectOption('edit'); await page.getByLabel('文件头模式', { exact: true }).selectOption('source'); const editor = page.getByRole('textbox', { name: '笔记 Markdown 源码', exact: true }); await editor.click(); await editor.press('ControlOrMeta+a'); await page.keyboard.insertText(text); }
 async function saved(name, text) { await eventually(() => readFile(path.join(root, name), 'utf8'), (source) => source.includes(text), 'content did not reach disk'); await page.getByRole('status').filter({ hasText: /^已保存$/ }).waitFor(); await ready(); }
 async function graph() { await closeSearch(); if (!await page.getByLabel('本地笔记知识图', { exact: true }).isVisible()) await page.getByRole('button', { name: '知识图', exact: true }).click(); await page.locator('.note-graph canvas').waitFor(); await page.waitForFunction(() => window.qaNoteGraph?.stage.children[0]?.children[1]?.children.length > 0); }

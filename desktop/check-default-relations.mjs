@@ -1,3 +1,4 @@
+import { resizeWindow, showNoteList } from './check-window.mjs';
 // Isolated Electron application, native picker stub, real localhost HTTP and disk.
 import assert from 'node:assert/strict';
 import { createServer } from 'node:http';
@@ -37,13 +38,13 @@ async function launch() {
   const env = { ...process.env }; delete env.TEXTBOOK_DOWNLOAD_BASE_URL;
   if (!offline) env.TEXTBOOK_DOWNLOAD_BASE_URL = `http://127.0.0.1:${server.address().port}/`;
   app = await _electron.launch({ executablePath: path.join(project, 'node_modules/electron/dist/Electron.app/Contents/MacOS/Electron'), args: [project, `--user-data-dir=${data}`, ...(!offline ? ['--textbook-local-http'] : [])], env });
-  page = await app.firstWindow(); page.setDefaultTimeout(20_000); await page.setViewportSize({ width: 1440, height: 980 });
+  page = await app.firstWindow(); page.setDefaultTimeout(20_000); await resizeWindow(app, page, { width: 1440, height: 980 });
   page.on('pageerror', (error) => errors.push(error.message)); page.on('request', (request) => { if (/^https?:/.test(request.url())) remote.push(request.url()); });
   if (offline) await app.evaluate(({ session }) => session.defaultSession.enableNetworkEmulation({ offline: true }));
 }
 const notes = async () => page.getByRole('button', { name: '笔记库', exact: true }).click();
 async function openPath(relative) {
-  await notes(); await page.locator('.vault-sidebar nav button').filter({ has: page.locator(`span`, { hasText: new RegExp(`^${relative.split('/').at(-1).slice(0, -3).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`) }) }).click();
+  await notes(); await showNoteList(page); await page.locator('.vault-sidebar nav button').filter({ has: page.locator(`span`, { hasText: new RegExp(`^${relative.split('/').at(-1).slice(0, -3).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`) }) }).click();
   await page.locator('.vault-note-heading h1').waitFor();
   await eventually(() => page.locator('.vault-note-title').getAttribute('title'), (text) => text === relative, 'wrong note opened');
 }
@@ -113,8 +114,8 @@ try {
   await rm(path.join(root, paths.get(target.sourceId))); await modes('preview'); await page.getByLabel('笔记只读预览', { exact: true }).getByRole('link', { name: '对照标准质量与偏差', exact: true }).click(); const chooser = page.getByRole('dialog', { name: '选择笔记链接', exact: true }); await eventually(async () => ({ dialog: await chooser.isVisible(), error: (await page.getByRole('alert').allTextContents()).join(' ') }), (state) => state.dialog || state.error.includes('ENOENT'), 'missing target did not report failure'); if (await chooser.isVisible()) { await chooser.getByText(/未找到目标，尚未创建文件/).waitFor(); await chooser.getByRole('button', { name: '取消', exact: true }).click(); } await assert.rejects(disk(paths.get(target.sourceId))); await modes('edit', 'source'); assert.ok((await editor().innerText()).includes('未保存关联草稿'));
   record('deleted imported target reports missing without creating a blank note or losing source draft');
   await source(initial); await eventually(() => disk(paths.get(from.sourceId)), (text) => text.includes('## 关联阅读'), 'source did not restore'); await closeApp(); server.closeAllConnections(); await new Promise((resolve) => server.close(resolve)); offline = true;
-  await launch(); await openPath('原文查阅.md'); await clickOriginal('跨页多框原文'); await originalLoaded(12); await page.setViewportSize({ width: 760, height: 900 }); await page.screenshot({ path: path.join(evidence, 'offline-narrow-original.png') }); await page.getByRole('button', { name: '返回关联来源', exact: true }).click(); record('offline restart: persisted original link, actual page image and source return work in narrow split');
-  await page.setViewportSize({ width: 1440, height: 980 }); await clickOriginal('跨页多框原文'); await originalLoaded(12); await source(unsaved);
+  await launch(); await openPath('原文查阅.md'); await clickOriginal('跨页多框原文'); await originalLoaded(12); await resizeWindow(app, page, { width: 760, height: 900 }); await page.screenshot({ path: path.join(evidence, 'offline-narrow-original.png') }); await page.getByRole('button', { name: '返回关联来源', exact: true }).click(); record('offline restart: persisted original link, actual page image and source return work in narrow split');
+  await resizeWindow(app, page, { width: 1440, height: 980 }); await clickOriginal('跨页多框原文'); await originalLoaded(12); await source(unsaved);
   const second = path.join(evidence, '第二笔记库'); await mkdir(second); await writeFile(path.join(second, '新库.md'), '新库不含旧教材。'); await app.evaluate(({ dialog }, second) => { dialog.showOpenDialog = async () => ({ canceled: false, filePaths: [second] }); }, second); await page.getByRole('button', { name: '切换笔记库', exact: true }).click(); await page.getByRole('button', { name: '放弃草稿并继续', exact: true }).click(); await eventually(() => page.locator('.vault-sidebar nav').innerText(), (text) => text.includes('新库'), 'vault switch failed'); assert.equal(await page.locator('.desktop-anchor-boundary').count(), 0); assert.equal(await page.getByRole('button', { name: '返回关联来源', exact: true }).count(), 0); record('vault switch clears prior relation targets and highlights; previous disk files remain untouched');
   assert.deepEqual(errors, []); assert.deepEqual(remote, []); await writeFile(path.join(evidence, 'result.json'), JSON.stringify({ result: 'passed', root, packageVersion: pack.version, checks, errors, remote, served: served.length }, null, 2)); console.log(JSON.stringify({ evidence, checks: checks.length, result: 'passed' }));
 } catch (error) { if (page && !page.isClosed()) { await page.screenshot({ path: path.join(evidence, 'failure.png') }).catch(() => {}); await writeFile(path.join(evidence, 'failure.txt'), await page.locator('body').innerText().catch(() => '')); } console.error('Evidence:', evidence, error); throw error; }

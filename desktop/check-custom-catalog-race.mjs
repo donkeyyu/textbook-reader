@@ -1,3 +1,4 @@
+import { resizeWindow } from './check-window.mjs';
 // Reuse only the isolated fixture produced by check-custom-catalog.mjs.
 import assert from 'node:assert/strict';
 import { readFile, writeFile } from 'node:fs/promises';
@@ -19,10 +20,11 @@ page.on('pageerror', (error) => errors.push(error.message));
 async function eventually(read, predicate) { for (let n = 0; n < 600; n++) { const value = await read(); if (predicate(value)) return value; await delay(50); } assert.fail('condition did not settle'); }
 try {
   await app.evaluate(({ session }) => session.defaultSession.enableNetworkEmulation({ offline: true }));
-  await page.setViewportSize({ width: 1380, height: 980 }); await button('笔记库').click();
+  await resizeWindow(app, page, { width: 1380, height: 980 }); await button('笔记库').click();
   await app.evaluate(({ dialog }, root) => { dialog.showOpenDialog = async () => ({ canceled: false, filePaths: [root] }); }, root);
   await page.getByRole('button', { name: /^(选择笔记库|切换笔记库)$/, exact: true }).first().click();
   await page.locator('.vault-sidebar nav').getByRole('button', { name: '甲', exact: true }).click();
+  if (await page.locator('.note-metadata').getAttribute('open') === null) await page.locator('.note-metadata > summary').click();
   await page.getByLabel('正文模式', { exact: true }).selectOption('preview');
   assert.equal(await page.getByRole('button', { name: /^管理自定义目录/ }).isDisabled(), true);
   await page.getByLabel('正文模式', { exact: true }).selectOption('edit'); checks.push('preview disables custom catalog writes');

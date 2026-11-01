@@ -5,6 +5,7 @@
 .note-position li > span { display: inline-block; margin-right: 10px; overflow-wrap: anywhere; }
 .note-position pre, .note-property pre { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; }
 .note-information { margin-bottom: 8px; color: var(--secondary); }
+.note-information > pre { white-space: pre-wrap; overflow-wrap: anywhere; }
 .note-information dl { margin: 8px 0; }
 .note-information dl > div { display: flex; gap: 12px; }
 .note-information dt { min-width: 95px; }
@@ -27,6 +28,8 @@
 .note-property-add { display: flex; align-items: center; gap: 8px; max-width: 540px; margin-top: 12px; }
 .note-property-add > select { width: 90px; }
 .note-property-add > button { flex-shrink: 0; }
+.note-property-create { margin-top: 8px; }
+.note-property-create summary { cursor: pointer; padding-block: 6px; }
 @media (max-width: 900px) {
   .note-properties { padding-inline: 16px; }
   .note-property { grid-template-columns: minmax(70px, 1fr) 80px auto; }

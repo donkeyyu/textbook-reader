@@ -1,3 +1,4 @@
+import { showNoteList } from './check-window.mjs';
 // Run against a compiled app, or pass an installed executable with DESKTOP_EXECUTABLE.
 import assert from 'node:assert/strict';
 import { mkdtemp, mkdir, writeFile, readFile, readdir, chmod, rename, rm, stat } from 'node:fs/promises';
@@ -59,7 +60,7 @@ try {
     return { keys: Object.keys(api), node: typeof window.require, process: typeof window.process, traversal: result.ok };
   });
   assert.equal(boundaries.node, 'undefined'); assert.equal(boundaries.process, 'undefined'); assert.equal(boundaries.traversal, false);
-  assert.deepEqual(boundaries.keys.sort(), ['chooseVault', 'copy', 'list', 'onChange', 'protectDraft', 'read', 'recoveries', 'restore', 'save', 'saveState', 'readSettings', 'saveSettings', 'setDirty'].sort());
+  assert.deepEqual(boundaries.keys.sort(), ['chooseVault', 'copy', 'list', 'onChange', 'protectDraft', 'read', 'recoveries', 'restore', 'save', 'saveState', 'readSettings', 'saveSettings', 'setDirty', 'links', 'moveStatus', 'planMove', 'planRepair', 'applyMove', 'customCatalog', 'saveCustomCatalog', 'customDeletions', 'planCustomDeletion', 'applyCustomDeletion'].sort());
   const preferences = await instance.evaluate(({ BrowserWindow }) => {
     const web = BrowserWindow.getAllWindows()[0].webContents;
     const settings = web.getLastWebPreferences();
@@ -287,6 +288,7 @@ try {
   const fixed = await readFile(path.join(root, '副本.md'), 'utf8');
   assert.notEqual(metadata(fixed).id, metadata(external).id);
   assert.deepEqual(metadata(fixed).ai_source, metadata(external).ai_source);
+  if (await page.getByRole('button', { name: '复制笔记', exact: true }).isHidden()) await page.locator('.note-move-actions > summary').click();
   await page.getByRole('button', { name: '复制笔记', exact: true }).click();
   await page.getByRole('heading', { name: '副本（2）', exact: true }).waitFor();
   await page.locator('.cm-content[contenteditable="true"]').waitFor();
@@ -326,11 +328,13 @@ try {
   await page.getByRole('status').filter({ hasText: /^已保存$/ }).waitFor();
   assert.ok((await readFile(activeFile, 'utf8')).endsWith(' deleted draft'));
   // Open a protected recovery as a new identity and save it through the same editor.
+  await showNoteList(page);
   await page.getByRole('button', { name: '恢复记录', exact: true }).click();
   const recoveryRows = page.getByRole('region', { name: '恢复记录' }).getByRole('article');
   const recoveryRow = recoveryRows.filter({ has: page.getByText('快速.md', { exact: true }) }).first();
   await recoveryRow.getByRole('button', { name: '打开草稿', exact: true }).click();
   await page.getByRole('heading', { name: '快速（恢复）', exact: true }).waitFor();
+  assert.equal(await page.locator('.vault-sidebar').isVisible(), false, 'opening a recovery must close the narrow list');
   await page.locator('.cm-content[contenteditable="true"]').waitFor();
   await editor().press('ControlOrMeta+a'); await page.keyboard.insertText('---\nunknown: []\n---\nrepaired recovery');
   await editor().press('ControlOrMeta+s');

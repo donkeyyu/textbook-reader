@@ -1,3 +1,4 @@
+import { resizeWindow } from './check-window.mjs';
 // Run after desktop:build. RELATIONS_FIXTURE points to check-default-relations evidence.
 // Copy only its fixture vault/cache. Never alter the supplied evidence or personal data.
 import assert from 'node:assert/strict';
@@ -50,9 +51,10 @@ async function openOriginal(mode = 'preview') {
 const scrolls = () => page.locator('.vault-paper,.cm-scroller,.note-preview').evaluateAll((elements) => elements.map((element) => ({ className: element.className, top: element.scrollTop })));
 try {
   console.log('Evidence:', evidence);
-  app = await _electron.launch({ executablePath: path.join(project, 'node_modules/electron/dist/Electron.app/Contents/MacOS/Electron'), args: [project, `--user-data-dir=${data}`] });
+  const executablePath = process.env.DESKTOP_EXECUTABLE || path.join(project, 'node_modules/electron/dist/Electron.app/Contents/MacOS/Electron');
+  app = await _electron.launch({ executablePath, args: [...(process.env.DESKTOP_EXECUTABLE ? [] : [project]), `--user-data-dir=${data}`] });
   await app.evaluate(({ session, dialog }, root) => { session.defaultSession.enableNetworkEmulation({ offline: true }); dialog.showOpenDialog = async () => ({ canceled: false, filePaths: [root] }); }, root);
-  page = await app.firstWindow(); page.setDefaultTimeout(20_000); await page.setViewportSize({ width: 1440, height: 980 });
+  page = await app.firstWindow(); page.setDefaultTimeout(20_000); await resizeWindow(app, page, { width: 1440, height: 980 });
   page.on('pageerror', (error) => errors.push(error.message)); page.on('request', (request) => { if (/^https?:/.test(request.url())) remote.push(request.url()); });
   await page.getByRole('button', { name: '选择笔记库', exact: true }).click();
   await page.locator('.vault-sidebar nav').getByRole('button', { name: '长文返回', exact: true }).click();

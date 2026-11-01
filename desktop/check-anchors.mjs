@@ -1,3 +1,4 @@
+import { resizeWindow, showNoteList } from './check-window.mjs';
 // Isolated real Electron + real local HTTP. Native picker and cleanup close prompts
 // are controlled; held/raced IPC requests still execute the real file handlers.
 import assert from 'node:assert/strict';
@@ -34,23 +35,24 @@ async function launch() {
   page = await app.firstWindow({ timeout: 30_000 }); page.setDefaultTimeout(15_000);
   page.on('pageerror', (error) => errors.push(error.message)); page.on('request', (request) => { if (/^https?:/.test(request.url())) remote.push(request.url()); });
   if (offline) await app.evaluate(({ session }) => session.defaultSession.enableNetworkEmulation({ offline: true }));
-  await page.setViewportSize({ width: 1440, height: 980 });
+  await resizeWindow(app, page, { width: 1440, height: 980 });
 }
 const disk = (name) => readFile(path.join(root, name), 'utf8');
 const anchors = async (name) => parse(await disk(name)).data._textbook.anchors;
 async function eventually(read, predicate, message) { for (let i = 0; i < 1200; i++) { const value = await read().catch(() => undefined); if (value !== undefined && predicate(value)) return value; await delay(50); } assert.fail(message); }
 const notes = async () => page.getByRole('button', { name: '笔记库', exact: true }).click();
 async function open(name) {
-  await notes(); await page.locator('.vault-sidebar nav').getByRole('button', { name, exact: true }).click({ timeout: 60_000 });
+  await notes(); await showNoteList(page); await page.locator('.vault-sidebar nav').getByRole('button', { name, exact: true }).click({ timeout: 60_000 });
   await page.getByRole('heading', { name, exact: true }).or(page.getByRole('heading', { name: '还有未保存的草稿', exact: true })).first().waitFor({ timeout: 60_000 });
   if (await page.getByRole('button', { name: '保存并继续', exact: true }).isVisible()) await page.getByRole('button', { name: '保存并继续', exact: true }).click();
   await page.getByRole('heading', { name, exact: true }).waitFor();
+  if (await page.locator('.note-metadata').getAttribute('open') === null) await page.locator('.note-metadata > summary').click();
 }
 async function modes(body = 'edit', header = 'properties') { await page.getByLabel('正文模式', { exact: true }).selectOption(body); if (body !== 'preview') await page.getByLabel('文件头模式', { exact: true }).selectOption(header); }
 const editor = () => page.getByRole('textbox', { name: '笔记 Markdown 源码', exact: true });
 async function source(text) { await modes('edit', 'source'); await editor().click(); await editor().press('ControlOrMeta+a'); await page.keyboard.insertText(text); }
 async function saved(name, predicate) { await eventually(() => disk(name), predicate, 'file did not save: ' + name); await page.getByRole('status').filter({ hasText: /^已保存$/ }).waitFor(); }
-async function position(index = 1) { const details = page.locator('.note-anchor').nth(index - 1); if (!await details.evaluate((element) => element.open)) await details.locator('summary').click(); return details; }
+async function position(index = 1) { if (await page.locator('.note-metadata').getAttribute('open') === null) await page.locator('.note-metadata > summary').click(); const details = page.locator('.note-anchor').nth(index - 1); if (!await details.evaluate((element) => element.open)) await details.locator('summary').click(); return details; }
 async function jump(number) {
   await page.locator('.page-index').click(); await page.getByRole('textbox', { name: '页码', exact: true }).fill(String(number)); await page.getByRole('textbox', { name: '页码', exact: true }).press('Enter');
   await page.getByRole('button', { name: `第 ${number} 页，共 202 页，点击输入页码`, exact: true }).waitFor();
@@ -182,7 +184,7 @@ try {
   await page.getByRole('button', { name: '返回来源', exact: true }).click(); await page.getByRole('heading', { name: '往返', exact: true }).waitFor(); assert.ok((await editor().innerText()).includes('尚未保存现场')); assert.equal(await disk('往返.md'), original);
   record('duplicate candidates show actual region images; split/fullscreen/resize and textbook-marker navigation return to invalid unsaved source without writing it');
   await source(original); await modes(); await position(); await page.getByRole('button', { name: '定位位置 1', exact: true }).click(); await jump(20);
-  await page.setViewportSize({ width: 760, height: 900 }); await page.screenshot({ path: path.join(evidence, 'narrow-split.png') });
+  await resizeWindow(app, page, { width: 760, height: 900 }); await page.screenshot({ path: path.join(evidence, 'narrow-split.png') });
   await app.evaluate(({ dialog }) => { dialog.showMessageBoxSync = () => 1; }); await app.close(); app = null; server.closeAllConnections(); await new Promise((resolve) => server.close(resolve)); offline = true;
   await launch(); await notes(); await page.getByRole('heading', { name: '往返', exact: true }).waitFor(); await position(); await page.getByRole('button', { name: '定位位置 1', exact: true }).click(); await jump(20); await draw(20, [.18, .26, .4, .06]); await page.getByRole('button', { name: '添加到当前笔记', exact: true }).click(); await eventually(() => anchors('往返.md'), (items) => items.length === 2, 'offline append failed');
   await page.screenshot({ path: path.join(evidence, 'offline-roundtrip.png') });

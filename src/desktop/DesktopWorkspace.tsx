@@ -17,6 +17,9 @@ const emptySession: AnchorSession = { vaultToken: '', anchors: undefined, writab
 export function DesktopWorkspace() {
   const [view, setView] = useState(() => { try { return localStorage.getItem('desktop-workspace-view') === 'textbooks' ? 'textbooks' : 'notes'; } catch { return 'notes'; } });
   const [split, setSplit] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(innerWidth);
+  // Both panels need this width to keep controls and the editor usable in the minimum window.
+  const minimumShare = Math.min(50, Math.max(30, Math.ceil(355 / (windowWidth - 10) * 100)));
   const [chooseRequest, setChooseRequest] = useState(0);
   const [openRequest, setOpenRequest] = useState<{ path: string; serial: number; vaultToken: string; expectedId?: string }>();
   const [locate, setLocate] = useState<LocateRequest>();
@@ -37,6 +40,11 @@ export function DesktopWorkspace() {
   const share = useRef(50);
   const locateSerial = useRef(0);
   const token = useRef(''); token.current = session.vaultToken;
+  useEffect(() => {
+    const changed = () => setWindowWidth(innerWidth);
+    window.addEventListener('resize', changed); return () => window.removeEventListener('resize', changed);
+  }, []);
+  useEffect(() => { resize(share.current); }, [split, minimumShare]);
   useEffect(() => { try { localStorage.setItem('desktop-workspace-view', view); } catch { /* Navigation remains available. */ } }, [view]);
   useEffect(() => {
     catalogRequest.current++;
@@ -152,7 +160,7 @@ export function DesktopWorkspace() {
     </>,
   };
   function resize(value: number) {
-    share.current = Math.max(30, Math.min(70, value));
+    share.current = Math.max(minimumShare, Math.min(100 - minimumShare, value));
     const panels = body.current?.querySelectorAll<HTMLElement>(':scope > .desktop-workspace-view');
     body.current?.querySelector('[role=separator]')?.setAttribute('aria-valuenow', String(Math.round(share.current)));
     if (panels) { panels[0]!.style.flex = String(share.current); panels[1]!.style.flex = String(100 - share.current); }
@@ -175,7 +183,6 @@ export function DesktopWorkspace() {
       <button aria-current={!split && view === 'textbooks' ? 'page' : undefined} onClick={() => { setTextbooksMounted(true); setSplit(false); setView('textbooks'); }}>教材书架</button>
       <button aria-pressed={split} onClick={() => { setTextbooksMounted(true); setSplit(!split); }}>展开教材分屏</button>
       {split && <button onClick={() => setChooseRequest((previous) => previous + 1)}>{session.vaultToken ? '切换笔记库' : '选择笔记库'}</button>}
-      {session.path && <button onClick={() => { setSplit(false); setView('notes'); }}>返回当前笔记</button>}
       {(split || view === 'textbooks') && <div className="desktop-local-browse" role="group" aria-label="查阅本地笔记">{(['search', 'graph'] as const).map((target) => <button key={target} onClick={() => { setBrowseRequest((previous) => ({ view: target, serial: (previous?.serial ?? 0) + 1 })); setSplit(false); setView('notes'); }}>{target === 'search' ? '搜索笔记' : '知识图'}</button>)}</div>}
     </nav>
     {original && <section className="desktop-selection" aria-label="关联原文查阅"><button onClick={returnOriginal}>返回关联来源</button><span>教材原文</span>{original.targets.map((target, index) => <button key={index} aria-current={original.index === index ? 'page' : undefined} onClick={() => { setOriginal({ ...original, index }); setRestore(undefined); setLocate({ ...target, origin: 'relation', serial: ++locateSerial.current, vaultToken: session.vaultToken }); }}>文件第 {target.page} 页 · {target.rects.length} 个区域</button>)}</section>}
@@ -189,9 +196,9 @@ export function DesktopWorkspace() {
     </section>}
     <div ref={body} className={`desktop-workspace-body${split ? ' split' : ''}`}>
       <div className="desktop-workspace-view" hidden={!split && view !== 'notes'}><DesktopApp active={split || view === 'notes'} browseRequest={browseRequest} chooseRequest={chooseRequest} openRequest={openRequest} catalog={catalog} onRefreshCatalog={refreshCatalog} onAnchorSession={setSession} anchorBridge={bridge} onLocate={located} onOriginal={locateOriginal} onSelect={begin} /></div>
-      {split && <div className="desktop-workspace-resize" role="separator" tabIndex={0} aria-label="调整笔记与教材面板" aria-orientation="vertical" aria-valuemin={30} aria-valuemax={70} aria-valuenow={share.current} onPointerDown={(event) => { event.preventDefault(); event.currentTarget.setPointerCapture(event.pointerId); }} onPointerMove={(event) => {
+      {split && <div className="desktop-workspace-resize" role="separator" tabIndex={0} aria-label="调整笔记与教材面板" aria-orientation="vertical" aria-disabled={minimumShare === 50} aria-valuemin={minimumShare} aria-valuemax={100 - minimumShare} aria-valuenow={share.current} onPointerDown={(event) => { event.preventDefault(); event.currentTarget.setPointerCapture(event.pointerId); }} onPointerMove={(event) => {
         if (!event.currentTarget.hasPointerCapture(event.pointerId) || !body.current) return;
-        const bounds = body.current.getBoundingClientRect(); resize(window.innerWidth <= 800 ? 100 - (event.clientY - bounds.top) / bounds.height * 100 : (event.clientX - bounds.left) / bounds.width * 100);
+        const bounds = body.current.getBoundingClientRect(); resize((event.clientX - bounds.left) / bounds.width * 100);
       }} onPointerUp={(event) => event.currentTarget.releasePointerCapture(event.pointerId)} onKeyDown={(event) => { if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(event.key)) { event.preventDefault(); resize(share.current + (['ArrowLeft', 'ArrowUp'].includes(event.key) ? -5 : 5)); } }} />}
       <div className="desktop-workspace-view" hidden={!split && view !== 'textbooks'}>{textbooksMounted && <DesktopTextbooks vaultToken={session.vaultToken} active={split || view === 'textbooks'} tools={tools} onCatalog={onCatalog} onOpenNote={open} />}</div>
     </div>

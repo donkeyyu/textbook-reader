@@ -1,3 +1,4 @@
+import { resizeWindow, showNoteList } from './check-window.mjs';
 // Isolated Electron UI + real local HTTP. Only native directory selection is
 // controlled; all catalog and Markdown handlers use actual files.
 import assert from 'node:assert/strict';
@@ -39,15 +40,15 @@ async function launch() {
   page = await app.firstWindow(); page.setDefaultTimeout(20_000);
   page.on('pageerror', (error) => errors.push(error.message)); page.on('request', (request) => { if (/^https?:/.test(request.url())) remote.push(request.url()); });
   if (offline) await app.evaluate(({ session }) => session.defaultSession.enableNetworkEmulation({ offline: true }));
-  await page.setViewportSize({ width: 1380, height: 980 });
+  await resizeWindow(app, page, { width: 1380, height: 980 });
 }
 async function picker(folder) { await app.evaluate(({ dialog }, folder) => { dialog.showOpenDialog = async () => ({ canceled: false, filePaths: [folder] }); }, folder); }
 async function open(name) {
-  await button('笔记库').click(); await page.locator('.vault-sidebar nav').getByRole('button', { name, exact: true }).click({ timeout: 60_000 });
+  await button('笔记库').click(); await showNoteList(page); await page.locator('.vault-sidebar nav').getByRole('button', { name, exact: true }).click({ timeout: 60_000 });
   await page.getByRole('heading', { name, exact: true }).waitFor();
   await page.getByLabel('正文模式', { exact: true }).selectOption('edit'); await page.getByLabel('文件头模式', { exact: true }).selectOption('properties');
 }
-async function manage() { await page.getByRole('button', { name: /^管理自定义目录/ }).click(); await page.getByRole('dialog', { name: '管理自定义目录', exact: true }).waitFor(); await page.getByLabel('自定义目录名称', { exact: true }).waitFor(); }
+async function manage() { if (await page.locator('.note-metadata').getAttribute('open') === null) await page.locator('.note-metadata > summary').click(); await page.getByRole('button', { name: /^管理自定义目录/ }).click(); await page.getByRole('dialog', { name: '管理自定义目录', exact: true }).waitFor(); await page.getByLabel('自定义目录名称', { exact: true }).waitFor(); }
 async function create(title, kind = 'chapter', parent) {
   await page.getByLabel('自定义条目类型', { exact: true }).selectOption(kind);
   if (kind === 'section') await page.getByLabel('自定义节父章', { exact: true }).selectOption(parent);
@@ -135,7 +136,7 @@ try {
   await page.getByLabel('位置 1 章', { exact: true }).selectOption(retained); await page.getByLabel('位置 1 节', { exact: true }).selectOption(''); await page.getByRole('status').filter({ hasText: /^已保存$/ }).waitFor();
   await button('定位位置 1').click(); await page.getByLabel('已定位区域 1', { exact: true }).waitFor();
   await page.waitForFunction(() => { const image = document.querySelector('#page-20 .page-image'); return image?.complete && image.naturalWidth > 0; });
-  await page.setViewportSize({ width: 760, height: 900 }); await manage();
+  await resizeWindow(app, page, { width: 760, height: 900 }); await manage();
   await page.waitForFunction(() => [...document.querySelectorAll('button')].some((button) => button.textContent === '关闭目录管理' && !button.disabled));
   await page.screenshot({ path: path.join(evidence, 'narrow-management.png') });
   const overflow = await page.getByRole('dialog', { name: '管理自定义目录', exact: true }).evaluate((element) => element.scrollWidth > element.clientWidth + 1); assert.equal(overflow, false);

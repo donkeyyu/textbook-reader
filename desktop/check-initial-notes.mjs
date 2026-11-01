@@ -1,3 +1,4 @@
+import { resizeWindow } from './check-window.mjs';
 // Real Electron UI path. Only the native folder picker is controlled; OS validation belongs to 15.
 import assert from 'node:assert/strict';
 import { createServer } from 'node:http';
@@ -70,14 +71,22 @@ try {
   console.log('First explicit add stopped on the blocked receipt directory.');
   const plan = JSON.parse(await readFile(path.join(importRoot, 'plan.json'), 'utf8'));
   await rm(path.join(importRoot, 'receipts')); await mkdir(path.join(importRoot, 'receipts'));
-  const blockedReceipt = path.join(importRoot, `receipts/${plan.notes[1].id}.json`); await writeFile(blockedReceipt, 'broken receipt');
+  // Receipt validation now precedes creation. Block an unreferenced later file
+  // with an actual directory so the retry exercises a real partial installation.
+  const targetIds = new Set(pack.source.content.supplements.flatMap((item) => item.related.flatMap((relation) => pack.source.content.supplements.filter((target) => target.locationId === relation.locationId).map((target) => target.id))));
+  const blocked = plan.notes.find((item, index) => index > 0 && !targetIds.has(item.sourceId));
+  assert.ok(blocked);
+  const blockedPath = path.join(root, blocked.path); await mkdir(blockedPath);
   await page.getByRole('button', { name: '添加到书架', exact: true }).click();
-  await page.getByRole('alert').filter({ hasText: '初始笔记导入记录无法读取' }).first().waitFor({ timeout: 30_000 });
-  const interruptedPath = path.join(root, plan.notes[0].path); const interrupted = await readFile(interruptedPath, 'utf8');
+  const interruptedPath = path.join(root, plan.notes[0].path);
+  let interrupted;
+  for (let attempt = 0; attempt < 600; attempt++) { interrupted = await readFile(interruptedPath, 'utf8').catch(() => null); if (interrupted) break; await new Promise((resolve) => setTimeout(resolve, 100)); }
+  assert.ok(interrupted, 'partial import must actually install the first note');
+  await page.getByRole('alert').first().waitFor({ timeout: 30000 });
   await writeFile(interruptedPath, interrupted + '\n中断后学生的修改\n');
   await page.screenshot({ path: path.join(evidence, 'import-failed.png') });
   assert.equal(await readFile(sameName, 'utf8'), '学生已有同名内容');
-  await rm(blockedReceipt);
+  await rm(blockedPath, { recursive: true });
   await page.getByRole('button', { name: '添加到书架', exact: true }).click();
   await page.getByRole('button', { name: '已添加', exact: true }).waitFor({ timeout: 120_000 });
   console.log('All 971 initial notes imported after a partial failure; existing content preserved.');
@@ -135,7 +144,7 @@ try {
   await page.locator('.vault-note-heading h1').filter({ hasText: entry.title }).waitFor();
   await page.getByLabel('正文模式').selectOption('edit'); await append('断网关闭重开后继续编辑。');
   assert.ok((await readFile(targetPath, 'utf8')).includes('断网关闭重开后继续编辑。'));
-  await page.setViewportSize({ width: 760, height: 780 }); await page.getByLabel('正文模式').selectOption('preview');
+  await resizeWindow(app, page, { width: 760, height: 780 }); await page.getByLabel('正文模式').selectOption('preview');
   await page.locator('.note-preview .math-inline svg').first().waitFor();
   await page.screenshot({ path: path.join(evidence, 'offline-unified-narrow.png') });
   await page.getByRole('button', { name: '教材书架', exact: true }).click(); await page.getByRole('button', { name: '继续阅读', exact: true }).click(); await jump(88);

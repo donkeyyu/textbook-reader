@@ -1,3 +1,4 @@
+import { resizeWindow, showNoteList } from './check-window.mjs';
 // Real Electron regression for note modes. The OS picker is covered separately.
 import assert from 'node:assert/strict';
 import { mkdtemp, mkdir, writeFile, readFile, stat } from 'node:fs/promises';
@@ -110,9 +111,11 @@ async function choose(directory) {
   await page.getByRole('button', { name: /^(选择|切换)笔记库$/ }).click();
 }
 async function openNote(name) {
+  await showNoteList(page);
   await page.getByRole('button', { name, exact: true }).click();
   await page.getByRole('heading', { name, exact: true, level: 1 }).waitFor();
-  await eventually(() => page.getByRole('button', { name: '新建笔记', exact: true }).isEnabled(), Boolean, 'note stayed busy');
+  await eventually(() => page.locator('.vault-list-actions button').first().isEnabled(), Boolean, 'note stayed busy');
+  if (await page.locator('.note-metadata').getAttribute('open') === null) await page.locator('.note-metadata > summary').click();
 }
 const editor = () => page.getByRole('textbox', { name: '笔记 Markdown 源码', exact: true });
 const bodyMode = () => page.getByRole('combobox', { name: '正文模式', exact: true });
@@ -191,6 +194,7 @@ try {
   await saved((text) => data(text).id === '用户新身份');
   assert.equal(data(await disk())._textbook.id, 'builtin-identity');
   assert.equal(data(await disk()).anchors, '用户位置');
+  await page.locator('.note-property-create > summary').click();
   await page.getByRole('textbox', { name: '新增属性名', exact: true }).fill('新增字段');
   await page.getByRole('combobox', { name: '新增属性类型', exact: true }).selectOption('text');
   await page.getByRole('button', { name: '添加属性', exact: true }).click();
@@ -227,7 +231,8 @@ try {
     await source(invalid);
     await page.getByText(/YAML 第 \d+ 行，第 \d+ 列/).first().waitFor();
     await modes('live', 'properties');
-    await page.getByText(/属性写入已暂停/).waitFor();
+    await page.locator('.vault-problems').getByText(/YAML 第 \d+ 行，第 \d+ 列/).waitFor();
+    assert.equal(await page.getByText(/YAML 第 \d+ 行，第 \d+ 列/).count(), 1, 'one YAML error must not repeat in anchors and properties');
     assert.equal(await page.getByRole('textbox', { name: '新增属性名', exact: true }).count(), 0);
     await delay(900); assert.equal(await disk(), prior);
     await modes('preview');
@@ -363,7 +368,7 @@ try {
   record('future schema note read-only body/properties/anchors with no write controls');
   await openNote('模式');
   await modes('live', 'properties');
-  await instance.evaluate(({ BrowserWindow }) => BrowserWindow.getAllWindows()[0].setBounds({ width: 760, height: 700 }));
+  await resizeWindow(instance, page, { width: 760, height: 700 }, true);
   await page.locator('.vault-source .cm-scroller').evaluate((element) => { element.scrollTop = 0; });
   await page.locator('.note-rendered-block').filter({ hasText: '可原位修改的段落' }).scrollIntoViewIfNeeded();
   await page.screenshot({ path: path.join(evidence, 'live-properties-narrow.png') });

@@ -1,3 +1,4 @@
+import { resizeWindow, showNoteList } from './check-window.mjs';
 // Real Electron controls and disk assertions; the native folder picker belongs to 15.
 import assert from 'node:assert/strict';
 import { randomUUID } from 'node:crypto';
@@ -26,7 +27,8 @@ const disk = (name) => readFile(path.join(root, name), 'utf8');
 let instance, page;
 const errors = [];
 async function launch() {
-  instance = await _electron.launch({ args: [project, `--user-data-dir=${userData}`] });
+  const executablePath = process.env.DESKTOP_EXECUTABLE;
+  instance = await _electron.launch({ ...(executablePath ? { executablePath } : {}), args: [...(executablePath ? [] : [project]), `--user-data-dir=${userData}`] });
   page = await instance.firstWindow();
   page.setDefaultTimeout(15_000);
   page.on('pageerror', (error) => errors.push(error.message));
@@ -38,6 +40,8 @@ async function select() {
 }
 const dialog = () => page.getByRole('dialog', { name: '改名与移动笔记', exact: true });
 async function preview(to) {
+  await page.waitForFunction(() => [...document.querySelectorAll('button')].some((button) => button.textContent === '新建笔记' && !button.disabled));
+  if (await page.locator('.note-move-actions').getAttribute('open') === null) await page.locator('.note-move-actions > summary').click();
   await page.getByRole('button', { name: '改名或移动', exact: true }).click();
   await page.getByRole('textbox', { name: '移动目标路径', exact: true }).fill(to);
   await page.getByRole('button', { name: '预览引用变更', exact: true }).click();
@@ -56,7 +60,7 @@ try {
   await dialog().getByRole('status').filter({ hasText: '2 篇，4 处' }).waitFor();
   assert.equal(await disk('甲引用.md'), first);
   await screenshot('01-preview.png');
-  await instance.evaluate(({ BrowserWindow }) => BrowserWindow.getAllWindows()[0].setBounds({ width: 720, height: 620 }));
+  await resizeWindow(instance, page, { width: 720, height: 620 }, true);
   await screenshot('02-narrow-preview.png');
   await chmod(path.join(root, '乙引用.md'), 0o400);
   await page.getByRole('button', { name: '确认改名并维护引用', exact: true }).click();
@@ -86,9 +90,9 @@ try {
   assert.ok((await disk('乙引用.md')).includes('[[复习/中文新名称.md|只读后重试]]'));
   await screenshot('04-retry-complete.png');
   await dialog().getByRole('button', { name: '关闭', exact: true }).click();
-  await page.getByRole('button', { name: '中文新名称 · 复习', exact: true }).click();
+  await showNoteList(page); await page.getByRole('button', { name: '中文新名称 · 复习', exact: true }).click();
   await page.getByRole('heading', { name: '中文新名称', exact: true }).waitFor();
-  await page.getByRole('button', { name: '甲引用', exact: true }).click();
+  await showNoteList(page); await page.getByRole('button', { name: '甲引用', exact: true }).click();
   await page.getByRole('combobox', { name: '正文模式', exact: true }).selectOption('preview');
   await page.getByRole('link', { name: '正文别名', exact: true }).click();
   await page.getByRole('heading', { name: '中文新名称', exact: true }).waitFor();
@@ -96,7 +100,7 @@ try {
   await page.getByRole('heading', { name: '甲引用', exact: true }).waitFor();
   assert.ok((await disk('甲引用.md')).includes('[[相反数]]'));
   assert.ok((await disk('甲引用.md')).includes('[[复习/相反数|另一个同名]]'));
-  await instance.evaluate(({ BrowserWindow }) => BrowserWindow.getAllWindows()[0].setBounds({ width: 1100, height: 780 }));
+  await resizeWindow(instance, page, { width: 1100, height: 780 }, true);
   await screenshot('05-link-return-and-names.png');
 
   const external = source('外部移动原件。'), externalRefs = source('[[外部原件|旧名]] [[外部原件]]');
@@ -166,6 +170,8 @@ try {
   await page.getByRole('button', { name: '确认改名并维护引用', exact: true }).click().catch(() => {});
   await exited;
   await launch();
+  await page.locator('.note-move-actions > summary').filter({ hasText: '待处理' }).waitFor();
+  await page.locator('.note-move-actions > summary').click();
   await page.getByRole('button', { name: '查看并重试', exact: true }).click();
   await page.getByRole('button', { name: '重试未完成项', exact: true }).click();
   await dialog().getByRole('status').filter({ hasText: '1 篇引用已完成' }).waitFor();
@@ -181,6 +187,7 @@ try {
   await rename(path.join(root, '关闭时旧路径.md'), path.join(root, '复习/关闭时新路径.md'));
   await launch();
   assert.equal(await disk('关闭时引用.md'), offlineRef);
+  if (await page.locator('.note-move-actions').getAttribute('open') === null) await page.locator('.note-move-actions > summary').click();
   assert.equal(await page.getByRole('button', { name: '预览引用修复', exact: true }).count(), 0);
   await page.getByRole('button', { name: '关闭时引用', exact: true }).click();
   await page.getByRole('link', { name: '关闭时旧路径', exact: true }).click();

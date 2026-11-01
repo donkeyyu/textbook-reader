@@ -67,7 +67,7 @@ export function NoteProperties({ source, readOnly, propertyTypes, onChange, onTy
   return <section className="note-properties" aria-label="笔记属性">
     <details className="note-information"><summary>笔记信息</summary><dl>{['id', 'create_time', 'update_time'].map((key) => <div key={key}><dt>{key}</dt><dd>{metadata[key] === undefined ? '未知' : display(metadata[key])}</dd></div>)}</dl></details>
     {metadata.ai_source !== undefined && <details className="note-information"><summary>AI 初始来源</summary><pre>{display(metadata.ai_source)}</pre><p>初始内容来自固定版本包。云端归档尚待发布核验。</p></details>}
-    <div hidden={!showProperties}>{problem ? <p className="note-property-error" role="note">{problem} 属性写入已暂停，请切换文件头源码修复。</p> : <>
+    <div hidden={!showProperties}>{!problem && <>
       <div className="note-property-rows">{properties.map(({ name: propertyName, value, editable }) => {
         const actualType = inferPropertyType(value);
         const type = Object.hasOwn(propertyTypes, propertyName) ? propertyTypes[propertyName]! : actualType;
@@ -84,7 +84,7 @@ export function NoteProperties({ source, readOnly, propertyTypes, onChange, onTy
         </div>;
       })}</div>
       {!properties.length && readOnly && <p>没有用户属性</p>}
-      {!readOnly && <form className="note-property-add" onSubmit={(event) => {
+      {!readOnly && <details className="note-property-create"><summary>新增属性</summary><form className="note-property-add" onSubmit={(event) => {
         event.preventDefault();
         const defaults: Record<PropertyType, unknown> = { text: '', number: 0, boolean: false, list: [], date: new Date().toISOString().slice(0, 10), object: {} };
         if (mutate(() => setUserProperty(source, propertyName, defaults[creationType], true))) {
@@ -94,7 +94,7 @@ export function NoteProperties({ source, readOnly, propertyTypes, onChange, onTy
       }}><input aria-label="新增属性名" placeholder="属性名" value={name} onChange={(event) => setName(event.target.value)} />
         <select aria-label="新增属性类型" value={creationType} disabled={sharedType !== undefined} title={sharedType === undefined ? undefined : '沿用本库同名属性类型'} onChange={(event) => setNewType(event.target.value as PropertyType)}>{types.map((type) => <option key={type} value={type}>{propertyTypeLabels[type]}</option>)}</select>
         <button type="submit" disabled={!name.trim()}>添加属性</button>
-      </form>}
+      </form></details>}
     </>}
     {error && <p className="note-property-error" role="alert">{error}</p>}</div>
   </section>;

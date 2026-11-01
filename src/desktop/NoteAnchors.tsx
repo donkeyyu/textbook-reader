@@ -12,7 +12,7 @@ export function NoteAnchors({ source, readOnly, catalog, onChange, onLocate, onS
   const options = (value: unknown, choices: { id: string; title: string }[], grouped = false) => <><option value="">未设置</option>{value !== undefined && !choices.some((item) => item.id === value) && <option value={String(value)}>{String(value)}（未匹配）</option>}{grouped ? ['教材索引', '自定义目录'].map((label) => <optgroup label={label} key={label}>{choices.filter((entry) => ('source' in entry && entry.source === 'custom') === (label === '自定义目录')).map((entry) => <option key={entry.id} value={entry.id}>{entry.title}</option>)}</optgroup>) : choices.map((entry) => <option key={entry.id} value={entry.id}>{entry.title}</option>)}</>;
   return <section className="note-anchors" aria-label="笔记位置"><strong>笔记位置</strong>{catalogTools}
     {!catalog && <p role="note">当前教材目录不可用。原值已保留，请先添加教材。</p>}
-    {problem ? <p role="note">{problem} 位置写入已暂停。</p> : <>
+    {!problem && <>
       {anchors !== undefined && !Array.isArray(anchors) && <p role="note">anchors 不是列表，原值已保留；请在源码中修复。</p>}
       {Array.isArray(anchors) && anchors.map((anchor, index) => {
         const item = anchorObject(anchor), resolved = resolveAnchor(anchor, catalog);

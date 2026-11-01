@@ -1,3 +1,4 @@
+import { resizeWindow, showNoteList } from './check-window.mjs';
 // Real Electron UI + filesystem regression. Only the native picker is stubbed;
 // OS dialogs and Windows runtime verification stay with tickets 15 and 13.
 import assert from 'node:assert/strict';
@@ -48,6 +49,7 @@ async function source(text) {
   await modes('edit', 'source'); await editor().click(); await editor().press('ControlOrMeta+a'); await page.keyboard.insertText(text);
 }
 async function open(name) {
+  await showNoteList(page);
   await page.getByRole('navigation').getByRole('button', { name, exact: true }).click();
   await page.getByRole('heading', { name, exact: true }).waitFor();
 }
@@ -213,7 +215,7 @@ try {
 
   const hideRecoveries = page.getByRole('button', { name: '收起恢复记录', exact: true });
   if (await hideRecoveries.count()) await hideRecoveries.click();
-  await instance.evaluate(({ BrowserWindow }) => BrowserWindow.getAllWindows()[0].setBounds({ width: 760, height: 700 }));
+  await resizeWindow(instance, page, { width: 760, height: 700 }, true);
   await incoming().getByRole('button').filter({ hasText: '来源' }).click();
   await page.getByRole('heading', { name: '来源', exact: true }).waitFor();
   await page.getByRole('button', { name: '返回来源', exact: true }).click();

@@ -1,3 +1,4 @@
+import { resizeWindow } from './check-window.mjs';
 // Reuse only check-anchors' disposable library; never attach to a user instance.
 import assert from 'node:assert/strict';
 import path from 'node:path';
@@ -22,8 +23,9 @@ try {
   await app.evaluate(({ dialog }) => { dialog.showErrorBox = (title, message) => console.error(title, message); });
   page = await app.firstWindow({ timeout: 60000 }); page.setDefaultTimeout(30000); page.on('pageerror', (error) => errors.push(error.message));
   await app.evaluate(({ session }) => session.defaultSession.enableNetworkEmulation({ offline: true }));
-  await page.setViewportSize({ width: 760, height: 900 }); await page.getByRole('button', { name: '笔记库', exact: true }).click();
+  await resizeWindow(app, page, { width: 760, height: 900 }); await page.getByRole('button', { name: '笔记库', exact: true }).click();
   await page.getByRole('heading', { name: '往返', exact: true }).waitFor();
+  if (await page.locator('.note-metadata').getAttribute('open') === null) await page.locator('.note-metadata > summary').click();
   let detail = page.locator('.note-anchor').first(); if (!await detail.evaluate((element) => element.open)) await detail.locator('summary').click();
   await page.getByRole('button', { name: '定位位置 1', exact: true }).click(); await page.getByRole('button', { name: '第 20 页，共 202 页，点击输入页码', exact: true }).waitFor();
   await page.getByLabel('已定位区域 1', { exact: true }).waitFor();

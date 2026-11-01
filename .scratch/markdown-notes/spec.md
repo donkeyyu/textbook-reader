@@ -19,9 +19,10 @@
 | [09 笔记改名和移动后维护引用](issues/09-rename-links.md) | 02、08 |
 | [10 将默认知识关联接入统一笔记](issues/10-default-relations.md) | 04、06、08 |
 | [11 搜索与知识图统一指向本地笔记](issues/11-search-graph.md) | 04、08 |
-| [12 双平台首版交付与完整离线路径验收](issues/12-desktop-release-verification.md) | 07、09、10、11、13 |
+| [12 双平台首版交付与完整离线路径验收](issues/12-desktop-release-verification.md) | 07、09、10、11、13、15 |
 | [13 Windows 实机验收](issues/13-windows-runtime-verification.md) | 01、09；另需 Windows 环境 |
 | [14 离线教材资源清单与校验准备](issues/14-offline-resource-manifest.md) | 无 |
+| [15 macOS 原生对话框与安装启动验收](issues/15-macos-native-dialog-verification.md) | 01；另需解锁 Mac |
 
 按依赖已完成的前沿领取，不要求机械地按编号串行。当前无前置的实施票为 01、14；技术选择在对应票内落实。旧领域词汇中的附属笔记与逐实例绑定描述的是旧系统，新桌面目标以 R15 为准；现有 proposed ADR 不自动升级为已批准决定。
 
@@ -47,3 +48,5 @@ worker 只领取已具备前置条件的票，在隔离的工作树实施，保�
 2026-11-01：DonQ 确认无 Windows 环境，将 01、09 的 Windows 实机验证移到 13，12 仍等待该证据；实现须保持双平台兼容。03 的资源准备拆为 14，与 01 并行；03 等待 01、14。
 
 集成工作树：`/Users/chengqiyu/.codex/worktrees/markdown-notes-integration/课本解读`，分支 `codex/markdown-notes-integration`。原工作区的教材及界面未提交修改保留，后续 worker 从已审查的集成提交建立独立工作树。
+
+2026-11-01：01 的原生选库、关闭确认及 DMG 安装启动验收遇到 Mac 锁屏，单列 15。01 实现与自动检查通过协调者审查后可放行 02、03；01 中未执行的原生操作仍注明转交 15，12 必须等待真实操作证据。

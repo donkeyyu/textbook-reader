@@ -1,4 +1,4 @@
-// Run after the Mac is unlocked. Uses real Electron input; only folder selection is controlled.
+// Uses isolated real Electron input; only folder selection is controlled. No native OS dialogs.
 // Both builds use the same cloned 971-note vault and the same local textbook resources.
 import assert from 'node:assert/strict';
 import { cp, mkdir, mkdtemp, readFile, realpath, writeFile } from 'node:fs/promises';
@@ -7,6 +7,8 @@ import os from 'node:os';
 import { performance } from 'node:perf_hooks';
 import { _electron } from 'playwright-core';
 const project = path.resolve(import.meta.dirname, '..');
+let app, page;
+const deadline = setTimeout(() => { console.error('Runtime performance check exceeded 360000 ms.'); app?.process().kill('SIGTERM'); process.exit(124); }, 360_000); deadline.unref();
 const beforeApp = process.env.INITIAL_NOTES_BEFORE_APP;
 const [sourceVault, sourceData] = process.argv.slice(2);
 assert.ok(beforeApp && sourceVault && sourceData, 'Set INITIAL_NOTES_BEFORE_APP; pass a 971-note vault and its resource app-data.');
@@ -18,7 +20,7 @@ await cp(path.join(sourceData, 'textbook-resources'), path.join(data, 'textbook-
 const pack = JSON.parse(await readFile(path.join(project, 'resources/initial-notes/grade-7-volume-1.json'), 'utf8'));
 const plan = JSON.parse(await readFile(path.join(root, `.textbook/textbooks/${pack.textbook}/initial-notes/plan.json`), 'utf8'));
 assert.equal(plan.notes.length, 971);
-const results = [], errors = []; let app, page;
+const results = [], errors = [];
 async function ready() { await page.waitForFunction(() => [...document.querySelectorAll('.vault-sidebar button')].some((button) => button.textContent === '新建笔记' && !button.disabled)); }
 async function add() {
   await page.getByRole('button', { name: '添加教材', exact: true }).first().click();
@@ -34,8 +36,11 @@ async function readBook() {
 }
 try {
   for (const [phase, appRoot] of [['before', beforeApp], ['after', project]]) {
-    app = await _electron.launch({ executablePath: path.join(project, 'node_modules/electron/dist/Electron.app/Contents/MacOS/Electron'), args: [appRoot, `--user-data-dir=${data}`], env: { ...process.env, TEXTBOOK_DOWNLOAD_BASE_URL: '' } });
-    page = await app.firstWindow(); page.on('pageerror', (error) => errors.push({ phase, error: error.message }));
+    console.log(`${phase}: launching isolated Electron process`);
+    app = await _electron.launch({ timeout: 30_000, executablePath: path.join(project, 'node_modules/electron/dist/Electron.app/Contents/MacOS/Electron'), args: [appRoot, `--user-data-dir=${data}`], env: { ...process.env, TEXTBOOK_DOWNLOAD_BASE_URL: '' } });
+    page = await app.firstWindow({ timeout: 30_000 }); page.setDefaultTimeout(30_000);
+    console.log(`${phase}: first window ready`);
+    page.on('pageerror', (error) => errors.push({ phase, error: error.message }));
     await page.getByRole('button', { name: '笔记库', exact: true }).click();
     if (phase === 'before') {
       await app.evaluate(({ dialog }, root) => { dialog.showOpenDialog = async () => ({ canceled: false, filePaths: [root] }); }, root);
@@ -79,6 +84,7 @@ try {
   assert.deepEqual(errors, []); await writeFile(path.join(evidence, 'result.json'), JSON.stringify({ root, beforeApp, afterApp: project, count: 971, results, errors }, null, 2));
   console.log(JSON.stringify({ evidence, result: 'passed' }));
 } catch (error) {
+  await writeFile(path.join(evidence, 'failure.json'), JSON.stringify({ message: String(error), stack: error.stack, results, errors }, null, 2));
   if (page && !page.isClosed()) await page.screenshot({ path: path.join(evidence, 'failure.png') }).catch(() => {});
   throw error;
-} finally { if (app) app.process().kill('SIGTERM'); }
+} finally { clearTimeout(deadline); if (app) app.process().kill('SIGTERM'); }

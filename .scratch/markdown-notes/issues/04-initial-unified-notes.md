@@ -86,4 +86,14 @@ Category: enhancement
 - 仍保留每次查询的 O(N) 文件名/文件戳检查，以立即发现新增外部重复 ID；未把它藏成无失效规则的长期缓存。O(N) 未变化正文读取/解析已消除。不改首次导入的写入/收据协议，不宣称已优化首导。
 - 当前 Mac 再次核对仍锁屏，未启动新的窗口输入。上述为同规模后端/API 耗时，不能替代旧的 5,846ms 标记窗口数据。已准备真实 Electron 前后对比 `desktop/check-initial-notes-runtime-performance.mjs`，同一个克隆库、三次标记打开、三次实际键盘编辑保存、重加和截图。待解锁执行：`INITIAL_NOTES_BEFORE_APP=/tmp/markdown-notes-04-performance/before-app node desktop/check-initial-notes-runtime-performance.mjs /tmp/markdown-notes-04-performance/vault /private/var/folders/w5/kpp0bgcj4tb377ck3_y5_z3m0000gn/T/textbook-initial-notes-RsAjiR/app-data`。旧应用编译快照已在 before-app 保留；新构建在本工作树。窗口性能对比及新的 expectedId 客户端路径尚未执行，不据后端数字放行依赖。
 
+### 2026-11-01 真实 Electron 性能验收补齐
+
+- 纠正上一轮阻塞判断：CUA 的锁屏提示不能证明隔离 Playwright/Electron 路径无法运行，不再作为本脚本执行前置。按协调者要求直接运行了一次有界实际对比；前后构建均成功 launch、打开 firstWindow，并完成全部真实 UI 操作。未尝试解锁、操作原生系统窗口或用户现有实例。
+- 脚本增加 launch / firstWindow / 普通操作各 30 秒限制、整轮 360 秒期限；只控制选库返回值。失败会保留 failure.json/截图，并只结束本脚本拥有的进程。两个隔离 Electron 进程顺序使用同一个 971 篇克隆库、同一份已校验离线资源和同一 app-data；旧构建为 1a2ff64 快照，新构建为 94c2937 的产品代码。
+- 实际操作为：选库→明确添加已下载教材及已有初始笔记→第 88 页→三次交替教材标记打开两篇笔记→目标笔记三次键盘输入并点击保存→从磁盘核对文字→返回书架/移出/重加→关闭进程；新构建重复同一路径。三次中位数：标记打开 8,455ms→1,964ms；点击保存到已保存且磁盘含新文字 11,957ms→2,556ms；重加一次 11,459ms→5,099ms。不把这些值与仅后端/API 的测量混用。
+- 全轮通过，零 pageerror。结束后另做文件核对：仍为 971 个 Markdown，本地 ID、AI 来源 ID 与版本保持，前后六次实际输入全部保留。已视觉核对 before-editor.png / after-editor.png，新客户端 expectedId 正常打开与保存路径已执行。
+- 真实证据 `/private/var/folders/w5/kpp0bgcj4tb377ck3_y5_z3m0000gn/T/textbook-marker-performance-qc9nq1/`：result.json 是每次原始耗时，summary.json 是中位数及文件核对，before-editor.png / after-editor.png 是两轮编辑现场；日志 `/tmp/markdown-notes-04-performance/runtime.log`。`npm run lint:desktop` 与 diff 检查通过；产品代码没有进一步改动，沿用 96 项测试、lint/typecheck/build 通过结果。此前因 CUA 状态留下的窗口性能待验收项现已补齐，等待协调者最终审查；云端 18 及各发布门槛不变。
+
+- 测量环境补记：本轮同机同时有根集成树的真实 HTTP、971 篇导入和路径链接全流程（textbook-initial-notes-cbZkUM），以及 09 的检查，存在并行磁盘负载。窗口数据是一轮样本；绝对值和前后倍率不是稳定性能承诺。确定证据是后端公共 read 971→1 / 973→3、完整语义回归，以及此次真实窗口操作和持久文件核对通过；无需为精确基准重复拖延交付。
+
 - 2026-11-01 协调者最终本地审查：功能 `acda443`、身份索引与统一变化通知 `e08f898` 已合入；与08合并后删去重复通知回调。协调者执行44项受影响桌面测试、lint、typecheck与构建通过，沿用此前98项全套基线。跨票真实Electron检查发现保存正文后、位置记账结束前点击链接被run提前丢弃；`e508c53` 改为等待当前保存收尾并补跨票回归。最终971篇失败重试→教材标记→路径链接→返回来源→正文编辑→重加→断网重启全部通过，零pageerror/外部请求；证据 `/private/var/folders/w5/kpp0bgcj4tb377ck3_y5_z3m0000gn/T/textbook-initial-notes-GTkg8f`，日志 `/tmp/markdown-notes-integration-initial-links-final.log`。已核对worker实际窗口比较的summary及截图，性能数字为并行负载下一轮样本，不作固定延迟承诺。本地职责通过，放行06与11；18云端归档和其余发布门槛仍未完成。

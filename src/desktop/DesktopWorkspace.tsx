@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { originalTargets } from '../../desktop/original-links';
 import { DesktopApp } from './DesktopApp';
 import { DesktopTextbooks } from './DesktopTextbooks';
 import { anchorKey, resolveAnchor, type AnchorTarget, type Catalog, type Rect } from '../../desktop/anchors';
 import type { LinkEntry } from '../../desktop/links';
-import type { LocalReaderTools } from '../reader/Reader';
+import type { LocalReaderTools, LocalReadingPosition } from '../reader/Reader';
 import type { AnchorSession, AnchorBridge, LocateRequest } from './anchor-session';
 import { AnchorRegions, type SelectionPage } from './AnchorRegions';
 import { Candidate } from './NoteLinks';
@@ -19,6 +20,9 @@ export function DesktopWorkspace() {
   const [chooseRequest, setChooseRequest] = useState(0);
   const [openRequest, setOpenRequest] = useState<{ path: string; serial: number; vaultToken: string; expectedId?: string }>();
   const [locate, setLocate] = useState<LocateRequest>();
+  const [original, setOriginal] = useState<{ targets: AnchorTarget[]; href: string; key?: number; index: number; previous: { view: string; split: boolean; locate?: LocateRequest; position?: LocalReadingPosition | null; sourceScroll: { element: HTMLElement; top: number; left: number }[] } }>();
+  const capture = useRef<(() => LocalReadingPosition | null) | null>(null);
+  const [restore, setRestore] = useState<LocalReaderTools['request']>();
   const [textbooksMounted, setTextbooksMounted] = useState(view === 'textbooks');
   const [browseRequest, setBrowseRequest] = useState<{ view: 'search' | 'graph'; serial: number }>();
   const [session, setSession] = useState<AnchorSession>(emptySession);
@@ -36,7 +40,7 @@ export function DesktopWorkspace() {
   useEffect(() => { try { localStorage.setItem('desktop-workspace-view', view); } catch { /* Navigation remains available. */ } }, [view]);
   useEffect(() => {
     catalogRequest.current++;
-    setCatalog(null); setSelection(undefined); setLocate(undefined); setCandidates(undefined); dialog.current?.close();
+    setCatalog(null); setRestore(undefined); setOriginal(undefined); setSelection(undefined); setLocate(undefined); setCandidates(undefined); dialog.current?.close();
     if (!session.vaultToken) return;
     let active = true, polling = false;
     const read = async () => {
@@ -67,9 +71,27 @@ export function DesktopWorkspace() {
     if (token.current === vaultToken) void refreshCatalog().catch(() => { if (token.current === vaultToken) setCatalog(null); });
   }, [refreshCatalog]);
   const located = useCallback((target: AnchorTarget) => {
+    setOriginal(undefined); setRestore(undefined);
     setLocate({ ...target, serial: ++locateSerial.current, vaultToken: token.current });
     setTextbooksMounted(true); setSplit(true); setView('notes');
   }, []);
+  function locateOriginal(targets: AnchorTarget[], href: string) {
+    setOriginal({ targets, href, key: session.key, index: 0, previous: original?.previous ?? { view, split, locate, position: capture.current?.(), sourceScroll: [...body.current?.querySelectorAll<HTMLElement>('.desktop-workspace-view:first-child .vault-paper, .desktop-workspace-view:first-child .note-preview, .desktop-workspace-view:first-child .cm-scroller') ?? []].map((element) => ({ element, top: element.scrollTop, left: element.scrollLeft })) } });
+    setRestore(undefined);
+    setLocate({ ...targets[0]!, serial: ++locateSerial.current, vaultToken: token.current, origin: 'relation' });
+    setTextbooksMounted(true); setSplit(true); setView('notes');
+  }
+  function returnOriginal() {
+    if (!original) return;
+    setView(original.previous.view); setSplit(original.previous.split);
+    setLocate(original.previous.locate);
+    setRestore(original.previous.position ? { ...original.previous.position, rects: [], serial: ++locateSerial.current } : undefined);
+    setOriginal(undefined);
+    requestAnimationFrame(() => {
+      for (const saved of original.previous.sourceScroll) if (saved.element.isConnected) saved.element.scrollTo(saved.left, saved.top);
+      [...body.current?.querySelectorAll<HTMLElement>('[data-original-link]') ?? []].find((element) => element.dataset.originalLink === original.href)?.focus({ preventScroll: true });
+    });
+  }
   function open(path: string, vaultToken = session.vaultToken, expectedId?: string) {
     setOpenRequest((previous) => ({ path, vaultToken, expectedId, serial: (previous?.serial ?? 0) + 1 })); setView('notes');
   }
@@ -109,7 +131,8 @@ export function DesktopWorkspace() {
     else setSelection((previous) => previous ? { ...previous, error: '笔记状态或位置已改变，未覆盖当前内容。请取消后重新选择；选择草稿仍在。' } : previous);
   }
   const tools: LocalReaderTools = {
-    request: locate?.vaultToken === session.vaultToken ? locate : undefined,
+    capture,
+    request: restore ?? (locate?.vaultToken === session.vaultToken ? locate : undefined),
     toolbar: (page) => <><button onClick={() => choose((byPage.get(page) ?? []).map(({ entry }) => entry))} disabled={!byPage.get(page)?.length}>本页笔记 · {new Set(byPage.get(page)?.map(({ entry }) => entry.path)).size}</button><button onClick={() => draw(page)} disabled={!catalog}>框选当前页</button></>,
     page: (page) => <>
       {(() => {
@@ -137,9 +160,15 @@ export function DesktopWorkspace() {
   // Do not apply a stale highlight after source edits remove or invalidate it.
   useEffect(() => {
     if (!locate) return;
+    if (locate.origin === 'relation') {
+      let valid = false;
+      try { if (original) { originalTargets(original.href, catalog); valid = true; } } catch { /* Removed or mismatched catalogs cannot retain relation highlights. */ }
+      if (!valid || !original || original.key !== session.key || !session.originals?.includes(original.href)) { setOriginal(undefined); setLocate(undefined); }
+      return;
+    }
     if (!Array.isArray(session.anchors)) { setLocate(undefined); return; }
     if (!session.anchors.some((anchor) => { const target = resolveAnchor(anchor, catalog).target; return target && anchorKey(target) === anchorKey({ textbook: locate.textbook, page: locate.page, rects: locate.rects }); })) setLocate(undefined);
-  }, [session.anchors, catalog]);
+  }, [session.anchors, session.originals, session.key, catalog, original]);
   return <div className="desktop-workspace">
     <nav className="desktop-workspace-tabs" aria-label="本地工作区">
       <button aria-current={!split && view === 'notes' ? 'page' : undefined} onClick={() => { setSplit(false); setView('notes'); }}>笔记库</button>
@@ -149,6 +178,7 @@ export function DesktopWorkspace() {
       {session.path && <button onClick={() => { setSplit(false); setView('notes'); }}>返回当前笔记</button>}
       {(split || view === 'textbooks') && <div className="desktop-local-browse" role="group" aria-label="查阅本地笔记">{(['search', 'graph'] as const).map((target) => <button key={target} onClick={() => { setBrowseRequest((previous) => ({ view: target, serial: (previous?.serial ?? 0) + 1 })); setSplit(false); setView('notes'); }}>{target === 'search' ? '搜索笔记' : '知识图'}</button>)}</div>}
     </nav>
+    {original && <section className="desktop-selection" aria-label="关联原文查阅"><button onClick={returnOriginal}>返回关联来源</button><span>教材原文</span>{original.targets.map((target, index) => <button key={index} aria-current={original.index === index ? 'page' : undefined} onClick={() => { setOriginal({ ...original, index }); setRestore(undefined); setLocate({ ...target, origin: 'relation', serial: ++locateSerial.current, vaultToken: session.vaultToken }); }}>文件第 {target.page} 页 · {target.rects.length} 个区域</button>)}</section>}
     {selection && <section className="desktop-selection" aria-label="教材框选草稿"><span>{selection.index === undefined ? '框选后添加位置' : `调整位置 ${selection.index + 1}`} · {selection.items.reduce((count, item) => count + item.rects.length, 0)} 个区域</span>
       <span>可在教材中继续框选；拖动边界移动，右下角调整大小。</span>
       <button disabled={!selection.selected} onClick={() => { const [i, j] = selection.selected.split(':').map(Number); setSelection({ ...selection, selected: '', items: selection.items.map((item, n) => n === i ? { ...item, rects: item.rects.filter((_, at) => at !== j) } : item) }); }}>移除所选区域</button>
@@ -158,7 +188,7 @@ export function DesktopWorkspace() {
       {selection.error && <p role="alert">{selection.error}</p>}
     </section>}
     <div ref={body} className={`desktop-workspace-body${split ? ' split' : ''}`}>
-      <div className="desktop-workspace-view" hidden={!split && view !== 'notes'}><DesktopApp active={split || view === 'notes'} browseRequest={browseRequest} chooseRequest={chooseRequest} openRequest={openRequest} catalog={catalog} onRefreshCatalog={refreshCatalog} onAnchorSession={setSession} anchorBridge={bridge} onLocate={located} onSelect={begin} /></div>
+      <div className="desktop-workspace-view" hidden={!split && view !== 'notes'}><DesktopApp active={split || view === 'notes'} browseRequest={browseRequest} chooseRequest={chooseRequest} openRequest={openRequest} catalog={catalog} onRefreshCatalog={refreshCatalog} onAnchorSession={setSession} anchorBridge={bridge} onLocate={located} onOriginal={locateOriginal} onSelect={begin} /></div>
       {split && <div className="desktop-workspace-resize" role="separator" tabIndex={0} aria-label="调整笔记与教材面板" aria-orientation="vertical" aria-valuemin={30} aria-valuemax={70} aria-valuenow={share.current} onPointerDown={(event) => { event.preventDefault(); event.currentTarget.setPointerCapture(event.pointerId); }} onPointerMove={(event) => {
         if (!event.currentTarget.hasPointerCapture(event.pointerId) || !body.current) return;
         const bounds = body.current.getBoundingClientRect(); resize(window.innerWidth <= 800 ? 100 - (event.clientY - bounds.top) / bounds.height * 100 : (event.clientX - bounds.left) / bounds.width * 100);

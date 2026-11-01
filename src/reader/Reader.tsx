@@ -1,7 +1,7 @@
 import { BookNavigation } from "./book/BookNavigation";
 import { PageControls } from "./book/PageControls";
 import { PageImage } from "./book/PageImage";
-import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode, type RefObject } from "react";
 import { bookTitle, getPage, pageCount, pages, pageLabel } from "../textbook/catalog";
 import { getLocation } from "../textbook/supplements";
 import { bookId, nodeKey, supplementQueries } from '../textbook/content';
@@ -54,7 +54,8 @@ function measurePages(list: HTMLDivElement): PageMetric[] {
   });
 }
 
-export type LocalReaderTools = { request?: { page: number; rects: [number, number, number, number][]; serial: number }; toolbar: (page: number) => ReactNode; page: (page: number) => ReactNode };
+export type LocalReadingPosition = { page: number; fraction: number };
+export type LocalReaderTools = { capture?: RefObject<(() => LocalReadingPosition | null) | null>; request?: { page: number; fraction?: number; rects: [number, number, number, number][]; serial: number }; toolbar: (page: number) => ReactNode; page: (page: number) => ReactNode };
 
 export function Reader({ content, onReturnToShelf, navigationNotice = '', local = false, readingStorage, onOpenLocalNote, localTools }: { localTools?: LocalReaderTools; onOpenLocalNote?: (sourceId: string) => void; readingStorage?: Pick<Storage, 'getItem' | 'setItem'>; local?: boolean; content: BookContent; onReturnToShelf: (notice: string) => void; navigationNotice?: string }) {
   const [resume] = useState(() => {
@@ -608,8 +609,29 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '', local 
   }
 
   useEffect(() => {
+    const capture = localTools?.capture;
+    if (!capture) return;
+    capture.current = () => {
+      const element = scroller.current, list = pageList.current;
+      if (!element || !list || !element.clientHeight || !list.clientWidth) return { ...anchor.current };
+      const measured = measurePages(list);
+      const page = readingPage(measured, element.scrollTop, element.clientHeight, element.scrollHeight);
+      const metric = measured[page - 1];
+      return metric && metric.height > 0 ? { page, fraction: (element.scrollTop - metric.top) / metric.height } : { ...anchor.current };
+    };
+    return () => { capture.current = null; };
+  }, [localTools?.capture]);
+  useEffect(() => {
     const target = localTools?.request;
-    if (target) void navigate({ page: target.page, locate: { fraction: target.rects[0]?.[1] ?? 0, focusId: `page-${target.page}`, panelScroll: 0 } });
+    if (target?.fraction !== undefined && (!scroller.current?.clientHeight || !pageList.current?.clientWidth)) {
+      // A hidden desktop reader cannot measure a commit. Keep the return anchor
+      // for its existing ResizeObserver to restore when the pane is shown.
+      anchor.current = { page: target.page, fraction: target.fraction };
+      current.current = target.page; setCurrentPage(target.page);
+      requestId.current += 1; navigationPending.current = false; setPending(false); setError(null);
+      return;
+    }
+    if (target) void navigate({ page: target.page, locate: { fraction: target.fraction ?? target.rects[0]?.[1] ?? 0, focusId: `page-${target.page}`, panelScroll: 0 } });
   }, [localTools?.request?.serial]);
 
   const note = supplementId ? getSupplement(supplementId) : undefined;

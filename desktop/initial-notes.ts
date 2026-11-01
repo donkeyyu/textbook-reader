@@ -7,6 +7,7 @@ import { parse } from './format.ts';
 import { Vault, notePath } from './vault.ts';
 import { atomicFile, persistentDirectory } from './textbooks.ts';
 import { checkPackage, type InitialPackage } from './initial-package.ts';
+import { initialRelations, relationBody } from './initial-relations.ts';
 
 export type ImportPlan = { version: string; textbook: string; notes: { sourceId: string; id: string; path: string }[] };
 export type InitialNoteIndex = { textbook: string; version: string; archive: 'unpublished'; notes: { sourceId: string; id: string; path: string | null; problem?: string }[] };
@@ -99,16 +100,46 @@ export class InitialNotes {
     }
     await atomicFile(vault.root, `${base}/source.json`, Buffer.from(JSON.stringify(pack)), true, assertCurrent);
     const byId = await vault.identities();
+    const completed = new Set<string>();
+    for (const note of plan.notes) {
+      try {
+        const saved = await readPersistent(vault.root, `${base}/receipts/${note.id}.json`) as { id: string; sourceId: string; version: string };
+        if (saved.id !== note.id || saved.sourceId !== note.sourceId || saved.version !== pack.version) throw new Error('初始笔记收据不匹配，已停止导入。');
+        completed.add(note.id);
+      } catch (error) { if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error; }
+    }
+    const relations = initialRelations(pack);
+    const planned = new Map(plan.notes.map((note) => [note.sourceId, note]));
+    async function targetPaths(sourceId: string) {
+      const paths = new Map<string, string | null>();
+      for (const targetId of new Set((relations.get(sourceId) ?? []).flatMap((relation) => relation.targets))) {
+        const target = planned.get(targetId);
+        if (!target) { paths.set(targetId, null); continue; }
+        const current = byId.get(target.id) ?? [];
+        if (current.length > 1) { paths.set(targetId, null); continue; }
+        if (current.length === 1) {
+          const saved = await vault.read(current[0]!).catch(() => null);
+          // Retry a move between the identity scan and this read. Never use a replacement.
+          const actual = saved?.id === target.id ? saved : await vault.readById(target.id).catch(() => null);
+          paths.set(targetId, actual?.path ?? null);
+        } else if (completed.has(target.id)) paths.set(targetId, null);
+        else {
+          try {
+            const saved = await vault.read(target.path);
+            paths.set(targetId, saved.id === target.id ? saved.path : null);
+          } catch (error) {
+            paths.set(targetId, (error as NodeJS.ErrnoException).code === 'ENOENT' ? target.path : null);
+          }
+        }
+      }
+      return paths;
+    }
     let created = 0;
     for (let index = 0; index < plan.notes.length; index++) {
       assertCurrent();
       const note = plan.notes[index]!;
       const receipt = `${base}/receipts/${note.id}.json`;
-      try {
-        const saved = await readPersistent(vault.root, receipt) as { id: string; sourceId: string; version: string };
-        if (saved.id !== note.id || saved.sourceId !== note.sourceId || saved.version !== pack.version) throw new Error('初始笔记收据不匹配，已停止导入。');
-        continue; // A completed file can be moved, edited, or deleted by its owner.
-      } catch (error) { if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error; }
+      if (completed.has(note.id)) continue; // Student-owned body, including moves or deletion.
       const paths = byId.get(note.id) ?? [];
       if (paths.length > 1) throw new Error('导入笔记的 ID 重复，原件已保留，请先修复。');
       if (!paths.length) {
@@ -117,7 +148,7 @@ export class InitialNotes {
         const metadata = { schema_version: 1, id: note.id, create_time: now, update_time: now,
           ai_source: { textbook: pack.textbook, source_id: note.sourceId, version: pack.version, archive: 'unpublished' },
           anchors: entry.anchors, initial_type: entry.type };
-        const source = `---\n${stringify({ _textbook: metadata }, { lineWidth: 0, defaultStringType: 'QUOTE_DOUBLE' })}---\n${entry.body}`;
+        const source = `---\n${stringify({ _textbook: metadata }, { lineWidth: 0, defaultStringType: 'QUOTE_DOUBLE' })}---\n${entry.body}${relationBody(relations.get(note.sourceId) ?? [], await targetPaths(note.sourceId))}`;
         const full = await vault.resolve(note.path, true);
         const temporary = path.join(path.dirname(full), `.initial-${randomUUID()}.tmp`);
         const handle = await open(temporary, 'wx', 0o600);
@@ -126,6 +157,7 @@ export class InitialNotes {
           await vault.resolve(note.path, true); assertCurrent();
           // A concurrently claimed name fails. It is never replaced or silently renamed.
           await link(temporary, full); await rm(temporary);
+          byId.set(note.id, [note.path]);
           created++; await this.checkpoint?.(created);
         } finally { await handle.close().catch(() => {}); await rm(temporary, { force: true }); }
       } else {
@@ -134,6 +166,7 @@ export class InitialNotes {
         const meta = parse(saved.source).data._textbook;
         if (meta?.ai_source?.source_id !== note.sourceId || meta.ai_source.version !== pack.version || meta.ai_source.textbook !== pack.textbook) throw new Error('未完成导入的本地来源已改变，已保留原件。');
       }
+      completed.add(note.id);
       await atomicFile(vault.root, receipt, Buffer.from(JSON.stringify({ id: note.id, sourceId: note.sourceId, version: pack.version })), true, assertCurrent);
     }
     assertCurrent(); await vault.scan();

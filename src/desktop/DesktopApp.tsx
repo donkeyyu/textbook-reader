@@ -3,6 +3,7 @@ import type { DesktopApi, Note, Position, Recovery, Result, VaultChange, VaultSt
 import { freshIdentity as freshCopy, rebaseSaved, saveProblem } from '../../desktop/format';
 import { SourceEditor, headerEnd, type EditorScene } from './SourceEditor';
 import { NoteProperties } from './NoteProperties';
+import { originalHrefs, originalTargets } from '../../desktop/original-links';
 import { NoteMarkdown } from './note-markdown';
 import { NoteLinks } from './NoteLinks';
 import { NoteMoves, noteDirectory, noteName } from './NoteMoves';
@@ -39,11 +40,11 @@ function Difference({ source, other }: { source: string; other: string }) {
 const NoteList = memo(function NoteList({ notes, active, busy, duplicates, onOpen }: { notes: string[]; active?: string; busy: boolean; duplicates: Record<string, string[]>; onOpen: (path: string) => void }) {
   return <nav>{notes.map((path) => <button key={path} disabled={busy} aria-current={active === path ? 'page' : undefined} onClick={() => onOpen(path)} title={path} aria-label={path.includes('/') ? `${noteName(path)} · ${noteDirectory(path)}` : noteName(path)}><span>{noteName(path)}</span>{path.includes('/') && <small className="vault-note-directory">{noteDirectory(path)}</small>}{duplicates[path] && <small> ID 冲突</small>}</button>)}</nav>;
 });
-export function DesktopApp({ openRequest, catalog = null, onRefreshCatalog, onAnchorSession, anchorBridge, onLocate, onSelect, chooseRequest, browseRequest, active = true }: {
+export function DesktopApp({ openRequest, catalog = null, onRefreshCatalog, onAnchorSession, anchorBridge, onLocate, onOriginal, onSelect, chooseRequest, browseRequest, active = true }: {
   chooseRequest?: number; browseRequest?: { view: 'search' | 'graph'; serial: number }; active?: boolean;
   openRequest?: { path: string; serial: number; vaultToken: string; expectedId?: string }; catalog?: Catalog | null;
   onRefreshCatalog?: () => Promise<void>;
-  onAnchorSession?: (session: AnchorSession) => void; anchorBridge?: AnchorBridge; onLocate?: (target: AnchorTarget) => void; onSelect?: (index?: number) => void;
+  onAnchorSession?: (session: AnchorSession) => void; anchorBridge?: AnchorBridge; onLocate?: (target: AnchorTarget) => void; onOriginal?: (targets: AnchorTarget[], href: string) => void; onSelect?: (index?: number) => void;
 }) {
   const api = window.textbookDesktop!;
   const [preferences, setPreferences] = useState<SettingsView>({ revision: null, settings: { editor: { bodyMode: 'live', frontmatterMode: 'properties' }, propertyTypes: {} } });
@@ -445,6 +446,14 @@ export function DesktopApp({ openRequest, catalog = null, onRefreshCatalog, onAn
       localState.current.activePath = restored.note.path; await remember();
     });
   }
+  function openOriginal(href: string) {
+    if (!originalHrefs(latest.current.draft?.source ?? '').includes(href)) { setError('原文链接已改变，请重新打开。'); return; }
+    try {
+      const targets = originalTargets(href, catalog, (warnings) => setError(warnings.join('；')));
+      onOriginal?.(targets, href);
+    }
+    catch (error) { setError((error as Error).message); }
+  }
   function openLink(clicked: NoteReference) {
     const reference = noteReferences(latest.current.draft?.source ?? '').find((item) => item.from === clicked.from && item.to === clicked.to && item.raw === clicked.raw && JSON.stringify(item.property) === JSON.stringify(clicked.property));
     if (!reference) { setError('内容已改变，请重新打开链接。'); return; }
@@ -466,10 +475,11 @@ export function DesktopApp({ openRequest, catalog = null, onRefreshCatalog, onAn
   }
   let anchorSignature: string | undefined;
   try { anchorSignature = anchorKey(readAnchors(draft?.source ?? '')); } catch { /* Invalid YAML stays in the editor. */ }
+  const originalSignature = JSON.stringify(originalHrefs(draft?.source ?? ''));
   const anchorWritable = !!draft && !busy && !draft.note.readOnly && bodyMode !== 'preview' && !problem && !draft.conflict;
   useEffect(() => {
-    if (onAnchorSession) onAnchorSession({ vaultToken: vault?.token ?? '', key: draft?.key, path: draft?.note.path, anchors: anchorSignature === undefined ? undefined : JSON.parse(anchorSignature).anchors, writable: anchorWritable, index: linkIndex });
-  }, [vault?.token, draft?.key, draft?.note.path, anchorSignature, anchorWritable, linkIndex, onAnchorSession]);
+    if (onAnchorSession) onAnchorSession({ vaultToken: vault?.token ?? '', key: draft?.key, path: draft?.note.path, originals: JSON.parse(originalSignature), anchors: anchorSignature === undefined ? undefined : JSON.parse(anchorSignature).anchors, writable: anchorWritable, index: linkIndex });
+  }, [vault?.token, draft?.key, draft?.note.path, anchorSignature, originalSignature, anchorWritable, linkIndex, onAnchorSession]);
   if (anchorBridge) anchorBridge.current = async (command) => {
     let succeeded = false;
     // Validate the candidate before parking any source or changing history.
@@ -590,8 +600,8 @@ export function DesktopApp({ openRequest, catalog = null, onRefreshCatalog, onAn
               }
               value(await api.list(current.token)); await refreshLinks(current);
             }} />} source={draft.source} readOnly={!anchorWritable} catalog={catalog} onChange={edit} onLocate={onLocate ?? (() => {})} onSelect={onSelect ?? (() => {})} /><NoteProperties key={draft.key} showProperties={bodyMode === 'preview' || draft.note.readOnly || frontmatterMode === 'properties'} source={draft.source} readOnly={busy || draft.note.readOnly || bodyMode === 'preview'} propertyTypes={preferences.settings.propertyTypes} unsupportedPropertyTypes={preferences.unsupportedPropertyTypes} onChange={edit} onTypeChange={(name, type) => configure({ propertyTypes: { [name]: type } })} /></div>
-            <SourceEditor key={draft.key} scene={scene} entries={linkIndex.entries} onLink={openLink} source={draft.source} bodyMode={draft.note.readOnly ? 'preview' : bodyMode} frontmatterMode={frontmatterMode} readOnly={busy || draft.note.readOnly} position={localState.current.positions[draft.note.path]} onChange={edit} onPosition={position} onSave={() => { if (bodyMode !== 'preview') void save(); }} />
-            {(bodyMode === 'preview' || draft.note.readOnly) && <div className="note-preview" aria-label="笔记只读预览"><NoteMarkdown onLink={openLink} offset={headerEnd(draft.source)} source={draft.source.slice(headerEnd(draft.source))} /></div>}
+            <SourceEditor onOriginal={openOriginal} key={draft.key} scene={scene} entries={linkIndex.entries} onLink={openLink} source={draft.source} bodyMode={draft.note.readOnly ? 'preview' : bodyMode} frontmatterMode={frontmatterMode} readOnly={busy || draft.note.readOnly} position={localState.current.positions[draft.note.path]} onChange={edit} onPosition={position} onSave={() => { if (bodyMode !== 'preview') void save(); }} />
+            {(bodyMode === 'preview' || draft.note.readOnly) && <div className="note-preview" aria-label="笔记只读预览"><NoteMarkdown onOriginal={openOriginal} onLink={openLink} offset={headerEnd(draft.source)} source={draft.source.slice(headerEnd(draft.source))} /></div>}
           </div>
         </> : <div className="vault-empty">{returnCount > 0 && <button disabled={busy || saving} onClick={() => { void returnToSource(); }}>返回来源</button>}<h1>选一篇笔记，继续写</h1><p>手动创建的 .md 文件也会出现在左侧。</p></div>}</section>
         </div>

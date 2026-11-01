@@ -16,6 +16,7 @@ import { historyField } from '@codemirror/commands';
 import { noteReferences, pathLink, type LinkEntry, type NoteReference } from '../../desktop/links';
 
 export type EditorScene = { json?: ReturnType<EditorState['toJSON']>; scroll?: number };
+const openOriginal = Facet.define<(href: string) => void, (href: string) => void>({ combine: (values) => values[0]! });
 const openLink = Facet.define<(reference: NoteReference) => void, (reference: NoteReference) => void>({ combine: (values) => values[0]! });
 
 type Display = { bodyMode: BodyMode; frontmatterMode: FrontmatterMode };
@@ -65,10 +66,12 @@ class RenderedBlock extends WidgetType {
       view.focus();
     };
     dom.addEventListener('mousedown', (event) => {
-      if ((event.target as Element).closest('summary, [data-note-link]')) return;
+      if ((event.target as Element).closest('summary, [data-note-link], [data-original-link]')) return;
       event.preventDefault(); edit();
     });
     dom.addEventListener('click', (event) => {
+      const original = (event.target as Element).closest<HTMLElement>('[data-original-link]');
+      if (original?.dataset.originalLink) { event.preventDefault(); view.state.facet(openOriginal)(original.dataset.originalLink); return; }
       const link = (event.target as Element).closest<HTMLElement>('[data-note-link]');
       if (link?.dataset.noteLink) { event.preventDefault(); view.state.facet(openLink)(JSON.parse(link.dataset.noteLink) as NoteReference); }
     });
@@ -104,15 +107,15 @@ function build(state: EditorState, hasFocus: boolean) {
   return { decorations: Decoration.set(ranges, true), focused: hasFocus };
 }
 
-export function SourceEditor({ source, readOnly, position, bodyMode, frontmatterMode, onChange, onPosition, onSave, onLink, entries = [], scene }: {
+export function SourceEditor({ source, readOnly, position, bodyMode, frontmatterMode, onChange, onPosition, onSave, onLink, onOriginal, entries = [], scene }: {
   source: string; readOnly: boolean; position?: Position; bodyMode: BodyMode; frontmatterMode: FrontmatterMode;
   onChange: (source: string) => void; onPosition: (value: Position) => void; onSave: () => void;
-  onLink?: (reference: NoteReference) => void; entries?: LinkEntry[]; scene?: EditorScene;
+  onLink?: (reference: NoteReference) => void; onOriginal?: (href: string) => void; entries?: LinkEntry[]; scene?: EditorScene;
 }) {
   const host = useRef<HTMLDivElement>(null);
   const view = useRef<EditorView | null>(null);
-  const callbacks = useRef({ onChange, onPosition, onSave, onLink, entries });
-  callbacks.current = { onChange, onPosition, onSave, onLink, entries };
+  const callbacks = useRef({ onChange, onPosition, onSave, onLink, onOriginal, entries });
+  callbacks.current = { onChange, onPosition, onSave, onLink, onOriginal, entries };
   const initial = useRef({ source, position, readOnly, bodyMode, frontmatterMode });
   const appliedDisplay = useRef({ readOnly, bodyMode, frontmatterMode });
   const editable = useRef(new Compartment()), presentation = useRef(new Compartment());
@@ -123,6 +126,7 @@ export function SourceEditor({ source, readOnly, position, bodyMode, frontmatter
     const config = {
       doc: first.source, selection: { anchor: cursor },
       extensions: [minimalSetup, markdown(), EditorView.lineWrapping, codeFolding(),
+        openOriginal.of((href) => callbacks.current.onOriginal?.(href)),
         openLink.of((raw) => callbacks.current.onLink?.(raw)),
         autocompletion({ override: [(context) => {
           const match = context.matchBefore(/\[\[(?:\\.|[^\]\\\n])*/);

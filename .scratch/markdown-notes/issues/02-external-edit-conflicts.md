@@ -39,3 +39,5 @@ Category: enhancement
 - 验证：macOS 26.7.1 / Intel x64。`npm test` 在本轮中通过 67 项（含当时 10 组桌面测试）；随后仅对新发现的恢复边界与索引失败补检查，最终 `npm run test:desktop` 13 组全部通过。`npm run lint`、`npm run typecheck`、`npm run desktop:build` 通过；最后小改后受影响 lint、桌面编译与真实 Electron 自动交互再次通过。构建仍有既有 MathJax eval 和分块大小提示。
 - 最终 Electron 证据：`npm run desktop:check` PASS，使用编译后前端和真实 Electron 主进程/文件系统；只对原生选择框与关闭确认使用可控返回值。独立库与 appData 在 `/var/folders/w5/kpp0bgcj4tb377ck3_y5_z3m0000gn/T/textbook-desktop-check-hzizfM`。覆盖自动保存、快速连续输入、无效 YAML 暂停与保护、冲突差异/取消/采用、外部新增替换删除、只读重试/另存、重复 ID 修复及复制、恢复草稿、自身写入不循环、跨库旧错误隔离及当前真实错误。宽/窄冲突截图和构建日志保留在本工作树 `release/evidence/02/`；已检查布局与窄屏无横向溢出。
 - 验收边界：以上勾选表示本票实现及 macOS 编译后真进程检查有证据，仍待协调者集成审查；不表示双平台或发布验收完成。Windows 实机由 13 处理；macOS 原生对话框与安装启动由 15 处理。本票按调度未重打安装包，最终相关打包归 03/12；未迁移个人内容、未新增云端备份、编辑模式或路径链接功能，未修改教材阅读模块及公共资源清单。
+
+- 2026-11-01 协调者最终审查：以 `950009e` 集成，保留 03 的教材主进程和独立桥接。核对恢复原件、进程中断、外部竞争与切库 token 隔离实现；集成工作树 73 项测试、lint、typecheck、桌面构建及真实 Electron 自动交互全部通过。证据 `/var/folders/w5/kpp0bgcj4tb377ck3_y5_z3m0000gn/T/textbook-desktop-check-89ANsP`。允许 05 继续；15 已派针对性原生复核，不能以本次对话框桩替代。

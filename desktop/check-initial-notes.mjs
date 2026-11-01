@@ -5,6 +5,7 @@ import { mkdtemp, mkdir, readFile, writeFile, rm, readdir, realpath } from 'node
 import os from 'node:os';
 import path from 'node:path';
 import { _electron } from 'playwright-core';
+import { pathLink } from './links.ts';
 
 const project = path.resolve(import.meta.dirname, '..');
 const evidence = await realpath(await mkdtemp(path.join(os.tmpdir(), 'textbook-initial-notes-')));
@@ -94,11 +95,21 @@ try {
   const targetPlan = plan.notes.find((item) => item.sourceId === entry.sourceId); const targetPath = path.join(root, targetPlan.path);
   let saved = await readFile(targetPath, 'utf8'); assert.ok(saved.includes('编辑模式写入：保留原有面积推导。'));
   const id = targetPlan.id;
+  const linked = plan.notes.find((item) => item.sourceId === 'ch3-triangle-base-height');
+  await append(pathLink(linked.path, '集成验证：底与高'));
   await page.getByLabel('正文模式').selectOption('preview');
   await page.locator('.note-preview .math-inline svg').first().waitFor();
   await page.locator('.note-preview .note-initial-diagram').waitFor();
   assert.equal(await page.locator('.cm-content[contenteditable=true]').count(), 0);
   await page.screenshot({ path: path.join(evidence, 'unified-preview.png') });
+  // A textbook marker and a path link share the same editable note navigation.
+  await page.getByLabel('笔记只读预览', { exact: true }).getByRole('link', { name: '集成验证：底与高', exact: true }).click();
+  await page.locator('.vault-note-heading h1').filter({ hasText: pack.entries.find((item) => item.sourceId === linked.sourceId).title }).waitFor();
+  await page.getByRole('button', { name: '返回来源', exact: true }).click();
+  await page.locator('.vault-note-heading h1').filter({ hasText: entry.title }).waitFor();
+  assert.equal(await page.getByLabel('正文模式').inputValue(), 'preview');
+  assert.ok((await readFile(targetPath, 'utf8')).includes(pathLink(linked.path, '集成验证：底与高')));
+  console.log('Textbook note → saved path link → return preserves the same source and preview mode.');
   await page.getByRole('button', { name: '教材书架', exact: true }).click();
   await page.getByRole('button', { name: '第 88 页，共 202 页，点击输入页码', exact: true }).waitFor();
   await openFromMarker(entry.sourceId);
@@ -129,7 +140,7 @@ try {
   await page.getByRole('button', { name: '教材书架', exact: true }).click(); await page.getByRole('button', { name: '继续阅读', exact: true }).click(); await jump(88);
   await page.screenshot({ path: path.join(evidence, 'offline-textbook.png') });
   assert.deepEqual(errors, []); assert.deepEqual(remote, []);
-  await writeFile(path.join(evidence, 'result.json'), JSON.stringify({ count: 971, version: pack.version, archive: 'unpublished', timings, failureRetry: true, sameNamePreserved: true, markerSameNote: true, editLivePreview: true, offlineRestart: true, errors, remote }, null, 2));
+  await writeFile(path.join(evidence, 'result.json'), JSON.stringify({ count: 971, version: pack.version, archive: 'unpublished', timings, failureRetry: true, sameNamePreserved: true, markerSameNote: true, pathLinkRoundtrip: true, editLivePreview: true, offlineRestart: true, errors, remote }, null, 2));
   console.log(JSON.stringify({ evidence, timings, result: 'passed' }));
 } catch (error) {
   if (page && !page.isClosed()) { await page.screenshot({ path: path.join(evidence, 'failure.png') }).catch(() => {}); await writeFile(path.join(evidence, 'failure.txt'), await page.locator('body').innerText().catch(() => '')); }

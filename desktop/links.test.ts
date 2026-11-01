@@ -111,7 +111,9 @@ test('disk index rebuild, manual files without IDs, changes/deletion, unreadable
   await assert.rejects(vault.read('逃逸.md'));
   await writeFile(path.join(library, '来源.md'), '移除引用');
   let notified: string[] = [];
-  const modified = await vault.links((change) => { notified = change.changed; });
+  const stop = vault.watch(() => {}, (change) => { notified = change.changed; });
+  t.after(stop);
+  const modified = await vault.links();
   assert.equal(backlinks('目标.md', modified.entries).length, 0);
   assert.strictEqual(modified.entries.find((entry) => entry.path === '目标.md'), first.entries.find((entry) => entry.path === '目标.md'));
   assert.notStrictEqual(modified.entries.find((entry) => entry.path === '来源.md'), first.entries.find((entry) => entry.path === '来源.md'));

@@ -276,7 +276,11 @@ export function DesktopApp({ openRequest }: { openRequest?: { path: string; seri
     guardDialog.current?.close(); guardResolve.current?.(choice); guardResolve.current = null;
   }
   async function run(action: () => Promise<void>) {
-    if (latest.current.busy || latest.current.saving) return;
+    if (latest.current.busy) return;
+    // A save may have persisted content while its position bookkeeping is still
+    // queued. Honor the requested navigation after it settles instead of dropping it.
+    if (inFlight.current) await inFlight.current;
+    if (latest.current.busy) return;
     latest.current.busy = true; setBusy(true); setError('');
     try { await action(); }
     catch (cause) { setError((cause as Error).message); }

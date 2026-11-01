@@ -160,9 +160,8 @@ export class Vault {
   }
 
   // Rebuildable, disk-only index. scan reuses unchanged file contents.
-  async links(onChange?: (change: VaultChange) => void): Promise<LinkIndex> {
-    const change = await this.scan();
-    if (change.changed.length) onChange?.(change);
+  async links(): Promise<LinkIndex> {
+    await this.scan();
     const entries = [], problems = [];
     for (const [path, entry] of this.index) {
       if (entry.note) entries.push(entry.links ??= linkEntry(path, entry.note.source));

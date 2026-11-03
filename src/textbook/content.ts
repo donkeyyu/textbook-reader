@@ -1,3 +1,4 @@
+import { isSupplementVisual } from './supplement-visual.ts';
 import book from './book.json' with { type: 'json' };
 import { chapterSources } from './chapters.ts';
 import { chapters, sections } from './sections.ts';
@@ -69,7 +70,7 @@ export function parsePublishedContent(value: unknown): PublishedContent {
   for (const item of data.supplements) {
     if (!item || typeof item.id !== 'string' || !item.id || ids.has(item.id) || typeof item.locationId !== 'string' ||
       !['title', 'preview', 'learningRole', 'learningGap', 'learningAction'].every((key) => typeof item[key as keyof Supplement] === 'string') ||
-      !strings(item.paragraphs) || !Array.isArray(item.related) || item.related.some((link) => !link || typeof link.locationId !== 'string' || typeof link.label !== 'string' || typeof link.purpose !== 'string') ||
+      !strings(item.paragraphs) || (item.visual !== undefined && !isSupplementVisual(item.visual)) || !Array.isArray(item.related) || item.related.some((link) => !link || typeof link.locationId !== 'string' || typeof link.label !== 'string' || typeof link.purpose !== 'string') ||
       (item.questionGuide && (!strings(item.questionGuide.method) || (item.questionGuide.knowledgePoints !== undefined && !strings(item.questionGuide.knowledgePoints)) || (item.questionGuide.cautions !== undefined && !strings(item.questionGuide.cautions))))) throw new Error('教材补充内容无效。');
     ids.add(item.id);
     getLocation(item.locationId);

@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "chapters": 6,
+  "contentPagesReviewed": 192,
+  "pagesWithVisuals": 175,
+  "visuals": 180,
+  "newVisuals": 177,
+  "bodyRewrites": 83,
+  "unitTestsPassed": 53,
+  "lint": "PASS",
+  "build": "PASS",
+  "formulaSegments": 740,
+  "mathErrors": 0,
+  "allVisualRenderChecks": 540,
+  "actualBookEntryChecks": 63,
+  "page88RelatedReturnAndMethodState": "PASS",
+  "graphChapterSamples": 6,
+  "mobileGraphDiagram": "PASS",
+  "rightPanelPage": 129,
+  "cloudPublished": false,
+  "physicalPhoneTested": false,
+  "studentLearningEffectTested": false
+}

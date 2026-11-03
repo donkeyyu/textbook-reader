@@ -136,6 +136,8 @@ node --experimental-strip-types scripts/check-cloud-content.mjs
 | --- | --- |
 | 界面风格、书架设置与选择保存 | [check-ui-style.mjs](scripts/check-ui-style.mjs)：`checkUiStyles(page, { testOrigin, evidenceDir })` 使用独立空 origin，检查默认小岛书桌、键盘选择、保存失败重试、刷新及阅读启动、四种风格的原文与关联返回；`checkUiStylesNarrow(page, { evidenceDir })` 在窄屏检查设置、工具栏边界及阅读路径 |
 | 内页风格、目录与图谱菜单 | [check-reader-appearance.mjs](scripts/check-reader-appearance.mjs)：`checkReaderAppearance(page, { narrow, evidenceDir })` 从教材单视图、无展开解读和菜单开始，检查目录位置、选中图标、类型菜单、筛选、搜索、焦点及边界，结束于图谱单视图；主题与屏宽由调用方选择，画布配色另用现有 Pixi 探针和截图核对 |
+| 全量图示容器渲染 | 开发环境通过浏览器导入 `.scratch/supplement-content-enrichment/visual-harness.tsx` 并运行 `checkAllVisuals()`，使用正式组件与样式检查全部图示在320/390/560px下的边界，结束移除临时夹具；不代替真实入口与关联路径回归 |
+| 全书补充图解 | [check-book-visuals.mjs](scripts/check-book-visuals.mjs)：`checkBookVisuals(page, cases, { width, evidenceDir })` 使用本地内容预览和教材视图，逐条检查图文、公式及标签边界；`cases` 为 `{ id, page, kind }` 数组，可检查全部图示或各章代表条目 |
 | 第88页三条图解 | [check-page88-content.mjs](scripts/check-page88-content.mjs)：`checkPage88Content(page, { evidenceDir })` 从第88页教材视图开始，检查1440/390/320宽度下的三幅图、公式和标签边界，以及关联返回、方法状态与定位 |
 | 完整题目及跨页原文框 | [check-complete-location.mjs](scripts/check-complete-location.mjs)：`checkCompleteLocation(page)` 检查两行题干、跨页续题及关闭后的清除；教材可见且内容已载入 |
 | 窗口尺寸变化与阅读位置 | [check-reading-resize.mjs](scripts/check-reading-resize.mjs)：`checkReadingResize(page)` 从教材可见、解读展开开始，在同一浏览器回合切换390/1440宽度，核对页码、页内位置与解读，并确认主动滚动仍更新位置 |
@@ -175,7 +177,7 @@ node --experimental-strip-types scripts/check-cloud-content.mjs
 
 涉及个人内容或阅读记录写入的检查，使用独立测试 origin 和自己的浏览器页面，不接管用户验收页。要求 `{ testOrigin }` 的函数须显式传入；先检查各函数的存储及草稿前置条件，结束后恢复原始状态。多个检查不要并发修改同一页面或存储。
 
-云端检查还须使用可清理的专用 QA 账号。`check-related-return.mjs` 中直接读写旧 localStorage 的笔记、草稿和跨标签检查只适用于冻结的旧版；新版存储行为使用上表的云端入口。测试脚本不得打印账号凭据或清空浏览器全局存储。
+云端检查还须使用可清理的专用 QA 账号。旧 localStorage 笔记保存、失败草稿与跨标签写入检查已退役；保存行为使用上表的云端入口。`checkLocate` 与 `checkLocateGroup` 只检查定位上下文，不编辑个人内容或模拟保存故障。测试脚本不得打印账号凭据或清空浏览器全局存储。
 
 ## 验证记录
 

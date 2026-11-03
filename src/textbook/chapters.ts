@@ -29,11 +29,11 @@ export type ChapterSource = {
   positioning: { documentSha256: string; locations: TextbookLocation[] };
 };
 
-export const chapterSources: ChapterSource[] = [
+export const chapterSources = [
   { chapter: chapter1, positioning: locations1 },
   { chapter: chapter2, positioning: locations2 },
   { chapter: chapter3, positioning: locations3 },
   { chapter: chapter4, positioning: locations4 },
   { chapter: chapter5, positioning: locations5 },
   { chapter: chapter6, positioning: locations6 },
-];
+] as ChapterSource[];

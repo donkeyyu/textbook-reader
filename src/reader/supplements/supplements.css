@@ -91,3 +91,18 @@
   .area-diagram figcaption { font-size: 17px; }
   .area-diagram-explanation { font-size: 13px; }
 }
+
+.supplement-visual { margin: 0 auto 24px; max-width: 560px; min-width: 0; padding: 16px; border: 1px solid var(--type-border, var(--border)); border-radius: 14px; background: var(--type-surface, var(--surface)); overflow-wrap: anywhere; }
+.supplement-visual-title { margin-bottom: 14px; font-size: 15px; font-weight: 650; line-height: 1.6; }
+.supplement-visual-items { display: grid; gap: 16px; margin: 0; padding: 0; list-style: none; }
+.supplement-visual-items > li { min-width: 0; }
+.supplement-visual-label { display: flex; align-items: baseline; gap: 8px; font-size: 14px; font-weight: 600; line-height: 1.6; }
+.supplement-visual-label > span:first-child { flex: none; color: var(--secondary); font-size: 11px; font-variant-numeric: tabular-nums; }
+.supplement-visual-math { margin: 8px 0; padding: 10px; border-radius: 8px; background: var(--type-tint); font-size: 18px; overflow-x: auto; }
+.supplement-visual-text, .supplement-visual figcaption { font-size: 14px; line-height: 1.8; }
+.supplement-visual figcaption { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--type-border, var(--border)); }
+.supplement-visual > svg { display: block; width: 100%; height: auto; max-width: 400px; margin: auto; }
+.supplement-visual-direction { text-align: center; font-size: 12px; color: var(--secondary); }
+@container (min-width: 480px) {
+  .supplement-visual-compare .supplement-visual-items { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

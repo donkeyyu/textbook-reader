@@ -1,7 +1,6 @@
-import type { ComponentType } from 'react';
 import { MathText } from '../text/MathText';
 
-function TriangleAreaDiagram() {
+export function TriangleAreaDiagram() {
   return <figure className="area-diagram" data-diagram="triangle-area">
     <svg viewBox="0 0 352 120" role="img" aria-label="面积拆分：两条直角边为a、b的三角形，减去半径为r的圆孔，得到三角尺。示意图不按比例绘制。">
       <g stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round">
@@ -26,7 +25,7 @@ function TriangleAreaDiagram() {
   </figure>;
 }
 
-function TriangleHeightDiagram() {
+export function TriangleHeightDiagram() {
   return <figure className="area-diagram" data-diagram="triangle-height">
     <svg className="area-diagram-detail" viewBox="0 0 280 190" role="img" aria-label="两个全等直角三角形沿斜边拼成长方形，长为b、宽为a。斜线两侧各占面积的一半。">
       <g stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round">
@@ -46,7 +45,7 @@ function TriangleHeightDiagram() {
   </figure>;
 }
 
-function AreaUnitDiagram() {
+export function AreaUnitDiagram() {
   return <figure className="area-diagram" data-diagram="area-unit">
     <svg className="area-diagram-detail" viewBox="0 0 280 226" role="img" aria-label="边长1厘米的正方形，每条边分为10个1毫米，共有10行、每行10个小方格。每格1平方毫米，共100平方毫米。">
       <rect x="64" y="36" width="160" height="160" fill="var(--diagram-triangle)" stroke="currentColor" strokeWidth="1.5" />
@@ -67,16 +66,4 @@ function AreaUnitDiagram() {
     <figcaption><MathText text={String.raw`$1\ \mathrm{cm}^2=100\ \mathrm{mm}^2$`} /></figcaption>
     <small>补充用例 · 分格表示面积单位的换算</small>
   </figure>;
-}
-
-// 第88页的三个样板共用正文插图入口；未配置的条目保持纯正文。
-const diagrams: Record<string, ComponentType> = {
-  'ch3-q-p88-example4': TriangleAreaDiagram,
-  'ch3-triangle-base-height': TriangleHeightDiagram,
-  'ch3-area-value-unit': AreaUnitDiagram,
-};
-
-export function SupplementDiagram({ supplementId }: { supplementId: string }) {
-  const Diagram = diagrams[supplementId];
-  return Diagram ? <Diagram /> : null;
 }

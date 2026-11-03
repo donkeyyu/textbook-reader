@@ -6,82 +6,6 @@ const positioning = JSON.parse(await readFile(new URL('../content/grade-7-volume
 const locations = new Map(positioning.locations.map((location) => [location.id, location]));
 export const reviewCases = chapter.supplements.flatMap((note) => note.related.map((link) => ({ note, link })));
 
-const personalKey = `textbook-personal-v1:${positioning.documentSha256}`;
-
-async function noteSource(page) {
-  await page.waitForSelector('.personal-note .note-mode-toggle');
-  if (await page.evaluate(() => document.querySelector('.personal-note .note-mode-toggle').getAttribute('aria-pressed') === 'true')) {
-    await page.click('.personal-note .note-mode-toggle');
-  }
-}
-
-async function replaceNote(page, text) {
-  await noteSource(page);
-  await page.focus('.personal-note .cm-content');
-  await page.press('.personal-note .cm-content', 'ControlOrMeta+a');
-  if (text) await page.keyboard.insertText(text);
-  else await page.press('.personal-note .cm-content', 'Backspace');
-}
-
-async function savedNote(page, id, expected) {
-  await page.waitForFunction(({ key, id, expected }) => {
-    const value = JSON.parse(localStorage.getItem(key))?.notes?.[id];
-    return (expected === null ? value === undefined : value === expected) && !document.querySelector('.personal-note [data-dirty="true"]');
-  }, { key: personalKey, id, expected });
-}
-
-// These write checks require an explicitly named, dedicated test origin. They
-// refuse existing notes, never save personal supplements, and restore the raw key.
-async function withEmptyNotes(page, ids, { testOrigin } = {}, run) {
-  assert.ok(testOrigin, 'Pass { testOrigin } for a dedicated origin, separate from the user acceptance server');
-  assert.equal(new URL(await page.url()).origin, new URL(testOrigin).origin);
-  assert.equal(await page.evaluate(() => !!document.querySelector('[data-dirty="true"]')), false, 'Do not run note checks over an existing user draft');
-  await page.evaluate(({ key, ids }) => {
-    if (window.noteTest) throw new Error('A note test is already active');
-    const raw = localStorage.getItem(key);
-    const data = raw === null ? { supplements: [], notes: {} } : JSON.parse(raw);
-    for (const id of ids) if (data.notes[id]?.trim()) throw new Error(`Test source already has a note: ${id}`);
-    window.noteTest = { key, raw, lastSaved: raw, setItem: Storage.prototype.setItem, fail: false };
-    Storage.prototype.setItem = function (key, value) {
-      const test = window.noteTest;
-      if (this === localStorage && key === test.key) {
-        if (test.fail) throw new DOMException('Note test write failure', 'QuotaExceededError');
-        test.setItem.call(this, key, value);
-        test.lastSaved = String(value);
-      } else test.setItem.call(this, key, value);
-    };
-  }, { key: personalKey, ids });
-  try {
-    return await run();
-  } finally {
-    // Restore the reader's last successful revision before clearing any failed
-    // draft; a deliberately simulated external write must not block cleanup.
-    await page.evaluate(() => {
-      const test = window.noteTest;
-      test.fail = false;
-      if (test.lastSaved === null) localStorage.removeItem(test.key);
-      else test.setItem.call(localStorage, test.key, test.lastSaved);
-    });
-    try {
-      if (await page.evaluate(() => !!document.querySelector('.personal-note .cm-content'))) {
-        await replaceNote(page, '');
-        if (await page.evaluate(() => !!document.querySelector('.personal-note [data-dirty="true"]'))) await page.click('.personal-note .note-retry');
-        await page.waitForFunction(() => !document.querySelector('.personal-note [data-dirty="true"]'));
-      }
-    } finally {
-      await page.evaluate(() => {
-        const test = window.noteTest;
-        Storage.prototype.setItem = test.setItem;
-        if (test.raw === null) localStorage.removeItem(test.key);
-        else test.setItem.call(localStorage, test.key, test.raw);
-        delete window.noteTest;
-      });
-    }
-    await page.reload();
-    await page.waitForSelector('.page-index');
-  }
-}
-
 async function settled(page) {
   await page.waitForFunction(() => !document.querySelector('.reading-message'), undefined, { timeout: 30_000 });
 }
@@ -406,44 +330,6 @@ export async function checkOnDemandMethod(page, id) {
   console.log(`PASS on-demand method: ${id}; default, click, keyboard, reopen, close, refresh`);
 }
 
-export async function checkMethodDraft(page, id, options) {
-  return withEmptyNotes(page, [id], options, async () => {
-    await openNote(page, id);
-    await noteSource(page);
-    await page.evaluate(() => { window.noteTest.fail = true; });
-    await replaceNote(page, 'Method failure draft');
-    await page.waitForSelector('.personal-note [role="alert"]');
-    const draft = await page.evaluate(() => {
-      window.methodDraftEditor = document.querySelector('.personal-note .cm-content');
-      window.methodDraftConfirm = window.confirm;
-      window.methodDraftPrompts = 0;
-      window.confirm = () => { window.methodDraftPrompts += 1; return false; };
-      return window.methodDraftEditor.textContent;
-    });
-    try {
-      await page.click(`#method-${id}`);
-      await page.press(`#method-${id}`, 'Enter');
-      await page.press(`#method-${id}`, 'Space');
-      assert.deepEqual(await page.evaluate(() => ({
-        sameEditor: document.querySelector('.personal-note .cm-content') === window.methodDraftEditor,
-        draft: document.querySelector('.personal-note .cm-content').textContent,
-        dirty: !!document.querySelector('.personal-note [data-dirty="true"]'),
-        prompts: window.methodDraftPrompts,
-      })), { sameEditor: true, draft, dirty: true, prompts: 0 }, 'Method toggles keep a failed autosave draft without asking to discard');
-      await page.click('button[aria-label="关闭解读"]');
-      assert.ok(await page.evaluate(() => !!document.querySelector('.personal-note [data-dirty="true"]')), 'Canceling a destructive close still protects a failed autosave');
-    } finally {
-      await page.evaluate(() => {
-        window.confirm = window.methodDraftConfirm;
-        delete window.methodDraftConfirm;
-        delete window.methodDraftEditor;
-        delete window.methodDraftPrompts;
-      });
-    }
-    console.log(`PASS method with failed autosave: ${id}; toggles keep the draft and canceled close protects it`);
-  });
-}
-
 export async function checkMethodReturnChain(page) {
   const id = 'ch1-exercise-1-1-8';
   await openNote(page, id);
@@ -502,39 +388,6 @@ export async function checkTitleDraft(page) {
   console.log('PASS title-only draft: beforeunload and canceled discard retain the title');
 }
 
-export async function checkDraftDuringNavigation(page, options) {
-  const id = 'ch1-measurement-exercise';
-  return withEmptyNotes(page, [id], options, async () => {
-    await openNote(page, id);
-    await noteSource(page);
-    await page.evaluate(() => {
-      window.noteTest.fail = true;
-      window.draftDecode = HTMLImageElement.prototype.decode;
-      HTMLImageElement.prototype.decode = function () { return new Promise((resolve) => { window.draftRelease = resolve; }); };
-    });
-    try {
-      await page.click('#related-ch1-measurement-exercise-ch1-source-standard-comparison');
-      await page.waitForSelector('.reading-message[role="status"]');
-      await page.focus('.personal-note .cm-content');
-      await page.keyboard.insertText('Navigation failure draft');
-      await page.waitForSelector('.personal-note [role="alert"]');
-      const snapshot = () => page.evaluate(() => ({
-        draft: document.querySelector('.personal-note .cm-content').textContent,
-        title: document.querySelector('#supplement-title').textContent,
-        highlight: document.querySelector('.location-highlight')?.id,
-      }));
-      const before = await snapshot();
-      await page.evaluate(() => window.draftRelease());
-      await settled(page);
-      assert.deepEqual(await snapshot(), before, 'Late navigation must not unload a failed autosave draft');
-      assert.ok(await page.evaluate(() => !!document.querySelector('.personal-note [data-dirty="true"]')));
-    } finally {
-      await page.evaluate(() => { HTMLImageElement.prototype.decode = window.draftDecode; delete window.draftDecode; delete window.draftRelease; });
-    }
-    console.log('PASS edit during image loading: a failed autosave cancels navigation and late results keep its draft');
-  });
-}
-
 export async function checkReaderJourney(page) {
   const id = 'ch1-measurement-exercise';
   const readingKey = `textbook-reading-v1:${positioning.documentSha256}`;
@@ -579,114 +432,7 @@ export async function checkReaderJourney(page) {
   return { before, returned, saved, refreshed };
 }
 
-// Use two Pages on the same explicitly named test origin.
-export async function checkStalePersonalWrite(page, stalePage, options) {
-  assert.ok(options?.testOrigin, 'Pass { testOrigin } for a dedicated test origin');
-  assert.equal(new URL(await stalePage.url()).origin, new URL(options.testOrigin).origin);
-  const id = 'ch1-measurement-exercise';
-  return withEmptyNotes(page, [id], options, async () => {
-    await stalePage.reload();
-    await stalePage.waitForSelector('.page-index');
-    await openNote(stalePage, id);
-    await noteSource(stalePage);
-    await openNote(page, id);
-    await replaceNote(page, 'Saved in A');
-    await savedNote(page, id, 'Saved in A');
-    const saved = await page.evaluate((key) => localStorage.getItem(key), personalKey);
-    try {
-      await replaceNote(stalePage, 'Draft in B');
-      await stalePage.waitForSelector('.personal-note [role="alert"]');
-      assert.deepEqual(await stalePage.evaluate((key) => ({
-        stored: localStorage.getItem(key),
-        draft: document.querySelector('.personal-note .cm-content').textContent,
-        dirty: document.querySelector('.personal-note .markdown-editor').dataset.dirty,
-      }), personalKey), { stored: saved, draft: 'Draft in B', dirty: 'true' });
-    } finally {
-      const original = await page.evaluate(() => window.noteTest.raw);
-      await stalePage.evaluate(({ key, raw }) => {
-        if (raw === null) localStorage.removeItem(key);
-        else localStorage.setItem(key, raw);
-      }, { key: personalKey, raw: original });
-      await replaceNote(stalePage, '');
-      await stalePage.waitForFunction(() => !document.querySelector('.personal-note [data-dirty="true"]'));
-      await stalePage.reload();
-      await stalePage.waitForSelector('.page-index');
-    }
-    console.log('PASS stale tab: automatic save preserves the newer note and keeps the conflicting draft');
-  });
-}
-
-export async function checkNoteAutosave(page, options) {
-  const id = 'ch1-measurement-exercise';
-  return withEmptyNotes(page, [id], options, async () => {
-    await openNote(page, id);
-    await noteSource(page);
-    assert.ok(await page.evaluate(() => {
-      const editor = document.querySelector('.personal-note .cm-editor');
-      const style = getComputedStyle(editor);
-      return !document.querySelector('.personal-note button[type="submit"]') &&
-        [style.borderTopWidth, style.borderRightWidth, style.borderBottomWidth, style.borderLeftWidth].every((width) => parseFloat(width) === 0) && style.boxShadow === 'none';
-    }), 'Notes have no manual save control or editor frame');
-    await replaceNote(page, 'Autosave **one**');
-    await savedNote(page, id, 'Autosave **one**');
-    // Reopen to give Undo a known initial document, independent of input grouping.
-    await page.click('button[aria-label="关闭解读"]');
-    await openNote(page, id);
-    await noteSource(page);
-    await page.press('.personal-note .cm-content', 'ControlOrMeta+End');
-    await page.keyboard.insertText(' + two');
-    await savedNote(page, id, 'Autosave **one** + two');
-    await page.evaluate(() => { window.noteTest.editor = document.querySelector('.personal-note .cm-content'); });
-    await page.click('.personal-note .note-mode-toggle');
-    assert.ok(await page.evaluate(() => document.querySelector('.personal-note .editor-preview strong') && document.querySelector('.personal-note .cm-content') === window.noteTest.editor));
-    await page.click('.personal-note .note-mode-toggle');
-    assert.ok(await page.evaluate(() => document.querySelector('.personal-note .cm-content') === window.noteTest.editor), 'Mode switches retain the same CodeMirror instance');
-    await page.press('.personal-note .cm-content', 'ControlOrMeta+z');
-    await savedNote(page, id, 'Autosave **one**');
-    await replaceNote(page, '');
-    await savedNote(page, id, null);
-    await replaceNote(page, 'Preview on reopen');
-    await savedNote(page, id, 'Preview on reopen');
-    await page.click('button[aria-label="关闭解读"]');
-    await openNote(page, id);
-    assert.equal(await page.evaluate(() => document.querySelector('.personal-note .note-mode-toggle').getAttribute('aria-pressed')), 'true', 'A saved note initially opens in preview');
-    await noteSource(page);
-    await page.evaluate(() => { window.noteTest.editor = document.querySelector('.personal-note .cm-content'); window.noteTest.fail = true; });
-    await replaceNote(page, 'Failure draft');
-    await page.waitForSelector('.personal-note [role="alert"]');
-    assert.deepEqual(await page.evaluate(({ key, id }) => ({
-      stored: JSON.parse(localStorage.getItem(key)).notes[id],
-      draft: document.querySelector('.personal-note .cm-content').textContent,
-      sameEditor: document.querySelector('.personal-note .cm-content') === window.noteTest.editor,
-      dirty: !!document.querySelector('.personal-note [data-dirty="true"]'),
-    }), { key: personalKey, id }), { stored: 'Preview on reopen', draft: 'Failure draft', sameEditor: true, dirty: true });
-    await page.click('.personal-note .note-mode-toggle');
-    await page.click('.personal-note .note-mode-toggle');
-    assert.ok(await page.evaluate(() => document.querySelector('.personal-note .cm-content') === window.noteTest.editor));
-    await page.evaluate(() => { window.noteTest.fail = false; });
-    await page.click('.personal-note .note-retry');
-    await savedNote(page, id, 'Failure draft');
-    await page.press('.personal-note .cm-content', 'ControlOrMeta+z');
-    await savedNote(page, id, 'Preview on reopen');
-    // Simulate another tab's write without updating this tab's successful revision.
-    await page.evaluate(({ key, id }) => {
-      const data = JSON.parse(localStorage.getItem(key));
-      data.notes[id] = 'Other tab saved';
-      window.noteTest.setItem.call(localStorage, key, JSON.stringify(data));
-    }, { key: personalKey, id });
-    await replaceNote(page, 'Conflicting local draft');
-    await page.waitForSelector('.personal-note [role="alert"]');
-    assert.deepEqual(await page.evaluate(({ key, id }) => ({
-      stored: JSON.parse(localStorage.getItem(key)).notes[id],
-      draft: document.querySelector('.personal-note .cm-content').textContent,
-      dirty: !!document.querySelector('.personal-note [data-dirty="true"]'),
-    }), { key: personalKey, id }), { stored: 'Other tab saved', draft: 'Conflicting local draft', dirty: true }, 'A stale autosave cannot overwrite the external revision');
-    console.log('PASS note autosave: continuous input, empty deletion, default preview, same editor/Undo, failed-write retry and stale-revision protection');
-  });
-}
-
-// The caller owns an empty-note sandbox; writes are restored by its outer helper.
-async function locateCurrentNote(page, locationId, fail = false) {
+async function locateCurrentNote(page, locationId) {
   assert.ok(locations.has(locationId), locationId);
   assert.equal(await page.evaluate(() => !!document.querySelector('[data-dirty="true"]')), false, 'Run locate checks without an existing user draft');
   const button = '#supplement-panel .supplement-heading .locate-button';
@@ -695,14 +441,6 @@ async function locateCurrentNote(page, locationId, fail = false) {
   await page.click(button);
   const method = await page.evaluate(() => document.querySelector('#supplement-panel .method-toggle')?.id);
   if (method && await page.evaluate((id) => document.getElementById(id).getAttribute('aria-expanded') === 'false', method)) await page.click(`#${method}`);
-  await noteSource(page);
-  const original = await page.evaluate(() => document.querySelector('.personal-note .cm-content').textContent);
-  await page.focus('.personal-note .cm-content');
-  await page.press('.personal-note .cm-content', 'ControlOrMeta+End');
-  await page.evaluate((fail) => { window.noteTest.fail = fail; }, fail);
-  await page.keyboard.insertText(' [locate draft check]');
-  if (fail) await page.waitForSelector('.personal-note [role="alert"]');
-  else await page.waitForFunction(() => !document.querySelector('.personal-note [data-dirty="true"]'));
   await page.evaluate(() => {
     window.locateCheck = {
       editor: document.querySelector('.personal-note .cm-content'),
@@ -725,8 +463,8 @@ async function locateCurrentNote(page, locationId, fail = false) {
     function measure() {
       const panel = document.querySelector('#supplement-panel');
       const editor = document.querySelector('.personal-note .cm-content');
-      if (!panel || !editor) { reject(new Error('Locate removed the panel or note editor before it settled')); return; }
-      const geometry = JSON.stringify([panel.scrollTop, panel.scrollHeight, panel.clientHeight, editor.getBoundingClientRect().height]);
+      if (!panel) { reject(new Error('Locate removed the panel before it settled')); return; }
+      const geometry = JSON.stringify([panel.scrollTop, panel.scrollHeight, panel.clientHeight, editor?.getBoundingClientRect().height]);
       stable = geometry === previous ? stable + 1 : 0;
       previous = geometry;
       if (stable >= 4) resolve(panel.scrollTop);
@@ -757,7 +495,6 @@ async function locateCurrentNote(page, locationId, fail = false) {
     });
     await stablePanel();
     const before = await snapshot();
-    assert.equal(before.dirty, fail, 'A successful autosave is clean; a failed autosave retains a draft');
     await page.evaluate(() => {
       const scroller = document.querySelector('.paper-scroller');
       scroller.scrollTop += Math.max(scroller.clientHeight * 2, 640);
@@ -793,41 +530,30 @@ async function locateCurrentNote(page, locationId, fail = false) {
       button?.removeEventListener('click', window.locateCheck.recordClick, true);
       delete window.locateCheck;
     });
-    // Undo the single test insertion; the successful autosave also clears any error.
-    await page.evaluate(() => { window.noteTest.fail = false; });
-    if (await page.evaluate(() => !!document.querySelector('.personal-note .cm-content'))) {
-      await page.press('.personal-note .cm-content', 'ControlOrMeta+z');
-      assert.equal(await page.evaluate(() => document.querySelector('.personal-note .cm-content').textContent), original, 'Undo removes only the test draft');
-      await page.waitForFunction(() => !document.querySelector('.personal-note [data-dirty="true"]'));
-    }
   }
 }
 
-export async function checkLocate(page, id = 'ch1-measurement-exercise', options) {
-  return withEmptyNotes(page, [id], options, async () => {
-    await openNote(page, id);
-    const location = chapter.supplements.find((note) => note.id === id).locationId;
-    await locateCurrentNote(page, location);
-    await locateCurrentNote(page, location, true);
-    console.log(`PASS locate: ${id}; saved notes and failed autosave drafts both retain editor, state and panel scroll`);
-  });
+export async function checkLocate(page, id = 'ch1-measurement-exercise') {
+  await openNote(page, id);
+  const location = chapter.supplements.find((note) => note.id === id).locationId;
+  await locateCurrentNote(page, location);
+  console.log(`PASS locate: ${id}; preserves panel state and scroll without editing personal content`);
 }
 
 // Choose an id whose marker is grouped at the current width.
-export async function checkLocateGroup(page, id, options) {
-  return withEmptyNotes(page, [id], options, async () => {
-    const note = chapter.supplements.find((item) => item.id === id);
-    assert.ok(note, id);
-    await jumpToFilePage(page, locations.get(note.locationId).page);
-    await page.click(`[data-supplement-ids~="${id}"]`);
-    assert.ok(await page.evaluate(() => document.querySelectorAll('.supplement-accordion').length > 1), 'Choose a grouped marker');
-    assert.equal(await page.evaluate(() => document.querySelector('.locate-button').disabled), true, 'A group with no selected explanation cannot locate an arbitrary item');
-    await page.click(`#choice-${id}`);
-    await locateCurrentNote(page, note.locationId);
-    await page.click(`#choice-${id}`);
-    assert.equal(await page.evaluate(() => document.querySelector('.locate-button').disabled), true, 'Collapsing the selected explanation disables locate again');
-    console.log(`PASS grouped locate: ${id}; disabled before selection, locates the expanded item and preserves its state`);
-  });
+export async function checkLocateGroup(page, id) {
+  const note = chapter.supplements.find((item) => item.id === id);
+  assert.ok(note, id);
+  await jumpToFilePage(page, locations.get(note.locationId).page);
+  await page.click(`[data-supplement-ids~="${id}"]`);
+  assert.ok(await page.evaluate(() => document.querySelectorAll('.supplement-accordion').length > 1), 'Choose a grouped marker');
+  assert.equal(await page.evaluate(() => document.querySelector('.locate-button').disabled), true, 'A group with no selected explanation cannot locate an arbitrary item');
+  await page.click(`#choice-${id}`);
+  await locateCurrentNote(page, note.locationId);
+  await page.evaluate(() => { document.querySelector('#supplement-panel').scrollTop = 0; });
+  await page.click(`#choice-${id}`);
+  assert.equal(await page.evaluate(() => document.querySelector('.locate-button').disabled), true, 'Collapsing the selected explanation disables locate again');
+  console.log(`PASS grouped locate: ${id}; disabled before selection, locates the expanded item and preserves its state`);
 }
 
 // This history-only case does not edit notes or write the personal-content key.

@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-02",
+  "base_branch": "codex/reader-focus-ui",
+  "base_commit": "9e7802138448ebff01d22efc3bc74c6073fd2a51",
+  "generation_mode": "built-in image_gen",
+  "prompt": "prompt.txt",
+  "image": "prototype.png",
+  "references": [
+    "output/reader-focus-ui/desktop.png",
+    "public/textbooks/grade-7-volume-1/page-88.webp"
+  ],
+  "textbook_printed_page": 81,
+  "scope": "Static interaction reference only; generated textbook text is illustrative. No application implementation or behavioral verification."
+}

@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { getLocation, type Supplement } from "../../textbook/supplements";
 import { supplementType, supplementTypes, TypeMarker } from './supplement-types';
 import { MathText } from '../text/MathText';
-import { SupplementDiagram } from './AreaDiagrams';
+import { SupplementDiagram } from './SupplementDiagram';
 import './supplement-appearance.css';
 import { getPage, pageLabel } from "../../textbook/catalog";
 
@@ -86,7 +86,7 @@ function SupplementContent({ note, pending, onRelated, activeLocationId, persona
     <div className="supplement-body">
       {note.paragraphs.map((paragraph, index) => <div key={index}>
         <p><MathText text={paragraph} /></p>
-        {index === 0 && <SupplementDiagram supplementId={note.id} />}
+        {index === 0 && <SupplementDiagram note={note} />}
       </div>)}
       {guide && (guide.continuous
         ? [...(guide.knowledgePoints ?? []), ...guide.method, ...(guide.cautions ?? [])].map((paragraph, index) => <p key={index}><MathText text={paragraph} /></p>)

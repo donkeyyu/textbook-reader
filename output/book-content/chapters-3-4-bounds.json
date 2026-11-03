@@ -1,0 +1,452 @@
+[
+  {
+    "id": "ch3-q-robot-introduction",
+    "page": 75,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-rate-and-time-units",
+    "page": 76,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-context-and-unit",
+    "page": 77,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-read-outer-operation",
+    "page": 78,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-new-speed-whole",
+    "page": 79,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-direct-proportion-condition",
+    "page": 80,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-inverse-not-decrease",
+    "page": 81,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-table-pairing-exercise",
+    "page": 82,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-early-arrival-exercise",
+    "page": 83,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-digits-place-exercise",
+    "page": 84,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-same-letter-consistency",
+    "page": 85,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-value-denominator-condition",
+    "page": 86,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-negative-substitution-base",
+    "page": 87,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-q-p88-example4",
+    "page": 88,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-triangle-base-height",
+    "page": 88,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-area-value-unit",
+    "page": 88,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-sum-square-structure",
+    "page": 89,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-square-pattern-index",
+    "page": 90,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-cipher-unambiguous-rule",
+    "page": 91,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-expression-value-checks",
+    "page": 92,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-verbal-operation-scope",
+    "page": 93,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-diagram-segment-label",
+    "page": 94,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-why-simplify",
+    "page": 95,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-monomial-product",
+    "page": 96,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-ratio-area",
+    "page": 97,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-signed-terms",
+    "page": 98,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-polynomial-degree",
+    "page": 99,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-degree-table",
+    "page": 100,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-q-hw41-6",
+    "page": 101,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-values-and-law",
+    "page": 102,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-like-terms",
+    "page": 103,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-combine-rule",
+    "page": 103,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-zero-coefficient",
+    "page": 104,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-stock-and-change",
+    "page": 105,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-minus-bracket",
+    "page": 106,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-bracket-check-exercise",
+    "page": 107,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-box-surface",
+    "page": 108,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-nested-bracket-check",
+    "page": 109,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-all-values-exercise",
+    "page": 110,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-q-sheet-formula",
+    "page": 111,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-calendar-evidence",
+    "page": 112,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-divisibility-split",
+    "page": 113,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-one-law-two-directions",
+    "page": 114,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-difference-whole-review",
+    "page": 115,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-whole-expression",
+    "page": 116,
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  }
+]

@@ -4,7 +4,7 @@ import test from 'node:test';
 import { chapterSources } from './chapters.ts';
 import book from './book.json' with { type: 'json' };
 import { getLocation, type QuestionCoverage, type TextbookLocation } from './supplements.ts';
-import { publishedContent, supplementQueries } from './content.ts';
+import { parsePublishedContent, publishedContent, supplementQueries } from './content.ts';
 
 const { getSupplement, supplementsForPage } = supplementQueries(publishedContent());
 
@@ -121,6 +121,11 @@ test('formula delimiters are balanced in every readable field', () => {
     for (const note of chapter.supplements) {
       const guide = note.questionGuide;
       const fields = [note.preview, ...note.paragraphs, ...(guide?.knowledgePoints ?? []), ...(guide?.method ?? []), ...(guide?.cautions ?? [])];
+      const visual = note.visual;
+      if (visual && 'title' in visual) {
+        fields.push(visual.title, visual.caption);
+        if ('items' in visual) for (const item of visual.items) fields.push(item.label, item.text, item.math ?? '');
+      }
       for (const field of fields) {
         assert.equal(field.split('$').length % 2, 1, `${note.id}: unbalanced $ in ${field}`);
         assert.equal(field.match(/\\\[/g)?.length ?? 0, field.match(/\\\]/g)?.length ?? 0, `${note.id}: unbalanced \\[ in ${field}`);
@@ -142,4 +147,32 @@ test('multi-line and continuation questions keep their full source regions', () 
   const diagram = getLocation('ch1-order-without-scale').additionalRegions;
   assert.equal(diagram?.[0]?.page, 30);
   assert.ok(diagram[0]!.region.y + diagram[0]!.region.height < 0.137, 'exclude the next question');
+});
+
+
+test('published visuals round-trip and reject invalid geometry or incomplete explanations', () => {
+  const source = publishedContent();
+  assert.deepEqual(parsePublishedContent(JSON.parse(JSON.stringify(source))), source);
+  const content = structuredClone(source);
+  const note = content.supplements[0]!;
+  delete note.visual;
+  assert.doesNotThrow(() => parsePublishedContent(content));
+  const valid = [
+    { kind: 'steps', title: '依据', items: [{ label: '条件', text: '检查条件' }, { label: '结论', math: '$a=a$', text: '等式成立' }], caption: '补充说明' },
+    { kind: 'number-line', title: '位置', min: -2, max: 2, points: [{ value: -2, label: '-2' }, { value: 2, label: '2' }], caption: '同一单位长度' },
+    { kind: 'segment', title: '方向', points: [{ position: 0, label: 'A' }, { position: 1, label: 'B' }], extend: 'right', caption: '补充示意' },
+  ];
+  for (const visual of valid) {
+    Object.assign(note, { visual });
+    assert.doesNotThrow(() => parsePublishedContent(content));
+  }
+  for (const visual of [null, {}, { kind: 'unknown' }, { kind: ['triangle-area'] }, { ...valid[0], items: [] },
+    { ...valid[0], items: [{ label: '条件', text: '检查条件' }, null] },
+    { ...valid[1], min: 2 }, { ...valid[1], max: Infinity },
+    { ...valid[1], points: [{ value: -3, label: '-3' }, { value: 2, label: '2' }] },
+    { ...valid[2], points: [{ position: 1, label: 'A' }, { position: 0, label: 'B' }] },
+    { ...valid[2], extend: 'up' }, { ...valid[2], extend: ['right'] }]) {
+    Object.assign(note, { visual });
+    assert.throws(() => parsePublishedContent(content), /补充内容无效/);
+  }
 });

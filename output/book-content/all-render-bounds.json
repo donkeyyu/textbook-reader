@@ -1,0 +1,4862 @@
+[
+  {
+    "id": "ch1-why-negative",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-positive-negative",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-deviation",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-zero-reference",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-growth-rate-question",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-tolerance-range",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-rational-form",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-classification-overlap",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-road-number",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-number-line-fraction",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-opposite-geometry",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-opposite-pair",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-opposite-sign",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-absolute-definition",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-absolute-negative",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-negative-order",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-comparison-simplify",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-deviation-distance-activity",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-number-line-review",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-number-scope-practice",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-signed-change",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-motion-result",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-opposite-add-cancel",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-opposite-add-zero",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-commute-whole-number",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-associate-order",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-restore-total",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-subtract-add-opposite",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-subtract-mixed-number",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-sum-abbreviation",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-rewrite-exercise",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-height-difference-exercise",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-road-two-questions",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-ancient-word-scope",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-multiplication-consistency",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-multiplication-sign-magnitude",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-reciprocal-condition",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-distribution-every-addend",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-product-negative-parity",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-division-reciprocal-reason",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-mixed-product-reciprocal",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-monthly-average-weight",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-reciprocal-mixed-practice",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-absolute-value-scope-practice",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-height-change-practice",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-negative-product-zero-pair",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-power-factor-count",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-power-negative-parity",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-same-level-order",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-scientific-same-value",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-scientific-coefficient",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-speed-unit-practice",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-income-record-activity",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-rational-closure-review",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-division-condition-review",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-absolute-scope-practice",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-counterexample-review",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-base-unit-exchange",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-zero-power-place",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-time-base-boundary",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-q-p73-process2",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-q-p74-report",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-q-robot-introduction",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-rate-and-time-units",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-context-and-unit",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-read-outer-operation",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-new-speed-whole",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-direct-proportion-condition",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-inverse-not-decrease",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-table-pairing-exercise",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-early-arrival-exercise",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-digits-place-exercise",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-same-letter-consistency",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-value-denominator-condition",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-negative-substitution-base",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-q-p88-example4",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-triangle-base-height",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-area-value-unit",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-sum-square-structure",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-square-pattern-index",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-cipher-unambiguous-rule",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-expression-value-checks",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-verbal-operation-scope",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-diagram-segment-label",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-why-simplify",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-monomial-product",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-ratio-area",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-signed-terms",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-polynomial-degree",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-degree-table",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-q-hw41-6",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-values-and-law",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-like-terms",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-combine-rule",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-zero-coefficient",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-stock-and-change",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-minus-bracket",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-bracket-check-exercise",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-box-surface",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-nested-bracket-check",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-all-values-exercise",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-q-sheet-formula",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-calendar-evidence",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-divisibility-split",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-one-law-two-directions",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-difference-whole-review",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-whole-expression",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-unknown-as-number",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-same-reference",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-equation",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-percent-base",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-solution",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-linear-definition",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-nonzero",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-negative-coefficient",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-diagram-evidence",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-digit-value",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-combine-purpose",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-successive-ratio",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-transpose",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-ratio-unit",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-monthly-total",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-negative-bracket",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-change-dimensions",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-elapsed-time",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-every-term",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-whole-numerator",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-negative-denominator",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-climb-time",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-repeating-alignment",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-work-unit",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-two-checks",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-profit-base",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-discount-bases",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-context-integer",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-energy-units",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-cost-difference",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-temperature-start",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-promotion-threshold",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-model-assumptions",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-water-tier",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-balance-data",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-standard-nonzero",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-formula-known",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-age-same-time",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-abstract-shape",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-hidden-edges",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-views-information",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-net-vs-view",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-surface-and-solid",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-motion-needs-direction",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-line-points-not-ends",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-extension-order",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-segment-comparison-alignment",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-segment-sum-between",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-midpoint-two-conditions",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-cylinder-route-constraints",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-screen-unit-exercise",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-angle-three-letter-name",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-compound-angle-units",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-bearing-reference-direction",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-angle-overlap-conditions",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-angle-borrow-same-quantity",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-bisector-ray-conditions",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-equal-angle-complements",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-example4-opposite-rays",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-angle-position-exercise",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-bearing-observation-base",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-extended-angle-observation",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-paper-glue-tabs",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-star-consecutive-angles",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-view-versus-net",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-analogy-boundaries",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-reverse-extension-reading",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-surface-route-correspondence",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-fold-angle-evidence",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-field-data-sources",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-field-scale-consistency",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-field-layout-constraints",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-design-evidence",
+    "width": 320,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-why-negative",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-positive-negative",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-deviation",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-zero-reference",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-growth-rate-question",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-tolerance-range",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-rational-form",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-classification-overlap",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-road-number",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-number-line-fraction",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-opposite-geometry",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-opposite-pair",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-opposite-sign",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-absolute-definition",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-absolute-negative",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-negative-order",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-comparison-simplify",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-deviation-distance-activity",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-number-line-review",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-number-scope-practice",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-signed-change",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-motion-result",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-opposite-add-cancel",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-opposite-add-zero",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-commute-whole-number",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-associate-order",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-restore-total",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-subtract-add-opposite",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-subtract-mixed-number",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-sum-abbreviation",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-rewrite-exercise",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-height-difference-exercise",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-road-two-questions",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-ancient-word-scope",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-multiplication-consistency",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-multiplication-sign-magnitude",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-reciprocal-condition",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-distribution-every-addend",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-product-negative-parity",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-division-reciprocal-reason",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-mixed-product-reciprocal",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-monthly-average-weight",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-reciprocal-mixed-practice",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-absolute-value-scope-practice",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-height-change-practice",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-negative-product-zero-pair",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-power-factor-count",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-power-negative-parity",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-same-level-order",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-scientific-same-value",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-scientific-coefficient",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-speed-unit-practice",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-income-record-activity",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-rational-closure-review",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-division-condition-review",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-absolute-scope-practice",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-counterexample-review",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-base-unit-exchange",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-zero-power-place",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-time-base-boundary",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-q-p73-process2",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-q-p74-report",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-q-robot-introduction",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-rate-and-time-units",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-context-and-unit",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-read-outer-operation",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-new-speed-whole",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-direct-proportion-condition",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-inverse-not-decrease",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-table-pairing-exercise",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-early-arrival-exercise",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-digits-place-exercise",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-same-letter-consistency",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-value-denominator-condition",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-negative-substitution-base",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-q-p88-example4",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-triangle-base-height",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-area-value-unit",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-sum-square-structure",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-square-pattern-index",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-cipher-unambiguous-rule",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-expression-value-checks",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-verbal-operation-scope",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-diagram-segment-label",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-why-simplify",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-monomial-product",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-ratio-area",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-signed-terms",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-polynomial-degree",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-degree-table",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-q-hw41-6",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-values-and-law",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-like-terms",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-combine-rule",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-zero-coefficient",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-stock-and-change",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-minus-bracket",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-bracket-check-exercise",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-box-surface",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-nested-bracket-check",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-all-values-exercise",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-q-sheet-formula",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-calendar-evidence",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-divisibility-split",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-one-law-two-directions",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-difference-whole-review",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-whole-expression",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-unknown-as-number",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-same-reference",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-equation",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-percent-base",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-solution",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-linear-definition",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-nonzero",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-negative-coefficient",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-diagram-evidence",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-digit-value",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-combine-purpose",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-successive-ratio",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-transpose",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-ratio-unit",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-monthly-total",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-negative-bracket",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-change-dimensions",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-elapsed-time",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-every-term",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-whole-numerator",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-negative-denominator",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-climb-time",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-repeating-alignment",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-work-unit",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-two-checks",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-profit-base",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-discount-bases",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-context-integer",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-energy-units",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-cost-difference",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-temperature-start",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-promotion-threshold",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-model-assumptions",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-water-tier",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-balance-data",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-standard-nonzero",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-formula-known",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-age-same-time",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-abstract-shape",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-hidden-edges",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-views-information",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-net-vs-view",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-surface-and-solid",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-motion-needs-direction",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-line-points-not-ends",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-extension-order",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-segment-comparison-alignment",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-segment-sum-between",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-midpoint-two-conditions",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-cylinder-route-constraints",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-screen-unit-exercise",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-angle-three-letter-name",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-compound-angle-units",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-bearing-reference-direction",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-angle-overlap-conditions",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-angle-borrow-same-quantity",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-bisector-ray-conditions",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-equal-angle-complements",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-example4-opposite-rays",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-angle-position-exercise",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-bearing-observation-base",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-extended-angle-observation",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-paper-glue-tabs",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-star-consecutive-angles",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-view-versus-net",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-analogy-boundaries",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-reverse-extension-reading",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-surface-route-correspondence",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-fold-angle-evidence",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-field-data-sources",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-field-scale-consistency",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-field-layout-constraints",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-design-evidence",
+    "width": 390,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-why-negative",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-positive-negative",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-deviation",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-zero-reference",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-growth-rate-question",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-tolerance-range",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-rational-form",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-classification-overlap",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-road-number",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-number-line-fraction",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-opposite-geometry",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-opposite-pair",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-opposite-sign",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-absolute-definition",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-absolute-negative",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-negative-order",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-comparison-simplify",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-deviation-distance-activity",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-number-line-review",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch1-number-scope-practice",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-signed-change",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-motion-result",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-opposite-add-cancel",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-opposite-add-zero",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-commute-whole-number",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-associate-order",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-restore-total",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-subtract-add-opposite",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-subtract-mixed-number",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-sum-abbreviation",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-rewrite-exercise",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-height-difference-exercise",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-road-two-questions",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-ancient-word-scope",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-multiplication-consistency",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-multiplication-sign-magnitude",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-reciprocal-condition",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-distribution-every-addend",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-product-negative-parity",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-division-reciprocal-reason",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-mixed-product-reciprocal",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-monthly-average-weight",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-reciprocal-mixed-practice",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-absolute-value-scope-practice",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-height-change-practice",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-negative-product-zero-pair",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-power-factor-count",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-power-negative-parity",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-same-level-order",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-scientific-same-value",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-scientific-coefficient",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-speed-unit-practice",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-income-record-activity",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-rational-closure-review",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-division-condition-review",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-absolute-scope-practice",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-counterexample-review",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-base-unit-exchange",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-zero-power-place",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-time-base-boundary",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-q-p73-process2",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch2-q-p74-report",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-q-robot-introduction",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-rate-and-time-units",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-context-and-unit",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-read-outer-operation",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-new-speed-whole",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-direct-proportion-condition",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-inverse-not-decrease",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-table-pairing-exercise",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-early-arrival-exercise",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-digits-place-exercise",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-same-letter-consistency",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-value-denominator-condition",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-negative-substitution-base",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-q-p88-example4",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-triangle-base-height",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-area-value-unit",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-sum-square-structure",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-square-pattern-index",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-cipher-unambiguous-rule",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-expression-value-checks",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-verbal-operation-scope",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch3-diagram-segment-label",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-why-simplify",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-monomial-product",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-ratio-area",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-signed-terms",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-polynomial-degree",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-degree-table",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-q-hw41-6",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-values-and-law",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-like-terms",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-combine-rule",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-zero-coefficient",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-stock-and-change",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-minus-bracket",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-bracket-check-exercise",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-box-surface",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-nested-bracket-check",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-all-values-exercise",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-q-sheet-formula",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-calendar-evidence",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-divisibility-split",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-one-law-two-directions",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-difference-whole-review",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch4-whole-expression",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-unknown-as-number",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-same-reference",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-equation",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-percent-base",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-solution",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-linear-definition",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-nonzero",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-negative-coefficient",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-diagram-evidence",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-digit-value",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-combine-purpose",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-successive-ratio",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-transpose",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-ratio-unit",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-monthly-total",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-negative-bracket",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-change-dimensions",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-elapsed-time",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-every-term",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-whole-numerator",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-negative-denominator",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-climb-time",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-repeating-alignment",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-work-unit",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-two-checks",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-profit-base",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-discount-bases",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-context-integer",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-energy-units",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-cost-difference",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-temperature-start",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-promotion-threshold",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-model-assumptions",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-water-tier",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-balance-data",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-standard-nonzero",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-formula-known",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch5-age-same-time",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-abstract-shape",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-hidden-edges",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-views-information",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-net-vs-view",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-surface-and-solid",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-motion-needs-direction",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-line-points-not-ends",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-extension-order",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-segment-comparison-alignment",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-segment-sum-between",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-midpoint-two-conditions",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-cylinder-route-constraints",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-screen-unit-exercise",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-angle-three-letter-name",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-compound-angle-units",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-bearing-reference-direction",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-angle-overlap-conditions",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-angle-borrow-same-quantity",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-bisector-ray-conditions",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-equal-angle-complements",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-example4-opposite-rays",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-angle-position-exercise",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-bearing-observation-base",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-extended-angle-observation",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-paper-glue-tabs",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-star-consecutive-angles",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-view-versus-net",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-analogy-boundaries",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-reverse-extension-reading",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-surface-route-correspondence",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-fold-angle-evidence",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-field-data-sources",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-field-scale-consistency",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-field-layout-constraints",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  },
+  {
+    "id": "ch6-design-evidence",
+    "width": 560,
+    "panel": true,
+    "figure": true,
+    "formulas": true,
+    "mathErrors": 0,
+    "labels": true
+  }
+]

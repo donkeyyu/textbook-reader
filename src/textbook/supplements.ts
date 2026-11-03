@@ -1,3 +1,4 @@
+import type { SupplementVisual } from './supplement-visual.ts';
 import { chapterSources } from './chapters.ts';
 import book from './book.json' with { type: 'json' };
 
@@ -24,6 +25,7 @@ export type Supplement = {
   title: string;
   preview: string;
   paragraphs: string[];
+  visual?: SupplementVisual;
   learningRole: string;
   learningGap: string;
   learningAction: string;

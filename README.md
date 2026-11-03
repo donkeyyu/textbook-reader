@@ -143,6 +143,10 @@ node --experimental-strip-types scripts/check-cloud-content.mjs
 
 源码目录与职责见 [系统架构](docs/ARCHITECTURE.md#当前模块)。功能样式、实现与测试按目录归位；`src/style.css` 保留统一样式加载顺序。
 
+## 选择回归入口
+
+当前活跃产品是 Electron 本地版。桌面阅读、笔记及文件交互使用上方[桌面本地笔记](#桌面本地笔记)与 [desktop/README.md](desktop/README.md) 的对应检查入口；选择本次改动影响的路径。下方浏览器回归可用于共用渲染组件及网页入口，但不能代替本地文件保存、笔记库切换或桌面重开验证。
+
 ## 浏览器回归
 
 以下脚本导出检查函数，供已打开本地阅读器的 ego-browser Page 调用。直接用 `node` 执行脚本只会加载模块，不会运行这些检查。使用 ego-browser skill 建立自己的页面，再以绝对 `file:` URL 导入所需模块，传入该页面；参数和前置状态以函数定义为准。

@@ -1,0 +1,95 @@
+{
+  "result": "passed",
+  "fixture": "/var/folders/w5/kpp0bgcj4tb377ck3_y5_z3m0000gn/T/textbook-note-metadata-U8qKg1",
+  "checks": [
+    "default reading shows compact locations without selectors, repeated region previews or internal fields",
+    "location reveals both textbook boundaries; pointer continuation adds two draft regions; cancel preserves the file",
+    "continued pointer drawing saves same-page and cross-page regions as new anchors while retaining the original",
+    "chapter and page edits save, retain dependent raw values and disable invalid targets until repaired",
+    "user property saves separately; source toggle and collapse preserve one editor; internal identity is only in explicit note information",
+    "read-only mode exposes no mutations; desktop and narrow controls remain inside the note and viewport"
+  ],
+  "layouts": [
+    {
+      "name": "desktop-reading",
+      "viewport": [
+        1440,
+        980
+      ],
+      "document": [
+        1440,
+        980
+      ],
+      "paper": {
+        "width": 486,
+        "scrollWidth": 486
+      },
+      "outside": []
+    },
+    {
+      "name": "desktop-location-edit",
+      "viewport": [
+        1440,
+        980
+      ],
+      "document": [
+        1440,
+        980
+      ],
+      "paper": {
+        "width": 486,
+        "scrollWidth": 486
+      },
+      "outside": []
+    },
+    {
+      "name": "desktop-properties",
+      "viewport": [
+        1440,
+        980
+      ],
+      "document": [
+        1440,
+        980
+      ],
+      "paper": {
+        "width": 486,
+        "scrollWidth": 486
+      },
+      "outside": []
+    },
+    {
+      "name": "narrow-reading",
+      "viewport": [
+        760,
+        900
+      ],
+      "document": [
+        760,
+        900
+      ],
+      "paper": {
+        "width": 760,
+        "scrollWidth": 760
+      },
+      "outside": []
+    },
+    {
+      "name": "narrow-location-properties",
+      "viewport": [
+        760,
+        900
+      ],
+      "document": [
+        760,
+        900
+      ],
+      "paper": {
+        "width": 760,
+        "scrollWidth": 760
+      },
+      "outside": []
+    }
+  ],
+  "errors": []
+}

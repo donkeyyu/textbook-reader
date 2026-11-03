@@ -26,6 +26,8 @@ let customCatalog: CustomCatalog;
 let state: VaultState = { positions: {} };
 let dirty = false;
 let closing = false;
+let closeSequence = 0;
+let closeRequest: { id: number; timer: ReturnType<typeof setTimeout> } | null = null;
 let queue: Promise<unknown> = Promise.resolve();
 let textbooks: TextbookStore;
 let initialNotes: InitialNotes;
@@ -72,6 +74,22 @@ function handle(channel: string, operation: (...args: unknown[]) => Promise<unkn
 async function persist() {
   if (vault && window && !window.isDestroyed()) await local.save(vault.root, state, window.getNormalBounds());
 }
+function closeIncomplete(detail: string) {
+  if (window.isDestroyed()) return;
+  dialog.showMessageBoxSync(window, { type: 'warning', message: '保存尚未完成，窗口已保留。', detail, buttons: ['继续编辑'], defaultId: 0, cancelId: 0 });
+}
+async function finishClose() {
+  closing = true;
+  try {
+    // Include operations queued while an earlier save or its state write settles.
+    let settled: Promise<unknown>;
+    do { settled = queue; await settled; await persist(); } while (settled !== queue);
+    if (dirty) { closeIncomplete('仍有未保存的草稿，请处理编辑器中的提示后再次关闭。'); return; }
+    window.destroy(); app.quit();
+  } catch (cause) {
+    closeIncomplete(`本机状态未保存：${(cause as Error).message}\n请重试关闭。`);
+  } finally { closing = false; }
+}
 function restoreBounds(value: unknown) {
   const bounds = value as Partial<Electron.Rectangle> | null;
   if (!bounds || ![bounds.x, bounds.y, bounds.width, bounds.height].every((number) => Number.isSafeInteger(number) && Math.abs(number!) < 1_000_000)) return;
@@ -91,6 +109,7 @@ async function select(root: string): Promise<VaultView> {
   await persist();
   // Remembering a choice is required before reporting a successful transition.
   await local.remember(next.root);
+  await textbooks.useVaultResources(next.root);
   vault = next; moves = nextMoves; customCatalog = nextCustom; settings = new VaultSettingsStore(next.root); state = saved.state;
   watchVault(next);
   restoreBounds(saved.bounds);
@@ -174,6 +193,12 @@ ipcMain.on('vault:dirty', (event, value: unknown) => {
   if (trustedSender(event) && typeof value === 'boolean') dirty = value;
   event.returnValue = null;
 });
+ipcMain.on('vault:close-ready', (event, request: unknown, saved: unknown) => {
+  if (!trustedSender(event) || !closeRequest || request !== closeRequest.id || typeof saved !== 'boolean') return;
+  clearTimeout(closeRequest.timer); closeRequest = null;
+  if (!saved || dirty) { closeIncomplete('笔记尚未全部保存。请处理保存失败、文件冲突或未保存的历史草稿，再次关闭时会重试。'); return; }
+  void finishClose();
+});
 
 // Downloads run separately from the note queue so note saves and progress reads remain available.
 function textbookHandle(channel: string, operation: (...args: unknown[]) => Promise<unknown>) {
@@ -233,13 +258,17 @@ window.webContents.on('will-prevent-unload', (event) => {
 window.webContents.session.setPermissionRequestHandler((_contents, _permission, callback) => callback(false));
 window.webContents.session.setPermissionCheckHandler(() => false);
 window.on('close', (event) => {
-  if (closing) return;
   event.preventDefault();
-  if (dirty && dialog.showMessageBoxSync(window, { type: 'warning', message: '还有未保存的草稿。', detail: '返回编辑器保存，或放弃草稿并关闭。', buttons: ['继续编辑', '放弃并关闭'], defaultId: 0, cancelId: 0 }) === 0) return;
-  closing = true;
-  void queue.then(persist).then(() => { window.destroy(); app.quit(); }).catch((error: Error) => {
-    closing = false; dialog.showErrorBox('本机状态未保存', `${error.message}\n笔记正文未改动，请重试关闭。`);
-  });
+  if (closing || closeRequest) return;
+  if (!dirty) { void finishClose(); return; }
+  const id = ++closeSequence;
+  const timer = setTimeout(() => {
+    if (closeRequest?.id !== id) return;
+    closeRequest = null;
+    closeIncomplete('编辑器尚未确认保存完成。窗口和草稿已保留，请等待保存结果后重试关闭。');
+  }, 30_000);
+  closeRequest = { id, timer };
+  window.webContents.send('vault:before-close', id);
 });
 await window.loadURL(appUrl);
 app.on('window-all-closed', () => { stopWatching?.(); app.quit(); });

@@ -1,0 +1,275 @@
+{
+  "result": "passed",
+  "fixture": "/var/folders/w5/kpp0bgcj4tb377ck3_y5_z3m0000gn/T/textbook-reader-modes-ByvlIN",
+  "checks": [
+    "fresh book default; complete local textbook import; marker opens its AI draft alongside the original without rewriting",
+    "one mounted editor across three modes; undo survives switching; auto-save changes the actual local Markdown",
+    "invalid unsaved source survives all modes while disk stays unchanged; undo restores the source without a discard dialog",
+    "actual filesystem write failure after closing notes reopens its error and retains draft; retry reaches disk",
+    "notes mode expands textbook on the right and keeps reading position when closing and reopening",
+    "real Pixi node click keeps graph active, shows the same local note, and leaves textbook on the right",
+    "medium and narrow book notes stack with keyboard resize; narrow companion closes back to the same editor",
+    "scroll immediately before shelf return is flushed and restored when reading resumes",
+    "manual QA note opened from its second anchor stays on that page despite the previous note session",
+    "offline app restart reopens saved note and downloaded textbook"
+  ],
+  "layouts": [
+    {
+      "name": "book-default",
+      "viewport": [
+        1440,
+        980
+      ],
+      "document": [
+        1440,
+        980
+      ],
+      "outsideToolbar": []
+    },
+    {
+      "name": "book-right-note",
+      "viewport": [
+        1440,
+        980
+      ],
+      "document": [
+        1440,
+        980
+      ],
+      "outsideToolbar": []
+    },
+    {
+      "name": "notes-right-book",
+      "viewport": [
+        1440,
+        980
+      ],
+      "document": [
+        1440,
+        980
+      ],
+      "outsideToolbar": []
+    },
+    {
+      "name": "graph-right-book",
+      "viewport": [
+        1440,
+        980
+      ],
+      "document": [
+        1440,
+        980
+      ],
+      "outsideToolbar": []
+    },
+    {
+      "name": "book-bottom-note",
+      "viewport": [
+        900,
+        820
+      ],
+      "document": [
+        900,
+        820
+      ],
+      "outsideToolbar": []
+    },
+    {
+      "name": "narrow-book-note",
+      "viewport": [
+        720,
+        780
+      ],
+      "document": [
+        720,
+        780
+      ],
+      "outsideToolbar": []
+    },
+    {
+      "name": "minimum-graph-note",
+      "viewport": [
+        720,
+        448
+      ],
+      "document": [
+        720,
+        448
+      ],
+      "outsideToolbar": []
+    },
+    {
+      "name": "narrow-book-companion",
+      "viewport": [
+        720,
+        780
+      ],
+      "document": [
+        720,
+        780
+      ],
+      "outsideToolbar": []
+    },
+    {
+      "name": "shelf-position",
+      "beforeWheel": -0.022082376619327042,
+      "beforeShelf": 0.08677041698557134,
+      "scrollTop": 98813
+    }
+  ],
+  "errors": [],
+  "remote": [],
+  "additionalChecks": [
+    {
+      "name": "selected note stays visible after book overlay narrows from 280px to 220px, three modes and textbook hide/show",
+      "result": "passed",
+      "samples": [
+        {
+          "name": "notes-book",
+          "current": {
+            "x": 10,
+            "y": 900,
+            "width": 199,
+            "height": 80,
+            "top": 900,
+            "right": 209,
+            "bottom": 980,
+            "left": 10
+          },
+          "sidebar": {
+            "x": 0,
+            "y": 109,
+            "width": 220,
+            "height": 871,
+            "top": 109,
+            "right": 220,
+            "bottom": 980,
+            "left": 0
+          },
+          "scrollTop": 45072.5
+        },
+        {
+          "name": "three-modes",
+          "current": {
+            "x": 10,
+            "y": 900,
+            "width": 199,
+            "height": 80,
+            "top": 900,
+            "right": 209,
+            "bottom": 980,
+            "left": 10
+          },
+          "sidebar": {
+            "x": 0,
+            "y": 109,
+            "width": 220,
+            "height": 871,
+            "top": 109,
+            "right": 220,
+            "bottom": 980,
+            "left": 0
+          },
+          "scrollTop": 45072.5
+        },
+        {
+          "name": "hide-book",
+          "current": {
+            "x": 10,
+            "y": 900,
+            "width": 199,
+            "height": 80,
+            "top": 900,
+            "right": 209,
+            "bottom": 980,
+            "left": 10
+          },
+          "sidebar": {
+            "x": 0,
+            "y": 109,
+            "width": 220,
+            "height": 871,
+            "top": 109,
+            "right": 220,
+            "bottom": 980,
+            "left": 0
+          },
+          "scrollTop": 45072.5
+        },
+        {
+          "name": "show-book",
+          "current": {
+            "x": 10,
+            "y": 900,
+            "width": 199,
+            "height": 80,
+            "top": 900,
+            "right": 209,
+            "bottom": 980,
+            "left": 10
+          },
+          "sidebar": {
+            "x": 0,
+            "y": 109,
+            "width": 220,
+            "height": 871,
+            "top": 109,
+            "right": 220,
+            "bottom": 980,
+            "left": 0
+          },
+          "scrollTop": 45072.5
+        },
+        {
+          "name": "book-list-280",
+          "current": {
+            "x": 935.1953125,
+            "y": 109,
+            "width": 259,
+            "height": 59,
+            "top": 109,
+            "right": 1194.1953125,
+            "bottom": 168,
+            "left": 935.1953125
+          },
+          "sidebar": {
+            "x": 925.1953125,
+            "y": 109,
+            "width": 280,
+            "height": 871,
+            "top": 109,
+            "right": 1205.1953125,
+            "bottom": 980,
+            "left": 925.1953125
+          },
+          "scrollTop": 33605.5
+        },
+        {
+          "name": "notes-from-list-220",
+          "current": {
+            "x": 10,
+            "y": 900,
+            "width": 199,
+            "height": 80,
+            "top": 900,
+            "right": 209,
+            "bottom": 980,
+            "left": 10
+          },
+          "sidebar": {
+            "x": 0,
+            "y": 109,
+            "width": 220,
+            "height": 871,
+            "top": 109,
+            "right": 220,
+            "bottom": 980,
+            "left": 0
+          },
+          "scrollTop": 45072.5
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

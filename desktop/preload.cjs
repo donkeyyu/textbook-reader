@@ -24,6 +24,17 @@ contextBridge.exposeInMainWorld('textbookDesktop', Object.freeze({
     ipcRenderer.on('vault:change', listener);
     return () => ipcRenderer.removeListener('vault:change', listener);
   },
+  onBeforeClose: (callback) => {
+    let active = true;
+    const listener = async (_event, request) => {
+      if (!Number.isSafeInteger(request) || request < 1) return;
+      let saved = false;
+      try { saved = await callback() === true; } catch { /* A failed save keeps the native window open. */ }
+      if (active) ipcRenderer.send('vault:close-ready', request, saved);
+    };
+    ipcRenderer.on('vault:before-close', listener);
+    return () => { active = false; ipcRenderer.removeListener('vault:before-close', listener); };
+  },
   saveState: (token, state) => ipcRenderer.invoke('vault:state', token, state),
   readSettings: (token) => ipcRenderer.invoke('vault:settings:read', token),
   saveSettings: (token, revision, patch) => ipcRenderer.invoke('vault:settings:save', token, revision, patch),

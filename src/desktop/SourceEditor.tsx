@@ -10,7 +10,7 @@ import { parse } from '../../desktop/format';
 import { isMap, isScalar } from 'yaml';
 import { NoteMarkdown } from './note-markdown';
 import { markdownBlocks, referenceDefinitions } from './markdown-source';
-import { loadMath, subscribeMath } from '../reader/text/math';
+import { loadMath, mathReady, subscribeMath } from '../reader/text/math';
 import { autocompletion } from '@codemirror/autocomplete';
 import { historyField } from '@codemirror/commands';
 import { noteReferences, pathLink, type LinkEntry, type NoteReference } from '../../desktop/links';
@@ -51,8 +51,9 @@ function reservedRange(state: EditorState) {
   } catch { return null; }
 }
 class RenderedBlock extends WidgetType {
+  readonly mathLoaded = mathReady();
   constructor(readonly source: string, readonly from: number, readonly references: string) { super(); }
-  override eq(other: RenderedBlock) { return this.source === other.source && this.from === other.from && this.references === other.references; }
+  override eq(other: RenderedBlock) { return this.source === other.source && this.from === other.from && this.references === other.references && this.mathLoaded === other.mathLoaded; }
   toDOM(view: EditorView) {
     const dom = document.createElement('div');
     dom.className = 'note-rendered-block';

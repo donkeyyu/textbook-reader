@@ -26,7 +26,7 @@ export function NoteSearch({ catalog, entries, disabled, onOpen }: { catalog: Ca
     if (event.key === 'Escape') { event.preventDefault(); close(); }
     else if (event.key === 'ArrowDown' && event.target === input.current) { event.preventDefault(); event.currentTarget.querySelector<HTMLButtonElement>('.note-search-results button')?.focus(); }
   }}>
-    <button ref={toggle} disabled={disabled} aria-expanded={open} onClick={() => { setOpen(!open); }}>搜索笔记</button>
+    <button ref={toggle} className="note-search-toggle" aria-label="搜索笔记" title="搜索笔记" disabled={disabled} aria-expanded={open} onClick={() => { setOpen(!open); }}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" strokeWidth="1.5" /><path d="m16 16 5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg><span>搜索</span></button>
     {open && <div ref={panel} className="note-search-panel" role="search" aria-label="搜索已保存笔记">
       <label>名称、正文或标签<input ref={input} autoFocus type="search" aria-label="搜索本地笔记" value={query} onChange={(event) => { setQuery(event.target.value); setLimit(60); }} /></label>
       <p role="status">{query.trim() ? `${results.length} 篇已保存笔记` : '输入文字搜索已保存内容，草稿不计入。'}</p>

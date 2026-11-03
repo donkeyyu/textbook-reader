@@ -1,11 +1,3 @@
-.desktop-workspace { display: flex; flex-direction: column; height: 100dvh; }
-.desktop-workspace-tabs { display: flex; flex-shrink: 0; gap: 8px; padding: 8px 24px; background: var(--app-canvas); border-bottom: 1px solid var(--separator); }
-.desktop-workspace-tabs button { min-height: 36px; border: 0; border-radius: 18px; padding: 6px 18px; background: transparent; color: var(--app-text); }
-.desktop-workspace-tabs button[aria-current] { background: var(--island-nav); }
-.desktop-workspace-view { flex: 1; min-height: 0; min-width: 0; }
-.desktop-workspace-view > .vault-app, .desktop-workspace-view > .reader-app { height: 100%; }
-.desktop-workspace-view > .shelf-app { height: 100%; overflow: auto; }
-.desktop-workspace-view[hidden] { display: none; }
 .desktop-download { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 10px 0; color: var(--secondary); }
 .desktop-download button { min-height: 40px; border: 1px solid var(--separator); border-radius: 20px; padding: 6px 16px; background: var(--surface); color: var(--app-text); }
 .desktop-book-placeholder { display: grid; place-items: center; width: 100%; height: 100%; min-height: 180px; padding: 16px; color: var(--secondary); background: var(--surface); font-family: var(--app-font-ui); }

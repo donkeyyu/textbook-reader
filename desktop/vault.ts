@@ -12,6 +12,15 @@ export const digest = (source: string) => createHash('sha256').update(source).di
 const utf8 = new TextDecoder('utf-8', { fatal: true, ignoreBOM: true });
 type IndexedNote = { stamp: string; note?: Note; links?: LinkEntry };
 
+async function mapFiles<T>(names: string[], read: (name: string) => Promise<T>): Promise<T[]> {
+  const results: T[] = [];
+  // Bound open handles while overlapping filesystem checks; retain path order.
+  for (let offset = 0; offset < names.length; offset += 8) {
+    results.push(...await Promise.all(names.slice(offset, offset + 8).map(read)));
+  }
+  return results;
+}
+
 async function readCaptured(file: string, restoredTarget?: string) {
   const handle = await open(file, constants.O_RDONLY | constants.O_NOFOLLOW);
   try {
@@ -78,13 +87,16 @@ export class Vault {
           if ((await lstat(candidate)).isSymbolicLink() || await realpath(candidate) !== candidate) continue;
           await walk(candidate, `${relative}/`);
         } else if (entry.isFile() && entry.name.endsWith('.md')) {
-          try { await this.resolve(relative); notes.push(relative); } catch { /* Unsupported files stay untouched. */ }
+          notes.push(relative);
         }
       }
     };
     if ((await lstat(this.root)).isSymbolicLink() || await realpath(this.root) !== this.root) throw new Error('笔记库目录已改变。');
     await walk(this.root, '');
-    return notes.sort((a, b) => a.localeCompare(b, 'zh-CN'));
+    const supported = await mapFiles(notes, async (relative) => {
+      try { await this.resolve(relative); return relative; } catch { return null; }
+    });
+    return supported.filter((name) => name !== null).sort((a, b) => a.localeCompare(b, 'zh-CN'));
   }
 
   private async readFile(relative: string): Promise<Note> {
@@ -111,9 +123,10 @@ export class Vault {
 
   async scan(): Promise<VaultChange> {
     const names = await this.list();
-    const changed = new Set([...this.index.keys()].filter((name) => !names.includes(name)));
+    const present = new Set(names);
+    const changed = new Set([...this.index.keys()].filter((name) => !present.has(name)));
     const next = new Map<string, IndexedNote>();
-    for (const name of names) {
+    const entries = await mapFiles(names, async (name) => {
       try {
         const info = await lstat(await this.resolve(name));
         const stamp = [info.dev, info.ino, info.size, info.mtimeMs, info.ctimeMs, info.mode].join(':');
@@ -123,9 +136,14 @@ export class Vault {
         // stamp-only change keeps them; changed/unreadable content drops them.
         // Deleted paths leave the map entirely; reopening a vault starts empty.
         if (entry !== previous && entry.note && entry.note.revision === previous?.note?.revision) entry.links = previous.links;
-        next.set(name, entry);
-        if (previous?.stamp !== stamp || previous?.note?.revision !== entry.note?.revision) changed.add(name);
-      } catch { changed.add(name); }
+        return entry;
+      } catch { return undefined; }
+    });
+    for (const [index, name] of names.entries()) {
+      const entry = entries[index];
+      const previous = this.index.get(name);
+      if (entry) next.set(name, entry);
+      if (!entry || previous?.stamp !== entry.stamp || previous?.note?.revision !== entry.note?.revision) changed.add(name);
     }
     const oldDuplicates = JSON.stringify(this.duplicates());
     this.index = next;

@@ -7,7 +7,7 @@
 .note-link-row > button:first-child { flex: 1; text-align: left; min-width: 0; overflow-wrap: anywhere; }
 .note-links small { display: block; color: var(--secondary); font-size: 12px; font-weight: normal; }
 .vault-app .note-link-candidate { display: block; width: 100%; text-align: left; border-radius: 12px; margin-block: 6px; overflow-wrap: anywhere; }
-.vault-app .note-wikilink { display: inline; min-height: 0; padding: 0 2px; border: 0; border-radius: 3px; box-shadow: none; color: var(--accent); background: transparent; text-decoration: underline; font: inherit; cursor: pointer; }
+.vault-app .note-wikilink { display: inline; min-height: 0; padding: 0 2px; border: 0; border-radius: 3px; box-shadow: none; color: var(--accent); background: transparent; text-decoration: none; font: inherit; cursor: pointer; }
 .note-link-dialog { width: min(620px, 88vw); max-height: 85vh; overflow: auto; }
 .note-link-dialog label { display: grid; gap: 6px; margin-block: 10px; }
 .note-link-dialog input { width: 100%; border: 1px solid var(--input-border); border-radius: 12px; padding: 10px; background: var(--island-input); color: inherit; }

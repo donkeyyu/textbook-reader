@@ -1,0 +1,212 @@
+{
+  "result": "passed",
+  "fixture": "/var/folders/w5/kpp0bgcj4tb377ck3_y5_z3m0000gn/T/textbook-reader-navigation-5cw3Xj",
+  "checks": [
+    "global note list opens before any note, closes with its button and Escape, and leaves the textbook visible",
+    "fresh book default; complete local textbook import; marker opens its AI draft alongside the original without rewriting",
+    "existing metadata actions start add/edit region selection directly; cancel keeps disk unchanged and page markers work",
+    "650ms typing pause saves while focused; blur and immediate hide persist the newest text",
+    "one mounted editor across textbook and graph; undo survives switching; auto-save changes the actual local Markdown",
+    "invalid unsaved source survives textbook and graph while disk stays unchanged; undo restores the source without a discard dialog",
+    "actual write failure reopens its error; native close keeps the same window and draft; retry reaches disk",
+    "real graph node selects the same editor; textbook comparison opens on the right and retains its scroll position",
+    "medium and narrow notes stack with keyboard resize; narrow comparison returns to the same graph and note",
+    "scroll immediately before shelf return is flushed and restored when reading resumes",
+    "manual QA note opened from its second anchor stays on that page despite the previous note session",
+    "title idle and blur save exact source; unfinished IME composition does not rename a file",
+    "moving immediately after editing a title uses the newly saved path",
+    "inline title cancel writes nothing; rename preserves exact Markdown and ID; duplicate target keeps input and both files; narrow icons are reachable",
+    "referenced title requires review; cancel leaves files unchanged; confirm renames the note and updates incoming references",
+    "native window close immediately after typing flushes the current local Markdown before exit",
+    "offline app restart reopens saved note and downloaded textbook"
+  ],
+  "layouts": [
+    {
+      "name": "book-default",
+      "viewport": [
+        1440,
+        980
+      ],
+      "document": [
+        1440,
+        980
+      ],
+      "outsideToolbar": []
+    },
+    {
+      "name": "book-global-note-list",
+      "viewport": [
+        1440,
+        980
+      ],
+      "document": [
+        1440,
+        980
+      ],
+      "outsideToolbar": []
+    },
+    {
+      "name": "book-right-note",
+      "viewport": [
+        1440,
+        980
+      ],
+      "document": [
+        1440,
+        980
+      ],
+      "outsideToolbar": []
+    },
+    {
+      "name": "toolbar-groups",
+      "left": {
+        "x": 965.796875,
+        "y": 62,
+        "width": 153,
+        "height": 32
+      },
+      "right": {
+        "x": 1244,
+        "y": 62,
+        "width": 184,
+        "height": 32
+      }
+    },
+    {
+      "name": "blur-save",
+      "elapsedMs": 815
+    },
+    {
+      "name": "hide-save",
+      "elapsedMs": 3076
+    },
+    {
+      "name": "native-close-save-failure",
+      "viewport": [
+        1440,
+        980
+      ],
+      "document": [
+        1440,
+        980
+      ],
+      "outsideToolbar": []
+    },
+    {
+      "name": "graph-note",
+      "viewport": [
+        1440,
+        980
+      ],
+      "document": [
+        1440,
+        980
+      ],
+      "outsideToolbar": []
+    },
+    {
+      "name": "graph-right-book",
+      "viewport": [
+        1440,
+        980
+      ],
+      "document": [
+        1440,
+        980
+      ],
+      "outsideToolbar": []
+    },
+    {
+      "name": "book-bottom-note",
+      "viewport": [
+        900,
+        820
+      ],
+      "document": [
+        900,
+        820
+      ],
+      "outsideToolbar": []
+    },
+    {
+      "name": "narrow-book-note",
+      "viewport": [
+        720,
+        780
+      ],
+      "document": [
+        720,
+        780
+      ],
+      "outsideToolbar": []
+    },
+    {
+      "name": "minimum-graph-note",
+      "viewport": [
+        720,
+        448
+      ],
+      "document": [
+        720,
+        448
+      ],
+      "outsideToolbar": []
+    },
+    {
+      "name": "narrow-graph-note",
+      "viewport": [
+        720,
+        780
+      ],
+      "document": [
+        720,
+        780
+      ],
+      "outsideToolbar": []
+    },
+    {
+      "name": "narrow-book-comparison",
+      "viewport": [
+        720,
+        780
+      ],
+      "document": [
+        720,
+        780
+      ],
+      "outsideToolbar": []
+    },
+    {
+      "name": "shelf-position",
+      "beforeWheel": -0.022082376619327042,
+      "beforeShelf": 0.08677041698557134,
+      "scrollTop": 98813
+    },
+    {
+      "name": "narrow-editable-title",
+      "viewport": [
+        720,
+        780
+      ],
+      "document": [
+        720,
+        780
+      ],
+      "outsideToolbar": []
+    },
+    {
+      "name": "title-reference-awaiting-confirmation",
+      "viewport": [
+        1440,
+        980
+      ],
+      "document": [
+        1440,
+        980
+      ],
+      "outsideToolbar": []
+    }
+  ],
+  "errors": [],
+  "remote": []
+}

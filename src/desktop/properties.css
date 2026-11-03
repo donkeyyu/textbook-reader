@@ -1,15 +1,15 @@
-.note-properties { flex-shrink: 0; max-height: 38vh; overflow: auto; padding: 8px 28px 14px; font-size: 14px; border-bottom: 1px solid var(--separator); }
+.note-properties { padding: 0 0 14px; font-size: 14px; border-bottom: 1px solid var(--separator); }
 .note-position { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px; margin-bottom: 8px; }
 .note-position > span { color: var(--secondary); }
 .note-position ul { margin: 0; padding-left: 20px; }
 .note-position li > span { display: inline-block; margin-right: 10px; overflow-wrap: anywhere; }
 .note-position pre, .note-property pre { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; }
-.note-information { margin-bottom: 8px; color: var(--secondary); }
-.note-information > pre { white-space: pre-wrap; overflow-wrap: anywhere; }
-.note-information dl { margin: 8px 0; }
-.note-information dl > div { display: flex; gap: 12px; }
-.note-information dt { min-width: 95px; }
-.note-information dd { margin: 0; overflow-wrap: anywhere; }
+.note-information-content { margin-bottom: 8px; color: var(--secondary); }
+.note-information-content pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+.note-information-content dl { margin: 8px 0; }
+.note-information-content dl > div { display: grid; gap: 4px; margin-bottom: 12px; }
+.note-information-content dt { min-width: 95px; }
+.note-information-content dd { margin: 0; overflow-wrap: anywhere; }
 .note-property { display: grid; grid-template-columns: minmax(75px, 1fr) 80px minmax(80px, 2fr) auto; gap: 8px; align-items: start; margin-block: 7px; }
 .note-property > strong { padding-block: 8px; overflow-wrap: anywhere; }
 .note-properties input:not([type=checkbox]), .note-properties select { min-width: 0; width: 100%; padding: 7px 9px; color: inherit; background: var(--island-input, var(--surface)); border: 1px solid var(--input-border); border-radius: 10px; font: inherit; }
@@ -31,7 +31,6 @@
 .note-property-create { margin-top: 8px; }
 .note-property-create summary { cursor: pointer; padding-block: 6px; }
 @media (max-width: 900px) {
-  .note-properties { padding-inline: 16px; }
   .note-property { grid-template-columns: minmax(70px, 1fr) 80px auto; }
   .note-property > input, .note-property > .note-property-number, .note-property > .note-property-list, .note-property > .note-property-nested, .note-property > pre { grid-column: 1 / -1; grid-row: 2; }
   .note-property > button { grid-column: 3; grid-row: 1; }

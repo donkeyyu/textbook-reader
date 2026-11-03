@@ -55,7 +55,7 @@ function measurePages(list: HTMLDivElement): PageMetric[] {
 }
 
 export type LocalReadingPosition = { page: number; fraction: number };
-export type LocalReaderTools = { capture?: RefObject<(() => LocalReadingPosition | null) | null>; request?: { page: number; fraction?: number; rects: [number, number, number, number][]; serial: number }; toolbar: (page: number) => ReactNode; page: (page: number) => ReactNode };
+export type LocalReaderTools = { returnToShelfRequest?: number; capture?: RefObject<(() => LocalReadingPosition | null) | null>; request?: { page: number; fraction?: number; rects: [number, number, number, number][]; serial: number }; page: (page: number, width: number) => ReactNode };
 
 export function Reader({ content, onReturnToShelf, navigationNotice = '', local = false, readingStorage, onOpenLocalNote, localTools }: { localTools?: LocalReaderTools; onOpenLocalNote?: (sourceId: string) => void; readingStorage?: Pick<Storage, 'getItem' | 'setItem'>; local?: boolean; content: BookContent; onReturnToShelf: (notice: string) => void; navigationNotice?: string }) {
   const [resume] = useState(() => {
@@ -608,6 +608,13 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '', local 
     }
   }
 
+  const previousShelfRequest = useRef(localTools?.returnToShelfRequest);
+  useEffect(() => {
+    if (previousShelfRequest.current === localTools?.returnToShelfRequest) return;
+    previousShelfRequest.current = localTools?.returnToShelfRequest;
+    onReturnToShelf(flushReadingPosition.current());
+  }, [localTools?.returnToShelfRequest]);
+
   useEffect(() => {
     const capture = localTools?.capture;
     if (!capture) return;
@@ -685,7 +692,7 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '', local 
       toggleButton.current?.focus();
     }
   }}>
-    <header className="toolbar reader-toolbar">
+    {!localTools && <header className="toolbar reader-toolbar">
       <div className="book-heading">
         <h1>{bookTitle}</h1>
       </div>
@@ -731,7 +738,6 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '', local 
             {hiddenIds.length > 0 && <button className="text-button" onClick={() => setHiddenIds([])}>恢复隐藏的 {hiddenIds.length} 条补充</button>}
           </div>
         </details>}
-        {localTools?.toolbar(currentPage)}
         {!localTools && <button id="add-personal-supplement" className="icon-button" aria-label="添加补充" title="添加补充" disabled={!ownsPersonal || content.loading} onClick={() => {
           views.show('book', true); closeSupplement(false); setPersonalItem(null); clearPreview(); setSelectionPage(currentPage);
         }}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg></button>}
@@ -747,7 +753,7 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '', local 
         }} />}
         </div>
       </div>
-    </header>
+    </header>}
     {localContentPreview && <div className="content-preview-notice" role="status">本地内容预览 · 尚未发布</div>}
     {selectionPage !== null && <div className="selection-help" role="status">在第 {selectionPage} 页拖动框选段落；键盘可用方向键调整，Enter 确认。<button className="text-button" onClick={() => setSelectionPage(null)}>取消</button></div>}
     {content.loading && <LoadingToast />}
@@ -791,7 +797,7 @@ export function Reader({ content, onReturnToShelf, navigationNotice = '', local 
           {pages.map((page) => <section id={`page-${page.page}`} key={page.page} className="paper" tabIndex={-1}
             aria-label={`教材文件第 ${page.page} 页，${page.printedPage === null ? "无印刷页码" : pageLabel(page)}`} style={{ aspectRatio: `${page.width} / ${page.height}` }}>
             <PageImage page={page} />
-            {localTools?.page(page.page)}
+            {localTools?.page(page.page, paperWidth)}
             {highlightedLocations.filter((location) => location.page === page.page).map((highlighted) => {
               const highlightedNote = supplementsForPage(getLocation(highlighted.id).page).find((item) => item.locationId === highlighted.id);
               return <div key={highlighted.highlightId} id={`location-${highlighted.highlightId}`} className={`location-highlight${previewNote || groupPreview ? " preview-highlight" : ""}`} tabIndex={-1}

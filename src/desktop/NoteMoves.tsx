@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { DesktopApi, Note, Result } from '../../desktop/contracts';
+import { NoteActionIcon } from './NoteActionIcon';
 import type { MovePlan, MoveStatus } from '../../desktop/moves';
 
 export const noteName = (path: string) => path.split('/').at(-1)!.slice(0, -3);
@@ -8,8 +9,7 @@ const complete = (plan: MovePlan) => plan.moved && !plan.error && plan.edits.eve
 const retryable = (plan: MovePlan) => !plan.moved || !!plan.error || plan.edits.some((edit) => !edit.done);
 function value<T>(result: Result<T>) { if (!result.ok) throw new Error(result.error); return result.value; }
 
-export function NoteMoves({ api, token, note, disabled, refresh, before, run, onApplied, children }: {
-  children?: ReactNode;
+export function NoteMoves({ api, token, note, disabled, refresh, before, run, onApplied }: {
   api: DesktopApi; token: string; note?: Note; disabled: boolean; refresh: unknown;
   before: () => Promise<boolean>; run: (action: () => Promise<void>) => Promise<void>; onApplied: (plan: MovePlan) => Promise<void>;
 }) {
@@ -20,6 +20,7 @@ export function NoteMoves({ api, token, note, disabled, refresh, before, run, on
   const [show, setShow] = useState(false);
   const dialog = useRef<HTMLDialogElement>(null);
   const origin = useRef<Note | undefined>(undefined);
+  const currentNote = useRef(note); currentNote.current = note;
   async function reload() {
     const result = await api.moveStatus(token);
     if (result.ok) setStatus(result.value); else setError(result.error);
@@ -34,17 +35,17 @@ export function NoteMoves({ api, token, note, disabled, refresh, before, run, on
   }
   const pending = status.operations.filter((operation) => !complete(operation));
   return <section className="note-moves" aria-label="改名与引用维护">
-    <details className="note-move-actions"><summary>笔记操作{pending.length + status.notices.length > 0 ? ` · 待处理 ${pending.length + status.notices.length}` : ''}{error ? ' · 请核对' : ''}</summary><div>
-      {note && !note.readOnly && <button disabled={disabled} onClick={() => { void (async () => {
+      {note && !note.readOnly && <button className="icon-button" aria-label="改名或移动" title="改名或移动" disabled={disabled} onMouseDown={(event) => { if (event.button === 0) event.preventDefault(); }} onClick={() => { void (async () => {
         if (!await before()) return;
-        // Read the saved version after before() has flushed the current draft.
+        // Flushing the title can rename the file; read its current path afterwards.
         await run(async () => {
-          origin.current = value(await api.read(token, note.path));
-          setDestination(note.path); setPlan(null); setError(''); setShow(true);
+          const saved = currentNote.current;
+          if (!saved) return;
+          origin.current = value(await api.read(token, saved.path));
+          setDestination(saved.path); setPlan(null); setError(''); setShow(true);
         });
-      })(); }}>改名或移动</button>}
-      {children}
-      {(pending.length > 0 || status.notices.length > 0 || error) && <details open><summary>待处理引用 · {pending.length + status.notices.length}</summary>
+      })(); }}><NoteActionIcon name="move" /></button>}
+      {(pending.length > 0 || status.notices.length > 0 || error) && <details className="note-move-actions"><summary className="icon-button" aria-label="待处理引用" title="待处理引用"><NoteActionIcon name="info" /><small>{pending.length + status.notices.length}</small></summary><div>
         {error && !show && <p role="alert">{error}</p>}
         {status.notices.map((notice) => <div key={notice.id}><p>发现外部路径变化：{notice.from} → {notice.to}{notice.problem && ` · ${notice.problem}`}</p>
           {!notice.problem && <button disabled={disabled} onClick={() => { void (async () => {
@@ -55,8 +56,7 @@ export function NoteMoves({ api, token, note, disabled, refresh, before, run, on
         {pending.map((operation) => <div key={operation.id}><p>{operation.from} → {operation.to} · {operation.moved ? '路径已完成' : '路径未完成'} · 引用 {operation.edits.filter((edit) => edit.done).length}/{operation.edits.length}{operation.warnings.length > 0 && ` · ${operation.warnings.length} 项需手动核对`}</p>
           <button disabled={disabled} onClick={() => { setPlan(operation); setError(''); setShow(true); }}>{retryable(operation) ? '查看并重试' : '查看未处理项'}</button>
         </div>)}
-      </details>}
-    </div></details>
+      </div></details>}
     <dialog ref={dialog} className="vault-guard note-move-dialog" aria-label="改名与移动笔记" onCancel={(event) => { event.preventDefault(); close(); }}>
       <h2>{plan?.external ? '修复外部移动后的引用' : '改名或移动笔记'}</h2>
       {!plan ? <form onSubmit={(event) => { event.preventDefault(); void run(async () => {

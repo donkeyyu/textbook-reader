@@ -1,0 +1,33 @@
+import assert from 'node:assert/strict';
+import { test } from 'node:test';
+import { mkdtemp, mkdir, writeFile, readFile, rm, readdir, cp, copyFile } from 'node:fs/promises';
+import path from 'node:path';
+import os from 'node:os';
+import { prepareVault } from './prepare-vault.mjs';
+import { textbookId } from '../desktop/textbooks.ts';
+
+const project = path.resolve(import.meta.dirname, '..');
+test('portable vault keeps notes and catalogs, verifies resources and never overwrites a conflict', async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'textbook-portable-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const vault = path.join(root, 'vault'); await mkdir(vault);
+  const source = path.join(root, 'source');
+  await cp(path.join(project, 'public/textbooks'), path.join(source, 'textbooks'), { recursive: true });
+  await copyFile(path.join(project, 'resources/offline/grade-7-volume-1/catalog.json'), path.join(source, 'textbooks/grade-7-volume-1/catalog.json'));
+  const directory = `.textbook/textbooks/${textbookId}`;
+  await mkdir(path.join(vault, directory), { recursive: true });
+  await writeFile(path.join(vault, '我的笔记.md'), '用户自己的笔记\n');
+  await writeFile(path.join(vault, directory, 'catalog.json'), '{"custom":"preserve"}');
+  const result = await prepareVault(vault, source);
+  assert.equal(result.files, 405);
+  assert.equal(await readFile(path.join(vault, '我的笔记.md'), 'utf8'), '用户自己的笔记\n');
+  assert.equal(await readFile(path.join(vault, directory, 'catalog.json'), 'utf8'), '{"custom":"preserve"}');
+  assert.equal((await readdir(path.join(result.resources, 'textbooks/grade-7-volume-1'))).length, 405);
+  await prepareVault(vault, source);
+  const page = path.join(result.resources, 'textbooks/grade-7-volume-1/page-1.webp');
+  await writeFile(page, 'different');
+  await assert.rejects(prepareVault(vault, source), /已有不同内容/);
+  assert.equal(await readFile(page, 'utf8'), 'different');
+  const wrong = path.join(root, 'wrong.pdf'); await writeFile(wrong, 'wrong PDF');
+  await assert.rejects(prepareVault(vault, source, wrong), /版本不匹配/);
+});

@@ -3,7 +3,7 @@ import type { Result } from '../../desktop/contracts';
 import type { TextbookApi, TextbookContext, TextbookStatus } from '../../desktop/textbook-contracts';
 import { textbookStorage } from './textbook-storage';
 import { Shelf } from '../app/shelf/Shelf';
-import { loadShelf, removeShelfBook, saveShelf } from '../app/shelf/shelf-store';
+import { loadShelf, removeShelfBook, saveShelf, shelfStorageKey } from '../app/shelf/shelf-store';
 import { loadStartupDestination, resolveStartupDestination, saveStartupDestination } from '../app/startup';
 import { Reader, type LocalReaderTools } from '../reader/Reader';
 import { bookId as textbookId, contentNodes, publishedContent } from '../textbook/content';
@@ -13,7 +13,7 @@ import type { Catalog } from '../../desktop/anchors';
 declare global { interface Window { textbookResources?: TextbookApi } }
 function value<T>(result: Result<T>): T { if (!result.ok) throw new Error(result.error); return result.value; }
 
-export function DesktopTextbooks({ active, onOpenNote, tools, onCatalog, vaultToken }: { vaultToken: string; tools?: LocalReaderTools; onCatalog?: (catalog: Catalog, token: string) => void; active: boolean; onOpenNote: (path: string, vaultToken: string, id?: string) => void }) {
+export function DesktopTextbooks({ active, onOpenNote, tools, onCatalog, vaultToken, shelfRequest, onChooseVault }: { shelfRequest?: number; onChooseVault?: () => void; vaultToken: string; tools?: LocalReaderTools; onCatalog?: (catalog: Catalog, token: string) => void; active: boolean; onOpenNote: (path: string, vaultToken: string, id?: string) => void }) {
   const [context, setContext] = useState<TextbookContext | null>(null);
   const [error, setError] = useState('');
   const [loaded, setLoaded] = useState(false);
@@ -25,14 +25,15 @@ export function DesktopTextbooks({ active, onOpenNote, tools, onCatalog, vaultTo
       .catch((error: Error) => { if (mounted) setError(error.message); }).finally(() => { if (mounted) setLoaded(true); });
     return () => { mounted = false; };
   }, [active, vaultToken]);
+  if (!vaultToken) return <main className="vault-welcome"><h1>从课本开始，把理解写进笔记</h1><p>选择本机文件夹存放笔记，再添加教材。AI 提供初稿，你可以直接修改。</p><button onClick={onChooseVault}>选择本地文件夹</button></main>;
   if (!context || context.vaultToken !== vaultToken) return <main className="vault-welcome"><h1>教材书架</h1><p role={error ? 'alert' : 'status'}>{error || (loaded ? '请先在“笔记库”中选择本机文件夹，再添加教材。' : '正在读取笔记库…')}</p></main>;
-  return <TextbookShelf key={context.vaultToken} context={context} onOpenNote={onOpenNote} tools={tools} onCatalog={onCatalog} />;
+  return <TextbookShelf key={context.vaultToken} context={context} onOpenNote={onOpenNote} tools={tools} onCatalog={onCatalog} shelfRequest={shelfRequest} />;
 }
-function TextbookShelf({ context, onOpenNote, tools, onCatalog }: { tools?: LocalReaderTools; onCatalog?: (catalog: Catalog, token: string) => void; context: TextbookContext; onOpenNote: (path: string, vaultToken: string, id?: string) => void }) {
+function TextbookShelf({ context, onOpenNote, tools, onCatalog, shelfRequest }: { shelfRequest?: number; tools?: LocalReaderTools; onCatalog?: (catalog: Catalog, token: string) => void; context: TextbookContext; onOpenNote: (path: string, vaultToken: string, id?: string) => void }) {
   const storage = useMemo(() => textbookStorage(context.vaultKey), [context.vaultKey]);
   const api = window.textbookResources!;
   const [initial] = useState(() => {
-    try { return { members: loadShelf(storage), error: '' }; } catch (error) { return { members: [], error: (error as Error).message }; }
+    try { return { members: loadShelf(storage), newVault: storage.getItem(shelfStorageKey) === null, error: '' }; } catch (error) { return { members: [], error: (error as Error).message }; }
   });
   const [members, setMembers] = useState(initial.members);
   const [error, setError] = useState(initial.error);
@@ -48,7 +49,18 @@ function TextbookShelf({ context, onOpenNote, tools, onCatalog }: { tools?: Loca
     const update = async () => { const next = value(await api.status()); if (mounted) setStatus(next); return next; };
     void update().then(async (next) => {
       if (!mounted) return;
-      const destination = resolveStartupDestination(loadStartupDestination(storage), initial.members, next.phase === 'ready' ? [textbookId] : []);
+      let restoredMembers = initial.members;
+      // A copied vault carries its catalog; machine-local shelf state is optional.
+      // An explicitly empty shelf must stay empty after the user removes a book.
+      if (initial.newVault && next.phase === 'ready') {
+        const catalog = await api.catalog(context.vaultToken);
+        if (!mounted) return;
+        if (catalog.ok && (catalog.value as Catalog).textbookId === textbookId) {
+          restoredMembers = [textbookId];
+          saveShelf(restoredMembers, storage); setMembers(restoredMembers);
+        }
+      }
+      const destination = resolveStartupDestination(loadStartupDestination(storage), restoredMembers, next.phase === 'ready' ? [textbookId] : []);
       setNotice(destination.notice);
       if (destination.bookId) await open(false);
     }).catch((error: Error) => { if (mounted) setError(error.message); });
@@ -94,7 +106,7 @@ function TextbookShelf({ context, onOpenNote, tools, onCatalog }: { tools?: Loca
     try { const note = value(await api.note(context.vaultToken, sourceId)); onOpenNote(note.path, context.vaultToken, note.id); setError(''); }
     catch (cause) { setError((cause as Error).message); }
   }
-  if (reading && content) return <><Reader content={content} local localTools={tools} onOpenLocalNote={(sourceId) => { void openLocalNote(sourceId); }} readingStorage={storage} onReturnToShelf={(message) => {
+  if (reading && content) return <><Reader content={content} local localTools={tools ? { ...tools, returnToShelfRequest: shelfRequest } : undefined} onOpenLocalNote={(sourceId) => { void openLocalNote(sourceId); }} readingStorage={storage} onReturnToShelf={(message) => {
     setReading(false); setReturned(textbookId); setNotice(message);
     try { saveStartupDestination({ page: 'shelf' }, storage); } catch (error) { setError((error as Error).message); }
   }} />{error && <div className="reading-message" role="alert">{error}</div>}</>;

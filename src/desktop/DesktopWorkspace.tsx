@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { originalTargets } from '../../desktop/original-links';
 import { DesktopApp } from './DesktopApp';
 import { DesktopTextbooks } from './DesktopTextbooks';
@@ -8,26 +8,38 @@ import type { LocalReaderTools, LocalReadingPosition } from '../reader/Reader';
 import type { AnchorSession, AnchorBridge, LocateRequest } from './anchor-session';
 import { AnchorRegions, type SelectionPage } from './AnchorRegions';
 import { Candidate } from './NoteLinks';
+import { noteName } from './NoteMoves';
+import { bookTitle, getPage } from '../textbook/catalog';
+import { groupMarkers } from '../reader/book/marker-groups';
 import './textbooks.css';
 import './anchors.css';
+import './workspace.css';
 
+type Mode = 'book' | 'graph';
 type Selection = { session: AnchorSession; items: SelectionPage[]; index?: number; drawing?: number; selected: string; name: string; error: string };
 const emptySession: AnchorSession = { vaultToken: '', anchors: undefined, writable: false, index: { entries: [], problems: [] } };
 // Both editor and reader stay mounted across full-screen and split views.
 export function DesktopWorkspace() {
-  const [view, setView] = useState(() => { try { return localStorage.getItem('desktop-workspace-view') === 'textbooks' ? 'textbooks' : 'notes'; } catch { return 'notes'; } });
-  const [split, setSplit] = useState(false);
+  const [mode, setMode] = useState<Mode>('book');
+  const [noteOpen, setNoteOpen] = useState(false);
+  const [bookOpen, setBookOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(innerWidth);
-  // Both panels need this width to keep controls and the editor usable in the minimum window.
-  const minimumShare = Math.min(50, Math.max(30, Math.ceil(355 / (windowWidth - 10) * 100)));
+  const [toolbarHost, setToolbarHost] = useState<HTMLDivElement | null>(null);
+  const [shelfRequest, setShelfRequest] = useState(0);
+  const narrow = windowWidth <= 1000;
+  const bottom = mode === 'book' && windowWidth <= 1100;
+  const bookVisible = mode === 'book' || bookOpen;
+  const notesVisible = mode === 'book' ? noteOpen : !narrow || !bookOpen;
+  const split = bookVisible && notesVisible;
+  const noteActive = noteOpen;
+  const minimumShare = bottom ? 25 : Math.min(50, Math.ceil(320 / Math.max(1, windowWidth - 10) * 100));
+  const sizeKey = bottom ? 'bottom' : mode;
   const [chooseRequest, setChooseRequest] = useState(0);
   const [openRequest, setOpenRequest] = useState<{ path: string; serial: number; vaultToken: string; expectedId?: string }>();
   const [locate, setLocate] = useState<LocateRequest>();
-  const [original, setOriginal] = useState<{ targets: AnchorTarget[]; href: string; key?: number; index: number; previous: { view: string; split: boolean; locate?: LocateRequest; position?: LocalReadingPosition | null; sourceScroll: { element: HTMLElement; top: number; left: number }[] } }>();
+  const [original, setOriginal] = useState<{ targets: AnchorTarget[]; href: string; key?: number; index: number; previous: { mode: Mode; noteOpen: boolean; bookOpen: boolean; locate?: LocateRequest; position?: LocalReadingPosition | null; sourceScroll: { element: HTMLElement; top: number; left: number }[] } }>();
   const capture = useRef<(() => LocalReadingPosition | null) | null>(null);
   const [restore, setRestore] = useState<LocalReaderTools['request']>();
-  const [textbooksMounted, setTextbooksMounted] = useState(view === 'textbooks');
-  const [browseRequest, setBrowseRequest] = useState<{ view: 'search' | 'graph'; serial: number }>();
   const [session, setSession] = useState<AnchorSession>(emptySession);
   const bridge: AnchorBridge = useRef(null);
   const [catalog, setCatalog] = useState<Catalog | null>(null);
@@ -37,18 +49,20 @@ export function DesktopWorkspace() {
   const [candidates, setCandidates] = useState<LinkEntry[]>();
   const dialog = useRef<HTMLDialogElement>(null);
   const body = useRef<HTMLDivElement>(null);
-  const share = useRef(50);
+  const shares = useRef({ book: Math.max(66, (1 - 500 / Math.max(1, innerWidth - 10)) * 100), graph: 60, bottom: 55 });
+  const preferredPage = useRef<number | undefined>(undefined);
+  const pendingNote = useRef<{ path: string; vaultToken: string; page?: number } | undefined>(undefined);
   const locateSerial = useRef(0);
   const token = useRef(''); token.current = session.vaultToken;
   useEffect(() => {
     const changed = () => setWindowWidth(innerWidth);
     window.addEventListener('resize', changed); return () => window.removeEventListener('resize', changed);
   }, []);
-  useEffect(() => { resize(share.current); }, [split, minimumShare]);
-  useEffect(() => { try { localStorage.setItem('desktop-workspace-view', view); } catch { /* Navigation remains available. */ } }, [view]);
+  useLayoutEffect(() => { resize(shares.current[sizeKey]); }, [split, minimumShare, sizeKey]);
   useEffect(() => {
     catalogRequest.current++;
-    setCatalog(null); setRestore(undefined); setOriginal(undefined); setSelection(undefined); setLocate(undefined); setCandidates(undefined); dialog.current?.close();
+    pendingNote.current = undefined; preferredPage.current = undefined;
+    setCatalog(null); setNoteOpen(false); setBookOpen(false); setRestore(undefined); setOriginal(undefined); setSelection(undefined); setLocate(undefined); setCandidates(undefined); dialog.current?.close();
     if (!session.vaultToken) return;
     let active = true, polling = false;
     const read = async () => {
@@ -81,17 +95,17 @@ export function DesktopWorkspace() {
   const located = useCallback((target: AnchorTarget) => {
     setOriginal(undefined); setRestore(undefined);
     setLocate({ ...target, serial: ++locateSerial.current, vaultToken: token.current });
-    setTextbooksMounted(true); setSplit(true); setView('notes');
+    setBookOpen(true);
   }, []);
   function locateOriginal(targets: AnchorTarget[], href: string) {
-    setOriginal({ targets, href, key: session.key, index: 0, previous: original?.previous ?? { view, split, locate, position: capture.current?.(), sourceScroll: [...body.current?.querySelectorAll<HTMLElement>('.desktop-workspace-view:first-child .vault-paper, .desktop-workspace-view:first-child .note-preview, .desktop-workspace-view:first-child .cm-scroller') ?? []].map((element) => ({ element, top: element.scrollTop, left: element.scrollLeft })) } });
+    setOriginal({ targets, href, key: session.key, index: 0, previous: original?.previous ?? { mode, noteOpen, bookOpen, locate, position: capture.current?.(), sourceScroll: [...body.current?.querySelectorAll<HTMLElement>('.workspace-notes .vault-paper, .workspace-notes .note-preview, .workspace-notes .cm-scroller') ?? []].map((element) => ({ element, top: element.scrollTop, left: element.scrollLeft })) } });
     setRestore(undefined);
     setLocate({ ...targets[0]!, serial: ++locateSerial.current, vaultToken: token.current, origin: 'relation' });
-    setTextbooksMounted(true); setSplit(true); setView('notes');
+    setBookOpen(true);
   }
   function returnOriginal() {
     if (!original) return;
-    setView(original.previous.view); setSplit(original.previous.split);
+    setMode(original.previous.mode); setNoteOpen(original.previous.noteOpen); setBookOpen(original.previous.bookOpen);
     setLocate(original.previous.locate);
     setRestore(original.previous.position ? { ...original.previous.position, rects: [], serial: ++locateSerial.current } : undefined);
     setOriginal(undefined);
@@ -101,7 +115,9 @@ export function DesktopWorkspace() {
     });
   }
   function open(path: string, vaultToken = session.vaultToken, expectedId?: string) {
-    setOpenRequest((previous) => ({ path, vaultToken, expectedId, serial: (previous?.serial ?? 0) + 1 })); setView('notes');
+    pendingNote.current = { path, vaultToken, page: preferredPage.current };
+    preferredPage.current = undefined;
+    setOpenRequest((previous) => ({ path, vaultToken, expectedId, serial: (previous?.serial ?? 0) + 1 })); setNoteOpen(true);
   }
   const byPage = useMemo(() => {
     const map = new Map<number, { entry: LinkEntry; target: AnchorTarget }[]>();
@@ -111,7 +127,10 @@ export function DesktopWorkspace() {
     }
     return map;
   }, [session.index, catalog]);
-  function choose(entries: LinkEntry[]) {
+  const noteTargets = useMemo(() => (Array.isArray(session.anchors) ? session.anchors : [])
+    .flatMap((anchor) => { const target = resolveAnchor(anchor, catalog).target; return target ? [target] : []; }), [session.anchors, catalog]);
+  function choose(entries: LinkEntry[], page?: number) {
+    preferredPage.current = page;
     const unique = [...new Map(entries.map((entry) => [entry.path, entry])).values()];
     if (unique.length === 1) open(unique[0]!.path, session.vaultToken, unique[0]!.id);
     else { setCandidates(unique); dialog.current?.showModal(); }
@@ -121,34 +140,41 @@ export function DesktopWorkspace() {
     const anchor = index === undefined || !Array.isArray(session.anchors) ? null : session.anchors[index];
     const { target } = resolveAnchor(anchor, catalog);
     if (index !== undefined && !target) return;
-    setSelection({ session, index, items: target ? [{ textbook: target.textbook, pdf_page: target.page, rects: target.rects.map((rect) => [...rect]) }] : [], selected: target?.rects.length ? '0:0' : '', name: '教材笔记', error: '' });
-    setTextbooksMounted(true); setSplit(true);
+    const position = capture.current?.();
+    const page = target?.page ?? position?.page ?? catalog.pages[0]?.page;
+    if (page === undefined) return;
+    setSelection({ session, index, items: target ? [{ textbook: target.textbook, pdf_page: target.page, rects: target.rects.map((rect) => [...rect]) }] : [], drawing: page, selected: target?.rects.length ? '0:0' : '', name: '教材笔记', error: '' });
+    setBookOpen(true);
     if (target) located(target);
-  }
-  function draw(page: number) {
-    if (!catalog) return;
-    if (selection?.index !== undefined && selection.items[0]?.pdf_page !== page) { setSelection({ ...selection, error: '调整此条位置请在原页面框选；跨页请新增位置。' }); return; }
-    setSelection((previous) => previous ? { ...previous, drawing: page, error: '' } : { session, items: [], selected: '', name: '教材笔记', error: '', drawing: page });
+    else if (!position) located({ textbook: catalog.textbookId, page, rects: [] });
   }
   async function apply(create: boolean) {
     if (!selection || !bridge.current) return;
     const items = selection.items.filter((item) => item.rects.length);
     if (!items.length && selection.index === undefined) { setSelection({ ...selection, error: '请先框选至少一个区域。' }); return; }
     const ok = await bridge.current({ session: selection.session, ...(create ? { create: { name: selection.name, anchors: items } } : selection.index === undefined ? { append: items } : { index: selection.index, rects: items[0]?.rects }) });
-    if (ok) { setSelection(undefined); setView('notes'); }
+    if (ok) { setSelection(undefined); setNoteOpen(true); }
     else setSelection((previous) => previous ? { ...previous, error: '笔记状态或位置已改变，未覆盖当前内容。请取消后重新选择；选择草稿仍在。' } : previous);
   }
   const tools: LocalReaderTools = {
     capture,
     request: restore ?? (locate?.vaultToken === session.vaultToken ? locate : undefined),
-    toolbar: (page) => <><button onClick={() => choose((byPage.get(page) ?? []).map(({ entry }) => entry))} disabled={!byPage.get(page)?.length}>本页笔记 · {new Set(byPage.get(page)?.map(({ entry }) => entry.path)).size}</button><button onClick={() => draw(page)} disabled={!catalog}>框选当前页</button></>,
-    page: (page) => <>
+    page: (page, width) => <>
       {(() => {
         const entries = byPage.get(page) ?? [];
-        if (!entries.length) return null;
-        return <button className="desktop-anchor-mark" aria-label={`打开文件第 ${page} 页的 ${new Set(entries.map(({ entry }) => entry.path)).size} 篇笔记`} style={{ top: `${(entries[0]!.target.rects[0]?.[1] ?? .03) * 100}%` }} onClick={() => choose(entries.map(({ entry }) => entry))}>笔记 · {new Set(entries.map(({ entry }) => entry.path)).size}</button>;
+        const dimensions = getPage(page);
+        const height = width * dimensions.height / dimensions.width;
+        return groupMarkers(entries.map(({ target }, index) => ({ id: String(index), x: width, y: (target.rects[0]?.[1] ?? .03) * height })), 40).map((group) => {
+          const items = [...new Map(group.map(({ id }) => { const { entry } = entries[Number(id)]!; return [entry.path, entry] as const; })).values()];
+          const title = items.length === 1 ? noteName(items[0]!.path) : `${items.length} 篇笔记：${items.map((entry) => noteName(entry.path)).join('；')}`;
+          return <button key={group[0]!.id} className="desktop-anchor-mark" aria-label={`打开笔记：${title}`} title={title}
+            aria-pressed={noteActive && items.some((entry) => entry.path === session.path)}
+            style={{ top: `${group[0]!.y / height * 100}%` }} onClick={() => choose(items, page)}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 4h12v17H5V4h2m2-2h6v4H9zM8 10h8M8 14h8M8 18h5" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" /></svg>{items.length > 1 && <span>{items.length}</span>}
+          </button>;
+        });
       })()}
-      {locate?.page === page && locate.rects.map(([x, y, width, height], index) => <div key={index} className="desktop-anchor-boundary" aria-label={`已定位区域 ${index + 1}`} style={{ left: `${x * 100}%`, top: `${y * 100}%`, width: `${width * 100}%`, height: `${height * 100}%` }} />)}
+      {noteActive && (locate?.origin === 'relation' ? [locate] : noteTargets).filter((target) => target.page === page).flatMap((target) => target.rects).map(([x, y, width, height], index) => <div key={index} className="desktop-anchor-boundary" aria-label={`已定位区域 ${index + 1}`} style={{ left: `${x * 100}%`, top: `${y * 100}%`, width: `${width * 100}%`, height: `${height * 100}%` }} />)}
       {selection && <AnchorRegions page={page} items={selection.items} drawing={selection.drawing === page} selected={selection.selected} onSelect={(selected) => setSelection((previous) => previous ? { ...previous, selected } : previous)} onAdd={(rect) => setSelection((previous) => {
         if (!previous || !catalog) return previous;
         const items = previous.items.map((item) => ({ ...item, rects: [...item.rects] }));
@@ -160,10 +186,41 @@ export function DesktopWorkspace() {
     </>,
   };
   function resize(value: number) {
-    share.current = Math.max(minimumShare, Math.min(100 - minimumShare, value));
-    const panels = body.current?.querySelectorAll<HTMLElement>(':scope > .desktop-workspace-view');
-    body.current?.querySelector('[role=separator]')?.setAttribute('aria-valuenow', String(Math.round(share.current)));
-    if (panels) { panels[0]!.style.flex = String(share.current); panels[1]!.style.flex = String(100 - share.current); }
+    const next = Math.max(minimumShare, Math.min(bottom ? 75 : 100 - minimumShare, value));
+    shares.current[sizeKey] = next;
+    body.current?.style.setProperty('--primary-share', `${next}fr`);
+    body.current?.style.setProperty('--secondary-share', `${100 - next}fr`);
+    const handle = body.current?.querySelector('[role=separator]');
+    handle?.setAttribute('aria-valuenow', String(Math.round(next)));
+  }
+  function toggleGraph() {
+    setMode(mode === 'book' ? 'graph' : 'book');
+    setBookOpen(false);
+    requestAnimationFrame(() => document.getElementById('workspace-graph-toggle')?.focus());
+  }
+  function revealNote(path?: string) {
+    if (path && pendingNote.current?.path !== path) pendingNote.current = undefined;
+    setNoteOpen(true);
+    if (narrow && mode !== 'book') setBookOpen(false);
+  }
+  function closeNote() {
+    const returnFocus = mode === 'graph' ? body.current?.querySelector<HTMLElement>('.graph-viewport') : body.current?.querySelector<HTMLElement>('.desktop-anchor-mark[aria-pressed="true"]');
+    setNoteOpen(false);
+    requestAnimationFrame(() => returnFocus?.focus({ preventScroll: true }));
+  }
+  function toggleBook() {
+    setBookOpen(!bookOpen);
+    requestAnimationFrame(() => document.getElementById(narrow && !bookOpen ? 'workspace-return-graph' : 'workspace-book-toggle')?.focus());
+  }
+  function returnToShelf() {
+    pendingNote.current = undefined;
+    preferredPage.current = undefined;
+    setLocate(undefined);
+    setRestore(undefined);
+    setOriginal(undefined);
+    setMode('book');
+    setNoteOpen(false);
+    setShelfRequest((value) => value + 1);
   }
   // Do not apply a stale highlight after source edits remove or invalidate it.
   useEffect(() => {
@@ -177,31 +234,68 @@ export function DesktopWorkspace() {
     if (!Array.isArray(session.anchors)) { setLocate(undefined); return; }
     if (!session.anchors.some((anchor) => { const target = resolveAnchor(anchor, catalog).target; return target && anchorKey(target) === anchorKey({ textbook: locate.textbook, page: locate.page, rects: locate.rects }); })) setLocate(undefined);
   }, [session.anchors, session.originals, session.key, catalog, original]);
-  return <div className="desktop-workspace">
-    <nav className="desktop-workspace-tabs" aria-label="本地工作区">
-      <button aria-current={!split && view === 'notes' ? 'page' : undefined} onClick={() => { setSplit(false); setView('notes'); }}>笔记库</button>
-      <button aria-current={!split && view === 'textbooks' ? 'page' : undefined} onClick={() => { setTextbooksMounted(true); setSplit(false); setView('textbooks'); }}>教材书架</button>
-      <button aria-pressed={split} onClick={() => { setTextbooksMounted(true); setSplit(!split); }}>展开教材分屏</button>
-      {split && <button onClick={() => setChooseRequest((previous) => previous + 1)}>{session.vaultToken ? '切换笔记库' : '选择笔记库'}</button>}
-      {(split || view === 'textbooks') && <div className="desktop-local-browse" role="group" aria-label="查阅本地笔记">{(['search', 'graph'] as const).map((target) => <button key={target} onClick={() => { setBrowseRequest((previous) => ({ view: target, serial: (previous?.serial ?? 0) + 1 })); setSplit(false); setView('notes'); }}>{target === 'search' ? '搜索笔记' : '知识图'}</button>)}</div>}
-    </nav>
+  // Select a new note's original only when it is visible; ordinary edits and mode
+  // switches retain the reader's scroll. A newly selected note is located when its companion becomes visible.
+  const lastLocated = useRef('');
+  useEffect(() => {
+    if (!bookVisible || !noteActive || original || selection) return;
+    const key = `${session.vaultToken}:${session.path ?? ''}:${session.key ?? ''}`;
+    const pending = pendingNote.current;
+    if (pending && (pending.path !== session.path || pending.vaultToken !== session.vaultToken)) return;
+    if (lastLocated.current === key && !pending) return;
+    const target = noteTargets.find((item) => item.page === pending?.page) ?? noteTargets[0];
+    if (!target) { if (pending && catalog) pendingNote.current = undefined; return; }
+    pendingNote.current = undefined; lastLocated.current = key;
+    setRestore(undefined);
+    setLocate({ ...target, vaultToken: session.vaultToken, serial: ++locateSerial.current });
+  }, [session.key, session.path, session.vaultToken, noteTargets, catalog, bookVisible, noteActive, original, selection, openRequest?.serial]);
+  const graphControls = <button className="icon-button graph-floating-button" id="workspace-book-toggle" aria-label={bookOpen ? '收起教材' : '展开教材'} title={bookOpen ? '收起教材' : '展开教材'} aria-expanded={bookOpen} aria-controls="workspace-textbook" onClick={toggleBook}>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1Zm0 0v15" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" /></svg>
+  </button>;
+  return <div className="desktop-workspace" data-mode={mode}>
+    <header className="workspace-toolbar">
+      {mode === 'graph' && narrow && bookOpen && <button id="workspace-return-graph" className="workspace-return" onClick={toggleBook}><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m14 6-6 6 6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>返回图谱</button>}
+      <strong className="workspace-title">{bookTitle}</strong>
+      <div className="workspace-actions" ref={setToolbarHost}>
+      <button className="workspace-graph" id="workspace-graph-toggle" aria-label={mode === 'graph' ? '关闭图谱' : '打开图谱'} title={mode === 'graph' ? '关闭图谱，返回课本' : '打开图谱'} aria-expanded={mode === 'graph'} aria-controls="workspace-notes" onClick={toggleGraph}>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m7 7 10 2M7 7l3 11m7-9-7 9" stroke="currentColor" strokeWidth="1.5" /><circle cx="7" cy="7" r="3" fill="var(--surface)" stroke="currentColor" strokeWidth="1.5" /><circle cx="17" cy="9" r="2.5" fill="var(--surface)" stroke="currentColor" strokeWidth="1.5" /><circle cx="10" cy="18" r="2.5" fill="var(--surface)" stroke="currentColor" strokeWidth="1.5" /></svg><span>图谱</span>
+      </button>
+      <button className="workspace-shelf" aria-label="返回书架" title="返回书架" onClick={returnToShelf}>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h4v14H4zM10 5h4v14h-4zM16 6l3-1 3 13-3 1zM3 21h20" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" /></svg>
+      </button>
+      </div>
+    </header>
     {original && <section className="desktop-selection" aria-label="关联原文查阅"><button onClick={returnOriginal}>返回关联来源</button><span>教材原文</span>{original.targets.map((target, index) => <button key={index} aria-current={original.index === index ? 'page' : undefined} onClick={() => { setOriginal({ ...original, index }); setRestore(undefined); setLocate({ ...target, origin: 'relation', serial: ++locateSerial.current, vaultToken: session.vaultToken }); }}>文件第 {target.page} 页 · {target.rects.length} 个区域</button>)}</section>}
     {selection && <section className="desktop-selection" aria-label="教材框选草稿"><span>{selection.index === undefined ? '框选后添加位置' : `调整位置 ${selection.index + 1}`} · {selection.items.reduce((count, item) => count + item.rects.length, 0)} 个区域</span>
-      <span>可在教材中继续框选；拖动边界移动，右下角调整大小。</span>
+      <span>{selection.index === undefined ? '可翻页后继续框选；' : '继续框选会回到此位置所在页；'}拖动边界移动，右下角调整大小。</span>
+      <button disabled={!catalog} onClick={() => {
+        const page = selection.index === undefined ? capture.current?.()?.page : selection.items[0]?.pdf_page;
+        if (!catalog || page === undefined || !catalog.pages.some((item) => item.page === page)) return;
+        setSelection({ ...selection, drawing: page, error: '' });
+        setBookOpen(true);
+        if (selection.index !== undefined) located({ textbook: catalog.textbookId, page, rects: selection.items[0]!.rects });
+      }}>{selection.index === undefined ? '继续框选当前页' : '继续框选原页'}</button>
       <button disabled={!selection.selected} onClick={() => { const [i, j] = selection.selected.split(':').map(Number); setSelection({ ...selection, selected: '', items: selection.items.map((item, n) => n === i ? { ...item, rects: item.rects.filter((_, at) => at !== j) } : item) }); }}>移除所选区域</button>
       <button onClick={() => setSelection(undefined)}>取消框选</button>
       <button disabled={!session.writable || session.key !== selection.session.key} onClick={() => { void apply(false); }}>{selection.index === undefined ? '添加到当前笔记' : '保存区域调整'}</button>
       {selection.index === undefined && <><input aria-label="框选新笔记名称" value={selection.name} onChange={(event) => setSelection({ ...selection, name: event.target.value })} /><button onClick={() => { void apply(true); }}>从框选新建笔记</button></>}
       {selection.error && <p role="alert">{selection.error}</p>}
     </section>}
-    <div ref={body} className={`desktop-workspace-body${split ? ' split' : ''}`}>
-      <div className="desktop-workspace-view" hidden={!split && view !== 'notes'}><DesktopApp active={split || view === 'notes'} browseRequest={browseRequest} chooseRequest={chooseRequest} openRequest={openRequest} catalog={catalog} onRefreshCatalog={refreshCatalog} onAnchorSession={setSession} anchorBridge={bridge} onLocate={located} onOriginal={locateOriginal} onSelect={begin} /></div>
-      {split && <div className="desktop-workspace-resize" role="separator" tabIndex={0} aria-label="调整笔记与教材面板" aria-orientation="vertical" aria-disabled={minimumShare === 50} aria-valuemin={minimumShare} aria-valuemax={100 - minimumShare} aria-valuenow={share.current} onPointerDown={(event) => { event.preventDefault(); event.currentTarget.setPointerCapture(event.pointerId); }} onPointerMove={(event) => {
+    <div ref={body} className="desktop-workspace-body" data-split={split} data-bottom={bottom}>
+      <div id="workspace-notes" className="desktop-workspace-view workspace-notes" hidden={!notesVisible}><DesktopApp mode={mode} noteVisible={noteOpen} graphControls={graphControls} onCloseNote={closeNote} onRevealNote={revealNote} toolbarHost={toolbarHost} active={notesVisible} chooseRequest={chooseRequest} openRequest={openRequest} catalog={catalog} onRefreshCatalog={refreshCatalog} onAnchorSession={setSession} anchorBridge={bridge} onLocate={located} onOriginal={locateOriginal} onSelect={begin} /></div>
+      {split && <div className="desktop-workspace-resize" role="separator" tabIndex={0} aria-label={bottom ? '调整笔记区域高度' : '调整笔记与课本宽度'} aria-orientation={bottom ? 'horizontal' : 'vertical'} aria-controls="workspace-textbook" aria-valuemin={minimumShare} aria-valuemax={bottom ? 75 : 100 - minimumShare} aria-valuenow={shares.current[sizeKey]} onPointerDown={(event) => {
+        if (event.button !== 0) return;
+        event.preventDefault(); event.currentTarget.focus(); event.currentTarget.setPointerCapture(event.pointerId);
+      }} onPointerMove={(event) => {
         if (!event.currentTarget.hasPointerCapture(event.pointerId) || !body.current) return;
-        const bounds = body.current.getBoundingClientRect(); resize((event.clientX - bounds.left) / bounds.width * 100);
-      }} onPointerUp={(event) => event.currentTarget.releasePointerCapture(event.pointerId)} onKeyDown={(event) => { if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(event.key)) { event.preventDefault(); resize(share.current + (['ArrowLeft', 'ArrowUp'].includes(event.key) ? -5 : 5)); } }} />}
-      <div className="desktop-workspace-view" hidden={!split && view !== 'textbooks'}>{textbooksMounted && <DesktopTextbooks vaultToken={session.vaultToken} active={split || view === 'textbooks'} tools={tools} onCatalog={onCatalog} onOpenNote={open} />}</div>
+        const bounds = body.current.getBoundingClientRect(); resize(bottom ? (event.clientY - bounds.top) / bounds.height * 100 : (event.clientX - bounds.left) / bounds.width * 100);
+      }} onPointerUp={(event) => { if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId); }} onKeyDown={(event) => {
+        const value = shares.current[sizeKey];
+        const next = event.key === (bottom ? 'ArrowUp' : 'ArrowLeft') ? value - 5 : event.key === (bottom ? 'ArrowDown' : 'ArrowRight') ? value + 5 : event.key === 'Home' ? minimumShare : event.key === 'End' ? bottom ? 75 : 100 - minimumShare : null;
+        if (next !== null) { event.preventDefault(); resize(next); }
+      }}><span aria-hidden="true" /></div>}
+      <div id="workspace-textbook" className="desktop-workspace-view workspace-book" hidden={!bookVisible}><DesktopTextbooks vaultToken={session.vaultToken} active={bookVisible} shelfRequest={shelfRequest} onChooseVault={() => setChooseRequest((previous) => previous + 1)} tools={tools} onCatalog={onCatalog} onOpenNote={open} /></div>
     </div>
-    <dialog ref={dialog} className="vault-guard note-link-dialog" aria-label="选择教材笔记" onCancel={(event) => { event.preventDefault(); dialog.current?.close(); setCandidates(undefined); }}><h2>选择笔记</h2><div className="note-link-candidates">{candidates?.map((entry) => <button className="note-link-candidate" key={entry.path} onClick={() => { open(entry.path, session.vaultToken, entry.id); dialog.current?.close(); setCandidates(undefined); }}><Candidate entry={entry} catalog={catalog} /></button>)}</div><button onClick={() => { dialog.current?.close(); setCandidates(undefined); }}>取消</button></dialog>
+    <dialog ref={dialog} className="vault-guard note-link-dialog" aria-label="选择教材笔记" onCancel={(event) => { event.preventDefault(); dialog.current?.close(); setCandidates(undefined); preferredPage.current = undefined; }}><h2>选择笔记</h2><div className="note-link-candidates">{candidates?.map((entry) => <button className="note-link-candidate" key={entry.path} onClick={() => { open(entry.path, session.vaultToken, entry.id); dialog.current?.close(); setCandidates(undefined); preferredPage.current = undefined; }}><Candidate entry={entry} catalog={catalog} /></button>)}</div><button onClick={() => { dialog.current?.close(); setCandidates(undefined); preferredPage.current = undefined; }}>取消</button></dialog>
   </div>;
 }

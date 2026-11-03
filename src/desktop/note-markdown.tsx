@@ -45,9 +45,9 @@ export function NoteMarkdown({ source, references = '', onLink, onOriginal, offs
     const name = Object.hasOwn(calloutNames, item.type) ? calloutNames[item.type]! : item.type;
     const content = <Markdown onOriginal={onOriginal} onLink={onLink} locate={(at) => offset + block.from + calloutPosition(block.source, at)} source={`${item.body}\n\n${definitions}`} />;
     return item.fold ? <details key={block.from} className={`note-callout note-callout-${item.type}`} open={item.fold === '+'}>
-      <summary>{item.title || name}<small>{item.title ? name : ''}</small></summary>{content}
+      <summary>{item.title || name}<small>{item.title && item.title !== name ? name : ''}</small></summary>{content}
     </details> : <section key={block.from} className={`note-callout note-callout-${item.type}`}>
-      <header>{item.title || name}<small>{item.title ? name : ''}</small></header>{content}
+      <header>{item.title || name}<small>{item.title && item.title !== name ? name : ''}</small></header>{content}
     </section>;
   })}</>;
 }

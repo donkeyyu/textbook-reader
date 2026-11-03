@@ -35,6 +35,7 @@ export type DesktopApi = {
   protectDraft: (token: string, path: string, source: string) => Promise<Result<string>>;
   recoveries: (token: string) => Promise<Result<Recovery[]>>;
   onChange: (callback: (change: VaultChange) => void) => () => void;
+  onBeforeClose: (callback: () => Promise<boolean>) => () => void;
   saveState: (token: string, state: VaultState) => Promise<Result<null>>;
   readSettings: (token: string) => Promise<Result<SettingsView>>;
   saveSettings: (token: string, revision: string | null, patch: SettingsPatch) => Promise<Result<SettingsView>>;

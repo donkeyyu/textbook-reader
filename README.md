@@ -49,6 +49,21 @@ npm run preview   # 预览构建结果
 
 仅在重新生成页图时运行 `npm run prepare:textbook`。该命令需要 `cwebp`，以及本地 `materials/indexes/人教版-数学-七年级上册/images/` 中已核对的 PNG 页图（不纳入 Git）；它校验 PDF 与全部 PNG 的哈希，再生成 WebP、缩略图、来源记录及 `src/textbook/book.json`。来源见 [项目背景](docs/CONTEXT.md)。换教材时须重新核对内容与定位，不能仅替换文件名。
 
+### 桌面本地笔记
+
+运行 `npm run desktop` 构建并启动 Electron。选择本地文件夹后添加教材，应用导入 AI 初稿；直接修改笔记会保存为该文件夹中的 Markdown。点击课本上的笔记图标展开笔记；顶部图谱图标打开图谱，图谱右上角书本图标展开教材对照。中窄屏使用底部笔记。页面顶部有独立的笔记列表入口；笔记工具栏左侧为编辑工具，右侧为导航与文件工具，悬停可查看操作名称。停输入650毫秒、失焦或关闭时自动保存。点击正文内标题可编辑，Enter 保存、Escape 取消；有引用受影响时先预览再确认。
+
+课本与图谱交互的原生回归：
+
+```sh
+npm run desktop:build
+node desktop/check-reader-navigation.mjs
+```
+
+脚本创建独立临时笔记库与应用数据，用本机 HTTP 提供仓库教材资源，通过真实下载、初稿导入与磁盘写入检查完整路径；不会读取或修改个人笔记库。结果与截图写到 `output/reader-navigation/`。支持 `READER_NAVIGATION_FIXTURE` 复用本脚本先前创建的测试资源，具体目录见脚本输出。本交互回归使用上述脚本。
+
+笔记位置与属性回归：构建后运行 `node --experimental-strip-types desktop/check-note-metadata.mjs`。脚本从上次阅读回归的临时资源复制独立测试库（可用 `NOTE_METADATA_FIXTURE` 指定），检查按需展开、教材多框与跨页操作、属性保存、文件头收起及只读保护；截图与结果写入 `output/note-metadata/`。
+
 ### 本地内容预览
 
 开发服务器使用 `/?content=local` 可预览仓库中的补充正文，例如 `http://localhost:5198/?content=local`（端口以实际启动命令为准）。阅读页显示“本地内容预览 · 尚未发布”；不带参数仍读取云端发布版本。该开关仅在 Vite 开发模式生效，正式构建始终读取已发布内容。修改 JSON 后刷新预览；此模式不会发布内容，也不改变个人内容的保存方式。
@@ -175,7 +190,7 @@ node --experimental-strip-types scripts/check-cloud-content.mjs
 
 涉及个人内容或阅读记录写入的检查，使用独立测试 origin 和自己的浏览器页面，不接管用户验收页。要求 `{ testOrigin }` 的函数须显式传入；先检查各函数的存储及草稿前置条件，结束后恢复原始状态。多个检查不要并发修改同一页面或存储。
 
-云端检查还须使用可清理的专用 QA 账号。`check-related-return.mjs` 中直接读写旧 localStorage 的笔记、草稿和跨标签检查只适用于冻结的旧版；新版存储行为使用上表的云端入口。测试脚本不得打印账号凭据或清空浏览器全局存储。
+云端检查还须使用可清理的专用 QA 账号。旧 localStorage 笔记保存、失败草稿与跨标签写入检查已退役；保存行为使用上表的云端入口。`checkLocate` 与 `checkLocateGroup` 只检查定位上下文，不编辑个人内容或模拟保存故障。测试脚本不得打印账号凭据或清空浏览器全局存储。
 
 ## 验证记录
 

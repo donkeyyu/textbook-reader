@@ -1,8 +1,10 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
+import fs from 'node:fs';
+import { syncBuiltinESMExports } from 'node:module';
 import { createServer } from 'node:http';
 import { createHash } from 'node:crypto';
-import { copyFile, mkdir, mkdtemp, readFile, readdir, realpath, rm, symlink, link, writeFile } from 'node:fs/promises';
+import { copyFile, cp, mkdir, mkdtemp, readFile, readdir, realpath, rm, symlink, link, stat, utimes, writeFile } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import { textbookStorage } from '../src/desktop/textbook-storage.ts';
@@ -87,10 +89,70 @@ test('HTTP download retries checked files, survives restart, repairs loss and pr
     assert.equal(await readFile(custom, 'utf8'), '{"future":true}');
     assert.equal(await readFile(path.join(f.vault, '个人.md'), 'utf8'), '自定义笔记保持原样');
     const before = new Map(hits);
-    const offline = new TextbookStore(f.app, f.data, null); await offline.initialize();
+    const offline = new TextbookStore(f.app, f.data, null);
+    const read = fs.promises.readFile; let startupResourceReads = 0;
+    fs.promises.readFile = (async (...args: Parameters<typeof read>) => {
+      if (String(args[0]).startsWith(`${store.root}${path.sep}textbooks${path.sep}`)) startupResourceReads++;
+      return read(...args);
+    }) as typeof read;
+    syncBuiltinESMExports();
+    try { await offline.initialize(); }
+    finally { fs.promises.readFile = read; syncBuiltinESMExports(); }
+    assert.equal(startupResourceReads, 0, 'Warm startup must not reread 405 unchanged resources');
     assert.equal(offline.snapshot().phase, 'ready'); await offline.addToVault(f.vault, textbookId);
     for (const entry of manifest.download) assert.equal(hash(await offline.read(entry.path)), entry.sha256);
     assert.deepEqual(hits, before);
+    const verification = path.join(f.data, 'textbook-verification');
+    assert.ok((await readdir(verification)).length >= 2, 'Warm startup retains rebuildable validation receipts outside the vault');
+    // A copied repository must open without any shared appData textbook files.
+    const portable = path.join(f.vault, '.textbook/textbooks', textbookId, 'resources');
+    await cp(store.root, portable, { recursive: true });
+    await writeFile(path.join(portable, 'manifest.json'), manifestBytes);
+    const defaultRoot = store.root;
+    await rm(path.join(defaultRoot, failedPath));
+    const downloading = store.download();
+    await store.useVaultResources(f.vault);
+    await downloading;
+    assert.equal(store.root, portable, 'An old download must not switch the selected vault back');
+    assert.equal(store.snapshot().phase, 'ready');
+    assert.equal(hash(await readFile(path.join(defaultRoot, failedPath))), manifest.download.find((entry) => entry.path === failedPath)!.sha256,
+      'An in-flight download finishes in its original directory');
+    await store.useVaultResources(other);
+    const detached = new TextbookStore(f.app, path.join(f.root, 'fresh-device'), null);
+    await detached.initialize();
+    assert.equal(detached.snapshot().phase, 'unavailable');
+    await detached.useVaultResources(f.vault);
+    assert.equal(detached.root, portable);
+    assert.equal(detached.snapshot().phase, 'ready');
+    assert.equal(hash(await detached.read(manifest.download[0]!.path)), manifest.download[0]!.sha256);
+    await detached.useVaultResources(other);
+    assert.equal(detached.snapshot().phase, 'unavailable', 'A plain vault cannot use the previous vault resources');
+    await detached.useVaultResources(f.vault);
+    const originalManifest = await readFile(path.join(portable, 'manifest.json'));
+    await rm(path.join(portable, 'manifest.json'));
+    await detached.useVaultResources(f.vault);
+    assert.equal(detached.snapshot().phase, 'unavailable', 'An incomplete portable resource folder cannot silently fall back');
+    await writeFile(path.join(portable, 'manifest.json'), originalManifest);
+    await detached.useVaultResources(f.vault);
+    assert.equal(detached.snapshot().phase, 'ready');
+    // Restoring mtime cannot hide same-sized corruption: ctime is part of the receipt.
+    const portablePage = path.join(portable, manifest.download[0]!.path);
+    const originalPage = await readFile(portablePage); const originalStat = await stat(portablePage);
+    await writeFile(portablePage, Buffer.alloc(originalPage.length));
+    await utimes(portablePage, originalStat.atime, originalStat.mtime);
+    await detached.useVaultResources(f.vault);
+    assert.equal(detached.snapshot().phase, 'unavailable');
+    await writeFile(portablePage, originalPage);
+    await detached.useVaultResources(f.vault);
+    assert.equal(detached.snapshot().phase, 'ready');
+    // Corrupt receipts are discarded; a real resource check rebuilds them.
+    for (const name of await readdir(verification)) await writeFile(path.join(verification, name), '{broken');
+    const uncached = new TextbookStore(f.app, f.data, null); await uncached.initialize();
+    assert.equal(uncached.snapshot().phase, 'ready');
+    await writeFile(path.join(f.app, 'dist/assets/unlisted.js'), 'unexpected');
+    const changedInstaller = new TextbookStore(f.app, f.data, null); await changedInstaller.initialize();
+    assert.equal(changedInstaller.snapshot().phase, 'unavailable');
+    await rm(path.join(f.app, 'dist/assets/unlisted.js'));
     const damaged = manifest.download[10]!;
     await writeFile(path.join(store.root, damaged.path), 'corrupt');
     const restart = new TextbookStore(f.app, f.data, source, true); await restart.initialize();

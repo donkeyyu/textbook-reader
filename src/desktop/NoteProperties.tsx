@@ -48,7 +48,7 @@ export function NoteProperties({ source, readOnly, propertyTypes, onChange, onTy
   source: string; readOnly: boolean; showProperties?: boolean; unsupportedPropertyTypes?: string[]; propertyTypes: Record<string, PropertyType>;
   onChange: (source: string) => void; onTypeChange: (name: string, type: PropertyType) => void;
 }) {
-  const { properties, metadata, problem } = inspectProperties(source);
+  const { properties, problem } = inspectProperties(source);
   const [name, setName] = useState('');
   const [newType, setNewType] = useState<PropertyType>('text');
   const [error, setError] = useState('');
@@ -65,8 +65,6 @@ export function NoteProperties({ source, readOnly, propertyTypes, onChange, onTy
     catch (cause) { setError((cause as Error).message); return false; }
   }
   return <section className="note-properties" aria-label="笔记属性">
-    <details className="note-information"><summary>笔记信息</summary><dl>{['id', 'create_time', 'update_time'].map((key) => <div key={key}><dt>{key}</dt><dd>{metadata[key] === undefined ? '未知' : display(metadata[key])}</dd></div>)}</dl></details>
-    {metadata.ai_source !== undefined && <details className="note-information"><summary>AI 初始来源</summary><pre>{display(metadata.ai_source)}</pre><p>初始内容来自固定版本包。云端归档尚待发布核验。</p></details>}
     <div hidden={!showProperties}>{!problem && <>
       <div className="note-property-rows">{properties.map(({ name: propertyName, value, editable }) => {
         const actualType = inferPropertyType(value);
@@ -96,6 +94,16 @@ export function NoteProperties({ source, readOnly, propertyTypes, onChange, onTy
         <button type="submit" disabled={!name.trim()}>添加属性</button>
       </form></details>}
     </>}
+    {problem && <p role="alert">属性暂不可用，请修复文件头格式。</p>}
     {error && <p className="note-property-error" role="alert">{error}</p>}</div>
   </section>;
+}
+
+export function NoteInformation({ source, path, fileMtime }: { source: string; path: string; fileMtime?: number }) {
+  const { metadata } = inspectProperties(source);
+  return <div className="note-information-content"><dl>
+    <div><dt>文件</dt><dd>{path}</dd></div>
+    {([['id', '笔记 ID'], ['create_time', '创建时间'], ['update_time', '更新时间']] as const).map(([key, label]) => <div key={key}><dt>{label}</dt><dd>{metadata[key] === undefined ? '未知' : display(metadata[key])}</dd></div>)}
+    {fileMtime !== undefined && <div><dt>文件修改时间</dt><dd>{new Date(fileMtime).toLocaleString()}</dd></div>}
+  </dl>{metadata.ai_source !== undefined && <details><summary>AI 初始来源</summary><pre>{display(metadata.ai_source)}</pre></details>}</div>;
 }
